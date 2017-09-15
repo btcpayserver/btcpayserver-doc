@@ -3,7 +3,7 @@
 ## Introduction
 
 BTCPay Server is an open source server compatible with Bitpay API written in .NET Core 2.0.
-BTCPay is not maintained by Bitpay in any occasion. 
+BTCPay is not maintained by Bitpay. 
 
 If you have any issue with BTCPay, please fill a [github issue](https://github.com/btcpayserver/btcpayserver-doc/issues).
 If you have more general questions, please come on [Slack](http://13.79.159.103:3000/).
