@@ -3,10 +3,14 @@
 ## Introduction
 
 BTCPay Server is an open source server compatible with Bitpay API written in .NET Core 2.0.
+BTCPay is not maintained by Bitpay in any occasion. 
+
+If you have any issue with BTCPay, please fill a [github issue](https://github.com/btcpayserver/btcpayserver-doc/issues).
+If you have more general questions, please come on [Slack](http://13.79.159.103:3000/).
 
 Use BTCPay Server in the following case:
 
-* You depends now on Bitpay and want to keep using Bitcoin payment after november for your payments
+* You depends now on Bitpay and want to keep using Bitcoin after november
 * You do not want to give custody of your funds to a third party
 * You have been rejected by Bitpay for KYC/AML reasons
 * You are a service provider who wants to offer Bitcoin payments to your customer with a different pricing model than Bitpay
