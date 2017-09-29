@@ -19,7 +19,7 @@ Use BTCPay Server in the following case:
 
 ## Architecture
 
-BTCPay is using a minimalist block explorer called NBXplorer which track HD derived addresses.
+BTCPay is using a minimalist block explorer called [NBXplorer](https://github.com/dgarage/NBXplorer) which track HD derived addresses.
 The Explorer depends on a trusted full node.
 
 ![Architecture](img/Architecture.png)
