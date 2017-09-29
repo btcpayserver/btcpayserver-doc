@@ -17,6 +17,15 @@ Use BTCPay Server in the following case:
 * Want to propose services similar to Bitpay for an alt currency.
 * Want features Bitpay are not proposing (Multi-sig +Segwit support soon)
 
+## Architecture
+
+BTCPay is using a minimalist block explorer called NBXplorer which track HD derived addresses.
+The Explorer depends on a trusted full node.
+
+![Architecture](img/Architecture.png)
+
+BTCPay server saves its data into SQLite DB of postgres.
+
 ## Where to go next?
 
 If you are just curious to test it go to [Getting Started](Getting-Started.md).
