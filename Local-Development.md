@@ -37,10 +37,6 @@ In a terminal start bitcoind in testnet:
 ```
 bitcoind -regtest -printtoconsole
 ```
-Mine some blocks:
-```
-bitcoin-cli -regtest generate 101
-```
 
 Fetch the block explorer and BTCPayServer:
 
@@ -55,7 +51,7 @@ Run NBXplorer:
 ```
 cd NBXplorer/NBXplorer
 dotnet restore
-dotnet run -regtest
+dotnet run --no-launch-profile -- -regtest
 ```
 
 Check that it successfully connects to your regtest instance.
@@ -64,7 +60,7 @@ Go back to the `GettingStarted` folder, and start BTCPayServer:
 ```
 cd btcpayserver/BTCPayServer
 dotnet restore
-dotnet run -regtest
+dotnet run --no-launch-profile -- -regtest
 ```
 
 Now you can browse to http://127.0.0.1:23002.
