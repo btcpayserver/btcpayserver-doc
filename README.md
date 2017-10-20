@@ -24,7 +24,7 @@ The Explorer depends on a trusted full node.
 
 ![Architecture](img/Architecture.png)
 
-BTCPay server saves its data into SQLite DB of postgres.
+BTCPay server saves its data into either a SQLite or a PostgreSQL database.
 
 ## Where to go next?
 
