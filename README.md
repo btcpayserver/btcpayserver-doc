@@ -34,3 +34,8 @@ If you want to help development, go to [Local Development](Local-Development.md)
 
 If you want to easily host your own server on testnet, go to [our docker's repository](https://github.com/btcpayserver/btcpayserver-docker).
 
+## Integrations
+
+### Wordpress/Woocommerce
+
+You can integrate to woocommerce by using [our plugin](https://github.com/btcpayserver/woocommerce-plugin/), as documented on [this video](https://www.youtube.com/watch?v=6rd8ZpLrz-4/)
