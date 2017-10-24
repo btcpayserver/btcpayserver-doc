@@ -32,5 +32,5 @@ If you are just curious to test it, go to [Getting Started](Getting-Started.md).
 
 If you want to help development, go to [Local Development](Local-Development.md)
 
-If you want to easily host your own server on testnet, go to [our docker's repository](https://github.com/btcpayserver/btcpayserver-docker).
+If you want to easily host your own server on testnet, go to [our docker's repository](https://github.com/btcpayserver/btcpayserver-docker) or see [our video](https://www.youtube.com/watch?v=a5ehSfzYkJo).
 
