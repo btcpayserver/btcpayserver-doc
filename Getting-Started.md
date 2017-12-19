@@ -2,6 +2,10 @@
 
 This section goes through the process of creating an account and store on our public *testnet* BTCPay server.
 
+You can take a look at our video:
+
+[![BTCPay - Introduction](http://img.youtube.com/vi/xh3Eac66qc4/mqdefault.jpg)](http://www.youtube.com/watch?v=xh3Eac66qc4 "BTCPay - Introduction")
+
 ## Create your first invoice
 
 First let's create a new store:
