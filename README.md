@@ -2,42 +2,24 @@
 
 ## Introduction
 
-BTCPay Server is an open source server compatible with the Bitpay API, written in .NET Core 2.0.  
-BTCPay is not maintained by Bitpay. 
+BTCPay Server is an Open Source payment processor conforms to the invoice API of Bitpay.
+This allows easy migration of your code base to your own, self-hosted payment processor.
 
 If you have any issues with BTCPay, please fill a [github issue](https://github.com/btcpayserver/btcpayserver-doc/issues).  
-If you have more general questions, please come on [Slack](http://13.79.159.103:3000/).
+If you have more general questions, please come on [Slack](http://52.191.212.129:3000/).
 
-Use BTCPay Server in the following case:
+This solution is for you if:
 
-* You currently depend on Bitpay and want to keep using Bitcoin after november
-* You do not want to give custody of your funds to a third party
-* You have been rejected by Bitpay for KYC/AML reasons
-* You are a service provider who wants to offer Bitcoin payments to your customer with a different pricing model than Bitpay
-* You want to propose services similar to Bitpay for an alt currency.
-* You want features Bitpay are not proposing (Multi-sig +Segwit support soon)
+* You currently use Bitpay as a payment processor but are worry about their commitment to Bitcoin in the future
+* You want to be in control of your own funds
+* Bitpay compliance team decided to reject your application
+* You want lower fee (we support Segwit)
+* You want to become a payment processor yourself and offer BTCPay hosted solution to merchants
+* You want to a way support other currency than those offered by Bitpay
 
-## Architecture
+## Table of content
 
-BTCPay is using a minimalist block explorer called [NBXplorer](https://github.com/dgarage/NBXplorer) which track HD derived addresses.
-The Explorer depends on a trusted full node.
-
-![Architecture](img/Architecture.png)
-
-BTCPay server saves its data into either a SQLite or a PostgreSQL database.
-
-## Where to go next?
-
-If you are just curious to test it, go to [Getting Started](Getting-Started.md).
-
-If you want to help development, go to [Local Development](Local-Development.md)
-
-If you want to easily host your own server on testnet, go to [our docker's repository](https://github.com/btcpayserver/btcpayserver-docker) or see [our video](https://www.youtube.com/watch?v=a5ehSfzYkJo).
-
-If you want to deploy easily, check how to [Self-Hosted a BTCPay instance on Azure](https://github.com/btcpayserver/btcpayserver-azure).
-
-## Integrations
-
-### Wordpress/Woocommerce
-
-You can integrate to woocommerce by using [our plugin](https://github.com/btcpayserver/woocommerce-plugin/), as documented on [this video](https://www.youtube.com/watch?v=6rd8ZpLrz-4/)
+* [Try it!](Getting-Started.md)
+* [How to deploy](Deployment.md)
+* [How to contribute](Local-Development.md)
+* [ECommerce integration](Integration.md)
