@@ -24,3 +24,4 @@ This solution is for you if:
 * [How to contribute](Local-Development.md)
 * [ECommerce integration](Integration.md)
 * [Connect with the community](Community.md)
+* [FAQ](FAQ.md)
