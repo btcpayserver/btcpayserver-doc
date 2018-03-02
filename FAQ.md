@@ -6,9 +6,10 @@ See also [The Merchants Guide to accepting Bitcoin directly with no intermediate
 
 Ledger integration depends on U2F feature of your browser (supported by chrome) and on the [browser support](https://support.ledgerwallet.com/hc/en-us/articles/115005198565-What-is-the-Browser-support-option-made-for-) mode of your ledger.
 
-If it still does not work after activating the browser support mode, the reverse proxy of the server hosting BTCPay might not support Websocket.
-You can see it looking javascript console error of the wallet page.
+If it still does not work after activating the browser support mode, the reverse proxy of the BTCPay server hosting BTCPay might not support Websocket.
+If this is the case, you will notice a javascript error in the console of the "Wallet" page of your store.
 
+If you are the host of the server, you most likely just need to update the settings of your reverse proxy to support websockets.
 If you have nginx, make sure that the following is included at the top of `/etc/nginx/conf.d/default.conf`.
 
 ```
