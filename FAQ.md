@@ -31,3 +31,23 @@ Then restart nginx.
 ## Does BTCPay Server support crypto to fiat conversion?
 
 No
+
+## Where can I get help/support?
+
+BTCPay is an open-source project. The best way to ask questions is through the Slack group.
+
+## How much does it cost?
+
+If you are using the simplest way to deploy, it costs around 70$ per month.
+
+You have to register with Microsoft Azure server. Upon registration, you'll get 200$ free credits which will be enough for the first few months of for running the server, so basically, there are no upfront costs. Be aware that BTCPay is free; it does not cost a dime, you're paying Microsoft here for the server which will keep your node online 24/7.
+
+After you buy the server, there is a single one-click deploy button you have to click. It will take you to your Azure VM and configure everything for you. There are few things you have to change yourself. ([See this video](https://www.youtube.com/watch?v=Bxs95BdEMHY) for a demonstration)
+
+## Can the cost of running BTCPay be cheaper?
+
+Yes it can. Currently, the one-click deployment requires Azure Virtual Machine, but if you’re a programmer or understand VM’s you can deploy one on a different VM. Furthermore, the changes in the Bitcoin Core 0.16.0 (BIP159) make it possible to run the full node in pruned mode to save more disk space.
+
+Also, once the full node is synchronized to the network, you can downgrade the machine on Azure to take a less expensive one.
+
+Penny-pinching cost is a manual process which involves trial and error.
