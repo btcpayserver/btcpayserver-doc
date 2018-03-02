@@ -1,5 +1,7 @@
 # FAQ
 
+See also [The Merchants Guide to accepting Bitcoin directly with no intermediates through BTCPay](https://www.reddit.com/r/Bitcoin/comments/81h1oy/the_merchants_guide_to_accepting_bitcoin_directly/).
+
 ## Why is my ledger not detected by BTCPay Server?
 
 Ledger integration depends on U2F feature of your browser (supported by chrome) and on the [browser support](https://support.ledgerwallet.com/hc/en-us/articles/115005198565-What-is-the-Browser-support-option-made-for-) mode of your ledger.
