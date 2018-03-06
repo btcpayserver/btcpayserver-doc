@@ -1,6 +1,6 @@
 <img src="img/xadrez.jpg" width="20%"><br>
 # Xadrez 
-**Seeking the best open source setup for an e-commerce store that accepts Litecoin (LTC) and Bitcoin (BTC)**
+**A guide to run an open source based e-store that accepts Litecoin, Bitcoin and fiat**
 
 Author: Ricardo Sodré Andrade ([Twitter](https://www.twitter.com/ricsodre))
 
