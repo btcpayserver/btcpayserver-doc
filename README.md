@@ -23,5 +23,6 @@ This solution is for you if:
 * [How to deploy](Deployment.md)
 * [How to contribute](Local-Development.md)
 * [ECommerce integration](Integration.md)
+* [Xadrez - Guide to run an e-commerce store that accepts Litecoin, Bitcoin and fiat](Xadrez.md)
 * [Connect with the community](Community.md)
 * [FAQ](FAQ.md)
