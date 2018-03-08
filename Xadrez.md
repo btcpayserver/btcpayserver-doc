@@ -112,17 +112,19 @@ Go to menu ```View``` and be sure the last submenu is ```Hide console``` if it i
 
 *A modern bitcoin wallet hand forged to keep your transactions private, your identity masked, and your funds secure.*
 
-Samourai will provide us the Derivation Scheme necessary to inform BTCpay Server. Derivation Scheme will generate different addresses (public keys) to every order at store.
+**Samourai Wallet is not recommended yet to used as the merchant's BTC wallet**
 
-To get the Derivation Scheme - at Samourai Wallet - you need to click upper right icon, choose Settings, Choose Wallets and decide if you want or not to use segwit addresses. Segwit is extremely recommended. Use the Segwit YPUB code at BTCpay Server to generate Segwit addresses which will send the funds to your Samourai wallet.
+Even if Samourai actually provide the Derivation Scheme necessary to inform BTCpay Server we still has a issue that not let us to use it. The fixed ```gap limit``` of Samourai Wallet is limited to 20 addresses (we recommend a number between 200 to 2000).
 
-TODO: Nicolas Dorier, BTCpay Server maintener, [was in doubt about the gap limit of Samourai](https://twitter.com/NicolasDorier/status/968638958438572032).
+Until Samourai Wallet give to their users the option to change the ```gap limit``` to any number, we do not recommend this wallet to be used. 
 
 ### [Loafwallet](https://www.loadwallet.org)
 
 *Loafwallet is the best standalone Litecoin wallet built for iOS and Android. It is available to download for free on the Apple App Store and Play Store!*
 
-Loafwallet will be the best choice for accept LTC in Xadrez setup when archive some requirements as listed:
-  - Be compatible with segwit (probably at 2.1 version)
-  - Inform the Derivation Scheme
-  - Has the a high gap limit of 20 addresses or option to config it
+**Loafwallet is not recommended yet to used as the merchant's LTC wallet**
+
+Loafwallet will be the best choice for accept LTC in Xadrez setup as soon it archive some requirements as listed below:
+  - Be fully compatible with Segwit - it do not scan Bech32 and generated addresses are non-segwit
+  - Let the users get the Derivation Scheme
+  - Has a option to set the ```gap limit```
