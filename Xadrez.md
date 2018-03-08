@@ -116,7 +116,7 @@ Go to menu ```View``` and be sure the last submenu is ```Hide console``` if it i
 
 Samourai currently provide the Derivation Scheme necessary to inform BTCpay Server but we still has a issue that not let us to use it. The fixed ```gap limit``` of Samourai Wallet is limited to 20 addresses (we recommend a number between 200 to 2000).
 
-Until Samourai Wallet give to their users the option to change the ```gap limit``` to any number, we do not recommend this wallet for Xadrez setup. 
+Until Samourai Wallet feature the option to change the ```gap limit``` to any number, we do not recommend this wallet for Xadrez setup. 
 
 ### [Loafwallet](https://www.loadwallet.org)
 
