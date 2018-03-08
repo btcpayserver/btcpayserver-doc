@@ -127,4 +127,4 @@ Until Samourai Wallet feature the option to change the ```gap limit``` to any nu
 Loafwallet will be the best choice for accept LTC in Xadrez setup as soon it archive some requirements as listed below:
   - Be fully compatible with Segwit - it do not scan Bech32 and generated addresses are non-segwit
   - Let the users get the Derivation Scheme
-  - Has a option to set the ```gap limit```
+  - Has an option to set the ```gap limit```
