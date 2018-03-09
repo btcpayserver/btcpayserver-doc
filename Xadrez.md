@@ -64,7 +64,7 @@ You will need to prune the ```bitcoind``` including a new line with argument ```
 
 You can read a lot of additional information about BTCpay Server at [The Merchants Guide to accepting Bitcoin directly with no intermediates through BTCPay](https://www.reddit.com/r/Bitcoin/comments/81h1oy/the_merchants_guide_to_accepting_bitcoin_directly/).
 
-You should follow [the BTCPay Server Twitter acoount](https://www.twitter.com/tcpayServer) too.
+You should follow [the BTCPay Server Twitter account](https://www.twitter.com/btcpayServer) too.
 
 ### ["Wordpress-Woocommerce-BTCpay" plugin](https://github.com/btcpayserver/woocommerce-plugin)
 
@@ -118,7 +118,7 @@ Samourai currently provide the Derivation Scheme necessary to inform BTCpay Serv
 
 Until Samourai Wallet feature the option to change the ```gap limit``` to any number, we do not recommend this wallet for Xadrez setup. 
 
-### [Loafwallet](https://www.loafwallet.org)
+### [Loafwallet](https://www.loadwallet.org)
 
 *Loafwallet is the best standalone Litecoin wallet built for iOS and Android. It is available to download for free on the Apple App Store and Play Store!*
 
