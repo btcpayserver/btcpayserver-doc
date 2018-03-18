@@ -4,9 +4,9 @@ See also [The Merchants Guide to accepting Bitcoin directly with no intermediate
 
 ## Why is my ledger not detected by BTCPay Server?
 
-Ledger integration depends on U2F feature of your browser (supported by chrome) and on the [browser support](https://support.ledgerwallet.com/hc/en-us/articles/115005198565-What-is-the-Browser-support-option-made-for-) mode of your ledger.
-
-If it still does not work after activating the browser support mode, the reverse proxy of the BTCPay server hosting BTCPay might not support Websocket.
+Check that you are running the ledger app with a version equals or above 1.2.4.
+ 
+ If the problem persists, contact the owner of the BTCPay Server: The reverse proxy of the BTCPay server hosting BTCPay might not support Websocket.
 
 To confirm this is the issue, create a new invoice and go on its checkout page, you can also go on your store's "Wallet" page.
 You should then you will see this error in the javascript console.
