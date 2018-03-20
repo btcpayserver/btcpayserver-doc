@@ -118,7 +118,7 @@ Samourai currently provide the Derivation Scheme necessary to inform BTCpay Serv
 
 Until Samourai Wallet feature the option to change the ```gap limit``` to any number, we do not recommend this wallet for Xadrez setup. 
 
-### [Loafwallet](https://www.loadwallet.org)
+### [Loafwallet](https://www.loafwallet.org)
 
 *Loafwallet is the best standalone Litecoin wallet built for iOS and Android. It is available to download for free on the Apple App Store and Play Store!*
 
