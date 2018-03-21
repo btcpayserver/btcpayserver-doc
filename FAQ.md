@@ -57,3 +57,92 @@ Yes it can. Currently, the one-click deployment requires Azure Virtual Machine, 
 Also, once the full node is synchronized to the network, you can downgrade the machine on Azure to take a less expensive one.
 
 Penny-pinching cost is a manual process which involves trial and error.
+
+## I previously installed BTCPayServer without the integrate lightning support, can I migrate?
+
+The integrated lightning support is only useful for scenario where you are at the same time the host and the merchant of BTCPay Server.
+
+When logged as admin of your server you will then have a nice link to connect to plug your lightning node to BTCPay Server.
+
+![LightningNode](img/setuplightningnode.png)
+
+Depending on how you deployed BTCPayServer you might have different step to do:
+
+### Case 1: You manually installed
+
+If you installed BTCPayServer manually without docker or Azure, then you only need to start run [CLightning](https://hub.docker.com/r/nicolasdorier/clightning/) with the correct network parameter.
+
+Assuming you are running as root, CLightning will allow call to its API via a unix socket on `/root/.lightning/lightning-rpc`
+
+Once this is done, make sure you start BTCPayServer with
+
+```
+-btclightning=/root/.lightning/lightning-rpc
+```
+
+If you are using CLightning for Litecoin, use the parameter `-ltclightning` instead.
+
+Then, make sure the port lightning network port `9735` is open on your firewalls.
+
+### Case2: You are using docker (without Azure)
+
+In this case, you only have to change the docker-compose you are using.
+If before you were using `docker-compose -f "$(pwd)/Production/docker-compose.btc-ltc.yml" up -d` (as documented [here](https://github.com/btcpayserver/btcpayserver-docker#for-docker-noobs)), then you need to change to `docker-compose -f "$(pwd)/Production/docker-compose.btc-ltc-clightning.yml" up -d`.
+
+Then, make sure the port lightning network port `9735` is open on your firewalls.
+
+### Case3: You are using Azure
+
+Log as root:
+
+```
+sudo su -
+```
+
+Run
+
+```
+cd $DOWNLOAD_ROOT
+wget -O - https://raw.githubusercontent.com/btcpayserver/btcpayserver-azure/master/btcpay-update.sh > btcpay-update.sh
+btcpay-update.sh
+```
+
+Modify the file `/etc/profile.d/btcpay-env.sh`:
+
+You should have something like:
+
+```
+BTCPAY_DOCKER_COMPOSE="/var/lib/waagent/custom-script/download/0/btcpayserver-docker/Production/docker-compose.btc-ltc.yml"
+```
+
+Modify by adding `-clightning` at the end:
+
+```
+BTCPAY_DOCKER_COMPOSE="/var/lib/waagent/custom-script/download/0/btcpayserver-docker/Production/docker-compose.btc-ltc-clightning.yml"
+```
+
+Update your environment variables in current session by running:
+
+```
+. /etc/profile.d/btcpay-env.sh
+```
+
+Then restart your server:
+
+```
+btcpay-restart.sh
+```
+
+Then, connect to your [Microsoft Azure Portal](https://portal.azure.com/),
+Go to the resource group of your install, and add a new security rule in the Network Security Group inside it. (See [this example](https://docs.microsoft.com/en-us/azure/virtual-network/virtual-networks-create-nsg-arm-pportal#create-rules-in-an-existing-nsg))
+
+If your resource group do not have a Network Security Group, you can skip this step. The Network Security Group has been introduced in new Azure installs.
+
+Rule:
+
+* Name: LightningBTC
+* Priority: 150
+* Source: Internet
+* Destination: Any
+* Port: 9735
+* Protocol: TCP
