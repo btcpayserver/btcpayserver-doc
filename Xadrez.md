@@ -25,13 +25,13 @@ I personally run an online bookstore which uses Xadrez to give the option for cu
 
 ## Introduction <a name="introduction"></a>
 
-This tutorial expect to give directions and tools to anyone who want to setup an ecommerce store that accepts Litecoin (LTC) and Bitcoin (BTC). Old payment methods like credit card and stuff can be enabled too. All components in this solution are open source software and can be obtained at their websites.
+This tutorial expect to give directions and tools to anyone who want to setup an ecommerce store that accepts Litecoin (LTC) and Bitcoin (BTC) over <strong>Lightning Network</strong> or not. Old payment methods like credit card and stuff can be enabled too. All components in this solution are open source software and can be obtained at their websites.
 
 This setup is called Xadrez just to be easier to anyone who want to refer the proposal presented here. Xadrez is Chess in portuguese language and we will change the pieces (the components) on the board until we reach a very nice full featured setup for a stable and definitive ecommerce store (the Checkmate). 
 
 The e-commerce store setup need to use stable software, be easy to configure by merchants with no more than basic tech skills and be able to show products, handle carts, inventory, customer accounts, generate reports and others expected capabilities. All the Litecoin and Bitcoin received need to go directly to the merchant's (preferable mobile) wallets.
 
-I personally run an online bookstore which uses Xadrez to give the option for customers pay with Litecoin and Bitcoin: [9Bravos](https://www.9bravos.com.br/loja). At same time that e-store let me validate what I've documented here. The store is in Brazilian Portuguese.
+I personally run an online bookstore which uses Xadrez to give the option for customers pay with Litecoin and Bitcoin: [9Bravos](https://www.9bravos.com.br/loja). At same time that e-store let me validate what I've documented here. The store is available just in Brazilian Portuguese but I will find time to make something in english to validate the Xadrez for you all.
 
 ## Components <a name="components"></a>
 
@@ -60,7 +60,19 @@ BTCpay Server will will turn the merchant into a self sovereign one. The merchan
 
 The minimum infrastructure to setup this can be purchased at [Digital Ocean](https://m.do.co/c/ec2caf98348a). You can create your Droplet for BTCpay Server (check about BTCpay below) using an ```One-click apps``` image called ```Docker 17.12.0~ce on 16.04``` on the plan described as ```2 GB, 1 vCPU, 50 GB, 2 TB``` - that will costs $10/mo.
 
-You will need to prune the ```bitcoind``` including a new line with argument ```prune=2000M``` at BITCOIN_EXTRA_ARGS in ```docker-compose.btc-ltc.yml``` file. Do not prune ```litecoind```.
+You will need to prune the ```bitcoind``` including a new line with argument ```prune=2500M``` at BITCOIN_EXTRA_ARGS in ```docker-compose.btc-ltc-clightning.yml``` file. Do not prune ```litecoind```.
+
+Create an ```.env``` file at ./Production folder:
+
+```
+NBITCOIN_NETWORK=mainnet
+BTCPAY_HOST=btcpay.example.com
+LETSENCRYPT_EMAIL=me@example.com
+ACME_CA_URI=https://acme-v01.api.letsencrypt.org/directory
+LIGHTNING_ALIAS=an_alias_for_your_LN_node
+```
+
+BTCPay Server enable Lightning Network capabilities and I think this is awesome! You do not need to do anything more than use the right yml file and choose a name for you node at your .env file
 
 You can read a lot of additional information about BTCpay Server at [The Merchants Guide to accepting Bitcoin directly with no intermediates through BTCPay](https://www.reddit.com/r/Bitcoin/comments/81h1oy/the_merchants_guide_to_accepting_bitcoin_directly/).
 
