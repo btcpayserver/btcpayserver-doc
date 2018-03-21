@@ -66,6 +66,8 @@ When logged as admin of your server you will then have a nice link to connect to
 
 ![LightningNode](img/setuplightningnode.png)
 
+You can then click on `Test Connection` in this page to see if you successfully configured your lightning node.
+
 Depending on how you deployed BTCPayServer you might have different step to do:
 
 ### Case 1: You manually installed
