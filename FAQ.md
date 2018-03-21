@@ -84,14 +84,14 @@ Once this is done, make sure you start BTCPayServer with
 
 If you are using CLightning for Litecoin, use the parameter `-ltclightning` instead.
 
-Then, make sure the port lightning network port `9735` is open on your firewalls.
+Then, make sure the port lightning network ports `9735` (BTC) and `9736` (LTC) are open on your firewalls.
 
 ### Case2: You are using docker (without Azure)
 
 In this case, you only have to change the docker-compose you are using.
 If before you were using `docker-compose -f "$(pwd)/Production/docker-compose.btc-ltc.yml" up -d` (as documented [here](https://github.com/btcpayserver/btcpayserver-docker#for-docker-noobs)), then you need to change to `docker-compose -f "$(pwd)/Production/docker-compose.btc-ltc-clightning.yml" up -d`.
 
-Then, make sure the port lightning network port `9735` is open on your firewalls.
+Then, make sure the port lightning network ports `9735` (BTC) and `9736` (LTC) are open on your firewalls.
 
 ### Case3: You are using Azure
 
@@ -140,11 +140,20 @@ Go to the resource group of your install, and add a new security rule in the Net
 
 If your resource group do not have a Network Security Group, you can skip this step. The Network Security Group has been introduced in new Azure installs.
 
-Rule:
+Rule 1:
 
 * Name: LightningBTC
 * Priority: 150
 * Source: Internet
 * Destination: Any
 * Port: 9735
+* Protocol: TCP
+
+Rule 2:
+
+* Name: LightningLTC
+* Priority: 151
+* Source: Internet
+* Destination: Any
+* Port: 9736
 * Protocol: TCP
