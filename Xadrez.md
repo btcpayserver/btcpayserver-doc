@@ -53,7 +53,7 @@ This is the plugin mentioned above. WooCommerce is widely used and offer a bunch
 
 ### [BTCpay Server](https://github.com/btcpayserver/btcpayserver)
 
-<img align="right" src="img/btcpay-invoice.jpg" width="28%">
+<img align="right" src="img/ltc-lightningnetwork.png" width="22%">
 *BTCPay Server is a free and open source server for merchants wanting to accept Bitcoin for their business. The API is compatible with Bitpay service to allow seamless migration.*
 
 BTCpay Server will will turn the merchant into a self sovereign one. The merchant (or some merchants who trust themselves) will run a payment gateway and link the store (Wordpress + WooCommerce) to it using a Woocommerce addon plugin from BTCpayServer project. 
