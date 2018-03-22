@@ -140,6 +140,8 @@ Go to the resource group of your install, and add a new security rule in the Net
 
 If your resource group do not have a Network Security Group, you can skip this step. The Network Security Group has been introduced in new Azure installs.
 
+Add a Security Inbound Rules:
+
 Rule 1:
 
 * Name: LightningBTC
@@ -157,3 +159,8 @@ Rule 2:
 * Destination: Any
 * Port: 9736
 * Protocol: TCP
+
+Here is how it should look like:
+
+![SecurityRules](img/azuresecurityrule.png)
+
