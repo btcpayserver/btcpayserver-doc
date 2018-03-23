@@ -58,7 +58,7 @@ Also, once the full node is synchronized to the network, you can downgrade the m
 
 Penny-pinching cost is a manual process which involves trial and error.
 
-## I previously installed BTCPayServer without the integrate lightning support, can I migrate?
+## I previously installed BTCPayServer without the integrated lightning support, can I migrate?
 
 The integrated lightning support is only useful for scenario where you are at the same time the host and the merchant of BTCPay Server.
 
@@ -164,3 +164,14 @@ Here is how it should look like:
 
 ![SecurityRules](img/azuresecurityrule.png)
 
+## I get "WARNING: The LIGHTNING_ALIAS variable is not set. Defaulting to a blank string" when starting container
+
+You can ignore this.
+If you want to set an alias for your lightning node, open the env file:
+
+```
+sudo su -
+vim $BTCPAY_ENV_FILE
+```
+
+And add or modify the `LIGHTNING_ALIAS` entry to `LIGHTNING_ALIAS=myawesomenode`.
