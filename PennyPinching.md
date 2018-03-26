@@ -91,6 +91,8 @@ Now, go back to https://azureprice.net/, let's find something cheaper than `0.05
 
 Wow! `Standard_B1ms` cost only `0.02049219 EUR/H`! Let's switch to it!
 
+A quick look at [this article](https://www.singhkays.com/blog/understanding-azure-b-series/) shows us that this type of virtual machine is adapted for low CPU consumption with occasional burst. This is what BTCPay Server is about after the nodes are synched.
+
 * Go on the Azure portal
 * Go to Resource Groups
 * Select your resource group
