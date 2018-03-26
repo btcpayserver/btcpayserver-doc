@@ -1,10 +1,10 @@
 # The guide for penny pinching your Azure install
 
-This guide is for Azure install users who wishes to do some saving on their install. (This guide cut the cost by 50%)
-Please do this **Only after your nodes are fully synched**. During synchronization you need a powerful setup.
+This guide is for [Azure install](https://github.com/btcpayserver/btcpayserver-azure) users who wishes to do some saving on their install. (This guide cut the cost by 50%)
 
-The reason this guide is necessary is that depending on what you are running, you might need more or less powerful machine.
-Penny pinching is an opportunity for you to better understand the resources you are using and tailor your configuration.
+Please do this **Only after your nodes are fully synched**. During synchronization you need a more powerful setup.
+
+Penny pinching is an opportunity for you to better understand the resources you are consuming and tailor your configuration to your workload.
 
 ## How much am I spending now?
 
@@ -19,7 +19,7 @@ You can find out how much cost your install by:
 
 ![ShowCost](img/ShowCost.png)
 
-As you can see, my install cost `47.00 EUR` per month, most of the cost spent on the VM I am using.
+As you can see, my install cost `47.00 EUR/Month`, most of the cost spent on the virtual machine.
 
 ## What is my current configuration
 
@@ -37,7 +37,7 @@ Also my VM type is `Standard_D1_v2`. As you can see on [Azure Price Website](htt
 
 ![ShowPrice](img/ShowPrice.png)
 
-This cost me `0.0573444 EUR/H` per hour or `42.66 EUR/Month`.
+This cost me `0.0573444 EUR/H` or `42.66 EUR/Month`.
 
 Ok so now we know that downgrading this VM will bring us the largest cost benefit, let's see how far we can go.
 
@@ -65,7 +65,7 @@ Swap:           0B         0B         0B
 
 Now we know that 2 GB of RAM, and a less powerfull CPU will probably do the trick.
 
-But first, you don't want your machine to crash if it runs out of RAM, so add some Swap:
+But first, you don't want your machine to crash if it runs out of RAM, so you need to add some swap:
 
 ```
 sudo su -
