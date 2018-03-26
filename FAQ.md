@@ -56,7 +56,7 @@ Yes it can. Currently, the one-click deployment requires Azure Virtual Machine, 
 
 Also, once the full node is synchronized to the network, you can downgrade the machine on Azure to take a less expensive one.
 
-Penny-pinching cost is a manual process which involves trial and error.
+Please checkout out [The guide for penny pinching your Azure install](PennyPinching.md).
 
 ## I previously installed BTCPayServer without the integrated lightning support, can I migrate?
 
