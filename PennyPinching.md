@@ -78,6 +78,7 @@ Swap:           0B         0B         0B
 Now we know that 2 GB of RAM, and a less powerfull CPU will probably do the trick.
 
 But first, you don't want your machine to crash if it runs out of RAM, so you need to add some swap:
+Note that `/mnt` is used in Azure for temporary data, and is optimized for low latency, this is why we set the swapfile here.
 
 ```
 sudo su -
