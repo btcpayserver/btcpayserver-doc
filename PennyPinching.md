@@ -1,14 +1,22 @@
 # The guide for penny pinching your Azure install
 
-This guide is for [Azure install](https://github.com/btcpayserver/btcpayserver-azure) users who wishes to do some saving on their install. (This guide cut the cost by 50%)
+This guide is for [Azure install](https://github.com/btcpayserver/btcpayserver-azure) users who wishes to do some saving on their install.
 
 Please do this **Only after your nodes are fully synched**. During synchronization you need a more powerful setup.
 
 Penny pinching is an opportunity for you to better understand the resources you are consuming and tailor your configuration to your workload.
 
-Note that because you are using a less powerful machine, running `btcpay-update.sh` or rebooting will be way slower. 
+Downside:
+* Running `btcpay-update.sh` or rebooting will take longer
+* You might see `502 Bad Gateway` and your node taking lot's of time to start
+* Your server might becomes very slower
 
-You might then see '502 Bad Gateway', or your nodes taking long time to start after your server reboot for longer than you expected before.
+Upside:
+* 50% savings
+
+If you find that your server is too slow: 
+* Drop support of one coin by editing the setting `BTCPAY_DOCKER_COMPOSE` in `/etc/profile.d/btcpay-env.sh`, or
+* Resize up your Virtual Machine
 
 ## How much am I spending now?
 
@@ -73,11 +81,11 @@ But first, you don't want your machine to crash if it runs out of RAM, so you ne
 
 ```
 sudo su -
-fallocate -l 2G /swapfile
-chmod 600 /swapfile
-mkswap /swapfile
-swapon /swapfile
-echo "/swapfile   none    swap    sw    0   0" >> /etc/fstab
+fallocate -l 2G /mnt/swapfile
+chmod 600 /mnt/swapfile
+mkswap /mnt/swapfile
+swapon /mnt/swapfile
+echo "/mnt/swapfile   none    swap    sw    0   0" >> /etc/fstab
 ```
 
 As you can see, the swap got added:
