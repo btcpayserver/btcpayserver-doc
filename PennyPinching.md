@@ -6,6 +6,10 @@ Please do this **Only after your nodes are fully synched**. During synchronizati
 
 Penny pinching is an opportunity for you to better understand the resources you are consuming and tailor your configuration to your workload.
 
+Note that because you are using a less powerful machine, running `btcpay-update.sh` or rebooting will be way slower. 
+
+You might then see '502 Bad Gateway' while your server reboot for longer than you expected before.
+
 ## How much am I spending now?
 
 You can find out how much cost your install by:
