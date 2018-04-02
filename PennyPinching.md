@@ -100,7 +100,7 @@ Swap:         **2.0G**         0B       2.0G
 
 Now, go back to https://azureprice.net/, let's find something cheaper than `0.0573444 EUR/H`.
 
-![ShowVM](img/ShowVM.png)
+![ShowB1](img/ShowB1.png)
 
 Wow! `Standard_B1ms` cost only `0.02049219 EUR/H`! Let's switch to it!
 
