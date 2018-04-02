@@ -111,7 +111,7 @@ A quick look at [this article](https://www.singhkays.com/blog/understanding-azur
 * Select your resource group
 * Select BTCPayServerVM
 * Select `Size`
-* Select `B1MS` (if you don't see, the [FAQ](#b1ms))
+* Select `B1MS` (if you don't see, take a look at the [FAQ](#b1ms))
 * Click `Select`
 
 ![ShowSize](img/ShowSize.png)
