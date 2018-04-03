@@ -18,6 +18,13 @@ If you find that your server is too slow:
 * Drop support of one coin by editing the setting `BTCPAY_DOCKER_COMPOSE` in `/etc/profile.d/btcpay-env.sh`, or
 * Resize up your Virtual Machine
 
+***************
+*** WARNING ***
+
+After some testing, it seems that following this guide for a setup on mainnet involving `BTC+LTC+CLightning` is a bit too much and make the server very laggy.
+
+****************
+
 ## How much am I spending now?
 
 You can find out how much cost your install by:
