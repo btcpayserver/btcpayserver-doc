@@ -30,7 +30,7 @@ After some testing, it seems that following this guide for a setup on mainnet in
 You can find out how much cost your install by:
 
 * Go on the Azure portal
-* Go to Subscription 
+* Go to Subscription (If you don't find the `Subscription` menu search `Subscription` in the search bar next to the notification's bell.)
 * Go to Cost Analysis
 * Select your Resource group (my one is called dwoiqdwqb)
 * Timespan 30 days
