@@ -23,6 +23,8 @@ If you find that your server is too slow:
 
 After some testing, it seems that following this guide for a setup on mainnet involving `BTC+LTC+CLightning` is a bit too much and make the server very laggy.
 
+Note that the server becomes less laggy as time pass after restart, so it might still be ok for your case.
+
 ****************
 
 ## How much am I spending now?
