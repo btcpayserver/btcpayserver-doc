@@ -25,6 +25,8 @@ After some testing, it seems that following this guide for a setup on mainnet in
 
 Note that the server becomes less laggy as time pass after restart, so it might still be ok for your case.
 
+If it is not acceptable you should swtich from `B1MS` (20 USD/Month) type to a `B2S` (40 USD/Month) type. If you support LTC + BTC + CLightning we advice
+
 ****************
 
 ## How much am I spending now?
