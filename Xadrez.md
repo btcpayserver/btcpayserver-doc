@@ -25,7 +25,7 @@ I personally run an online bookstore which uses Xadrez to give the option for cu
 
 ## Introduction <a name="introduction"></a>
 
-This tutorial expect to give directions and tools to anyone who want to setup an ecommerce store that accepts Litecoin (LTC) and Bitcoin (BTC) over <strong>Lightning Network</strong> or not. Old payment methods like credit card and stuff can be enabled too. All components in this solution are open source software and can be obtained at their websites.
+This tutorial expect to give directions and tools to anyone who want to setup an ecommerce store that accepts Litecoin (LTC) and Bitcoin (BTC). Is possible to accept payments over <strong>Lightning Network</strong>. Old payment methods like credit card and stuff can be enabled too. All components in this solution are open source software and can be obtained at their websites.
 
 This setup is called Xadrez just to be easier to anyone who want to refer the proposal presented here. Xadrez is Chess in portuguese language and we will change the pieces (the components) on the board until we reach a very nice full featured setup for a stable and definitive ecommerce store (the Checkmate). 
 
@@ -69,10 +69,9 @@ NBITCOIN_NETWORK=mainnet
 BTCPAY_HOST=btcpay.example.com
 LETSENCRYPT_EMAIL=me@example.com
 ACME_CA_URI=https://acme-v01.api.letsencrypt.org/directory
-LIGHTNING_ALIAS=an_alias_for_your_LN_node
 ```
 
-BTCPay Server enable Lightning Network capabilities and I think this is awesome! You do not need to do anything more than use the right yml file and choose a name for you node at your .env file
+BTCPay Server can enable Lightning Network capabilities and I think this is awesome! But this has a cost: you can't prune your bitcoind to make it works. Use the right yml file and choose a name for you node at your .env file adding the line ```LIGHTNING_ALIAS=an_alias_for_your_LN_node```.
 
 You can read a lot of additional information about BTCpay Server at [The Merchants Guide to accepting Bitcoin directly with no intermediates through BTCPay](https://www.reddit.com/r/Bitcoin/comments/81h1oy/the_merchants_guide_to_accepting_bitcoin_directly/).
 
