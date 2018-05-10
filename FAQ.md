@@ -122,20 +122,6 @@ Modify by adding `-clightning` at the end:
 ```
 export BTCPAY_DOCKER_COMPOSE="/var/lib/waagent/custom-script/download/0/btcpayserver-docker/Production/docker-compose.btc-ltc-clightning.yml"
 ```
-
-Do the same for the file `/etc/environment`. 
-
-Replace
-
-```
-BTCPAY_DOCKER_COMPOSE="/var/lib/waagent/custom-script/download/0/btcpayserver-docker/Production/docker-compose.btc-ltc.yml"
-```
-
-By
-```
-BTCPAY_DOCKER_COMPOSE="/var/lib/waagent/custom-script/download/0/btcpayserver-docker/Production/docker-compose.btc-ltc-clightning.yml"
-```
-
 Update your environment variables in current session by running:
 
 ```
