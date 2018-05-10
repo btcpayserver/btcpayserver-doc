@@ -129,6 +129,8 @@ Update your environment variables in current session by running:
 . /etc/profile.d/btcpay-env.sh
 ```
 
+Do the same for the file `/etc/environment`.
+
 Then restart your server:
 
 ```
