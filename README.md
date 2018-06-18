@@ -25,5 +25,6 @@ This solution is for you if:
 * [ECommerce integration](Integration.md)
 * [The Ultimate Guide to BTCPay - The free and open-source Bitcoin Payment processor](https://www.reddit.com/comments/8f1eqf)
 * [Xadrez - Guide to run an open source based e-store that accepts Litecoin, Bitcoin and fiat](Xadrez.md)
+* [Third party hosted BTCPay servers - If you are looking for help with BTCPay Server](Managed.md)
 * [Connect with the community](Community.md)
 * [FAQ](FAQ.md)
