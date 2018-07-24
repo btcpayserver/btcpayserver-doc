@@ -10,9 +10,9 @@ You can take a look at our video:
 
 First let's create a new store:
 
-1. Go on [Testnet website](http://btcpay-server-testnet.azurewebsites.net/)
-2. [Create an account](http://btcpay-server-testnet.azurewebsites.net/Account/Register)
-3. [Create a new store](http://btcpay-server-testnet.azurewebsites.net/stores)
+1. Go on [Testnet website](http://test2-btc-ltc.forkbitpay.ninja/)
+2. [Create an account](http://test2-btc-ltc.forkbitpay.ninja/Account/Register)
+3. [Create a new store](http://test2-btc-ltc.forkbitpay.ninja/stores)
 
 Let's create a testnet wallet for your store:
 
