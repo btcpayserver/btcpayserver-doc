@@ -43,6 +43,7 @@ This solution is for you if:
 * [The Ultimate List of BTCPay Server Hosts and Merchants](https://bitcoinshirt.co/btcpay-stores/)
 * [Xadrez - Guide to run an open source based e-store that accepts Litecoin, Bitcoin and fiat](Xadrez.md)
 * [Third party hosted BTCPay servers - If you are looking for help with BTCPay Server](Managed.md)
+* [BTCPay Server official youtube channel](https://www.youtube.com/channel/UCpG9WL6TJuoNfFVkaDMp9ug)
 
 ### More
 * [The guide for penny pinching your Microsoft Azure bill](PennyPinching.md)
