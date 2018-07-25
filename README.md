@@ -34,13 +34,16 @@ This solution is for you if:
 * [Connect with the community](Community.md)
 
 ### Integration
-* [ECommerce integration](Integration.md)
+* [Drupal](Drupal.md)
+* [Woocommerce](Woocommerce.md)
+* [Custom integration](CustomIntegration.md)
 
 ### Community articles
-* [The Ultimate Guide to BTCPay - The free and open-source Bitcoin Payment processor](https://www.reddit.com/comments/8f1eqf)
+* [The Ultimate Guide to BTCPay - The free and open-source Bitcoin Payment processor](https://www.reddit.com/r/Bitcoin/comments/8f1eqf/the_ultimate_guide_to_btcpay_the_free_and/)
 * [The Ultimate List of BTCPay Server Hosts and Merchants](https://bitcoinshirt.co/btcpay-stores/)
 * [Xadrez - Guide to run an open source based e-store that accepts Litecoin, Bitcoin and fiat](Xadrez.md)
 * [Third party hosted BTCPay servers - If you are looking for help with BTCPay Server](Managed.md)
 
 ### More
+* [The guide for penny pinching your Microsoft Azure bill](PennyPinching.md)
 * [FAQ](FAQ.md)
