@@ -1,6 +1,9 @@
 # Getting Started
 
-This section goes through the process of creating an account and store on our public *testnet* BTCPay server.
+This section goes through the process of creating an account and store on our public BTCPay server. (For evaluation purpose)
+
+* Our [mainnet site](https://main2-btc-ltc.forkbitpay.ninja)
+* Our [testnet site](https://test2-btc-ltc.forkbitpay.ninja)
 
 You can take a look at our video:
 

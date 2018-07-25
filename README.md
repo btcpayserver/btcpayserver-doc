@@ -17,17 +17,30 @@ This solution is for you if:
 * You want a way to support payment in altcoins (BGold, Dogecoin, Feathercoin, Groestlcoin, Litecoin, Monacoin, Viacoin, POLIS)
 * You want to accept payments on lightning network
 
-
-
 ## Documentation
 
-* [Try it!](Getting-Started.md)
-* [How to deploy](Deployment.md)
+### Getting started
+* [Try it on our test servers](Getting-Started.md)
+
+### Deployment
+* [Architecture](Architecture.md)
+* [Manual deployment](ManualDeployment.md)
+* [Docker deployment](DockerDeployment.md)
+* [Azure deployment](AzureDeployment.md)
+
+### Get engaged
 * [How to contribute](Local-Development.md)
 * [How to get support](Support.md)
+* [Connect with the community](Community.md)
+
+### Integration
 * [ECommerce integration](Integration.md)
+
+### Community articles
 * [The Ultimate Guide to BTCPay - The free and open-source Bitcoin Payment processor](https://www.reddit.com/comments/8f1eqf)
+* [The Ultimate List of BTCPay Server Hosts and Merchants](https://bitcoinshirt.co/btcpay-stores/)
 * [Xadrez - Guide to run an open source based e-store that accepts Litecoin, Bitcoin and fiat](Xadrez.md)
 * [Third party hosted BTCPay servers - If you are looking for help with BTCPay Server](Managed.md)
-* [Connect with the community](Community.md)
+
+### More
 * [FAQ](FAQ.md)
