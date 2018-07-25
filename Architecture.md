@@ -33,8 +33,9 @@ If you want altcoin supports we support connection to the following full nodes:
 Because BTCPay Server has lot's of dependencies, we provide different way of deploying depending if you favor flexibility or ease of use.
 From the hardest way to the easiest:
 
-* [Manual deployment](ManualDeployment.md)
-* [Docker deployment](DockerDeployment.md)
-* [Azure deployment](AzureDeployment.md)
+* [Manual deployment](ManualDeployment.md) (Downloading, building and running all the dependencies by yourself)
+* [Docker deployment](DockerDeployment.md) (Using a `docker-compose.yml` file which bundle all the dependencies together)
+* [Azure deployment](AzureDeployment.md) (Using a one-click deploy on Microsoft Azure)
+* [Third party hosting](Managed.md) (Having someone else manage BTCPay for you)
 
 For people who wants to try BTCPay Server and does not require lightning network payment, and are not willing to host BTCPay by themselves, we advise you to see the list of third party on [The Ultimate List of BTCPay Server Hosts and Merchants](https://bitcoinshirt.co/btcpay-stores/).

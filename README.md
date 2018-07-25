@@ -27,6 +27,7 @@ This solution is for you if:
 * [Manual deployment](ManualDeployment.md)
 * [Docker deployment](DockerDeployment.md)
 * [Azure deployment](AzureDeployment.md)
+* [Third party hosting](Managed.md)
 
 ### Get engaged
 * [How to contribute](Local-Development.md)
@@ -45,6 +46,9 @@ This solution is for you if:
 * [Third party hosted BTCPay servers - If you are looking for help with BTCPay Server](Managed.md)
 * [BTCPay Server official youtube channel](https://www.youtube.com/channel/UCpG9WL6TJuoNfFVkaDMp9ug)
 
-### More
+## Administrating your server
+* [How to change the domain name of your BTCPay Server](ChangeDomain.md)
 * [The guide for penny pinching your Microsoft Azure bill](PennyPinching.md)
+
+### More
 * [FAQ](FAQ.md)

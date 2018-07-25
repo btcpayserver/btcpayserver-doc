@@ -6,4 +6,4 @@ The ideal deployment is similar to:
 
 ![Production BTCPay](https://raw.githubusercontent.com/btcpayserver/btcpayserver-docker/master/Production/Production.png)
 
-There is a `docker-compose.yml` file available setting up this environment, please visit our [docker-compose for production environment](https://github.com/btcpayserver/btcpayserver-docker/tree/master/Production).
+Please visit our [docker-compose for production environment](https://github.com/btcpayserver/btcpayserver-docker) to see how it works.
