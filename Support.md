@@ -10,6 +10,12 @@ Here are some member of the community that you can contact to get additional pai
 
 Contact: hubik.tomas@gmail.com
 
+### Spas Vutov
+
+> I can assist with initial configuration for BTCPay to work with Bitcoin Gold (BTG, also referred as BGold), Bitcoin Gold LND and any docker, no-docker setup for BTCPay with Bitcoin Gold. I would accept tips if the work done was useful, but defensively not mandatory for anyone to pay me for any help.
+
+Contact: VutovSpas@gmail.com, [Slack](http://slack.forkbitpay.ninja/), [BTG Discord](https://forum.bitcoingold.org/t/btg-discord-invite/138) - on both @Spas
+
 ### Free support
 
 
