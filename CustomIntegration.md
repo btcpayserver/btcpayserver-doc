@@ -4,7 +4,9 @@ BTCPay implements the same API as Bitpay for creating or managing your invoices.
 Migrating should just be a matter of pointing to the BTCPay URL instead of Bitpay.
 
 While Bitpay is using one user account for one merchant, BTCPay allows a user to manage multiple stores.
-BTCPay also uses `BitId`.
+
+
+The authentication mechanism is made by called `BitId`.
 
 With `BitId`, the `client` of the API (like an e-commerce plugin) generates a private key, then inform the `server` (BTCPay) about the `public key`.
 
