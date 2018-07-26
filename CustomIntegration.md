@@ -5,8 +5,7 @@ Migrating should just be a matter of pointing to the BTCPay URL instead of Bitpa
 
 While Bitpay is using one user account for one merchant, BTCPay allows a user to manage multiple stores.
 
-
-The authentication mechanism is made by called `BitId`.
+The authentication mechanism is using `BitId`.
 
 With `BitId`, the `client` of the API (like an e-commerce plugin) generates a private key, then inform the `server` (BTCPay) about the `public key`.
 
