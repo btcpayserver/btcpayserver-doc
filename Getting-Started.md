@@ -28,5 +28,4 @@ Let's configure the store so it uses your electrum wallet:
 1. Go to the setting page of your store in BTCPay
 2. In the Information Menu, paste the `ExtPubKey` with the string you just copied from Electrum, validate.
 
-Then you can create an invoice, either by the process documented on the [Migration From Bitpay](Migration-From-Bitpay.md) page.
-Or through the website on the `Invoice` menu.
+Then you can create an invoice, either by the process documented on the [Custom integration](CustomIntegration.md) page, through plugins or through the website on the `Invoice` menu.
