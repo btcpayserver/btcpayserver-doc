@@ -174,3 +174,25 @@ vim $BTCPAY_ENV_FILE
 ```
 
 And add or modify the `LIGHTNING_ALIAS` entry to `LIGHTNING_ALIAS=myawesomenode`.
+
+## I lost the password of my admin account, can I fix the situation?
+
+Yes, you need to edit your database. Register new user, says "newadmin@example.com":
+
+Assuming you use docker:
+
+```bash
+# In root
+sudo su -
+# Connect to your postgres container
+docker exec -ti $(docker ps -a -q -f "name=postgres_1") bash
+# Switch to postgres user
+su postgres
+# Run psql
+psql
+# Connect to db
+\c btcpayservermainnet
+INSERT INTO "AspNetUserRoles" Values ( (SELECT "Id" FROM "AspNetUsers" WHERE "Email"='newadmin@example.com'), (SELECT "Id" FROM "AspNetRoles" WHERE "NormalizedName"='SERVERADMIN'));
+```
+
+Now you can access with `newadmin@example.com` as admin.
