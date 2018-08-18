@@ -18,7 +18,7 @@ Contact: VutovSpas@gmail.com, [Slack](http://slack.forkbitpay.ninja/), [BTG Disc
 
 ### Norman Moore
 
-> I can assist with BTCPayServer installation on cloud service (Azure or other VPS) or your own server.  Can also help install WooCommerce Plugin and BTCPayServer Store/App creation.  
+> BTCPayServer local or cloud installation (Azure/other VPS).  Can also help with WooCommerce Plugin configuration and BTCPayServer Store/App creation.  
 
 Contact: support@lightninginabox.co
 
