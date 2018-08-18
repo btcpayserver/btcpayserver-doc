@@ -27,6 +27,7 @@ This solution is for you if:
 * [Manual deployment](ManualDeployment.md)
 * [Docker deployment](DockerDeployment.md)
 * [Azure deployment](AzureDeployment.md)
+* [Deployment on a cheap VPS provider](https://medium.com/@BtcpayServer/hosting-btcpay-server-for-cheap-2b27761fdb9d)
 * [Third party hosting](Managed.md)
 
 ### Get engaged
