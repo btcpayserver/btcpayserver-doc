@@ -16,8 +16,13 @@ Contact: hubik.tomas@gmail.com
 
 Contact: VutovSpas@gmail.com, [Slack](http://slack.forkbitpay.ninja/), [BTG Discord](https://forum.bitcoingold.org/t/btg-discord-invite/138) - on both @Spas
 
-### Free support
+### Norman Moore
 
+> BTCPayServer local or cloud installation (Azure/other VPS).  Can also help with WooCommerce Plugin configuration and BTCPayServer Store/App creation.  
+
+Contact: support@lightninginabox.co
+
+### Free support
 
 If you have any issues or feature request with BTCPay, please file a [github issue](https://github.com/btcpayserver/btcpayserver/issues).
 
