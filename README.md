@@ -27,8 +27,9 @@ This solution is for you if:
 * [Manual deployment](ManualDeployment.md)
 * [Docker deployment](DockerDeployment.md)
 * [Azure deployment](AzureDeployment.md)
-* [Deployment on a cheap VPS provider](https://medium.com/@BtcpayServer/hosting-btcpay-server-for-cheap-2b27761fdb9d)
 * [Third party hosting](Managed.md)
+* [Hosting Provider: How to deploy on LunaNode](https://medium.com/@BtcpayServer/hosting-btcpayserver-on-lunanode-bf9ef5fff75b)
+* ~[Hosting Provider: How to deploy on time4vps](https://medium.com/@BtcpayServer/hosting-btcpay-server-for-cheap-2b27761fdb9d)~ (They do not officially support docker yet)
 
 ### Get engaged
 * [How to contribute](Local-Development.md)
