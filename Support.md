@@ -20,7 +20,7 @@ Contact: VutovSpas@gmail.com, [Slack](http://slack.forkbitpay.ninja/), [BTG Disc
 
 > BTCPayServer local or cloud installation (Azure/other VPS).  Can also help with WooCommerce Plugin configuration and BTCPayServer Store/App creation.  
 
-Contact: support@lightninginabox.co
+Contact: support@lightninginabox.co, [Web](https://lightninginabox.co)
 
 ### Free support
 
