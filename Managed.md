@@ -6,6 +6,6 @@ You are maybe interested in BTCPay Server, but you maybe don't have the necessar
 * [ltcpay.com](https://ltcpay.com/)
 * [btcpayjungle.com](https://btcpayjungle.com)
 * [btcpaynow.net](https://btcpaynow.net)
-* [lightninginabox.co] (https://lightninginabox.co)
+* [lightninginabox.co](https://lightninginabox.co)
 
 Feel free to also chat with the [Community](Community.md) to find the appropriate one!
