@@ -20,37 +20,42 @@ This solution is for you if:
 ## Documentation
 
 ### Getting started
-* [Try it on our test servers](Getting-Started.md)
+
+* [Try it on our test servers](TryItOut.md)
+* [Architecture](Architecture.md)
 
 ### Deployment
-* [Architecture](Architecture.md)
-* [Manual deployment](ManualDeployment.md)
+
+* [Azure deployment (simplest)](AzureDeployment.md)
 * [Docker deployment](DockerDeployment.md)
-* [Azure deployment](AzureDeployment.md)
-* [Third party hosting](Managed.md)
-* [Hosting Provider: How to deploy on LunaNode](https://medium.com/@BtcpayServer/hosting-btcpayserver-on-lunanode-bf9ef5fff75b)
-* ~~[Hosting Provider: How to deploy on time4vps](https://medium.com/@BtcpayServer/hosting-btcpay-server-for-cheap-2b27761fdb9d)~~ (They do not officially support docker yet)
+* [Manual deployment (not recommended)](ManualDeployment.md)
+* [Third party hosting](ThirdPartyHosting.md)
+* [BTC-accepting Hosting Provider: How to deploy on LunaNode](https://medium.com/@BtcpayServer/hosting-btcpayserver-on-lunanode-bf9ef5fff75b)
+* ~~[BTC-accepting Hosting Provider: How to deploy on time4vps](https://medium.com/@BtcpayServer/hosting-btcpay-server-for-cheap-2b27761fdb9d)~~ (They do not officially support docker yet)
 
-### Get engaged
-* [How to contribute](Local-Development.md)
-* [How to get support](Support.md)
-* [Connect with the community](Community.md)
+### Integrations
 
-### Integration
 * [Drupal](Drupal.md)
 * [Woocommerce](Woocommerce.md)
 * [Custom integration](CustomIntegration.md)
 
+### Tips & tricks
+
+* [FAQ](FAQ.md)
+* [How to change the domain name of your BTCPay Server](ChangeDomain.md)
+* [The guide for penny pinching your Microsoft Azure bill](PennyPinching.md)
+
+### Get engaged
+
+* [How to contribute](LocalDevelopment.md)
+* [How to get support](Support.md)
+* [Connect with the community](Community.md)
+
 ### Community articles
+
 * [The Ultimate Guide to BTCPay - The free and open-source Bitcoin Payment processor](https://www.reddit.com/r/Bitcoin/comments/8f1eqf/the_ultimate_guide_to_btcpay_the_free_and/)
 * [The Ultimate List of BTCPay Server Hosts and Merchants](https://bitcoinshirt.co/btcpay-stores/)
 * [Xadrez - Guide to run an open source based e-store that accepts Litecoin, Bitcoin and fiat](Xadrez.md)
 * [Third party hosted BTCPay servers - If you are looking for help with BTCPay Server](Managed.md)
 * [BTCPay Server official youtube channel](https://www.youtube.com/channel/UCpG9WL6TJuoNfFVkaDMp9ug)
 
-## Administrating your server
-* [How to change the domain name of your BTCPay Server](ChangeDomain.md)
-* [The guide for penny pinching your Microsoft Azure bill](PennyPinching.md)
-
-### More
-* [FAQ](FAQ.md)
