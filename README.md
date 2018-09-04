@@ -1,21 +1,20 @@
-# BTCPay Server Documentation
+# BTCPayServer Documentation
 
 ## Introduction
 
-BTCPay Server is an Open Source payment processor which conforms to the invoice API of Bitpay.
-This allows easy migration of your codebase to your own, self-hosted payment processor.
+BTCPayServer is an open-source, self-hosted payment processor for Bitcoin and other cryptocurrencies.
 
-If you have any issues with BTCPay, please file a [github issue](https://github.com/btcpayserver/btcpayserver/issues).
+If you have any issues with BTCPay, please file a [Github issue](https://github.com/btcpayserver/btcpayserver/issues).
 If you have more general questions, please come on [Slack](http://slack.forkbitpay.ninja/).
 
 This solution is for you if:
 
 * You want to be in control of your own funds
-* Compliance teams of traditional payment processor rejected your application,
-* You want lower fees (we support SegWit),
-* You want to become a payment processor yourself and offer BTCPay hosted solution to merchants
-* You want a way to support payment in altcoins (BGold, Dogecoin, Feathercoin, Groestlcoin, Litecoin, Monacoin, Viacoin, POLIS)
-* You want to accept payments on lightning network
+* Compliance teams of traditional payment processors rejected your application
+* You want lower fees (we support SegWit)
+* You want a way to support payments in altcoins
+* You want to accept payments on the Lightning Network
+* You want universally compatible invoices (we support the Bitpay API)
 
 ## Documentation
 
@@ -36,20 +35,21 @@ This solution is for you if:
 ### Integrations
 
 * [Drupal](Drupal.md)
-* [Woocommerce](Woocommerce.md)
+* [WooCommerce](WooCommerce.md)
 * [Custom integration](CustomIntegration.md)
 
 ### Tips & tricks
 
 * [FAQ](FAQ.md)
 * [How to change the domain name of your BTCPay Server](ChangeDomain.md)
-* [The guide for penny pinching your Microsoft Azure bill](PennyPinching.md)
+* [How to penny-pinch your Microsoft Azure deployment](AzurePennyPinching.md)
 
 ### Get engaged
 
-* [How to contribute](LocalDevelopment.md)
+* [How to add altcoins](Altcoins.md)
+* [How to contribute to development](LocalDevelopment.md)
 * [How to get support](Support.md)
-* [Connect with the community](Community.md)
+* [How to connect with the community](Community.md)
 
 ### Community articles
 
@@ -58,4 +58,3 @@ This solution is for you if:
 * [Xadrez - Guide to run an open source based e-store that accepts Litecoin, Bitcoin and fiat](Xadrez.md)
 * [Third party hosted BTCPay servers - If you are looking for help with BTCPay Server](Managed.md)
 * [BTCPay Server official youtube channel](https://www.youtube.com/channel/UCpG9WL6TJuoNfFVkaDMp9ug)
-

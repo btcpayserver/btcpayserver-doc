@@ -1,10 +1,10 @@
-# The guide for penny pinching your Azure install
+# How to penny-pinch your Azure deployment
 
-This guide is for [Azure install](https://github.com/btcpayserver/btcpayserver-azure) users who wishes to do some saving on their install.
+This guide is for [Azure-deployed](https://github.com/btcpayserver/btcpayserver-azure) users who wishes to do some saving on their install.
 
 Please do this **Only after your nodes are fully synched**. During synchronization you need a more powerful setup.
 
-Penny pinching is an opportunity for you to better understand the resources you are consuming and tailor your configuration to your workload.
+Penny-pinching is an opportunity for you to better understand the resources you are consuming and tailor your configuration to your workload.
 
 Downside:
 * Running `btcpay-update.sh` or rebooting will take longer

@@ -40,7 +40,7 @@ Then I click 'Create'. (Note that if you want to point directly to an IP address
 
 * Visit `https://myawesomedemobtcpay.westeurope.cloudapp.azure.com/server/maintenance`
 * Log in as an administrator, which is typically the first account created on the server.
-* Enter new hostname `tothemoon.btcpayserver.com` and click 'Confirm'.
+* Enter new hostname `tothemoon.btcpayserver.com` and click 'Update'.
 
 ![Maintenance](img/Maintenance.png)
 
