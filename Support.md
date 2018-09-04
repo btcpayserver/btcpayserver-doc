@@ -2,7 +2,7 @@
 
 This project is open source, and is not a company. Instead we rely on a network of contributors and users to provide support.
 
-Here are some member of the community that you can contact to get additional paid support,
+Here are some members of the community that you can contact to get additional paid support:
 
 ### Hubik Tomas
 

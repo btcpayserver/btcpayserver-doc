@@ -1,6 +1,6 @@
-# Third party hosted BTCPay servers
+# Third-party hosting
 
-You are maybe interested in BTCPay Server, but you maybe don't have the necessary experience to set it up? Or you maybe want to be able to call somebody in case you have an issue? Please have a look at the following services, all have another focus:
+Are you interested in BTCPayServer, but not comfortable setting it up? Or maybe you want to be able to call somebody if you have an issue? Please have a look at the following services for third-party hosting:
 
 * [lightbo.lt](https://lightbo.lt)
 * [ltcpay.com](https://ltcpay.com/)

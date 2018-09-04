@@ -10,12 +10,14 @@ The project can be found [here](https://drupal.org/project/commerce_btcpay) on d
 
 ## Module installation and configuration
 
-### Quick walkthrough screencast:
+### Quick walkthrough screencast
+
 [![Drupal Commerce](https://img.youtube.com/vi/XBZwyC2v48s/mqdefault.jpg)](https://youtu.be/XBZwyC2v48s "BTCPay - Drupal Commerce 2.x quick walkthrough")
 
 ### Quick walkthrough steps
 
 #### Generate pairing code on BTCPay server
+
 1.  in store settings go to "**Access Tokens**"
 2.  click on **[Create a new token]**
 3.  **Label:** enter some label (eg. my store)
@@ -27,6 +29,7 @@ The project can be found [here](https://drupal.org/project/commerce_btcpay) on d
  (you will need that code below on gateway configuration, see below)
 
 #### Commerce BTCPay: Installation + configuration
+
 1.  install module: `composer require drupal/commerce_btcpay`
 2.  enable the module: `drush en commerce_btcpay -y`
 3.  make sure you have configured [private file system](https://www.drupal.org/docs/8/core/modules/file/overview#content-accessing-private-files) (needed to store encrypted public+private key)
