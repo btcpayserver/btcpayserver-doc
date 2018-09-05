@@ -196,3 +196,34 @@ INSERT INTO "AspNetUserRoles" Values ( (SELECT "Id" FROM "AspNetUsers" WHERE "Em
 ```
 
 Now you can access with `newadmin@example.com` as admin.
+
+## Warning `The BTCPAY_SSHKEYFILE variable is not set` when running docker
+
+You may see such error message when you run your docker-compose (either via `btcpay-up.sh` or `btcpay-setup.sh`):
+
+```bash
+WARNING: The BTCPAY_SSHKEYFILE variable is not set. Defaulting to a blank string.
+WARNING: The BTCPAY_SSHTRUSTEDFINGERPRINTS variable is not set. Defaulting to a blank string.
+```
+
+This mean that your BTCPay Server does not have access to SSH to your VM.
+BTCPay Server asks for SSH access to your Virtual Machine when you want to perform actions as admin `Server Settings/Maintenance`. (Like updating BTCPay Server or changing the domain name)
+
+If you did not setup the SSH keys, then BTCPay will prompt you for SSH information when trying to run those actions.
+
+If you decide you want to give access SSH to BTCPay Server, run:
+
+```bash
+# Log as root
+sudo su -
+
+# Add SSH access to a key generated for btcpay
+ssh-keygen -t rsa -f /root/.ssh/id_rsa_btcpay -q -P ""
+echo "# Key used by BTCPay Server" >> /root/.ssh/authorized_keys
+cat /root/.ssh/id_rsa_btcpay.pub >> /root/.ssh/authorized_keys
+
+# Change your settings to pass the key to btcpay
+BTCPAY_HOST_SSHKEYFILE=/root/.ssh/id_rsa_btcpay
+cd $BTCPAY_BASE_DIRECTORY/btcpayserver-docker
+. ./btcpay-setup.sh -i
+```
