@@ -90,6 +90,8 @@ If you're a developer you can develop your own integration, by following the [cu
 
 You can use BTCPay even if you don't have an e-commerce store. You can launch your BTCpay and be the payment processor for your friends or local market. Another use-case is to accept donations through the POS (Point of Sale) app or payment buttons which can be copy-pasted as HTML snippets into any website.
 
+If you do not have a store, but want to create one, read [How to Create an Online Store & Accept Bitcoin – Step By Step Guide](https://bitcoinshirt.co/how-to-create-store-accept-bitcoin/) which will teach you how to build a store from scratch and install BTCPay.
+
 ## Which cryptocurrencies are supported in BTCPay?
 
 BTCPay natively supports:
@@ -121,6 +123,10 @@ If you encountered an issue or have a feature request, please [open an issue on 
 There are many ways in which you can contribute to an open-source project like BTCPay.
 
 The easiest way is to just use the software, provide feedback and report any bugs or issues you or your customers encounter. If you're a developer you can help us develop and improve the software by contributing on the GitHub. Translating BTCPay into your native language, helping us with documentation writing are ways in which you can help us out, even if you're not a developer or tech-savvy. We appreciate each and every contributor to the project. You're awesome.
+
+## Does BTCPay Support Lightning Network?
+
+Yes. BTCPay was the first payment processor to embrace and offer the second-layer Bitcoin solution. You can run either LND or c-lightning implementations of the Lightning Network.
 
 ## What is a "network cost"?
 
