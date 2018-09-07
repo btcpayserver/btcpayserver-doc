@@ -6,19 +6,19 @@ See also [The Merchants Guide to accepting Bitcoin directly with no intermediate
 
 BTCPay Server is a free and open-source cryptocurrency payment processor which allows you to receive payments in Bitcoin and altcoins directly, with no fees, transaction cost or a middleman.
 
-BTCPay is a non-custodial invoicing system which eliminates the involvement of a third-party. Payments with BTCPay go directly to your wallet, which increases the privacy and security. Your private keys are never uploaded to the server. There is no address re-use, since each invoice generates a new address deriving from your xpubkey.
+BTCPay is a non-custodial invoicing system which eliminates the involvement of a third-party. Payments with BTCPay go directly to your wallet, which increases the privacy and security. Your private keys are never uploaded to the server. There is no address re-use since each invoice generates a new address deriving from your xpubkey.
 
 ## BTCPay vs other processors?
 
-The biggest advantage of BTCPay over other processors is that it is completely free and open-source, non-custodial software, created by the community. While most of other processors hold your Bitcoins, BTCPay allows you to receive paymets P2P, directly to your software or hardware wallet. Furthemore, BTCPay allows you to become a processor yourself, so that you can offer different packages and help spread the adoption locally or globally.
+The most significant advantage of BTCPay over other processors is that it is entirely free and open-source, non-custodial software, created by the community. While most of the other processors hold your Bitcoins, BTCPay allows you to receive payments P2P, directly to your software or hardware wallet. Furthermore, BTCPay will enable you to become a processor yourself, so that you can offer different packages and help spread the adoption locally or globally.
 
-BTCPay is a self-hosted software. This means that you are your own payment processor. There are no subscriptions, no transaction fees. While most of other processors hold your Bitcoins, BTCPay allows you to receive paymets P2P, directly to your software or hardware wallet. There's is no third-party involvement which significantly increases the censorship-resistance, privacy, and security. With BTCPay, you are your own bank.
+BTCPay is a self-hosted software. This means that you are your own payment processor. There are no subscriptions, no transaction fees. While most of the other processors hold your Bitcoins, BTCPay allows you to receive payments P2P, directly to your software or hardware wallet. There's no third-party involvement which significantly increases the censorship-resistance, privacy, and security. With BTCPay, you are your own bank.
 
-Furthemore, BTCPay allows you to become a processor yourself, so that you can offer different packages and help spread the adoption locally or globally.
+Furthermore, BTCPay allows you to become a processor yourself so that you can offer different packages and help spread the adoption locally or globally.
 
 ## Why are everyone so excited about BTCPay?
 
-The community is excited about BTCPay and often recommends it to merchants or content creators, because it the software offers  a direct way for store-owners and charities to receive Bitcoin payments, which grately improves the privacy of the customers/donors. BTCPay offers a censorship-resistant way of receiving bitcoin. The fact that the software is free and open-source gives a huge opportunity for developers to build things and integrations on top of BTCPay.
+The community is excited about BTCPay and often recommends it to merchants or content creators because it the software offers a direct way for store-owners and charities to receive Bitcoin payments, which significantly improves the privacy of the customers/donors. BTCPay provides a censorship-resistant way of accepting bitcoin. The fact that the software is free and open-source gives a great opportunity for developers to build things and integrations on top of BTCPay.
 
 ## How much it costs to run BTCPay Server?
 
@@ -36,17 +36,17 @@ Just like you can host a website locally, you can do it with BTCPay. Please be a
 
 ### Can the cost of running BTCPay on Microsoft Azure be reduced?
 
-Yes. Currently, the one-click deployment requires Azure Virtual Machine, but if you’re a programmer or understand VM’s you can deploy one on a different VM. Furthermore, the changes in the Bitcoin Core 0.16.0 (BIP159) make it possible to run the full node in pruned mode to save more disk space.
+Yes. Currently, the one-click deployment requires Azure Virtual Machine, but if you’re a programmer or understand VM’s you can deploy one on a different VM. Furthermore, the changes in the Bitcoin Core 0.16.0 (BIP159) make it possible to run the full node in the pruned mode to save more disk space.
 
 Also, once the full node is synchronized to the network, you can downgrade the machine on Azure to take a less expensive one.
 
 Please check out [How to penny-pinch your Azure deployment](AzurePennyPinching.md).
 
-## What are the minimal requirments to run BTCPay?
+## What are the minimal requirements to run BTCPay?
 
-If you would like to run Bitcoin and Lightning Network nodes, the minimal requirments are :
+If you would like to run Bitcoin and Lightning Network nodes, the minimal requirements are :
 - 2GB Ram
-- 250 GB of storage (for the initial sync) can be prunned to 80GB.
+- 250 GB of storage (for the initial sync) can be pruned to 80GB.
 - Docker
 
 ## How to install BTCPay Server?
@@ -61,11 +61,11 @@ There are several videos and article online which you can check out:
 
 ## Why can't I just give my Bitcoin address to a buyer?
 
-Re-using the address for receiving payments is a privacy issue. Providing a different address manually to each customer is not an optimal solution. Imagine having to send an e-mail that wants to pay you with cryptocurrenct. 
+Re-using the address for receiving payments is a privacy issue. Providing a different address manually to each customer is not an optimal solution. Imagine having to send an e-mail that wants to pay you with cryptocurrency.
 
-BTCPay solves the address re-use and automates the checkout proces. The software is a complete, automated invoicing system. It integrates into your checkout proccess and customers can pay you in Bitcoin or altcoins in few clicks.
+BTCPay solves the address re-use and automates the checkout process. The software is a complete, automated invoicing system. It integrates into your checkout process and customers can pay you in Bitcoin or altcoins in few clicks.
 
-After the payment, software notifies your store that the order has been paid/completed. Depending on the e-commerce software you're using, it can also change the order status. You just worry about getting items shipped, leave the invoicing and payment processing to BTCPay.
+After the payment, the software notifies your store that the order has been paid/completed. Depending on the e-commerce software you're using, it can also change the order status. You worry about getting items shipped, leave the invoicing and payment processing to BTCPay.
 
 ## Does BTCPay need my private key?
 
@@ -84,9 +84,9 @@ Currently, BTCPay has integrations with the following e-commerce platforms:
 - Drupal
 - Custom integration
 
-If you're a developer you can develop your own integration, by following the [custom integration instructions](https://github.com/btcpayserver/btcpayserver-doc/blob/master/CustomIntegration.md).
+If you're a developer, you can develop your own integration, by following the [custom integration instructions](https://github.com/btcpayserver/btcpayserver-doc/blob/master/CustomIntegration.md).
 
-## Do I need a to have an online store to accept cryptocurrencies?
+## Do I need to have an online store to accept cryptocurrencies?
 
 You can use BTCPay even if you don't have an e-commerce store. You can launch your BTCpay and be the payment processor for your friends or local market. Another use-case is to accept donations through the POS (Point of Sale) app or payment buttons which can be copy-pasted as HTML snippets into any website.
 
@@ -122,7 +122,7 @@ If you encountered an issue or have a feature request, please [open an issue on 
 
 There are many ways in which you can contribute to an open-source project like BTCPay.
 
-The easiest way is to just use the software, provide feedback and report any bugs or issues you or your customers encounter. If you're a developer you can help us develop and improve the software by contributing on the GitHub. Translating BTCPay into your native language, helping us with documentation writing are ways in which you can help us out, even if you're not a developer or tech-savvy. We appreciate each and every contributor to the project. You're awesome.
+The easiest way is to use the software, provide feedback and report any bugs or issues you or your customers encounter. If you're a developer, you can help us develop and improve the software by contributing on the GitHub. Translating BTCPay into your native language, helping us with documentation writing are ways in which you can help us out, even if you're not a developer or tech-savvy. We appreciate every contributor to the project. You're awesome.
 
 ## Does BTCPay Support Lightning Network?
 
@@ -130,7 +130,7 @@ Yes. BTCPay was the first payment processor to embrace and offer the second-laye
 
 ## What is a "network cost"?
 
-Network cost is a feature in BTCPay which protects merchants from a customer who pays the invoice partially. When an invoice is paid from many outputs, the fee for merchant to move those funds will be higher.
+Network cost is a feature in BTCPay which protects merchants from a customer who pays the invoice partially. When an invoice is paid from many outputs, the fee for a merchant to move those funds will be higher.
 
 For example, your customer created an invoice for 20$ and paid 20 x 1$. You as a merchant now have a larger transaction which increases the mining cost should you decide to move those funds. BTCPay applies a network cost after the first transaction, to cover for merchants expense.
 
@@ -138,7 +138,7 @@ The network cost in BTCPay is not the same thing as the mining fee. Your custome
 
 The network cost is an optional feature. It's enabled by default, but it's entirely up to a merchant to enable or disable it. Your customers will be able to see this "network cost" at the checkout when they expand the invoice information.
 
-While it provides the protection from dust transactions, it can also reflect negatively and your customers might have additional questions and may lead them into thinking you're overcharging them.
+While it protects dust transactions, it can also reflect negatively and your customers might have additional questions and may lead them into thinking you're overcharging them.
 
 Please think twice about how this may affect your business and make sure to communicate it to your customers properly inside your store Terms of Service or by other methods.
 
@@ -349,4 +349,4 @@ Please make sure to enter the URL of the host you're trying to pair with correct
 
 ## Invalid derivation scheme
 
-If you're getting this error, this means that you have not connected your wallet to BTCPay. In Store>Settings> Derivation Scheme. Depending on the cryptocurrencies you added, on the right hand side click modify and set up your derivation scheme correctly. [This video](https://www.youtube.com/watch?v=xX6LyQej0NQ) covers how to set derivation scheme manually (with Electrum or any other wallet) and automaitcally with a hardware wallet - Nano S.
+If you're getting this error, this means that you have not connected your wallet to BTCPay. In Store>Settings> Derivation Scheme. Depending on the cryptocurrencies you added, on the right-hand side click modify and set up your derivation scheme correctly. [This video](https://www.youtube.com/watch?v=xX6LyQej0NQ) covers how to set derivation scheme manually (with Electrum or any other wallet) and automatically with a hardware wallet - Nano S.
