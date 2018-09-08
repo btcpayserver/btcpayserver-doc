@@ -18,7 +18,7 @@ Furthermore, BTCPay allows you to become a processor yourself so that you can of
 
 ## Why are everyone so excited about BTCPay?
 
-The community is excited about BTCPay and often recommends it to merchants or content creators because it the software offers a direct way for store-owners and charities to receive Bitcoin payments, which significantly improves the privacy of the customers/donors. BTCPay provides a censorship-resistant way of accepting bitcoin. The fact that the software is free and open-source gives a great opportunity for developers to build things and integrations on top of BTCPay.
+The community is excited about BTCPay and often recommends it to merchants or content creators because it offers a direct way for store-owners and charities to receive Bitcoin payments, which significantly improves the privacy of the customers/donors. BTCPay provides a censorship-resistant way of accepting bitcoin. The fact that the software is free and open-source gives a great opportunity for developers to build things and integrations on top of BTCPay.
 
 ## How much it costs to run BTCPay Server?
 
