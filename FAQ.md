@@ -4,7 +4,7 @@ See also [The Merchants Guide to accepting Bitcoin directly with no intermediate
 
 ## What is BTCPay Server?
 
-BTCPay Server is a free and open-source cryptocurrency payment processor which allows you to receive payments in Bitcoin and altcoins directly, with no fees, transaction cost or a middleman.
+BTCPay Server is a free and open-source cryptocurrency payment processor which allows you to receive payments in Bitcoin (on-chain and via the Lightning Network) and altcoins directly, with no fees, transaction cost or a middleman.
 
 BTCPay is a non-custodial invoicing system which eliminates the involvement of a third-party. Payments with BTCPay go directly to your wallet, which increases the privacy and security. Your private keys are never uploaded to the server. There is no address re-use since each invoice generates a new address deriving from your xpubkey.
 
@@ -46,7 +46,7 @@ Please check out [How to penny-pinch your Azure deployment](AzurePennyPinching.m
 
 If you would like to run Bitcoin and Lightning Network nodes, the minimal requirements are :
 - 2GB Ram
-- 250 GB of storage (for the initial sync) can be pruned to 80GB.
+- 80 GB of storage (with pruning enabled)
 - Docker
 
 ## How to install BTCPay Server?
@@ -58,6 +58,26 @@ There are several videos and article online which you can check out:
 - [How to install BTCPay on LunaNode VPS - article](https://medium.com/@BtcpayServer/hosting-btcpayserver-on-lunanode-bf9ef5fff75b)
 - [How to install BTCPay on LunaNode VPS - video](https://youtu.be/PZXwacAai9E)
 - [See all deployments](https://github.com/btcpayserver/btcpayserver-doc#deployment)
+- [BTCPay YouTube channel](https://www.youtube.com/channel/UCpG9WL6TJuoNfFVkaDMp9ug/videos)
+- [Assorted playlist of all BTCPay YouTube videos](https://www.youtube.com/playlist?list=PL7b9Wt9shK2r-WXS6ysG4tafVQRu80biZ)
+
+### How to use WooCommerce store with BTCPay?
+
+- [BTCPay and WooCommerce](https://www.youtube.com/watch?v=tTH3nLoyTcw)
+- [BTCPay WordPress plugin installation](https://www.youtube.com/watch?v=6QcTWHRKZag)
+- [Connecting your store to a third-party BTCPay host](https://www.youtube.com/watch?v=IT2K8It3S3o)
+- [Connect your wallet to BTCPay](https://www.youtube.com/watch?v=xX6LyQej0NQ)
+- [Test your store checkout when you finish with the setup](https://www.youtube.com/watch?v=Fi3pYpzGmmo)
+
+### How to use BTCPay with Drupal?
+
+- [BTCPay and Drupal installation and configuration](https://github.com/btcpayserver/commerce_btcpay#installation-and-configuration) 
+- [Drupal Commerce BTCPay module installation walkthrough](https://youtu.be/XBZwyC2v48s)
+
+### How to use BTCPay with Prestashop?
+
+- [BTCPay and Prestashop - getting started guide](https://github.com/btcpayserver/prestashop-plugin#description)
+- [Using the BTCPay plugin for Prestashop](https://github.com/adapp-tech/prestashop-plugin/blob/master/GUIDE.md#using-the-btcpay-plugin-for-prestashop)
 
 ## Why can't I just give my Bitcoin address to a buyer?
 
@@ -69,7 +89,9 @@ After the payment, the software notifies your store that the order has been paid
 
 ## Does BTCPay need my private key?
 
-Absolutely not. The fact that BTCPay Server never needs access to your master private key is a huge security advantage. Even if your server gets hacked, your funds from the on-chain transactions are always safe. Securing your on-chain funds, comes down to [securing your wallet](https://btcinformation.org/en/secure-your-wallet).
+Absolutely not. The fact that BTCPay Server never needs access to your master private key for on-chain transactions is a huge security advantage. Even if your server gets hacked, your funds from the on-chain transactions are always safe. Securing your on-chain funds, comes down to [securing your wallet](https://btcinformation.org/en/secure-your-wallet).
+
+If you have a lightning node, BTCPay technically has access to the keys (macarons) of your LN.
 
 ### Address re-use - How BTCPay creates a different address?
 
@@ -82,6 +104,7 @@ Currently, BTCPay has integrations with the following e-commerce platforms:
 - WordPress / WooCommerce
 - Magneto
 - Drupal
+- Prestashop
 - Custom integration
 
 If you're a developer, you can develop your own integration, by following the [custom integration instructions](https://github.com/btcpayserver/btcpayserver-doc/blob/master/CustomIntegration.md).
@@ -116,7 +139,7 @@ At this time, it is not possible to instantly convert your payments into fiat th
 
 BTCPay is an open-source project. It is not a company; there is no e-mail, live-chat or phone support. The software relies on a network of contributors and users to provide support.
 
-If you encountered an issue or have a feature request, please [open an issue on GitHub](https://github.com/btcpayserver/btcpayserver/issues). For more general questions, join our [community on Slack](http://slack.forkbitpay.ninja/).
+If you encountered an issue or have a feature request, please [open an issue on GitHub](https://github.com/btcpayserver/btcpayserver/issues). For more general questions, join our [community on Slack](http://slack.forkbitpay.ninja/). Certain community members offer [premium (paid) support](https://github.com/btcpayserver/btcpayserver-doc/blob/master/Support.md).
 
 ## How can I contribute to BTCPay?
 
