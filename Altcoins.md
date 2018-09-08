@@ -11,7 +11,6 @@ Support is implemented for several coins:
 * Groestlcoin
 * Monacoin
 * Polis
-* UFO
 * Viacoin
 
 ## How can I add an altcoin to BTCPayServer?

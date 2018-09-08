@@ -128,7 +128,6 @@ BTCPay natively supports:
 - Litecoin (LTC)
 - Monacoin (MONA)
 - Polis (POLIS)
-- Uniform Fiscal Object (UFO)
 - Viacoin (VIA)
 
 ## Does BTCPay Server support crypto to fiat conversion?
