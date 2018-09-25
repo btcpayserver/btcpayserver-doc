@@ -49,6 +49,20 @@ If you would like to run Bitcoin and Lightning Network nodes, the minimal requir
 - 80 GB of storage (with pruning enabled)
 - Docker
 
+## I'm already running a full node and have a synched blockchain, can I make BTCPay use it so that it doesn't have to do a full sync again ?
+
+If you run BTCPay inside a docker compose, it is possible to bind docker's volume to a specific directory in your local host by modifying the file `docker-compose.generated.yml` inside of `btcpayserver-docker/Generated`. If the binded directory contains blockchain's data, bitcoind will recognize it and use it instead of doing the full sync again. 
+
+To do that, follow the following steps :
+* open `btcpayserver-docker/Generated/docker-compose.generated.yml` with nano or a similar text editor.
+* At the very bottom of the file, inside `volumes`, delete `bitcoin_datadir:`.
+* then do a `Ctrl-W` and look for every occurence of `bitcoin_datadir:` (NOT including the ones where `bitcoin_datadir:` is part of another volume name, like `lnd_bitcoin_datadir:`). There are **3 such occurrences**.
+* replace them with the absolute path to your blockchain directory in your host (for example : `/home/user/.bitcoin`). Save and exit. 
+
+If BTCPay was running, you have to restart it with `./btcpay-restart.sh` for the changes to be effective. Your will get exactly the same node, including the wallet, inside of BTCPay's docker.
+
+:warning: Updating BTCPay with `./btcpay-update.sh` will overwrite such modifications, so you will have to do all that again.
+
 ## How to install BTCPay Server?
 
 There are several videos and article online which you can check out:
