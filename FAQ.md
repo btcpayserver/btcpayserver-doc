@@ -51,17 +51,19 @@ If you would like to run Bitcoin and Lightning Network nodes, the minimal requir
 
 ## I'm already running a full node and have a synched blockchain, can I make BTCPay use it so that it doesn't have to do a full sync again ?
 
-If you run BTCPay inside a docker compose, it is possible to bind docker's volume to a specific directory in your local host by modifying the file `docker-compose.generated.yml` inside of `btcpayserver-docker/Generated`. If the binded directory contains blockchain's data, bitcoind will recognize it and use it instead of doing the full sync again. 
+If you run BTCPay inside a docker compose, it is possible to bind docker's volume to a specific directory in your local host **without** modifying the file `docker-compose.generated.yml` inside of `btcpayserver-docker/Generated` using a _symlink_. If the directory your link is pointing at contains blockchain's data, bitcoind will recognize it and use it instead of doing the full sync again. 
 
 To do that, follow the following steps :
-* open `btcpayserver-docker/Generated/docker-compose.generated.yml` with nano or a similar text editor.
-* At the very bottom of the file, inside `volumes`, delete `bitcoin_datadir:`.
-* then do a `Ctrl-W` and look for every occurence of `bitcoin_datadir:` (NOT including the ones where `bitcoin_datadir:` is part of another volume name, like `lnd_bitcoin_datadir:`). There are **3 such occurrences**.
-* replace them with the absolute path to your blockchain directory in your host (for example : `/home/user/.bitcoin`). Save and exit. 
+* Do the normal setup according to [this instruction](https://github.com/btcpayserver/btcpayserver-docker/blob/master/README.md).
+* Once `btcpay-setup` is over, turn down the docker compose with `btcpay-down.sh`.
+* Login as root with `sudo su -`.
+* Open the docker's volume for bitcoind : `cd /var/lib/docker/volumes/generated_bitcoin_datadir/`, and look to its content with `ls -la`. You should see only one directory named `_data`.
+* Now remove the `_data`directory : `rm -r _data`. If for any reason you wang to keep this directory and its content you can also rename it instead : `mv _data/ _data.old/`
+* Now creata a [symbolic link](https://www.cyberciti.biz/faq/creating-soft-link-or-symbolic-link/) between this directory and .bitcoin directory in your host's path : `ln -s path/to/.bitcoin /var/lib/docker/volumes/generated_bitcoin_datadir/_data`
+* Check that the link has been done with a `ls -la`
+* Exit root, and start your docker compose again with `btcpay-up.sh`
 
-If BTCPay was running, you have to restart it with `./btcpay-restart.sh` for the changes to be effective. Your will get exactly the same node, including the wallet, inside of BTCPay's docker.
-
-:warning: Updating BTCPay with `./btcpay-update.sh` will overwrite such modifications, so you will have to do all that again.
+You should now get exactly the same synching percentage than your previous node.
 
 ## How to install BTCPay Server?
 
