@@ -372,3 +372,26 @@ Please make sure to enter the URL of the host you're trying to pair with correct
 ## Invalid derivation scheme
 
 If you're getting this error, this means that you have not connected your wallet to BTCPay. In Store>Settings> Derivation Scheme. Depending on the cryptocurrencies you added, on the right-hand side click modify and set up your derivation scheme correctly. [This video](https://www.youtube.com/watch?v=xX6LyQej0NQ) covers how to set derivation scheme manually (with Electrum or any other wallet) and automatically with a hardware wallet - Nano S.
+
+## LND connection issues after an update
+
+Authentication tends to fail on LND after an update, symptoms are:
+
+* In store settings, when testing the connection to your node you get `Error while connecting to the API (The HTTP status code of the response was not expected (500).)`
+* In Zap wallet, `Unable to connect to host: cannot retrieve macaroon: cannot get macaroon: root key with id 0 doesn’t exist`
+
+In such case, you need to delete the macaroon of lnd and restart it.
+
+If you are using docker deployment, please connect with SSH to your VM and the following command:
+
+```bash
+sudo su -
+docker exec btcpayserver_lnd_bitcoin rm /data/admin.macaroon
+docker exec btcpayserver_lnd_bitcoin rm /data/invoice.macaroon
+docker exec btcpayserver_lnd_bitcoin rm /data/readonly.macaroon
+docker exec btcpayserver_lnd_bitcoin rm /data/data/macaroons.db
+docker exec btcpayserver_lnd_bitcoin rm /data/data/chain/bitcoin/mainnet/invoice.macaroon
+docker exec btcpayserver_lnd_bitcoin rm /data/data/chain/bitcoin/mainnet/macaroons.db
+docker exec btcpayserver_lnd_bitcoin rm /data/data/chain/bitcoin/mainnet/readonly.macaroon
+docker restart btcpayserver_lnd_bitcoin
+```
