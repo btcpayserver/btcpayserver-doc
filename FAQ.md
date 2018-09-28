@@ -395,3 +395,5 @@ docker exec btcpayserver_lnd_bitcoin rm /data/data/chain/bitcoin/mainnet/macaroo
 docker exec btcpayserver_lnd_bitcoin rm /data/data/chain/bitcoin/mainnet/readonly.macaroon
 docker restart btcpayserver_lnd_bitcoin
 ```
+
+Because this will invalidate the previous macaroons, you need to manually reconnect with Zap with `Server Settings / Services / LND-gRPC`.
