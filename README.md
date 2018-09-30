@@ -5,7 +5,7 @@
 BTCPayServer is an open-source, self-hosted payment processor for Bitcoin and other cryptocurrencies.
 
 If you have any issues with BTCPay, please file a [Github issue](https://github.com/btcpayserver/btcpayserver/issues).
-If you have more general questions, please come on [Slack](http://slack.forkbitpay.ninja/).
+If you have more general questions, please come on [Slack](http://slack.btcpayserver.org/).
 
 This solution is for you if:
 
