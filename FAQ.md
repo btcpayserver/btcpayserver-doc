@@ -6,33 +6,37 @@ See also [The Merchants Guide to accepting Bitcoin directly with no intermediate
 
 BTCPay Server is a free and open-source cryptocurrency payment processor which allows you to receive payments in Bitcoin (on-chain and via the Lightning Network) and altcoins directly, with no fees, transaction cost or a middleman.
 
-BTCPay is a non-custodial invoicing system which eliminates the involvement of a third-party. Payments with BTCPay go directly to your wallet, which increases the privacy and security. Your private keys are never uploaded to the server. There is no address re-use since each invoice generates a new address deriving from your xpubkey.
+## Why should I choose BTCPay over other processors?
 
-## BTCPay vs other processors?
+The most significant advantage of BTCPay over other processors is that it is entirely free and open-source, non-custodial software, created by the community. While most of the other processors hold your Bitcoins, BTCPay allows you to receive payments P2P, directly to your software or hardware wallet. 
 
-The most significant advantage of BTCPay over other processors is that it is entirely free and open-source, non-custodial software, created by the community. While most of the other processors hold your Bitcoins, BTCPay allows you to receive payments P2P, directly to your software or hardware wallet. Furthermore, BTCPay will enable you to become a processor yourself, so that you can offer different packages and help spread the adoption locally or globally.
+BTCPay is a self-hosted software. This means that you are your own payment processor. There are no subscriptions, no transaction fees. There's no third-party involvement which significantly increases the censorship-resistance, privacy, and security for you and your customers. Furthermore, BTCPay will enable you to become a processor yourself, so that you can offer different packages and help spread the adoption locally or globally.
 
-BTCPay is a self-hosted software. This means that you are your own payment processor. There are no subscriptions, no transaction fees. While most of the other processors hold your Bitcoins, BTCPay allows you to receive payments P2P, directly to your software or hardware wallet. There's no third-party involvement which significantly increases the censorship-resistance, privacy, and security. With BTCPay, you are your own bank.
-
-Furthermore, BTCPay allows you to become a processor yourself so that you can offer different packages and help spread the adoption locally or globally.
+With BTCPay, you are your own bank. 
 
 ## Why are everyone so excited about BTCPay?
 
-The community is excited about BTCPay and often recommends it to merchants or content creators because it offers a direct way for store-owners and charities to receive Bitcoin payments, which significantly improves the privacy of the customers/donors. BTCPay provides a censorship-resistant way of accepting bitcoin. The fact that the software is free and open-source gives a great opportunity for developers to build things and integrations on top of BTCPay.
+The community is excited about BTCPay and often recommends it to merchants or content creators because it offers a direct way for store-owners and charities to receive Bitcoin payments, which significantly improves the privacy of the customers/donors. 
 
-## How much it costs to run BTCPay Server?
+BTCPay doesn't compromise on censorship-resistance, which is one of the main feature of Bitcoin. Besides that, being free and open-source it gives a great opportunity for developers to build things and integrations on top of BTCPay.
+
+## How much does it cost to run BTCPay Server?
 
 BTCPay is a free software. You can run it as a self-hosted solution on your own local server, or use a hosting provider, which is what a majority of users do. Additionally, you can use a third-party BTCPay host and attach your store to it.
 
-For a self-hosted option, the price depends on a hosting provider of your choice. Be sure to choose the VPS which meets the minimal requirements.
+If you choose to host it externally, the price depends obviously on the hosting provider. Be sure to choose a VPS which meets the minimal requirements in RAM and storage.
 
-The low-priced VPS servers which community tested with the BTCPay start at around [9$/month](https://medium.com/@BtcpayServer/hosting-btcpayserver-on-lunanode-bf9ef5fff75b).
+The low-priced VPS servers tested by the community start at around [9$/month](https://medium.com/@BtcpayServer/hosting-btcpayserver-on-lunanode-bf9ef5fff75b).
 
-The Microsoft Azure servers are slightly [easier to deploy](https://github.com/btcpayserver/btcpayserver-doc/blob/master/AzureDeployment.md), but that comfort comes with a higher price-tag of roughly 65$/month. The price for the Azure servers can be reduced to approximately 25$/month after the initial sync with [penny-pinching](https://github.com/btcpayserver/btcpayserver-doc/blob/master/AzurePennyPinching.md).
+The Microsoft Azure servers are slightly [easier to deploy](https://github.com/btcpayserver/btcpayserver-doc/blob/master/AzureDeployment.md), but that comfort comes with a higher price-tag of roughly 65$/month. However, the price for the Azure servers can be reduced to approximately 25$/month after the initial sync with [penny-pinching](https://github.com/btcpayserver/btcpayserver-doc/blob/master/AzurePennyPinching.md).
 
 ### Why do I need a VPS? Can't I just run BTCPay on my home computer?
 
-Just like you can host a website locally, you can do it with BTCPay. Please be aware that your PC would have to meet the minimal requirements and also run 24/7 if you don't want interruptions. While local hosting is good for testing, for production it's really not a viable solution.
+Just like you can host a website locally, you can do it with BTCPay. Please be aware that your PC would have to meet the minimal requirements and also run 24/7 if you don't want interruptions of service.
+
+You might also not want to expose your home IP address for an activity related to payment and money.
+
+For all these reasons, while local hosting is good for testing, it's really not a viable solution on production.
 
 ### Can the cost of running BTCPay on Microsoft Azure be reduced?
 
@@ -97,11 +101,11 @@ There are several videos and article online which you can check out:
 
 ## Why can't I just give my Bitcoin address to a buyer?
 
-Re-using the address for receiving payments is a privacy issue. Providing a different address manually to each customer is not an optimal solution. Imagine having to send an e-mail that wants to pay you with cryptocurrency.
+Re-using the address for receiving payments is a privacy issue. Providing a different address manually to each customer is not an optimal solution. Imagine having to send an e-mail to everyone that wants to pay you with cryptocurrency.
 
-BTCPay solves the address re-use and automates the checkout process. The software is a complete, automated invoicing system. It integrates into your checkout process and customers can pay you in Bitcoin or altcoins in few clicks.
+BTCPay solves the address re-use and automates the checkout process. The software is a complete, automated invoicing system. It integrates into your checkout process and customers can pay you in Bitcoin or altcoins in a few clicks.
 
-After the payment, the software notifies your store that the order has been paid/completed. Depending on the e-commerce software you're using, it can also change the order status. You worry about getting items shipped, leave the invoicing and payment processing to BTCPay.
+After the payment, the software notifies your store that the order has been paid/completed. Depending on the e-commerce software you're using, it can also change the order status. All you have to worry about is getting items shipped, leave the invoicing and payment processing to BTCPay.
 
 ## Does BTCPay need my private key?
 
