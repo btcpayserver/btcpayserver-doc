@@ -26,4 +26,4 @@ Contact: support@lightninginabox.co, [Web](https://lightninginabox.co)
 
 If you have any issues or feature request with BTCPay, please file a [github issue](https://github.com/btcpayserver/btcpayserver/issues).
 
-If you have more general questions, please come on [Slack](http://slack.btcpayserver.org/).
+If you have more general questions, please come on [Slack](http://slack.btcpayserver.org/) or browse [NBitStack](https://nbitstack.com/c/btcpayserver) for a curated list of answered topics.
