@@ -2,8 +2,8 @@
 
 This section goes through the process of creating an account and store on our public BTCPay server. (For evaluation purpose)
 
-* Our [mainnet site](https://main2-btc-ltc.forkbitpay.ninja)
-* Our [testnet site](https://test2-btc-ltc.forkbitpay.ninja)
+* Our [mainnet site](https://mainnet.demo.btcpayserver.org/)
+* Our [testnet site](https://testnet.demo.btcpayserver.org)
 
 You can take a look at our video:
 
@@ -13,9 +13,9 @@ You can take a look at our video:
 
 First let's create a new store:
 
-1. Go on [Testnet website](http://test2-btc-ltc.forkbitpay.ninja/)
-2. [Create an account](http://test2-btc-ltc.forkbitpay.ninja/Account/Register)
-3. [Create a new store](http://test2-btc-ltc.forkbitpay.ninja/stores)
+1. Go on [Testnet website](https://testnet.demo.btcpayserver.org/)
+2. [Create an account](https://testnet.demo.btcpayserver.org/Account/Register)
+3. [Create a new store](https://testnet.demo.btcpayserver.org/stores)
 
 Let's create a testnet wallet for your store:
 
