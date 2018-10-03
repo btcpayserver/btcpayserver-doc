@@ -2,6 +2,18 @@
 
 This project is open source, and is not a company. Instead we rely on a network of contributors and users to provide support.
 
+## Free support
+
+Problem ? Don't worry, someone else has probably been through that before you. 
+
+* First have a look at [NBitStack](https://nbitstack.com/c/btcpayserver) for a curated list of topics already answered by the community.
+
+* If your issue is not referenced there, or you want to request a new feature, please open a [github issue](https://github.com/btcpayserver/btcpayserver/issues).
+ 
+If you have more general questions about BTCPay, the way it works and why you should use it, you're welcome on our [Slack](http://slack.btcpayserver.org/).
+
+## Paid support
+
 Here are some members of the community that you can contact to get additional paid support:
 
 ### Hubik Tomas
@@ -21,9 +33,3 @@ Contact: VutovSpas@gmail.com, [Slack](http://slack.btcpayserver.org/), [BTG Disc
 > BTCPayServer local or cloud installation (Azure/other VPS).  Can also help with WooCommerce Plugin configuration and BTCPayServer Store/App creation.  
 
 Contact: support@lightninginabox.co, [Web](https://lightninginabox.co)
-
-### Free support
-
-If you have any issues or feature request with BTCPay, please file a [github issue](https://github.com/btcpayserver/btcpayserver/issues).
-
-If you have more general questions, please come on [Slack](http://slack.btcpayserver.org/) or browse [NBitStack](https://nbitstack.com/c/btcpayserver) for a curated list of answered topics.
