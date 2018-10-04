@@ -1,7 +1,5 @@
 # FAQ
 
-See also [The Merchants Guide to accepting Bitcoin directly with no intermediates through BTCPay](https://www.reddit.com/r/Bitcoin/comments/81h1oy/the_merchants_guide_to_accepting_bitcoin_directly/).
-
 ## What is BTCPay Server?
 
 BTCPay Server is a free and open-source cryptocurrency payment processor which allows you to receive payments in Bitcoin (on-chain and via the Lightning Network) and altcoins directly, with no fees, transaction cost or a middleman.
@@ -55,25 +53,14 @@ If you would like to run Bitcoin and Lightning Network nodes, the minimal requir
 - 80 GB of storage (with pruning enabled)
 - Docker
 
-## I'm already running a full node and have a synched blockchain, can I make BTCPay use it so that it doesn't have to do a full sync again ?
-
-If you want to run BTCPay inside a docker-compose, and that you have the data directory (`.bitcoin`) of a fully synched node on your docker host, then you can reuse it easily for BTCPay.
-
-To do that, follow the following steps :
-* Do the normal setup according to [this instruction](https://github.com/btcpayserver/btcpayserver-docker/blob/master/README.md).
-* Once `btcpay-setup.sh` is over, turn down the docker compose with `btcpay-down.sh`.
-* Login as root with `sudo su -`.
-* Open the docker's volume for bitcoind : `cd /var/lib/docker/volumes/generated_bitcoin_datadir/`, and check its content with `ls -la`. You should see only one directory named `_data`.
-* Now remove the `_data`directory : `rm -r _data`. If for any reason you want to keep this directory and its content you can also rename it instead : `mv _data/ _data.old/`
-* Now create a [symbolic link](https://www.cyberciti.biz/faq/creating-soft-link-or-symbolic-link/) between `/var/lib/docker/volumes/generated_bitcoin_datadir/_data` and your data directory (`.bitcoin`) on your host: `ln -s path/to/.bitcoin /var/lib/docker/volumes/generated_bitcoin_datadir/_data`
-* Check that the link has been done with a `ls -la`
-* Start your docker-compose again with `btcpay-up.sh`
-
-Your BTCPay Server should now be fully synched.
-
 ## How to install BTCPay Server?
 
-There are several videos and article online which you can check out:
+If you don't have the technical knowledge, we recommend that you use our new web-wizard to deploy BTCPay Server.
+
+- [How to install BTCPay via Web-Wizard LunaNode - guide](https://medium.com/@BtcpayServer/launch-btcpay-server-via-web-interface-and-deploy-full-bitcoin-node-lnd-in-less-than-a-minute-dc8bc6f06a3)
+- [How to install BTCPay via Web-Wizard LunaNode - video](https://www.youtube.com/watch?v=NjslXYvp8bk)
+
+There are several other deployment methods you can check out:
 
 - [How to install BTCPay on Azure - guide](https://github.com/btcpayserver/btcpayserver-doc/blob/master/AzureDeployment.md)
 - [How to install BTCPay on Azure - video](https://www.youtube.com/watch?v=Bxs95BdEMHY)
@@ -100,24 +87,6 @@ There are several videos and article online which you can check out:
 
 - [BTCPay and Prestashop - getting started guide](https://github.com/btcpayserver/prestashop-plugin#description)
 - [Using the BTCPay plugin for Prestashop](https://github.com/adapp-tech/prestashop-plugin/blob/master/GUIDE.md#using-the-btcpay-plugin-for-prestashop)
-
-## Why can't I just give my Bitcoin address to a buyer?
-
-Re-using the address for receiving payments is a privacy issue. Providing a different address manually to each customer is not an optimal solution. Imagine having to send an e-mail to everyone that wants to pay you with cryptocurrency.
-
-BTCPay solves the address re-use and automates the checkout process. The software is a complete, automated invoicing system. It integrates into your checkout process and customers can pay you in Bitcoin or altcoins in a few clicks.
-
-After the payment, the software notifies your store that the order has been paid/completed. Depending on the e-commerce software you're using, it can also change the order status. All you have to worry about is getting items shipped, leave the invoicing and payment processing to BTCPay.
-
-## Does BTCPay need my private key?
-
-Absolutely not. The fact that BTCPay Server never needs access to your master private key for on-chain transactions is a huge security advantage. Even if your server gets hacked, your funds from the on-chain transactions are always safe. Securing your on-chain funds, comes down to [securing your wallet](https://btcinformation.org/en/secure-your-wallet).
-
-If you have a lightning node, BTCPay technically has access to the keys (macarons) of your LN.
-
-### Address re-use - How BTCPay creates a different address?
-
-BTCPay generates a different address for each invoice. The address is derived from your [xpubkey](https://bitcointalk.org/index.php?topic=2828777.0). Your private keys are never uploaded or required by BTCPay. The software only needs your extended public key. You can create your private key in your software or hardware wallet and import the public key (xpub) into BTCPay so that it can derive addresses from it. Meanwhile, you should stick to the best practices for protecting your private key.
 
 ## What e-commerce integrations are available?
 
@@ -152,6 +121,24 @@ BTCPay natively supports:
 - Polis (POLIS)
 - Viacoin (VIA)
 
+## Why can't I just give my Bitcoin address to a buyer?
+
+Re-using the address for receiving payments is a privacy issue. Providing a different address manually to each customer is not an optimal solution. Imagine having to send an e-mail to everyone that wants to pay you with cryptocurrency.
+
+BTCPay solves the address re-use and automates the checkout process. The software is a complete, automated invoicing system. It integrates into your checkout process and customers can pay you in Bitcoin or altcoins in a few clicks.
+
+After the payment, the software notifies your store that the order has been paid/completed. Depending on the e-commerce software you're using, it can also change the order status. All you have to worry about is getting items shipped, leave the invoicing and payment processing to BTCPay.
+
+## Does BTCPay need my private key?
+
+Absolutely not. The fact that BTCPay Server never needs access to your master private key for on-chain transactions is a huge security advantage. Even if your server gets hacked, your funds from the on-chain transactions are always safe. Securing your on-chain funds, comes down to [securing your wallet](https://btcinformation.org/en/secure-your-wallet).
+
+If you have a lightning node, BTCPay technically has access to the keys (macarons) of your LN.
+
+### Address re-use - How BTCPay creates a different address?
+
+BTCPay generates a different address for each invoice. The address is derived from your [xpubkey](https://bitcointalk.org/index.php?topic=2828777.0). Your private keys are never uploaded or required by BTCPay. The software only needs your extended public key. You can create your private key in your software or hardware wallet and import the public key (xpub) into BTCPay so that it can derive addresses from it. Meanwhile, you should stick to the best practices for protecting your private key.
+
 ## Does BTCPay Server support crypto to fiat conversion?
 
 At this time, it is not possible to instantly convert your payments into fiat through BTCPay. This feature is planned for the future, but there is no ETA.
@@ -185,6 +172,22 @@ The network cost is an optional feature. It's enabled by default, but it's entir
 While it protects dust transactions, it can also reflect negatively and your customers might have additional questions and may lead them into thinking you're overcharging them.
 
 Please think twice about how this may affect your business and make sure to communicate it to your customers properly inside your store Terms of Service or by other methods.
+
+## I'm already running a full node and have a synched blockchain, can I make BTCPay use it so that it doesn't have to do a full sync again ?
+
+If you want to run BTCPay inside a docker-compose, and that you have the data directory (`.bitcoin`) of a fully synched node on your docker host, then you can reuse it easily for BTCPay.
+
+To do that, follow the following steps :
+* Do the normal setup according to [this instruction](https://github.com/btcpayserver/btcpayserver-docker/blob/master/README.md).
+* Once `btcpay-setup.sh` is over, turn down the docker compose with `btcpay-down.sh`.
+* Login as root with `sudo su -`.
+* Open the docker's volume for bitcoind : `cd /var/lib/docker/volumes/generated_bitcoin_datadir/`, and check its content with `ls -la`. You should see only one directory named `_data`.
+* Now remove the `_data`directory : `rm -r _data`. If for any reason you want to keep this directory and its content you can also rename it instead : `mv _data/ _data.old/`
+* Now create a [symbolic link](https://www.cyberciti.biz/faq/creating-soft-link-or-symbolic-link/) between `/var/lib/docker/volumes/generated_bitcoin_datadir/_data` and your data directory (`.bitcoin`) on your host: `ln -s path/to/.bitcoin /var/lib/docker/volumes/generated_bitcoin_datadir/_data`
+* Check that the link has been done with a `ls -la`
+* Start your docker-compose again with `btcpay-up.sh`
+
+Your BTCPay Server should now be fully synched.
 
 ## Why is my ledger not detected by BTCPay Server?
 
@@ -419,3 +422,11 @@ docker restart btcpayserver_lnd_bitcoin
 ```
 
 Because this will invalidate the previous macaroons, you need to manually reconnect with Zap with `Server Settings / Services / LND-gRPC`.
+
+## Additional Resources
+
+If you're unable to find a solution to your problem in the FAQ, here is where to search:
+
+* [BTCPay Wiki Page](https://nbitstack.com/c/btcpayserver) - Search for common questions and problems
+* [BTCPay Slack](http://slack.btcpayserver.org/) - ask general questions about BTCPay
+* [Ultimate Guide to BTCPay](https://www.reddit.com/r/Bitcoin/comments/8f1eqf/the_ultimate_guide_to_btcpay_the_free_and/) - merchant's guide
