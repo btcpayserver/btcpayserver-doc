@@ -155,6 +155,23 @@ There are many ways in which you can contribute to an open-source project like B
 
 The easiest way is to use the software, provide feedback and report any bugs or issues you or your customers encounter. If you're a developer, you can help us develop and improve the software by contributing on the GitHub. Translating BTCPay into your native language, helping us with documentation writing are ways in which you can help us out, even if you're not a developer or tech-savvy. We appreciate every contributor to the project. You're awesome.
 
+## How to update BTCPay Server?
+
+There are two ways:
+1. (via front-end)Server Settings > Maintenance > Update Button
+
+2. (via ssh)
+
+Log as root:
+
+```
+sudo su -
+```
+```
+btcpay-update.sh
+```
+More on updating BTCPay [here](https://nbitstack.com/t/how-to-update-my-btcpay-server/93/2).
+
 ## Does BTCPay Support Lightning Network?
 
 Yes. BTCPay was the first payment processor to embrace and offer the second-layer Bitcoin solution. You can run either LND or c-lightning implementations of the Lightning Network.
