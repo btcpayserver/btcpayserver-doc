@@ -419,3 +419,24 @@ docker restart btcpayserver_lnd_bitcoin
 ```
 
 Because this will invalidate the previous macaroons, you need to manually reconnect with Zap with `Server Settings / Services / LND-gRPC`.
+
+## BTCPAY_SSHKEYFILE is not set when running the docker install, or unable to update through Server Settings / Maintenance
+
+`BTCPay Server` needs SSH access to itself so you can perform some tasks through the website like:
+
+* Updating the server
+* Changing the domain name of the server
+
+You can run the following command line to give access to BTCPay to your server via SSH.
+
+```bash 
+sudo su -
+cd $BTCPAY_BASE_DIRECTORY/btcpayserver-docker
+git checkout master
+# Setup SSH access via private key
+ssh-keygen -t rsa -f /root/.ssh/id_rsa_btcpay -q -P ""
+echo "# Key used by BTCPay Server" >> /root/.ssh/authorized_keys
+cat /root/.ssh/id_rsa_btcpay.pub >> /root/.ssh/authorized_keys
+BTCPAY_HOST_SSHKEYFILE=/root/.ssh/id_rsa_btcpay
+. ./btcpay-setup.sh -i
+```
