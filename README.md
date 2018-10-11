@@ -5,7 +5,7 @@
 BTCPayServer is an open-source, self-hosted payment processor for Bitcoin and other cryptocurrencies.
 
 If you have any issues with BTCPay, please file a [Github issue](https://github.com/btcpayserver/btcpayserver/issues).
-If you have more general questions, please come on [Slack](http://slack.btcpayserver.org/).
+If you have more general questions, please come on [Slack](http://slack.btcpayserver.org/) or check our [Wiki Page](https://nbitstack.com/c/btcpayserver) for common issues.
 
 This solution is for you if:
 
@@ -25,17 +25,20 @@ This solution is for you if:
 
 ### Deployment
 
-* [Azure deployment (simplest)](AzureDeployment.md)
+* [Web-Wizard deployment](https://medium.com/@BtcpayServer/launch-btcpay-server-via-web-interface-and-deploy-full-bitcoin-node-lnd-in-less-than-a-minute-dc8bc6f06a3) (easiest) - [Video](https://www.youtube.com/watch?v=NjslXYvp8bk)
+* [Azure deployment](AzureDeployment.md) - [Video](https://www.youtube.com/watch?v=Bxs95BdEMHY) 
 * [Docker deployment](DockerDeployment.md)
 * [Manual deployment (not recommended)](ManualDeployment.md)
 * [Third party hosting](ThirdPartyHosting.md)
-* [BTC-accepting Hosting Provider: How to deploy on LunaNode](https://medium.com/@BtcpayServer/hosting-btcpayserver-on-lunanode-bf9ef5fff75b)
+* [BTC-accepting Hosting Provider: How to deploy on LunaNode manually](https://medium.com/@BtcpayServer/hosting-btcpayserver-on-lunanode-bf9ef5fff75b)
 * ~~[BTC-accepting Hosting Provider: How to deploy on time4vps](https://medium.com/@BtcpayServer/hosting-btcpay-server-for-cheap-2b27761fdb9d)~~ (They do not officially support docker yet)
 
 ### Integrations
 
 * [Drupal](Drupal.md)
 * [WooCommerce](WooCommerce.md)
+* [Magneto](https://github.com/btcpayserver/magento-plugin)
+* [PrestaShop](https://github.com/btcpayserver/prestashop-plugin)
 * [Custom integration](CustomIntegration.md)
 
 ### Tips & tricks
