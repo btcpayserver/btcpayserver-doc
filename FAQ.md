@@ -424,6 +424,27 @@ BTCPAY_HOST_SSHKEYFILE=/root/.ssh/id_rsa_btcpay
 cd $BTCPAY_BASE_DIRECTORY/btcpayserver-docker
 . ./btcpay-setup.sh -i
 ```
+## BTCPAY_SSHKEYFILE is not set when running the docker install, or unable to update through Server Settings / Maintenance
+
+`BTCPay Server` needs SSH access to itself so you can perform some tasks through the website like:
+
+* Updating the server
+* Changing the domain name of the server
+
+You can run the following command line to give access to BTCPay to your server via SSH.
+
+```bash 
+sudo su -
+cd $BTCPAY_BASE_DIRECTORY/btcpayserver-docker
+git checkout master
+# Setup SSH access via private key
+ssh-keygen -t rsa -f /root/.ssh/id_rsa_btcpay -q -P ""
+echo "# Key used by BTCPay Server" >> /root/.ssh/authorized_keys
+cat /root/.ssh/id_rsa_btcpay.pub >> /root/.ssh/authorized_keys
+BTCPAY_HOST_SSHKEYFILE=/root/.ssh/id_rsa_btcpay
+. ./btcpay-setup.sh -i
+```
+
 ## Invalid Status Code:301 when pairing the store with BTCPay.
 
 Please make sure to enter the URL of the host you're trying to pair with correctly, including the HTTP(s) part. For example https://myhost.com
@@ -457,27 +478,6 @@ docker restart btcpayserver_lnd_bitcoin
 
 Because this will invalidate the previous macaroons, you need to manually reconnect with Zap with `Server Settings / Services / LND-gRPC`.
 
-## BTCPAY_SSHKEYFILE is not set when running the docker install, or unable to update through Server Settings / Maintenance
-
-`BTCPay Server` needs SSH access to itself so you can perform some tasks through the website like:
-
-* Updating the server
-* Changing the domain name of the server
-
-You can run the following command line to give access to BTCPay to your server via SSH.
-
-```bash 
-sudo su -
-cd $BTCPAY_BASE_DIRECTORY/btcpayserver-docker
-git checkout master
-# Setup SSH access via private key
-ssh-keygen -t rsa -f /root/.ssh/id_rsa_btcpay -q -P ""
-echo "# Key used by BTCPay Server" >> /root/.ssh/authorized_keys
-cat /root/.ssh/id_rsa_btcpay.pub >> /root/.ssh/authorized_keys
-BTCPAY_HOST_SSHKEYFILE=/root/.ssh/id_rsa_btcpay
-. ./btcpay-setup.sh -i
-```
-
 ## Additional Resources
 
 If you're unable to find a solution to your problem in the FAQ, here is where to search:
@@ -485,4 +485,3 @@ If you're unable to find a solution to your problem in the FAQ, here is where to
 * [BTCPay Wiki Page](https://nbitstack.com/c/btcpayserver) - Search for common questions and problems
 * [BTCPay Slack](http://slack.btcpayserver.org/) - ask general questions about BTCPay
 * [Ultimate Guide to BTCPay](https://www.reddit.com/r/Bitcoin/comments/8f1eqf/the_ultimate_guide_to_btcpay_the_free_and/) - merchant's guide
-
