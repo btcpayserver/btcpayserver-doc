@@ -158,6 +158,7 @@ The easiest way is to use the software, provide feedback and report any bugs or 
 ## How to update BTCPay Server?
 
 There are two ways:
+
 1. (via front-end)Server Settings > Maintenance > Update Button
 
 2. (via ssh)
@@ -175,23 +176,6 @@ More on updating BTCPay [here](https://nbitstack.com/t/how-to-update-my-btcpay-s
 ## Does BTCPay Support Lightning Network?
 
 Yes. BTCPay was the first payment processor to embrace and offer the second-layer Bitcoin solution. You can run either LND or c-lightning implementations of the Lightning Network.
-
-## How to update BTCPay Server?
-
-There are two ways:
-1. (via front-end)Server Settings > Maintenance > Update Button
-
-2. (via ssh)
-
-Log as root:
-
-```
-sudo su -
-```
-Then
-```
-btcpay-update.sh
-```
 
 ## What is a "network cost"?
 
