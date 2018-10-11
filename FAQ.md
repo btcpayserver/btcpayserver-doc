@@ -159,6 +159,23 @@ The easiest way is to use the software, provide feedback and report any bugs or 
 
 Yes. BTCPay was the first payment processor to embrace and offer the second-layer Bitcoin solution. You can run either LND or c-lightning implementations of the Lightning Network.
 
+## How to update BTCPay Server?
+
+There are two ways:
+1. (via front-end)Server Settings > Maintenance > Update Button
+
+2. (via ssh)
+
+Log as root:
+
+```
+sudo su -
+```
+Then
+```
+btcpay-update.sh
+```
+
 ## What is a "network cost"?
 
 Network cost is a feature in BTCPay which protects merchants from a customer who pays the invoice partially. When an invoice is paid from many outputs, the fee for a merchant to move those funds will be higher.
