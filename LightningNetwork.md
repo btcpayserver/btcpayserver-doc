@@ -47,13 +47,13 @@ Regardless of the implementation (c-lightning or LND) you've decided to use, the
 5. Enable. Submit.
 6. Test Connection.
 
-![LightningNetworkSettup1](img/LLightningNetworkNodeSetup1.jpg)
+![LightningNetworkSettup1](img/LightningNetworkNodeSetup1.jpg)
 
-![LightningNetworkSettup2](img/LLightningNetworkNodeSetup2.jpg)
+![LightningNetworkSettup2](img/LightningNetworkNodeSetup2.jpg)
 
-![LightningNetworkSettup3](img/LLightningNetworkNodeSetup3.jpg)
+![LightningNetworkSettup3](img/LightningNetworkNodeSetup3.jpg)
 
-![LightningNetworkSettup4](img/LLightningNetworkNodeSetup4.jpg)
+![LightningNetworkSettup4](img/LightningNetworkNodeSetup4.jpg)
 
 
 ## Getting Started with BTCPay and LND
