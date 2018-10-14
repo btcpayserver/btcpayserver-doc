@@ -37,7 +37,7 @@ This solution is for you if:
 
 * [Drupal](Drupal.md)
 * [WooCommerce](WooCommerce.md)
-* [Magneto](https://github.com/btcpayserver/magento-plugin)
+* [Magento](https://github.com/btcpayserver/magento-plugin)
 * [PrestaShop](https://github.com/btcpayserver/prestashop-plugin)
 * [Custom integration](CustomIntegration.md)
 
