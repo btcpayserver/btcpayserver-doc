@@ -47,6 +47,8 @@ Regardless of the implementation (c-lightning or LND) you've decided to use, the
 5. Enable. Submit.
 6. Test Connection.
 
+<strong> Your blockchain needs to be fully synced before you try to connect your Lightning Node, otherwise the connection will fail.</strong>
+
 ![LightningNetworkSettup1](img/LightningNetworkNodeSetup1.jpg)
 
 ![LightningNetworkSettup2](img/LightningNetworkNodeSetup2.jpg)
