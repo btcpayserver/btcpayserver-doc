@@ -2,7 +2,7 @@
 
 ## Dependencies
 
-* [.NET Core 2.0 SDK](https://microsoft.com/net/core/)
+* [.NET Core 2.1 SDK](https://microsoft.com/net/core/)
 * Docker
 * NBXplorer
 * PostgreSQL
@@ -10,7 +10,7 @@
 
 ## Which IDE?
 
-I recommend using Visual Studio Code (cross platform) or Visual Studio 2017 update 3 (Windows Only).  
+I recommend using Visual Studio Code (cross platform) or Visual Studio 2017 update 3 (Windows Only) or Rider( cross platform).  
 You can of course use VIM if you are hardcore, .NET Core 2.0 is command-line environment friendly.
 
 ## During development...
@@ -19,4 +19,4 @@ You need an instance of NBXplorer, Postgres, and Bitcoin Core running and config
 
 To simplify the development process we created a docker-compose file which setup everything for your dev environment, you can find all the information in [the README of the test project](https://github.com/btcpayserver/btcpayserver/blob/master/BTCPayServer.Tests/README.md).
 
-Both Visual Studio Code and Visual Studio 2017 will run the debug profile Docker-Regtest, which will run a BTCPayServer instance connecting to the services in your Docker service, so you can easily debug and step through the code.  
+Visual Studio Code, Visual Studio 2017 and Rider will run the debug profile Docker-Regtest, which will run a BTCPayServer instance connecting to the services in your Docker service, so you can easily debug and step through the code.  
