@@ -2,8 +2,6 @@
 
 ## BTCPay Basics
 
-* [What is BTCPay?](README.md)
-* [Use Cases](UseCases.md)
 * [Getting Started](GettingStarted.md)
 * [Try it Out](TryitOut.md)
 * [Lightning Network](LightningNetwork.md)
