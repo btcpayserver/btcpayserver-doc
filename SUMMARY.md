@@ -21,7 +21,7 @@
 ### Integrations
 
 * [WooCommerce](WooCommerce.md)
-    * [WooCommerce Xarde's Guide](Xadrez.md)
+    * [WooCommerce Xadrez's Guide](Xadrez.md)
 * [Drupal](Drupal.md)
 * [Custom Integration](CustomIntegration.md)
 
