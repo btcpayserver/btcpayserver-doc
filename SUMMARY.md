@@ -10,7 +10,7 @@
 
 * [Web Deployment](LunaNodeWebDeployment.md)
 * [Azure Deployment](AzureDeployment.md)
-    * [Reducing Cost on Azure](Pennypitching.md)
+    * [Reducing Cost on Azure](AzurePennyPinching.md)
     * [Changing Domain](ChangeDomain.md)
 * [Docker Deployment](DockerDeployment.md)
 * [Manual Deployment](ManualDeployment.md)
