@@ -3,7 +3,7 @@
 ## BTCPay Basics
 
 * [Getting Started](GettingStarted.md)
-* [Try it Out](TryitOut.md)
+* [Try it Out](TryItOut.md)
 * [Lightning Network](LightningNetwork.md)
     
 ## Deployment
