@@ -14,11 +14,11 @@ Benefits of using BTCPay as a merchant:
 
 ### Online Store
 
-If you're a merchant with an e-commerce business, you quickly can easily [deploy BTCPay](https://docs.btcpayserver.org/deployment) and connect it to your store via [integration plugins](https://docs.btcpayserver.org/integrations/) in just a few clicks. BTCPay checkout is no different to any other payment gateway. Your customer gets an invoice. They pay it by scanning a QR code or by copy-pasting the amount and the address. When their payment is confirmed, you will be notified via your e-commerce CMS; you can ship the item.
+If you're a merchant with an e-commerce business, you quickly can easily [deploy BTCPay](https://docs.btcpayserver.org/deployment) and connect it to your store via [integration plugins](https://docs.btcpayserver.org/integrations/) in just a few clicks. BTCPay checkout is no different to any other payment gateway. Your customer gets an invoice. They pay it by scanning a QR code or by copy-pasting the amount and the address. When their payment is confirmed, you will be notified via your e-commerce CMS; you can ship the item. Take a look at [our demo online store](https://store.demo.btcpayserver.org/).
 
 ### Physical Store
 
-For brick and mortar stores, BTCPay has a web-based Point of Sale (POS) App which can be customized. Similarly to the online store, the customer is presented with an invoice which needs to be paid. You can create a watch-only wallet on your phone to be notified of the payments through the POS, without the need of any additional software. There are plans on developing the POS mobile app which would make the process even smoother.
+For brick and mortar stores, BTCPay has a [web-based Point of Sale](https://mainnet.demo.btcpayserver.org/apps/87kj5yKay8mB4UUZcJhZH5TqDKMD3CznjwLjiu1oYZXe/pos) (POS) App which can be customized. Similarly to the online store, your customer is presented with an invoice which needs to be paid. You can create a watch-only wallet on your phone to be notified of the payments through the POS, without the need of any additional software. There are plans on developing the POS mobile app which would make the process even smoother.
 
 ## Charities and Content Creators (Donations)
 
@@ -42,13 +42,15 @@ Benefits of being a local payment processor:
 * Payments go directly to your customers' wallets
 * Easy registration
 
+Take a look at the list of [third-party hosts](ThirdPartyHosting.md).
+
 ## Cryptocurrency Exchanges
 
-The number of merchants using BTCPay is growing each day. That's why the exchanges can develop integration with BTCPay and allow instant conversion of cryptocurrency payment to local fiat currency for merchants. Immediate conversion helps with mitigating the volatility risk and can be a new revenue opportunity for the exchanges.
+The number of merchants using BTCPay is growing each day. That's why the exchanges can develop integration with BTCPay and allow instant conversion of cryptocurrency payment to local fiat currency for merchants. Immediate conversion helps with mitigating the volatility risk and can be a new revenue opportunity for the exchanges. BTCPay takes away the centralization from payment processors and gives the opportunity for any exchange, regardless of the size or the country to integrate.
 
 ## Hosting Providers
 
-Hosting providers can create easy 1-click BTCPay deployment solutions for their customers. With the growing interest in BTCPay, companies can make money by hosting BTCPay instances for merchants.
+Hosting providers can create easy 1-click BTCPay deployment solutions for their customers. With the growing interest in BTCPay, companies can make money by hosting easily-depoyable BTCPay instances for merchants.
 
 ## Lightning Network Users
 
