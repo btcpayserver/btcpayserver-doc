@@ -3,8 +3,8 @@
 ## BTCPay Basics
 
 * [Getting Started](GettingStarted.md)
+* [Use Case](UseCase.md)
 * [Try it Out](TryItOut.md)
-* [Lightning Network](LightningNetwork.md)
     
 ## Deployment
 
@@ -25,11 +25,12 @@
 
 ### Development
 
-- [BTCPay Architecture](Architecture.md)
-- [Developing Locally](LocalDevelopment.md)
-- [How to add an Altcoin](Altcoins.md)
+* [Architecture](Architecture.md)
+* [Developing Locally](LocalDevelopment.md)
+* [Lightning Network](LightningNetwork.md)
+* [How to add an Altcoin](Altcoins.md)
 
 ### Support and Community
 
-- [FAQ](FAQ.md)
-- [Community](Community.md)
+* [FAQ](FAQ.md)
+* [Community](Community.md)
