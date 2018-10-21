@@ -462,6 +462,17 @@ docker restart btcpayserver_lnd_bitcoin
 
 Because this will invalidate the previous macaroons, you need to manually reconnect with Zap with `Server Settings / Services / LND-gRPC`.
 
+## Get rid of the blank space above the pay button
+Are you on Wordpress? Wordpress text editor can be messing with the pay button code by adding `<br>`, which is "line break" in HTML, between the hidden lines of the form, thus adding invisible empty lines. 
+
+Hopefully, you can get read of that with a simple Wordpress plugin, [Don't muck my markup](https://wordpress.org/plugins/dont-muck-my-markup/). Install it like any plugin, activate it and then you should see this box on the right of the edit page of your posts :  
+
+![Dont-muck-markup](img/Dont-muck-markup.png)
+
+Just tick the case in the post you want to stick the pay button in and the problem should be solved.
+
+If the same problem occurs with other CMS please check that the text editor does not add `<br>` tag automatically in the HTML code of your post.
+
 ## Additional Resources
 
 If you're unable to find a solution to your problem in the FAQ, here is where to search:
