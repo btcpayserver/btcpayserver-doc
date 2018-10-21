@@ -59,6 +59,6 @@ BTCPay offers a very easy way to deploy a Lightning Network node. You can use an
 
 ## Developers
 
-BTCPay community is amiable and open-minded. Developers can not only learn a lot and get their name out by working on an open-source project, but also participate in the in completely transforming the payment processing.
+BTCPay community is amiable and open-minded. Developers can not only learn a lot and get their name out by working on an open-source project, but also participate in transforming the payment processing.
 
 These are some of the many ways in which you can use BTCPay. Unleash your creativity and feel free to build your own solutions that solve problems.
