@@ -61,3 +61,4 @@ This solution is for you if:
 * [Xadrez - Guide to run an open source based e-store that accepts Litecoin, Bitcoin and fiat](Xadrez.md)
 * [Third party hosted BTCPay servers - If you are looking for help with BTCPay Server](ThirdPartyHosting.md)
 * [BTCPay Server official youtube channel](https://www.youtube.com/channel/UCpG9WL6TJuoNfFVkaDMp9ug)
+* [BTCPay Server Manual Install](http://blog.sipsorcery.com/?p=1052)
