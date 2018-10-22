@@ -7,6 +7,6 @@ Are you interested in BTCPayServer, but not comfortable setting it up? Or maybe 
 * [btcpayjungle.com](https://btcpayjungle.com)
 * [btcpaynow.net](https://btcpaynow.net)
 * [lightninginabox.co](https://lightninginabox.co)
-* [nodl.it](httpd://nodl.it)
+* [nodl.it](https://nodl.it)
 
 Feel free to also chat with the [Community](Community.md) to find the appropriate one!
