@@ -1,4 +1,4 @@
-# BTCPay Server: Use Cases
+# BTCPay Server Use Cases
 
 Build with the community in mind, BTCPay's ambition is to deliver the best Bitcoin payment service for merchants and their customers, while creating opportunities for everyone to contribute and take parts in its development and growth.
 
