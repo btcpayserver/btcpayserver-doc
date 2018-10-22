@@ -29,3 +29,12 @@ Let's configure the store so it uses your electrum wallet:
 2. In the Information Menu, paste the `ExtPubKey` with the string you just copied from Electrum, validate.
 
 Then you can create an invoice, either by the process documented on the [Custom integration](CustomIntegration.md) page, through plugins or through the website on the `Invoice` menu.
+
+## BTCPay Demo
+
+To see BTCPay in action, visit our demo apps and stores or check out some of the stores using BTCPay in production.
+
+* [BTCPay Demo Store](https://store.demo.btcpayserver.org/)
+* [Point of Sale Demo](https://mainnet.demo.btcpayserver.org/apps/87kj5yKay8mB4UUZcJhZH5TqDKMD3CznjwLjiu1oYZXe/pos)
+* [Payment Button Demo](https://store.demo.btcpayserver.org/?page_id=44)
+* [In-production stores](https://bitcoinshirt.co/btcpay-stores/)
