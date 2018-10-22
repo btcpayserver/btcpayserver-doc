@@ -2,6 +2,8 @@
 
 Build with the community in mind, BTCPay's ambition is to deliver the best Bitcoin payment service for merchants and their customers, while creating opportunities for everyone to contribute and take parts in its development and growth.
 
+So let's see what you can do with BTCPay and why it is best for you!
+
 ## Merchants
 
 By choosing BTCPay to process payments, you are:
