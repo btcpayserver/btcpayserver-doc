@@ -42,4 +42,4 @@ If you have a custom build setup and are facing a complex problem, [open an issu
 
 ### 5.3 Premium Support
 
-Some community members provide a paid support. If you want a quicker help, check out the list of [members providing premium support](.
+Some community members provide a paid support. If you want a quicker help, check out the list of [members providing premium support](Support.md).
