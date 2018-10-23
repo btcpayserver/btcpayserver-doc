@@ -79,4 +79,4 @@ BTCPay community is amiable and open-minded. Developers can not only learn a lot
 
 ---
 
-These are some of the many ways in which you can use BTCPay. Unleash your creativity and feel free to build your own solutions that solve problems.
+These are some of the many ways in which you can use BTCPay. Unleash your creativity and feel free to build your own solutions to solve problems.
