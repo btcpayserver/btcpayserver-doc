@@ -16,7 +16,7 @@ By choosing BTCPay to process payments, you are:
 * Saving time (easy integration and installation)
 * Protecting yourself from interference in your business (self-sovereignty) 
 
-To enjoy most of these benefits, you don't even need to run a BTCPay server yourself, you could just create an account on someone else's server. It will be even easier to set up and entirely free, at the cost of relying on the server admin to keep it functional and up-to-date.  
+To enjoy most of these benefits, you don't even need to run a BTCPay server yourself, you could just create an account on someone else's server. It will be even easier to set up for free or a fee depending on the host's choice. Downside is that you will rely on the server admin to keep it functional and up-to-date.  
 
 With the growth of your business it will eventually become important to set-up your own server to be really independent.
 
