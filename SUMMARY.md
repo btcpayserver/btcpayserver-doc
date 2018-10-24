@@ -21,6 +21,8 @@
 * [WooCommerce](WooCommerce.md)
     * [WooCommerce Xadrez's Guide](Xadrez.md)
 * [Drupal](Drupal.md)
+* [Magento](Magento.md)
+* [PrestaShop](PrestaShop.md)
 * [Custom Integration](CustomIntegration.md)
 
 ### Development

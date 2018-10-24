@@ -46,7 +46,7 @@ Take a look at the list of [third-party hosts](ThirdPartyHosting.md).
 
 ## Cryptocurrency Exchanges
 
-The number of merchants using BTCPay is growing each day. That's why the exchanges can develop integration with BTCPay and allow instant conversion of cryptocurrency payment to local fiat currency for merchants. Immediate conversion helps with mitigating the volatility risk and can be a new revenue opportunity for the exchanges. BTCPay takes away the centralization from payment processors and gives the opportunity for any exchange, regardless of the size or the country to integrate.
+The number of merchants using BTCPay grows each day. That is why the exchanges can develop integration with BTCPay and allow instant conversion of cryptocurrency payments into local fiat currency for merchants. Immediate conversion helps with mitigating the volatility risk and can be a new revenue stream for the exchanges. BTCPay takes away the centralization from payment processors and gives the opportunity for any exchange, regardless of the size or the country to integrate.
 
 ## Hosting Providers
 
@@ -59,6 +59,6 @@ BTCPay offers a very easy way to deploy a Lightning Network node. You can use an
 
 ## Developers
 
-BTCPay community is amiable and open-minded. Developers can not only learn a lot and get their name out by working on an open-source project, but also participate in the in completely transforming the payment processing.
+BTCPay community is amiable and open-minded. Developers can not only learn a lot and get their name out by working on an open-source project, but also participate in transforming the payment processing.
 
 These are some of the many ways in which you can use BTCPay. Unleash your creativity and feel free to build your own solutions that solve problems.
