@@ -29,6 +29,7 @@ This solution is for you if:
 * [Azure deployment](AzureDeployment.md) - [Video](https://www.youtube.com/watch?v=Bxs95BdEMHY) 
 * [Docker deployment](DockerDeployment.md)
 * [Manual deployment (not recommended)](ManualDeployment.md)
+* [Google Cloud Deployment](GoogleCloudDeployment.md)
 * [Third party hosting](ThirdPartyHosting.md)
 * [BTC-accepting Hosting Provider: How to deploy on LunaNode manually](https://medium.com/@BtcpayServer/hosting-btcpayserver-on-lunanode-bf9ef5fff75b)
 * ~~[BTC-accepting Hosting Provider: How to deploy on time4vps](https://medium.com/@BtcpayServer/hosting-btcpay-server-for-cheap-2b27761fdb9d)~~ (They do not officially support docker yet)
