@@ -1,6 +1,6 @@
 # BTCPay Server Use Cases
   
-Build with the community in mind, BTCPay server is a feature-rich software with plenty of use-cases that can solve problems for different types of users. 
+Built with the community in mind, BTCPay server is a feature-rich software with plenty of use-cases that can solve problems for different types of users. 
 
 In this guide, we will show you some of the use-cases of BTCPay, but it is by no means limited to the groups of users we mentioned.
 
