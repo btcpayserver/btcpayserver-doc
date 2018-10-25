@@ -6,6 +6,53 @@ Facing a problem is never fun. This document explains the most common workflow a
 
 ## 3. Looking through the logs (optional)
 
+### 3.1 BTCPay Logs
+
+### 3.2 Bitcoin Core Logs
+
+### 3.3 Lightning Network Logs
+
+### 3.3.1 - Lightning Network LND - Docker
+
+There are a few ways to access your LND logs when using Docker.
+
+#### 3.3.1.1 LND Docker Logs via container ID
+
+`sudo su -`
+
+`docker ps`
+
+Find the LND container ID.
+
+`docker logs 'add your container ID here'`
+
+or use this
+
+`docker logs --tail 40 btcpayserver_lnd_bitcoin`
+
+#### 3.3.1.2 LND Docker Logs (more logs)
+
+If for any reason you need more logs
+
+`sudo su -`
+
+`cd /var/lib/docker/volumes/generated_lnd_bitcoin_datadir/_data/logs/bitcoin/mainnet/`
+
+inside that directory do `ls`
+
+You will see something like `lnd.log  lnd.log.13  lnd.log.15  lnd.log.16.gz  lnd.log.17.gz`
+
+To access uncompressed logs of those logs do `cat lnd.log` or if you want another one, use `cat lnd.log.15`
+
+To access compressed logs in .gzip  use `gzip -d lnd.log.16.gz` (in this case we're accessing lnd.log.16.gz)
+
+This should give you a new file, where you can do `cat lnd.log.16`
+
+In case the above does not work, you may need to use install gzip first `sudo apt-get install gzip`
+
+### 3.3.1 - Lightning Network c-lightning - Docker
+
+
 ## 4. Finding a solution yourself (FAQ, Wiki, GitHub issues)
 
 Even though the setups differ, the chances that someone else experienced the same issue as yours are pretty high.
