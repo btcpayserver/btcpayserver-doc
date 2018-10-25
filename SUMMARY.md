@@ -13,6 +13,7 @@
     * [Reducing Cost on Azure](AzurePennyPinching.md)
     * [Changing Domain](ChangeDomain.md)
 * [Docker Deployment](DockerDeployment.md)
+* [Google Cloud Deployment](GoogleCloudDeployment.md)
 * [Manual Deployment](ManualDeployment.md)
 * [Third-Party Hosting](ThirdPartyHosting.md)
 
