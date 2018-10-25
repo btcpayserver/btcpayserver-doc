@@ -462,16 +462,34 @@ docker restart btcpayserver_lnd_bitcoin
 
 Because this will invalidate the previous macaroons, you need to manually reconnect with Zap with `Server Settings / Services / LND-gRPC`.
 
-## Get rid of the blank space above the pay button
-Are you on Wordpress? Wordpress text editor can be messing with the pay button code by adding `<br>`, which is "line break" in HTML, between the hidden lines of the form, thus adding invisible empty lines. 
+## I do not see the funds in my software/hardware wallet
 
-Hopefully, you can get read of that with a simple Wordpress plugin, [Don't muck my markup](https://wordpress.org/plugins/dont-muck-my-markup/). Install it like any plugin, activate it and then you should see this box on the right of the edit page of your posts :  
+If your internal BTCPay wallet is showing the transactions and you do not see the funds in your desktop, mobile or hardware wallet, you need to **increase the gap limit** of your wallet. Do not worry, your funds are safe.
 
-![Dont-muck-markup](img/Dont-muck-markup.png)
+Most wallets, have a gap limit of 20. This means that after 20 consecutive unpaid invoices, wallet will stop fetching the transactions beyond that. The solution is to increase the gap limit. Not all wallets have this feature.
 
-Just tick the case in the post you want to stick the pay button in and the problem should be solved.
+For that reason, it's highly recommended that you use [Electrum wallet](https://electrum.org/). To set increase the gap limit in Electrum, [follow this video](https://www.youtube.com/watch?v=Fi3pYpzGmmo)
 
-If the same problem occurs with other CMS please check that the text editor does not add `<br>` tag automatically in the HTML code of your post.
+Enter following commands into the console
+
+```
+ wallet.change_gap_limit(100)
+ wallet.storage.write()  
+```
+Restart your Electrum and verify that the newly set gap limit is correct by entering:
+
+`wallet.gap_limit`
+
+There's no good answer to how much you should set the gap limit to. Most merchants set 100-200. If you're a big merchants with high transaction volume, you can try with even higher gap limit. 
+
+Be aware that :
+
+* Higher gap limit may slow down the performance of your wallet
+* Not all wallets support the incraesed gap limit. If you import Electrum recovery seed into another wallet, you may not see all the funds again.
+
+When an invoice is created in BTCPay, it does it for all coins you have setup. You may want to increase the gap limit for altcoins as well in their supported wallets.
+
+If you do not see your funds yet, you may have set up your derivation scheme incorrectly.
 
 ## Additional Resources
 
