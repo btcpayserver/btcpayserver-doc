@@ -4,6 +4,8 @@ In this article, we will walk you through the BTCPay user interface and show you
 
 After you created the account on the BTCPay Server instance hosted by yourself or a third-party, you'll see a variety of options in the navigation menu on top.
 
+![BTCPayNavigation](img/BTCPay-Navigation.jpg)
+
 * Server settings
 * Stores
 * Apps
