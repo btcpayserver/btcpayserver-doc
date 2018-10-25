@@ -42,7 +42,7 @@ Each store has access to different apps. Applications built on top of BTCPay ext
 
 ## Wallets
 
-Each store gets a wallet upon adding a derivation scheme. Internal BTCPay wallet shows all of your payments and should be used as a reference if some payments are not shown in your software or hardware wallet due to some wallets [not supporting larger gap limit(FAQ.md#i-do-not-see-the-funds-in-my-softwarehardware-wallet). In &gt; Wallets, you can see the total balance.
+Each store gets a wallet upon adding a derivation scheme. Internal BTCPay wallet shows all of your payments and should be used as a reference if some payments are not shown in your software or hardware wallet due to some wallets [not supporting larger gap limit](FAQ.md#i-do-not-see-the-funds-in-my-softwarehardware-wallet). In Wallets, you can see the total balance of your store.
 
 You can even send the funds out of the wallet and make payments if you have a supported hardware wallet (for example, Ledger Nano S) and use a Google Chrome as a browser.
 
