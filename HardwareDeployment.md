@@ -17,8 +17,8 @@ For the sake of speed, compatibility and ease of installation I recommend purcha
 I have successfully installed BTCPayServer on the following hardware.  It's small, quiet and fast enough to sync your node from block zero.  The total cost is approximatly $225 (including tax and delivery). It took roughly 24 hours to sync the Bitcoin blockchain. You could save a little bit of money by cutting your RAM and hard drive in half (please don't use a knife). 
  
 
-1. Gigabyte Brix GB-BXBT-1900
-2. Crucial 8GB DDR3L-1600 SODIMM
+1. ![alt text](https://i1.wp.com/lightninginabox.co/wp-content/uploads/2018/08/20150603180458_m.png?resize=300%2C254&ssl=1 "Gigabyte Brix GB-BXBT-1900")
+2. Crucial 8GB DDR3L-1600 SODIMMGigabyte Brix GB-BXBT-1900
 3. WD Blue 1TB Mobile Hard Disk Drive
 
 
