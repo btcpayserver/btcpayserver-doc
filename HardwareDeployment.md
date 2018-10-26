@@ -1,6 +1,6 @@
 # Hardware Deployment
 
-Andreas Antonopoulos tells us to "Not your keys, not your Bitcoin". I would like to add "Not your hardware, not your node" to the list of Bitcoin axioms. In order to be truly self-sovereign you should consider running your own node on your own hardware and internet connection. 
+Andreas Antonopoulos tells us "Not your keys, not your Bitcoin".  I would like to propose another axiom "Not your hardware, not your node". In order to be truly self-sovereign and trustless you should consider running your own node on your own hardware and internet connection. BTCPayServer is a great way to run Bitcoin & Lightning nodes because it also gives you merchant functionality. 
 To that end here are instructions to install and host your very own BTCPay Server. 
 
 The process is basically the following:
@@ -38,7 +38,7 @@ Other requirements are as follows:
 Assuming you purchased the hardware mentioned above, here are the build instructions.
 
 **Step 1** - Configure your domain name. 
-It can take several hours for DNS changes to propagate so you should do this step first.  Login to your domain registrar and point an A record from your domain to the external IP address of your internet connection.  I suggest that you use a subdomain (ie. btcpay.yourdomain.com).  
+It can take several hours for DNS changes to propagate so you should do this step first.  Login to your domain registrar and point an A record from your domain to the external IP address of your internet connection.  I suggest that you use a subdomain (ie. btcpay.yourdomain.com).  If you already have your own Ubuntu Server you can skip to Step 6. 
 
 **Step 2** - Assemble your BTCPayBox (BTCPB)
   - Remove back cover with screwdriver.
