@@ -60,10 +60,38 @@ In this case we will be using Etcher to flash our USB Thumb Drive with the Ubunt
 - Open a new terminal window and type the following command 'sudo apt update && install -y openssh-server fail2ban'
 
 **Step 9** - Install Uncomplicated Firewall (UFW) and allow only specific ports. UFW is a user-friendly front-end for managing iptables firewall rules and its main goal is to make managing iptables easier or as the name says uncomplicated. 
-- 'sudo apt install ufw'
-- 'sudo ufw allow 22'
-- 'sudo ufw allow 80'
-- 'sudo ufw allow 443'
-- 'sudo ufw allow 9735'
+- sudo apt install ufw
+- sudo ufw allow from 192.168.1.0/24 to any port 22 (This command allows SSH connections from your LAN only. Replace 192.168.1.0 with your own subnet).
+- sudo ufw allow 80, 443, 9735 (These ports need to be accessible from anywhere.  The default subnet is 'any' unless you specify one.)
+- sudo ufw status (Verify your configuration.)
+- sudo ufw enable (Enables your firewall.)
+
+**Step 10** - Install BTCPayServer.  Run the following commands.  Make sure you change the BTCPAY_HOST parameter to your own domain name. 
+# Login as root
+sudo su -
+
+# Create a folder for BTCPay
+mkdir BTCPayServer
+cd BTCPayServer
+
+# Clone this repository
+git clone https://github.com/btcpayserver/btcpayserver-docker
+cd btcpayserver-docker
+
+# Run btcpay-setup.sh with the right parameters
+export BTCPAY_HOST="btcpay.YourDomain.com"
+export NBITCOIN_NETWORK="mainnet"
+export BTCPAYGEN_CRYPTO1="btc"
+export BTCPAYGEN_CRYPTO2="ltc"
+export BTCPAYGEN_REVERSEPROXY="nginx"
+export BTCPAYGEN_LIGHTNING="clightning"
+. ./btcpay-setup.sh -i
+
+exit
+
+**Step 11**
+If you haven't cracked open a beer or two yet, now is the time to do do. 
+Go to https://btcpay.yourdomain.com and confirm that your nodes are syncing. 
+
 
 
