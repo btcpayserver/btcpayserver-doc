@@ -1,5 +1,8 @@
 # Hardware Deployment
 
+Andreas Antonopoulos tells us to remember "Not your keys, not your Bitcoin". I would like to add "Not your hardware, not your node" to the list of Bitcoin axioms. In order to be truly self-sovereign you should consider running your own node on your own hardware and internet connection. 
+To that end here are instructions to install and host your very own BTCPay Server. 
+
 The process is basically the following:
 
 1. Purchase and assemble hardware. 
@@ -9,9 +12,9 @@ The process is basically the following:
 
 While it may be possible to install BTCPayServer or parts of it's architecture on ARM based single board computers (ie. Raspberry Pi, 
 Odroid, OrangePi or NanoPC) the process may require additional skills and knowledge that are beyond the scope of this tutorial. 
-For the sake of speed, compatibility and ease of installation I recommend purchasing a small Intel/AMD based computer with a minimum of 4Gb RAM and a 500 Gb hard drive.  The Gigabyte Brix or Intel NUC lines of small computers are a good place to start. They are basically small, fanless boxes that are built using laptop components. 
+For the sake of speed, compatibility and ease of installation I recommend purchasing an Intel/AMD based computer with a minimum of 4Gb RAM and a 500 Gb hard drive.  The Gigabyte Brix or Intel NUC lines of small computers are a good place to start. They are basically small, fanless boxes that are built using laptop components. 
 
-I have successfully installed BTCPayServer on the following hardware.  It's small, quiet and fast enough to sync your node from the block zero.  The total cost is approximatly $225 (including tax and delivery) from Amazon. It only took about 24 hours to sync the Bitcon blockchain. You could save a little bit of money by cutting your RAM and hard drive in half (please don't use a knife). 
+I have successfully installed BTCPayServer on the following hardware.  It's small, quiet and fast enough to sync your node from block zero.  The total cost is approximatly $225 (including tax and delivery). It only took about 24 hours to sync the Bitcon blockchain. You could save a little bit of money by cutting your RAM and hard drive in half (please don't use a knife). 
  
 
 1. Gigabyte Brix GB-BXBT-1900
