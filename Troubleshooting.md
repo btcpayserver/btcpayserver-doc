@@ -112,7 +112,7 @@ If you're facing a technical problem with your Lightning Network implementation,
 
 #### 4.4.1 LND Support
 
-* LND GitHub(https://github.com/lightningnetwork/lnd/issues)
+* [LND GitHub](https://github.com/lightningnetwork/lnd/issues)
 * [Lightning Community on Slack](lightningcommunity.slack.com)
 * [#lightning-dev](https://webchat.freenode.net/?channels=lightning-dev&uio=d4) on IRC
 
