@@ -1,22 +1,24 @@
-Facing a problem is never fun. This document explains the most common workflow and steps you should take to easier identify the issue you're having.
+Facing a problem is never fun. This document explains the most common workflow and steps you should take to easier identify the issue you're having and hopefully solve it yourself or with community help.
 
-## 1. Identifing the problem
+Identifiying the problem is crutial.
 
-## 2. Replicating the issue
+## 1. Replicating the issue
 
-## 3. Looking through the logs (optional)
+## 2. Looking through the logs (optional)
 
-### 3.1 BTCPay Logs
+Logs can usually provide an essential piece of information. They are sort of an advanced step. In the next few paragraphs, we will describe how to get the log information for various parts of BTCPay.
 
-### 3.2 Bitcoin Core Logs
+### 2.1 BTCPay Logs
 
-### 3.3 Lightning Network Logs
+### 2.2 Bitcoin Core Logs
 
-### 3.3.1 - Lightning Network LND - Docker
+### 2.3 Lightning Network Logs
+
+### 2.3.1 - Lightning Network LND - Docker
 
 There are a few ways to access your LND logs when using Docker.
 
-#### 3.3.1.1 LND Docker Logs via container ID
+#### 2.3.1.1 LND Docker Logs via container ID
 
 `sudo su -`
 
@@ -29,8 +31,6 @@ Find the LND container ID.
 or use this
 
 `docker logs --tail 40 btcpayserver_lnd_bitcoin`
-
-#### 3.3.1.2 LND Docker Logs (more logs)
 
 If for any reason you need more logs
 
@@ -50,8 +50,19 @@ This should give you a new file, where you can do `cat lnd.log.16`
 
 In case the above does not work, you may need to use install gzip first `sudo apt-get install gzip`
 
-### 3.3.1 - Lightning Network c-lightning - Docker
+### 2.3.1 - Lightning Network c-lightning - Docker
 
+sudo su -
+
+docker ps
+
+Find the c-lightning container ID.
+
+docker logs 'add your container ID here'
+
+or use this
+
+docker logs --tail 40 btcpayserver_clightning_bitcoin
 
 ## 4. Finding a solution yourself (FAQ, Wiki, GitHub issues)
 
