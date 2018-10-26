@@ -18,8 +18,6 @@ Logs can usually provide an essential piece of information. They are sort of an 
 
 There are a few ways to access your LND logs when using Docker.
 
-#### 2.3.1.1 LND Docker Logs via container ID
-
 `sudo su -`
 
 `docker ps`
@@ -50,11 +48,11 @@ This should give you a new file, where you can do `cat lnd.log.16`
 
 In case the above does not work, you may need to use install gzip first `sudo apt-get install gzip`
 
-### 2.3.1 - Lightning Network c-lightning - Docker
+### 2.3.2 - Lightning Network c-lightning - Docker
 
-sudo su -
+`sudo su -`
 
-docker ps
+`docker ps`
 
 Find the c-lightning container ID.
 
@@ -62,7 +60,11 @@ docker logs 'add your container ID here'
 
 or use this
 
-docker logs --tail 40 btcpayserver_clightning_bitcoin
+`docker logs --tail 40 btcpayserver_clightning_bitcoin`
+
+You can also get log information with c-lightning cli command 
+
+`bitcoin-lightning-cli.sh getlog`
 
 ## 4. Finding a solution yourself (FAQ, Wiki, GitHub issues)
 
