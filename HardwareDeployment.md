@@ -79,13 +79,13 @@ git clone https://github.com/btcpayserver/btcpayserver-docker
 cd btcpayserver-docker
 
 Set your environment variables. Run each command separately. 
-export BTCPAY_HOST="btcpay.YourDomain.com"
-export NBITCOIN_NETWORK="mainnet"
-export BTCPAYGEN_CRYPTO1="btc"
-export BTCPAYGEN_CRYPTO2="ltc"
-export BTCPAYGEN_REVERSEPROXY="nginx"
-export BTCPAYGEN_LIGHTNING="clightning"
-. ./btcpay-setup.sh -i
+- export BTCPAY_HOST="btcpay.YourDomain.com"
+- export NBITCOIN_NETWORK="mainnet"
+- export BTCPAYGEN_CRYPTO1="btc"
+- export BTCPAYGEN_CRYPTO2="ltc"
+- export BTCPAYGEN_REVERSEPROXY="nginx"
+- export BTCPAYGEN_LIGHTNING="clightning"
+- . ./btcpay-setup.sh -i
 
 exit
 
