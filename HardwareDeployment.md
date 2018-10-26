@@ -1,6 +1,6 @@
 # Hardware Deployment
 
-Andreas Antonopoulos tells us "Not your keys, not your Bitcoin".  I would like to propose another axiom "Not your hardware, not your node". In order to be truly self-sovereign and trustless you should consider running your own node on your own hardware and internet connection. BTCPayServer is a great way to run Bitcoin & Lightning nodes because it also gives you merchant functionality. 
+Andreas Antonopoulos tells us "Not your keys, not your Bitcoin".  I would like to propose another Bitcoin axiom "Not your hardware, not your node". In order to be truly self-sovereign and trustless you should consider running your own node on your own hardware and internet connection. BTCPayServer is a great way to run Bitcoin & Lightning nodes because it also gives you merchant functionality. 
 To that end here are instructions to install and host your very own BTCPay Server. 
 
 The process is basically the following:
@@ -50,14 +50,20 @@ It can take several hours for DNS changes to propagate so you should do this ste
 **Step 4** - Download and install [Etcher](https://etcher.io/).  Etcher is software that is used to flash OS images to SD cards and USB Drives. 
 In this case we will be using Etcher to flash our USB Thumb Drive with the Ubuntu OS. 
 
-**Step 5** - Connect your USB keyboard, mouse, monitor and thumb drive.  Press the power button to boot your BIAB using the thumb drive.  The Ubuntu installation process is pretty simple and easy to follow.  Here's a tutorial from the Ubuntu website.  [Install Ubuntu Desktop](https://tutorials.ubuntu.com/tutorial/tutorial-install-ubuntu-desktop#0)
+**Step 5** - Connect your USB keyboard, mouse, monitor and thumb drive.  Press the power button to boot your BTCPB using the thumb drive.  The Ubuntu installation process is pretty simple and easy to follow.  Here's a tutorial from the Ubuntu website.  [Install Ubuntu Desktop](https://tutorials.ubuntu.com/tutorial/tutorial-install-ubuntu-desktop#0)
 
 **Step 6** - Give your BTCPB a static IP address on your local network. There are a few different ways to do this and you will find a ton of articles online. Here's a pretty simple one to follow [How to configure a static IP address on Ubuntu 18.04](https://linuxconfig.org/how-to-configure-static-ip-address-on-ubuntu-18-04-bionic-beaver-linux).  To avoid conflicts with others devices on your network you should also set a "reservation" on your router so BTCPB's IP address doesn't get handed out to your grandchild's tablet. 
 
 **Step 7** - Log into your router and forward ports 80, 443 and 9735 to your BTPCB's local IP address. Every router is different and you should be able to find instructions for your router by searching for Port Forward + your router make and model. 
 
-**Step 8** - Install OpenSSH Server
-- Open a new terminal window and type the following commands
-sudo apt update
-sudo apt install -y openssh-server
+**Step 8** - Install OpenSSH Server and Fail2ban.  OpenSSH server allows you to connect to your server using SSH clients (ie. [Putty](https://www.putty.org/) Fail2ban bans IP's that attempt to connect to your server and show malicious signs.
+- Open a new terminal window and type the following command 'sudo apt update && install -y openssh-server fail2ban'
+
+**Step 9** - Install Uncomplicated Firewall (UFW) and allow only specific ports. UFW is a user-friendly front-end for managing iptables firewall rules and its main goal is to make managing iptables easier or as the name says uncomplicated. 
+- 'sudo apt install ufw'
+- 'sudo ufw allow 22'
+- 'sudo ufw allow 80'
+- 'sudo ufw allow 443'
+- 'sudo ufw allow 9735'
+
 
