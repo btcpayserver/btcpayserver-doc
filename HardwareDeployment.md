@@ -9,17 +9,15 @@ The process is basically the following:
 
 While it may be possible to install BTCPayServer or parts of it's architecture on ARM based single board computers (ie. Raspberry Pi, 
 Odroid, OrangePi or NanoPC) the process may require additional skills and knowledge that are beyond the scope of this tutorial. 
-For the sake of speed, compatibility and ease of installation I recommend purchasing a small Intel/AMD based computer with a minimum of 4Gb RAM and a 500 Gb hard drive.  The Gigabyte Brix or Intel NUC line of small computers is a good place to start. They are basically small, fanless boxes that are based on laptop components. 
+For the sake of speed, compatibility and ease of installation I recommend purchasing a small Intel/AMD based computer with a minimum of 4Gb RAM and a 500 Gb hard drive.  The Gigabyte Brix or Intel NUC lines of small computers are a good place to start. They are basically small, fanless boxes that are built using laptop components. 
 
-I have successfully installed BTCPayServer on the following hardware.  It's small, quiet, fast enough and honestly pretty cool.   The total cost was approximatly $225 from Amazon.com but you could save a little bit by cutting the RAM and hard drive in half. 
-It only took about 24 hours to sync the Bitcoin blockchain. 
+I have successfully installed BTCPayServer on the following hardware.  It's small, quiet and fast enough to sync your node from the block zero.  The total cost is approximatly $225 (including tax and delivery) from Amazon. It only took about 24 hours to sync the Bitcon blockchain. You could save a little bit of money by cutting your RAM and hard drive in half (please don't use a knife). 
+ 
 
 1. Gigabyte Brix GB-BXBT-1900
 2. Crucial 8GB DDR3L-1600 SODIMM
 3. WD Blue 1TB Mobile Hard Disk Drive
 
-
-Assuming you purchased the hardware mentioned above, here are the build instructions. 
 
 Other requirements are as follows:
 
@@ -30,6 +28,9 @@ Other requirements are as follows:
 5. Tiny Screwdriver
 6. USB Thumb Drive
 7. USB Keyboard, Mouse and Monitor (for initial install only). Can be headless when completed.
+8. Beer, my favorite this time of the year is [Yuengling Oktoberfest](https://www.yuengling.com/our-beer/oktoberfest/). 
+
+Assuming you purchased the hardware mentioned above, here are the build instructions.
 
 Step 1 - Assemble your BTCPayBox (BTCPB)
   - Remove back cover with screwdriver.
