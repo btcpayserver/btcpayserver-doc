@@ -2,8 +2,9 @@
 
 ## BTCPay Basics
 
-* [Getting Started](GettingStarted.md)
 * [Use Case](UseCase.md)
+* [Walkthrough](Walkthrough.md)
+* [Getting Started](GettingStarted.md)
 * [Try it Out](TryItOut.md)
     
 ## Deployment
