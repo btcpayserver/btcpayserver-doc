@@ -43,9 +43,9 @@ Step 3 - Download and install [Etcher](https://etcher.io/).  Etcher is software 
 In this case we will be using Etcher to flash our USB Thumb Drive with the Ubuntu OS. 
 
 Step 4 - Connect your USB keyboard, mouse, monitor and thumb drive.  Press the power button to boot your BIAB using the thumb drive.  
-The Ubuntu installation process is pretty simple and easy to follow.  Here's a tutorial from the Ubuntu website.  (Install Ubuntu Desktop](https://tutorials.ubuntu.com/tutorial/tutorial-install-ubuntu-desktop#0)
+The Ubuntu installation process is pretty simple and easy to follow.  Here's a tutorial from the Ubuntu website.  [Install Ubuntu Desktop](https://tutorials.ubuntu.com/tutorial/tutorial-install-ubuntu-desktop#0)
 
-Step 5 - Give your BTCPB a static IP address on your local network. There are a few different ways to do this and you will find a ton of articles online. Here's a pretty simple one to follow [How to configure a static IP address on Ubuntu 18.08](https://linuxconfig.org/how-to-configure-static-ip-address-on-ubuntu-18-04-bionic-beaver-linux).  To avoid conflicts with others devices on your network you should also set a "reservation" on your router so BTCPB's IP address doesn't get handed out to another devices on your network. 
+Step 5 - Give your BTCPB a static IP address on your local network. There are a few different ways to do this and you will find a ton of articles online. Here's a pretty simple one to follow [How to configure a static IP address on Ubuntu 18.04](https://linuxconfig.org/how-to-configure-static-ip-address-on-ubuntu-18-04-bionic-beaver-linux).  To avoid conflicts with others devices on your network you should also set a "reservation" on your router so BTCPB's IP address doesn't get handed out to another devices on your network. 
 
 Step 6 - Log into your router and forward ports 80, 443 and 9735 to your BTPCB's local IP address. Every router is different and you should be able to find instructions for your router by searching for Port Forward + your router make and model. 
 
