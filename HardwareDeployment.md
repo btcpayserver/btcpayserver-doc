@@ -57,7 +57,8 @@ In this case we will be using Etcher to flash our USB Thumb Drive with the Ubunt
 **Step 7** - Log into your router and forward ports 80, 443 and 9735 to your BTPCB's local IP address. Every router is different and you should be able to find instructions for your router by searching for Port Forward + your router make and model. 
 
 **Step 8** - Install OpenSSH Server, Fail2ban and GIT.  OpenSSH server allows you to connect to your server using SSH clients (ie. [Putty](https://www.putty.org/) Fail2ban bans IP's that attempt to connect to your server and show malicious signs.  GIT allows you to clone and manage repositories on github.com. 
-- Open a new terminal window and type the following command 'sudo apt update && install -y openssh-server fail2ban git'
+Open a new terminal window and type the following command 
+- sudo apt update && install -y openssh-server fail2ban git
 
 **Step 9** - Install Uncomplicated Firewall (UFW) and allow only specific ports. UFW is a user-friendly front-end for managing iptables firewall rules and its main goal is to make managing iptables easier or as the name says uncomplicated. 
 - sudo apt install ufw
