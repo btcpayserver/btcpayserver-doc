@@ -67,18 +67,18 @@ In this case we will be using Etcher to flash our USB Thumb Drive with the Ubunt
 - sudo ufw enable (Enables your firewall.)
 
 **Step 10** - Install BTCPayServer.  Run the following commands.  Make sure you change the BTCPAY_HOST parameter to your own domain name. 
-# Login as root
+Login as root
 sudo su -
 
-# Create a folder for BTCPay
+Create a folder for BTCPay
 mkdir BTCPayServer
 cd BTCPayServer
 
-# Clone this repository
+Clone the btcpayserver-docker repository
 git clone https://github.com/btcpayserver/btcpayserver-docker
 cd btcpayserver-docker
 
-# Run btcpay-setup.sh with the right parameters
+Set your environment variables. Run each command separately. 
 export BTCPAY_HOST="btcpay.YourDomain.com"
 export NBITCOIN_NETWORK="mainnet"
 export BTCPAYGEN_CRYPTO1="btc"
