@@ -18,11 +18,11 @@ I have successfully installed BTCPayServer on the following hardware.  It's smal
  
 
 1.Gigabyte Brix GB-BXBT-1900 
-![alt text](https://i1.wp.com/lightninginabox.co/wp-content/uploads/2018/08/20150603180458_m.png?resize=300%2C254&ssl=1 "Gigabyte Brix GB-BXBT-1900")
+![alt text](https://i1.wp.com/lightninginabox.co/wp-content/uploads/2018/08/20150603180458_m.png?resize=300%2C254&ssl=1 "Gigabyte Brix GB-BXBT-1900")\
 2. Crucial 8GB DDR3L-1600 SODIMM
-![alt text](https://i0.wp.com/lightninginabox.co/wp-content/uploads/2018/08/204-pinsodimmddr3.png?resize=300%2C133&ssl=1 "Crucial 8GB DDR3L-1600 SODIMM")
+![alt text](https://i0.wp.com/lightninginabox.co/wp-content/uploads/2018/08/204-pinsodimmddr3.png?resize=300%2C133&ssl=1 "Crucial 8GB DDR3L-1600 SODIMM")\
 3. WD Blue 1TB Mobile Hard Disk Drive
-![alt text](https://i1.wp.com/lightninginabox.co/wp-content/uploads/2018/08/81qCyd2gDL._SL1500_.jpg?resize=300%2C300&ssl=1 "WD Blue 1TB Mobile Hard Disk Drive")
+![alt text](https://i1.wp.com/lightninginabox.co/wp-content/uploads/2018/08/81qCyd2gDL._SL1500_.jpg?resize=300%2C300&ssl=1 "WD Blue 1TB Mobile Hard Disk Drive")\
 
 
 Other requirements are as follows:
