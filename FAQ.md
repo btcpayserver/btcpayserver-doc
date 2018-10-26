@@ -473,6 +473,35 @@ Just tick the case in the post you want to stick the pay button in and the probl
 
 If the same problem occurs with other CMS please check that the text editor does not add `<br>` tag automatically in the HTML code of your post.
 
+## I do not see the funds in my software/hardware wallet
+
+If your internal BTCPay wallet is showing the transactions and you do not see the funds in your desktop, mobile or hardware wallet, you need to **increase the gap limit** of your wallet. Do not worry, your funds are safe.
+
+Most wallets, have a gap limit of 20. This means that after 20 consecutive unpaid invoices, wallet will stop fetching the transactions beyond that. The solution is to increase the gap limit. Not all wallets have this feature.
+
+For that reason, it's highly recommended that you use [Electrum wallet](https://electrum.org/). To set increase the gap limit in Electrum, [follow this video](https://www.youtube.com/watch?v=Fi3pYpzGmmo)
+
+Enter following commands into the console
+
+```
+ wallet.change_gap_limit(100)
+ wallet.storage.write()  
+```
+Restart your Electrum and verify that the newly set gap limit is correct by entering:
+
+`wallet.gap_limit`
+
+There's no good answer to how much you should set the gap limit to. Most merchants set 100-200. If you're a big merchants with high transaction volume, you can try with even higher gap limit. 
+
+Be aware that :
+
+* Higher gap limit may slow down the performance of your wallet
+* Not all wallets support the incraesed gap limit. If you import Electrum recovery seed into another wallet, you may not see all the funds again.
+
+When an invoice is created in BTCPay, it does it for all coins you have setup. You may want to increase the gap limit for altcoins as well in their supported wallets.
+
+If you do not see your funds yet, you may have set up your derivation scheme incorrectly.
+
 ## Additional Resources
 
 If you're unable to find a solution to your problem in the FAQ, here is where to search:
