@@ -91,8 +91,9 @@ Set your environment variables. Run each command separately.
 exit
 
 **Step 11**
-If you haven't cracked open a beer or two yet, now is the time to do do. 
+If you haven't cracked open a beer or two yet, now is the time to do so. 
 Go to https://btcpay.yourdomain.com and confirm that your nodes are syncing. 
+Enjoy!
 
 
 
