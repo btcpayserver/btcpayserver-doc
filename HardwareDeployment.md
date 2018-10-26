@@ -35,26 +35,26 @@ Other requirements are as follows:
 
 Assuming you purchased the hardware mentioned above, here are the build instructions.
 
-**'Step 1'** - Configure your domain name. 
+**Step 1** - Configure your domain name. 
 It can take several hours for DNS changes to propagate so you should do this step first.  Login to your domain registrar and point an A record from your domain to the external IP address of your internet connection.  I suggest that you use a subdomain (ie. btcpay.yourdomain.com).  
 
-**'Step 2'** - Assemble your BTCPayBox (BTCPB)
+**Step 2** - Assemble your BTCPayBox (BTCPB)
   - Remove back cover with screwdriver.
   - Insert RAM
   - Install hard drive included cage. 
 
-**'Step 3'** - Download [Ubuntu 18.04 Desktop Image](http://releases.ubuntu.com/18.04/ubuntu-18.04.1-desktop-amd64.iso)
+**Step 3** - Download [Ubuntu 18.04 Desktop Image](http://releases.ubuntu.com/18.04/ubuntu-18.04.1-desktop-amd64.iso)
 
-**'Step 4'** - Download and install [Etcher](https://etcher.io/).  Etcher is software that is used to flash OS images to SD cards and USB Drives. 
+**Step 4** - Download and install [Etcher](https://etcher.io/).  Etcher is software that is used to flash OS images to SD cards and USB Drives. 
 In this case we will be using Etcher to flash our USB Thumb Drive with the Ubuntu OS. 
 
-**'Step 5'** - Connect your USB keyboard, mouse, monitor and thumb drive.  Press the power button to boot your BIAB using the thumb drive.  The Ubuntu installation process is pretty simple and easy to follow.  Here's a tutorial from the Ubuntu website.  [Install Ubuntu Desktop](https://tutorials.ubuntu.com/tutorial/tutorial-install-ubuntu-desktop#0)
+**Step 5** - Connect your USB keyboard, mouse, monitor and thumb drive.  Press the power button to boot your BIAB using the thumb drive.  The Ubuntu installation process is pretty simple and easy to follow.  Here's a tutorial from the Ubuntu website.  [Install Ubuntu Desktop](https://tutorials.ubuntu.com/tutorial/tutorial-install-ubuntu-desktop#0)
 
-**'Step 6'** - Give your BTCPB a static IP address on your local network. There are a few different ways to do this and you will find a ton of articles online. Here's a pretty simple one to follow [How to configure a static IP address on Ubuntu 18.04](https://linuxconfig.org/how-to-configure-static-ip-address-on-ubuntu-18-04-bionic-beaver-linux).  To avoid conflicts with others devices on your network you should also set a "reservation" on your router so BTCPB's IP address doesn't get handed out to your grandchild's tablet. 
+**Step 6** - Give your BTCPB a static IP address on your local network. There are a few different ways to do this and you will find a ton of articles online. Here's a pretty simple one to follow [How to configure a static IP address on Ubuntu 18.04](https://linuxconfig.org/how-to-configure-static-ip-address-on-ubuntu-18-04-bionic-beaver-linux).  To avoid conflicts with others devices on your network you should also set a "reservation" on your router so BTCPB's IP address doesn't get handed out to your grandchild's tablet. 
 
 **Step 7** - Log into your router and forward ports 80, 443 and 9735 to your BTPCB's local IP address. Every router is different and you should be able to find instructions for your router by searching for Port Forward + your router make and model. 
 
-**'Step 8'** - Install OpenSSH Server
+**Step 8** - Install OpenSSH Server
 - Open a new terminal window and type the following commands
 sudo apt update
 sudo apt install -y openssh-server
