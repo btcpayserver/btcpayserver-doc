@@ -15,7 +15,7 @@ While it may be possible to install BTCPayServer or parts of it's architecture o
 Odroid, OrangePi or NanoPC) the process may require additional skills and knowledge that are beyond the scope of this tutorial. 
 For the sake of speed, compatibility and ease of installation it is recommended that you use an Intel/AMD based computer with a minimum of 4Gb RAM and a 500 Gb hard drive.  The Gigabyte Brix or Intel NUC lines of compact computers are a good place to start. They are basically small, fanless boxes built using laptop components. 
 
-BTCPayServer can be  successfully installed on the following hardware.  The end result is a small, quiet node that is fast enough to sync block zero.  The total cost is approximatly $225 (including tax and delivery). It will take roughly 24 hours to sync the Bitcoin blockchain. You can save little money by cutting the RAM and hard drive size in half. 
+BTCPayServer can be successfully installed on the following hardware.  The end result is a small, quiet node that is fast enough to sync from block zero.  The total cost is approximatly $225 (including tax and delivery).  These are "off the shelf" components that can be purchased from any online retailer (TigerDirect, NewEgg, Amazon, BestBuy etc).   It will take roughly 24 hours to sync the Bitcoin blockchain. You can save little money by cutting the RAM and hard drive size in half. 
  
 1. Gigabyte Brix GB-BXBT-1900
 ![alt text](https://i1.wp.com/lightninginabox.co/wp-content/uploads/2018/08/20150603180458_m.png?resize=300%2C254&ssl=1 "Gigabyte Brix GB-BXBT-1900")
