@@ -53,7 +53,7 @@ In this case we will be using Etcher to flash our USB Thumb Drive with the Ubunt
 
 **Step 5** - Connect your USB keyboard, mouse, monitor and thumb drive.  Press the power button to boot your BTCPB using the thumb drive.  The Ubuntu installation process is pretty simple and easy to follow.  Here's a tutorial from the Ubuntu website.  [Install Ubuntu Desktop](https://tutorials.ubuntu.com/tutorial/tutorial-install-ubuntu-desktop#0)
 
-**Step 6** - Give your BTCPB a static IP address on your local network. There are a few different ways to do this and you will find a ton of articles online. Here's a pretty simple one to follow [How to configure a static IP address on Ubuntu 18.04](https://linuxconfig.org/how-to-configure-static-ip-address-on-ubuntu-18-04-bionic-beaver-linux).  To avoid conflicts with others devices on your network you should also set a "reservation" on your router so BTCPB's IP address doesn't get handed out to your grandchild's tablet. 
+**Step 6** - Give your BTCPB a static IP address on your local network. There are a few different ways to do this and you will find a ton of articles online. Here's a pretty simple one to follow [How to configure a static IP address on Ubuntu 18.04](https://linuxconfig.org/how-to-configure-static-ip-address-on-ubuntu-18-04-bionic-beaver-linux).  To avoid conflicts with others devices on your network you should also set a "reservation" on your router so BTCPB's IP address doesn't get given out to another device on your network. 
 
 **Step 7** - Log into your router and forward ports 80, 443 and 9735 to your BTPCB's local IP address. Every router is different and you should be able to find instructions for your router by searching for Port Forward + your router make and model. 
 
@@ -62,11 +62,20 @@ Open a new terminal window and type the following command
 - sudo apt update && install -y openssh-server fail2ban git
 
 **Step 9** - Install Uncomplicated Firewall (UFW) and allow only specific ports. UFW is a user-friendly front-end for managing iptables firewall rules and its main goal is to make managing iptables easier or as the name says uncomplicated. 
+Install UFW
 - sudo apt install ufw
-- sudo ufw allow from 192.168.1.0/24 to any port 22 (This command allows SSH connections from your LAN only. Replace 192.168.1.0 with your own subnet).
-- sudo ufw allow 80, 443, 9735 (These ports need to be accessible from anywhere.  The default subnet is 'any' unless you specify one.)
-- sudo ufw status (Verify your configuration.)
-- sudo ufw enable (Enables your firewall.)
+
+This command allows SSH connections from your LAN only. Replace 192.168.1.0 with your own subnet.
+- sudo ufw allow from 192.168.1.0/24 to any port 22 
+
+These ports need to be accessible from anywhere.  The default subnet is 'any' unless you specify one.
+- sudo ufw allow 80, 443, 9735
+
+Verify your configuration.
+- sudo ufw status
+
+Enable your firewall.
+- sudo ufw enable 
 
 Reboot your BTCB and disconnect the keyboard, mouse and monitor. You should now be able to your BTCB from another computer on your LAN via SSH.  
 
