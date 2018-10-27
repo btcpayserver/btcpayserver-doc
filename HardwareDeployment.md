@@ -1,6 +1,6 @@
 # Hardware Deployment
 
-Andreas Antonopoulos tells us "Not your keys, not your Bitcoin".  I would like to propose another Bitcoin axiom "Not your hardware, not your node". In order to be truly self-sovereign and trustless you should consider running your node(s) on your own hardware and internet connection. BTCPayServer is an excellent way to run Bitcoin & Lightning nodes because you also get merchant capabilities. 
+Andreas Antonopoulos tells us "Not your keys, not your Bitcoin".  Here's another Bitcoin axiom "Not your hardware, not your node". In order to be truly self-sovereign and trustless you should consider running your node(s) on your own hardware and internet connection. BTCPayServer is an excellent way to run Bitcoin & Lightning nodes because not only do your nodes help validate the network your also get merchant capabilities. 
 To that end here are instructions to install and host your very own BTCPay Server. 
 
 The process is basically the following:
@@ -8,13 +8,12 @@ The process is basically the following:
 1. Purchase and assemble hardware. 
 2. Install base Operating System and configure networking.
 3. Install BTCPayServer-Docker.
-4. Kick back and drink a beer. 
 
 While it may be possible to install BTCPayServer or parts of it's architecture on ARM based single board computers (ie. Raspberry Pi, 
 Odroid, OrangePi or NanoPC) the process may require additional skills and knowledge that are beyond the scope of this tutorial. 
-For the sake of speed, compatibility and ease of installation I recommend purchasing an Intel/AMD based computer with a minimum of 4Gb RAM and a 500 Gb hard drive.  The Gigabyte Brix or Intel NUC lines of compact computers are a good place to start. They are basically small, fanless boxes built using laptop components. 
+For the sake of speed, compatibility and ease of installation it is recommended that you use an Intel/AMD based computer with a minimum of 4Gb RAM and a 500 Gb hard drive.  The Gigabyte Brix or Intel NUC lines of compact computers are a good place to start. They are basically small, fanless boxes built using laptop components. 
 
-I have successfully installed BTCPayServer on the following hardware.  It's small, quiet and fast enough to sync your node from block zero.  The total cost is approximatly $225 (including tax and delivery). It took roughly 24 hours to sync the Bitcoin blockchain. You could save a little bit of money by cutting your RAM and hard drive in half (please don't use a knife). 
+BTCPayServer can be  successfully installed on the following hardware.  The end result is a small, quiet node that is fast enough to sync block zero.  The total cost is approximatly $225 (including tax and delivery). It will take roughly 24 hours to sync the Bitcoin blockchain. You can save little money by cutting the RAM and hard drive size in half. 
  
 1. Gigabyte Brix GB-BXBT-1900
 ![alt text](https://i1.wp.com/lightninginabox.co/wp-content/uploads/2018/08/20150603180458_m.png?resize=300%2C254&ssl=1 "Gigabyte Brix GB-BXBT-1900")
@@ -33,7 +32,7 @@ Other requirements are as follows:
 5. Tiny Screwdriver
 6. USB Thumb Drive
 7. USB Keyboard, Mouse and Monitor (for initial install only). Can be headless when completed.
-8. Beer, my favorite this time of the year is [Yuengling Oktoberfest](https://www.yuengling.com/our-beer/oktoberfest/). 
+8. Four Port USB Hub  
 
 Assuming you purchased the hardware mentioned above, here are the build instructions.
 
@@ -43,7 +42,7 @@ It can take several hours for DNS changes to propagate so you should do this ste
 **Step 2** - Assemble your BTCPayBox (BTCPB)
   - Remove back cover with screwdriver.
   - Insert RAM
-  - Install hard drive included cage. 
+  - Install hard drive using included cage. 
 
 **Step 3** - Download [Ubuntu 18.04 Desktop Image](http://releases.ubuntu.com/18.04/ubuntu-18.04.1-desktop-amd64.iso)
 
@@ -56,7 +55,7 @@ In this case we will be using Etcher to flash our USB Thumb Drive with the Ubunt
 
 **Step 7** - Log into your router and forward ports 80, 443 and 9735 to your BTPCB's local IP address. Every router is different and you should be able to find instructions for your router by searching for Port Forward + your router make and model. 
 
-**Step 8** - Install OpenSSH Server, Fail2ban and GIT.  OpenSSH server allows you to connect to your server using SSH clients (ie. [Putty](https://www.putty.org/) Fail2ban bans IP's that attempt to connect to your server and show malicious signs.  GIT allows you to clone and manage repositories on github.com. 
+**Step 8** - Install OpenSSH Server, Fail2ban and GIT.  OpenSSH server allows you to connect to your server using SSH clients (ie. [Putty](https://www.putty.org/)) Fail2ban bans IP's that attempt to connect to your server and show malicious signs.  GIT allows you to clone and manage repositories on github.com. 
 Open a new terminal window and type the following command 
 - sudo apt update && install -y openssh-server fail2ban git
 
@@ -67,8 +66,11 @@ Open a new terminal window and type the following command
 - sudo ufw status (Verify your configuration.)
 - sudo ufw enable (Enables your firewall.)
 
-**Step 10** - Install BTCPayServer.  Run the following commands.  Make sure you change the BTCPAY_HOST parameter to your own domain name. 
+Reboot your BTCB and disconnect the keyboard, mouse and monitor. You should now be able to your BTCB from another computer on your LAN via SSH.  
 
+**Step 10** - Install BTCPayServer.  
+
+Run the following commands.  Make sure you change the BTCPAY_HOST parameter to your own domain name. 
 Login as root
 - sudo su -
 
@@ -87,14 +89,12 @@ Set your environment variables. Run each command separately.
 - export BTCPAYGEN_CRYPTO2="ltc"
 - export BTCPAYGEN_REVERSEPROXY="nginx"
 - export BTCPAYGEN_LIGHTNING="clightning"
+
+The last step is to launch the BTCPayServer setup script. 
 - . ./btcpay-setup.sh -i
 
 exit
 
-**Step 11**
-If you haven't cracked open a beer or two yet, now is the time to do so. 
+**Step 11** 
 Go to https://btcpay.yourdomain.com and confirm that your nodes are syncing. 
 Enjoy!
-
-
-
