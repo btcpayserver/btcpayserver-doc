@@ -16,7 +16,9 @@
 * [Docker Deployment](DockerDeployment.md)
 * [Google Cloud Deployment](GoogleCloudDeployment.md)
 * [Manual Deployment](ManualDeployment.md)
+* [Hardware Deployment](HardwareDeployment.md)
 * [Third-Party Hosting](ThirdPartyHosting.md)
+
 
 ### Integrations
 
