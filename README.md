@@ -20,6 +20,9 @@ This solution is for you if:
 
 ### Getting started
 
+* [Use Case](UseCase.md)
+* [Walkthrough](Walkthrough.md)
+* [Getting Started](GettingStarted.md)
 * [Try it on our test servers](TryItOut.md)
 * [Architecture](Architecture.md)
 
@@ -30,6 +33,7 @@ This solution is for you if:
 * [Docker deployment](DockerDeployment.md)
 * [Google Cloud Deployment](GoogleCloudDeployment.md)
 * [Manual deployment (not recommended)](ManualDeployment.md)
+* [Hardware Deployment](HardwareDeployment.md)
 * [Third party hosting](ThirdPartyHosting.md)
 * [BTC-accepting Hosting Provider: How to deploy on LunaNode manually](https://medium.com/@BtcpayServer/hosting-btcpayserver-on-lunanode-bf9ef5fff75b)
 * ~~[BTC-accepting Hosting Provider: How to deploy on time4vps](https://medium.com/@BtcpayServer/hosting-btcpay-server-for-cheap-2b27761fdb9d)~~ (They do not officially support docker yet)
