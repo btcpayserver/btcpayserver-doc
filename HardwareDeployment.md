@@ -18,11 +18,11 @@ For the sake of speed, compatibility and ease of installation it is recommended 
 BTCPayServer can be successfully installed on the following hardware.  The end result is a small, quiet node that is fast enough to sync from block zero.  The total cost is approximatly $225 (including tax and delivery).  These are "off the shelf" components that can be purchased from any online retailer (TigerDirect, NewEgg, Amazon, BestBuy etc).   It will take roughly 24 hours to sync the Bitcoin blockchain. You can save little money by cutting the RAM and hard drive size in half. 
  
 1. Gigabyte Brix GB-BXBT-1900
-![alt text](https://i1.wp.com/lightninginabox.co/wp-content/uploads/2018/08/20150603180458_m.png?resize=300%2C254&ssl=1 "Gigabyte Brix GB-BXBT-1900")
+![Gigabyte Brix GB-BXBT-1900](https://i1.wp.com/lightninginabox.co/wp-content/uploads/2018/08/20150603180458_m.png?resize=300%2C254&ssl=1 "Gigabyte Brix GB-BXBT-1900")
 2. Crucial 8GB DDR3L-1600 SODIMM
-![alt text](https://i0.wp.com/lightninginabox.co/wp-content/uploads/2018/08/204-pinsodimmddr3.png?resize=300%2C133&ssl=1 "Crucial 8GB DDR3L-1600 SODIMM")
+![Crucial 8GB DDR3L-1600](https://i0.wp.com/lightninginabox.co/wp-content/uploads/2018/08/204-pinsodimmddr3.png?resize=300%2C133&ssl=1 "Crucial 8GB DDR3L-1600 SODIMM")
 3. WD Blue 1TB Mobile Hard Disk Drive
-![alt text](https://i1.wp.com/lightninginabox.co/wp-content/uploads/2018/08/81qCyd2gDL._SL1500_.jpg?resize=300%2C300&ssl=1 "WD Blue 1TB Mobile Hard Disk Drive")
+![WD Blue 1 TB HDD](https://i1.wp.com/lightninginabox.co/wp-content/uploads/2018/08/81qCyd2gDL._SL1500_.jpg?resize=300%2C300&ssl=1 "WD Blue 1TB Mobile Hard Disk Drive")
 
 
 Other requirements are as follows:
@@ -53,7 +53,7 @@ In this case we will be using Etcher to flash our USB Thumb Drive with the Ubunt
 
 **Step 5** - Connect your USB keyboard, mouse, monitor and thumb drive.  Press the power button to boot your BTCPB using the thumb drive.  The Ubuntu installation process is pretty simple and easy to follow.  Here's a tutorial from the Ubuntu website.  [Install Ubuntu Desktop](https://tutorials.ubuntu.com/tutorial/tutorial-install-ubuntu-desktop#0)
 
-**Step 6** - Give your BTCPB a static IP address on your local network. There are a few different ways to do this and you will find a ton of articles online. Here's a pretty simple one to follow [How to configure a static IP address on Ubuntu 18.04](https://linuxconfig.org/how-to-configure-static-ip-address-on-ubuntu-18-04-bionic-beaver-linux).  To avoid conflicts with others devices on your network you should also set a "reservation" on your router so BTCPB's IP address doesn't get given out to another device on your network. 
+**Step 6** - Give your BTCPB a static IP address on your local network. There are a few different ways to do this and you will find a ton of articles online. Here's a pretty simple one to follow [How to configure a static IP address on Ubuntu 18.04](https://linuxconfig.org/how-to-configure-static-ip-address-on-ubuntu-18-04-bionic-beaver-linux).  To avoid conflicts with others devices on your network you should also set a "reservation" on your router to avoid conflicts with other devices on your LAN. 
 
 **Step 7** - Log into your router and forward ports 80, 443 and 9735 to your BTPCB's local IP address. Every router is different and you should be able to find instructions for your router by searching for Port Forward + your router make and model. 
 
