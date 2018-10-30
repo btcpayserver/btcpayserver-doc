@@ -36,9 +36,9 @@ The video below shows you how to connect your store to such host.
 
 ## 3. Pairing the store
 
-BTCPay WooCommerceplugin , is a bridge between your server (payment processor) and your store. No matter if you're using a self-hosted or third-party solution from step 2, the pairing process is identical.
+BTCPay WooCommerce plugin is a bridge between your server (payment processor) and your e-commerce store. No matter if you're using a self-hosted or third-party solution from step 2, the pairing process is identical.
 
-Go to your store dashboard. WooCommerce > Settings > Paymenvts. Click BTCPay.
+Go to your store dashboard. WooCommerce > Settings > Payments. Click BTCPay.
 
 1. In the field, enter the full URL of your host (including the https) – https://btcpay.mydomain.com
 2. Click on the generated link which will redirect you back to your BTCPay Server.
