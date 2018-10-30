@@ -34,13 +34,32 @@ The video below shows you how to connect your store to such host.
 
 [![BTCPayHost](https://img.youtube.com/vi/IT2K8It3S3o/mqdefault.jpg)](https://www.youtube.com/watch?v=IT2K8It3S3o "BTCPay - Third Party Host")
 
-## 3. Connecting your wallet
+## 3. Pairing the store
+
+BTCPay WooCommerce plugin is a bridge between your server (payment processor) and your e-commerce store. No matter if you're using a self-hosted or third-party solution from step 2, the pairing process is identical.
+
+Go to your store dashboard. WooCommerce > Settings > Payments. Click BTCPay.
+
+1. In the field, enter the full URL of your host (including the https) – https://btcpay.mydomain.com
+2. Click on the generated link which will redirect you back to your BTCPay Server.
+3. Click on request pairing
+4. Approve the pairing
+5. Copy the pairing code
+6. Go back to your store and paste the pairing code
+7. Click “Pair”
+8. When you see the image, it means you successfully paired your server and your store.
+
+The process of pairing a store with BTCPay is explained in a video below, starting at 1:59
+
+[![Store Pairing](https://img.youtube.com/vi/IT2K8It3S3o/mqdefault.jpg)](https://youtu.be/IT2K8It3S3o?t=119 "BTCPay - Pairing your Store")
+
+## 4. Connecting your wallet
 
 No matter if you're using self-hosted or server hosted by a third-party, the process of configuring your wallet is the same. 
 
 [![BTCPayWallet](https://img.youtube.com/vi/xX6LyQej0NQ/mqdefault.jpg)](https://www.youtube.com/watch?v=xX6LyQej0NQ "BTCPay - Wallet")
 
-## 4. Testing the checkout
+## 5. Testing the checkout
 
 Making a small test-purchase from your own store, will give you a piece of mind. Always make sure that everything is set up correctly before going live. The final video, guides you through the steps of setting a gap limit in your Electrum wallet and testing the checkout process.
 
