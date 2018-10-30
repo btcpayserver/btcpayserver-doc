@@ -19,7 +19,6 @@
 * [Hardware Deployment](HardwareDeployment.md)
 * [Third-Party Hosting](ThirdPartyHosting.md)
 
-
 ### Integrations
 
 * [WooCommerce](WooCommerce.md)
@@ -39,4 +38,5 @@
 ### Support and Community
 
 * [FAQ](FAQ.md)
+* [Support](Support.md)
 * [Community](Community.md)
