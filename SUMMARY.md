@@ -39,4 +39,5 @@
 
 * [FAQ](FAQ.md)
 * [Support](Support.md)
+* [Contribute](Contribute.md)
 * [Community](Community.md)
