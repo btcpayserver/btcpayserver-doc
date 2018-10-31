@@ -6,6 +6,8 @@ In this guide, we will show you some of the use-cases of BTCPay, but it is by no
 
 So let's have a look at what you can do with BTCPay and what are the benefits of using it.
 
+![BTCPayInfographic](img/BTCPayUseCaseInfographic.png)
+
 ## Merchants
 
 By choosing BTCPay to process payments, you are:

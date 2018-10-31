@@ -16,6 +16,8 @@ This solution is for you if:
 * You want to accept payments on the Lightning Network
 * You want universally compatible invoices (we support the Bitpay API)
 
+![BTCPayInfographic](img/BTCPAYINFOGRAPHIC.png)
+
 ## Documentation
 
 ### Getting started
