@@ -6,6 +6,8 @@ You can check out the following video, or head over to [the WooCommerce plugin r
 
 [![WooCommerce](https://img.youtube.com/vi/tTH3nLoyTcw/mqdefault.jpg)](https://www.youtube.com/watch?v=tTH3nLoyTcw "BTCPay - WooCommerce")
 
+![Infographic](img/BTCPayWooCommerceInfoggraphic.png)
+
 To integrate BTCPay Server into an existing WooCommerce store, follow the steps below.
 
 ## 1. Install BTCPay Plugin
