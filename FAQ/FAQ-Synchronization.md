@@ -1,24 +1,29 @@
-# BTCPay Syncronization Issues
+# BTCPay Synchronization Issues
 
-In this document, we will cover some the most common questions and issues that may occur during BTCPay sync.
+This document covers the most common questions and issues that may occur during BTCPay sync.
 
 * [Why does BTCPay sync?](#why-does-btcpay-sync)
 * [Can I skip/speed up the sync?](#can-i-skip-the-syncronization)
+* [How do I know that the sync is finished?(
 * [BTCPay takes forever to synchronize](#btcpay-server-takes-forever-to-synchronize)
 * [BTCPay Server keep showing that my node is always starting](#btcpay-server-keep-showing-that-my-node-is-always-starting)
-* [I already have a synced full node, can I use it with BTCPay?](#im-already-running-a-full-node-and-have-a-synched-blockchain-can-btcpay-use-it-so-that-it-doesnt-have-to-do-a-full-sync-)
+* [I already have a synced full node, can I use it with BTCPay?](#im-running-a-full-node-and-have-a-synched-blockchain-can-btcpay-use-it-so-that-it-doesnt-have-to-do-a-full-sync)
 
 ## Why does BTCPay sync?
 
-After deployment, your BTCPay Server needs to sync the entire blockchain and validate all the concencus rules. Depending on your machine specification, bandwidth and number of altcoins you added, this process may take between 1-5 days.
+After deployment, your BTCPay Server needs to sync the entire blockchain and validate all the consensus rules. Depending on your machine specification, bandwidth and number of altcoins you added, this process may take between 1-5 days.
 
-## Can I skip the syncronization?
+## Can I skip the synchronization?
 
 There's nothing you can do to bypass the sync process. It may seem tedious, but it's a critical step of running your own full node and not having to trust or rely on anyone. Your node will not only download 200GB of data (less if you're using a pruned node) but also validate all the rules of the consensus. You can find more information about the importance of blockchain synchronization in this video.
 
-## BTCPay Server takes forever to synchronize...
+## How do I know that BTCPay synced completely?
 
-Synchronizing a Bitcoin full node should take between 1 and 3 days.
+When you do not see a pop-up message in the bottom right corner, which shows the sync progress, that means that your server is fully synced and you can [begin using it](GettingStarted.md).
+
+## BTCPay Server takes forever to synchronize
+
+Synchronizing a Full Bitcoin node should take between 1 and 3 days.
 
 If this is not the case:
 
@@ -27,7 +32,7 @@ If this is not the case:
 
 ### Cause 1: Not enough CPU
 
-We recommend 2 CPU while synchronizing, however some hosting providers throttle your CPU if you us too much.
+We recommend 2 CPU while synchronizing; however some hosting providers throttle your CPU if you use too much.
 
 Check with
 
@@ -50,9 +55,9 @@ If you see very low CPU usage (less than 10%) during synchronization:
 8e7ac41e6e2a        btcpayserver_bitcoind               10%               560.5MiB / 3.853GiB   14.20%              4.17
 ```
 
-Then your hosting provider might throttle your CPU. Please make sure your host support high use of CPU for extended period of time.
+Then your hosting provider might throttle your CPU. Please make sure your host supports the high use of CPU for an extended period.
 
-If they don't allow it, shutdown your server until they stop throttling you. Then you can limit the CPU via docker, and restart the server:
+If they don't allow it, shut down your server until they stop throttling you. Then you can limit the CPU via docker, and restart the server:
 
 ```
 docker update btcpayserver_bitcoind --cpus ".8"
@@ -60,7 +65,7 @@ docker update btcpayserver_bitcoind --cpus ".8"
 
 ### Cause 2: Using swap memory
 
-If you are synching and don't have enough memory, your server may use swap in order to continue operating:
+If you are synching and don't have enough memory, your server may use swap to continue operating:
 
 ```bash
 sudo su -
@@ -77,13 +82,13 @@ Swap:          1.0G        200M      800M
 
 Then it means you need to scale up your server by adding more memory.
 
-## BTCPay Server keep showing that my node is always starting...
+## BTCPay Server keep showing that my node is always starting
 
 Possible cause:
 
 * Your bitcoin data directory is corrupted
 * You do not have enough RAM
-* Your do not have enough storage
+* You do not have enough storage
 
 
 ### Cause 1: Your bitcoin data directory is corrupted
@@ -101,7 +106,7 @@ If you see:
 Please restart with -reindex or -reindex-chainstate to recover.
 ```
 
-Then your bitcoin data directory has been corrupted. It may be a physical damage or failure of the hard drive.
+Then your bitcoin data directory has been corrupted. It may be physical damage or failure of the hard drive.
 To reindex your node:
 
 ```bash
@@ -128,7 +133,7 @@ Mem:           2.0G        2.0G        0M         66M        0G        0M
 Swap:            0B          0B          0B
 ```
 
-Then you need more memory. If you have already synched your node, you can add some swap. If you have not yet synched, your server specs is too limited.
+Then you need more memory. If you have already synched your node, you can add some swap. If you have not yet synched, your server specs are too limited.
 
 If you already synched, you can add 2G of swap with:
 
@@ -140,7 +145,7 @@ swapon /mnt/swapfile
 echo "/mnt/swapfile   none    swap    sw    0   0" >> /etc/fstab
 ```
 
-### Cause 3: Your do not have enough storage
+### Cause 3: You do not have enough storage
 
 Check the storage of your machine:
 
@@ -166,7 +171,7 @@ tmpfs           2.0G     0  2.0G   0% /sys/fs/cgroup
 
 Then [prune your node](https://github.com/btcpayserver/btcpayserver-docker#how-i-can-prune-my-nodes).
 
-## I'm already running a full node and have a synched blockchain, can BTCPay use it so that it doesn't have to do a full sync ?
+## I'm running a full node and have a synched blockchain, can BTCPay use it so that it doesn't have to do a full sync?
 
 If you want to run BTCPay inside a docker-compose, and that you have the data directory (`.bitcoin`) of a fully synched node on your docker host, then you can reuse it easily for BTCPay.
 
