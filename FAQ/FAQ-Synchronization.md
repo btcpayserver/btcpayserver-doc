@@ -1,6 +1,20 @@
 # BTCPay Syncronization Issues
 
-In this document, we will cover some the most common issues when syncing your BTCPay Server
+In this document, we will cover some the most common questions and issues that may occur during BTCPay sync.
+
+* Why does BTCPay sync?
+* Can I skip/speed up the sync?
+* BTCPay takes forever to synchronize
+* BTCPay Server keep showing that my node is always starting
+* I already have a synced full node, can I use it with BTCPay?
+
+## Why does BTCPay sync?
+
+After deployment, your BTCPay Server needs to sync the entire blockchain and validate all the concencus rules. Depending on your machine specification, bandwidth and number of altcoins you added, this process may take between 1-5 days.
+
+## Can I skip the syncronization?
+
+There's nothing you can do to bypass the sync process. It may seem tedious, but it's a critical step of running your own full node and not having to trust or rely on anyone. Your node will not only download 200GB of data (less if you're using a pruned node) but also validate all the rules of the consensus. You can find more information about the importance of blockchain synchronization in this video.
 
 ## BTCPay Server takes forever to synchronize...
 
@@ -151,3 +165,19 @@ tmpfs           2.0G     0  2.0G   0% /sys/fs/cgroup
 [Choose the docker fragment](https://github.com/btcpayserver/btcpayserver-docker#generated-docker-compose-) for the amount of storage you aim to keep.
 
 Then [prune your node](https://github.com/btcpayserver/btcpayserver-docker#how-i-can-prune-my-nodes).
+
+## I'm already running a full node and have a synched blockchain, can BTCPay use it so that it doesn't have to do a full sync ?
+
+If you want to run BTCPay inside a docker-compose, and that you have the data directory (`.bitcoin`) of a fully synched node on your docker host, then you can reuse it easily for BTCPay.
+
+To do that, follow the following steps :
+* Do the normal setup according to [this instruction](https://github.com/btcpayserver/btcpayserver-docker/blob/master/README.md).
+* Once `btcpay-setup.sh` is over, turn down the docker compose with `btcpay-down.sh`.
+* Login as root with `sudo su -`.
+* Open the docker's volume for bitcoind : `cd /var/lib/docker/volumes/generated_bitcoin_datadir/`, and check its content with `ls -la`. You should see only one directory named `_data`.
+* Now remove the `_data`directory : `rm -r _data`. If for any reason you want to keep this directory and its content you can also rename it instead : `mv _data/ _data.old/`
+* Now create a [symbolic link](https://www.cyberciti.biz/faq/creating-soft-link-or-symbolic-link/) between `/var/lib/docker/volumes/generated_bitcoin_datadir/_data` and your data directory (`.bitcoin`) on your host: `ln -s path/to/.bitcoin /var/lib/docker/volumes/generated_bitcoin_datadir/_data`
+* Check that the link has been done with a `ls -la`
+* Start your docker-compose again with `btcpay-up.sh`
+
+Your BTCPay Server should now be fully synched.
