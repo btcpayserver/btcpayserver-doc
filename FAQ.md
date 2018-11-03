@@ -191,22 +191,6 @@ While it protects dust transactions, it can also reflect negatively and your cus
 
 Please think twice about how this may affect your business and make sure to communicate it to your customers properly inside your store Terms of Service or by other methods.
 
-## I'm already running a full node and have a synched blockchain, can I make BTCPay use it so that it doesn't have to do a full sync again ?
-
-If you want to run BTCPay inside a docker-compose, and that you have the data directory (`.bitcoin`) of a fully synched node on your docker host, then you can reuse it easily for BTCPay.
-
-To do that, follow the following steps :
-* Do the normal setup according to [this instruction](https://github.com/btcpayserver/btcpayserver-docker/blob/master/README.md).
-* Once `btcpay-setup.sh` is over, turn down the docker compose with `btcpay-down.sh`.
-* Login as root with `sudo su -`.
-* Open the docker's volume for bitcoind : `cd /var/lib/docker/volumes/generated_bitcoin_datadir/`, and check its content with `ls -la`. You should see only one directory named `_data`.
-* Now remove the `_data`directory : `rm -r _data`. If for any reason you want to keep this directory and its content you can also rename it instead : `mv _data/ _data.old/`
-* Now create a [symbolic link](https://www.cyberciti.biz/faq/creating-soft-link-or-symbolic-link/) between `/var/lib/docker/volumes/generated_bitcoin_datadir/_data` and your data directory (`.bitcoin`) on your host: `ln -s path/to/.bitcoin /var/lib/docker/volumes/generated_bitcoin_datadir/_data`
-* Check that the link has been done with a `ls -la`
-* Start your docker-compose again with `btcpay-up.sh`
-
-Your BTCPay Server should now be fully synched.
-
 ## Why is my ledger not detected by BTCPay Server?
 
 Check that you are running the ledger app with a version equals or above 1.2.4.
