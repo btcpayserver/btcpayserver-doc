@@ -19,7 +19,7 @@ There's nothing you can do to bypass the sync process. It may seem tedious, but 
 
 ## How do I know that BTCPay synced completely?
 
-When you do not see a pop-up message in the bottom right corner, which shows the sync progress, that means that your server is fully synced and you can [begin using it](master/GettingStarted.md).
+When you do not see a pop-up message in the bottom right corner, which shows the sync progress, that means that your server is fully synced and you can [begin using it](../GettingStarted.md).
 
 ## BTCPay Server takes forever to synchronize
 
