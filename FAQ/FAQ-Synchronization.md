@@ -2,11 +2,11 @@
 
 In this document, we will cover some the most common questions and issues that may occur during BTCPay sync.
 
-* [Why does BTCPay sync?](FAQ-Synchronization.md#why-does-btcpay-sync)
-* [Can I skip/speed up the sync?](FAQ-Synchronization.md#can-i-skip-the-syncronization)
-* [BTCPay takes forever to synchronize](FAQ-Synchronization.md#btcpay-server-takes-forever-to-synchronize)
+* [Why does BTCPay sync?](#why-does-btcpay-sync)
+* [Can I skip/speed up the sync?](#can-i-skip-the-syncronization)
+* [BTCPay takes forever to synchronize](#btcpay-server-takes-forever-to-synchronize)
 * [BTCPay Server keep showing that my node is always starting](#btcpay-server-keep-showing-that-my-node-is-always-starting)
-* [I already have a synced full node, can I use it with BTCPay?](#im-already-running-a-full-node-and-have-a-synched-blockchain-can-btcpay-use-it-so-that-it-doesnt-have-to-do-a-full-sync)
+* [I already have a synced full node, can I use it with BTCPay?](#im-already-running-a-full-node-and-have-a-synched-blockchain-can-btcpay-use-it-so-that-it-doesnt-have-to-do-a-full-sync-)
 
 ## Why does BTCPay sync?
 
