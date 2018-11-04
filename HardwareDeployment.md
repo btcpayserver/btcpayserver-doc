@@ -77,7 +77,7 @@ Verify your configuration.
 Enable your firewall.
 - sudo ufw enable 
 
-Reboot your BTCB and disconnect the keyboard, mouse and monitor. You should now be able to your BTCB from another computer on your LAN via SSH.  
+Reboot your BTCB and disconnect the keyboard, mouse and monitor. You should now be able to connect to your BTCB from another computer on your LAN via SSH.  
 
 **Step 10** - Install BTCPayServer.  
 From another PC on your network login in to your BTCPB via SSH. 
