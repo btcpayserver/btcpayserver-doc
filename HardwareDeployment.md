@@ -2,7 +2,7 @@
 
 Andreas Antonopoulos tells us "Not your keys, not your Bitcoin".  Here's another Bitcoin axiom "Your hardware.  Your node.  Your keys.  Your Bitcoin". 
 
-In order for your Bitcoin experience to be truly self-sovereign and trustless you should consider running node on your own hardware and internet connection. BTCPayServer is an excellent way to run both Bitcoin & Lightning nodes.  Not only are you validating transactions youu also get the ability to accept base layer Bitcoin and second layer Lightning payments.  
+In order for your Bitcoin experience to be truly self-sovereign and trustless you should consider running nodes on your own hardware and internet connection. BTCPayServer is an excellent way to run both Bitcoin & Lightning nodes.  Not only are you validating transactions you also get the ability to accept base layer Bitcoin and second layer Lightning payments.  
 To that end here are instructions to install and host your very own BTCPay Server. 
 
 The process is basically the following:
