@@ -1,8 +1,8 @@
 # Hardware Deployment
 
-Andreas Antonopoulos tells us "Not your keys, not your Bitcoin".  Here's another Bitcoin axiom "Your hardware.  Your node.  Your key.  Your Bitcoin". 
+Andreas Antonopoulos tells us "Not your keys, not your Bitcoin".  Here's another Bitcoin axiom "Your hardware.  Your node.  Your keys.  Your Bitcoin". 
 
-In order for your Bitcoin experience to be truly self-sovereign and trustless you should consider running your node(s) on your own hardware and internet connection. BTCPayServer is an excellent way to run both Bitcoin & Lightning nodes.  Not only are you validating the network you also get the ability to accept base layer Bitcoin and second layer Lightning payments.  
+In order for your Bitcoin experience to be truly self-sovereign and trustless you should consider running node on your own hardware and internet connection. BTCPayServer is an excellent way to run both Bitcoin & Lightning nodes.  Not only are you validating transactions youu also get the ability to accept base layer Bitcoin and second layer Lightning payments.  
 To that end here are instructions to install and host your very own BTCPay Server. 
 
 The process is basically the following:
@@ -39,7 +39,7 @@ Other requirements are as follows:
 Assuming you purchased the hardware mentioned above, here are the build instructions.
 
 **Step 1** - Configure your domain name. 
-It can take several hours for DNS changes to propagate so you should do this step first.  Login to your domain registrar and point an A record from your domain to the external IP address of your internet connection.  I suggest that you use a subdomain (ie. btcpay.yourdomain.com).  
+It can take several hours for DNS changes to propagate so you should do this step first.  Login to your domain registrar and point an A record from your domain to the external IP address of your internet connection.  I suggest that you use a subdomain (ie. btcpay.yourdomain.com).  To find your external IP address Google "whats my ip".  
 
 **Step 2** - Assemble your BTCPayBox (BTCPB).  If you already have your own Ubuntu Server you can skip to Step 6.
   - Remove back cover with screwdriver.
@@ -81,8 +81,10 @@ Reboot your BTCB and disconnect the keyboard, mouse and monitor. You should now 
 
 **Step 10** - Install BTCPayServer.  
 From another PC on your network login in to your BTCPB via SSH. 
-If you using Windows 
+
+If you are using Windows 
  - download [Putty](https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html) and create a connection to your BTCPB.
+
 If you are using another Linux machine open a new terminal and type in the following.  You will be prompted for your password. 
 - ssh user@LANIP (ie. bob@192.168.1.2)
 
