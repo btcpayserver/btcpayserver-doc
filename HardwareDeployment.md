@@ -1,8 +1,8 @@
 # Hardware Deployment
 
-Andreas Antonopoulos tells us "Not your keys, not your Bitcoin".  Here's another Bitcoin axiom "Not your hardware, not your node". 
+Andreas Antonopoulos tells us "Not your keys, not your Bitcoin".  Here's another Bitcoin axiom "Your hardware.  Your node.  Your keys.  Your Bitcoin". 
 
-In order for your Bitcoin experience to be truly self-sovereign and trustless you should consider running your node(s) on your own hardware and internet connection. BTCPayServer is an excellent way to run Bitcoin & Lightning nodes because not only are you validating the network you also get the ability to accept base layer Bitcoin and second layer Lightning payments.  
+In order for your Bitcoin experience to be truly self-sovereign and trustless you should consider running nodes on your own hardware and internet connection. BTCPayServer is an excellent way to run both Bitcoin & Lightning nodes.  Not only are you validating transactions you also get the ability to accept base layer Bitcoin and second layer Lightning payments.  
 To that end here are instructions to install and host your very own BTCPay Server. 
 
 The process is basically the following:
@@ -13,7 +13,7 @@ The process is basically the following:
 
 While it may be possible to install BTCPayServer or parts of it's architecture on ARM based single board computers (ie. Raspberry Pi, 
 Odroid, OrangePi or NanoPC) the process may require additional skills and knowledge that are beyond the scope of this tutorial. 
-For the sake of speed, compatibility and ease of installation it is recommended that you use an Intel/AMD based computer with a minimum of 4Gb RAM and a 500 Gb hard drive.  The Gigabyte Brix or Intel NUC lines of compact computers are a good place to start. They are basically small, fanless boxes built using laptop components. 
+For the sake of speed, compatibility and ease of installation it is recommended that you use an Intel/AMD based computer with a minimum of 4Gb RAM and a 500 Gb hard drive.  The Gigabyte Brix or Intel NUC lines of compact computers are a great place to start. They are basically small, fanless boxes that are built using laptop components. 
 
 BTCPayServer can be successfully installed on the following hardware.  The end result is a small, quiet node that is fast enough to sync from block zero.  The total cost is approximatly $225 (including tax and delivery).  These are "off the shelf" components that can be purchased from any online retailer (TigerDirect, NewEgg, Amazon, BestBuy etc).   It will take roughly 24 hours to sync the Bitcoin blockchain. You can save little money by cutting the RAM and hard drive size in half. 
  
@@ -39,9 +39,9 @@ Other requirements are as follows:
 Assuming you purchased the hardware mentioned above, here are the build instructions.
 
 **Step 1** - Configure your domain name. 
-It can take several hours for DNS changes to propagate so you should do this step first.  Login to your domain registrar and point an A record from your domain to the external IP address of your internet connection.  I suggest that you use a subdomain (ie. btcpay.yourdomain.com).  If you already have your own Ubuntu Server you can skip to Step 6. 
+It can take several hours for DNS changes to propagate so you should do this step first.  Login to your domain registrar and point an A record from your domain to the external IP address of your internet connection.  I suggest that you use a subdomain (ie. btcpay.yourdomain.com).  To find your external IP address Google "whats my ip".  
 
-**Step 2** - Assemble your BTCPayBox (BTCPB)
+**Step 2** - Assemble your BTCPayBox (BTCPB).  If you already have your own Ubuntu Server you can skip to Step 6.
   - Remove back cover with screwdriver.
   - Insert RAM
   - Install hard drive using included cage. 
@@ -55,7 +55,7 @@ In this case we will be using Etcher to flash our USB Thumb Drive with the Ubunt
 
 **Step 6** - Give your BTCPB a static IP address on your local network. There are a few different ways to do this and you will find a ton of articles online. Here's a pretty simple one to follow [How to configure a static IP address on Ubuntu 18.04](https://linuxconfig.org/how-to-configure-static-ip-address-on-ubuntu-18-04-bionic-beaver-linux).  To avoid conflicts with other devices on your network you should also set a "reservation" for your BTCPB. 
 
-**Step 7** - Log into your router and forward ports 80, 443 and 9735 to your BTPCB's local IP address. Every router is different and you should be able to find instructions for your router by searching for Port Forward + your router make and model. 
+**Step 7** - Log into your router and forward ports 80, 443 and 9735 to your BTPCB's local IP address. Every router is different and you should be able to find instructions for your router by searching for "Port Forward + your router make and model". 
 
 **Step 8** - Install OpenSSH Server, Fail2ban and GIT.  OpenSSH server allows you to connect to your server using SSH clients (ie. [Putty](https://www.putty.org/)) Fail2ban bans IP's that attempt to connect to your server and show malicious signs.  GIT allows you to clone and manage repositories on github.com. 
 Open a new terminal window and type the following command 
@@ -77,11 +77,19 @@ Verify your configuration.
 Enable your firewall.
 - sudo ufw enable 
 
-Reboot your BTCB and disconnect the keyboard, mouse and monitor. You should now be able to your BTCB from another computer on your LAN via SSH.  
+Reboot your BTCB and disconnect the keyboard, mouse and monitor. You should now be able to connect to your BTCB from another computer on your LAN via SSH.  
 
 **Step 10** - Install BTCPayServer.  
+From another PC on your network login in to your BTCPB via SSH. 
+
+If you are using Windows 
+ - download [Putty](https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html) and create a connection to your BTCPB.
+
+If you are using another Linux machine open a new terminal and type in the following.  You will be prompted for your password. 
+- ssh user@LANIP (ie. bob@192.168.1.2)
 
 Run the following commands.  Make sure you change the BTCPAY_HOST parameter to your own domain name. 
+
 Login as root
 - sudo su -
 
