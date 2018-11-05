@@ -70,7 +70,7 @@ Take a look at the list of [third-party hosts](ThirdPartyHosting.md).
 
 The number of merchants using BTCPay grows each day, and cryptocurrency exchanges could benefit from it by developing integration with BTCPay and allow instant conversion of cryptocurrency payments into local fiat currencies. 
 
-Being an open-sourced project, BTCPay doesn't have the power to impose anything on exchanges, meaning than any of them could build on top of it, regardless of their size or the country they operate.
+Being an open-sourced project, BTCPay doesn't have the power to impose anything on exchanges, meaning that any of them could build on top of it, regardless of their size or the country they operate.
 
 ## Hosting Providers
 
