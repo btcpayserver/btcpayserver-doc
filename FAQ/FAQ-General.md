@@ -156,39 +156,3 @@ If you encountered an issue or have a feature request, please [open an issue on 
 There are many ways in which you can contribute to an open-source project like BTCPay.
 
 The easiest way is to use the software, provide feedback and report any bugs or issues you or your customers encounter. If you're a developer, you can help us develop and improve the software by contributing on the GitHub. Translating BTCPay into your native language, helping us with documentation writing are ways in which you can help us out, even if you're not a developer or tech-savvy. We appreciate every contributor to the project. You're awesome.
-
-## How to update BTCPay Server?
-
-There are two ways:
-
-1. (via front-end)Server Settings > Maintenance > Update Button
-
-2. (via ssh)
-
-Log as root:
-
-```
-sudo su -
-```
-```
-btcpay-update.sh
-```
-More on updating BTCPay [here](https://nbitstack.com/t/how-to-update-my-btcpay-server/93/2).
-
-## Does BTCPay Support Lightning Network?
-
-Yes. BTCPay was the first payment processor to embrace and offer the second-layer Bitcoin solution. You can run either LND or c-lightning implementations of the Lightning Network.
-
-## What is a "network cost"?
-
-Network cost is a feature in BTCPay which protects merchants from a customer who pays the invoice partially. When an invoice is paid from many outputs, the fee for a merchant to move those funds will be higher.
-
-For example, your customer created an invoice for 20$ and paid 20 x 1$. You as a merchant now have a larger transaction which increases the mining cost should you decide to move those funds. BTCPay applies a network cost after the first transaction, to cover for merchants expense.
-
-The network cost in BTCPay is not the same thing as the mining fee. Your customer would still need to pay for the miner's fee.
-
-The network cost is an optional feature. It's enabled by default, but it's entirely up to a merchant to enable or disable it. Your customers will be able to see this "network cost" at the checkout when they expand the invoice information.
-
-While it protects dust transactions, it can also reflect negatively and your customers might have additional questions and may lead them into thinking you're overcharging them.
-
-Please think twice about how this may affect your business and make sure to communicate it to your customers properly inside your store Terms of Service or by other methods.
