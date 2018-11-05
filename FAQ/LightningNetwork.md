@@ -9,6 +9,8 @@ If you're a customer trying to pay a Lightning Network invoice:
 2. Select Copy/Scan
 3. Select Node Info and scan or copy it manually.
 
+![BTCPay Checkout](/img/btcpay-node-info.jpg)
+
 The exact procedure of opening a direct Lightning Network channel depends on the wallet you’re using. But, you should be able to figure it out easily now that you have merchant’s node information.
 
 ### Can I used pruned node with LN in BTCPay?
@@ -41,7 +43,7 @@ To switch to c-lightning:
 sudo su -
 cd btcpayserver-docker
 export BTCPAYGEN_LIGHTNING="clightning"
-. ./btcpay-setup.sh -i 
+. ./btcpay-setup.sh -i /
 ```
 ### I switched Lightning Network implementation, but getting "no payment available" error
 
