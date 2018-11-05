@@ -41,3 +41,24 @@ Here are some of the questions and problems about wallets in BTCPay.
 * [Missing payments in wallet](FAQ-Wallet.md#missing-payments-in-my-softwarehardware-wallet)
 * [Electrum and Zap show different addresses](FAQ-Wallet.md#receiving-address-in-zap-and-electrum-is-different)
 * [How to see payments on a mobile device](FAQ-Wallet.md#can-i-see-my-payments-on-mobile)
+
+## [Lightningn Network FAQ](FAQ-LightningNetwork.md)
+
+### [Lightning Network General FAQ](FAQ-LightningNetwork.md#lightning-network-general-faq)
+* [How many users can use Lightning Network in BTCPay?](FAQ-LightningNetwork.md#how-many-users-can-use-lightning-network-in-btcpay)
+* [How to find node info and open a direct channel with a store using BTCPay?](FAQ-LightningNetwork.md#how-to-find-node-info-and-open-a-direct-channel-with-a-store-using-btcpay)
+* [As a merchant, do I need to open direct channels?](FAQ-LightningNetwork.md#as-a-merchant-do-i-need-to-open-direct-channels) 
+* [Previosly installed BTCPay without the integrated LN support, can I migrate?](FAQ-LightningNetwork.md#i-previously-installed-btcpayserver-without-the-integrated-lightning-support-can-i-migrate)
+* [Can I used pruned node with LN in BTCPay?](FAQ-LightningNetwork.md#can-i-used-pruned-node-with-ln-in-btcpay)
+* [How to change from c-lightning to LND or vice-versa?](FAQ-LightningNetwork.md#how-to-change-from-c-lightning-to-lnd-or-vice-versa)
+* [Switched Lightning Network implementation, getting "no payment available" error](FAQ-LightningNetwork.md#i-switched-lightning-network-implementation-but-getting-no-payment-available-error)
+* [WARNING: The LIGHTNING_ALIAS variable is not set. Defaulting to a blank string" when starting container](FAQ-LightningNetwork.md#i-get-warning-the-lightning_alias-variable-is-not-set-defaulting-to-a-blank-string-when-starting-container)
+* [Where can I get Lightning Network Support?](FAQ-LightningNetwork.md#lightning-network-questions-and-support)
+
+#### [Lightning Network (LND) FAQ](FAQ-LightningNetwork.md#lightning-network-lnd-faq)
+* [How to restart my LND?](FAQ-LightningNetwork.md#how-to-restart-my-lnd)
+* [How to see LND logs?](FAQ-LightningNetwork.md#how-to-see-lnd-logs)
+* [What’s the default LND Directory in BTCPay?](FAQ-LightningNetwork.md#whats-the-default-directory-of-lnd-in-btcpay)
+* [LND connection issue - cannot get macaroon: root key with id 0 doesn’t exist](FAQ-LightningNetwork.md#lnd-connection-issues-after-an-update)
+
+#### [Lightning Network (c-lightning) FAQ](FAQ-LightningNetwork.md#lightning-network-c-lightning-faq)
