@@ -44,6 +44,8 @@ Here are some of the questions and problems about wallets in BTCPay.
 
 ## [Lightningn Network FAQ](FAQ-LightningNetwork.md)
 
+Lightning Network troubleshooting and common problems.
+
 ### [Lightning Network General FAQ](FAQ-LightningNetwork.md#lightning-network-general-faq)
 * [How many users can use Lightning Network in BTCPay?](FAQ-LightningNetwork.md#how-many-users-can-use-lightning-network-in-btcpay)
 * [How to find node info and open a direct channel with a store using BTCPay?](FAQ-LightningNetwork.md#how-to-find-node-info-and-open-a-direct-channel-with-a-store-using-btcpay)
