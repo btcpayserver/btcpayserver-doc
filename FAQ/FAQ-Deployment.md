@@ -22,6 +22,8 @@ Here are common questions about installation, regardless of the deployment metho
 * [Getting 500 nginx error on aa local server https and for http (BTCPay is expecting you to access this website from)](FAQ-Deployment.md#getting-500-nginx-error-on-aa-local-server-https-and-for-http-btcpay-is-expecting-you-to-access-this-website-from)
 * [How to manually install BTCPay on Ubuntu 18.04?](FAQ-Deployment.md#how-to-manually-install-btcpay-on-ubuntu-1804)
 
+## General Deployment
+
 ### How much it costs to run BTCPay Server?
 BTCPay is a 100% free and open-source software. We do not charge you anything.
 However, to run it, you should host it. You can run it as a self-hosted solution on your own local server, or use a cloud hosting provider, which is what a majority of users do. Advanced users can run BTCPay on [their own hardware](/HardwareDeployment.md) Visit our [Deployment Page](/Deployment.md) to see various ways in which you can run BTCPay.
