@@ -64,7 +64,7 @@ Here you can find common questions and solutions to BTCPay web-deployments.
 
 Additional documentation can be found on [domain change page](/ChangeDomain.md).
 
-### Manual Deployment
+## Manual Deployment
 
 #### Getting 500 nginx error on aa local server https and for http (BTCPay is expecting you to access this website from)
 
