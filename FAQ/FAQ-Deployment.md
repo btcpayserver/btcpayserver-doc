@@ -1,6 +1,6 @@
 # BTCPay Deployment Frequently Asked Questions
 
-This document covers the most common questions, errors, and issues you may encounter prior and during the installation of the software. For a detailed list of deployments method and instructions for each, please see [/Deployment page](Deployment.md).
+This document covers the most common questions, errors, and issues you may encounter prior and during the installation of the software. For a detailed list of deployments method and instructions for each, please see [Deployment page](/Deployment.md).
 
 ## General Deployment FAQ
 
@@ -13,6 +13,14 @@ Here are common questions about installation, regardless of the deployment metho
 * [Can I run BTCPay on my hardware?](FAQ/FAQ-Deployment.md#can-i-run-btcpay-on-my-own-hardware)
 * [Can I deploy on my existing VPS?](FAQ-Deployment.md#can-i-deploy-btcpay-my-existing-vps)
 * [Are there free hosts where I can test?](FAQ-Deployment.md#can-i-deploy-btcpay-my-existing-vps)
+
+## Web Deployment FAQ
+### Luna Node Web Deployment FAQ
+* [How to change domain name on my LunaNode BTCPay?](FAQ-Deployment.md#how-to-change-domain-name-on-my-lunanode-btcpay)
+
+## Manual Deployment FAQ
+* [Getting 500 nginx error on aa local server https and for http (BTCPay is expecting you to access this website from)](FAQ-Deployment.md#getting-500-nginx-error-on-aa-local-server-https-and-for-http-btcpay-is-expecting-you-to-access-this-website-from)
+* [How to manually install BTCPay on Ubuntu 18.04?](FAQ-Deployment.md#how-to-manually-install-btcpay-on-ubuntu-1804)
 
 ### How much it costs to run BTCPay Server?
 BTCPay is a 100% free and open-source software. We do not charge you anything.
@@ -48,7 +56,6 @@ On a self-hosted BTCPay, the unlimited amount of users and stores can be attache
 Here you can find common questions and solutions to BTCPay web-deployments.
 
 ### LunaNode web-deployment
-* How to change domain name on my LunaNode BTCPay?
 
 #### How to change domain name on my LunaNode BTCPay?
 1. In your LunaNode dashboard, click on Virtual Machines > Your Virtual Machine > General Tab > External IP. Copy the external IP.
@@ -58,9 +65,6 @@ Here you can find common questions and solutions to BTCPay web-deployments.
 Additional documentation can be found on [domain change page](/ChangeDomain.md).
 
 ### Manual Deployment
-
-* [Getting 500 nginx error on aa local server https and for http (BTCPay is expecting you to access this website from)](
-* [How to manually install BTCPay on Ubuntu 18.04?](
 
 #### Getting 500 nginx error on aa local server https and for http (BTCPay is expecting you to access this website from)
 
