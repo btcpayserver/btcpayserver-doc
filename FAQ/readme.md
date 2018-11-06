@@ -63,9 +63,9 @@ Here are some of the questions and problems about wallets in BTCPay.
 
 ### [Lightning Network (c-lightning) FAQ](FAQ-LightningNetwork.md#lightning-network-c-lightning-faq)
 
-## Deployment FAQ
+## [Deployment FAQ](FAQ-Deployment.md)
 
-### General Deployment FAQ
+### [General Deployment FAQ](FAQ-Deployment.md#general-deployment-faq)
 
 * [How much it costs to run BTCPay Server?](FAQ-Deployment.md#how-much-it-costs-to-run-btcpay-server)
 * [What are the minimal requirements for BTCPay?](FAQ-Deployment.md#what-are-the-minimal-requirements-for-btcpay)
@@ -75,8 +75,8 @@ Here are some of the questions and problems about wallets in BTCPay.
 * [Can I deploy on my existing VPS?](FAQ-Deployment.md#can-i-deploy-btcpay-my-existing-vps)
 * [Are there free hosts where I can test?](FAQ-Deployment.md#can-i-deploy-btcpay-my-existing-vps)
 
-### Web Deployment FAQ
-#### Luna Node Web Deployment FAQ
+### [Web Deployment FAQ](FAQ-Deployment.md#web-deployment-faq)
+#### [Luna Node Web Deployment FAQ](FAQ-Deployment.md#luna-node-web-deployment-faq)
 * [How to change domain name on my LunaNode BTCPay?](FAQ-Deployment.md#how-to-change-domain-name-on-my-lunanode-btcpay)
 
 ### Manual Deployment FAQ
