@@ -45,11 +45,24 @@ On a self-hosted BTCPay, the unlimited amount of users and stores can be attache
 
 ## Web-deployment
 
-### LunaNode web-deployment
-- [How to change lunanode domain on my server?](https://nbitstack.com/t/how-to-change-custom-lunanode-btcpay-domain-to-my-own-domain-web-wizard-installation/82/3)
+Here you can find common questions and solutions to BTCPay web-deployments.
 
-### Deployment Manual
-- [Can I deploy BTCPay on my existing VPS?](https://nbitstack.com/t/how-to-set-up-btcpay-server-on-my-existing-vps/74)
-- [How to manually install BTCPay on Ubuntu 18.04?](https://nbitstack.com/t/how-to-manually-install-btcpay-on-ubuntu-18-04/76/2)
-- [How to install BTCPay if I am already running a full node?](https://nbitstack.com/t/how-to-install-btcpay-if-i-already-have-full-bitcoin-and-lightning-node/77)
-- [Getting 500 nginx error on a local server](https://nbitstack.com/t/getting-500-nginx-error-for-my-btcpay-installed-on-a-local-server-https-and-for-http-btcpay-is-expecting-you-to-access-this-website-from/109)
+### LunaNode web-deployment
+* How to change domain name on my LunaNode BTCPay?
+
+#### How to change domain name on my LunaNode BTCPay?
+1. In your LunaNode dashboard, click on Virtual Machines > Your Virtual Machine > General Tab > External IP. Copy the external IP.
+2. Go to your DNS provider and create an A record. Paste the external IP.
+3. Go to Server Settings > Maintainance > Change Domain. Paste yourdomain.com without http or https prefix.
+
+Additional documentation can be found on [domain change page](ChangeDomain.md).
+
+### Manual Deployment
+
+#### Getting 500 nginx error on aa local server https and for http (BTCPay is expecting you to access this website from)
+
+You need to open port 80 and 443. Once you did that, restar doccker btcpay-restart.sh
+
+### [How to manually install BTCPay on Ubuntu 18.04?]
+
+Check this [community guide](https://nbitstack.com/t/how-to-manually-install-btcpay-on-ubuntu-18-04/76/2). 
