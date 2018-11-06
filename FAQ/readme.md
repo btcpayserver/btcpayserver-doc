@@ -62,3 +62,23 @@ Here are some of the questions and problems about wallets in BTCPay.
 * [LND connection issue - cannot get macaroon: root key with id 0 doesn’t exist](FAQ-LightningNetwork.md#lnd-connection-issues-after-an-update)
 
 ### [Lightning Network (c-lightning) FAQ](FAQ-LightningNetwork.md#lightning-network-c-lightning-faq)
+
+## Deployment FAQ
+
+### General Deployment FAQ
+
+* [How much it costs to run BTCPay Server?](FAQ-Deployment.md#how-much-it-costs-to-run-btcpay-server)
+* [What are the minimal requirements for BTCPay?](FAQ-Deployment.md#what-are-the-minimal-requirements-for-btcpay)
+* [What is the easiest method to deploy a self-hosted BTCPay Server?](FAQ-Deployment.md#what-are-the-minimal-requirements-for-btcpay)
+* [How to choose a proper deployment method?](FAQ-Deployment.md#how-to-choose-a-proper-deployment-method)
+* [Can I run BTCPay on my hardware?](FAQ/FAQ-Deployment.md#can-i-run-btcpay-on-my-own-hardware)
+* [Can I deploy on my existing VPS?](FAQ-Deployment.md#can-i-deploy-btcpay-my-existing-vps)
+* [Are there free hosts where I can test?](FAQ-Deployment.md#can-i-deploy-btcpay-my-existing-vps)
+
+### Web Deployment FAQ
+#### Luna Node Web Deployment FAQ
+* [How to change domain name on my LunaNode BTCPay?](FAQ-Deployment.md#how-to-change-domain-name-on-my-lunanode-btcpay)
+
+### Manual Deployment FAQ
+* [Getting 500 nginx error on aa local server https and for http (BTCPay is expecting you to access this website from)](FAQ-Deployment.md#getting-500-nginx-error-on-aa-local-server-https-and-for-http-btcpay-is-expecting-you-to-access-this-website-from)
+* [How to manually install BTCPay on Ubuntu 18.04?](FAQ-Deployment.md#how-to-manually-install-btcpay-on-ubuntu-1804)
