@@ -68,9 +68,9 @@ Additional documentation can be found on [domain change page](/ChangeDomain.md).
 
 ## Manual Deployment
 
-#### Getting 500 nginx error on aa local server https and for http (BTCPay is expecting you to access this website from)
+#### Getting 500 nginx error on a local server https and for http (BTCPay is expecting you to access this website from)
 
-You need to open port 80 and 443. Once you did that, restar doccker btcpay-restart.sh
+You need to open port 80 and 443. Once you did that, restart docker `btcpay-restart.sh`
 
 ### How to manually install BTCPay on Ubuntu 18.04?
 
