@@ -42,7 +42,7 @@ Here are some of the questions and problems about wallets in BTCPay.
 * [Electrum and Zap show different addresses](FAQ-Wallet.md#receiving-address-in-zap-and-electrum-is-different)
 * [How to see payments on a mobile device](FAQ-Wallet.md#can-i-see-my-payments-on-mobile)
 
-## [Lightningn Network FAQ](FAQ-LightningNetwork.md)
+## [Lightning Network FAQ](FAQ-LightningNetwork.md)
 
 Lightning Network troubleshooting and common problems.
 
