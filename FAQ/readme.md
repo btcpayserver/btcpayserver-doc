@@ -88,7 +88,7 @@ Questions and solutions to BTCPay installaton.
 
 ## [Apps FAQ](FAQ-Apps.md)
 
-* [What are the Apps in BTCPay?](FAQ#what-are-the-apps-in-btcpay)
-* [Is there a limit on the number of Apps I can deploy?](FAQ#is-there-a-limit-on-the-number-of-apps-i-can-deploy)
-* [Is there a Point of Sale feature in BTCPay?](FAQ#is-there-a-point-of-sale-feature-in-btcpay)
-* [How can I use BTCPay in a physical store?](FAQ#how-can-i-use-btcpay-in-a-physical-store)
+* [What are the Apps in BTCPay?](FAQ-Apps.md#what-are-the-apps-in-btcpay)
+* [Is there a limit on the number of Apps I can deploy?](FAQ-Apps.md#is-there-a-limit-on-the-number-of-apps-i-can-deploy)
+* [Is there a Point of Sale feature in BTCPay?](FAQ-Apps.md#is-there-a-point-of-sale-feature-in-btcpay)
+* [How can I use BTCPay in a physical store?](FFAQ-Apps.md#how-can-i-use-btcpay-in-a-physical-store)
