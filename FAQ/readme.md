@@ -9,6 +9,7 @@ General, non-technical questions about BTCPay. What it is, how it works, what ar
 * [What is BTCPay Server?](FAQ-General.md#what-is-btcpay-server)
 * [Why choose it over other payment processors?](FAQ-General.md#what-is-btcpay-server)
 * [Why are everyone excited about BTCPay?](FAQ-General.md#what-is-btcpay-server)
+* [Who can use BTCPay?](FAQ-General.md#who-can-use-btcpay)
 * [How much does it cost to run BTCPay Server](FAQ-General.md#what-is-btcpay-server)
 * [How to install BTCPay](FAQ-General.md#whow-to-install-btcpay-server)
 * [What are the minimal requirements?](FAQ-General.md#what-are-the-minimal-requirements-to-run-btcpay)
