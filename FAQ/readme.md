@@ -9,6 +9,7 @@ General, non-technical questions about BTCPay. What it is, how it works, what ar
 * [What is BTCPay Server?](FAQ-General.md#what-is-btcpay-server)
 * [Why choose it over other payment processors?](FAQ-General.md#what-is-btcpay-server)
 * [Why are everyone excited about BTCPay?](FAQ-General.md#what-is-btcpay-server)
+* [Who can use BTCPay?](FAQ-General.md#who-can-use-btcpay)
 * [How much does it cost to run BTCPay Server](FAQ-General.md#what-is-btcpay-server)
 * [How to install BTCPay](FAQ-General.md#whow-to-install-btcpay-server)
 * [What are the minimal requirements?](FAQ-General.md#what-are-the-minimal-requirements-to-run-btcpay)
@@ -42,7 +43,7 @@ Here are some of the questions and problems about wallets in BTCPay.
 * [Electrum and Zap show different addresses](FAQ-Wallet.md#receiving-address-in-zap-and-electrum-is-different)
 * [How to see payments on a mobile device](FAQ-Wallet.md#can-i-see-my-payments-on-mobile)
 
-## [Lightningn Network FAQ](FAQ-LightningNetwork.md)
+## [Lightning Network FAQ](FAQ-LightningNetwork.md)
 
 Lightning Network troubleshooting and common problems.
 
@@ -84,3 +85,10 @@ Questions and solutions to BTCPay installaton.
 ### [Manual Deployment FAQ](FAQ-Deployment.md#manual-deployment)
 * [Getting 500 nginx error on aa local server https and for http (BTCPay is expecting you to access this website from)](FAQ-Deployment.md#getting-500-nginx-error-on-aa-local-server-https-and-for-http-btcpay-is-expecting-you-to-access-this-website-from)
 * [How to manually install BTCPay on Ubuntu 18.04?](FAQ-Deployment.md#how-to-manually-install-btcpay-on-ubuntu-1804)
+
+## [Apps FAQ](FAQ-Apps.md)
+
+* [What are the Apps in BTCPay?](FAQ-Apps.md#what-are-the-apps-in-btcpay)
+* [Is there a limit on the number of Apps I can deploy?](FAQ-Apps.md#is-there-a-limit-on-the-number-of-apps-i-can-deploy)
+* [Is there a Point of Sale feature in BTCPay?](FAQ-Apps.md#is-there-a-point-of-sale-feature-in-btcpay)
+* [How can I use BTCPay in a physical store?](FFAQ-Apps.md#how-can-i-use-btcpay-in-a-physical-store)

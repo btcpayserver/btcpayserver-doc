@@ -1,6 +1,23 @@
-# FAQ
+# General BTCPay FAQ
 
 This page contains general questions about BTCPay. What it is, how it works, how to install it.
+
+# [General FAQ](FAQ-General.md)
+
+* [What is BTCPay Server?](FAQ-General.md#what-is-btcpay-server)
+* [Why choose it over other payment processors?](FAQ-General.md#what-is-btcpay-server)
+* [Why are everyone excited about BTCPay?](FAQ-General.md#what-is-btcpay-server)
+* [Who can use BTCPay?](FAQ-General.md#who-can-use-btcpay)
+* [How much does it cost to run BTCPay Server](FAQ-General.md#what-is-btcpay-server)
+* [How to install BTCPay](FAQ-General.md#whow-to-install-btcpay-server)
+* [What are the minimal requirements?](FAQ-General.md#what-are-the-minimal-requirements-to-run-btcpay)
+* [What e-commerce integrations are available?](FAQ-General.md#what-e-commerce-integrations-are-available)
+* [Can I use BTCPay if I'm not a merchant and don't have a store?](FAQ-General.md#do-i-need-to-have-an-online-store-to-accept-cryptocurrencies)
+* [Which cryptocurrencies are supported in BTCPay?](FAQ-General.md#which-cryptocurrencies-are-supported-in-btcpay)
+* [Why can't I just give my public address to my buyer?](FAQ-General.md#why-cant-i-just-give-my-bitcoin-address-to-a-buyer)
+* [Does BTCPay need my private key?](FAQ-General.md#does-btcpay-need-myprivate-key)
+* [Where can I get help/support?](FAQ-General.md#where-can-i-get-help-and-support)
+* [How can I contribute to BTCPay?](FAQ-General.md#how-can-i-contribute-to-btcpay)
 
 ## What is BTCPay Server?
 
@@ -12,7 +29,7 @@ BTCPay is a non-custodial invoicing system which eliminates the involvement of a
 
 The most significant advantage of BTCPay over other processors is that it is entirely free and open-source, non-custodial software, created by the community. While most of the other processors hold your Bitcoins, BTCPay allows you to receive payments P2P, directly to your software or hardware wallet. 
 
-BTCPay is a self-hosted software. This means that you are your own payment processor. There are no subscriptions, no transaction fees. There's no third-party involvement which significantly increases the censorship-resistance, privacy, and security for you and your customers. Furthermore, BTCPay will enable you to become a processor yourself, so that you can offer different packages and help spread the adoption locally or globally.
+BTCPay is a self-hosted software. This means that you are your own payment processor. There are no subscriptions, no transaction fees. There's no third-party involvement which significantly increases the censorship-resistance, privacy, and security for you and your customers. Furthermore, BTCPay enables you to become a processor yourself, so that you can offer different packages and help spread the adoption locally or globally.
 
 With BTCPay, you are your own bank. 
 
@@ -20,11 +37,15 @@ With BTCPay, you are your own bank.
 
 The community is excited about BTCPay and often recommends it to merchants or content creators because it offers a direct way for store-owners and charities to receive Bitcoin payments, which significantly improves the privacy of the customers/donors. 
 
-BTCPay doesn't compromise on censorship-resistance, which is one of the main feature of Bitcoin. Besides that, being free and open-source it gives a great opportunity for developers to build things and integrations on top of BTCPay.
+BTCPay doesn't compromise on censorship-resistance, which is one of the main features of Bitcoin. Besides that, being free and open-source it gives an excellent opportunity for developers to build things and integrations on top of BTCPay.
+
+## Who can use BTCPay?
+
+BTCPay server is a feature-rich software with plenty of use-cases that can solve problems for different types of users. Merchants, content creators, lightning network users, exchanges, hosting providers and many others can find it useful. See the [Use Case page](/UseCase.md) for detailed breakdown of BTCPay use-cases.
 
 ## How much does it cost to run BTCPay Server?
 
-BTCPay is a free software. You can run it as a self-hosted solution on your own local server, or use a hosting provider, which is what a majority of users do. Additionally, you can use a third-party BTCPay host and attach your store to it.
+BTCPay is free software. You can run it as a self-hosted solution on your own local server, or use a hosting provider, which is what a majority of users do. Additionally, you can use a third-party BTCPay host and attach your store to it.
 
 If you choose to host it externally, the price depends obviously on the hosting provider. Be sure to choose a VPS which meets the minimal requirements in RAM and storage.
 
@@ -38,7 +59,7 @@ Just like you can host a website locally, you can do it with BTCPay. Please be a
 
 You might also not want to expose your home IP address for an activity related to payment and money.
 
-For all these reasons, while local hosting is good for testing, it's really not a viable solution on production.
+For all these reasons, while local hosting is suitable for testing, it's not a viable solution for production.
 
 ### Can the cost of running BTCPay on Microsoft Azure be reduced?
 
@@ -106,7 +127,7 @@ If you're a developer, you can develop your own integration, by following the [c
 
 You can use BTCPay even if you don't have an e-commerce store. You can launch your BTCpay and be the payment processor for your friends or local market. Another use-case is to accept donations through the POS (Point of Sale) app or payment buttons which can be copy-pasted as HTML snippets into any website.
 
-If you do not have a store, but want to create one, read [How to Create an Online Store & Accept Bitcoin – Step By Step Guide](https://bitcoinshirt.co/how-to-create-store-accept-bitcoin/) which will teach you how to build a store from scratch and install BTCPay.
+If you do not have a store, but want to create one, read [How to Create an Online Store & Accept Bitcoin – Step By Step Guide](https://bitcoinshirt.co/how-to-create-store-accept-bitcoin/) which teaches you how to build a store from scratch and install BTCPay.
 
 ## Which cryptocurrencies are supported in BTCPay?
 
@@ -127,13 +148,13 @@ BTCPay natively supports:
 
 Re-using the address for receiving payments is a privacy issue. Providing a different address manually to each customer is not an optimal solution. Imagine having to send an e-mail to everyone that wants to pay you with cryptocurrency.
 
-BTCPay solves the address re-use and automates the checkout process. The software is a complete, automated invoicing system. It integrates into your checkout process and customers can pay you in Bitcoin or altcoins in a few clicks.
+BTCPay solves the address re-use and automates the checkout process. The software is a complete, automated invoicing system. It integrates into your checkout process, and customers can pay you in Bitcoin or altcoins in a few clicks.
 
 After the payment, the software notifies your store that the order has been paid/completed. Depending on the e-commerce software you're using, it can also change the order status. All you have to worry about is getting items shipped, leave the invoicing and payment processing to BTCPay.
 
 ## Does BTCPay need my private key?
 
-Absolutely not. The fact that BTCPay Server never needs access to your master private key for on-chain transactions is a huge security advantage. Even if your server gets hacked, your funds from the on-chain transactions are always safe. Securing your on-chain funds, comes down to [securing your wallet](https://btcinformation.org/en/secure-your-wallet).
+Absolutely not. The fact that BTCPay Server never needs access to your master private key for on-chain transactions is a huge security advantage. Even if your server gets hacked, your funds from the on-chain transactions are always safe. Securing your on-chain funds comes down to [securing your wallet](https://btcinformation.org/en/secure-your-wallet).
 
 If you have a lightning node, BTCPay technically has access to the keys (macarons) of your LN.
 
@@ -155,4 +176,4 @@ If you encountered an issue or have a feature request, please [open an issue on 
 
 There are many ways in which you can contribute to an open-source project like BTCPay.
 
-The easiest way is to use the software, provide feedback and report any bugs or issues you or your customers encounter. If you're a developer, you can help us develop and improve the software by contributing on the GitHub. Translating BTCPay into your native language, helping us with documentation writing are ways in which you can help us out, even if you're not a developer or tech-savvy. We appreciate every contributor to the project. You're awesome.
+The easiest way is to use the software, provide feedback and report any bugs or issues you or your customers encounter. If you're a developer, you can help us develop and improve the software by contributing on the GitHub. Translating BTCPay into your native language, helping us with documentation writing are ways in which you can help us out, even if you're not a developer or tech-savvy. We appreciate every contributor to the project.
