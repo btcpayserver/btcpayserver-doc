@@ -85,3 +85,10 @@ Questions and solutions to BTCPay installaton.
 ### [Manual Deployment FAQ](FAQ-Deployment.md#manual-deployment)
 * [Getting 500 nginx error on aa local server https and for http (BTCPay is expecting you to access this website from)](FAQ-Deployment.md#getting-500-nginx-error-on-aa-local-server-https-and-for-http-btcpay-is-expecting-you-to-access-this-website-from)
 * [How to manually install BTCPay on Ubuntu 18.04?](FAQ-Deployment.md#how-to-manually-install-btcpay-on-ubuntu-1804)
+
+## [Apps FAQ](FAQ-Apps.md)
+
+* [What are the Apps in BTCPay?](FAQ#what-are-the-apps-in-btcpay)
+* [Is there a limit on the number of Apps I can deploy?](FAQ#is-there-a-limit-on-the-number-of-apps-i-can-deploy)
+* [Is there a Point of Sale feature in BTCPay?](FAQ#is-there-a-point-of-sale-feature-in-btcpay)
+* [How can I use BTCPay in a physical store?](FAQ#how-can-i-use-btcpay-in-a-physical-store)
