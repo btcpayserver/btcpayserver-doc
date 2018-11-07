@@ -2,10 +2,10 @@
 
 This document covers frequently asked question about the Apps in BTCPay.
 
-* [What are the Apps in BTCPay?](FAQ#what-are-the-apps-in-btcpay)
-* [Is there a limit on the number of Apps I can deploy?](FAQ#is-there-a-limit-on-the-number-of-apps-i-can-deploy)
-* [Is there a Point of Sale feature in BTCPay?](FAQ#is-there-a-point-of-sale-feature-in-btcpay)
-* [How can I use BTCPay in a physical store?](FAQ#how-can-i-use-btcpay-in-a-physical-store)
+* [What are the Apps in BTCPay?](#what-are-the-apps-in-btcpay)
+* [Is there a limit on the number of Apps I can deploy?](#is-there-a-limit-on-the-number-of-apps-i-can-deploy)
+* [Is there a Point of Sale feature in BTCPay?](#is-there-a-point-of-sale-feature-in-btcpay)
+* [How can I use BTCPay in a physical store?](#how-can-i-use-btcpay-in-a-physical-store)
 
 ## What are the Apps in BTCPay?
 Apps are plugins (features) you can use to expand the-use case of your BTCPay.
