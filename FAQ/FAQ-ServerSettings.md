@@ -4,18 +4,18 @@ This document covers all the questions and issues related to Server Settings. Th
 
 ## Maintainance
     
-* [How to update BTCPay Server](FAQ/FAQ-ServerSettings.md#how-to-update-btcpay-server)
+* [How to update BTCPay Server](FAQ-ServerSettings.md#how-to-update-btcpay-server)
 * [How can I check my BTCPay Server version?](FAQ/FAQ-ServerSettings.md#how-can-i-see-my-btcpay-version)
-* [How can I check my BTCPay Server version via termina]?(FAQ/FAQ-ServerSettings.md#how-can-i-see-my-btcpay-version)
-* [What is BTCPay SSH key file](FAQ/FAQ-ServerSettings.md#what-is-btcpay-ssh-key-file)
+* [How can I check my BTCPay Server version via termina?](FAQ-ServerSettings.md#how-can-i-see-my-btcpay-version)
+* [What is BTCPay SSH key file](FAQ-ServerSettings.md#what-is-btcpay-ssh-key-file)
 * [Error the BTCPAY_SSHKEYFILE variable is not set/ Unable to update](FAQ-ServerSettings.md#btcpay_sshkeyfile-is-not-set-when-running-the-docker-install-or-unable-to-update-through-server-settings--maintenance)
 * [Forgot BTCPay Admin password]()
 
 ## Theme / Customization
     
-* [How to customize my BTCPay theme style](FAQ/FAQ-ServerSettings.md#how-to-customize-my-btcpay-theme-style)
-* [How to add Google Analytics code to BTCPay](FAQ/FAQ-ServerSettings.md#how-to-add-google-analytics-code-to-btcpay)
-* [How to modify BTCPay checkout page](FAQ/FAQ-ServerSettings.md#how-to-modify-the-checkout-page)
+* [How to customize my BTCPay theme style](FAQ-ServerSettings.md#how-to-customize-my-btcpay-theme-style)
+* [How to add Google Analytics code to BTCPay](FAQ-ServerSettings.md#how-to-add-google-analytics-code-to-btcpay)
+* [How to modify BTCPay checkout page](FAQ-ServerSettings.md#how-to-modify-the-checkout-page)
 
 ## Maintainance
    
