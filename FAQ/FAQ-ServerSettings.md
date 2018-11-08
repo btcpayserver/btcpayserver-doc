@@ -21,13 +21,13 @@ This document covers all the questions and issues related to Server Settings. Th
 
 There are 2 ways to update your BTCPay Server :
 1. Updating through the front end: Server Settings > Maintenance > Update.
-2. Updating through SSH: Log in into your virtual machine with ssh, then apply following commands:
+2. Updating through SSH: Login into your virtual machine with ssh, then apply following commands:
 ```
 sudo su -
 btcpay-update.sh
 ```
 ### How can I see my BTCPay version?
-You can see your BTCPay version in the bottom right of the page footer, when you're logged in as a server admin.
+You can see your BTCPay version in the bottom right of the page footer when you're logged in as a server admin.
 ### How can I check my BTCPay Server version via terminal?
 In the btcpayserver-docker folder:`bitcoin-cli.sh getnetworkinfo`
 ### What is BTCPay SSH key file?
@@ -54,37 +54,16 @@ INSERT INTO "AspNetUserRoles" Values ( (SELECT "Id" FROM "AspNetUsers" WHERE "Em
 ```
 Now you can access with `newadmin@example.com` as admin.
 
-### Warning `The BTCPAY_SSHKEYFILE variable is not set` when running docker
+## BTCPAY_SSHKEYFILE is not set when running the docker install, or unable to update through Server Settings / Maintenance
 
-You may see such error message when you run your docker-compose (either via `btcpay-up.sh` or `btcpay-setup.sh`):
+You may see such the following message when you run your docker-compose (either via `btcpay-up.sh` or `btcpay-setup.sh`):
 
 ```bash
 WARNING: The BTCPAY_SSHKEYFILE variable is not set. Defaulting to a blank string.
 WARNING: The BTCPAY_SSHTRUSTEDFINGERPRINTS variable is not set. Defaulting to a blank string.
 ```
-This means that your BTCPay Server does not have access to SSH to your VM.
 
-If you did not set up the SSH keys, then BTCPay prompts you for SSH information when trying to run those actions.
-
-If you decide you want to give access SSH to BTCPay Server, run:
-
-```bash
-# Log as root
-sudo su -
-
-# Add SSH access to a key generated for btcpay
-ssh-keygen -t rsa -f /root/.ssh/id_rsa_btcpay -q -P ""
-echo "# Key used by BTCPay Server" >> /root/.ssh/authorized_keys
-cat /root/.ssh/id_rsa_btcpay.pub >> /root/.ssh/authorized_keys
-
-# Change your settings to pass the key to btcpay
-BTCPAY_HOST_SSHKEYFILE=/root/.ssh/id_rsa_btcpay
-cd $BTCPAY_BASE_DIRECTORY/btcpayserver-docker
-. ./btcpay-setup.sh -i
-```
-## BTCPAY_SSHKEYFILE is not set when running the docker install, or unable to update through Server Settings / Maintenance
-
-`BTCPay Server` needs SSH access so you can perform some tasks through the front-end like:
+`BTCPay Server` requires SSH access, to allow you to perform the following tasks from the front-end:
 
 * Updating the server
 * Changing the domain name of the server
