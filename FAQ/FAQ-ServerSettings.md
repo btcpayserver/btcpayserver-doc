@@ -4,16 +4,18 @@ This document covers all the questions and issues related to Server Settings. Th
 
 ## Maintainance
     
-* How to update BTCPay Server[]
-* How can I check my BTCPay Server version via terminal?[]
-* What is BTCPay SSH key file[]
-* Error the BTCPAY_SSHKEYFILE variable is not set[]
+* [How to update BTCPay Server](FAQ/FAQ-ServerSettings.md#how-to-update-btcpay-server)
+* [How can I check my BTCPay Server version?](FAQ/FAQ-ServerSettings.md#how-can-i-see-my-btcpay-version)
+* [How can I check my BTCPay Server version via termina]?(FAQ/FAQ-ServerSettings.md#how-can-i-see-my-btcpay-version)
+* [What is BTCPay SSH key file](FAQ/FAQ-ServerSettings.md#what-is-btcpay-ssh-key-file)
+* [Error the BTCPAY_SSHKEYFILE variable is not set/ Unable to update](FAQ-ServerSettings.md#btcpay_sshkeyfile-is-not-set-when-running-the-docker-install-or-unable-to-update-through-server-settings--maintenance)
+* [Forgot BTCPay Admin password]()
 
 ## Theme / Customization
     
-* How to customize my BTCPay theme style[]
-* How to add Google Analytics code to BTCPay[]
-* How to modify BTCPay checkout page[]
+* [How to customize my BTCPay theme style](FAQ/FAQ-ServerSettings.md#how-to-customize-my-btcpay-theme-style)
+* [How to add Google Analytics code to BTCPay](FAQ/FAQ-ServerSettings.md#how-to-add-google-analytics-code-to-btcpay)
+* [How to modify BTCPay checkout page](FAQ/FAQ-ServerSettings.md#how-to-modify-the-checkout-page)
 
 ## Maintainance
    
@@ -32,11 +34,8 @@ You can see your BTCPay version in the bottom right of the page footer when you'
 In the btcpayserver-docker folder:`bitcoin-cli.sh getnetworkinfo`
 ### What is BTCPay SSH key file?
 BTCPay SSH key, enables users to update their server or quickly change the domain name from btcpay website, the front-end.
-
 ### Forgot BTCPay Admin password?
-
 You need to edit your database. Register new user, for example: "newadmin@example.com":
-
 Assuming you use docker:
 
 ```bash
