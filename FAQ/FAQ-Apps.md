@@ -29,7 +29,7 @@ This usually happensi in Wordpress. The Wordpress text editor can cause conflict
 
 You can get rid of that with a simple Wordpress plugin, [Don't muck my markup](https://wordpress.org/plugins/dont-muck-my-markup/). Install, activate it and then you should see this box on the right of the edit page of your posts :  
 
-![Dont-muck-markup](img/Dont-muck-markup.png)
+![Dont-muck-markup](/img/Dont-muck-markup.png)
 
 Just tick the case in the post you want to stick the pay button in and the problem should be solved.
 
