@@ -43,10 +43,10 @@
 * [Community](Community.md)
 
 ### FAQ and common issues
-* [General FAQ](FAQ-General.md)
-* [Deployment FAQ](FAQ-Deployment.md)
-* [Synchronization FAQ](FAQ-Synchronization.md)
-* [Server Settings FAQ](FAQ-ServerSettings.md)
-* [Apps FAQ](FAQ-Apps.md)
-* [Wallet FAQ](FAQ-Wallet.md)
-* [Lightning Network FAQ](FAQ-LightningNetwork.md)
+* [General FAQ](/FAQ-General.md)
+* [Deployment FAQ](/FAQ-Deployment.md)
+* [Synchronization FAQ](/FAQ-Synchronization.md)
+* [Server Settings FAQ](/FAQ-ServerSettings.md)
+* [Apps FAQ](/FAQ-Apps.md)
+* [Wallet FAQ](/FAQ-Wallet.md)
+* [Lightning Network FAQ](/FAQ-LightningNetwork.md)
