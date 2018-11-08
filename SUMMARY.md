@@ -35,14 +35,9 @@
 * [Lightning Network](LightningNetwork.md)
 * [How to add an Altcoin](Altcoins.md)
 
-### Support and Community
-
-* [FAQ](FAQ.md)
-* [Support](Support.md)
-* [Contribute](Contribute.md)
-* [Community](Community.md)
-
 ### FAQ and common issues
+
+* [FAQ Table of Contents](FAQ/readme.md)
 * [General FAQ](FAQ/FAQ-General.md)
 * [Deployment FAQ](FAQ/FAQ-Deployment.md)
 * [Synchronization FAQ](FAQ/FAQ-Synchronization.md)
@@ -50,3 +45,9 @@
 * [Apps FAQ](FAQ/FAQ-Apps.md)
 * [Wallet FAQ](FAQ/FAQ-Wallet.md)
 * [Lightning Network FAQ](FAQ/FAQ-LightningNetwork.md)
+
+### Support and Community
+
+* [Support](Support.md)
+* [Contribute](Contribute.md)
+* [Community](Community.md)
