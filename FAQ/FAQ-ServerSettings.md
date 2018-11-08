@@ -90,7 +90,6 @@ You should be able to do what you want by injecting your GA code to ~/wwwroot/ch
 ### How to modify the checkout page?
 Create a new CSS Stylesheet and name it yourdomain.css on your local site. Then, add the link to the yordomain.css to your Stores > Checkout Experience.
 Create  “yourdomain.css” similar to the template below, on your local site, then add that link to your BTCPay settings.
-.
 Here is a sample template you can use:
 ```
 .top-header {background-color: #fff;}
