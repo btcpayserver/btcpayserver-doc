@@ -139,7 +139,7 @@ Lightning Network troubleshooting and common problems.
 
 ### [Lightning Network (c-lightning) FAQ](FAQ-LightningNetwork.md#lightning-network-c-lightning-faq)
 
-## Altcoins FAQ(FAQ-Altcoin.md)
+## [Altcoins FAQ](FAQ-Altcoin.md)
 * [Which coins BTCPay Server supports?](FAQ-Altcoin.md#which-coins-btcpay-server-supports)
 * [Can an XYZ coin be added in BTCPay?](FAQ-Altcoin.md#can-an-xyz-coin-be-added-in-btcpay)
 * [How to an altcoin in BTCPay?](FAQ-Altcoin.md#how-to-an-altcoin-in-btcpay)
