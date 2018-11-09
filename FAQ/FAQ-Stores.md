@@ -35,7 +35,7 @@ Please think twice about how this may affect your business and make sure to comm
 ## Allow anyone to create invoice
 You should enable this option if you want to enable users to create invoices themselves. This option is only useful if you're using POS App or the payment button.
 
-## Invoice expires if the full amountdecicide has not been paid after ... minutes
+## Invoice expires if the full amount has not been paid after ... minutes
 The invoice timer is set to 15 minutes by default. The timer is a protection mechanism against the volatility since it locks the cryptocurrency amount according to the crypto to fiat rates. If the customer does not pay the invoice within the defined period, the invoice is considered expired. The invoice is considered "paid" as soon as the transaction is visible on the blockchain (o-confirmations) but considered "complete" when it reaches the number of confirmations the merchant defined (usually, 1-6). The timer is customizable.
 
 ## Payment invalid if transactions fails to confirm ... minutes after invoice expiration
