@@ -41,7 +41,7 @@
 * [General FAQ](FAQ/FAQ-General.md)
 * [Deployment FAQ](FAQ/FAQ-Deployment.md)
 * [Synchronization FAQ](FAQ/FAQ-Synchronization.md)
-* [Interations FAQ](FAQ/FAQ-Integrations.md)
+* [Integrations FAQ](FAQ/FAQ-Integrations.md)
 * [Server Settings FAQ](FAQ/FAQ-ServerSettings.md)
 * [Stores FAQ](FAQ/FAQ-Stores.md)
 * [Wallet FAQ](FAQ/FAQ-Wallet.md)
