@@ -51,6 +51,7 @@
 
 ### Support and Community
 
+* [Troubleshooting an issue](Troubleshooting.md)
 * [Support](Support.md)
 * [Contribute](Contribute.md)
 * [Community](Community.md)
