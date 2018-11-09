@@ -1,3 +1,5 @@
+# Troubleshooting an issue in BTCPay Server
+
 Facing a problem is never fun. This document explains the most common workflow and steps you should take to easier identify the issue you're having and hopefully solve it yourself or with community help.
 
 Identifying the problem is crucial.
