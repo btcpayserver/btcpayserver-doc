@@ -95,7 +95,7 @@ Here are some of the questions and problems about wallets in BTCPay.
 * [What are the Apps in BTCPay?](FAQ-Apps.md#what-are-the-apps-in-btcpay)
 * [Is there a limit on the number of Apps I can deploy?](FAQ-Apps.md#is-there-a-limit-on-the-number-of-apps-i-can-deploy)
 * [Is there a Point of Sale feature in BTCPay?](FAQ-Apps.md#is-there-a-point-of-sale-feature-in-btcpay)
-* [How can I use BTCPay in a physical store?](FFAQ-Apps.md#how-can-i-use-btcpay-in-a-physical-store)
+* [How can I use BTCPay in a physical store?](FAQ-Apps.md#how-can-i-use-btcpay-in-a-physical-store)
 
 ## [Lightning Network FAQ](FAQ-LightningNetwork.md)
 
