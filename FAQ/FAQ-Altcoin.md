@@ -2,10 +2,10 @@
 
 This page answers some of the common questions about alternative cryptocurrencies - altcoins.
 
-* [Which coins BTCPay Server supports?]()
-* [Can an XYZ coin be added in BTCPay?]()
-* [How to an altcoin in BTCPay?]()
-* [How to add an altcoin to an existing BTCPay deployment?]()
+* [Which coins BTCPay Server supports?](FAQ-Altcoin.md#which-coins-btcpay-server-supports)
+* [Can an XYZ coin be added in BTCPay?](FAQ-Altcoin.md#can-an-xyz-coin-be-added-in-btcpay)
+* [How to an altcoin in BTCPay?](FAQ-Altcoin.md#how-to-an-altcoin-in-btcpay)
+* [How to add an altcoin to an existing BTCPay deployment?](FAQ-Altcoin.md#how-to-add-an-altcoin-to-an-existing-btcpay-deployment)
 
 ## Which coins BTCPay Server supports?
 Besides, Bitcoin as the main focus of the project, BTCPay natively supports following alternative cryptocurrencies:
