@@ -2,7 +2,7 @@
 
 This document covers all the questions and issues related to Server Settings. This option is only available to server admin. Take a look at the [walkthrough page](/Walkthrough.md) to easier understand the navigation 
 
-## Maintainance
+## Maintenance
     
 * [How to update BTCPay Server](FAQ-ServerSettings.md#how-to-update-btcpay-server)
 * [How can I check my BTCPay Server version?](FAQ-ServerSettings.md#how-can-i-see-my-btcpay-version)
@@ -17,7 +17,7 @@ This document covers all the questions and issues related to Server Settings. Th
 * [How to add Google Analytics code to BTCPay](FAQ-ServerSettings.md#how-to-add-google-analytics-code-to-btcpay)
 * [How to modify BTCPay checkout page](FAQ-ServerSettings.md#how-to-modify-the-checkout-page)
 
-## Maintainance
+## Maintenance
    
 ### How to update BTCPay Server
 
