@@ -15,10 +15,10 @@ This page shows common issues and frequently asked questions about Stores in BTC
 ## How to create a store in BTCPay?
 To create your first store, go to > Stores from the header menu and click "create a new store".
 ## How many stores can I create?
-There's no limit on number of stores you can create in BTCPay.
+There's no limit on a number of stores you can create in BTCPay.
 
 ## Store General Settings
-Explanation of features inside Store > General Settings, configured on a store-level.
+Explanation of features inside Store > General Settings configured on a store-level.
 
 ## Add network fee to invoice (vary with mining fees)?
 Network fee (cost) is a feature in BTCPay which protects merchants from a customer who pays the invoice partially. When an invoice is paid from many outputs, the fee for a merchant who needs to move those funds will be higher.
@@ -26,7 +26,7 @@ For example, the customer created an invoice for 20$ and paid 20 x 1$. Merchant 
 
 BTCPay applies a network cost after to transaction, to cover this expense. The network fee in BTCPay is not the same thing as the mining fee. The customers still need to pay for the miner's fee. 
 
-The network cost is an optional feature. It's enabled by default, but it's entirely up to a merchant to enable or disable it. Your customers will be able to see this "network cost" at the checkout when they expand the invoice information.
+The network cost is an optional feature. It's enabled by default, but it's entirely up to a merchant to enable or disable it. The customer sees the "network cost" at the checkout when they expand the invoice information.
 
 While it protects dust transactions, it can also reflect negatively and your customers might have additional questions and may lead them into thinking you're overcharging them.
 
@@ -35,14 +35,14 @@ Please think twice about how this may affect your business and make sure to comm
 ## Allow anyone to create invoice
 You should enable this option if you want to enable users to create invoices themselves. This option is only useful if you're using POS App or the payment button.
 
-## Invoice expires if the full amount has not been paid after ... minutes
-The invoice timer is set to 15 minutes by default. The timer is a protection mechanism against the volatility, since it locks the cryptocurrency amount according to the crypto to fiat rates. If the customer does not pay the invoice within the defined period, the invoice will be considered expired. The invoice is considered "paid"as soon as the transaction is visible on the blockchain (o-confirmations), but considered "complete" when it reaches the amount of confirmations the merchant defined (usually, 1-6). The timer is customizable.
+## Invoice expires if the full amountdecicide has not been paid after ... minutes
+The invoice timer is set to 15 minutes by default. The timer is a protection mechanism against the volatility since it locks the cryptocurrency amount according to the crypto to fiat rates. If the customer does not pay the invoice within the defined period, the invoice is considered expired. The invoice is considered "paid" as soon as the transaction is visible on the blockchain (o-confirmations) but considered "complete" when it reaches the number of confirmations the merchant defined (usually, 1-6). The timer is customizable.
 
 ## Payment invalid if transactions fails to confirm ... minutes after invoice expiration
-If the customer pays the invoice, but it fails to get the defined number of confirmations within the set time period, it will be marked as "invalid". Merchant can then decicide wheather to accept the invoice afterwards manuallly or decline it and require additional payment from the customer. This is an additional protection mechanism against the volatility.
+If the customer pays the invoice, but it fails to get the defined number of confirmations within the set period, it is marked as "invalid." The merchant can then decide whether to accept the invoice afterward manually or decline it and require additional payment from the customer. This is an additional protection mechanism against the volatility.
 
 ## Consider the invoice confirmed when the payment transaction
-The invoice is considered "paid", as soon as it's visible on the blockchain. When invoice reaches the defined number of confirmations, it will be considered "confirmed/completed". Here you set the minimum amount of confirmations after which the invoice gets the "confirmed/completed" status.
+The invoice is considered "paid," as soon as it's visible on the blockchain. When the invoice reaches the defined number of confirmations, it itis considered "confirmed/completed". Here you set the minimum amount of confirmations after which the invoice gets the "confirmed/completed" status.
 
 ## Consider the invoice paid even if the paid amount is ... % less than expected
-In situation where a customer uses an exchange wallet to pay directly for an invoice, the exchange takes small amount of fee. This means that such invoice will not be considered fully completed. The invoice will get status "paid partially". If a merchant wants to accept underpaid invoices, you can set the percentage rate here.
+In a situation where a customer uses an exchange wallet to pay directly for an invoice, the exchange takes a small amount of fee. This means that such invoice is not considered fully completed. The invoice gets status "paid partially." If a merchant wants to accept underpaid invoices, you can set the percentage rate here.
