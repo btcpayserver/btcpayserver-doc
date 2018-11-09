@@ -54,7 +54,7 @@ Common questions and issues that may occur during the initial sync of BTCPay.
 
 ## [Server Settings FAQ](FAQ-ServerSettings.md)
 
-### [Maintenance FAQ](FAQ-ServerSettings.md#maintainance-1)
+### [Maintenance FAQ](FAQ-ServerSettings.md#maintainance)
 * [How to update BTCPay Server](FAQ-ServerSettings.md#how-to-update-btcpay-server)
 * [How can I check my BTCPay Server version?](FAQ-ServerSettings.md#how-can-i-see-my-btcpay-version)
 * [How can I check my BTCPay Server version via termina?](FAQ-ServerSettings.md#how-can-i-see-my-btcpay-version)
