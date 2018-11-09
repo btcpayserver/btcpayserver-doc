@@ -42,6 +42,7 @@
 * [Deployment FAQ](FAQ/FAQ-Deployment.md)
 * [Synchronization FAQ](FAQ/FAQ-Synchronization.md)
 * [Server Settings FAQ](FAQ/FAQ-ServerSettings.md)
+* [Stores FAQ](FAQ/FAQ-Stores.md)
 * [Apps FAQ](FAQ/FAQ-Apps.md)
 * [Wallet FAQ](FAQ/FAQ-Wallet.md)
 * [Lightning Network FAQ](FAQ/FAQ-LightningNetwork.md)
