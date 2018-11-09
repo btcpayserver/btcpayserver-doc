@@ -2,11 +2,13 @@
 This page covers questions about BTCPay integrations.
 
 ## [Integrations General](FAQ-Integrations.md#integrations-general-faq)
+
 * [Which integrations are available in BTCPay?](FAQ-Integrations.md#which-integrations-are-available-in-btcpay)
 * [Does BTCPay have a Shopify plugin?](FAQ-Integrations.md#does-btcpay-have-a-shopify-plugin)
 * [Can I use BTCPay without an integration](FAQ-Integrations.md#can-i-use-btcpay-without-an-integration)
 
 ## [WooCommerce FAQ](FAQ-Integrations.md#woocommerce-faq-1)
+
 * [How to configure order status in WooCommerce?](FAQ-Integrations.md#how-to-configure-order-status-in-woocommerce)
 * [How to customize e-mail confirmations in WooCommerce?](FAQ-Integrations.md#how-to-customize-e-mail-confirmations-in-woocommerce)
 
@@ -17,6 +19,7 @@ This page covers questions about BTCPay integrations.
 * [Magento](/Magento.md)
 * [PrestaShop](/PrestaShop.md)
 * [Custom Integration](/CustomIntegration.md)
+
 ### Does BTCPay have a Shopify plugin?
 At this time, BTCPay does not have a Shopify integration.
 ### Can I use BTCPay without an integration?
