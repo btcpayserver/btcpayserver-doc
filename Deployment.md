@@ -1,15 +1,24 @@
-# BTCPayServer Deployment
+# BTCPay Server Deployment
 
-## What are my options?
-There are several different deployment methods available, all using the same BTCPayServer software. Because BTCPay is a free and open-source cryptocurrency payment processor, we support diversity in deployment methods for users. Different solutions work best for different use cases. 
+There are several different deployment methods available, all using the same BTCPay Server software. Because BTCPay is a free and open-source cryptocurrency payment processor, we support diversity in deployment methods for users. Different solutions work best for [different use cases](https://github.com/btcpayserver/btcpayserver-doc/blob/master/UseCase.md). 
 
-Business deployment methods can vary by setup, maintenance, support, price, etc. You can run BTCPay as a self-hosted solution on your own server, or use a third-party host. The self-hosted solution allows you not only to attach an unlimited number of stores and use the Lightning Network but also become a payment processor for others.
+Business deployment methods can vary by setup, maintenance, support, price, etc. You can run BTCPay as a self-hosted solution on your own server, or use a third-party host. The self-hosted solution allows you not only to attach an unlimited number of stores and use the [Lightning Network](https://github.com/btcpayserver/btcpayserver-doc/blob/master/LightningNetwork.md) but also become a payment processor for others.
 
 BTCPay is a non-custodial invoicing system which eliminates the involvement of a third-party when managing funds. Payments with BTCPay go directly to your wallet. Your private keys are never uploaded to the server. Meaning 3rd Party BTCPay hosts do not control user funds, they are simply hosting your instance of the BTCPay software for you.
 
 Developer deployments are not recommended for production environments and require the user to have technical knowledge related to the build. 
 
-To chose one that will best suit your needs, consider the following:
+## What are my options?
+
+* [Web Deployment](https://github.com/btcpayserver/btcpayserver-doc/blob/master/LunaNodeWebDeployment.md)
+* [Azure Deployment](https://github.com/btcpayserver/btcpayserver-doc/blob/master/AzureDeployment.md)
+* [Docker Deployment](https://github.com/btcpayserver/btcpayserver-doc/blob/master/DockerDeployment.md)
+* [Google Cloud Deployment](https://github.com/btcpayserver/btcpayserver-doc/blob/master/GoogleCloudDeployment.md)
+* [Hardware Deployment](https://github.com/btcpayserver/btcpayserver-doc/blob/master/HardwareDeployment.md)
+* [Third-Party Hosting](https://github.com/btcpayserver/btcpayserver-doc/blob/master/ThirdPartyHosting.md)
+* [Manual Deployment](https://github.com/btcpayserver/btcpayserver-doc/blob/master/ManualDeployment.md)
+
+## To chose one that will best suit your needs, consider the following:
 
 <br>
 
@@ -41,5 +50,5 @@ To chose one that will best suit your needs, consider the following:
 |Developer Solutions                     |                     |                   |              |    
 | -------------------------------------- |:-------------------:|:-----------------:|:------------:|
 |Developer<br>(Testing Setup)            |Manual Install       |Manual Build       |Hardware Build|
-|**Not Recommended<br>For New Users**    |[Install From<br>Command Line](http://blog.sipsorcery.com/?p=1052)|[Build Without<br>Docker Image](https://github.com/btcpayserver/btcpayserver-doc/blob/master/ManualDeployment.md) |[arm32v7](https://hub.docker.com/r/ketominer/btcpayserver-arm32v7/)<br>[BTCPayBox](https://github.com/btcpayserver/btcpayserver-doc/blob/master/HardwareDeployment.md) |
+|**Not Recommended<br>For New Users**    |[Install From<br>Command Line](http://blog.sipsorcery.com/?p=1052)|[Build Without<br>Docker Image](https://github.com/btcpayserver/btcpayserver-doc/blob/master/ManualDeployment.md) |[ARM32v7](https://hub.docker.com/r/ketominer/btcpayserver-arm32v7/)<br>[BTCPayBox](https://github.com/btcpayserver/btcpayserver-doc/blob/master/HardwareDeployment.md) |
 
