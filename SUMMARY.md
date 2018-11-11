@@ -55,5 +55,5 @@
 * [Troubleshooting an issue](Troubleshooting.md)
 * [Support](Support.md)
 * [Contribute](Contribute.md)
-* [Translate](Translation.md)
+* [Translate](Translate.md)
 * [Community](Community.md)
