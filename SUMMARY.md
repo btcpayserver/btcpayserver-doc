@@ -7,8 +7,9 @@
 * [Getting Started](GettingStarted.md)
 * [Try it Out](TryItOut.md)
     
-## [Deployment](Deployment.md)
+## Deployment
 
+* [Choosing a Deployment Method](Deployment.md)
 * [Web Deployment](LunaNodeWebDeployment.md)
 * [Azure Deployment](AzureDeployment.md)
     * [Reducing Cost on Azure](AzurePennyPinching.md)
