@@ -44,15 +44,14 @@ Line 2: The name of your language, in your language.
 ## Translation Tips
 
 ### **Variables**
-{{ Words }} like this will be replaced by a variable depending on user choices.
+    {{Words}} like this will be replaced by a variable depending on user choices.
 
-  
 Example: To complete your payment, please send {{btcDue}} {{cryptoCode}} to the address below.
 
     {{btcDue}} Example: 10
     {{cryptoCode}} Example: BTC
 
-{{Variables}} should not be translated, but they need to remain in the correct place in your translated string because their placement will vary by language.
+They should not be translated, but they need to remain in the correct place in your translated string because their placement will vary by language.
 
     French Example:
      "Return to StoreName" translates to "Retourner sur {{storeName}}"
