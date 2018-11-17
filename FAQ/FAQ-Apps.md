@@ -6,7 +6,7 @@ This document covers frequently asked question about the Apps in BTCPay.
 * [Is there a limit on the number of Apps I can deploy?](#is-there-a-limit-on-the-number-of-apps-i-can-deploy)
 * [Is there a Point of Sale feature in BTCPay?](#is-there-a-point-of-sale-feature-in-btcpay)
 * [How can I use BTCPay in a physical store?](#how-can-i-use-btcpay-in-a-physical-store)
-* [How to customize the apperance of POS in BTCPay?](#how-to-customize-the-appearance-of-POS-in-BTCPay)
+* [How to customize the apperance of Point of Sale App in BTCPay?](#how-to-customize-the-appearance-of-Point-of-Sale-App-in-BTCPay)
 * [What is a Payment Button?](#what-is-a-payment-button)
 * [How to fix empty spacing around payment button](#how-to-fix-empty-spacing-around-payment-button)
 
@@ -22,7 +22,7 @@ Yes. Please read our [guide on creating the POS app](/GettingStarted.md#creating
 ## How can I use BTCPay in a physical store?
 You can use our Point of Sale up. For creating physical POS, right now, the easiest solution is to utilize POS App that’s available and then set that as URL within your in store POS. When you create POS app within BtcPayServer - you will get publicly accessible URL where checkout buttons for products you’ve defined will be displayed. Click on the button creates an invoice.
 
-## How to customize the appearance of POS in BTCPay
+## How to customize the appearance of Point of Sale App in BTCPay
 It is very easy to customize the look of the Point of Sale app. [Follow this guide](/Theme.md) to learn how to change the theme.
 
 ## What is a Payment Button?
