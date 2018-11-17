@@ -51,6 +51,7 @@ This solution is for you if:
 ### Tips & tricks
 
 * [FAQ](FAQ.md)
+* [Customize Bootstrap theme](Theme.md)
 * [How to change the domain name of your BTCPay Server](ChangeDomain.md)
 * [How to penny-pinch your Microsoft Azure deployment](AzurePennyPinching.md)
 

@@ -35,6 +35,7 @@
 * [Developing Locally](LocalDevelopment.md)
 * [Lightning Network](LightningNetwork.md)
 * [How to add an Altcoin](Altcoins.md)
+* [Customize Bootstrap theme](Theme.md)
 
 ### FAQ and common issues
 
