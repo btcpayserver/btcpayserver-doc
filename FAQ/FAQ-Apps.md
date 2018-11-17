@@ -23,7 +23,7 @@ Yes. Please read our [guide on creating the POS app](/GettingStarted.md#creating
 You can use our Point of Sale up. For creating physical POS, right now, the easiest solution is to utilize POS App that’s available and then set that as URL within your in store POS. When you create POS app within BtcPayServer - you will get publicly accessible URL where checkout buttons for products you’ve defined will be displayed. Click on the button creates an invoice.
 
 ## How to customize the appearance of POS in BTCPay
-It is very easy to customize the look of the Point of Sale app. [Follow this guide](/theme.md) to learn how to change the theme.
+It is very easy to customize the look of the Point of Sale app. [Follow this guide](/Theme.md) to learn how to change the theme.
 
 ## What is a Payment Button?
 The Payment Button is a simple and customizable HTML button you can create and embed into your website. To create a payment button, [follow this guide](/GettingStarted.md#creating-the-point-of-sale-app)
