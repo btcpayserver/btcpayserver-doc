@@ -115,6 +115,9 @@ Frequent questions about the applications in BTCPay.
 * [Is there a limit on the number of Apps I can deploy?](FAQ-Apps.md#is-there-a-limit-on-the-number-of-apps-i-can-deploy)
 * [Is there a Point of Sale feature in BTCPay?](FAQ-Apps.md#is-there-a-point-of-sale-feature-in-btcpay)
 * [How can I use BTCPay in a physical store?](FAQ-Apps.md#how-can-i-use-btcpay-in-a-physical-store)
+* [How to customize the apperance of POS in BTCPay?](FAQ-Apps.md#how-to-customize-the-appearance-of-POS-in-BTCPay)
+* [What is a Payment Button?](FAQ-Apps.md#what-is-a-payment-button)
+* [How to fix empty spacing around payment button](FAQ-Apps.md#how-to-fix-empty-spacing-around-payment-button)
 
 ## [Lightning Network FAQ](FAQ-LightningNetwork.md)
 
