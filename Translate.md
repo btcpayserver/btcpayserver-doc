@@ -32,7 +32,7 @@ You will need to know your language-country code. You can look them up [here](ht
 Line 1: Translate your Country-Code.
 
     Example for Brazilian Portuguese
-     'en' translates to 'pt_BR'
+     'en' translates to 'pt-BR'
 
 Line 2: The name of your language, in your language.
     
@@ -45,9 +45,6 @@ Line 2: The name of your language, in your language.
 
 ### **Variables**
     {{Words}} like this will be replaced by a variable depending on user choices.
-
-Example: To complete your payment, please send {{btcDue}} {{cryptoCode}} to the address below.
-
     {{btcDue}} Example: 10
     {{cryptoCode}} Example: BTC
 
