@@ -81,6 +81,7 @@ Common problems and questions server admins have.
 * [How to customize my BTCPay theme style](FAQ-ServerSettings.md#how-to-customize-my-btcpay-theme-style)
 * [How to add Google Analytics code to BTCPay](FAQ-ServerSettings.md#how-to-add-google-analytics-code-to-btcpay)
 * [How to modify BTCPay checkout page](FAQ-ServerSettings.md#how-to-modify-the-checkout-page)
+* [How to customize POS app theme?](/Theme.md)
 
 ## [Stores FAQ](FAQ-Stores.md)
 
