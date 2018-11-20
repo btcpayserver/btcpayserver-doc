@@ -17,7 +17,7 @@ You'll have to confirm and sign the transaction on your hardware wallet. BTCPay 
 
 ## Recommended external wallets?
 
-We highly recommend that you use interlan wallet in case you need to double-check the transaction. If you wish to use an external wallet, here are our recomendations
+We highly recommend you to use an internal wallet in case you need to double-check the transaction. If you wish to use an external wallet, here are our recomendations
 
 * Electrum - desktop wallet
 * Ledger Nano S - hardware wallet (other hardware wallets should be added at some point)
@@ -62,7 +62,7 @@ There's no good answer to how much you should set the gap limit to. Most merchan
 Be aware that :
 
 * Higher gap limit may slow down the performance of your wallet
-* Not all wallets support the incraesed gap limit. If you import Electrum recovery seed into another wallet, you may not see all the funds again.
+* Not all wallets support the increased gap limit. If you import Electrum recovery seed into another wallet, you may not see all the funds again.
 
 When an invoice is created in BTCPay, it does it for all coins you have setup. You may want to increase the gap limit for altcoins as well in their supported wallets.
 
