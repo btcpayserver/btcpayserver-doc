@@ -18,7 +18,7 @@ With BTCPay, you are your own bank.
 
 The community is excited about BTCPay and often recommends it to merchants or content creators because it offers a direct way for store-owners and charities to receive Bitcoin payments, which significantly improves the privacy of the customers/donors. 
 
-BTCPay doesn't compromise on censorship-resistance, which is one of the main feature of Bitcoin. Besides that, being free and open-source it gives a great opportunity for developers to build things and integrations on top of BTCPay.
+BTCPay doesn't compromise on censorship-resistance, which is one of the main features of Bitcoin. Besides that, being free and open-source it gives a great opportunity for developers to build things and integrations on top of BTCPay.
 
 ## How much does it cost to run BTCPay Server?
 
@@ -48,7 +48,7 @@ Please check out [How to penny-pinch your Azure deployment](AzurePennyPinching.m
 
 ## What are the minimal requirements to run BTCPay?
 
-If you would like to run Bitcoin and Lightning Network nodes, the minimal requirements are :
+If you would like to run Bitcoin and Lightning Network nodes, the minimal requirements are:
 - 2GB Ram
 - 80 GB of storage (with pruning enabled)
 - Docker
@@ -475,12 +475,12 @@ Restart your Electrum and verify that the newly set gap limit is correct by ente
 
 `wallet.gap_limit`
 
-There's no good answer to how much you should set the gap limit to. Most merchants set 100-200. If you're a big merchants with high transaction volume, you can try with even higher gap limit. 
+There's no good answer to how much you should set the gap limit to. Most merchants set 100-200. If you're a big merchant with high transaction volume, you can try with even higher gap limit. 
 
 Be aware that :
 
 * Higher gap limit may slow down the performance of your wallet
-* Not all wallets support the incraesed gap limit. If you import Electrum recovery seed into another wallet, you may not see all the funds again.
+* Not all wallets support the increased gap limit. If you import Electrum recovery seed into another wallet, you may not see all the funds again.
 
 When an invoice is created in BTCPay, it does it for all coins you have setup. You may want to increase the gap limit for altcoins as well in their supported wallets.
 
