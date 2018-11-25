@@ -24,7 +24,7 @@ Here are common questions about installation, regardless of the deployment metho
 
 ## General Deployment
 
-### How much it costs to run BTCPay Server?
+### How much does it cost to run BTCPay Server?
 BTCPay is a 100% free and open-source software. We do not charge you anything.
 However, to run it, you should host it. You can run it as a self-hosted solution on your own local server, or use a cloud hosting provider, which is what a majority of users do. Advanced users can run BTCPay on [their own hardware](/HardwareDeployment.md) Visit our [Deployment Page](/Deployment.md) to see various ways in which you can run BTCPay.
 If you do not wish to host your own server, you should use a free host. If you prefer to have control over your node and additional features, you can use a cloud solution, which goes from 5$ to 65$ /month depending on the provider you choose.
