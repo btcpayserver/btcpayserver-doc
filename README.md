@@ -7,6 +7,13 @@ BTCPayServer is an open-source, self-hosted payment processor for Bitcoin and ot
 If you have any issues with BTCPay, please file a [Github issue](https://github.com/btcpayserver/btcpayserver/issues).
 If you have more general questions, please come on [Slack](http://slack.btcpayserver.org/) or check our [Wiki Page](https://nbitstack.com/c/btcpayserver) for common issues.
 
+## How it works
+### In a nutshell
+### How is it different
+### How it keeps funds secure
+### How it keeps data private
+### How it resists censorship
+
 This solution is for you if:
 
 * You want to be in control of your own funds
