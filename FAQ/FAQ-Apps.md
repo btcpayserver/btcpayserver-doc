@@ -6,7 +6,7 @@ This document covers frequently asked question about the Apps in BTCPay.
 * [Is there a limit on the number of Apps I can deploy?](#is-there-a-limit-on-the-number-of-apps-i-can-deploy)
 * [Is there a Point of Sale feature in BTCPay?](#is-there-a-point-of-sale-feature-in-btcpay)
 * [How can I use BTCPay in a physical store?](#how-can-i-use-btcpay-in-a-physical-store)
-* [How to customize the apperance of Point of Sale App in BTCPay?](#how-to-customize-the-appearance-of-Point-of-Sale-App-in-BTCPay)
+* [How to customize the appearance of Point of Sale App in BTCPay?](#how-to-customize-the-appearance-of-Point-of-Sale-App-in-BTCPay)
 * [What is a Payment Button?](#what-is-a-payment-button)
 * [How to fix empty spacing around payment button](#how-to-fix-empty-spacing-around-payment-button)
 
@@ -29,7 +29,7 @@ It is very easy to customize the look of the Point of Sale app. [Follow this gui
 The Payment Button is a simple and customizable HTML button you can create and embed into your website. To create a payment button, [follow this guide](/GettingStarted.md#creating-the-point-of-sale-app)
 
 ## How to fix empty spacing around payment button?
-This usually happensi in Wordpress. The Wordpress text editor can cause conflicts with the pay button code by adding `<br>`, which is "line break" in HTML, between the hidden lines of the form, thus adding invisible empty lines. 
+This usually happens in Wordpress. The Wordpress text editor can cause conflicts with the pay button code by adding `<br>`, which is "line break" in HTML, between the hidden lines of the form, thus adding invisible empty lines. 
 
 You can get rid of that with a simple Wordpress plugin, [Don't muck my markup](https://wordpress.org/plugins/dont-muck-my-markup/). Install, activate it and then you should see this box on the right of the edit page of your posts :  
 
