@@ -6,7 +6,7 @@ This document covers the most common questions, errors, and issues you may encou
 
 Here are common questions about installation, regardless of the deployment method.
 
-* [How much it costs to run BTCPay Server?](FAQ-Deployment.md#how-much-it-costs-to-run-btcpay-server)
+* [How much does it cost to run BTCPay Server?](FAQ-Deployment.md#how-much-does-it-cost-to-run-btcpay-server)
 * [What are the minimal requirements for BTCPay?](FAQ-Deployment.md#what-are-the-minimal-requirements-for-btcpay)
 * [What is the easiest method to deploy a self-hosted BTCPay Server?](FAQ-Deployment.md#what-are-the-minimal-requirements-for-btcpay)
 * [How to choose a proper deployment method?](FAQ-Deployment.md#how-to-choose-a-proper-deployment-method)

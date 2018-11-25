@@ -6,7 +6,7 @@ This page contains general questions about BTCPay. What it is, how it works, how
 
 * [What is BTCPay Server?](FAQ-General.md#what-is-btcpay-server)
 * [Why choose it over other payment processors?](FAQ-General.md#what-is-btcpay-server)
-* [Why are everyone excited about BTCPay?](FAQ-General.md#what-is-btcpay-server)
+* [Why is everyone excited about BTCPay?](FAQ-General.md#what-is-btcpay-server)
 * [Who can use BTCPay?](FAQ-General.md#who-can-use-btcpay)
 * [How much does it cost to run BTCPay Server](FAQ-General.md#what-is-btcpay-server)
 * [How to install BTCPay](FAQ-General.md#whow-to-install-btcpay-server)
@@ -33,7 +33,7 @@ BTCPay is a self-hosted software. This means that you are your own payment proce
 
 With BTCPay, you are your own bank. 
 
-## Why are everyone so excited about BTCPay?
+## Why is everyone so excited about BTCPay?
 
 The community is excited about BTCPay and often recommends it to merchants or content creators because it offers a direct way for store-owners and charities to receive Bitcoin payments, which significantly improves the privacy of the customers/donors. 
 

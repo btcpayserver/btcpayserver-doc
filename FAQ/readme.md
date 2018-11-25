@@ -8,7 +8,7 @@ General, non-technical questions about BTCPay. What it is, how it works, what ar
 
 * [What is BTCPay Server?](FAQ-General.md#what-is-btcpay-server)
 * [Why choose it over other payment processors?](FAQ-General.md#what-is-btcpay-server)
-* [Why are everyone excited about BTCPay?](FAQ-General.md#what-is-btcpay-server)
+* [Why is everyone excited about BTCPay?](FAQ-General.md#what-is-btcpay-server)
 * [Who can use BTCPay?](FAQ-General.md#who-can-use-btcpay)
 * [How much does it cost to run BTCPay Server](FAQ-General.md#what-is-btcpay-server)
 * [How to install BTCPay](FAQ-General.md#whow-to-install-btcpay-server)
@@ -22,10 +22,10 @@ General, non-technical questions about BTCPay. What it is, how it works, what ar
 * [How can I contribute to BTCPay?](FAQ-General.md#how-can-i-contribute-to-btcpay)
 
 ## [Deployment FAQ](FAQ-Deployment.md)
-Questions and solutions to BTCPay installaton. 
+Questions and solutions to BTCPay installation. 
 
 ### [General Deployment FAQ](FAQ-Deployment.md#general-deployment-faq)
-* [How much it costs to run BTCPay Server?](FAQ-Deployment.md#how-much-it-costs-to-run-btcpay-server)
+* [How much does it cost to run BTCPay Server?](FAQ-Deployment.md#how-much-does-it-cost-to-run-btcpay-server)
 * [What are the minimal requirements for BTCPay?](FAQ-Deployment.md#what-are-the-minimal-requirements-for-btcpay)
 * [What is the easiest method to deploy a self-hosted BTCPay Server?](FAQ-Deployment.md#what-are-the-minimal-requirements-for-btcpay)
 * [How to choose a proper deployment method?](FAQ-Deployment.md#how-to-choose-a-proper-deployment-method)
@@ -72,7 +72,7 @@ Common problems and questions server admins have.
 ### [Maintenance FAQ](FAQ-ServerSettings.md#maintainance)
 * [How to update BTCPay Server](FAQ-ServerSettings.md#how-to-update-btcpay-server)
 * [How can I check my BTCPay Server version?](FAQ-ServerSettings.md#how-can-i-see-my-btcpay-version)
-* [How can I check my BTCPay Server version via termina?](FAQ-ServerSettings.md#how-can-i-see-my-btcpay-version)
+* [How can I check my BTCPay Server version via terminal?](FAQ-ServerSettings.md#how-can-i-see-my-btcpay-version)
 * [What is BTCPay SSH key file](FAQ-ServerSettings.md#what-is-btcpay-ssh-key-file)
 * [Error the BTCPAY_SSHKEYFILE variable is not set/ Unable to update](FAQ-ServerSettings.md#btcpay_sshkeyfile-is-not-set-when-running-the-docker-install-or-unable-to-update-through-server-settings--maintenance)
 * [Forgot BTCPay Admin password]()
@@ -116,7 +116,7 @@ Frequent questions about the applications in BTCPay.
 * [Is there a limit on the number of Apps I can deploy?](FAQ-Apps.md#is-there-a-limit-on-the-number-of-apps-i-can-deploy)
 * [Is there a Point of Sale feature in BTCPay?](FAQ-Apps.md#is-there-a-point-of-sale-feature-in-btcpay)
 * [How can I use BTCPay in a physical store?](FAQ-Apps.md#how-can-i-use-btcpay-in-a-physical-store)
-* [How to customize the apperance of POS in BTCPay?](FAQ-Apps.md#how-to-customize-the-appearance-of-Point-of-Sale-App-in-BTCPay)
+* [How to customize the appearance of POS in BTCPay?](FAQ-Apps.md#how-to-customize-the-appearance-of-Point-of-Sale-App-in-BTCPay)
 * [What is a Payment Button?](FAQ-Apps.md#what-is-a-payment-button)
 * [How to fix empty spacing around payment button](FAQ-Apps.md#how-to-fix-empty-spacing-around-payment-button)
 
@@ -128,7 +128,7 @@ Lightning Network troubleshooting and common problems.
 * [How many users can use Lightning Network in BTCPay?](FAQ-LightningNetwork.md#how-many-users-can-use-lightning-network-in-btcpay)
 * [How to find node info and open a direct channel with a store using BTCPay?](FAQ-LightningNetwork.md#how-to-find-node-info-and-open-a-direct-channel-with-a-store-using-btcpay)
 * [As a merchant, do I need to open direct channels?](FAQ-LightningNetwork.md#as-a-merchant-do-i-need-to-open-direct-channels) 
-* [Previosly installed BTCPay without the integrated LN support, can I migrate?](FAQ-LightningNetwork.md#i-previously-installed-btcpayserver-without-the-integrated-lightning-support-can-i-migrate)
+* [Previously installed BTCPay without the integrated LN support, can I migrate?](FAQ-LightningNetwork.md#i-previously-installed-btcpayserver-without-the-integrated-lightning-support-can-i-migrate)
 * [Can I used pruned node with LN in BTCPay?](FAQ-LightningNetwork.md#can-i-used-pruned-node-with-ln-in-btcpay)
 * [How to change from c-lightning to LND or vice-versa?](FAQ-LightningNetwork.md#how-to-change-from-c-lightning-to-lnd-or-vice-versa)
 * [Switched Lightning Network implementation, getting "no payment available" error](FAQ-LightningNetwork.md#i-switched-lightning-network-implementation-but-getting-no-payment-available-error)
