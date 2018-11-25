@@ -13,6 +13,12 @@ If you have more general questions, please come on [Slack](http://slack.btcpayse
 ### How it keeps funds secure
 ### How it keeps data private
 ### How it resists censorship
+* Self-hosted
+* Can be run on a hardware
+* No central point of failiure
+* Can easily be re-deployed
+
+BTCPay does not have a central point of failure since nobody is controlling it except for the user running it. If run on the cloud server, the hosting providers can potentially censor users by suspending hosting accounts or disabling access to virtual machines. Since no private keys are stored on the server, a censored individual can easily re-deploy the server with another host. For ultimate censorship-resistance, users should run [BTCPay on their own hardware](HardwareDeployment.md).
 
 This solution is for you if:
 
