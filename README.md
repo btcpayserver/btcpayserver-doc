@@ -45,47 +45,64 @@ The data is shared only between two parties - the buyer and a seller. Other paym
 BTCPay does not have a central point of failure since nobody is controlling it except for the user running it. If run on the cloud server, the hosting providers can potentially censor users by suspending hosting accounts or disabling access to virtual machines. Since no private keys are stored on the server, a censored individual can easily re-deploy the server with another host. Your coins are always inside your wallet. For ultimate censorship-resistance, users should run [BTCPay on their own hardware](HardwareDeployment.md).
 ## Documentation
 
-### Getting started
+## BTCPay Basics
 
 * [Use Case](UseCase.md)
 * [Walkthrough](Walkthrough.md)
 * [Getting Started](GettingStarted.md)
-* [Try it on our test servers](TryItOut.md)
-* [Architecture](Architecture.md)
+* [Try it Out](TryItOut.md)
+    
+## Deployment
 
-### Deployment
-
-* [Web-Wizard deployment](https://medium.com/@BtcpayServer/launch-btcpay-server-via-web-interface-and-deploy-full-bitcoin-node-lnd-in-less-than-a-minute-dc8bc6f06a3) (easiest) - [Video](https://www.youtube.com/watch?v=NjslXYvp8bk)
-* [Azure deployment](AzureDeployment.md) - [Video](https://www.youtube.com/watch?v=Bxs95BdEMHY) 
-* [Docker deployment](DockerDeployment.md)
+* [Choosing a Deployment Method](Deployment.md)
+* [Web Deployment](LunaNodeWebDeployment.md)
+* [Azure Deployment](AzureDeployment.md)
+    * [Reducing Cost on Azure](AzurePennyPinching.md)
+    * [Changing Domain](ChangeDomain.md)
+* [Docker Deployment](DockerDeployment.md)
 * [Google Cloud Deployment](GoogleCloudDeployment.md)
-* [Manual deployment (not recommended)](ManualDeployment.md)
+* [Manual Deployment](ManualDeployment.md)
 * [Hardware Deployment](HardwareDeployment.md)
-* [Third party hosting](ThirdPartyHosting.md)
-* [BTC-accepting Hosting Provider: How to deploy on LunaNode manually](https://medium.com/@BtcpayServer/hosting-btcpayserver-on-lunanode-bf9ef5fff75b)
-* ~~[BTC-accepting Hosting Provider: How to deploy on time4vps](https://medium.com/@BtcpayServer/hosting-btcpay-server-for-cheap-2b27761fdb9d)~~ (They do not officially support docker yet)
+* [Third-Party Hosting](ThirdPartyHosting.md)
 
 ### Integrations
 
-* [Drupal](Drupal.md)
 * [WooCommerce](WooCommerce.md)
-* [Magento](https://github.com/btcpayserver/magento-plugin)
-* [PrestaShop](https://github.com/btcpayserver/prestashop-plugin)
-* [Custom integration](CustomIntegration.md)
+    * [WooCommerce Xadrez's Guide](Xadrez.md)
+* [Drupal](Drupal.md)
+* [Magento](Magento.md)
+* [PrestaShop](PrestaShop.md)
+* [Custom Integration](CustomIntegration.md)
 
-### Tips & tricks
+### Development
 
-* [FAQ](FAQ.md)
+* [Architecture](Architecture.md)
+* [Developing Locally](LocalDevelopment.md)
+* [Lightning Network](LightningNetwork.md)
+* [How to add an Altcoin](Altcoins.md)
 * [Customize Bootstrap theme](Theme.md)
-* [How to change the domain name of your BTCPay Server](ChangeDomain.md)
-* [How to penny-pinch your Microsoft Azure deployment](AzurePennyPinching.md)
 
-### Get engaged
+### FAQ and common issues
 
-* [How to add altcoins](Altcoins.md)
-* [How to contribute to development](LocalDevelopment.md)
-* [How to get support](Support.md)
-* [How to connect with the community](Community.md)
+* [FAQ Table of Contents](FAQ/readme.md)
+* [General FAQ](FAQ/FAQ-General.md)
+* [Deployment FAQ](FAQ/FAQ-Deployment.md)
+* [Synchronization FAQ](FAQ/FAQ-Synchronization.md)
+* [Integrations FAQ](FAQ/FAQ-Integrations.md)
+* [Server Settings FAQ](FAQ/FAQ-ServerSettings.md)
+* [Stores FAQ](FAQ/FAQ-Stores.md)
+* [Wallet FAQ](FAQ/FAQ-Wallet.md)
+* [Apps FAQ](FAQ/FAQ-Apps.md)
+* [Lightning Network FAQ](FAQ/FAQ-LightningNetwork.md)
+* [Altcoins FAQ](FAQ/FAQ-Altcoin.md)
+
+### Support and Community
+
+* [Troubleshooting an issue](Troubleshooting.md)
+* [Support](Support.md)
+* [Contribute](Contribute.md)
+* [Translate](Translate.md)
+* [Community](Community.md)
 
 ### Community articles
 
