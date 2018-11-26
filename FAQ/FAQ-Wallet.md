@@ -5,7 +5,7 @@ This document contains frequently asked questions and solution to common issues 
 * [What is BTCPay wallet](#what-is-btcpay-wallet)
 * [Recommended external wallets](#recommended-external-wallets)
 * [How to connect my wallet](#how-to-connect-my-wallet-to-btcpay-server)
-* [Missing payments in wallet](#missing-payments-in-my-softwarehardware-wallet)
+* [Missing payments in wallet](#missing-payments-in-my-software-hardware-wallet)
 * [Electrum and Zap show different addresses](#receiving-address-in-zap-and-electrum-is-different)
 * [How to see payments on a mobile device](#can-i-see-my-payments-on-mobile)
 
