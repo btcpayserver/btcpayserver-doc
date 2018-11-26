@@ -7,19 +7,6 @@ BTCPayServer is an open-source, self-hosted payment processor for Bitcoin and ot
 If you have any issues with BTCPay, please file a [Github issue](https://github.com/btcpayserver/btcpayserver/issues).
 If you have more general questions, please come on [Slack](http://slack.btcpayserver.org/) or check our [Wiki Page](https://nbitstack.com/c/btcpayserver) for common issues.
 
-## How it works
-### In a nutshell
-### How is it different
-### How it keeps funds secure
-### How it keeps data private
-### How it resists censorship
-* Self-hosted
-* Can be run on a hardware
-* No central point of failiure
-* Can easily be re-deployed
-
-BTCPay does not have a central point of failure since nobody is controlling it except for the user running it. If run on the cloud server, the hosting providers can potentially censor users by suspending hosting accounts or disabling access to virtual machines. Since no private keys are stored on the server, a censored individual can easily re-deploy the server with another host. For ultimate censorship-resistance, users should run [BTCPay on their own hardware](HardwareDeployment.md).
-
 This solution is for you if:
 
 * You want to be in control of your own funds
@@ -30,6 +17,22 @@ This solution is for you if:
 * You want universally compatible invoices (we support the Bitpay API)
 
 ![BTCPayInfographic](img/BTCPAYINFOGRAPHIC.png)
+
+## How it works
+### In a nutshell
+In layment words, BTCPay Server is a self-hosted and automated invoicing system. When checking out, the customer is presented with an invoice. Each time, a different address is tied to a particular invoice, so there is no address re-use. BTCPay follows the status of the invoice through the blockchain and informs a merchant when he can fulfil the order safely.
+### How is it different
+BTCPay is a code, not a company. There is no third-party between merchant and a customer. Merchant is always in full control of the funds. There are no processing or subscribtion fees. BTCPay Server is free to use and completely open-source, so the quality of the code can always be inspected by developers or security auditors.
+### How it keeps funds secure
+Payments via BTCPay are direct, peer to peer. Merchant receives the coins directly to the wallet, with no intermediate. Securing your fuds comes down to securing your private keys. There is an internal wallet inside BTCPay that merchants can use to spend the funds from. The funds from that wallet can only be spent, if a transaction is signed with a compatible hardware wallet.
+### How it keeps data private
+### How it resists censorship
+* Self-hosted
+* Can be run on a hardware
+* No central point of failiure
+* Can easily be re-deployed
+
+BTCPay does not have a central point of failure since nobody is controlling it except for the user running it. If run on the cloud server, the hosting providers can potentially censor users by suspending hosting accounts or disabling access to virtual machines. Since no private keys are stored on the server, a censored individual can easily re-deploy the server with another host. Your coins are always inside your wallet. For ultimate censorship-resistance, users should run [BTCPay on their own hardware](HardwareDeployment.md).
 
 ## Documentation
 
