@@ -104,7 +104,7 @@ Here are some of the questions and problems about wallets in BTCPay.
 * [What is BTCPay wallet](FAQ-Wallet.md#what-is-btcpay-wallet)
 * [Recommended external wallets](FAQ-Wallet.md#recommended-external-wallets)
 * [How to connect my wallet](FAQ-Wallet.md#how-to-connect-my-wallet-to-btcpay-server)
-* [Missing payments in wallet](FAQ-Wallet.md#missing-payments-in-my-softwarehardware-wallet)
+* [Missing payments in wallet](FAQ-Wallet.md#missing-payments-in-my-software-or-hardware-wallet)
 * [Electrum and Zap show different addresses](FAQ-Wallet.md#receiving-address-in-zap-and-electrum-is-different)
 * [How to see payments on a mobile device](FAQ-Wallet.md#can-i-see-my-payments-on-mobile)
 

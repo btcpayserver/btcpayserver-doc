@@ -5,7 +5,7 @@ This document contains frequently asked questions and solution to common issues 
 * [What is BTCPay wallet](#what-is-btcpay-wallet)
 * [Recommended external wallets](#recommended-external-wallets)
 * [How to connect my wallet](#how-to-connect-my-wallet-to-btcpay-server)
-* [Missing payments in wallet](#missing-payments-in-my-softwarehardware-wallet)
+* [Missing payments in wallet](#missing-payments-in-my-software-or-hardware-wallet)
 * [Electrum and Zap show different addresses](#receiving-address-in-zap-and-electrum-is-different)
 * [How to see payments on a mobile device](#can-i-see-my-payments-on-mobile)
 
@@ -39,7 +39,7 @@ Watch the video below or read [this article](https://bitcoinshirt.co/how-to-crea
 
 [![ConnectBTCPayWallet](https://img.youtube.com/vi/xX6LyQej0NQ/mqdefault.jpg)](https://www.youtube.com/watch?v=xX6LyQej0NQ "BTCPay - Connecting Wallet")
 
-## Missing payments in my software/hardware wallet
+## Missing payments in my software or hardware wallet
 
 If your internal BTCPay wallet is showing the transactions and you do not see the funds on your desktop, mobile or hardware wallet, you need to **increase the gap limit** of the external wallet you're using. Do not worry, your funds are safe.
 
