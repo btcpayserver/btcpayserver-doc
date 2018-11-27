@@ -5,7 +5,7 @@
 BTCPayServer is an open-source, self-hosted payment processor for Bitcoin and other cryptocurrencies.
 
 If you have any issues with BTCPay, please file a [Github issue](https://github.com/btcpayserver/btcpayserver/issues).
-If you have more general questions, please come on [Slack](http://slack.btcpayserver.org/) or check our [Wiki Page](https://nbitstack.com/c/btcpayserver) for common issues.
+If you have more general questions, please come on [Slack](http://slack.btcpayserver.org/) or check our [Wiki Page](https://nbitstack.com/c/btcpayserver) for common problems.
 
 ![BTCPayInfographic](img/BTCPAYINFOGRAPHIC.png)
 
@@ -35,7 +35,7 @@ BTCPay is a code, not a company. There is no third-party between a merchant and 
 ### How it keeps funds secure
 Payments via BTCPay are direct, peer to peer. The merchant receives the coins directly to their wallet, with no intermediate. Securing funds comes down to the merchant securing their own private keys, which is standard for most cryptocurrency wallets. There is an internal wallet inside BTCPay that merchants can use to view funds received by paid invoices. The funds from that wallet can only be spent, if a transaction is signed with the merchant's compatible hardware wallet. This allows merchants to have complete control of funds received.
 ### How it keeps data private
-The data is shared only between two parties - the buyer and a seller. Other payment processors share and collect user data with other parties, making it very hard to comply with privacy law regulations like GDPR.
+The data is shared only between two parties - the buyer and a seller. Other payment processors share and collect user data with other parties, making it very hard to comply with privacy law regulations like GDPR. Each invoice in BTCPay has a different receiving address, which means there is no address re-use which improves privacy significantly.
 ### How it resists censorship
 * Self-hosted
 * Can be run on a hardware
