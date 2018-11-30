@@ -10,4 +10,4 @@ Take a look at our video to learn more:
 
 [![BTCPay - Setup](http://img.youtube.com/vi/Xo_vApXTZBU/mqdefault.jpg)](http://www.youtube.com/watch?v=Xo_vApXTZBU "BTCPay - Setup")
 
-Also, check [this article](http://blog.sipsorcery.com/?p=1052).
+Also, check [this article](http://blog.sipsorcery.com/?p=1052) or [this one](https://freedomnode.com/blog/114/how-to-setup-btc-and-lightning-payment-gateway-with-btcpayserver-on-linux-manual-install).
