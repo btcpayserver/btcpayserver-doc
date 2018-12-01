@@ -50,5 +50,5 @@ Developer deployments are not recommended for production environments and requir
 |Developer Solutions                     |                     |                   |              |    
 | -------------------------------------- |:-------------------:|:-----------------:|:------------:|
 |Developer<br>(Testing Setup)            |Manual Install       |Manual Build       |Hardware Build|
-|**Not Recommended<br>For New Users**    |[Install From<br>Command Line](http://blog.sipsorcery.com/?p=1052)|[Build Without<br>Docker Image](https://github.com/btcpayserver/btcpayserver-doc/blob/master/ManualDeployment.md) |[ARM32v7](https://hub.docker.com/r/ketominer/btcpayserver-arm32v7/)<br>[BTCPayBox](https://github.com/btcpayserver/btcpayserver-doc/blob/master/HardwareDeployment.md) |
+|**Not Recommended<br>For New Users**    |[Install From<br>Command Line](http://blog.sipsorcery.com/?p=1052)|[Build Without<br>Docker Image](https://github.com/btcpayserver/btcpayserver-doc/blob/master/ManualDeployment.md) |[ARM32v7](https://hub.docker.com/r/btcpayserver/btcpayserver/tags/)<br>[Fast Sync](https://github.com/btcpayserver/btcpayserver-docker/tree/master/contrib/FastSync)<br>[BTCPayBox](https://github.com/btcpayserver/btcpayserver-doc/blob/master/HardwareDeployment.md) |
 
