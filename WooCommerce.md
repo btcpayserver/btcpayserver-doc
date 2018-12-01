@@ -20,6 +20,8 @@ There are two ways to download BTCPay plugin:
 2. In Search, type "BTCPay for WooCommerce"
 3. Install and activate.
 
+![BTCPay WordPress Repo plugin installation](img/BTCPay-WooCommerce-WP-Repo-Install.png)
+
 ### Download and install plugin from GitHub
 
 [Download the latest BTCPay plugin](https://github.com/btcpayserver/woocommerce-plugin/releases), upload it in .zip format into  your WordPress and activate it.
