@@ -178,7 +178,7 @@ To switch to c-lightning:
 sudo su -
 cd btcpayserver-docker
 export BTCPAYGEN_LIGHTNING="clightning"
-. ./btcpay-setup.sh -i /
+. ./btcpay-setup.sh -i
 ```
 ### I switched Lightning Network implementation, but getting "no payment available" error
 
@@ -250,7 +250,7 @@ To change the display name of your LND node, you should ssh log in into your vir
 sudo su -
 cd btcpayserver-docker
 export LIGHTNING_ALIAS="namehere"
-. ./btcpay-setup.sh -i /
+. ./btcpay-setup.sh -i
 ```
 
 ## Lightning Network (c-lightning) FAQ 
