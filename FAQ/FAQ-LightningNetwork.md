@@ -16,7 +16,7 @@ This document clarifies some of the most common questions and issues users face 
 * [How to see LND logs?](FAQ-LightningNetwork.md#how-to-see-lnd-logs)
 * [What’s the default LND Directory in BTCPay?](FAQ-LightningNetwork.md#whats-the-default-directory-of-lnd-in-btcpay)
 * [LND connection issue - cannot get macaroon: root key with id 0 doesn’t exist](FAQ-LightningNetwork.md#lnd-connection-issues-after-an-update)
-* [How to change LND Node alias](FAQ-LightningNetwork.md#how-to-change-my-LND-Node-alias)
+* [How to change LND Node alias](FAQ-LightningNetwork.md#how-to-change-my-lnd-node-alias)
 
 ## [Lightning Network (c-lightning) FAQ](FAQ-LightningNetwork.md#lightning-network-c-lightning-faq)
 
