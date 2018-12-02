@@ -4,7 +4,7 @@ After deployment, your BTCPay Server needs to sync the blockchain. Depending on 
 
 There's nothing you can do to bypass it. It may seem tedious, but it's a critical step of running your own full node and not having to trust or rely on anyone. Your node will not only download 200GB of data (less if you're using a pruned node) but also validate all the rules of the consensus. You can find more information about the importance of blockchain synchronization in [this video](https://www.youtube.com/watch?v=OrYDehC-8TU).
 
-You will see the pop-up message showing the sync progress. When your node fully syncs, the pop-up will disappear.
+You will see the pop-up message showing the sync progress. When your node fully syncs, the pop-up disappears.
 
 ## Account Registration
 
@@ -39,20 +39,22 @@ Watch the video below or read [this article](https://bitcoinshirt.co/how-to-crea
 
 ## Creating the Point of Sale App
 
-BTCPay has a POS app which you can use to receive payments from your customers directly or to receive donations. To create the POS app, you need to have a store created in BTCPay.
+BTCPay has a PoS app which you can use to receive payments from your customers directly or to receive donations. To create the POS app, you need to have a store created in BTCPay.
 
 ![BTCPayPOS](img/BTCPay-Pos.gif)
 
 1. Go to > Apps
 2. Create a new App
-3. Add a name for your app (ex "My awesome POS."
-4. Customize your POS
-5. Submit query.
-6. Click view to preview your POS
+3. Add a name of your app
+4. Customize your PoS by adding your own items with prices, photos, and a description.
+5. Click "Submit query".
+6. Click "View" to preview your PoS (Your customers can access the PoS through that link).
+
+You can change the appearance of your Point of Sale app by following [theme customization guide](Theme.md).
 
 ## Creating the Pay Button
 
-Pay buttons are great when you have a fixed amount for a product or a donation. You can easily embed the button into HTML. When the customer or a visitor clicks on the button, BTCPay will display a checkout page and an invoice for them.
+Pay buttons are great when you have a fixed amount for a product or a donation. You can easily embed the button into HTML. When the customer or a visitor clicks on the button, BTCPay displays a checkout page and an invoice for them.
 
 ![BTCPayPOS](img/BTCPay-PayButton.gif)
 
