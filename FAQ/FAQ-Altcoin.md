@@ -11,6 +11,7 @@ This page answers some of the common questions about alternative cryptocurrencie
 Besides, Bitcoin as the main focus of the project, BTCPay natively supports following alternative cryptocurrencies:
 
 * Bitcoin Gold (BTG)
+* Bitcore (BTX)
 * Dash (DASH)
 * Dogecoin (DOGE)
 * Feathercoin (FTC)

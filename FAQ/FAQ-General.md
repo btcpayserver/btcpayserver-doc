@@ -135,6 +135,7 @@ BTCPay natively supports:
 
 - Bitcoin (BTC)
 - Bitcoin Gold (BTG)
+- Bitcore (BTX)
 - Dash (DASH)
 - Dogecoin (DOGE)
 - Feathercoin (FTC)

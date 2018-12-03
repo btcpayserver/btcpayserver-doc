@@ -2,13 +2,14 @@
 
 Support is implemented for several coins:
 
-* Litecoin
-* BGold
 * BCash
+* BGold
+* Bitcore
 * Dash
 * Dogecoin
 * Feathercoin
 * Groestlcoin
+* Litecoin
 * Monacoin
 * Polis
 * Viacoin
