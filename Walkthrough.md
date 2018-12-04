@@ -28,10 +28,11 @@ Server settings is something only a server admin can access. If you're using som
 - Services - GRPC used for connecting your LND node and BTCPay SSH keys are located here.
 - Theme - Customize the front-end appearance of your BTCPay Server.
 - Maintenance - Update your BTCPay to latest version or change domain name
+- Logs - Displays most recent logs of the BTCPay Server.
 
 ## Stores
 
-Inside BTCPay you can create and manage an unlimited number of stores. Each store has its own wallet, can create apps (Point of Sale or Payment Button) or be paired with external e-commerce software through one of the [integrations](https://docs.btcpayserver.org/integrations/) available. Admin does not have control over the private keys of the other user's stores.
+Inside BTCPay you can create and manage an unlimited number of stores. Each store has its own wallet, can create apps (Point of Sale or Payment Button) or be paired with external e-commerce software through one of the [integrations](https://docs.btcpayserver.org/integrations/) available. Admin does not have control over the private keys of the other user's stores. For more information, check [Stores FAQ](/FAQ/FAQ-Stores.md)
 
 - General settings - Configure individual store settings, set up derivation scheme for your wallet and adjust the number of confirmations or invoice expiration time. Server admins can enable Lightning Network payments.
 - Rates - Set the source for cryptocurrency to fiat rates for your store.
@@ -44,11 +45,13 @@ Inside BTCPay you can create and manage an unlimited number of stores. Each stor
 
 Each store has access to different apps. Applications built on top of BTCPay extend [the usecase](usecase.md) of the software and cater to different type of users. Here you can create a new app and connect it to the store and customize it. A good example is [Point of Sale app](GettingStarted.md#creating-the-point-of-sale-app) you can use to receive payments in physical stores or even donations.
 
+For more information, check [Apps FAQ](/FAQ/FAQ-Apps.md)
+
 ## Wallets
 
-Each store gets a wallet upon adding a derivation scheme. Internal BTCPay wallet shows all of your payments and should be used as a reference if some payments are not shown in your software or hardware wallet due to some wallets [not supporting larger gap limit](FAQ.md#i-do-not-see-the-funds-in-my-softwarehardware-wallet). In Wallets, you can see the total balance of your store.
+Each store gets an internal wallet upon adding a derivation scheme. Internal BTCPay wallet shows all of your payments and should be used as a reference if some payments are not shown in your software or hardware wallet due to some wallets [not supporting larger gap limit](FAQ.md#i-do-not-see-the-funds-in-my-softwarehardware-wallet). In Wallets, you can see the total balance of your store. The funds from the wallet can only be spent, if the user signs a transaction with a compatible hardware wallet.
 
-You can even send the funds out of the wallet and make payments if you have a supported hardware wallet (for example, Ledger Nano S) and use a Google Chrome as a browser.
+For more information, check [Wallet FAQ](/FAQ/FAQ-Wallet.md)
 
 ## Invoices
 
