@@ -1,18 +1,17 @@
 # Altcoins
 
-Support is implemented for several coins:
+Support is implemented for several altcoins:
 
-* BCash
-* BGold
-* Bitcore
-* Dash
-* Dogecoin
-* Feathercoin
-* Groestlcoin
-* Litecoin
-* Monacoin
-* Polis
-* Viacoin
+* Bitcoin Gold (BTG)
+* Bitcore (BTX)
+* Dash (DASH)
+* Dogecoin (DOGE)
+* Feathercoin (FTC)
+* Groestlcoin (GRS)
+* Litecoin (LTC)
+* Monacoin (MONA)
+* Polis (POLIS)
+* Viacoin (VIA)
 
 ## How can I add an altcoin to BTCPayServer?
 
@@ -36,4 +35,4 @@ dotnet run
 
 This will generate your docker-compose in the `Generated` folder, which you can then run and test.
 
-Note that BTCPayServer developers will not spend excessive time testing your image, so make sure it works.
+Note: BTCPay developers do not implement alternative coins on request. Adding a new coin explicitly depends on the community and developers of those coins. Furthermore, BTCPay developers do not spend excessive time testing nor maintaining the altcoins. If you're submitting a PR for a new coin, make sure your image works. If the altcoin integration is not actively maintained it will be removed from BTCPay.
