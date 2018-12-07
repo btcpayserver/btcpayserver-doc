@@ -51,6 +51,11 @@ For more information, check [Apps FAQ](/FAQ/FAQ-Apps.md)
 
 Each store gets an internal wallet upon adding a derivation scheme. Internal BTCPay wallet shows all of your payments and should be used as a reference if some payments are not shown in your software or hardware wallet due to some wallets [not supporting larger gap limit](FAQ.md#i-do-not-see-the-funds-in-my-softwarehardware-wallet). In Wallets, you can see the total balance of your store. The funds from the wallet can only be spent, if the user signs a transaction with a compatible hardware wallet.
 
+Three elements of the internal BTCPay Wallet are 
+* Transaction - tab which shows your entire transaction history
+* Send - used for sending funds out of your wallet (has to be signed and confirmed on a compatible hardware wallet)
+* Rescan - enables you to easier import old wallets into BTCPay and solves problem with gap limit most external wallets have
+
 For more information, check [Wallet FAQ](/FAQ/FAQ-Wallet.md)
 
 ## Invoices
