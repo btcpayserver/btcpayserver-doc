@@ -3,6 +3,7 @@
 This document contains frequently asked questions and solution to common issues regarding internal or external wallets you're using with or within BTCPay.
 
 * [What is BTCPay wallet](#what-is-btcpay-wallet)
+* [What is wallet re-scan in BTCPay?)(#what-is-wallet-re-scan-in-btcpay)
 * [Recommended external wallets](#recommended-external-wallets)
 * [How to connect my wallet](#how-to-connect-my-wallet-to-btcpay-server)
 * [Missing payments in wallet](#missing-payments-in-my-software-or-hardware-wallet)
@@ -14,6 +15,13 @@ This document contains frequently asked questions and solution to common issues 
 BTCPay has an internal wallet which you can use to see the transactions and even send the money out of it. The wallet works only with a supported hardware wallet, like Ledger Nano S. 
 
 You'll have to confirm and sign the transaction on your hardware wallet. BTCPay wallet is not a hot wallet. The private keys are secured inside your hardware wallet.
+
+## What is wallet re-scan in BTCPay?
+
+A feature called [scantxoutset](https://bitcoincore.org/en/doc/0.17.0/rpc/blockchain/scantxoutset/) added in Bitcoin Core 0.17.0 enables BTCPay users to easily restore an old wallet in BTCPay and see a proper ballance, without ever having to use an external wallet.
+Prior to version 1.0.3.0 which added this feature, if a user added an xpub key already used for receiving payments, BTCPay couldn't recognize those past UTXOs, and would start generating addresses for invoices that were already used in the past.
+
+Wallet re-scan solves allows users to easier import their xpub keys that was used in the past, for example on a mobile wallet or even on another BTCPay Server. That is why, users who import xpub that was used for receiving payments in the past, should re-scan their wallet. Additionally this feature helps wit gap limit issues explained later in this document.
 
 ## Recommended external wallets?
 
