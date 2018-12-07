@@ -91,6 +91,7 @@ TLS Protocol: ON
 SMTP Username: (your Gmail username)
 SMTP Password: (your Gmail password)
 ```
+If by any chance you have 2-step verification added to your gmail account, [visit this article](https://support.google.com/mail/answer/185833?hl=en).
 ## Theme / Customization
 
 ### How to customize my BTCPay theme style
