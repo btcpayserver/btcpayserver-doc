@@ -83,14 +83,14 @@ BTCPAY_HOST_SSHKEYFILE=/root/.ssh/id_rsa_btcpay
 ```
 ### How to configure SMTP settings in BTCPay?
 Each e-mail provider has different configuration, so we can't provide you with exact setup, but here's the configuration for gmail which should work:
-
+```
 SMTP Host: smtp.gmail.com
 SMTP Port: 587
 SSL Protocol: ON
 TLS Protocol: ON
 SMTP Username: (your Gmail username)
 SMTP Password: (your Gmail password)
-
+```
 ## Theme / Customization
 
 ### How to customize my BTCPay theme style
