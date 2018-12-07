@@ -9,7 +9,8 @@ This document covers all the questions and issues related to Server Settings. Th
 * [How can I check my BTCPay Server version via terminal?](FAQ-ServerSettings.md#how-can-i-see-my-btcpay-version)
 * [What is BTCPay SSH key file](FAQ-ServerSettings.md#what-is-btcpay-ssh-key-file)
 * [Error the BTCPAY_SSHKEYFILE variable is not set/ Unable to update](FAQ-ServerSettings.md#btcpay_sshkeyfile-is-not-set-when-running-the-docker-install-or-unable-to-update-through-server-settings--maintenance)
-* [Forgot BTCPay Admin password]()
+* [Forgot BTCPay Admin password](FAQ-ServerSettings.md#forgot-btcpay-admin-password)
+* [How to configure SMTP settings in BTCPay?](FAQ-ServerSettings.md#how-to-configure-smtp-settings-in-btcpay)
 
 ## Theme / Customization
     
@@ -80,6 +81,16 @@ cat /root/.ssh/id_rsa_btcpay.pub >> /root/.ssh/authorized_keys
 BTCPAY_HOST_SSHKEYFILE=/root/.ssh/id_rsa_btcpay
 . ./btcpay-setup.sh -i
 ```
+### How to configure SMTP settings in BTCPay?
+Each e-mail provider has different configuration, so we can't provide you with exact setup, but here's the configuration for gmail which should work:
+
+SMTP Host: smtp.gmail.com
+SMTP Port: 587
+SSL Protocol: ON
+TLS Protocol: ON
+SMTP Username: (your Gmail username)
+SMTP Password: (your Gmail password)
+
 ## Theme / Customization
 
 ### How to customize my BTCPay theme style
