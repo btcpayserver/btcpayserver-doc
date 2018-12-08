@@ -3,7 +3,7 @@
 This document contains frequently asked questions and solution to common issues regarding internal or external wallets you're using with or within BTCPay.
 
 * [What is BTCPay wallet](#what-is-btcpay-wallet)
-* [What is wallet re-scan in BTCPay?)(#what-is-wallet-re-scan-in-btcpay)
+* [What is wallet re-scan in BTCPay?](#what-is-wallet-re-scan-in-btcpay)
 * [Recommended external wallets](#recommended-external-wallets)
 * [How to connect my wallet](#how-to-connect-my-wallet-to-btcpay-server)
 * [Missing payments in wallet](#missing-payments-in-my-software-or-hardware-wallet)
@@ -18,10 +18,17 @@ You'll have to confirm and sign the transaction on your hardware wallet. BTCPay 
 
 ## What is wallet re-scan in BTCPay?
 
-A feature called [scantxoutset](https://bitcoincore.org/en/doc/0.17.0/rpc/blockchain/scantxoutset/) added in Bitcoin Core 0.17.0 enables BTCPay users to easily restore an old wallet in BTCPay and see a proper ballance, without ever having to use an external wallet.
-Prior to version 1.0.3.0 which added this feature, if a user added an xpub key already used for receiving payments, BTCPay couldn't recognize those past UTXOs, and would start generating addresses for invoices that were already used in the past.
+The Rescan feature is best explained in a real-life situation:
 
-Wallet re-scan solves allows users to easier import their xpub keys that was used in the past, for example on a mobile wallet or even on another BTCPay Server. That is why, users who import xpub that was used for receiving payments in the past, should re-scan their wallet. Additionally this feature helps wit gap limit issues explained later in this document.
+* You use a wallet outside of BTCPay (for example Ledger Nano S with the Ledger Live app)
+* You receive payment worth 1BTC to your Nano S wallet. 
+* After a while you decide to use Ledger wallet with the same xpub key with BTCPay Server. You add this xpub as a derivation scheme in your Store.
+* You then find out that BTCPay has no information about transaction A, and shows 0 BTC balance while Ledger Live shows 1BTC.
+
+This happens because when you use a new derivation scheme with your store, BTCPay Server doesn't know the past transactions of your wallet.
+
+To solve this issue, you need to use the **Rescan feature**. The Rescan relies on Bitcoin Core 0.17.0's [scantxoutset](https://bitcoincore.org/en/doc/0.17.0/rpc/blockchain/scantxoutset/) to scan the current state of the blockchain (called UTXO Set) for coins belonging to your derivation scheme.
+Once the scan is complete, BTCPay Server will show the correct balance, along with some of past transactions of your wallet.
 
 ## Recommended external wallets?
 
