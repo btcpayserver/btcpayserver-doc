@@ -5,6 +5,7 @@
 * [Use Case](UseCase.md)
 * [Walkthrough](Walkthrough.md)
 * [Getting Started](GettingStarted.md)
+* [BTCPay vs other proccessors](BTCPayVsOthers.md)
 * [Try it Out](TryItOut.md)
     
 ## Deployment
