@@ -1,5 +1,7 @@
 # BTCPay Vs Others
 
+![ShowCost](img/BTCPay-How-Is-It-Different.png)
+
 Most new merchants will likely only consider the price of the service. Since BTCPay is free, that may have led you here and if so, welcome. 
 
 BTCPay is a code, not a company. There is no third-party between a merchant and a customer. Merchant is always in full control of the funds. There are no processing or subscription fees. BTCPay Server is free to use and completely open-source, so developers or security auditors can always inspect the quality of the code.
