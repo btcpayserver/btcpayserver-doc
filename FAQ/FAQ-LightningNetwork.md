@@ -241,6 +241,8 @@ docker exec btcpayserver_lnd_bitcoin rm /data/data/chain/bitcoin/mainnet/readonl
 docker restart btcpayserver_lnd_bitcoin
 ```
 
+If a macaroon does not exist, you will see an error message, you can safely ignore it.
+
 Because this will invalidate the previous macaroons, you need to manually reconnect with Zap with `Server Settings / Services / LND-gRPC`.
 
 ### How to change my LND Node alias?
