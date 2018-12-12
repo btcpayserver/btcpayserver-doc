@@ -80,6 +80,12 @@ Run `./bitcoin-lncli.sh --help` to see a full list of commands or check above me
 
 ## Getting Started with BTCPay and c-lightning
 
+The most straightforward way to start using the c-lightning implementation in BTCPay is to use Spark Wallet integration. Just like Zap for LND, Spark is a graphical interface of your internal c-lightning node.
+
+Spark works like an internal wallet in BTCPay right out of the box. Go to Server Settings > Services > Spark Server > More information to access your wallet.
+
+![Accessing Spark wallet](img/SparkConnect.jpg)
+
 ### c-lightning Commands lightning-cli
 
 To use clightning CLI it is the same like above for `lncli` but instead you use the shell script `bitcoin-lightning-cli.sh`
