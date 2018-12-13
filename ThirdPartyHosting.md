@@ -1,8 +1,10 @@
 # Third-party hosting
 
-A third-party host is an individual or an organization which self-hosts a BTCPay Server instance and enables other users to register and use their server. On a self-hosted server, the owner of the server add an unlimited amount of users and stores and allow those users to manage their stores independently and receive payments to their own wallets. 
+A third-party host is an individual or a business which self-hosts a BTCPay instance and enables other users to register and use the server. On a self-hosted server, server owner can add an unlimited amount of users and stores and allow those users to manage their stores independently and receive payments to their own wallets. 
 
-While this function in BTCPay Server is primarily developed for complex business management, community enthusiasts use it to help other users, mostly beginners, skip the sometimes challenging step of deploying a BTCPay server. Users who want to test or develop also use instances hosted by third parties. The best illustration is that you think of BTCPay as a payment processor factory which allows anyone to deploy a server and help others with receiving payments through their Bitcoin full node.
+While this function in BTCPay Server exists for complex multi-store business management, community enthusiasts use it to help other users, (mostly beginners), skip the step of deploying a BTCPay server. Users who want to test or develop applications on top of BTCPay also use instances hosted by third parties. 
+
+The best illustration is that you think of BTCPay as a payment processor factory which allows anyone to deploy a server and help others receive payments which are validated via the server owner [full Bitcoin node](https://en.bitcoin.it/wiki/Full_node).
 
 ## The list of BTCPay third-party hosts
 
@@ -17,18 +19,20 @@ While this function in BTCPay Server is primarily developed for complex business
 Feel free to chat with the [Community](Community.md) to find the appropriate host for your needs, but also make sure to choose a host you trust. Read the rest of this document to understand better the pros and cons of using a third party host.
 
 ## How can one become a third-party host?
+To become a third party host, you need to self-host a BTCPay Server and enable registration for other users. 
+Go to Server Settings > Policies > Enable registration. You may also want to configure the [SMTP setings](/FAQ/FAQ-ServerSettings.md#how-to-configure-smtp-settings-in-btcpay) to allow other users to retrieve their password if they forget it.
 
-To become a third party host, you need to self-host a BTCPay Server and enable registration for other users. Go to Server Settings > Policies > Enable registration. You may also want to set up the [SMTP setings](/FAQ/FAQ-ServerSettings.md#how-to-configure-smtp-settings-in-btcpay) to allow other users to retrieve their password if they forget it.
-
-## Are there a limitation in features when using a third party host?
-
+## Are there any limitations in features when using a third party host?
+Yes. Here are some restriction.
 * No [Lightning Network](LightningNetwork.md)
 * No [wallet re-scan](/FAQ/FAQ-Wallet.md#what-is-wallet-re-scan-in-btcpay)
 * No [Server Settings] access
 
+These limitations are not purposefully built in. They happen because of technical reasons, mostly because for some features require a user to run a full node.
+
 ## Pros
-* Easy setup and quicker setup
-* Cheaper and in most cases free (depending if a host is premium or free)
+* Easy and quicker setup
+* Cheaper and in most cases free (depending if the host is premium or free)
 * Receive payments directly to your wallet
 * Private key never required (if it is, it's a scam!)
 
@@ -51,4 +55,6 @@ BTCPay does not allow server hosts to view the stores of other users nor have ac
 The biggest concern, which happens with a third party host (even if a user is not malicious) comes from the nature of the Bitcoin itself. If a user is not running a full node but instead relies on someone else's node, 
 
 ## Summary
-To summarize, third-party hosts play an important role in the ecosystem since they provide an easy and cost-effective way for users to use BTCPay. The role of honest hosts who provide free service to others is essential in the early phase of BTCPay Server adoption. However, users should be familiar with the pros, cons and potential risks involved when using a trusted third-party.
+To summarize, third-party hosts play an important role in the ecosystem since they provide an easy and cost-effective way for users to use BTCPay. The role of honest hosts who provide free service to others is essential in the early phase of BTCPay Server adoption. However, users should be familiar with the pros, cons and potential risks involved when using a trusted third-party. Find the optimal balance between your use-case, cost, and privacy/security trade-offs.
+
+Some of the hosts are entirely free to use and maintain the server cost from donations of their users. If you've been using a free host for a while, you should consider donating to them to support them.
