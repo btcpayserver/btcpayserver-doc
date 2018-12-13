@@ -6,6 +6,7 @@ This page answers some of the common questions about alternative cryptocurrencie
 * [Can an XYZ coin be added in BTCPay?](FAQ-Altcoin.md#can-an-xyz-coin-be-added-in-btcpay)
 * [How to an altcoin in BTCPay?](FAQ-Altcoin.md#how-to-an-altcoin-in-btcpay)
 * [How to add an altcoin to an existing BTCPay deployment?](FAQ-Altcoin.md#how-to-add-an-altcoin-to-an-existing-btcpay-deployment)
+* [How to remove a coin from BTCPay?](FAQ-Altcoin.md#how-to-remove-a-coin-from-btcpay)
 
 ## Which coins BTCPay Server supports?
 Besides, Bitcoin as the main focus of the project, BTCPay natively supports following alternative cryptocurrencies:
@@ -47,5 +48,13 @@ To add Litecoin, as your second coin (CRYPTO2) do this :
 ```
 sudo su -
 export BTCPAYGEN_CRYPTO2="ltc"
+. ./btcpay-setup.sh -i
+```
+## How to remove a coin from BTCPay?
+
+In the example above we've added Litecoin as the second coin. To remove a particular coin, use the following command:
+```
+sudo su -
+export BTCPAYGEN_CRYPTO2=""
 . ./btcpay-setup.sh -i
 ```
