@@ -63,6 +63,8 @@ Pay buttons are great when you have a fixed amount for a product or a donation. 
 3. Customize your button
 4. Copy the generated form and embed it on your website.
 
+You can also take a look at [this video](https://www.youtube.com/watch?v=MIWGvl6_WzI) which explains how to create a payment button and embed it to your website.
+
 ## Connecting your BTCPay store to your e-commerce platform
 
 Depending on the CMS you're using, you can easily connect BTCPay to your online store. Currently, BTCPay offers following integrations :
