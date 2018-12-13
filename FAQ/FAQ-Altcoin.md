@@ -52,9 +52,10 @@ export BTCPAYGEN_CRYPTO2="ltc"
 ```
 ## How to remove a coin from BTCPay?
 
-In the example above we've added Litecoin as the second coin. To remove a particular coin, use the following command:
+In the [example above](#how-to-add-an-altcoin-to-an-existing-btcpay-deployment) we've added Litecoin as the second coin. To remove a particular coin, use the following command:
 ```
 sudo su -
 export BTCPAYGEN_CRYPTO2=""
 . ./btcpay-setup.sh -i
 ```
+Where CRYPTO**02** should be replaced with a coin number you wish to remove. If you have an XYZ coin as `BTCPAYGEN_CRYPTO3`, and you want to remove it, you should use CRYPT**O3**.
