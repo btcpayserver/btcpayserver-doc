@@ -88,7 +88,7 @@ Go to Server Settings > Services > Spark Server > More information.
 
 ![Accessing Spark wallet](img/SparkConnect.jpg)
 
-![Accessing Spark wallet](img/SparkConnect2.jpg)
+![Accessing Spark wallet](img/SparkConnect2.jpg.png)
 
 ### c-lightning Commands lightning-cli
 
