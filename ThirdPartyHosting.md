@@ -26,7 +26,7 @@ Go to Server Settings > Policies > Disable registration, unmark the checkbox. Yo
 Yes. Here are some restriction.
 * No [Lightning Network](LightningNetwork.md)
 * No [wallet re-scan](/FAQ/FAQ-Wallet.md#what-is-wallet-re-scan-in-btcpay)
-* No [Server Settings] access
+* No [Server Settings](Walkthrough.md#server-settings) access
 
 The limitations happen for technical reasons, mostly because of these features require a user to run a full node to use them.
 
