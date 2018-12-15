@@ -33,7 +33,7 @@ While it protects dust transactions, it can also reflect negatively and your cus
 Please think twice about how this may affect your business and make sure to communicate it to your customers properly inside your store Terms of Service or by other methods.
 
 ## Allow anyone to create invoice
-You should enable this option if you want to enable users to create invoices themselves. This option is only useful if you're using POS App or the payment button.
+You should enable this option if you want to enable outside world to create invoices in your store. This option is only useful if you're using the payment button or if you are issuing invoices via API or 3rd party HTML website. POS app is pre-authorised and does not need this enabled for random visitor to open your POS store and create an invoice. If in doubt, don't enable it as you can always enable it if needed.
 
 ## Invoice expires if the full amount has not been paid after ... minutes
 The invoice timer is set to 15 minutes by default. The timer is a protection mechanism against the volatility since it locks the cryptocurrency amount according to the crypto to fiat rates. If the customer does not pay the invoice within the defined period, the invoice is considered expired. The invoice is considered "paid" as soon as the transaction is visible on the blockchain (o-confirmations) but considered "complete" when it reaches the number of confirmations the merchant defined (usually, 1-6). The timer is customizable.
