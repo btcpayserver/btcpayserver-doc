@@ -20,7 +20,7 @@ Feel free to chat with the [Community](Community.md) to find the appropriate hos
 
 ## How can one become a third-party host?
 To become a third party host, you need to self-host a BTCPay Server and enable registration for other users. 
-Go to Server Settings > Policies > Disable registration, unmark the checkbox. You may also want to configure the [SMTP setings](/FAQ/FAQ-ServerSettings.md#how-to-configure-smtp-settings-in-btcpay) to allow them to reset their password if they forget it.
+Go to Server Settings > Policies > Disable registration, unmark the checkbox. You may also want to configure the [SMTP settings](/FAQ/FAQ-ServerSettings.md#how-to-configure-smtp-settings-in-btcpay) to allow them to reset their password if they forget it.
 
 ## Are there any limitations in features when using a third party host?
 Yes. Here are some restriction.
