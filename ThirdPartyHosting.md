@@ -52,7 +52,7 @@ In BTCPay, a private key is never required. This means that funds are safe even 
 
 If a third-party host asks for your private key or pre-generates one for you, be sure it's a scam. Never share your private key with anyone. It's called private for a reason.
 
-Xbpubkey replacement attack applies to a self-hosted server as well. A malicious hacker can try to hack your server and try to replace an xpubkey.
+Xpubkey replacement attack applies to a self-hosted server as well. A malicious hacker can try to hack your server and try to replace an xpubkey.
 
 ### Privacy concerns
 BTCPay does not allow server hosts to view the stores of other users nor have access to any personal data (except for registration email address). The xpubkey and even balances of other users can't be seen. However, as mentioned, a malicious third party could modify that by creating a fork that can look like BTCPay on the front but be something completely different in reality.
