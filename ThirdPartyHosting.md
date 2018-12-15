@@ -57,7 +57,7 @@ Xpubkey replacement attack applies to a self-hosted server as well. A malicious 
 ### Privacy concerns
 BTCPay does not allow server hosts to view the stores of other users nor have access to any personal data (except for registration email address). The xpubkey and even balances of other users can't be seen. However, as mentioned, a malicious third party could modify that by creating a fork that can look like BTCPay on the front but be something completely different in reality.
 
-The biggest concern, which happens when using a third-party host (even if the owner of a self-hosted server is not malicious) comes from the nature of the Bitcoin itself. If a user is not running a full node but instead relies on someone else's node, his transactions can be listened by the owner of that node. Running a full node is not just a convenience that gives you convenience in features and enables privacy, it gives you better security and the right to "vote" and validate all the transactions yourself. Don't trust, verify.
+The biggest concern, which happens when using a third-party host (even if the owner of a self-hosted server is not malicious) comes from the nature of the Bitcoin itself. If a user is not running a full node but instead relies on someone else's node, his transactions can be listened to by the owner of that node. Running a full node is not just a convenience that gives you features and enables privacy, it gives you better security and the right to "vote" and validate all the transactions yourself. Don't trust, verify.
 
 Here are some good resources where you learn more about the importance of full nodes
 
