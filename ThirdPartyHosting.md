@@ -23,7 +23,7 @@ To become a third party host, you need to self-host a BTCPay Server and enable r
 Go to Server Settings > Policies > Disable registration, unmark the checkbox. You may also want to configure the [SMTP settings](/FAQ/FAQ-ServerSettings.md#how-to-configure-smtp-settings-in-btcpay) to allow them to reset their password if they forget it.
 
 ## Are there any limitations in features when using a third party host?
-Yes. Here are some restriction.
+Yes. Here are some restrictions.
 * No [Lightning Network](LightningNetwork.md)
 * No [wallet re-scan](/FAQ/FAQ-Wallet.md#what-is-wallet-re-scan-in-btcpay)
 * No [Server Settings](Walkthrough.md#server-settings) access
