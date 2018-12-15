@@ -16,7 +16,7 @@ In layman, words think of this feature as a payment processor factory which allo
 * [nodl.it](https://nodl.it)
 * [register.btcpal.online](https://register.btcpal.online)
 
-Feel free to chat with the [Community](Community.md) to find the appropriate host for your needs, but also make sure to choose a host you trust. Read the rest of this document to understand better the pros and cons of using a third party host.
+Feel free to chat with the [Community](Community.md) to find the appropriate host for your needs, but also make sure to choose a host you trust. Read the rest of this document to better understand the pros and cons of using a third party host.
 
 ## How can one become a third-party host?
 To become a third party host, you need to self-host a BTCPay Server and enable registration for other users. 
