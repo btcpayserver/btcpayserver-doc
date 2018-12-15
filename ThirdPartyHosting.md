@@ -28,7 +28,7 @@ Yes. Here are some restriction.
 * No [wallet re-scan](/FAQ/FAQ-Wallet.md#what-is-wallet-re-scan-in-btcpay)
 * No [Server Settings](Walkthrough.md#server-settings) access
 
-The limitations happen for technical reasons, mostly because of these features require a user to run a full node to use them.
+The limitations happen for technical reasons, mostly because these features require a user to run a full node to use them.
 
 ## Pros
 * Easy and quicker setup
