@@ -1,8 +1,8 @@
 # Lightning Network and BTCPay
 
-After deploying BTCPay Server, as a merchant, you may want to experiment with an innovative second-layer payment system built on top of Bitcoin protocol - the [Lightning Network](https://en.bitcoin.it/wiki/Lightning_Network).
+After deploying BTCPay Server, you may want to experiment with an innovative second-layer payment system built on top of Bitcoin protocol - the [Lightning Network](https://en.bitcoin.it/wiki/Lightning_Network).
 
-This guide will show you how to set up your Lightning Network node in BTCPay and guide you through some basics.
+This guide will show you how to set up your Lightning Network node in BTCPay and guide you through the basics.
 
 <strong>Before you proceed, please understand that Lightning Network is still in the experimental stage. Do not put the money you can't afford to lose. There is a high risk of you losing the money. </strong>
 
@@ -81,7 +81,9 @@ Run `./bitcoin-lncli.sh --help` to see a full list of commands or check above me
 
 The most straightforward way to start using the c-lightning implementation in BTCPay is to use [Spark Wallet](https://github.com/shesek/spark-wallet) integration. Just like Zap for LND, Spark is a graphical interface of your internal c-lightning node.
 
-You can use Spark as an internal or external wallet. Internal wallet allows users to use Spark via the web-browser inside their BTCPay Server. You can also connect to an external wallet, like mobile or desktop app by just scanning a QR code.
+You can use Spark as an internal or external wallet. Internal wallet allows users to use Spark via the web-browser inside their BTCPay Server. You can also connect externally to a Spark mobile or desktop app just by scanning a QR code.
+
+[![c-lightningbtcpay](https://img.youtube.com/vi/uV1R6IQpmg8/mqdefault.jpg)](https://www.youtube.com/watch?v=uV1R6IQpmg8 "BTCPay - c-lightning and Spark")
 
 Go to **Server Settings > Services > Spark Server > See information**
 
