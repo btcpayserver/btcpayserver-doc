@@ -104,3 +104,16 @@ cd btcpayserver-docker
 ```
 E.g. to list all commands: `./bitcoin-lightning-cli.sh help`
 or show info about the node `./bitcoin-lightning-cli.sh getinfo`
+
+### Lapps (Lightning Network Apps)
+[Lapps](https://blockstream.com/2018/03/29/blockstreams-week-of-lapps-ends/) are applications built on top of the [Lightning Charge](https://blockstream.com/2018/01/16/lightning-charge/), a complimentary package that allows users and developers to easier use and develop on top of c-lightning. If you decided to use c-lightning, you can easily connect your BTCPay to any of the Lapps.
+
+BTCPay exposes all the necessary information required to connect your internal BTCPay c-lightning node to a Lightning Network App.  Go to Server Settings > Services > Lightning charge server > See information > Credentials.
+
+Below are videos that showcase how to connect some of the lapps to your BTCPay.
+
+[![c-lightningbtcpay1](https://img.youtube.com/vi/6EHNq1anD1k/mqdefault.jpg)](https://www.youtube.com/watch?v=6EHNq1anD1k "BTCPay - c-lightning and lapps intro")
+
+[![c-lightningbtcpay2](https://img.youtube.com/vi/ZbM3jcxau0o/mqdefault.jpg)](https://www.youtube.com/watch?v=ZbM3jcxau0o "BTCPay - c-lightning and lapps publisher")
+
+[![c-lightningbtcpay3](https://img.youtube.com/vi/EYrsU3LGpbI/mqdefault.jpg)](https://www.youtube.com/watch?v=EYrsU3LGpbI "BTCPay - c-lightning and lapps woo lightning")
