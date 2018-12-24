@@ -4,7 +4,7 @@ In this article, we will walk you through the BTCPay user interface and show you
 
 Watch video below for an interactive overview of the features.
 
-[![Walkthrough](https://img.youtube.com/vi/AgG1xObHtQU/mqdefault.jpg)](https://www.youtube.com/watch?v=AgG1xObHtQU "BTCPay - WalkThrough")
+[![Walkthrough](https://img.youtube.com/vi/ZIfJyq9RimM/mqdefault.jpg)](https://www.youtube.com/watch?v=ZIfJyq9RimM "BTCPay - WalkThrough")
 
 After you created the account on the BTCPay Server instance hosted by yourself or a third-party, you'll see a variety of options in the navigation menu on top.
 
