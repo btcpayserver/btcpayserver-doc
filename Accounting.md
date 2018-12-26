@@ -3,7 +3,7 @@
 BTCPay offers several tools that make cryptocurrency bookkeeping easier.
 
 ## Invoice Export
-![Invoice exporting in BTCPay](img/BTCPay Invoice Export.png)
+![Invoice exporting in BTCPay](img/BTCPayInvoiceExport.png)
 
 To export the invoices, go to Invoices > Export invoices, select the export format (CSV/JSON) and download the file. You can then, customize the fields to fit your business needs and import the data into your accounting software, or create pivot tables from the exported data.
 
