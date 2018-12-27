@@ -19,7 +19,7 @@ This document clarifies some of the most common questions and issues users face 
 * [How to change LND Node alias](FAQ-LightningNetwork.md#how-to-change-my-lnd-node-alias)
 
 ## [Lightning Network (c-lightning) FAQ](FAQ-LightningNetwork.md#lightning-network-c-lightning-faq)
-
+* [How to find an on-chain address in Spark?)(FAQ-LightningNetwork.md#how-to-find-an-on-chain-address-in-spark)
 
 ## Lightning Network General FAQ
 
@@ -258,6 +258,15 @@ export LIGHTNING_ALIAS="namehere"
 ## Lightning Network (c-lightning) FAQ 
 
 Here are some of the common questions about the [c-lightning](https://github.com/ElementsProject/lightning/issues) implementation of the Lightning Network.
+
+### How to find an on-chain address in Spark?
+To fund your on-chain wallet in Spark, you need to get an on-chain address. To find your address, click on the version link at the left corner bottom of the Spark wallet (for example v0.2.2). 
+
+That should toggle the settings. Click > Console. To generate a new address in RPC Console field, enter `newaddr` for bech32 address or `newaddr p2sh-segwit` click execute. At the bottom you should see the newly generated address. 
+You can also toogle help if you need help with other commands in Spark.
+
+![BTCPay Checkout](/img/Spark-console1.png)
+![BTCPay Checkout](/img/Spark-console2.png)
 
 ## Lightning Network Questions and Support
 
