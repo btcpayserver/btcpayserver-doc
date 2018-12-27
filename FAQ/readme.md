@@ -144,6 +144,8 @@ Lightning Network troubleshooting and common problems.
 * [How to change LND Node alias](FAQ-LightningNetwork.md#how-to-change-my-LND-Node-alias)
 
 ### [Lightning Network (c-lightning) FAQ](FAQ-LightningNetwork.md#lightning-network-c-lightning-faq)
+* [How to find an on-chain address in Spark?](FAQ-LightningNetwork.md#how-to-find-an-on-chain-address-in-spark)
+
 
 ## [Altcoins FAQ](FAQ-Altcoin.md)
 * [Which coins BTCPay Server supports?](FAQ-Altcoin.md#which-coins-btcpay-server-supports)
