@@ -19,7 +19,7 @@ This document clarifies some of the most common questions and issues users face 
 * [How to change LND Node alias](FAQ-LightningNetwork.md#how-to-change-my-lnd-node-alias)
 
 ## [Lightning Network (c-lightning) FAQ](FAQ-LightningNetwork.md#lightning-network-c-lightning-faq)
-* [How to find an on-chain address in Spark?)(FAQ-LightningNetwork.md#how-to-find-an-on-chain-address-in-spark)
+* [How to find an on-chain address in Spark?](FAQ-LightningNetwork.md#how-to-find-an-on-chain-address-in-spark)
 
 ## Lightning Network General FAQ
 
