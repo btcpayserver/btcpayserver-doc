@@ -21,6 +21,12 @@
 * [Hardware Deployment](HardwareDeployment.md)
 * [Third-Party Hosting](ThirdPartyHosting.md)
 
+### Features
+
+* [Lightning Network](LightningNetwork.md)
+* [Accounting](Accounting.md)
+
+
 ### Integrations
 
 * [WooCommerce](WooCommerce.md)
@@ -34,7 +40,6 @@
 
 * [Architecture](Architecture.md)
 * [Developing Locally](LocalDevelopment.md)
-* [Lightning Network](LightningNetwork.md)
 * [How to add an Altcoin](Altcoins.md)
 * [Customize Bootstrap theme](Theme.md)
 
