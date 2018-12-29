@@ -23,9 +23,9 @@
 
 ### Features
 
+* [Internal Wallet](Wallet.md)
 * [Lightning Network](LightningNetwork.md)
 * [Accounting](Accounting.md)
-
 
 ### Integrations
 
