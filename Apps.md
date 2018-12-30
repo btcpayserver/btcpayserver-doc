@@ -1,5 +1,5 @@
 # BTCPay Server Apps
-The primary purpose of BTCPay Server is to remove dependencies on trusted third-parties. The Apps are built in applications that obsolete central-authorities and allow users an easy way to extend the [use case](UseCase.md) of the software. Users can self-host all sort of customizable applications that work out of the box. 
+The primary purpose of BTCPay Server is to remove dependencies on trusted third-parties. The Apps are built in applications that obsolete central-authorities and allow users an easy way to extend the [use case](UseCase.md) of the software. Users can self-host all sorts of customizable applications that work out of the box. 
 
 To create an app, go to Apps > Create a new app. Apps are store-dependant, which means that each app needs to be connected to a store.
 
