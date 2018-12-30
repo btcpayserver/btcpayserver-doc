@@ -4,9 +4,9 @@ The primary purpose of BTCPay Server is to remove dependencies on trusted third-
 To create an app, go to Apps > Create a new app. Apps are store-dependent, which means that each app needs to be connected to a store.
 
 ## Point of Sale App
-The web-based PoS app allows users with brick and mortar stores to readily accept cryptocurrencies without fees or a third-party, directly to their wallet. 
+The web-based PoS app allows users with brick and mortar stores to readily accept cryptocurrencies without fees or a third-party, directly to their wallet. The PoS can be displayed easily on tablets or any other devices which support web browsing. Users can easily create a homescreen shortcut for a quick access to the web-app.
 
-![Invoice exporting in BTCPay](img/BTCPayPointOfSale1.jpg)
+![BTCPay Pos](img/BTCPayPointOfSale1.jpg)
 
 Adding new products is easy. The app has a shopping cart feature, tips, custom payment options and more.
 
