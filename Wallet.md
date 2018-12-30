@@ -49,4 +49,4 @@ Wallet re-scan solves two critical problems for BTCPay users:
 
 Re-scan is a feature that solves both of these problems. Once the scan is complete, BTCPay Server will show the correct balance, along with the past transactions of the wallet. Wallet re-scan requires access to the full node which means that this function is only available for server owners.
 
-Users who use a third party host should use a newly generated xpub key and also use external wallet like Electrum which allows them to increase the gap limit.
+Users who use a third party host should use a newly generated xpub key and also use an external wallet like Electrum which allows them to increase the gap limit.
