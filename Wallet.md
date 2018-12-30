@@ -33,7 +33,7 @@ Users who own a compatible hardware wallet can use the send function to send the
 ![Send from the Wallet](img/BTCPayWallets3.png)
 
 #### Re-scan
-The Rescan relies on Bitcoin Core 0.17.0's scantxoutset to scan the current state of the blockchain (called UTXO Set) for coins belonging to particular derivation scheme. 
+The Rescan relies on Bitcoin Core 0.17.0's scantxoutset to scan the current state of the blockchain (called UTXO Set) for coins belonging to the derivation scheme being used. 
 
 ![Wallet rescan](img/BTCPayWallets4.png)
 
