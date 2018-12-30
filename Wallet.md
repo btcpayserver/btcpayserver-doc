@@ -23,7 +23,7 @@ The wallet is minimal and easy to use. It contains several functions:
 3. Re-scan
 
 #### Transactions
-An overview of your incoming (green), outgoing (red) and unconfirmed(greyed out) transactions displayed together with timestamp and balances, sorted by date. Users can click on the tx ID to preview the transaction on the block explorer.
+An overview of your incoming (green), outgoing (red) and unconfirmed (greyed out) transactions displayed together with timestamp and balances, sorted by date. Users can click on the tx ID to preview the transaction on the block explorer.
 
 ![Individual Wallet](img/BTCPayWallets2.png)
 
