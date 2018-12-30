@@ -41,7 +41,7 @@ Wallet re-scan solves two critical problems for BTCPay users:
 1. [Gap limit](FAQ/FAQ-Wallet.md#missing-payments-in-my-software-or-hardware-wallet)
 2. Importing previously used wallet
 
-**Gap limit**: Most of the wallets have the gap limit set to 20. This means that if a merchant receives 21 or more consecutive unpaid invoices, those walletsm show the incorrect balance and some transactions may not be visible.
+**Gap limit**: Most of the wallets have the gap limit set to 20. This means that if a merchant receives 21 or more consecutive unpaid invoices, those wallets show the incorrect balance and some transactions may not be visible.
 
 **Wallet import**: When users add a derivation scheme of a wallet that had transactions in the past (used wallet), BTCPay won't be able to show the balance and transactions from the past.
 
