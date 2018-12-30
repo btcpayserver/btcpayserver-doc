@@ -5,7 +5,7 @@ Note: A [private key](https://en.bitcoin.it/wiki/Private_key) (xprv)is **never**
 
 If you're using a [third-party host](ThirdPartyHosting.md) and are asked to provide a private key, it's certainly a scam. Never share your private key with anyone. It's called private for a reason. 
 
-BTCPay has a**internal**, full node reliant wallet that can be accessed by clicking "Wallets" from the top menu. The reliance on the users own full node makes the wallet more private and secure compared to any [SPV](https://en.bitcoin.it/wiki/Thin_Client_Security#Simplified_Payment_Verification_.28SPV.29) wallet.
+BTCPay has an **internal**, full node reliant wallet that can be accessed by clicking "Wallets" from the top menu. The reliance on the user's own full node makes the wallet more private and secure compared to any [SPV](https://en.bitcoin.it/wiki/Thin_Client_Security#Simplified_Payment_Verification_.28SPV.29) wallet.
 
 The internal wallet does not generate a private key. Users have to create their own private key and enter xpubkey derived from xpriv into Store Settings > Derivation scheme to activate the internal wallet. 
 
