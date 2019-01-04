@@ -4,7 +4,7 @@ The project can be found [here](https://drupal.org/project/commerce_btcpay) on d
 
 ## Requirements
 
-* BTCPay Server (see [docker setup guide](https://github.com/btcpayserver/btcpayserver-docker))
+* BTCPay Server ([self hosted or 3rd party](https://docs.btcpayserver.org/deployment/deployment) or [quick start with a testserver](https://docs.btcpayserver.org/btcpay-basics/tryitout))
 * Drupal Commerce 2.x installed ([installation guide](https://docs.drupalcommerce.org/commerce2/developer-guide/install-update/installation))  
 * Drupal: [configured private file system](https://www.drupal.org/docs/8/core/modules/file/overview#content-accessing-private-files)
 
@@ -18,14 +18,15 @@ The project can be found [here](https://drupal.org/project/commerce_btcpay) on d
 
 #### Generate pairing code on BTCPay server
 
-1.  in store settings go to "**Access Tokens**"
-2.  click on **[Create a new token]**
-3.  **Label:** enter some label (eg. my store)
-4.  **Public key:** this needs to be left **empty**
-5.  **Facade:** "merchant"
-6.  click on **[Request pairing]**
-7.  on next screen choose your configured store in** Pair to** select dropdown and click on **[approve]**
-8.  note down the displayed 7-digit code at the top status message, e.g. "d7afaXr"   
+1.  BTCPay server: [create and configure a store](https://docs.btcpayserver.org/btcpay-basics/gettingstarted#creating-btcpay-store)
+2.  in store settings go to "**Access Tokens**"
+3.  click on **[Create a new token]**
+4.  **Label:** enter some label (eg. my store)
+5.  **Public key:** this needs to be left **empty**
+6.  **Facade:** "merchant"
+7.  click on **[Request pairing]**
+8.  on next screen choose your configured store in** Pair to** select dropdown and click on **[approve]**
+9.  note down the displayed 7-digit code at the top status message, e.g. "d7afaXr"   
  (you will need that code below on gateway configuration, see below)
 
 #### Commerce BTCPay: Installation + configuration
