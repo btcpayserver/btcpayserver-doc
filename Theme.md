@@ -17,7 +17,7 @@ You will see that the default design for such point of sale is:
 
 ![DefaultPoS](img/DefaultPoS.png)
 
-If you want to change this theme, find a theme on [Bootswatch](img/Bootswatch.jpg) which interest you, for example, [Darkly](https://bootswatch.com/darkly/).
+If you want to change this theme, find a theme on [Bootswatch](https://bootswatch.com/) which interest you, for example, [Darkly](https://bootswatch.com/darkly/).
 
 You can copy the link to the theme:
 
