@@ -31,7 +31,7 @@ BTCPay offers several options to customize this protection feature. You can appl
 * On every payment (including the first payment, in our example, the total  will be 20$ + network fee right away, even on the first payment)
 * Never add network fee (disables the network fee entirely)
 
-The network fee in BTCPay is **not the as the mining fee**. The customers still need to pay for the miner's fee. 
+The network fee in BTCPay is **not the mining fee**. The customers still need to pay for the miner's fee. 
 
 The network cost is an optional feature. It's enabled by default, but it's entirely up to a merchant to enable or disable it. The customer sees the "network cost" at the checkout when they expand the invoice information.
 
