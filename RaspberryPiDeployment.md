@@ -51,7 +51,7 @@ In this case we will be using Etcher to flash our micro SD card with the Raspbia
 If "raspberrypi.local" doesn't work you will have to look up the Pi's IP address on your router. 
 
 **Important! Change your password**
-- ```bash passwd ```
+- ``` passwd ```
 
 **Step 8** - Give your BTCPi a static IP address on your local network and setup WiFi (optional). There are a few different ways to do this and you will find a ton of articles online. Here's a pretty simple one to follow [Setting up Raspberry Pi WiFi with Static IP on Raspbian Stretch Lite](https://electrondust.com/2017/11/25/setting-raspberry-pi-wifi-static-ip-raspbian-stretch-lite/).  To avoid conflicts with other devices on your network you should also set a "reservation" for your BTCPi. 
 
@@ -59,35 +59,35 @@ If "raspberrypi.local" doesn't work you will have to look up the Pi's IP address
 
 **Step 10** - Install Fail2ban and GIT.  Fail2ban bans IP's that attempt to connect to your server and show malicious signs.  GIT allows you to clone and manage repositories on github.com. 
 Open a new terminal window and type the following command 
-- sudo apt update && install -y fail2ban git
+- ``` sudo apt update && install -y fail2ban git ```
 
 **Step 11** - Install Uncomplicated Firewall (UFW) and allow only specific ports. UFW is a user-friendly front-end for managing iptables firewall rules and its main goal is to make managing iptables easier or as the name says uncomplicated. 
 Install UFW
-- sudo apt install ufw
+- ``` sudo apt install ufw ```
 
 This command allows SSH connections from your LAN only. Replace 192.168.1.0 with your own subnet.
-- '''bashr sudo ufw allow from 192.168.1.0/24 to any port 22 '''
+-``` sudo ufw allow from 192.168.1.0/24 to any port 22 ```
 
 These ports need to be accessible from anywhere.  The default subnet is 'any' unless you specify one.
-- sudo ufw allow 80, 443, 9735
+- ``` sudo ufw allow 80, 443, 9735 ```
 
 Verify your configuration.
-- sudo ufw status
+- ``` sudo ufw status ```
 
 Enable your firewall.
-- sudo ufw enable 
+- ``` sudo ufw enable ```
 
 **Step 12** - Prepare Flash Drive. If you don't have a flash drive you can skip ahead to Step 13.
 The command 'fdisk -l' shows a list of the connected storage devices. Assuming you only have one flash drive connected it will be
 called /dev/sda.  Double check that the /dev/sda exists and the storage capacity matches your device. 
 
 Delete existing partition.
-- sudo fdisk /dev/sda
+- ``` sudo fdisk /dev/sda ```
 - d
 - w
 
 Create new primary partition.
-- sudo fdisk /dev/sda
+- ``` sudo fdisk /dev/sda ```
 - n
 - p
 - 1
@@ -96,58 +96,58 @@ Create new primary partition.
 - w
 
 Format partition as ext4.
-- sudo mkfs.ext4 /dev/sda1
+- ``` sudo mkfs.ext4 /dev/sda1 ```
 
 Create folder for mount.
-- sudo mkdir /mnt/usb
+- ``` sudo mkdir /mnt/usb ```
 
 Look up UUID of flash drive.
-- sudo blkid -o list
+- ``` sudo blkid -o list ```
 
 Add mount to fstab.
-- sudo nano /etc/fstab
+- ``` sudo nano /etc/fstab ```
 
 Add the following line to the end of the fstab file.
 - UUID=(UUID of flash drive do not include parenthesis) /mnt/usb ext4 defaults,nofail 0
 
 Test fstab file.
-- sudo mount -a
+- ``` sudo mount -a ```
 
 Check to see if drive is mounted. 
-- df -h
+- ``` df -h ```
 - /dev/sda1 should appear as mounted on /mnt/usb
 
 Create symlink to flash drive for Docker.
-- sudo mkdir /mnt/usb/docker
-- sudo ln -s /var/lib/docker /mnt/usb/docker
+- ``` sudo mkdir /mnt/usb/docker ```
+- ``` sudo ln -s /var/lib/docker /mnt/usb/docker ```
 
 
 **Step 13** - Install BTCPayServer.  
 Run the following commands.  Make sure you change the BTCPAY_HOST parameter to your own domain name. 
 
 Login as root
-- sudo su -
+- ``` sudo su - ```
 
 Create a folder for BTCPay
-- mkdir BTCPayServer
-- cd BTCPayServer
+- ``` mkdir BTCPayServer ```
+- ``` cd BTCPayServer ```
 
 Clone the btcpayserver-docker repository
-- git clone https://github.com/btcpayserver/btcpayserver-docker
-- cd btcpayserver-docker
+- ``` git clone https://github.com/btcpayserver/btcpayserver-docker ```
+- ``` cd btcpayserver-docker ```
 
 Set your environment variables. Run each command separately. 
-- export BTCPAY_HOST="btcpay.YourDomain.com"
-- export NBITCOIN_NETWORK="mainnet"
-- export BTCPAYGEN_CRYPTO1="btc"
-- export BTCPAYGEN_REVERSEPROXY="nginx"
-- export BTCPAYGEN_LIGHTNING="lnd"
-- export BTCPAYGEN_ADDITIONAL_FRAGMENTS="opt-save-storage-xs;opt-save-memory"
+- ``` export BTCPAY_HOST="btcpay.YourDomain.com" ```
+- ``` export NBITCOIN_NETWORK="mainnet" ```
+- ``` export BTCPAYGEN_CRYPTO1="btc" ```
+- ``` export BTCPAYGEN_REVERSEPROXY="nginx" ```
+- ``` export BTCPAYGEN_LIGHTNING="lnd" ```
+- ``` export BTCPAYGEN_ADDITIONAL_FRAGMENTS="opt-save-storage-xs;opt-save-memory" ```
 
 The last step is to launch the BTCPayServer setup script. 
-- . ./btcpay-setup.sh -i
+- ``` . ./btcpay-setup.sh -i ```
 
-exit
+``` exit ```
 
 **Step 14** 
 Go to https://btcpay.yourdomain.com and confirm that your nodes are syncing. 
@@ -159,13 +159,13 @@ Please read very carefully to understand what FastSync is and why it's important
 **Step 15**
 From the /root/BTCPayServer/btcpayserver-docker folder run the following commands.
 
-- ./btcpay-down.sh
-- cd contrib
-- cd FastSync
-- ./load-utxo-set.sh
+- ``` ./btcpay-down.sh ```
+- ``` cd contrib ```
+- ``` cd FastSync ```
+- ``` ./load-utxo-set.sh ```
 
 FastSync will take about 30 minutes or so depending on your download speed. After FastSync finishes run the following command.
-- ./btcpay-up.sh
+- ``` ./btcpay-up.sh ```
 
 Enjoy!
 
