@@ -144,6 +144,22 @@ exit
 
 **Step 14** 
 Go to https://btcpay.yourdomain.com and confirm that your nodes are syncing. 
+
+**Fast Sync**
+BTCPayServer's FastSync documentation is available here https://github.com/btcpayserver/btcpayserver-docker/tree/master/contrib/FastSync.
+Please read very carefully to understand what FastSync is and why it's important to verify the UTXO set yourself.
+
+**Step 15**
+From the /root/BTCPayServer/btcpayserver-docker folder run the following commands.
+
+- ./btcpay-down.sh
+- cd contrib
+- cd FastSync
+- ./load-utxo-set.sh
+
+FastSync will take about 30 minutes or so depending on your download speed. After FastSync finishes run the following command.
+- ./btcpay-up.sh
+
 Enjoy!
 
 If you don't have the time or patience to build your own BTCPB there are a few merchants who can build one for you. 
