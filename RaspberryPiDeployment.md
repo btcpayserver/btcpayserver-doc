@@ -1,4 +1,4 @@
-# Raspberry Pi Deployment with Pruning and FastSync support.
+# Raspberry Pi Deployment with Pruning and FastSync.
 
 Andreas Antonopoulos tells us "Not your keys, not your Bitcoin".  Here's another Bitcoin axiom "Your hardware.  Your node.  Your keys.  Your Bitcoin". 
 
