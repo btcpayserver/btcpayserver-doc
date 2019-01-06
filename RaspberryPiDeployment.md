@@ -46,7 +46,7 @@ In this case we will be using Etcher to flash our micro SD card with the Raspbia
 
 **Step 7** - From another computer use an SSH client (Putty) to connect to your Raspberry Pi. Hostname = raspberrypi.local, username=pi, password=raspberry). If "raspberrypi.local" doesn't work you will have to look up the Pi's IP address on your router. 
 
-**Step 8** -  Give your BTCPi a static IP address on your local network. There are a few different ways to do this and you will find a ton of articles online. Here's a pretty simple one to follow [Setting up Raspberry Pi WiFi with Static IP on Raspbian Stretch Lite](https://electrondust.com/2017/11/25/setting-raspberry-pi-wifi-static-ip-raspbian-stretch-lite/).  To avoid conflicts with other devices on your network you should also set a "reservation" for your BTCPi. 
+**Step 8** - Give your BTCPi a static IP address on your local network and setup WiFi (optional). There are a few different ways to do this and you will find a ton of articles online. Here's a pretty simple one to follow [Setting up Raspberry Pi WiFi with Static IP on Raspbian Stretch Lite](https://electrondust.com/2017/11/25/setting-raspberry-pi-wifi-static-ip-raspbian-stretch-lite/).  To avoid conflicts with other devices on your network you should also set a "reservation" for your BTCPi. 
 
 **Step 9** - Log into your router and forward ports 80, 443 and 9735 to your BTCPi's local IP address. Every router is different and you should be able to find instructions for your router by searching for "Port Forward + your router make and model". 
 
@@ -70,7 +70,52 @@ Verify your configuration.
 Enable your firewall.
 - sudo ufw enable 
 
-**Step 12** - Install BTCPayServer.  
+**Step 12** - Prepare Flash Drive. If you don't have a flash drive you can skip ahead to Step 13.
+The command 'fdisk -l' shows a list of the connected storage devices. Assuming you only have one flash drive connected it will be
+called /dev/sda.  Double check that the /dev/sda exists and the storage capacity matches your device. 
+
+Delete existing partition.
+sudo fdisk /dev/sda
+d
+w
+
+Create new primary partition.
+sudo fdisk /dev/sda
+n
+p
+1
+enter
+enter
+w
+
+Format partition as ext4.
+sudo mkfs.ext4 /dev/sda1
+
+Create folder for mount.
+sudo mkdir /mnt/usb
+
+Look up UUID of flash drive.
+sudo blkid -o list
+
+Add mount to fstab.
+sudo nano /etc/fstab
+
+Add the following line to the end of the fstab file.
+UUID=(UUID of flash drive do not include parenthesis) /mnt/usb ext4 defaults,nofail 0
+
+Test fstab file.
+sudo mount -a
+
+Check to see if drive is mounted. 
+df -h
+/dev/sda1 should appear as mounted on /mnt/usb
+
+Create symlink to flash drive for Docker.
+sudo mkdir /mnt/usb/docker
+sudo ln -s /var/lib/docker /mnt/usb/docker
+
+
+**Step 13** - Install BTCPayServer.  
 Run the following commands.  Make sure you change the BTCPAY_HOST parameter to your own domain name. 
 
 Login as root
@@ -88,16 +133,16 @@ Set your environment variables. Run each command separately.
 - export BTCPAY_HOST="btcpay.YourDomain.com"
 - export NBITCOIN_NETWORK="mainnet"
 - export BTCPAYGEN_CRYPTO1="btc"
-- export BTCPAYGEN_CRYPTO2="ltc"
 - export BTCPAYGEN_REVERSEPROXY="nginx"
-- export BTCPAYGEN_LIGHTNING="clightning"
+- export BTCPAYGEN_LIGHTNING="lnd"
+- export BTCPAYGEN_ADDITIONAL_FRAGMENTS="opt-save-storage-xs;opt-save-memory"
 
 The last step is to launch the BTCPayServer setup script. 
 - . ./btcpay-setup.sh -i
 
 exit
 
-**Step 11** 
+**Step 14** 
 Go to https://btcpay.yourdomain.com and confirm that your nodes are syncing. 
 Enjoy!
 
