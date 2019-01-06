@@ -75,44 +75,44 @@ The command 'fdisk -l' shows a list of the connected storage devices. Assuming y
 called /dev/sda.  Double check that the /dev/sda exists and the storage capacity matches your device. 
 
 Delete existing partition.
-sudo fdisk /dev/sda
-d
-w
+- sudo fdisk /dev/sda
+- d
+- w
 
 Create new primary partition.
-sudo fdisk /dev/sda
-n
-p
-1
-enter
-enter
-w
+- sudo fdisk /dev/sda
+- n
+- p
+- 1
+- enter
+- enter
+- w
 
 Format partition as ext4.
-sudo mkfs.ext4 /dev/sda1
+- sudo mkfs.ext4 /dev/sda1
 
 Create folder for mount.
-sudo mkdir /mnt/usb
+- sudo mkdir /mnt/usb
 
 Look up UUID of flash drive.
-sudo blkid -o list
+- sudo blkid -o list
 
 Add mount to fstab.
-sudo nano /etc/fstab
+- sudo nano /etc/fstab
 
 Add the following line to the end of the fstab file.
-UUID=(UUID of flash drive do not include parenthesis) /mnt/usb ext4 defaults,nofail 0
+- UUID=(UUID of flash drive do not include parenthesis) /mnt/usb ext4 defaults,nofail 0
 
 Test fstab file.
-sudo mount -a
+- sudo mount -a
 
 Check to see if drive is mounted. 
-df -h
-/dev/sda1 should appear as mounted on /mnt/usb
+- df -h
+- /dev/sda1 should appear as mounted on /mnt/usb
 
 Create symlink to flash drive for Docker.
-sudo mkdir /mnt/usb/docker
-sudo ln -s /var/lib/docker /mnt/usb/docker
+- sudo mkdir /mnt/usb/docker
+- sudo ln -s /var/lib/docker /mnt/usb/docker
 
 
 **Step 13** - Install BTCPayServer.  
