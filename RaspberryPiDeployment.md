@@ -35,16 +35,23 @@ It can take several hours for DNS changes to propagate so you should do this ste
 
 **Step 2** - Assemble your BTCPi.  
 
-**Step 3** - Download [Raspbian Stretch Lite](https://downloads.raspberrypi.org/raspbian_lite_latest)
+**Step 3** - Download and extract [Raspbian Stretch Lite](https://downloads.raspberrypi.org/raspbian_lite_latest)
 
 **Step 4** - Download and install [Etcher](https://etcher.io/).  Etcher is software that is used to flash OS images to SD cards and USB Drives. 
 In this case we will be using Etcher to flash our micro SD card with the Raspbian OS. 
 
-**Step 5** - Before you plug the SD card into your Raspberry Pi create an empty file on the named "SSH" on the boot partition of the SD card.
+**Step 5** - Before you plug the SD card into your Raspberry Pi create an empty file named "ssh" on the boot partition of the SD card.
 
 **Step 6** - Insert your SD card and flash drive connect the network cable and power supply. 
 
-**Step 7** - From another computer use an SSH client (Putty) to connect to your Raspberry Pi. Hostname = raspberrypi.local, username=pi, password=raspberry). If "raspberrypi.local" doesn't work you will have to look up the Pi's IP address on your router. 
+**Step 7** - From another computer use an SSH client (Putty) to connect to your Raspberry Pi. 
+- Hostname = raspberrypi.local
+- username=pi
+- password=raspberry 
+If "raspberrypi.local" doesn't work you will have to look up the Pi's IP address on your router. 
+
+**Important! Change your password**
+- passwd
 
 **Step 8** - Give your BTCPi a static IP address on your local network and setup WiFi (optional). There are a few different ways to do this and you will find a ton of articles online. Here's a pretty simple one to follow [Setting up Raspberry Pi WiFi with Static IP on Raspbian Stretch Lite](https://electrondust.com/2017/11/25/setting-raspberry-pi-wifi-static-ip-raspbian-stretch-lite/).  To avoid conflicts with other devices on your network you should also set a "reservation" for your BTCPi. 
 
