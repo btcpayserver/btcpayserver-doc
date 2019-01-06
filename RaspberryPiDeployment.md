@@ -51,7 +51,7 @@ In this case we will be using Etcher to flash our micro SD card with the Raspbia
 If "raspberrypi.local" doesn't work you will have to look up the Pi's IP address on your router. 
 
 **Important! Change your password**
-- passwd
+- ```bash passwd '''
 
 **Step 8** - Give your BTCPi a static IP address on your local network and setup WiFi (optional). There are a few different ways to do this and you will find a ton of articles online. Here's a pretty simple one to follow [Setting up Raspberry Pi WiFi with Static IP on Raspbian Stretch Lite](https://electrondust.com/2017/11/25/setting-raspberry-pi-wifi-static-ip-raspbian-stretch-lite/).  To avoid conflicts with other devices on your network you should also set a "reservation" for your BTCPi. 
 
