@@ -48,7 +48,7 @@ In this case we will be using Etcher to flash our micro SD card with the Raspbia
 - Hostname = raspberrypi.local
 - username=pi
 - password=raspberry 
-- If "raspberrypi.local" doesn't work you will have to look up the Pi's IP address on your router. 
+If "raspberrypi.local" doesn't work you will have to look up the Pi's IP address on your router. 
 
 **Important! Change your password**
 - ``` passwd ```
