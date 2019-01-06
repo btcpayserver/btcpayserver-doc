@@ -1,0 +1,107 @@
+# Hardware Deployment
+
+Andreas Antonopoulos tells us "Not your keys, not your Bitcoin".  Here's another Bitcoin axiom "Your hardware.  Your node.  Your keys.  Your Bitcoin". 
+
+In order for your Bitcoin experience to be truly self-sovereign and trustless you should consider running nodes on your own hardware and internet connection. BTCPayServer is an excellent way to run both Bitcoin & Lightning nodes.  Not only are you validating transactions you also get the ability to accept base layer Bitcoin and second layer Lightning payments.  
+To that end here are instructions to install and host your very own BTCPay Server on a Raspberry Pi. 
+
+The process is basically the following:
+
+1. Purchase and assemble hardware. 
+2. Install base Operating System and configure networking.
+3. Install BTCPayServer-Docker.
+
+BTCPayServer can be successfully installed on the following hardware.   
+ 
+1. Raspberry Pi 3 Model B+
+![Raspberry Pi 3 Model B+](https://www.raspberrypi.org/app/uploads/2018/03/770A5842-462x322.jpg "Raspberry Pi 3 Model B+")
+2. 64GB SanDisk Ultra Fit USB Flash Drive
+![64 GB SanDisk Ultra Fit USB Flash Drive](https://drh1.img.digitalriver.com/DRHM/Storefront/Company/sandiskus/images/product/detail/SDCZ430-210.png "SanDisk Ultra Fit USB 3.1 Flash Drive")
+3. 16 GB SanDisk Ultra MicroSDXC Card
+![16 GB SanDisk Ultra MicroSDXC Card](https://drh2.img.digitalriver.com/DRHM/Storefront/Company/sandiskus/images/product/detail/ultra-microsd-16gb-sandisk-210x210.png "16 GB SanDisk Ultra MicroSDXC Card")
+
+
+Other requirements are as follows:
+
+1. High speed internet connection.
+2. Static IP
+3. Domain Name
+4. Ability to open ports (80, 443, 9735) on your router. 
+
+Assuming you purchased the hardware mentioned above, here are the build instructions.
+
+**Step 1** - Configure your domain name. 
+It can take several hours for DNS changes to propagate so you should do this step first.  Login to your domain registrar and point an A record from your domain to the external IP address of your internet connection.  I suggest that you use a subdomain (ie. btcpay.yourdomain.com).  To find your external IP address Google "whats my ip".  
+
+**Step 2** - Assemble your BTCPi.  
+
+**Step 3** - Download [Raspbian Stretch Lite](https://downloads.raspberrypi.org/raspbian_lite_latest)
+
+**Step 4** - Download and install [Etcher](https://etcher.io/).  Etcher is software that is used to flash OS images to SD cards and USB Drives. 
+In this case we will be using Etcher to flash our micro SD card with the Raspbian OS. 
+
+**Step 5** - Before you plug the SD card into your Raspberry Pi create an empty file on the named "SSH" on the boot partition of the SD card.
+
+**Step 6** - Insert your SD card and flash drive connect the network cable and power supply. 
+
+**Step 7** - From another computer use an SSH client (Putty) to connect to your Raspberry Pi. Hostname = raspberrypi.local, username=pi, password=raspberry). If "raspberrypi.local" doesn't work you will have to look up the Pi's IP address on your router. 
+
+**Step 8** -  Give your BTCPi a static IP address on your local network. There are a few different ways to do this and you will find a ton of articles online. Here's a pretty simple one to follow [Setting up Raspberry Pi WiFi with Static IP on Raspbian Stretch Lite](https://electrondust.com/2017/11/25/setting-raspberry-pi-wifi-static-ip-raspbian-stretch-lite/).  To avoid conflicts with other devices on your network you should also set a "reservation" for your BTCPB. 
+
+**Step 9** - Log into your router and forward ports 80, 443 and 9735 to your BTPCB's local IP address. Every router is different and you should be able to find instructions for your router by searching for "Port Forward + your router make and model". 
+
+**Step 10** - Install Fail2ban and GIT.  Fail2ban bans IP's that attempt to connect to your server and show malicious signs.  GIT allows you to clone and manage repositories on github.com. 
+Open a new terminal window and type the following command 
+- sudo apt update && install -y fail2ban git
+
+**Step 11** - Install Uncomplicated Firewall (UFW) and allow only specific ports. UFW is a user-friendly front-end for managing iptables firewall rules and its main goal is to make managing iptables easier or as the name says uncomplicated. 
+Install UFW
+- sudo apt install ufw
+
+This command allows SSH connections from your LAN only. Replace 192.168.1.0 with your own subnet.
+- sudo ufw allow from 192.168.1.0/24 to any port 22 
+
+These ports need to be accessible from anywhere.  The default subnet is 'any' unless you specify one.
+- sudo ufw allow 80, 443, 9735
+
+Verify your configuration.
+- sudo ufw status
+
+Enable your firewall.
+- sudo ufw enable 
+
+**Step 12** - Install BTCPayServer.  
+Run the following commands.  Make sure you change the BTCPAY_HOST parameter to your own domain name. 
+
+Login as root
+- sudo su -
+
+Create a folder for BTCPay
+- mkdir BTCPayServer
+- cd BTCPayServer
+
+Clone the btcpayserver-docker repository
+- git clone https://github.com/btcpayserver/btcpayserver-docker
+- cd btcpayserver-docker
+
+Set your environment variables. Run each command separately. 
+- export BTCPAY_HOST="btcpay.YourDomain.com"
+- export NBITCOIN_NETWORK="mainnet"
+- export BTCPAYGEN_CRYPTO1="btc"
+- export BTCPAYGEN_CRYPTO2="ltc"
+- export BTCPAYGEN_REVERSEPROXY="nginx"
+- export BTCPAYGEN_LIGHTNING="clightning"
+
+The last step is to launch the BTCPayServer setup script. 
+- . ./btcpay-setup.sh -i
+
+exit
+
+**Step 11** 
+Go to https://btcpay.yourdomain.com and confirm that your nodes are syncing. 
+Enjoy!
+
+If you don't have the time or patience to build your own BTCPB there are a few merchants who can build one for you. 
+- [Lightning in a Box](https://lightninginabox.co)
+- [Nodl.it](https://nodl.it)
+
