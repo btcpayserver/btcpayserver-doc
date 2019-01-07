@@ -119,15 +119,10 @@ sudo mkfs.ext4 /dev/sda1
 # Create folder for mount.
 sudo mkdir /mnt/usb
 # Look up UUID of flash drive.
-sudo blkid -o list
+UUID="$(sudo blkid -s UUID -o value /dev/sda1)"
 # Add mount to fstab.
-sudo nano /etc/fstab
+echo "UUID=$UUID /mnt/usb ext4 defaults,nofail 0" | sudo tee -a /etc/fstab
 ```
-
-Add the following line to the end of the fstab file:
-
-```UUID=(UUID of flash drive do not include parenthesis) /mnt/usb ext4 defaults,nofail 0```
-
 Test fstab file.
 ```bash 
 sudo mount -a
@@ -203,6 +198,12 @@ FastSync will take about 30 minutes or so depending on your download speed. Afte
 ```bash
 ./btcpay-up.sh
 ```
+
+**Step 16**
+
+By using FastSync you are exposing yourself to attacks if a [malicious UTXO Set snapshot](https://github.com/btcpayserver/btcpayserver-docker/blob/master/contrib/FastSync/README.md#what-are-the-downsides-of-fast-sync) is sent to you.
+
+If you have another trusted node somewhere else, you can check the validity of the UTXO Set used by FastSync by following [those instructions](https://github.com/btcpayserver/btcpayserver-docker/blob/master/contrib/FastSync/README.md#dont-trust-verify).
 
 Enjoy!
 
