@@ -19,6 +19,7 @@
 * [Google Cloud Deployment](GoogleCloudDeployment.md)
 * [Manual Deployment](ManualDeployment.md)
 * [Hardware Deployment](HardwareDeployment.md)
+* [Raspberry Pi Deployment](RaspberryPiDeployment.md)
 * [Third-Party Hosting](ThirdPartyHosting.md)
 
 ### Features
