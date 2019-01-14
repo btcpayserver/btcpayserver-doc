@@ -7,7 +7,7 @@
 * [Getting Started](GettingStarted.md)
 * [BTCPay vs other processors](BTCPayVsOthers.md)
 * [Try it Out](TryItOut.md)
-    
+
 ## Deployment
 
 * [Choosing a Deployment Method](Deployment.md)
@@ -28,6 +28,11 @@
 * [Apps](Apps.md)
 * [Lightning Network](LightningNetwork.md)
 * [Accounting](Accounting.md)
+
+### Apps
+
+* [Point of Sale](PointofSale.md)
+* [Crowd Funding](CrowdFunding.md)
 
 ### Integrations
 
