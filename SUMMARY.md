@@ -32,7 +32,8 @@
 ### Apps
 
 * [Point of Sale](PointofSale.md)
-* [Crowd Funding](CrowdFunding.md)
+* [Crowdfunding](Crowdfunding.md)
+* [View All](Apps.md)
 
 ### Integrations
 

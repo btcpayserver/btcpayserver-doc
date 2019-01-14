@@ -78,7 +78,8 @@ If an invoice is paid while your BTCPay server is down, the software will automa
 ### Apps
 
 * [Point of Sale](PointofSale.md)
-* [Crowd Funding](CrowdFunding.md)
+* [Crowdfunding](Crowdfunding.md)
+* [View All](Apps.md)
 
 ### Integrations
 
