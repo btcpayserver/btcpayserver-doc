@@ -32,6 +32,17 @@ Users who own a compatible hardware wallet can use the send function to send the
 
 ![Send from the Wallet](img/BTCPayWallets3.png)
 
+##### Make sure no change UTXO is created (Expert mode)
+
+This option is available in the `expert mode` of the Send page.
+It is a privacy enhancing feature which is useful when you send to another of your own wallet or to an exchange. It makes sure that no change UTXO is created by **rounding up** the amount sent.
+
+By default this feature is disabled, so if your wallet have a UTXO of `1.1 BTC` and you input an amount equals to `1.0 BTC`, the resulting transaction will have two outputs `0.1 BTC` of change, and `1.0 BTC` to your destination. Blockchain analysis will understand that those `0.1 BTC` of change belong to the same entity which controlled `1.1 BTC` before, and will track the future purchase you will make under the same principle.
+
+By enabling this feature, BTCPay Server wallet will round up the amount sent to `1.1 BTC` such that no change output is sent back to you.
+
+Warning: Despite the fact, in this example, that you entered `1.0` in the amount field, the amount that will really be sent to your destination will be `1.1 BTC`.
+
 #### Re-scan
 The Rescan relies on Bitcoin Core 0.17.0's scantxoutset to scan the current state of the blockchain (called UTXO Set) for coins belonging to the derivation scheme being used. 
 
