@@ -26,14 +26,11 @@
 
 * [Internal Wallet](Wallet.md)
 * [Apps](Apps.md)
+  * [Point of Sale](PointofSale.md)
+  * [Crowdfunding](Crowdfunding.md)
+  * [Payment Button](Apps.md#payment-button)
 * [Lightning Network](LightningNetwork.md)
 * [Accounting](Accounting.md)
-
-### Apps
-
-* [Point of Sale](PointofSale.md)
-* [Crowdfunding](Crowdfunding.md)
-* [View All](Apps.md)
 
 ### Integrations
 
