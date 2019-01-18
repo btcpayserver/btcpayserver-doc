@@ -1,9 +1,20 @@
-# Custom Integration
+# Using the BTCPay API for Custom Integration
 
-BTCPay implements the same API as Bitpay for creating or managing your invoices.
-Migrating should just be a matter of pointing to the BTCPay URL instead of Bitpay.
+BTCPay implements the same API as Bitpay for creating and managing invoices.
 
-While Bitpay is using one user account for one merchant, BTCPay allows a user to manage multiple stores.
+Migrating from BitPay to BTCPay normally is as easy as changing a URL.
+
+While Bitpay only allows one account for one merchant, BTCPay allows a user to manage multiple stores.
+
+# Official Client Libraries
+
+BTCPay maintains official client libraries for both [Python](https://github.com/btcpayserver/btcpay-python) and [NodeJS](https://github.com/btcpayserver/node-btcpay). 
+
+In addition, there are forked repositories of Bitpay's [PHP](https://github.com/btcpayserver/php-bitpay-client) and [Ruby](https://github.com/bitpay/ruby-client) clients.
+
+# Accessing the API Manually
+
+If not using one of the libraries above, the REST API can be accessed manually.
 
 The authentication mechanism is using `BitId`.
 
@@ -45,7 +56,8 @@ The second way, is to generate your private key via some bitcoin library then:
 
 ## Note
 
-BTCPay Server has an API compatible with Bitpay, it inherits from all its integration to ECommerce solutions with minimal engineering efforts.
-You can read the documentation [on Bitpay's website](https://bitpay.com/api#resource-Invoices).
+BTCPay Server has an API compatible with Bitpay; changing your e-commerce application from Bitpay to BTCPay should take minimal effort.
 
-The only difference is that while bitpay support one store per account, BTCPay supports multiple store per account.
+You can read the full API documentation [on Bitpay's website](https://bitpay.com/api#resource-Invoices).
+
+There is only one difference: Bitpay only allows one account for one merchant, BTCPay allows a user to manage multiple stores.
