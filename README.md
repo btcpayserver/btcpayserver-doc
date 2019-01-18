@@ -75,6 +75,7 @@ If an invoice is paid while your BTCPay server is down, the software will automa
   * [Point of Sale](PointofSale.md)
   * [Crowdfunding](Crowdfunding.md)
   * [Payment Button](Apps.md#payment-button)
+  * [Lightning Network Apps](Apps.md#lightning-network-apps-lapps)
 * [Lightning Network](LightningNetwork.md)
 * [Accounting](Accounting.md)
 
