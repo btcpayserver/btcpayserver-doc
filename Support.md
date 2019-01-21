@@ -10,9 +10,9 @@ Problem? Don't worry, someone else has probably been through that before you.
 
 * If your issue is not referenced there, or you want to request a new feature, please open a [github issue](https://github.com/btcpayserver/btcpayserver/issues).
  
-* If you have more general questions about BTCPay, the way it works and why you should use it, you're welcome on our [Slack](http://slack.btcpayserver.org/).
+* If you have more general questions about BTCPay, the way it works and why you should use it, you're welcome on our [Slack](http://slack.btcpayserver.org/) or [Telegram](https://t.me/btcpayserver)
 
-Getting a proper support also depends on how you formulate your questions. Read our [troubleshooting guidelines](Troubleshooting.md).  
+Getting a proper support also depends on how you formulate your questions. Read our [troubleshooting guidelines](Troubleshooting.md).
 
 ## Paid support
 
@@ -22,7 +22,7 @@ Here are some members of the community that you can contact to get additional pa
 
 > I can assist with your BTCPay requirements end-to-end. I develop features of any scope to BTCPay and can assist with integration and deployments. Some of the features I can help with are: New Coins, New Apis, Client Libraries, Client Library Integrations (such as the woocommerce plugin), Custom Apps, Docker Functionality etc.
 
-Contact: VutovSpas@gmail.com, Kukks on [Slack](http://slack.btcpayserver.org/), [Twitter](https://twitter.com/MrKukks), [LinkedIn](https://www.linkedin.com/in/camilleriandrew/)
+Contact: evilkukka@gmail.com, @Kukks on [Slack](http://slack.btcpayserver.org/), [Twitter](https://twitter.com/MrKukks), [LinkedIn](https://www.linkedin.com/in/camilleriandrew/)
 
 ### Hubik Tomas
 
