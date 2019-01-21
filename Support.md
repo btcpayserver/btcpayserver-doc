@@ -4,13 +4,15 @@ This project is open source, and is not a company. Instead we rely on a network 
 
 ## Free support
 
-Problem ? Don't worry, someone else has probably been through that before you. 
+Problem? Don't worry, someone else has probably been through that before you. 
 
-* First have a look at [NBitStack](https://nbitstack.com/c/btcpayserver) for a curated list of topics already answered by the community.
+* First have a look at our [user documentation](README.md) and [Frequently Asked Questions](/FAQ/readme.md).
 
 * If your issue is not referenced there, or you want to request a new feature, please open a [github issue](https://github.com/btcpayserver/btcpayserver/issues).
  
-If you have more general questions about BTCPay, the way it works and why you should use it, you're welcome on our [Slack](http://slack.btcpayserver.org/).
+* If you have more general questions about BTCPay, the way it works and why you should use it, you're welcome on our [Slack](http://slack.btcpayserver.org/).
+
+Getting a proper support also depends on how you formulate your questions. Read our [troubleshooting guidelines](Troubleshooting.md).  
 
 ## Paid support
 
