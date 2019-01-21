@@ -26,6 +26,7 @@ If you have more general questions, please come on [Slack](http://slack.btcpayse
 * Process payments for others
 * Easy-embeddable Payment buttons
 * Point of sale app
+* Crowdfunding app
 
 ## How it works
 ### In a nutshell
@@ -42,7 +43,7 @@ The data is shared only between two parties - the buyer and a seller. Other paym
 * No third-party
 * Can easily be re-deployed
 
-BTCPay does not have a central point of failure since nobody is controlling it except for the user running it. If run on the cloud server, the hosting providers can potentially censor users by suspending hosting accounts or disabling access to virtual machines. This is always a risk for anyone using a hosting provider. Since no private keys are stored on the server, a censored individual can easily re-deploy the server with another host. Your coins are always inside your wallet. 
+BTCPay does not have a central point of failure since nobody is controlling it except for the user running it. If run on the cloud server, the hosting providers can potentially censor users by suspending hosting accounts or disabling access to virtual machines. This is always a risk for anyone using a hosting provider. Since no private keys are stored on the server, a censored individual can easily re-deploy the server with another host. Your coins are always inside your wallet.
 If an invoice is paid while your BTCPay server is down, the software will automatically determine and notify the merchant of offline invoice payments when your server is back up. If a hosting provider suspends the server, and there was no proper backup, server settings and invoice data may be lost, but on-chain payments are always in your wallet. For ultimate censorship-resistance, users should run [BTCPay on their own hardware](HardwareDeployment.md).
 ## Documentation
 
@@ -53,7 +54,7 @@ If an invoice is paid while your BTCPay server is down, the software will automa
 * [Getting Started](GettingStarted.md)
 * [BTCPay vs other processors](BTCPayVsOthers.md)
 * [Try it Out](TryItOut.md)
-    
+
 ## Deployment
 
 * [Choosing a Deployment Method](Deployment.md)
