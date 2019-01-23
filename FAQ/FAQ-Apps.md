@@ -61,7 +61,7 @@ The following plugins are recommended, but not required. You don't have to use t
 
 ### Instructions
 
-#### 1. Connecting the stores to a wallet
+#### 1. Connecting 2 stores to a single wallet
 
 In your BTCPay Server, create two separate stores:
 1. Store for WooCommerce
@@ -70,7 +70,9 @@ In your BTCPay Server, create two separate stores:
 Add the **same xpub derivation scheme**, so that both stores remain in sync.
 
 #### 2. Modifying CSS in WordPress
-In the first step, we need to remove all the redundancies from your WordPress store and make it clean and simple. Place the following custom CSS code into WordPress. Appearance > Customize > **Custom CSS**
+In the first step, you need to remove all the redundancies from the WordPress store and make it clean and simple, so that it embeds smoothly into the crowdfund app. 
+
+Place the following custom CSS code into WordPress. Appearance > Customize > **Custom CSS**
 ```
 .storefront-product-section .section-title {
    display: none;
@@ -142,7 +144,7 @@ visibility:hidden;
 background-color:rgba(0,0,255,0.5);
 }
 ```
-The code above removes and hides all the unnecessary things from your store (headers, footers, breadcrumbs, and sorting). If you're not using the Storefront theme, you may need to modify it slightly. Besides removing, the bottom part of the code adds a bit of different style which improves the checkout experience and makes it more Patreon like. Feel free to modify colors.
+The code above removes and hides all the unnecessary things from your store (headers, footers, breadcrumbs, and sorting). If you're not using the Storefront theme, you may need to modify it slightly. Besides removing, the bottom part of the code adds a bit of different style which improves the checkout experience and makes it more KickStarter like. Feel free to modify colors.
 
 To remove the redundant fields in WooCommerce checkout, use [Flexible Checkout Fields](https://wordpress.org/plugins/flexible-checkout-fields/). 
 
