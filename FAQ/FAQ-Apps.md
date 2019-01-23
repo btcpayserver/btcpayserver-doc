@@ -9,7 +9,7 @@ This document covers frequently asked questions about the Apps in BTCPay.
 * [How to customize the appearance of Point of Sale App in BTCPay?](#how-to-customize-the-appearance-of-Point-of-Sale-App-in-BTCPay)
 * [What is a Payment Button?](#what-is-a-payment-button)
 * [How to fix empty spacing around payment button](#how-to-fix-empty-spacing-around-payment-button)
-* [How to integrate WooCommerce Store in BTCPay Crowdfund app?](#how-to-integrate-woocommerce-store-in-btcpay-crowdfund-app)
+* [How to integrate WooCommerce Store in BTCPay Crowdfund app?](#how-to-integrate-woocommerce-store-into-a-btcpay-crowdfund-app)
 
 ## What are the Apps in BTCPay?
 Apps are plugins (features) you can use to expand the use case of your BTCPay.
