@@ -43,6 +43,8 @@ If the same problem occurs with other CMS, please check that the text editor doe
 ## How to integrate WooCommerce Store into a BTCPay Crowdfund app?
 If you want to provide a way for your backers to receive digital files and physical products, you can embed WooCommerce store into your Crowdfunding app.
 
+![Crowdfunding WooCommerce Integration Preview](/img/CrowdfundingWoo.gif)
+
 The following tutorial assumes you have a semi-advanced understanding of BTCPay, WordPress and WooCommerce.
 
 ### Requirements
@@ -60,8 +62,6 @@ The following plugins are recommended, but not required. You don't have to use t
 * [Header and Footer Scripts](https://wordpress.org/plugins/header-and-footer-scripts/) (place <script> code here)
 
 ### Instructions
-
-![Crowdfunding WooCommerce Integration Preview](/img/CrowdfundingWoo.gif)
 
 #### 1. Connecting 2 stores to a single wallet
 
