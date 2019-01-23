@@ -61,6 +61,8 @@ The following plugins are recommended, but not required. You don't have to use t
 
 ### Instructions
 
+![Crowdfunding WooCommerce Integration Preview](/img/CrowdfundingWoo.gif)
+
 #### 1. Connecting 2 stores to a single wallet
 
 In your BTCPay Server, create two separate stores:
