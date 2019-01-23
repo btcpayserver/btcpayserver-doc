@@ -29,4 +29,4 @@ Yes, you can. While various e-commerce CMS use integrations,  you can use BTCPay
 Order status depends on a merchant's business model. To better understand BTCPay order (invoice) status [read this document](/WooCommerce.md#btcpay-order-statuses).
 There's no best way to configure them without trial and error and seeing what works for your business.
 ### How to customize e-mail confirmations in WooCommerce?
-If you wish to send an e-mail after a certain status to the customer, you can configure your BTCPay WooCommerce plugin. This is recommended only if you know what you're doing. 
+If you wish to send an e-mail after a certain status to the customer, you need to edit WooCommerce order e-mail templates. This is recommended only if you know what you're doing. [Check out this guide](https://www.cloudways.com/blog/how-to-customize-woocommerce-order-emails/).
