@@ -194,7 +194,7 @@ function wc_remove_frame_options_header() {
 If you add the php code directly into Appearance>Editor>functions.php, next time you update the theme, the changes will be wiped. So, use either use a custom function plugin of some sort, or [create a child theme](https://docs.woocommerce.com/document/set-up-and-use-a-child-theme/) and always place the code at the bottom.
 
 #### 3. Adding script to WordPress
-Install [Header and Footer Scripts](https://wordpress.org/plugins/header-and-footer-scripts/)plugin. Add the followig code to your header or footer. Settings > Headers and Footers Script, paste the code and save changes.
+Install [Header and Footer Scripts](https://wordpress.org/plugins/header-and-footer-scripts/) plugin. Add the followig code to your header or footer. Settings > Headers and Footers Script, paste the code and save changes.
 ```
 <script>
 jQuery( document ).ready(function() {
