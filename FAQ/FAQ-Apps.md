@@ -6,7 +6,7 @@ This document covers frequently asked questions about the Apps in BTCPay.
 * [Is there a limit on the number of Apps I can deploy?](#is-there-a-limit-on-the-number-of-apps-i-can-deploy)
 * [Is there a Point of Sale feature in BTCPay?](#is-there-a-point-of-sale-feature-in-btcpay)
 * [How can I use BTCPay in a physical store?](#how-can-i-use-btcpay-in-a-physical-store)
-* [How to customize the appearance of Point of Sale App in BTCPay?](#how-to-customize-the-appearance-of-Point-of-Sale-App-in-BTCPay)
+* [How to customize the appearance of Point of Sale App in BTCPay?](#how-to-customize-the-appearance-of-point-of-sale-app-in-btcpay)
 * [What is a Payment Button?](#what-is-a-payment-button)
 * [How to fix empty spacing around payment button](#how-to-fix-empty-spacing-around-payment-button)
 * [How to integrate WooCommerce Store in BTCPay Crowdfund app?](#how-to-integrate-woocommerce-store-into-a-btcpay-crowdfund-app)
