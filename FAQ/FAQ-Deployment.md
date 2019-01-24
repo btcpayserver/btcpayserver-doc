@@ -74,4 +74,4 @@ You need to open port 80 and 443. Once you did that, restart docker `btcpay-rest
 
 ### How to manually install BTCPay on Ubuntu 18.04?
 
-Check this [community guide](https://nbitstack.com/t/how-to-manually-install-btcpay-on-ubuntu-18-04/76/2). 
+Check this [community guide](https://freedomnode.com/blog/114/how-to-setup-btc-and-lightning-payment-gateway-with-btcpayserver-on-linux-manual-install). 

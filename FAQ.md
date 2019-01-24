@@ -172,7 +172,7 @@ sudo su -
 ```
 btcpay-update.sh
 ```
-More on updating BTCPay [here](https://nbitstack.com/t/how-to-update-my-btcpay-server/93/2).
+More on updating BTCPay [here](/FAQ/FAQ-ServerSettings.md#how-to-update-btcpay-server).
 
 ## Does BTCPay Support Lightning Network?
 
@@ -491,6 +491,5 @@ If you do not see your funds yet, you may have set up your derivation scheme inc
 
 If you're unable to find a solution to your problem in the FAQ, here is where to search:
 
-* [BTCPay Wiki Page](https://nbitstack.com/c/btcpayserver) - Search for common questions and problems
 * [BTCPay Slack](http://slack.btcpayserver.org/) - ask general questions about BTCPay
 * [Ultimate Guide to BTCPay](https://www.reddit.com/r/Bitcoin/comments/8f1eqf/the_ultimate_guide_to_btcpay_the_free_and/) - merchant's guide

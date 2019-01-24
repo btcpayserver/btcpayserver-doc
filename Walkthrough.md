@@ -36,7 +36,7 @@ Inside BTCPay you can create and manage an unlimited number of stores. Each stor
 
 - General settings - Configure individual store settings, set up derivation scheme for your wallet and adjust the number of confirmations or invoice expiration time. Server admins can enable Lightning Network payments.
 - Rates - Set the source for cryptocurrency to fiat rates for your store.
-- Checkout experience - [Customize the appearance](https://nbitstack.com/t/how-to-modify-btcpay-css-checkout-page/99/2) of the checkout page, choose default coin, etc.
+- Checkout experience - [Customize the appearance](/FAQ/FAQ-ServerSettings.md#how-to-modify-the-checkout-page) of the checkout page, choose default coin, etc.
 - Access Tokens - Tokens for [pairing the store to an integration](GettingStarted.md#connecting-your-btcpay-store-to-your-e-commerce-platform)
 - Users - Enable other users with a registered BTCPay account to access your store
 - Pay Button - [Create a payment button](GettingStarted.md#creating-the-pay-button) you can easily embed into your website
