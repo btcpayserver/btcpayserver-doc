@@ -172,7 +172,7 @@ sudo su -
 ```
 btcpay-update.sh
 ```
-More on updating BTCPay [here](FAQ-ServerSettings.md#how-to-update-btcpay-server).
+More on updating BTCPay [here](/FAQ/FAQ-ServerSettings.md#how-to-update-btcpay-server).
 
 ## Does BTCPay Support Lightning Network?
 
