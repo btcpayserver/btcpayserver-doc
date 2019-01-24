@@ -75,7 +75,36 @@ Add the **same xpub derivation scheme**, so that both stores remain in sync.
 In the first step, you need to remove all the redundancies from the WordPress store and make it clean and simple, so that it embeds smoothly into the crowdfund app. 
 
 Place the following custom CSS code into WordPress. Appearance > Customize > **Custom CSS**
+
 ```
+#masthead {
+	display: none;
+}
+
+.site-footer {
+display: none;
+}
+
+.storefront-breadcrumb {
+	display: none;
+}
+
+.storefront-sorting {
+	display: none;
+}
+
+.woocommerce-products-header {
+	display: none;
+}
+
+.woocommerce-additional-fields{
+	display: none;
+}
+
+.woocommerce-form-coupon-toggle {
+	display: none;
+}
+
 .storefront-product-section .section-title {
    display: none;
 }
@@ -120,31 +149,27 @@ ul.products li.product .button {
    display: none;
 }
 
-.product:hover{
-background-color:rgba(0,0,255,0.3);
-color:rgba(0,0,0,0);
-padding-bottom:45px;
+#masthead {
+    display: none;
 }
-.product:hover a *{
-visibility:hidden;
+.site-footer {
+display: none;
 }
-
-.product:hover a.add_to_cart_button {
-    position: absolute;
-    top: 0;
-    left: 0px;
-    width: 100%;
-    height: 100%;
-    padding-top: 50%;
-    color: white;
-    background-color:rgba(0,0,255,0.3);
-
+.storefront-breadcrumb {
+    display: none;
 }
-
-.product:hover a.add_to_cart_button:hover{
-
-background-color:rgba(0,0,255,0.5);
+.storefront-sorting {
+    display: none;
 }
+.woocommerce-products-header {
+    display: none;
+}
+.woocommerce-additional-fields{
+    display: none;
+}
+.woocommerce-form-coupon-toggle {
+    display: none;
+} 
 ```
 The code above removes and hides all the unnecessary things from your store (headers, footers, breadcrumbs, and sorting). If you're not using the Storefront theme, you may need to modify it slightly. Besides removing, the bottom part of the code adds a bit of different styling which improves the checkout experience and makes it more KickStarter like. Feel free to modify colors. You should also remove the sidebar.
 
