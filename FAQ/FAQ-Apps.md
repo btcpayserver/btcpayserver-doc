@@ -57,7 +57,6 @@ The following tutorial assumes you have a semi-advanced understanding of BTCPay,
 #### Optional WordPress Plugins
 The following plugins are recommended, but not required. You don't have to use them if you're an advanced WordPress user. 
 * [Flexible Checkout Fields](https://wordpress.org/plugins/flexible-checkout-fields/) (to edit checkout and remove redundant checkout fields in Woo)
-* [My Custom Functions](https://wordpress.org/plugins/my-custom-functions/) (place all PHP functions here instead of placing them directly into a functions.php file, so they don't get wiped during theme update)
 * [WooCommerce Direct Checkout](https://wordpress.org/plugins/woocommerce-direct-checkout/) (remove redundant steps in the checkout process and make pledging quicker)
 * [Header and Footer Scripts](https://wordpress.org/plugins/header-and-footer-scripts/) (place <script> code here)
 
