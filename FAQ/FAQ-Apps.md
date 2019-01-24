@@ -63,7 +63,7 @@ The following plugins are recommended, but not required. You don't have to use t
 
 ### Instructions
 
-#### 1. Connecting 2 stores to a single wallet
+#### 1. Connecting two stores to a single wallet
 
 In your BTCPay Server, create two separate stores:
 1. Store for WooCommerce
@@ -146,7 +146,7 @@ visibility:hidden;
 background-color:rgba(0,0,255,0.5);
 }
 ```
-The code above removes and hides all the unnecessary things from your store (headers, footers, breadcrumbs, and sorting). If you're not using the Storefront theme, you may need to modify it slightly. Besides removing, the bottom part of the code adds a bit of different style which improves the checkout experience and makes it more KickStarter like. Feel free to modify colors.
+The code above removes and hides all the unnecessary things from your store (headers, footers, breadcrumbs, and sorting). If you're not using the Storefront theme, you may need to modify it slightly. Besides removing, the bottom part of the code adds a bit of different styling which improves the checkout experience and makes it more KickStarter like. Feel free to modify colors. You should also remove the sidebar.
 
 To remove the redundant fields in WooCommerce checkout, use [Flexible Checkout Fields](https://wordpress.org/plugins/flexible-checkout-fields/). 
 
@@ -154,40 +154,20 @@ To speed up the checkout process use [WooCommerce Direct Checkout](https://wordp
 
 #### 2. Modifing WordPress functions
 
-Insert the following code at the bottom of your child theme's **functions.php** file. Ideally, if you're a beginner, you should use [My Custom Function](https://wordpress.org/plugins/my-custom-functions/) plugin to insert the custom functions to avoid overlap.
-
-If you add the code directly into Appearance>Editor>functions.php, next time you update the theme, the changes will be wiped. So, use either a plugin like My Custom Function or [create a child theme](https://docs.woocommerce.com/document/set-up-and-use-a-child-theme/).
-
-Assuming you're using the plugin, in your WordPress dashboard, go to Settings > PHP Inserter, paste the code and save changes.
-
-![Adding Custom PHP](/img/AddCustomPhp.gif)
+Insert the following code at the bottom of your child theme's **functions.php** file.
 
 ```
-//* Allow rendering of checkout and account pages in iframes
+ * Code goes in theme functions.php.
+*/
 add_action( 'after_setup_theme', 'wc_remove_frame_options_header', 11 );
+/**
+* Allow rendering of checkout and account pages in iframes.
+*/
 function wc_remove_frame_options_header() {
     remove_action( 'template_redirect', 'wc_send_frame_options_header' );
 }
 ```
-(Optional) To remove order notes field:
-```
-// * Remove Order Notes from checkout field in Woocommerce
-add_filter( 'woocommerce_checkout_fields' , 'alter_woocommerce_checkout_fields' );
-function alter_woocommerce_checkout_fields( $fields ) {
-     unset($fields['order']['order_comments']);
-     return $fields;
-}
-```
-(Optional) To display a short product description on the shop page:
-```
-// * Add products short description on the shop page.
-add_action( 'woocommerce_after_shop_loop_item', 'woo_show_excerpt_shop_page', 5 );
-function woo_show_excerpt_shop_page() {
-    global $product;
-
-    echo $product->post->post_excerpt;
-} 
-```
+If you add the php code directly into Appearance>Editor>functions.php, next time you update the theme, the changes will be wiped. So, use either use a custom function plugin of some sort, or [create a child theme](https://docs.woocommerce.com/document/set-up-and-use-a-child-theme/) and always place the code at the bottom.
 
 #### 3. Adding script to WordPress
 Install [Header and Footer Scripts](https://wordpress.org/plugins/header-and-footer-scripts/)plugin. Add the followig code to your header or footer. Settings > Headers and Footers Script, paste the code and save changes.
@@ -215,11 +195,6 @@ Replace it with the URL of your WooCommerce Store page.
 
 Next, paste the following code into the **Custom CSS Code** section of your crowdfunding app:
 ```
-iframe {
-    border: 0;
-    max-width: 100%;
-}
-
 #crowdfund-body-header-tagline-container,
 #crowdfund-body-description-container {
     max-width: 100% !important;
@@ -237,6 +212,8 @@ iframe {
 
 #crowdfund-body-description-container iframe {
     width:100%;
+    border:0;
+    min-height:500px;
 }
 /* // Medium devices (tablets, 768px and up) */
 @media (min-width: 768px) {
@@ -250,8 +227,9 @@ iframe {
         right: 0;
         top:0;
         height: 100%;
+        border-left: 1px #e5e5e5 solid;
     }
-}
+} 
 ```
 
 One final thing, make sure to check (enable) **Count all invoices created on the store as part of the crowdfunding goal**
