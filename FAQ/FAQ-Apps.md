@@ -52,7 +52,9 @@ The following tutorial assumes you have a semi-advanced understanding of BTCPay,
 2. [WooCommerce Plugin](https://wordpress.org/plugins/woocommerce/)
 3. [BTCPay for WooCommerce Plugin](https://wordpress.org/plugins/btcpay-for-woocommerce/)
 4. [Storefront Theme](https://wordpress.org/themes/storefront/) (if you're using another theme, you may need to modify the CSS code to fit your theme.
-5. BTCPay Server 
+5. BTCPay Server
+
+**Important Note**  Make sure that both your WooCommerce store and BTCPay Server **are on a same domain**. Some browsers have aggressive way of blocking the cross-domain embeded content. Quite specifically, Safari on iOS will destroy the cookie when the item is added, which will leaad to empty cart. There's no other way to fix this besides having BTCPay and Woo on a same domain as subdomains at least.
 
 #### Optional WordPress Plugins
 The following plugins are recommended, but not required. You don't have to use them if you're an advanced WordPress user. 
@@ -169,6 +171,32 @@ display: none;
 .woocommerce-form-coupon-toggle {
     display: none;
 } 
+
+.product:hover{
+background-color:rgba(0,0,255,0.3);
+color:rgba(0,0,0,0);
+padding-bottom:45px;
+}
+.product:hover a *{
+visibility:hidden;
+}
+.product:hover a.add_to_cart_button{
+    position: absolute;
+    top: 0;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+    padding-top: 50%;
+    color: white;
+background-color:rgba(0,0,255,0.3);
+
+}
+
+.product:hover a.add_to_cart_button:hover{
+
+background-color:rgba(0,0,255,0.5);
+}
+
 ```
 The code above removes and hides all the unnecessary things from your store (headers, footers, breadcrumbs, and sorting). If you're not using the Storefront theme, you may need to modify it slightly. Besides removing, the bottom part of the code adds a bit of different styling which improves the checkout experience and makes it more KickStarter like. Feel free to modify colors. You should also remove the sidebar.
 
@@ -257,5 +285,4 @@ Next, paste the following code into the **Custom CSS Code** section of your crow
 ```
 
 One final thing, make sure to check (enable) **Count all invoices created on the store as part of the crowdfunding goal**
-
 Save the changes and preview the app.
