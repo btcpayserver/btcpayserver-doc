@@ -37,7 +37,7 @@ Watch the video below or read [this article](https://bitcoinshirt.co/how-to-crea
 
 [![ConnectBTCPayWallet](https://img.youtube.com/vi/xX6LyQej0NQ/mqdefault.jpg)](https://www.youtube.com/watch?v=xX6LyQej0NQ "BTCPay - Connecting Wallet")
 
-If you're using altcoins, be sure to repeat the process for each of the alternative coins. Each coin has it's own wallet and derivation scheme.
+If you're using altcoins, be sure to repeat the process for each of the alternative coins. Each coin has its own wallet and derivation scheme.
 
 ## Creating the Point of Sale App
 
