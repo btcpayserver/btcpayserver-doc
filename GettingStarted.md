@@ -12,7 +12,9 @@ You will see the pop-up message showing the sync progress. When your node fully 
 
 The <strong>first created account</strong> on your newly-created BTCPay Server is automatically an <strong>admin</strong>. You can register your admin account even if your node is not fully synced.
 
-To register, visit your BTCPay Server URL and click on the "Register" in the upper menu. Input your password and e-mail and click "Register" button. You will automatically be logged in. If you're using a third-party host, you may be asked to verify your e-mail address.
+To register, visit your BTCPay Server URL and click on the "Register" in the upper menu. Input your password and e-mail and click "Register" button. You will automatically be logged in. If you're using a third-party host, you may be asked to verify your e-mail address to register.
+
+To allow other users to access your server, you need to enable registration in Server Settings > Policies. Server admins, should also [configure SMTP settings](FAQ/FAQ-ServerSettings.md#how-to-configure-smtp-settings-in-btcpay) to allow password reset via the e-mail for themselves and other users.
 
 ## Creating BTCPay Store
 
