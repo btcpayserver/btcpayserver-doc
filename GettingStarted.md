@@ -37,6 +37,8 @@ Watch the video below or read [this article](https://bitcoinshirt.co/how-to-crea
 
 [![ConnectBTCPayWallet](https://img.youtube.com/vi/xX6LyQej0NQ/mqdefault.jpg)](https://www.youtube.com/watch?v=xX6LyQej0NQ "BTCPay - Connecting Wallet")
 
+If you're using altcoins, be sure to repeat the process for each of the alternative coins. Each coin has it's own wallet and derivation scheme.
+
 ## Creating the Point of Sale App
 
 BTCPay has a PoS app which you can use to receive payments from your customers directly or to receive donations. To create the POS app, you need to have a store created in BTCPay.
