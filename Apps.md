@@ -18,6 +18,8 @@ Crowdfunding is an application which you can launch from BTCPay Server interface
 
 [![BTCPay Crowdfunding](https://img.youtube.com/vi/tFbfyneDj88/mqdefault.jpg)](https://www.youtube.com/watch?v=tFbfyneDj88 "BTCPay crowdfunding")
 
+If you would like to provide digital or physical prodcuts to the backers of your crowdfunding campaign, you can [integrate WooCommerce store into it](FAQ/FAQ-Apps.md#how-to-integrate-woocommerce-store-into-a-btcpay-crowdfund-app).
+
 ## Payment Button
 Easily-embeddable HTML and highly-customizable payment buttons allow users to receive tips and donations. Online stores can also integrate payment buttons. When a site visitor clicks on the button, BTCPay displays the invoice.
 
