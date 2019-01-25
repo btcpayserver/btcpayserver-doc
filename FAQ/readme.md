@@ -121,6 +121,7 @@ Frequent questions about the applications in BTCPay.
 * [How to customize the appearance of POS in BTCPay?](FAQ-Apps.md#how-to-customize-the-appearance-of-Point-of-Sale-App-in-BTCPay)
 * [What is a Payment Button?](FAQ-Apps.md#what-is-a-payment-button)
 * [How to fix empty spacing around payment button](FAQ-Apps.md#how-to-fix-empty-spacing-around-payment-button)
+* [How to integrate WooCommerce Store in BTCPay Crowdfund app?](FAQ-Apps.md#how-to-integrate-woocommerce-store-into-a-btcpay-crowdfund-app)
 
 ## [Lightning Network FAQ](FAQ-LightningNetwork.md)
 
