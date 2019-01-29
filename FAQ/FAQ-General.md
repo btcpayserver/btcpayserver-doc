@@ -74,7 +74,7 @@ Please check out [How to penny-pinch your Azure deployment](AzurePennyPinching.m
 
 If you would like to run Bitcoin and Lightning Network nodes, the minimal requirements are :
 - 2GB Ram
-- 80 GB of storage (with pruning enabled)
+- 80 GB of storage (with [pruning](https://github.com/btcpayserver/btcpayserver-docker#generated-docker-compose-) enabled)
 - Docker
 
 ## How to install BTCPay Server?
