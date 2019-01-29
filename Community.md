@@ -2,7 +2,7 @@
 
 This project is nothing without its community!
 
-Contact us via:
+Join us:
 
 [![Mattermost](img/mattermost.png)](https://chat.btcpayserver.org/)
 [![Twitter](img/twitter.png)](https://twitter.com/BtcpayServer)
