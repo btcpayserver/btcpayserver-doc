@@ -84,11 +84,14 @@ We try to document the most common issues on the [Frequently Asked Questions pag
 
 When there's an advanced technical issue, users usually open an issue on GitHub. Take a look at the BTCPay GitHub repository and browse [search the closed issues](https://github.com/btcpayserver/btcpayserver/issues?q=is%3Aissue+is%3Aclosed).
 
+### 3.3 Mattermost
+Mattermost chat platform is great for similar issues, other users experienced before you. On the top right-hand corner, click on the search and enter your query.
+
 ## 4. Asking for help
 
 If you're unable to solve the problem yourself, do not worry. There's an amid community ready to help you. 
 
-The better you describe the problem, the higher are the chances of getting a timely fix. Be concise and provide as much relevant information as possible. Be sure to include the [version you're using](FAQ/FAQ-ServerSettings.md#how-can-i-see-my-btcpay-version) and describe your BTCPay Setup. Try to explain what you're trying to do and what's the issue. If you can provide the logs. If you think it's relevant, feel free to include a screenshot.
+The better you describe the problem, the higher are the chances of getting a timely fix. Be concise and provide as much relevant information as possible. Be sure to include the [version you're using](FAQ/FAQ-ServerSettings.md#how-can-i-see-my-btcpay-version) and describe your BTCPay Deployment Setup. Try to explain what you're trying to do and what's the issue. If you can provide the logs. If you think it's relevant, feel free to include a screenshot.
 
 Here's a good example of how to ask a question.
 
@@ -96,7 +99,7 @@ Here's a good example of how to ask a question.
 
 ### 4.1 Asking the community (general problems)
 
-For quick answers to fundamental problems, it's best to post a question in #help or #general channel on [BTCPay Slack](http://slack.btcpayserver.org/).
+For quick answers to fundamental problems, it's best to post a question in #support channel on [BTCPay Mattermost](https://chat.btcpayserver.org/btcpayserver/channels/support).
 
 ### 4.2 Opening an Issue on GitHub (advanced problems)
 
