@@ -9,9 +9,10 @@ This page answers some of the common questions about alternative cryptocurrencie
 * [How to remove a coin from BTCPay?](FAQ-Altcoin.md#how-to-remove-a-coin-from-btcpay)
 
 ## Which coins BTCPay Server supports?
-Besides, Bitcoin as the main focus of the project, BTCPay natively supports following alternative cryptocurrencies:
+Besides, Bitcoin as the core focus of the project, BTCPay natively supports following alternative cryptocurrencies:
 
 * Bitcoin Gold (BTG)
+* Bitcoin Plus (XBC)
 * Bitcore (BTX)
 * Dash (DASH)
 * Dogecoin (DOGE)
@@ -22,7 +23,7 @@ Besides, Bitcoin as the main focus of the project, BTCPay natively supports foll
 * Polis (POLIS)
 * Viacoin (VIA)
 
-Native support means that these coins are using full nodes and that the payments are direct. There are certain third-party providers integrated which enable merchants to accept a more significant number of coins.
+Native support means that these coins are using full nodes and that the payments are direct. There are certain third-party providers integrated which enable merchants to accept a more significant number of coins. Alternative coins are maintained by their respective communities.
 
 ## Can an XYZ coin be added in BTCPay?
 No. BTCPay developers can't add alternative coins on request. Adding a new coin explicitly depends on the community and developers of those coins. Furthermore, BTCPay developers do not spend excessive time testing nor maintaining the altcoins. If you're submitting a PR for a new coin, make sure that it works. If the altcoin integration is not actively maintained it will be removed.

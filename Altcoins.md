@@ -1,8 +1,9 @@
 # Altcoins
 
-Support is implemented for several altcoins:
+Bitcoin is the only focus of the project and its core developers. However, support is implemented for several altcoins:
 
 * Bitcoin Gold (BTG)
+* Bitcoin Plus (XBC)
 * Bitcore (BTX)
 * Dash (DASH)
 * Dogecoin (DOGE)
@@ -12,6 +13,8 @@ Support is implemented for several altcoins:
 * Monacoin (MONA)
 * Polis (POLIS)
 * Viacoin (VIA)
+
+Altcoins are maintained by their respective communities.
 
 ## How can I add an altcoin to BTCPayServer?
 

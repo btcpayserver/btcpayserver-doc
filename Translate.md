@@ -2,7 +2,9 @@
 
 ## Want to contribute to BTCPay by translating it to another language? 
 
-BTCPay uses a translation platform called Transifex to allow users to add a new language translation or modify an existing one. We are currently working on translating the BTCPay checkout page. After a translation has been made on Transifex, the submittal process is automated and merged periodically into the BTCPay git repository. 
+BTCPay uses a translation platform called Transifex to allow users to add a new language translation or modify an existing one. We are currently working on translating the BTCPay checkout page. After a translation has been made on Transifex, the submittal process is automated and merged periodically into the BTCPay git repository.
+
+If you have any questions about translating, join the [#Translations channel](https://chat.btcpayserver.org/btcpayserver/channels/translations) on Mattermost.
 
  ## To make a translation contribution, follow these steps:
 
