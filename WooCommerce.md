@@ -97,3 +97,29 @@ Depending on your business model and store settings, you may want to configure y
 Take time to think about how you wish to automate these statuses. If you do not wish certain BTCPay status to trigger WooCommerce order status, you can leave it blank. 
 
 For example, if a merchant wants to send an email notifying the customer that the payment has been received, but the order will be processed upon confirmation, the merchant would have to set "order status paid" to "on hold." Then, the merchant would have to customize and trigger email for 'on hold' status of the order in WooCommerce. It takes some time to find a perfect formula, so users should test things out before going live.
+
+# Deploying WooCommerce from BTCPay Server
+If you already have BTCPay Server, you can very easily start WooCommerce from your existing environment.
+
+1. Point the external IP of the virtual machine where your BTCPay is hosted to your store domain, for example store.yourdomain.com.
+
+
+2. Log into your BTCPay server as root.
+
+```
+sudo su -
+```
+
+3. Set up WooCommerce variables. You can add [optional variables](https://github.com/btcpayserver/btcpayserver-docker/blob/master/docker-compose-generator/docker-fragments/opt-add-woocommerce.yml) as well.
+
+```
+export BTCPAYGEN_ADDITIONAL_FRAGMENTS="$BTCPAYGEN_ADDITIONAL_FRAGMENTS;opt-add-woocommerce"
+export WOOCOMMERCE_HOST="yourstoredomain.com"
+```
+4. Lastly, just run BTCPay Setup script which will add the set up variables.
+
+```
+. ./btcpay-setup.sh -i
+
+```
+5. Go to your store's domain name, in our example that's store.yourdomain.com and follow the WordPress installation wizard.
