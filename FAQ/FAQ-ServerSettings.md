@@ -36,8 +36,26 @@ In the btcpayserver-docker folder:`bitcoin-cli.sh getnetworkinfo`
 ### What is BTCPay SSH key file?
 BTCPay SSH key, enables users to update their server or quickly change the domain name from btcpay website, the front-end.
 ### Forgot BTCPay Admin password?
-You need to edit your database. Register new user, for example: "newadmin@example.com":
-Assuming you use docker:
+You need to edit your database.
+
+First, register new user, for example: "newadmin@example.com".
+If you can't create a new user because registrations are disabled, you reset your Policies settings with the following command line, please skip this step if you could create a new user.
+
+```bash
+# In root
+sudo su -
+# Connect to your postgres container
+docker exec -ti $(docker ps -a -q -f "name=postgres_1") bash
+# Switch to postgres user
+su postgres
+# Run psql
+psql
+# Connect to db
+\c btcpayservermainnet
+DELETE FROM "Settings" WHERE "Id" = 'BTCPayServer.Services.PoliciesSettings';
+```
+
+Then, add `newadmin@example.com` as an admin:
 
 ```bash
 # In root
