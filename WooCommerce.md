@@ -120,6 +120,5 @@ export WOOCOMMERCE_HOST="yourstoredomain.com"
 
 ```
 . ./btcpay-setup.sh -i
-
 ```
 5. Go to your store's domain name, in our example that's store.yourdomain.com and follow the WordPress installation wizard.
