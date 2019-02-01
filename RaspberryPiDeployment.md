@@ -137,7 +137,7 @@ df -h
 Create symlink to flash drive for Docker.
 ```bash 
 sudo mkdir /mnt/usb/docker
-sudo ln -s /var/lib/docker /mnt/usb/docker
+sudo ln -s /mnt/usb/docker /var/lib/docker
 ```
 
 
