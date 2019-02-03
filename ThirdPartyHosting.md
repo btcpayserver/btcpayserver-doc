@@ -4,7 +4,7 @@ A third-party host is an individual or a business which self-hosts a BTCPay inst
 
 While this feature in BTCPay Server exists for complex multi-store business management, community enthusiasts use it to help other users, (mostly beginners), sometimes skip an overwhelming step of deploying a self-hosted BTCPay server. Users who want to test or develop applications on top of BTCPay also use instances hosted by third parties. Some hosts try to spread the adoption of cryptocurrencies by allowing their local merchants to receive payments for free or for a small sign-up fee.
 
-In layman, words think of this feature as a payment processor factory which allows anyone to deploy a server and help others receive payments which are validated via the server owner [full Bitcoin node](https://en.bitcoin.it/wiki/Full_node).
+In layman words, think of this feature as a payment processor factory which allows anyone to deploy a server and help others receive payments which are validated via the server owner [full Bitcoin node](https://en.bitcoin.it/wiki/Full_node).
 
 ## The list of BTCPay third-party hosts
 
