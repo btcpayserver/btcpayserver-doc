@@ -210,4 +210,3 @@ Enjoy!
 If you don't have the time or patience to build your own BTCPB there are a few merchants who can build one for you. 
 - [Lightning in a Box](https://lightninginabox.co)
 - [Nodl.it](https://nodl.it)
-
