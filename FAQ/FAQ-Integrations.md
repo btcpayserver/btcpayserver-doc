@@ -33,7 +33,7 @@ There's no best way to configure them without trial and error and seeing what wo
 ### How to customize e-mail confirmations in WooCommerce?
 If you wish to send an e-mail after a certain status to the customer, you need to edit WooCommerce order e-mail templates. This is recommended only if you know what you're doing. [Check out this guide](https://www.cloudways.com/blog/how-to-customize-woocommerce-order-emails/).
 
-## Error: If you use an alternative order numbering system, please see class-wc-gateway-btcpay.php to apply a search filter
+### Error: If you use an alternative order numbering system, please see class-wc-gateway-btcpay.php to apply a search filter
 
 If by any chance you use a different order numbering than standard in WooCommerce, the following error may appear in your BTCPay WooCommerce plugin logs: 
 
