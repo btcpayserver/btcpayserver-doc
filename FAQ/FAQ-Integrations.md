@@ -39,7 +39,7 @@ If by any chance you use a different order numbering than standard in WooCommerc
 
 > [Error] The BTCPay payment plugin was called to process an IPN message but could not retrieve the order details for order_id: "ON123". If you use an alternative order numbering system, please see class-wc-gateway-btcpay.php to apply a search filter.
 
-Paste the following code at the bottom of your child's theme function.php file:
+Paste the following code at the bottom of your child's theme **functions.php** file:
 ```
 function get_order_id_from_custom_order_style($orderid){
   if(is_string($orderid)){
