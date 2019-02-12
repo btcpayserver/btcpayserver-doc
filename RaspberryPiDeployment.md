@@ -78,7 +78,9 @@ sudo ufw allow from 192.168.1.0/24 to any port 22
 
 These ports need to be accessible from anywhere.  The default subnet is 'any' unless you specify one.
 ```bash
-sudo ufw allow 80,443,9735 
+sudo ufw allow 80
+sudo ufw allow 443
+sudo ufw allow 9735 
 ```
 
 Verify your configuration.
