@@ -152,7 +152,7 @@ CONF_SWAPFILE=/mnt/usb/swapfile
 Change the CONF_SWAPSIZE line to 
 CONF_SWAPSIZE=2048
 
-Stop and restart the swapfie service
+Stop and restart the swapfile service
 ```bash
 sudo /etc/init.d/dphys-swapfile stop
 sudo /etc/init.d/dphys-swapfile start
