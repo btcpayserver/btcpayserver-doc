@@ -78,7 +78,9 @@ sudo ufw allow from 192.168.1.0/24 to any port 22
 
 These ports need to be accessible from anywhere.  The default subnet is 'any' unless you specify one.
 ```bash
-sudo ufw allow 80, 443, 9735 
+sudo ufw allow 80
+sudo ufw allow 443
+sudo ufw allow 9735 
 ```
 
 Verify your configuration.
@@ -140,8 +142,23 @@ sudo mkdir /mnt/usb/docker
 sudo ln -s /mnt/usb/docker /var/lib/docker
 ```
 
+**Step 13** - Move Swapfile to USB and increase size
+```bash 
+sudo nano /etc/dphys-swapfile
+```
+Change the CONF_SWAPFILE line to 
+CONF_SWAPFILE=/mnt/usb/swapfile
 
-**Step 13** - Install BTCPayServer.  
+Change the CONF_SWAPSIZE line to 
+CONF_SWAPSIZE=2048
+
+Stop and restart the swapfile service
+```bash
+sudo /etc/init.d/dphys-swapfile stop
+sudo /etc/init.d/dphys-swapfile start
+```
+
+**Step 14** - Install BTCPayServer.  
 Run the following commands.  Make sure you change the BTCPAY_HOST parameter to your own domain name. 
 
 Login as root
@@ -177,14 +194,14 @@ The last step is to launch the BTCPayServer setup script.
 exit
 ```
 
-**Step 14** 
+**Step 15** 
 Go to https://btcpay.yourdomain.com and confirm that your nodes are syncing. 
 
 **Fast Sync**
 BTCPayServer's FastSync documentation is available here https://github.com/btcpayserver/btcpayserver-docker/tree/master/contrib/FastSync.
 Please read very carefully to understand what FastSync is and why it's important to verify the UTXO set yourself.
 
-**Step 15**
+**Step 16**
 From the /root/BTCPayServer/btcpayserver-docker folder run the following commands.
 
 ```bash
@@ -199,7 +216,7 @@ FastSync will take about 30 minutes or so depending on your download speed. Afte
 ./btcpay-up.sh
 ```
 
-**Step 16**
+**Step 17**
 
 By using FastSync you are exposing yourself to attacks if a [malicious UTXO Set snapshot](https://github.com/btcpayserver/btcpayserver-docker/blob/master/contrib/FastSync/README.md#what-are-the-downsides-of-fast-sync) is sent to you.
 
