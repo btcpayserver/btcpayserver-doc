@@ -150,7 +150,7 @@ Change the CONF_SWAPFILE line to
 CONF_SWAPFILE=/mnt/usb/swapfile
 
 Change the CONF_SWAPSIZE line to 
-CONF_SWAPSIZE=2048
+CONF_SWAPSIZE=1024
 
 Stop and restart the swapfile service
 ```bash
