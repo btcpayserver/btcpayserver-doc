@@ -19,6 +19,11 @@ Additionally, if you need Lightning Network access, NBXplorer supports connectio
 * Lightning Charge
 * LND (via the REST interface)
 
+Video below shows BTCPay Architecture in-depth.
+
+[![BTCPay Architecture](advancing-bitcoin-2019-btcpayserver-architecture.jpg)](https://www.youtube.com/watch?v=6EHNq1anD1k "BTCPay Architecture")
+
+
 ---
 
 We provide several ways of deploying BTCPayServer, depending on whether you favor flexibility or ease-of-use.
