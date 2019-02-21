@@ -61,3 +61,44 @@ BTCPay Server has an API compatible with Bitpay; changing your e-commerce applic
 You can read the full API documentation [on Bitpay's website](https://bitpay.com/api#resource-Invoices).
 
 There is only one difference: Bitpay only allows one account for one merchant, BTCPay allows a user to manage multiple stores.
+
+## Modal Checkout
+
+To geneate a pop-up modal experience:
+1. Include the btcpay.js script in your html page
+
+```
+    <script src ="https://your.btcpay.url/modal/btcpay.js"></script>
+```
+
+2. Call the invoice API to generate an invoice (example code). This is sample backend code as it contains an auth token that should not be exposed in your front-end.
+
+```
+    const axiosClient = axios.create({
+      baseURL: BTCPAY_URL,
+      timeout: 5000,
+      responseType: 'json',
+      headers: {
+        'Content-Type': 'application/json',
+        'Authorization': BTCPAY_AUTH
+      }
+    });
+
+    const invoiceCreation = {
+      "price": 12345,
+      "currency": "USD",
+      "orderId": "something",
+      "itemDesc": "item description",
+      "notificationUrl": "https://webhook.after.checkout.com/goeshere",
+      "redirectURL": "https://go.here.after.checkout.com"
+    };
+
+    const response = await axiosClient.post("/invoices", invoiceCreation);
+    const invoiceId = response.data.data.id;
+```
+
+3. Use the invoiceId to pop up the modal
+
+```
+      window.btcpay.showInvoice(invoiceId);
+```
