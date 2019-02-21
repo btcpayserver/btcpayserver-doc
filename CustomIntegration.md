@@ -90,7 +90,7 @@ To geneate a pop-up modal experience:
       "orderId": "something",
       "itemDesc": "item description",
       "notificationUrl": "https://webhook.after.checkout.com/goeshere",
-      "redirectURL": params.redirectURL
+      "redirectURL": "https://go.here.after.checkout.com"
     };
 
     const response = await axiosClient.post("/invoices", invoiceCreation);
