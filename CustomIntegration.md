@@ -102,3 +102,10 @@ To geneate a pop-up modal experience:
 ```
       window.btcpay.showInvoice(invoiceId);
 ```
+
+4. You'll often want to do something like refresh the state of your page when the invoice is paid, or note some kind of state before the modal pops up. You can attach event listeners like this:
+
+```
+      window.btcpay.onModalWillEnter(yourCallbackFunction);
+      window.btcpay.onModalWillLeave(yourCallbackFunction);
+```
