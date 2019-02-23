@@ -72,6 +72,8 @@ INSERT INTO "AspNetUserRoles" Values ( (SELECT "Id" FROM "AspNetUsers" WHERE "Em
 ```
 Now you can access with `newadmin@example.com` as admin.
 
+When you apply the changes, you'll noticed that newly created user isn't the member of any stores. In that case, [follow this guide] to add the new users to all or certain stores.
+
 ## BTCPAY_SSHKEYFILE is not set when running the docker install, or unable to update through Server Settings / Maintenance
 
 You may see such the following message when you run your docker-compose (either via `btcpay-up.sh` or `btcpay-setup.sh`):
