@@ -38,7 +38,7 @@ Check with
 
 ```bash
 sudo su -
-docker stat
+docker stats
 ```
 
 If you see more than 100% CPU usage, while being very slow to sync:
