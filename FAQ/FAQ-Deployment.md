@@ -21,6 +21,7 @@ Here are common questions about installation, regardless of the deployment metho
 ## Manual Deployment FAQ
 * [Getting 500 nginx error on aa local server https and for http (BTCPay is expecting you to access this website from)](FAQ-Deployment.md#getting-500-nginx-error-on-aa-local-server-https-and-for-http-btcpay-is-expecting-you-to-access-this-website-from)
 * [How to manually install BTCPay on Ubuntu 18.04?](FAQ-Deployment.md#how-to-manually-install-btcpay-on-ubuntu-1804)
+* [Error: BTCPay is expecting you to access this website from...](FAQ-Deployment.md#BTCPay-is-expecting-you-to-access-this-website-from)
 
 ## General Deployment
 
@@ -72,6 +73,23 @@ Additional documentation can be found on [domain change page](/ChangeDomain.md).
 
 You need to open port 80 and 443. Once you did that, restart docker `btcpay-restart.sh`
 
-### How to manually install BTCPay on Ubuntu 18.04?
+#### How to manually install BTCPay on Ubuntu 18.04?
 
 Check this [community guide](https://freedomnode.com/blog/114/how-to-setup-btc-and-lightning-payment-gateway-with-btcpayserver-on-linux-manual-install). 
+
+#### BTCPay is expecting you to access this website from
+
+You might see this error on the front page of your BTCPay Server since version `1.0.3.73`.
+
+This is caused by a breaking change made in BTCPay to be able to handle different domain on the same server.
+
+It happens because your BTCPay Server is not exposed directly on internet, instead a reverse proxy (like nginx or IIS) receive the request and forward it to BTCPay Server.
+
+Sadly, depending on the configuration of your reverse proxy, either the HTTP HOST header has been replaced, or the reverse proxy did not forwarded the protocol at the front with the http header `X-Forwarded-Proto`.
+
+If you use NGinx, here is what you need to have at the top level in `/etc/nginx/conf.d/default.conf`:
+
+```
+proxy_set_header Host $http_host;
+proxy_set_header X-Forwarded-Proto $proxy_x_forwarded_proto;
+```
