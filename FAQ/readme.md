@@ -140,6 +140,7 @@ Lightning Network troubleshooting and common problems.
 * [Switched Lightning Network implementation, getting "no payment available" error](FAQ-LightningNetwork.md#i-switched-lightning-network-implementation-but-getting-no-payment-available-error)
 * [WARNING: The LIGHTNING_ALIAS variable is not set. Defaulting to a blank string" when starting container](FAQ-LightningNetwork.md#i-get-warning-the-lightning_alias-variable-is-not-set-defaulting-to-a-blank-string-when-starting-container)
 * [How to display my Lightning Node information so that others can connect to me?](FAQ-LightningNetwork.md#how-to-display-my-lightning-node-information-so-that-others-can-connect-to-me)
+* [Where can I find recovery seed backup for my Lightning Network wallet in BTCPay Server?](FAQ-LightningNetwork.md#where-can-i-find-recovery-seed-backup-for-my-lightning-network-wallet-in-btcpay-server)
 * [Where can I get Lightning Network Support?](FAQ-LightningNetwork.md#lightning-network-questions-and-support)
 
 ### [Lightning Network (LND) FAQ](FAQ-LightningNetwork.md#lightning-network-lnd-faq)

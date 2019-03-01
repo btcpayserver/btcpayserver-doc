@@ -10,6 +10,7 @@ This document clarifies some of the most common questions and issues users face 
 * [Switched Lightning Network implementation, getting "no payment available" error](FAQ-LightningNetwork.md#i-switched-lightning-network-implementation-but-getting-no-payment-available-error)
 * [WARNING: The LIGHTNING_ALIAS variable is not set. Defaulting to a blank string" when starting container](FAQ-LightningNetwork.md#i-get-warning-the-lightning_alias-variable-is-not-set-defaulting-to-a-blank-string-when-starting-container)
 * [How to display my Lightning Node information so that others can connect to me?](FAQ-LightningNetwork.md#how-to-display-my-lightning-node-information-so-that-others-can-connect-to-me)
+* [Where can I find recovery seed backup for my Lightning Network wallet in BTCPay Server?](FAQ-LightningNetwork.md#where-can-i-find-recovery-seed-backup-for-my-lightning-network-wallet-in-btcpay-server)
 * [Where can I get Lightning Network Support?](FAQ-LightningNetwork.md#lightning-network-questions-and-support)
 
 ## [Lightning Network (LND) FAQ](FAQ-LightningNetwork.md#lightning-network-lnd-faq)
@@ -203,6 +204,12 @@ The information other users need to connect to your node, is already displayed a
 There are numerous ways to find your node information, but the easiest way to display it to others is by using Lightning Node info page. Go to Store > General Settings > Lightning nodes > Modify. At the bottom of the page, there is a "Open Public Node Page" button. Click on it to see the information. The page can be embeded into your website with `<iframe>`. 
 
 ![BTCPay Checkout](/img/LightningNodepPageInfo.png)
+
+### Where can I find recovery seed backup for my Lightning Network wallet in BTCPay Server?
+
+BTCPay uses noseedbackup, so you can’t backup your LN wallet or get your recovery seed.This is because in Lightning Network there’s still no solution for backing up funds in channels, just in your on-chain wallet.
+
+If BTCPay was to provide a way to backup the lightning network wallet, it would provide a false sense of security to users, since the most of funds in lightning network are in channels anyway. To understand why backup seed gives false sense of security, watch this [video](https://www.youtube.com/watch?v=5fMv8MpzLgQ). Once again, please understand that Lightning Network is still in experimental phase and do not put what you're not willing to lose.
 
 ## Lightning Network (LND) FAQ 
 
