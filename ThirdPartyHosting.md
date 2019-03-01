@@ -13,7 +13,6 @@ In layman words, think of this feature as a payment processor factory which allo
 * [lightbo.lt](https://lightbo.lt)
 * [lightninginabox.co](https://lightninginabox.co)
 * [lpay.io](https://lpay.io)
-* [ltcpay.com](https://ltcpay.com/)
 * [nodl.it](https://nodl.it)
 * [register.btcpal.online](https://register.btcpal.online)
 
