@@ -13,9 +13,9 @@ In layman words, think of this feature as a payment processor factory which allo
 * [lightbo.lt](https://lightbo.lt)
 * [lightninginabox.co](https://lightninginabox.co)
 * [lpay.io](https://lpay.io)
-* [ltcpay.com](https://ltcpay.com/)
+* [~~ltcpay.com~~](https://ltcpay.com/)
 * [nodl.it](https://nodl.it)
-* [register.btcpal.online](https://register.btcpal.online)
+* [~~register.btcpal.online~~](https://register.btcpal.online)
 
 Feel free to chat with the [Community](Community.md) to find the appropriate host for your needs, but also make sure to choose a host you trust. Read the rest of this document to better understand the pros and cons of using a third party host.
 
