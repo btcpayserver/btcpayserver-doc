@@ -59,9 +59,23 @@ Regardless of the implementation (c-lightning or LND) you've decided to use, the
 
 ## Getting Started with BTCPay and LND
 
-The easiest way to use LND implementation with BTCPay is to use [Zap wallet integration](https://github.com/LN-Zap/zap-tutorials/blob/master/zap-desktop-btcpay-server.md).
+The easiest way to use LND implementation with BTCPay is to use [Ride The Lightning](https://github.com/ShahanaFarooqui/RTL) (RTL). 
+
+![RideTheLightningServices](img/RideTheLightning.png)
+
+RTL is a device agnostic web user interface for Lightning Network that allows you to operate your node without leaving BTCPay, from your browser.
+
+![RideTheLightningServices](img/RideTheLightningServices.png)
+
+To initiate RTL in BTCPay, Go to **Server Settings > Services > RTL > See information**.
+
+
+
+For remote use of your LND node on iOS or PC, you can use [Zap wallet integration](https://github.com/LN-Zap/zap-tutorials/blob/master/zap-desktop-btcpay-server.md).
 
 [![LNDBTCPay](https://img.youtube.com/vi/CWhTOunTb2Q/mqdefault.jpg)](https://www.youtube.com/watch?v=CWhTOunTb2Q "BTCPay - LND and Zap")
+
+Besides Zap, there are two more wallets that allow remotely control of the LND node, [the Pebble wallet](https://www.pebble.indiesquare.me/) and the [ZeusLN](https://github.com/ZeusLN/zeus). Both of which have not yet extensively been tested by the community.
 
 ### LND Commands lncli
 
