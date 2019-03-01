@@ -93,3 +93,13 @@ If you use NGinx, here is what you need to have at the top level in `/etc/nginx/
 proxy_set_header Host $http_host;
 proxy_set_header X-Forwarded-Proto $proxy_x_forwarded_proto;
 ```
+
+If your reverse proxy is Apache 2, you need to set those two settings
+
+```
+<VirtualHost *:443>
+    RequestHeader set X-Forwarded-Proto "https"
+    ProxyPreserveHost on
+...
+</VirtualHost>
+```
