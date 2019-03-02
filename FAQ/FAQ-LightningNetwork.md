@@ -28,7 +28,9 @@ Here are some general questions about LN in BTCPay, regardless of the implementa
 
 ### How many users can use Lightning Network in BTCPay?
 
-In BTCPay, only server admin has the Lightning Network node, due to technical and security reasons. On a self-hosted server, you can use only 1 Lightning Node. If you want to accept LN in multiple stores, you'll have to deploy a separate server for each store.
+Only server admin has the access to the Lightning Network node, for technical and security reasons. On a self-hosted server, you can use only one internal Lightning node.
+
+Server owners can use the same Lightning node for an unlimited number of stores tied to their admin account. Other users can connect to their external nodes. External connection is technically advanced task, and we recommend that if you want Lightning, you should deploy your own server, which comes with all the necessities bundled up.
 
 ### How to find node info and open a direct channel with a store using BTCPay?
 
