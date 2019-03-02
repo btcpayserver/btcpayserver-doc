@@ -33,6 +33,7 @@ Questions and solutions to BTCPay installation.
 * [Can I run BTCPay on my hardware?](FAQ/FAQ-Deployment.md#can-i-run-btcpay-on-my-own-hardware)
 * [Can I deploy on my existing VPS?](FAQ-Deployment.md#can-i-deploy-btcpay-my-existing-vps)
 * [Are there free hosts where I can test?](FAQ-Deployment.md#can-i-deploy-btcpay-my-existing-vps)
+* [After initial deployment, I can't register and I don't have a login yet?](FAQ-Deployment.md#Unable-to-register-first-user-and-i-do-not-have-a-login-yet)
 
 ### [Web Deployment FAQ](FAQ-Deployment.md#web-deployment-faq)
 #### [Luna Node Web Deployment FAQ](FAQ-Deployment.md#luna-node-web-deployment-faq)
