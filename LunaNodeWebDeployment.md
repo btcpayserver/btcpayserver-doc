@@ -2,7 +2,7 @@
 
 This article explains the deployment of BTCPay Server through LunaNode Web-Wizard. [LunaNode](http://lunanode.com/) is Canadian based hosting provider that accept Bitcoin payments and requires no personal identification except for a phone number verification.
 
-Their web-wizard is one of the easiest ways to deploy BTCPay Servers from a very user-friendly interface. This method is highly recommended if you do not have any technical knowledge. For the price of around US$ 8.8, you can have a self-hosted BTCpay.
+Their web-wizard is one of the easiest ways to deploy BTCPay Servers from a very user-friendly interface. This method is highly recommended if you do not have any technical knowledge. For the price of around US$ 8.8 per month, you can have a self-hosted BTCpay, which includes a Bitcoin full node and Lightning Network node.
 
 Video bellow explains all the step and customization of BTCPay.
 
