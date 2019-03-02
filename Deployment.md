@@ -36,7 +36,7 @@ Developer deployments are not recommended for production environments and requir
 |Business<br>(Self Setup)               |[LunaNode](https://medium.com/@BtcpayServer/hosting-btcpayserver-on-lunanode-bf9ef5fff75b)           |[Microsoft<br>Azure](AzureDeployment.md)    |[Google<br>Cloud](GoogleCloudDeployment.md) |- Moderate Difficulty<br>- Docker Compose Build<br>- Lightning Network    |
 |Cost                                   |10 USD / mo             |60 USD / mo |70 USD /mo  |BTC Accepted (1)|
 
-*BTCPay can also be deployed on any VPS that meets the [minimal requirements](FAQ.md#what-are-the-minimal-requirements-to-run-btcpay).*
+*BTCPay can also be deployed on any VPS that meets the [minimal requirements](FAQ/FAQ-Deployment.md#what-are-the-minimal-requirements-for-btcpay).*
 
 <br>
 
