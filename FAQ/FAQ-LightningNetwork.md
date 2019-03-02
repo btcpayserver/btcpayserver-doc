@@ -209,7 +209,7 @@ There are numerous ways to find your node information, but the easiest way to di
 
 BTCPay uses noseedbackup, so you can’t backup your LN wallet or get your recovery seed.This is because in Lightning Network there’s still no solution for backing up funds in channels, just in your on-chain wallet.
 
-If BTCPay was to provide a way to backup the lightning network wallet, it would provide a false sense of security to users, since the most of funds in lightning network are in channels anyway. To understand why backup seed gives false sense of security, watch this [video](https://www.youtube.com/watch?v=5fMv8MpzLgQ). Once again, please understand that Lightning Network is still in experimental phase and do not put what you're not willing to lose.
+If BTCPay was to provide a way to backup the lightning network wallet, it would provide a false sense of security to users, since most funds in the lightning network are in channels anyway. To understand why backup seed gives a false sense of security, watch this [video](https://www.youtube.com/watch?v=5fMv8MpzLgQ). Once again, please understand that the Lightning Network is still in an experimental phase and do not put funds into it, which you're not willing to lose.
 
 ## Lightning Network (LND) FAQ 
 
