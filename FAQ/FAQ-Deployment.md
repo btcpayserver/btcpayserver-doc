@@ -34,11 +34,11 @@ If you do not wish to host your own server, you should use a free host. If you p
 If you would like to run Bitcoin and Lightning Network nodes, the minimal requirements are :
 
 * 2GB Ram
-* 80 GB of storage [with enabled prunining](https://github.com/btcpayserver/btcpayserver-docker/blob/master/README.md#generated-docker-compose)
+* 80 GB of storage [with enabled pruning](https://github.com/btcpayserver/btcpayserver-docker/blob/master/README.md#generated-docker-compose)
 * Docker
 
 ### What is the easiest method to deploy a self-hosted BTCPay Server?
-For beginers, we strongly recommend the [web-deployment](/LunaNodeWebDeployment.md) if you want a self-hosted solution or a [third-party host](ThirdPartyHosting.md)
+For beginners, we strongly recommend the [web-deployment](/LunaNodeWebDeployment.md) if you want a self-hosted solution or a [third-party host](ThirdPartyHosting.md)
 
 If you're going to add more than one crypto coin, you need to expand the storage according to that coin(s) blockchain size.
 
@@ -46,7 +46,7 @@ If you're going to add more than one crypto coin, you need to expand the storage
 Please see [Deployment page](/Deployment.md) for comparison of different installation methods and choose the one that suits your needs and skill level the most.
 
 ### Can I run BTCPay on my own hardware?
-Yes, you can. Check our the [Hadrdware Deployment page](/HardwareDeployment.md) for detailed instructions.
+Yes, you can. Check our the [Hardware Deployment page](/HardwareDeployment.md) for detailed instructions.
 
 ### Can I deploy BTCPay my existing VPS?
 Yes. BTCPay is not limited to the documented deployment methods. You can use whichever hosting solution you prefer, that fits the minimal requirements.
@@ -63,7 +63,7 @@ Here you can find common questions and solutions to BTCPay web-deployments.
 #### How to change domain name on my LunaNode BTCPay?
 1. In your LunaNode dashboard, click on Virtual Machines > Your Virtual Machine > General Tab > External IP. Copy the external IP.
 2. Go to your DNS provider and create an A record. Paste the external IP.
-3. Go to Server Settings > Maintainance > Change Domain. Paste yourdomain.com without http or https prefix.
+3. Go to Server Settings > Maintenance > Change Domain. Paste yourdomain.com without http or https prefix.
 
 Additional documentation can be found on [domain change page](/ChangeDomain.md).
 
