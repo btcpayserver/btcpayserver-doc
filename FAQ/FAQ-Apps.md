@@ -296,5 +296,6 @@ However, you can use a work-around:
 3. Remove all the products from the automatically generated template.
 4. Save settings.
 5. Click on the `Embed payment button linking to PoS item` at the bottom of the page and copy the expanded code. Paste it into html page of your website.
-![Custom Amount Pay Button](/img/BTCPayPayButtonDynamic2.png)![Custom Amount Pay Button](/img/BTCPayPayButtonDynamic.png)
-
+6. Remove the extra fields you do not need, especially `<input name="price" type="hidden" value="10" />` so that button redirects to the point of sale.
+![Custom Amount Pay Button](/img/BTCPayPayButtonDynamic2.png)
+![Custom Amount Pay Button](/img/BTCPayPayButtonDynamic.png)
