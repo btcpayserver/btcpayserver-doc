@@ -289,13 +289,15 @@ One final thing, make sure to check (enable) **Count all invoices created on the
 Save the changes and preview the app.
 
 ## How to create Pay button with a custom amount?
+
 BTCPay Pay Button which can be found in Store Settings > Pay Button, currently does not support custom amounts. 
 However, you can use a work-around:
-1. [Create Point of sale app](GettingStarted.md#creating-the-point-of-sale-app)
-2. Enable `user can input a custom amount` field
-3. Remove all the products from the automatically generated template.
-4. Save settings.
-5. Click on the `Embed payment button linking to PoS item` at the bottom of the page and copy the expanded code. Paste it into html page of your website.
-6. Remove the extra fields you do not need, especially `<input name="price" type="hidden" value="10" />` so that button redirects to the point of sale.
+* [Create Point of sale app](GettingStarted.md#creating-the-point-of-sale-app)
+* Enable `user can input a custom amount` field
+* Remove all the products from the automatically generated template.
+* Save settings.
+* Click on the `Embed payment button linking to PoS item` at the bottom of the page and copy the expanded code. Paste it into html page of your website.
+* Remove the extra fields you do not need, especially `<input name="price" type="hidden" value="10" />` so that button redirects to the point of sale.
+
 ![Custom Amount Pay Button](/img/BTCPayPayButtonDynamic2.png)
 ![Custom Amount Pay Button](/img/BTCPayPayButtonDynamic.png)
