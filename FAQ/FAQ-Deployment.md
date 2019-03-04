@@ -94,8 +94,12 @@ Sadly, depending on the configuration of your reverse proxy, either the HTTP HOS
 If you use NGinx, here is what you need to have at the top level in `/etc/nginx/conf.d/default.conf`:
 
 ```
+map $http_x_forwarded_proto $proxy_x_forwarded_proto {
+  default $http_x_forwarded_proto;
+  ''      $scheme;
+}
 proxy_set_header Host $http_host;
-proxy_set_header X-Forwarded-Proto $http_x_forwarded_proto;
+proxy_set_header X-Forwarded-Proto $proxy_x_forwarded_proto;
 ```
 
 If your reverse proxy is Apache 2, you need to set those two settings
