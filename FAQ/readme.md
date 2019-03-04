@@ -126,6 +126,7 @@ Frequent questions about the applications in BTCPay.
 * [What is a Payment Button?](FAQ-Apps.md#what-is-a-payment-button)
 * [How to fix empty spacing around payment button](FAQ-Apps.md#how-to-fix-empty-spacing-around-payment-button)
 * [How to integrate WooCommerce Store in BTCPay Crowdfund app?](FAQ-Apps.md#how-to-integrate-woocommerce-store-into-a-btcpay-crowdfund-app)
+* [How to create Pay button with a custom amount?](FAQ-Apps.md#how-to-create-pay-button-with-a-custom-amount)
 
 ## [Lightning Network FAQ](FAQ-LightningNetwork.md)
 
