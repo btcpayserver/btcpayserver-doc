@@ -23,11 +23,11 @@ This document covers all the questions and issues related to Server Settings. Th
 ### How to update BTCPay Server
 
 There are 2 ways to update your BTCPay Server :
-1. Updating through the front end: Server Settings > Maintenance > Update.
+- Updating through the front end: Server Settings > Maintenance > Update.
 
 ![Updating BTCPay Server](/img/HowToUpdateBTCPayServer.png)
 
-2. Updating through SSH: Login into your virtual machine with ssh, then apply following commands:
+- Updating through SSH: Login into your virtual machine with ssh, then apply following commands:
 ```
 sudo su -
 btcpay-update.sh
