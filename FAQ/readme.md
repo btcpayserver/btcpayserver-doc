@@ -32,8 +32,8 @@ Questions and solutions to BTCPay installation.
 * [How to choose a proper deployment method?](FAQ-Deployment.md#how-to-choose-a-proper-deployment-method)
 * [Can I run BTCPay on my hardware?](FAQ-Deployment.md#can-i-run-btcpay-on-my-own-hardware)
 * [Can I deploy on my existing VPS?](FAQ-Deployment.md#can-i-deploy-btcpay-on-my-existing-vps)
-* [Are there free hosts where I can test?](FAQ-Deployment.md#can-i-deploy-btcpay-my-existing-vps)
-* [After initial deployment, I can't register and I don't have a login yet?](FAQ-Deployment.md#Unable-to-register-first-user-and-i-do-not-have-a-login-yet)
+* [Are there free hosts where I can test?](FAQ-Deployment.md#are-there-free-hosts-where-i-can-test)
+* [After initial deployment, I can't register and I don't have a login yet?](FAQ-Deployment.md#after-initial-deployment-i-cant-register-and-i-dont-have-a-login-yet)
 
 ### [Web Deployment FAQ](FAQ-Deployment.md#web-deployment-faq)
 #### [Luna Node Web Deployment FAQ](FAQ-Deployment.md#luna-node-web-deployment-faq)
