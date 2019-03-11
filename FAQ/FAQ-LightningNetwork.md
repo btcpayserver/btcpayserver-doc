@@ -23,7 +23,7 @@ This document clarifies some of the most common questions and issues users face 
 
 ## [Lightning Network (c-lightning) FAQ](FAQ-LightningNetwork.md#lightning-network-c-lightning-faq)
 * [How to find an on-chain address in Spark?](FAQ-LightningNetwork.md#how-to-find-an-on-chain-address-in-spark)
-* [How to withdraw funds from my on-chain Spark wallet?](FAQ/FAQ-LightningNetwork.md#how-to-withdraw-funds-from-my-on-chain-spark-wallet)
+* [How to withdraw funds from my on-chain Spark wallet?](FAQ-LightningNetwork.md#how-to-withdraw-funds-from-my-on-chain-spark-wallet)
 
 ## Lightning Network General FAQ
 
