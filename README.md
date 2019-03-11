@@ -27,6 +27,7 @@ If you have more general questions, please join the community chat on [Mattermos
 * Easy-embeddable Payment buttons
 * Point of sale app
 * Crowdfunding app
+* Payment Requests
 
 ## How it works
 ### In a nutshell
@@ -75,6 +76,7 @@ If an invoice is paid while your BTCPay server is down, the software will automa
 * [Apps](Apps.md)
 * [Lightning Network](LightningNetwork.md)
 * [Accounting](Accounting.md)
+* [Payment Requests](PaymentRequests.md)
 
 ### Integrations
 
