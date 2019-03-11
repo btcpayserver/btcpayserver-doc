@@ -159,7 +159,7 @@ Lightning Network troubleshooting and common problems.
 
 ### [Lightning Network (c-lightning) FAQ](FAQ-LightningNetwork.md#lightning-network-c-lightning-faq)
 * [How to find an on-chain address in Spark?](FAQ-LightningNetwork.md#how-to-find-an-on-chain-address-in-spark)
-
+* [How to withdraw funds from my on-chain Spark wallet?](FAQ/FAQ-LightningNetwork.md#how-to-withdraw-funds-from-my-on-chain-spark-wallet)
 
 ## [Altcoins FAQ](FAQ-Altcoin.md)
 * [Which coins BTCPay Server supports?](FAQ-Altcoin.md#which-coins-btcpay-server-supports)
