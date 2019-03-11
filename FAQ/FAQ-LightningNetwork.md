@@ -290,6 +290,28 @@ You can also toogle help if you need help with other commands in Spark.
 ![BTCPay Checkout](/img/Spark-console1.png)
 ![BTCPay Checkout](/img/Spark-console2.png)
 
+## How to withdraw funds from my on-chain Spark wallet?
+First if your funds are in channel, you need to close channel and wait for them to get back to your on-chain wallet in Spark. (144 blocks in most cases).
+
+Next, you need to toogle the console mode. Click on the version link at the left corner bottom of the Spark wallet [explained above](FAQ-LightningNetwork.md#lightning-network-c-lightning-faq)
+
+That should toggle the settings. Click > Console. 
+
+In console mode there are help commands. The command needed for withdrwawing from an on-chain wallet is called `withdraw`.
+
+```
+withdraw destination satoshi [feerate] [minconf]
+Send to {destination} address {satoshi} (or 'all') amount via Bitcoin transaction
+```
+
+If you want to withdraw 1000 sats to bc1qjl8uwezzlech793lpnyuzy0h2cdkvxvh54v3dn, the exact command would be:
+
+`withdraw bc1qjl8uwezzlech793lpnyuzy0h2cdkvxvh54v3dn 1000` click *execute*. 
+
+![Spark Withdraw](/img/Spark Wallet Withdraw Console.png)
+
+Note that the address format needs to be SegWit, bech32 (starting with bc1).
+
 ## Lightning Network Questions and Support
 
 Community support for Lightning Network question is pretty limited, since the protocol is fairly new.
