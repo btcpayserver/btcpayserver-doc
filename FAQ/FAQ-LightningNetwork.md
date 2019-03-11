@@ -51,7 +51,8 @@ Merchants need incoming channels - other people opening a channel with them, pro
 Your customer should be able to open a direct channel with you. You can also ask well-connected nodes to open a direct channel with you. Opening a channel is not spending funds, it’s more like putting the funds on a pre-paid card, and spending it later, or withdrawing it by closing a channel.
 
 ### How can I get inbound capacity to my node?
-There are many ways in which one can get an inbound capacity. We recommend that you read this great article that provides [practical tips to inbound capacity](https://medium.com/lightningto-me/practical-solutions-to-inbound-capacity-problem-in-lightning-network-60224aa13393)
+There are many ways in which one can get an inbound capacity. We recommend that you read this great article that provides [practical tips to inbound capacity](https://medium.com/lightningto-me/practical-solutions-to-inbound-capacity-problem-in-lightning-network-60224aa13393). 
+When asking for an inboud capacity, consider policy fees a node opening a channel back to you may have. [This document](https://wiki.ion.radar.tech/tutorials/troubleshooting/bootstrapping-channels) provides an overview of what kind of fees to expect from well-known nodes offering the service.
 
 ### I previously installed BTCPayServer without the integrated lightning support, can I migrate?
 
