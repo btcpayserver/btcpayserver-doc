@@ -28,6 +28,7 @@
 * [Apps](Apps.md)
 * [Lightning Network](LightningNetwork.md)
 * [Accounting](Accounting.md)
+* [Payment Requests](PaymentRequests.md)
 
 ### Integrations
 
