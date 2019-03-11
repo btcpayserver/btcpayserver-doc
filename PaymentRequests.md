@@ -22,7 +22,9 @@ Users can pay requests in partial payments and the request will remain valid unt
 - **Invoice Amount** - Accept Multiple Partial or Full Payments
 - **Denomination** - Request Payment in Fiat or Cryptocurrency
 
-![BTCPay Pos](img/PaymentRequests.gif)
+## Examples:
+
+![BTCPay Pos](img/PaymentRequests.jpg)
 
 
 
