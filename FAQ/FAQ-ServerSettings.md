@@ -18,6 +18,10 @@ This document covers all the questions and issues related to Server Settings. Th
 * [How to add Google Analytics code to BTCPay](FAQ-ServerSettings.md#how-to-add-google-analytics-code-to-btcpay)
 * [How to modify BTCPay checkout page](FAQ-ServerSettings.md#how-to-modify-the-checkout-page)
 
+## Policies
+* [How to allow registration on my BTCPay Server](FAQ-ServerSettings.md#how-to-allow-registration-on-my-btcpay-server)
+* [How to hide my BTCPay Server from Search Engines](FAQ-ServerSettings.md#how-to-hide-my-btcpay-server-from-search-engines)
+
 ## Maintenance
    
 ### How to update BTCPay Server
@@ -139,3 +143,13 @@ Here is a sample template you can use:
 .action-button:active, .action-button.active, .open>.action-button.dropdown-toggle {    color: #fff;    background-color: #ef8022;    border-color: #ef8022;}
 .action-button:active:hover, .action-button:active:focus, .action-button:active.focus, .action-button.active:hover, .action-button.active:focus, .action-button.active.focus, .open>.action-button.dropdown-toggle:hover, .open>.action-button.dropdown-toggle:focus, .open>.action-button.dropdown-toggle.focus {    color: #fff;    background-color: #ef8022;    border-color: #ef8022;}
 ```
+
+
+## Policies
+### How to allow registration on my BTCPay Server
+To allow other users to register and use your server, in Server Settings > Policies enable registration. If you [configured SMTP properly](FAQ-ServerSettings.md#how-to-configure-smtp-settings-in-btcpay), you can request users e-mail confirmation to prevent spam or bot registrating on your instance.
+
+### [How to hide my BTCPay Server from Search Engines](FAQ-ServerSettings.md#how-to-hide-my-btcpay-server-from-search-engines)
+Discouraging search engines from indexing your site in Server Settings > Policies, adds `<meta name="robots" content="noindex">` to your server header, which informs search engines not to index your pages. 
+
+It is up to search engines to honor this request, and may take time for your pages to disappear completely. Unfortunatelly, the exact time is beyond our control, it depends on crawl bots of particular search engine like Google.
