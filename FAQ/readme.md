@@ -89,7 +89,7 @@ Common problems and questions server admins have.
 * [How to modify BTCPay checkout page](FAQ-ServerSettings.md#how-to-modify-the-checkout-page)
 * [How to customize POS app theme?](/Theme.md)
 
-### Policies
+### [Policies](FAQ/FAQ-ServerSettings.md#policies-1)
 * [How to allow registration on my BTCPay Server](FAQ-ServerSettings.md#how-to-allow-registration-on-my-btcpay-server)
 * [How to hide my BTCPay Server from Search Engines](FAQ-ServerSettings.md#how-to-hide-my-btcpay-server-from-search-engines)
 
