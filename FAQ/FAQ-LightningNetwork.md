@@ -23,6 +23,7 @@ This document clarifies some of the most common questions and issues users face 
 
 ## [Lightning Network (c-lightning) FAQ](FAQ-LightningNetwork.md#lightning-network-c-lightning-faq)
 * [How to find an on-chain address in Spark?](FAQ-LightningNetwork.md#how-to-find-an-on-chain-address-in-spark)
+* [How to withdraw funds from my on-chain Spark wallet?](FAQ/FAQ-LightningNetwork.md#how-to-withdraw-funds-from-my-on-chain-spark-wallet)
 
 ## Lightning Network General FAQ
 
@@ -308,7 +309,7 @@ If you want to withdraw 1000 sats to bc1qjl8uwezzlech793lpnyuzy0h2cdkvxvh54v3dn,
 
 `withdraw bc1qjl8uwezzlech793lpnyuzy0h2cdkvxvh54v3dn 1000` click *execute*. 
 
-![Spark Withdraw](/img/Spark Wallet Withdraw Console.png)
+![Spark Withdraw](/img/SparkWalletWithdrawConsole.png)
 
 Note that the address format needs to be SegWit, bech32 (starting with bc1).
 
