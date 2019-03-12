@@ -1,9 +1,9 @@
 # Payment Requests
 
 To create a shareable Payment Request:
-1. Click on the header item: Payment Requests
-2. Choose the Amount, Expiration Time & Description (Optional)
-3. Share the URL
+- Click on the header item: Payment Requests
+- Choose the Amount, Expiration Time & Description (Optional)
+- Share the URL
 
 Payment Requests are a feature which allows BTCPay store owners to create custom invoices which can be shared with others, by sending a link to the custom payment request. Funds paid to a payment request use the exchange rate at the time of payment. This allows users to make payments at their convenience without having to negotiate or verify exchange rates with the store owner at the time of payment. 
 
@@ -24,7 +24,7 @@ Users can pay requests in partial payments and the request will remain valid unt
 
 ## Examples:
 
-![BTCPay Pos](img/PaymentRequests.jpg)
+![Payment Request](img/PaymentRequests.jpg)
 
 
 
