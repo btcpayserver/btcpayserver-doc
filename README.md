@@ -21,7 +21,8 @@ If you have more general questions, please join the community chat on [Mattermos
 * Self-hosted
 * SegWit support
 * Lightning Network support (LND and c-lightning)
-* Altcoin support
+* Tor support
+* Opt-in Altcoin integrations
 * Full compatibility with BitPay API (easy migration)
 * Process payments for others
 * Easy-embeddable Payment buttons
