@@ -14,7 +14,7 @@ Here are common questions about installation, regardless of the deployment metho
 * [Can I deploy on my existing VPS?](FAQ-Deployment.md#can-i-deploy-btcpay-on-my-existing-vps)
 * [Are there free hosts where I can test?](FAQ-Deployment.md#are-there-free-hosts-where-i-can-test)
 * [After initial deployment, I can't register and I don't have a login yet?](FAQ-Deployment.md#after-initial-deployment-i-cant-register-and-i-dont-have-a-login-yet)
-* [With the docker deployment, how to use a different volume for the data?](FAQ-Deployment.md)
+* [With the docker deployment, how to use a different volume for the data?](FAQ-Deployment.md#with-the-docker-deployment-how-to-use-a-different-volume-for-the-data)
 
 ## Web Deployment FAQ
 ### Luna Node Web Deployment FAQ
