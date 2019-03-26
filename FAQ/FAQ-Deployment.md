@@ -14,6 +14,7 @@ Here are common questions about installation, regardless of the deployment metho
 * [Can I deploy on my existing VPS?](FAQ-Deployment.md#can-i-deploy-btcpay-on-my-existing-vps)
 * [Are there free hosts where I can test?](FAQ-Deployment.md#are-there-free-hosts-where-i-can-test)
 * [After initial deployment, I can't register and I don't have a login yet?](FAQ-Deployment.md#after-initial-deployment-i-cant-register-and-i-dont-have-a-login-yet)
+* [With the docker deployment, how to use a different volume for the data?](FAQ-Deployment.md)
 
 ## Web Deployment FAQ
 ### Luna Node Web Deployment FAQ
@@ -57,6 +58,26 @@ On a self-hosted BTCPay, the unlimited amount of users and stores can be attache
 
 ### After initial deployment, I can't register and I don't have a login yet?
 When you deploy your BTCPay Server, you should first register a user (during server synchronization). This user is automatically the server admin. If your BTCPay only shows Login in the header menu, and you are unable to register the first user after initial deployment, someone else has registered on your server as the admin. Although this is unlikely to occur (the user would need to know and watch your BTCPay domain name), they had access to your ssh private keys, thus you should redeploy a new server for security reasons. 
+
+### With the docker deployment, how to use a different volume for the data?
+
+For example if you plug a USB drive, and find out that it is the volume `/dev/sda1`, then:
+
+```bash
+# Format the drive
+sudo mkfs.ext4 /dev/sda1
+# Create folder for mount.
+sudo mkdir /mnt/usb
+# Look up UUID of flash drive.
+UUID="$(sudo blkid -s UUID -o value /dev/sda1)"
+# Add mount to fstab.
+echo "UUID=$UUID /mnt/usb ext4 defaults,nofail 0" | sudo tee -a /etc/fstab
+# Define `/var/lib/docker` as symbolic link to /mnt/usb
+sudo mkdir /mnt/usb/docker
+sudo ln -s /mnt/usb/docker /var/lib/docker
+```
+
+If you want to mount specific folder (like only Bitcoin node data directory), please browse `/var/lib/docker/volumes` to chose the different docker volumes.
 
 ## Web-deployment
 
