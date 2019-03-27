@@ -25,24 +25,25 @@ Developer deployments are not recommended for production environments and requir
 |Web Solutions                             |1.                            |2.          |Why?          |     
 | ---------------------------------------- |:----------------------------:|:----------:|:------------:|
 |Business<br>(Fast Setup)                  |[3rd Party <br> BTCPay Hosts](ThirdPartyHosting.md)  |[LunaNode <br> Web-Wizard](LunaNodeWebDeployment.md)* |- Low Difficulty<br>- BTCPayServer Support (1)<br>- Lightning Network (2)     |
-|Cost                                      |Free / Pay                    |10 USD / mo |BTC Accepted  |
+|Cost / Month                                     | Free                    | $10 |BTC Accepted  |
 
 **LunaNode Web-Wizard is a VPS solution, deployable from an easy-web interface.*
 
 <br>
 
-|VPS Solutions                          |1.                      |2.          |3.          |Why?     | 
-| ------------------------------------- |:----------------------:|:----------:|:----------:|:-------:|
-|Business<br>(Self Setup)               |[LunaNode](https://medium.com/@BtcpayServer/hosting-btcpayserver-on-lunanode-bf9ef5fff75b)           |[Microsoft<br>Azure](AzureDeployment.md)    |[Google<br>Cloud](GoogleCloudDeployment.md) |- Moderate Difficulty<br>- Docker Compose Build<br>- Lightning Network    |
-|Cost                                   |10 USD / mo             |60 USD / mo |70 USD /mo  |BTC Accepted (1)|
+|VPS Solutions                 |1.               |2.          |3.       |4.       |5.       |Why?     |
+| ---------------------------- |:---------------:|:----------:|:-------:|:-------:|:-------:|:-------:|
+|Business<br>(Self Setup)      |[LunaNode](https://medium.com/@BtcpayServer/hosting-btcpayserver-on-lunanode-bf9ef5fff75b)|[Digital<br>Ocean](https://medium.com/@molthoff/running-btcpay-on-digital-ocean-for-10-month-how-to-add-other-coins-7a497339fb2f)|[Amazon<br>AWS EC2](https://wiki.ion.radar.tech/tutorials/nodes/btcpay-+-aws-ec2)|[Microsoft<br>Azure](AzureDeployment.md)    |[Google<br>Cloud](GoogleCloudDeployment.md) |- Moderate Difficulty<br>- Docker Compose<br>- Lightning Network    |
+|Cost / Month          |$10 | $10 | $35 | $60 | $70  |BTC Accepted (1)|
 
-*BTCPay can also be deployed on any VPS that meets the [minimal requirements](FAQ/FAQ-Deployment.md#what-are-the-minimal-requirements-for-btcpay).*
+*- BTCPay can also be deployed on any VPS that meets the [minimal requirements](FAQ/FAQ-Deployment.md#what-are-the-minimal-requirements-for-btcpay).*<br>
+*- VPS providers that use OpenVZ are not supported.*
 
 <br>
 
-|Hardware Solutions                    |1.                          |2.          |Why?      |   
-| ------------------------------------ |:--------------------------:|:----------:|:--------:|
-|Business<br>(Hardware Setup)          |Ready Out Of<br>The Box   |  Installation &<br>Consultation |- Prices Vary By Service<br>- BTCPayServer Support<br>- Lightning Network<br>[Nodl.it](https://www.nodl.it/) / [Lightning in a Box](https://lightninginabox.co/) |
+|Hardware Solutions                    |1.                        |2.        |Why?      |   
+| ------------------------------------ |:------------------------:|:--------:|:--------:|
+|Business<br>(Hardware Setup)          |   [Lightning<br>in a Box](https://lightninginabox.co/)  | [Nodl.it](https://www.nodl.it/) |- Ready Out Of The Box<br>- Prices Vary By Service<br>- Lightning Network<br>|
 |                                      |                            |            |BTC Accepted|
 
 <br>
