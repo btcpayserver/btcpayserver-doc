@@ -1,6 +1,6 @@
 # Altcoins
 
-Bitcoin is the only focus of the project and its core developers. However, support is implemented for several altcoins:
+Bitcoin is the only focus of the project and its core developers. However, opt in integrations for several altcoins maintained by altcoins community is implemented for several altcoins:
 
 * Bitcoin Gold (BTG)
 * Bitcoin Plus (XBC)
