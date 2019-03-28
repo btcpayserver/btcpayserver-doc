@@ -14,6 +14,8 @@ Bitcoin is the only focus of the project and its core developers. However, opt i
 * Polis (POLIS)
 * Viacoin (VIA)
 
+For more information, check [Altcoin FAQ page](FAQ/FAQ-Altcoin.md).
+
 ## How can I add an altcoin to BTCPayServer?
 
 The steps for having a coin added are:
