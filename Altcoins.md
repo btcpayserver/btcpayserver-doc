@@ -1,6 +1,6 @@
 # Altcoins
 
-Bitcoin is the only focus of the project and its core developers. However, opt in integrations for several altcoins maintained by altcoins community is implemented for several altcoins:
+Bitcoin is the only focus of the project and its core developers. However, opt in integrations for several altcoins, maintained by their respective communities is implemented:
 
 * Bitcoin Gold (BTG)
 * Bitcoin Plus (XBC)
@@ -13,8 +13,6 @@ Bitcoin is the only focus of the project and its core developers. However, opt i
 * Monacoin (MONA)
 * Polis (POLIS)
 * Viacoin (VIA)
-
-Altcoins are maintained by their respective communities.
 
 ## How can I add an altcoin to BTCPayServer?
 
