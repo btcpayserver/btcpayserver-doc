@@ -15,7 +15,7 @@ After you created the account on the BTCPay Server instance hosted by yourself o
 * Apps
 * Wallets
 * Invoices
-* Payment Requests
+* Payment requests
 * My settings
 
 ## Server settings
