@@ -65,7 +65,7 @@ All of the invoices for your user account will be displayed here. You can filter
 
 ## Payment Requests
 
-Each store can have an unlimited number of payment requests which are displayed here. Payment requests are dynamic invoices that can be shared by url and paid at any time using current BTC exchange rates. Here you can edit, view and pay your payment requests. You can see invoice details for your payment requests and even clone previous payment requests for easy reoccuring requests for payment. 
+Each store can have an unlimited number of payment requests which are displayed here. Payment requests are dynamic invoices that can be shared by url and paid at any time using current BTC exchange rates. Here you can edit and view your payment requests. You can see invoice details and even clone previous payment requests. 
 
 For more information, check [Payment Requests](PaymentRequests.md)
 
