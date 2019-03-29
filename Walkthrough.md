@@ -15,11 +15,12 @@ After you created the account on the BTCPay Server instance hosted by yourself o
 * Apps
 * Wallets
 * Invoices
+* Payment requests
 * My settings
 
 ## Server settings
 
-Server settings is something only a server admin can access. If you're using someone else's server, you won't see Server Settings. Inside the settings, you can perform tasks such as controlling users, rates, updating the server, etc.
+Server settings is something only a server admin can access. If you're using someone else's server, you won't see Server Settings. Inside the settings, you can perform tasks such as controlling users, rates, updating the server, etc. For more information, check [Server Settings FAQ](FAQ/FAQ-ServerSettings.md)
 
 - Users - Add, remove or manage users of your BTCPay Server.
 - Rates - Set the source for cryptocurrency to fiat rates used by the server.
@@ -43,7 +44,7 @@ Inside BTCPay you can create and manage an unlimited number of stores. Each stor
 
 ## Apps
 
-Each store has access to different apps. Applications built on top of BTCPay extend [the usecase](usecase.md) of the software and cater to different type of users. Here you can create a new app and connect it to the store and customize it. A good example is [Point of Sale app](GettingStarted.md#creating-the-point-of-sale-app) you can use to receive payments in physical stores or even donations.
+Each store has access to different apps. Applications built on top of BTCPay extend the [use case](UseCase.md) of the software and cater to different type of users. Here you can create a new app and connect it to the store and customize it. A good example is [Point of Sale app](GettingStarted.md#creating-the-point-of-sale-app) you can use to receive payments in physical stores or even donations.
 
 For more information, check [Apps FAQ](/FAQ/FAQ-Apps.md)
 
@@ -61,6 +62,12 @@ For more information, check [Wallet FAQ](/FAQ/FAQ-Wallet.md)
 ## Invoices
 
 All of the invoices for your user account will be displayed here. You can filter the invoices by the status or a store. You can also create invoices manually. Invoices are sorted by date from new to old. You can open an individual invoice for more information.
+
+## Payment Requests
+
+Each store can have an unlimited number of payment requests which are displayed here. Payment requests are dynamic invoices that can be shared by url and paid at any time using current BTC exchange rates. Here you can edit and view your payment requests. You can see invoice details for your payment requests and even clone previously created payment requests. 
+
+For more information, check [Payment Requests](PaymentRequests.md)
 
 ## My Settings
 
