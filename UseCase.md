@@ -36,9 +36,9 @@ For brick and mortar stores, BTCPay has a [web-based Point of Sale](https://main
 
 ### Freelancers & Bill Pay
 
-Send anyone a request for payment by sharing a [Payment Request](PaymentRequests.md) Url. Customize the content and appearance of the payment request. With or without expiry, users can pay the request at any time. BTCPay automatically updates the BTC exchange rate when the user pays the payment request when it's convenient for them. 
+Send anyone a request for payment by sharing a [Payment Request](PaymentRequests.md). Customize the content and appearance of the payment request. With or without expiry, users can pay the request at any time. BTCPay automatically updates the BTC exchange rate when the user pays the payment request when it's convenient for them. 
 
-Merchants or freelancers can use payment requests for bill pay services. Payment requests can even be used to quickly send or request money from friends. 
+Merchants or freelancers can use payment requests for bill pay services. Payment requests can even be used to quickly request money from friends. 
 
 ### Lightning Network payments
 
