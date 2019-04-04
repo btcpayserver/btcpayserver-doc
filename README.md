@@ -31,13 +31,16 @@ If you have more general questions, please join the community chat on [Mattermos
 * Payment Requests
 
 ## How it works
+
+[![How BTCPay Works](https://img.youtube.com/vi/nr0UNbz3AoQ/mqdefault.jpg)](https://www.youtube.com/watch?v=nr0UNbz3AoQ "How BTCPay Works")
+
 ### In a nutshell
 In layman words, BTCPay Server is a self-hosted and automated invoicing system. When checking out, the customer is presented with an invoice. Each time, a different address is tied to a particular invoice, so there is no address re-use. BTCPay follows the status of the invoice through the blockchain and informs a merchant when he can fulfill the order safely.
 
-[![BTCPay Server Simply Explained](https://img.youtube.com/vi/dbX6qWZlxOw/mqdefault.jpg)](https://www.youtube.com/watch?v=dbX6qWZlxOw "BTCPay Server Simply Explained")
-
 ### How is it different
 BTCPay is a code, not a company. There is no third-party between a merchant and a customer. Merchant is always in full control of the funds. There are no processing or subscription fees. BTCPay Server is free to use and completely open-source, so developers or security auditors can always inspect the quality of the code.
+
+[![BTCPay Server Simply Explained](https://img.youtube.com/vi/dbX6qWZlxOw/mqdefault.jpg)](https://www.youtube.com/watch?v=dbX6qWZlxOw "BTCPay Server Simply Explained")
 
 ### How it keeps funds secure
 Payments via BTCPay are direct, peer to peer. The merchant receives the coins directly to their wallet, with no intermediate. Securing funds comes down to the merchant securing their own private keys, which is standard for most cryptocurrency wallets. There is an internal wallet inside BTCPay that merchants can use to view funds received by paid invoices. The funds from that wallet can only be spent, if a transaction is signed with the merchant's compatible hardware wallet. This allows merchants to have complete control of funds received.
