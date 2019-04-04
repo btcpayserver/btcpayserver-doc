@@ -2,8 +2,8 @@
 
 Bitcoin is the only focus of the project and its core developers. However, opt in integrations for several altcoins, maintained by their respective communities are implemented:
 
-* Bitcoin Gold (BTG)
-* Bitcoin Plus (XBC)
+* BGold (BTG) (also known as Bitcoin Gold)
+* BPlus (XBC) (also known as Bitcoin Plus)
 * Bitcore (BTX)
 * Dash (DASH)
 * Dogecoin (DOGE)
@@ -21,7 +21,7 @@ For more information, check [Altcoin FAQ page](FAQ/FAQ-Altcoin.md).
 The steps for having a coin added are:
 
 1. Add support for your crypto to [NBitcoin](https://github.com/MetacoSA/NBitcoin/tree/master/NBitcoin.Altcoins), [NBxplorer](https://github.com/dgarage/NBXplorer), and [BTCPayServer](https://github.com/btcpayserver/btcpayserver). (Use examples from other coins)
-2. Create your own docker image ([Example for BTC](https://hub.docker.com/r/nicolasdorier/docker-bitcoin/))
+2. Create your own docker image ([Example for BTC](https://hub.docker.com/r/btcpayserver/bitcoin))
 3. Create a docker-compose fragment ([Example for BTC](https://github.com/btcpayserver/btcpayserver-docker/blob/master/docker-compose-generator/docker-fragments/bitcoin.yml))
 4. Add your CryptoDefinition ([Example for BTC](https://github.com/btcpayserver/btcpayserver-docker/blob/master/docker-compose-generator/src/CryptoDefinition.cs))
 
