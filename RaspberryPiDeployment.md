@@ -62,7 +62,7 @@ passwd
 **Step 10** - Install Fail2ban and GIT.  Fail2ban bans IP's that attempt to connect to your server and show malicious signs.  GIT allows you to clone and manage repositories on github.com. 
 Open a new terminal window and type the following command 
 ```bash 
-sudo apt update && install -y fail2ban git
+sudo apt update && sudo apt install -y fail2ban git
 ```
 
 **Step 11** - Install Uncomplicated Firewall (UFW) and allow only specific ports. UFW is a user-friendly front-end for managing iptables firewall rules and its main goal is to make managing iptables easier or as the name says uncomplicated. 

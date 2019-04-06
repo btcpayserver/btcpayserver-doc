@@ -34,6 +34,12 @@ BTCPay checkout is no different to any other payment gateway. Your customer gets
 
 For brick and mortar stores, BTCPay has a [web-based Point of Sale](https://mainnet.demo.btcpayserver.org/apps/87kj5yKay8mB4UUZcJhZH5TqDKMD3CznjwLjiu1oYZXe/pos) (POS) App which can be customized. Similarly to the online store, your customer is presented with an invoice that he can pay on the spot. You can create a watch-only wallet on your phone to be notified of the payments through the POS, without the need of any additional software. There are plans to develop the POS mobile app which would make the process even smoother.
 
+### Freelancers & Bill Pay
+
+Send anyone a request for payment by sharing a [Payment Request](PaymentRequests.md). Customize the content and appearance of the payment request. With or without expiry, users can pay the request at any time. BTCPay automatically updates the BTC exchange rate when the user pays the payment request when it's convenient for them. 
+
+Merchants or freelancers can use payment requests for bill pay services. Payment requests can even be used to quickly request money from friends. 
+
 ### Lightning Network payments
 
 No matter the kind of business you run, BTCPay offers a very easy way to get started on the Lightning Network. You can use and experiment with this innovative second-layer solution build on top of Bitcoin by [following this guide](LightningNetwork.md). Both merchants and customers can use BTCPay to receive or make payments off-chain with instant confirmations and neglectable network fees.

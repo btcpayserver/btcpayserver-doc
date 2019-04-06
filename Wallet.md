@@ -1,5 +1,5 @@
 # BTCPay Server Wallet
-This document explains the features of the internal BTCPay wallet. For frequently asked questions - check the [Wallets FAQ](FAQ-Wallet.md)
+This document explains the features of the internal BTCPay wallet. For frequently asked questions - check the [Wallets FAQ](FAQ/FAQ-Wallet.md)
 
 Note: A [private key](https://en.bitcoin.it/wiki/Private_key) (xprv) is **never** required for BTCPay to work. The software needs a public key (xpub) which is a watch-only wallet token. The xpubkey allows BTCPay to generate a new address each time a new invoice is created. It enables users to observe the wallet balance and transactions without having to share their private key.
 

@@ -10,6 +10,7 @@ This document covers frequently asked questions about the Apps in BTCPay.
 * [What is a Payment Button?](#what-is-a-payment-button)
 * [How to fix empty spacing around payment button](#how-to-fix-empty-spacing-around-payment-button)
 * [How to integrate WooCommerce Store in BTCPay Crowdfund app?](#how-to-integrate-woocommerce-store-into-a-btcpay-crowdfund-app)
+* [How to create Pay button with a custom amount?](#how-to-create-pay-button-with-a-custom-amount)
 
 ## What are the Apps in BTCPay?
 Apps are plugins (features) you can use to expand the use case of your BTCPay.
@@ -286,3 +287,17 @@ Next, paste the following code into the **Custom CSS Code** section of your crow
 
 One final thing, make sure to check (enable) **Count all invoices created on the store as part of the crowdfunding goal**
 Save the changes and preview the app.
+
+## How to create Pay button with a custom amount?
+
+BTCPay Pay Button which can be found in Store Settings > Pay Button, currently does not support custom amounts. 
+However, you can use a work-around:
+* [Create Point of sale app](GettingStarted.md#creating-the-point-of-sale-app)
+* Enable `user can input a custom amount` field
+* Remove all the products from the automatically generated template.
+* Save settings.
+* Click on the `Embed payment button linking to PoS item` at the bottom of the page and copy the expanded code. Paste it into html page of your website.
+* Remove the extra fields you do not need, especially `<input name="price" type="hidden" value="10" />` so that button redirects to the point of sale.
+
+![Custom Amount Pay Button](/img/BTCPayPayButtonDynamic2.png)
+![Custom Amount Pay Button](/img/BTCPayPayButtonDynamic.png)

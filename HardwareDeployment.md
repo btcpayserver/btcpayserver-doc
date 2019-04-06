@@ -11,8 +11,7 @@ The process is basically the following:
 2. Install base Operating System and configure networking.
 3. Install BTCPayServer-Docker.
 
-While it may be possible to install BTCPayServer or parts of it's architecture on ARM based single board computers (ie. Raspberry Pi, 
-Odroid, OrangePi or NanoPC) the process may require additional skills and knowledge that are beyond the scope of this tutorial. 
+While it may be possible to install BTCPayServer or parts of it's architecture on ARM based single board computers (ie. Raspberry Pi, Odroid, OrangePi or NanoPC) the process may require additional skills and knowledge that are beyond the scope of this tutorial. 
 For the sake of speed, compatibility and ease of installation it is recommended that you use an Intel/AMD based computer with a minimum of 4Gb RAM and a 500 Gb hard drive.  The Gigabyte Brix or Intel NUC lines of compact computers are a great place to start. They are basically small, fanless boxes that are built using laptop components. 
 
 BTCPayServer can be successfully installed on the following hardware.  The end result is a small, quiet node that is fast enough to sync from block zero.  The total cost is approximatly $225 (including tax and delivery).  These are "off the shelf" components that can be purchased from any online retailer (TigerDirect, NewEgg, Amazon, BestBuy etc).   It will take roughly 24 hours to sync the Bitcoin blockchain. You can save little money by cutting the RAM and hard drive size in half. 
@@ -58,24 +57,25 @@ In this case we will be using Etcher to flash our USB Thumb Drive with the Ubunt
 **Step 7** - Log into your router and forward ports 80, 443 and 9735 to your BTPCB's local IP address. Every router is different and you should be able to find instructions for your router by searching for "Port Forward + your router make and model". 
 
 **Step 8** - Install OpenSSH Server, Fail2ban and GIT.  OpenSSH server allows you to connect to your server using SSH clients (ie. [Putty](https://www.putty.org/)) Fail2ban bans IP's that attempt to connect to your server and show malicious signs.  GIT allows you to clone and manage repositories on github.com. 
-Open a new terminal window and type the following command 
-- sudo apt update && install -y openssh-server fail2ban git
+Open a new terminal window and type the following commands:
+- `sudo apt update`
+- `sudo apt install -y openssh-server fail2ban git`
 
 **Step 9** - Install Uncomplicated Firewall (UFW) and allow only specific ports. UFW is a user-friendly front-end for managing iptables firewall rules and its main goal is to make managing iptables easier or as the name says uncomplicated. 
 Install UFW
-- sudo apt install ufw
+- `sudo apt install ufw`
 
 This command allows SSH connections from your LAN only. Replace 192.168.1.0 with your own subnet.
-- sudo ufw allow from 192.168.1.0/24 to any port 22 
+- `sudo ufw allow from 192.168.1.0/24 to any port 22`
 
 These ports need to be accessible from anywhere.  The default subnet is 'any' unless you specify one.
-- sudo ufw allow 80, 443, 9735
+- `sudo ufw allow 80, 443, 9735`
 
 Verify your configuration.
-- sudo ufw status
+- `sudo ufw status`
 
 Enable your firewall.
-- sudo ufw enable 
+- `sudo ufw enable`
 
 Reboot your BTCB and disconnect the keyboard, mouse and monitor. You should now be able to connect to your BTCB from another computer on your LAN via SSH.  
 
@@ -86,33 +86,32 @@ If you are using Windows
  - download [Putty](https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html) and create a connection to your BTCPB.
 
 If you are using another Linux machine open a new terminal and type in the following.  You will be prompted for your password. 
-- ssh user@LANIP (ie. bob@192.168.1.2)
+- `ssh user@LANIP` (ie. bob@192.168.1.2)
 
-Run the following commands.  Make sure you change the BTCPAY_HOST parameter to your own domain name. 
+Run the following commands.  Make sure you change the `BTCPAY_HOST` parameter to your own domain name. 
 
 Login as root
-- sudo su -
+- `sudo su -`
 
 Create a folder for BTCPay
-- mkdir BTCPayServer
-- cd BTCPayServer
+- `mkdir BTCPayServer`
+- `cd BTCPayServer`
 
 Clone the btcpayserver-docker repository
-- git clone https://github.com/btcpayserver/btcpayserver-docker
-- cd btcpayserver-docker
+- `git clone https://github.com/btcpayserver/btcpayserver-docker`
+- `cd btcpayserver-docker`
 
 Set your environment variables. Run each command separately. 
-- export BTCPAY_HOST="btcpay.YourDomain.com"
-- export NBITCOIN_NETWORK="mainnet"
-- export BTCPAYGEN_CRYPTO1="btc"
-- export BTCPAYGEN_CRYPTO2="ltc"
-- export BTCPAYGEN_REVERSEPROXY="nginx"
-- export BTCPAYGEN_LIGHTNING="clightning"
+- `export BTCPAY_HOST="btcpay.YourDomain.com"`
+- `export NBITCOIN_NETWORK="mainnet"`
+- `export BTCPAYGEN_CRYPTO1="btc"`
+- `export BTCPAYGEN_CRYPTO2="ltc"`
+- `export BTCPAYGEN_REVERSEPROXY="nginx"`
+- `export BTCPAYGEN_LIGHTNING="clightning"`
 
 The last step is to launch the BTCPayServer setup script. 
-- . ./btcpay-setup.sh -i
-
-exit
+- `. ./btcpay-setup.sh -i`
+- `exit`
 
 **Step 11** 
 Go to https://btcpay.yourdomain.com and confirm that your nodes are syncing. 

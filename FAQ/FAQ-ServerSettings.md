@@ -18,13 +18,20 @@ This document covers all the questions and issues related to Server Settings. Th
 * [How to add Google Analytics code to BTCPay](FAQ-ServerSettings.md#how-to-add-google-analytics-code-to-btcpay)
 * [How to modify BTCPay checkout page](FAQ-ServerSettings.md#how-to-modify-the-checkout-page)
 
+## Policies
+* [How to allow registration on my BTCPay Server](FAQ-ServerSettings.md#how-to-allow-registration-on-my-btcpay-server)
+* [How to hide my BTCPay Server from Search Engines](FAQ-ServerSettings.md#how-to-hide-my-btcpay-server-from-search-engines)
+
 ## Maintenance
    
 ### How to update BTCPay Server
 
 There are 2 ways to update your BTCPay Server :
-1. Updating through the front end: Server Settings > Maintenance > Update.
-2. Updating through SSH: Login into your virtual machine with ssh, then apply following commands:
+- Updating through the front end: Server Settings > Maintenance > Update.
+
+![Updating BTCPay Server](/img/HowToUpdateBTCPayServer.png)
+
+- Updating through SSH: Login into your virtual machine with ssh, then apply following commands:
 ```
 sudo su -
 btcpay-update.sh
@@ -71,6 +78,8 @@ psql
 INSERT INTO "AspNetUserRoles" Values ( (SELECT "Id" FROM "AspNetUsers" WHERE "Email"='newadmin@example.com'), (SELECT "Id" FROM "AspNetRoles" WHERE "NormalizedName"='SERVERADMIN'));
 ```
 Now you can access with `newadmin@example.com` as admin.
+
+When you apply the changes, you'll noticed that newly created user isn't the member of any stores. In that case, [follow this guide](https://gist.github.com/justinmoon/8128e66fc11d90ae5732f2491570bfc5) to add the new users to all or certain stores.
 
 ## BTCPAY_SSHKEYFILE is not set when running the docker install, or unable to update through Server Settings / Maintenance
 
@@ -134,3 +143,14 @@ Here is a sample template you can use:
 .action-button:active, .action-button.active, .open>.action-button.dropdown-toggle {    color: #fff;    background-color: #ef8022;    border-color: #ef8022;}
 .action-button:active:hover, .action-button:active:focus, .action-button:active.focus, .action-button.active:hover, .action-button.active:focus, .action-button.active.focus, .open>.action-button.dropdown-toggle:hover, .open>.action-button.dropdown-toggle:focus, .open>.action-button.dropdown-toggle.focus {    color: #fff;    background-color: #ef8022;    border-color: #ef8022;}
 ```
+
+
+## Policies
+
+### How to allow registration on my BTCPay Server
+To allow other users to register and use your server, in Server Settings > Policies enable registration. If you [configured SMTP properly](FAQ-ServerSettings.md#how-to-configure-smtp-settings-in-btcpay), you can request users e-mail confirmation to prevent spam or bot registrating on your instance.
+
+### How to hide my BTCPay Server from Search Engines
+Discouraging search engines from indexing your site in Server Settings > Policies, adds `<meta name="robots" content="noindex">` to your server header, which informs search engines not to index your pages. 
+
+It is up to search engines to honor this request, and may take time for your pages to disappear completely. Unfortunatelly, the exact time is beyond our control, it depends on crawl bots of particular search engine like Google.
