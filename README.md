@@ -4,8 +4,9 @@
 
 BTCPayServer is an open-source, self-hosted payment processor for Bitcoin and other cryptocurrencies.
 
-If you have any troubles with BTCPay, please file a [Github issue](https://github.com/btcpayserver/btcpayserver/issues).
-If you have more general questions, please join the community chat on [Mattermost](https://chat.btcpayserver.org/) or check the [FAQ page Page](/FAQ/readme.md) for solutions to common problems.
+If you have trouble using BTCPay, consider joining [communities listed on official website](https://btcpayserver.org/#communityCTA) to get help from BTCPay community members. Only file [Github issue](https://github.com/btcpayserver/btcpayserver/issues) for technical issues you can't resolve through other channels or feature requests you've validated with other members of community.
+
+Please check out our [official website](https://btcpayserver.org/), our [complete documentation](https://github.com/btcpayserver/btcpayserver-doc) and [FAQ](https://github.com/btcpayserver/btcpayserver-doc/tree/master/FAQ#btcpay-frequently-asked-questions-and-common-issues) for more details.
 
 ![BTCPayInfographic](img/BTCPAYINFOGRAPHIC.png)
 
@@ -48,12 +49,13 @@ Payments via BTCPay are direct, peer to peer. The merchant receives the coins di
 The data is shared only between two parties - the buyer and a seller. Other payment processors share and collect user data with other parties, making it very hard to comply with privacy law regulations like GDPR. Each invoice in BTCPay has a different receiving address, which means there is no address re-use which improves privacy significantly.
 ### How it resists censorship
 * Self-hosted
-* Can be run on a hardware
+* Can be run everywhere, from low-powered device like Raspberry Pi at home to enterprise-grade servers
 * No third-party
 * Can easily be re-deployed
 
 BTCPay does not have a central point of failure since nobody is controlling it except for the user running it. If run on the cloud server, the hosting providers can potentially censor users by suspending hosting accounts or disabling access to virtual machines. This is always a risk for anyone using a hosting provider. Since no private keys are stored on the server, a censored individual can easily re-deploy the server with another host. Your coins are always inside your wallet.
 If an invoice is paid while your BTCPay server is down, the software will automatically determine and notify the merchant of offline invoice payments when your server is back up. If a hosting provider suspends the server, and there was no proper backup, server settings and invoice data may be lost, but on-chain payments are always in your wallet. For ultimate censorship-resistance, users should run [BTCPay on their own hardware](HardwareDeployment.md).
+
 ## Documentation
 
 ## BTCPay Basics

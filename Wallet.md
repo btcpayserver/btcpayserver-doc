@@ -7,9 +7,9 @@ If you're using a [third-party host](ThirdPartyHosting.md) and are asked to prov
 
 BTCPay has an **internal**, full node reliant wallet that can be accessed by clicking "Wallets" from the top menu. The reliance on the user's own full node makes the wallet more private and secure compared to any [SPV](https://en.bitcoin.it/wiki/Thin_Client_Security#Simplified_Payment_Verification_.28SPV.29) wallet.
 
-The internal wallet does not generate a private key. Users have to create their own private key and enter xpubkey derived from xpriv into Store Settings > Derivation scheme to activate the internal wallet. 
+The internal wallet does not generate a private key. Users have to create their own private key externally and enter xpubkey derived from xpriv into Store Settings > Derivation scheme to activate the internal wallet. 
 
-The public key can be easily added from external wallet like Electrum by pasting it into derivation scheme field or automatically with a hardware wallet like Ledger Nano S. For more information on how to add a derivation scheme to BTCPay, see the [Getting Started Guide](GettingStarted.md)
+The public key can be easily added from external wallet like Electrum by pasting it into derivation scheme field, or automatically with a compatible hardware wallet. For more information on how to add a derivation scheme to BTCPay, see the [Getting Started Guide](GettingStarted.md)
 
 Each store and cryptocurrency have a separate wallet displayed on the Wallets page.  To access a particular wallet, select "Manage."
 
@@ -28,7 +28,7 @@ An overview of your incoming (green), outgoing (red) and unconfirmed (greyed out
 ![Individual Wallet](img/BTCPayWallets2.png)
 
 #### Send
-Users who own a compatible hardware wallet can use the send function to send the funds from the wallet. Quite simply, to send the funds, the user is required to sign and confirm the transaction on the hardware wallet physically.
+Users who own a compatible hardware wallet can use the send function to send the funds from the wallet. Quite simply, to send the funds, the user is required to sign and confirm the transaction on the hardware wallet - physically.
 
 ![Send from the Wallet](img/BTCPayWallets3.png)
 
@@ -37,7 +37,7 @@ Users who own a compatible hardware wallet can use the send function to send the
 This option is available in the `expert mode` of the Send page.
 It is a privacy enhancing feature which is useful when you send to another of your own wallet or to an exchange. It makes sure that no change UTXO is created by **rounding up** the amount sent.
 
-By default this feature is disabled, so if your wallet have a UTXO of `1.1 BTC` and you input an amount equals to `1.0 BTC`, the resulting transaction will have two outputs `0.1 BTC` of change, and `1.0 BTC` to your destination. Blockchain analysis will understand that those `0.1 BTC` of change belong to the same entity which controlled `1.1 BTC` before, and will track the future purchase you will make under the same principle.
+By default this feature is disabled, so if your wallet has an UTXO of `1.1 BTC` and you input an amount equals to `1.0 BTC`, the resulting transaction will have two outputs `0.1 BTC` of change, and `1.0 BTC` to your destination. Blockchain analysis will understand that those `0.1 BTC` of change belong to the same entity which controlled `1.1 BTC` before, and can track the future purchase you make under the same pattern.
 
 By enabling this feature, BTCPay Server wallet will round up the amount sent to `1.1 BTC` such that no change output is sent back to you.
 

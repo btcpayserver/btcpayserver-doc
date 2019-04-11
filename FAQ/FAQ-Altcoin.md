@@ -9,31 +9,31 @@ This page answers some of the common questions about alternative cryptocurrencie
 * [How to remove a coin from BTCPay?](FAQ-Altcoin.md#how-to-remove-a-coin-from-btcpay)
 
 ## Which coins BTCPay Server supports?
-Besides, Bitcoin as the core focus of the project, BTCPay natively supports following alternative cryptocurrencies:
+Bitcoin is the only focus of the project and its core developers. However, opt in integrations are present for several altcoins:
 
-* Bitcoin Gold (BTG)
-* Bitcoin Plus (XBC)
-* Bitcore (BTX)
-* Dash (DASH)
-* Dogecoin (DOGE)
-* Feathercoin (FTC)
-* Groestlcoin (GRS)
-* Litecoin (LTC)
-* Monacoin (MONA)
-* Polis (POLIS)
-* Viacoin (VIA)
+- BGold (BTG) (also known as Bitcoin Gold)
+- BPlus (XBC) (also known as Bitcoin Plus)
+- Bitcore (BTX)
+- Dash (DASH)
+- Dogecoin (DOGE)
+- Feathercoin (FTC)
+- Groestlcoin (GRS)
+- Litecoin (LTC)
+- Monacoin (MONA)
+- Polis (POLIS)
+- Viacoin (VIA)
 
-Native support means that these coins are using full nodes and that the payments are direct. There are certain third-party providers integrated which enable merchants to accept a more significant number of coins. Alternative coins are maintained by their respective communities.
+Altcoins are maintained by their respective communities.
 
 ## Can an XYZ coin be added in BTCPay?
-No. BTCPay developers can't add alternative coins on request. Adding a new coin explicitly depends on the community and developers of those coins. Furthermore, BTCPay developers do not spend excessive time testing nor maintaining the altcoins. If you're submitting a PR for a new coin, make sure that it works. If the altcoin integration is not actively maintained it will be removed.
+No. BTCPay developers don't add alternative coins on request. Adding a new coin explicitly depends on the community and developers of those coins. Furthermore, BTCPay developers do not spend excessive time testing nor maintaining the altcoins. If you're submitting a PR for a new coin, make sure that it works. If the altcoin integration is not actively maintained it will be removed from BTCPay.
 
 ## How to an altcoin in BTCPay?
 To add a new coin to BTCPay, please [follow the instructions here](/Altcoins.md#how-can-i-add-an-altcoin-to-btcpayserver).
 
 ## How to add an altcoin to an existing BTCPay deployment?
 
-If you want to expand the number of coins in your existing BTCPayServer installation, make sure that you have enough storage space.
+If you want to expand the number of coins in your existing BTCPay Server installation, make sure that you have enough storage space on your machine.
 
 In this example, we only have Bitcoin, and we're adding Litecoin to our docker deployment.
 
@@ -59,4 +59,4 @@ sudo su -
 export BTCPAYGEN_CRYPTO2=""
 . ./btcpay-setup.sh -i
 ```
-Where CRYPTO**02** should be replaced with a coin number you wish to remove. If you have an XYZ coin as `BTCPAYGEN_CRYPTO3`, and you want to remove it, you should use CRYPT**O3**.
+Where CRYPTO**02** should be replaced with a coin number you wish to remove. If you have an XYZ coin as `BTCPAYGEN_CRYPTO3`, and you want to remove it, you should use CRYPT**03**.
