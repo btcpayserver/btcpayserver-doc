@@ -15,6 +15,8 @@ Here are common questions about installation, regardless of the deployment metho
 * [Are there free hosts where I can test?](FAQ-Deployment.md#are-there-free-hosts-where-i-can-test)
 * [After initial deployment, I can't register and I don't have a login yet?](FAQ-Deployment.md#after-initial-deployment-i-cant-register-and-i-dont-have-a-login-yet)
 * [With the docker deployment, how to use a different volume for the data?](FAQ-Deployment.md#with-the-docker-deployment-how-to-use-a-different-volume-for-the-data)
+* [How do I activate Tor on my BTCPay Server?](FAQ-Deployment.md#how-do-i-activate-tor-on-my-btcpay-server)
+* [Why activate Tor? Does it mean that nobody knows who I am?](FAQ-Deployment.md#why-activate-tor-does-it-mean-that-nobody-knows-who-i-am)
 
 ## Web Deployment FAQ
 ### Luna Node Web Deployment FAQ
@@ -78,6 +80,42 @@ sudo ln -s /mnt/usb/docker /var/lib/docker
 ```
 
 If you want to mount specific folder (like only Bitcoin node data directory), please browse `/var/lib/docker/volumes` to chose the different docker volumes.
+
+### How do I activate Tor on my BTCPay Server?
+
+That's really easy: just log in your instance with SSH, and enter the `root/btcpayserver-docker` directory as root. There, type the two following command lines:
+```
+root/btcpayserver-docker $ BTCPAYGEN_ADDITIONAL_FRAGMENTS="$BTCPAYGEN_ADDITIONAL_FRAGMENTS;opt-add-tor"
+root/btcpayserver-docker $ . btcpay-setup.sh -i
+```
+
+Then wait a few minutes for the server to restart, and you're done!
+
+If you used to have other options passed with BTCPAYGEN_ADDITIONAL_FRAGMENTS, remember to add those as well. For example, if you pruned the blockchain, you need to pass this line instead of the one above:
+
+```
+root/btcpayserver-docker $ BTCPAYGEN_ADDITIONAL_FRAGMENTS="$BTCPAYGEN_ADDITIONAL_FRAGMENTS;opt-add-tor;opt-save-storage-s"
+```
+
+### Why activate Tor? Does it mean that nobody knows who I am?
+
+Tor for BTCPay server is intented more as an improvement of the setup process, and allows for more flexibility for hosting on one's own device at home or in an office. 
+
+Having Tor activated would allow for simpler, plug-and-play usage of BTCPay, as it suppress the need for the following configuration steps:
+* Opening multiple ports on the firewall
+* Configuring the NAT for port redirection to your device on your local network
+* Setting up a DNS entry to get a HTTPS certificate
+* Having a fixed IP for Lightning
+
+While these steps are usually not a problem when BTCPay is hosted on a VPS, it can be difficult to solve for non-technical users on home or office networks. 
+
+Tor just solves all these issues in one shot, all you have to do is plug your device on the local network. It is especially useful for POS application.
+
+But if you're looking for perfect privacy and security, **activating Tor with your BTCPay just won't do it.** 
+
+Tor is a really tricky software to use for developpers, as the slightest mistake can tear down the anonymity it provides. As BTCPay is evolving into a rather complex service and adding more and more plugins, even if we tried to route all this trafic thourgh Tor, we can't guarantee that there will never be leaks of data in clear.
+
+We think that the illusion of security is more dangerous that no security, or at least security we know is imperfect. So be aware that activating Tor doesn't prevent others to connect to your instance website, your bitcoin or lightning node in clear, **it doesn't make you anonymous at all.**
 
 ## Web-deployment
 
