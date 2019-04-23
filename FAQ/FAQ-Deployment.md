@@ -113,9 +113,11 @@ Tor just solves all these issues in one shot, all you have to do is plug your de
 
 But if you're looking for perfect privacy and security, **activating Tor with your BTCPay just won't do it.** 
 
-Tor is a really tricky software to use for developpers, as the slightest mistake can tear down the anonymity it provides. As BTCPay is evolving into a rather complex service and adding more and more plugins, even if we tried to route all this trafic thourgh Tor, we can't guarantee that there will never be leaks of data in clear.
+Tor is a really tricky software to use for developpers, as the slightest mistake can tear down the anonymity it provides. As BTCPay is evolving into a rather complex service and adding more and more plugins, even if we tried to route all this trafic through Tor, we couldn't guarantee that there will never be leaks of data in clear.
 
 We think that the illusion of security is more dangerous that no security, or at least security we know is imperfect. So be aware that activating Tor doesn't prevent others to connect to your instance website, your bitcoin or lightning node in clear, **it doesn't make you anonymous at all.**
+
+If you want to know more about the philosophy behind all this, you can read our [article on  Medium](https://medium.com/@BtcpayServer/about-tor-and-btcpay-server-2ec1e4bd5e51).
 
 ## Web-deployment
 
