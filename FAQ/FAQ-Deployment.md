@@ -113,6 +113,19 @@ We think that the illusion of security is more dangerous that no security, or at
 
 If you want to know more about the philosophy behind all this, you can read our [article on  Medium](https://medium.com/@BtcpayServer/about-tor-and-btcpay-server-2ec1e4bd5e51).
 
+### How can I deactivate Tor (or any other option)?
+
+To deactivate Tor, or any other option passed as `BTCPAYGEN_ADDITIONAL_FRAGMENTS`, you need to go to the `root/btcpayserver-docker` directory as root user:
+* first figure out the complete list of options that you are running:  
+`echo $BTCPAYGEN_ADDITIONAL_FRAGMENTS`
+* Then, copy the output of the previous command (that should look like `opt-xxx;opt-yyy`), and paste it in the following command:
+`export BTCPAYGEN_ADDITIONAL_FRAGMENTS="[your options]"`
+* Delete the `opt-add-tor` (or any other option you don't need anymore) from the command, and press enter.
+* Setup BTCPay with the new options:
+`. btcpay-setup.sh -i`
+
+Wait for BTCPay to restart, and you're done!
+
 ## Web-deployment
 
 Here you can find common questions and solutions to BTCPay web-deployments.
