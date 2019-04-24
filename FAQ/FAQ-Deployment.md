@@ -91,12 +91,6 @@ root/btcpayserver-docker $ . btcpay-setup.sh -i
 
 Then wait a few minutes for the server to restart, and you're done!
 
-If you used to have other options passed with BTCPAYGEN_ADDITIONAL_FRAGMENTS, remember to add those as well. For example, if you pruned the blockchain, you need to pass this line instead of the one above:
-
-```
-root/btcpayserver-docker $ BTCPAYGEN_ADDITIONAL_FRAGMENTS="$BTCPAYGEN_ADDITIONAL_FRAGMENTS;opt-add-tor;opt-save-storage-s"
-```
-
 ### Why activate Tor? Does it mean that nobody knows who I am?
 
 Tor for BTCPay server is intented more as an improvement of the setup process, and allows for more flexibility for hosting on one's own device at home or in an office. 
