@@ -93,7 +93,7 @@ Then wait a few minutes for the server to restart, and you're done!
 
 ### Why activate Tor? Does it mean that nobody knows who I am?
 
-Tor for BTCPay server is intented more as an improvement of the setup process, and allows for more flexibility for hosting on one's own device at home or in an office. 
+Tor for BTCPay server is intended more as an improvement of the setup process, and allows for more flexibility for hosting on one's own device at home or in an office. 
 
 Having Tor activated would allow for simpler, plug-and-play usage of BTCPay, as it suppress the need for the following configuration steps:
 * Opening multiple ports on the firewall
@@ -107,7 +107,7 @@ Tor just solves all these issues in one shot, all you have to do is plug your de
 
 But if you're looking for perfect privacy and security, **activating Tor with your BTCPay just won't do it.** 
 
-Tor is a really tricky software to use for developpers, as the slightest mistake can tear down the anonymity it provides. As BTCPay is evolving into a rather complex service and adding more and more plugins, even if we tried to route all this trafic through Tor, we couldn't guarantee that there will never be leaks of data in clear.
+Tor is a really tricky software to use for developers, as the slightest mistake can tear down the anonymity it provides. As BTCPay is evolving into a rather complex service and adding more and more plugins, even if we tried to route all this trafic through Tor, we couldn't guarantee that there would never be leaks of data in clear.
 
 We think that the illusion of security is more dangerous that no security, or at least security we know is imperfect. So be aware that activating Tor doesn't prevent others to connect to your instance website, your bitcoin or lightning node in clear, **it doesn't make you anonymous at all.**
 
