@@ -17,7 +17,7 @@ Here are common questions about installation, regardless of the deployment metho
 * [With the docker deployment, how to use a different volume for the data?](FAQ-Deployment.md#with-the-docker-deployment-how-to-use-a-different-volume-for-the-data)
 * [How do I activate Tor on my BTCPay Server?](FAQ-Deployment.md#how-do-i-activate-tor-on-my-btcpay-server)
 * [Why activate Tor? Does it mean that nobody knows who I am?](FAQ-Deployment.md#why-activate-tor-does-it-mean-that-nobody-knows-who-i-am)
-* [How can I modify/deactivate environment variables?](FAQ-Deployment.md#How-can-i-modify-deactivate-environment-variables)
+* [How can I modify/deactivate environment variables?](FAQ-Deployment.md#How-can-i-modifydeactivate-environment-variables)
 
 ## Web Deployment FAQ
 ### Luna Node Web Deployment FAQ
