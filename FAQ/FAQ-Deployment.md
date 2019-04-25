@@ -17,7 +17,7 @@ Here are common questions about installation, regardless of the deployment metho
 * [With the docker deployment, how to use a different volume for the data?](FAQ-Deployment.md#with-the-docker-deployment-how-to-use-a-different-volume-for-the-data)
 * [How do I activate Tor on my BTCPay Server?](FAQ-Deployment.md#how-do-i-activate-tor-on-my-btcpay-server)
 * [Why activate Tor? Does it mean that nobody knows who I am?](FAQ-Deployment.md#why-activate-tor-does-it-mean-that-nobody-knows-who-i-am)
-* [How can I deactivate Tor (or any other option)?](FAQ-Deployment.md#how-can-i-deactivate-tor-or-any-other-option)
+* [How can I modify/deactivate environment variables?](FAQ-Deployment.md#How-can-i-modify-deactivate-environment-variables)
 
 ## Web Deployment FAQ
 ### Luna Node Web Deployment FAQ
@@ -114,18 +114,32 @@ We think that the illusion of security is more dangerous that no security, or at
 
 If you want to know more about the philosophy behind all this, you can read our [article on  Medium](https://medium.com/@BtcpayServer/about-tor-and-btcpay-server-2ec1e4bd5e51).
 
-### How can I deactivate Tor (or any other option)?
+### How can I modify/deactivate environment variables?
 
-To deactivate Tor, or any other option passed as `BTCPAYGEN_ADDITIONAL_FRAGMENTS`, you need to go to the `root/btcpayserver-docker` directory as root user:
-* first you need to figure out the complete list of options that you are running:  
-`echo $BTCPAYGEN_ADDITIONAL_FRAGMENTS`
-* Then, copy the output of the previous command (which should look like `opt-xxx;opt-yyy`), and paste it in the following command:
-`export BTCPAYGEN_ADDITIONAL_FRAGMENTS="[your options]"`
-* Delete the `opt-add-tor` (or any other option you don't need anymore) from the command, and press enter.
-* Setup BTCPay with the new options:
-`. btcpay-setup.sh -i`
+In BTCPay, various options are activated through environment variables. You can modify or delete any of these options using command lines by exporting the new value with `export {environment variable}="{value}"` and then running `. ./btcpay-setup.sh -i` again.
 
-Wait for BTCPay to restart, and you're good to go!
+For example, let's say I want to deactivate Tor for my BTCPay server:
+```
+# Login as root
+sudo su -
+
+# Go to the root/btcpayserver-docker directory
+cd /root/btcpayserver-docker
+
+# Print the complete list of options that you are running (for the sake of the demonstration, let's say that beside Tor you have pruning mode activated too)
+echo $BTCPAYGEN_ADDITIONAL_FRAGMENTS
+opt-save-storage-s;opt-add-tor
+
+# Export the BTCPAYGEN_ADDITIONAL_FRAGMENTS variable without opt-add-tor
+export BTCPAYGEN_ADDITIONAL_FRAGMENTS="opt-save-storage-s"
+
+# Run btcpay-setup.sh
+. btcpay-setup.sh -i
+
+exit
+```
+
+If you need to figure out which environment variable you need to modify, have a look at [this list](https://github.com/btcpayserver/btcpayserver-docker#environment-variables).
 
 ## Web-deployment
 
