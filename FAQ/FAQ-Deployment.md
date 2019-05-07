@@ -171,6 +171,8 @@ Check this [community guide](https://freedomnode.com/blog/114/how-to-setup-btc-a
 
 #### BTCPay is expecting you to access this website from
 
+You might also see the following error: `You access BTCPay Server over an unsecured network`.
+
 You might see this error on the front page of your BTCPay Server since version `1.0.3.73`.
 
 This is caused by a breaking change made in BTCPay to be able to handle different domain on the same server.

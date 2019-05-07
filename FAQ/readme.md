@@ -48,6 +48,7 @@ Questions and solutions to BTCPay installation.
 * [Getting 500 nginx error on a local server https and for http (BTCPay is expecting you to access this website from)](FAQ-Deployment.md#getting-500-nginx-error-on-a-local-server-https-and-for-http-btcpay-is-expecting-you-to-access-this-website-from)
 * [How to manually install BTCPay on Ubuntu 18.04?](FAQ-Deployment.md#how-to-manually-install-btcpay-on-ubuntu-1804)
 * [Error: BTCPay is expecting you to access this website from...](FAQ-Deployment.md#btcpay-is-expecting-you-to-access-this-website-from)
+* [You access BTCPay Server over an unsecured network](FAQ-Deployment.md#btcpay-is-expecting-you-to-access-this-website-from)
 
 ## [Synchronization FAQ](FAQ-Synchronization.md)
 
