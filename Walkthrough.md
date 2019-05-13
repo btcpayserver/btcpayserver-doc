@@ -72,4 +72,4 @@ For more information, check [Payment Requests](PaymentRequests.md)
 
 ## My Settings
 
-My Settings are user settings. Modify your e-mail address, password or set up two-factor authentication. The U2F feature allows users to further enhance the security of their accounts by physically confirming wallet authentication via a U2F compatible device.
+My Settings are user settings. Modify your e-mail address, password or set up two-factor authentication. The U2F feature allows users to further enhance the security of their accounts by physically confirming authentication with a U2F compatible device.
