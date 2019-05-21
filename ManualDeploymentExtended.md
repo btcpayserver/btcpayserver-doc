@@ -24,6 +24,10 @@ The instructions in this document were tested on Ubuntu 18.04. They should be ap
 4) Lightning Network Daemon (lnd),
 5) Ride The Lightning (RTL).
 
+### Services
+
+1) Let's Encrypt.
+
 ## Postgresql
 
 Postgresql is used by BTCPay Server. If you're happy using the default of an SQLite to store your BTCPay Server settings then you do not need to install Postgresql.
