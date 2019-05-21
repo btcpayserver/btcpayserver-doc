@@ -18,7 +18,7 @@ The instructions in this document were tested on Ubuntu 18.04. They should be ap
 
 ### Application Components
 
-1) Bitcoin Daemon,
+1) Bitcoin-core Daemon,
 2) NBXplorer,
 3) BTCPay Server,
 4) Lightning Network Daemon (lnd),
@@ -49,6 +49,61 @@ postgres=# \q
 
 ##### :black_nib: Configuration
 
-See btcpay DB section below.
+See BTCPay Server Configuration.
 
+## Tor
 
+Tor is optional. It can be used by the following components to provide enhanced privacy and/or help with NAT traversal:
+
+- Bitcoin-core Daemon
+- Lightning Network Daemon (lnd).
+
+##### :truck: Install
+
+```bash
+~$ sudo apt install apt-transport-https
+~$ sudo vi /etc/apt/sources.list # (and append two lines below)
+deb https://deb.torproject.org/torproject.org bionic main
+deb-src https://deb.torproject.org/torproject.org bionic main
+~$ curl https://deb.torproject.org/torproject.org/A3C4F0F979CAA22CDBA8F512EE8CBC9E886DDD89.asc | gpg --import
+~$ gpg --export A3C4F0F979CAA22CDBA8F512EE8CBC9E886DDD89 | sudo apt-key add -
+~$ sudo apt update
+~$ sudo apt install tor deb.torproject.org-keyring
+```
+##### :black_nib: Configuration
+```bash
+~$ sudo vi /etc/tor/torrc  # (and uncomment two lines below)
+ControlPort 9051
+CookieAuthentication 1
+~$ sudo systemctl restart tor
+```
+
+##### :thumbsup: Check
+```bash
+~$ netstat -tlnp # (lines below correspond to the tor control port and SOCKS proxy)
+tcp        0      0 127.0.0.1:9050          0.0.0.0:*               LISTEN      -
+tcp        0      0 127.0.0.1:9051          0.0.0.0:*               LISTEN      -
+```
+## NGINX
+
+NGINX is used as a web server to manage traffic to the BTCPay Server and Ride The Lightning components. It is also optional but if you do not already have a TLS certificate to use with BTCPay Server then NGINX solves the problem via the Let's Encrypt free and automated TLS certificate service.
+
+##### :truck: Install
+
+```bash
+~$ sudo apt update
+~$ sudo apt-get install nginx
+~$ sudo systemctl enable nginx
+~$ sudo systemctl start nginx
+```
+
+##### :thumbsup: Check
+
+```bash
+~$ sudo nginx -v
+ nginx version: nginx/1.14.0 (Ubuntu)
+```
+
+##### :black_nib: Configuration
+
+See BTCPay Server Configuration.
