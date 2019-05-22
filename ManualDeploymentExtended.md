@@ -8,35 +8,37 @@ Manual installation is NOT recommended for production use unless you are very co
 
 ## Installation Steps Overview
 
-The instructions in this document were tested on Ubuntu 18.04. They should be applicable to other Linux based distributions. The instructions are also based on all components running on the same instance. It's possible to split the components across different instances but that is not covered.
+The instructions in this document were tested on Ubuntu 18.04. They should be applicable to other Linux based distributions. These instructions are based on all components executing on the same single instance. It's possible to split things up any way you wish but these instructions don't describe that.
 
 ### Prerequisites:
 
-1) Postgresql,
-2) Tor,
-3) NGINX.
+1. Postgresql,
+2. Tor,
+3. NGINX.
+4. Let's Encrypt.
 
 ### Application Components
 
-1) Bitcoin-core Daemon,
-2) NBXplorer,
-3) BTCPay Server,
-4) Lightning Network Daemon (lnd),
-5) Ride The Lightning (RTL).
+1. Bitcoin Daemon*,
+2. NBXplorer*,
+3. BTCPay Server*,
+4. Lightning Network Daemon (lnd),
+5. Ride The Lightning (RTL).
 
-### Services
-
-1) Let's Encrypt.
+\* The bare minimum install of a BTCPay server only requires the starred items. Using a bare minimum configuration reduces the functionality: no lightning payments, no auto-renewal of TLS certificates, less reliable data store, less capable of handling NAT and more.
 
 ## Postgresql
 
-Postgresql is used by BTCPay Server. If you're happy using the default of an SQLite to store your BTCPay Server settings then you do not need to install Postgresql.
+Postgresql can be used by BTCPay Server in place of the default SQLite file based storage.
 
 ##### :truck: Install
 
 ```bash
 ~$ sudo apt install postgresql postgresql-contrib
 ```
+##### :black_nib: Configuration
+
+Covered in BTCPay Server Configuration.
 
 ##### :thumbsup: Check
 
@@ -51,14 +53,9 @@ Type "help" for help.
 postgres=# \q
 ```
 
-##### :black_nib: Configuration
-
-See BTCPay Server Configuration.
-
 ## Tor
 
-Tor is optional. It can be used by the following components to provide enhanced privacy and/or help with NAT traversal:
-
+Tor can be used by the following components to provide enhanced privacy and/or help with NAT traversal:
 - Bitcoin-core Daemon
 - Lightning Network Daemon (lnd).
 
@@ -81,6 +78,7 @@ ControlPort 9051
 CookieAuthentication 1
 ~$ sudo systemctl restart tor
 ```
+Covered further in Bitcoin and Lightning Network Daemon Configurations.
 
 ##### :thumbsup: Check
 ```bash
@@ -88,18 +86,22 @@ CookieAuthentication 1
 tcp        0      0 127.0.0.1:9050          0.0.0.0:*               LISTEN      -
 tcp        0      0 127.0.0.1:9051          0.0.0.0:*               LISTEN      -
 ```
+
 ## NGINX
 
-NGINX is used as a web server to manage traffic to the BTCPay Server and Ride The Lightning components. It is also optional but if you do not already have a TLS certificate to use with BTCPay Server then NGINX solves the problem via the Let's Encrypt free and automated TLS certificate service.
+NGINX is used as a web server to manage HTTP requests to BTCPay Server and Ride The Lightning. Paired with Let's Encrypt it allows seamless procurement and renewal of a TLS certificate for your BTCPay Server instance.
 
 ##### :truck: Install
 
 ```bash
-~$ sudo apt update
-~$ sudo apt-get install nginx
+~$ sudo apt install nginx
 ~$ sudo systemctl enable nginx
 ~$ sudo systemctl start nginx
 ```
+
+##### :black_nib: Configuration
+
+Covered in BTCPay Server Configuration.
 
 ##### :thumbsup: Check
 
@@ -108,6 +110,186 @@ NGINX is used as a web server to manage traffic to the BTCPay Server and Ride Th
  nginx version: nginx/1.14.0 (Ubuntu)
 ```
 
+## Let's Encrypt
+
+Let's Encrypt is a free service for procuring and renewing TLS certificates. The service comes with scripts that can be installed to automatically manage the whole process.
+
+##### :truck: Install
+
+```bash
+~$ sudo add-apt-repository ppa:certbot/certbot
+~$ sudo apt update
+~$ sudo apt install certbot python-certbot-nginx
+```
+
 ##### :black_nib: Configuration
 
-See BTCPay Server Configuration.
+You must create an A or AAAA record for **\<your domain name\>** that points to the IP address of your server instance.
+If your server is behind NAT then you need to forward port 80 to your instance. 
+
+The **certbot** script works by checking for a specific file on the web server hosting the requested domain. If it can't get the file the TLS certificate won't be issued. If the initial attempt fails it will be periodically re-attempted or you can simply re-run the command.
+
+```bash
+sudo certbot --nginx -d <your domain name> # (e.g: sudo certbot --nginx -d btcpaytest.sipsorcery.com)
+```
+
+##### :thumbsup: Check
+
+It can be a little bit tricky to get everything set up correctly for the Let's Encrypt script to work correctly. Some additional commands are listed below to help with any troubleshooting.
+
+```bash
+~$ sudo certbot certificates
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+Found the following certs:
+  Certificate Name: btcpaytest.sipsorcery.com
+    Domains: btcpaytest.sipsorcery.com
+    Expiry Date: 2019-08-10 18:00:31+00:00 (VALID: 79 days)
+    Certificate Path: /etc/letsencrypt/live/btcpaytest.sipsorcery.com/fullchain.pem
+    Private Key Path: /etc/letsencrypt/live/btcpaytest.sipsorcery.com/privkey.pem
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+~$ cat /etc/cron.d/certbot # (check the cron job exists)
+0 */12 * * * root test -x /usr/bin/certbot -a \! -d /run/systemd/system && perl -e 'sleep int(rand(43200))' && certbot -q renew
+
+~$ sudo tail /var/log/letsencrypt/letsencrypt.log # (check for problems)
+2019-05-22 19:36:36,062:DEBUG:certbot.main:certbot version: 0.31.0
+
+~$ sudo certbot renew --dry-run # (test renewal)
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+** DRY RUN: simulating 'certbot renew' close to cert expiry
+**          (The test certificates below have not been saved.)
+
+Congratulations, all renewals succeeded. The following certs have been renewed:
+  /etc/letsencrypt/live/btcpaytest.sipsorcery.com/fullchain.pem (success)
+** DRY RUN: simulating 'certbot renew' close to cert expiry
+**          (The test certificates above have not been saved.)
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+```
+
+## Bitcoin Daemon
+
+The gateway to the Bitcoin network for BTCPay Server components.
+
+##### :truck: Install
+
+##### 1. Download the latest binaries from a trusted source such as [https://bitcoincore.org/en/download/](https://bitcoincore.org/en/download/).
+```bash
+~$ wget https://bitcoincore.org/bin/bitcoin-core-0.18.0/bitcoin-0.18.0-x86_64-linux-gnu.tar.gz
+~$ wget https://bitcoincore.org/bin/bitcoin-core-0.18.0/SHA256SUMS.asc
+```
+##### 2. Verify the authenticity of the downloads. 
+The Bitcoin Core code signing key is currently: 
+
+>  "Wladimir J. van der Laan (Bitcoin Core binary release signing key) <laanwj@gmail.com>")
+>  public key: 01EA5486DE18A882D4C2684590C8019E36C2E964
+
+It's advisable to double check the signing key corresponds with other available sources. A good one is [https://github.com/bitcoin/bitcoin/tree/master/contrib/verifybinaries](https://github.com/bitcoin/bitcoin/tree/master/contrib/verifybinaries).
+
+```bash
+~$ gpg --receive-key 0x01EA5486DE18A882D4C2684590C8019E36C2E964
+~$ gpg --verify SHA256SUMS.asc
+ gpg: Good signature from "Wladimir J. van der Laan (Bitcoin Core binary release signing key) <laanwj@gmail.com>" [unknown]
+~$ sha256sum --ignore-missing -c SHA256SUMS.asc
+ bitcoin-0.18.0-x86_64-linux-gnu.tar.gz: OK
+```
+##### 3. Install the binaries.
+
+```bash
+~$ tar zxf bitcoin-0.18.0-x86_64-linux-gnu.tar.gz
+~$ pushd bitcoin-0.18.0/bin; sudo cp bitcoind bitcoin-cli /usr/bin; popd;
+~$ bitcoind --version
+Bitcoin Core Daemon version v0.18.0
+```
+##### 4. Create a systemd service.
+Download the example systemd service file from the Bitcoin Core source code repository.
+```bash
+~$ wget https://raw.githubusercontent.com/bitcoin/bitcoin/master/contrib/init/bitcoind.service
+```
+Edit the service file depending on your needs. 
+
+In the example below the **User** and **Group** have been changed and the permissions on the **ConfigurationDirectory** have been modified to make it usable without needing to explicitly set ownership see [this issue](https://github.com/bitcoin/bitcoin/pull/15995).
+
+```text
+[Unit]
+Description=Bitcoin daemon
+After=network.target
+
+[Service]
+ExecStart=/usr/bin/bitcoind -daemon \
+                            -pid=/run/bitcoind/bitcoind.pid \
+                            -conf=/etc/bitcoin/bitcoin.conf \
+                            -datadir=/var/lib/bitcoind
+
+# Process management
+####################
+
+Type=forking
+PIDFile=/run/bitcoind/bitcoind.pid
+Restart=on-failure
+
+# Directory creation and permissions
+####################################
+User=admin
+Group=admin
+
+# /run/bitcoind
+RuntimeDirectory=bitcoind
+RuntimeDirectoryMode=0710
+
+# /etc/bitcoin
+ConfigurationDirectory=bitcoin
+ConfigurationDirectoryMode=0755
+
+# /var/lib/bitcoind
+StateDirectory=bitcoind
+StateDirectoryMode=0710
+
+# Hardening measures
+####################
+# Provide a private /tmp and /var/tmp.
+PrivateTmp=true
+
+# Mount /usr, /boot/ and /etc read-only for the process.
+ProtectSystem=full
+
+# Disallow the process and all of its children to gain
+# new privileges through execve().
+NoNewPrivileges=true
+
+# Use a new /dev namespace only populated with API pseudo devices
+# such as /dev/null, /dev/zero and /dev/random.
+PrivateDevices=true
+
+# Deny the creation of writable and executable memory mappings.
+MemoryDenyWriteExecute=true
+
+# Deny access to /home.
+ProtectHome=true
+
+[Install]
+WantedBy=multi-user.target
+```
+Once the service file is ready complete the commands below. Note that the service will fail in its attempt to start due to the configuration file not yet being present. This is desired as the service will still create the **/etc/bitcoin** directory with the correct permissions ready for the next step.
+
+```bash
+~$ sudo cp bitcoind.service /etc/systemd/system
+~$ sudo systemctl enable bitcoind
+~$ sudo systemctl start bitcoind
+~$ sudo systemctl stop bitcoind
+```
+##### 5. Create the configuration file.
+An example configuration file is available on the Bitcoin Core repository at https://github.com/bitcoin/bitcoin/blob/master/share/examples/bitcoin.conf.
+
+Create a bitcoin.conf file to suit your needs. An example file that is sufficient for BTCPay Server is:
+```text
+server=1                              # need RPC for btcpay.
+rpcbind=127.0.0.1                     # loopback is default for 0.18.0 but no harm making sure.
+whitelist=127.0.0.1                   # for nbxplorer.
+rpcallowip=127.0.0.1/32               # overkill but again no harm.
+zmqpubrawblock=tcp://127.0.0.1:28332  # needed for lightning.
+zmqpubrawtx=tcp://127.0.0.1:28333     # needed for lightning.
+```
+Copy the file to the directory specified in the systemd service file.
+```bash
+~$ sudo cp bitcoin.conf /etc/bitcoin
+```
