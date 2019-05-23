@@ -78,7 +78,7 @@ ControlPort 9051
 CookieAuthentication 1
 ~$ sudo systemctl restart tor
 ```
-Covered further in Bitcoin and Lightning Network Daemon Configurations.
+Covered further in Bitcoin and Lightning Network Daemon sections.
 
 ##### :thumbsup: Check
 ```bash
@@ -204,15 +204,40 @@ It's advisable to double check the signing key corresponds with other available 
 ~$ bitcoind --version
 Bitcoin Core Daemon version v0.18.0
 ```
-##### 4. Create a systemd service.
-Download the example systemd service file from the Bitcoin Core source code repository.
+##### 4. Create the configuration file.
+An example configuration file is available on the Bitcoin Core repository at https://github.com/bitcoin/bitcoin/blob/master/share/examples/bitcoin.conf.
+
+Create a bitcoin.conf file to suit your needs. An example file that is suitable for BTCPay Server is shown below. This configuration does not prune blocks which means as of May 2019 you will require 235 GB for the Bitcoin blockchain. 
 ```bash
-~$ wget https://raw.githubusercontent.com/bitcoin/bitcoin/master/contrib/init/bitcoind.service
+~$ vi bitcoin.conf
 ```
+```text
+mainnet=1
+server=1                              # need RPC for btcpay.
+rpcbind=127.0.0.1                     # loopback is default for 0.18.0 but no harm making sure.
+whitelist=127.0.0.1                   # for nbxplorer.
+rpcallowip=127.0.0.1/32               # loopback is default but again no harm.
+disablewallet=1                       # btcpay does not host a bitcoin wallet.
+zmqpubrawblock=tcp://127.0.0.1:28332  # needed for lightning.
+zmqpubrawtx=tcp://127.0.0.1:28333     # needed for lightning.
+```
+Copy the file to the directory specified in the systemd service file and assign read permissions to all users.
+```bash
+~$ sudo mkdir -p /etc/bitcoin
+~$ sudo cp bitcoin.conf /etc/bitcoin
+~$ sudo chmod 644 /etc/bitcoin/bitcoin.conf
+```
+
+##### 5. Create a systemd service.
+An example systemd service file is available in the Bitcoin Core  repository at https://raw.githubusercontent.com/bitcoin/bitcoin/master/contrib/init/bitcoind.service.
+
 Edit the service file depending on your needs. 
 
 In the example below the **User** and **Group** have been changed and the permissions on the **ConfigurationDirectory** have been modified to make it usable without needing to explicitly set ownership see [this issue](https://github.com/bitcoin/bitcoin/pull/15995).
 
+```bash
+~$ vi bitcoind.service
+```
 ```text
 [Unit]
 Description=Bitcoin daemon
@@ -273,33 +298,11 @@ ProtectHome=true
 [Install]
 WantedBy=multi-user.target
 ```
-Once the service file is ready complete the commands below. Note that the service will fail in its attempt to start due to the configuration file not yet being present. This is desired as the service will still create the **/etc/bitcoin** directory with the correct permissions ready for the next step.
-
+Once the service file is ready complete the commands below. 
 ```bash
 ~$ sudo cp bitcoind.service /etc/systemd/system
 ~$ sudo systemctl enable bitcoind
 ~$ sudo systemctl start bitcoind
-~$ sudo systemctl stop bitcoind
-```
-##### 5. Create the configuration file.
-An example configuration file is available on the Bitcoin Core repository at https://github.com/bitcoin/bitcoin/blob/master/share/examples/bitcoin.conf.
-
-Create a bitcoin.conf file to suit your needs. An example file that is suitable for BTCPay Server is shown below. This configuration does not prune blocks which means as of May 2019 you will require 235GB for the Bitcoin blockchain. 
-```text
-mainnet=1
-server=1                              # need RPC for btcpay.
-rpcbind=127.0.0.1                     # loopback is default for 0.18.0 but no harm making sure.
-whitelist=127.0.0.1                   # for nbxplorer.
-rpcallowip=127.0.0.1/32               # loopback is default but again no harm.
-disablewallet=1                       # btcpay does not host a bitcoin wallet.
-zmqpubrawblock=tcp://127.0.0.1:28332  # needed for lightning.
-zmqpubrawtx=tcp://127.0.0.1:28333     # needed for lightning.
-```
-Copy the file to the directory specified in the systemd service file and give users read permissions.
-```bash
-~$ sudo cp bitcoin.conf /etc/bitcoin
-~$ sudo chmod 644 /etc/bitcoin/bitcoin.conf
-~$ sudo systemctl restart bitcoind
 ```
 ##### 6. Create a symbolic link to the bitcoind cookie file.
 The `bitcoin-cli` client needs to authenticate to `bitcoind` for RPC calls. The easiest way to allow this is to create a symbolic link to the cookie file.
@@ -351,7 +354,7 @@ To change your onion address:
 2019-05-23T19:06:30Z tor: Got service ID zrzoqb4e5bengdju, advertising service zrzoqb4e5bengdju.onion:8333
 2019-05-23T19:06:30Z AddLocal(zrzoqb4e5bengdju.onion:8333,4)
 ```
-To check your onion address accessibility from a remote host with tor installed:
+To check your onion address from a remote host with tor installed:
 ```bash
 ~$ torsocks --shell 
 ~$ telnet 4d4al7v4hj5p7bb6.onion 8333
@@ -360,7 +363,7 @@ To check your onion address accessibility from a remote host with tor installed:
  Escape character is '^]'.
 ~$ exit
 ```
-To connect a remote `'bitcoind` to your new node:
+To connect another `bitcoind` instance to your new node:
 ```bash
 ~$ bitcoin-cli addnode "4d4al7v4hj5p7bb6.onion" "add"
 ~$ bitcoin-cli getaddednodeinfo
@@ -374,4 +377,240 @@ To connect a remote `'bitcoind` to your new node:
      }
    ]
  }
+```
+## NBXplorer
+NBXplorer is a dotnet core application that monitors the Bitcoin blockchain for transactions of interest to your BTCPay Server.
+##### :truck: Install
+
+##### 1. Install dotnet core
+Check [download link for latest version](https://dotnet.microsoft.com/download/dotnet-core) (.Net Core 2.2 at the time of writing)
+```bash
+~$ wget -q https://packages.microsoft.com/config/ubuntu/18.04/packages-microsoft-prod.deb
+~$ sudo dpkg -i packages-microsoft-prod.deb
+~$ sudo add-apt-repository universe
+~$ sudo apt-get install apt-transport-https
+~$ sudo apt-get update
+~$ sudo apt-get install dotnet-sdk-2.2
+~$ dotnet --version
+2.2.203
+```
+##### 2. Build NBXplorer
+```bash
+~$ cd ~; mkdir -p src; cd src
+~/src$ git clone https://github.com/dgarage/NBXplorer
+~/src$ cd NBXplorer
+~/src/NBXplorer$ ./build.sh
+```
+##### 3. Create a systemd service.
+An example systemd service file is shown below. Adjust the paths, User and Group accordingly.
+```bash
+~$ vi nbxplorer.service
+```
+```text
+[Unit]
+Description=NBXplorer daemon
+Requires=bitcoind.service
+After=bitcoind.service
+
+[Service]
+WorkingDirectory=/home/admin/src/NBXplorer
+ExecStart=/home/admin/src/NBXplorer/run.sh
+User=admin
+Group=admin
+Type=simple
+PIDFile=/run/nbxplorer/nbxplorer.pid
+Restart=on-failure
+
+[Install]
+WantedBy=multi-user.target
+```
+```bash
+~$ sudo cp nbxplorer.service /etc/systemd/system
+~$ sudo systemctl enable nbxplorer
+~$ sudo systemctl start nbxplorer
+```
+##### :thumbsup: Check
+```bash
+~$ sudo journalctl -xe --unit nbxplorer --follow
+May 23 19:13:35 btc run.sh[8065]: info: Configuration:  Data Directory: /home/admin/.nbxplorer/Main
+May 23 19:13:35 btc run.sh[8065]: info: Configuration:  Configuration File: /home/admin/.nbxplorer/Main/settings.config
+May 23 19:13:35 btc run.sh[8065]: info: Configuration:  Network: Mainnet
+...
+May 23 19:20:04 btc run.sh[8065]: info: Events:         BTC: New block 0000000000000000000c405ba5df5f5533359a4393247a0c52d26c458d4dd989 (577449)
+```
+
+If it doesn't start correctly stop the service and run the application directly to get any error messages.
+```bash
+~$ sudo systemctl stop nbxplorer
+~$ cd ~; pushd ./src/NBXplorer; ./run.sh; popd
+```
+#####  :rotating_light: Update
+Updating could break things. Be careful on a live system.
+```bash
+~$ sudo systemctl stop nbxplorer
+~$ cd ~; pushd ~/src/NBXplorer; git pull; ./build.sh; popd;
+~$ sudo systemctl start nbxplorer
+```
+
+## BTCPay Server
+
+Like NBXplorer the BTCPay Server application is also dotnet core. The install steps assume dotnet core was installed in the 
+previous step.
+
+##### :truck: Install
+
+##### 1. Build BTCPay Server
+```bash
+~$ cd ~; mkdir -p src; cd src
+~/src$ git clone https://github.com/btcpayserver/btcpayserver.git
+~/src$ cd btcpayserver
+~/src/btcpayserver$ ./build.sh
+```
+##### 2. Create Postgresql Database.
+
+By default BTCPay Server will store data in a single SQLite file. A more robust option is to use Postgresql which requires the appropriate database and user exist.
+
+```bash
+~$ sudo -u postgres psql
+postgres=# create database btcpay;
+postgres=# create user btcpay with encrypted password 'urpassword';
+postgres=# grant all privileges on database btcpay to btcpay;
+postgres=#\q
+```
+##### 3. Create a configuration file.
+```bash
+$ vi btcpay.config
+```
+```text
+### Database ###
+postgres=User ID=btcpay;Password=urpassword;Host=localhost;Port=5432;Database=btcpay;
+```
+```bash
+~$ sudo mkdir /etc/btcpay
+~$ sudo cp btcpay.config /etc/btcpay
+~$ sudo chmod 644 /etc/btcpay/btcpay.config
+```
+##### 4. Create a systemd service.
+An example systemd service file is shown below. Adjust the paths, User and Group accordingly.
+```bash
+~$ vi btcpay.service
+```
+```text
+[Unit]
+Description=BTCPay Server
+Requires=nbxplorer.service
+After=nbxplorer.service
+
+[Service]
+WorkingDirectory=/home/admin/src/btcpayserver
+ExecStart=/home/admin/src/btcpayserver/run.sh --conf=/etc/btcpay/btcpay.config
+User=admin
+Group=admin
+Type=simple
+PIDFile=/run/btcpayserver/btcpayserver.pid
+Restart=on-failure
+
+[Install]
+WantedBy=multi-user.target
+```
+```bash
+~$ sudo cp btcpay.service /etc/systemd/system
+~$ sudo systemctl enable btcpay
+~$ sudo systemctl start btcpay
+```
+##### :thumbsup: Check
+```bash
+~$ sudo journalctl -xe --unit btcpay --follow
+-- The start-up result is RESULT.
+May 23 20:01:25 btc run.sh[10263]: info: Configuration:  Data Directory: /home/admin/.btcpayserver/Main
+May 23 20:01:25 btc run.sh[10263]: info: Configuration:  Configuration File: /etc/btcpay/btcpay.config
+May 23 20:01:25 btc run.sh[10263]: info: Configuration:  Network: Mainnet
+```
+
+If it doesn't start correctly stop the service and run the application directly to get any error messages.
+```bash
+~$ sudo systemctl stop btcpay
+~$ cd ~; pushd ~/src/btcpayserver --conf=/etc/btcpay/btcpay.config; ./run.sh; popd;
+```
+An example of checking information in the database.
+```bash
+~$ sudo -u postgres psql
+postgres=# \connect btcpay;
+btcpay=# \dt
+btcpay=# select * from "Invoices";
+btcpay=# \q
+```
+
+#####  :rotating_light: Update
+Updating could break things. Be careful on a live system.
+```bash
+~$ sudo systemctl stop btcpay
+~$ cd ~; pushd ~/src/btcpayserver; git pull; ./build.sh; popd;
+~$ sudo systemctl start btcpay
+```
+## Lightning Network Daemon (lnd)
+
+##### :truck: Install
+##### 1. Install Go.
+```bash
+~$ sudo apt install make
+~$ wget https://dl.google.com/go/go1.12.3.linux-amd64.tar.gz
+~$ sha256sum go1.12.3.linux-amd64.tar.gz | awk -F " " '{ print $1 }'
+ 3924819eed16e55114f02d25d03e77c916ec40b7fd15c8acb5838b63135b03df
+~$ sudo tar -C /usr/local -xzf go1.12.3.linux-amd64.tar.gz
+~$ export PATH=$PATH:/usr/local/go/bin:$GOPATH/bin
+~$ export GOPATH=~/gocode
+~$ go version
+ go version go1.12.3 linux/amd64
+ ```
+
+##### 2. Build and install lnd.
+```bash
+~$ go get -d github.com/lightningnetwork/lnd
+~$ cd $GOPATH/src/github.com/lightningnetwork/lnd
+~$ make
+~$ make install # installs to /home/admin/gocode/bin which is $GOPATH/bin
+~$ lnd --version
+lnd version 0.6.1-beta commit=v0.6.1-beta-12-gf8c824fb1d6c5ef8524148f59ea5650af65af98b
+~$ sudo cp $GOPATH/bin/lnd $GOPATH/bin/lncli /usr/bin
+```
+##### 3. Create a symbolic link to the Bitcoin configuration file.
+
+lnd looks for bitcoin.conf in a specific location to get necessary RPC and zeromq details.
+
+```bash
+~$ ln -s /etc/bitcoin/bitcoin.conf ~/.bitcoin/bitcoin.conf 
+```
+
+##### 4. Create a configuration file.
+```bash
+~$ vi lnd.conf
+```
+```text
+[Application Options]
+datadir=/var/lib/lnd/data
+tlscertpath=/var/lib/lnd/tls.cert
+tlskeypath=/var/lib/lnd/tls.key
+logdir=/var/lib/lnd/logs
+maxlogfiles=3
+maxlogfilesize=10
+#externalip=1.1.1.1 # change to your public IP address if required.
+alias=i_luv_btcpay
+listen=0.0.0.0
+
+[Bitcoin]
+bitcoin.active=1
+bitcoin.node=bitcoind
+bitcoin.mainnet=true
+
+[tor]
+tor.active=true
+tor.v3=true
+```
+```bash
+~$ sudo mkdir -p /etc/lnd
+~$ sudo mkdir -p /var/lib/lnd
+~$ sudo chown admin:admin -R /var/lib/lnd
+~$ sudo cp lnd.conf /etc/lnd
+~$ sudo chmod 644 /etc/lnd/lnd.conf
 ```
