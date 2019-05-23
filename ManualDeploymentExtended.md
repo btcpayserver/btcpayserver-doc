@@ -147,13 +147,17 @@ Found the following certs:
     Certificate Path: /etc/letsencrypt/live/btcpaytest.sipsorcery.com/fullchain.pem
     Private Key Path: /etc/letsencrypt/live/btcpaytest.sipsorcery.com/privkey.pem
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-
+```
+```bash
 ~$ cat /etc/cron.d/certbot # (check the cron job exists)
 0 */12 * * * root test -x /usr/bin/certbot -a \! -d /run/systemd/system && perl -e 'sleep int(rand(43200))' && certbot -q renew
+```
 
+```bash
 ~$ sudo tail /var/log/letsencrypt/letsencrypt.log # (check for problems)
 2019-05-22 19:36:36,062:DEBUG:certbot.main:certbot version: 0.31.0
-
+```
+```bash
 ~$ sudo certbot renew --dry-run # (test renewal)
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 ** DRY RUN: simulating 'certbot renew' close to cert expiry
@@ -280,16 +284,94 @@ Once the service file is ready complete the commands below. Note that the servic
 ##### 5. Create the configuration file.
 An example configuration file is available on the Bitcoin Core repository at https://github.com/bitcoin/bitcoin/blob/master/share/examples/bitcoin.conf.
 
-Create a bitcoin.conf file to suit your needs. An example file that is sufficient for BTCPay Server is:
+Create a bitcoin.conf file to suit your needs. An example file that is suitable for BTCPay Server is shown below. This configuration does not prune blocks which means as of May 2019 you will require 235GB for the Bitcoin blockchain. 
 ```text
+mainnet=1
 server=1                              # need RPC for btcpay.
 rpcbind=127.0.0.1                     # loopback is default for 0.18.0 but no harm making sure.
 whitelist=127.0.0.1                   # for nbxplorer.
-rpcallowip=127.0.0.1/32               # overkill but again no harm.
+rpcallowip=127.0.0.1/32               # loopback is default but again no harm.
+disablewallet=1                       # btcpay does not host a bitcoin wallet.
 zmqpubrawblock=tcp://127.0.0.1:28332  # needed for lightning.
 zmqpubrawtx=tcp://127.0.0.1:28333     # needed for lightning.
 ```
-Copy the file to the directory specified in the systemd service file.
+Copy the file to the directory specified in the systemd service file and give users read permissions.
 ```bash
 ~$ sudo cp bitcoin.conf /etc/bitcoin
+~$ sudo chmod 644 /etc/bitcoin/bitcoin.conf
+~$ sudo systemctl restart bitcoind
+```
+##### 6. Create a symbolic link to the bitcoind cookie file.
+The `bitcoin-cli` client needs to authenticate to `bitcoind` for RPC calls. The easiest way to allow this is to create a symbolic link to the cookie file.
+```bash
+~$ cd ~
+~$ ln -s /var/lib/bitcoind/.cookie .bitcoin/.cookie
+```
+It's not vital to perform this step but if not done then every `bitcoin-cli` command needs to specify the path to the cookie file as below.
+```bash
+~$ bitcoin-cli -rpccookiefile=/var/lib/bitcoind/.cookie getblockchaininfo
+```
+
+##### :thumbsup: Check
+It will take Bitcoin anywhere from a few hours to a few days to synchronise the blockchain. Use any or all of the commands below to check its status.
+
+```bash
+~$ sudo systemctl status bitcoind
+Active: active (running) since Thu 2019-05-23 18:23:48 UTC; 21min ago
+```
+
+```bash
+~$ tail /var/lib/bitcoind/debug.log -f
+20800000 log2_work=90.667233 tx=416658838 date='2019-05-23T18:46:27Z' progress=1.000000 cache=13.6MiB(103874txo) warning='32 of last 100 blocks have unexpected version'
+```
+
+```bash
+~$ bitcoin-cli getblockchaininfo
+{
+  "chain": "main",
+  "blocks": 577444,
+  "headers": 577444,
+  ...
+}
+```
+##### :thumbsup: Check Tor + Bitcoin
+If Tor was installed prior to the Bitcoin Daemon then it should have automatically registered and begun listening on a torv2 onion address (note support for torv3 onion addresses is in the [pipeline](https://gist.github.com/laanwj/4fe8470881d7b9499eedc48dc9ef1ad1#file-addrv2-mediawiki)).
+
+The easiest way to get your Bitcoin Daemon torv2 address is from the log file:
+```bash
+~$ cat /var/lib/bitcoind/debug.log | grep onion
+2019-05-23T18:24:22Z tor: Got service ID 4d4al7v4hj5p7bb6, advertising service 4d4al7v4hj5p7bb6.onion:8333
+2019-05-23T18:24:22Z AddLocal(4d4al7v4hj5p7bb6.onion:8333,4)
+```
+To change your onion address:
+```bash
+~$ rm /var/lib/bitcoind/onion_private_key
+~$ sudo systemctl restart bitcoind
+~$ cat /var/lib/bitcoind/debug.log | grep onion
+2019-05-23T19:06:30Z tor: Got service ID zrzoqb4e5bengdju, advertising service zrzoqb4e5bengdju.onion:8333
+2019-05-23T19:06:30Z AddLocal(zrzoqb4e5bengdju.onion:8333,4)
+```
+To check your onion address accessibility from a remote host with tor installed:
+```bash
+~$ torsocks --shell 
+~$ telnet 4d4al7v4hj5p7bb6.onion 8333
+ Trying 127.42.42.0...
+ Connected to 127.42.42.0.
+ Escape character is '^]'.
+~$ exit
+```
+To connect a remote `'bitcoind` to your new node:
+```bash
+~$ bitcoin-cli addnode "4d4al7v4hj5p7bb6.onion" "add"
+~$ bitcoin-cli getaddednodeinfo
+{
+   "addednode": "4d4al7v4hj5p7bb6.onion",
+   "connected": true,
+   "addresses": [
+     {
+       "address": "4d4al7v4hj5p7bb6.onion:8333",
+       "connected": "outbound"
+     }
+   ]
+ }
 ```
