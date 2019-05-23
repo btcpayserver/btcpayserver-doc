@@ -614,3 +614,41 @@ tor.v3=true
 ~$ sudo cp lnd.conf /etc/lnd
 ~$ sudo chmod 644 /etc/lnd/lnd.conf
 ```
+##### 5. Create a systemd service.
+An example systemd service file is shown below. Adjust the paths, User and Group accordingly.
+```bash
+~$ vi lnd.service
+```
+```text
+[Unit]
+Description=LND Lightning Network Daemon
+Requires=bitcoind.service
+After=bitcoind.service
+
+[Service]
+ExecStart=/usr/bin/lnd --configfile=/etc/lnd/lnd.conf
+ExecStop=/usr/bin/lncli --lnddir /var/lib/lnd stop
+PIDFile= /run/lnd/lnd.pid
+
+User=admin
+Group=admin
+
+Type=simple
+KillMode=process
+TimeoutStartSec=60
+TimeoutStopSec=60
+Restart=always
+RestartSec=60
+
+[Install]
+WantedBy=multi-user.target
+```
+```bash
+~$ sudo cp lnd.service /etc/systemd/system
+~$ sudo systemctl enable lnd
+~$ sudo systemctl start lnd
+```
+
+## Ride The Lightning (RTL)
+
+##### :truck: Install
