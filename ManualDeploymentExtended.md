@@ -121,7 +121,6 @@ Let's Encrypt is a free service for procuring and renewing TLS certificates. The
 ~$ sudo apt update
 ~$ sudo apt install certbot python-certbot-nginx
 ```
-
 ##### :black_nib: Configuration
 
 You must create an A or AAAA record for **\<your domain name\>** that points to the IP address of your server instance.
@@ -338,6 +337,7 @@ Active: active (running) since Thu 2019-05-23 18:23:48 UTC; 21min ago
 }
 ```
 ##### :thumbsup: Check Tor + Bitcoin
+
 If Tor was installed prior to the Bitcoin Daemon then it should have automatically registered and begun listening on a torv2 onion address (note support for torv3 onion addresses is in the [pipeline](https://gist.github.com/laanwj/4fe8470881d7b9499eedc48dc9ef1ad1#file-addrv2-mediawiki)).
 
 The easiest way to get your Bitcoin Daemon torv2 address is from the log file:
@@ -648,6 +648,74 @@ WantedBy=multi-user.target
 ~$ sudo systemctl enable lnd
 ~$ sudo systemctl start lnd
 ```
+##### :black_nib: Configuration
+**Running a Bitcoin Lightning daemon requires a hot wallet on your BTCPay Server.**
+Repeating for emphasis.
+**Running a Bitcoin Lightning daemon requires a hot wallet on your BTCPay Server.**
+
+With Bitcoin the protocol has evolved and deterministic key derivation means the keys for your wallet can be kept in a different location to the BTCPay Server. Lightning daemons do not have this facility so any Bitcoins committed or received in your lightning channels are controlled by the private keys in the lnd hot wallet.
+
+##### 1. Create a symbolic link to the lnd data directory.
+The install steps above use `/var/lib/lnd` as the data directory rather than the default `/home/user/.lnd`. In order to save typing when using the `lncli` client it's useful to add a symbolic directory link.
+
+```bash
+ln -s /var/lib/lnd .lnd
+```
+
+##### 2. Create Lightning wallet.
+The first time the lnd is started a new wallet must be created and the backup seed safely recorded (if someone else gets your seed they can steal your funds so keep it safe).
+```bash
+~$ lncli create
+Input wallet password:
+Confirm wallet password:
+---------------BEGIN LND CIPHER SEED---------------
+ 1. above      2. catch    3. start     4. tape
+ 5. sound      6. friend   7. water     8. royal
+ 9. solid     10. poet    11. wisdom   12. match
+13. virtual   14. zero    15. slender  16. thrive
+17. idle      18. catch   19. robot    20. clay
+21. resemble  22. angry   23. work     24. until
+---------------END LND CIPHER SEED-----------------
+```
+Note that if the symbolic directory link from the previous step was not created the command is:
+```bash
+lncli --lnddir /var/lib/lnd create
+```
+
+##### 3. Unlock the wallet.
+Every time lnd is restarted the wallet needs to be unlocked. This is not ideal for a BTCPay Server that can is designed to run unattended but Lighting is still in its infancy.
+
+```bash
+~$ lncli unlock
+```
+##### :thumbsup: Check
+```bash
+~$ lncli getinfo
+ {
+   "version": "0.6.1-beta commit=v0.6.1-beta-12-gf8c824fb1d6c5ef8524148f59ea5650af65af98b",
+   ...
+ }
+```
+Check the service:
+
+```bash
+~$ sudo journalctl -xe --unit lnd --follow
+...
+May 24 19:21:54 btc lnd[8067]: 2019-05-24 19:21:54.683 [INF] DISC: Broadcasting batch of 27 new announcements
+May 24 19:23:24 btc lnd[8067]: 2019-05-24 19:23:24.683 [INF] DISC: Broadcasting batch of 163 new announcements
+```
+
+##### :thumbsup: Check Tor + lnd
+
+As with the Bitcoin daemon if Tor is installed and the configuration file enables it (the one above does) then lnd will automatically register an onion address. In lnd's case torv3 addresses are supported. 
+
+The torv3 onion address below is a lot longer than the torv2 one from the Bitcoin daemon section (16 characters compared to 56 characters).
+
+```bash
+~$ lncli getinfo | grep onion
+"029b0e3c05595074afcffdca0fb22fb68a95a9c4698dd20962f647de4891eceabd@liyuvwbbycrvvuzcrsd5rq7svwckabejlsymcxiwzkj3smvlwcsqpjyd.onion:9735"
+```
+The Tor address created by lnd can be used to connect to other Lighting peers on the Tor network. The Tor address can work in parallel with an IPv4 or IPv6 address. To register one of those make sure the `externalip` is set in the lnd configuration file.
 
 ## Ride The Lightning (RTL)
 
