@@ -19,13 +19,15 @@ The instructions in this document were tested on Ubuntu 18.04. They should be ap
 
 ### Application Components
 
-1. Bitcoin Daemon*,
-2. NBXplorer*,
-3. BTCPay Server*,
-4. Lightning Network Daemon (lnd),
-5. Ride The Lightning (RTL).
+1. Bitcoin Daemon<sup>1</sup>,
+2. NBXplorer<sup>1,2</sup>,
+3. BTCPay Server<sup>1,2</sup>,
+4. Lightning Network Daemon (lnd)<sup>2</sup>,
+5. Ride The Lightning (RTL)<sup>2</sup>.
 
-\* The bare minimum install of a BTCPay server only requires the starred items. Using a bare minimum configuration reduces the functionality: no lightning payments, no auto-renewal of TLS certificates, less reliable data store, less capable of handling NAT and more.
+<sup>1</sup> The bare minimum install of a BTCPay server only requires the starred items. Using a bare minimum configuration reduces the functionality: no lightning payments, no auto-renewal of TLS certificates, less reliable data store, less capable of handling NAT and more.
+
+<sup>2</sup> Instructions build from source.
 
 ## Postgresql
 
@@ -548,6 +550,7 @@ Updating could break things. Be careful on a live system.
 ~$ cd ~; pushd ~/src/btcpayserver; git pull; ./build.sh; popd;
 ~$ sudo systemctl start btcpay
 ```
+
 ## Lightning Network Daemon (lnd)
 
 ##### :truck: Install
@@ -717,6 +720,137 @@ The torv3 onion address below is a lot longer than the torv2 one from the Bitcoi
 ```
 The Tor address created by lnd can be used to connect to other Lighting peers on the Tor network. The Tor address can work in parallel with an IPv4 or IPv6 address. To register one of those make sure the `externalip` is set in the lnd configuration file.
 
+#####  :rotating_light: Update
+Updating could break things. Be careful on a live system.
+```bash
+~$ sudo systemctl stop lnd
+~$ export PATH=$PATH:/usr/local/go/bin:$GOPATH/bin
+~$ export GOPATH=~/gocode
+~$ go get -d github.com/lightningnetwork/lnd
+~$ cd $GOPATH/src/github.com/lightningnetwork/lnd
+~$ make
+~$ make install # installs to /home/admin/gocode/bin which is $GOPATH/bin
+~$ lnd --version
+lnd version 0.6.1-beta commit=v0.6.1-beta-12-gf8c824fb1d6c5ef8524148f59ea5650af65af98b
+~$ sudo cp $GOPATH/bin/lnd $GOPATH/bin/lncli /usr/bin
+~$ sudo systemctl start lnd
+```
+After the daemon has been restarted the wallet needs to be unlocked:
+```bash
+~$ lncli unlock
+```
+If RTL is installed it may have stopped when lnd disappeared so it will also need to be restarted.
+```bash
+~$ sudo systemctl start rtl
+```
+
 ## Ride The Lightning (RTL)
 
+Ride the Lightning is a Node.js application to manage your Lightning peers, channels, wallet etc.
+
+The advantage of the work that has gone into BTCPay Server is that the RTL web page can be controlled and accessed in the same manner as the BTCPay site.
+
 ##### :truck: Install
+
+##### 1. Install dependencies.
+```bash
+~$ sudo apt install nodejs build-essential npm
+```
+##### 2. Build RTL.
+```bash
+~$ cd ~/src
+~$ git clone https://github.com/ShahanaFarooqui/RTL.git
+~$ cd RTL
+~$ npm install
+```
+##### 3. Create a configuration file.
+A sample RTL.conf configuration file is available [here](https://github.com/ShahanaFarooqui/RTL/blob/master/sample-RTL.conf).
+```bash
+~$ vi RTL.conf
+```
+```text
+[SSO]
+rtlSSO=0
+rtlCookiePath=/var/lib/rtl
+logoutRedirectLink=/login
+
+[Authentication]
+macaroonPath=/var/lib/lnd/data/chain/bitcoin/mainnet
+lndConfigPath=/etc/lnd/lnd.conf
+nodeAuthType=CUSTOM
+rtlPass=password
+[Settings]
+flgSidenavOpened=true
+flgSidenavPinned=true
+menu=Vertical
+menuType=Regular
+theme=dark-blue
+satsToBTC=false
+bitcoindConfigPath=/etc/bitcoin/bitcoin.conf
+enableLogging=true
+port=3000
+lndServerUrl=https://localhost:8080/v1
+```
+Note that RTL has different behaviour and requirements compared to the other services documented in theses instructions, specifically:
+ 1. The configuration file needs to exist in RTL's data directory, 
+ 2. The RTL process writes to the configuration file. The main change it will do is convert any cleartext password set with `rtlPass` to a hashed version with `rtlPassHashed`.
+ 
+```bash
+~$ sudo mkdir -p /var/lib/rtl
+~$ sudo chown admin:admin -R /var/lib/rtl
+~$ sudo cp ~/RTL.conf /var/lib/rtl
+~$ sudo chmod 644 /var/lib/rtl/RTL.conf
+```
+##### 4. Create a systemd service.
+```bash
+~$ vi rtl.service
+```
+```text
+[Unit]
+Description=Ride The Lightning
+Requires=lnd.service
+After=lnd.service
+
+[Service]
+Environment="RTL_CONFIG_PATH=/var/lib/rtl/RTL.conf"
+WorkingDirectory=/var/lib/rtl
+ExecStart=/usr/bin/node /home/admin/src/RTL/rtl
+User=admin
+Group=admin
+Type=simple
+PIDFile=/run/rtl/rtl.pid
+Restart=on-failure
+
+[Install]
+WantedBy=multi-user.target
+```
+```bash
+~$ sudo cp rtl.service /etc/systemd/system
+~$ sudo systemctl enable rtl
+~$ sudo systemctl start rtl
+```
+
+##### :thumbsup: Check
+
+Check the service:
+
+```bash
+~$ sudo journalctl -xe --unit rtl --follow
+...
+May 24 19:38:01 btc node[8072]: Console:
+May 24 19:38:01 btc node[8072]: Transactions: 10: 1558726681366: INFO: Transaction Received: {}
+```
+If it doesn't start correctly stop the service and run the application directly to get any error messages.
+```bash
+~$ sudo systemctl stop rtl
+~$ export RTL_CONFIG_PATH=/var/lib/rtl/RTL.conf; pushd ~/src/RTL; node rtl; popd;
+Server is up and running, please open the UI at http://localhost:3000
+```
+
+#####  :rotating_light: Update
+Updating could break things. Be careful on a live system.
+```bash
+~$ sudo systemctl stop rtl
+~$ cd ~; pushd ~/src/RTL; git pull; npm install; popd;
+~$ sudo systemctl start rtl
+```
