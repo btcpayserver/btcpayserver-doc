@@ -22,6 +22,10 @@ This document covers all the questions and issues related to Server Settings. Th
 * [How to allow registration on my BTCPay Server](FAQ-ServerSettings.md#how-to-allow-registration-on-my-btcpay-server)
 * [How to hide my BTCPay Server from Search Engines](FAQ-ServerSettings.md#how-to-hide-my-btcpay-server-from-search-engines)
 
+## Files
+* [How to upload files to BTCPay](FAQ-ServerSettings.md#how-to-upload-files-to-btcpay)
+
+
 ## Maintenance
    
 ### How to update BTCPay Server
@@ -154,3 +158,10 @@ To allow other users to register and use your server, in Server Settings > Polic
 Discouraging search engines from indexing your site in Server Settings > Policies, adds `<meta name="robots" content="noindex">` to your server header, which informs search engines not to index your pages. 
 
 It is up to search engines to honor this request, and may take time for your pages to disappear completely. Unfortunatelly, the exact time is beyond our control, it depends on crawl bots of particular search engine like Google.
+
+## Files
+
+### How to upload files to BTCPay
+To upload files to your BTCPay Server instance, first under Server Settings > Services, enable the External Storage feature and choose which storage service provider you would like to use. Next, go to Server Settings > Files to browse and upload local files. 
+
+Store files for use with BTCPay in Apps > Settings. You can also use the Get Temp Link feature to create temporary URLs and even enable file downloading. Note that temporary file links cannot be created with the FileStorage system type. Depending on the limitations of your storage system, you may have difficulty uploading large files. 
