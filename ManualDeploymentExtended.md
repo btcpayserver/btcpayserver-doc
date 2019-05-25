@@ -8,7 +8,7 @@ Manual installation is NOT recommended for production use unless you are very co
 
 ## Installation Steps Overview
 
-The instructions in this document were tested on Ubuntu 18.04. They should be applicable to other Linux based distributions. These instructions are based on all components executing on the same single instance. It's possible to split things up any way you wish but these instructions don't describe that.
+The instructions in this article have been tested on Ubuntu 18.04. They should be applicable to other Linux based distributions. They are also based on all components being on the same host or virtual machine. It is possible to split the components across different hosts but these instructions don't describe that.
 
 ### Prerequisites:
 
@@ -26,11 +26,11 @@ The instructions in this document were tested on Ubuntu 18.04. They should be ap
 
 <sup>1</sup> The bare minimum install of a BTCPay server only requires the starred items. Using a bare minimum configuration reduces the functionality: no lightning payments, no auto-renewal of TLS certificates, less reliable data store, less capable of handling NAT and more.
 
-<sup>2</sup> Instructions build from source.
+<sup>2</sup> Built from source code (note if you'd like to build the Bitcoin Daemon from source the instruction are [here](https://github.com/bitcoin/bitcoin/blob/master/doc/build-unix.md).
 
 ## Postgresql
 
-Postgresql can be used by BTCPay Server in place of the default SQLite file based storage.
+Postgresql can be used by BTCPay Server in place of the default SQLite file based storage. It's also possible to use MySQL.
 
 ##### :truck: Install
 
@@ -752,13 +752,17 @@ WantedBy=multi-user.target
 ~$ sudo systemctl start lnd
 ```
 ##### :black_nib: Configuration
-**Running a Bitcoin Lightning daemon requires a hot wallet on your BTCPay Server.**
-Repeating for emphasis.
+
 **Running a Bitcoin Lightning daemon requires a hot wallet on your BTCPay Server.**
 
-With Bitcoin the protocol has evolved and deterministic key derivation means the keys for your wallet can be kept in a different location to the BTCPay Server. Lightning daemons do not have this facility so any Bitcoins committed or received in your lightning channels are controlled by the private keys in the lnd hot wallet.
+Repeating for emphasis.
+
+**Running a Bitcoin Lightning daemon requires a hot wallet on your BTCPay Server.**
+
+With Bitcoin the protocol has evolved and deterministic key derivation means the keys for your wallet can be kept in a different location to the BTCPay Server. Lightning daemons do not have this facility. Any Bitcoins committed or received in your lightning channels are controlled by private keys that are on your BTCPay Server.
 
 ##### 1. Create a symbolic link to the lnd data directory.
+
 The install steps above use `/var/lib/lnd` as the data directory rather than the default `/home/user/.lnd`. In order to save typing when using the `lncli` client it's useful to add a symbolic directory link.
 
 ```bash
@@ -780,7 +784,7 @@ Confirm wallet password:
 21. resemble  22. angry   23. work     24. until
 ---------------END LND CIPHER SEED-----------------
 ```
-Note that if the symbolic directory link from the previous step was not created the command is:
+Note that if the symbolic directory link from the previous step **was not** created the command is:
 ```bash
 lncli --lnddir /var/lib/lnd create
 ```
@@ -954,3 +958,9 @@ Updating could break things. Be careful on a live system.
 ~$ cd ~; pushd ~/src/RTL; git pull; npm install; popd;
 ~$ sudo systemctl start rtl
 ```
+ 
+## :checkered_flag: The End
+
+That's all there is to it!
+
+If you were able to successfully complete the steps then you now have the equivalent of the multi-billion behemoth PayPal running on your own server.
