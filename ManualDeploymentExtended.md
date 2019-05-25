@@ -14,8 +14,7 @@ The instructions in this document were tested on Ubuntu 18.04. They should be ap
 
 1. Postgresql,
 2. Tor,
-3. NGINX.
-4. Let's Encrypt.
+3. NGINX and Let's Encrypt.
 
 ### Application Components
 
@@ -84,40 +83,25 @@ Covered further in Bitcoin and Lightning Network Daemon sections.
 
 ##### :thumbsup: Check
 ```bash
-~$ netstat -tlnp # (lines below correspond to the tor control port and SOCKS proxy)
-tcp        0      0 127.0.0.1:9050          0.0.0.0:*               LISTEN      -
-tcp        0      0 127.0.0.1:9051          0.0.0.0:*               LISTEN      -
+~$ netstat -tlnp | grep tor # (lines below correspond to the tor control port and SOCKS proxy)
+tcp        0      0 127.0.0.1:9050          0.0.0.0:*               LISTEN      1376/tor
+tcp        0      0 127.0.0.1:9051          0.0.0.0:*               LISTEN      1376/tor
 ```
 
-## NGINX
+## NGINX and Let's Encrypt
 
 NGINX is used as a web server to manage HTTP requests to BTCPay Server and Ride The Lightning. Paired with Let's Encrypt it allows seamless procurement and renewal of a TLS certificate for your BTCPay Server instance.
-
-##### :truck: Install
-
-```bash
-~$ sudo apt install nginx
-~$ sudo systemctl enable nginx
-~$ sudo systemctl start nginx
-```
-
-##### :black_nib: Configuration
-
-Covered in BTCPay Server Configuration.
-
-##### :thumbsup: Check
-
-```bash
-~$ sudo nginx -v
- nginx version: nginx/1.14.0 (Ubuntu)
-```
-
-## Let's Encrypt
 
 Let's Encrypt is a free service for procuring and renewing TLS certificates. The service comes with scripts that can be installed to automatically manage the whole process.
 
 ##### :truck: Install
 
+##### 1. Install NGINX.
+
+```bash
+~$ sudo apt install nginx
+```
+##### 2. Install Let's Encrypt
 ```bash
 ~$ sudo add-apt-repository ppa:certbot/certbot
 ~$ sudo apt update
@@ -125,16 +109,121 @@ Let's Encrypt is a free service for procuring and renewing TLS certificates. The
 ```
 ##### :black_nib: Configuration
 
+##### 1. Let's Encrypt TLS certificate.
+
 You must create an A or AAAA record for **\<your domain name\>** that points to the IP address of your server instance.
 If your server is behind NAT then you need to forward port 80 to your instance. 
 
 The **certbot** script works by checking for a specific file on the web server hosting the requested domain. If it can't get the file the TLS certificate won't be issued. If the initial attempt fails it will be periodically re-attempted or you can simply re-run the command.
 
 ```bash
-sudo certbot --nginx -d <your domain name> # (e.g: sudo certbot --nginx -d btcpaytest.sipsorcery.com)
+sudo certbot --nginx -d <your domain name> # (e.g: sudo certbot --nginx -d mainnet.demo.btcpayserver.org)
 ```
+##### 2.  Add NGINX configuration file.
 
+The configuration file below has been copied from the BTCPay Server docker install.
+
+Search for "mainnet.demo.btcpayserver.org" and replace it with your own domain name.
+
+```bash
+~$ vi default.conf
+```
+```text
+# If we receive X-Forwarded-Proto, pass it through; otherwise, pass along the
+# scheme used to connect to this server
+map $http_x_forwarded_proto $proxy_x_forwarded_proto {
+  default $http_x_forwarded_proto;
+  ''      $scheme;
+}
+# If we receive X-Forwarded-Port, pass it through; otherwise, pass along the
+# server port the client connected to
+map $http_x_forwarded_port $proxy_x_forwarded_port {
+  default $http_x_forwarded_port;
+  ''      $server_port;
+}
+# If we receive Upgrade, set Connection to "upgrade"; otherwise, delete any
+# Connection header that may have been passed to this server
+map $http_upgrade $proxy_connection {
+  default upgrade;
+  '' close;
+}
+# Apply fix for very long server names
+#server_names_hash_bucket_size 128;
+# Prevent Nginx Information Disclosure
+server_tokens off;
+# Default dhparam
+# Set appropriate X-Forwarded-Ssl header
+map $scheme $proxy_x_forwarded_ssl {
+  default off;
+  https on;
+}
+
+gzip_types text/plain text/css application/javascript application/json application/x-javascript text/xml application/xml application/xml+rss text/javascript;
+log_format vhost '$host $remote_addr - $remote_user [$time_local] '
+                 '"$request" $status $body_bytes_sent '
+                 '"$http_referer" "$http_user_agent"';
+access_log off;
+# HTTP 1.1 support
+proxy_http_version 1.1;
+proxy_buffering off;
+proxy_set_header Host $http_host;
+proxy_set_header Upgrade $http_upgrade;
+proxy_set_header Connection $proxy_connection;
+proxy_set_header X-Real-IP $remote_addr;
+proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+proxy_set_header X-Forwarded-Proto $proxy_x_forwarded_proto;
+proxy_set_header X-Forwarded-Ssl $proxy_x_forwarded_ssl;
+proxy_set_header X-Forwarded-Port $proxy_x_forwarded_port;
+# Mitigate httpoxy attack (see README for details)
+proxy_set_header Proxy "";
+
+server {
+        server_name mainnet.demo.btcpayserver.org;
+        listen 80 ;
+        access_log /var/log/nginx/access.log vhost;
+        return 301 https://$host$request_uri;
+}
+server {
+        client_max_body_size 100M;
+        server_name mainnet.demo.btcpayserver.org;
+        listen 443 ssl http2 ;
+        access_log /var/log/nginx/access.log vhost;
+        ssl_protocols TLSv1.2;
+        ssl_ciphers 'ECDHE-ECDSA-AES256-GCM-SHA384:ECDHE-RSA-AES256-GCM-SHA384:ECDHE-ECDSA-CHACHA20-POLY1305:ECDHE-RSA-CHACHA20-POLY1305:ECDHE-ECDSA-AES128-GCM-SHA256:ECDHE-RSA-AES128-GCM-SHA256:ECDHE-ECDSA-AES256-SHA384:ECDHE-RSA-AES256-SHA384:ECDHE-ECDSA-AES128-SHA256:ECDHE-RSA-AES128-SHA256';
+        ssl_prefer_server_ciphers on;
+        ssl_session_timeout 5m;
+        ssl_session_cache shared:SSL:50m;
+        ssl_session_tickets off;
+        ssl_certificate /etc/letsencrypt/live/mainnet.demo.btcpayserver.org/cert.pem;
+        ssl_certificate_key /etc/letsencrypt/live/mainnet.demo.btcpayserver.org/privkey.pem;
+        ssl_dhparam /etc/letsencrypt/ssl-dhparams.pem;
+        ssl_stapling on;
+        ssl_stapling_verify on;
+                ssl_trusted_certificate /etc/letsencrypt/live/mainnet.demo.btcpayserver.org/fullchain.pem;
+        add_header Strict-Transport-Security "max-age=31536000" always;
+        #include /etc/nginx/vhost.d/default;
+        location / {
+                proxy_pass http://127.0.0.1:23000;
+        }
+        location /lnrpc.Lightning {
+                grpc_pass grpcs://127.0.0.1:10009;
+        }
+        location /lnd-rest/btc/ {
+                rewrite ^/lnd-rest/btc/(.*) /$1 break;
+                proxy_pass https://127.0.0.1:8080/;
+        }
+        location /rtl/ {
+                proxy_pass http://127.0.0.1:3000/rtl/;
+        }
+}
+```
+```bash
+~$ sudo cp default.conf /etc/nginx/conf.d
+~$ sudo systemctl restart nginx
+```
 ##### :thumbsup: Check
+
+##### 1. Check Let's Encrypt
 
 It can be a little bit tricky to get everything set up correctly for the Let's Encrypt script to work correctly. Some additional commands are listed below to help with any troubleshooting.
 
@@ -142,18 +231,17 @@ It can be a little bit tricky to get everything set up correctly for the Let's E
 ~$ sudo certbot certificates
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 Found the following certs:
-  Certificate Name: btcpaytest.sipsorcery.com
-    Domains: btcpaytest.sipsorcery.com
+  Certificate Name: mainnet.demo.btcpayserver.org
+    Domains: mainnet.demo.btcpayserver.org
     Expiry Date: 2019-08-10 18:00:31+00:00 (VALID: 79 days)
-    Certificate Path: /etc/letsencrypt/live/btcpaytest.sipsorcery.com/fullchain.pem
-    Private Key Path: /etc/letsencrypt/live/btcpaytest.sipsorcery.com/privkey.pem
+    Certificate Path: /etc/letsencrypt/live/mainnet.demo.btcpayserver.org/fullchain.pem
+    Private Key Path: /etc/letsencrypt/live/mainnet.demo.btcpayserver.org/privkey.pem
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 ```
 ```bash
 ~$ cat /etc/cron.d/certbot # (check the cron job exists)
 0 */12 * * * root test -x /usr/bin/certbot -a \! -d /run/systemd/system && perl -e 'sleep int(rand(43200))' && certbot -q renew
 ```
-
 ```bash
 ~$ sudo tail /var/log/letsencrypt/letsencrypt.log # (check for problems)
 2019-05-22 19:36:36,062:DEBUG:certbot.main:certbot version: 0.31.0
@@ -165,10 +253,23 @@ Found the following certs:
 **          (The test certificates below have not been saved.)
 
 Congratulations, all renewals succeeded. The following certs have been renewed:
-  /etc/letsencrypt/live/btcpaytest.sipsorcery.com/fullchain.pem (success)
+  /etc/letsencrypt/live/mainnet.demo.btcpayserver.org/fullchain.pem (success)
 ** DRY RUN: simulating 'certbot renew' close to cert expiry
 **          (The test certificates above have not been saved.)
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+```
+##### 2. Check NGINX.
+```bash
+~$ sudo nginx -v
+ nginx version: nginx/1.14.0 (Ubuntu)
+```
+```bash
+~$ sudo sudo netstat -tlnp | grep nginx
+ nginx version: nginx/1.14.0 (Ubuntu)
+```
+```bash
+~$ sudo journalctl -xe --unit nginx --follow
+-- Unit nginx.service has finished starting up.
 ```
 
 ## Bitcoin Daemon
@@ -542,7 +643,6 @@ btcpay=# \dt
 btcpay=# select * from "Invoices";
 btcpay=# \q
 ```
-
 #####  :rotating_light: Update
 Updating could break things. Be careful on a live system.
 ```bash
