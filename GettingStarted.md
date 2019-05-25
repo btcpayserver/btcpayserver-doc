@@ -1,22 +1,26 @@
 # Getting Started with BTCPay Server
 
-After deployment, your BTCPay Server needs to sync the blockchain. Depending on your machine configuration, bandwidth and the number of altcoins you added, this process usually takes between 1-7 days.
+After deployment, your BTCPay Server needs to sync the blockchain. Depending on your machine configuration, bandwidth and the number of altcoins you added, this process usually takes a few days.
 
-It may seem tedious, but it's a critical step of running your own full node and not having to trust or rely on anyone. Your node will not only download 200GB of data (less if you're using a pruned node) but also validate all the rules of the consensus. You can find more information about the importance of blockchain synchronization in [this video](https://www.youtube.com/watch?v=OrYDehC-8TU).
+It may seem tedious, but it's a critical step of running your own full node and not having to trust or rely on anyone. Your node will not only download around 200GB of data (less if you're using a pruned node) but also validate all the rules of the consensus. You can find more information about the importance of blockchain synchronization in [this video](https://www.youtube.com/watch?v=OrYDehC-8TU).
 
-You will see the pop-up message showing the sync progress. When your node fully syncs, the pop-up disappears.
+Once your node begins to sync, you will see the pop-up message showing the sync progress in the right corner of your screen. When your node fully syncs, the pop-up disappears.
 
 If you're comfortable with using command line, you can use [FastSync](https://github.com/btcpayserver/btcpayserver-docker/tree/master/contrib/FastSync) and synchronize your node faster.
 
 ## Account Registration
 
+Once your nodes are fully synced, you can proceed with creating your user account.
+
 ![BTCPayRegister1](img/BTCPayRegister1.jpg)
 
-The <strong>first created account</strong> on your newly-created BTCPay Server is automatically an <strong>admin</strong>. You should register your admin account even if your node is not fully synced. 
+The <strong>first created account</strong> on a newly-created BTCPay Server is automatically <strong>admin</strong>. You can register your admin account even if your node is not fully synced. 
 
-To register, visit your BTCPay Server URL and click on the "Register" in the upper menu. Input your password and e-mail and click "Register" button. You will automatically be logged in. If you're using a third-party host, you may be asked to verify your e-mail address to register.
+To register, visit your BTCPay Server URL and click on the "Register" in the upper menu. Input your password and e-mail and click "Register" button. You will automatically be logged in. If you're using a [third-party host](ThirdPartyHosting.md), you may be asked to verify your e-mail address to register.
 
 To allow other users to access your server, you need to enable registration in Server Settings > Policies. Server admins, should also [configure SMTP settings](FAQ/FAQ-ServerSettings.md#how-to-configure-smtp-settings-in-btcpay) to allow password reset via the e-mail for themselves and other users.
+
+When you create an account, optionally, you can further enchance the security by enabling two-factor authentication (both 2FA and U2F are supported). To enable 2FA or U2F, click on the user setting icon in the header menu.
 
 ## Creating BTCPay Store
 
