@@ -4,7 +4,7 @@ This document lists steps for manually deploying BTCPay Server and additional re
 
 #### Warning: Not recommended for production use
 
-Manual installation is NOT recommended for production use unless you are very confident with your Operating System and Bitcoin security expertise. If you are unsure use [docker](https://github.com/btcpayserver/btcpayserver-docker).
+Manual installation is NOT recommended for production use unless you are very confident with your Operating System and Bitcoin security expertise. If you are unsure use the docker deployment or one of the other [deployment options](https://github.com/btcpayserver/btcpayserver-doc/blob/master/Deployment.md).
 
 ## Installation Steps Overview
 
@@ -12,21 +12,21 @@ The instructions in this article have been tested on Ubuntu 18.04. They should b
 
 ### Prerequisites:
 
-1. Postgresql,
-2. Tor,
-3. NGINX and Let's Encrypt.
+- Postgresql
+- Tor
+- NGINX and Let's Encrypt
 
 ### Application Components
 
-1. Bitcoin Daemon<sup>1</sup>,
-2. NBXplorer<sup>1,2</sup>,
-3. BTCPay Server<sup>1,2</sup>,
-4. Lightning Network Daemon (lnd)<sup>2</sup>,
-5. Ride The Lightning (RTL)<sup>2</sup>.
+- Bitcoin Daemon<sup>1</sup>
+- NBXplorer<sup>1,2</sup>
+- BTCPay Server<sup>1,2</sup>
+- Lightning Network Daemon (lnd)<sup>2</sup>
+- Ride The Lightning (RTL)<sup>2</sup>
 
-<sup>1</sup> The bare minimum install of a BTCPay server only requires the starred items. Using a bare minimum configuration reduces the functionality: no lightning payments, no auto-renewal of TLS certificates, less reliable data store, less capable of handling NAT and more.
+<sup>1</sup> The bare minimum install of a BTCPay server only requires these items. Using a bare minimum configuration reduces the functionality: no lightning payments, no auto-renewal of TLS certificates, less reliable data store, less capable of handling NAT and more.
 
-<sup>2</sup> Built from source code (note if you'd like to build the Bitcoin Daemon from source the instruction are [here](https://github.com/bitcoin/bitcoin/blob/master/doc/build-unix.md).
+<sup>2</sup> Built from source code (note if you'd like to build the Bitcoin Daemon from source the instruction are [here](https://github.com/bitcoin/bitcoin/blob/master/doc/build-unix.md)).
 
 ## Postgresql
 
@@ -119,7 +119,7 @@ The **certbot** script works by checking for a specific file on the web server h
 ```bash
 sudo certbot --nginx -d <your domain name> # (e.g: sudo certbot --nginx -d mainnet.demo.btcpayserver.org)
 ```
-##### 2.  Add NGINX configuration file.
+##### 2. Add NGINX configuration file.
 
 The configuration file below has been copied from the BTCPay Server docker install.
 
@@ -223,7 +223,7 @@ server {
 ```
 ##### :thumbsup: Check
 
-##### 1. Check Let's Encrypt
+##### 1. Check Let's Encrypt.
 
 It can be a little bit tricky to get everything set up correctly for the Let's Encrypt script to work correctly. Some additional commands are listed below to help with any troubleshooting.
 
