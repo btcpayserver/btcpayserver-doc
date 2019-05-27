@@ -10,6 +10,8 @@ Manual installation is NOT recommended for production use unless you are very co
 
 The instructions in this article have been tested on Ubuntu 18.04. They should be applicable to other Linux based distributions. They are also based on all components being on the same host or virtual machine. It is possible to split the components across different hosts but these instructions don't describe that.
 
+An example hostname of `mainnet.demo.btcpayserver.org` has been used in certain places in these instructions. It needs to be replaced with the hostname you are using for your BTCPay Server.
+
 ### Prerequisites:
 
 - Postgresql
@@ -699,7 +701,7 @@ maxlogfiles=3
 maxlogfilesize=10
 #externalip=1.1.1.1 # change to your public IP address if required.
 alias=i_luv_btcpay
-listen=0.0.0.0
+listen=0.0.0.0:9375
 
 [Bitcoin]
 bitcoin.active=1
