@@ -52,6 +52,12 @@ The rules have now been temporarily applied. To apply the rules automatically ea
 ~$ sudo apt install iptables-persistent
 ```
 
+If you subsequently change the iptables rules and want to save them across reboots use the command below.
+
+```bash
+~$ sudo netfilter-persistent save
+ ```
+
 ### Prerequisites
 
 - Postgresql
