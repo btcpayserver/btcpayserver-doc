@@ -1008,7 +1008,3 @@ Updating could break things. Be careful on a live system.
 ```
  
 ## :checkered_flag: The End
-
-That's all there is to it!
-
-If you were able to successfully complete the steps then you now have the equivalent of the multi-billion behemoth PayPal running on your own server.
