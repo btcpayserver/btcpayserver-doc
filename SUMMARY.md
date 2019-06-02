@@ -18,6 +18,7 @@
 * [Docker Deployment](DockerDeployment.md)
 * [Google Cloud Deployment](GoogleCloudDeployment.md)
 * [Manual Deployment](ManualDeployment.md)
+    * [Manual Deployment Extended](ManualDeploymentExtended.md)
 * [Hardware Deployment](HardwareDeployment.md)
 * [Raspberry Pi Deployment](RaspberryPiDeployment.md)
 * [Third-Party Hosting](ThirdPartyHosting.md)
