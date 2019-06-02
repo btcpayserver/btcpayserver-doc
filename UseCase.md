@@ -4,7 +4,7 @@ Built with the community in mind, BTCPay server is a feature-rich software with 
 
 In this guide, we will show you some of the use-cases of BTCPay, but it is by no means limited to the groups of users we mentioned.
 
-So let's have a look at what you can do with BTCPay and what are the benefits of using it.
+So let's have a look at what you can do with BTCPay and what the benefits are of using it.
 
 ![BTCPayInfographic](img/BTCPayUseCaseInfographic.png)
 
@@ -13,7 +13,7 @@ So let's have a look at what you can do with BTCPay and what are the benefits of
 By choosing BTCPay to process payments, you are:
 
 * Saving money (no fees, no subscriptions)
-* Cutting off the middle-man (Payments go directly to your wallet)
+* Cutting out the middle-man (Payments go directly to your wallet)
 * Enhancing privacy for you and your customers (no address re-use, no IP leaks to third parties)
 * Saving time (easy integration and installation)
 * Protecting yourself from interference in your business (self-sovereignty)
@@ -32,7 +32,7 @@ BTCPay checkout is no different to any other payment gateway. Your customer gets
 
 ### Physical Store
 
-For brick and mortar stores, BTCPay has a [web-based Point of Sale](https://mainnet.demo.btcpayserver.org/apps/87kj5yKay8mB4UUZcJhZH5TqDKMD3CznjwLjiu1oYZXe/pos) (POS) App which can be customized. Similarly to the online store, your customer is presented with an invoice that he can pay on the spot. You can create a watch-only wallet on your phone to be notified of the payments through the POS, without the need of any additional software. There are plans to develop the POS mobile app which would make the process even smoother.
+For brick and mortar stores, BTCPay has a [web-based Point of Sale](https://mainnet.demo.btcpayserver.org/apps/87kj5yKay8mB4UUZcJhZH5TqDKMD3CznjwLjiu1oYZXe/pos) (POS) App which can be customized. Similarly to the online store, your customer is presented with an invoice that he can pay on the spot. You can create a watch-only wallet on your phone to be notified of the payments through the POS, without the need of any additional software. There are plans to develop the POS mobile app which would make the process even smoother. The POS app can be run on any web-connected device.
 
 ### Freelancers & Bill Pay
 
@@ -51,13 +51,13 @@ Charities, non-profits, content creators, and other organizations that want to a
 Benefits of using BTCPay for accepting donations:
 
 * Saving money (no fees, no subscriptions)
-* Cutting off the middle-man (Payments go directly to your wallet)
+* Cutting out the middle-man (Payments go directly to your wallet)
 * Enhancing privacy for you and your customers (no address re-use, no IP leaks to third parties)
 
 It is particularly important to mention that BTCPay prevents address reuse, as many people has been reusing address for donations in the past. Here is why you SHOULD NOT reuse Bitcoin address:
 
-* Privacy: reusing the same address for donations not only make it incredibly easy to link it to your identity, it also compromises the privacy of your donators and every person that interacts with you
-* Security: by compromising your privacy, address reuse increases your attack surface, as people that want to steal you or harm you would have MANY information about you and your donators
+* Privacy: reusing the same address for donations not only makes it incredibly easy to link it to your identity, it also compromises the privacy of your donators and every person that interacts with you
+* Security: by compromising your privacy, address reuse increases your attack surface, as people that want to steal from you or harm you would have A LOT of information about you and your donators
 * High fees: fees for a Bitcoin transaction are calculated according to the "size" of a transaction (which has nothing to do with the amount being sent). By reusing addresses, you are building huge transactions involving many inputs, that will cost you a lot in fees when you want to move them
 
 You can read more about address reuse on the [Bitcoin Wiki](https://en.bitcoin.it/wiki/Address_reuse).
