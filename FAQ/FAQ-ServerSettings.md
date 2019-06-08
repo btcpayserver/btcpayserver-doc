@@ -126,28 +126,14 @@ If by any chance you have 2-step verification added to your gmail account, [visi
 ## Theme / Customization
 
 ### How to customize my BTCPay theme style
-Fork  BTCPay repository and apply desired design changes. Build and publish the docker image to Docker Hub. Set the `BTCPAY_IMAGE` environment variable to your docker image tag(`export BTCPAY_IMAGE="your custom btcpay docker image"`) and run the setup (`. ./btcpay-setup.sh -i`) as usual from [BTCPay Docker](https://github.com/btcpayserver/btcpayserver-docker). Modify generated docker compose to use your custom docker image. **You will need to create a new image manually and follow these steps for EACH BTCPay update so it is advised to stick with the default setup.**
+There are two ways to customize the theme of your BTCPay.
+The easy way is to head over to the **Server Settings > Theme** and follow the instructions on how to [change your Bootstrap theme](/Theme.md#bootstrap-themes).
+
+For advanced theme changes, you'll most likely need to fork  BTCPay repository and apply desired design changes. Build and publish the docker image to Docker Hub. Set the `BTCPAY_IMAGE` environment variable to your docker image tag(`export BTCPAY_IMAGE="your custom btcpay docker image"`) and run the setup (`. ./btcpay-setup.sh -i`) as usual from [BTCPay Docker](https://github.com/btcpayserver/btcpayserver-docker). Modify generated docker compose to use your custom docker image. **You will need to create a new image manually and follow these steps for EACH BTCPay update so it is advised to stick with the default setup.**
 ### How to add Google Analytics code to BTCPay
 You should be able to do what you want by injecting your GA code to ~/wwwroot/checkout/js/core.js. Might be the easiest way but you have to redo it every time you update BTCPay to the latest version. Then you won’t have the hassle of forking the code, deploying it manually. Every time there is an update. Just do the docker update and add the same lines to the js file.
-
 ### How to modify the checkout page?
-Create a new CSS Stylesheet and name it yourdomain.css on your local site. Then, add the link to the yordomain.css to your Stores > Checkout Experience.
-Create  “yourdomain.css” similar to the template below, on your local site, then add that link to your BTCPay settings.
-Here is a sample template you can use:
-```
-.top-header {background-color: #fff;}
-.top-header .timer-row__progress-bar {background:#ef8022;}
-.top-header .timer-row {background: #ffc313;}
-.payment-tabs__slider {background: #ef8022;    }
-.separatorGem {background: #ef8022;}
-.action-button {color: #fff; background-color: #ef8022;border-color: #ef8022;}
-.action-button:hover {background-color: #ffc313;}
-.action-button:focus, .action-button.focus {color: #fff;background-color: #ef8022;
-    border-color: #ef8022;}
-.action-button:active, .action-button.active, .open>.action-button.dropdown-toggle {    color: #fff;    background-color: #ef8022;    border-color: #ef8022;}
-.action-button:active:hover, .action-button:active:focus, .action-button:active.focus, .action-button.active:hover, .action-button.active:focus, .action-button.active.focus, .open>.action-button.dropdown-toggle:hover, .open>.action-button.dropdown-toggle:focus, .open>.action-button.dropdown-toggle.focus {    color: #fff;    background-color: #ef8022;    border-color: #ef8022;}
-```
-
+You can easily change the appearance of your BTCPay's checkout page by following the [instructions here](/Theme.md#checkout-page-theme)
 
 ## Policies
 
