@@ -100,6 +100,9 @@ Common problems and questions server admins have.
 * [How to allow registration on my BTCPay Server](FAQ-ServerSettings.md#how-to-allow-registration-on-my-btcpay-server)
 * [How to hide my BTCPay Server from Search Engines](FAQ-ServerSettings.md#how-to-hide-my-btcpay-server-from-search-engines)
 
+### [Services FAQ](FAQ-ServerSettings.md#services)
+* [How to remotely connect to my BTCPay full node?](FAQ-ServerSettings.md#how-to-remotely-connect-to-my-btcpay-full-node)
+
 ### [Files FAQ](FAQ-ServerSettings.md#files)
 * [How to upload files to BTCPay](FAQ-ServerSettings.md#how-to-upload-files-to-btcpay)
 

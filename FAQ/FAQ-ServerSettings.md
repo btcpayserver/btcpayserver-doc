@@ -13,7 +13,6 @@ This document covers all the questions and issues related to Server Settings. Th
 * [How to configure SMTP settings in BTCPay?](FAQ-ServerSettings.md#how-to-configure-smtp-settings-in-btcpay)
 
 ## Theme / Customization
-    
 * [How to customize my BTCPay theme style](FAQ-ServerSettings.md#how-to-customize-my-btcpay-theme-style)
 * [How to add Google Analytics code to BTCPay](FAQ-ServerSettings.md#how-to-add-google-analytics-code-to-btcpay)
 * [How to modify BTCPay checkout page](FAQ-ServerSettings.md#how-to-modify-the-checkout-page)
@@ -21,6 +20,9 @@ This document covers all the questions and issues related to Server Settings. Th
 ## Policies
 * [How to allow registration on my BTCPay Server](FAQ-ServerSettings.md#how-to-allow-registration-on-my-btcpay-server)
 * [How to hide my BTCPay Server from Search Engines](FAQ-ServerSettings.md#how-to-hide-my-btcpay-server-from-search-engines)
+
+## Services
+* [How to remotely connect to my BTCPay full node?](FAQ-ServerSettings.md#how-to-remotely-connect-to-my-btcpay-full-node)
 
 ## Files
 * [How to upload files to BTCPay](FAQ-ServerSettings.md#how-to-upload-files-to-btcpay)
@@ -144,6 +146,17 @@ To allow other users to register and use your server, in Server Settings > Polic
 Discouraging search engines from indexing your site in Server Settings > Policies, adds `<meta name="robots" content="noindex">` to your server header, which informs search engines not to index your pages. 
 
 It is up to search engines to honor this request, and may take time for your pages to disappear completely. Unfortunatelly, the exact time is beyond our control, it depends on crawl bots of particular search engine like Google.
+
+## Services
+
+### How to remotely connect to my BTCPay full node?
+
+If you're using an external wallet which allows BTC-P2P connection, you can easily connect it to your BTCPay full node. By doing this, you avoid leaking information to third-party servers and are soley relying on your own full node. 
+To connect to a compatible BTC-P2P wallet, go to **Server Settings > Services > Full node P2P** Reveal the QR code and scan it with a BTC-P2P compatible wallet, or input it by copy-pasting it.
+
+![BTC-P2P](/img/BTC-P2P.png)
+
+If you do not see Full node P2P in your Services, you probably have to [activate Tor on your server](FAQ-Deployment.md#how-do-i-activate-tor-on-my-btcpay-server).
 
 ## Files
 
