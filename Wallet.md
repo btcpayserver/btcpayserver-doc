@@ -7,9 +7,9 @@ If you're using a [third-party host](ThirdPartyHosting.md) and are asked to prov
 
 BTCPay has an **internal**, full node reliant wallet that can be accessed by clicking "Wallets" from the top menu. The reliance on the user's own full node makes the wallet more private and secure compared to any [SPV](https://en.bitcoin.it/wiki/Thin_Client_Security#Simplified_Payment_Verification_.28SPV.29) wallet.
 
-The internal wallet does not generate a private key. Users have to create their own private key externally and enter xpubkey derived from xpriv into Store Settings > Derivation scheme to activate the internal wallet. 
+The internal wallet does not generate a private key. Users have to create their own private key externally and enter the xpubkey derived from xpriv into Store Settings > Derivation scheme to activate the internal wallet. 
 
-The public key can be easily added from external wallet like Electrum by pasting it into derivation scheme field, or automatically with a compatible hardware wallet. For more information on how to add a derivation scheme to BTCPay, see the [Getting Started Guide](GettingStarted.md)
+The public key can be easily added from an external wallet like Electrum by pasting it into derivation scheme field, or automatically with a compatible hardware wallet. For more information on how to add a derivation scheme to BTCPay, see the [Getting Started Guide](GettingStarted.md)
 
 Each store and cryptocurrency have a separate wallet displayed on the Wallets page.  To access a particular wallet, select "Manage."
 
@@ -35,9 +35,9 @@ Users who own a compatible hardware wallet can use the send function to send the
 ##### Make sure no change UTXO is created (Expert mode)
 
 This option is available in the `expert mode` of the Send page.
-It is a privacy enhancing feature which is useful when you send to another of your own wallet or to an exchange. It makes sure that no change UTXO is created by **rounding up** the amount sent.
+It is a privacy enhancing feature which is useful when you send to another of your own wallets or to an exchange. It makes sure that no change UTXO is created by **rounding up** the amount sent.
 
-By default this feature is disabled, so if your wallet has an UTXO of `1.1 BTC` and you input an amount equals to `1.0 BTC`, the resulting transaction will have two outputs `0.1 BTC` of change, and `1.0 BTC` to your destination. Blockchain analysis will understand that those `0.1 BTC` of change belong to the same entity which controlled `1.1 BTC` before, and can track the future purchase you make under the same pattern.
+By default this feature is disabled, so if your wallet has a UTXO of `1.1 BTC` and you input an amount equals to `1.0 BTC`, the resulting transaction will have two outputs `0.1 BTC` of change, and `1.0 BTC` to your destination. Blockchain analysis will understand that those `0.1 BTC` of change belong to the same entity which controlled `1.1 BTC` before, and can track the future purchase you make under the same pattern.
 
 By enabling this feature, BTCPay Server wallet will round up the amount sent to `1.1 BTC` such that no change output is sent back to you.
 
@@ -50,7 +50,7 @@ The Rescan relies on Bitcoin Core 0.17.0's scantxoutset to scan the current stat
 
 Wallet re-scan solves two critical problems for BTCPay users:
 1. [Gap limit](FAQ/FAQ-Wallet.md#missing-payments-in-my-software-or-hardware-wallet)
-2. Importing previously used wallet
+2. Importing a previously used wallet
 
 **Gap limit**: Most of the wallets have the gap limit set to 20. This means that if a merchant receives 21 or more consecutive unpaid invoices, those wallets show the incorrect balance and some transactions may not be visible.
 
