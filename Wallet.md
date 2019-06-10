@@ -1,38 +1,45 @@
 # BTCPay Server Wallet
 This document explains the features of the internal BTCPay wallet. For frequently asked questions - check the [Wallets FAQ](FAQ/FAQ-Wallet.md)
 
-Note: A [private key](https://en.bitcoin.it/wiki/Private_key) (xprv) is **never** required for BTCPay to work. The software needs a public key (xpub) which is a watch-only wallet token. The xpubkey allows BTCPay to generate a new address each time a new invoice is created. It enables users to observe the wallet balance and transactions without having to share their private key.
+Note: A [private key](https://en.bitcoin.it/wiki/Private_key) (xprv) is **never** required for receiving money to a BTCPay wallet. The software needs a public key (xpubkey) which is a watch-only wallet token. The xpubkey allows BTCPay to generate a new address each time a new invoice is generated. It enables users to observe the wallet balance and transactions without having to share their private key.
 
-If you're using a [third-party host](ThirdPartyHosting.md) and are asked to provide a private key, it's certainly a scam. Never share your private key with anyone. It's called private for a reason. 
+*The wallet does not generate a private key. Users have to create their own private key externally and import an xpubkey derived from the private key into Store Settings > Derivation scheme.  The public key (xpubkey) can be imported from a compatible hardware wallet or added manually by pasting the key into the field and adding an appropriate suffix. For more information on how to add a derivation scheme to BTCPay, see the [Getting Started Guide](GettingStarted.md). If you're using a [third-party host](ThirdPartyHosting.md) and are asked to provide a private key, it's certainly a scam. Never share your private key with anyone. It's called private for a reason.*
 
-BTCPay has an **internal**, full node reliant wallet that can be accessed by clicking "Wallets" from the top menu. The reliance on the user's own full node makes the wallet more private and secure compared to any [SPV](https://en.bitcoin.it/wiki/Thin_Client_Security#Simplified_Payment_Verification_.28SPV.29) wallet.
+BTCPay's **internal**, full-node reliant wallet that can be accessed by clicking **Wallets** from the top menu. The reliance on the user's own full node makes the wallet more private and secure compared to any [SPV](https://en.bitcoin.it/wiki/Thin_Client_Security#Simplified_Payment_Verification_.28SPV.29) wallet.
 
-The internal wallet does not generate a private key. Users have to create their own private key externally and enter xpubkey derived from xpriv into Store Settings > Derivation scheme to activate the internal wallet. 
-
-The public key can be easily added from external wallet like Electrum by pasting it into derivation scheme field, or automatically with a compatible hardware wallet. For more information on how to add a derivation scheme to BTCPay, see the [Getting Started Guide](GettingStarted.md)
-
-Each store and cryptocurrency have a separate wallet displayed on the Wallets page.  To access a particular wallet, select "Manage."
+Each store and a cryptocurrency have a separate wallet displayed on the Wallets page. To access a particular wallet, click **Manage**.
 
 ![Wallets Page BTCPay](img/BTCPayWallets1.png)
 
 ### Wallet overview
 
-The wallet is minimal and easy to use. It contains several functions:
+The wallet contains following features:
 1. Transactions
 2. Send 
 3. Re-scan
+4. PSBT 
+5. Settings
 
 #### Transactions
-An overview of your incoming (green), outgoing (red) and unconfirmed (greyed out) transactions displayed together with timestamp and balances, sorted by date. Users can click on the tx ID to preview the transaction on the block explorer.
+An overview of the incoming (green), outgoing (red) and unconfirmed (greyed out) transactions displayed together with timestamp and balances, sorted by date. Users can click on the tx ID to preview the transaction on the block explorer.
 
 ![Individual Wallet](img/BTCPayWallets2.png)
 
 #### Send
-Users who own a compatible hardware wallet can use the send function to send the funds from the wallet. Quite simply, to send the funds, the user is required to sign and confirm the transaction on the hardware wallet - physically.
+
+The Send function allows spending of the funds from the BTCPay wallet.
 
 ![Send from the Wallet](img/BTCPayWallets3.png)
 
-##### Make sure no change UTXO is created (Expert mode)
+Since the wallet is not a hot wallet, in order to spend the funds, user is required to sign the transaction.  Signing can be achieved in several ways :
+
+- LedgerHardware Wallet
+- HD Private key or mnemonic seed
+- Wallet supporting PSBT
+
+##### Advanced Settings
+
+###### Make sure no change UTXO is created (Expert mode)
 
 This option is available in the `expert mode` of the Send page.
 It is a privacy enhancing feature which is useful when you send to another of your own wallet or to an exchange. It makes sure that no change UTXO is created by **rounding up** the amount sent.
