@@ -8,7 +8,7 @@ The invoices page lists the invoices from all stores and [apps](apps.md). It cum
 
 Invoices can be filtered via the quick filters located next to the search button or via the advanced filters which can be toggled by clicking the (Help) link on the top of the page. Users can filter invoices by store, order id, item id, status or a date.
 
-![Invoice Filtering](InvoiceFiltering.gif)
+![Invoice Filtering](img/InvoiceFiltering.gif)
 
 ### Invoice Export
 
