@@ -200,6 +200,12 @@ map $http_x_forwarded_proto $proxy_x_forwarded_proto {
 }
 proxy_set_header Host $http_host;
 proxy_set_header X-Forwarded-Proto $proxy_x_forwarded_proto;
+
+server_names_hash_bucket_size 128;
+proxy_buffer_size          128k;
+proxy_buffers              4 256k;
+proxy_busy_buffers_size    256k;
+http2_max_field_size       32k;
 ```
 
 If your reverse proxy is Apache 2, you need to set those two settings
