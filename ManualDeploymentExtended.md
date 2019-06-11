@@ -196,7 +196,7 @@ map $http_upgrade $proxy_connection {
   '' close;
 }
 # Apply fix for very long server names
-#server_names_hash_bucket_size 128;
+server_names_hash_bucket_size 128;
 # Prevent Nginx Information Disclosure
 server_tokens off;
 # Default dhparam
@@ -222,6 +222,10 @@ proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
 proxy_set_header X-Forwarded-Proto $proxy_x_forwarded_proto;
 proxy_set_header X-Forwarded-Ssl $proxy_x_forwarded_ssl;
 proxy_set_header X-Forwarded-Port $proxy_x_forwarded_port;
+proxy_buffer_size          128k;
+proxy_buffers              4 256k;
+proxy_busy_buffers_size    256k;
+http2_max_field_size       32k;
 # Mitigate httpoxy attack (see README for details)
 proxy_set_header Proxy "";
 

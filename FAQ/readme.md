@@ -36,6 +36,7 @@ Questions and solutions to BTCPay installation.
 * [After initial deployment, I can't register and I don't have a login yet?](FAQ-Deployment.md#after-initial-deployment-i-cant-register-and-i-dont-have-a-login-yet)
 * [With the docker deployment, how to use a different volume for the data?](FAQ-Deployment.md#with-the-docker-deployment-how-to-use-a-different-volume-for-the-data)
 * [How do I activate Tor on my BTCPay Server?](FAQ-Deployment.md#how-do-i-activate-tor-on-my-btcpay-server)
+* [How do I disable Tor on my BTCPay Server?](FAQ-Deployment.md#how-do-i-disable-tor-on-my-btcpay-server)
 * [Why activate Tor? Does it mean that nobody knows who I am?](FAQ-Deployment.md#why-activate-tor-does-it-mean-that-nobody-knows-who-i-am)
 * [How can I modify/deactivate environment variables?](FAQ-Deployment.md#How-can-i-modifydeactivate-environment-variables)
 * [Can I start BTCPay only when I'm expecting a payment?](FAQ-Deployment.md#can-i-start-btcpay-only-when-im-expecting-a-payment)
@@ -99,6 +100,9 @@ Common problems and questions server admins have.
 ### [Policies FAQ](FAQ-ServerSettings.md#policies-1)
 * [How to allow registration on my BTCPay Server](FAQ-ServerSettings.md#how-to-allow-registration-on-my-btcpay-server)
 * [How to hide my BTCPay Server from Search Engines](FAQ-ServerSettings.md#how-to-hide-my-btcpay-server-from-search-engines)
+
+### [Services FAQ](FAQ-ServerSettings.md#services)
+* [How to remotely connect to my BTCPay full node?](FAQ-ServerSettings.md#how-to-remotely-connect-to-my-btcpay-full-node)
 
 ### [Files FAQ](FAQ-ServerSettings.md#files)
 * [How to upload files to BTCPay](FAQ-ServerSettings.md#how-to-upload-files-to-btcpay)

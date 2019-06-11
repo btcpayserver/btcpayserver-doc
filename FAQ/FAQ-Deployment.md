@@ -16,6 +16,7 @@ Here are common questions about installation, regardless of the deployment metho
 * [After initial deployment, I can't register and I don't have a login yet?](FAQ-Deployment.md#after-initial-deployment-i-cant-register-and-i-dont-have-a-login-yet)
 * [With the docker deployment, how to use a different volume for the data?](FAQ-Deployment.md#with-the-docker-deployment-how-to-use-a-different-volume-for-the-data)
 * [How do I activate Tor on my BTCPay Server?](FAQ-Deployment.md#how-do-i-activate-tor-on-my-btcpay-server)
+* [How do I disable Tor on my BTCPay Server?](FAQ-Deployment.md#how-do-i-disable-tor-on-my-btcpay-server)
 * [Why activate Tor? Does it mean that nobody knows who I am?](FAQ-Deployment.md#why-activate-tor-does-it-mean-that-nobody-knows-who-i-am)
 * [How can I modify/deactivate environment variables?](FAQ-Deployment.md#How-can-i-modifydeactivate-environment-variables)
 * [Can I start BTCPay only when I'm expecting a payment?](FAQ-Deployment.md#can-i-start-btcpay-only-when-im-expecting-a-payment)
@@ -86,9 +87,13 @@ If you want to mount specific folder (like only Bitcoin node data directory), pl
 
 ### How do I activate Tor on my BTCPay Server?
 
+Tor is activated by default on the docker deployment.
+
+### How do I disable Tor on my BTCPay Server?
+
 That's really easy: just log in your instance with SSH, and enter the `root/btcpayserver-docker` directory as root. There, type the two following command lines:
 ```
-root/btcpayserver-docker $ BTCPAYGEN_ADDITIONAL_FRAGMENTS="$BTCPAYGEN_ADDITIONAL_FRAGMENTS;opt-add-tor"
+root/btcpayserver-docker $ BTCPAYGEN_EXCLUDE_FRAGMENTS="$BTCPAYGEN_EXCLUDE_FRAGMENTS;opt-add-tor"
 root/btcpayserver-docker $ . btcpay-setup.sh -i
 ```
 
@@ -195,6 +200,12 @@ map $http_x_forwarded_proto $proxy_x_forwarded_proto {
 }
 proxy_set_header Host $http_host;
 proxy_set_header X-Forwarded-Proto $proxy_x_forwarded_proto;
+
+server_names_hash_bucket_size 128;
+proxy_buffer_size          128k;
+proxy_buffers              4 256k;
+proxy_busy_buffers_size    256k;
+http2_max_field_size       32k;
 ```
 
 If your reverse proxy is Apache 2, you need to set those two settings
