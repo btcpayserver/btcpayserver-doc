@@ -1,4 +1,4 @@
-The invoices page lists the invoices from all stores and [apps](apps.md). It cumulatively sorts invoices by date and allows plenty of customization options for better management.
+The invoices page lists the invoices from all stores and [apps](apps.md) and [payment requests](http://PaymentRequests.md). It cumulatively sorts invoices by date and allows plenty of customization options for a better invoice management.
 
 ## Managing Invoices
 
