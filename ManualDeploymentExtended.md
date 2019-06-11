@@ -246,7 +246,7 @@ server {
         ssl_session_timeout 5m;
         ssl_session_cache shared:SSL:50m;
         ssl_session_tickets off;
-            ssl_certificate /etc/letsencrypt/live/mainnet.demo.btcpayserver.org/cert.pem;
+        ssl_certificate /etc/letsencrypt/live/mainnet.demo.btcpayserver.org/cert.pem;
         ssl_certificate_key /etc/letsencrypt/live/mainnet.demo.btcpayserver.org/privkey.pem;
         ssl_dhparam /etc/letsencrypt/ssl-dhparams.pem;
         ssl_stapling on;
