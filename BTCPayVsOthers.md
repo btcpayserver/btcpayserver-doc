@@ -4,7 +4,7 @@
 
 Most new merchants will likely only consider the price of the service. Since BTCPay is free, that may have led you here and if so, welcome.
 
-BTCPay is code, not a company. There is no third-party between a merchant and a customer. The merchant is always in full control of their funds. There's no processing or subscription fees. BTCPay Server is free to use and completely open-source, so developers or security auditors can always inspect the quality of the code.
+BTCPay is code, not a company. There is no third-party between a merchant and a customer. The merchant is always in full control of their funds. There are no processing or subscription fees. BTCPay Server is free to use and completely open-source, so developers or security auditors can always inspect the quality of the code.
 
 We want users to understand not only BTCPay, but also how payments can be processed on behalf of a merchant. In order to help users understand trade-offs when using various cryptocurrency payment processing methods. We don't know which payment processors provide which services. That will need to be part of your own research. The following list is a good place to start:
 
@@ -31,7 +31,7 @@ Every payment processor has features, here are some BTCPay features:
 * **Payment Buttons** - HTML embeddable donation and pay buttons.
 * **Unlimited Stores** - Merchants can process payments for their own stores, or for others.
 * **Translations** - Customers can pay in 20 different languages.
-* **Payment Requests** - Create & send an invoice requesting payment for goods or services.
+* **Payment Requests** - Create & send a long-lived invoice requesting payment for goods or services.
 
 ----
 
@@ -91,7 +91,7 @@ Many payment processors claim to have no middleman. They claim that funds go dir
 * If the payment processor has terms and conditions stating they can hold or freeze your account.
 * Fees for using the payment processor are automatically taken out from the customer's payment to the merchant.
 
-Payment processors are able act as a middleman by using a **custodial wallet**. A payment processor can use an internal custodial wallet for altering customer payments before routing them to merchants. This is how they can collect fees, hold payments for verification and processing, etc. This type of wallet is an intermediary between the merchant wallet and the customer wallet. It's the middleman wallet.
+Payment processors are able act as middlemen by using **custodial wallets**. A payment processor can use an internal custodial wallet for altering customer payments before routing them to merchants. This is how they can collect fees, hold payments for verification and processing, etc. This type of wallet is an intermediary between the merchant wallet and the customer wallet. It's the middleman wallet.
 
 The payment processor may also provide a custodial wallet for the merchant to use. As mentioned above, this is advised against because your private keys may be compromised. If they claim to not save your private keys after giving them to you, it's likely you will not know the truth until it's too late. Centralized services may seem like an easier solution for the merchant. Unfortunately the trade-off is sacrifices in privacy, security and self-sovereignty which is normally obtained using the Bitcoin Network.
 
