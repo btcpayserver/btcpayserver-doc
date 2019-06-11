@@ -10,7 +10,7 @@ BTCPay's **internal**, full-node reliant wallet that can be accessed by clicking
 
 Each store and a cryptocurrency have a separate wallet displayed on the Wallets page. To access a particular wallet, click **Manage**.
 
-![Wallets Page BTCPay](C:/Users/Pavle/Desktop/img/BTCPayWallets1.png)
+![Wallets Page BTCPay](/img/BTCPayWallets1.png)
 
 ### Wallet overview
 
@@ -26,13 +26,13 @@ The wallet contains following features:
 
 An overview of the incoming (green), outgoing (red) and unconfirmed (greyed out) transactions displayed together with timestamp and balances, sorted by date. Users can click on the tx ID to preview the transaction on the block explorer.
 
-![Individual Wallet](C:/Users/Pavle/Desktop/img/BTCPayWallets2.png)
+![Individual Wallet](/img/BTCPayWallets2.png)
 
 #### Send
 
 The Send function allows spending of the funds from the BTCPay wallet.
 
-![Send from the Wallet](C:/Users/Pavle/Desktop/img/BTCPayWallets3.png)
+![Send from the Wallet](/img/BTCPayWallets3.png)
 
 Since the wallet is not a hot wallet, in order to spend the funds, user is required to sign the transaction.  Signing can be achieved in several ways :
 
@@ -57,7 +57,7 @@ Warning: Despite the fact, in this example, that you entered `1.0` in the amount
 
 The Rescan relies on Bitcoin Core 0.17.0's scantxoutset to scan the current state of the blockchain (called UTXO Set) for coins belonging to the derivation scheme being used. 
 
-![Wallet rescan](C:/Users/Pavle/Desktop/img/BTCPayWallets4.png)
+![Wallet rescan](/img/BTCPayWallets4.png)
 
 Wallet re-scan solves two critical problems for BTCPay users:
 
@@ -68,7 +68,7 @@ Wallet re-scan solves two critical problems for BTCPay users:
 
 **Wallet import**: When users add a derivation scheme of a wallet that had transactions in the past (used wallet), BTCPay won't be able to show the balance and transactions from the past.
 
-![Wallet rescan progress](C:/Users/Pavle/Desktop/img/BTCPayWallets5.png)
+![Wallet rescan progress](/img/BTCPayWallets5.png)
 
 Re-scan is a feature that solves both of these problems. Once the scan is complete, BTCPay Server will show the correct balance, along with the past transactions of the wallet. Wallet re-scan requires access to the full node which means that this function is only available for server owners.
 
