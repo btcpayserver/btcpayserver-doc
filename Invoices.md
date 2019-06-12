@@ -1,4 +1,4 @@
-The invoices page lists the invoices from all stores and [apps](apps.md) and [payment requests](http://PaymentRequests.md). It cumulatively sorts invoices by date and allows plenty of customization options for a better invoice management.
+The invoices page lists the invoices from all stores and [apps](apps.md) and [payment requests](PaymentRequests.md). It cumulatively sorts invoices by date and allows plenty of customization options for a better invoice management.
 
 ## Managing Invoices
 
@@ -25,7 +25,7 @@ Table below lists and describes common invoice statuses in BTCPay and suggests c
 | Paid                   | Paid, but has not received sufficient amount of confirmations specified in the Store Settings | Wait for confirmations (The invoice should become - complete) |
 | Completed              | Paid, completed, received sufficient amount of confirmations | Fulfil the order                                             |
 | Expired (paidPartial)* | Paid, but not in full amount and expired                     | Contact buyer to arrange a refund or ask for them to pay their due. Optionally mark invoice as completed |
-| Paid (Paid Over)       | Paid more than the invoice amount, but has not received sufficient amount of confirmations specified in the Store Settings | Wait for confirmations. The invoice should become - Complete (Paid Over). Then, |
+| Paid (Paid Over)       | Paid more than the invoice amount, but has not received sufficient amount of confirmations specified in the Store Settings | Wait for confirmations. The invoice should become - Complete (Paid Over) |
 | Complete (Paid Over)   | Paid more than the invoice amount, completed, received sufficient amount of confirmations | Contact buyer to arrange a refund for the extra amount, or optionally wait for buyer to contact you |
 | Invalid**              | Paid, but failed to receive sufficient amount of confirmations within the time specified in store settings | Check the transaction on a blockchain explorer, if it received sufficient confirmations, mark as complete |
 
