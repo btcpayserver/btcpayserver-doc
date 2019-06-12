@@ -23,7 +23,7 @@ The fields are the following:
 | PaymentType | The type of payment (`OnChain`, `Offchain`) |
 | CryptoCode | Currency code of the method of payment (e.g. `BTC`) |
 | Paid | Amount of payment in the currency of CryptoCode |
-| NetworkFee | [Network fee](FAQ-Stores.md#add-network-fee-to-invoice-vary-with-mining-fees) paid by the user in this payment |
+| NetworkFee | [Network fee](FAQ/FAQ-Stores.md#add-network-fee-to-invoice-vary-with-mining-fees) paid by the user in this payment |
 | ConvertionRate | The conversion rate at invoice creation to convert from `CryptoCode` to `InvoiceCurrency` |
 | InvoiceCurrency | The currency of the invoice (e.g. `USD`) |
 | InvoiceDue | The amount still due to fully pay the Invoice after this payment (without `NetworkFee`, denominated in `InvoiceCurrency`) |
