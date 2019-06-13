@@ -1,4 +1,4 @@
-The invoices page lists the invoices from all stores and [apps](apps.md) and [payment requests](PaymentRequests.md). It cumulatively sorts invoices by date and allows plenty of customization options for a better invoice management.
+The invoices page lists the invoices from all stores and [apps](Apps.md) and [payment requests](PaymentRequests.md). It cumulatively sorts invoices by date and allows plenty of customization options for a better invoice management.
 
 ## Managing Invoices
 
@@ -12,7 +12,7 @@ Invoices can be filtered via the quick filters located next to the search button
 
 ### Invoice Export
 
-Invoices can be exported in CSV or JSON format. For more information about invoice export and accounting, [see this page](accounting.md).
+Invoices can be exported in CSV or JSON format. For more information about invoice export and accounting, [see this page](Accounting.md).
 
 ## Invoice Statuses
 
