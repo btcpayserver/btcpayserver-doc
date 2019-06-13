@@ -82,7 +82,8 @@ If an invoice is paid while your BTCPay server is down, the software will automa
 
 ### Features
 
-* [Internal Wallet](Wallet.md)
+* [Wallet](Wallet.md)
+* [Invoices](Invoices.md)
 * [Apps](Apps.md)
 * [Lightning Network](LightningNetwork.md)
 * [Accounting](Accounting.md)
