@@ -36,7 +36,7 @@ The Send function allows spending of the funds from the BTCPay wallet.
 
 Since the wallet is not a hot wallet, in order to spend the funds, user is required to sign the transaction.  Signing can be achieved in several ways :
 
-- LedgerHardware Wallet
+- Ledger Hardware Wallet
 - HD Private key or mnemonic seed
 - Wallet supporting PSBT
 
