@@ -40,6 +40,11 @@ Since the wallet is not a hot wallet, in order to spend the funds, user is requi
 - HD Private key or mnemonic seed
 - Wallet supporting PSBT
 
+#### Signing with Ledger Hardware wallet
+Ledger's Nano S is a hardware wallet that can be used to sign transactions in BTCPay's wallet. To understand how to configure it and use it, watch a video below.
+
+[![How to Use Ledger Nano S in BTCPay](https://img.youtube.com/vi/1Sj5mP4TkFI/mqdefault.jpg)](https://www.youtube.com/watch?v=1Sj5mP4TkFI "How to Use Ledger Nano S in BTCPay")
+
 ##### Advanced Settings
 
 ###### Make sure no change UTXO is created (Expert mode)
