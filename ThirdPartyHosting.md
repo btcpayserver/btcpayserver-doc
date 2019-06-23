@@ -33,6 +33,9 @@ Yes. Here are some restrictions.
 
 The limitations happen for technical reasons, mostly because these features require a user to run a full node to use them.
 
+*Tip: If you are owner of [c-lightning](https://github.com/ElementsProject/lightning) Lightning Node you are able to create Lightning invoices with third-party host using [lightning charge drop-in](https://github.com/ElementsProject/lightning-charge). [Add remote lightning node](LightningNetwork.md) specifying type(charge), server and api-token specific for your own server.* 
+
+
 ## Pros
 * Easy and quicker setup
 * Cheaper and in most cases free (depending if the host is premium or free)
