@@ -33,21 +33,26 @@ This document covers all the questions and issues related to Server Settings. Th
 ### How to update BTCPay Server
 
 There are 2 ways to update your BTCPay Server :
-* Updating through the front end: Server Settings > Maintenance > Update.
+1. Updating through the front end: Server Settings > Maintenance > Update.
 
 ![Updating BTCPay Server](/img/HowToUpdateBTCPayServer.png)
 
-* Updating through SSH: Login into your virtual machine with ssh, then apply following commands:
+2.Updating through SSH: Login into your virtual machine with ssh, then apply following commands:
+
 ```
 sudo su -
 btcpay-update.sh
 ```
+
 ### How can I see my BTCPay version?
 You can see your BTCPay version in the bottom right of the page footer when you're logged in as a server admin.
+
 ### How can I check my BTCPay Server version via terminal?
 In the btcpayserver-docker folder:`bitcoin-cli.sh getnetworkinfo`
+
 ### What is BTCPay SSH key file?
 BTCPay SSH key, enables users to update their server or quickly change the domain name from btcpay website, the front-end.
+
 ### Forgot BTCPay Admin password?
 You need to edit your database.
 
