@@ -32,11 +32,11 @@ As an additional aid below is a lit of iptables rules and instructions which sho
 :OUTPUT ACCEPT [0:0]
 -A INPUT -i lo -j ACCEPT
 -A INPUT -p tcp -m tcp --dport 22 -j ACCEPT
--A INPUT -p tcp -m tcp --dport 80 -j ACCEPT    
+-A INPUT -p tcp -m tcp --dport 80 -j ACCEPT
 -A INPUT -p tcp -m tcp --dport 443 -j ACCEPT
 -A INPUT -p tcp -m tcp --dport 8333 -j ACCEPT
 -A INPUT -p tcp -m tcp --dport 9375 -j ACCEPT
--A INPUT -m conntrack --ctstate ESTABLISHED,RELATED -j ACCEPT 
+-A INPUT -m conntrack --ctstate ESTABLISHED,RELATED -j ACCEPT
 COMMIT
 # Completed on Mon May 27 18:48:11 2019
 ```
@@ -56,7 +56,15 @@ If you subsequently change the iptables rules and want to save them across reboo
 
 ```bash
 ~$ sudo netfilter-persistent save
- ```
+```
+
+## Unprivileged user
+
+These instructions configure everything to run under an unprivileged user called `admin`.  Create this user before proceeding:
+
+```bash
+~$ sudo useradd -m -s /dev/null admin
+```
 
 ### Prerequisites
 
@@ -160,7 +168,7 @@ Let's Encrypt is a free service for procuring and renewing TLS certificates. The
 ##### 1. Let's Encrypt TLS certificate.
 
 You must create an A or AAAA record for **\<your domain name\>** that points to the IP address of your server instance.
-If your server is behind NAT then you need to forward port 80 to your instance. 
+If your server is behind NAT then you need to forward port 80 to your instance.
 
 The **certbot** script works by checking for a specific file on the web server hosting the requested domain. If it can't get the file the TLS certificate won't be issued. If the initial attempt fails it will be periodically re-attempted or you can simply re-run the command.
 
@@ -254,16 +262,23 @@ server {
                 ssl_trusted_certificate /etc/letsencrypt/live/mainnet.demo.btcpayserver.org/fullchain.pem;
         add_header Strict-Transport-Security "max-age=31536000" always;
         #include /etc/nginx/vhost.d/default;
+
+        # Here is the main BTCPay Server application
         location / {
                 proxy_pass http://127.0.0.1:23000;
         }
+
+        # Include the next two stanzas if and only if you want to expose your lightning gRPC & RPC interfaces to the internet
         location /lnrpc.Lightning {
                 grpc_pass grpcs://127.0.0.1:10009;
         }
+
         location /lnd-rest/btc/ {
                 rewrite ^/lnd-rest/btc/(.*) /$1 break;
                 proxy_pass https://127.0.0.1:8080/;
         }
+
+        # Include this stanza if you are planning to set up Ride The Lightning (RTL)
         location /rtl/ {
                 proxy_pass http://127.0.0.1:3000/rtl/;
         }
@@ -335,8 +350,8 @@ The gateway to the Bitcoin network for BTCPay Server components.
 ~$ wget https://bitcoincore.org/bin/bitcoin-core-0.18.0/bitcoin-0.18.0-x86_64-linux-gnu.tar.gz
 ~$ wget https://bitcoincore.org/bin/bitcoin-core-0.18.0/SHA256SUMS.asc
 ```
-##### 2. Verify the authenticity of the downloads. 
-The Bitcoin Core code signing key is currently: 
+##### 2. Verify the authenticity of the downloads.
+The Bitcoin Core code signing key is currently:
 
 >  "Wladimir J. van der Laan (Bitcoin Core binary release signing key) <laanwj@gmail.com>")
 >  public key: 01EA5486DE18A882D4C2684590C8019E36C2E964
@@ -361,7 +376,7 @@ Bitcoin Core Daemon version v0.18.0
 ##### 4. Create the configuration file.
 An example configuration file is available on the Bitcoin Core repository at https://github.com/bitcoin/bitcoin/blob/master/share/examples/bitcoin.conf.
 
-Create a bitcoin.conf file to suit your needs. An example file that is suitable for BTCPay Server is shown below. This configuration does not prune blocks which means as of May 2019 you will require 235 GB for the Bitcoin blockchain. 
+Create a bitcoin.conf file to suit your needs. An example file that is suitable for BTCPay Server is shown below. This configuration does not prune blocks which means as of May 2019 you will require 235 GB for the Bitcoin blockchain.
 ```bash
 ~$ vi bitcoin.conf
 ```
@@ -385,7 +400,7 @@ Copy the file to the directory specified in the systemd service file and assign 
 ##### 5. Create a systemd service.
 An example systemd service file is available in the Bitcoin Core  repository at https://raw.githubusercontent.com/bitcoin/bitcoin/master/contrib/init/bitcoind.service.
 
-Edit the service file depending on your needs. 
+Edit the service file depending on your needs.
 
 In the example below the **User** and **Group** have been changed and the permissions on the **ConfigurationDirectory** have been modified to make it usable without needing to explicitly set ownership see [this issue](https://github.com/bitcoin/bitcoin/pull/15995).
 
@@ -452,7 +467,7 @@ ProtectHome=true
 [Install]
 WantedBy=multi-user.target
 ```
-Once the service file is ready complete the commands below. 
+Once the service file is ready complete the commands below.
 ```bash
 ~$ sudo cp bitcoind.service /etc/systemd/system
 ~$ sudo systemctl enable bitcoind
@@ -511,7 +526,7 @@ To change your onion address:
 ```
 To check your onion address from a remote host with tor installed:
 ```bash
-~$ torsocks --shell 
+~$ torsocks --shell
 ~$ telnet 4d4al7v4hj5p7bb6.onion 8333
  Trying 127.42.42.0...
  Connected to 127.42.42.0.
@@ -609,7 +624,7 @@ Updating could break things. Be careful on a live system.
 
 ## BTCPay Server
 
-Like NBXplorer the BTCPay Server application is also dotnet core. The install steps assume dotnet core was installed in the 
+Like NBXplorer the BTCPay Server application is also dotnet core. The install steps assume dotnet core was installed in the
 previous step.
 
 ##### :truck: Install
@@ -639,6 +654,9 @@ $ vi btcpay.config
 ```text
 ### Database ###
 postgres=User ID=btcpay;Password=urpassword;Host=localhost;Port=5432;Database=btcpay;
+
+### Application ###
+rootPath="/btcpay"  # if you'd like to run BTCPay Server along side other apps
 ```
 ```bash
 ~$ sudo mkdir /etc/btcpay
@@ -734,7 +752,7 @@ lnd version 0.6.1-beta commit=v0.6.1-beta-12-gf8c824fb1d6c5ef8524148f59ea5650af6
 lnd looks for bitcoin.conf in a specific location to get necessary RPC and zeromq details.
 
 ```bash
-~$ ln -s /etc/bitcoin/bitcoin.conf ~/.bitcoin/bitcoin.conf 
+~$ ln -s /etc/bitcoin/bitcoin.conf ~/.bitcoin/bitcoin.conf
 ```
 
 ##### 4. Create a configuration file.
@@ -866,7 +884,7 @@ May 24 19:23:24 btc lnd[8067]: 2019-05-24 19:23:24.683 [INF] DISC: Broadcasting 
 
 ##### :thumbsup: Check Tor + lnd
 
-As with the Bitcoin daemon if Tor is installed and the configuration file enables it (the one above does) then lnd will automatically register an onion address. In lnd's case torv3 addresses are supported. 
+As with the Bitcoin daemon if Tor is installed and the configuration file enables it (the one above does) then lnd will automatically register an onion address. In lnd's case torv3 addresses are supported.
 
 The torv3 onion address below is a lot longer than the torv2 one from the Bitcoin daemon section (16 characters compared to 56 characters).
 
@@ -948,9 +966,9 @@ port=3000
 lndServerUrl=https://localhost:8080/v1
 ```
 Note that RTL has different behaviour and requirements compared to the other services documented in theses instructions, specifically:
- 1. The configuration file needs to exist in RTL's data directory, 
+ 1. The configuration file needs to exist in RTL's data directory,
  2. The RTL process writes to the configuration file. The main change it will do is convert any cleartext password set with `rtlPass` to a hashed version with `rtlPassHashed`.
- 
+
 ```bash
 ~$ sudo mkdir -p /var/lib/rtl
 ~$ sudo chown admin:admin -R /var/lib/rtl
@@ -1010,5 +1028,5 @@ Updating could break things. Be careful on a live system.
 ~$ cd ~; pushd ~/src/RTL; git pull; npm install; popd;
 ~$ sudo systemctl start rtl
 ```
- 
+
 ## :checkered_flag: The End
