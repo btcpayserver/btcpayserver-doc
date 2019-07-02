@@ -654,6 +654,9 @@ $ vi btcpay.config
 ```text
 ### Database ###
 postgres=User ID=btcpay;Password=urpassword;Host=localhost;Port=5432;Database=btcpay;
+
+### Application ###
+rootPath="/btcpay"  # if you'd like to run BTCPay Server along side other apps
 ```
 ```bash
 ~$ sudo mkdir /etc/btcpay
