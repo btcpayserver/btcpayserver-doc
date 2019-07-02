@@ -166,6 +166,4 @@ If you do not see Full node P2P in your Services, you probably have to [activate
 ## Files
 
 ### How to upload files to BTCPay
-To upload files to your BTCPay Server instance, first under Server Settings > Services, enable the External Storage feature and choose which storage service provider you would like to use. Next, go to Server Settings > Files to browse and upload local files. 
-
-Store files for use with BTCPay in Apps > Settings. You can also use the Get Temp Link feature to create temporary URLs and even enable file downloading. Note that temporary file links cannot be created with the FileStorage system type. Depending on the limitations of your storage system, you may have difficulty uploading large files. 
+To upload files to your BTCPay Server instance, first under Server Settings > Services, enable the External Storage feature and choose which storage service provider you would like to use. Next, go to Server Settings > Files to browse and upload local files. Depending on the limitations of your storage system, you may have difficulty uploading large files. 
