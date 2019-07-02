@@ -56,7 +56,15 @@ If you subsequently change the iptables rules and want to save them across reboo
 
 ```bash
 ~$ sudo netfilter-persistent save
- ```
+```
+
+## Unprivileged user
+
+These instructions configure everything to run under an unprivileged user called `admin`.  Create this user before proceeding:
+
+```bash
+~$ sudo useradd -m -s /dev/null admin
+```
 
 ### Prerequisites
 
