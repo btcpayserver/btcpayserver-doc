@@ -37,7 +37,7 @@ It is possible to entirely customize the checkout experience of your customer wi
 
 Go to your Store Settings, Checkout Experience, Link to a custom CSS stylesheet. Create your custom theme using these examples below:
 
-Server admins can upload their .css file to [File Storage](FAQ-ServerSettings.md#how-to-upload-files-to-btcpay) to create a CSS stylesheet link.
+Server admins can upload their .css file to [File Storage](FAQ/FAQ-ServerSettings.md#how-to-upload-files-to-btcpay) to create a CSS stylesheet link.
 
 ### Wear my liberty
 
