@@ -120,6 +120,7 @@ Store settings explained.
  * [Payment invalid if transactions fails to confirm ... minutes after invoice expiration?](FAQ-Stores.md#payment-invalid-if-transactions-fails-to-confirm--minutes-after-invoice-expiration)
  * [Consider the invoice confirmed when the payment transaction?](FAQ-Stores.md#consider-the-invoice-confirmed-when-the-payment-transaction)
  * [Consider the invoice paid even if the paid amount is ... % less than expected?](FAQ-Stores.md#consider-the-invoice-paid-even-if-the-paid-amount-is---less-than-expected)
+ * [How to disable email on invoices?](FAQ-Stores.md#how-to-disable-email-on-invoices)
 
 ## [Wallet FAQ](FAQ-Wallet.md)
 
