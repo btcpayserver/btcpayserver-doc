@@ -11,6 +11,7 @@ This page shows common issues and frequently asked questions about Stores in BTC
  * [Payment invalid if transactions fails to confirm ... minutes after invoice expiration?](FAQ-Stores.md#payment-invalid-if-transactions-fails-to-confirm--minutes-after-invoice-expiration)
  * [Consider the invoice confirmed when the payment transaction?](FAQ-Stores.md#consider-the-invoice-confirmed-when-the-payment-transaction)
  * [Consider the invoice paid even if the paid amount is ... % less than expected?](FAQ-Stores.md#consider-the-invoice-paid-even-if-the-paid-amount-is---less-than-expected)
+ * [How to disable email on invoices?](FAQ-Stores.md#how-to-disable-email-on-invoices)
 
 ## How to create a store in BTCPay?
 To create your first store, go to > Stores from the header menu and click "create a new store."
@@ -53,3 +54,6 @@ The invoice is considered "paid," as soon as it's visible on the blockchain. Whe
 
 ## Consider the invoice paid even if the paid amount is ... % less than expected
 In a situation where a customer uses an exchange wallet to pay directly for an invoice, the exchange takes a small amount of fee. This means that such invoice is not considered fully completed. The invoice gets status "paid partially." If a merchant wants to accept underpaid invoices, you can set the percentage rate here.
+
+##  How to disable email on invoices
+To disable the email requirement for your store's invoices, go to Stores > Settings > Checkout Experience > uncheck 'Requires a refund email' box. 
