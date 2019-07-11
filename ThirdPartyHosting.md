@@ -18,6 +18,7 @@ In layman words, think of this feature as a payment processor factory which allo
 * [merklesig.com](https://merklesig.com/)
 * [nodl.it](https://nodl.it)
 * [~~register.btcpal.online~~](https://register.btcpal.online)
+* [btcpayprovider.com](https://btcpayprovider.com/)
 
 Feel free to chat with the [Community](Community.md) to find the appropriate host for your needs, but also make sure to choose a host you trust. Read the rest of this document to better understand the pros and cons of using a third party host.
 
