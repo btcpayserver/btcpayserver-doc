@@ -205,7 +205,10 @@ server_names_hash_bucket_size 128;
 proxy_buffer_size          128k;
 proxy_buffers              4 256k;
 proxy_busy_buffers_size    256k;
-http2_max_field_size       32k;
+client_header_buffer_size 500k;
+large_client_header_buffers 4 500k;
+http2_max_field_size       500k;
+http2_max_header_size      500k;
 ```
 
 If your reverse proxy is Apache 2, you need to set those two settings
@@ -216,4 +219,11 @@ If your reverse proxy is Apache 2, you need to set those two settings
     ProxyPreserveHost on
 ...
 </VirtualHost>
+```
+
+You will also need those settings in the `apache2.conf` to prevent issues while signing PSBTs.
+
+```
+LimitRequestLine 500000
+LimitRequestFieldSize 500000
 ```
