@@ -167,55 +167,56 @@ The contents of this vhost file should look like this:
 server {
 	listen 80;
 
-        root /var/www/html;
-        index index.html index.htm index.nginx-debian.html;
+	root /var/www/html;
+	index index.html index.htm index.nginx-debian.html;
 
-		# Put your domain name here
-        server_name btcpay.domain.com;
+	# Put your domain name here
+	server_name btcpay.domain.com;
 
-		# Needed for Let's Encrypt verification
-        location ~ /.well-known {
-                allow all;
-        }
+	# Needed for Let's Encrypt verification
+	location ~ /.well-known {
+		allow all;
+	}
 
-		# Force HTTP to HTTPS
-        location / {
-			return 301 https://$http_host$request_uri;
-        }
+	# Force HTTP to HTTPS
+	location / {
+		return 301 https://$http_host$request_uri;
+	}
 }
 
 server {
-        listen 443 ssl http2;
+	listen 443 ssl http2;
 
-        ssl on;
+	ssl on;
         
-        # SSL certificate by Let's Encrypt in this Nginx (not using Let's Encyrpt that came with BTCPay Server Docker)
-        ssl_certificate      /etc/letsencrypt/live/btcpay.domain.com/fullchain.pem;
-        ssl_certificate_key  /etc/letsencrypt/live/btcpay.domain.com/privkey.pem;
+	# SSL certificate by Let's Encrypt in this Nginx (not using Let's Encyrpt that came with BTCPay Server Docker)
+	ssl_certificate      /etc/letsencrypt/live/btcpay.domain.com/fullchain.pem;
+	ssl_certificate_key  /etc/letsencrypt/live/btcpay.domain.com/privkey.pem;
 
-        root /var/www/html;
-        index index.html index.htm index.nginx-debian.html;
+	root /var/www/html;
+	index index.html index.htm index.nginx-debian.html;
 
-        server_name btcpay.domain.com;
+	# Put your domain name here
+	server_name btcpay.domain.com;
 
-		# Route everything to the real BTCPay server
-        location / {
-        	# URL of BTCPay Server (i.e. a Docker installation with REVERSEPROXY_HTTP_PORT set to 10080)
-			proxy_pass http://127.0.0.1:10080;
+	# Route everything to the real BTCPay server
+	location / {
+		# URL of BTCPay Server (i.e. a Docker installation with REVERSEPROXY_HTTP_PORT set to 10080)
+		proxy_pass http://127.0.0.1:10080;
 
-			proxy_set_header Host $http_host;
-			proxy_set_header X-Forwarded-Proto $scheme;
-			proxy_set_header X-Real-IP $remote_addr;
-			proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+		proxy_set_header Host $http_host;
+		proxy_set_header X-Forwarded-Proto $scheme;
+		proxy_set_header X-Real-IP $remote_addr;
+		proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
 
-			# For websockets (used by Ledger hardware wallets)
-			proxy_set_header Upgrade $http_upgrade;
-        }
+		# For websockets (used by Ledger hardware wallets)
+		proxy_set_header Upgrade $http_upgrade;
+	}
 
-		# Needed for Let's Encrypt verification
-        location ~ /.well-known {
-                allow all;
-        }
+	# Needed for Let's Encrypt verification
+	location ~ /.well-known {
+		allow all;
+	}
 }
 
 ```
