@@ -246,7 +246,9 @@ http {
 }
 ```
 
-Now test your Nginx config with `service nginx configtest` and reload the config with `service nginx reload`. 
+Now test your Nginx config with `service nginx configtest` and reload the config with `service nginx reload`.
+
+Notice: If your BTCPay Server install has more than one domain (for example `WOOCOMMERCE_HOST` or `BTCPAY_ADDITIONAL_HOSTS`) you will need to modify your config for each domain name. The example above only covers 1 domain name called `btcpay.domain.com`.
 
 
 ## Web-deployment
