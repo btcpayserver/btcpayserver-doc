@@ -2,7 +2,6 @@
 
 BTCPayServer is a project which ties together several Bitcoin-related components into a coherent user experience for installing and managing your own payment processor.
 
-![Architecture](img/Architecture.png)
 ![Stack](img/Stack.png)
 
 The minimal setup involves:
