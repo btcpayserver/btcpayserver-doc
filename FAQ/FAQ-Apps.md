@@ -11,6 +11,7 @@ This document covers frequently asked questions about the Apps in BTCPay.
 * [How to fix empty spacing around payment button](#how-to-fix-empty-spacing-around-payment-button)
 * [How to integrate WooCommerce Store in BTCPay Crowdfund app?](#how-to-integrate-woocommerce-store-into-a-btcpay-crowdfund-app)
 * [How to create Pay button with a custom amount?](#how-to-create-pay-button-with-a-custom-amount)
+* [How to map a domain name to an app?](#how-to-use-a-different-domain-name-for-a-btcpay-app)
 
 ## What are the Apps in BTCPay?
 Apps are plugins (features) you can use to expand the use case of your BTCPay.
@@ -303,3 +304,24 @@ However, you can use a work-around:
 
 ![Custom Amount Pay Button](/img/BTCPayPayButtonDynamic2.png)
 ![Custom Amount Pay Button](/img/BTCPayPayButtonDynamic.png)
+
+## How to use a different domain name for BTCPay app
+BTCPay Apps can have a domain name that's different from the servers domain. Let's assume you have BTCPay server at mybtcpayserver.com and want to display your PoS app on mybtcpaypos.com instead mybtcpayserver.com/apps/pos/abc123
+First, [configure DNS settings](/ChangeDomain.md#setting-up-your-dns-record) of mypointofsale.com and make sure it's pointing to the external ip of your BTCPay Server.
+
+Next, add additional domain or subdomain name(s) by adding a new enviroment variable through ssh:
+```
+sudo su -
+export BTCPAY_ADDITIONAL_HOSTS="mybtcpaypos.com"
+. ./btcpay-setup.sh -i
+```
+If you want to add multiple domains, you just need to update the env variables again
+```
+sudo su -
+export BTCPAY_ADDITIONAL_HOSTS="mybtcpaypos.com.,subdomain.domain2.com,domain3.com"
+. ./btcpay-setup.sh -i
+```
+Finally, in Server Settings > Policies click on the `Map specific domains to specific apps`
+![App domain mapping](/img/domainmapping1.png)
+Enter domain name, select a previously created app from the drop down menu and click `save` to map the app to specific domain.
+![App domain mapping](/img/domainmapping2.png)
