@@ -1,110 +1,144 @@
-# Raspberry Pi Deployment with Pruning and FastSync.
+# Raspberry Pi Deployment with Pruning and FastSync
 
-Andreas Antonopoulos tells us "Not your keys, not your Bitcoin".  Here's another Bitcoin axiom "Your hardware.  Your node.  Your keys.  Your Bitcoin". 
+Andreas Antonopoulos tells us "Not your keys, not your Bitcoin". Here's another Bitcoin axiom: "Your hardware. Your node. Your keys. Your Bitcoin."
 
-In order for your Bitcoin experience to be truly self-sovereign and trustless you should consider running nodes on your own hardware and internet connection. BTCPayServer is an excellent way to run both Bitcoin & Lightning nodes.  Not only are you validating transactions you also get the ability to accept base layer Bitcoin and second layer Lightning payments.  
-To that end here are instructions to install and host your very own BTCPay Server on a Raspberry Pi. 
+For your Bitcoin experience to be truly self-sovereign and trustless, you should run nodes on your own hardware and internet connection. BTCPayServer is an excellent way to run Bitcoin & Lightning nodes together. Not only are you validating transactions, you also get the ability to accept Bitcoin (layer 1) and Lightning (layer 2) payments.
 
-The process is basically the following:
+To that end, here are instructions to install and host your very own BTCPayServer on a Raspberry Pi. We call it a BTCPi.
 
-1. Purchase and assemble hardware. 
-2. Install base Operating System and configure networking.
-3. Install BTCPayServer-Docker.
+The overall process is as follows:
 
-BTCPayServer can be successfully installed on the following hardware.   
- 
-1. Raspberry Pi 3 Model B+
+1. Purchase and assemble hardware
+2. Install Raspbian Lite operating system, configure networking
+3. Install BTCPayServer-Docker
+
+BTCPayServer can be successfully installed on the following hardware:
+
+1. Raspberry Pi 3 Model B+<br/>
 ![Raspberry Pi 3 Model B+](https://www.raspberrypi.org/app/uploads/2018/03/770A5842-462x322.jpg "Raspberry Pi 3 Model B+")
-2. 64GB SanDisk Ultra Fit USB Flash Drive
-![64 GB SanDisk Ultra Fit USB Flash Drive](https://drh1.img.digitalriver.com/DRHM/Storefront/Company/sandiskus/images/product/detail/SDCZ430-210.png "SanDisk Ultra Fit USB 3.1 Flash Drive")
-3. 16 GB SanDisk Ultra MicroSDXC Card
-![16 GB SanDisk Ultra MicroSDXC Card](https://drh2.img.digitalriver.com/DRHM/Storefront/Company/sandiskus/images/product/detail/ultra-microsd-16gb-sandisk-210x210.png "16 GB SanDisk Ultra MicroSDXC Card")
 
+2. 64GB SanDisk Ultra Fit USB Flash Drive<br/>
+![64 GB SanDisk Ultra Fit USB Flash Drive](https://drh1.img.digitalriver.com/DRHM/Storefront/Company/sandiskus/images/product/detail/SDCZ430-210.png "SanDisk Ultra Fit USB 3.1 Flash Drive")
+
+3. 16 GB SanDisk Ultra MicroSDXC Card<br/>
+![16 GB SanDisk Ultra MicroSDXC Card](https://drh2.img.digitalriver.com/DRHM/Storefront/Company/sandiskus/images/product/detail/ultra-microsd-16gb-sandisk-210x210.png "16 GB SanDisk Ultra MicroSDXC Card")
 
 Other requirements are as follows:
 
-1. High speed internet connection.
+1. Internet connection
 2. Static IP
 3. Domain Name
-4. Ability to open ports (80, 443, 9735) on your router. 
+4. Ability to open ports `80`, `443`, `9735` on your router
 
-Assuming you purchased the hardware mentioned above, here are the build instructions.
+Once you have the hardware and other requirements, you're ready to begin!
 
-**Step 1** - Configure your domain name. 
-It can take several hours for DNS changes to propagate so you should do this step first.  Login to your domain registrar and point an A record from your domain to the external IP address of your internet connection.  I suggest that you use a subdomain (ie. btcpay.yourdomain.com).  To find your external IP address Google "whats my ip".  
+## Here are the setup instructions:
 
-**Step 2** - Assemble your BTCPi.  
+**Step 1** - Configure your domain name.
 
-**Step 3** - Download and extract [Raspbian Stretch Lite](https://downloads.raspberrypi.org/raspbian_lite_latest)
+Login to your domain registrar and create an `A` record pointing your domain to the external IP address of your Pi's internet connection:
 
-**Step 4** - Download and install [Etcher](https://etcher.io/).  Etcher is software that is used to flash OS images to SD cards and USB Drives. 
-In this case we will be using Etcher to flash our micro SD card with the Raspbian OS. 
+- IP Address: Visit [ipchicken.com](https://ipchicken.com) or search the web for "what's my ip" from any device on the network
+- Domain / Hostname: `btcpay.YourDomain.com`. Name the subdomain where BTCPayServer will run (e.g. `btcpay`).
+- TTL: Shortest, or Default
 
-**Step 5** - Before you plug the SD card into your Raspberry Pi create an empty file named "ssh" on the boot partition of the SD card.
+It can take several hours for DNS changes to propagate worldwide, so you should do this step first.
 
-**Step 6** - Insert your SD card and flash drive connect the network cable and power supply. 
+**Step 2** - Assemble your Pi.
 
-**Step 7** - From another computer use an SSH client (Putty) to connect to your Raspberry Pi. 
-- Hostname = raspberrypi.local
-- username=pi
-- password=raspberry 
-If "raspberrypi.local" doesn't work you will have to look up the Pi's IP address on your router. 
+**Step 3** - Get on a computer with a microSD card slot, or a USB port if you have a [USB-microSD adapter](https://www.canakit.com/mini-micro-sd-usb-reader.html). Download and extract [Raspbian Buster Lite](https://downloads.raspberrypi.org/raspbian_lite_latest) to this machine.
 
-**Important! Change your password**
+**Step 4** - On this same computer, download and install [Etcher](https://etcher.io/). Etcher is used to 'flash' Operating System disk images to SD cards and USB drives. **⚠️ 'Flashing' a drive wipes it completely; be careful**.
+
+In this case, we will be using Etcher to flash your microSD card with the downloaded Raspbian Lite OS. Plug in the microSD card, and run Etcher. Select the unzipped Raspbian OS, select your microSD card, and confirm to flash it.
+
+**Step 5** - On this same computer, **⚠️ before you plug the SD card into your Pi**, create an empty file named `ssh` in the boot partition of the SD card.
+
+- On Mac and Linux, use `touch ssh` in the card's root directory via `Terminal`
+- On Windows, use `type nul > ssh` in the card's root directory via `cmd`
+
+**Step 6** - Insert your microSD card and flash drive into the Pi; connect the network cable and power supply.
+
+**Step 7** - From another computer, use an SSH client (`ssh` on Mac and Linux, [PuTTY](https://putty.org) on Windows) to connect to your Raspberry Pi:
+
+- hostname: `raspberrypi.local`
+- username: `pi`
+- password: `raspberry`
+
+So: `ssh pi@raspberrypi.local`.
+
+If `raspberrypi.local` doesn't work, you will have to either look up the Pi's IP address on your router, or run `ifconfig` on the Pi directly for the `eth0` `inet` address.
+
+**Step 8 - ⚠️ IMPORTANT!** - Change your password:
 ```bash
 passwd
 ```
 
-**Step 8** - Give your BTCPi a static IP address on your local network and setup WiFi (optional). There are a few different ways to do this and you will find a ton of articles online. Here's a pretty simple one to follow [Setting up Raspberry Pi WiFi with Static IP on Raspbian Stretch Lite](https://electrondust.com/2017/11/25/setting-raspberry-pi-wifi-static-ip-raspbian-stretch-lite/).  To avoid conflicts with other devices on your network you should also set a "reservation" for your BTCPi. 
+**Step 9** - Give your Pi a static IP address and a DHCP reservation on your local network, via your router. Optionally, setup WiFi. There are a few different ways to do this and you will find a ton of articles online. Here's a pretty simple one to follow: [Setting up Raspberry Pi WiFi with Static IP on Raspbian Stretch Lite](https://electrondust.com/2017/11/25/setting-raspberry-pi-wifi-static-ip-raspbian-stretch-lite/).
 
-**Step 9** - Log into your router and forward ports 80, 443 and 9735 to your BTCPi's local IP address. Every router is different and you should be able to find instructions for your router by searching for "Port Forward + your router make and model". 
+To get your router's IP:
 
-**Step 10** - Install Fail2ban and GIT.  Fail2ban bans IP's that attempt to connect to your server and show malicious signs.  GIT allows you to clone and manage repositories on github.com. 
-Open a new terminal window and type the following command 
-```bash 
+- On Linux: `ip route | grep default`
+- On Mac: `netstat -nr | grep default`
+- On Windows: `ipconfig | findstr /i "Gateway"`
+
+**Step 10** - Log into your router and forward ports `80`, `443`, and `9735` to your Pi's local IP address. Every router is different and you should be able to find instructions for your router by searching the web for "Port Forwarding + {your router make and model}".
+
+**Step 11** - Install `fail2ban` and `git`.
+
+`fail2ban` bans IPs that attempt to connect to your server and show malicious signs. `git` allows you to clone and manage repositories on github.com.
+
+So, open a new terminal window and type the following command:
+```bash
 sudo apt update && sudo apt install -y fail2ban git
 ```
 
-**Step 11** - Install Uncomplicated Firewall (UFW) and allow only specific ports. UFW is a user-friendly front-end for managing iptables firewall rules and its main goal is to make managing iptables easier or as the name says uncomplicated. 
-Install UFW
+**⚠️ Note for beginners:** Run all commands in these instructions **one line at a time**!
+
+**Step 12** - Install `ufw` (Uncomplicated Firewall) and allow only specific ports. UFW is a user-friendly frontend for managing iptables firewall rules and its main goal is to make managing iptables easier, or as the name says: uncomplicated.
+
+Install UFW:
 ```bash
-sudo apt install ufw 
+sudo apt install ufw
 ```
 
-This command allows SSH connections from your LAN only. Replace 192.168.1.0 with your own subnet.
-```bash 
-sudo ufw allow from 192.168.1.0/24 to any port 22 
+This command allows SSH connections from your LAN only. Replace `192.168.1.0` with your own subnet:
+```bash
+sudo ufw allow from 192.168.1.0/24 to any port 22
 ```
 
-These ports need to be accessible from anywhere.  The default subnet is 'any' unless you specify one.
+These ports need to be accessible from anywhere (The default subnet is 'any' unless you specify one):
 ```bash
 sudo ufw allow 80
 sudo ufw allow 443
-sudo ufw allow 9735 
+sudo ufw allow 9735
 ```
 
-Verify your configuration.
+Verify your configuration:
 ```bash
-sudo ufw status 
+sudo ufw status
 ```
 
-Enable your firewall.
+Enable your firewall:
 ```bash
-sudo ufw enable 
+sudo ufw enable
 ```
 
-**Step 12** - Prepare Flash Drive. If you don't have a flash drive you can skip ahead to Step 13.
-The command 'fdisk -l' shows a list of the connected storage devices. Assuming you only have one flash drive connected it will be
-called /dev/sda.  Double check that the /dev/sda exists and the storage capacity matches your device. 
+**Step 13** - Reformat flash drive, to be configured as swap space.
 
-Delete existing partition.
+**⚠️ Warning:** Using any SD card for swap space **kills it quickly!**. Instead, use a flash drive, as the instructions discuss.
+
+The command `sudo fdisk -l` shows a list of the connected storage devices. Assuming you only have one flash drive connected, it will be
+called `/dev/sda`. Double-check that `/dev/sda` exists, and that its storage capacity matches your flash memory.
+
+Delete existing flash drive partition:
 ```bash
-sudo fdisk /dev/sda 
+sudo fdisk /dev/sda
 # Press 'd'
 # Press 'w'
 ```
 
-Create new primary partition.
+Create new primary flash drive partition:
 ```bash
 sudo fdisk /dev/sda
 # Press 'n'
@@ -115,7 +149,7 @@ sudo fdisk /dev/sda
 # Press 'w'
 ```
 
-Format partition as ext4.
+Format partition as ext4:
 ```bash
 sudo mkfs.ext4 /dev/sda1
 # Create folder for mount.
@@ -125,105 +159,118 @@ UUID="$(sudo blkid -s UUID -o value /dev/sda1)"
 # Add mount to fstab.
 echo "UUID=$UUID /mnt/usb ext4 defaults,nofail 0" | sudo tee -a /etc/fstab
 ```
-Test fstab file.
-```bash 
+
+Test changes to `fstab` file:
+```bash
 sudo mount -a
 ```
 
-Check to see if drive is mounted. 
+Verify that drive is mounted:
 ```bash
 df -h
 ```
-`/dev/sda1` should appear as mounted on `/mnt/usb`
 
-Create symlink to flash drive for Docker.
-```bash 
+`/dev/sda1` should appear as mounted on `/mnt/usb`.
+
+Create symlink to flash drive for Docker:
+```bash
 sudo mkdir /mnt/usb/docker
 sudo ln -s /mnt/usb/docker /var/lib/docker
 ```
 
-**Step 13** - Move Swapfile to USB and increase size
-```bash 
+**Step 14** - Finally, move Swapfile to USB and increase its size.
+
+Edit its configuration file:
+```bash
 sudo nano /etc/dphys-swapfile
 ```
-Change the CONF_SWAPFILE line to 
-CONF_SWAPFILE=/mnt/usb/swapfile
 
-Change the CONF_SWAPSIZE line to 
-CONF_SWAPSIZE=2048
+Change the CONF_SWAPFILE line to:
+`CONF_SWAPFILE=/mnt/usb/swapfile`
 
-Stop and restart the swapfile service
+Change the CONF_SWAPSIZE line to:
+`CONF_SWAPSIZE=2048`
+
+Stop and restart the swapfile service:
 ```bash
 sudo /etc/init.d/dphys-swapfile stop
 sudo /etc/init.d/dphys-swapfile start
 ```
 
-**Step 14** - Install BTCPayServer.  
-Run the following commands.  Make sure you change the BTCPAY_HOST parameter to your own domain name. 
+**Step 15** - Install BTCPayServer!
 
-Login as root
+Login as `root`:
 ```bash
-sudo su - 
+sudo su -
 ```
 
-Create a folder for BTCPay
+Create a folder for BTCPayServer:
 ```bash
-mkdir BTCPayServer
-cd BTCPayServer 
+mkdir btcpayserver
+cd btcpayserver
 ```
 
-Clone the btcpayserver-docker repository
+Clone the BTCPayServer-Docker repository into the folder:
 ```bash
 git clone https://github.com/btcpayserver/btcpayserver-docker
 cd btcpayserver-docker
 ```
 
-Set your environment variables. Run each command separately. 
-```bash 
-export BTCPAY_HOST="btcpay.YourDomain.com" 
+Set your environment variables. Make sure the `BTCPAY_HOST` value uses your own domain & subdomain. As usual, run each command separately:
+```bash
+export BTCPAY_HOST="btcpay.YourDomain.com"
 export NBITCOIN_NETWORK="mainnet"
 export BTCPAYGEN_CRYPTO1="btc"
 export BTCPAYGEN_REVERSEPROXY="nginx"
 export BTCPAYGEN_LIGHTNING="lnd"
-export BTCPAYGEN_ADDITIONAL_FRAGMENTS="opt-save-storage-xs;opt-save-memory" 
+export BTCPAYGEN_ADDITIONAL_FRAGMENTS="opt-save-storage-xs;opt-save-memory"
 ```
 
-The last step is to launch the BTCPayServer setup script. 
-```bash 
+Finally, run the BTCPayServer setup script:
+```bash
 . ./btcpay-setup.sh -i
 exit
 ```
 
-**Step 15** 
-Go to https://btcpay.yourdomain.com and confirm that your nodes are syncing. 
+**Step 16** - Go to `https://btcpay.YourDomain.com` and confirm that your site is up and your nodes are syncing.
 
-**Fast Sync**
-BTCPayServer's FastSync documentation is available here https://github.com/btcpayserver/btcpayserver-docker/tree/master/contrib/FastSync.
+Syncing is very slow on a Pi, since each block and transaction needs to go through validation. You can skip this, at your own risk, by using [FastSync](#Fast-Sync). Otherwise, simply leave the node running to sync to 100%; this may take weeks.
+
+**Setup Complete!**
+
+## Fast Sync
+
+BTCPayServer's complete FastSync documentation is [available here](https://github.com/btcpayserver/btcpayserver-docker/tree/master/contrib/FastSync).
+
 Please read very carefully to understand what FastSync is and why it's important to verify the UTXO set yourself.
 
-**Step 16**
-From the /root/BTCPayServer/btcpayserver-docker folder run the following commands.
+**Step 17 - OPTIONAL** - FastSync:
 
 ```bash
+cd /root/btcpayserver/btcpayserver-docker
+
 ./btcpay-down.sh
 cd contrib
 cd FastSync
 ./load-utxo-set.sh
 ```
 
-FastSync will take about 30 minutes or so depending on your download speed. After FastSync finishes run the following command.
+FastSync currently takes about 30 minutes on a high-speed internet connection. After FastSync finishes, run the following command to restart BTCPayServer:
 ```bash
+cd ../..
 ./btcpay-up.sh
 ```
 
-**Step 17**
+## Total Verification
 
-By using FastSync you are exposing yourself to attacks if a [malicious UTXO Set snapshot](https://github.com/btcpayserver/btcpayserver-docker/blob/master/contrib/FastSync/README.md#what-are-the-downsides-of-fast-sync) is sent to you.
+By using FastSync, you are exposing yourself to attacks if a [malicious UTXO Set snapshot](https://github.com/btcpayserver/btcpayserver-docker/blob/master/contrib/FastSync/README.md#what-are-the-downsides-of-fast-sync) is sent to you.
 
-If you have another trusted node somewhere else, you can check the validity of the UTXO Set used by FastSync by following [those instructions](https://github.com/btcpayserver/btcpayserver-docker/blob/master/contrib/FastSync/README.md#dont-trust-verify).
+If you have another trusted node somewhere else, you can check the validity of the UTXO Set gathered by FastSync by following [these instructions](https://github.com/btcpayserver/btcpayserver-docker/blob/master/contrib/FastSync/README.md#dont-trust-verify).
 
-Enjoy!
 
-If you don't have the time or patience to build your own BTCPB there are a few merchants who can build one for you. 
+## That's it! Enjoy your BTCPi! 🎉 🎉
+
+If you don't have the time or patience to build your own BTCPi, there are a few merchants who can build one for you:
+
 - [Lightning in a Box](https://lightninginabox.co)
 - [Nodl.it](https://nodl.it)
