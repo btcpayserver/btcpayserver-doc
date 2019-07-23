@@ -81,7 +81,7 @@ In the first step, you need to remove all the redundancies from the WordPress st
 
 Place the following custom CSS code into WordPress. Appearance > Customize > **Custom CSS**
 
-```
+```bash
 #masthead {
 	display: none;
 }
@@ -212,7 +212,7 @@ To speed up the checkout process use [WooCommerce Direct Checkout](https://wordp
 
 Insert the following code at the bottom of your child theme's **functions.php** file.
 
-```
+```bash
  * Code goes in theme functions.php.
 */
 add_action( 'after_setup_theme', 'wc_remove_frame_options_header', 11 );
@@ -227,7 +227,7 @@ If you add the php code directly into Appearance>Editor>functions.php, next time
 
 #### 3. Adding script to WordPress
 Install [Header and Footer Scripts](https://wordpress.org/plugins/header-and-footer-scripts/) plugin. Add the followig code to your header or footer. Settings > Headers and Footers Script, paste the code and save changes.
-```
+```bash
 <script>
 jQuery( document ).ready(function() {
     jQuery(".product").each(function(){
@@ -250,7 +250,7 @@ Replace it with the URL of your WooCommerce Store page.
 ![EmbedIframeCrowdfund](/img/CrowdfundCodeEmbed.png)
 
 Next, paste the following code into the **Custom CSS Code** section of your crowdfunding app:
-```
+```bash
 #crowdfund-body-header-tagline-container,
 #crowdfund-body-description-container {
     max-width: 100% !important;
@@ -310,15 +310,16 @@ BTCPay Apps can have a domain name that's different from the servers domain. Let
 First, [configure DNS settings](/ChangeDomain.md#setting-up-your-dns-record) of mypointofsale.com and make sure it's pointing to the external ip of your BTCPay Server.
 
 Next, add additional domain or subdomain name(s) by adding a new enviroment variable through ssh:
-```
+
+```bash
 sudo su -
 export BTCPAY_ADDITIONAL_HOSTS="mybtcpaypos.com"
 . ./btcpay-setup.sh -i
 ```
 If you want to add multiple domains, you just need to update the env variables again
-```
+```bash
 sudo su -
-export BTCPAY_ADDITIONAL_HOSTS="mybtcpaypos.com.,subdomain.domain2.com,domain3.com"
+export BTCPAY_ADDITIONAL_HOSTS="mybtcpaypos.com,subdomain.domain2.com,domain3.com"
 . ./btcpay-setup.sh -i
 ```
 Finally, in Server Settings > Policies click on the `Map specific domains to specific apps`
