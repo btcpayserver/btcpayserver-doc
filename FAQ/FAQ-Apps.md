@@ -81,7 +81,7 @@ In the first step, you need to remove all the redundancies from the WordPress st
 
 Place the following custom CSS code into WordPress. Appearance > Customize > **Custom CSS**
 
-```bash
+```css
 #masthead {
 	display: none;
 }
@@ -212,7 +212,7 @@ To speed up the checkout process use [WooCommerce Direct Checkout](https://wordp
 
 Insert the following code at the bottom of your child theme's **functions.php** file.
 
-```bash
+```php
  * Code goes in theme functions.php.
 */
 add_action( 'after_setup_theme', 'wc_remove_frame_options_header', 11 );
@@ -227,7 +227,7 @@ If you add the php code directly into Appearance>Editor>functions.php, next time
 
 #### 3. Adding script to WordPress
 Install [Header and Footer Scripts](https://wordpress.org/plugins/header-and-footer-scripts/) plugin. Add the followig code to your header or footer. Settings > Headers and Footers Script, paste the code and save changes.
-```bash
+```js
 <script>
 jQuery( document ).ready(function() {
     jQuery(".product").each(function(){
@@ -250,7 +250,7 @@ Replace it with the URL of your WooCommerce Store page.
 ![EmbedIframeCrowdfund](/img/CrowdfundCodeEmbed.png)
 
 Next, paste the following code into the **Custom CSS Code** section of your crowdfunding app:
-```bash
+```css
 #crowdfund-body-header-tagline-container,
 #crowdfund-body-description-container {
     max-width: 100% !important;
