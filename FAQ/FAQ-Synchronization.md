@@ -13,9 +13,11 @@ This document covers the most common questions and issues that may occur during 
 
 After deployment, your BTCPay Server needs to sync the entire blockchain and validate all the consensus rules. Depending on your machine specification, bandwidth and number of altcoins you added, this process may take between 1-5 days.
 
+It may seem tedious, but it's a critical step of running your own full node and not having to trust or rely on anyone. Your node will not only download 200GB of data (less if you're using a pruned node) but also validate all the rules of the consensus. You can find more information about the importance of blockchain synchronization in [this video](https://www.youtube.com/watch?v=OrYDehC-8TU).
+
 ## Can I skip the synchronization?
 
-There's nothing you can do to bypass the sync process. It may seem tedious, but it's a critical step of running your own full node and not having to trust or rely on anyone. Your node will not only download 200GB of data (less if you're using a pruned node) but also validate all the rules of the consensus. You can find more information about the importance of blockchain synchronization in [this video](https://www.youtube.com/watch?v=OrYDehC-8TU).
+You can't skip synchronization, but you can drastically decrease sync time. If you're comfortable with using the command line, you can use [FastSync](https://github.com/btcpayserver/btcpayserver-docker/tree/master/contrib/FastSync) to synchronize your node faster. You can also follow [this video](https://youtu.be/VNMnd-dX9Q8?t=1730). However, be sure to read the Fast Sync document to understand the potential trust issues involved with Fast Sync. 
 
 ## How do I know that BTCPay synced completely?
 

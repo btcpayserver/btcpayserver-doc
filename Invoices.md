@@ -1,0 +1,34 @@
+The invoices page lists the invoices from all stores and [apps](Apps.md) and [payment requests](PaymentRequests.md). It cumulatively sorts invoices by date and allows plenty of customization options for a better invoice management.
+
+## Managing Invoices
+
+![Invoices Interface](img/Invoices.png)
+
+### Invoice Filtering
+
+Invoices can be filtered via the quick filters located next to the search button or via the advanced filters which can be toggled by clicking the (Help) link on the top of the page. Users can filter invoices by store, order id, item id, status or a date.
+
+![Invoice Filtering](img/InvoiceFiltering.gif)
+
+### Invoice Export
+
+Invoices can be exported in CSV or JSON format. For more information about invoice export and accounting, [see this page](Accounting.md).
+
+## Invoice Statuses
+
+Table below lists and describes common invoice statuses in BTCPay and suggests common actions. Actions are just recommendations. It's up to users to define best course of action for their use-case and business.
+
+| Invoice Status         | Description                                                  | Action                                                       |
+| ---------------------- | ------------------------------------------------------------ | ------------------------------------------------------------ |
+| New                    | Not paid, invoice timer still has not expired                | None                                                         |
+| Expired                | Not paid, invoice timer expired                              | None                                                         |
+| Paid                   | Paid, but has not received sufficient amount of confirmations specified in the Store Settings | Wait for confirmations (The invoice should become - complete) |
+| Completed              | Paid, completed, received sufficient amount of confirmations | Fulfil the order                                             |
+| Expired (paidPartial)* | Paid, but not in full amount and expired                     | Contact buyer to arrange a refund or ask for them to pay their due. Optionally mark invoice as completed |
+| Paid (Paid Over)       | Paid more than the invoice amount, but has not received sufficient amount of confirmations specified in the Store Settings | Wait for confirmations. The invoice should become - Complete (Paid Over) |
+| Complete (Paid Over)   | Paid more than the invoice amount, completed, received sufficient amount of confirmations | Contact buyer to arrange a refund for the extra amount, or optionally wait for buyer to contact you |
+| Invalid**              | Paid, but failed to receive sufficient amount of confirmations within the time specified in store settings | Check the transaction on a blockchain explorer, if it received sufficient confirmations, mark as complete |
+
+* *Paid Partial invoice usually happens when a buyer pays the invoice from the exchange wallet  which takes a fee for their service and deducts it from a total. In some cases, it happens when buyer enters an  incorrect amount in their wallet.
+* **Invalid - If you're receiving a lot of invalid invoices in your store, you may want to [adjust invalid invoice time in store settings](FAQ/FAQ-Stores.md#payment-invalid-if-transactions-fails-to-confirm--minutes-after-invoice-expiration).
+* ***Note: Invoices paid via the [Lightning Network](LightningNetwork.md) immediately go to a completed state, as their confirmation is instant.

@@ -10,7 +10,7 @@ While Bitpay only allows one account for one merchant, BTCPay allows a user to m
 
 BTCPay maintains official client libraries for both [Python](https://github.com/btcpayserver/btcpay-python) and [NodeJS](https://github.com/btcpayserver/node-btcpay). 
 
-In addition, there are forked repositories of Bitpay's [PHP](https://github.com/btcpayserver/php-bitpay-client) and [Ruby](https://github.com/bitpay/ruby-client) clients.
+In addition, there are forked repositories of Bitpay's [PHP](https://github.com/btcpayserver/btcpayserver-php-client) and [Ruby](https://github.com/bitpay/ruby-client) clients.
 
 # Accessing the API Manually
 

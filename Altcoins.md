@@ -1,20 +1,22 @@
 # Altcoins
 
-Bitcoin is the only focus of the project and its core developers. However, opt in integrations for several altcoins, maintained by their respective communities are implemented:
+Bitcoin is the only focus of the project and its core developers. However, opt-in integrations are available for several altcoins:
 
-* BGold (BTG) (also known as Bitcoin Gold)
-* BPlus (XBC) (also known as Bitcoin Plus)
-* Bitcore (BTX)
-* Dash (DASH)
-* Dogecoin (DOGE)
-* Feathercoin (FTC)
-* Groestlcoin (GRS)
-* Litecoin (LTC)
-* Monacoin (MONA)
-* Polis (POLIS)
-* Viacoin (VIA)
+- BGold (BTG) (also known as Bitcoin Gold)
+- BPlus (XBC) (also known as Bitcoin Plus)
+- Bitcore (BTX)
+- Dash (DASH)
+- Dogecoin (DOGE)
+- Feathercoin (FTC)
+- Groestlcoin (GRS)
+- Litecoin (LTC)
+- Monacoin (MONA)
+- Polis (POLIS)
+- Viacoin (VIA)
 
-For more information, check [Altcoin FAQ page](FAQ/FAQ-Altcoin.md).
+Altcoins are maintained by their respective communities.
+
+For more information, check the [Altcoin FAQ page](FAQ/FAQ-Altcoin.md).
 
 ## How can I add an altcoin to BTCPayServer?
 
@@ -38,4 +40,4 @@ dotnet run
 
 This will generate your docker-compose in the `Generated` folder, which you can then run and test.
 
-Note: BTCPay developers do not implement alternative coins on request. Adding a new coin explicitly depends on the community and developers of those coins. Furthermore, BTCPay developers do not spend excessive time testing nor maintaining the altcoins. If you're submitting a PR for a new coin, make sure your image works. If the altcoin integration is not actively maintained it will be removed from BTCPay.
+Note: BTCPay developers do not implement alternative coins on request. Adding a new coin explicitly depends on the community and developers of those coins. Furthermore, BTCPay developers do not spend excessive time testing nor maintaining the altcoins. If you're submitting a PR for a new coin, make sure that your image works. If the altcoin integration is not actively maintained it will be removed from BTCPay.

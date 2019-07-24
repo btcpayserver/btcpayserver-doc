@@ -7,7 +7,7 @@
 * [Getting Started](GettingStarted.md)
 * [BTCPay vs other processors](BTCPayVsOthers.md)
 * [Try it Out](TryItOut.md)
-    
+  
 ## Deployment
 
 * [Choosing a Deployment Method](Deployment.md)
@@ -18,13 +18,15 @@
 * [Docker Deployment](DockerDeployment.md)
 * [Google Cloud Deployment](GoogleCloudDeployment.md)
 * [Manual Deployment](ManualDeployment.md)
+    * [Manual Deployment Extended](ManualDeploymentExtended.md)
 * [Hardware Deployment](HardwareDeployment.md)
 * [Raspberry Pi Deployment](RaspberryPiDeployment.md)
 * [Third-Party Hosting](ThirdPartyHosting.md)
 
 ### Features
 
-* [Internal Wallet](Wallet.md)
+* [Wallet](Wallet.md)
+* [Invoices](Invoices.md)
 * [Apps](Apps.md)
 * [Lightning Network](LightningNetwork.md)
 * [Accounting](Accounting.md)
