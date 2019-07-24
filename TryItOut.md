@@ -21,7 +21,7 @@ Let's create a testnet wallet for your store:
 
 1. Download [Electrum](https://electrum.org)
 2. Run Electrum with parameter `--testnet`
-3. Go to Wallet menu then Master Public Key, copy the whole string starting by `tpub...`
+3. Open Electrum Desktop. At the top of the screen, click “Wallet” and then “Information”. Copy the whole string starting by `tpub...`
 
 Let's configure the store so it uses your electrum wallet:
 
