@@ -213,7 +213,7 @@ To speed up the checkout process use [WooCommerce Direct Checkout](https://wordp
 Insert the following code at the bottom of your child theme's **functions.php** file.
 
 ```php
- * Code goes in theme functions.php.
+* Code goes in theme functions.php.
 */
 add_action( 'after_setup_theme', 'wc_remove_frame_options_header', 11 );
 /**
@@ -314,13 +314,13 @@ Next, add additional domain or subdomain name(s) by adding a new enviroment vari
 ```bash
 sudo su -
 export BTCPAY_ADDITIONAL_HOSTS="mybtcpaypos.com"
-. ./btcpay-setup.sh -i
+. btcpay-setup.sh -i
 ```
 If you want to add multiple domains, you just need to update the env variables again
 ```bash
 sudo su -
 export BTCPAY_ADDITIONAL_HOSTS="mybtcpaypos.com,subdomain.domain2.com,domain3.com"
-. ./btcpay-setup.sh -i
+. btcpay-setup.sh -i
 ```
 Finally, in Server Settings > Policies click on the `Map specific domains to specific apps`
 
