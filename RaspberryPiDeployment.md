@@ -142,7 +142,7 @@ sudo mkdir /mnt/usb/docker
 sudo ln -s /mnt/usb/docker /var/lib/docker
 ```
 
-**Step 13** - Move Swapfile to USB and increase size
+**Step 13** - Move Swapfile to USB and increase size.  Skip this step if using RPi4 with more than 1 GB RAM.
 ```bash 
 sudo nano /etc/dphys-swapfile
 ```
@@ -164,8 +164,7 @@ Docker-CE is not available yet for Raspbian Buster.  Until Docker is available i
 curl -fsSL https://get.docker.com|sed -e 's/buster/stretch/' > get-docker.sh
 chmod +x get-docker.sh
 ./get-docker.sh
-```bash
-
+```
 
 **Step 15** - Install BTCPayServer.  
 Run the following commands.  Make sure you change the BTCPAY_HOST parameter to your own domain name. 
