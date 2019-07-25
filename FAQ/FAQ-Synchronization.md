@@ -117,7 +117,12 @@ rm -rf /var/lib/docker/volumes/generated_bitcoin_datadir/_data
 mkdir /var/lib/docker/volumes/generated_bitcoin_datadir/_data
 btcpay-up.sh
 ```
+If the above command did not solve your issue, try:
 
+```bash
+docker exec -ti btcpayserver_bitcoind /bin/bash
+bitcoind -reindex-chainstate
+```
 ### Cause 2: You do not have enough RAM
 
 Check your RAM:
