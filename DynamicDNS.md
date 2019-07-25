@@ -56,4 +56,4 @@ BTCPAY_ADDITIONAL_HOSTS="example.ddns.net"
 . btcpay-setup.sh -i
 ```
 
-If you other hosts, separate them with `,`.
+If you have any other hosts in `BTCPAY_ADDITIONAL_HOSTS`, just separate them with `,`.
