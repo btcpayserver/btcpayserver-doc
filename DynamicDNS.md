@@ -45,3 +45,15 @@ You need to be administrator of your instance, go to Server Settings / Services 
 * Add the login and password that you created in step 1
 * Check the `enabled` box
 * Save
+
+### Step 3: Configure your BTCPay docker install to provide HTTPS certificates
+
+If you are using a docker deployment, you also need to update your BTCPayServer install.
+Connect via SSH to your instance and run:
+
+```bash
+BTCPAY_ADDITIONAL_HOSTS="example.ddns.net"
+. btcpay-setup.sh -i
+```
+
+If you other hosts, separate them with `,`.
