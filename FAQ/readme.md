@@ -145,7 +145,7 @@ Frequent questions about the applications in BTCPay.
 * [How to fix empty spacing around payment button](FAQ-Apps.md#how-to-fix-empty-spacing-around-payment-button)
 * [How to integrate WooCommerce Store in BTCPay Crowdfund app?](FAQ-Apps.md#how-to-integrate-woocommerce-store-into-a-btcpay-crowdfund-app)
 * [How to create Pay button with a custom amount?](FAQ-Apps.md#how-to-create-pay-button-with-a-custom-amount)
-* [How to map a domain name to an app?](#how-to-map-a-domain-name-to-an-app)
+* [How to map a domain name to an app?](FAQ-Apps.md#how-to-map-a-domain-name-to-an-app)
 
 ## [Lightning Network FAQ](FAQ-LightningNetwork.md)
 
