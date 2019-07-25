@@ -2,13 +2,13 @@
 
 ## Motivation
 
-You **need** Dynamic DNS Service if:
+Dynamic DNS is needed if:
 1. Install BTCPay Server on a host provider which do not provide a default domain for your server,
-2. Don't want to buy your own domain name (ie, `mybusiness.com`)
+2. You don't want to buy your own domain name (ie, `mybusiness.com`)
 3. Need to access your BTCPay Server over internet via HTTPS. (Your BTCPayServer is accessed by other internet users)
 
 Or
-1. You host BTCPayServer at home and are not guarantee to by your internet service provider to keep the same IP
+1. BTCPay Server is installed on a hosting provider which does not provide a default domain for your server.
 2. Need to access your BTCPay Server over internet via HTTPS.
 
 Then you want to use BTCPayServer Dynamic DNS service.
@@ -19,14 +19,14 @@ You **don't need** Dynamic DNS Service if:
 2. Your BTCPayServer should be only accessed by yourself (Just use Tor browser and the Tor address of you instance)
 3. Your hosting provider provide some domain name for your server by default (ie, Lunanode for example provide a subdomain of `.lndyn.com` for free, and Azure provides for `.azurewebsites.net`)
 
-A Dynamic DNS Providers allows you to have a free domain like `example.ddns.net` for your server, additionally Dynamic DNS Providers exposes a simple API to update the DNS record automatically when your BTCPayServer instance change it's external IP address.
+A Dynamic DNS Providers allows you to have a free domain like `example.ddns.net` for your server, additionally Dynamic DNS Providers exposes a simple API to update the DNS record automatically when your BTCPayServer instance change its external IP address.
 
 BTCPayServer, when configured to use Dynamic DNS, will periodically check and update the DNS record if an external IP change is detected.
 
 ## How to use
 
 ### Step 1: Create the domain
-You need first to create an account on one Dynamic DNS provider, the most popular are:
+First, create an account on a Dynamic DNS provider, the most popular providers are:
 
 * [noip](https://www.noip.com/) (free)
 * [duckdns](https://www.duckdns.org/) (free)
