@@ -325,7 +325,9 @@ export BTCPAY_ADDITIONAL_HOSTS="mybtcpaypos.com,subdomain.domain2.com,domain3.co
 Finally, in Server Settings > Policies click on the `Map specific domains to specific apps`
 
 ![App domain mapping](/img/domainmapping1.png)
+
 Enter domain name, select a previously created app from the drop down menu and click `save` to map the app to specific domain.
+
 ![App domain mapping](/img/domainmapping2.png)
 
 If for any reason, you want an app to be on the same domain as your BTCPay Server homepage, you can select to display it on the root. In that case, no DNS configuration is needed, since your domain is already pointing properly. Using an app on a root domain, means you'll have to access the log in page manually adding `Account/Login` in domain URL. We don't recommend setting up your app on a root, as it makes navigation harder.
