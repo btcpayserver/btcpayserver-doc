@@ -103,4 +103,6 @@ In Wasabi, Tools > Settings. Scroll to the bottom of the page and click `Open Co
   "PrivacyLevelStrong": 50
 }
 ```
-Replace `  "MainNetBitcoinCoreHost": "127.0.0.1",` with `  "MainNetBitcoinCoreHost": "bitcoinp2pstringgoeshere", remember to remove ``bitcoin-p2p://` part. Save the file, quit Wasabi and open it again.
+Replace ```"MainNetBitcoinCoreHost": "127.0.0.1",```
+with ``` "MainNetBitcoinCoreHost": "bitcoinp2pstringgoeshere", remember to remove ``bitcoin-p2p://``` part. 
+Save the file, quit Wasabi and open it again. That's all.
