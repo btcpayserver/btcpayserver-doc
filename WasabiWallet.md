@@ -1,0 +1,78 @@
+# Connecting Wasabi Wallet to BTCPay Server
+
+This documents shows how to connect Wasabi Wallet to BTCPay Server. 
+
+1. Create a Store in BTCPay Server
+2. [Download Wasabi Wallet](https://wasabiwallet.io/#download)
+3. Install Wasabi Wallet
+
+## Wasabi Wallet Setup
+
+After installation, open the Wasabi Wallet by clicking on the icon on your desktop.
+
+## Quick Setup
+
+1. Generate Wasabi Wallet
+2. In Wasabi, Advanced Settings > Wallet info - copy the Extended Public Key.
+3. In BTCPay Server, Store Settings > General > Derivation Scheme - Paste the Extended Public Key
+4. In Receive tab in Wasabi, generate a new address.
+5. Compare the addresses in Wasabi and BTCPay Server, they should match. 
+6. Confirm the match in BTCPay.
+
+## Step by Step
+
+![](\img\WassabiWalletSetupBTCPay1.png)
+
+Firstly, give your wallet a name, for example, `BTCPay Server Wallet` and enter the password. Make sure to remember or write down the password. Agree to Terms of Service, and click `Generate` in the right corner.
+
+![](\img\WassabiWalletSetupBTCPay2.png)
+
+**IMPORTANT NOTE:** Write down your recovery words in the order you see them on the screen. Write them down a piece of paper and store it somewhere secure. Take your time and triple check each word. Do not store your seed in a digital format (photograph, text document). Whoever has the access to your seed can access your funds. Confirm that the seed has been properly backed up.
+
+![](\img\WassabiWalletSetupBTCPay3.png)
+
+Before proceeding, it is recommended to test the password, to be sure that the wallet can be accessed without any problems.
+
+To test the password, enter it in the password field, and click `Test Password`. 
+
+![](\img\WassabiWalletSetupBTCPay4.png)
+
+The green message on the left bottom side of the screen will appear if the password is correct.  If by any chance you password is incorrect, delete the wallet and start from scratch.
+
+![WassabiWalletSetupBTCPay5](\img\WassabiWalletSetupBTCPay5.png)
+
+Upon testing the password, click on the `Load Wallet` to access your newly created wallet.
+
+![WassabiWalletSetupBTCPay6](\img\WassabiWalletSetupBTCPay6.png)
+
+When the wallet loads (it may take few moments), on the right hand sidebar, toggle the `Advanced` options and then click `Wallet Info`
+
+![WassabiWalletSetupBTCPay8](\img\WassabiWalletSetupBTCPay8.png)
+
+Select and **copy** the `Extended Account Public Key`. This is the **public** key from which BTCPay will derive addresses.
+
+![WassabiWalletSetupBTCPay9](\img\WassabiWalletSetupBTCPay9.png)
+
+Return to your BTCPay Server. Click on the `Stores` in the header menu and scroll until you see `Derivation Scheme` section. Click on the `Modify` link.
+
+![](\img\WassabiWalletSetupBTCPay10.png)
+
+Paste the `Extended Account Public Key` into derivation scheme field as it is, without adding anything else. Make sure that `Enabled` checkbox is ticked and click `Continue`.
+
+![WassabiWalletSetupBTCPay11](\img\WassabiWalletSetupBTCPay11.png)
+
+Return to the Wasabi  Wallet. Go to `Receive tab` and `generate a new address`.
+
+![WassabiWalletSetupBTCPay12](\img\WassabiWalletSetupBTCPay12.png)
+
+Compare the address you see in Wasabi Wallet to Addresses shown in BTCPay Server. If there's a match, `continue`. If there is no match, copy the address from Wasabi and paste it into `Hint Address Form`. If you still can't get the matching, double-check that you're actually pasting `Extended Account Public Key`.
+
+![WassabiWalletSetupBTCPay13](\img\WassabiWalletSetupBTCPay13.png)
+
+Wasabi and BTCPay Server are now connected. Any payments received to your BTCPay will be visible in Wasabi, where you can further spend or mix them.
+
+## Connecting Wasabi to BTCPay Server Full Node (If you're self-hosting BTCPay)
+
+After wallets are connected, it is highly-recommended to connect Wasabi to your full node in BTCPay. The process is easy, but can only be done if you self-host BTCPay and are logged in as `Admin`. Tor has to be enabled in BTCPay (it is enabled by default). This process enhances privacy even further. 
+
+In BTCPay, go Server Settings > Services > Bitcoin P2P.
