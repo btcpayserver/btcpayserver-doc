@@ -21,53 +21,53 @@ After installation, open the Wasabi Wallet by clicking on the icon on your deskt
 
 ## Step by Step
 
-![](\img\WassabiWalletSetupBTCPay1.png)
+![WasabiWallet](img\WassabiWalletSetupBTCPay1.png)
 
 Firstly, give your wallet a name, for example, `BTCPay Server Wallet` and enter the password. Make sure to remember or write down the password. Agree to Terms of Service, and click `Generate` in the right corner.
 
-![](\img\WassabiWalletSetupBTCPay2.png)
+![WasabiWallet](img\WassabiWalletSetupBTCPay2.png)
 
 **IMPORTANT NOTE:** Write down your recovery words in the order you see them on the screen. Write them down a piece of paper and store it somewhere secure. Take your time and triple check each word. Do not store your seed in a digital format (photograph, text document). Whoever has the access to your seed can access your funds. Confirm that the seed has been properly backed up.
 
-![](\img\WassabiWalletSetupBTCPay3.png)
+![WasabiWallet](img\WassabiWalletSetupBTCPay3.png)
 
 Before proceeding, it is recommended to test the password, to be sure that the wallet can be accessed without any problems.
 
 To test the password, enter it in the password field, and click `Test Password`. 
 
-![](\img\WassabiWalletSetupBTCPay4.png)
+![WasabiWallet](img\WassabiWalletSetupBTCPay4.png)
 
 The green message on the left bottom side of the screen will appear if the password is correct.  If by any chance you password is incorrect, delete the wallet and start from scratch.
 
-![WassabiWalletSetupBTCPay5](\img\WassabiWalletSetupBTCPay5.png)
+![WasabiWallet](img\WassabiWalletSetupBTCPay5.png)
 
 Upon testing the password, click on the `Load Wallet` to access your newly created wallet.
 
-![WassabiWalletSetupBTCPay6](\img\WassabiWalletSetupBTCPay6.png)
+![WasabiWallet](img\WassabiWalletSetupBTCPay6.png)
 
 When the wallet loads (it may take few moments), on the right hand sidebar, toggle the `Advanced` options and then click `Wallet Info`
 
-![WassabiWalletSetupBTCPay8](\img\WassabiWalletSetupBTCPay8.png)
+![WasabiWallet](img\WassabiWalletSetupBTCPay8.png)
 
 Select and **copy** the `Extended Account Public Key`. This is the **public** key from which BTCPay will derive addresses.
 
-![WassabiWalletSetupBTCPay9](\img\WassabiWalletSetupBTCPay9.png)
+![WasabiWallet](img\WassabiWalletSetupBTCPay9.png)
 
 Return to your BTCPay Server. Click on the `Stores` in the header menu and scroll until you see `Derivation Scheme` section. Click on the `Modify` link.
 
-![](\img\WassabiWalletSetupBTCPay10.png)
+![WasabiWallet](img\WassabiWalletSetupBTCPay10.png)
 
 Paste the `Extended Account Public Key` into derivation scheme field as it is, without adding anything else. Make sure that `Enabled` checkbox is ticked and click `Continue`.
 
-![WassabiWalletSetupBTCPay11](\img\WassabiWalletSetupBTCPay11.png)
+![WasabiWallet](img\WassabiWalletSetupBTCPay11.png)
 
 Return to the Wasabi  Wallet. Go to `Receive tab` and `generate a new address`.
 
-![WassabiWalletSetupBTCPay12](\img\WassabiWalletSetupBTCPay12.png)
+![WasabiWallet](img\WassabiWalletSetupBTCPay12.png)
 
 Compare the address you see in Wasabi Wallet to Addresses shown in BTCPay Server. If there's a match, `continue`. If there is no match, copy the address from Wasabi and paste it into `Hint Address Form`. If you still can't get the matching, double-check that you're actually pasting `Extended Account Public Key`.
 
-![WassabiWalletSetupBTCPay13](\img\WassabiWalletSetupBTCPay13.png)
+![WasabiWallet](img\WassabiWalletSetupBTCPay13.png)
 
 Wasabi and BTCPay Server are now connected. Any payments received to your BTCPay will be visible in Wasabi, where you can further spend or mix them.
 
@@ -75,4 +75,32 @@ Wasabi and BTCPay Server are now connected. Any payments received to your BTCPay
 
 After wallets are connected, it is highly-recommended to connect Wasabi to your full node in BTCPay. The process is easy, but can only be done if you self-host BTCPay and are logged in as `Admin`. Tor has to be enabled in BTCPay (it is enabled by default). This process enhances privacy even further. 
 
-In BTCPay, go Server Settings > Services > Bitcoin P2P.
+In BTCPay, go Server Settings > Services > **Full node P2P > See Information**.
+On the BTCP-P2P page, click on the `Show Confidential QR Code`. Bellow the QR Code, there's a link `See QR Code information by clicking here`, so click on the link to reveal your string. Copy the string but remove `bitcoin-p2p://` part.
+
+In Wasabi, Tools > Settings. Scroll to the bottom of the page and click `Open Config File`. The config file should look similar to this:
+
+```bash
+{
+
+  "Network": "TestNet",
+  "MainNetBackendUriV3": "http://wasabiukrxmkdgve5kynjztuovbg43uxcbcxn6y2okcrsg7gb6jdmbad.onion",
+  "TestNetBackendUriV3": "http://testwnp3fugjln6vh5vpj7mvq3lkqqwjj3c2aafyu7laxz42kgwh2rad.onion",
+  "MainNetFallbackBackendUri": "https://wasabiwallet.io",
+  "TestNetFallbackBackendUri": "https://wasabiwallet.co",
+  "RegTestBackendUriV3": "http://localhost:37127",
+  "TorHost": "127.0.0.1",
+  "TorSocks5Port": 9050,
+  "MainNetBitcoinCoreHost": "127.0.0.1",
+  "TestNetBitcoinCoreHost": "127.0.0.1",
+  "RegTestBitcoinCoreHost": "127.0.0.1",
+  "MainNetBitcoinCorePort": 8333,
+  "TestNetBitcoinCorePort": 18333,
+  "RegTestBitcoinCorePort": 18444,
+  "MixUntilAnonymitySet": 50,
+  "PrivacyLevelSome": 2,
+  "PrivacyLevelFine": 21,
+  "PrivacyLevelStrong": 50
+}
+```
+Replace `  "MainNetBitcoinCoreHost": "127.0.0.1",` with `  "MainNetBitcoinCoreHost": "bitcoinp2pstringgoeshere", remember to remove ``bitcoin-p2p://` part. Save the file, quit Wasabi and open it again.
