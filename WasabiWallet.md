@@ -17,7 +17,7 @@ After installation, open the Wasabi Wallet by clicking on the icon on your deskt
 3. In BTCPay Server, Store Settings > General > Derivation Scheme - Paste the Extended Public Key
 4. In Receive tab in Wasabi, generate a new address.
 5. Compare the addresses in Wasabi and BTCPay Server, they should match. 
-6. Confirm the address in BTCPay and Wasabi.
+6. Confirm the address match in BTCPay.
 
 ## Step by Step
 
