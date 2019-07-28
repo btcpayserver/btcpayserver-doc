@@ -69,9 +69,7 @@ Compare the address you see in Wasabi Wallet to Addresses shown in BTCPay Server
 
 ![WasabiWallet](/img/WassabiWalletSetupBTCPay13.png)
 
-Wasabi and BTCPay Server are now connected. Any payments received to your BTCPay will be visible in Wasabi, where you can further spend or mix them.
-
-## Connecting Wasabi to BTCPay Server Full Node (If you're self-hosting BTCPay)
+### Connecting Wasabi to BTCPay Server Full Node (If you're self-hosting BTCPay)
 
 After wallets are connected, it is highly-recommended to connect Wasabi to your full node in BTCPay. The process is easy, but can only be done if you self-host BTCPay and are logged in as `Admin`. Tor has to be enabled in BTCPay (it is enabled by default). This process enhances privacy even further. 
 
@@ -112,4 +110,15 @@ with
 "MainNetBitcoinCoreHost": "bitcoinp2pstringgoeshere"
 ```
 Remember to remove `bitcoin-p2p://` from the string. 
-Save the file, quit Wasabi and open it again. That's all.
+Save the file, quit Wasabi and open it again. That's it.
+
+### Configuring the Gap Limit in Wasabi
+
+In the top menu, select click on the `File > Open > Wallets Folder`. Shortly the `json` file will be shown in a sub-folder. Open that file with a text editor like notepad.
+Locate `"MinGapLimit": 21,` change it to `"MinGapLimit": 100,` and save the file.
+
+There's no good answer to how much you should set the gap limit to. Most merchants set 100-200. If you're a big merchants with high transaction volume, you can try with even higher gap limit.
+
+For more details about the [Gap Limit, check the FAQ](FAQ/FAQ-Wallet.md#missing-payments-in-my-software-or-hardware-wallet).
+
+Wasabi Wallet and BTCPay Server are now connected. Any payments received to your BTCPay will be visible in Wasabi, where you can further spend or mix them.
