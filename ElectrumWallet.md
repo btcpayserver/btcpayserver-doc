@@ -2,6 +2,12 @@
 
 This documents shows how to connect Electrum Wallet to BTCPay Server. 
 
+**Word of caution** Using Electrum wallet relies on servers that are controlled by third-parties. Informations, like public adresses, balances and the transacted amount can potentially be leaked. To protect against such leaks, you can setup your own [Electrum Personnal Server](https://github.com/chris-belcher/electrum-personal-server),  which is technically advanced task not covered in this document. W
+
+For a better privacy use [BTCPay Wallet](Wallet.md) with a compatible hardware wallet or [Wassabi](WasabiWallet.md).
+
+If you understood the risks, but still want to proceed using Electrum, follow the instructions below.
+
 1. Create a Store in BTCPay Server
 2. [Download](https://electrum.org/#download) and install Electrum Wallet
 
