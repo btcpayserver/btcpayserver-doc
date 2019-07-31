@@ -37,7 +37,7 @@ To test the password, enter it in the password field, and click `Test Password`.
 
 ![WasabiWallet](/img/WassabiWalletSetupBTCPay4.png)
 
-The green message on the left bottom side of the screen will appear if the password is correct.  If by any chance you password is incorrect, delete the wallet and start from scratch.
+The green message on the left bottom side of the screen will appear if the password is correct.  If by any chance your password is incorrect, delete the wallet and start from scratch.
 
 ![WasabiWallet](/img/WassabiWalletSetupBTCPay5.png)
 
@@ -117,7 +117,7 @@ Save the file, quit Wasabi and open it again. That's it.
 In the top menu, select click on the `File > Open > Wallets Folder`. Shortly the `json` file will be shown in a sub-folder. Open that file with a text editor like notepad.
 Locate `"MinGapLimit": 21,` change it to `"MinGapLimit": 100,` and save the file.
 
-There's no good answer to how much you should set the gap limit to. Most merchants set 100-200. If you're a big merchants with high transaction volume, you can try with even higher gap limit.
+There's no good answer to how much you should set the gap limit to. Most merchants set 100-200. If you're a big merchant with high transaction volume, you can try with even higher gap limit.
 
 For more details about the [Gap Limit, check the FAQ](FAQ/FAQ-Wallet.md#missing-payments-in-my-software-or-hardware-wallet).
 
