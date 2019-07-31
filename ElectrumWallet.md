@@ -30,55 +30,55 @@ The following setup guides you through setting up an entirely new Bech32(SegWit)
 
 Firstly, give your wallet a name, for example, `BTCPay Server Wallet` and click `Next`.
 
-![ElectrumWallet]()
+![ElectrumWallet](img/ElectrumWallet1.png)
 
 Choose `Standard wallet` and proceed by clicking the `Next`button.
 
-![ElectrumWallet](C:/Users/Pavle/Desktop/img/ElectrumWallet2.png)
+![ElectrumWallet](img/ElectrumWallet2.png)
 
 Since we're creating a brand-new wallet,choose  `Create a new seed` and `Next`
 
-![ElectrumWallet](C:/Users/Pavle/Desktop/img/ElectrumWallet3.png)
+![ElectrumWallet](img/ElectrumWallet3.png)
 
 From the multiple choice menu, select `SegWit` and `Next`
 
-![ElectrumWallet]()
+![ElectrumWallet](img/ElectrumWallet4.png)
 
 **IMPORTANT NOTE:** Write down your recovery words in the order you see them on the screen. Write them down a piece of paper and store it somewhere secure. Take your time and triple check each word. Do not store your seed in a digital format (photograph, text document). Whoever has the access to your seed can access your funds. Confirm that the seed has been properly backed up by re-entering it in the same order. Once the seed is validated, proceed to the next step.
 
-![ElectrumWallet]()
+![ElectrumWallet](img/ElectrumWallet6.png)
 
 It's highly recommended that you encrypt your wallet. Select a password that you can easily remember and mark make sure `Encrypt Wallet File` is marked. Proceed by clicking `Next`.
 
-![ElectrumWallet](C:/Users/Pavle/Desktop/img/ElectrumWallet7.png)
+![ElectrumWallet](img/ElectrumWallet7.png)
 
 When the wallet loads (it may take few moments), in the top menu, click on the `Wallet` and then`Information` .
 
-![ElectrumWallet](C:/Users/Pavle/Desktop/img/ElectrumWallet9.png)
+![ElectrumWallet](img/ElectrumWallet9.png)
 
 Select and **copy** the `Master Public Key`. This is the **public** key from which BTCPay will derive addresses.
 
-![ElectrumWallet](C:/Users/Pavle/Desktop/img/ElectrumWallet10.png)
+![ElectrumWallet](img/ElectrumWallet10.png)
 
 Return to your BTCPay Server. Click on the `Stores` in the header menu and scroll until you see `Derivation Scheme` section. Click on the `Modify` link.
 
-![WasabiWallet]()
+![WasabiWallet](img/WassabiWalletSetupBTCPay10.png)
 
 Paste the `Master Public Key` into derivation scheme field as it is, without adding anything else. Make sure that `Enabled` checkbox is ticked and click `Continue`.
 
-![WasabiWallet]()
+![WasabiWallet](img/WassabiWalletSetupBTCPay11.png)
 
 Return to the Electrum Wallet. Go to `Receive tab` which shows your wallet receiving address.
 
 Compare the address you see in Electrum Wallet to Addresses shown in BTCPay Server. If there's a match, `continue`. If there is no match, copy the address from Electrum and paste it into `Hint Address Form`. If you still can't get the matching, double-check that you're actually pasting `Master Public Key`.
 
-![ElectrumWallet](C:/Users/Pavle/Desktop/img/ElectrumWallet11.png)
+![ElectrumWallet](img/ElectrumWallet11.png)
 
 ### Configuring the Gap Limit in Electrum
 
  In the top menu, click on the `View` and then`Show Console` .
 
-![ElectrumWallet](C:/Users/Pavle/Desktop/img/ElectrumWallet11a.png)
+![ElectrumWallet](img/ElectrumWallet11a.png)
 
 Enter following commands in Electrum console and press `enter`on your keyboard.
 
@@ -87,7 +87,7 @@ Enter following commands in Electrum console and press `enter`on your keyboard.
  wallet.storage.write()  
 ```
 
-![ElectrumWallet](C:/Users/Pavle/Desktop/img/ElectrumWallet12.png)
+![ElectrumWallet](img/ElectrumWallet12.png)
 
 Restart your Electrum and verify that the newly set gap limit is correct by entering in the console:
 
