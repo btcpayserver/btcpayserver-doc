@@ -7,7 +7,7 @@ To register, visit your BTCPay Server URL and click on the "Register" in the upp
 ![BTCPayRegister1](img/BTCPayRegister1.jpg)
 
 ### Configuring e-mail
-It's recommended that server admins [configure SMTP settings](FAQ/FAQ-ServerSettings.md#how-to-configure-smtp-settings-in-btcpay). E-mail setups enables easier password reset for the instance users in case of a forgoten credentials.
+It's recommended that server admins [configure SMTP settings](FAQ/FAQ-ServerSettings.md#how-to-configure-smtp-settings-in-btcpay). E-mail setup enables easier password reset for the instance users in case of forgotten credentials.
 
 To allow other users to access your server, you need to enable registration in Server Settings > Policies. 
 
