@@ -158,15 +158,7 @@ sudo /etc/init.d/dphys-swapfile stop
 sudo /etc/init.d/dphys-swapfile start
 ```
 
-**Step 14** - Install Docker. 
-Docker-CE is not available yet for Raspbian Buster.  Until Docker is available in the official repo it has to be installed manually. 
-```bash
-curl -fsSL https://get.docker.com|sed -e 's/buster/stretch/' > get-docker.sh
-chmod +x get-docker.sh
-./get-docker.sh
-```
-
-**Step 15** - Install BTCPayServer.  
+Stepp 14** - Install BTCPayServer.  
 Run the following commands.  Make sure you change the BTCPAY_HOST parameter to your own domain name. 
 
 Login as root
@@ -189,6 +181,7 @@ cd btcpayserver-docker
 Set your environment variables. Run each command separately. 
 ```bash 
 export BTCPAY_HOST="btcpay.YourDomain.com" 
+export LETSENCRYPT_EMAIL="youremail@mail.com"
 export NBITCOIN_NETWORK="mainnet"
 export BTCPAYGEN_CRYPTO1="btc"
 export BTCPAYGEN_REVERSEPROXY="nginx"
@@ -202,14 +195,14 @@ The last step is to launch the BTCPayServer setup script.
 exit
 ```
 
-**Step 16** 
+**Step 15** 
 Go to https://btcpay.yourdomain.com and confirm that your nodes are syncing. 
 
 **Fast Sync**
 BTCPayServer's FastSync documentation is available here https://github.com/btcpayserver/btcpayserver-docker/tree/master/contrib/FastSync.
 Please read very carefully to understand what FastSync is and why it's important to verify the UTXO set yourself.
 
-**Step 17**
+**Step 16**
 From the /root/BTCPayServer/btcpayserver-docker folder run the following commands.
 
 ```bash
@@ -224,7 +217,7 @@ FastSync will take about 30 minutes or so depending on your download speed. Afte
 ./btcpay-up.sh
 ```
 
-**Step 18**
+**Step 17**
 
 By using FastSync you are exposing yourself to attacks if a [malicious UTXO Set snapshot](https://github.com/btcpayserver/btcpayserver-docker/blob/master/contrib/FastSync/README.md#what-are-the-downsides-of-fast-sync) is sent to you.
 
