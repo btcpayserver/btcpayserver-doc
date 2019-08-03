@@ -11,6 +11,7 @@ This document covers frequently asked questions about the Apps in BTCPay.
 * [How to fix empty spacing around payment button](#how-to-fix-empty-spacing-around-payment-button)
 * [How to integrate WooCommerce Store in BTCPay Crowdfund app?](#how-to-integrate-woocommerce-store-into-a-btcpay-crowdfund-app)
 * [How to create Pay button with a custom amount?](#how-to-create-pay-button-with-a-custom-amount)
+* [How to map a domain name to an app?](#how-to-map-a-domain-name-to-an-app)
 
 ## What are the Apps in BTCPay?
 Apps are plugins (features) you can use to expand the use case of your BTCPay.
@@ -80,7 +81,7 @@ In the first step, you need to remove all the redundancies from the WordPress st
 
 Place the following custom CSS code into WordPress. Appearance > Customize > **Custom CSS**
 
-```
+```css
 #masthead {
 	display: none;
 }
@@ -211,8 +212,8 @@ To speed up the checkout process use [WooCommerce Direct Checkout](https://wordp
 
 Insert the following code at the bottom of your child theme's **functions.php** file.
 
-```
- * Code goes in theme functions.php.
+```php
+* Code goes in theme functions.php.
 */
 add_action( 'after_setup_theme', 'wc_remove_frame_options_header', 11 );
 /**
@@ -226,7 +227,7 @@ If you add the php code directly into Appearance>Editor>functions.php, next time
 
 #### 3. Adding script to WordPress
 Install [Header and Footer Scripts](https://wordpress.org/plugins/header-and-footer-scripts/) plugin. Add the followig code to your header or footer. Settings > Headers and Footers Script, paste the code and save changes.
-```
+```js
 <script>
 jQuery( document ).ready(function() {
     jQuery(".product").each(function(){
@@ -249,7 +250,7 @@ Replace it with the URL of your WooCommerce Store page.
 ![EmbedIframeCrowdfund](/img/CrowdfundCodeEmbed.png)
 
 Next, paste the following code into the **Custom CSS Code** section of your crowdfunding app:
-```
+```css
 #crowdfund-body-header-tagline-container,
 #crowdfund-body-description-container {
     max-width: 100% !important;
@@ -303,3 +304,30 @@ However, you can use a work-around:
 
 ![Custom Amount Pay Button](/img/BTCPayPayButtonDynamic2.png)
 ![Custom Amount Pay Button](/img/BTCPayPayButtonDynamic.png)
+
+## How to map a domain name to an app?
+BTCPay Apps can have a domain name that's different from the servers domain. Let's assume you have BTCPay server at mybtcpayserver.com and want to display your PoS app on mybtcpaypos.com instead mybtcpayserver.com/apps/pos/abc123
+First, [configure DNS settings](/ChangeDomain.md#setting-up-your-dns-record) of mypointofsale.com and make sure it's pointing to the external ip of your BTCPay Server.
+
+Next, add additional domain or subdomain name(s) by adding a new enviroment variable through ssh:
+
+```bash
+sudo su -
+export BTCPAY_ADDITIONAL_HOSTS="mybtcpaypos.com"
+. btcpay-setup.sh -i
+```
+If you want to add multiple domains, you just need to update the env variables again
+```bash
+sudo su -
+export BTCPAY_ADDITIONAL_HOSTS="mybtcpaypos.com,subdomain.domain2.com,domain3.com"
+. btcpay-setup.sh -i
+```
+Finally, in Server Settings > Policies click on the `Map specific domains to specific apps`
+
+![App domain mapping](/img/domainmapping1.png)
+
+Enter domain name, select a previously created app from the drop down menu and click `save` to map the app to specific domain.
+
+![App domain mapping](/img/domainmapping2.png)
+
+If for any reason, you want an app to be on the same domain as your BTCPay Server homepage, you can select to display it on the root. In that case, no DNS configuration is needed, since your domain is already pointing properly. Using an app on a root domain, means you'll have to access the log in page manually adding `Account/Login` in domain URL. We don't recommend setting up your app on a root, as it makes navigation harder.

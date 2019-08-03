@@ -115,7 +115,7 @@ However, a fiat conversion feature is on the roadmap for BTCPay. Since merchants
 
 * It's probably a feature not a bug!
 * All of this information should be available to merchants.
-* Check out: [howtoacceptcrypto.com][6] comparison chart.
+* Checkout the [Awesome Payment Processor List](https://github.com/alexk111/awesome-bitcoin-payment-processors)
 * If you have more questions about BTCPay, read our [Official Documentation][7].
 
 [1]: https://github.com/bitcoin/bips/blob/master/bip-0021.mediawiki
