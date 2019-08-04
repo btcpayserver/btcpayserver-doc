@@ -75,8 +75,7 @@ Questions about e-commerce and other integrations.
 ### [WooCommerce FAQ](FAQ-Integrations.md#woocommerce-faq-1)
 * [How to configure order status in WooCommerce?](FAQ-Integrations.md#how-to-configure-order-status-in-woocommerce)
 * [How to customize e-mail confirmations in WooCommerce?](FAQ-Integrations.md#how-to-customize-e-mail-confirmations-in-woocommerce)
-* [Error: If you use an alternative order numbering system, please see class-wc-gateway-btcpay.php to apply a search filter
-](FAQ-Integrations.md#error-if-you-use-an-alternative-order-numbering-system-please-see-class-wc-gateway-btcpayphp-to-apply-a-search-filter)
+* [Error: If you use an alternative order numbering system, please see class-wc-gateway-btcpay.php to apply a search filter](FAQ-Integrations.md#error-if-you-use-an-alternative-order-numbering-system-please-see-class-wc-gateway-btcpayphp-to-apply-a-search-filter)
 
 ## [Server Settings FAQ](FAQ-ServerSettings.md)
 
@@ -146,6 +145,7 @@ Frequent questions about the applications in BTCPay.
 * [How to fix empty spacing around payment button](FAQ-Apps.md#how-to-fix-empty-spacing-around-payment-button)
 * [How to integrate WooCommerce Store in BTCPay Crowdfund app?](FAQ-Apps.md#how-to-integrate-woocommerce-store-into-a-btcpay-crowdfund-app)
 * [How to create Pay button with a custom amount?](FAQ-Apps.md#how-to-create-pay-button-with-a-custom-amount)
+* [How to map a domain name to an app?](FAQ-Apps.md#how-to-map-a-domain-name-to-an-app)
 
 ## [Lightning Network FAQ](FAQ-LightningNetwork.md)
 

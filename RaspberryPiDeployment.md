@@ -15,6 +15,7 @@ The overall process is as follows:
 BTCPayServer can be successfully installed on the following hardware:
 
 1. Raspberry Pi 3 Model B+<br/>
+
 ![Raspberry Pi 3 Model B+](https://www.raspberrypi.org/app/uploads/2018/03/770A5842-462x322.jpg "Raspberry Pi 3 Model B+")
 
 2. 64GB SanDisk Ultra Fit USB Flash Drive<br/>
@@ -187,6 +188,7 @@ sudo nano /etc/dphys-swapfile
 
 Change the CONF_SWAPFILE line to:
 `CONF_SWAPFILE=/mnt/usb/swapfile`
+
 
 Change the CONF_SWAPSIZE line to:
 `CONF_SWAPSIZE=2048`

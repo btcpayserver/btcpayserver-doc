@@ -136,7 +136,7 @@ html {
 }
 
 .invoice {
-  background-color: #15181c;
+  background-color: #343f4c;
 }
 
 .expired__body {
