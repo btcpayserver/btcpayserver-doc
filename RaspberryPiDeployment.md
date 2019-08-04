@@ -13,7 +13,7 @@ The process is basically the following:
 
 BTCPayServer can be successfully installed on the following hardware.   
  
-1. Raspberry Pi 3 Model B+
+1. Raspberry Pi 3 Model B+, Raspiberry Pi 4 Model B
 ![Raspberry Pi 3 Model B+](https://www.raspberrypi.org/app/uploads/2018/03/770A5842-462x322.jpg "Raspberry Pi 3 Model B+")
 2. 64GB SanDisk Ultra Fit USB Flash Drive
 ![64 GB SanDisk Ultra Fit USB Flash Drive](https://drh1.img.digitalriver.com/DRHM/Storefront/Company/sandiskus/images/product/detail/SDCZ430-210.png "SanDisk Ultra Fit USB 3.1 Flash Drive")
@@ -35,7 +35,7 @@ It can take several hours for DNS changes to propagate so you should do this ste
 
 **Step 2** - Assemble your BTCPi.  
 
-**Step 3** - Download and extract [Raspbian Stretch Lite](https://downloads.raspberrypi.org/raspbian_lite_latest)
+**Step 3** - Download and extract [Raspbian Buster](https://downloads.raspberrypi.org/raspbian_lite_latest)
 
 **Step 4** - Download and install [Etcher](https://etcher.io/).  Etcher is software that is used to flash OS images to SD cards and USB Drives. 
 In this case we will be using Etcher to flash our micro SD card with the Raspbian OS. 
@@ -142,7 +142,7 @@ sudo mkdir /mnt/usb/docker
 sudo ln -s /mnt/usb/docker /var/lib/docker
 ```
 
-**Step 13** - Move Swapfile to USB and increase size
+**Step 13** - Move Swapfile to USB and increase size.  Skip this step if using RPi4 with more than 1 GB RAM.
 ```bash 
 sudo nano /etc/dphys-swapfile
 ```
@@ -150,7 +150,7 @@ Change the CONF_SWAPFILE line to
 CONF_SWAPFILE=/mnt/usb/swapfile
 
 Change the CONF_SWAPSIZE line to 
-CONF_SWAPSIZE=2048
+CONF_SWAPSIZE=1024
 
 Stop and restart the swapfile service
 ```bash
@@ -158,7 +158,7 @@ sudo /etc/init.d/dphys-swapfile stop
 sudo /etc/init.d/dphys-swapfile start
 ```
 
-**Step 14** - Install BTCPayServer.  
+Stepp 14** - Install BTCPayServer.  
 Run the following commands.  Make sure you change the BTCPAY_HOST parameter to your own domain name. 
 
 Login as root
@@ -181,6 +181,7 @@ cd btcpayserver-docker
 Set your environment variables. Run each command separately. 
 ```bash 
 export BTCPAY_HOST="btcpay.YourDomain.com" 
+export LETSENCRYPT_EMAIL="youremail@mail.com"
 export NBITCOIN_NETWORK="mainnet"
 export BTCPAYGEN_CRYPTO1="btc"
 export BTCPAYGEN_REVERSEPROXY="nginx"
