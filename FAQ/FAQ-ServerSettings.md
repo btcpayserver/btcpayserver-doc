@@ -56,8 +56,10 @@ BTCPay SSH key, enables users to update their server or quickly change the domai
 ### Forgot BTCPay Admin password?
 You need to edit your database.
 
-First, register new user, for example: "newadmin@example.com".
-If you can't create a new user because registrations are disabled, you reset your Policies settings with the following command line, please skip this step if you could create a new user.
+First, register a new user on your BTCPay Server, by clicking "Register", for example: "newadmin@example.com".
+If you can't create a new user because registrations are disabled in your Server Settings > Policies, you need to reset the policies settings with the following command line: 
+
+Please skip this step if you can create a new user on the front-end.
 
 ```bash
 # In root
@@ -73,7 +75,9 @@ psql
 DELETE FROM "Settings" WHERE "Id" = 'BTCPayServer.Services.PoliciesSettings';
 ```
 
-Then, add `newadmin@example.com` as an admin:
+Head back to your BTCPay Server and click on the "Register" which should now be enabled. In case you don't see the Register link in the menu, that's probably because of the caching. Restart your btcpay with `btcpay-down.sh` then `btcpay-up.sh`.
+
+Next, add a newly registered user `newadmin@example.com` as an admin:
 
 ```bash
 # In root
