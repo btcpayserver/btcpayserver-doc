@@ -88,16 +88,16 @@ These instructions configure everything to run under an unprivileged user called
 
 Postgresql can be used by BTCPay Server in place of the default SQLite file based storage. It's also possible to use MySQL.
 
-##### :truck: Install
+##### 🚚 Install
 
 ```bash
 ~$ sudo apt install postgresql postgresql-contrib
 ```
-##### :black_nib: Configuration
+##### ✒️ Configuration
 
 Covered in BTCPay Server Configuration.
 
-##### :thumbsup: Check
+##### 👍 Check
 
 ```bash
 ~$ psql --version
@@ -116,7 +116,7 @@ Tor can be used by the following components to provide enhanced privacy and/or h
 - Bitcoin-core Daemon
 - Lightning Network Daemon (lnd).
 
-##### :truck: Install
+##### 🚚 Install
 
 ```bash
 ~$ sudo apt install apt-transport-https
@@ -128,7 +128,7 @@ deb-src https://deb.torproject.org/torproject.org bionic main
 ~$ sudo apt update
 ~$ sudo apt install tor deb.torproject.org-keyring
 ```
-##### :black_nib: Configuration
+##### ✒️ Configuration
 ```bash
 ~$ sudo vi /etc/tor/torrc  # (and uncomment two lines below)
 ControlPort 9051
@@ -137,7 +137,7 @@ CookieAuthentication 1
 ```
 Covered further in Bitcoin and Lightning Network Daemon sections.
 
-##### :thumbsup: Check
+##### 👍 Check
 ```bash
 ~$ netstat -tlnp | grep tor # (lines below correspond to the tor control port and SOCKS proxy)
 tcp        0      0 127.0.0.1:9050          0.0.0.0:*               LISTEN      1376/tor
@@ -150,7 +150,7 @@ NGINX is used as a web server to manage HTTP requests to BTCPay Server and Ride 
 
 Let's Encrypt is a free service for procuring and renewing TLS certificates. The service comes with scripts that can be installed to automatically manage the whole process.
 
-##### :truck: Install
+##### 🚚 Install
 
 ##### 1. Install NGINX.
 
@@ -163,7 +163,7 @@ Let's Encrypt is a free service for procuring and renewing TLS certificates. The
 ~$ sudo apt update
 ~$ sudo apt install certbot python-certbot-nginx
 ```
-##### :black_nib: Configuration
+##### ✒️ Configuration
 
 ##### 1. Let's Encrypt TLS certificate.
 
@@ -291,7 +291,7 @@ server {
 ~$ sudo cp default.conf /etc/nginx/conf.d
 ~$ sudo systemctl restart nginx
 ```
-##### :thumbsup: Check
+##### 👍 Check
 
 ##### 1. Check Let's Encrypt.
 
@@ -346,7 +346,7 @@ Congratulations, all renewals succeeded. The following certs have been renewed:
 
 The gateway to the Bitcoin network for BTCPay Server components.
 
-##### :truck: Install
+##### 🚚 Install
 
 ##### 1. Download the latest binaries from a trusted source such as [https://bitcoincore.org/en/download/](https://bitcoincore.org/en/download/).
 ```bash
@@ -487,7 +487,7 @@ It's not vital to perform this step but if not done then every `bitcoin-cli` com
 ~$ bitcoin-cli -rpccookiefile=/var/lib/bitcoind/.cookie getblockchaininfo
 ```
 
-##### :thumbsup: Check
+##### 👍 Check
 It will take Bitcoin anywhere from a few hours to a few days to synchronise the blockchain. Use any or all of the commands below to check its status.
 
 ```bash
@@ -509,7 +509,7 @@ Active: active (running) since Thu 2019-05-23 18:23:48 UTC; 21min ago
   ...
 }
 ```
-##### :thumbsup: Check Tor + Bitcoin
+##### 👍 Check Tor + Bitcoin
 
 If Tor was installed prior to the Bitcoin Daemon then it should have automatically registered and begun listening on a torv2 onion address (note support for torv3 onion addresses is in the [pipeline](https://gist.github.com/laanwj/4fe8470881d7b9499eedc48dc9ef1ad1#file-addrv2-mediawiki)).
 
@@ -553,7 +553,7 @@ To connect another `bitcoind` instance to your new node:
 ```
 ## NBXplorer
 NBXplorer is a dotnet core application that monitors the Bitcoin blockchain for transactions of interest to your BTCPay Server.
-##### :truck: Install
+##### 🚚 Install
 
 ##### 1. Install dotnet core
 Check [download link for latest version](https://dotnet.microsoft.com/download/dotnet-core) (.Net Core 2.2 at the time of writing)
@@ -602,7 +602,7 @@ WantedBy=multi-user.target
 ~$ sudo systemctl enable nbxplorer
 ~$ sudo systemctl start nbxplorer
 ```
-##### :thumbsup: Check
+##### 👍 Check
 ```bash
 ~$ sudo journalctl -xe --unit nbxplorer --follow
 May 23 19:13:35 btc run.sh[8065]: info: Configuration:  Data Directory: /home/admin/.nbxplorer/Main
@@ -617,7 +617,7 @@ If it doesn't start correctly stop the service and run the application directly 
 ~$ sudo systemctl stop nbxplorer
 ~$ cd ~; pushd ./src/NBXplorer; ./run.sh; popd
 ```
-#####  :rotating_light: Update
+##### 🚨 Update
 Updating could break things. Be careful on a live system.
 ```bash
 ~$ sudo systemctl stop nbxplorer
@@ -630,7 +630,7 @@ Updating could break things. Be careful on a live system.
 Like NBXplorer the BTCPay Server application is also dotnet core. The install steps assume dotnet core was installed in the
 previous step.
 
-##### :truck: Install
+##### 🚚 Install
 
 ##### 1. Build BTCPay Server
 ```bash
@@ -694,7 +694,7 @@ WantedBy=multi-user.target
 ~$ sudo systemctl enable btcpay
 ~$ sudo systemctl start btcpay
 ```
-##### :thumbsup: Check
+##### 👍 Check
 ```bash
 ~$ sudo journalctl -xe --unit btcpay --follow
 -- The start-up result is RESULT.
@@ -716,7 +716,7 @@ btcpay=# \dt
 btcpay=# select * from "Invoices";
 btcpay=# \q
 ```
-#####  :rotating_light: Update
+##### 🚨 Update
 Updating could break things. Be careful on a live system.
 ```bash
 ~$ sudo systemctl stop btcpay
@@ -726,7 +726,7 @@ Updating could break things. Be careful on a live system.
 
 ## Lightning Network Daemon (lnd)
 
-##### :truck: Install
+##### 🚚 Install
 ##### 1. Install Go.
 ```bash
 ~$ sudo apt install make
@@ -824,7 +824,7 @@ WantedBy=multi-user.target
 ~$ sudo systemctl enable lnd
 ~$ sudo systemctl start lnd
 ```
-##### :black_nib: Configuration
+##### ✒️ Configuration
 
 **Running a Bitcoin Lightning daemon requires a hot wallet on your BTCPay Server.**
 
@@ -868,7 +868,7 @@ Every time lnd is restarted the wallet needs to be unlocked. This is not ideal f
 ```bash
 ~$ lncli unlock
 ```
-##### :thumbsup: Check
+##### 👍 Check
 ```bash
 ~$ lncli getinfo
  {
@@ -885,7 +885,7 @@ May 24 19:21:54 btc lnd[8067]: 2019-05-24 19:21:54.683 [INF] DISC: Broadcasting 
 May 24 19:23:24 btc lnd[8067]: 2019-05-24 19:23:24.683 [INF] DISC: Broadcasting batch of 163 new announcements
 ```
 
-##### :thumbsup: Check Tor + lnd
+##### 👍 Check Tor + lnd
 
 As with the Bitcoin daemon if Tor is installed and the configuration file enables it (the one above does) then lnd will automatically register an onion address. In lnd's case torv3 addresses are supported.
 
@@ -897,7 +897,7 @@ The torv3 onion address below is a lot longer than the torv2 one from the Bitcoi
 ```
 The Tor address created by lnd can be used to connect to other Lighting peers on the Tor network. The Tor address can work in parallel with an IPv4 or IPv6 address. To register one of those make sure the `externalip` is set in the lnd configuration file.
 
-#####  :rotating_light: Update
+##### 🚨 Update
 Updating could break things. Be careful on a live system.
 ```bash
 ~$ sudo systemctl stop lnd
@@ -927,7 +927,7 @@ Ride the Lightning is a Node.js application to manage your Lightning peers, chan
 
 The advantage of the work that has gone into BTCPay Server is that the RTL web page can be controlled and accessed in the same manner as the BTCPay site.
 
-##### :truck: Install
+##### 🚚 Install
 
 ##### 1. Install dependencies.
 ```bash
@@ -1007,7 +1007,7 @@ WantedBy=multi-user.target
 ~$ sudo systemctl start rtl
 ```
 
-##### :thumbsup: Check
+##### 👍 Check
 
 Check the service:
 
@@ -1024,7 +1024,7 @@ If it doesn't start correctly stop the service and run the application directly 
 Server is up and running, please open the UI at http://localhost:3000
 ```
 
-#####  :rotating_light: Update
+##### 🚨 Update
 Updating could break things. Be careful on a live system.
 ```bash
 ~$ sudo systemctl stop rtl
@@ -1032,4 +1032,4 @@ Updating could break things. Be careful on a live system.
 ~$ sudo systemctl start rtl
 ```
 
-## :checkered_flag: The End
+## 🏁 The End
