@@ -1,6 +1,6 @@
 # Troubleshooting an issue in BTCPay Server
 
-Facing a problem is never fun. This document explains the most common workflow and steps you should take to easier identify the issue you're having and hopefully solve it yourself or with community help.
+Facing a problem is never fun. This document explains the most common workflow and steps you should take to identify the issue you're having more easily and hopefully solve it yourself or with community help.
 
 Identifying the problem is crucial.
 
@@ -14,7 +14,29 @@ Logs can provide an essential piece of information. In the next few paragraphs, 
 
 ### 2.1 BTCPay Logs
 
-Since the v1.0.3.8, you can easily access BTCPay Server logs from the front-end. If you are a server admin, go to Server Settings > Logs and open the logs file. If you don't know what a particular error in the logs means, make sure to mention it when troubleshooting.
+Since the v1.0.3.8, you can easily access BTCPay Server logs from the front-end. If you are a server admin, go to **Server Settings > Logs** and open the logs file. If you don't know what a particular error in the logs means, make sure to mention it when troubleshooting.
+
+If you would like more detailed logs and you're using a Docker deployment, you can view logs of specific Docker containers using the command line. See these [instructions to ssh](FAQ/FAQ-ServerSettings.md#how-to-ssh-into-my-btcpay-running-on-vps) into an instance of BTCPay running on a VPS (like LunaNode).
+
+Below is a general list of the container names used for BTCPay. Follow the lightning examples below for step by step log generation instructions.  
+
+
+| LOGS FOR | CONTAINER NAME  |
+|-------|:-------:|
+| BTCPayServer | generated_btcpayserver_1 |
+| NBXplorer | generated_nbxplorer_1 |
+| Bitcoind | btcpayserver_bitcoind |
+| Postgres | generated_postgres_1 |
+| proxy | letsencrypt-nginx-proxy-companion |
+| Nginx | nginx-gen |
+| Nginx | nginx |
+| c-lightning | btcpayserver_clightning_bitcoin |
+| LND | btcpayserver_lnd_bitcoin |
+| RTL | generated_lnd_bitcoin_rtl_1 |
+| LibrePatron | librepatron |
+| Tor | tor-gen |
+| Tor | tor |
+
 
 ### 2.2 Lightning Network Logs
 
