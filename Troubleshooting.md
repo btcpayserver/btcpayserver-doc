@@ -78,7 +78,7 @@ Even though setups differ, the chances that someone else experienced the same is
 
 ### 3.1 BTCPay FAQ
 
-We try to document the most common issues on the [Frequently Asked Questions page](FAQ.md). Take a look there and see if your question is recorded.
+We try to document the most common issues on the [Frequently Asked Questions page](/FAQ/readme.md). Take a look there and see if your question is recorded.
 
 ### 3.2 GitHub
 
