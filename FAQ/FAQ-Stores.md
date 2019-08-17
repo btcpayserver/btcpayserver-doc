@@ -12,6 +12,7 @@ This page shows common issues and frequently asked questions about Stores in BTC
  * [Consider the invoice confirmed when the payment transaction?](FAQ-Stores.md#consider-the-invoice-confirmed-when-the-payment-transaction)
  * [Consider the invoice paid even if the paid amount is ... % less than expected?](FAQ-Stores.md#consider-the-invoice-paid-even-if-the-paid-amount-is---less-than-expected)
  * [How to disable email on invoices?](FAQ-Stores.md#how-to-disable-email-on-invoices)
+ * [Can I delete invoices from BTCPay?](FAQ-Stores.md#can-i-delete-invoices-from-btcpay)
 
 ## How to create a store in BTCPay?
 To create your first store, go to > Stores from the header menu and click "create a new store."
@@ -57,3 +58,6 @@ In a situation where a customer uses an exchange wallet to pay directly for an i
 
 ##  How to disable email on invoices
 To disable the email requirement for your store's invoices, go to Stores > Settings > Checkout Experience > uncheck 'Requires a refund email' box. 
+
+## Can I delete invoices from BTCPay?
+No, you can't delete invoices in BTCPay. Even if the invoice is expired, invalid, paid (or any other status) you can't delete invoices because they may contain important information. For example, information from the invoice may be needed if the invoice gets paid at a later time.
