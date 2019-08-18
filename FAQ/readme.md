@@ -120,6 +120,7 @@ Store settings explained.
  * [Consider the invoice confirmed when the payment transaction?](FAQ-Stores.md#consider-the-invoice-confirmed-when-the-payment-transaction)
  * [Consider the invoice paid even if the paid amount is ... % less than expected?](FAQ-Stores.md#consider-the-invoice-paid-even-if-the-paid-amount-is---less-than-expected)
  * [How to disable email on invoices?](FAQ-Stores.md#how-to-disable-email-on-invoices)
+ * [Can I delete invoices from BTCPay?](FAQ-Stores.md#can-i-delete-invoices-from-btcpay)
 
 ## [Wallet FAQ](FAQ-Wallet.md)
 
