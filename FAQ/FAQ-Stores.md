@@ -60,4 +60,4 @@ In a situation where a customer uses an exchange wallet to pay directly for an i
 To disable the email requirement for your store's invoices, go to Stores > Settings > Checkout Experience > uncheck 'Requires a refund email' box. 
 
 ## Can I delete invoices from BTCPay?
-No, you can't delete invoices in BTCPay. Even if the invoice is expired, invalid, paid (or any other status) you can't delete invoices because they may contain important information. For example, information from the invoice may be needed if the invoice gets paid at a later time.
+No, you can't delete invoices in BTCPay. Even if the invoice is expired, invalid, paid (or any other status) you can't delete invoices because they may contain important information. For example, information from the invoice may be needed if the invoice gets paid at a later time. Try [filtering invoices](/Invoices.md#invoice-filtering) instead.
