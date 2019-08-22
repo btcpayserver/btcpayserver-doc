@@ -1,6 +1,6 @@
 # Troubleshooting an issue in BTCPay Server
 
-Facing a problem is never fun. This document explains the most common workflow and steps you should take to easier identify the issue you're having and hopefully solve it yourself or with community help.
+Facing a problem is never fun. This document explains the most common workflow and steps you should take to identify the issue you're having more easily and hopefully solve it yourself or with community help.
 
 Identifying the problem is crucial.
 
@@ -14,7 +14,38 @@ Logs can provide an essential piece of information. In the next few paragraphs, 
 
 ### 2.1 BTCPay Logs
 
-Since the v1.0.3.8, you can easily access BTCPay Server logs from the front-end. If you are a server admin, go to Server Settings > Logs and open the logs file. If you don't know what a particular error in the logs means, make sure to mention it when troubleshooting.
+Since the v1.0.3.8, you can easily access BTCPay Server logs from the front-end. If you are a server admin, go to **Server Settings > Logs** and open the logs file. If you don't know what a particular error in the logs means, make sure to mention it when troubleshooting.
+
+If you would like more detailed logs and you're using a Docker deployment, you can view logs of specific Docker containers using the command line. See these [instructions to ssh](FAQ/FAQ-ServerSettings.md#how-to-ssh-into-my-btcpay-running-on-vps) into an instance of BTCPay running on a VPS.
+
+Below is a general list of the container names used for BTCPay. 
+
+
+| LOGS FOR | CONTAINER NAME  |
+|-------|:-------:|
+| BTCPayServer | generated_btcpayserver_1 |
+| NBXplorer | generated_nbxplorer_1 |
+| Bitcoind | btcpayserver_bitcoind |
+| Postgres | generated_postgres_1 |
+| proxy | letsencrypt-nginx-proxy-companion |
+| Nginx | nginx-gen |
+| Nginx | nginx |
+| c-lightning | btcpayserver_clightning_bitcoin |
+| LND | btcpayserver_lnd_bitcoin |
+| RTL | generated_lnd_bitcoin_rtl_1 |
+| LibrePatron | librepatron |
+| Tor | tor-gen |
+| Tor | tor |
+
+Run the commands below to print logs by container name. Replace the container name to view other container logs.
+
+```
+sudo su -
+docker ps
+docker logs --tail 40 generated_btcpayserver_1
+```
+
+
 
 ### 2.2 Lightning Network Logs
 
@@ -22,19 +53,21 @@ Use the following if you're having a problem with the Lightning Network.
 
 ### 2.2.1 - Lightning Network LND - Docker
 
-There are a few ways to access your LND logs when using Docker.
+There are a few ways to access your LND logs when using Docker. First log in as root:
 
 `sudo su -`
 
+Find container name:
+
 `docker ps`
 
-Find the LND container ID.
-
-`docker logs 'add your container ID here'`
-
-alternatively, use this
+Print logs by container name:
 
 `docker logs --tail 40 btcpayserver_lnd_bitcoin`
+
+Alternatively, you can quickly print logs by using container ID (only the first unique ID characters are needed, such as the two furthest left characters):
+
+`docker logs 'add your container ID '`
 
 If for any reason you need more logs
 
