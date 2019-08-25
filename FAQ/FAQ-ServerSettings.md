@@ -118,7 +118,7 @@ sudo su -
 cd $BTCPAY_BASE_DIRECTORY/btcpayserver-docker
 git checkout master
 # Setup SSH access via private key
-ssh-keygen -t rsa -f /root/.ssh/id_rsa_btcpay -q -P ""
+ssh-keygen -t rsa -f /root/.ssh/id_rsa_btcpay -q -P "" -m PEM
 echo "# Key used by BTCPay Server" >> /root/.ssh/authorized_keys
 cat /root/.ssh/id_rsa_btcpay.pub >> /root/.ssh/authorized_keys
 BTCPAY_HOST_SSHKEYFILE=/root/.ssh/id_rsa_btcpay
