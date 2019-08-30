@@ -163,7 +163,7 @@ Here is how it should look like:
 
 ### Can I use a pruned node with LN in BTCPay?
 
-Both LND and c-lightning support prunning. 
+Both LND and c-lightning support pruning. 
 
 This will prune your Bitcoin full node to a maximum of 100GB (of blocks):
 ```
