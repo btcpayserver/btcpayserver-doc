@@ -8,7 +8,7 @@ The web-based PoS app allows users with brick and mortar stores to readily accep
 
 ![BTCPay Pos](img/BTCPayPointOfSale1.jpg)
 
-Adding new products is easy. The app has a shopping cart feature, tips, custom payment options and more.
+Adding new products is easy. The app has a shopping cart feature, tips, product inventory, custom payment options and more.
 
 Point of sale app can also be used for receiving donations or even as a small e-shop, depending on the customizations applied.
 
@@ -18,7 +18,7 @@ Crowdfunding is an application which you can launch from BTCPay Server interface
 
 [![BTCPay Crowdfunding](https://img.youtube.com/vi/tFbfyneDj88/mqdefault.jpg)](https://www.youtube.com/watch?v=tFbfyneDj88 "BTCPay crowdfunding")
 
-If you would like to provide digital or physical prodcuts to the backers of your crowdfunding campaign, you can [integrate WooCommerce store into it](FAQ/FAQ-Apps.md#how-to-integrate-woocommerce-store-into-a-btcpay-crowdfund-app).
+If you would like to provide digital or physical prodcuts to the backers of your crowdfunding campaign, you can [integrate WooCommerce store into it](FAQ/FAQ-Apps.md#how-to-integrate-woocommerce-store-into-a-btcpay-crowdfund-app). You can also set limits on contribution perks using the inventory feature.
 
 ## Payment Button
 Easily-embeddable HTML and highly-customizable payment buttons allow users to receive tips and donations. Online stores can also integrate payment buttons. When a site visitor clicks on the button, BTCPay displays the invoice.
