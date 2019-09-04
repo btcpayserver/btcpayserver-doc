@@ -26,12 +26,10 @@ cd $BTCPAY_BASE_DIRECTORY/btcpayserver-docker/
 btcpay-down.sh
 cd contrib/FastSync
 ./load-utxo-set.sh
-```
-After Fast Sync has completed:
-```bash
+# Once FastSync has completed
 btcpay-up.sh
 ```
-You can also follow [this video](https://youtu.be/VNMnd-dX9Q8?t=1730). 
+After FastSync is complete and you have brought back up your instance, refresh your BTCPay domain and wait for remaining blockchain synchronization. You can also follow [this video](https://youtu.be/VNMnd-dX9Q8?t=1730). 
 
 ## How do I know that BTCPay synced completely?
 
