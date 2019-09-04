@@ -20,15 +20,15 @@ It may seem tedious, but it's a critical step of running your own full node and 
 You can't skip synchronization, but you can drastically decrease sync time. If you're comfortable with using the command line, you can use FastSync to synchronize your node faster. Be sure to [read this FastSync document](https://github.com/btcpayserver/btcpayserver-docker/tree/master/contrib/FastSync) to understand the potential trust issues involved with FastSync.
 
 To use FastSync, [ssh into](FAQ-ServerSettings.md#how-to-ssh-into-my-btcpay-running-on-vps) your BTCPayServer instance and run the following commands:
-```
+```bash
 sudo su -
-cd /root/btcpayserver-docker/
+cd $BTCPAY_BASE_DIRECTORY/btcpayserver-docker/
 btcpay-down.sh
 cd contrib/FastSync
 ./load-utxo-set.sh
 ```
 After Fast Sync has completed:
-```
+```bash
 btcpay-up.sh
 ```
 You can also follow [this video](https://youtu.be/VNMnd-dX9Q8?t=1730). 
