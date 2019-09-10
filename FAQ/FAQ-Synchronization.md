@@ -17,7 +17,19 @@ It may seem tedious, but it's a critical step of running your own full node and 
 
 ## Can I skip the synchronization?
 
-You can't skip synchronization, but you can drastically decrease sync time. If you're comfortable with using the command line, you can use [FastSync](https://github.com/btcpayserver/btcpayserver-docker/tree/master/contrib/FastSync) to synchronize your node faster. You can also follow [this video](https://youtu.be/VNMnd-dX9Q8?t=1730). However, be sure to read the Fast Sync document to understand the potential trust issues involved with Fast Sync. 
+You can't skip synchronization, but you can drastically decrease sync time. If you're comfortable with using the command line, you can use FastSync to synchronize your node faster. Be sure to [read this FastSync document](https://github.com/btcpayserver/btcpayserver-docker/tree/master/contrib/FastSync) to understand the potential trust issues involved with FastSync.
+
+To use FastSync, make sure your deployment has a pruning option enabled by using an `opt-save-storage` [environment variable](FAQ-Deployment.md#how-can-i-modify-deactivate-environment-variables), otherwise bitcoind will not be able to sync. First step is to [ssh into](FAQ-ServerSettings.md#how-to-ssh-into-my-btcpay-running-on-vps) your BTCPayServer instance and run the following commands:
+```bash
+sudo su -
+cd $BTCPAY_BASE_DIRECTORY/btcpayserver-docker/
+btcpay-down.sh
+cd contrib/FastSync
+./load-utxo-set.sh
+# Once FastSync has completed
+btcpay-up.sh
+```
+After FastSync is complete and you have brought back up your instance, refresh your BTCPay domain and wait for remaining blockchain synchronization. You can also follow [this video](https://youtu.be/VNMnd-dX9Q8?t=1730). 
 
 ## How do I know that BTCPay synced completely?
 
