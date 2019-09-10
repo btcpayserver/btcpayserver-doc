@@ -18,7 +18,7 @@ Here are common questions about installation, regardless of the deployment metho
 * [How do I activate Tor on my BTCPay Server?](FAQ-Deployment.md#how-do-i-activate-tor-on-my-btcpay-server)
 * [How do I disable Tor on my BTCPay Server?](FAQ-Deployment.md#how-do-i-disable-tor-on-my-btcpay-server)
 * [Why activate Tor? Does it mean that nobody knows who I am?](FAQ-Deployment.md#why-activate-tor-does-it-mean-that-nobody-knows-who-i-am)
-* [How can I modify/deactivate environment variables?](FAQ-Deployment.md#How-can-i-modify/deactivate-environment-variables)
+* [How can I modify/deactivate environment variables?](FAQ-Deployment.md#How-can-i-modify-deactivate-environment-variables)
 * [Can I start BTCPay only when I'm expecting a payment?](FAQ-Deployment.md#can-i-start-btcpay-only-when-im-expecting-a-payment)
 * [Can I use my existing BTC or LN node with BTCPay?](FAQ-Deployment.md#can-i-use-my-existing-btc-or-ln-node-with-btcpay)
 
