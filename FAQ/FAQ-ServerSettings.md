@@ -10,6 +10,7 @@ This document covers all the questions and issues related to Server Settings. Th
 * [What is BTCPay SSH key file](FAQ-ServerSettings.md#what-is-btcpay-ssh-key-file)
 * [Error the BTCPAY_SSHKEYFILE variable is not set/ Unable to update](FAQ-ServerSettings.md#btcpay_sshkeyfile-is-not-set-when-running-the-docker-install-or-unable-to-update-through-server-settings--maintenance)
 * [Forgot BTCPay Admin password](FAQ-ServerSettings.md#forgot-btcpay-admin-password)
+* [How to disable U2F and 2FA for a user](FAQ-ServerSettings.md#how-to-disable-u2f-and-2fa-for-a-user)
 * [How to configure SMTP settings in BTCPay?](FAQ-ServerSettings.md#how-to-configure-smtp-settings-in-btcpay)
 * [How to SSH into my BTCPay running on VPS?](FAQ-ServerSettings.md#how-to-ssh-into-my-btcpay-running-on-vps)
 
@@ -55,47 +56,39 @@ In the btcpayserver-docker folder:`bitcoin-cli.sh getnetworkinfo`
 BTCPay SSH key, enables users to update their server or quickly change the domain name from btcpay website, the front-end.
 
 ### Forgot BTCPay Admin password?
-You need to edit your database.
-
 First, register a new user on your BTCPay Server, by clicking "Register", for example: "newadmin@example.com".
-If you can't create a new user because registrations are disabled in your Server Settings > Policies, you need to reset the policies settings with the following command line: 
 
-Please skip this step if you can create a new user on the front-end.
+If you can't create a new user because registrations are disabled in your Server Settings > Policies, you need to reset the policies settings. Please skip this step if you can create a new user on the front-end home page using the register button. Run the following command (It also deletes any other server settings currently being used): 
 
 ```bash
 # In root
 sudo su -
-# Connect to your postgres container
-docker exec -ti $(docker ps -a -q -f "name=postgres_1") bash
-# Switch to postgres user
-su postgres
-# Run psql
-psql
-# Connect to db
-\c btcpayservermainnet
-DELETE FROM "Settings" WHERE "Id" = 'BTCPayServer.Services.PoliciesSettings';
+cd $BTCPAY_BASE_DIRECTORY/btcpayserver-docker/
+# Re-open registrations
+./btcpay-admin.sh reset-server-policy
 ```
 
-Head back to your BTCPay Server and click on the "Register" which should now be enabled. In case you don't see the Register link in the menu, that's probably because of the caching. Restart your btcpay with `btcpay-down.sh` then `btcpay-up.sh`.
+Head back to your BTCPay Server and click on the "Register" button which should now be enabled. In case you don't see the Register link in the menu, that's probably because of the caching. Restart your btcpay with `btcpay-restart.sh`.
 
-Next, add a newly registered user `newadmin@example.com` as an admin:
-
+Next, add the newly registered user `newadmin@example.com` as an admin:
 ```bash
-# In root
-sudo su -
-# Connect to your postgres container
-docker exec -ti $(docker ps -a -q -f "name=postgres_1") bash
-# Switch to postgres user
-su postgres
-# Run psql
-psql
-# Connect to db
-\c btcpayservermainnet
-INSERT INTO "AspNetUserRoles" Values ( (SELECT "Id" FROM "AspNetUsers" WHERE "Email"='newadmin@example.com'), (SELECT "Id" FROM "AspNetRoles" WHERE "NormalizedName"='SERVERADMIN'));
+# Set new user as admin
+./btcpay-admin.sh set-user-admin newadmin@example.com
 ```
 Now you can access with `newadmin@example.com` as admin.
 
 When you apply the changes, you'll noticed that newly created user isn't the member of any stores. In that case, [follow this guide](https://gist.github.com/justinmoon/8128e66fc11d90ae5732f2491570bfc5) to add the new users to all or certain stores.
+
+### How to disable U2F and 2FA for a user
+Remove U2F and 2FA settings for a registered user, for example `user@example.com` with the following commands:
+
+```bash
+# In root
+sudo su -
+cd $BTCPAY_BASE_DIRECTORY/btcpayserver-docker/
+# Disable U2F and 2FA
+./btcpay-admin.sh disable-multifactor user@example.com
+```
 
 ## BTCPAY_SSHKEYFILE is not set when running the docker install, or unable to update through Server Settings / Maintenance
 
