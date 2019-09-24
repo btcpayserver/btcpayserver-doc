@@ -9,7 +9,7 @@ This guide assumes, you have a Coldcard wallet set up. To configure the Coldcard
 ### Quick Setup
 
 1. Insert the MicroSD card into the Coldcard wallet.
-2. Go to Advanced > MiroSD Card > Electrum Wallet > Native Segwit
+2. Go to Advanced > MicroSD Card > Electrum Wallet > Native Segwit
 3. Insert the MicroSD card back into your PC
 4. In BTCPay Server, Store Settings > General > Derivation Scheme > Import from Hardware Device > Coldcard
 5. Browse and select the wallet file earlier exported from Coldcard. 
