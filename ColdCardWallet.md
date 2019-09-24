@@ -27,7 +27,7 @@ Once there are some funds in received to your BTCPay Wallet connected to Coldcar
 1. Wallets > Manage > Send
 2. Fill in destination address and the amount
 3. Click on the Sign with `a wallet supporting PSBT` button.
-4. You will be redirected to PSBT tab, with pre-filled information, click on thec`Sign with a wallet supporting PSBT (save as file)`
+4. You will be redirected to PSBT tab, with pre-filled information, click on the `Sign with a wallet supporting PSBT (save as file)`
 5. Save the file onto MicroSD card
 6. Insert MicroSD into your Coldcard.
 7. In Coldcard, click on the `Ready To Sign`
