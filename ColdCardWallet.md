@@ -20,7 +20,6 @@ The Coldcard is now connected to your BTCPay. Payments go directly to Coldcard. 
 
 [![BTCPay and Coldcard](https://img.youtube.com/vi/N0eVwdP_7EQ/mqdefault.jpg)](https://www.youtube.com/watch?v=N0eVwdP_7EQ "Connecting Coldcard to BTCPay")
 
-
 ###  Spending from BTCPay Server wallet with Coldcard (PSBT)
 
 Once there are some funds in received to your BTCPay Wallet connected to Coldcard, you can spend them by using [PSBT](https://github.com/bitcoin/bitcoin/blob/master/doc/psbt.md#psbt-in-general) (Partially Signed Bitcoin Transactions). This allows completely offline signing of your transactions, without ever having to connect your hardware wallet to the internet.
@@ -39,3 +38,6 @@ Once there are some funds in received to your BTCPay Wallet connected to Coldcar
 12. Click `Other Actions` and select `Review`
 13. Review your transactions and click `Broadcast` to broadcast it on the network.
 
+The video below shows how to connect your BTCPay store to your Coldcard.
+
+[![BTCPay and Coldcard](https://img.youtube.com/vi/oK0h-76Giaw/mqdefault.jpg)](https://www.youtube.com/watch?v=oK0h-76Giaw "PSBT Coldcard and BTCPay")
