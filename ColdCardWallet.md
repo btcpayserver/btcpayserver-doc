@@ -1,6 +1,6 @@
 # Connecting Coldcard Wallet to BTCPay Server
 
-This documents shows how to connect Coldcard Wallet to BTCPay Server. 
+This document shows how to connect Coldcard Wallet to BTCPay Server. 
 
 ## ColdCard Wallet Setup
 
@@ -27,13 +27,13 @@ Once there are some funds in received to your BTCPay Wallet connected to Coldcar
 1. Wallets > Manage > Send
 2. Fill in destination address and the amount
 3. Click on the Sign with `a wallet supporting PSBT` button.
-4. You will be redirected to PSBT tab, with pre-filled information, click on the  Sign with `a wallet supporting PSBT (save as file)`
+4. You will be redirected to PSBT tab, with pre-filled information, click on thec`Sign with a wallet supporting PSBT (save as file)`
 5. Save the file onto MicroSD card
 6. Insert MicroSD into your Coldcard.
 7. In Coldcard, click on the `Ready To Sign`
 8. Review the transaction information, and click OK button to sign it.
 9. Transaction will be saved onto MicroSD.
-10. In BTCPay, go to PSTB tab of the wallet and upload the signed PSBT file.
+10. In BTCPay, go to PSBT tab of the wallet and upload the signed PSBT file.
 11. Click `Decode`
 12. Click `Other Actions` and select `Review`
 13. Review your transactions and click `Broadcast` to broadcast it on the network.
