@@ -26,11 +26,11 @@ Easily-embeddable HTML and highly-customizable payment buttons allow users to re
 [![BTCPay Payment Buttons](https://img.youtube.com/vi/MIWGvl6_WzI/mqdefault.jpg)](https://www.youtube.com/watch?v=MIWGvl6_WzI "BTCPay Payment Button")
 
 ## Lightning Network Apps (Lapps)
-[Lapps](https://blockstream.com/2018/03/29/blockstreams-week-of-lapps-ends/) are applications built on top of the [Lightning Charge](https://blockstream.com/2018/01/16/lightning-charge/), a complimentary package that allows users and developers to easier use and develop on top of c-lightning. If you decided to use c-lightning, you could easily connect your BTCPay to any of the Lapps.
+[Lapps](https://blockstream.com/2018/03/29/blockstreams-week-of-lapps-ends/) are applications built on top of [Lightning Charge](https://blockstream.com/2018/01/16/lightning-charge/), a complimentary package that enables easier development on top of c-lightning. If you decided to use c-lightning, you could easily connect your BTCPay to any of the Lapps.
 
-BTCPay exposes all the necessary information required to connect your internal BTCPay c-lightning node to a Lightning Network App.  Go to Server Settings > Services > Lightning charge server > See information > Credentials.
+BTCPay exposes all the necessary information required to connect your internal BTCPay c-lightning node to a Lightning Network App. Go to Server Settings > Services > Lightning charge server > See information > Credentials.
 
-Below are videos that showcase how to connect some of the lapps to your BTCPay.
+Below are videos that showcase how to connect some of the lapps to BTCPay.
 
 [![c-lightningbtcpay1](https://img.youtube.com/vi/6EHNq1anD1k/mqdefault.jpg)](https://www.youtube.com/watch?v=6EHNq1anD1k "BTCPay - c-lightning and lapps intro")
 
