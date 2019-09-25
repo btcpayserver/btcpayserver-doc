@@ -4,7 +4,7 @@ This document shows how to connect Ledger Nano S Wallet to BTCPay Server.
 
 ## Ledger Nano S Wallet Setup
 
-This guide assumes, you have a Nano Swallet set up. To configure the Nano S, please see the [quick setup guide on manufacturer's website](https://www.ledger.com/start/).
+This guide assumes, you have a Nano S wallet set up. To configure the Nano S, please see the [quick setup guide on manufacturer's website](https://www.ledger.com/start/).
 
 ### Requirements
 
