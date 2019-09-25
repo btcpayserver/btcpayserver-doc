@@ -1,4 +1,4 @@
-# Connecting Coldcard Wallet to BTCPay Server
+# Connecting Ledger Wallet to BTCPay Server
 
 This document shows how to connect Ledger Nano S Wallet to BTCPay Server. 
 
@@ -43,4 +43,4 @@ Once there are some funds in received to your BTCPay Wallet connected to Ledger,
 
 The video below shows how to connect your BTCPay store to your Ledger and how to use Ledger with the [internal BTCPay wallet](Wallet.md).
 
-[![BTCPay and Coldcard](https://img.youtube.com/vi/1Sj5mP4TkFI/mqdefault.jpg)](https://www.youtube.com/watch?v=1Sj5mP4TkFI "Ledger Nano S with BTCPay")
+[![BTCPay and Ledger](https://img.youtube.com/vi/1Sj5mP4TkFI/mqdefault.jpg)](https://www.youtube.com/watch?v=1Sj5mP4TkFI "Ledger Nano S with BTCPay")
