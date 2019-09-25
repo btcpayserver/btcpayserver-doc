@@ -58,13 +58,22 @@ If an invoice is paid while your BTCPay server is down, the software will automa
 
 ## Documentation
 
-## BTCPay Basics
+* ## BTCPay Basics
 
-* [Use Case](UseCase.md)
-* [Walkthrough](Walkthrough.md)
-* [Getting Started](GettingStarted.md)
-* [BTCPay vs other processors](BTCPayVsOthers.md)
-* [Try it Out](TryItOut.md)
+  - [Use Case](UseCase.md)
+  - [Walkthrough](Walkthrough.md)
+  - [BTCPay vs other processors](BTCPayVsOthers.md)
+  - [Try it Out](TryItOut.md)
+
+  ## Getting Started
+
+  - [(1) Register account](RegisterAccount.md)
+  - [(2) Create a store](CreateStore.md)
+  - [(3) Connect a wallet](ConnectWallet.md)
+    - [Ledger Wallet](LedgerWallet.md)
+    - [Coldcard Wallet](ColdcardWallet.md)
+    - [Wasabi Wallet](WasabiWallet.md)
+    - [Electrum Wallet](ElectrumWallet.md)
 
 ## Deployment
 
