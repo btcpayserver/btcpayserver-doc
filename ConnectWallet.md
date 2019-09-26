@@ -24,3 +24,5 @@ This page lists the recommended wallets for BTCPay Server. Click on the link and
 
 - [Wasabi Wallet](WasabiWallet.md)
 - [Electrum Wallet](ElectrumWallet.md)
+
+***Proceed to the next step - [What's Next?](WhatsNext.md).***
