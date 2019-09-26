@@ -18,7 +18,7 @@ This page lists the recommended wallets for BTCPay Server. Click on the link and
 ### Internal BTCPay Wallet
 
 - [Ledger Wallet](LedgerWallet.md)
-- [Coldcard Wallet](ColdcardWallet.md)
+- [Coldcard Wallet]( 	ColdCardWallet.md)
 
 ### External Wallets
 
