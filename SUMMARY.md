@@ -31,6 +31,7 @@
   - [Coldcard Wallet](ColdcardWallet.md)
   - [Wasabi Wallet](WasabiWallet.md)
   - [Electrum Wallet](ElectrumWallet.md)
+- [(4) What's Next?](WhatsNext.md)
 
 ## Features
 
