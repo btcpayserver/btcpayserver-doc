@@ -4,7 +4,7 @@ After [account registration](RegisterAccount.md), [store creation](CreateStore.m
 
 BTCPay is a non-custodial software, which means that all the funds received to your store, will end up directly into your connected wallet.
 
-*Note: A [private key](https://en.bitcoin.it/wiki/Private_key) (xprv) is **never** required for receiving money to a BTCPay wallet. The software needs a public key (xpubkey) which is a watch-only wallet token. The xpubkey allows BTCPay to generate a new address each time a new invoice is generated. It enables users to observe the wallet balance and transactions without having to share their private key.*
+*Note: A [private key](https://en.bitcoin.it/wiki/Private_key) (xprv) is **never** required for receiving money on-chain to your BTCPay wallet. The software needs a public key (xpubkey) which is a watch-only wallet token. The xpubkey allows BTCPay to generate a new address each time a new invoice is generated. It enables users to observe the wallet balance and transactions without having to share their private key.*
 
 To manage the funds received to your BTCPay wallet, you can use an [internal BTCPay Wallet](Wallet.md) or an external wallet. We recommend that you use internal wallet, since it's connected to your full node and does not leak information to third-parties. If you're using an external wallet, we recommend that you use the wallet which:
 
