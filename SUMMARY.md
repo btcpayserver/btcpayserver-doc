@@ -28,7 +28,7 @@
 - [(2) Create a store](CreateStore.md)
 - [(3) Connect a wallet](ConnectWallet.md)
   - [Ledger Wallet](LedgerWallet.md)
-  - [Coldcard Wallet](ColdcardWallet.md)
+  - [Coldcard Wallet](ColdCardWallet.md)
   - [Wasabi Wallet](WasabiWallet.md)
   - [Electrum Wallet](ElectrumWallet.md)
 - [(4) What's Next?](WhatsNext.md)
