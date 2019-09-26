@@ -4,10 +4,9 @@
 
 * [Use Case](UseCase.md)
 * [Walkthrough](Walkthrough.md)
-* [Getting Started](GettingStarted.md)
 * [BTCPay vs other processors](BTCPayVsOthers.md)
 * [Try it Out](TryItOut.md)
-  
+
 ## Deployment
 
 * [Choosing a Deployment Method](Deployment.md)
@@ -23,7 +22,17 @@
 * [Raspberry Pi Deployment](RaspberryPiDeployment.md)
 * [Third-Party Hosting](ThirdPartyHosting.md)
 
-### Features
+## Getting Started
+
+- [(1) Register account](RegisterAccount.md)
+- [(2) Create a store](CreateStore.md)
+- [(3) Connect a wallet](ConnectWallet.md)
+  - [Ledger Wallet](LedgerWallet.md)
+  - [Coldcard Wallet](ColdcardWallet.md)
+  - [Wasabi Wallet](WasabiWallet.md)
+  - [Electrum Wallet](ElectrumWallet.md)
+
+## Features
 
 * [Wallet](Wallet.md)
 * [Invoices](Invoices.md)
@@ -33,7 +42,7 @@
 * [Payment Requests](PaymentRequests.md)
 * [Dynamic DNS](DynamicDNS.md)
 
-### Integrations
+## Integrations
 
 * [WooCommerce](WooCommerce.md)
     * [WooCommerce Xadrez's Guide](Xadrez.md)
@@ -42,14 +51,14 @@
 * [PrestaShop](PrestaShop.md)
 * [Custom Integration](CustomIntegration.md)
 
-### Development
+## Development
 
 * [Architecture](Architecture.md)
 * [Developing Locally](LocalDevelopment.md)
 * [How to add an Altcoin](Altcoins.md)
 * [Customize Bootstrap theme](Theme.md)
 
-### FAQ and common issues
+## FAQ and common issues
 
 * [FAQ Table of Contents](FAQ/readme.md)
 * [General FAQ](FAQ/FAQ-General.md)
@@ -63,7 +72,7 @@
 * [Lightning Network FAQ](FAQ/FAQ-LightningNetwork.md)
 * [Altcoins FAQ](FAQ/FAQ-Altcoin.md)
 
-### Support and Community
+## Support and Community
 
 * [Troubleshooting an issue](Troubleshooting.md)
 * [Support](Support.md)
