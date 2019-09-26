@@ -14,7 +14,7 @@ The overall process is as follows:
 
 BTCPayServer can be successfully installed on the following hardware:
 
-1. Raspberry Pi 3 Model B+<br/>
+1. Raspberry Pi 3 Model B+<br/>Raspberry Pi 4 instructions [here](https://medium.com/@wiz/1731a56719d5)<br/>
 
 ![Raspberry Pi 3 Model B+](https://www.raspberrypi.org/app/uploads/2018/03/770A5842-462x322.jpg "Raspberry Pi 3 Model B+")
 
