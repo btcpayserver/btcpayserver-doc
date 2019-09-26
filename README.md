@@ -74,6 +74,8 @@ If an invoice is paid while your BTCPay server is down, the software will automa
     - [Coldcard Wallet](ColdcardWallet.md)
     - [Wasabi Wallet](WasabiWallet.md)
     - [Electrum Wallet](ElectrumWallet.md)
+- [(4) What's next](WhatsNext.md)
+
 
 ### Deployment
 
