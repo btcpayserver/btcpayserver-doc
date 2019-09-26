@@ -38,7 +38,7 @@ Once there are some funds in received to your BTCPay Wallet connected to Ledger,
 5. Click on the Sign with `your Ledger Wallet device`.
 6. BTCPay will establish a connection with the Ledger wallet and display transaction information on the wallet screen.
 7. Confirm the transaction on the Ledger.
-8. In Coldcard, click on the `Ready To Sign`
+8. In Ledger, click on the `Ready To Sign`
 9. Review your transactions and click `Broadcast` to broadcast it on the network.
 
 The video below shows how to connect your BTCPay store to your Ledger and how to use Ledger with the [internal BTCPay wallet](Wallet.md).
