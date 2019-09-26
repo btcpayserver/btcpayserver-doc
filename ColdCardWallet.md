@@ -2,7 +2,7 @@
 
 This document shows how to connect Coldcard Wallet to BTCPay Server. 
 
-## ColdCard Wallet Setup
+## Coldcard Wallet Setup
 
 This guide assumes, you have a Coldcard wallet set up. To configure the Coldcard, please see the [quick setup guide on manufacturer's website](https://coldcardwallet.com/docs/quick).
 
