@@ -20,7 +20,7 @@ Apps are plugins (features) you can use to expand the use case of your BTCPay.
 There's no limit. Each app can be created an unlimited amount of times. Apps are added on a store level; you need to have a store to create an app.
 
 ## Is there a Point of Sale feature in BTCPay?
-Yes. Please read our [guide on creating the POS app](/GettingStarted.md#creating-the-pay-button).
+Yes. Please read our [guide on creating the POS app](/WhatsNext.md#creating-the-pay-button).
 
 ## How can I use BTCPay in a physical store?
 You can use our Point of Sale app. For having a physical PoS, right now, the easiest solution is to utilize PoS App that’s available and then set that as URL within your in-store POS. When you create POS app within BTCPay Server - you will get publicly accessible URL where checkout buttons for products you’ve defined will be displayed. Click on the button creates an invoice. 
@@ -31,7 +31,7 @@ Please follow our detailed guide on how to use our [PoS App on a mobile device.]
 It is very easy to customize the look of the Point of Sale app. [Follow this guide](/Theme.md) to learn how to change the theme.
 
 ## What is a Payment Button?
-The Payment Button is a simple and customizable HTML button you can create and embed into your website. To create a payment button, [follow this guide](/GettingStarted.md#creating-the-point-of-sale-app)
+The Payment Button is a simple and customizable HTML button you can create and embed into your website. To create a payment button, [follow this guide](/WhatsNext.md#creating-the-point-of-sale-app)
 
 ## How to fix empty spacing around payment button?
 This usually happens in Wordpress. The Wordpress text editor can cause conflicts with the pay button code by adding `<br>`, which is "line break" in HTML, between the hidden lines of the form, thus adding invisible empty lines. 
@@ -295,7 +295,7 @@ Save the changes and preview the app.
 
 BTCPay Pay Button which can be found in Store Settings > Pay Button, currently does not support custom amounts. 
 However, you can use a work-around:
-* [Create Point of sale app](GettingStarted.md#creating-the-point-of-sale-app)
+* [Create Point of sale app](/WhatsNext.md#creating-the-point-of-sale-app)
 * Enable `user can input a custom amount` field
 * Remove all the products from the automatically generated template.
 * Save settings.
