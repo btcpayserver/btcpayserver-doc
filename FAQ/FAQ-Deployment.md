@@ -155,7 +155,11 @@ If you need to figure out which environment variable you need to modify, have a 
 Building on the section above, this is how you configure BTCPay to use `testnet` instead of the default `mainnet`:
 
 ```bash
+# Export the NBITCOIN_NETWORK variable switching to testnet
 export NBITCOIN_NETWORK="testnet"
+
+# Run btcpay-setup.sh for the change to take effect
+. btcpay-setup.sh -i
 ```
 
 If you just want to test things quickly without deploying everything yourself, have a look at the [Try It Out](/TryItOut.md) section.
