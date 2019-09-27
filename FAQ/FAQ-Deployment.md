@@ -19,6 +19,7 @@ Here are common questions about installation, regardless of the deployment metho
 * [How do I disable Tor on my BTCPay Server?](FAQ-Deployment.md#how-do-i-disable-tor-on-my-btcpay-server)
 * [Why activate Tor? Does it mean that nobody knows who I am?](FAQ-Deployment.md#why-activate-tor-does-it-mean-that-nobody-knows-who-i-am)
 * [How can I modify/deactivate environment variables?](FAQ-Deployment.md#How-can-i-modify-deactivate-environment-variables)
+* [How can I run BTCPay on testnet?](FAQ-Deployment.md#how-can-i-run-btcpay-on-testnet)
 * [Can I start BTCPay only when I'm expecting a payment?](FAQ-Deployment.md#can-i-start-btcpay-only-when-im-expecting-a-payment)
 * [Can I use my existing BTC or LN node with BTCPay?](FAQ-Deployment.md#can-i-use-my-existing-btc-or-ln-node-with-btcpay)
 * [Can I connect to my BTCPay Bitcoin P2P on port 8333?](FAQ-Deployment.md#can-i-connect-to-my-btcpay-bitcoin-p2p-on-port-8333)
@@ -93,7 +94,7 @@ Tor is activated by default on the docker deployment.
 ### How do I disable Tor on my BTCPay Server?
 
 That's really easy: just log in your instance with SSH, and enter the `root/btcpayserver-docker` directory as root. There, type the two following command lines:
-```
+```bash
 root/btcpayserver-docker $ BTCPAYGEN_EXCLUDE_FRAGMENTS="$BTCPAYGEN_EXCLUDE_FRAGMENTS;opt-add-tor"
 root/btcpayserver-docker $ . btcpay-setup.sh -i
 ```
@@ -127,7 +128,7 @@ If you want to know more about the philosophy behind all this, you can read our 
 In BTCPay, various options are activated through environment variables. You can modify or delete any of these options using command lines by exporting the new value with `export {environment variable}="{value}"` and then running `. ./btcpay-setup.sh -i` again.
 
 For example, let's say I want to deactivate Tor for my BTCPay server:
-```
+```bash
 # Login as root
 sudo su -
 
@@ -148,6 +149,21 @@ exit
 ```
 
 If you need to figure out which environment variable you need to modify, have a look at [this list](https://github.com/btcpayserver/btcpayserver-docker#environment-variables).
+
+### How can I run BTCPay on testnet?
+
+Building on the section above, this is how you configure BTCPay to use `testnet` instead of the default `mainnet`:
+
+```bash
+# Export the NBITCOIN_NETWORK variable switching to testnet
+export NBITCOIN_NETWORK="testnet"
+
+# Run btcpay-setup.sh for the change to take effect
+. btcpay-setup.sh -i
+```
+
+If you just want to test things quickly without deploying everything yourself, have a look at the [Try It Out](/TryItOut.md) section.
+It provides links and explanations for a BTCPay testnet instance hosted by us.
 
 ### Can I start BTCPay only when I'm expecting a payment?
 
