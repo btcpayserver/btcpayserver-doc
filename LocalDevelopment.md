@@ -1,22 +1,42 @@
 # Local development
 
-## Dependencies
+## Prerequisites
+
+For the development environment you need to install these tools:
 
 * [.NET Core 2.2 SDK](https://dotnet.microsoft.com/download)
-* Docker
-* NBXplorer
-* PostgreSQL
-* Bitcoin Core (optionally other full nodes)
+* Docker: [Windows](https://docs.docker.com/docker-for-windows/install/) | [Mac OS](https://docs.docker.com/docker-for-mac/install/) | [Linux](https://docs.docker.com/install/linux/docker-ce/ubuntu/)
+
+## Dependencies
+
+To execute tests and run the project for debugging you also need instances of the following running and configured on the right ports:
+
+* [NBXplorer](https://github.com/dgarage/NBxplorer)
+* [Postgres](https://www.postgresql.org/)
+* [Bitcoin Core](https://bitcoincore.org/) (and optionally other full nodes)
+
+We recommend you use our dockerized setup to bootstrap the development environment:
+The file [BTCPayServer.Tests/docker-compose.yml](https://github.com/btcpayserver/btcpayserver/blob/master/BTCPayServer.Tests/docker-compose.yml) can be used to spin everything up:
+
+```bash
+git clone git@github.com:btcpayserver/btcpayserver.git
+cd btcpayserver/BTCPayServer.Tests
+docker-compose up dev
+```
+
+To get started see the [README of the test project](https://github.com/btcpayserver/btcpayserver/blob/master/BTCPayServer.Tests/README.md).
 
 ## Which IDE?
 
-I recommend using Visual Studio Code (cross platform) or Visual Studio 2017 update 3 (Windows Only) or Rider (cross platform).  
+We recommend using Visual Studio Code (cross platform) or Visual Studio 2017 update 3 (Windows Only) or Rider (cross platform).
 You can of course use VIM if you are hardcore, .NET Core 2.0 is command-line environment friendly.
 
-## During development...
+Visual Studio Code, Visual Studio 2017 and Rider will run the debug profile Docker-Regtest.
+This will run a BTCPayServer instance connecting to the services in your Docker service, so you can easily debug and step through the code.
 
-You need an instance of NBXplorer, Postgres, and Bitcoin Core running and configured on the right ports to execute tests and run the project for debugging.
+## Videos
 
-To simplify the development process we created a docker-compose file which setup everything for your dev environment, you can find all the information in [the README of the test project](https://github.com/btcpayserver/btcpayserver/blob/master/BTCPayServer.Tests/README.md).
+For more information check out these videos:
 
-Visual Studio Code, Visual Studio 2017 and Rider will run the debug profile Docker-Regtest, which will run a BTCPayServer instance connecting to the services in your Docker service, so you can easily debug and step through the code. For more info check out this [developer video](https://youtu.be/ZePbMPSIvHM). 
+* [How to contribute to BTCPay Server Development](https://youtu.be/ZePbMPSIvHM) by Nicolas Dorier
+* [Setting up BTCPayServer development environment on Linux (Ubuntu)](https://youtube.com/watch?v=j486T_Rk-yw) by RockStarDev
