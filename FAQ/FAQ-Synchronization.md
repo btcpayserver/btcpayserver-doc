@@ -33,7 +33,7 @@ After FastSync is complete and you have brought back up your instance, refresh y
 
 ## How do I know that BTCPay synced completely?
 
-When you do not see a pop-up message in the bottom right corner, which shows the sync progress, that means that your server is fully synced and you can [begin using it](../GettingStarted.md).
+When you do not see a pop-up message in the bottom right corner, which shows the sync progress, that means that your server is fully synced and you can [begin using it](/RegisterAccount.md).
 
 ## BTCPay Server takes forever to synchronize
 
