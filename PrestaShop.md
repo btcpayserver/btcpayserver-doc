@@ -32,7 +32,7 @@ If you want to test in test mode, just paste an other btcpayserver url with test
 ## Plugin Configuration
 
 ### For Prestashop versions 1.7:
-1. Download the latest release from https://github.com/adapp-tech/prestashop-plugin/releases
+1. Download the latest release from https://github.com/btcpayserver/prestashop-plugin/releases
 2. Go to your PrestaShop administration. Under "Modules and services" select "Upload a module" (v1.7)
 3. Go to your "installed modules" -> "BTCPay" and click [Configure]<br />
 4. Go on your BTCPay server, in your store and display access tokens.
