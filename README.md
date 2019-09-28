@@ -92,7 +92,6 @@ If an invoice is paid while your BTCPay server is down, the software will automa
 ### Integrations
 
 * [WooCommerce](WooCommerce.md)
-    * [WooCommerce Xadrez's Guide](Xadrez.md)
 * [Drupal](Drupal.md)
 * [Magento](Magento.md)
 * [PrestaShop](PrestaShop.md)
