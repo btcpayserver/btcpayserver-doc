@@ -218,7 +218,9 @@ git clone https://github.com/btcpayserver/btcpayserver-docker
 cd btcpayserver-docker
 ```
 
-Set your environment variables. Make sure the `BTCPAY_HOST` value uses your own domain & subdomain. As usual, run each command separately:
+Set your environment variables.
+Make sure the `BTCPAY_HOST` value uses your own domain & subdomain.
+As usual, run each command separately:
 ```bash
 export BTCPAY_HOST="btcpay.YourDomain.com"
 export NBITCOIN_NETWORK="mainnet"
@@ -227,6 +229,13 @@ export BTCPAYGEN_REVERSEPROXY="nginx"
 export BTCPAYGEN_LIGHTNING="lnd"
 export BTCPAYGEN_ADDITIONAL_FRAGMENTS="opt-save-storage-xs;opt-save-memory"
 ```
+
+If you want to use multiple hostnames, add them via the optional `BTCPAY_ADDITIONAL_HOSTS` variable:
+```bash
+export BTCPAY_ADDITIONAL_HOSTS="raspberrypi.local,btcpay.local"
+```
+
+In case you want to restrict access to your local network only, please note that you need to use a `.local` domain.
 
 Finally, run the BTCPayServer setup script:
 ```bash

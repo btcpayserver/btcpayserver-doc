@@ -46,7 +46,7 @@ No matter the kind of business you run, BTCPay offers a very easy way to get sta
 
 ## Charities and Content Creators (Donations)
 
-Charities, non-profits, content creators, and other organizations that want to accept cryptocurrency donations in a more private way than the traditional single bitcoin address method can utilize the [Pay Button](https://docs.btcpayserver.org/btcpay-basics/gettingstarted#creating-the-pay-button),  [POS app](https://github.com/btcpayserver/btcpayserver-doc/blob/master/GettingStarted.md#creating-the-point-of-sale-app), and [Crowdfunding app](Apps.md#crowdfunding-app) for a better user experience.
+Charities, non-profits, content creators, and other organizations that want to accept cryptocurrency donations in a more private way than the traditional single bitcoin address method can utilize the [Pay Button](WhatsNext.md#creating-the-pay-button), [POS app](WhatsNext.md#creating-the-point-of-sale-app), and [Crowdfunding app](Apps.md#crowdfunding-app) for a better user experience.
 
 Benefits of using BTCPay for accepting donations:
 
