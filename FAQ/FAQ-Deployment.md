@@ -80,10 +80,11 @@ sudo mkdir /mnt/usb
 UUID="$(sudo blkid -s UUID -o value /dev/sda1)"
 # Add mount to fstab.
 echo "UUID=$UUID /mnt/usb ext4 defaults,nofail 0" | sudo tee -a /etc/fstab
+# Mount the new drive
+mount /dev/sda1
 # Define `/var/lib/docker` as symbolic link to /mnt/usb
 sudo mkdir /mnt/usb/docker
 sudo ln -s /mnt/usb/docker /var/lib/docker
-mount /dev/sda1
 ```
 
 If you want to mount specific folder (like only Bitcoin node data directory), please browse `/var/lib/docker/volumes` to chose the different docker volumes.
