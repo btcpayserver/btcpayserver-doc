@@ -20,6 +20,8 @@
     * [Manual Deployment Extended](ManualDeploymentExtended.md)
 * [Hardware Deployment](HardwareDeployment.md)
 * [Raspberry Pi Deployment](RaspberryPiDeployment.md)
+* - [Raspberry Pi 3 Deployment](RPi3.md)
+    - [Raspberry Pi 4 Deployment](RPi4.md)
 * [Third-Party Hosting](ThirdPartyHosting.md)
 
 ## Getting Started
