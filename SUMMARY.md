@@ -10,18 +10,29 @@
 ## Deployment
 
 * [Choosing a Deployment Method](Deployment.md)
+
 * [Web Deployment](LunaNodeWebDeployment.md)
+
 * [Azure Deployment](AzureDeployment.md)
     * [Reducing Cost on Azure](AzurePennyPinching.md)
     * [Changing Domain](ChangeDomain.md)
+    
 * [Docker Deployment](DockerDeployment.md)
+
 * [Google Cloud Deployment](GoogleCloudDeployment.md)
+
 * [Manual Deployment](ManualDeployment.md)
+    
     * [Manual Deployment Extended](ManualDeploymentExtended.md)
+    
 * [Hardware Deployment](HardwareDeployment.md)
+
 * [Raspberry Pi Deployment](RaspberryPiDeployment.md)
-* - [Raspberry Pi 3 Deployment](RPi3.md)
-    - [Raspberry Pi 4 Deployment](RPi4.md)
+
+  * [Raspberry Pi 3 Deployment](RPi3.md)
+
+  * [Raspberry Pi 4 Deployment](RPi4.md)
+
 * [Third-Party Hosting](ThirdPartyHosting.md)
 
 ## Getting Started
