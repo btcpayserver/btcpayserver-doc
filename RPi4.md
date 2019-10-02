@@ -51,13 +51,13 @@ The 500GB SSD allows you to keep a full copy of the Bitcoin blockchain, until it
 - Connect the SSD to one of the blue colored USB 3 ports
 - Prepare the USB Power Adapter but don’t plug it in yet
 
-![](img\RPI4Components.jpeg)
+![RPI4 Components](/img/RPI4Components.jpeg)
 
 ## Install Linux on the Raspberry Pi
 
 Start by downloading [Raspbian Linux](https://www.raspberrypi.org/downloads/raspbian/) to your existing computer. The “Lite” distribution is fine for BTCPay setup, but if you want to use your Raspberry Pi for other things, you might want the full image.
 
-![](img\RPI4Linux.png)
+![RPI4 Linux Installation](/img/RPI4Linux.png)
 
 ### Flash your SD card with Raspbian Linux
 
@@ -69,7 +69,7 @@ sudo -sdiskutil list
 
 You’ll see a list of disks like this:
 
-![](C:\Users\Pavle\Documents\GitHub\btcpayserver-doc\btcpayserver-doc\btcpayserver-doc\img\RPI4Terminal1.png)
+![RPI4 Console](/img/RPI4Terminal1.png)
 
 Here’s  where your computer might be different from the above and you need to be careful. From the above list of disks on my computer, I can identify `disk0` and `disk1` are my mac’s internal hard disks. But that ~32GB “external” and “physical” `disk2` is the same size as my SD card and has some Windows partition on it, so I can identify my SD card is `disk2`.
 
@@ -87,7 +87,7 @@ dd if=/path/to/raspbian.img of=/dev/rdiskX bs=4m
 
 If all went well, you should see the commands return something like this:
 
-![](img\RPI4Terminal2.png)
+![RPI4 Console](/img/RPI4Terminal2.png)
 
 Next,  enable SSH at bootup so you can remotely login, and finally eject the  SD card so you can move it to the Raspberry Pi. The new SD card’s boot  partition should automatically be mounted on `/Volumes/boot`
 
@@ -96,7 +96,7 @@ touch /Volumes/boot/ssh
 diskutil eject disk2
 ```
 
-![](img\RPI4Terminal3.png)
+![RPI4 Console](/img/RPI4Terminal4.png)
 
 ## Booting up the Raspberry Pi
 
@@ -131,7 +131,7 @@ update-rc.d dphys-swapfile remove
 systemctl disable dphys-swapfile
 ```
 
-![](img\RPI4Terminal5.png)
+![RPI4 Console](/img/RPI4Terminal5.png)
 
 Partition your SSD
 
