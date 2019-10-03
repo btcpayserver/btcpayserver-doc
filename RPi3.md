@@ -1,10 +1,6 @@
 # Raspberry Pi 3 Deployment with Pruning and FastSync
 
-Andreas Antonopoulos tells us "Not your keys, not your Bitcoin". Here's another Bitcoin axiom: "Your hardware. Your node. Your keys. Your Bitcoin."
-
-For your Bitcoin experience to be truly self-sovereign and trustless, you should run nodes on your own hardware and internet connection. BTCPayServer is an excellent way to run Bitcoin & Lightning nodes together. Not only are you validating transactions, you also get the ability to accept Bitcoin (layer 1) and Lightning (layer 2) payments.
-
-To that end, here are instructions to install and host your very own BTCPayServer on a Raspberry Pi. We call it a BTCPi.
+This document guides you step by step on how to run BTCPay Server on a Raspberry Pi 3. See here the [Raspberry Pi 4 instructions](RPi4.md)
 
 The overall process is as follows:
 
@@ -103,7 +99,7 @@ Install UFW:
 sudo apt install ufw
 ```
 
-This command allows SSH connections from your LAN only. Replace `192.168.1.0` with your own subnet:
+**This command allows SSH connections from your LAN only**. Replace `192.168.1.0` with your own subnet:
 ```bash
 sudo ufw allow from 192.168.1.0/24 to any port 22
 ```
