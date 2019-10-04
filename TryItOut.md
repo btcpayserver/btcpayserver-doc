@@ -40,7 +40,6 @@ See the [What's Next](https://docs.btcpayserver.org/getting-started/whatsnext) p
 
 To see BTCPay in action, visit our demo apps and stores or check out some of the stores using BTCPay in production.
 
-* [BTCPay Demo Store](https://store.demo.btcpayserver.org/)
+* [BTCPay Demo Store](https://store.btcpayserver.org/)
 * [Point of Sale Demo](https://mainnet.demo.btcpayserver.org/apps/87kj5yKay8mB4UUZcJhZH5TqDKMD3CznjwLjiu1oYZXe/pos)
-* [Payment Button Demo](https://store.demo.btcpayserver.org/?page_id=44)
 * [In-production stores](https://bitcoinshirt.co/btcpay-stores/)
