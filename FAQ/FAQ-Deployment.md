@@ -18,6 +18,7 @@ Here are common questions about installation, regardless of the deployment metho
 * [How do I activate Tor on my BTCPay Server?](FAQ-Deployment.md#how-do-i-activate-tor-on-my-btcpay-server)
 * [How do I disable Tor on my BTCPay Server?](FAQ-Deployment.md#how-do-i-disable-tor-on-my-btcpay-server)
 * [Why activate Tor? Does it mean that nobody knows who I am?](FAQ-Deployment.md#why-activate-tor-does-it-mean-that-nobody-knows-who-i-am)
+* [How to access the .onion address without clearnet?](FAQ-Deployment.md#how-to-access-the-onion-address-without-clearnet)
 * [How can I modify/deactivate environment variables?](FAQ-Deployment.md#How-can-i-modify-deactivate-environment-variables)
 * [How can I run BTCPay on testnet?](FAQ-Deployment.md#how-can-i-run-btcpay-on-testnet)
 * [Can I start BTCPay only when I'm expecting a payment?](FAQ-Deployment.md#can-i-start-btcpay-only-when-im-expecting-a-payment)
@@ -98,7 +99,6 @@ That's really easy: just log in your instance with SSH, and enter the `root/btcp
 root/btcpayserver-docker $ BTCPAYGEN_EXCLUDE_FRAGMENTS="$BTCPAYGEN_EXCLUDE_FRAGMENTS;opt-add-tor"
 root/btcpayserver-docker $ . btcpay-setup.sh -i
 ```
-
 Then wait a few minutes for the server to restart, and you're done!
 
 ### Why activate Tor? Does it mean that nobody knows who I am?
@@ -123,6 +123,11 @@ We think that the illusion of security is more dangerous that no security, or at
 
 If you want to know more about the philosophy behind all this, you can read our [article on  Medium](https://medium.com/@BtcpayServer/about-tor-and-btcpay-server-2ec1e4bd5e51).
 
+### How to access the .onion address without clearnet?
+To see the .onion address of your BTCPay instance without accessing it through the clearnet and clicking the Tor logo in top left corner, apply the following command:
+```bash
+tail /var/lib/docker/volumes/generated_tor_servicesdir/_data/BTCPayServer/hostname
+```
 ### How can I modify/deactivate environment variables?
 
 In BTCPay, various options are activated through environment variables. You can modify or delete any of these options using command lines by exporting the new value with `export {environment variable}="{value}"` and then running `. ./btcpay-setup.sh -i` again.

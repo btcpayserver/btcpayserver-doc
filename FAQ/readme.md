@@ -38,6 +38,7 @@ Questions and solutions to BTCPay installation.
 * [How do I activate Tor on my BTCPay Server?](FAQ-Deployment.md#how-do-i-activate-tor-on-my-btcpay-server)
 * [How do I disable Tor on my BTCPay Server?](FAQ-Deployment.md#how-do-i-disable-tor-on-my-btcpay-server)
 * [Why activate Tor? Does it mean that nobody knows who I am?](FAQ-Deployment.md#why-activate-tor-does-it-mean-that-nobody-knows-who-i-am)
+* [How to access the .onion address without clearnet?](FAQ-Deployment.md#how-to-access-the-onion-address-without-clearnet)
 * [How can I modify/deactivate environment variables?](FAQ-Deployment.md#How-can-i-modifydeactivate-environment-variables)
 * [How can I run BTCPay on testnet?](FAQ-Deployment.md#how-can-i-run-btcpay-on-testnet)
 * [Can I start BTCPay only when I'm expecting a payment?](FAQ-Deployment.md#can-i-start-btcpay-only-when-im-expecting-a-payment)
