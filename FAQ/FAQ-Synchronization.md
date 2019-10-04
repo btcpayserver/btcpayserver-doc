@@ -128,9 +128,6 @@ btcpay-down.sh
 # Delete 'blocks' and 'chainstate' folders
 rm -rf /var/lib/docker/volumes/generated_bitcoin_datadir/_data/blocks
 rm -rf /var/lib/docker/volumes/generated_bitcoin_datadir/_data/chainstate
-# Recreate empty 'blocks' and 'chainstate' folders
-mkdir /var/lib/docker/volumes/generated_bitcoin_datadir/_data/blocks
-mkdir /var/lib/docker/volumes/generated_bitcoin_datadir/_data/chainstate
 btcpay-up.sh
 ```
 
