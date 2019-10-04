@@ -13,7 +13,7 @@ If you have any questions about translating, join the [#Translations channel](ht
   * Step 2: Find Your Language-Country Code
   * Step 3: New Language Translation
   * Translation Tips
-  * View:  [Checkout Page](https://store.demo.btcpayserver.org/) For Reference
+  * View:  [Checkout Page](https://store.btcpayserver.org/) For Reference
 
 ----
 
@@ -64,5 +64,5 @@ They should not be translated, but they need to remain in the correct place in y
 
 Need context for a string?
 
-Visit the BTCPay Server demo store [checkout page](https://store.demo.btcpayserver.org/). 
+Visit the BTCPay Server demo store [checkout page](https://store.btcpayserver.org/). 
 

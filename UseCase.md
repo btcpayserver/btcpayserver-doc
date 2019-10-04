@@ -28,7 +28,7 @@ Want to give it a try? Here is an up-to-date list of [third-party hosts](ThirdPa
 
 If you're a merchant running an e-commerce business, you can easily [deploy BTCPay](https://docs.btcpayserver.org/deployment) and connect it to your store via [integration plugins](https://docs.btcpayserver.org/integrations/) in just a few clicks.
 
-BTCPay checkout is no different to any other payment gateway. Your customer gets an invoice. They pay it by scanning a QR code or by copy-pasting the amount and the address. When their payment is confirmed, you will be notified via your e-commerce CMS, and you can ship the item. Take a look at [our demo online store](https://store.demo.btcpayserver.org/).
+BTCPay checkout is no different to any other payment gateway. Your customer gets an invoice. They pay it by scanning a QR code or by copy-pasting the amount and the address. When their payment is confirmed, you will be notified via your e-commerce CMS, and you can ship the item. Take a look at [our demo online store](https://store.btcpayserver.org/).
 
 ### Physical Store
 
