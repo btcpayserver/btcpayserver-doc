@@ -46,13 +46,13 @@ BTCPay server is a feature-rich software with plenty of use-cases that can solve
 
 ## How much does it cost to run BTCPay Server?
 
-BTCPay is free software. You can run it as a self-hosted solution on your own local server, or use a hosting provider, which is what a majority of users do. Additionally, you can use a third-party BTCPay host and attach your store to it.
+BTCPay is completely free software. The software itself costs nothing. It can be downloaded and used by anyone, free of charge. You can run it **internally** as a self-hosted solution, on a home server, on a low-cost single-board computer like [RaspberryPi](RaspberryPiDeployment.md) or different kind of [in-home hardware](HardwareDeployment.md) 
 
-If you choose to host it externally, the price depends obviously on the hosting provider. Be sure to choose a VPS which meets the minimal requirements in RAM and storage.
+Hosting BTCPay **externally**, usually means using a Virtual Private Server, enterprise-grade infrastructure, or a [third-party BTCPay hosting](ThirdPartyHosting.md).
 
-The low-priced VPS servers tested by the community start at around [9$/month](https://medium.com/@BtcpayServer/hosting-btcpayserver-on-lunanode-bf9ef5fff75b).
+The price of hosting BTCPay Server obviously depends on the hosting provider.
 
-The Microsoft Azure servers are slightly [easier to deploy](https://github.com/btcpayserver/btcpayserver-doc/blob/master/AzureDeployment.md), but that comfort comes with a higher price-tag of roughly 65$/month. However, the price for the Azure servers can be reduced to approximately 25$/month after the initial sync with [penny-pinching](https://github.com/btcpayserver/btcpayserver-doc/blob/master/AzurePennyPinching.md).
+The low-priced VPS servers tested by the community start at around [9$/month](LunaNodeWebDepolyment.md), but you're free to explore other hosting providers that suit your budget, as long as they meet the [minimum requirements](FAQ-General.md#what-are-the-minimal-requirements-to-run-btcpay).
 
 ### Why do I need a VPS? Can't I just run BTCPay on my home computer?
 
@@ -63,10 +63,6 @@ You might also not want to expose your home IP address for an activity related t
 For all these reasons, while local hosting is suitable for testing, it's not a viable solution for production.
 
 ### Can the cost of running BTCPay on Microsoft Azure be reduced?
-
-Yes. Currently, the one-click deployment requires Azure Virtual Machine, but if you’re a programmer or understand VM’s you can deploy one on a different VM. Furthermore, the changes in the Bitcoin Core 0.16.0 (BIP159) make it possible to run the full node in the pruned mode to save more disk space.
-
-Also, once the full node is synchronized to the network, you can downgrade the machine on Azure to take a less expensive one.
 
 Please check out [How to penny-pinch your Azure deployment](AzurePennyPinching.md).
 
