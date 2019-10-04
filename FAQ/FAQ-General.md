@@ -46,13 +46,13 @@ BTCPay server is a feature-rich software with plenty of use-cases that can solve
 
 ## How much does it cost to run BTCPay Server?
 
-BTCPay is completely free software. The software itself costs nothing. It can be downloaded and used by anyone, free of charge. You can run it **internally** as a self-hosted solution, on a home server, on a low-cost single-board computer like [RaspberryPi](RaspberryPiDeployment.md) or different kind of [in-home hardware](HardwareDeployment.md) 
+BTCPay is completely free software. The software itself costs nothing. It can be downloaded and used by anyone, free of charge. You can run it **internally** as a self-hosted solution, on a home server, on a low-cost single-board computer like [RaspberryPi](RaspberryPiDeployment.md) or different kind of [in-home hardware](/HardwareDeployment.md) 
 
-Hosting BTCPay **externally**, usually means using a Virtual Private Server, enterprise-grade infrastructure, or a [third-party BTCPay hosting](ThirdPartyHosting.md).
+Hosting BTCPay **externally**, usually means using a Virtual Private Server, enterprise-grade infrastructure, or a [third-party BTCPay hosting](/ThirdPartyHosting.md).
 
 The price of hosting BTCPay Server obviously depends on the hosting provider.
 
-The low-priced VPS servers tested by the community start at around [9$/month](LunaNodeWebDepolyment.md), but you're free to explore other hosting providers that suit your budget, as long as they meet the [minimum requirements](FAQ-General.md#what-are-the-minimal-requirements-to-run-btcpay).
+The low-priced VPS servers tested by the community start at around [9$/month](/LunaNodeWebDepolyment.md), but you're free to explore other hosting providers that suit your budget, as long as they meet the [minimum requirements](FAQ-General.md#what-are-the-minimal-requirements-to-run-btcpay).
 
 ### Why do I need a VPS? Can't I just run BTCPay on my home computer?
 
