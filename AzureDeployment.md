@@ -4,8 +4,6 @@ This setup is similar to the [Docker Deployment](DockerDeployment.md), except th
 
 ## One-click setup
 
-Azure is currently the fastest and easiest way to set up BTCPayServer.
-
 Start by clicking the following button:
 
 [![Deploy to Azure](https://azuredeploy.net/deploybutton.svg)](https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2Fbtcpayserver%2Fbtcpayserver-azure%2Fmaster%2Fazuredeploy.json)
