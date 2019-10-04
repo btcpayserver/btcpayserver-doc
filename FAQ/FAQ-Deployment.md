@@ -65,7 +65,7 @@ Yes. BTCPay is not limited to the documented deployment methods. You can use whi
 On a self-hosted BTCPay, the unlimited amount of users and stores can be attached. That's why there are users who opened their servers for others to use. Most of them are community-driven and free. See this list of [third-party BTCPay hosts](/ThirdPartyHosting.md)
 
 ### After initial deployment, I can't register and I don't have a login yet?
-When you deploy your BTCPay Server, you should first register a user (during server synchronization). This user is automatically the server admin. If your BTCPay only shows Login in the header menu, and you are unable to register the first user after initial deployment, someone else has registered on your server as the admin. Although this is unlikely to occur (the user would need to know and watch your BTCPay domain name), they had access to your ssh private keys, thus you should redeploy a new server for security reasons. 
+When you deploy your BTCPay Server, you should first register a user (during server synchronization). This user is automatically the server admin. If your BTCPay only shows Login in the header menu, and you are unable to register the first user after initial deployment, someone else has registered on your server as the admin. Although this is unlikely to occur (the user would need to know and watch your BTCPay domain name), they had access to your ssh private keys, thus you should redeploy a new server for security reasons.
 
 ### With the docker deployment, how to use a different volume for the data?
 
@@ -80,6 +80,8 @@ sudo mkdir /mnt/usb
 UUID="$(sudo blkid -s UUID -o value /dev/sda1)"
 # Add mount to fstab.
 echo "UUID=$UUID /mnt/usb ext4 defaults,nofail 0" | sudo tee -a /etc/fstab
+# Mount the new drive
+mount /dev/sda1
 # Define `/var/lib/docker` as symbolic link to /mnt/usb
 sudo mkdir /mnt/usb/docker
 sudo ln -s /mnt/usb/docker /var/lib/docker
@@ -103,7 +105,7 @@ Then wait a few minutes for the server to restart, and you're done!
 
 ### Why activate Tor? Does it mean that nobody knows who I am?
 
-Tor for BTCPay server is intended more as an improvement of the setup process, and allows for more flexibility for hosting on one's own device at home or in an office. 
+Tor for BTCPay server is intended more as an improvement of the setup process, and allows for more flexibility for hosting on one's own device at home or in an office.
 
 Having Tor activated would allow for simpler, plug-and-play usage of BTCPay, as it suppress the need for the following configuration steps:
 * Opening multiple ports on the firewall
@@ -111,11 +113,11 @@ Having Tor activated would allow for simpler, plug-and-play usage of BTCPay, as 
 * Setting up a DNS entry to get a HTTPS certificate
 * Having a fixed IP for Lightning
 
-While these steps are usually not a problem when BTCPay is hosted on a VPS, it can be difficult to solve for non-technical users on home or office networks. 
+While these steps are usually not a problem when BTCPay is hosted on a VPS, it can be difficult to solve for non-technical users on home or office networks.
 
 Tor just solves all these issues in one shot, all you have to do is plug your device on the local network. It is especially useful for POS application.
 
-But if you're looking for perfect privacy and security, **activating Tor with your BTCPay just won't do it.** 
+But if you're looking for perfect privacy and security, **activating Tor with your BTCPay just won't do it.**
 
 Tor is a really tricky software to use for developers, as the slightest mistake can tear down the anonymity it provides. As BTCPay is evolving into a rather complex service and adding more and more plugins, even if we tried to route all this trafic through Tor, we couldn't guarantee that there would never be leaks of data in clear.
 
@@ -208,7 +210,7 @@ server {
 	listen 443 ssl http2;
 
 	ssl on;
-        
+
 	# SSL certificate by Let's Encrypt in this Nginx (not using Let's Encyrpt that came with BTCPay Server Docker)
 	ssl_certificate      /etc/letsencrypt/live/btcpay.domain.com/fullchain.pem;
 	ssl_certificate_key  /etc/letsencrypt/live/btcpay.domain.com/privkey.pem;
@@ -246,8 +248,8 @@ Also, put the following in your main Nginx config file at `/etc/nginx/nginx.conf
 ```
 http {
 
-	# ... # Existing stuff 
-	
+	# ... # Existing stuff
+
 	# Needed to allow very long URLs to prevent issues while signing PSBTs
 	server_names_hash_bucket_size 128;
 	proxy_buffer_size          128k;
@@ -263,7 +265,7 @@ http {
     	default upgrade;
     	''      close;
 	}
-	
+
 }
 ```
 
@@ -293,7 +295,7 @@ You need to open port 80 and 443. Once you did that, restart docker `btcpay-rest
 
 #### How to manually install BTCPay on Ubuntu 18.04?
 
-Check this [community guide](https://freedomnode.com/blog/114/how-to-setup-btc-and-lightning-payment-gateway-with-btcpayserver-on-linux-manual-install). 
+Check this [community guide](https://freedomnode.com/blog/114/how-to-setup-btc-and-lightning-payment-gateway-with-btcpayserver-on-linux-manual-install).
 
 #### BTCPay is expecting you to access this website from
 

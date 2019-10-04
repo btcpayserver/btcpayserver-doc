@@ -29,7 +29,7 @@ cd contrib/FastSync
 # Once FastSync has completed
 btcpay-up.sh
 ```
-After FastSync is complete and you have brought back up your instance, refresh your BTCPay domain and wait for remaining blockchain synchronization. You can also follow [this video](https://youtu.be/VNMnd-dX9Q8?t=1730). 
+After FastSync is complete and you have brought back up your instance, refresh your BTCPay domain and wait for remaining blockchain synchronization. You can also follow [this video](https://youtu.be/VNMnd-dX9Q8?t=1730).
 
 ## How do I know that BTCPay synced completely?
 
@@ -125,8 +125,9 @@ To reindex your node:
 
 ```bash
 btcpay-down.sh
-rm -rf /var/lib/docker/volumes/generated_bitcoin_datadir/_data
-mkdir /var/lib/docker/volumes/generated_bitcoin_datadir/_data
+# Delete 'blocks' and 'chainstate' folders
+rm -rf /var/lib/docker/volumes/generated_bitcoin_datadir/_data/blocks
+rm -rf /var/lib/docker/volumes/generated_bitcoin_datadir/_data/chainstate
 btcpay-up.sh
 ```
 
