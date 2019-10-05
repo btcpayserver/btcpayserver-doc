@@ -58,6 +58,15 @@ They should not be translated, but they need to remain in the correct place in y
     Japanese Example:
      "Return to StoreName" translates to "{{storeName}} に戻る"
 
+### **Notifications**
+To stay up to date with new strings - enable alerts for new strings needing to be translated by enabling the watch language feature in Transifex. 
+
+Click on the eye" icon (in red in the following screenshot).
+
+![Transifex Alerts](img/transifex-alert.png)
+
+You have to click it for the each project you wish to follow.
+
 ----
 
 ## View Checkout Page For Reference
