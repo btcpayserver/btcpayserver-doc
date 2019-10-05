@@ -170,6 +170,7 @@ Lightning Network troubleshooting and common problems.
 * [Where can I find recovery seed backup for my Lightning Network wallet in BTCPay Server?](FAQ-LightningNetwork.md#where-can-i-find-recovery-seed-backup-for-my-lightning-network-wallet-in-btcpay-server)
 * [How to disable on-chain payments and use LN payments only?](FAQ-LightningNetwork.md#how-to-disable-on-chain-payments-and-use-ln-payments-only)
 * [Where can I get Lightning Network Support?](FAQ-LightningNetwork.md#lightning-network-questions-and-support)
+* [How to see my Lightning Network version?](FAQ-LightningNetwork.md#how-to-see-my-lightning-network-version)
 
 ### [Lightning Network (LND) FAQ](FAQ-LightningNetwork.md#lightning-network-lnd-faq)
 * [How to restart my LND?](FAQ-LightningNetwork.md#how-to-restart-my-lnd)

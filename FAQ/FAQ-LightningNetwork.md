@@ -13,6 +13,7 @@ This document clarifies some of the most common questions and issues users face 
 * [How to display my Lightning Node information so that others can connect to me?](FAQ-LightningNetwork.md#how-to-display-my-lightning-node-information-so-that-others-can-connect-to-me)
 * [Where can I find recovery seed backup for my Lightning Network wallet in BTCPay Server?](FAQ-LightningNetwork.md#where-can-i-find-recovery-seed-backup-for-my-lightning-network-wallet-in-btcpay-server)
 * [How to disable on-chain payments and use LN payments only?](FAQ-LightningNetwork.md#how-to-disable-on-chain-payments-and-use-ln-payments-only)
+* [How to see my Lightning Network version?](FAQ-LightningNetwork.md#how-to-see-my-lightning-network-version)
 * [Where can I get Lightning Network Support?](FAQ-LightningNetwork.md#lightning-network-questions-and-support)
 
 ## [Lightning Network (LND) FAQ](FAQ-LightningNetwork.md#lightning-network-lnd-faq)
@@ -226,6 +227,21 @@ There are two easy ways to do this:
 
 1. Store Settings > Checkout experience > Choose default payment method at checkout
 2. Store Settings > General settings > Modify > Uncheck the Enabled box to disable on-chain payments
+
+### How to see my Lightning Network version?
+You can check your Lightning Network version from the command line.
+For LND
+```bash
+sudo su -
+cd btcpayserver-docker
+./bitcoin-lncli.sh help
+```
+For c-lightning
+```bash
+sudo su -
+./bitcoin-lightning-cli.sh getinfo
+```
+Most of the wallets (RTL, Zap, Spark, etc) that are able to your lightning node remotely will display the version on the front-end as well.
 
 ## Lightning Network (LND) FAQ 
 
