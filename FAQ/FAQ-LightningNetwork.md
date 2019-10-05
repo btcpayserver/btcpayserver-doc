@@ -231,12 +231,14 @@ There are two easy ways to do this:
 ### How to see my Lightning Network version?
 You can check your Lightning Network version from the command line.
 For LND
+
 ```bash
 sudo su -
 cd btcpayserver-docker
 ./bitcoin-lncli.sh help
 ```
 For c-lightning
+
 ```bash
 sudo su -
 ./bitcoin-lightning-cli.sh getinfo
