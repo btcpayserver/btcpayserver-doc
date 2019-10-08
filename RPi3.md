@@ -224,6 +224,13 @@ export BTCPAYGEN_LIGHTNING="lnd"
 export BTCPAYGEN_ADDITIONAL_FRAGMENTS="opt-save-storage-xs;opt-save-memory"
 ```
 
+If you want to use multiple hostnames, add them via the optional `BTCPAY_ADDITIONAL_HOSTS` variable:
+```bash
+export BTCPAY_ADDITIONAL_HOSTS="raspberrypi.local,btcpay.local"
+```
+
+In case you want to restrict access to your local network only, please note that you need to use a `.local` domain.
+
 Finally, run the BTCPayServer setup script:
 ```bash
 . ./btcpay-setup.sh -i
