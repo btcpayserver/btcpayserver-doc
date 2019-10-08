@@ -11,7 +11,7 @@ The newly released Raspberry Pi 4 is currently the best low-cost single-board co
 - [Raspberry Pi 4 with **4GB RAM**](https://www.canakit.com/raspberry-pi-4-4gb.html) ($55)
 - [Sandisk 16GB SD Card](https://www.amazon.com/dp/B073K14CVB/) ($5)
 
-Don’t settle for only 1GB or 2GB of RAM. The **4GB RAM** version is harder to find than the other versions, but you absolutely want that **4GB of RAM** for a few extra bucks, and it’s totally worth spending a few extra minutes searching on the Internet to find a vendor that has the 4GB RAM  version in stock. You’ll also need an **SD card reader** if you don’t already have one.
+Don’t settle for only 1GB or 2GB of RAM. The **4GB RAM** version is harder to find than the other versions, but you absolutely want that **4GB of RAM** for a few extra bucks, and it’s totally worth spending a few extra minutes searching on the Internet to find a vendor that has the 4GB RAM version in stock. You’ll also need an **SD card reader** if you don’t already have one.
 
 ### Power Adapters and USB-C Cable
 
@@ -25,7 +25,7 @@ Don’t waste your time with random Chinese power adapters from Amazon, or expec
 
 - [Pimoroni Fan Shim](https://shop.pimoroni.com/products/fan-shim) ($10)
 
-Strictly speaking, you don’t actually **need** a cooling solution, but you certainly **want** a cooling solution, because once the Raspberry PI core temperature  reaches 70C, it will throttle the CPU down to avoid burning itself up.
+Strictly speaking, you don’t actually **need** a cooling solution, but you certainly **want** a cooling solution, because once the Raspberry PI core temperature reaches 70C, it will throttle the CPU down to avoid burning itself up.
 
 ### Case options: Naked vs. Protection
 
@@ -60,7 +60,7 @@ Start by downloading [Raspbian Linux](https://www.raspberrypi.org/downloads/rasp
 
 ### Flash your SD card with Raspbian Linux
 
-Assuming  you’re running macOS, first you need to identify which device is your SD card. Plug your SD card into your SD card reader and type:
+Assuming you’re running macOS, first you need to identify which device is your SD card. Plug your SD card into your SD card reader and type:
 
 ```bash
 sudo -sdiskutil list
@@ -72,7 +72,7 @@ You’ll see a list of disks like this:
 
 Here’s where your computer might be different from the above and you need to be careful. From the above list of disks on my computer, I can identify `disk0` and `disk1` are my mac’s internal hard disks. But that 32GB “external” and “physical” `disk2` is the same size as my SD card and has some Windows partition on it, so I can identify my SD card is `disk2`.
 
-🚨 **WARNING: You need to correctly identify the drive number of your SD card, and  modify the following commands before typing them, or you could  accidentally erase your computer’s hard drive instead.** 🚨
+🚨 **WARNING: You need to correctly identify the drive number of your SD card, and modify the following commands before typing them, or you could accidentally erase your computer’s hard drive instead.** 🚨
 
 Don’t copy and paste the following, you need to replace the 3 instances of `diskX` in these commands with your actual drive ID. For me this was `disk2`,but it might be different for you. The following commands will erase the SD card, and then write the Raspbian image to the SD card, so be careful not to mess up these commands.
 
@@ -81,13 +81,13 @@ diskutil unmountDisk diskX
 dd if=/dev/zero of=/dev/rdiskX bs=4m count=100
 dd if=/path/to/raspbian.img of=/dev/rdiskX bs=4m
 ```
-🚨 **WARNING:  If you incorrectly flash the wrong drive, you could erase your  computer’s hard drive instead of the SD card. Double check you have the  disk ID correct so you don’t accidentally erase your data.** 🚨
+🚨 **WARNING: If you incorrectly flash the wrong drive, you could erase your computer’s hard drive instead of the SD card. Double check you have the disk ID correct so you don’t accidentally erase your data.** 🚨
 
 If all went well, you should see the commands return something like this:
 
 ![RPI4 Console](/img/RPI4Terminal2.png)
 
-Next, enable SSH at bootup so you can remotely login, and finally eject the SD card so you can move it to the Raspberry Pi. The new SD card’s boot  partition should automatically be mounted on `/Volumes/boot`
+Next, enable SSH at bootup so you can remotely login, and finally eject the SD card so you can move it to the Raspberry Pi. The new SD card’s boot partition should automatically be mounted on `/Volumes/boot`
 
 ```bash
 touch /Volumes/boot/ssh
@@ -106,7 +106,7 @@ The IP address that my Raspberry Pi got was 192.168.1.5 so I SSH’d to that
 ssh 192.168.1.5 -l pi
 ```
 
-The  default password for the “pi” user is “raspberry”. After SSH’ing in, the first thing I want to do is check the device’s CPU temperature to  make sure the cooling system are working correctly:
+The default password for the “pi” user is “raspberry”. After SSH’ing in, the first thing I want to do is check the device’s CPU temperature to make sure the cooling system are working correctly:
 
 ```bash
 sudo -svcgencmd measure_temp
@@ -181,11 +181,33 @@ Install a firewall and allow SSH, HTTP, HTTPS, Bitcoin, and Lightning
 apt install -y ufw
 ufw default deny incoming
 ufw default allow outgoing
-ufw allow 22/tcp
+```
+
+This command allows SSH connections from your LAN only.
+**⚠️ Replace `192.168.1.0` with your own subnet:**
+
+```bash
+sudo ufw allow from 192.168.1.0/24 to any port 22
+```
+
+These ports need to be accessible from anywhere (The default subnet is 'any' unless you specify one):
+
+```bash
 ufw allow 80/tcp
 ufw allow 443/tcp
 ufw allow 8333/tcp
 ufw allow 9735/tcp
+```
+
+Verify your configuration:
+
+```bash
+sudo ufw status
+```
+
+Enable your firewall:
+
+```bash
 ufw enable
 ```
 
