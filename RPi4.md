@@ -183,7 +183,7 @@ ufw default deny incoming
 ufw default allow outgoing
 ```
 
-This command allows SSH connections from your LAN only.
+This command allows SSH connections from your LAN only.<br/>
 **⚠️ Replace `192.168.1.0` with your own subnet:**
 
 ```bash
