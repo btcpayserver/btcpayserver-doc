@@ -181,11 +181,33 @@ Install a firewall and allow SSH, HTTP, HTTPS, Bitcoin, and Lightning
 apt install -y ufw
 ufw default deny incoming
 ufw default allow outgoing
-ufw allow 22/tcp
+```
+
+This command allows SSH connections from your LAN only.
+**⚠️ Replace `192.168.1.0` with your own subnet:**
+
+```bash
+sudo ufw allow from 192.168.1.0/24 to any port 22
+```
+
+These ports need to be accessible from anywhere (The default subnet is 'any' unless you specify one):
+
+```bash
 ufw allow 80/tcp
 ufw allow 443/tcp
 ufw allow 8333/tcp
 ufw allow 9735/tcp
+```
+
+Verify your configuration:
+
+```bash
+sudo ufw status
+```
+
+Enable your firewall:
+
+```bash
 ufw enable
 ```
 
