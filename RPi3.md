@@ -99,10 +99,15 @@ Install UFW:
 sudo apt install ufw
 ```
 
-This command allows SSH connections from your LAN only.<br/>
-**⚠️ Replace `192.168.1.0` with your own subnet:**
+This command allows SSH connections from internal networks only:
 ```bash
-sudo ufw allow from 192.168.1.0/24 to any port 22
+sudo ufw allow from 10.0.0.0/8 to any port 22 proto tcp
+sudo ufw allow from 172.16.0.0/12 to any port 22 proto tcp
+sudo ufw allow from 192.168.0.0/16 to any port 22 proto tcp
+sudo ufw allow from 169.254.0.0/16 to any port 22 proto tcp
+sudo ufw allow from fc00::/7 to any port 22 proto tcp
+sudo ufw allow from fe80::/10 to any port 22 proto tcp
+sudo ufw allow from ff00::/8 to any port 22 proto tcp
 ```
 
 These ports need to be accessible from anywhere (The default subnet is 'any' unless you specify one):
