@@ -134,10 +134,11 @@ systemctl disable dphys-swapfile
 Partition your SSD
 
 ```bash
-fdisk /dev/sdatype 'p' to list existing partitions
-type 'd' to delete currently selected partitions
-type 'n' to create a new partition
-type 'w' to write the new partition table and exit fdisk
+fdisk /dev/sda
+# type 'p' to list existing partitions
+# type 'd' to delete currently selected partitions
+# type 'n' to create a new partition
+# type 'w' to write the new partition table and exit fdisk
 ```
 
 Format the new partition on your SSD
