@@ -223,6 +223,7 @@ export BTCPAYGEN_CRYPTO1="btc"
 export BTCPAYGEN_REVERSEPROXY="nginx"
 export BTCPAYGEN_LIGHTNING="lnd"
 export BTCPAYGEN_ADDITIONAL_FRAGMENTS="opt-save-storage-xs;opt-save-memory"
+export BTCPAY_ENABLE_SSH=true
 ```
 
 If you want to use multiple hostnames, add them via the optional `BTCPAY_ADDITIONAL_HOSTS` variable:
