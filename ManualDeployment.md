@@ -94,5 +94,5 @@ cd ~/btcpayserver
 Now you can browse your server on port 8080.
 
 ## Additional links
-* [Extended Manual Deployment](ManualDeploymentExtended.md)
+* [Extended Manual Deployment](https://github.com/btcpayserver/btcpayserver-doc/blob/master/ManualDeploymentExtended.md)
 * [How to Setup BTC and Lightning Payment Gateway with BTCPayServer on Linux [Manual Install]](https://freedomnode.com/blog/114/how-to-setup-btc-and-lightning-payment-gateway-with-btcpayserver-on-linux-manual-install) from freedomnode.com.
