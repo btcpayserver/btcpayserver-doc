@@ -16,7 +16,7 @@ This document covers all the questions and issues related to Server Settings. Th
 
 ## Theme / Customization
 * [How to customize my BTCPay theme style](FAQ-ServerSettings.md#how-to-customize-my-btcpay-theme-style)
-* [How to add Google Analytics code to BTCPay](FAQ-ServerSettings.md#how-to-add-google-analytics-code-to-btcpay)
+* [How to add Google Analytics or Matomo code to BTCPay](FAQ-ServerSettings.md#how-to-add-google-analytics-or-matomo-code-to-btcpay)
 * [How to modify BTCPay checkout page](FAQ-ServerSettings.md#how-to-modify-the-checkout-page)
 
 ## Policies
@@ -139,8 +139,9 @@ There are two ways to customize the theme of your BTCPay.
 The easy way is to head over to the **Server Settings > Theme** and follow the instructions on how to [change your Bootstrap theme](/Theme.md#bootstrap-themes).
 
 For advanced theme changes, you'll most likely need to fork  BTCPay repository and apply desired design changes. Build and publish the docker image to Docker Hub. Set the `BTCPAY_IMAGE` environment variable to your docker image tag(`export BTCPAY_IMAGE="your custom btcpay docker image"`) and run the setup (`. ./btcpay-setup.sh -i`) as usual from [BTCPay Docker](https://github.com/btcpayserver/btcpayserver-docker). Modify generated docker compose to use your custom docker image. **You will need to create a new image manually and follow these steps for EACH BTCPay update so it is advised to stick with the default setup.**
-### How to add Google Analytics code to BTCPay
-You should be able to do what you want by injecting your GA code to ~/wwwroot/checkout/js/core.js. Might be the easiest way but you have to redo it every time you update BTCPay to the latest version. Then you won’t have the hassle of forking the code, deploying it manually. Every time there is an update. Just do the docker update and add the same lines to the js file.
+### How to add Google Analytics or Matomo code to BTCPay
+You should be able to do what you want by injecting your GA or Matomo code to ~/wwwroot/checkout/js/core.js. Might be the easiest way but you have to redo it every time you update BTCPay to the latest version. Then you won’t have the hassle of forking the code, deploying it manually. Every time there is an update. Just do the docker update and add the same lines to the js file.
+Not sure what Matomo is? Matomo is a powerful web analytics platform that gives you and your business 100% data ownership and user privacy protection. Check it [here](https://matomo.org/)
 ### How to modify the checkout page?
 You can easily change the appearance of your BTCPay's checkout page by following the [instructions here](/Theme.md#checkout-page-theme)
 
