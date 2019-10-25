@@ -89,6 +89,7 @@ BTCPay Server is often misconceived as being the payment processor used by the m
 - [Docker Deployment](DockerDeployment.md)
 - [Google Cloud Deployment](GoogleCloudDeployment.md)
 - [Manual Deployment](ManualDeployment.md)
+    - [Manual Deployment Extended](ManualDeploymentExtended.md)
 - [Hardware Deployment](HardwareDeployment.md)
 - [Raspberry Pi Deployment](RaspberryPiDeployment.md)
     - [Raspberry Pi 3 Deployment](RPi3.md)
