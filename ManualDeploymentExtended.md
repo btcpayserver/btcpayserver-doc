@@ -574,7 +574,7 @@ Check [download link for latest version](https://dotnet.microsoft.com/download/d
 ~/src$ cd NBXplorer
 ~/src/NBXplorer$ ./build.sh
 ```
-##### 3. Create a systemd service.
+##### 3. Create a systemd service
 An example systemd service file is shown below. Adjust the paths, User and Group accordingly.
 ```bash
 ~$ vi nbxplorer.service
