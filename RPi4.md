@@ -118,7 +118,7 @@ Next, let’s change the password for the “pi” user.
 passwd pi
 ```
 
-![](C:\Users\Pavle\Documents\GitHub\btcpayserver-doc\btcpayserver-doc\btcpayserver-doc\img\RPI4Terminal4.png)
+![RPI4 Console](/img/RPI4Terminal4.png)
 
 I also recommend to disable swap to prevent burning out your SD card.
 
