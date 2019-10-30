@@ -137,6 +137,7 @@ Here are some of the questions and problems about wallets in BTCPay.
 * [Missing payments in wallet](FAQ-Wallet.md#missing-payments-in-my-software-or-hardware-wallet)
 * [Electrum and Zap show different addresses](FAQ-Wallet.md#receiving-address-in-zap-and-electrum-is-different)
 * [How to see payments on a mobile device](FAQ-Wallet.md#can-i-see-my-payments-on-mobile)
+* [What is a derivation scheme?](FAQ-Wallet.md#what-is-a-derivation-scheme)
 
 ## [Apps FAQ](FAQ-Apps.md)
 
