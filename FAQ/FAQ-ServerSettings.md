@@ -118,6 +118,8 @@ BTCPAY_HOST_SSHKEYFILE=/root/.ssh/id_rsa_btcpay
 . ./btcpay-setup.sh -i
 ```
 ### How to configure SMTP settings in BTCPay?
+SMTP can be configured in settings for each store. It can also be configured for the entire server if you have admin privileges.
+
 Each e-mail provider has different configuration, so we can't provide you with exact setup, but here's the configuration for gmail which should work:
 ```
 SMTP Host: smtp.gmail.com
@@ -127,7 +129,11 @@ TLS Protocol: ON
 SMTP Username: (your Gmail username)
 SMTP Password: (your Gmail password)
 ```
+For gmail it's important to allow access from less secure apps. To enable go to: Manage Your Google Account > Security > Allow Less Secure Apps (On). Also note Google may automatically turn off this setting if it’s not being used. If your smtp has stopped working, check this setting is not off. 
+
 If by any chance you have 2-step verification added to your gmail account, [visit this article](https://support.google.com/mail/answer/185833?hl=en).
+
+Use the test email feature in BTCPay to verify your emails are being sent properly. If you are seeking a more reliable smtp service for your business needs, consider using a dedicated mail service like Mailgun. 
 
 ### How to SSH into my BTCPay running on VPS?
 Follow these instructions to connect via [SSH into your virtual machine](https://github.com/JeffVandrewJr/patron/blob/master/SSH.md).
@@ -147,18 +153,18 @@ You can easily change the appearance of your BTCPay's checkout page by following
 ## Policies
 
 ### How to allow registration on my BTCPay Server
-To allow other users to register and use your server, in Server Settings > Policies enable registration. If you [configured SMTP properly](FAQ-ServerSettings.md#how-to-configure-smtp-settings-in-btcpay), you can request users e-mail confirmation to prevent spam or bot registrating on your instance.
+To allow other users to register and use your server, in Server Settings > Policies enable registration. If you [configured SMTP properly](FAQ-ServerSettings.md#how-to-configure-smtp-settings-in-btcpay), you can request users e-mail confirmation to prevent spam or bot registering on your instance.
 
 ### How to hide my BTCPay Server from Search Engines
 Discouraging search engines from indexing your site in Server Settings > Policies, adds `<meta name="robots" content="noindex">` to your server header, which informs search engines not to index your pages. 
 
-It is up to search engines to honor this request, and may take time for your pages to disappear completely. Unfortunatelly, the exact time is beyond our control, it depends on crawl bots of particular search engine like Google.
+It is up to search engines to honor this request, and may take time for your pages to disappear completely. Unfortunately, the exact time is beyond our control, it depends on crawl bots of particular search engine like Google.
 
 ## Services
 
 ### How to remotely connect to my BTCPay full node?
 
-If you're using an external wallet which allows BTC-P2P connection, you can easily connect it to your BTCPay full node. By doing this, you avoid leaking information to third-party servers and are soley relying on your own full node. 
+If you're using an external wallet which allows BTC-P2P connection, you can easily connect it to your BTCPay full node. By doing this, you avoid leaking information to third-party servers and are solely relying on your own full node. 
 To connect to a compatible BTC-P2P wallet, go to **Server Settings > Services > Full node P2P** Reveal the QR code and scan it with a BTC-P2P compatible wallet, or input it by copy-pasting it.
 
 ![BTC-P2P](/img/BTC-P2P.png)
