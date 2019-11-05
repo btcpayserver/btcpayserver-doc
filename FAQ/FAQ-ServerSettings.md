@@ -118,6 +118,8 @@ BTCPAY_HOST_SSHKEYFILE=/root/.ssh/id_rsa_btcpay
 . ./btcpay-setup.sh -i
 ```
 ### How to configure SMTP settings in BTCPay?
+SMTP can be configured in settings for each store. It can also be configured for the entire server if you have admin privileges.
+
 Each e-mail provider has different configuration, so we can't provide you with exact setup, but here's the configuration for gmail which should work:
 ```
 SMTP Host: smtp.gmail.com
@@ -127,7 +129,11 @@ TLS Protocol: ON
 SMTP Username: (your Gmail username)
 SMTP Password: (your Gmail password)
 ```
+For gmail it's important to allow access from less secure apps. To enable go to: Manage Your Google Account > Security > Allow Less Secure Apps (On). Also note Google may automatically turn off this setting if it’s not being used. If your smtp has stopped working, check this setting is not off. 
+
 If by any chance you have 2-step verification added to your gmail account, [visit this article](https://support.google.com/mail/answer/185833?hl=en).
+
+Use the test email feature in BTCPay to verify your emails are being sent properly. If you are seeking a more reliable smtp service for your business needs, consider using a dedicated mail service like Mailgun. 
 
 ### How to SSH into my BTCPay running on VPS?
 Follow these instructions to connect via [SSH into your virtual machine](https://github.com/JeffVandrewJr/patron/blob/master/SSH.md).
