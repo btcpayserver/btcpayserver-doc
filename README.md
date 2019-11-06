@@ -154,3 +154,23 @@ BTCPay Server is often misconceived as being the payment processor used by the m
 * [BTCPay Server Setup Using AWS EC2](https://wiki.ion.radar.tech/tutorials/nodes/btcpay-+-aws-ec2)
 
 For list of articles, podcasts and video presentations about BTCPay, please see our [media repository](https://github.com/btcpayserver/btcpayserver-media/tree/master/Publications).
+
+### Supporters
+
+The BTCPay Server Project is proudly supported by these entities through the [BTCPay Server Foundation](https://foundation.btcpayserver.org/). 
+
+<table>
+  <tbody>
+    <tr>
+      <td align="center" valign="middle">
+        <a href="https://twitter.com/sqcrypto" target="_blank">
+          <img  src="https://raw.githubusercontent.com/btcpayserver/btcpayserver/master/BTCPayServer/wwwroot/img/squarecrypto.svg?sanitize=true" alt="Sponsor Square Crypto" height=120>
+          <br/>
+          <span>Square Crypto</span>
+        </a>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+If you'd like to support the project, please visit the [donation page](https://btcpayserver.org/donate/).
