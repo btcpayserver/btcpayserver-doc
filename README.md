@@ -164,7 +164,7 @@ The BTCPay Server Project is proudly supported by these entities through the [BT
     <tr>
       <td align="center" valign="middle">
         <a href="https://twitter.com/sqcrypto" target="_blank">
-          <img  src="https://github.com/btcpayserver/btcpayserver/raw/master/BTCPayServer/wwwroot/img/sqcrypto.png" alt="Sponsor Square Crypto" height=200>
+          <img  src="https://raw.githubusercontent.com/btcpayserver/btcpayserver/master/BTCPayServer/wwwroot/img/squarecrypto.svg?sanitize=true" alt="Sponsor Square Crypto" height=120>
           <br/>
           <span>Square Crypto</span>
         </a>
