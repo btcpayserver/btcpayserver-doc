@@ -2,6 +2,8 @@
 
 This documents shows how to connect Electrum Wallet to BTCPay Server. 
 
+The [docker version of BTCPay Server](https://github.com/btcpayserver/btcpayserver-docker) (since version 1.0.3.137) supports full integration with [ElectrumX](https://electrumx.readthedocs.io/en/latest/features.html), which is the most widely implemented "Server" version of Electrum that your wallet on your local machine relies upon to get the details of various transactions from the blockchain.
+
 **Word of caution** Using Electrum wallet relies on servers that are controlled by third-parties. Information, like public addresses, balances and the transacted amount can potentially be leaked. To protect against such leaks, you can setup your own [Electrum Personnal Server](https://github.com/chris-belcher/electrum-personal-server), which is technically advanced task not covered in this document.
 
 For better privacy, use [BTCPay Wallet](Wallet.md) with a compatible hardware wallet or [Wasabi](WasabiWallet.md).
