@@ -1,11 +1,12 @@
 # Connecting Electrum Wallet to BTCPay Server
 
-This documents shows how to connect Electrum Wallet to BTCPay Server. 
+This documents shows:
+1. how to connect Electrum Wallet to BTCPay Server and,
+2. how you can go the extra mile to secure your own privacy and connect your Electrum Wallet to your very own ElectrumX Server (which is fully integrated with the docker version of BTCPay Server!).
 
 The [docker version of BTCPay Server](https://github.com/btcpayserver/btcpayserver-docker) (since Nov 7th 2019, version 1.0.3.137) supports full integration with [ElectrumX](https://electrumx.readthedocs.io/en/latest/features.html) is the most widely implemented "Server version" of Electrum that your local Electrum wallet relies upon to get the details of various transactions from the blockchain.
 
-
-
+***How to connect Electrum Wallet to BTCPay Server***
 **Word of caution** Using Electrum wallet relies on servers that are controlled by third-parties. Information, like public addresses, balances and the transacted amount can potentially be leaked. To protect against such leaks, you can setup your own [Electrum Personnal Server](https://github.com/chris-belcher/electrum-personal-server), which is technically advanced task not covered in this document.
 
 For better privacy, use [BTCPay Wallet](Wallet.md) with a compatible hardware wallet or [Wasabi](WasabiWallet.md).
@@ -104,3 +105,9 @@ There's no good answer to how much you should set the gap limit to.  Most mercha
 For more details about the [Gap Limit, check the FAQ](FAQ/FAQ-Wallet.md#missing-payments-in-my-software-or-hardware-wallet).
 
 Electrum and BTCPay Server are now connected. Any payments received to your BTCPay will be visible in Electrum, where you can further spend them.
+
+
+Before we go on with the tutorial on connecting
+![ElectrumWalletMainScreenLight](https://user-images.githubusercontent.com/1388507/68436414-3dc5ab00-01be-11ea-92d4-17c714e8d6b2.png)
+
+
