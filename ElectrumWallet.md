@@ -1,6 +1,6 @@
 # Electrum Wallet and ElectrumX with BTCPay Server - Introduction
 
-This documents has two "sections" which are mutually independent (you can do section 1. OR 2. or both sections 1. AND 2 depending on your needs):
+This document has two "sections" which are independent (i.e. users can do section 1. OR 2. or both sections 1. AND 2 depending on their needs):
 **Section 1.** How to connect Electrum Wallet on your desktop and use it with BTCPay Server (easy, all BTCPay versions)
 **Section 2.** How you can go the extra mile to fully secure your bitcoin privacy and connect your Electrum Wallet to your very own ElectrumX Server (intermediate, only docker version of BTCPay Server)
 
