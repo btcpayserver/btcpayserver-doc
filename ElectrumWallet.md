@@ -121,9 +121,9 @@ You will see this screen with a list of all the available Electrum servers that 
 
 ![ElectrumWalletServerList](https://user-images.githubusercontent.com/1388507/68437521-8a5eb580-01c1-11ea-9ece-0666353a6742.png)
 
-While there is nothing wrong with leaving things as they are here, every transaction that you make/browse/broadcast in your Electrum Wallet will be using someone else's server to do it all.  That is what the Electrum server network is there to do and indeed how most users will use their wallet.  If you are not (yet) into becoming your own completly sovereign and private bitcoin "bank" there is no need for you to read further, because everything is hunky-dory.
+While there is nothing wrong with "Select Server Automatically" per se, every transaction that you make/browse/broadcast in your Electrum Wallet will be using someone else's server to do it all.  Don't take this point as a threat, that is exactly what the Electrum server network is there to do and indeed how most users will safely use their wallet.  The people running those EectrumX public servers are just like us, bitcoin enthusiasts who want to help adoption by playing their part.  If you are not (yet) into becoming your own completly sovereign and private bitcoin "bank" there is no need for you to read further, because everything is hunky-dory.
 
-But, lets say you DON'T want to send all your transaction details from your IP address to another server, using that other server as your "proxy" to lookup details of BTC transactions, create new transactions or just monitor the blockchain for any transactions that might be relevant to your wallet, read-on!
+But, let's say you DON'T want to rely on or trust anyone else with your detailed blockchain queries and transactions.  After all, sending the entirety of your online wallet activity (including your IP address, receive/send addresses, amounts etc) through another server as your "proxy" to the blockchain might give you the heebie-jeebies.  If this is you, read on!
 
 Tbc....
 
