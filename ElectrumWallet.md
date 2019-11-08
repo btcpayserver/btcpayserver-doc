@@ -10,9 +10,9 @@ This document has two "sections" which are independent (i.e. users can do sectio
 
 **Word of caution** Using Electrum wallet (without following Section 2 of this document!) relies on Electrum servers that are controlled by third-parties. Information, like public addresses, balances and the transacted amount can potentially be leaked. To protect against such leaks, you can setup your own [ElectrumX Server](https://electrumx.readthedocs.io/en/latest/features.html) within BTCPay server in Section 2 of this document, or otherwise setting up [Electrum Personnal Server - EPS](https://github.com/chris-belcher/electrum-personal-server), which is technically advanced task not covered in this document.  You can read about the differences between EPS and ElectrumX [here](https://www.reddit.com/r/Electrum/comments/7xb0lz/whats_the_difference_between_electrumx_server_and/). 
 
-For the best privacy, after you follow this section, also make sure to setup and use your own ElectrumX Server outlined in Section 2 below (Alternatively, you can also use [BTCPay Wallet](Wallet.md) with a compatible hardware wallet or [Wasabi](WasabiWallet.md)).
+In short, for full privacy with BTCPay Server and your Electrum Wallet, also make sure to setup and use your own ElectrumX Server outlined in Section 2 below (Alternatively, you can also use [BTCPay Wallet](Wallet.md) with a compatible hardware wallet or [Wasabi](WasabiWallet.md)).
 
-If you understood the risks of using Electrum Wallet without ElectrumX, but still want to proceed using public servers with your Electrum wallet, follow the instructions below.
+If you understood the risks of using Electrum Wallet without ElectrumX and still want to proceed with using public Electrum servers with your Electrum wallet, follow the instructions below.
 
 1. Create a Store in BTCPay Server
 2. [Download](https://electrum.org/#download) and install Electrum Wallet
