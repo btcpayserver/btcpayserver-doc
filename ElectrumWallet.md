@@ -132,9 +132,19 @@ But, let's say you DON'T want to rely on or trust anyone else with your detailed
 1. You are using or will use the [Docker version of BTCPay Server](https://github.com/btcpayserver/btcpayserver-docker)
 2. You do NOT [prune your full bitcoin node](https://docs.btcpayserver.org/faq-and-common-issues/faq-synchronization#can-i-skip-the-synchronization) in BTCPay Server (i.e. you have synched and stored from genesis block, and you do not use the opt-save-storage [Environment Variable](https://docs.btcpayserver.org/faq-and-common-issues/faq-deployment#how-can-i-modify-deactivate-environment-variables))
 3. You have at least 400GB of drive space on the drive where your docker volumes are stored (as at the writing of this documentation on 8th Nov 2019, my BTCPay Server volumes diretory uses in total is 333G with full node and ElectrumX enabled and obviously it will grow further with time).
+4. You are familiar with how to use BTCPays [Additional Fragment](https://github.com/btcpayserver/btcpayserver-docker/blob/master/README.md#environment-variables) feature as part of your environment variable setup.
+
+### How will enabling ElectrumX affect current BTCPay implementations?:
+
+Fundamentally, setting up ElectrumX in BTCPay server is simple, and will not affect the rest of your implementation.  The only pre-requisites are as above.  Then, ElectrumX is enabled by a docker fragment, which is now by standard available in BTCPay Server.  When ElectrumX is enabled using the [additional fragment](https://github.com/btcpayserver/btcpayserver-docker/blob/master/README.md#generated-docker-compose-) called [opt-add-electumx](https://github.com/btcpayserver/btcpayserver-docker/blob/master/docker-compose-generator/docker-fragments/opt-add-electumx.yml). This fragment will setup the official ElectrumX docker, and also change your bitcoin core config out of the box, enabling "txindex=1" in your bitcoin full node.  "txindex=1" (Transaction Index) is a bitcoin core feature required for ElectrumX to be able to serve your Electrum Wallet detailed transaction data for any transaction, directly from the blockchain, without getting it from any third party server.  
+
+If you have been running your BTCPay Server for a while but haven't had txindex=1 set until now, then it might take a few hours to build the index, this is no issue and it should not involve downtime of more than a few hours - better to set this to run overnight though when nobody will be using your node. Note: If you want to rebuild the index from scratch, launch with the "-reindex" option (warning: this reindex option may take a VERY long time, and is not enabled out of the box as you likely dont need it, and hence is not in scope of this document).
+
+### OK, I got it all, now what do I have to do, concretely!:
+
+If you have read this far (you're a star!) and theres not much to actually setting it all up.  Below are the steps to enable it in your BTCPay node.
+
+1. ElectrumX Server is accessible for Electrum Wallets via port 50002.  You need to open this up fully at least for your own network, and you really should open it up on your router so that your ElectrumX Server becomes part of the Electrum ecosystem and is hence usable by other Electum wallet users.  There is no risk to do this, port 50002 is SSL encypted out of the box, and is designed to be opened up to the outside world.  Hence, it is suggested that you open this port on your router and setup port forwarding to the host where you have BTCPay server installed (it is assumed you have this knowledge and there are too many router models out there to cover it in the scope of this document.
+2. Enable the Docker Additional Fragment on your BTCPay node by running the following commands:
 
 
-
-### How will enabling ElectrumX affect my current BTCPay implementation?:
-
-Fundamentally, setting up ElectrumX in BTCPay server is simple, and will not affect the rest of your implementation.  The only pre-requisites are as above.  Then, ElectrumX is enabled by a docker fragment, which is now by standard available in BTCPay Server.  When ElectrumX is enabled using the frangemt XXXXXX, it will change your bitcoin core config out of the box, to enable -txindex=1 in your bitcoin full node, which is required for Electrum Wallet to be able to get transaction data for any transaction in the blockchain.  Also, if you have been running your client for a while but haven't had txindex=1 set, then it might take a few hours to build the index. If you want to rebuild, launch with the -reindex option (warning: this reindex option may take a VERY long time, and is not enabled out of the box as you likely dont need it).
