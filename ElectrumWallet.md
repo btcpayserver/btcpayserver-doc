@@ -148,19 +148,19 @@ If you have read this far (you're a star!) and theres not much to do in order to
 1. ElectrumX Server is accessible for Electrum Wallets via TCP port 50002.  You need to open this port up fully at least to be available within your own network to any PC or Android device running Electrum Wallet, and turn on port forwarding (you really should setup port forwarding, and open 50002 up on your router to the whole world so that your ElectrumX Server becomes part of the Electrum Server ecosystem and becomes available to other Electrum wallet users on the internet.  There is no risk to do this, port 50002 is SSL encrypted out of the box, and is designed to accept connections from unknown Electrum Users.  Although, it is assumed you have this knowledge already if you want to do that, as there are too many router models out there to cover it in the scope of this document).
 2. Enable the Docker Additional Fragment on your BTCPay node by running the following commands (this is assuming a brand new BTCPay installation with LND and ElectrumX, please tweak accordingly using the [relevant documentation](https://github.com/btcpayserver/btcpayserver-docker/blob/master/README.md#generated-docker-compose-):
 
-a. Follow the [normal setup and install of BTCPay Server](https://github.com/btcpayserver/btcpayserver-docker#full-installation-for-technical-users), then after this command `cd btcpayserver-docker`, follow the below instructions instead of those in the link.  If you already have a BTCPay Server running, then just follow from the next step.
+3. Follow the [normal setup and install of BTCPay Server](https://github.com/btcpayserver/btcpayserver-docker#full-installation-for-technical-users), then after this command `cd btcpayserver-docker`, follow the below instructions instead of those in the link.  If you already have a BTCPay Server running, then just follow from the next step.
 
-b. Set your environment variables:
+4. Set your environment variables:
 ```
 export BTCPAY_HOST="YOURHOST.com" && export NBITCOIN_NETWORK="mainnet" && export BTCPAYGEN_CRYPTO1="btc" && export BTCPAYGEN_REVERSEPROXY="nginx" && export BTCPAYGEN_LIGHTNING="lnd" && export LIGHTNING_ALIAS="MY_LN" && export LETSENCRYPT_EMAIL="you@example.com" && BTCPAYGEN_ADDITIONAL_FRAGMENTS="opt-add-electumx;opt-more-memory"
 ```
 You can run all of that as one command after you tweak it to your needs.  The main part for our purposes in this guide of course is `BTCPAYGEN_ADDITIONAL_FRAGMENTS="opt-add-electumx;opt-more-memory"`.  `opt-more-memory` can be removed if you like, but I really recommend it if your system has more than 1GB of RAM/memory that you can assign to BTCPay server, it will speed synching your node and ElectrumX up drastically.
 
-c. Set up or reconfigure BTCPay Server with ElectrumX:
+5. Set up or reconfigure BTCPay Server with ElectrumX:
 `cd ~/BTCPayServer/btcpayserver-docker && . ./btcpay-setup.sh -i`
 This will setup (or re-setup) your server with everything needed including ElectrumX, and it all should "just work"!  But, it will cause at least a couple of hours of syncing, and if it is a new server, could be a couple of days depending on your hardware.
 
-d. WAIT... for your node to fully sync:
+6. WAIT... for your node to fully sync:
 You can check the status of bitcoin core sync by going to your domain for BTCPay server, and it will show you on the front page.  Or, you can check from the command line as well, using these commands:
 `docker logs btcpayserver_bitcoind` - this will show you the bitcoin core blockchain sync status (and ALL other info about your node, including any errors)
 `docker logs generated_electrumx_1` - this will show you the ElectrumX sync status.  Note: ElectrumX will NOT start syncing until bitcoin full node has finished syncing, you will see errors until that is done direct.
