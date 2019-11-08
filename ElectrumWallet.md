@@ -114,9 +114,11 @@ Electrum and BTCPay Server are now connected. Any payments received to your BTCP
 Before we proceed, it is important to understand how your Electrum wallet on your PC/Mac functions so well/fast, without having its own bitcoin full node.  In actual fact, Electrum Wallet relies on a community effort to maintain a bunch of servers all around the world with a bitcoin full node that do this job for you! They are called Electrum Servers, and you can be a part of that community to make that network even stronger, lets see how.
 
 When you click the little traffic light at the bottom of your Electrum Wallet here:
+
 ![ElectrumWalletMainScreenLight](https://user-images.githubusercontent.com/1388507/68437133-5636c500-01c0-11ea-822c-6e72bd6d60ea.png)
 
-You will see this screen with a list of all the available Electrum servers that your wallet can connect to, normally with "Select Server Automatically" already checked.
+You will see this screen with a list of all the available Electrum servers that your wallet can connect to, normally with "Select Server Automatically" already checked:
+
 ![ElectrumWalletServerList](https://user-images.githubusercontent.com/1388507/68437521-8a5eb580-01c1-11ea-9ece-0666353a6742.png)
 
 While there is nothing wrong with leaving things as they are here, every transaction that you make/browse/broadcast in your Electrum Wallet will be using someone else's server to do it all.  That is what the Electrum server network is there to do and indeed how most users will use their wallet.  If you are not (yet) into becoming your own completly sovereign and private bitcoin "bank" there is no need for you to read further, because everything is hunky-dory.
