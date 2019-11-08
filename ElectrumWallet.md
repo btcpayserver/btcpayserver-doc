@@ -1,12 +1,13 @@
-# Connecting Electrum Wallet to BTCPay Server
+# Electrum Wallet and ElectrumX with BTCPay Server - Introduction
 
-This documents shows:
-1. how to connect Electrum Wallet to BTCPay Server and,
-2. how you can go the extra mile to secure your own privacy and connect your Electrum Wallet to your very own ElectrumX Server (which is fully integrated with the docker version of BTCPay Server!).
+This documents has two "sections" which are mutually independent (you can do section 1. OR 2. or both sections 1. AND 2 depending on your needs):
+**Section 1.** How to connect Electrum Wallet on your desktop and use it with BTCPay Server (easy, all BTCPay versions)
+**Section 2.** How you can go the extra mile to fully secure your bitcoin privacy and connect your Electrum Wallet to your very own ElectrumX Server (intermediate, only docker version of BTCPay Server)
 
-The [docker version of BTCPay Server](https://github.com/btcpayserver/btcpayserver-docker) (since Nov 7th 2019, version 1.0.3.137) supports full integration with [ElectrumX](https://electrumx.readthedocs.io/en/latest/features.html) is the most widely implemented "Server version" of Electrum that your local Electrum wallet relies upon to get the details of various transactions from the blockchain.
+**Note:** the [docker version of BTCPay Server](https://github.com/btcpayserver/btcpayserver-docker) (since Nov 7th 2019, version 1.0.3.137) supports full integration with [ElectrumX](https://electrumx.readthedocs.io/en/latest/features.html) is the most widely implemented software used for Electrum public servers that your local Electrum wallet relies upon to get all the details of, or broadcast transactions to the bitcoin blockchain.  Skip to Section 2 below, to read more on what this all means, and how to set it up on your BTCPay stack.
 
-***How to connect Electrum Wallet to BTCPay Server***
+# Section 1. How to connect Electrum Wallet to BTCPay Server
+
 **Word of caution** Using Electrum wallet relies on servers that are controlled by third-parties. Information, like public addresses, balances and the transacted amount can potentially be leaked. To protect against such leaks, you can setup your own [Electrum Personnal Server](https://github.com/chris-belcher/electrum-personal-server), which is technically advanced task not covered in this document.
 
 For better privacy, use [BTCPay Wallet](Wallet.md) with a compatible hardware wallet or [Wasabi](WasabiWallet.md).
@@ -107,7 +108,20 @@ For more details about the [Gap Limit, check the FAQ](FAQ/FAQ-Wallet.md#missing-
 Electrum and BTCPay Server are now connected. Any payments received to your BTCPay will be visible in Electrum, where you can further spend them.
 
 
-Before we go on with the tutorial on connecting
-![ElectrumWalletMainScreenLight](https://user-images.githubusercontent.com/1388507/68436414-3dc5ab00-01be-11ea-92d4-17c714e8d6b2.png)
+# Section 2. How to integrate ElectrumX into your BTCPay Server and connect your Electrum Wallet to it for your complete privacy
+### (only available in BTCPay docker version)
 
+Before we proceed, it is important to understand how your Electrum wallet on your PC/Mac functions so well/fast, without having its own bitcoin full node.  In actual fact, Electrum Wallet relies on a community effort to maintain a bunch of servers all around the world with a bitcoin full node that do this job for you! They are called Electrum Servers, and you can be a part of that community to make that network even stronger, lets see how.
+
+When you click the little traffic light at the bottom of your Electrum Wallet here:
+![ElectrumWalletMainScreenLight](https://user-images.githubusercontent.com/1388507/68437133-5636c500-01c0-11ea-822c-6e72bd6d60ea.png)
+
+You will see this screen with a list of all the available Electrum servers that your wallet can connect to, normally with "Select Server Automatically" already checked.
+![ElectrumWalletServerList](https://user-images.githubusercontent.com/1388507/68437521-8a5eb580-01c1-11ea-9ece-0666353a6742.png)
+
+While there is nothing wrong with leaving things as they are here, every transaction that you make/browse/broadcast in your Electrum Wallet will be using someone else's server to do it all.  That is what the Electrum server network is there to do and indeed how most users will use their wallet.  If you are not (yet) into becoming your own completly sovereign and private bitcoin "bank" there is no need for you to read further, because everything is hunky-dory.
+
+But, lets say you DON'T want to send all your transaction details from your IP address to another server, using that other server as your "proxy" to lookup details of BTC transactions, create new transactions or just monitor the blockchain for any transactions that might be relevant to your wallet, read-on!
+
+Tbc....
 
