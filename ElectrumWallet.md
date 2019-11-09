@@ -170,6 +170,8 @@ Once all syncing for both bitcoin and ElectrumX has finished you can proceed to 
 
 ### Connect to ElectrumX from Electrum Wallet on your Mac/PC/Linux Machine:
 
+Read all of this first before proceeding.  You may wish to do just the "Protip" below instead of the manual steps in the Electrum Wallet GUI.
+
 Open Electrum Wallet.  When you click the traffic light at the bottom of your Electrum Wallet:
 
 ![ElectrumWalletMainScreenLight](https://user-images.githubusercontent.com/1388507/68437133-5636c500-01c0-11ea-822c-6e72bd6d60ea.png)
@@ -186,17 +188,15 @@ If all of the above worked well, and your node is healthy, you will get a green 
 
 ![ElectrumWalletMainScreenLight](https://user-images.githubusercontent.com/1388507/68437133-5636c500-01c0-11ea-822c-6e72bd6d60ea.png)
 
-Protip: If you prefer to avoid connecting to other servers from the very first moment you open Electrum Wallet, do the following.
+#### Protip - perform the above steps directly in Electrum Wallet config file:
+If you prefer to avoid connecting to other servers from the outset when you open Electrum Wallet, do the following.
 Open your Electrum Wallet folder ([see here](https://electrum.readthedocs.io/en/latest/faq.html#where-is-my-wallet-file-located) if you don't know where that is), and edit the config file in a text editor as below:
 
-Find line:
-`    "oneserver": false,` and switch it to
-`    "oneserver": true,`
+1. Find line: `"oneserver": false,` and switch it to: `"oneserver": true,`
 
-Find line with `"server": "SOMEIPADDRESS:50002:s",`and switch it to your own ElectrumX Server's IP address:
-`    "server": "192.168.1.3:50002:s",`
+2. Find line with `"server": "SOMEIPADDRESS:50002:s",`and switch it to your own ElectrumX Server's IP address, in the axample above this would be: `"server": "192.168.1.3:50002:s",`
 
-These two steps optional but recommended.  This will prevent your Electrum Wallet from connecting to several other random servers to obtain block headers; and locks Electrum to connect only to your private server specified by the IP address ([Reference](https://github.com/chris-belcher/electrum-personal-server#how-to)).
+These two steps optional but recommended for full privacy.  This will prevent your Electrum Wallet from connecting to several other random servers to obtain block headers; and locks Electrum to a connection only to your private server ([Reference](https://github.com/chris-belcher/electrum-personal-server#how-to)).
 
 You are now running your very own private ElectrumX Server, all data transfer happens directly between your server and the bitcoin blockchain, without going over any other 3rd party servers.  You have attained full bitcoin transaction privacy (at least from the perspective of your blockchain queries and transactions, payment/receive addresses etc, nobody except you and the blockchain can see what you are doing).
 
