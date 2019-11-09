@@ -190,15 +190,17 @@ If all of the above worked well, and your node is healthy, you will get a green 
 
 #### Protip - perform the above steps directly in Electrum Wallet config file:
 If you prefer to avoid connecting to other servers from the outset when you open Electrum Wallet, do the following.
-Open your Electrum Wallet folder ([see here](https://electrum.readthedocs.io/en/latest/faq.html#where-is-my-wallet-file-located) if you don't know where that is), and edit the config file in a text editor as below:
+Open your Electrum Wallet folder ([see here](https://electrum.readthedocs.io/en/latest/faq.html#where-is-my-wallet-file-located) if you don't know where that is), and edit the `config` file in a text editor like this:
 
 1. Find line: `"oneserver": false,` and switch it to: `"oneserver": true,`
 
-2. Find line with `"server": "SOMEIPADDRESS:50002:s",`and switch it to your own ElectrumX Server's IP address, in the axample above this would be: `"server": "192.168.1.3:50002:s",`
+2. Find or add line: `"server": "SOMEIPADDRESS:50002:s",`and switch it to your own ElectrumX Server's IP address, in the axample above this would be: `"server": "192.168.1.3:50002:s",`
 
 These two steps optional but recommended for full privacy.  This will prevent your Electrum Wallet from connecting to several other random servers to obtain block headers; and locks Electrum to a connection only to your private server ([Reference](https://github.com/chris-belcher/electrum-personal-server#how-to)).
 
-You are now running your very own private ElectrumX Server, all data transfer happens directly between your server and the bitcoin blockchain, without going over any other 3rd party servers.  You have attained full bitcoin transaction privacy (at least from the perspective of your blockchain queries and transactions, payment/receive addresses etc, nobody except you and the blockchain can see what you are doing).
+### Reflection on what has been achieved:
+
+You are now running your very own private ElectrumX Server.  All Electrum Wallet related data transfer happens directly between your ElectrumX Server and the bitcoin blockchain, without going over any other 3rd party servers.  You have attained full bitcoin transaction privacy (at least from the perspective of your blockchain queries and transactions, payment/receive addresses etc - nobody except you and the blockchain can see what you are doing).
 
 ### Troubleshooting:
 
