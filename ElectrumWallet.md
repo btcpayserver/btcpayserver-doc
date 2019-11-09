@@ -121,31 +121,30 @@ You will see this screen with a list of all the available Electrum servers that 
 
 ![ElectrumWalletServerList](https://user-images.githubusercontent.com/1388507/68437521-8a5eb580-01c1-11ea-9ece-0666353a6742.png)
 
-While there is nothing wrong with "Select Server Automatically" per se, every transaction that you make/browse/broadcast in your Electrum Wallet will be using someone else's server to do it all.  Don't take this point as a threat, that is exactly what the Electrum server network is there to do and indeed how most users will safely use their wallet.  The people running those ElectrumX public servers are just like us, bitcoin enthusiasts who want to help adoption by playing their part.  If you are not (yet) into becoming your own completely sovereign and private bitcoin "bank" there is no need for you to read further, because everything is hunky-dory.
-
-But, let's say you DON'T want to rely on or trust anyone else with your detailed blockchain queries and transactions.  After all, sending the entirety of your online wallet activity (including your IP address, receive/send addresses, amounts etc) through another server as your "proxy" to the blockchain might give you the heebie-jeebies.  If this is you, read on!
+While using Electrum Wallet with "Select Server Automatically" on is the easiest, every transaction that you make/browse/broadcast in your Electrum Wallet will be done via someone else's server - this is a privacy risk, that will be mitigated by setting up and using your own ElectrumX Server.
 
 ## Section 2.1 Enable Your Own ElectrumX Server (fully integrated with your BTCPay Server's full bitcoin node)
 
 ### Prerequisites (mandatory):
 
 1. You are using or will use the [Docker version of BTCPay Server](https://github.com/btcpayserver/btcpayserver-docker)
-2. You do NOT [prune your full bitcoin node](https://docs.btcpayserver.org/faq-and-common-issues/faq-synchronization#can-i-skip-the-synchronization) in BTCPay Server (i.e. you have synched and stored from genesis block, and you do not use the opt-save-storage [Environment Variable](https://docs.btcpayserver.org/faq-and-common-issues/faq-deployment#how-can-i-modify-deactivate-environment-variables))
-3. You have at least 400GB of drive space on the drive where your docker volumes are stored (as at the writing of this documentation on 8th Nov 2019, my BTCPay Server volumes directory uses in total is 333G with full node and ElectrumX enabled and obviously it will grow further with time).
+2. You do NOT [prune your full bitcoin node](https://docs.btcpayserver.org/faq-and-common-issues/faq-synchronization#can-i-skip-the-synchronization) in BTCPay Server (i.e. you have synched and stored from genesis block, and you do not use the opt-save-storage [Environment Variable](https://github.com/btcpayserver/btcpayserver-docker#generated-docker-compose-))
+3. You have at least 400GB of drive space on the drive where your docker volumes are stored (as at the writing of this documentation on 9th Nov 2019, the total hard drive space used is 333GB with full node and ElectrumX enabled it will grow further over time).
 4. You are familiar with how to use BTCPays [Additional Fragment](https://github.com/btcpayserver/btcpayserver-docker/blob/master/README.md#environment-variables) feature as part of your environment variable setup.
-5. Basic Linux command line knowledge: I guess you have that already, as you are reading this far.  This is tested fully on Ubuntu 18.04 but we assume this will work on any linux with BTCPay server and docker.
+5. Basic Linux command line knowledge: This is assumed.  This setup tested fully on Ubuntu 18.04 and Debian Buster, and should work well on any linux with BTCPay server and docker installed.
 
-### How will enabling ElectrumX affect current BTCPay implementations?:
+### How will enabling ElectrumX Server affect an existing BTCPay implementation?:
 
 Fundamentally, setting up ElectrumX in BTCPay server is simple, and will not affect the rest of your implementation.  The only pre-requisites are as above.  The [ElectrumX official docker release](https://github.com/lukechilds/docker-electrumx)) is enabled in BTCPay by activating the [additional fragment](https://github.com/btcpayserver/btcpayserver-docker/blob/master/README.md#generated-docker-compose-) called [`opt-add-electumx`](https://github.com/btcpayserver/btcpayserver-docker/blob/master/docker-compose-generator/docker-fragments/opt-add-electumx.yml). This fragment will not only enable and start the ElectrumX server, it will also enable `txindex=1` in your bitcoin full node.  `txindex=1` (Transaction Index=ON) is a bitcoin core feature required for ElectrumX to be able to serve your Electrum Wallet detailed transaction data for any transaction, directly from the blockchain, without getting it from any third party server.
 
 If you have been running your BTCPay Server for a while but haven't had `txindex=1` set until now, then it might take a few hours to build the index, this is no issue and it should not involve downtime of more than a few hours - better to set this to run overnight though when nobody will be using your node. Note: If you want to rebuild the index from scratch, launch bitcoind once with the `reindex=1` option (warning: this reindex option may take a VERY long time, and is not enabled out of the box as you likely dont need it, and hence is not in scope of this document).
 
-### OK OK, I got it, now what do I have to do to make it work?!:
+### Steps to enable ElectrumX Server in BTCPay:
 
-If you have read this far (you're a star!) and theres not much to do in order to set it all up.  Below are the steps to enable it in your BTCPay node.
+Here are al the steps to enable ElectrumX Server in your BTCPay node (read carefully as you may need to adjust for your specific setup, especially if you use other custom or conflicting "fragments" (pruning, less-memory etc).
 
-1. ElectrumX Server is accessible for Electrum Wallets via TCP port 50002.  You need to open this port up fully at least to be available within your own network to any PC or Android device running Electrum Wallet, and turn on port forwarding (you really should setup port forwarding, and open 50002 up on your router to the whole world so that your ElectrumX Server becomes part of the Electrum Server ecosystem and becomes available to other Electrum wallet users on the internet.  There is no risk to do this, port 50002 is SSL encrypted out of the box, and is designed to accept connections from unknown Electrum Users.  Although, it is assumed you have this knowledge already if you want to do that, as there are too many router models out there to cover it in the scope of this document).
+1. ElectrumX Server is accessible for Electrum Wallets via TCP port 50002.  You need to open this port up fully at least to be available within your own network to any PC or Android device running Electrum Wallet, and turn on port forwarding (you can also port forward 50002 from your Internet/WAN, to enable other Electrum Wallet users from the Internet to query your server).
+
 2. Enable the Docker Additional Fragment on your BTCPay node by running the following commands (this is assuming a brand new BTCPay installation with LND and ElectrumX, please tweak accordingly using the [relevant documentation](https://github.com/btcpayserver/btcpayserver-docker/blob/master/README.md#generated-docker-compose-):
 
 3. Follow the [normal setup and install of BTCPay Server](https://github.com/btcpayserver/btcpayserver-docker#full-installation-for-technical-users), then after this command `cd btcpayserver-docker`, follow the below instructions instead of those in the link.  If you already have a BTCPay Server running, then just follow from the next step.
@@ -154,23 +153,24 @@ If you have read this far (you're a star!) and theres not much to do in order to
 ```
 export BTCPAY_HOST="YOURHOST.com" && export NBITCOIN_NETWORK="mainnet" && export BTCPAYGEN_CRYPTO1="btc" && export BTCPAYGEN_REVERSEPROXY="nginx" && export BTCPAYGEN_LIGHTNING="lnd" && export LIGHTNING_ALIAS="MY_LN" && export LETSENCRYPT_EMAIL="you@example.com" && BTCPAYGEN_ADDITIONAL_FRAGMENTS="opt-add-electrumx;opt-more-memory"
 ```
-You can run all of that as one command after you tweak it to your needs.  The main part for our purposes in this guide of course is `BTCPAYGEN_ADDITIONAL_FRAGMENTS="opt-add-electrumx;opt-more-memory"`.  Note: `opt-more-memory` can be removed if you like, but I really recommend it if your system has more than 1GB of RAM/memory that you can assign to BTCPay server, it will speed synching your node and ElectrumX up drastically.
+You can run all of that as one command after you tweak it to your needs.  The main part for our purposes in this guide of course is `BTCPAYGEN_ADDITIONAL_FRAGMENTS="opt-add-electrumx"`.  Note: `opt-more-memory` can be removed if you like, but I really recommend it if your system has more than 1GB of RAM/memory that you can assign to BTCPay server, it will speed synching your node and the general performance of ElectrumX up drastically.
 
 5. Set up or reconfigure BTCPay Server with ElectrumX:
 `cd ~/BTCPayServer/btcpayserver-docker && . ./btcpay-setup.sh -i`
-This will setup (or re-setup) your server with everything needed including ElectrumX, and it all should "just work"!  But, it will cause at least a couple of hours of syncing, and if it is a new server, could be a couple of days depending on your hardware.
+This will setup (or re-setup) your server with everything needed including ElectrumX, and it all should "just work".  But, it will trigger at least a couple of hours of syncing the `txindex`, and if it is a new server, could be a couple of days depending on your hardware.
 
-6. WAIT... for your node to fully sync:
+6. WAIT for your node to fully sync:
 You can check the status of bitcoin core sync by going to your domain for BTCPay server, and it will show you on the front page.  Or, you can check from the command line as well, using these commands:
 `docker logs btcpayserver_bitcoind` - this will show you the bitcoin core blockchain sync status (and ALL other info about your node, including any errors)
-`docker logs generated_electrumx_1` - this will show you the ElectrumX sync status.  Note: ElectrumX will NOT start syncing until bitcoin full node has finished syncing, you will see errors until that is done direct.
+`docker logs generated_electrumx_1` - this will show you the ElectrumX sync status.  Note: ElectrumX will NOT start syncing until bitcoin full node has finished syncing, you will see errors until that is finished and these can be ignored.
 
-Once all syncing for both bitcoin and ElectrumX has finished, you can proceed to the next step.  Electrum wallets will not connect to an Electrum server that has not finished synching.
+Once all syncing for both bitcoin and ElectrumX has finished you can proceed to the next step.  (Note: Electrum wallets will not connect to an Electrum server that has not finished synching)
 
-## Section 2.2 Finally!  Connect your Electrum Wallet to Your Own ElectrumX Server
+## Section 2.2 Connect your Electrum Wallet (Desktop or Android) to your ElectrumX Server
 
 ### Connect to ElectrumX from Electrum Wallet on your Mac/PC/Linux Machine:
-When you click the little traffic light at the bottom of your Electrum Wallet here:
+
+Open Electrum Wallet.  When you click the traffic light at the bottom of your Electrum Wallet:
 
 ![ElectrumWalletMainScreenLight](https://user-images.githubusercontent.com/1388507/68437133-5636c500-01c0-11ea-822c-6e72bd6d60ea.png)
 
@@ -186,11 +186,23 @@ If all of the above worked well, and your node is healthy, you will get a green 
 
 ![ElectrumWalletMainScreenLight](https://user-images.githubusercontent.com/1388507/68437133-5636c500-01c0-11ea-822c-6e72bd6d60ea.png)
 
-You are now running your very own ElectrumX Server, and all of your interactions with the bitcoin blockchain happen directly from your server to the blockchain, without going over any other 3rd party servers!  You have attained full bitcoin transaction privacy (at least from the perspective of your blockchain queries and transactions, payment/receive addresses etc, nobody except you and the blockchain can see what you are doing).  Cool isn't it.
+Protip: If you prefer to avoid connecting to other servers from the very first moment you open Electrum Wallet, do the following.
+Open your Electrum Wallet folder ([see here](https://electrum.readthedocs.io/en/latest/faq.html#where-is-my-wallet-file-located) if you don't know where that is), and edit the config file in a text editor as below:
+
+Find line:
+`    "oneserver": false,` and switch it to
+`    "oneserver": true,`
+
+Find line with `"server": "SOMEIPADDRESS:50002:s",`and switch it to your own ElectrumX Server's IP address:
+`    "server": "192.168.1.3:50002:s",`
+
+These two steps optional but recommended.  This will prevent your Electrum Wallet from connecting to several other random servers to obtain block headers; and locks Electrum to connect only to your private server specified by the IP address ([Reference](https://github.com/chris-belcher/electrum-personal-server#how-to)).
+
+You are now running your very own private ElectrumX Server, all data transfer happens directly between your server and the bitcoin blockchain, without going over any other 3rd party servers.  You have attained full bitcoin transaction privacy (at least from the perspective of your blockchain queries and transactions, payment/receive addresses etc, nobody except you and the blockchain can see what you are doing).
 
 ### Troubleshooting:
 
-So there is one thing you may encounter, where even after you did everything correctly, you still get a red traffic light (which means not connected to any server) in the steps above.  I will add any other troubleshooting tips that people contribute here as needed.
+So there is one thing you may encounter, where even after you did everything correctly, you still get a red traffic light (which means not connected to any server) in the steps above.  Any other troubleshooting tips that people encounter can be added, I would suggest to make a PR to this document directly.
 
 - If you get a red traffic light, shutdown Electrum Wallet completely, then go to your Electrum Wallet folder ([see here](https://electrum.readthedocs.io/en/latest/faq.html#where-is-my-wallet-file-located) if you don't know where that is).
 
@@ -198,4 +210,4 @@ Inside the Electrum Wallet folder (in this case below, it is what it looks like 
 
 ![Certs](https://user-images.githubusercontent.com/1388507/68497330-9a73a500-0254-11ea-9349-71bdb3bd9511.png)
 
-Start up Electrum Wallet again, and connect to your ElectrumX server.  If it is fully synched, it will now likely show a green traffic light, and you are good to go!
+Start up Electrum Wallet again, and connect to your ElectrumX server.  If it is fully synched, it will now likely show a green traffic light, and you are good to go.
