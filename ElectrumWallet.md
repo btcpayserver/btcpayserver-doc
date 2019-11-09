@@ -129,7 +129,7 @@ While using Electrum Wallet with "Select Server Automatically" on is the easiest
 
 1. You are using or will use the [Docker version of BTCPay Server](https://github.com/btcpayserver/btcpayserver-docker)
 2. You do NOT [prune your full bitcoin node](https://docs.btcpayserver.org/faq-and-common-issues/faq-synchronization#can-i-skip-the-synchronization) in BTCPay Server (i.e. you have synched and stored from genesis block, and you do not use the opt-save-storage [Environment Variable](https://github.com/btcpayserver/btcpayserver-docker#generated-docker-compose-))
-3. You have at least 400GB of drive space on the drive where your docker volumes are stored (as at the writing of this documentation on 9th Nov 2019, the total hard drive space used is 333GB with full node and ElectrumX enabled it will grow further over time).
+3. You have at least 400GB of drive space on the drive where your docker volumes are stored (as at the writing of this documentation on 9th Nov 2019, the total hard drive space used is 333GB - with full node and ElectrumX enabled - and of course this will grow further over time).
 4. You are familiar with how to use BTCPays [Additional Fragment](https://github.com/btcpayserver/btcpayserver-docker/blob/master/README.md#environment-variables) feature as part of your environment variable setup.
 5. Basic Linux command line knowledge: This is assumed.  This setup tested fully on Ubuntu 18.04 and Debian Buster, and should work well on any linux with BTCPay server and docker installed.
 
