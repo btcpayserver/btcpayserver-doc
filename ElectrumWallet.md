@@ -188,15 +188,18 @@ If all of the above worked well, and your node is healthy, you will get a green 
 
 ![ElectrumWalletMainScreenLight](https://user-images.githubusercontent.com/1388507/68437133-5636c500-01c0-11ea-822c-6e72bd6d60ea.png)
 
-#### Protip - perform the above steps directly in Electrum Wallet config file:
-If you prefer to avoid connecting to other servers from the outset when you open Electrum Wallet, do the following.
-Open your Electrum Wallet folder ([see here](https://electrum.readthedocs.io/en/latest/faq.html#where-is-my-wallet-file-located) if you don't know where that is), and edit the `config` file in a text editor like this:
+#### Protip - optionally perform the above steps directly in Electrum Wallet config file before even opening the wallet GUI:
+If you prefer to avoid connecting to other servers from the outset when you open Electrum Wallet, do the following before you open Electrum Wallet GUI.
 
-1. Find line: `"oneserver": false,` and switch it to: `"oneserver": true,`
+In the Electrum Wallet folder ([see here](https://electrum.readthedocs.io/en/latest/faq.html#where-is-my-wallet-file-located) if you don't know where that is), open and edit the `config` file like this:
 
-2. Find or add line: `"server": "SOMEIPADDRESS:50002:s",`and switch it to your own ElectrumX Server's IP address, in the axample above this would be: `"server": "192.168.1.3:50002:s",`
+1. Find line: `"auto_connect": true,` and switch it to: `"auto_connect": false,` - this will prevent your Electrum Wallet from auto-connecting to other 3rd party Electrum Servers at launch time (to obtain block headers and transaction information).
 
-These two steps optional but recommended for full privacy.  This will prevent your Electrum Wallet from connecting to several other random servers to obtain block headers; and locks Electrum to a connection only to your private server ([Reference](https://github.com/chris-belcher/electrum-personal-server#how-to)).
+2. Find line: `"oneserver": false,` and switch it to: `"oneserver": true,` - ensures that all data is obtained from just one server.
+
+3. Find or add line: `"server": "SOMEIPADDRESS:50002:s",`and switch it to your own ElectrumX Server's IP address, in the example above this would be: `"server": "192.168.1.3:50002:s",`- hard code your IP address as the default upon opening the Wallet.
+
+These 3 steps optional but recommended for full privacy by locking down Electrum Wallet to one single connection with your private server ([Reference](https://github.com/chris-belcher/electrum-personal-server#how-to)).
 
 ### Reflection on what has been achieved:
 
