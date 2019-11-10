@@ -141,7 +141,7 @@ If you have been running your BTCPay Server for a while but haven't had `txindex
 
 ### Steps to enable ElectrumX Server in BTCPay:
 
-Here are al the steps to enable ElectrumX Server in your BTCPay node (read carefully as you may need to adjust for your specific setup, especially if you use other custom or conflicting "fragments" (pruning, less-memory etc).
+Here are al the steps to enable ElectrumX Server in your BTCPay node (read carefully as you may need to adjust for your specific setup, especially if you use other custom or conflicting "fragments" (pruning, less-memory etc.  To reiterate, ou should NOT proceed further here if you run a pruned BTCPay node.  In a [future release we will integrate EPS](https://github.com/btcpayserver/btcpayserver-docker/pull/227) into BTCPay, which will enable similar functionality as ElectrumX on a pruned node, but only for a personal wallet).
 
 1. ElectrumX Server is accessible for Electrum Wallets via TCP port 50002.  You need to open this port up fully at least to be available within your own network to any PC or Android device running Electrum Wallet, and turn on port forwarding (you can also port forward 50002 from your Internet/WAN, to enable other Electrum Wallet users from the Internet to query your server).
 
