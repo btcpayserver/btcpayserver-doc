@@ -31,6 +31,8 @@ btcpay-up.sh
 ```
 After FastSync is complete and you have brought back up your instance, refresh your BTCPay domain and wait for remaining blockchain synchronization. You can also follow [this video](https://youtu.be/VNMnd-dX9Q8?t=1730).
 
+If your FastSync returns: `You need to delete your Bitcoin Core wallet` after you load the uxto set, it means you need to delete your internal Bitcoin Core wallet that is not compatible with your newly pruned node. WARNING: Do not delete this wallet if you have any funds on it. (For example, this may be the case if you use Eclair or FullyNoded to receive funds). If you agree to remove the wallet to finish syncing with FastSync, use `docker volume rm generated_bitcoin_wallet_datadir` before you run `btcpay-up.sh`
+
 ## How do I know that BTCPay synced completely?
 
 When you do not see a pop-up message in the bottom right corner, which shows the sync progress, that means that your server is fully synced and you can [begin using it](/RegisterAccount.md).
