@@ -45,7 +45,7 @@ Inside BTCPay you can create and manage an unlimited number of stores. Each stor
 
 ## Apps
 
-Each store has access to different apps. Applications built on top of BTCPay extend the [use case](UseCase.md) of the software and cater to different type of users. Here you can create a new app and connect it to the store and customize it. A good example is [Point of Sale app](GettingStarted.md#creating-the-point-of-sale-app) you can use to receive payments in physical stores or even donations.
+Each store has access to different apps. Applications built on top of BTCPay extend the [use case](UseCase.md) of the software and cater to different type of users. Here you can create a new app and connect it to the store and customize it. A good example is the Point of Sale app which you can use to receive payments in physical stores or even donations.
 
 For more information, check [Apps](Apps.md) or [Apps FAQ](/FAQ/FAQ-Apps.md)
 
