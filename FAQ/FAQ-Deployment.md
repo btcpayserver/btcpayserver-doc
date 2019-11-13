@@ -276,8 +276,14 @@ http {
 
 Now test your Nginx config with `service nginx configtest` and reload the config with `service nginx reload`.
 
-Notice: If your BTCPay Server install has more than one domain (for example `WOOCOMMERCE_HOST` or `BTCPAY_ADDITIONAL_HOSTS`) you will need to modify your config for each domain name. The example above only covers 1 domain name called `btcpay.domain.com`.
+Then, you need to make sure that BTCPayServer does not try to handle HTTPS on its side, you can do this by disabling it on your BTCPayServer instance.
 
+```bash
+BTCPAYGEN_EXCLUDE_FRAGMENTS="$BTCPAYGEN_EXCLUDE_FRAGMENTS;nginx-https"
+. btcpay-setup.sh -i
+```
+
+Notice: If your BTCPay Server install has more than one domain (for example `WOOCOMMERCE_HOST` or `BTCPAY_ADDITIONAL_HOSTS`) you will need to modify your config for each domain name. The example above only covers 1 domain name called `btcpay.domain.com`.
 
 ## Web-deployment
 
