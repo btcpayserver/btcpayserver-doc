@@ -330,4 +330,6 @@ Enter domain name, select a previously created app from the drop down menu and c
 
 ![App domain mapping](/img/domainmapping2.png)
 
+If any of the additionally added hosts does not have a properly configured DNS, Let's Encrypt will not be able to renew the certificate for any of the domains, including the main domain. If you're using additional hosts and facing https issues with the main domain, try removing domain from the `BTCPAY_ADDITIONAL_HOSTS` domain and re-run the setup. The https issue also occur if [Dynamic DNS](DynamicDNS.md) has not been renewed and is an additional host.
+
 If for any reason, you want an app to be on the same domain as your BTCPay Server homepage, you can select to display it on the root. In that case, no DNS configuration is needed, since your domain is already pointing properly. Using an app on a root domain, means you'll have to access the log in page manually adding `Account/Login` in domain URL. We don't recommend setting up your app on a root, as it makes navigation harder.
