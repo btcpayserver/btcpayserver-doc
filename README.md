@@ -184,7 +184,7 @@ The BTCPay Server Project is proudly supported by these entities through the [BT
       </td>
        <td align="center" valign="middle">
         <a href="https://lunanode.com" target="_blank">
-          <img  src="Bhttps://raw.githubusercontent.com/btcpayserver/btcpayserver/master/BTCPayServer/wwwroot/img/lunanode.svg?sanitize=true" alt="LunaNode" height=100>
+          <img  src="https://raw.githubusercontent.com/btcpayserver/btcpayserver/master/BTCPayServer/wwwroot/img/lunanode.svg?sanitize=true" alt="LunaNode" height=100>
           <br/>
           <span>LunaNode</span>
     </tr>
