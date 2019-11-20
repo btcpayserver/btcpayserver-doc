@@ -13,7 +13,6 @@ In layman words, think of this feature as a payment processor factory which allo
 * [btcpayprovider.com](https://btcpayprovider.com/)
 * [exitpay.org](https://exitpay.org/)
 * [LAWGATE.IO](https://btcpayserver.lawgate-consulting.com/Account/Register)
-* [lightbo.lt](https://lightbo.lt)
 * [lightninginabox.co](https://lightninginabox.co)
 * [lpay.io](https://lpay.io)
 * [luxnode.io](https://luxnode.io/)
