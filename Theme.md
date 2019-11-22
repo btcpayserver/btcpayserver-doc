@@ -1,11 +1,35 @@
 # Theming
 
+BTCPay Server is built on Bootstrap and offers the flexibility to adjust its look to your needs.
+
+You can either provide a CSS file yourself or use an existing one from Bootswatch.
+Let's take a closer look at both approaches …
+
+## Custom themes
+
+This is the way we are building our own themes, like the [Classic](https://github.com/btcpayserver/btcpayserver/blob/master/BTCPayServer/wwwroot/main/themes/classic.css) or [Casa](https://github.com/btcpayserver/btcpayserver/blob/master/BTCPayServer/wwwroot/main/themes/casa.css) theme.
+
+With this approach you provide a CSS file containing the variable definitions ([CSS custom properties](https://developer.mozilla.org/en-US/docs/Web/CSS/--*)) to adjust colors, fonts, etc.
+
+You should copy one of our [preexisting themes](https://github.com/btcpayserver/btcpayserver/blob/master/BTCPayServer/wwwroot/main/themes/) and change the variables to fit your needs.
+To test and play around with the adjustments, you can also use the developer tools of the browser:
+Inspect the `<html>` element and modify the variables in the `:root` section of the styles inspector:
+
+![Theme customizations](img/ThemeCustomization.gif)
+
+Once you are done with your modifications, you can upload and reference it in the "Custom theme CSS file" field.
+
+![Theme settings](img/ThemeSettings.png)
+
+The Bootstrap theme options are another approach of providing customizations, let's look at this next …
+
 ## Bootstrap themes
 
-BTCPay Server is built on Bootstrap, this gives you access to lot's of custom theme maintained by the community.
-Browse [Bootswatch](https://bootswatch.com/) to find some themes.
+[Bootswatch](https://bootswatch.com/) offers lots of custom theme maintained by the Bootstrap community.
 
 ![Bootswatch](img/Bootswatch.png)
+
+Please note that this approach works best when used with the Classic theme described above!
 
 Let's see how we can take advantage of it.
 
