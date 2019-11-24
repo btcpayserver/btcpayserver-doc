@@ -217,9 +217,24 @@ There are numerous ways to find your node information, but the easiest way to di
 
 ### Where can I find recovery seed backup for my Lightning Network wallet in BTCPay Server?
 
-BTCPay uses noseedbackup, so you can’t backup your LN wallet or get your recovery seed. This is because in Lightning Network there’s still no solution for backing up funds in channels, just in your on-chain wallet.
+Originally BTCPay did use `noseedbackup`, so you couldn’t backup your LN wallet or get your recovery seed. This was because in Lightning Network there’s was no solution for backing up funds in channels, just in your on-chain wallet.  
+By now LND has functionality like static channel backup that depends seed presence.  
+But once again, please understand that the Lightning Network is still in an experimental phase and do not put funds into it, which you're not [willing to lose](https://www.youtube.com/watch?v=5fMv8MpzLgQ).
 
-If BTCPay was to provide a way to backup the lightning network wallet, it would provide a false sense of security to users, since most funds in the lightning network are in channels anyway. To understand why backup seed gives a false sense of security, watch this [video](https://www.youtube.com/watch?v=5fMv8MpzLgQ). Once again, please understand that the Lightning Network is still in an experimental phase and do not put funds into it, which you're not willing to lose.
+#### Using LND with seed (since [`v1.0.3.138`](https://github.com/btcpayserver/btcpayserver/releases/tag/v1.0.3.138))
+
+You can find the LND Seed Service under:
+- Server Settings > Services > LND Seed Backup
+
+![LND Seed Backup service](/img/LND-Service-Seed-Backup.jpg)
+
+Safely backup and store your recovery seed. The seed is a backup of your on-chain Lightning wallet, but is also necessary to perform static channel backups.
+
+![LND Seed Backup example](/img/LND-With-Seed-Example.jpg)
+
+If you backed it up safely you can remove it from the server.
+
+If you migrate from an older version to `v1.0.3.138` [this blog post on how to do the migration](https://blog.btcpayserver.org/btcpay-lnd-migration) might be helpful.
 
 ### How to disable on-chain payments and use LN payments only?
 
