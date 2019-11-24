@@ -190,6 +190,8 @@ Then [prune your node](https://github.com/btcpayserver/btcpayserver-docker#how-i
 
 ## I'm running a full node and have a synched blockchain, can BTCPay use it so that it doesn't have to do a full sync?
 
+Yes you can!  However, before you do that, you'll want to stop BTCPayServer from running its internal node.  Here's how you do that:
+
 If you want to run BTCPay inside a docker-compose, and that you have the data directory (`.bitcoin`) of a fully synched node on your docker host, then you can reuse it easily for BTCPay.
 
 To do that, follow the following steps :
