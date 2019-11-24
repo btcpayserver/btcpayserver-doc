@@ -58,7 +58,7 @@
 * [Architecture](Architecture.md)
 * [Developing Locally](LocalDevelopment.md)
 * [How to add an Altcoin](Altcoins.md)
-* [Customize Bootstrap theme](Theme.md)
+* [Customizing Themes](Theme.md)
 
 ## FAQ and common issues
 
