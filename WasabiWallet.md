@@ -103,14 +103,19 @@ In Wasabi, Tools > Settings. Scroll to the bottom of the page and click `Open Co
 ```
 Replace 
 ```
-"MainNetBitcoinCoreHost": "127.0.0.1",
+"MainNetBackendUriV3": "127.0.0.1",
 ```
 with 
 ``` 
-"MainNetBitcoinCoreHost": "bitcoinp2pstringgoeshere"
+"MainNetBackendUriV3": "bitcoinp2pstringgoeshere"
 ```
 Remember to remove `bitcoin-p2p://` from the string. 
-Save the file, quit Wasabi and open it again. That's it.
+
+The replaced string should look similar this `"MainNetBackendUriV3": "http://xkasdsabiukrxmkdgve5kynjztuovbg43uxcbcxn6y2okcrsg7gb6jdmbad.onion:8333",`
+
+For better privacy, `MainNetFallbackBackendUri` can be replaced with the same string.
+
+Save the file, quit Wasabi and open it again.
 
 ### Configuring the Gap Limit in Wasabi
 
