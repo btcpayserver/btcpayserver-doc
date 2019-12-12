@@ -47,8 +47,6 @@ Upon testing the password, click on the `Load Wallet` to access your newly creat
 
 When the wallet loads (it may take few moments), on the right hand sidebar, toggle the `Advanced` options and then click `Wallet Info`
 
-![WasabiWallet](/img/WassabiWalletSetupBTCPay7.png)
-
 Select and **copy** the `Extended Account Public Key`. This is the **public** key from which BTCPay will derive addresses.
 
 ![WasabiWallet](/img/WassabiWalletSetupBTCPay8.png)
