@@ -14,7 +14,11 @@ and if you want, some companies provide hosting services.
 # Using the BTCPay plugin for Prestashop
 
 ## Prerequisites
-You must have a BTCPay merchant account to use this plugin.
+* [Self-hosted BTCPay](Deploymnent.md) or a server [hosted by a third-party](ThirdPartyHosting.md) 
+* [Registered account on the instance](RegisterAccount.md)
+* [Created BTCPay store](CreateStore.md)
+* [Connected wallet to a store](ConnectWallet.md)
+
 If you want to test in test mode, just paste an other btcpayserver url with testing port.
 
 ## Making a release
