@@ -77,6 +77,7 @@ BTCPay Server is often misconceived as being the payment processor used by the m
     - [ColdCard Wallet](ColdcardWallet.md)
     - [Wasabi Wallet](WasabiWallet.md)
     - [Electrum Wallet](ElectrumWallet.md)
+          -[ElectrumX](ElectrumX.md)
 - [(4) What's next](WhatsNext.md)
 
 
