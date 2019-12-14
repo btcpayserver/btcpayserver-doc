@@ -59,40 +59,16 @@ Start by downloading [Raspbian Linux](https://www.raspberrypi.org/downloads/rasp
 ![RPI4 Linux Installation](/img/RPI4Linux.png)
 
 ### Flash your SD card with Raspbian Linux
+- Extract the downloaded Raspbian Linux zip file
+- Download the latest version of [balenaEtcher](https://www.balena.io/etcher/) and install it.
+- Connect an SD card reader with the SD card inside.
+- Open balenaEtcher and select from your hard drive the Raspberry Pi .img from the extracted zip file you wish to write to the SD card.
+- Select the SD card you wish to write your image to.
+- Review your selections and click 'Flash!' to begin writing data to the SD card.
 
-Assuming you’re running macOS, first you need to identify which device is your SD card. Plug your SD card into your SD card reader and type:
+You can find a more in-depth instruction guide to flashing to your SD card at the [official Raspberry Pi  website](https://www.raspberrypi.org/documentation/installation/installing-images). 
 
-```bash
-sudo -sdiskutil list
-```
-
-You’ll see a list of disks like this:
-
-![RPI4 Console](/img/RPI4Terminal1.png)
-
-Here’s where your computer might be different from the above and you need to be careful. From the above list of disks on my computer, I can identify `disk0` and `disk1` are my mac’s internal hard disks. But that 32GB “external” and “physical” `disk2` is the same size as my SD card and has some Windows partition on it, so I can identify my SD card is `disk2`.
-
-🚨 **WARNING: You need to correctly identify the drive number of your SD card, and modify the following commands before typing them, or you could accidentally erase your computer’s hard drive instead.** 🚨
-
-Don’t copy and paste the following, you need to replace the 3 instances of `diskX` in these commands with your actual drive ID. For me this was `disk2`,but it might be different for you. The following commands will erase the SD card, and then write the Raspbian image to the SD card, so be careful not to mess up these commands.
-
-```bash
-diskutil unmountDisk diskX
-dd if=/dev/zero of=/dev/rdiskX bs=4m count=100
-dd if=/path/to/raspbian.img of=/dev/rdiskX bs=4m
-```
-🚨 **WARNING: If you incorrectly flash the wrong drive, you could erase your computer’s hard drive instead of the SD card. Double check you have the disk ID correct so you don’t accidentally erase your data.** 🚨
-
-If all went well, you should see the commands return something like this:
-
-![RPI4 Console](/img/RPI4Terminal2.png)
-
-Next, enable SSH at bootup so you can remotely login, and finally eject the SD card so you can move it to the Raspberry Pi. The new SD card’s boot partition should automatically be mounted on `/Volumes/boot`
-
-```bash
-touch /Volumes/boot/ssh
-diskutil eject disk2
-```
+If you used balenaEtcher to flash, the SD card will already have been ejected. Simply take the SD card out and put it back in. The SD card should now be labelled as `boot`. Next, enable SSH at bootup so you can remotely login by creating an empty file in the SD card root folder called `ssh`. Eject the SD card through your OS before taking it out of the SD card reader.
 
 ![RPI4 Console](/img/RPI4Terminal4.png)
 
