@@ -123,6 +123,7 @@ passwd pi
 I also recommend to disable swap to prevent burning out your SD card.
 
 ```bash
+sudo su -
 dphys-swapfile swapoff
 dphys-swapfile uninstall
 update-rc.d dphys-swapfile remove
