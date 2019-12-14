@@ -161,7 +161,7 @@ mount -a
 While you’re editing `/etc/fstab` add a RAM filesystem for logs (optional). This is also to prevent burning out your SD card too quickly.
 
 ```bash
-none        /var/log        tmpfs   size=10M,noatime         00
+echo 'none        /var/log        tmpfs   size=10M,noatime         00' >> /etc/fstab
 ```
 
 Mount the SSD partition and create a symlink for docker to use the SSD
