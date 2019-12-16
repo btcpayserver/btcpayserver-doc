@@ -88,4 +88,4 @@ You should be able access the ports/services of the host computer through the IP
 
 https://github.com/rootzoll/raspiblitz/blob/master/FAQ.md#how-to-setup-port-forwarding-with-a-ssh-tunnel
 
-https://stadicus.github.io/RaspiBolt/raspibolt_20_pi.html#login-with-ssh-keys
+https://stadicus.github.io/RaspiBolt/raspibolt_21_security.html#login-with-ssh-keys
