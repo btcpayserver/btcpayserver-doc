@@ -8,7 +8,7 @@
 ## Requirements:
 * a Virtual Private Server (VPS) - eg. a minimal package on Lunanode for ~3.5$/month
 * root access on the VPS - only root can forward ports under no. 1000
-* ssh access to the host computer (from where the ports will be forwarded from)
+* ssh access to the host computer (where the ports will be forwarded from)
 
 ## On the host computer 
 
@@ -41,7 +41,7 @@ Can just paste these on the end of the file:
     ```
     CTRL+O, ENTER to save, CTRL+X to exit.
  
-* restart the sshd service (WARNING: you can lose acccess at this point if the config is wrong):  
+* restart the sshd service (WARNING: you can lose access at this point if the config is wrong):  
 `sudo systemctl restart sshd`
 
 ## Back to the host computer
@@ -83,7 +83,6 @@ You should be able access the ports/services of the host computer through the IP
 
 * To check if tunnel is active on the VPS:  
 `$ netstat -tulpn`
-
 
 ## Resources
 
