@@ -185,7 +185,7 @@ ufw allow 9735/tcp
 Verify your configuration:
 
 ```bash
-sudo ufw status
+ufw status
 ```
 
 Enable your firewall:
@@ -197,11 +197,10 @@ ufw enable
 Download BTCPay Server from GitHub
 
 ```bash
+cd # ensure we are in root home
 apt install -y fail2ban git
 git clone https://github.com/btcpayserver/btcpayserver-docker
 cd btcpayserver-docker
-sudo su -
-cd ~pi/btcpayserver-docker/
 ```
 
 Configure BTCPay by setting some environment variables:
