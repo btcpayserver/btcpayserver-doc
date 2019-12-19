@@ -15,7 +15,7 @@ Don’t settle for only 1GB or 2GB of RAM. The **4GB RAM** version is harder to 
 
 ### Power Adapters and USB-C Cable
 
-- [Official Raspberry Pi 4 USB-C Power Adapter 5.1V/3A for US ](https://shop.pimoroni.com/products/raspberry-pi-official-usb-c-power-supply-us?variant=29391144648787)($10)
+- [Official Raspberry Pi 4 USB-C Power Adapter 5.1V/3A for US](https://shop.pimoroni.com/products/raspberry-pi-official-usb-c-power-supply-us?variant=29391144648787) ($10)
 - [Official Raspberry Pi 4 USB-C Power Adapter 5.1V/3A for EU](https://shop.pimoroni.com/products/raspberry-pi-official-usb-c-power-supply-eu?variant=29391130624083) ($10)
 - [Official Raspberry Pi 4 USB-C Power Adapter 5.1V/3A for AU](https://shop.pimoroni.com/products/raspberry-pi-official-usb-c-power-supply-au?variant=29391160737875) ($10)
 
@@ -59,6 +59,7 @@ Start by downloading [Raspbian Linux](https://www.raspberrypi.org/downloads/rasp
 ![RPI4 Linux Installation](/img/RPI4Linux.png)
 
 ### Flash your SD card with Raspbian Linux
+
 - Extract the downloaded Raspbian Linux zip file
 - Download the latest version of [balenaEtcher](https://www.balena.io/etcher/) and install it.
 - Connect an SD card reader with the SD card inside.
@@ -66,7 +67,7 @@ Start by downloading [Raspbian Linux](https://www.raspberrypi.org/downloads/rasp
 - Select the SD card you wish to write your image to.
 - Review your selections and click 'Flash!' to begin writing data to the SD card.
 
-You can find a more in-depth instruction guide to flashing to your SD card at the [official Raspberry Pi  website](https://www.raspberrypi.org/documentation/installation/installing-images). 
+You can find a more in-depth instruction guide to flashing to your SD card at the [official Raspberry Pi  website](https://www.raspberrypi.org/documentation/installation/installing-images).
 
 If you used balenaEtcher to flash, the SD card will already have been ejected. Simply take the SD card out and put it back in. The SD card should now be labelled as `boot`. Next, enable SSH at bootup so you can remotely login by creating an empty file in the SD card root folder called `ssh`. Eject the SD card through your OS before taking it out of the SD card reader.
 
