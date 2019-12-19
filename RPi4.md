@@ -77,7 +77,7 @@ If you used balenaEtcher to flash, the SD card will already have been ejected. S
 
 After inserting the SD card into the Raspberry Pi, go ahead and connect the power and ethernet, and optionally the display and keyboard if you have those. It should boot up and get an IP address using DHCP. You can try searching for it with `ping raspberrypi.local` on your desktop PC, but if that doesn’t work you will need to login to your router to find its IP address.
 
-The IP address that my Raspberry Pi got was 192.168.1.5 so I SSH’d to that
+The IP address that my Raspberry Pi got was 192.168.1.5 so I SSH’d to that:
 
 ```bash
 ssh 192.168.1.5 -l pi
@@ -89,7 +89,7 @@ The default password for the “pi” user is “raspberry”. After SSH’ing i
 sudo -svcgencmd measure_temp
 ```
 
-Next, let’s change the password for the “pi” user.
+Next, let’s change the password for the “pi” user:
 
 ```bash
 passwd pi
@@ -103,7 +103,7 @@ After that, switch to the `root` user, which we will use for the remaining part 
 sudo su -
 ```
 
-We recommend to disable swap to prevent burning out your SD card.
+We recommend to disable swap to prevent burning out your SD card:
 
 ```bash
 dphys-swapfile swapoff
@@ -114,7 +114,7 @@ systemctl disable dphys-swapfile
 
 ![RPI4 Console](/img/RPI4Terminal5.png)
 
-Partition your SSD
+Partition your SSD:
 
 ```bash
 fdisk /dev/sda
@@ -124,13 +124,13 @@ fdisk /dev/sda
 # type 'w' to write the new partition table and exit fdisk
 ```
 
-Format the new partition on your SSD
+Format the new partition on your SSD:
 
 ```bash
 mkfs.ext4 /dev/sda1
 ```
 
-Configure the SSD partition to auto-mount at bootup
+Configure the SSD partition to auto-mount at bootup:
 
 ```bash
 mkfs.ext4 /dev/sda1
@@ -140,26 +140,27 @@ echo "UUID=$UUID /mnt/usb ext4 defaults,noatime,nofail 0" | sudo tee -a /etc/fst
 mount -a
 ```
 
-While you’re editing `/etc/fstab` add a RAM filesystem for logs (optional). This is also to prevent burning out your SD card too quickly.
+While you’re editing `/etc/fstab` add a RAM filesystem for logs (optional).
+This is also to prevent burning out your SD card too quickly:
 
 ```bash
 echo 'none        /var/log        tmpfs   size=10M,noatime         00' >> /etc/fstab
 ```
 
-Mount the SSD partition and create a symlink for docker to use the SSD
+Mount the SSD partition and create a symlink for docker to use the SSD:
 
 ```bash
 mkdir /mnt/usb/docker
 ln -s /mnt/usb/docker /var/lib/docker
 ```
 
-Upgrade your OS packages to latest
+Upgrade your OS packages to latest:
 
 ```bash
 apt update && apt upgrade -y && apt autoremove
 ```
 
-Install a firewall and allow SSH, HTTP, HTTPS, Bitcoin, and Lightning
+Install a firewall and allow SSH, HTTP, HTTPS, Bitcoin, and Lightning:
 
 ```bash
 apt install -y ufw
@@ -200,7 +201,7 @@ Enable your firewall:
 ufw enable
 ```
 
-Download BTCPay Server from GitHub
+Download BTCPay Server from GitHub:
 
 ```bash
 cd # ensure we are in root home
