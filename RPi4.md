@@ -79,7 +79,7 @@ After inserting the SD card into the Raspberry Pi, go ahead and connect the powe
 
 The IP address that my Raspberry Pi got was 192.168.1.5 so I SSH’d to that
 
-```
+```bash
 ssh 192.168.1.5 -l pi
 ```
 
@@ -97,10 +97,15 @@ passwd pi
 
 ![RPI4 Console](/img/RPI4Terminal4.png)
 
-I also recommend to disable swap to prevent burning out your SD card.
+After that, switch to the `root` user, which we will use for the remaining part of the tutorial:
 
 ```bash
 sudo su -
+```
+
+We recommend to disable swap to prevent burning out your SD card.
+
+```bash
 dphys-swapfile swapoff
 dphys-swapfile uninstall
 update-rc.d dphys-swapfile remove
