@@ -103,6 +103,8 @@ After that, switch to the `root` user, which we will use for the remaining part 
 sudo su -
 ```
 
+## Configuring the storage
+
 We recommend to disable swap to prevent burning out your SD card:
 
 ```bash
@@ -154,6 +156,8 @@ mkdir /mnt/usb/docker
 ln -s /mnt/usb/docker /var/lib/docker
 ```
 
+## Configuring the firewall
+
 Upgrade your OS packages to latest:
 
 ```bash
@@ -200,6 +204,8 @@ Enable your firewall:
 ```bash
 ufw enable
 ```
+
+## Setup BTCPay Server
 
 Download BTCPay Server from GitHub:
 
