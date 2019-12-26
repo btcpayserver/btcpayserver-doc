@@ -6,7 +6,8 @@
 4. Remove other BTCPay system files with this: `rm /etc/systemd/system/btcpayserver.service && rm /etc/profile.d/btcpay-env.sh`
 5. Go into /usr/local/bin and remove all of the symlinks that BTCPay put in there.  At the time of writing these were: 
 
-`bitcoin-cli.sh -> /root/BTCPayServer/btcpayserver-docker/bitcoin-cli.sh
+```
+bitcoin-cli.sh -> /root/BTCPayServer/btcpayserver-docker/bitcoin-cli.sh
 bitcoin-lncli.sh -> /root/BTCPayServer/btcpayserver-docker/bitcoin-lncli.sh
 btcpay-admin.sh -> /root/BTCPayServer/btcpayserver-docker/btcpay-admin.sh
 btcpay-clean.sh -> /root/BTCPayServer/btcpayserver-docker/btcpay-clean.sh
@@ -15,6 +16,8 @@ btcpay-restart.sh -> /root/BTCPayServer/btcpayserver-docker/btcpay-restart.sh
 btcpay-setup.sh -> /root/BTCPayServer/btcpayserver-docker/btcpay-setup.sh
 btcpay-up.sh -> /root/BTCPayServer/btcpayserver-docker/btcpay-up.sh
 btcpay-update.sh -> /root/BTCPayServer/btcpayserver-docker/btcpay-update.sh
-changedomain.sh -> /root/BTCPayServer/btcpayserver-docker/changedomain.sh`
+changedomain.sh -> /root/BTCPayServer/btcpayserver-docker/changedomain.sh
+```
 
-n. Remove your BTCPay installation folder with `rm -r "$(dirname "$BTCPAY_ENV_FILE")"`
+6. Remove your BTCPay installation folder with `rm -r "$(dirname "$BTCPAY_ENV_FILE")"`
+7. Just to make sure, run `docker system prune` after a reboot to get rid of any other docker related artifacts.
