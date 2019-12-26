@@ -126,6 +126,7 @@ Store settings explained.
  * [Consider the invoice paid even if the paid amount is ... % less than expected?](FAQ-Stores.md#consider-the-invoice-paid-even-if-the-paid-amount-is---less-than-expected)
  * [How to disable email on invoices?](FAQ-Stores.md#how-to-disable-email-on-invoices)
  * [Can I delete invoices from BTCPay?](FAQ-Stores.md#can-i-delete-invoices-from-btcpay)
+ * [How to change the exchange rate provider for invoices?](FAQ-Stores.md#how-to-change-the-exchange-rate-provider-for-invoices)
 
 ## [Wallet FAQ](FAQ-Wallet.md)
 
