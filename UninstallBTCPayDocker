@@ -1,2 +1,20 @@
-How to Completely Uninstall BTCPay Server (Docker Version):
+# How to Completely Uninstall BTCPay Server (Docker Version):
 
+1. Shutdown BTCPay Server (after you ensure you have required backups etc) with `btcpay-down.sh` and cleanup the install with `btcpay-clean.sh`.
+2. Change to your Base install directory `cd "$(dirname "$BTCPAY_ENV_FILE")"`
+3. Delete all volumes in /var/lib/docker/volumes/ with `docker-compose -f $BTCPAY_DOCKER_COMPOSE down --v`
+4. Remove other BTCPay system files with this: `rm /etc/systemd/system/btcpayserver.service && rm /etc/profile.d/btcpay-env.sh`
+5. Go into /usr/local/bin and remove all of the symlinks that BTCPay put in there.  At the time of writing these were: 
+
+`bitcoin-cli.sh -> /root/BTCPayServer/btcpayserver-docker/bitcoin-cli.sh
+bitcoin-lncli.sh -> /root/BTCPayServer/btcpayserver-docker/bitcoin-lncli.sh
+btcpay-admin.sh -> /root/BTCPayServer/btcpayserver-docker/btcpay-admin.sh
+btcpay-clean.sh -> /root/BTCPayServer/btcpayserver-docker/btcpay-clean.sh
+btcpay-down.sh -> /root/BTCPayServer/btcpayserver-docker/btcpay-down.sh
+btcpay-restart.sh -> /root/BTCPayServer/btcpayserver-docker/btcpay-restart.sh
+btcpay-setup.sh -> /root/BTCPayServer/btcpayserver-docker/btcpay-setup.sh
+btcpay-up.sh -> /root/BTCPayServer/btcpayserver-docker/btcpay-up.sh
+btcpay-update.sh -> /root/BTCPayServer/btcpayserver-docker/btcpay-update.sh
+changedomain.sh -> /root/BTCPayServer/btcpayserver-docker/changedomain.sh`
+
+n. Remove your BTCPay installation folder with `rm -r "$(dirname "$BTCPAY_ENV_FILE")"`
