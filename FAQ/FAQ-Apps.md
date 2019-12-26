@@ -12,6 +12,7 @@ This document covers frequently asked questions about the Apps in BTCPay.
 * [How to integrate WooCommerce Store in BTCPay Crowdfund app?](#how-to-integrate-woocommerce-store-into-a-btcpay-crowdfund-app)
 * [How to create Pay button with a custom amount?](#how-to-create-pay-button-with-a-custom-amount)
 * [How to map a domain name to an app?](#how-to-map-a-domain-name-to-an-app)
+* [What is the "Invoice IPN Notification" input field for?](#what-is-the-invoice-ipn-notification-input-field-for)
 
 ## What are the Apps in BTCPay?
 Apps are plugins (features) you can use to expand the use case of your BTCPay.
@@ -333,3 +334,57 @@ Enter domain name, select a previously created app from the drop down menu and c
 If any of the additionally added hosts do not have a properly configured DNS, Let's Encrypt will not be able to renew the certificate for any of the domains, including the main domain. If you're using additional hosts and facing https issues with the main domain, try removing a domain from the `BTCPAY_ADDITIONAL_HOSTS` and re-run the setup. The https issue also occurs if [Dynamic DNS](/DynamicDNS.md) has not been renewed and is configured as an additional host.
 
 If for any reason, you want an app to be on the same domain as your BTCPay Server homepage, you can select to display it on the root. In that case, no DNS configuration is needed, since your domain is already pointing properly. Using an app on a root domain, means you'll have to access the log in page manually adding `Account/Login` in domain URL. We don't recommend setting up your app on a root, as it makes navigation harder.
+
+## What is the "Invoice IPN Notification" input field for?
+[IPN](https://en.wikipedia.org/wiki/Instant_payment_notification) stands for - Instant payment notification.  
+If you input an email-address into this field you will get an email for each and every invoice-status.  
+You should not use this if you want to receive an email if i.e. an invoice was paid. For these cases have a look at the [BTC Transmuter project](https://github.com/btcpayserver/btcTransmuter).  
+
+Content of this email is a JSON string that looks like this:
+
+### Email Subject
+> BtcPayServer Invoice Notification - $[...]
+
+### Email content
+```
+{
+    "event": {
+        "code": [i.e. 1006],
+        "name": "[i.e. invoice_completed]"
+    },
+    "data": {
+        "id": "***",
+        "url": "http:***",
+        "posData": null,
+        "status": "complete",
+        "btcPrice": "***",
+        "price": 1,
+        "currency": "[currency]",
+        "invoiceTime": [timestamp, i.e. 1577088569000],
+        "expirationTime": [timestamp],
+        "currentTime": [timestamp],
+        "btcPaid": "***",
+        "btcDue": "0.00000000",
+        "rate": ***,
+        "exceptionStatus": false,
+        "buyerFields": null,
+        "transactionCurrency": null,
+        "paymentSubtotals": {
+            "btc": ***,
+            "btC_LightningLike": ***
+        },
+        "paymentTotals": {
+            "btc": ***,
+            "btC_LightningLike": ***
+        },
+        "amountPaid": "***",
+        "exchangeRates": {
+            "btc": {
+                "eur": ***
+            }
+        }
+    },
+    "extendedNotification": true,
+    "notificationURL": null
+}
+```
