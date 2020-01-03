@@ -19,7 +19,7 @@ We recommend you use our dockerized setup to bootstrap the development environme
 The file [BTCPayServer.Tests/docker-compose.yml](https://github.com/btcpayserver/btcpayserver/blob/master/BTCPayServer.Tests/docker-compose.yml) can be used to spin everything up:
 
 ```bash
-git clone git@github.com:btcpayserver/btcpayserver.git
+git clone https://github.com/btcpayserver/btcpayserver.git
 cd btcpayserver/BTCPayServer.Tests
 docker-compose up dev
 ```
