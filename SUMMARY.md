@@ -23,6 +23,9 @@
     - [Raspberry Pi 3 Deployment](RPi3.md)
     - [Raspberry Pi 4 Deployment](RPi4.md)
 - [Third-Party Hosting](ThirdPartyHosting.md)
+- Advanced Deployment
+    - [Dynamic DNS](DynamicDNS.md)
+    - [Reverse SSH Tunnel](ReverseSSHtunnel.md)
 
 ## Getting Started
 
@@ -44,7 +47,6 @@
 * [Lightning Network](LightningNetwork.md)
 * [Accounting](Accounting.md)
 * [Payment Requests](PaymentRequests.md)
-* [Dynamic DNS](DynamicDNS.md)
 
 ## Integrations
 
