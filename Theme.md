@@ -259,7 +259,9 @@ Logo:
 
 Website: https://thecryptocloak.com/
 
-Design (see website checkout)
+Design:
+
+![Shiftcrypto logo](img/Theme-CryptoCloaks.png)
 
 CSS file:
 ```css
@@ -508,3 +510,6 @@ span {
 /*	go wrong. PEACE / LOVE / BITCOIN				*/
 /*==========================END DISCLAIMER==========================	*/
 ```
+
+Logo:
+![CryptoCloaks](img/Theme-CryptoCloaks-logo.png)
