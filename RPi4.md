@@ -216,7 +216,7 @@ git clone https://github.com/btcpayserver/btcpayserver-docker
 cd btcpayserver-docker
 ```
 
-Configure BTCPay by setting some environment variables:
+Configure BTCPay by setting some [environment variables](https://github.com/btcpayserver/btcpayserver-docker#environment-variables):
 
 ```bash
 export BTCPAY_HOST="raspberrypi.local"
@@ -225,7 +225,6 @@ export BTCPAYGEN_CRYPTO1="btc"
 export BTCPAYGEN_LIGHTNING="lnd"
 export BTCPAYGEN_REVERSEPROXY="nginx"
 export BTCPAYGEN_ADDITIONAL_FRAGMENTS="opt-more-memory"
-export BTCPAYGEN_EXCLUDE_FRAGMENTS="opt-add-tor"
 export BTCPAY_ENABLE_SSH=true
 ```
 
