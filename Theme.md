@@ -222,6 +222,10 @@ canvas {
 .manual__step-one__instructions {
     color: #ffffff;
 }
+
+.payment__currencies:hover {
+    background: rgba(248, 248, 248,0.1);
+}
 ```
 Logo:
 
