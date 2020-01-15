@@ -226,6 +226,10 @@ canvas {
 .payment__currencies:hover {
     background: rgba(248, 248, 248,0.1);
 }
+
+.recommended-fee{
+    margin-top: 10px;
+}
 ```
 Logo:
 
