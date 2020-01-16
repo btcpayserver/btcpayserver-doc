@@ -18,6 +18,7 @@ Bitcoin is the only focus of the project and its core developers. However, opt i
 - Dogecoin (DOGE)
 - Feathercoin (FTC)
 - Groestlcoin (GRS)
+- Liquid Bitcoin (LBTC) (comes with Liquid Tether support USDt) 
 - Litecoin (LTC)
 - Monacoin (MONA)
 - Monero (XMR) [(notes on deployment)](https://github.com/btcpayserver/btcpayserver-docker/issues/204#issuecomment-552755422)
