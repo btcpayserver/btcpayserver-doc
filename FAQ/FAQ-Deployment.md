@@ -24,6 +24,7 @@ Here are common questions about installation, regardless of the deployment metho
 * [Can I start BTCPay only when I'm expecting a payment?](FAQ-Deployment.md#can-i-start-btcpay-only-when-im-expecting-a-payment)
 * [Can I use my existing BTC or LN node with BTCPay?](FAQ-Deployment.md#can-i-use-my-existing-btc-or-ln-node-with-btcpay)
 * [Can I connect to my BTCPay Bitcoin P2P on port 8333?](FAQ-Deployment.md#can-i-connect-to-my-btcpay-bitcoin-p2p-on-port-8333)
+* [How do I completely uninstall BTCPay from a linux environment (docker version)](FAQ-Deployment.md#how-do-i-completely-uninstall-btcpay-from-a-linux-environment-docker-version)
 
 ## Web Deployment FAQ
 ### Luna Node Web Deployment FAQ
@@ -284,6 +285,28 @@ BTCPAYGEN_EXCLUDE_FRAGMENTS="$BTCPAYGEN_EXCLUDE_FRAGMENTS;nginx-https"
 ```
 
 Notice: If your BTCPay Server install has more than one domain (for example `WOOCOMMERCE_HOST` or `BTCPAY_ADDITIONAL_HOSTS`) you will need to modify your config for each domain name. The example above only covers 1 domain name called `btcpay.domain.com`.
+
+### How do I completely uninstall BTCPay from a linux environment (docker version)
+1. Shutdown BTCPay Server (after you ensure you have required backups etc) with `btcpay-down.sh` and cleanup the install with `btcpay-clean.sh`.
+2. Change to your Base install directory `cd "$(dirname "$BTCPAY_ENV_FILE")"`
+3. Delete all volumes in /var/lib/docker/volumes/ with `docker-compose -f $BTCPAY_DOCKER_COMPOSE down --v`
+4. Remove other BTCPay system files with this: `rm /etc/systemd/system/btcpayserver.service && rm /etc/profile.d/btcpay-env.sh`
+5. Go into /usr/local/bin and remove all of the symlinks that BTCPay put in there.  At the time of writing these were: 
+```
+bitcoin-cli.sh -> /root/BTCPayServer/btcpayserver-docker/bitcoin-cli.sh
+bitcoin-lncli.sh -> /root/BTCPayServer/btcpayserver-docker/bitcoin-lncli.sh
+btcpay-admin.sh -> /root/BTCPayServer/btcpayserver-docker/btcpay-admin.sh
+btcpay-clean.sh -> /root/BTCPayServer/btcpayserver-docker/btcpay-clean.sh
+btcpay-down.sh -> /root/BTCPayServer/btcpayserver-docker/btcpay-down.sh
+btcpay-restart.sh -> /root/BTCPayServer/btcpayserver-docker/btcpay-restart.sh
+btcpay-setup.sh -> /root/BTCPayServer/btcpayserver-docker/btcpay-setup.sh
+btcpay-up.sh -> /root/BTCPayServer/btcpayserver-docker/btcpay-up.sh
+btcpay-update.sh -> /root/BTCPayServer/btcpayserver-docker/btcpay-update.sh
+changedomain.sh -> /root/BTCPayServer/btcpayserver-docker/changedomain.sh
+```
+6. Remove your BTCPay installation folder with `rm -r "$(dirname "$BTCPAY_ENV_FILE")"`
+7. Just to make sure, run `docker system prune` after a reboot to get rid of any other docker related artifacts.
+
 
 ## Web-deployment
 
