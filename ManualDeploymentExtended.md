@@ -564,7 +564,8 @@ Check [download link for latest version](https://dotnet.microsoft.com/download/d
 ~$ sudo apt-get install apt-transport-https
 ~$ sudo apt-get update
 ~$ sudo apt-get install dotnet-sdk-3.1
-~$ dotnet --version 3.1.1
+~$ dotnet --version 
+3.1.1
 ```
 ##### 2. Build NBXplorer
 ```bash
