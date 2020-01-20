@@ -4,7 +4,7 @@
 
 For the development environment you need to install these tools:
 
-* [.NET Core 3.0 SDK](https://dotnet.microsoft.com/download)
+* [.NET Core 3.1 SDK](https://dotnet.microsoft.com/download)
 * Docker: [Windows](https://docs.docker.com/docker-for-windows/install/) | [Mac OS](https://docs.docker.com/docker-for-mac/install/) | [Linux](https://docs.docker.com/install/linux/docker-ce/ubuntu/)
 
 ## Dependencies
@@ -28,10 +28,10 @@ To get started see the [README of the test project](https://github.com/btcpayser
 
 ## Which IDE?
 
-We recommend using Visual Studio Code (cross platform) or Visual Studio 2017 update 3 (Windows Only) or Rider (cross platform).
+We recommend using Visual Studio Code (cross platform) or Visual Studio 2019 (Windows Only) or Rider (cross platform).
 You can of course use VIM if you are hardcore, .NET Core is command-line environment friendly.
 
-Visual Studio Code, Visual Studio 2017 and Rider will run the debug profile Docker-Regtest.
+Visual Studio Code, Visual Studio and Rider will run the debug profile Docker-Regtest.
 This will run a BTCPayServer instance connecting to the services in your Docker service, so you can easily debug and step through the code.
 
 ## Videos
