@@ -40,15 +40,15 @@ sudo tar -xzvf bitcoin.tar.gz -C /usr/local/bin --strip-components=2 "bitcoin-$B
 rm bitcoin.tar.gz
 ```
 
-### 2) Install .NET Core SDK 2.1
-On my ubuntu 16.04 (See [those instructions](https://dotnet.microsoft.com/download/linux-package-manager/ubuntu16-04/sdk-2.1.505) for different OS).
+### 2) Install .NET Core SDK 3.1
+On my ubuntu 16.04 (See [these instructions](https://docs.microsoft.com/en-us/dotnet/core/install/linux-package-manager-ubuntu-1604) or [here](https://dotnet.microsoft.com/download) for different OS).
 
 ```bash
 wget -q https://packages.microsoft.com/config/ubuntu/16.04/packages-microsoft-prod.deb
 sudo dpkg -i packages-microsoft-prod.deb
 sudo apt-get install apt-transport-https
 sudo apt-get update
-sudo apt-get install -y dotnet-sdk-2.1
+sudo apt-get install -y dotnet-sdk-3.1
 ```
 
 ### 3) Install NBXplorer
