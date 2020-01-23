@@ -23,6 +23,13 @@ Setting up BTCPay Vault is quite easy. You only need to have already set up BTCP
 8. Validate that address shown on BTCPay is the same as the one on your device
 9. Save
 
+BTCPay Vault Store Setup 1.png 
+BTCPay Vault Store Setup 2.png
+BTCPay Vault Store Setup 3.png
+BTCPay Vault Store Setup 4.png
+BTCPay Vault Store Setup 5.png
+BTCPay Vault Store Setup 6.png
+
 ### Spending funds with BTCPay Wallet
 
 Once you’ve received funds to your wallet and you decide to spend them, you can sign the transaction with your hardware wallet, all inside BTCPay Server.
@@ -34,3 +41,7 @@ Once you’ve received funds to your wallet and you decide to spend them, you ca
 5. Select Sign with the Vault
 6. Verify the transaction on your hardware wallet and confirm it
 7. Broadcast the transaction
+
+## Supported Hardware Wallets
+
+The list of supported hardware wallets is available [on this link](https://github.com/bitcoin-core/HWI#device-support).
