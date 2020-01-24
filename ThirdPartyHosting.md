@@ -12,6 +12,7 @@ In layman words, think of this feature as a payment processor factory which allo
 * [btcpaynow.net](https://btcpaynow.net)
 * [btcpayprovider.com](https://btcpayprovider.com/)
 * [exitpay.org](https://exitpay.org/)
+* [kendesu.io](https://kendesu.io/)
 * [LAWGATE.IO](https://btcpayserver.lawgate-consulting.com/Account/Register)
 * [lightninginabox.co](https://lightninginabox.co)
 * [lpay.io](https://lpay.io)
@@ -19,7 +20,6 @@ In layman words, think of this feature as a payment processor factory which allo
 * [merklesig.com](https://merklesig.com/)
 * [nodl.it](https://nodl.it)
 * [pay.d-central.tech](https://pay.d-central.tech/)
-* [kendesu.io](https://kendesu.io/)
 * [~~ltcpay.com~~](https://ltcpay.com/)
 * [~~register.btcpal.online~~](https://register.btcpal.online)
 
