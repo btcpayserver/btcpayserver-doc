@@ -19,6 +19,7 @@ In layman words, think of this feature as a payment processor factory which allo
 * [merklesig.com](https://merklesig.com/)
 * [nodl.it](https://nodl.it)
 * [pay.d-central.tech](https://pay.d-central.tech/)
+* [kendesu.io](https://kendesu.io/)
 * [~~ltcpay.com~~](https://ltcpay.com/)
 * [~~register.btcpal.online~~](https://register.btcpal.online)
 
