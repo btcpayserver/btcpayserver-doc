@@ -83,10 +83,10 @@ The IP address that my Raspberry Pi got was 192.168.1.5 so I SSH’d to that:
 ssh 192.168.1.5 -l pi
 ```
 
-The default password for the “pi” user is “raspberry”. After SSH’ing in, the first thing I want to do is check the device’s CPU temperature to make sure the cooling system are working correctly:
+The default password for the “pi” user is “raspberry”. After SSH’ing in, the first thing I want to do is check the device’s CPU temperature to make sure the cooling system are working correctly. Press Ctrl-c to stop monitoring:
 
 ```bash
-sudo -svcgencmd measure_temp
+while :; do sudo su  -c "vcgencmd measure_temp"; sleep 1; done
 ```
 
 Next, let’s change the password for the “pi” user:
@@ -170,6 +170,12 @@ Install a firewall and allow SSH, HTTP, HTTPS, Bitcoin, and Lightning:
 apt install -y ufw
 ufw default deny incoming
 ufw default allow outgoing
+```
+
+UFW needs default iptables changes and a reboot for the firewall to work:
+```bash
+sudo update-alternatives --set iptables /usr/sbin/iptables-legacy
+sudo reboot
 ```
 
 This command allows SSH connections from internal networks only:
