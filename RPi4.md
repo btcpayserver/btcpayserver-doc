@@ -86,7 +86,7 @@ ssh 192.168.1.5 -l pi
 The default password for the “pi” user is “raspberry”. After SSH’ing in, the first thing I want to do is check the device’s CPU temperature to make sure the cooling system are working correctly. Press Ctrl-c to stop monitoring:
 
 ```bash
-while :; do sudo su  -c "vcgencmd measure_temp"; sleep 1; done
+sudo watch -n1 vcgencmd measure_temp
 ```
 
 Next, let’s change the password for the “pi” user:
