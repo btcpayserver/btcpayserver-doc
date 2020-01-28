@@ -4,7 +4,7 @@ This page answers some of the common questions about alternative cryptocurrencie
 
 * [Which coins BTCPay Server supports?](FAQ-Altcoin.md#which-coins-btcpay-server-supports)
 * [Can an XYZ coin be added in BTCPay?](FAQ-Altcoin.md#can-an-xyz-coin-be-added-in-btcpay)
-* [How to an altcoin in BTCPay?](FAQ-Altcoin.md#how-to-an-altcoin-in-btcpay)
+* [How to add an altcoin in BTCPay?](FAQ-Altcoin.md#how-to-add-an-altcoin-in-btcpay)
 * [How to add an altcoin to an existing BTCPay deployment?](FAQ-Altcoin.md#how-to-add-an-altcoin-to-an-existing-btcpay-deployment)
 * [How to remove a coin from BTCPay?](FAQ-Altcoin.md#how-to-remove-a-coin-from-btcpay)
 
@@ -18,6 +18,7 @@ Bitcoin is the only focus of the project and its core developers. However, opt i
 - Dogecoin (DOGE)
 - Feathercoin (FTC)
 - Groestlcoin (GRS)
+- Liquid Bitcoin (LBTC) (comes with Liquid Tether support USDt) [(notes on deployment & usage)](https://github.com/btcpayserver/btcpayserver/issues/1282)
 - Litecoin (LTC)
 - Monacoin (MONA)
 - Monero (XMR) [(notes on deployment)](https://github.com/btcpayserver/btcpayserver-docker/issues/204#issuecomment-552755422)
@@ -29,7 +30,7 @@ Altcoins are maintained by their respective communities.
 ## Can an XYZ coin be added in BTCPay?
 No. BTCPay developers don't add alternative coins on request. Adding a new coin explicitly depends on the community and developers of those coins. Furthermore, BTCPay developers do not spend excessive time testing nor maintaining the altcoins. If you're submitting a PR for a new coin, make sure that it works. If the altcoin integration is not actively maintained it will be removed from BTCPay.
 
-## How to an altcoin in BTCPay?
+## How to add an altcoin in BTCPay?
 To add a new coin to BTCPay, please [follow the instructions here](/Altcoins.md#how-can-i-add-an-altcoin-to-btcpayserver).
 
 ## How to add an altcoin to an existing BTCPay deployment?

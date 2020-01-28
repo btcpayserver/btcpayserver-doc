@@ -9,8 +9,10 @@ Bitcoin is the only focus of the project and its core developers. However, opt-i
 - Dogecoin (DOGE)
 - Feathercoin (FTC)
 - Groestlcoin (GRS)
+- Liquid Bitcoin (LBTC) (comes with Liquid Tether support USDt) 
 - Litecoin (LTC)
 - Monacoin (MONA)
+- Monero (XMR)
 - Polis (POLIS)
 - Viacoin (VIA)
 
@@ -29,7 +31,7 @@ The steps for having a coin added are:
 
 When testing your coin, **DO NOT USE `build.sh`**, since it uses a pre-built docker image.
 
-Instead, install [.NET Core 2.1 SDK](https://www.microsoft.com/net/download/windows) and run:
+Instead, install [.NET Core 3.1 SDK](https://www.microsoft.com/net/download/windows) and run:
 
 ```bash
 BTCPAYGEN_CRYPTO1="EXAMPLE-COIN"

@@ -47,8 +47,6 @@ Upon testing the password, click on the `Load Wallet` to access your newly creat
 
 When the wallet loads (it may take few moments), on the right hand sidebar, toggle the `Advanced` options and then click `Wallet Info`
 
-![WasabiWallet](/img/WassabiWalletSetupBTCPay7.png)
-
 Select and **copy** the `Extended Account Public Key`. This is the **public** key from which BTCPay will derive addresses.
 
 ![WasabiWallet](/img/WassabiWalletSetupBTCPay8.png)
@@ -103,14 +101,19 @@ In Wasabi, Tools > Settings. Scroll to the bottom of the page and click `Open Co
 ```
 Replace 
 ```
-"MainNetBitcoinCoreHost": "127.0.0.1",
+"MainNetBackendUriV3": "127.0.0.1",
 ```
 with 
 ``` 
-"MainNetBitcoinCoreHost": "bitcoinp2pstringgoeshere"
+"MainNetBackendUriV3": "bitcoinp2pstringgoeshere"
 ```
 Remember to remove `bitcoin-p2p://` from the string. 
-Save the file, quit Wasabi and open it again. That's it.
+
+The replaced string should look similar this `"MainNetBackendUriV3": "http://xkasdsabiukrxmkdgve5kynjztuovbg43uxcbcxn6y2okcrsg7gb6jdmbad.onion:8333",`
+
+For better privacy, `MainNetFallbackBackendUri` can be replaced with the same string.
+
+Save the file, quit Wasabi and open it again.
 
 ### Configuring the Gap Limit in Wasabi
 

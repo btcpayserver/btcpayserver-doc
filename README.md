@@ -95,6 +95,7 @@ Developers can build entire businesses and projects on top of the stack. Enterpr
     - [ColdCard Wallet](ColdcardWallet.md)
     - [Wasabi Wallet](WasabiWallet.md)
     - [Electrum Wallet](ElectrumWallet.md)
+      - [ElectrumX](ElectrumX.md)
 - [(4) What's next](WhatsNext.md)
 
 
@@ -137,7 +138,7 @@ Developers can build entire businesses and projects on top of the stack. Enterpr
 * [Architecture](Architecture.md)
 * [Developing Locally](LocalDevelopment.md)
 * [How to add an Altcoin](Altcoins.md)
-* [Customize Bootstrap theme](Theme.md)
+* [Customizing Themes](Theme.md)
 
 ### FAQ and common issues
 
@@ -176,16 +177,23 @@ For list of articles, podcasts and video presentations about BTCPay, please see 
 
 ### Supporters
 
-The BTCPay Server Project is proudly supported by these entities through the [BTCPay Server Foundation](https://foundation.btcpayserver.org/). 
+The BTCPay Server Project is proudly supported by these entities through the [BTCPay Server Foundation](https://foundation.btcpayserver.org/).
 
 <table>
   <tbody>
     <tr>
       <td align="center" valign="middle">
         <a href="https://twitter.com/sqcrypto" target="_blank">
-          <img  src="https://raw.githubusercontent.com/btcpayserver/btcpayserver/master/BTCPayServer/wwwroot/img/squarecrypto.svg?sanitize=true" alt="Sponsor Square Crypto" height=100>
+          <img  src="https://raw.githubusercontent.com/btcpayserver/btcpayserver/master/BTCPayServer/wwwroot/img/squarecrypto.svg?sanitize=true" alt="Square Crypto" height=100>
           <br/>
           <span>Square Crypto</span>
+        </a>
+      </td>
+      <td align="center" valign="middle">
+        <a href="https://www.dglab.com/en/" target="_blank">
+          <img  src="https://raw.githubusercontent.com/btcpayserver/btcpayserver/master/BTCPayServer/wwwroot/img/dglab.svg?sanitize=true" alt="DG Lab" height=100>
+          <br/>
+          <span>DG Lab</span>
         </a>
       </td>
        <td align="center" valign="middle">
@@ -193,6 +201,20 @@ The BTCPay Server Project is proudly supported by these entities through the [BT
           <img  src="https://raw.githubusercontent.com/btcpayserver/btcpayserver/master/BTCPayServer/wwwroot/img/acinq-logo.svg?sanitize=true" alt="ACINQ" height=100>
           <br/>
           <span>ACINQ</span>
+        </a>
+      </td>
+      <td align="center" valign="middle">
+        <a href="https://lunanode.com" target="_blank">
+          <img  src="https://raw.githubusercontent.com/btcpayserver/btcpayserver/master/BTCPayServer/wwwroot/img/lunanode.svg?sanitize=true" alt="LunaNode" height=100>
+          <br/>
+          <span>LunaNode</span>
+        </a>
+      </td>
+      <td align="center" valign="middle">
+        <a href="https://walletofsatoshi.com/" target="_blank">
+          <img  src="https://raw.githubusercontent.com/btcpayserver/btcpayserver/master/BTCPayServer/wwwroot/img/walletofsatoshi.svg?sanitize=true" alt="Wallet of Satoshi" height=100>
+          <br/>
+          <span>Wallet of Satoshi</span>
         </a>
       </td>
     </tr>
