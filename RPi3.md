@@ -231,6 +231,8 @@ export BTCPAYGEN_ADDITIONAL_FRAGMENTS="opt-save-storage-xs;opt-save-memory"
 export BTCPAY_ENABLE_SSH=true
 ```
 
+Adding the `opt-save-storage-xs` fragment will keep around 3 months of blocks (prune BTC for 25 GB), and is necessary for FastSync to work. See other pruning levels [here](https://github.com/btcpayserver/btcpayserver-docker#generated-docker-compose-). 
+
 If you want to use multiple hostnames, add them via the optional `BTCPAY_ADDITIONAL_HOSTS` variable:
 ```bash
 export BTCPAY_ADDITIONAL_HOSTS="raspberrypi.local,btcpay.local"
