@@ -47,6 +47,8 @@
 * [Lightning Network](LightningNetwork.md)
 * [Accounting](Accounting.md)
 * [Payment Requests](PaymentRequests.md)
+* [Dynamic DNS](DynamicDNS.md)
+* [Hardware Wallet Integration](Vault.md)
 
 ## Integrations
 
