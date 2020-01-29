@@ -12,7 +12,7 @@ Each store and a cryptocurrency have a separate wallet displayed on the Wallets 
 
 ![Wallets Page BTCPay](/img/BTCPayWallets1.png)
 
-### Wallet overview
+## Wallet overview
 
 The wallet contains following features:
 
@@ -23,38 +23,56 @@ The wallet contains following features:
 5. PSBT 
 6. Settings
 
-#### Transactions
+### Transactions
 
-An overview of the incoming (green), outgoing (red) and unconfirmed (greyed out) transactions displayed together with timestamp and balances, sorted by date. Users can click on the tx ID to preview the transaction on the block explorer.
+An overview of the incoming (green), outgoing (red) and unconfirmed (greyed out) transactions displayed together with timestamps and balances, sorted by date. Users can click on the tx ID to preview the transaction on the block explorer.
 
 ![Individual Wallet](/img/BTCPayWallets2.png)
 
-#### Send
+### Send
 
 The Send function allows spending of the funds from the BTCPay wallet.
 
 ![Send from the Wallet](/img/BTCPayWallets3.png)
 
-Since the wallet is not a hot wallet, in order to spend the funds, user is required to sign the transaction.  Signing can be achieved in several ways :
+To spend the funds, user is required to **sign** the transaction. Transaction can be signed with:
 
 - Ledger Hardware Wallet
 - HD Private key or mnemonic seed
 - Wallet supporting PSBT
+- Hardware Wallet (BTCPay Vault)
 
-##### Signing with Ledger Hardware wallet
-Ledger's Nano S is a hardware wallet that can be used to sign transactions in BTCPay's wallet. To understand how to configure it and use it, watch a video below.
+#### Signing with Ledger Hardware wallet
 
-[![How to Use Ledger Nano S in BTCPay](https://img.youtube.com/vi/1Sj5mP4TkFI/mqdefault.jpg)](https://www.youtube.com/watch?v=1Sj5mP4TkFI "How to Use Ledger Nano S in BTCPay")
+Ledger Nano S has a native integration and can be used to spend bitcoin and [altcoins](Altcoins.md) from the wallet. Both Nano S and Ledger X can be used with [BTCPay Vault](Vault.md) for smoother experience for bitcoin transactions.
 
-#### Receive
+Check this [tutorial on how to sign a transaction with Ledger Nano S](LedgerWallet.md#spending-from-btcpay-server-wallet-with-ledger)
+
+#### Signing with HD Private Key or mnemonic seed
+
+Transactions in BTCPay's wallet can be signed with a private key or mnemonic seed. Prior to inputing the private key, make sure to set a proper `AccountKeyPath` in Wallet > Settings.
+
+#### Signing with a wallet supporting PSBT
+
+PSBT (Partially Signed Bitcoin transaction) is supported and can be signed with PSBT compatible wallet.
+
+Check this tutorial on how to [sign a transaction with ColdCard Hardware Wallet](ColdCardWallet.md#spending-from-btcpay-server-wallet-with-coldcard-psbt) completely air-gaped.
+
+#### Signing with Hardware Wallets (BTCPay Vault)
+
+[BTCPay Vault](https://blog.btcpayserver.org/btcpay-vault/) is a cross-platform desktop application that makes it possible to use a wide range of hardware wallets with the BTCPay Wallet.
+
+Check [BTCPay Vault](Vault.md) documentation for instructions on how to set up and sign with a [compatible hardware wallet](https://github.com/bitcoin-core/HWI#device-support).
+
+### Receive
 
 Receive tab generates an unused address which can be used to receive payments. The same can be achieved by generating an invoice (Invoices > Create new invoice).
 
-##### Advanced Settings
+### Advanced Settings
 
-###### Make sure no change UTXO is created (Expert mode)
+#### Make sure no change UTXO is created (Advanced mode)
 
-This option is available in the `expert mode` of the Send page.
+This option is available in the `Advanced mode` of the Send page.
 
 It is a privacy enhancing feature which is useful when you send to another of your own wallets or to an exchange. It makes sure that no change UTXO is created by **rounding up** the amount sent.
 
@@ -66,7 +84,7 @@ By enabling this feature, BTCPay Server wallet will round up the amount sent to 
 
 Warning: Despite the fact, in this example, that you entered `1.0` in the amount field, the amount that will really be sent to your destination will be `1.1 BTC`.
 
-#### Re-scan
+### Re-scan
 
 The Rescan relies on Bitcoin Core 0.17.0's scantxoutset to scan the current state of the blockchain (called UTXO Set) for coins belonging to the derivation scheme being used. 
 
@@ -79,7 +97,7 @@ Wallet re-scan solves two critical problems for BTCPay users:
 
 **Gap limit**: Most of the wallets have the gap limit set to 20. This means that if a merchant receives 21 or more consecutive unpaid invoices, those wallets show the incorrect balance and some transactions may not be visible.
 
-**Wallet import**: When users add a derivation scheme of a wallet that had transactions in the past (used wallet), BTCPay won't be able to show the balance and transactions from the past.
+**Wallet import**: When users add a derivation scheme of a wallet that had transactions in the past (previously used wallet), BTCPay won't be able to show the balance and transactions from the past.
 
 ![Wallet rescan progress](/img/BTCPayWallets5.png)
 
