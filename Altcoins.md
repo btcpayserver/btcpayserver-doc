@@ -11,6 +11,7 @@ Bitcoin is the only focus of the project and its core developers. However, opt-i
 - Groestlcoin (GRS)
 - Litecoin (LTC)
 - Monacoin (MONA)
+- Monero (XMR)
 - Polis (POLIS)
 - Viacoin (VIA)
 

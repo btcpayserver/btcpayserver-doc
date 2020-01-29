@@ -23,7 +23,7 @@ Table below lists and describes common invoice statuses in BTCPay and suggests c
 | New                    | Not paid, invoice timer still has not expired                | None                                                         |
 | Expired                | Not paid, invoice timer expired                              | None                                                         |
 | Paid                   | Paid, but has not received sufficient amount of confirmations specified in the Store Settings | Wait for confirmations (The invoice should become - complete) |
-| Completed              | Paid, completed, received sufficient amount of confirmations | Fulfil the order                                             |
+| Completed              | Paid, completed, received sufficient amount of confirmations | Fulfill the order                                             |
 | Expired (paidPartial)* | Paid, but not in full amount and expired                     | Contact buyer to arrange a refund or ask for them to pay their due. Optionally mark invoice as completed |
 | Paid (Paid Over)       | Paid more than the invoice amount, but has not received sufficient amount of confirmations specified in the Store Settings | Wait for confirmations. The invoice should become - Complete (Paid Over) |
 | Complete (Paid Over)   | Paid more than the invoice amount, completed, received sufficient amount of confirmations | Contact buyer to arrange a refund for the extra amount, or optionally wait for buyer to contact you |

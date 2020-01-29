@@ -130,8 +130,8 @@ If you do not have a store, but want to create one, read [How to Create an Onlin
 
 BTCPay natively supports:
 
-- Bitcoin (BTC)
-- Bitcoin Gold (BTG)
+- BGold (BTG) (also known as Bitcoin Gold)
+- BPlus (XBC) (also known as Bitcoin Plus)
 - Bitcore (BTX)
 - Dash (DASH)
 - Dogecoin (DOGE)
@@ -139,6 +139,7 @@ BTCPay natively supports:
 - Groestlcoin (GRS)
 - Litecoin (LTC)
 - Monacoin (MONA)
+- Monero (XMR) [(notes on deployment)](https://github.com/btcpayserver/btcpayserver-docker/issues/204#issuecomment-552755422)
 - Polis (POLIS)
 - Viacoin (VIA)
 

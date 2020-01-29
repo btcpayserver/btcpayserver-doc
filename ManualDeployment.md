@@ -21,7 +21,7 @@ The docker deployment will provide you easy update system and make sure that all
 
 ## Typical manual installation
 
-This steps have been done on ubuntu 16.04, adapt for your own install.
+This steps have been done on Ubuntu 16.04, adapt for your own install.
 
 
 ### 1) Install Bitcoin Core 0.17.0
@@ -41,7 +41,7 @@ rm bitcoin.tar.gz
 ```
 
 ### 2) Install .NET Core SDK 2.1
-On my ubuntu 16.04 (See [those instructions](https://dotnet.microsoft.com/download/linux-package-manager/ubuntu16-04/sdk-2.1.505) for different OS).
+On my Ubuntu 16.04 (See [those instructions](https://dotnet.microsoft.com/download/linux-package-manager/ubuntu16-04/sdk-2.1.505) for different OS).
 
 ```bash
 wget -q https://packages.microsoft.com/config/ubuntu/16.04/packages-microsoft-prod.deb
