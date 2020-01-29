@@ -15,7 +15,7 @@ Don’t settle for only 1GB or 2GB of RAM. The **4GB RAM** version is harder to 
 
 ### Power Adapters and USB-C Cable
 
-- [Official Raspberry Pi 4 USB-C Power Adapter 5.1V/3A for US ](https://shop.pimoroni.com/products/raspberry-pi-official-usb-c-power-supply-us?variant=29391144648787)($10)
+- [Official Raspberry Pi 4 USB-C Power Adapter 5.1V/3A for US](https://shop.pimoroni.com/products/raspberry-pi-official-usb-c-power-supply-us?variant=29391144648787) ($10)
 - [Official Raspberry Pi 4 USB-C Power Adapter 5.1V/3A for EU](https://shop.pimoroni.com/products/raspberry-pi-official-usb-c-power-supply-eu?variant=29391130624083) ($10)
 - [Official Raspberry Pi 4 USB-C Power Adapter 5.1V/3A for AU](https://shop.pimoroni.com/products/raspberry-pi-official-usb-c-power-supply-au?variant=29391160737875) ($10)
 
@@ -60,39 +60,16 @@ Start by downloading [Raspbian Linux](https://www.raspberrypi.org/downloads/rasp
 
 ### Flash your SD card with Raspbian Linux
 
-Assuming you’re running macOS, first you need to identify which device is your SD card. Plug your SD card into your SD card reader and type:
+- Extract the downloaded Raspbian Linux zip file
+- Download the latest version of [balenaEtcher](https://www.balena.io/etcher/) and install it.
+- Connect an SD card reader with the SD card inside.
+- Open balenaEtcher and select from your hard drive the Raspberry Pi .img from the extracted zip file you wish to write to the SD card.
+- Select the SD card you wish to write your image to.
+- Review your selections and click 'Flash!' to begin writing data to the SD card.
 
-```bash
-sudo -sdiskutil list
-```
+You can find a more in-depth instruction guide to flashing to your SD card at the [official Raspberry Pi  website](https://www.raspberrypi.org/documentation/installation/installing-images).
 
-You’ll see a list of disks like this:
-
-![RPI4 Console](/img/RPI4Terminal1.png)
-
-Here’s where your computer might be different from the above and you need to be careful. From the above list of disks on my computer, I can identify `disk0` and `disk1` are my mac’s internal hard disks. But that 32GB “external” and “physical” `disk2` is the same size as my SD card and has some Windows partition on it, so I can identify my SD card is `disk2`.
-
-🚨 **WARNING: You need to correctly identify the drive number of your SD card, and modify the following commands before typing them, or you could accidentally erase your computer’s hard drive instead.** 🚨
-
-Don’t copy and paste the following, you need to replace the 3 instances of `diskX` in these commands with your actual drive ID. For me this was `disk2`,but it might be different for you. The following commands will erase the SD card, and then write the Raspbian image to the SD card, so be careful not to mess up these commands.
-
-```bash
-diskutil unmountDisk diskX
-dd if=/dev/zero of=/dev/rdiskX bs=4m count=100
-dd if=/path/to/raspbian.img of=/dev/rdiskX bs=4m
-```
-🚨 **WARNING: If you incorrectly flash the wrong drive, you could erase your computer’s hard drive instead of the SD card. Double check you have the disk ID correct so you don’t accidentally erase your data.** 🚨
-
-If all went well, you should see the commands return something like this:
-
-![RPI4 Console](/img/RPI4Terminal2.png)
-
-Next, enable SSH at bootup so you can remotely login, and finally eject the SD card so you can move it to the Raspberry Pi. The new SD card’s boot partition should automatically be mounted on `/Volumes/boot`
-
-```bash
-touch /Volumes/boot/ssh
-diskutil eject disk2
-```
+If you used balenaEtcher to flash, the SD card will already have been ejected. Simply take the SD card out and put it back in. The SD card should now be labelled as `boot`. Next, enable SSH at bootup so you can remotely login by creating an empty file in the SD card root folder called `ssh`. Eject the SD card through your OS before taking it out of the SD card reader.
 
 ![RPI4 Console](/img/RPI4Terminal4.png)
 
@@ -100,19 +77,19 @@ diskutil eject disk2
 
 After inserting the SD card into the Raspberry Pi, go ahead and connect the power and ethernet, and optionally the display and keyboard if you have those. It should boot up and get an IP address using DHCP. You can try searching for it with `ping raspberrypi.local` on your desktop PC, but if that doesn’t work you will need to login to your router to find its IP address.
 
-The IP address that my Raspberry Pi got was 192.168.1.5 so I SSH’d to that
+The IP address that my Raspberry Pi got was 192.168.1.5 so I SSH’d to that:
 
-```
+```bash
 ssh 192.168.1.5 -l pi
 ```
 
-The default password for the “pi” user is “raspberry”. After SSH’ing in, the first thing I want to do is check the device’s CPU temperature to make sure the cooling system are working correctly:
+The default password for the “pi” user is “raspberry”. After SSH’ing in, the first thing I want to do is check the device’s CPU temperature to make sure the cooling system are working correctly. Press Ctrl-c to stop monitoring:
 
 ```bash
-sudo -svcgencmd measure_temp
+sudo watch -n1 vcgencmd measure_temp
 ```
 
-Next, let’s change the password for the “pi” user.
+Next, let’s change the password for the “pi” user:
 
 ```bash
 passwd pi
@@ -120,7 +97,15 @@ passwd pi
 
 ![RPI4 Console](/img/RPI4Terminal4.png)
 
-I also recommend to disable swap to prevent burning out your SD card.
+After that, switch to the `root` user, which we will use for the remaining part of the tutorial:
+
+```bash
+sudo su -
+```
+
+## Configuring the storage
+
+We recommend to disable swap to prevent burning out your SD card:
 
 ```bash
 dphys-swapfile swapoff
@@ -131,7 +116,7 @@ systemctl disable dphys-swapfile
 
 ![RPI4 Console](/img/RPI4Terminal5.png)
 
-Partition your SSD
+Partition your SSD:
 
 ```bash
 fdisk /dev/sda
@@ -141,13 +126,13 @@ fdisk /dev/sda
 # type 'w' to write the new partition table and exit fdisk
 ```
 
-Format the new partition on your SSD
+Format the new partition on your SSD:
 
 ```bash
 mkfs.ext4 /dev/sda1
 ```
 
-Configure the SSD partition to auto-mount at bootup
+Configure the SSD partition to auto-mount at bootup:
 
 ```bash
 mkfs.ext4 /dev/sda1
@@ -157,31 +142,40 @@ echo "UUID=$UUID /mnt/usb ext4 defaults,noatime,nofail 0" | sudo tee -a /etc/fst
 mount -a
 ```
 
-While you’re editing `/etc/fstab` add a RAM filesystem for logs (optional). This is also to prevent burning out your SD card too quickly.
+While you’re editing `/etc/fstab` add a RAM filesystem for logs (optional).
+This is also to prevent burning out your SD card too quickly:
 
 ```bash
-none        /var/log        tmpfs   size=10M,noatime         00
+echo 'none        /var/log        tmpfs   size=10M,noatime         00' >> /etc/fstab
 ```
 
-Mount the SSD partition and create a symlink for docker to use the SSD
+Mount the SSD partition and create a symlink for docker to use the SSD:
 
 ```bash
 mkdir /mnt/usb/docker
 ln -s /mnt/usb/docker /var/lib/docker
 ```
 
-Upgrade your OS packages to latest
+## Configuring the firewall
+
+Upgrade your OS packages to latest:
 
 ```bash
 apt update && apt upgrade -y && apt autoremove
 ```
 
-Install a firewall and allow SSH, HTTP, HTTPS, Bitcoin, and Lightning
+Install a firewall and allow SSH, HTTP, HTTPS, Bitcoin, and Lightning:
 
 ```bash
 apt install -y ufw
 ufw default deny incoming
 ufw default allow outgoing
+```
+
+UFW needs default iptables changes and a reboot for the firewall to work:
+```bash
+sudo update-alternatives --set iptables /usr/sbin/iptables-legacy
+sudo reboot
 ```
 
 This command allows SSH connections from internal networks only:
@@ -208,7 +202,7 @@ ufw allow 9735/tcp
 Verify your configuration:
 
 ```bash
-sudo ufw status
+ufw status
 ```
 
 Enable your firewall:
@@ -217,17 +211,18 @@ Enable your firewall:
 ufw enable
 ```
 
-Download BTCPay Server from GitHub
+## Setup BTCPay Server
+
+Download BTCPay Server from GitHub:
 
 ```bash
+cd # ensure we are in root home
 apt install -y fail2ban git
 git clone https://github.com/btcpayserver/btcpayserver-docker
 cd btcpayserver-docker
-sudo su -
-cd ~pi/btcpayserver-docker/
 ```
 
-Configure BTCPay by setting some environment variables:
+Configure BTCPay by setting some [environment variables](https://github.com/btcpayserver/btcpayserver-docker#environment-variables):
 
 ```bash
 export BTCPAY_HOST="raspberrypi.local"
@@ -236,7 +231,6 @@ export BTCPAYGEN_CRYPTO1="btc"
 export BTCPAYGEN_LIGHTNING="lnd"
 export BTCPAYGEN_REVERSEPROXY="nginx"
 export BTCPAYGEN_ADDITIONAL_FRAGMENTS="opt-more-memory"
-export BTCPAYGEN_EXCLUDE_FRAGMENTS="opt-add-tor"
 export BTCPAY_ENABLE_SSH=true
 ```
 

@@ -556,16 +556,16 @@ NBXplorer is a dotnet core application that monitors the Bitcoin blockchain for 
 ##### 🚚 Install
 
 ##### 1. Install dotnet core
-Check [download link for latest version](https://dotnet.microsoft.com/download/dotnet-core) (.Net Core 2.2 at the time of writing)
+Check [download link for latest version](https://dotnet.microsoft.com/download/dotnet-core) (.Net Core 3.1 at the time of writing)
 ```bash
 ~$ wget -q https://packages.microsoft.com/config/ubuntu/18.04/packages-microsoft-prod.deb
 ~$ sudo dpkg -i packages-microsoft-prod.deb
 ~$ sudo add-apt-repository universe
 ~$ sudo apt-get install apt-transport-https
 ~$ sudo apt-get update
-~$ sudo apt-get install dotnet-sdk-2.2
-~$ dotnet --version
-2.2.203
+~$ sudo apt-get install dotnet-sdk-3.1
+~$ dotnet --version 
+3.1.1
 ```
 ##### 2. Build NBXplorer
 ```bash

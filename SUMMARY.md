@@ -23,6 +23,9 @@
     - [Raspberry Pi 3 Deployment](RPi3.md)
     - [Raspberry Pi 4 Deployment](RPi4.md)
 - [Third-Party Hosting](ThirdPartyHosting.md)
+- Advanced Deployment
+    - [Dynamic DNS](DynamicDNS.md)
+    - [Reverse SSH Tunnel](ReverseSSHtunnel.md)
 
 ## Getting Started
 
@@ -33,6 +36,7 @@
   - [Coldcard Wallet](ColdCardWallet.md)
   - [Wasabi Wallet](WasabiWallet.md)
   - [Electrum Wallet](ElectrumWallet.md)
+    - [ElectrumX](ElectrumX.md)
 - [(4) What's Next?](WhatsNext.md)
 
 ## Features
@@ -44,6 +48,7 @@
 * [Accounting](Accounting.md)
 * [Payment Requests](PaymentRequests.md)
 * [Dynamic DNS](DynamicDNS.md)
+* [Hardware Wallet Integration](Vault.md)
 
 ## Integrations
 
@@ -58,7 +63,7 @@
 * [Architecture](Architecture.md)
 * [Developing Locally](LocalDevelopment.md)
 * [How to add an Altcoin](Altcoins.md)
-* [Customize Bootstrap theme](Theme.md)
+* [Customizing Themes](Theme.md)
 
 ## FAQ and common issues
 

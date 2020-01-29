@@ -13,6 +13,7 @@ This page shows common issues and frequently asked questions about Stores in BTC
  * [Consider the invoice paid even if the paid amount is ... % less than expected?](FAQ-Stores.md#consider-the-invoice-paid-even-if-the-paid-amount-is---less-than-expected)
  * [How to disable email on invoices?](FAQ-Stores.md#how-to-disable-email-on-invoices)
  * [Can I delete invoices from BTCPay?](FAQ-Stores.md#can-i-delete-invoices-from-btcpay)
+ * [How to change the exchange rate provider for invoices?](FAQ-Stores.md#how-to-change-the-exchange-rate-provider-for-invoices)
 
 ## How to create a store in BTCPay?
 
@@ -74,3 +75,6 @@ To disable the email requirement for your store's invoices, go to Stores > Setti
 ## Can I delete invoices from BTCPay?
 
 No, you can't delete invoices in BTCPay. Even if the invoice is expired, invalid, paid (or any other status) you can't delete invoices because they may contain important information. For example, information from the invoice may be needed if the invoice gets paid at a later time. Try [filtering invoices](/Invoices.md#invoice-filtering) instead.
+
+## How to change the exchange rate provider for invoices?
+The default fiat to cryptocurreny exchange rate provider used in your BTCPay invoices can be modified by navigating to your Store Settings > Rates > Preferred price source. There are several exchange rate provider options available. Each store may use different settings. 

@@ -1,12 +1,12 @@
 # Connecting Electrum Wallet to BTCPay Server
 
-This documents shows how to connect Electrum Wallet to BTCPay Server. 
+This documents explains how to connect a desktop [Electrum Wallet](https://electrum.org/) to a BTCPay Server. 
 
-**Word of caution** Using Electrum wallet relies on servers that are controlled by third-parties. Information, like public addresses, balances and the transacted amount can potentially be leaked. To protect against such leaks, you can setup your own [Electrum Personnal Server](https://github.com/chris-belcher/electrum-personal-server), which is technically advanced task not covered in this document.
+**Word of caution** Electrum wallet relies on Electrum servers that are controlled by third-parties. Information, like public addresses, balances and the transacted amount can *potentially* be leaked. 
 
-For better privacy, use [BTCPay Wallet](Wallet.md) with a compatible hardware wallet or [Wasabi](WasabiWallet.md).
+To protect yourself against such leaks, set up [ElectrumX Server](ElectrumX.md) or [Electrum Personal Server - EPS](https://github.com/chris-belcher/electrum-personal-server).
 
-If you understood the risks, but still want to proceed using Electrum, follow the instructions below.
+You can read about the differences between EPS and ElectrumX [here](https://www.reddit.com/r/Electrum/comments/7xb0lz/whats_the_difference_between_electrumx_server_and/). 
 
 1. Create a Store in BTCPay Server
 2. [Download](https://electrum.org/#download) and install Electrum Wallet
@@ -44,7 +44,9 @@ From the multiple choice menu, select `SegWit` and `Next`
 
 ![ElectrumWallet](img/ElectrumWallet4.png)
 
-**IMPORTANT NOTE:** Write down your recovery words in the order you see them on the screen. Write them down a piece of paper and store it somewhere secure. Take your time and triple check each word. Do not store your seed in a digital format (photograph, text document). Whoever has the access to your seed can access your funds. Confirm that the seed has been properly backed up by re-entering it in the same order. Once the seed is validated, proceed to the next step.
+**IMPORTANT NOTE:** If you're a merchant, instead of SegWit (Bech32), it's recommended to use SegWit wrapped (P2SH) format. [This guide](https://www.youtube.com/watch?v=-1DBJWwA2Cw) explains how to create P2SH wallet in Electrum that's more suited for merchants, due to compatability with legacy wallets customers use.
+
+**IMPORTANT NOTE 2:** Write down your recovery words in the order you see them on the screen. Write them down a piece of paper and store it somewhere secure. Take your time and triple check each word. Do not store your seed in a digital format (photograph, text document). Whoever has the access to your seed can access your funds. Confirm that the seed has been properly backed up by re-entering it in the same order. Once the seed is validated, proceed to the next step.
 
 ![ElectrumWallet](img/ElectrumWallet6.png)
 
