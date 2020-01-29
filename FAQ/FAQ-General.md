@@ -128,7 +128,7 @@ If you do not have a store, but want to create one, read [How to Create an Onlin
 
 ## Which cryptocurrencies are supported in BTCPay?
 
-BTCPay natively supports:
+BTCPay Server natively supports Bitcoin (BTC). Opt-in integration is available for several altcoins:
 
 - BGold (BTG) (also known as Bitcoin Gold)
 - BPlus (XBC) (also known as Bitcoin Plus)
@@ -142,6 +142,8 @@ BTCPay natively supports:
 - Monero (XMR) [(notes on deployment)](https://github.com/btcpayserver/btcpayserver-docker/issues/204#issuecomment-552755422)
 - Polis (POLIS)
 - Viacoin (VIA)
+
+ Altcoins are maintained and supported by respective communities.
 
 ## Why can't I just give my Bitcoin address to a buyer?
 
