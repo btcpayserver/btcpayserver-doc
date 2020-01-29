@@ -18,9 +18,10 @@ The wallet contains following features:
 
 1. Transactions
 2. Send 
-3. Re-scan
-4. PSBT 
-5. Settings
+3. Receive
+4. Re-scan
+5. PSBT 
+6. Settings
 
 #### Transactions
 
@@ -40,19 +41,26 @@ Since the wallet is not a hot wallet, in order to spend the funds, user is requi
 - HD Private key or mnemonic seed
 - Wallet supporting PSBT
 
-#### Signing with Ledger Hardware wallet
+##### Signing with Ledger Hardware wallet
 Ledger's Nano S is a hardware wallet that can be used to sign transactions in BTCPay's wallet. To understand how to configure it and use it, watch a video below.
 
 [![How to Use Ledger Nano S in BTCPay](https://img.youtube.com/vi/1Sj5mP4TkFI/mqdefault.jpg)](https://www.youtube.com/watch?v=1Sj5mP4TkFI "How to Use Ledger Nano S in BTCPay")
+
+#### Receive
+
+Receive tab generates an unused address which can be used to receive payments. The same can be achieved by generating an invoice (Invoices > Create new invoice).
 
 ##### Advanced Settings
 
 ###### Make sure no change UTXO is created (Expert mode)
 
 This option is available in the `expert mode` of the Send page.
+
 It is a privacy enhancing feature which is useful when you send to another of your own wallets or to an exchange. It makes sure that no change UTXO is created by **rounding up** the amount sent.
 
-By default this feature is disabled, so if your wallet has a UTXO of `1.1 BTC` and you input an amount equals to `1.0 BTC`, the resulting transaction will have two outputs `0.1 BTC` of change, and `1.0 BTC` to your destination. Blockchain analysis will understand that those `0.1 BTC` of change belong to the same entity which controlled `1.1 BTC` before, and can track the future purchase you make under the same pattern.
+By default this feature is disabled, so if your wallet has a UTXO of `1.1 BTC` and you input an amount equals to `1.0 BTC`, the resulting transaction will have two outputs `0.1 BTC` of change, and `1.0 BTC` to your destination.
+
+Blockchain analysis will understand that those `0.1 BTC` of change belong to the same entity which controlled `1.1 BTC` before, and can track the future purchase you make under the same pattern.
 
 By enabling this feature, BTCPay Server wallet will round up the amount sent to `1.1 BTC` such that no change output is sent back to you.
 
@@ -75,6 +83,8 @@ Wallet re-scan solves two critical problems for BTCPay users:
 
 ![Wallet rescan progress](/img/BTCPayWallets5.png)
 
-Re-scan is a feature that solves both of these problems. Once the scan is complete, BTCPay Server will show the correct balance, along with the past transactions of the wallet. Wallet re-scan requires access to the full node which means that this function is only available for server owners.
+Re-scan is a feature that solves both of these problems. Once the scan is complete, BTCPay Server will show the correct balance, along with the past transactions of the wallet. 
+
+Wallet re-scan requires access to the full node which means that this function is only available for server owners.
 
 Users who use a third party host should use a newly generated xpub key and also use an external wallet like Electrum which allows them to increase the gap limit.
