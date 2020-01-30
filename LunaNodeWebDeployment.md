@@ -8,7 +8,7 @@ Video bellow explains all the step and customization of BTCPay.
 
 [![LunaNodeWebWizzard](https://img.youtube.com/vi/NjslXYvp8bk/mqdefault.jpg)](https://www.youtube.com/watch?v=NjslXYvp8bk "BTCPay - LunaNode Web-Deployment")
 
-The instalation is also covered in [this article](https://medium.com/@BtcpayServer/launch-btcpay-server-via-web-interface-and-deploy-full-bitcoin-node-lnd-in-less-than-a-minute-dc8bc6f06a3)
+The installation is also covered in [this article](https://medium.com/@BtcpayServer/launch-btcpay-server-via-web-interface-and-deploy-full-bitcoin-node-lnd-in-less-than-a-minute-dc8bc6f06a3)
 
 The third video covers setting BTCPay up on LunaNode, but also goes in-depth on setting up wallets, store and apps.
 

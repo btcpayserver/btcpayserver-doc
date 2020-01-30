@@ -80,6 +80,7 @@ Now you can access with `newadmin@example.com` as admin.
 When you apply the changes, you'll noticed that newly created user isn't the member of any stores. In that case, [follow this guide](https://gist.github.com/justinmoon/8128e66fc11d90ae5732f2491570bfc5) to add the new users to all or certain stores.
 
 ### How to disable U2F and 2FA for a user
+
 Remove U2F and 2FA settings for a registered user, for example `user@example.com` with the following commands:
 
 ```bash
@@ -118,6 +119,7 @@ BTCPAY_HOST_SSHKEYFILE=/root/.ssh/id_rsa_btcpay
 . ./btcpay-setup.sh -i
 ```
 ### How to configure SMTP settings in BTCPay?
+
 SMTP can be configured in settings for each store. It can also be configured for the entire server if you have admin privileges.
 
 Each e-mail provider has different configuration, so we can't provide you with exact setup, but here's the configuration for gmail which should work:
@@ -145,7 +147,9 @@ There are two ways to customize the theme of your BTCPay.
 The easy way is to head over to the **Server Settings > Theme** and follow the instructions on how to [change your Bootstrap theme](/Theme.md#bootstrap-themes).
 
 For advanced theme changes, you'll most likely need to fork  BTCPay repository and apply desired design changes. Build and publish the docker image to Docker Hub. Set the `BTCPAY_IMAGE` environment variable to your docker image tag(`export BTCPAY_IMAGE="your custom btcpay docker image"`) and run the setup (`. ./btcpay-setup.sh -i`) as usual from [BTCPay Docker](https://github.com/btcpayserver/btcpayserver-docker). Modify generated docker compose to use your custom docker image. **You will need to create a new image manually and follow these steps for EACH BTCPay update so it is advised to stick with the default setup.**
+
 ### How to add Google Analytics code to BTCPay
+
 You should be able to do what you want by injecting your GA code to ~/wwwroot/checkout/js/core.js. Might be the easiest way but you have to redo it every time you update BTCPay to the latest version. Then you won’t have the hassle of forking the code, deploying it manually. Every time there is an update. Just do the docker update and add the same lines to the js file.
 ### How to modify the checkout page?
 You can easily change the appearance of your BTCPay's checkout page by following the [instructions here](/Theme.md#checkout-page-theme)
@@ -153,9 +157,11 @@ You can easily change the appearance of your BTCPay's checkout page by following
 ## Policies
 
 ### How to allow registration on my BTCPay Server
+
 To allow other users to register and use your server, in Server Settings > Policies enable registration. If you [configured SMTP properly](FAQ-ServerSettings.md#how-to-configure-smtp-settings-in-btcpay), you can request users e-mail confirmation to prevent spam or bot registering on your instance.
 
 ### How to hide my BTCPay Server from Search Engines
+
 Discouraging search engines from indexing your site in Server Settings > Policies, adds `<meta name="robots" content="noindex">` to your server header, which informs search engines not to index your pages. 
 
 It is up to search engines to honor this request, and may take time for your pages to disappear completely. Unfortunately, the exact time is beyond our control, it depends on crawl bots of particular search engine like Google.
@@ -174,4 +180,5 @@ If you do not see Full node P2P in your Services, you probably have to [activate
 ## Files
 
 ### How to upload files to BTCPay
+
 To upload files to your BTCPay Server instance, first under Server Settings > Services, enable the External Storage feature and choose which storage service provider you would like to use. Next, go to Server Settings > Files to browse and upload local files. Depending on the limitations of your storage system, you may have difficulty uploading large files. 

@@ -36,7 +36,7 @@ You can find out how much cost your install by:
 * Go on the Azure portal
 * Go to Subscription (If you don't find the `Subscription` menu search `Subscription` in the search bar next to the notification's bell.)
 * Go to Cost Analysis
-* Select your Resource group (my one is called dwoiqdwqb)
+* Select your Resource group (mine is called dwoiqdwqb)
 * Timespan 30 days
 * Click on apply
 
@@ -86,7 +86,7 @@ Swap:           0B         0B         0B
 
 ## Selecting a new Virtual Machine
 
-Now we know that 2 GB of RAM, and a less powerfull CPU will probably do the trick.
+Now we know that 2 GB of RAM, and a less powerful CPU will probably do the trick.
 
 But first, you don't want your machine to crash if it runs out of RAM, so you need to add some swap:
 Note that `/mnt` is used in Azure for temporary data, and is optimized for low latency, this is why we set the swapfile here.
