@@ -13,6 +13,7 @@ Please check out our [official website](https://btcpayserver.org/), our [complet
 ![BTCPayInfographic](img/BTCPAYINFOGRAPHIC.png)
 
 ## Features
+
 * Direct, peer-to-peer Bitcoin and [altcoin](Altcoin.md) payments
 * No transaction fees (other than the [network fee](https://en.bitcoin.it/wiki/Miner_fees))
 * No processing fees
@@ -99,7 +100,6 @@ Enterprises can use it as scalable and secure back-end of their infrastracture w
     - [Electrum Wallet](ElectrumWallet.md)
       - [ElectrumX](ElectrumX.md)
 - [(4) What's next](WhatsNext.md)
-
 
 ### Deployment
 - [Choosing a Deployment Method](Deployment.md)
