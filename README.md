@@ -2,9 +2,9 @@
 
 ## Introduction
 
-BTCPayServer is an open-source, self-hosted payment processor for Bitcoin and other cryptocurrencies.
+BTCPay Server is an open-source, self-hosted payment processor for Bitcoin and other cryptocurrencies.
 
-If you have trouble using BTCPay, consider joining the [communities listed on the official website](https://btcpayserver.org/#communityCTA) to get help from BTCPay community members. 
+If you have trouble using BTCPay Server, consider joining the [communities listed on the official website](https://btcpayserver.org/#communityCTA) to get help from BTCPay community members. 
 
 Only file [Github issue](https://github.com/btcpayserver/btcpayserver/issues) for technical issues you can't resolve through other channels or feature requests you've validated with other members of community.
 
@@ -13,12 +13,12 @@ Please check out our [official website](https://btcpayserver.org/), our [complet
 ![BTCPayInfographic](img/BTCPAYINFOGRAPHIC.png)
 
 ## Features
-* Direct, peer-to-peer Bitcoin and altcoin payments
-* No transaction fees (other than those for the crypto networks)
+* Direct, peer-to-peer Bitcoin and [altcoin](Altcoin.md) payments
+* No transaction fees (other than the [network fee](https://en.bitcoin.it/wiki/Miner_fees))
 * No processing fees
 * No middleman
 * No KYC
-* User has complete control over private keys
+* Non-custodial (complete control over the private key)
 * Enhanced privacy
 * Enhanced security
 * Self-hosted
@@ -36,11 +36,11 @@ Please check out our [official website](https://btcpayserver.org/), our [complet
 
 ## How it works
 
-[![How BTCPay Works](https://img.youtube.com/vi/nr0UNbz3AoQ/mqdefault.jpg)](https://www.youtube.com/watch?v=nr0UNbz3AoQ "How BTCPay Works")
+[![How BTCPay Works](https://img.youtube.com/vi/nr0UNbz3AoQ/mqdefault.jpg)](https://www.youtube.com/watch?v=nr0UNbz3AoQ "How BTCPay Server Works")
 
 ### In a nutshell
 
-In layman's terms, BTCPay Server is a self-hosted and automated invoicing system. When checking out, the customer is presented with an invoice. Each time, a different address is tied to a particular invoice, so there is no address re-use. BTCPay follows the status of the invoice through the blockchain and informs a merchant when he can fulfill the order safely.
+In layman's terms, BTCPay Server is a self-hosted and automated invoicing system. At checkout, the customer is presented with an invoice. Each time, a different address is tied to a particular invoice, so there is no address re-use. BTCPay Server follows the status of the invoice through the blockchain and informs a merchant when he can fulfill the order safely.
 
 ### How is it different
 
@@ -50,9 +50,9 @@ BTCPay is code, not a company. There is no third-party between a merchant and a 
 
 ### How it keeps funds secure
 
-Payments via BTCPay are direct, peer to peer. The merchant receives the coins directly to their wallet, with no intermediary. Securing funds comes down to the merchant securing their own private keys, which is standard for most cryptocurrency wallets. 
+Payments via BTCPay Server are direct, peer to peer. The merchant receives the coins directly to their wallet, with no intermediary. Securing funds comes down to the merchant securing their own private keys, which is standard for most cryptocurrency wallets. 
 
-There is an [internal wallet](Wallet.md) inside BTCPay that merchants can use to view and spend funds received by their customers. The funds from that wallet can only be spent, if a transaction is signed with the merchant's compatible hardware wallet or a private key. This allows merchants to have complete control of funds received.
+There is an [internal wallet](Wallet.md) inside BTCPay Server that merchants can use to view and spend funds received by their customers. The funds from that wallet can only be spent, if a transaction is signed with the merchant's compatible hardware wallet or a private key. This allows merchants to have complete control of funds received.
 
 ### How it keeps data private
 
@@ -65,9 +65,9 @@ The data is shared only between two parties - the buyer and a seller. Other paym
 * No third-party
 * Can easily be re-deployed
 
-BTCPay does not have a central point of failure since nobody is controlling it except for the user running it. If run on the cloud server, the hosting providers can potentially censor users by suspending hosting accounts or disabling access to virtual machines. This is always a risk for anyone using a hosting provider. Since no private keys are stored on the server, a censored individual can easily re-deploy the server with another host. Your coins are always inside your wallet.
+BTCPay Server does not have a central point of failure since nobody is controlling it except for the user running it. If run on the cloud server, the hosting providers can potentially censor users by suspending hosting accounts or disabling access to virtual machines. This is always a risk for anyone using a hosting provider. Since no private keys are stored on the server, a censored individual can easily re-deploy the server with another host. Your coins are always inside your wallet.
 
-If an invoice is paid while your BTCPay Server is down, the software will automatically determine and notify the merchant of offline invoice payments when your server is back up. If a hosting provider suspends the server, and there was no proper backup, server settings and invoice data may be lost, but on-chain payments are always in your wallet. For ultimate censorship-resistance, users should run [BTCPay on their own hardware](HardwareDeployment.md).
+If an invoice is paid while your BTCPay Server is down, the software will automatically determine and notify the merchant of offline invoice payments when your server is back up. If a hosting provider suspends the server, and there was no proper backup, server settings and invoice data may be lost, but on-chain payments are always in your wallet. For ultimate censorship-resistance, users should run [BTCPay on their own hardware](HardwareDeployment.md). The software can even be run on a single-board computer, like [Raspberry Pi](RaspberryPiDeployment.md) from the comfort of your home.
 
 ### Beyond payment processing
 
@@ -75,7 +75,9 @@ BTCPay Server is often misconceived as being the payment processor used by the m
 
 BTCPay is a tech-stack that glues lots of complex components into an easy-to-use and coherent interface. The software can be used by self-sovereign individuals as a way to run a full node at home with a full-node reliant wallet.
 
-Developers can build entire businesses and projects on top of the stack. Enterprises can use it as scalable and secure back-end of their infrastracture without ever having to put a trust in a third-party. BTCPay Server is a [toolbox](https://www.facebook.com/kriptomedia/videos/vl.418099655731067/2898112140218815) with lots of tools you can use, it's up to you how you want to use it.
+Developers can build the entire businesses and projects on top of the stack. 
+
+Enterprises can use it as scalable and secure back-end of their infrastracture without ever having to put a trust in a third-party. BTCPay Server is a [toolbox](https://www.facebook.com/kriptomedia/videos/vl.418099655731067/2898112140218815) with lots of tools you can use, it's up to you how you want to use it.
 
 ## Documentation
 
