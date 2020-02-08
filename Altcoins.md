@@ -14,6 +14,7 @@ Bitcoin is the only focus of the project and its core developers. However, opt-i
 - Monacoin (MONA)
 - Monero (XMR)
 - Polis (POLIS)
+- Uniform Fiscal Object (UFO)
 - Viacoin (VIA)
 
 Altcoins are maintained by their respective communities.
