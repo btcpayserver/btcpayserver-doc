@@ -10,7 +10,7 @@ Only file [Github issue](https://github.com/btcpayserver/btcpayserver/issues) fo
 
 Please check out our [official website](https://btcpayserver.org/), our [complete documentation](https://github.com/btcpayserver/btcpayserver-doc) and [FAQ](https://github.com/btcpayserver/btcpayserver-doc/tree/master/FAQ#btcpay-frequently-asked-questions-and-common-issues) for more details.
 
-![ScreenShot](img/BTCPayServerScreenshot.png) 
+![](img/BTCPayServerScreenshot.png) 
 
 ## Features
 
