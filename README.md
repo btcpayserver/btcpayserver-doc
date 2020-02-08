@@ -14,7 +14,7 @@ Please check out our [official website](https://btcpayserver.org/), our [complet
 
 ## Features
 
-* Direct, peer-to-peer Bitcoin and [altcoin](Altcoin.md) payments
+* Direct, peer-to-peer Bitcoin and [altcoin](Altcoins.md) payments
 * No transaction fees (other than the [network fee](https://en.bitcoin.it/wiki/Miner_fees))
 * No processing fees
 * No middleman
