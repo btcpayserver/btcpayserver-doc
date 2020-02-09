@@ -99,6 +99,7 @@ Enterprises can use it as scalable and secure back-end of their infrastracture w
     - [Wasabi Wallet](WasabiWallet.md)
     - [Electrum Wallet](ElectrumWallet.md)
       - [ElectrumX](ElectrumX.md)
+      - [Electrum Personal Server EPS](ElectrumPersonalServer.md)
 - [(4) What's next](WhatsNext.md)
 
 ### Deployment
