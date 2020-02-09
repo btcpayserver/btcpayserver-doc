@@ -14,7 +14,7 @@ Please check out our [official website](https://btcpayserver.org/), our [complet
 
 ## Features
 
-* Direct, peer-to-peer Bitcoin and [altcoin](Altcoins.md) payments
+* Direct, peer-to-peer Bitcoin payments
 * No transaction fees (other than the [network fee](https://en.bitcoin.it/wiki/Miner_fees))
 * No processing fees
 * No middleman
@@ -26,7 +26,7 @@ Please check out our [official website](https://btcpayserver.org/), our [complet
 * SegWit support
 * Lightning Network support (LND, c-lightning, Eclair and Ptarmigan)
 * Tor support
-* Opt-in Altcoin integrations
+* Opt-in [altcoin](Altcoins.md) integrations
 * Full compatibility with BitPay API (easy migration)
 * Process payments for others
 * Easy-embeddable Payment buttons
