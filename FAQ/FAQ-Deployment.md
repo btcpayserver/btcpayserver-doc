@@ -379,3 +379,28 @@ You will also need those settings in the `apache2.conf` to prevent issues while 
 LimitRequestLine 500000
 LimitRequestFieldSize 500000
 ```
+
+#### When I try to access my BTCPay by IP address I get 503 Service Temporarily Unavailable nginx
+
+Your nginx config is set to route the HTTP request to a particular container based on the domain name of the request. For example, the official [deployment on pi 4](https://docs.btcpayserver.org/deployment/raspberrypideployment/rpi4) was to setup the souce domain name to http://raspberrypi.local/ yet getting automatic local domain raspberrypi.local does not always work. You are problably in this situation and trying to type the IP address of your BTCPay into the web-browser.
+
+Since nginx does not sees the IP address in the request instead of raspberrypi.local it does not know where to route that reuqstes and returns:
+```
+503 Service Temporarily Unavailable
+-----------------------------------
+nginx
+```
+
+You can fix this by forcing nginx to route the HTTP request to BTCPay even if request  domain name is not recognize.
+Simply, re-run the setup script like this:
+
+```
+sudo su -
+
+(set -u; echo "$BTCPAY_HOST") && REVERSEPROXY_DEFAULT_HOST="$BTCPAY_HOST" && . btcpay-setup.sh -i
+
+```
+
+Now putting local IP in the web-browser works.
+
+(Source: https://github.com/btcpayserver/btcpayserver-docker/issues/263#issuecomment-581472247 )
