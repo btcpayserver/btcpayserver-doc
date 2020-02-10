@@ -34,13 +34,13 @@ Take a look at [our demo POS app](https://mainnet.demo.btcpayserver.org/apps/3ut
 
 Privacy-minded individuals can use BTCPay Server internal wallet for their everyday crypocurrency transactions without providing a private key. For self-hosted servers, the [internal wallet](Wallet.md) relies on a full node, significantly enhances the privacy. [Hardware wallet integration](Vault.md) allows the usage of a hardware wallet with a [full node](https://en.bitcoin.it/wiki/Full_node) and avoids leaks to a third-party server.
 
-### Freelancers & Bill Pay
+## Freelancers & Bill Pay
 
 Freelancer can request for payment by sharing a [Payment Request](PaymentRequests.md). Content and appearance of the payment request is customizable. With or without expiry, customers can pay the request at any time. BTCPay Server automatically updates the exchange rate when the customer pays the payment request when it's convenient for them. 
 
 Merchants or freelancers can use payment requests for bill pay services. Payment requests can even be used to quickly request money from friends. 
 
-### Lightning Network payments
+## Lightning Network payments
 
 BTCPay Server offers a very easy way to get started with receiving or sending payments on the Lightning Network. You can use and experiment with this innovative second-layer solution build on top of Bitcoin by [following this guide](LightningNetwork.md). Both merchants and customers can use BTCPay to receive or make payments off-chain with instant confirmations and neglectable network fees.
 
