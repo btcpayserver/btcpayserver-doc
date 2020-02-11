@@ -33,17 +33,11 @@ You can check the status of bitcoin core sync by going to your domain for BTCPay
 
 Once all syncing for both bitcoin and EPS has finished you can proceed to the next step.  (Note: Electrum wallets will not connect to an EPS server that has not finished synching)
 
-## Section 2.2 Connect your Electrum Wallet (Desktop or Android) to your EPS Server
-
 ### Connect to EPS from Electrum Wallet on your Mac/PC/Linux Machine:
 
 Read all of this first before proceeding.  You may wish to do just the "Protip" below instead of the manual steps in the Electrum Wallet GUI.
 
-Open Electrum Wallet.  When you click the traffic light at the bottom of your Electrum Wallet:
-
-![ElectrumWalletMainScreenLight](https://user-images.githubusercontent.com/1388507/68437133-5636c500-01c0-11ea-822c-6e72bd6d60ea.png)
-
-You will see this screen with a list of all the available Electrum servers that your wallet can connect to, normally with `Select Server Automatically` already checked:
+Open Electrum Wallet.  When you click the traffic light (green or red) at the bottom of your Electrum Wallet, you will see a screen with a list of all the available Electrum servers that your wallet can connect to, normally with the `Select Server Automatically` box already checked:
 
 ![ElectrumWalletServerList](https://user-images.githubusercontent.com/1388507/68437521-8a5eb580-01c1-11ea-9ece-0666353a6742.png)
 
@@ -51,9 +45,7 @@ Now is the time to UNCHECK that `Select Server Automatically` setting, which wil
 
 ![EnterElectrumXServerIP](https://user-images.githubusercontent.com/1388507/68496320-4e276580-0252-11ea-8caf-facc8a246d70.png)
 
-If all of the above worked well, and your node is healthy, you will get a green traffic light down the bottom right of the wallet interface as pictured here - that means success!:
-
-![ElectrumWalletMainScreenLight](https://user-images.githubusercontent.com/1388507/68437133-5636c500-01c0-11ea-822c-6e72bd6d60ea.png)
+If all of the above worked well, and your node is healthy and synched, you will get a green traffic light down the bottom right of the wallet screen - that means success!:
 
 #### Protip - optionally perform the above steps directly in Electrum Wallet config file before even opening the wallet GUI:
 If you prefer to avoid connecting to other servers from the outset when you open Electrum Wallet, do the following before you open Electrum Wallet GUI.
