@@ -1,6 +1,6 @@
 ## Creating a Store in BTCPay Server
 
-Inside BTCPay Server, an unilimited number of stores can be created. Each store needs to be [connected to a wallet](ConnectWallet.md) and can have apps (Point of Sale, Payment Buttons and Crowdfunding) or be paired with external e-commerce software through one of many available [integrations](https://docs.btcpayserver.org/integrations/).
+Inside BTCPay Server, an unilimited number of stores can be created. Each store needs to be [connected to a wallet](ConnectWallet.md), can have apps (Point of Sale, Payment Buttons and Crowdfunding) attached to it, or be paired with external e-commerce software through one of many available [integrations](https://docs.btcpayserver.org/integrations/).
 
 To create a store, make sure you're logged in into your account, and go to > <strong>Stores</strong> in the upper navigation menu. Click on the <strong>create a new store</strong> button. Enter the store name into the text field and click `Create`.
 
