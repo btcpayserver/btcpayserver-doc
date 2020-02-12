@@ -380,7 +380,9 @@ LimitRequestLine 500000
 LimitRequestFieldSize 500000
 ```
 
-#### When I try to access my BTCPay by IP address I get 503 Service Temporarily Unavailable nginx
+### I get 503 Service Temporarily Unavailable nginx
+
+#### Cause 1: Trying to access my BTCPay by IP address
 
 Your nginx config is set to route the HTTP request to a particular container based on the domain name of the request. For example, the official [deployment on pi 4](https://docs.btcpayserver.org/deployment/raspberrypideployment/rpi4) was to setup the souce domain name to http://raspberrypi.local/ yet getting automatic local domain raspberrypi.local does not always work. You are problably in this situation and trying to type the IP address of your BTCPay into the web-browser.
 
@@ -403,4 +405,28 @@ sudo su -
 
 Now putting local IP in the web-browser works.
 
-(Source: https://github.com/btcpayserver/btcpayserver-docker/issues/263#issuecomment-581472247 )
+#### Cause 2: btcpayserver or letsencrypt-nginx-proxy is not running
+
+To check, run: 
+```
+sudo  docker ps | less -S
+```
+Press "q" to quit out of less.
+
+The output should contain:
+* btcpayserver/letsencrypt-nginx-proxy-companion
+* btcpayserver/btcpayserver
+
+And the status shold be "Up"
+
+If the docker container is not running, then check the reason for crash like this:
+```
+ sudo  docker logs 6a6b9fd75692 --tail 20
+```
+Where 6a6b9fd75692 is the container ID that is having issues.
+
+#### Cause N: Other
+
+There could be many causes for 5XX HTTP errors. Please create an [Issue](https://github.com/btcpayserver/btcpayserver-docker/issues) and when cause becomes known add it here in the [Deployment FAQ](https://github.com/btcpayserver/btcpayserver-doc/blob/master/FAQ/FAQ-Deployment.md) doc.
+
+
