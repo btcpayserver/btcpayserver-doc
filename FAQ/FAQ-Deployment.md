@@ -384,22 +384,23 @@ LimitRequestFieldSize 500000
 
 #### Cause 1: Trying to access my BTCPay by IP address
 
-Your nginx config is set to route the HTTP request to a particular container based on the domain name of the request. For example, the official [deployment on pi 4](https://docs.btcpayserver.org/deployment/raspberrypideployment/rpi4) was to setup the souce domain name to http://raspberrypi.local/ yet getting automatic local domain raspberrypi.local does not always work. You are problably in this situation and trying to type the IP address of your BTCPay into the web-browser.
+Your nginx config is set to route the HTTP request to a particular container based on the domain name of the request. For example, the official [deployment on pi 4](https://docs.btcpayserver.org/deployment/raspberrypideployment/rpi4) was to setup the souce domain name to http://raspberrypi.local/ yet getting automatic local domain raspberrypi.local does not always work. You are probably in this situation and trying to type the IP address of your BTCPay into the web-browser.
 
-Since nginx does not sees the IP address in the request instead of raspberrypi.local it does not know where to route that reuqstes and returns:
+Since nginx gets the IP address in the request instead of raspberrypi.local it does not know where to route that request and returns:
 ```
 503 Service Temporarily Unavailable
 -----------------------------------
 nginx
 ```
 
-You can fix this by forcing nginx to route the HTTP request to BTCPay even if request  domain name is not recognize.
+You can fix this by forcing nginx to route the HTTP request to BTCPay even if the request domain name is not recognized.
 Simply, re-run the setup script like this:
 
-```
+```bash
+
 sudo su -
 
-(set -u; echo "$BTCPAY_HOST") && REVERSEPROXY_DEFAULT_HOST="$BTCPAY_HOST" && . btcpay-setup.sh -i
+REVERSEPROXY_DEFAULT_HOST="$BTCPAY_HOST" && . btcpay-setup.sh -i
 
 ```
 
@@ -408,7 +409,7 @@ Now putting local IP in the web-browser works.
 #### Cause 2: btcpayserver or letsencrypt-nginx-proxy is not running
 
 To check, run: 
-```
+```bash
 sudo  docker ps | less -S
 ```
 Press "q" to quit out of less.
@@ -417,10 +418,10 @@ The output should contain:
 * btcpayserver/letsencrypt-nginx-proxy-companion
 * btcpayserver/btcpayserver
 
-And the status shold be "Up"
+And the status should be "Up"
 
 If the docker container is not running, then check the reason for crash like this:
-```
+```bash
  sudo  docker logs 6a6b9fd75692 --tail 20
 ```
 Where 6a6b9fd75692 is the container ID that is having issues.
