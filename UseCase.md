@@ -66,7 +66,7 @@ You can read more about address reuse on the [Bitcoin Wiki](https://en.bitcoin.i
 
 Admin running a BTCPay Server instance, can enable registration for other users and become a [third-party payment processor](ThirdPartyHosting.md) for family members, friends or their local community.
 
-This means that admin allows other people to register and use their instance, while the payment remain non-custodial.
+This means that admin allows other people to register and use their instance, while the payments remain non-custodial.
 
 Take a look at the list of [third-party hosts](ThirdPartyHosting.md).
 
