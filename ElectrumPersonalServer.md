@@ -8,11 +8,9 @@ EPS can be integrated into BTCPay Server using the optional docker fragment [opt
 
 ### Steps to enable Electrum Personal Server (EPS) in BTCPay:
 
-1. EPS Server is accessible for Electrum Wallets via TCP port 50002.  You need to open this port up fully at least to be available within your own network to any PC or Android device running Electrum Wallet, and turn on port forwarding (you can also port forward 50002 from your Internet/WAN, to enable other Electrum Wallet users from the Internet to query your server).
+1. EPS is accessible for Electrum Wallets via TCP port 50002.  You need to open this port up fully at least to be available within your own network to any PC or Android device running Electrum Wallet, and turn on port forwarding.
 
-2a. Enable the Docker Additional Fragment on your BTCPay node by running the following commands (this is assuming a brand new BTCPay installation with LND and EPS, please tweak accordingly using the [relevant documentation](https://github.com/btcpayserver/btcpayserver-docker/blob/master/README.md#generated-docker-compose-):
-
-2b. You must specify the XPUB/YPUB/ZPUB of your wallet in the docker fragment before you enable it.  In Electrum Wallet go to the "Wallet" menu then select "Information" to copy and paste yours.  Add it to the relevant line in the docker-fragment.
+2. As EPS is for a single wallet (single user), you must specify the XPUB/YPUB/ZPUB of your wallet as an environment varable before you enable the EPS docker-fragment.  In Electrum Wallet go to the "Wallet" menu then select "Information" to copy and paste yours. Set ENV variable by running this command: `export BTCPAY_EPS_XPUB="ADD_YOUR_XPUB_YPUB_OR_ZPUB_HERE"`.  Then enable the Docker Additional Fragment on your BTCPay node by running the following steps (this is assuming a brand new BTCPay installation with LND and EPS, please tweak accordingly using the [relevant documentation](https://github.com/btcpayserver/btcpayserver-docker/blob/master/README.md#generated-docker-compose-).
 
 3. Follow the [normal setup and install of BTCPay Server](https://github.com/btcpayserver/btcpayserver-docker#full-installation-for-technical-users), then after this command `cd btcpayserver-docker`, follow the below instructions instead of those in the link.  If you already have a BTCPay Server running, then just follow from the next step.
 
