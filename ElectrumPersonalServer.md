@@ -27,20 +27,11 @@ Once all syncing for both bitcoin and EPS has finished you can proceed to the ne
 
 ### Connect to EPS from Electrum Wallet on your Mac/PC/Linux Machine:
 
-Read all of this first before proceeding.  You may wish to do just the "Protip" below instead of the manual steps in the Electrum Wallet GUI.
+Read all of this document to the end before proceeding - especially if you value privacy, it is recommended to edit the Electrum Wallet GUI config file instead of making the same setup in the Electrum Wallet GUI.  The GUI settings do the same thing, but until you save new settings, Electrum Wallet will connect briefly to other servers before your own EPS server until you finish GUI setup.  Both options are documented below:
 
-Open Electrum Wallet.  When you click the traffic light (green or red) at the bottom of your Electrum Wallet, you will see a screen with a list of all the available Electrum servers that your wallet can connect to, normally with the `Select Server Automatically` box already checked:
+#### Option 1: Connect to your EPS Server by directly editing Electrum Wallet config file (before even opening the Electrum wallet GUI - recommended for full privacy):
 
-![ElectrumWalletServerList](https://user-images.githubusercontent.com/1388507/68437521-8a5eb580-01c1-11ea-9ece-0666353a6742.png)
-
-Now is the time to UNCHECK that `Select Server Automatically` setting, which will enable you to enter the IP address or domain or hostname of your EPS Server.  In the case below, the EPS server is on the local network at `192.168.1.3` so we enter that manually (leave port as 50002) and press `close`.
-
-![EnterElectrumServerIP](https://user-images.githubusercontent.com/1388507/68496320-4e276580-0252-11ea-8caf-facc8a246d70.png)
-
-If all of the above worked well, and your node is healthy and synched, you will get a green traffic light down the bottom right of the wallet screen - that means success!:
-
-#### Protip - optionally perform the above steps directly in Electrum Wallet config file before even opening the wallet GUI:
-If you prefer to avoid connecting to other servers from the outset when you open Electrum Wallet, do the following before you open Electrum Wallet GUI.
+If you prefer to avoid connecting to other servers at all costs, do the following before you open Electrum Wallet GUI.
 
 In the Electrum Wallet folder ([see here](https://electrum.readthedocs.io/en/latest/faq.html#where-is-my-wallet-file-located) if you don't know where that is), open and edit the `config` file like this:
 
@@ -51,6 +42,19 @@ In the Electrum Wallet folder ([see here](https://electrum.readthedocs.io/en/lat
 3. Find or add line: `"server": "SOMEIPADDRESS:50002:s",`and switch it to your own EPS Server's IP address, in the example above this would be: `"server": "192.168.1.3:50002:s",`- hard code your IP address as the default upon opening the Wallet.
 
 These 3 steps optional but recommended for full privacy by locking down Electrum Wallet to one single connection with your private server ([Reference](https://github.com/chris-belcher/electrum-personal-server#how-to)).
+
+#### Option 2: Connect to your EPS Server from Electrum Wallet GUI (not recommended as it momentarily connects with other random servers):
+
+1. Open Electrum Wallet.  When you click the traffic light (green or red) at the bottom of your Electrum Wallet, you will see a screen with a list of all the available Electrum servers that your wallet can connect to, normally with the `Select Server Automatically` box already checked:
+
+![ElectrumWalletServerList](https://user-images.githubusercontent.com/1388507/68437521-8a5eb580-01c1-11ea-9ece-0666353a6742.png)
+
+2. Now is the time to UNCHECK that `Select Server Automatically` setting, which will enable you to enter the IP address or domain or hostname of your EPS Server.  In the case below, the EPS server is on the local network at `192.168.1.3` so we enter that manually (leave port as 50002) and press `close`.
+
+![EnterElectrumServerIP](https://user-images.githubusercontent.com/1388507/68496320-4e276580-0252-11ea-8caf-facc8a246d70.png)
+
+3. If all of the above worked well, and your node is healthy and synched, you will get a green traffic light down the bottom right of the wallet screen - that means success!:
+
 
 ### Reflection on what has been achieved:
 
