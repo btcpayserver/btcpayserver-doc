@@ -379,3 +379,55 @@ You will also need those settings in the `apache2.conf` to prevent issues while 
 LimitRequestLine 500000
 LimitRequestFieldSize 500000
 ```
+
+### I get 503 Service Temporarily Unavailable nginx
+
+#### Cause 1: Trying to access my BTCPay by IP address
+
+Your nginx config is set to route the HTTP request to a particular container based on the domain name of the request. For example, the official [deployment on pi 4](https://docs.btcpayserver.org/deployment/raspberrypideployment/rpi4) was to setup the souce domain name to http://raspberrypi.local/ yet getting automatic local domain raspberrypi.local does not always work. You are probably in this situation and trying to type the IP address of your BTCPay into the web-browser.
+
+Since nginx gets the IP address in the request instead of raspberrypi.local it does not know where to route that request and returns:
+```
+503 Service Temporarily Unavailable
+-----------------------------------
+nginx
+```
+
+You can fix this by forcing nginx to route the HTTP request to BTCPay even if the request domain name is not recognized.
+Simply, re-run the setup script like this:
+
+```bash
+
+sudo su -
+
+REVERSEPROXY_DEFAULT_HOST="$BTCPAY_HOST" && . btcpay-setup.sh -i
+
+```
+
+Now putting local IP in the web-browser works.
+
+#### Cause 2: btcpayserver or letsencrypt-nginx-proxy is not running
+
+To check, run: 
+```bash
+sudo  docker ps | less -S
+```
+Press "q" to quit out of less.
+
+The output should contain:
+* btcpayserver/letsencrypt-nginx-proxy-companion
+* btcpayserver/btcpayserver
+
+And the status should be "Up"
+
+If the docker container is not running, then check the reason for crash like this:
+```bash
+ sudo  docker logs 6a6b9fd75692 --tail 20
+```
+Where 6a6b9fd75692 is the container ID that is having issues.
+
+#### Cause N: Other
+
+There could be many causes for 5XX HTTP errors. Please create an [Issue](https://github.com/btcpayserver/btcpayserver-docker/issues) and when cause becomes known add it here in the [Deployment FAQ](https://github.com/btcpayserver/btcpayserver-doc/blob/master/FAQ/FAQ-Deployment.md) doc.
+
+
