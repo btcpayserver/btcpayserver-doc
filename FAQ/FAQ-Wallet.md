@@ -53,7 +53,7 @@ There are two ways to connect your BTCPay and your wallet:
 
 Watch the video below or read [this article](https://bitcoinshirt.co/how-to-create-store-accept-bitcoin/8/#Connecting-BTCPay-with-your-wallet) for step by step instructions.
 
-[![ConnectBTCPayWallet](https://img.youtube.com/vi/xX6LyQej0NQ/mqdefault.jpg)](https://www.youtube.com/watch?v=xX6LyQej0NQ "BTCPay - Connecting Wallet")
+[![ConnectBTCPayWallet](img/thumbnails/BTCPayServerConnectingaWallet.png)](https://www.youtube.com/watch?v=xX6LyQej0NQ "BTCPay - Connecting Wallet")
 
 ## Missing payments in my software or hardware wallet
 

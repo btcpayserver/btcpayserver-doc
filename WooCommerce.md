@@ -26,7 +26,7 @@ There are two ways to download BTCPay plugin:
 
 [Download the latest BTCPay plugin](https://github.com/btcpayserver/woocommerce-plugin/releases), upload it in .zip format into your WordPress and activate it.
 
-[![BTCPayWooPlugin](https://img.youtube.com/vi/6QcTWHRKZag/mqdefault.jpg)](https://www.youtube.com/watch?v=6QcTWHRKZag "BTCPay - Woo Plugin")
+[![BTCPayWooPlugin](/Users/amnesia/Desktop/btcpayserver-doc/img/thumbnails/BTCPayServerWooCommerceSetup.png)](https://www.youtube.com/watch?v=6QcTWHRKZag "BTCPay - Woo Plugin")
 
 ## 2. Deploy BTCPay Server
 
@@ -36,7 +36,7 @@ To launch your BTCPay server, you can self-host it, or use a third party host.
 
 There are various ways to [launch a self-hosted BTCPay](https://github.com/btcpayserver/btcpayserver-doc#deployment). If you do not have technical knowledge, use the [web-wizard method](https://launchbtcpay.lunanode.com) and follow the video below.
 
-[![WebBTCPay](https://img.youtube.com/vi/NjslXYvp8bk/mqdefault.jpg)](https://www.youtube.com/watch?v=NjslXYvp8bk "BTCPay - LunaNode")
+[![WebBTCPay](img/thumbnails/BTCPayServerLunaNode1click.png)](https://www.youtube.com/watch?v=NjslXYvp8bk "BTCPay - LunaNode")
 
 For the self-hosted solutions, you'll have to wait for your node to sync fully before proceeding to step 3.
 
