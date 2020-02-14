@@ -41,9 +41,9 @@ In the Electrum Wallet folder ([see here](https://electrum.readthedocs.io/en/lat
 
 3. Find or add line: `"server": "SOMEIPADDRESS:50002:s",`and switch it to your own EPS Server's IP address, in the example above this would be: `"server": "192.168.1.3:50002:s",`- hard code your IP address as the default upon opening the Wallet.
 
-These 3 steps optional but recommended for full privacy by locking down Electrum Wallet to one single connection with your private server ([Reference](https://github.com/chris-belcher/electrum-personal-server#how-to)).
+These 3 steps strongly recommended for full privacy by locking down Electrum Wallet to one single connection with your private server only ([Reference](https://github.com/chris-belcher/electrum-personal-server#how-to)).
 
-#### Option 2: Connect to your EPS Server from Electrum Wallet GUI (not recommended as it momentarily connects with other random servers):
+#### Option 2: Connect to your EPS Server from Electrum Wallet GUI (not recommended as this will momentarily connects with other random public Electrum servers if you are online):
 
 1. Open Electrum Wallet.  When you click the traffic light (green or red) at the bottom of your Electrum Wallet, you will see a screen with a list of all the available Electrum servers that your wallet can connect to, normally with the `Select Server Automatically` box already checked:
 
