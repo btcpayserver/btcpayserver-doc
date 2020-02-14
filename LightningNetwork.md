@@ -73,13 +73,15 @@ Read the [RTL Getting Started Guide](https://medium.com/@suheb.khan/how-to-ride-
 
 For remote use of your LND node on iOS or PC, you can use [Zap wallet integration](https://github.com/LN-Zap/zap-tutorials/blob/master/docs/desktop/btcpay-server.mdx).
 
-[![LNDBTCPay](https://img.youtube.com/vi/CWhTOunTb2Q/mqdefault.jpg)](https://www.youtube.com/watch?v=CWhTOunTb2Q "BTCPay - LND and Zap")
+[![LNDBTCPay](img/thumbnails/BTCPayServerLightningZap.png)](https://www.youtube.com/watch?v=CWhTOunTb2Q "BTCPay - LND and Zap")
 
-Besides Zap, there are two more wallets that allow remote control of the LND node, [the Pebble wallet](https://www.pebble.indiesquare.me/) and the [ZeusLN](https://github.com/ZeusLN/zeus). Both of which have not yet extensively been tested by the community.
+[![LNDBTCPay](img/thumbnails/BTCPayServeDeployLNandZap.png)](https://www.youtube.com/watch?v=CWhTOunTb2Q "BTCPay - LND and Zap Node deployment")
+
+Besides Zap, there are a few more wallets that allow remote control of the LND node, [the Nayuta wallet](https://nayuta.co/) and the [ZeusLN](https://github.com/ZeusLN/zeus). Both of which have not yet extensively been tested by the community.
 
 To remotely control your LND node via web browser, you can use Lightning Joule.
 
-[![Joule](https://img.youtube.com/vi/a9_uHJhnKR4/mqdefault.jpg)](https://www.youtube.com/watch?v=a9_uHJhnKR4 "BTCPay - LND and Joule")
+[![Joule](img/thumbnails/BTCPayServerLightningJoule.png)](https://www.youtube.com/watch?v=a9_uHJhnKR4 "BTCPay - LND and Joule")
 
 ### LND Commands lncli
 
@@ -101,7 +103,8 @@ The most straightforward way to start using the c-lightning implementation in BT
 
 You can use Spark as an internal or external wallet. Internal wallet allows users to use Spark via the web-browser inside their BTCPay Server. You can also connect externally to a Spark mobile or desktop app just by scanning a QR code.
 
-[![c-lightningbtcpay](https://img.youtube.com/vi/uV1R6IQpmg8/mqdefault.jpg)](https://www.youtube.com/watch?v=uV1R6IQpmg8 "BTCPay - c-lightning and Spark")
+[![c-lightningbtcpay](img/thumbnails/BTCPayServerConnectSpark.png)](https://www.youtube.com/watch?v=uV1R6IQpmg8 "BTCPay - c-lightning and Spark")
+
 
 Go to **Server Settings > Services > Spark Server > See information**
 
