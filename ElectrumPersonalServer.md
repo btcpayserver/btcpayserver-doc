@@ -12,7 +12,7 @@ EPS can be integrated into BTCPay Server using the optional docker fragment [opt
 
 2. As EPS is for a single wallet (single user), you must specify the XPUB/YPUB/ZPUB of your wallet as an environment varable before you enable the EPS docker-fragment.  In Electrum Wallet go to the "Wallet" menu then select "Information" to copy and paste yours. Set ENV variable for your wallet XPUB and enable the Docker Additional Fragment on your BTCPay node by running the following steps:
 
-```bash
+``` bash
 export BTCPAYGEN_ADDITIONAL_FRAGMENTS="$BTCPAYGEN_ADDITIONAL_FRAGMENTS;opt-add-electrum-ps"
 export EPS_XPUB="XPUB_ADD_YOUR_XPUB_YPUB_OR_ZPUB_HERE"
 . btcpay-setup.sh -i
