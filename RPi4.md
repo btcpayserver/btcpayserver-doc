@@ -226,6 +226,7 @@ Configure BTCPay by setting some [environment variables](https://github.com/btcp
 
 ```bash
 export BTCPAY_HOST="raspberrypi.local"
+export REVERSEPROXY_DEFAULT_HOST="$BTCPAY_HOST"
 export NBITCOIN_NETWORK="mainnet"
 export BTCPAYGEN_CRYPTO1="btc"
 export BTCPAYGEN_LIGHTNING="lnd"
