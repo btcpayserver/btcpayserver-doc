@@ -95,7 +95,7 @@ Enterprises can use it as scalable and secure back-end of their infrastracture w
   - [(2) Create a store](CreateStore.md)
   - [(3) Connect a wallet](ConnectWallet.md)
     - [Ledger Wallet](LedgerWallet.md)
-    - [ColdCard Wallet](ColdcardWallet.md)
+    - [ColdCard Wallet](ColdCardWallet.md)
     - [Wasabi Wallet](WasabiWallet.md)
     - [Electrum Wallet](ElectrumWallet.md)
       - [ElectrumX](ElectrumX.md)
