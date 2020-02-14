@@ -10,11 +10,11 @@ EPS can be integrated into BTCPay Server using the optional docker fragment [opt
 
 1. EPS is accessible for Electrum Wallets via TCP port 50002.  You need to open this port up fully at least to be available within your own network to any PC or Android device running Electrum Wallet, and turn on port forwarding.
 
-2. As EPS is for a single wallet (single user), you must specify the XPUB/YPUB/ZPUB of your wallet as an environment varable before you enable the EPS docker-fragment.  In Electrum Wallet go to the "Wallet" menu then select "Information" to copy and paste yours. Set ENV variable by running this command: `export BTCPAY_EPS_XPUB="ADD_YOUR_XPUB_YPUB_OR_ZPUB_HERE"`.  Then enable the Docker Additional Fragment on your BTCPay node by running the following steps (this is assuming a brand new BTCPay installation with LND and EPS, please tweak accordingly using the [relevant documentation](https://github.com/btcpayserver/btcpayserver-docker/blob/master/README.md#generated-docker-compose-).
+2. As EPS is for a single wallet (single user), you must specify the XPUB/YPUB/ZPUB of your wallet as an environment varable before you enable the EPS docker-fragment.  In Electrum Wallet go to the "Wallet" menu then select "Information" to copy and paste yours. Set ENV variable by running this command: `export EPS_XPUB="ADD_YOUR_XPUB_YPUB_OR_ZPUB_HERE"`.  Then enable the Docker Additional Fragment on your BTCPay node by running the following steps (this is assuming a brand new BTCPay installation with LND and EPS, please tweak accordingly using the [relevant documentation](https://github.com/btcpayserver/btcpayserver-docker/blob/master/README.md#generated-docker-compose-).
 
 3. Follow the [normal setup and install of BTCPay Server](https://github.com/btcpayserver/btcpayserver-docker#full-installation-for-technical-users), then after this command `cd btcpayserver-docker`, follow the below instructions instead of those in the link.  If you already have a BTCPay Server running, then just follow from the next step.
 
-4. Set your environment variables:
+4. Set other environment variables as needed, example:
 ```
 export BTCPAY_HOST="YOURHOST.com" && export NBITCOIN_NETWORK="mainnet" && export BTCPAYGEN_CRYPTO1="btc" && export BTCPAYGEN_REVERSEPROXY="nginx" && export BTCPAYGEN_LIGHTNING="lnd" && export LIGHTNING_ALIAS="MY_LN" && export LETSENCRYPT_EMAIL="you@example.com" && BTCPAYGEN_ADDITIONAL_FRAGMENTS="opt-add-electrum-ps;opt-more-memory"
 ```
