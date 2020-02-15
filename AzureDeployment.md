@@ -12,8 +12,7 @@ You can log into [Azure](https://azure.microsoft.com/en-us/account/) with your M
 
 Final installation steps:
 
-Fill in the remaining options: 
-![Azure Resource Config](img/AzureResourceConfig.png)
+Fill in the remaining options: ![Azure Resource Config](img/AzureResourceConfig.png)
 * Click 'Purchase' to confirm
 * (Wait for Azure deployment)
 * Type `ip` into the search bar and select the first option, `BTCPayServerPublicIP`
