@@ -31,9 +31,13 @@ Here are common questions about installation, regardless of the deployment metho
 * [How to change domain name on my LunaNode BTCPay?](FAQ-Deployment.md#how-to-change-domain-name-on-my-lunanode-btcpay)
 
 ## Manual Deployment FAQ
-* [Getting 500 nginx error on a local server https and for http (BTCPay is expecting you to access this website from)](FAQ-Deployment.md#getting-500-nginx-error-on-a-local-server-https-and-for-http-btcpay-is-expecting-you-to-access-this-website-from)
 * [How to manually install BTCPay on Ubuntu 18.04?](FAQ-Deployment.md#how-to-manually-install-btcpay-on-ubuntu-1804)
-* [Error: BTCPay is expecting you to access this website from...](FAQ-Deployment.md#btcpay-is-expecting-you-to-access-this-website-from)
+* [I get 503 Service Temporarily Unavailable nginx](FAQ-Deployment.md#i-get-503-service-temporarily-unavailable-nginx)
+  * [Cause 1: Trying to access my BTCPay by IP address](FAQ-Deployment.md#cause-1-trying-to-access-my-btcpay-by-ip-address)
+  * [Cause 2: btcpayserver or letsencrypt-nginx-proxy is not running](FAQ-Deployment.md#cause-2-btcpayserver-or-letsencrypt-nginx-proxy-is-not-running)
+  * [Cause 3: Error: BTCPay is expecting you to access this website from](FAQ-Deployment.md#cause-3-btcpay-is-expecting-you-to-access-this-website-from)
+  * [Cause 4: Getting 500 nginx error on a local server https and for http BTCPay is expecting you to access this website from](FAQ-Deployment.md#cause-4-getting-500-nginx-error-on-a-local-server-https-and-for-http-btcpay-is-expecting-you-to-access-this-website-fro)
+
 
 ## General Deployment
 
@@ -323,15 +327,57 @@ Additional documentation can be found on [domain change page](/ChangeDomain.md).
 
 ## Manual Deployment
 
-#### Getting 500 nginx error on a local server https and for http (BTCPay is expecting you to access this website from)
-
-You need to open port 80 and 443. Once you did that, restart docker `btcpay-restart.sh`
-
 #### How to manually install BTCPay on Ubuntu 18.04?
 
 Check this [community guide](https://freedomnode.com/blog/114/how-to-setup-btc-and-lightning-payment-gateway-with-btcpayserver-on-linux-manual-install).
 
-#### BTCPay is expecting you to access this website from
+### I get 503 Service Temporarily Unavailable nginx
+
+#### Cause 1: Trying to access my BTCPay by IP address
+
+Your nginx config is set to route the HTTP request to a particular container based on the domain name of the request. For example, the official [deployment on pi 4](https://docs.btcpayserver.org/deployment/raspberrypideployment/rpi4) was to setup the souce domain name to http://raspberrypi.local/ yet getting automatic local domain raspberrypi.local does not always work. You are probably in this situation and trying to type the IP address of your BTCPay into the web-browser.
+
+Since nginx gets the IP address in the request instead of raspberrypi.local it does not know where to route that request and returns:
+```
+503 Service Temporarily Unavailable
+-----------------------------------
+nginx
+```
+
+You can fix this by forcing nginx to route the HTTP request to BTCPay even if the request domain name is not recognized.
+Simply, re-run the setup script like this:
+
+```bash
+
+sudo su -
+
+REVERSEPROXY_DEFAULT_HOST="$BTCPAY_HOST" && . btcpay-setup.sh -i
+
+```
+
+Now putting local IP in the web-browser works.
+
+#### Cause 2: btcpayserver or letsencrypt-nginx-proxy is not running
+
+To check, run: 
+```bash
+sudo  docker ps | less -S
+```
+Press "q" to quit out of less.
+
+The output should contain:
+* btcpayserver/letsencrypt-nginx-proxy-companion
+* btcpayserver/btcpayserver
+
+And the status should be "Up"
+
+If the docker container is not running, then check the reason for crash like this:
+```bash
+ sudo  docker logs 6a6b9fd75692 --tail 20
+```
+Where 6a6b9fd75692 is the container ID that is having issues.
+
+#### Cause 3: BTCPay is expecting you to access this website from
 
 You might also see the following error: `You access BTCPay Server over an unsecured network`.
 
@@ -380,51 +426,9 @@ LimitRequestLine 500000
 LimitRequestFieldSize 500000
 ```
 
-### I get 503 Service Temporarily Unavailable nginx
+#### Cause 4: Getting 500 nginx error on a local server https and for http BTCPay is expecting you to access this website from
 
-#### Cause 1: Trying to access my BTCPay by IP address
-
-Your nginx config is set to route the HTTP request to a particular container based on the domain name of the request. For example, the official [deployment on pi 4](https://docs.btcpayserver.org/deployment/raspberrypideployment/rpi4) was to setup the souce domain name to http://raspberrypi.local/ yet getting automatic local domain raspberrypi.local does not always work. You are probably in this situation and trying to type the IP address of your BTCPay into the web-browser.
-
-Since nginx gets the IP address in the request instead of raspberrypi.local it does not know where to route that request and returns:
-```
-503 Service Temporarily Unavailable
------------------------------------
-nginx
-```
-
-You can fix this by forcing nginx to route the HTTP request to BTCPay even if the request domain name is not recognized.
-Simply, re-run the setup script like this:
-
-```bash
-
-sudo su -
-
-REVERSEPROXY_DEFAULT_HOST="$BTCPAY_HOST" && . btcpay-setup.sh -i
-
-```
-
-Now putting local IP in the web-browser works.
-
-#### Cause 2: btcpayserver or letsencrypt-nginx-proxy is not running
-
-To check, run: 
-```bash
-sudo  docker ps | less -S
-```
-Press "q" to quit out of less.
-
-The output should contain:
-* btcpayserver/letsencrypt-nginx-proxy-companion
-* btcpayserver/btcpayserver
-
-And the status should be "Up"
-
-If the docker container is not running, then check the reason for crash like this:
-```bash
- sudo  docker logs 6a6b9fd75692 --tail 20
-```
-Where 6a6b9fd75692 is the container ID that is having issues.
+You need to open port 80 and 443. Once you did that, restart docker `btcpay-restart.sh`
 
 #### Cause N: Other
 
