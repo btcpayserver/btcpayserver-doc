@@ -37,4 +37,4 @@ The fields are the following:
 ## QuickBooks Online Connector for BTCPay Server
 BTCQBO is a third-party plugin that enables QuickBooks Online users to connect their BTCPay server easily. Besides bookkeeping, users can quickly generate invoices from their QuickBooks. For more information about the BTCQBO and all the features it offers, [check the plugin repository](https://github.com/JeffVandrewJr/btcqbo) or watch the video below.
 
-[![BTCPay QuickBooks](https://img.youtube.com/vi/srgwL9ozg6c/mqdefault.jpg)](https://www.youtube.com/watch?v=srgwL9ozg6c "BTCPay QuickBooks")
+[![BTCPay QuickBooks](img/thumbnails/BTCPayServerBTCQBOQuickbooks.png)](https://www.youtube.com/watch?v=srgwL9ozg6c "BTCPay QuickBooks")
