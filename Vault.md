@@ -24,11 +24,17 @@ Setting up BTCPay Vault is quite easy. You only need to have already set up BTCP
 9. Save
 
 ![BTCPay Vault Store Setup](img/BTCPayVaultStoreSetup1.png)
+
 ![BTCPay Vault Store Setup](img/BTCPayVaultStoreSetup2.png)
+
 ![BTCPay Vault Store Setup](img/BTCPayVaultStoreSetup3.png)
+
 ![BTCPay Vault Store Setup](img/BTCPayVaultStoreSetup4.png)
+
 ![BTCPay Vault Store Setup](img/BTCPayVaultStoreSetup5.png)
+
 ![BTCPay Vault Store Setup](img/BTCPayVaultStoreSetup6.png)
+
 ![BTCPay Vault Store Setup](img/BTCPayVaultStoreSetup7.png)
 
 ### Spending funds with BTCPay Wallet
@@ -44,6 +50,7 @@ Once you’ve received funds to your wallet and you decide to spend them, you ca
 7. Broadcast the transaction
 
 ![BTCPay Vault Wallet Send](img/BTCPayVaultWalletSend1.png)
+
 ![BTCPay Vault Wallet Send](img/BTCPayVaultWalletSend2.png)
 
 ## Supported Hardware Wallets
