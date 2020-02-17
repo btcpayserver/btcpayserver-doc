@@ -75,25 +75,104 @@ When you deploy your BTCPay Server, you should first register a user (during ser
 
 ### With the docker deployment, how to use a different volume for the data?
 
-For example if you plug a USB drive, and find out that it is the volume `/dev/sda1`, then:
-
+First, you need to make sure that btcpayserver and docker is not running
 ```bash
-# Format the drive
-sudo mkfs.ext4 /dev/sda1
-# Create folder for mount.
-sudo mkdir /mnt/usb
-# Look up UUID of flash drive.
-UUID="$(sudo blkid -s UUID -o value /dev/sda1)"
-# Add mount to fstab.
-echo "UUID=$UUID /mnt/usb ext4 defaults,nofail 0" | sudo tee -a /etc/fstab
-# Mount the new drive
-mount /dev/sda1
-# Define `/var/lib/docker` as symbolic link to /mnt/usb
-sudo mkdir /mnt/usb/docker
-sudo ln -s /mnt/usb/docker /var/lib/docker
+sudo su -
+btcpay-down.sh
+systemctl stop docker
 ```
 
-If you want to mount specific folder (like only Bitcoin node data directory), please browse `/var/lib/docker/volumes` to chose the different docker volumes.
+Now, you need to format your drive. If you already did you can skip this step.
+
+```bash
+# Step 1: Unplug the drive
+lsblk
+
+# Step 2: Plug the drive
+lsblk
+```
+The second `lsblk` should show the drive you just plugged in. (of TYPE `disk`)
+Make sure you don't make a mistake as the next command will erase all data on this disk.
+
+For the sake of the example, let's suppose it has the NAME `/dev/sdd`.
+
+```bash
+# Save the name in a variable
+DEVICE_NAME="/dev/sdd"
+# Set the partition name
+PARTITION_NAME="/dev/sdd1"
+```
+
+Now we can partition the disk and format the partition:
+```bash
+echo "Partitioning the external drive $DEVICE_NAME..."
+### DANGER ZONE ###
+(
+	echo o # Create a new empty DOS partition table
+	echo n # Add a new partition
+	echo p # Primary partition
+	echo 1 # Partition number
+	echo   # First sector (Accept default: 1)
+	echo   # Last sector (Accept default: varies)
+	echo w # Write changes
+) | fdisk ${DEVICE_NAME}
+partprobe ${DEVICE_NAME}
+while ! lsblk $PARTITION_NAME &> /dev/null; do
+	sleep 1
+done
+mkfs.ext4 -F "$PARTITION_NAME"
+```
+
+Then we need to mount the partition on the linux filesystem.
+
+```bash
+# Mounting the partition
+MOUNT_DIR="/mnt/external"
+mkdir "$MOUNT_DIR"
+mount -o defaults,noatime "$PARTITION_NAME" "$MOUNT_DIR"
+
+# Make sure the partition exists at the next reboot, we use UUID in case
+# the partition name is different in the next reboot
+if ! grep -qF "$MOUNT_DIR" /etc/fstab; then
+	UUID="$(sudo blkid -s UUID -o value $PARTITION_NAME)"
+	echo "UUID=$UUID $MOUNT_DIR ext4 defaults,noatime,nofail 0 2" >> /etc/fstab
+fi
+```
+
+Then, we need to make sure that docker not start before the mount.
+
+```bash
+MOUNT_UNIT="$(systemd-escape --path "$MOUNT_DIR").mount"
+docker_service="/lib/systemd/system/docker.service"
+if ! grep -qF "After=$MOUNT_UNIT" "$docker_service"; then
+	sed -i "s/After=/After=$MOUNT_UNIT /g" "$docker_service"
+fi
+```
+
+Now, imagine you want to put all the docker volume data on the previous partition
+
+```bash
+DOCKER_VOLUMES="/var/lib/docker/volumes"
+# Copy all the data from our volume to the mount directory (this can take a while)
+cp -a -r "$DOCKER_VOLUMES/." "$MOUNT_DIR"
+# Make the folder a mountpoint
+rm -rf "$DOCKER_VOLUMES"
+mkdir -p "$DOCKER_VOLUMES"
+mount --bind "$MOUNT_DIR" "$DOCKER_VOLUMES"
+# Make sure the mountpoint is mounted after reboot
+if ! grep -qF "$DOCKER_VOLUMES" /etc/fstab; then
+	echo "$MOUNT_DIR $DOCKER_VOLUMES none bind,nobootwait 0 2" >> /etc/fstab
+fi
+```
+
+Now restart docker and btcpayserver
+
+```bash
+systemctl start docker
+btcpay-up.sh
+```
+
+Note: We use mount bind instead of symbolic link because docker would complain when running `docker volume rm`.
 
 ### How do I activate Tor on my BTCPay Server?
 
