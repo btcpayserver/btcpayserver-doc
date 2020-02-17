@@ -1,6 +1,6 @@
 # BTCPay Magento Integration
 
-If you're using Magento, an an open-source e-commerce platform written in PHP, you can integrate BTCPay and use it as a payment processor.
+If you're using Magento, an an open-source e-commerce platform written in PHP, you can integrate BTCPay Server and use it as a payment processor.
 
 ## Magento 1
 1. Download [BTCPay Magento Plugin](https://github.com/btcpayserver/magento-plugin)

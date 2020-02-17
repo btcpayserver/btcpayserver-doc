@@ -4,16 +4,12 @@ Warning this is a Beta version. Use it at your own risk.
 
 ## Description
 
-A bitcoin payment plugin for PrestaShop using BTCPay server.
-BTCPay Server is a free and open source server for merchants wanting to accept Bitcoin for their business.
-The API is compatible with Bitpay service to allow seamless migration.
-
-BTCPay is design to be easy to deploy on container hosting platform like Azure.
-and if you want, some companies provide hosting services.
+A bitcoin payment plugin for PrestaShop using BTCPay Server.
 
 # Using the BTCPay plugin for Prestashop
 
 ## Prerequisites
+
 * [Self-hosted BTCPay](Deployment.md) or a server [hosted by a third-party](ThirdPartyHosting.md) 
 * [Registered account on the instance](RegisterAccount.md)
 * [Created BTCPay store](CreateStore.md)
@@ -22,6 +18,7 @@ and if you want, some companies provide hosting services.
 If you want to test in test mode, just paste an other btcpayserver url with testing port.
 
 ## Making a release
+
 * add Bitpay https://github.com/btcpayserver/php-bitpay-client/tree/master/src/Bitpay into modules/bitpay/lib
 * zip btcpay directory into btcpay.zip
 * add bitcoin icon into Order state configuration / icon !
@@ -36,6 +33,7 @@ If you want to test in test mode, just paste an other btcpayserver url with test
 ## Plugin Configuration
 
 ### For Prestashop versions 1.7:
+
 1. Download the latest release from https://github.com/btcpayserver/prestashop-plugin/releases
 2. Go to your PrestaShop administration. Under "Modules and services" select "Upload a module" (v1.7)
 3. Go to your "installed modules" -> "BTCPay" and click [Configure]<br />
@@ -48,6 +46,7 @@ If you want to test in test mode, just paste an other btcpayserver url with test
 # Support
 
 ## Tested successfully
+
 * Prestashop 1.7.x
 * BTCPay server v1.0.1 and v1.0.2
 
