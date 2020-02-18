@@ -43,5 +43,4 @@ For more information check out these videos:
 
 and these notes:
 
-* [How to get started with development](https://github.com/btcpayserver/btcpayserver/blob/master/BTCPayServer.Tests/README.md) by Nicolas Dorier
-   * covering relevant docker commands and how to interact with the local node (generate regtest coins, pay invoices, etc)
+* [How to get started with development](https://github.com/btcpayserver/btcpayserver/blob/master/BTCPayServer.Tests/README.md) by Nicolas Dorier (covering relevant docker commands, paying regtest invoices)
