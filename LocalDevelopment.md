@@ -40,3 +40,8 @@ For more information check out these videos:
 
 * [How to contribute to BTCPay Server Development](https://youtu.be/ZePbMPSIvHM) by Nicolas Dorier
 * [Setting up BTCPayServer development environment on Linux (Ubuntu)](https://youtube.com/watch?v=j486T_Rk-yw) by RockStarDev
+
+and these notes:
+
+* [How to get started with development](https://github.com/btcpayserver/btcpayserver/blob/master/BTCPayServer.Tests/README.md) by Nicolas Dorier
+   * covering relevant docker commands and how to interact with the local node (generate regtest coins, pay invoices, etc)
