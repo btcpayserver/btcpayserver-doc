@@ -2,9 +2,11 @@
 
 [Electrum Personal Server or EPS](https://github.com/chris-belcher/electrum-personal-server) is a personal version of public Electrum servers like [ElectrumX](https://github.com/btcpayserver/btcpayserver-doc/blob/master/ElectrumX.md).
 
-EPS can be integrated into BTCPay Server using the optional docker fragment [opt-add-electrum-ps.yml](https://github.com/btcpayserver/btcpayserver-docker/blob/master/docker-compose-generator/docker-fragments/opt-add-electrum-ps.yml).  Use EPS when you want to use your own full node (included in BTCPay Server) to verify your own transactions privately when using Electrum Wallet. The biggest difference with public Electrum servers (eg. ElectrumX), is that EPS is for monitoring only your own wallet(s).  The "XPUB" (extended public key) of the wallet you use in Electrum must be shared with EPS in order for it to function all all. Other than this, it functions (from an end user perspective) in the same way as ElectrumX etc.  It is easy to integrate into BTCPay just follow the instructions below.
+EPS can be integrated into BTCPay Server using the optional docker fragment [opt-add-electrum-ps.yml](https://github.com/btcpayserver/btcpayserver-docker/blob/master/docker-compose-generator/docker-fragments/opt-add-electrum-ps.yml). Use EPS when you want to use your own full node (included in BTCPay Server) to verify your own transactions privately when using Electrum Wallet. 
 
-EPS does not requires `txindex` and works on pruned node.
+The biggest difference with public Electrum servers (eg. ElectrumX), is that EPS is for monitoring only your own wallet(s).  The "XPUB" (extended public key) of the wallet you use in Electrum must be shared with EPS in order for it to function all all. Other than this, it functions (from an end user perspective) in the same way as ElectrumX etc.  It is easy to integrate into BTCPay just follow the instructions below.
+
+EPS does not require `txindex` and works on a pruned node.
 
 ## About Tor support
 
@@ -14,9 +16,9 @@ By default your EPS is accessible over Tor. You can run the following command li
 cat /var/lib/docker/volumes/generated_tor_servicesdir/_data/btc-electrum-ps/hostname
 ```
 
-You can can also go to your BTCPay Server, Server Settings, Services and find the tor link in `Other TOR hidden services`.
+You can can also go to your BTCPay Server > Server Settings > Services and find the tor link in `Other TOR hidden services`.
 
-On the electrum wallet machine, if you want to connect to your server via Tor, we assume in this tutorial that you run the Tor Browser locally, and thus you will use SOCKS5 port `9150`. If you run Tor through the command line instead, the local SOCKS5 port is `9050`.
+On the Electrum wallet machine, if you want to connect to your server via Tor, we assume in this tutorial that you run the Tor Browser locally, and thus you will use SOCKS5 port `9150`. If you run Tor through the command line instead, the local SOCKS5 port is `9050`.
 
 ## How to enable Electrum Personal Server (EPS) in BTCPay:
 
@@ -39,9 +41,9 @@ Once all syncing for both bitcoin and EPS have finished synching, you can procee
 
 ## How to connect Electrum Wallet to EPS
 
-There is three ways to use your server from Electrum Wallet:
+There are three ways to use your server from Electrum Wallet:
 1. By editing the configuration file
-2. By running electrum by the command line
+2. By running Electrum by the command line
 3. Via the user interface (not recommended, bad privacy)
 
 #### Option 1: Connect to your EPS Server by directly editing Electrum Wallet config file (before even opening the Electrum wallet GUI - recommended for full privacy):
@@ -78,9 +80,7 @@ If you use Tor, add `-p socks5:localhost:9150`.
 
 4. (**If you use Tor**) Go to proxy, then click on `Use Tor Proxy at port 9150`.
 
-5. If all of the above worked well, and your node is healthy and synched, you will get a green traffic light down the bottom right of the wallet screen - that means success!:
-
-
+5. If all of the above worked well, and your node is healthy and synched, you will get a green traffic light down the bottom right of the wallet screen - that means success!
 
 ### Reflection on what has been achieved:
 
