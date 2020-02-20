@@ -318,6 +318,59 @@ cd btcpayserver-docker
 export LIGHTNING_ALIAS="namehere"
 . ./btcpay-setup.sh -i
 ```
+### How to back up LND channels offsite
+Currently your BTCPay Server Docker on every change in channels state saves static channels backup (SCB) locally on the same disk (on-site). This poses a threat to LN off-chain funds recovery in case of the server crash or fatal data loss.
+IMPORTANT: to recover your LN on-chain and off-chain funds you need two things: LN wallet seed and SCB. 
+Every time a change is made to channel.backup file in your BTCPay Server docker it will instantly be copied to your remotes.
+The following procedure will allow you to keep the latest SCB offsite (on a remote server and/or popular cloud):
+NOTE: this has been tested on Linux systems only.
+
+1. Ssh into your BTCPay Server and run ```lnd-channels-backup-dependencies.sh``` script.
+
+```bash
+sudo su -
+cd btcpayserver-docker
+./lnd-channels-backup-dependencies.sh
+```
+
+2. Copy your btcpayserver ssh key to your remote server and create btcpayserver directory there. Replace USER_NAME and IP wihth remote server credentials.
+
+```bash
+cat /root/.ssh/id_ed25519_btcpayserver | ssh USER_NAME@IP "mkdir ~/btcpayserver ~/.ssh; cat >> ~/.ssh/authorized_keys"
+```
+
+3. Configure rclone for a cloud storage of your choice and note your newly configured remote name. You will need it for the next step.
+Please refer to this guide https://rclone.org/docs/
+NOTE: you need to create a new folder btcpayserver in your cloud storage where your SCB will be synced to.
+
+4. edit ```lnd-channels-remote-backup-on-change.sh``` script to add your remote server credentials and configured rclone remote from step 2 & 3.
+
+```bash
+nano lnd-channels-remote-backup-on-change.sh
+```
+Edit these two lines:
+
+```
+remote_server1="YOUR_REMOTE_SERVER_USER_NAME@YOUR_REMOTE_SERVER_IP:~/btcpayserver/"
+cloud1="YOUR_RCLONE_REMOTE:btcpayserver/"
+```
+
+5. Run ```lnd-channels-backup-systemd.sh``` script to finally set it up on your system.
+
+```bash
+./lnd-channels-backup-systemd.sh
+```
+
+6. Test it
+
+```bash
+touch /var/lib/docker/volumes/generated_lnd_bitcoin_datadir/_data/data/chain/bitcoin/mainnet/channel.backup
+```
+
+Ssh into your remote server and log into your cloud to see the latest SCB (channel.backup file in ~/btcpayserver).
+
+Now you have your latest SCB off-site!
+
 
 ## Lightning Network (c-lightning) FAQ 
 
