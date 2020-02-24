@@ -312,10 +312,6 @@ It provides links and explanations for a BTCPay testnet instance hosted by us.
 
 No, you need to keep your BTCPay running at all times so that your Bitcoin node stays in sync with the blockchain to verify transactions. If you only start it up every now and then, it would take a long time to catch up on verifying recent blocks, and your payments would not show up until much later.
 
-### Can I use my existing BTC or LN node with BTCPay?
-
-It is theoretically possible, but not recommended. Reasons being that it's not documented, making it difficult and time consuming. You would need to understand what docker-compose is doing, watch this [video](https://vimeo.com/316630434). If you are not technically able, it's much easier to use the nodes included in the BTCPay deployment.
-
 ### Can I connect to my BTCPay Bitcoin P2P on port 8333?
 
 No, BTCPay's Bitcoin core node is not exposed externally. For BTCPay purposes, it is not in the interest of the user, as it increases bandwidth requirement. BTCPay is also whitebinding connections to this port, so opening it would expose the node to potential DDoS.
