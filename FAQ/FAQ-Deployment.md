@@ -27,6 +27,7 @@ Here are common questions about installation, regardless of the deployment metho
 * [How do I completely uninstall BTCPay from a linux environment (docker version)](FAQ-Deployment.md#how-do-i-completely-uninstall-btcpay-from-a-linux-environment-docker-version)
 
 ## Web Deployment FAQ
+
 ### Luna Node Web Deployment FAQ
 * [How to change domain name on my LunaNode BTCPay?](FAQ-Deployment.md#how-to-change-domain-name-on-my-lunanode-btcpay)
 
@@ -42,11 +43,13 @@ Here are common questions about installation, regardless of the deployment metho
 ## General Deployment
 
 ### How much does it cost to run BTCPay Server?
+
 BTCPay is a 100% free and open-source software. We do not charge you anything.
 However, to run it, you should host it. You can run it as a self-hosted solution on your own local server, or use a cloud hosting provider, which is what a majority of users do. Advanced users can run BTCPay on [their own hardware](/HardwareDeployment.md) Visit our [Deployment Page](/Deployment.md) to see various ways in which you can run BTCPay.
 If you do not wish to host your own server, you should use a free host. If you prefer to have control over your node and additional features, you can use a cloud solution, which goes from 5$ to 65$ /month depending on the provider you choose.
 
 ### What are the minimal requirements for BTCPay?
+
 If you would like to run Bitcoin and Lightning Network nodes, the minimal requirements are :
 
 * 2GB Ram
@@ -54,23 +57,29 @@ If you would like to run Bitcoin and Lightning Network nodes, the minimal requir
 * Docker
 
 ### What is the easiest method to deploy a self-hosted BTCPay Server?
+
 For beginners, we strongly recommend the [web-deployment](/LunaNodeWebDeployment.md) if you want a self-hosted solution or a [third-party host](ThirdPartyHosting.md)
 
 If you're going to add more than one crypto coin, you need to expand the storage according to that coin(s) blockchain size.
 
 ### How to choose a proper deployment method?
+
 Please see [Deployment page](/Deployment.md) for comparison of different installation methods and choose the one that suits your needs and skill level the most.
 
 ### Can I run BTCPay on my own hardware?
+
 Yes, you can. Check our the [Hardware Deployment page](/HardwareDeployment.md) for detailed instructions.
 
 ### Can I deploy BTCPay on my existing VPS?
+
 Yes. BTCPay is not limited to the documented deployment methods. You can use whichever hosting solution you prefer, that fits the minimal requirements.
 
 ### Are there free hosts where I can test?
+
 On a self-hosted BTCPay, the unlimited amount of users and stores can be attached. That's why there are users who opened their servers for others to use. Most of them are community-driven and free. See this list of [third-party BTCPay hosts](/ThirdPartyHosting.md)
 
 ### After initial deployment, I can't register and I don't have a login yet?
+
 When you deploy your BTCPay Server, you should first register a user (during server synchronization). This user is automatically the server admin. If your BTCPay only shows Login in the header menu, and you are unable to register the first user after initial deployment, someone else has registered on your server as the admin. Although this is unlikely to occur (the user would need to know and watch your BTCPay domain name), they had access to your ssh private keys, thus you should redeploy a new server for security reasons.
 
 ### With the docker deployment, how to use a different volume for the data?
@@ -174,6 +183,48 @@ btcpay-up.sh
 
 Note: We use mount bind instead of symbolic link because docker would complain when running `docker volume rm`.
 
+
+### How to deploy BTCPay Server alongside existing Bitcoin node?
+
+The instructions below are valid for Docker deployments:
+
+* Run setup as described in [btcpayserver-docker](https://github.com/btcpayserver/btcpayserver-docker#full-installation-for-technical-users) up until `. ./btcpay-setup.sh -i`
+* Create `bitcoin.custom.yml` in the `docker-compose-generator/docker-fragments/` folder.
+
+```yml
+version: "3"
+
+services:
+  btcpayserver:
+      environment:
+        BTCPAY_CHAINS: "btc"
+        BTCPAY_BTCEXPLORERURL: http://nbxplorer:32838/
+  nbxplorer:
+      environment:
+        NBXPLORER_CHAINS: "btc"
+        NBXPLORER_BTCRPCURL: http://host.docker.internal:43782/
+        NBXPLORER_BTCNODEENDPOINT: host.docker.internal:39388
+      volumes:
+        - "localBitcoinfolder:/root/.bitcoin"
+```
+
+* Replace: `43782` with your bitcoin node's configured RPC port
+* Replace: `39388` with your bitcoin node's configured p2p port
+* Replace `localBitcoinfolder` with the path to your bitcoin data folder
+
+If you are running on linux, due to [a limitation of docker](https://github.com/docker/for-linux/issues/264), you will also need to do the following:
+
+* Run `ip route | grep docker0 | awk '{print $9}'`
+  * Add the following at the end of the `bitcoin.custom.yml` file, replacing `$DOCKER_HOST_IP` with the result of the previous command. 
+```yml
+      extra_hosts:
+        - "host.docker.internal:$DOCKER_HOST_IP"
+```
+
+* Run `BTCPAYGEN_EXCLUDE_FRAGMENTS="bitcoin"`
+* Run `BTCPAYGEN_ADDITIONAL_FRAGMENTS="$BTCPAYGEN_ADDITIONAL_FRAGMENTS"`
+* Run `. ./btcpay-setup.sh -i`
+
 ### How do I activate Tor on my BTCPay Server?
 
 Tor is activated by default on the docker deployment.
@@ -210,6 +261,7 @@ We think that the illusion of security is more dangerous that no security, or at
 If you want to know more about the philosophy behind all this, you can read our [article on  Medium](https://medium.com/@BtcpayServer/about-tor-and-btcpay-server-2ec1e4bd5e51).
 
 ### How to access the .onion address without clearnet?
+
 To see the .onion address of your BTCPay instance without accessing it through the clearnet and clicking the Tor logo in top left corner, apply the following command:
 ```bash
 tail /var/lib/docker/volumes/generated_tor_servicesdir/_data/BTCPayServer/hostname
@@ -260,11 +312,8 @@ It provides links and explanations for a BTCPay testnet instance hosted by us.
 
 No, you need to keep your BTCPay running at all times so that your Bitcoin node stays in sync with the blockchain to verify transactions. If you only start it up every now and then, it would take a long time to catch up on verifying recent blocks, and your payments would not show up until much later.
 
-### Can I use my existing BTC or LN node with BTCPay?
-
-It is theoretically possible, but not recommended. Reasons being that it's not documented, making it difficult and time consuming. You would need to understand what docker-compose is doing, watch this [video](https://vimeo.com/316630434). If you are not technically able, it's much easier to use the nodes included in the BTCPay deployment.
-
 ### Can I connect to my BTCPay Bitcoin P2P on port 8333?
+
 No, BTCPay's Bitcoin core node is not exposed externally. For BTCPay purposes, it is not in the interest of the user, as it increases bandwidth requirement. BTCPay is also whitebinding connections to this port, so opening it would expose the node to potential DDoS.
 
 ### Can I use an existing Nginx server as a reverse proxy with SSL termination?
@@ -370,6 +419,7 @@ BTCPAYGEN_EXCLUDE_FRAGMENTS="$BTCPAYGEN_EXCLUDE_FRAGMENTS;nginx-https"
 Notice: If your BTCPay Server install has more than one domain (for example `WOOCOMMERCE_HOST` or `BTCPAY_ADDITIONAL_HOSTS`) you will need to modify your config for each domain name. The example above only covers 1 domain name called `btcpay.domain.com`.
 
 ### How do I completely uninstall BTCPay from a linux environment (docker version)
+
 1. Shutdown BTCPay Server (after you ensure you have required backups etc) with `btcpay-down.sh` and cleanup the install with `btcpay-clean.sh`.
 2. Change to your Base install directory `cd "$(dirname "$BTCPAY_ENV_FILE")"`
 3. Delete all volumes in /var/lib/docker/volumes/ with `docker-compose -f $BTCPAY_DOCKER_COMPOSE down --v`
@@ -398,6 +448,7 @@ Here you can find common questions and solutions to BTCPay web-deployments.
 ### LunaNode web-deployment
 
 #### How to change domain name on my LunaNode BTCPay?
+
 1. In your LunaNode dashboard, click on Virtual Machines > Your Virtual Machine > General Tab > External IP. Copy the external IP.
 2. Go to your DNS provider and create an A record. Paste the external IP.
 3. Go to Server Settings > Maintenance > Change Domain. Paste yourdomain.com without http or https prefix.
