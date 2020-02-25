@@ -4,8 +4,8 @@ BTCPay Server is built on Bootstrap and offers the flexibility to adjust its loo
 
 There are two approaches to customizing the theme of your BTCPay Server.
 
-1. Developing a custom theme (requires technical skills)
-2. Using a pre-made Bootstrap theme (does not require technical skills)
+1. [Developing a custom theme](#1-custom-themes) (requires technical skills)
+2. [Using a pre-made Bootstrap theme](#2-bootstrap-themes) (does not require technical skills)
 
 ## 1. Custom themes
 
