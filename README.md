@@ -177,6 +177,14 @@ Enterprises can use it as scalable and secure back-end of their infrastracture w
 
 For list of articles, podcasts and video presentations about BTCPay, please see our [media repository](https://github.com/btcpayserver/btcpayserver-media/tree/master/Publications).
 
+### Contributing
+
+Pull requests are welcome and appreciated.
+
+If you're beginner, take a look at the step by step guide on how to contribute to BTCPay Server documentation below.
+
+[![Contributing to Documentation](img/thumbnails/ContributingDocumentation.png)](https://www.youtube.com/watch?v=nr0UNbz3AoQ "How BTCPay Server Works")
+
 ### Supporters
 
 The BTCPay Server Project is proudly supported by these entities through the [BTCPay Server Foundation](https://foundation.btcpayserver.org/).
