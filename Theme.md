@@ -109,7 +109,7 @@ Server admins can upload their .css file to [File Storage](FAQ/FAQ-ServerSetting
 
 Below are examples of businesses that use custom-made checkout themes.
 
-### Wear my liberty
+### [Wears My Liberty](https://wearsmyliberty.com)
 
 ![WearMyLiberty](img/Theme-WearMyLiberty.png)
 
@@ -133,7 +133,7 @@ CSS file:
 .action-button:active:hover, .action-button:active:focus, .action-button:active.focus, .action-button.active:hover, .action-button.active:focus, .action-button.active.focus, .open>.action-button.dropdown-toggle:hover, .open>.action-button.dropdown-toggle:focus, .open>.action-button.dropdown-toggle.focus {    color: #fff;    background-color: #3aa821;    border-color: #aa0303;}
 ```
 
-### Coincards
+### [Coincards](https://coincards.com/)
 
 ![CoinCards Logo](img/Theme-Coincards.png)
 
@@ -157,7 +157,7 @@ CSS file:
 .btnGroupLnd button.active:hover {background-color:#ef8022;}
 ```
 
-### Blockstream
+### [Blockstream](https://blockstream.com/)
 
 ![Blockstream](img/Theme-Blockstream.png)
 
@@ -268,11 +268,7 @@ canvas {
     margin-top: 10px;
 }
 ```
-Logo:
-
-![Blockstream logo](img/Theme-Blockstream-Logo.png)
-
-### Shiftcrypto
+### [Shiftcrypto](https://shiftcrypto.ch/)
 
 ![Shiftcrypto](img/Theme-cryptosecurity.png)
 
@@ -298,11 +294,7 @@ CSS file:
 ```
 Logo:
 
-### The CryptoCloak
-
-Website: https://thecryptocloak.com/
-
-Design:
+### [The CryptoCloak](https://thecryptocloak.com/)
 
 ![Shiftcrypto logo](img/Theme-CryptoCloaks.png)
 
