@@ -10,7 +10,7 @@ You can help BTCPay Server even if you're not a developer.
 
 The easiest way is to use the software as a business or individual, provide feedback and [report any bugs or issues](https://github.com/btcpayserver/btcpayserver/issues) you or your customers encounter.
 
-Translating BTCPay, helping us with [documentation](https://github.com/btcpayserver/btcpayserver-doc/issues), making videos, writing articles on our [blog](http://blog.btcpayserver.org) and spreading the word are ways in which you can help, even if you're not a developer or tech-savvy.
+Translating BTCPay Server, helping us with [documentation](https://github.com/btcpayserver/btcpayserver-doc/contribute-docs#contributing), making videos, writing articles on our [blog](http://blog.btcpayserver.org) and spreading the word are ways in which you can help, even if you're not a developer or tech-savvy.
 
 We need more VPS hosting providers to implement [1-Click BTCPay Server deployment](LunaNodeWebDeployment.md) and make the installation of software more accessible, decentralized and widely-available.
 
