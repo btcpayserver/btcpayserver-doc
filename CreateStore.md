@@ -13,5 +13,3 @@ Store > Settings provides basic control over the individual **store settings**. 
 Text goes here.
 
 ***Proceed to the next step - [Connecting a Wallet](ConnectWallet.md).***
-
-tadsadda
