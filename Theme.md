@@ -292,7 +292,6 @@ CSS file:
 .btnGroupLnd button:hover {background-color:#7faacc;}
 .btnGroupLnd button.active:hover {background-color:#5E94BF;}
 ```
-Logo:
 
 ### [The CryptoCloak](https://thecryptocloak.com/)
 
