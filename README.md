@@ -183,7 +183,7 @@ Pull requests are welcome and appreciated.
 
 If you're beginner, take a look at the step by step guide on how to contribute to BTCPay Server documentation below.
 
-[![Contributing to Documentation](img/thumbnails/ContributingDocumentation.png)](https://www.youtube.com/watch?v=nr0UNbz3AoQ "How BTCPay Server Works")
+[![Contributing to Documentation](img/thumbnails/ContributingDocumentation.png)](https://www.youtube.com/watch?v=bSDROcdSSWw "How BTCPay Server Works")
 
 ### Supporters
 
