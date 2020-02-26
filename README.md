@@ -189,6 +189,6 @@ If you're beginner, take a look at the step by step guide on how to contribute t
 
 The BTCPay Server Project is proudly supported by these entities through the [BTCPay Server Foundation](https://foundation.btcpayserver.org/).
 
-![Supporters](img/SupportersReadme.PNG)
+![](img/SupportersReadme.PNG)
 
 If you'd like to support the project, please visit the [donation page](https://btcpayserver.org/donate/).
