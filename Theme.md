@@ -2,10 +2,12 @@
 
 BTCPay Server is built on Bootstrap and offers the flexibility to adjust its look to your needs.
 
-You can either provide a CSS file yourself or use an existing one from Bootswatch.
-Let's take a closer look at both approaches …
+There are two approaches to customizing the theme of your BTCPay Server.
 
-## Custom themes
+1. [Developing a custom theme](#1-custom-themes) (requires technical skills)
+2. [Using a pre-made Bootstrap theme](#2-bootstrap-themes) (does not require technical skills)
+
+## 1. Custom themes
 
 This is the way we are building our own themes, like the [Classic](https://github.com/btcpayserver/btcpayserver/blob/master/BTCPayServer/wwwroot/main/themes/classic.css) or [Casa](https://github.com/btcpayserver/btcpayserver/blob/master/BTCPayServer/wwwroot/main/themes/casa.css) theme.
 
@@ -21,29 +23,71 @@ Once you are done with your modifications, you can upload and reference it in th
 
 ![Theme settings](img/ThemeSettings.png)
 
-The Bootstrap theme options are another approach of providing customizations, let's look at this next …
+### Developing and extending a custom theme
 
-## Bootstrap themes
+The BTCPay Server user interface is built on a customized version of Bootstrap that supports [CSS custom properties](https://developer.mozilla.org/en-US/docs/Web/CSS/--*).
+This allows us to change theme related settings like fonts and colors without affecting the [`bootstrap.css`](#Notes-on-bootstrapcss).
+Also we can provide just the relevant customized parts instead of shipping a whole `bootstrap.css` file for each theme.
+
+Take a look at the [predefined themes](../BTCPayServer/wwwroot/main/themes) to get an overview of this approach.
+
+#### Modifying existing themes
+
+The custom property definitions in the `:root` selector are divided into several sections, that can be seen as a cascade:
+
+- The first section contains general definitions (i.e. for custom brand and neutral colors).
+- The second section defines variables for specific purposes.
+  Here you can map the general definitions or create additional ones.
+- The third section contains definitions for specific parts of the page, sections or components.
+  Here you should try to reuse definitions from above as much as possible to provide a consistent look and feel.
+
+The variables defined in a theme file get used in the [`site.css`](../BTCPayServer/wwwroot/main/site.css) and [`creative.css`](../BTCPayServer/wwwroot/main/bootstrap4-creativestart/creative.css) files.
+
+##### Overriding Bootstrap selectors
+
+In addition to the variables you can also provide styles by directly adding CSS selectors to this file.
+This can be seen as a last resort in case there is no variable for something you want to change or some minor tweaking.
+
+##### Adding theme variables
+
+In general it is a good idea to introduce specific variables for special purposes (like setting the link colors of a specific section).
+This allows us to address individual portions of the styles without affecting other parts which might be tight to a general variable.
+
+For cases in which you want to introduce new variables that are used across all themes, add them to the `site.css` file.
+This file contains our modifications of the Bootstrap styles.
+Refrain from modifying `bootstrap.css` directly – see the [additional notes](#Notes-on-bootstrapcss) for the reasoning behind this.
+
+#### Adding a new theme
+
+You should copy one of our predefined themes and change the variables to fit your needs.
+
+To test and play around with the adjustments, you can also use the developer tools of the browser:
+Inspect the `<html>` element and modify the variables in the `:root` section of the styles inspector.
+
+#### Notes on bootstrap.css
+
+The `bootstrap.css` file itself is generated based on what the original vendor `bootstrap.css` provides.
+
+Right now [Bootstrap](https://getbootstrap.com/docs/4.3/getting-started/theming/) does not use custom properties, but in the future it is likely that they might switch to this approach as well.
+Until then we created a build script [in this repo](https://github.com/dennisreimann/btcpayserver-ui-prototype) which generates the `bootstrap.css` file we are using here.
+
+The general approach should be to not modify the `bootstrap.css`, so that we can keep it easily updatable.
+The initial modifications of this file were made in order to allow for this themeing approach.
+Because bootstrap has colors spread all over the place we'd otherwise have to override mostly everything, that's why these general modifications are in the main `bootstrap.css` file.
+
+The Bootstrap theme options are another approach of providing customizations, let's look at this next.
+
+## 2. Bootstrap themes
 
 [Bootswatch](https://bootswatch.com/) offers lots of custom theme maintained by the Bootstrap community.
 
 ![Bootswatch](img/Bootswatch.png)
 
-Please note that this approach works best when used with the Classic theme described above!
-
-Let's see how we can take advantage of it.
-
-1. Create a new store
-2. Setup a derivation scheme for BTC for this store
-3. Create a new Point of Sale app attached to this store (in the Apps menu)
-
-You will see that the default design for such point of sale is:
-
-![DefaultPoS](img/DefaultPoS.png)
+Please note that this approach works best when used with the Classic theme described above.
 
 If you want to change this theme, find a theme on [Bootswatch](https://bootswatch.com/) which interest you, for example, [Darkly](https://bootswatch.com/darkly/).
 
-You can copy the link to the theme:
+Copy the link of the theme:
 
 ![CopyBootswatch](img/CopyBootswatch.png)
 
@@ -55,17 +99,17 @@ And enjoy a new theme!
 
 ![CustomTheme](img/CustomTheme.png)
 
-## Checkout page theme
+## Checkout page themes
 
-It is possible to entirely customize the checkout experience of your customer with your brand.
+BTCPay Server checkout page can be customized to fit your branding.
 
-Go to your Store Settings, Checkout Experience, Link to a custom CSS stylesheet. Create your custom theme using these examples below:
+Go to your Store Settings > Checkout Experience, and link to a custom CSS stylesheet. 
 
 Server admins can upload their .css file to [File Storage](FAQ/FAQ-ServerSettings.md#how-to-upload-files-to-btcpay) to create a CSS stylesheet link.
 
-### Wear my liberty
+Below are examples of businesses that use custom-made checkout themes.
 
-Design:
+### [Wears My Liberty](https://wearsmyliberty.com)
 
 ![WearMyLiberty](img/Theme-WearMyLiberty.png)
 
@@ -89,11 +133,7 @@ CSS file:
 .action-button:active:hover, .action-button:active:focus, .action-button:active.focus, .action-button.active:hover, .action-button.active:focus, .action-button.active.focus, .open>.action-button.dropdown-toggle:hover, .open>.action-button.dropdown-toggle:focus, .open>.action-button.dropdown-toggle.focus {    color: #fff;    background-color: #3aa821;    border-color: #aa0303;}
 ```
 
-Logo:
-
-![WearMyLiberty](img/Theme-WearMyLiberty-Logo.png)
-
-### Coincards
+### [Coincards](https://coincards.com/)
 
 ![CoinCards Logo](img/Theme-Coincards.png)
 
@@ -116,11 +156,8 @@ CSS file:
 .btnGroupLnd button:hover {background-color:#ffc313;}
 .btnGroupLnd button.active:hover {background-color:#ef8022;}
 ```
-Logo:
 
-![CoinCards Logo](img/Theme-Coincards-Logo.png)
-
-### Blockstream
+### [Blockstream](https://blockstream.com/)
 
 ![Blockstream](img/Theme-Blockstream.png)
 
@@ -231,11 +268,7 @@ canvas {
     margin-top: 10px;
 }
 ```
-Logo:
-
-![Blockstream logo](img/Theme-Blockstream-Logo.png)
-
-### Shiftcrypto
+### [Shiftcrypto](https://shiftcrypto.ch/)
 
 ![Shiftcrypto](img/Theme-cryptosecurity.png)
 
@@ -259,15 +292,8 @@ CSS file:
 .btnGroupLnd button:hover {background-color:#7faacc;}
 .btnGroupLnd button.active:hover {background-color:#5E94BF;}
 ```
-Logo:
 
-![Shiftcrypto logo](img/Theme-cryptosecurity-logo.png)
-
-### The CryptoCloaks
-
-Website: https://thecryptocloak.com/
-
-Design:
+### [The CryptoCloak](https://thecryptocloak.com/)
 
 ![Shiftcrypto logo](img/Theme-CryptoCloaks.png)
 
@@ -519,5 +545,4 @@ span {
 /*==========================END DISCLAIMER==========================	*/
 ```
 
-Logo:
-![CryptoCloaks](img/Theme-CryptoCloaks-logo.png)
+For more custom checkout pages example, [check this link](https://github.com/artdesignbySF/BTCpay_Server-Custom_CSS-template).
