@@ -95,6 +95,7 @@ Common problems and questions server admins have.
 * [How to disable U2F and 2FA for a user?](FAQ-ServerSettings.md#how-to-disable-u2f-and-2fa-for-a-user)
 * [How to configure SMTP settings in BTCPay?](FAQ-ServerSettings.md#how-to-configure-smtp-settings-in-btcpay)
 * [How to SSH into my BTCPay running on VPS?](FAQ-ServerSettings.md#how-to-ssh-into-my-btcpay-running-on-vps)
+* [Error: Your local changes to the following files would be overwritten by merge](FAQ-ServerSettings.md#error-your-local-changes-to-the-following-files-would-be-overwritten-by-merge)
 
 ### [Theme / Customization FAQ](FAQ-ServerSettings.md#theme--customization-1)
 * [How to customize my BTCPay theme style](FAQ-ServerSettings.md#how-to-customize-my-btcpay-theme-style)
@@ -128,6 +129,7 @@ Store settings explained.
  * [How to disable email on invoices?](FAQ-Stores.md#how-to-disable-email-on-invoices)
  * [Can I delete invoices from BTCPay?](FAQ-Stores.md#can-i-delete-invoices-from-btcpay)
  * [How to change the exchange rate provider for invoices?](FAQ-Stores.md#how-to-change-the-exchange-rate-provider-for-invoices)
+ * [Getting GetRatesAsync was called on coinaverage error](FAQ-Stores.md#getting-getratesasync-was-called-on-coinaverage-error)
 
 ## [Wallet FAQ](FAQ-Wallet.md)
 
