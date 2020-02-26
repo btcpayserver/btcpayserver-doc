@@ -13,6 +13,7 @@ This document covers all the questions and issues related to Server Settings. Th
 * [How to disable U2F and 2FA for a user](FAQ-ServerSettings.md#how-to-disable-u2f-and-2fa-for-a-user)
 * [How to configure SMTP settings in BTCPay?](FAQ-ServerSettings.md#how-to-configure-smtp-settings-in-btcpay)
 * [How to SSH into my BTCPay running on VPS?](FAQ-ServerSettings.md#how-to-ssh-into-my-btcpay-running-on-vps)
+* [Error: Your local changes to the following files would be overwritten by merge](FAQ-ServerSettings.md#error-your-local-changes-to-the-following-files-would-be-overwritten-by-merge)
 
 ## Theme / Customization
 * [How to customize my BTCPay theme style](FAQ-ServerSettings.md#how-to-customize-my-btcpay-theme-style)
@@ -138,11 +139,27 @@ If by any chance you have 2-step verification added to your gmail account, [visi
 Use the test email feature in BTCPay to verify your emails are being sent properly. If you are seeking a more reliable smtp service for your business needs, consider using a dedicated mail service like Mailgun. 
 
 ### How to SSH into my BTCPay running on VPS?
+
 Follow these instructions to connect via [SSH into your virtual machine](https://github.com/JeffVandrewJr/patron/blob/master/SSH.md).
+
+### Error: Your local changes to the following files would be overwritten by merge
+Sometimes, an accidentally edited file can break the update mechanism with the following error:
+
+```bash
+error: Your local changes to the following files would be overwritten by merge:
+```
+To fix the this, [ssh into your server](https://github.com/JeffVandrewJr/patron/blob/master/SSH.md)
+
+```bash
+sudo su -
+cd btcpayserver-docker
+git reset --hard origin/master
+```
 
 ## Theme / Customization
 
 ### How to customize my BTCPay theme style
+
 There are two ways to customize the theme of your BTCPay.
 The easy way is to head over to the **Server Settings > Theme** and follow the instructions on how to [change your Bootstrap theme](/Theme.md#bootstrap-themes).
 
@@ -150,7 +167,8 @@ For advanced theme changes, you'll most likely need to fork  BTCPay repository a
 
 ### How to add Google Analytics code to BTCPay
 
-You should be able to do what you want by injecting your GA code to ~/wwwroot/checkout/js/core.js. Might be the easiest way but you have to redo it every time you update BTCPay to the latest version. Then you won’t have the hassle of forking the code, deploying it manually. Every time there is an update. Just do the docker update and add the same lines to the js file.
+You should be able to do what you want by injecting your GA code to `~/wwwroot/checkout/js/core.js.` Might be the easiest way but you have to redo it every time you update BTCPay to the latest version. Then you won’t have the hassle of forking the code, deploying it manually. Every time there is an update. Just do the docker update and add the same lines to the js file.
+
 ### How to modify the checkout page?
 You can easily change the appearance of your BTCPay's checkout page by following the [instructions here](/Theme.md#checkout-page-theme)
 

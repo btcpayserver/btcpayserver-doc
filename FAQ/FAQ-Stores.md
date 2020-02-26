@@ -14,6 +14,7 @@ This page shows common issues and frequently asked questions about Stores in BTC
  * [How to disable email on invoices?](FAQ-Stores.md#how-to-disable-email-on-invoices)
  * [Can I delete invoices from BTCPay?](FAQ-Stores.md#can-i-delete-invoices-from-btcpay)
  * [How to change the exchange rate provider for invoices?](FAQ-Stores.md#how-to-change-the-exchange-rate-provider-for-invoices)
+ * [Getting GetRatesAsync was called on coinaverage error](FAQ-Stores.md#getting-getratesasync-was-called-on-coinaverage-error)
 
 ## How to create a store in BTCPay?
 
@@ -77,4 +78,15 @@ To disable the email requirement for your store's invoices, go to Stores > Setti
 No, you can't delete invoices in BTCPay. Even if the invoice is expired, invalid, paid (or any other status) you can't delete invoices because they may contain important information. For example, information from the invoice may be needed if the invoice gets paid at a later time. Try [filtering invoices](/Invoices.md#invoice-filtering) instead.
 
 ## How to change the exchange rate provider for invoices?
-The default fiat to cryptocurreny exchange rate provider used in your BTCPay invoices can be modified by navigating to your Store Settings > Rates > Preferred price source. There are several exchange rate provider options available. Each store may use different settings. 
+
+The default fiat to cryptocurreny exchange rate provider used in your BTCPay invoices can be modified by navigating to your Store Settings > Rates > Preferred price source. There are several exchange rate provider options available. Each store may use different settings.
+
+## Getting GetRatesAsync was called on coinaverage error
+
+Coinaverage discontinued their free tier API. As a result the following error may appear:
+
+```
+GetRatesAsync was called on coinaverage when the rate is outdated. It should never happen, let BTCPayServer developers know about this.
+```
+
+The issue can be fixed by [selecting a different rate source provider](FAQ-Stores.md#how-to-change-the-exchange-rate-provider-for-invoices) in Stores > Settings > Rates, or by [updating your BTCPay Server](FAQ-ServerSettings.md#how-to-update-btcpay-server) if you're running verison 1.0.3.146 or older. The update will automatically replace Coinaverage with CoinGecko.
