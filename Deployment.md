@@ -29,7 +29,7 @@ Developer deployments are not recommended for production environments and requir
 |Business<br>(Fast Setup)                  |[3rd Party <br> BTCPay Hosts](ThirdPartyHosting.md)  |[LunaNode <br> Web-Wizard](LunaNodeWebDeployment.md)* |- Low Difficulty<br>- BTCPayServer Support (1)<br>- Lightning Network (2)     |
 |Cost / Month                                     | Free                    | $10 |BTC Accepted  |
 
-**LunaNode Web-Wizard is a VPS solution, deployable from an easy-web interface.*
+**LunaNode Web-Wizard is a VPS solution, deployable from an easy-web interface.**
 
 <br>
 
