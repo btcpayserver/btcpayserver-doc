@@ -16,7 +16,7 @@ Developer deployments are not recommended for production environments and requir
 * [Azure Deployment](AzureDeployment.md) *
 * [Docker Deployment](DockerDeployment.md)
 * [Google Cloud Deployment](GoogleCloudDeployment.md) *
-* [Hardware Deployment](HardwareDeployment.md)
+* [Hardware Deployment](HardwareDeployment.md) *
 * [Third-Party Hosting](ThirdPartyHosting.md)
 * [Manual Deployment](ManualDeployment.md)
 
