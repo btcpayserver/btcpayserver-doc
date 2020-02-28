@@ -12,13 +12,15 @@ Developer deployments are not recommended for production environments and requir
 
 ## What are my options?
 
-* [LunaNode Web Deployment](LunaNodeWebDeployment.md)
-* [Azure Deployment](AzureDeployment.md)
+* [LunaNode Web Deployment](LunaNodeWebDeployment.md) *
+* [Azure Deployment](AzureDeployment.md) *
 * [Docker Deployment](DockerDeployment.md)
-* [Google Cloud Deployment](GoogleCloudDeployment.md)
+* [Google Cloud Deployment](GoogleCloudDeployment.md) *
 * [Hardware Deployment](HardwareDeployment.md)
 * [Third-Party Hosting](ThirdPartyHosting.md)
 * [Manual Deployment](ManualDeployment.md)
+
+(*): Those deployments are using the Docker Deployment under the hood.
 
 ## To chose one that will best suit your needs, consider the following:
 
