@@ -138,7 +138,7 @@ Configure the SSD partition to auto-mount at bootup:
 mkfs.ext4 /dev/sda1
 mkdir /mnt/usb
 UUID="$(sudo blkid -s UUID -o value /dev/sda1)"
-echo "UUID=$UUID /mnt/usb ext4 defaults,noatime,nofail 0" | sudo tee -a /etc/fstab
+echo "UUID=$UUID /mnt/usb ext4 defaults,noatime,nofail 0 0" | sudo tee -a /etc/fstab
 mount -a
 ```
 
@@ -146,7 +146,7 @@ While you’re editing `/etc/fstab` add a RAM filesystem for logs (optional).
 This is also to prevent burning out your SD card too quickly:
 
 ```bash
-echo 'none        /var/log        tmpfs   size=10M,noatime         00' >> /etc/fstab
+echo 'none /var/log tmpfs size=10M,noatime 0 0' >> /etc/fstab
 ```
 
 Mount the SSD partition and create a symlink for docker to use the SSD:
