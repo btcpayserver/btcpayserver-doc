@@ -8,6 +8,7 @@ In laymen words, BTCPay Vault is a separate app, locally hosted on your own PC, 
 
 You can import your wallet and spend incoming funds with a simple confirmation on your device, with your keys never leaving your hardware device, with all funds being validated against your own Bitcoin full node and no data leakage.
 
+[![](img/thumbnails/BTCPayServerVault.png)](https://www.youtube.com/watch?v=nr0UNbz3AoQ)
 
 ### Connecting a wallet to a store
 
