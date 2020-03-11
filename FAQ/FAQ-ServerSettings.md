@@ -140,7 +140,28 @@ Use the test email feature in BTCPay to verify your emails are being sent proper
 
 ### How to SSH into my BTCPay running on VPS?
 
-Follow these instructions to connect via [SSH into your virtual machine](https://github.com/JeffVandrewJr/patron/blob/master/SSH.md).
+Follow these instructions to SSH via domain or IP:
+
+```
+ssh domainuser@example.com (domain)
+or
+ssh domainuser@70.32.86.175 (IP)
+
+domainuser@example.com's passowrd:
+yourPassword
+```
+Press Enter
+
+If this is your first time connecting to the server from this computer, you will see the following output. 
+```
+The authenticity of host 'example.com (70.32.86.175)' can't be established.
+RSA key fingerprint is 3c:6d:5c:99:5d:b5:c6:25:5a:d3:78:8e:d2:f5:7a:01.
+Are you sure you want to continue connecting (yes/no)?
+
+yes
+```
+
+Or see this [LunaNode example](https://github.com/JeffVandrewJr/patron/blob/master/SSH.md) with PuTTY.
 
 ### Error: Your local changes to the following files would be overwritten by merge
 Sometimes, an accidentally edited file can break the update mechanism with the following error:
