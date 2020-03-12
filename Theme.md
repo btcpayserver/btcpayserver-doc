@@ -109,57 +109,579 @@ Server admins can upload their .css file to [File Storage](FAQ/FAQ-ServerSetting
 
 Below are examples of businesses that use custom-made checkout themes.
 
-### [Wears My Liberty](https://wearsmyliberty.com)
+### [Andreas M. Antonopolous](https://aantonop.com/)
 
-![WearMyLiberty](img/Theme-WearMyLiberty.png)
-
-CSS file:
-```css
-.modal.page {background-color: #efefef;}
-.top-header .header {height: 80px;}
-.header__icon__img {height:60px;}
-.top-header .timer-row {padding: 4px 14px; position: relative; transition: background 1s ease;}
-.top-header {max-height: 120px; transition: all .2s ease-out;}
-.top-header {background-color: #000;}
-.top-header .timer-row__progress-bar {background:#ce0000;}
-.top-header .timer-row {background: #a0a0a0;}
-.payment-tabs__slider {background: #aa0303;	}
-.separatorGem {background: #aa0303;}
-.action-button {color: #fff; background-color: #aa0303;border-color: #700000;}
-.action-button:hover {background-color: #ef8022;}
-.action-button:focus, .action-button.focus {color: #fff;background-color: #aa0303;
-    border-color: #aa0303;}
-.action-button:active, .action-button.active, .open>.action-button.dropdown-toggle {    color: #fff;    background-color: #3aa821;    border-color: #aa0303;}
-.action-button:active:hover, .action-button:active:focus, .action-button:active.focus, .action-button.active:hover, .action-button.active:focus, .action-button.active.focus, .open>.action-button.dropdown-toggle:hover, .open>.action-button.dropdown-toggle:focus, .open>.action-button.dropdown-toggle.focus {    color: #fff;    background-color: #3aa821;    border-color: #aa0303;}
-```
-
-### [Coincards](https://coincards.com/)
-
-![CoinCards Logo](img/Theme-Coincards.png)
+![Aantonop checkout](img/Theme-AantonopShop.png)\
+_**Made by:** [@artdesignbySF](https://twitter.com/artdesignbySF) / <ArtDesignBySF@protonmail.com>_
+<details>
+  <summary>Click to view CSS</summary>
 
 CSS file:
 ```css
-.top-header {background-color: #fff;}
-.top-header .timer-row__progress-bar {background:#ef8022;}
-.top-header .timer-row {background: #ffc313;}
-.close-icon {color:#000;}
-.payment-tabs__slider {background: #ef8022;     }
-.separatorGem {background: #ef8022;}
-.action-button {color: #fff; background-color: #ef8022;border-color: #ef8022;}
-.action-button:hover {background-color: #ffc313;}
-.action-button:focus, .action-button.focus {color: #fff;background-color: #ef8022;
-    border-color: #ef8022;}
-.action-button:active, .action-button.active, .open>.action-button.dropdown-toggle {    color: #fff;    background-color: #ef8022;    border-color: #ef8022;}
-.action-button:active:hover, .action-button:active:focus, .action-button:active.focus, .action-button.active:hover, .action-button.active:focus, .action-button.active.focus, .open>.action-button.dropdown-toggle:hover, .open>.action-button.dropdown-toggle:focus, .open>.action-button.dropdown-toggle.focus {    color: #fff;    background-color: #ef8022;    border-color: #ef8022;}
-.btnGroupLnd button {border: solid 1px #ef8022;}
-.btnGroupLnd button.active {background-color: #ef8022; border-color: #ef8022;}
-.btnGroupLnd button:hover {background-color:#ffc313;}
-.btnGroupLnd button.active:hover {background-color:#ef8022;}
-```
+/*  ===========================CREDITS=========================== */
+/*  Custom BTCpay Server CSS template made by @artdesignbySF.   */
+/*  PLEASE CONSIDER DONATING BITCOIN IF YOU FIND          */
+/*  THIS FILE USEFULL: 3LBQbv72rdSrLmFF66p9gMPDuPMcKL7UL1     */
+/*  Follow @artdesignbySF on Twitter                */
+/*  Contact via: ArtDesignBySF@protonmail.com           */
+/*  =========================END CREDITS========================= */
+
+/*  =========================DISCLAIMER========================== */
+/*  Might not be the most efficient or correct way of implementing  */
+/*  CSS. I am not responsable for breaking your website if things */
+/*  go wrong. PEACE / LOVE / BITCOIN                */
+/*  =======================END DISCLAIMER======================== */
+
+/*======BACKGROUND COLOR======*/
+html {
+    background-color: #fff !important;  /*===BACKGROUND COLOR===*/
+}
+
+.modal.page {
+    background-color: #fff;   /*===BACKGROUND COLOR===*/
+}
+/*=============================*/
+
+/*=======OUTLINE SETTINGS=======*/
+.modal-content{
+  box-shadow: none; /*===OUTSIDE SHADOW===*/
+  outline: 1px solid #000000; /*===OUTLINE===*/
+  border-radius: 0px;   /*===ROUNDED CORNERS===*/
+}
+/*=============================*/
+
+/*=======HEADER SETTINGS=======*/
+.top-header {
+    background-image: linear-gradient(to right, #fff, #fff);  /*===HEADER BACKGROUND GRADIENT, CAN BE CHANGED TO SINGLE COLOR. UPLOAD (TRANSPARANT) PNG WITH HEADER LOGO WITH FOLLOWING DIMENTSIONS 720X120PX ===*/
+  color: #e1e1e1;
+  border-radius:0px;  /*===ROUNDED CORNER SETTINGS===*/
+}
+
+.top-header .timer-row__progress-bar {
+  border-top: 1px solid #000000;
+    background: #000000;    /*===PROGRESS BAR COLOR===*/
+}
+
+.top-header .timer-row {
+    border-top: 1px solid #000000;  /*===COLORED LINE ABOVE PROGRESS BAR===*/
+  border-bottom: 1px solid #e1e1e1; /*===COLORED LINE ABOVE PROGRESS BAR===*/
+  background-image: linear-gradient(to right, #7a7a7a, #7a7a7a);  /*===PROGRESS BAR BACKGROUND COLOR===*/
+}
+
+.header__icon__img {
+  display: block;
+  width:360px;  /*===HEADER DIMENSIONS===*/
+  height:60px;  /*===HEADER DIMENSIONS===*/
+  margin-left:-10px;  /*===HEADER POSITION CORRECTION===*/
+  margin-top:-10px;   /*===HEADER POSITION CORRECTION===*/
+}
+/*============================*/
+
+/*=====PAY WITH / AMOUNTS=====*/
+.line-items {
+    background-color: #000000;  /*===BACKGROUND COLOR===*/
+    color: #e1e1e1 !important;    /*===TEXT COLOR===*/
+  padding-top: 15px;
+    padding-bottom: 10px;
+}
+
+.buyerTotalLine {
+    border-top: 1px solid #e1e1e1;
+    background-color: #252525;
+    color: #e1e1e1;
+  padding-top: 15px;
+    padding-bottom: 12px;
+}
+/*==========================*/
+
+/*=======PAYMENT TABS=======*/
+.payment-tabs__slider {
+  background: #ec912f;  /*===SLIDER COLOR===*/
+}
+
+.payment-tabs {
+    background-color: #252525;  /*===BACKGROUND COLOR===*/
+    border-top: 1px solid #ec912f;  /*===COLORED LINE ABOVE PAYMENT TABS===*/
+}
+/*===========================*/
+
+/*===OPEN IN WALLET BUTTON===*/
+.action-button {
+    color: #e1e1e1 !important;
+    background-image: linear-gradient(to top, #3f3f3f, #7a7a7a);    /*===BUTTON BACKGROUND COLOR GRADIENT===*/
+  border-color:#e1e1e1;   /*===BUTTON BORDER COLOR===*/
+  box-shadow: 0px 0px 0px -3px #000000;   /*===DROP SHADOW SETTINGS===*/
+  border-radius: 0px;   /*===ROUNDED CORNER SETTINGS===*/
+}
+
+.action-button:hover {
+    background-image: linear-gradient(to bottom, #3f3f3f, #000000); /*===HOVER BUTTON BACKGROUND COLOR GRADIENT===*/
+  border-color:#e1e1e1; /*===BUTTON BORDER COLOR===*/
+}
+/*============================*/
+
+/*===BOLT/NODE INFO BUTTONS===*/
+.btnGroupLnd {
+    box-shadow: 0px 0px 0px 0px #000000;  /*===DROP SHADOW SETTINGS===*/
+  background-image: linear-gradient(to top, #7a7a7a, #7a7a7a);  /*===BUTTON BACKGROUND COLOR GRADIENT===*/
+  background-color:#000000; /*===BUTTON BACKGROUND COLOR (IF NO GRADIENT IS WANTED DELETE LINE ABOVE THIS)===*/
+  border-color:#000000; /*===BUTTON BORDER COLOR===*/
+  border-radius: 0px; /*===ROUNDED CORNER SETTINGS===*/
+}
+
+.btnGroupLnd button {
+  background-image:  linear-gradient(to top, #3f3f3f, #7a7a7a); /*===BUTTON BACKGROUND COLOR GRADIENT===*/
+  background-color:#000000; /*===BUTTON BACKGROUND COLOR (IF NO GRADIENT IS WANTED DELETE LINE ABOVE THIS)===*/
+  border-color: #000000; /*===BUTTON BORDER COLOR===*/
+  border-radius: 0px; /*===ROUNDED CORNER SETTINGS===*/
+}
+
+.btnGroupLnd button.active {
+  background-image:  linear-gradient(to bottom, #3f3f3f, #7a7a7a);  /*===ACTIVE BUTTON BACKGROUND COLOR GRADIENT===*/
+  background-color:#000000; /*===BUTTON BACKGROUND COLOR (IF NO GRADIENT IS WANTED DELETE LINE ABOVE THIS)===*/
+  border-color: #000000;    /*===BUTTON BORDER COLOR===*/
+  border-radius: 0px;   /*===ROUNDED CORNER SETTINGS===*/
+}
+/*===========================*/
+
+/*=====CURRENCY DROPDOWN=====*/
+.payment__currencies {
+  border-radius:0px;  /*===ROUNDED CORNER SETTINGS===*/
+}
+
+.currency-selection {
+    background-color: #252525;  /*===BACKGROUND COLOR===*/
+    border-bottom: 0px solid #e1e1e1;
+    color: #e1e1e1; /*===TEXT COLOR===*/
+    padding-top: 15px;
+    padding-bottom: 10px;
+    height: auto;
+}
+
+.vex.vex-theme-btcpay .vex-content  {
+  padding: 1px;
+  border-radius:0px; /*===ROUNDED CORNER SETTINGS===*/
+  box-shadow: 0px 0px 0px 0px #000000; /*===DROP SHADOW SETTINGS===*/
+}
+
+.vexmenu  {
+  background-color:#252525; /*===BACKGROUND COLOR===*/
+}
+
+.vexmenuitem:hover {
+  background: #7a7a7a;  /*===MENU BACKGROUND COLOR===*/
+}
+
+.vexmenuitem > a span {
+  color: #e1e1e1; /*===MENU BACKGROUND COLOR===*/
+}
+
+.payment__currencies {
+  background: #7a7a7a; /*===MENU HOVER HIGHLIGHT COLOR===*/
+}
+
+.payment__currencies:hover {
+  background: #252525; /*===MENU HOVER HIGHLIGHT COLOR===*/
+  border-color: #e1e1e1;
+}
+/*===========================*/
+
+/*===QR AND QR BACKGROUND===*/
+.invoice {
+    background-color: #000000;  /*===MENU BACKGROUND COLOR===*/
+  border-radius: 0px; /*===ROUNDED CORNER SETTINGS===*/
+} 
+
+.payment-box {
+  height:425px; /*===SIZE IMPORTANT BECAUSE HEIGHT LIGHTNING QR CODE + OUTLINE===*/
+}
+
+.payment__scan {
+  width:276px;
+  height:276px;
+  margin-left:auto; 
+  margin-right:auto;
+  margin-bottom:5px;
+  margin-top:0px;
+  border: 10px solid #f5f5f7; /*===QR CODE BORDER SIZE/COLOR (LEAVE AS IS FOR QUICK SCANNING)===*/
+}
+
+.recommended-fee {
+  margin-top:10px;
+  padding-top:3px;
+  height:25px;
+  background: #000000;
+  color:#e1e1e1;
+}
+
+.expired__body {
+    color: #000000;
+}
+/*==========================*/
+
+/*======COLOR OF LINKS======*/
+a {
+  color: #e1e1e1 !important;  /*===LINK COLOR===*/
+}
+/*==========================*/
+
+/*==="COLOR OF SOME TEXTS===*/
+span {
+  color:#e1e1e1; /*===TEXT COLOR===*/
+}
+/*=========================*/
+
+/*=====LANGUAGE SELECT=====*/
+#prettydropdown-DefaultLang ul {
+  color: #e1e1e1 !important; /* ===TEXT COLOR=== */
+  background-color: #252525 !important;   /*===BACKGROUND COLOR===*/
+  border-color: #000000; 
+  border-radius: 0px;
+}
+
+.checked: {
+  color:#000000;
+}
+/*===========================*/
+
+/*====INSTRUCTIONAL TEXTS====*/
+.manual__step-one__header {
+    color: #e1e1e1; /*===TEXT COLOR===*/
+  opacity: 1;
+}
+.content-faded, .manual__step-one__instructions, .manual__step-two__instructions {
+    color: #e1e1e1; /*===TEXT COLOR===*/
+  opacity: 1;
+}
+/*===========================*/
+
+/*====COPY INFO BOX/TEXTS====*/
+.copyBox {
+  background-color:#252525; 
+  border-color:#252525;
+}
+
+.copyAmountText {
+  color: #e1e1e1; /*===TEXT COLOR===*/
+}
+
+.copySectionBox label {
+  color: #e1e1e1; /*===TEXT COLOR===*/
+  opacity: 1;
+}
+
+.separatorGem {
+  background:#ec912f; /*===GEM ICON COLOR===*/
+}
+/*===========================*/
+
+/*====PAYMENT SUCCES PAGE====*/
+/*
+.success-block {
+  background-image: linear-gradient(to top, #252525, #f5f5f7); /*===GRADIENT BACKGROUND===*//*
+  height:275px;
+}
+*/
+.success-message {
+  color: #e1e1e1; /*  ===TEXT COLOR=== */
+}
+/*===========================*/
+
+/*  ===========================CREDITS=========================== */
+/*  Custom BTCpay Server CSS template made by @artdesignbySF.   */
+/*  PLEASE CONSIDER DONATING BITCOIN IF YOU FIND          */
+/*  THIS FILE USEFULL: 3LBQbv72rdSrLmFF66p9gMPDuPMcKL7UL1     */
+/*  Follow @artdesignbySF on Twitter                */
+/*  Contact via: ArtDesignBySF@protonmail.com           */
+/*  =========================END CREDITS========================= */
+
+/*  =========================DISCLAIMER========================== */
+/*  Might not be the most efficient or correct way of implementing  */
+/*  CSS. I am not responsable for breaking your website if things */
+/*  go wrong. PEACE / LOVE / BITCOIN                */
+/*  =======================END DISCLAIMER======================== */
+````
+</details>
+
+---
+
+### [Bitcoin Fortune Cookie](https://bitcoinfortunecookie.com/)
+
+![Bitcoin Fortune Cookie checkout](img/Theme-BitcoinFortuneCookie.png)\
+_**Made by:** [@artdesignbySF](https://twitter.com/artdesignbySF) / <ArtDesignBySF@protonmail.com>_
+<details>
+  <summary>Click to view CSS</summary>
+
+CSS file:
+```css
+/*  ===========================CREDITS=========================== */
+/*  Custom BTCpay Server CSS template made by @artdesignbySF.   */
+/*  PLEASE CONSIDER DONATING BITCOIN IF YOU FIND          */
+/*  THIS FILE USEFULL: 3LBQbv72rdSrLmFF66p9gMPDuPMcKL7UL1     */
+/*  Follow @artdesignbySF on Twitter                */
+/*  Contact via: ArtDesignBySF@protonmail.com           */
+/*  =========================END CREDITS========================= */
+
+/*  =========================DISCLAIMER========================== */
+/*  Might not be the most efficient or correct way of implementing  */
+/*  CSS. I am not responsable for breaking your website if things */
+/*  go wrong. PEACE / LOVE / BITCOIN                */
+/*  =======================END DISCLAIMER======================== */
+
+/*======BACKGROUND COLOR======*/
+html {
+    background-color: #00c3ff !important;   /*===BACKGROUND COLOR===*/
+}
+
+.modal.page {
+    background-color: #00c3ff;  /*===BACKGROUND COLOR===*/
+}
+/*=============================*/
+
+/*=======HEADER SETTINGS=======*/
+.top-header {
+    background-color: #408cca;  /*===HEADER BACKGROUND COLOR===*/
+  border-radius:6px;  /*===ROUNDED CORNER SETTINGS===*/
+}
+
+.top-header .timer-row__progress-bar {
+  border-top: 1px solid #00c3ff;
+    border-bottom: 1px solid #00c3ff;
+    background: #00c3ff;    /*===PROGRESS BAR COLOR===*/
+}
+
+.top-header .timer-row {
+    border-top: 1px solid #00c3ff;  /*===COLORED LINE ABOVE PROGRESS BAR===*/
+  border-bottom: 1px solid #00c3ff; /*===COLORED LINE ABOVE PROGRESS BAR===*/
+    background: #27384b;  /*===PROGRESS BAR BACKGROUND COLOR===*/
+}
+
+.header__icon__img {
+  display: block;
+  width:;   /*===HEADER DIMENSIONS===*/
+  height:;  /*===HEADER DIMENSIONS===*/
+  margin-left: 50%;   /*===HEADER POSITION CORRECTION===*/
+  margin-top: auto;   /*===HEADER POSITION CORRECTION===*/
+}
+/*============================*/
+
+/*=====PAY WITH / AMOUNTS=====*/
+.line-items {
+    background-color: #111316;  /*===BACKGROUND COLOR===*/
+    color: #fff !important;   /*===TEXT COLOR===*/
+  padding-top: 15px;
+    padding-bottom: 10px;
+    border-top: 1px solid #00c3ff !important;
+  border-bottom: 0px solid #00c3ff;
+}
+
+.buyerTotalLine {
+    border-top: 1px solid #00c3ff;
+    background-color: #27384b;
+    color: #fff;
+  padding-top: 15px;
+    padding-bottom: 12px;
+}
+/*==========================*/
+
+/*=======PAYMENT TABS=======*/
+.payment-tabs__slider {
+  background: #00c3ff;  /*===SLIDER COLOR===*/
+}
+
+.payment-tabs {
+    background-color: #27384b;  /*===BACKGROUND COLOR===*/
+  color: #fff;
+    border-top: 1px solid #00c3ff;  /*===COLORED LINE ABOVE PAYMENT TABS===*/
+  border-bottom: 1px solid #00c3ff; /*===COLORED LINE BELOW PAYMENT TABS===*/
+}
+/*===========================*/
+
+/*===OPEN IN WALLET BUTTON===*/
+.action-button {
+    color: #fff !important;
+    background-image: linear-gradient(to bottom, #00c3ff, #408cca);   /*===BUTTON BACKGROUND COLOR GRADIENT===*/
+  border-color:#fff;  /*===BUTTON BORDER COLOR===*/
+  box-shadow: 0px 0px 15px -3px #000000;  /*===DROP SHADOW SETTINGS===*/
+  border-radius: 6px;   /*===ROUNDED CORNER SETTINGS===*/
+}
+
+.action-button:hover {
+    background-image: linear-gradient(to top, #00c3ff, #408cca);  /*===HOVER BUTTON BACKGROUND COLOR GRADIENT===*/
+  border-color:#fff; /*===BUTTON BORDER COLOR===*/
+}
+/*============================*/
+
+/*===BOLT/NODE INFO BUTTONS===*/
+.btnGroupLnd {
+    box-shadow: 0px 0px 15px -3px #000000;  /*===DROP SHADOW SETTINGS===*/
+  background-image: linear-gradient(to right, #00c3ff, #408cca);  /*===BUTTON BACKGROUND COLOR GRADIENT===*/
+  background-color:#00c3ff; /*===BUTTON BACKGROUND COLOR (IF NO GRADIENT IS WANTED DELETE LINE ABOVE THIS)===*/
+  border-color:#fff;  /*===BUTTON BORDER COLOR===*/
+  border-radius: 6px; /*===ROUNDED CORNER SETTINGS===*/
+}
+
+.btnGroupLnd button {
+  background-image: linear-gradient(to right, #00c3ff, #408cca); /*===BUTTON BACKGROUND COLOR GRADIENT===*/
+  background-color:#00c3ff; /*===BUTTON BACKGROUND COLOR (IF NO GRADIENT IS WANTED DELETE LINE ABOVE THIS)===*/
+  border-color: #fff; /*===BUTTON BORDER COLOR===*/
+}
+
+.btnGroupLnd button.active {
+  background-image: linear-gradient(to right, #00c3ff, #408cca);  /*===ACTIVE BUTTON BACKGROUND COLOR GRADIENT===*/
+  background-color:#00c3ff; /*===BUTTON BACKGROUND COLOR (IF NO GRADIENT IS WANTED DELETE LINE ABOVE THIS)===*/
+  border-color: #fff;   /*===BUTTON BORDER COLOR===*/
+}
+/*===========================*/
+
+/*=====CURRENCY DROPDOWN=====*/
+.payment__currencies {
+  border-radius:6px;  /*===ROUNDED CORNER SETTINGS===*/
+  background-color: #27384b; /*===BACKGROUND COLOR DROPDOWN MENU===*/
+}
+
+.payment__currencies:hover {
+  background: #00c3ff; /*===MENU HOVER HIGHLIGHT COLOR===*/
+}
+
+.currency-selection {
+    background-color: #408cca;  /*===BACKGROUND COLOR===*/
+    border-bottom: 0px solid #00c3ff;
+    color: #fff;  /*===TEXT COLOR===*/
+    padding-top: 15px;
+    padding-bottom: 10px;
+    height: auto;
+}
+
+.vex.vex-theme-btcpay .vex-content  {
+  padding: 1px;
+  border-radius:0px; /*===ROUNDED CORNER SETTINGS===*/
+  box-shadow: 0px 0px 15px -3px #000000; /*===DROP SHADOW SETTINGS===*/
+}
+
+.vexmenu  {
+  background-color:#00c3ff; /*===BACKGROUND COLOR===*/
+}
+
+.vexmenuitem:hover {
+  background: #fff; /*===MENU BACKGROUND COLOR===*/
+}
+/*===========================*/
+
+/*===QR AND QR BACKGROUND===*/
+.invoice {
+    background-color: #408cca;  /*===MENU BACKGROUND COLOR===*/
+  border-radius: 6px; /*===ROUNDED CORNER SETTINGS===*/
+} 
+
+.payment-box {
+  height:420px; /*===SIZE IMPORTANT BECAUSE HEIGHT LIGHTNING QR CODE + OUTLINE===*/
+}
+
+.payment__scan {
+  width:276px;
+  height:276px;
+  margin-left:auto; 
+  margin-right:auto;
+  margin-bottom:5px;
+  margin-top:0px;
+  border: 10px solid #f5f5f7; /*===QR CODE BORDER SIZE/COLOR (LEAVE AS IS FOR QUICK SCANNING)===*/
+}
+
+.recommended-fee {
+  margin-top:15px;
+}
+
+.expired__body {
+    color: #fff;
+}
+/*==========================*/
+
+/*======COLOR OF LINKS======*/
+a {
+  color: #27384b !important;  /*===LINK COLOR===*/
+}
+/*==========================*/
+
+/*==="COLOR OF SOME TEXTS===*/
+span {
+  color:#fff; /*===TEXT COLOR===*/
+}
+/*=========================*/
+
+/*=====LANGUAGE SELECT=====*/
+#prettydropdown-DefaultLang ul {
+  color: #FFF !important; /*  ===TEXT COLOR=== */
+  background-color: #15171c !important;   /*===BACKGROUND COLOR===*/
+}
+/*===========================*/
+
+/*====INSTRUCTIONAL TEXTS====*/
+.manual__step-one__header {
+    color: #fff;  /*===TEXT COLOR===*/
+  opacity: 1;
+}
+.content-faded, .manual__step-one__instructions, .manual__step-two__instructions {
+    color: #fff;  /*===TEXT COLOR===*/
+  opacity: 1;
+}
+/*===========================*/
+
+/*====COPY INFO BOX/TEXTS====*/
+.copyBox {
+  background-color:#27384b; 
+  border-color:#00c3ff;
+}
+
+.copyAmountText {
+  color: #fff;  /*===TEXT COLOR===*/
+}
+
+.copySectionBox label {
+  color: #fff;  /*===TEXT COLOR===*/
+  opacity: 1;
+}
+
+.separatorGem {
+  background:#408cca; /*===GEM ICON COLOR===*/
+}
+/*===========================*/
+
+/*====PAYMENT SUCCES PAGE====*/
+/*
+.success-block {
+  background-image: linear-gradient(to bottom, #fbff0000, #fff700f2); /*===GRADIENT BACKGROUND===*//*
+}
+*/
+.success-message {
+  color: #fff; /* ===TEXT COLOR=== */
+}
+/*===========================*/
+
+/*  ===========================CREDITS=========================== */
+/*  Custom BTCpay Server CSS template made by @artdesignbySF.   */
+/*  PLEASE CONSIDER DONATING BITCOIN IF YOU FIND          */
+/*  THIS FILE USEFULL: 3LBQbv72rdSrLmFF66p9gMPDuPMcKL7UL1     */
+/*  Follow @artdesignbySF on Twitter                */
+/*  Contact via: ArtDesignBySF@protonmail.com           */
+/*  =========================END CREDITS========================= */
+
+/*  =========================DISCLAIMER========================== */
+/*  Might not be the most efficient or correct way of implementing  */
+/*  CSS. I am not responsable for breaking your website if things */
+/*  go wrong. PEACE / LOVE / BITCOIN                */
+/*  =======================END DISCLAIMER======================== */
+````
+</details>
+
+---
 
 ### [Blockstream](https://blockstream.com/)
 
-![Blockstream](img/Theme-Blockstream.png)
+![Blockstream checkout](img/Theme-Blockstream.png)
+
+<details>
+  <summary>Click to view CSS</summary>
 
 CSS file:
 ```css
@@ -268,9 +790,317 @@ canvas {
     margin-top: 10px;
 }
 ```
+</details>
+
+---
+
+### [Coincards](https://coincards.com/)
+
+![CoinCards checkout](img/Theme-Coincards.png)
+
+<details>
+  <summary>Click to view CSS</summary>
+
+CSS file:
+```css
+.top-header {background-color: #fff;}
+.top-header .timer-row__progress-bar {background:#ef8022;}
+.top-header .timer-row {background: #ffc313;}
+.close-icon {color:#000;}
+.payment-tabs__slider {background: #ef8022;     }
+.separatorGem {background: #ef8022;}
+.action-button {color: #fff; background-color: #ef8022;border-color: #ef8022;}
+.action-button:hover {background-color: #ffc313;}
+.action-button:focus, .action-button.focus {color: #fff;background-color: #ef8022;
+    border-color: #ef8022;}
+.action-button:active, .action-button.active, .open>.action-button.dropdown-toggle {    color: #fff;    background-color: #ef8022;    border-color: #ef8022;}
+.action-button:active:hover, .action-button:active:focus, .action-button:active.focus, .action-button.active:hover, .action-button.active:focus, .action-button.active.focus, .open>.action-button.dropdown-toggle:hover, .open>.action-button.dropdown-toggle:focus, .open>.action-button.dropdown-toggle.focus {    color: #fff;    background-color: #ef8022;    border-color: #ef8022;}
+.btnGroupLnd button {border: solid 1px #ef8022;}
+.btnGroupLnd button.active {background-color: #ef8022; border-color: #ef8022;}
+.btnGroupLnd button:hover {background-color:#ffc313;}
+.btnGroupLnd button.active:hover {background-color:#ef8022;}
+```
+</details>
+
+---
+
+### [CryptoCloaks](https://www.cryptocloaks.com/)
+
+![CryptoCloak checkout](img/Theme-CryptoCloaks.png)\
+_**Made by:** [@artdesignbySF](https://twitter.com/artdesignbySF) / <ArtDesignBySF@protonmail.com>_
+<details>
+  <summary>Click to view CSS</summary>
+
+CSS file:
+```css
+/*  ===========================CREDITS=========================== */
+/*  Custom BTCpay Server CSS template made by @artdesignbySF.   */
+/*  PLEASE CONSIDER DONATING BITCOIN IF YOU FIND          */
+/*  THIS FILE USEFULL: 3LBQbv72rdSrLmFF66p9gMPDuPMcKL7UL1     */
+/*  Follow @artdesignbySF on Twitter                */
+/*  Contact via: ArtDesignBySF@protonmail.com           */
+/*  =========================END CREDITS========================= */
+
+/*  =========================DISCLAIMER========================== */
+/*  Might not be the most efficient or correct way of implementing  */
+/*  CSS. I am not responsable for breaking your website if things */
+/*  go wrong. PEACE / LOVE / BITCOIN                */
+/*  =======================END DISCLAIMER======================== */
+
+/*======BACKGROUND COLOR======*/
+html {
+  background-color: #790099 !important;   /*===BACKGROUND COLOR===*/
+}
+
+.modal.page {
+    background-color: #790099;  /*===BACKGROUND COLOR===*/
+}
+/*=============================*/
+
+/*=======HEADER SETTINGS=======*/
+.top-header {
+    background-image: linear-gradient(to right, #790099, #cd00b9);  /*===HEADER BACKGROUND GRADIENT, CAN BE CHANGED TO SINGLE COLOR. UPLOAD (TRANSPARANT) PNG WITH HEADER LOGO WITH FOLLOWING DIMENTSIONS 720X120PX ===*/
+  border-radius:0px;  /*===ROUNDED CORNER SETTINGS===*/
+}
+
+.top-header .timer-row__progress-bar {
+  border-top: 1px solid #790099;
+    border-bottom: 1px solid #790099;
+    background: #790099;    /*===PROGRESS BAR COLOR===*/
+}
+
+.top-header .timer-row {
+    border-top: 1px solid #fff;   /*===COLORED LINE ABOVE PROGRESS BAR===*/
+  border-bottom: 1px solid #fff;  /*===COLORED LINE ABOVE PROGRESS BAR===*/
+    background: #481b5c;  /*===PROGRESS BAR BACKGROUND COLOR===*/
+}
+
+.header__icon__img {
+  display: block;
+  width:360px;  /*===HEADER DIMENSIONS===*/
+  height:60px;  /*===HEADER DIMENSIONS===*/
+  margin-left:-10px;  /*===HEADER POSITION CORRECTION===*/
+  margin-top:-10px;   /*===HEADER POSITION CORRECTION===*/
+}
+/*============================*/
+
+/*=====PAY WITH / AMOUNTS=====*/
+.line-items {
+    background-color: #09182e;  /*===BACKGROUND COLOR===*/
+    color: #fff !important;   /*===TEXT COLOR===*/
+  padding-top: 15px;
+    padding-bottom: 10px;
+    border-top: 1px solid #fff !important;
+  border-bottom: 0px solid #fff;
+}
+
+.buyerTotalLine {
+    border-top: 1px solid #fff;
+    background-color: #481b5c;
+    color: #fff;
+  padding-top: 15px;
+    padding-bottom: 12px;
+}
+/*==========================*/
+
+/*=======PAYMENT TABS=======*/
+.payment-tabs__slider {
+  background: #790099;  /*===SLIDER COLOR===*/
+}
+
+.payment-tabs {
+    background-color: #481b5c;  /*===BACKGROUND COLOR===*/
+    border-top: 1px solid #fff; /*===COLORED LINE ABOVE PAYMENT TABS===*/
+  border-bottom: 1px solid #09182e; /*===COLORED LINE BELOW PAYMENT TABS===*/
+}
+/*===========================*/
+
+/*===OPEN IN WALLET BUTTON===*/
+.action-button {
+    color: #fff !important;
+    background-image: linear-gradient(to bottom, #790099, #cd00b9);   /*===BUTTON BACKGROUND COLOR GRADIENT===*/
+  border-color:#fff;  /*===BUTTON BORDER COLOR===*/
+  box-shadow: 0px 0px 15px -3px #000000;  /*===DROP SHADOW SETTINGS===*/
+  border-radius: 0px;   /*===ROUNDED CORNER SETTINGS===*/
+}
+
+.action-button:hover {
+    background-image: linear-gradient(to top, #790099, #cd00b9);  /*===HOVER BUTTON BACKGROUND COLOR GRADIENT===*/
+  border-color:#fff; /*===BUTTON BORDER COLOR===*/
+}
+/*============================*/
+
+/*===BOLT/NODE INFO BUTTONS===*/
+.btnGroupLnd {
+    box-shadow: 0px 0px 15px -3px #000000;  /*===DROP SHADOW SETTINGS===*/
+  background-image: linear-gradient(to right, #790099, #cd00b9);  /*===BUTTON BACKGROUND COLOR GRADIENT===*/
+  background-color:#790099; /*===BUTTON BACKGROUND COLOR (IF NO GRADIENT IS WANTED DELETE LINE ABOVE THIS)===*/
+  border-color:#fff;  /*===BUTTON BORDER COLOR===*/
+  border-radius: 0px; /*===ROUNDED CORNER SETTINGS===*/
+}
+
+.btnGroupLnd button {
+  background-image:  linear-gradient(to right, #790099, #cd00b9); /*===BUTTON BACKGROUND COLOR GRADIENT===*/
+  background-color:#790099; /*===BUTTON BACKGROUND COLOR (IF NO GRADIENT IS WANTED DELETE LINE ABOVE THIS)===*/
+  border-color: #fff; /*===BUTTON BORDER COLOR===*/
+  border-radius: 0px; /*===ROUNDED CORNER SETTINGS===*/
+}
+
+.btnGroupLnd button.active {
+  background-image:  linear-gradient(to left, #790099, #cd00b9);  /*===ACTIVE BUTTON BACKGROUND COLOR GRADIENT===*/
+  background-color:#790099; /*===BUTTON BACKGROUND COLOR (IF NO GRADIENT IS WANTED DELETE LINE ABOVE THIS)===*/
+  border-color: #fff;   /*===BUTTON BORDER COLOR===*/
+  border-radius: 0px;   /*===ROUNDED CORNER SETTINGS===*/
+}
+/*===========================*/
+
+/*=====CURRENCY DROPDOWN=====*/
+.payment__currencies {
+  border-radius:0px;  /*===ROUNDED CORNER SETTINGS===*/
+}
+
+.currency-selection {
+    background-color: #481b5c;  /*===BACKGROUND COLOR===*/
+    border-bottom: 0px solid #fff;
+    color: #fff;  /*===TEXT COLOR===*/
+    padding-top: 15px;
+    padding-bottom: 10px;
+    height: auto;
+}
+
+.vex.vex-theme-btcpay .vex-content  {
+  padding: 1px;
+  border-radius:0px; /*===ROUNDED CORNER SETTINGS===*/
+  box-shadow: 0px 0px 15px -3px #000000; /*===DROP SHADOW SETTINGS===*/
+}
+
+.vexmenu  {
+  background-color:#15171c; /*===BACKGROUND COLOR===*/
+}
+
+.vexmenuitem:hover {
+  background: #481b5c;  /*===MENU BACKGROUND COLOR===*/
+}
+
+.payment__currencies:hover {
+  background: #15171c; /*===MENU HOVER HIGHLIGHT COLOR===*/
+}
+/*===========================*/
+
+/*===QR AND QR BACKGROUND===*/
+.invoice {
+    background-color: #cd00b9;  /*===MENU BACKGROUND COLOR===*/
+  border-radius: 0px; /*===ROUNDED CORNER SETTINGS===*/
+} 
+
+.payment-box {
+  height:425px; /*===SIZE IMPORTANT BECAUSE HEIGHT LIGHTNING QR CODE + OUTLINE===*/
+}
+
+.payment__scan {
+  width:276px;
+  height:276px;
+  margin-left:auto; 
+  margin-right:auto;
+  margin-bottom:5px;
+  margin-top:0px;
+  border: 10px solid #f5f5f7; /*===QR CODE BORDER SIZE/COLOR (LEAVE AS IS FOR QUICK SCANNING)===*/
+}
+
+.recommended-fee {
+  margin-top:15px;
+}
+
+.expired__body {
+    color: #000000;
+}
+/*==========================*/
+
+/*======COLOR OF LINKS======*/
+a {
+  color: #fff !important;   /*===LINK COLOR===*/
+}
+/*==========================*/
+
+/*==="COLOR OF SOME TEXTS===*/
+span {
+  color:#fff; /*===TEXT COLOR===*/
+}
+/*=========================*/
+
+/*=====LANGUAGE SELECT=====*/
+#prettydropdown-DefaultLang ul {
+  color: #FFF !important; /*  ===TEXT COLOR=== */
+  background-color: #15171c !important;   /*===BACKGROUND COLOR===*/
+}
+/*===========================*/
+
+/*====INSTRUCTIONAL TEXTS====*/
+.manual__step-one__header {
+    color: #fff;  /*===TEXT COLOR===*/
+  opacity: 1;
+}
+.content-faded, .manual__step-one__instructions, .manual__step-two__instructions {
+    color: #fff;  /*===TEXT COLOR===*/
+  opacity: 1;
+}
+/*===========================*/
+
+/*====COPY INFO BOX/TEXTS====*/
+.copyBox {
+  background-color:#481b5c; 
+  border-color:#481b5c;
+}
+
+.copyAmountText {
+  color: #fff;  /*===TEXT COLOR===*/
+}
+
+.copySectionBox label {
+  color: #fff;  /*===TEXT COLOR===*/
+  opacity: 1;
+}
+
+.separatorGem {
+  background:#790099; /*===GEM ICON COLOR===*/
+}
+/*===========================*/
+
+/*====PAYMENT SUCCES PAGE====*/
+/*
+.success-block {
+  background-image: linear-gradient(to bottom, #fbff0000, #fff700f2); /*===GRADIENT BACKGROUND===*//*
+}
+*/
+.success-message {
+  color: #fff; /* ===TEXT COLOR=== */
+}
+/*===========================*/
+
+/*  ===========================CREDITS=========================== */
+/*  Custom BTCpay Server CSS template made by @artdesignbySF.   */
+/*  PLEASE CONSIDER DONATING BITCOIN IF YOU FIND          */
+/*  THIS FILE USEFULL: 3LBQbv72rdSrLmFF66p9gMPDuPMcKL7UL1     */
+/*  Follow @artdesignbySF on Twitter                */
+/*  Contact via: ArtDesignBySF@protonmail.com           */
+/*  =========================END CREDITS========================= */
+
+/*  =========================DISCLAIMER========================== */
+/*  Might not be the most efficient or correct way of implementing  */
+/*  CSS. I am not responsable for breaking your website if things */
+/*  go wrong. PEACE / LOVE / BITCOIN                */
+/*  =======================END DISCLAIMER======================== */
+```
+</details>
+
+---
+
 ### [Shiftcrypto](https://shiftcrypto.ch/)
 
-![Shiftcrypto](img/Theme-cryptosecurity.png)
+![Shiftcrypto checkout](img/Theme-cryptosecurity.png)
+
+<details>
+  <summary>Click to view CSS</summary>
 
 CSS file:
 ```css
@@ -292,257 +1122,34 @@ CSS file:
 .btnGroupLnd button:hover {background-color:#7faacc;}
 .btnGroupLnd button.active:hover {background-color:#5E94BF;}
 ```
+</details>
 
-### [The CryptoCloak](https://thecryptocloak.com/)
+---
 
-![Shiftcrypto logo](img/Theme-CryptoCloaks.png)
+### [Wears My Liberty](https://wearsmyliberty.com)
+
+![WearMyLiberty](img/Theme-WearMyLiberty.png)
+
+<details>
+  <summary>Click to view CSS</summary>
 
 CSS file:
 ```css
-/*======BACKGROUND COLOR======*/
-html {
-    background-color: #790099 !important; 	/*===BACKGROUND COLOR===*/
-}
-
-.modal.page {
-    background-color: #790099; 	/*===BACKGROUND COLOR===*/
-}
-/*=============================*/
-
-/*=======HEADER SETTINGS=======*/
-.top-header {
-    background-image: linear-gradient(to right, #790099, #cd00b9);	/*===HEADER BACKGROUND GRADIENT, CAN BE CHANGED TO SINGLE COLOR. UPLOAD (TRANSPARANT) PNG WITH HEADER LOGO WITH FOLLOWING DIMENTSIONS 720X120PX ===*/
-	border-radius:0px;	/*===ROUNDED CORNER SETTINGS===*/
-}
-
-.top-header .timer-row__progress-bar {
-	border-top: 1px solid #790099;
-    border-bottom: 1px solid #790099;
-    background: #790099;  	/*===PROGRESS BAR COLOR===*/
-}
-
-.top-header .timer-row {
-    border-top: 1px solid #fff; 	/*===COLORED LINE ABOVE PROGRESS BAR===*/
-	border-bottom: 1px solid #fff;	/*===COLORED LINE ABOVE PROGRESS BAR===*/
-    background: #481b5c;	/*===PROGRESS BAR BACKGROUND COLOR===*/
-}
-
-.header__icon__img {
-	display: block;
-	width:360px; 	/*===HEADER DIMENSIONS===*/
-	height:60px;	/*===HEADER DIMENSIONS===*/
-	margin-left:-10px; 	/*===HEADER POSITION CORRECTION===*/
-	margin-top:-10px; 	/*===HEADER POSITION CORRECTION===*/
-}
-/*============================*/
-
-/*=====PAY WITH / AMOUNTS=====*/
-.line-items {
-    background-color: #09182e;	/*===BACKGROUND COLOR===*/
-    color: #fff !important;		/*===TEXT COLOR===*/
-	padding-top: 15px;
-    padding-bottom: 10px;
-    border-top: 1px solid #fff !important;
-	border-bottom: 0px solid #fff;
-}
-
-.buyerTotalLine {
-    border-top: 1px solid #fff;
-    background-color: #481b5c;
-    color: #fff;
-	padding-top: 15px;
-    padding-bottom: 12px;
-}
-/*==========================*/
-
-/*=======PAYMENT TABS=======*/
-.payment-tabs__slider {
-	background: #790099; 	/*===SLIDER COLOR===*/
-}
-
-.payment-tabs {
-    background-color: #481b5c;	/*===BACKGROUND COLOR===*/
-    border-top: 1px solid #fff;	/*===COLORED LINE ABOVE PAYMENT TABS===*/
-	border-bottom: 1px solid #09182e;	/*===COLORED LINE BELOW PAYMENT TABS===*/
-}
-/*===========================*/
-
-/*===OPEN IN WALLET BUTTON===*/
-.action-button {
-    color: #fff !important;
-    background-image: linear-gradient(to bottom, #790099, #cd00b9);		/*===BUTTON BACKGROUND COLOR GRADIENT===*/
-	border-color:#fff; 	/*===BUTTON BORDER COLOR===*/
-	box-shadow: 0px 0px 15px -3px #000000; 	/*===DROP SHADOW SETTINGS===*/
-	border-radius: 0px; 	/*===ROUNDED CORNER SETTINGS===*/
-}
-
-.action-button:hover {
-    background-image: linear-gradient(to top, #790099, #cd00b9);	/*===HOVER BUTTON BACKGROUND COLOR GRADIENT===*/
-	border-color:#fff; /*===BUTTON BORDER COLOR===*/
-}
-/*============================*/
-
-/*===BOLT/NODE INFO BUTTONS===*/
-.btnGroupLnd {
-    box-shadow: 0px 0px 15px -3px #000000;	/*===DROP SHADOW SETTINGS===*/
-	background-image: linear-gradient(to right, #790099, #cd00b9);	/*===BUTTON BACKGROUND COLOR GRADIENT===*/
-	background-color:#790099;	/*===BUTTON BACKGROUND COLOR (IF NO GRADIENT IS WANTED DELETE LINE ABOVE THIS)===*/
-	border-color:#fff;	/*===BUTTON BORDER COLOR===*/
-	border-radius: 0px;	/*===ROUNDED CORNER SETTINGS===*/
-}
-
-.btnGroupLnd button {
-	background-image:  linear-gradient(to right, #790099, #cd00b9); /*===BUTTON BACKGROUND COLOR GRADIENT===*/
-	background-color:#790099;	/*===BUTTON BACKGROUND COLOR (IF NO GRADIENT IS WANTED DELETE LINE ABOVE THIS)===*/
-	border-color: #fff; /*===BUTTON BORDER COLOR===*/
-	border-radius: 0px; /*===ROUNDED CORNER SETTINGS===*/
-}
-
-.btnGroupLnd button.active {
-	background-image:  linear-gradient(to left, #790099, #cd00b9);	/*===ACTIVE BUTTON BACKGROUND COLOR GRADIENT===*/
-	background-color:#790099;	/*===BUTTON BACKGROUND COLOR (IF NO GRADIENT IS WANTED DELETE LINE ABOVE THIS)===*/
-	border-color: #fff;		/*===BUTTON BORDER COLOR===*/
-	border-radius: 0px;		/*===ROUNDED CORNER SETTINGS===*/
-}
-/*===========================*/
-
-/*=====CURRENCY DROPDOWN=====*/
-.payment__currencies {
-	border-radius:0px;	/*===ROUNDED CORNER SETTINGS===*/
-}
-
-.currency-selection {
-    background-color: #481b5c;	/*===BACKGROUND COLOR===*/
-    border-bottom: 0px solid #fff;
-    color: #fff;	/*===TEXT COLOR===*/
-    padding-top: 15px;
-    padding-bottom: 10px;
-    height: auto;
-}
-
-.vex.vex-theme-btcpay .vex-content  {
-	padding: 1px;
-	border-radius:0px; /*===ROUNDED CORNER SETTINGS===*/
-	box-shadow: 0px 0px 15px -3px #000000; /*===DROP SHADOW SETTINGS===*/
-}
-
-.vexmenu  {
-	background-color:#15171c;	/*===BACKGROUND COLOR===*/
-}
-
-.vexmenuitem:hover {
-	background: #481b5c;	/*===MENU BACKGROUND COLOR===*/
-}
-
-.payment__currencies:hover {
-	background: #15171c; /*===MENU HOVER HIGHLIGHT COLOR===*/
-}
-/*===========================*/
-
-/*===QR AND QR BACKGROUND===*/
-.invoice {
-    background-color: #cd00b9;	/*===MENU BACKGROUND COLOR===*/
-	border-radius: 0px; /*===ROUNDED CORNER SETTINGS===*/
-} 
-
-.payment-box {
-	height:425px; /*===SIZE IMPORTANT BECAUSE HEIGHT LIGHTNING QR CODE + OUTLINE===*/
-}
-
-.payment__scan {
-	width:276px;
-	height:276px;
-	margin-left:auto;	
-	margin-right:auto;
-	margin-bottom:5px;
-	margin-top:0px;
-	border: 10px solid #f5f5f7; /*===QR CODE BORDER SIZE/COLOR (LEAVE AS IS FOR QUICK SCANNING)===*/
-}
-
-.recommended-fee {
-	margin-top:15px;
-}
-
-.expired__body {
-    color: #000000;
-}
-/*==========================*/
-
-/*======COLOR OF LINKS======*/
-a {
-	color: #fff !important; 	/*===LINK COLOR===*/
-}
-/*==========================*/
-
-/*==="COLOR OF SOME TEXTS===*/
-span {
-	color:#fff; /*===TEXT COLOR===*/
-}
-/*=========================*/
-
-/*=====LANGUAGE SELECT=====*/
-#prettydropdown-DefaultLang ul {
-	color: #FFF !important; /*	===TEXT COLOR=== */
-	background-color: #15171c !important; 	/*===BACKGROUND COLOR===*/
-}
-/*===========================*/
-
-/*====INSTRUCTIONAL TEXTS====*/
-.manual__step-one__header {
-    color: #fff;	/*===TEXT COLOR===*/
-	opacity: 1;
-}
-.content-faded, .manual__step-one__instructions, .manual__step-two__instructions {
-    color: #fff;	/*===TEXT COLOR===*/
-	opacity: 1;
-}
-/*===========================*/
-
-/*====COPY INFO BOX/TEXTS====*/
-.copyBox {
-	background-color:#481b5c; 
-	border-color:#481b5c;
-}
-
-.copyAmountText {
-	color: #fff;	/*===TEXT COLOR===*/
-}
-
-.copySectionBox label {
-	color: #fff;	/*===TEXT COLOR===*/
-	opacity: 1;
-}
-
-.separatorGem {
-	background:#790099;	/*===GEM ICON COLOR===*/
-}
-/*===========================*/
-
-/*====PAYMENT SUCCES PAGE====*/
-/*
-.success-block {
-	background-image: linear-gradient(to bottom, #fbff0000, #fff700f2); /*===GRADIENT BACKGROUND===*//*
-}
-*/
-.success-message {
-	color: #fff; /*	===TEXT COLOR=== */
-}
-/*===========================*/
-
-/*==============================CREDITS=============================	*/
-/*	Custom BTCpay Server CSS template for 				*/
-/*	https://thecryptocloak.com/ made by @artdesignbySF and		*/
-/*	published with permission of CryptoCloaks			*/
-/*	PLEASE CONSIDER DONATING BITCOIN IF YOU FIND 			*/
-/*	THIS FILE USEFULL: 3L2K9wypgs3xage6fZk6LXJSKxUsUKFDNM		*/
-/*	Follow @artdesignbySF on Twitter				*/
-/*============================END CREDITS===========================	*/
-
-/*============================DISCLAIMER============================	*/
-/*	Might not be the most efficient or correct way of implementing	*/
-/*	CSS. I am not responsable for breaking your website if things	*/
-/*	go wrong. PEACE / LOVE / BITCOIN				*/
-/*==========================END DISCLAIMER==========================	*/
+.modal.page {background-color: #efefef;}
+.top-header .header {height: 80px;}
+.header__icon__img {height:60px;}
+.top-header .timer-row {padding: 4px 14px; position: relative; transition: background 1s ease;}
+.top-header {max-height: 120px; transition: all .2s ease-out;}
+.top-header {background-color: #000;}
+.top-header .timer-row__progress-bar {background:#ce0000;}
+.top-header .timer-row {background: #a0a0a0;}
+.payment-tabs__slider {background: #aa0303;	}
+.separatorGem {background: #aa0303;}
+.action-button {color: #fff; background-color: #aa0303;border-color: #700000;}
+.action-button:hover {background-color: #ef8022;}
+.action-button:focus, .action-button.focus {color: #fff;background-color: #aa0303;
+    border-color: #aa0303;}
+.action-button:active, .action-button.active, .open>.action-button.dropdown-toggle {    color: #fff;    background-color: #3aa821;    border-color: #aa0303;}
+.action-button:active:hover, .action-button:active:focus, .action-button:active.focus, .action-button.active:hover, .action-button.active:focus, .action-button.active.focus, .open>.action-button.dropdown-toggle:hover, .open>.action-button.dropdown-toggle:focus, .open>.action-button.dropdown-toggle.focus {    color: #fff;    background-color: #3aa821;    border-color: #aa0303;}
 ```
-
-For more custom checkout pages example, [check this link](https://github.com/artdesignbySF/BTCpay_Server-Custom_CSS-template).
+</details>
