@@ -297,6 +297,9 @@ CSS file:
 
 ![CryptoCloak logo](img/Theme-CryptoCloaks.png)
 
+<details>
+  <summary>Click to expand CSS</summary>
+
 CSS file:
 ```css
 /*======BACKGROUND COLOR======*/
@@ -544,6 +547,7 @@ span {
 /*	go wrong. PEACE / LOVE / BITCOIN				*/
 /*==========================END DISCLAIMER==========================	*/
 ```
+</details>
 
 ### [Andreas M. Antonopolous](https://aantonop.com/)
 
