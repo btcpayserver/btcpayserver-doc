@@ -114,7 +114,7 @@ Below are examples of businesses that use custom-made checkout themes.
 ![WearMyLiberty](img/Theme-WearMyLiberty.png)
 
 <details>
-  <summary>Click to view CSS</summary>
+  <summary>_Click to view CSS_</summary>
 
 CSS file:
 ```css
@@ -142,7 +142,7 @@ CSS file:
 ![CoinCards Logo](img/Theme-Coincards.png)
 
 <details>
-  <summary>Click to view CSS</summary>
+  <summary>_Click to view CSS_</summary>
 
 CSS file:
 ```css
@@ -170,7 +170,7 @@ CSS file:
 ![Blockstream](img/Theme-Blockstream.png)
 
 <details>
-  <summary>Click to view CSS</summary>
+  <summary>_Click to view CSS_</summary>
 
 CSS file:
 ```css
@@ -286,7 +286,7 @@ canvas {
 ![Shiftcrypto](img/Theme-cryptosecurity.png)
 
 <details>
-  <summary>Click to view CSS</summary>
+  <summary>_Click to view CSS_</summary>
 
 CSS file:
 ```css
@@ -315,7 +315,7 @@ CSS file:
 ![CryptoCloak logo](img/Theme-CryptoCloaks.png)
 
 <details>
-  <summary>Click to view CSS</summary>
+  <summary>_Click to view CSS_</summary>
 
 CSS file:
 ```css
@@ -570,7 +570,7 @@ span {
 
 ![Aantonop logo](img/Theme-AantonopShop.png)
 <details>
-  <summary>Click to view CSS</summary>
+  <summary>_Click to view CSS_</summary>
 
 CSS file:
 ```css
