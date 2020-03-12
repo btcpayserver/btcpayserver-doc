@@ -293,7 +293,7 @@ CSS file:
 .btnGroupLnd button.active:hover {background-color:#5E94BF;}
 ```
 
-### [The CryptoCloak](https://thecryptocloak.com/)
+### [The CryptoCloak](https://www.cryptocloaks.com/)
 
 ![Shiftcrypto logo](img/Theme-CryptoCloaks.png)
 
