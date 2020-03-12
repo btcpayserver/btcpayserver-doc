@@ -113,6 +113,9 @@ Below are examples of businesses that use custom-made checkout themes.
 
 ![WearMyLiberty](img/Theme-WearMyLiberty.png)
 
+<details>
+  <summary>Click to view CSS</summary>
+
 CSS file:
 ```css
 .modal.page {background-color: #efefef;}
@@ -132,10 +135,14 @@ CSS file:
 .action-button:active, .action-button.active, .open>.action-button.dropdown-toggle {    color: #fff;    background-color: #3aa821;    border-color: #aa0303;}
 .action-button:active:hover, .action-button:active:focus, .action-button:active.focus, .action-button.active:hover, .action-button.active:focus, .action-button.active.focus, .open>.action-button.dropdown-toggle:hover, .open>.action-button.dropdown-toggle:focus, .open>.action-button.dropdown-toggle.focus {    color: #fff;    background-color: #3aa821;    border-color: #aa0303;}
 ```
+</details>
 
 ### [Coincards](https://coincards.com/)
 
 ![CoinCards Logo](img/Theme-Coincards.png)
+
+<details>
+  <summary>Click to view CSS</summary>
 
 CSS file:
 ```css
@@ -156,10 +163,14 @@ CSS file:
 .btnGroupLnd button:hover {background-color:#ffc313;}
 .btnGroupLnd button.active:hover {background-color:#ef8022;}
 ```
+</details>
 
 ### [Blockstream](https://blockstream.com/)
 
 ![Blockstream](img/Theme-Blockstream.png)
+
+<details>
+  <summary>Click to view CSS</summary>
 
 CSS file:
 ```css
@@ -268,9 +279,14 @@ canvas {
     margin-top: 10px;
 }
 ```
+</details>
+
 ### [Shiftcrypto](https://shiftcrypto.ch/)
 
 ![Shiftcrypto](img/Theme-cryptosecurity.png)
+
+<details>
+  <summary>Click to view CSS</summary>
 
 CSS file:
 ```css
@@ -292,13 +308,14 @@ CSS file:
 .btnGroupLnd button:hover {background-color:#7faacc;}
 .btnGroupLnd button.active:hover {background-color:#5E94BF;}
 ```
+</details>
 
 ### [The CryptoCloak](https://www.cryptocloaks.com/)
 
 ![CryptoCloak logo](img/Theme-CryptoCloaks.png)
 
 <details>
-  <summary>Click to expand CSS</summary>
+  <summary>Click to view CSS</summary>
 
 CSS file:
 ```css
@@ -552,6 +569,8 @@ span {
 ### [Andreas M. Antonopolous](https://aantonop.com/)
 
 ![Aantonop logo](img/Theme-AantonopShop.png)
+<details>
+  <summary>Click to view CSS</summary>
 
 CSS file:
 ```css
@@ -810,3 +829,4 @@ span {
 }
 /*===========================*/
 ````
+</details>
