@@ -109,11 +109,10 @@ Server admins can upload their .css file to [File Storage](FAQ/FAQ-ServerSetting
 
 Below are examples of businesses that use custom-made checkout themes.
 
-======
-
 ### [Bitcoin Fortune Cookie](https://bitcoinfortunecookie.com/)
 
 ![Bitcoin Fortune Cookie logo](img/Theme-BitcoinFortuneCookie.png)
+
 Made by: [@artdesignbySF](https://twitter.com/artdesignbySF) / <ArtDesignBySF@protonmail.com>
 
 <details>
@@ -381,8 +380,7 @@ span {
 ````
 </details>
 
-======
-
+---
 
 ### [The CryptoCloak](https://www.cryptocloaks.com/)
 
@@ -652,6 +650,8 @@ span {
 /*  =======================END DISCLAIMER======================== */
 ```
 </details>
+
+---
 
 ### [Andreas M. Antonopolous](https://aantonop.com/)
 
@@ -946,6 +946,8 @@ span {
 ````
 </details>
 
+---
+
 ### [Wears My Liberty](https://wearsmyliberty.com)
 
 ![WearMyLiberty](img/Theme-WearMyLiberty.png)
@@ -974,6 +976,8 @@ CSS file:
 ```
 </details>
 
+---
+
 ### [Coincards](https://coincards.com/)
 
 ![CoinCards Logo](img/Theme-Coincards.png)
@@ -1001,6 +1005,8 @@ CSS file:
 .btnGroupLnd button.active:hover {background-color:#ef8022;}
 ```
 </details>
+
+---
 
 ### [Blockstream](https://blockstream.com/)
 
@@ -1117,6 +1123,8 @@ canvas {
 }
 ```
 </details>
+
+---
 
 ### [Shiftcrypto](https://shiftcrypto.ch/)
 
