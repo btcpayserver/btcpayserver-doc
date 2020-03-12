@@ -113,6 +113,7 @@ Below are examples of businesses that use custom-made checkout themes.
 
 ![Bitcoin Fortune Cookie logo](img/Theme-BitcoinFortuneCookie.png)
 Made by: [@artdesignbySF](https://twitter.com/artdesignbySF) / <artdesignbysf@protonmail.com>
+
 <details>
   <summary>Click to view CSS</summary>
 
