@@ -38,8 +38,9 @@ This will run a BTCPayServer instance connecting to the services in your Docker 
 
 For more information check out these videos:
 
-* [How to contribute to BTCPay Server Development](https://youtu.be/ZePbMPSIvHM) by Nicolas Dorier
+* [How to contribute to BTCPay Server Development (Windows)](https://youtu.be/ZePbMPSIvHM) by Nicolas Dorier
 * [Setting up BTCPayServer development environment on Linux (Ubuntu)](https://youtube.com/watch?v=j486T_Rk-yw) by RockStarDev
+* [BTCPay Server Development - Testing pull request, payments (MacOS)](https://youtu.be/GWR_CcMsEV0) by Pavlenex
 
 and these notes:
 
