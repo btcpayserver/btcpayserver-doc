@@ -113,7 +113,6 @@ Below are examples of businesses that use custom-made checkout themes.
 
 ![Bitcoin Fortune Cookie checkout](img/Theme-BitcoinFortuneCookie.png)\
 _**Made by:** [@artdesignbySF](https://twitter.com/artdesignbySF) / <ArtDesignBySF@protonmail.com>_
-
 <details>
   <summary>Click to view CSS</summary>
 
@@ -383,8 +382,8 @@ span {
 
 ### [The CryptoCloak](https://www.cryptocloaks.com/)
 
-![CryptoCloak checkout](img/Theme-CryptoCloaks.png)
-
+![CryptoCloak checkout](img/Theme-CryptoCloaks.png)\
+_**Made by:** [@artdesignbySF](https://twitter.com/artdesignbySF) / <ArtDesignBySF@protonmail.com>_
 <details>
   <summary>Click to view CSS</summary>
 
@@ -654,7 +653,8 @@ span {
 
 ### [Andreas M. Antonopolous](https://aantonop.com/)
 
-![Aantonop checkout](img/Theme-AantonopShop.png)
+![Aantonop checkout](img/Theme-AantonopShop.png)\
+_**Made by:** [@artdesignbySF](https://twitter.com/artdesignbySF) / <ArtDesignBySF@protonmail.com>_
 <details>
   <summary>Click to view CSS</summary>
 
