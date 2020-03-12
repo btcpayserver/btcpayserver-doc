@@ -109,10 +109,12 @@ Server admins can upload their .css file to [File Storage](FAQ/FAQ-ServerSetting
 
 Below are examples of businesses that use custom-made checkout themes.
 
+======
+
 ### [Bitcoin Fortune Cookie](https://bitcoinfortunecookie.com/)
 
 ![Bitcoin Fortune Cookie logo](img/Theme-BitcoinFortuneCookie.png)
-Made by: [@artdesignbySF](https://twitter.com/artdesignbySF) / <artdesignbysf@protonmail.com>
+Made by: [@artdesignbySF](https://twitter.com/artdesignbySF) / <ArtDesignBySF@protonmail.com>
 
 <details>
   <summary>Click to view CSS</summary>
@@ -378,6 +380,9 @@ span {
 /*  =======================END DISCLAIMER======================== */
 ````
 </details>
+
+======
+
 
 ### [The CryptoCloak](https://www.cryptocloaks.com/)
 
