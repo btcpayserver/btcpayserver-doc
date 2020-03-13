@@ -678,7 +678,7 @@ span {
 
 ### [Bitma.tk](https://bitma.tk/)
 
-![Bitma.tk checkout](img/Theme-Blockstream.png)\
+![Bitma.tk checkout](img/Theme-bitmatk.png)\
 _**Made by:** [@artdesignbySF](https://twitter.com/artdesignbySF) / <artdesignbySF@protonmail.com>_
 
 <details>
