@@ -114,7 +114,7 @@ Below are examples of businesses that use custom-made checkout themes.
 ![Aantonop checkout](img/Theme-AantonopShop.png)\
 _**Made by:** [@artdesignbySF](https://twitter.com/artdesignbySF) / <artdesignbySF@protonmail.com>_
 
-<a href="Custom-CSS" target="_blank" rel="noopener noreferrer">Click here to view the CSS in a new tab</a>
+<a href="Custom-CSS/Aantonop-css.md" target="_blank" rel="noopener noreferrer">Click here to view the CSS in a new tab</a>
 
 ---
 
