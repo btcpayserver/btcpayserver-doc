@@ -1,6 +1,7 @@
 ### [Human Rights Foundation](https://hrf.org/)
 
 ![Human Rights Foundation checkout](../img/Theme-HumanRightsFoundation.png)
+_**Made by:** [@artdesignbySF](https://twitter.com/artdesignbySF) / <artdesignbySF@protonmail.com>_
 
 ```css
 /*  ===========================CREDITS=========================== */
