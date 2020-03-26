@@ -1,6 +1,6 @@
 ### [Andreas M. Antonopolous](https://aantonop.com/)
 
-![Aantonop checkout](img/Theme-AantonopShop.png)\
+![Aantonop checkout](./img/Theme-AantonopShop.png)\
 _**Made by:** [@artdesignbySF](https://twitter.com/artdesignbySF) / <artdesignbySF@protonmail.com>_
 
 CSS file:
