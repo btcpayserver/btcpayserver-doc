@@ -1,6 +1,6 @@
 ### [Human Rights Foundation](https://hrf.org/)
 
-![Human Rights Foundation checkout](img/Theme-HumanRightsFoundation.png)
+![Human Rights Foundation checkout](../img/Theme-HumanRightsFoundation.png)
 
 ```css
 /*  ===========================CREDITS=========================== */

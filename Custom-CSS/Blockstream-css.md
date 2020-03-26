@@ -1,6 +1,6 @@
 ### [Blockstream](https://blockstream.com/)
 
-![Blockstream checkout](img/Theme-Blockstream.png)
+![Blockstream checkout](../img/Theme-Blockstream.png)
 
 CSS file:
 ```css

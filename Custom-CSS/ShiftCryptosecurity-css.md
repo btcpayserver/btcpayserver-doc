@@ -1,6 +1,6 @@
 ### [Shiftcrypto](https://shiftcrypto.ch/)
 
-![Shiftcrypto checkout](img/Theme-cryptosecurity.png)
+![Shiftcrypto checkout](../img/Theme-cryptosecurity.png)
 
 CSS file:
 ```css

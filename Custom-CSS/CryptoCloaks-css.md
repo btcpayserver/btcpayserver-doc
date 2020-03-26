@@ -1,6 +1,6 @@
 ### [CryptoCloaks](https://www.cryptocloaks.com/)
 
-![CryptoCloak checkout](img/Theme-CryptoCloaks.png)\
+![CryptoCloak checkout](../img/Theme-CryptoCloaks.png)\
 _**Made by:** [@artdesignbySF](https://twitter.com/artdesignbySF) / <artdesignbySF@protonmail.com>_
 
 CSS file:

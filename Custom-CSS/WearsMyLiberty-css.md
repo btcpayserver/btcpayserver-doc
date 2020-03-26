@@ -1,6 +1,6 @@
 ### [Wears My Liberty](https://wearsmyliberty.com)
 
-![WearMyLiberty](img/Theme-WearMyLiberty.png)
+![WearMyLiberty](../img/Theme-WearMyLiberty.png)
 
 CSS file:
 ```css

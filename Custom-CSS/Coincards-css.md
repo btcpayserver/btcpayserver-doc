@@ -1,6 +1,6 @@
 ### [Coincards](https://coincards.com/)
 
-![CoinCards checkout](img/Theme-Coincards.png)
+![CoinCards checkout](../img/Theme-Coincards.png)
 
 CSS file:
 ```css

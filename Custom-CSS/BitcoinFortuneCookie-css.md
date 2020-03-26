@@ -1,6 +1,6 @@
 ### [Bitcoin Fortune Cookie](https://bitcoinfortunecookie.com/)
 
-![Bitcoin Fortune Cookie checkout](img/Theme-BitcoinFortuneCookie.png)\
+![Bitcoin Fortune Cookie checkout](../img/Theme-BitcoinFortuneCookie.png)\
 _**Made by:** [@artdesignbySF](https://twitter.com/artdesignbySF) / <artdesignbySF@protonmail.com>_
 
 CSS file:

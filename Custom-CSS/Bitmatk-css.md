@@ -1,6 +1,6 @@
 ### [Bitma.tk](https://bitma.tk/)
 
-![Bitma.tk checkout](img/Theme-Bitmatk.png)\
+![Bitma.tk checkout](../img/Theme-Bitmatk.png)\
 _**Made by:** [@artdesignbySF](https://twitter.com/artdesignbySF) / <artdesignbySF@protonmail.com>_
 
 CSS file:
