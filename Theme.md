@@ -114,7 +114,7 @@ Below are examples of businesses that use custom-made checkout themes.
 ![Aantonop checkout](img/Theme-AantonopShop.png)\
 _**Made by:** [@artdesignbySF](https://twitter.com/artdesignbySF) / <artdesignbySF@protonmail.com>_
 
-<a href="Custom-CSS/Aantonop-css.md" target="_blank" rel="noopener noreferrer">Click here to view the CSS</a>
+CSS file: <a href="Custom-CSS/Aantonop-css.md" target="_blank" rel="noopener noreferrer">Click here to view the CSS</a>
 
 ---
 
@@ -123,7 +123,7 @@ _**Made by:** [@artdesignbySF](https://twitter.com/artdesignbySF) / <artdesignby
 ![Bitcoin Fortune Cookie checkout](img/Theme-BitcoinFortuneCookie.png)\
 _**Made by:** [@artdesignbySF](https://twitter.com/artdesignbySF) / <artdesignbySF@protonmail.com>_
 
-<a href="Custom-CSS/BitcoinFortuneCookie-css.md" target="_blank" rel="noopener noreferrer">Click here to view the CSS</a>
+CSS file: <a href="Custom-CSS/BitcoinFortuneCookie-css.md" target="_blank" rel="noopener noreferrer">Click here to view the CSS</a>
 
 ---
 
@@ -132,7 +132,7 @@ _**Made by:** [@artdesignbySF](https://twitter.com/artdesignbySF) / <artdesignby
 ![Bitma.tk checkout](img/Theme-Bitmatk.png)\
 _**Made by:** [@artdesignbySF](https://twitter.com/artdesignbySF) / <artdesignbySF@protonmail.com>_
 
-<a href="Custom-CSS/Bitmatk-css.md" target="_blank" rel="noopener noreferrer">Click here to view the CSS</a>
+CSS file: <a href="Custom-CSS/Bitmatk-css.md" target="_blank" rel="noopener noreferrer">Click here to view the CSS</a>
 
 ---
 
@@ -140,7 +140,7 @@ _**Made by:** [@artdesignbySF](https://twitter.com/artdesignbySF) / <artdesignby
 
 ![Blockstream checkout](img/Theme-Blockstream.png)
 
-<a href="Custom-CSS/Blockstream-css.md" target="_blank" rel="noopener noreferrer">Click here to view the CSS</a>
+CSS file: <a href="Custom-CSS/Blockstream-css.md" target="_blank" rel="noopener noreferrer">Click here to view the CSS</a>
 
 ---
 
@@ -148,7 +148,7 @@ _**Made by:** [@artdesignbySF](https://twitter.com/artdesignbySF) / <artdesignby
 
 ![CoinCards checkout](img/Theme-Coincards.png)
 
-<a href="Custom-CSS/Coincards-css.md" target="_blank" rel="noopener noreferrer">Click here to view the CSS</a>
+CSS file: <a href="Custom-CSS/Coincards-css.md" target="_blank" rel="noopener noreferrer">Click here to view the CSS</a>
 
 ---
 
@@ -157,7 +157,7 @@ _**Made by:** [@artdesignbySF](https://twitter.com/artdesignbySF) / <artdesignby
 ![CryptoCloak checkout](img/Theme-CryptoCloaks.png)\
 _**Made by:** [@artdesignbySF](https://twitter.com/artdesignbySF) / <artdesignbySF@protonmail.com>_
 
-<a href="Custom-CSS/CryptoCloaks-css.md" target="_blank" rel="noopener noreferrer">Click here to view the CSS</a>
+CSS file: <a href="Custom-CSS/CryptoCloaks-css.md" target="_blank" rel="noopener noreferrer">Click here to view the CSS</a>
 
 ---
 
@@ -165,7 +165,7 @@ _**Made by:** [@artdesignbySF](https://twitter.com/artdesignbySF) / <artdesignby
 
 ![Human Rights Foundation checkout](img/Theme-HumanRightsFoundation.png)
 
-<a href="Custom-CSS/HumanRightsFoundation-css.md" target="_blank" rel="noopener noreferrer">Click here to view the CSS</a>
+CSS file: <a href="Custom-CSS/HumanRightsFoundation-css.md" target="_blank" rel="noopener noreferrer">Click here to view the CSS</a>
 
 ---
 
@@ -173,7 +173,7 @@ _**Made by:** [@artdesignbySF](https://twitter.com/artdesignbySF) / <artdesignby
 
 ![Shiftcrypto checkout](img/Theme-cryptosecurity.png)
 
-<a href="Custom-CSS/ShiftCryptosecurity-css.md" target="_blank" rel="noopener noreferrer">Click here to view the CSS</a>
+CSS file: <a href="Custom-CSS/ShiftCryptosecurity-css.md" target="_blank" rel="noopener noreferrer">Click here to view the CSS</a>
 
 ---
 
@@ -181,4 +181,4 @@ _**Made by:** [@artdesignbySF](https://twitter.com/artdesignbySF) / <artdesignby
 
 ![WearMyLiberty](img/Theme-WearMyLiberty.png)
 
-<a href="Custom-CSS/WearsMyLiberty-css.md" target="_blank" rel="noopener noreferrer">Click here to view the CSS</a>
+CSS file: <a href="Custom-CSS/WearsMyLiberty-css.md" target="_blank" rel="noopener noreferrer">Click here to view the CSS</a>
