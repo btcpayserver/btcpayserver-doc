@@ -156,6 +156,7 @@ _**Made by:** [@artdesignbySF](https://twitter.com/artdesignbySF) / <artdesignby
 
 ![CryptoCloak checkout](img/Theme-CryptoCloaks.png)\
 _**Made by:** [@artdesignbySF](https://twitter.com/artdesignbySF) / <artdesignbySF@protonmail.com>_
+
 <a href="Custom-CSS/CryptoCloaks-css.md" target="_blank" rel="noopener noreferrer">Click here to view the CSS</a>
 
 ---
