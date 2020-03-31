@@ -74,46 +74,9 @@ After wallets are connected, it is highly-recommended to connect Wasabi to your 
 In BTCPay, go Server Settings > Services > **Full node P2P > See Information**.
 On the BTCP-P2P page, click on the `Show Confidential QR Code`. Bellow the QR Code, there's a link `See QR Code information by clicking here`, so click on the link to reveal your string. Copy the string but remove `bitcoin-p2p://` part.
 
-In Wasabi, Tools > Settings. Scroll to the bottom of the page and click `Open Config File`. The config file should look similar to this:
+In `Alternative Block Source / Bitcoin P2P Endpoint`, paste the endpoint.
 
-```bash
-{
-
-  "Network": "TestNet",
-  "MainNetBackendUriV3": "http://wasabiukrxmkdgve5kynjztuovbg43uxcbcxn6y2okcrsg7gb6jdmbad.onion",
-  "TestNetBackendUriV3": "http://testwnp3fugjln6vh5vpj7mvq3lkqqwjj3c2aafyu7laxz42kgwh2rad.onion",
-  "MainNetFallbackBackendUri": "https://wasabiwallet.io",
-  "TestNetFallbackBackendUri": "https://wasabiwallet.co",
-  "RegTestBackendUriV3": "http://localhost:37127",
-  "TorHost": "127.0.0.1",
-  "TorSocks5Port": 9050,
-  "MainNetBitcoinCoreHost": "127.0.0.1",
-  "TestNetBitcoinCoreHost": "127.0.0.1",
-  "RegTestBitcoinCoreHost": "127.0.0.1",
-  "MainNetBitcoinCorePort": 8333,
-  "TestNetBitcoinCorePort": 18333,
-  "RegTestBitcoinCorePort": 18444,
-  "MixUntilAnonymitySet": 50,
-  "PrivacyLevelSome": 2,
-  "PrivacyLevelFine": 21,
-  "PrivacyLevelStrong": 50
-}
-```
-Replace 
-```
-"MainNetBackendUriV3": "127.0.0.1",
-```
-with 
-``` 
-"MainNetBackendUriV3": "bitcoinp2pstringgoeshere"
-```
-Remember to remove `bitcoin-p2p://` from the string. 
-
-The replaced string should look similar this `"MainNetBackendUriV3": "http://xkasdsabiukrxmkdgve5kynjztuovbg43uxcbcxn6y2okcrsg7gb6jdmbad.onion:8333",`
-
-For better privacy, `MainNetFallbackBackendUri` can be replaced with the same string.
-
-Save the file, quit Wasabi and open it again.
+Restart Wasabi.
 
 ### Configuring the Gap Limit in Wasabi
 
