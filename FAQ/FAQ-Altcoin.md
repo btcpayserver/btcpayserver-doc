@@ -61,4 +61,4 @@ sudo su -
 export BTCPAYGEN_CRYPTO2=""
 . ./btcpay-setup.sh -i
 ```
-Where CRYPTO**2** should be replaced with a coin number you wish to remove. If you have an XYZ coin as `BTCPAYGEN_CRYPTO3`, and you want to remove it, you should use CRYPT0**3**.
+Where CRYPTO**2** should be replaced with a coin number you wish to remove. If you have an XYZ coin as `BTCPAYGEN_CRYPTO3`, and you want to remove it, you should use CRYPTO**3**.
