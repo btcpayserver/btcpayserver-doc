@@ -24,12 +24,12 @@ The docker deployment will provide you easy update system and make sure that all
 This steps have been done on Ubuntu 16.04, adapt for your own install.
 
 
-### 1) Install Bitcoin Core 0.17.0
+### 1) Install Bitcoin Core 0.19.1
 
 ```bash
-BITCOIN_VERSION="0.17.0"
-BITCOIN_URL="https://bitcoincore.org/bin/bitcoin-core-0.17.0/bitcoin-0.17.0-x86_64-linux-gnu.tar.gz"
-BITCOIN_SHA256="9d6b472dc2aceedb1a974b93a3003a81b7e0265963bd2aa0acdcb17598215a4f"
+BITCOIN_VERSION="0.19.1"
+BITCOIN_URL="https://bitcoin.org/bin/bitcoin-core-0.19.1/bitcoin-0.19.1-x86_64-linux-gnu.tar.gz"
+BITCOIN_SHA256="5fcac9416e486d4960e1a946145566350ca670f9aaba99de6542080851122e4c"
 
 # install bitcoin binaries
 cd /tmp
