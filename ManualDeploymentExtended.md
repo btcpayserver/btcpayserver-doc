@@ -350,8 +350,8 @@ The gateway to the Bitcoin network for BTCPay Server components.
 
 ##### 1. Download the latest binaries from a trusted source such as [https://bitcoincore.org/en/download/](https://bitcoincore.org/en/download/).
 ```bash
-~$ wget https://bitcoincore.org/bin/bitcoin-core-0.18.0/bitcoin-0.18.0-x86_64-linux-gnu.tar.gz
-~$ wget https://bitcoincore.org/bin/bitcoin-core-0.18.0/SHA256SUMS.asc
+~$ wget https://bitcoincore.org/bin/bitcoin-core-0.19.1/bitcoin-0.19.1-x86_64-linux-gnu.tar.gz
+~$ wget https://bitcoincore.org/bin/bitcoin-core-0.19.1/SHA256SUMS.asc
 ```
 ##### 2. Verify the authenticity of the downloads.
 The Bitcoin Core code signing key is currently:
@@ -366,15 +366,15 @@ It's advisable to double check the signing key corresponds with other available 
 ~$ gpg --verify SHA256SUMS.asc
  gpg: Good signature from "Wladimir J. van der Laan (Bitcoin Core binary release signing key) <laanwj@gmail.com>" [unknown]
 ~$ sha256sum --ignore-missing -c SHA256SUMS.asc
- bitcoin-0.18.0-x86_64-linux-gnu.tar.gz: OK
+ bitcoin-0.19.1-x86_64-linux-gnu.tar.gz: OK
 ```
 ##### 3. Install the binaries.
 
 ```bash
-~$ tar zxf bitcoin-0.18.0-x86_64-linux-gnu.tar.gz
-~$ pushd bitcoin-0.18.0/bin; sudo cp bitcoind bitcoin-cli /usr/bin; popd;
+~$ tar zxf bitcoin-0.19.1-x86_64-linux-gnu.tar.gz
+~$ pushd bitcoin-0.19.1/bin; sudo cp bitcoind bitcoin-cli /usr/bin; popd;
 ~$ bitcoind --version
-Bitcoin Core Daemon version v0.18.0
+Bitcoin Core version v0.19.1
 ```
 ##### 4. Create the configuration file.
 An example configuration file is available on the Bitcoin Core repository at https://github.com/bitcoin/bitcoin/blob/master/share/examples/bitcoin.conf.
