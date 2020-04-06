@@ -21,7 +21,7 @@ The docker deployment will provide you easy update system and make sure that all
 
 ## Typical manual installation
 
-This steps have been done on Ubuntu 16.04, adapt for your own install.
+This steps have been done on Ubuntu 18.04, adapt for your own install.
 
 
 ### 1) Install Bitcoin Core 0.19.1
