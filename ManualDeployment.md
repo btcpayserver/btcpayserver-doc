@@ -41,10 +41,10 @@ rm bitcoin.tar.gz
 ```
 
 ### 2) Install .NET Core SDK 3.1
-On my ubuntu 16.04 (See [these instructions](https://docs.microsoft.com/en-us/dotnet/core/install/linux-package-manager-ubuntu-1604) or [here](https://dotnet.microsoft.com/download) for different OS).
+On my ubuntu 18.04 (See [these instructions](https://docs.microsoft.com/en-us/dotnet/core/install/linux-package-manager-ubuntu-1804) or [here](https://dotnet.microsoft.com/download) for different OS).
 
 ```bash
-wget -q https://packages.microsoft.com/config/ubuntu/16.04/packages-microsoft-prod.deb
+wget -q https://packages.microsoft.com/config/ubuntu/18.04/packages-microsoft-prod.deb
 sudo dpkg -i packages-microsoft-prod.deb
 sudo apt-get install apt-transport-https
 sudo apt-get update
