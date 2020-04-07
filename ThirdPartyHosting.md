@@ -1,6 +1,6 @@
 # Third-party hosting
 
-A third-party host is an individual or a business which self-hosts a BTCPay instance and enables other users to register and use the server. On a self-hosted server, the owner can add an unlimited amount of users and stores and allow those users to manage their stores independently and receive payments to their own wallets. 
+A third-party host is an individual or a business which self-hosts a BTCPay instance and enables other users to register and use the server. On a self-hosted server, the owner can add an unlimited amount of users and stores and allow those users to manage their stores independently and receive payments to their own wallets.
 
 While this feature in BTCPay Server exists for complex multi-store business management, community enthusiasts use it to help other users, (mostly beginners), sometimes skip an overwhelming step of deploying a self-hosted BTCPay server. Users who want to test or develop applications on top of BTCPay also use instances hosted by third parties. Some hosts try to spread the adoption of cryptocurrencies by allowing their local merchants to receive payments for free or for a small sign-up fee.
 
@@ -13,7 +13,7 @@ In layman words, think of this feature as a payment processor factory which allo
 * [btcpayprovider.com](https://btcpayprovider.com/)
 * [exitpay.org](https://exitpay.org/)
 * [kendesu.io](https://kendesu.io/)
-* [LAWGATE.IO](https://btcpayserver.lawgate-consulting.com/Account/Register)
+* [LAWGATE.IO](https://btcpayserver.lawgate.io/Account/Register)
 * [lightninginabox.co](https://lightninginabox.co)
 * [lpay.io](https://lpay.io)
 * [luxnode.io](https://luxnode.io/)
@@ -26,7 +26,7 @@ In layman words, think of this feature as a payment processor factory which allo
 Feel free to chat with the [Community](Community.md) to find the appropriate host for your needs, but also make sure to choose a host you trust. Read the rest of this document to better understand the pros and cons of using a third party host.
 
 ## How can one become a third-party host?
-To become a third party host, you need to self-host a BTCPay Server and enable registration for other users. 
+To become a third party host, you need to self-host a BTCPay Server and enable registration for other users.
 Go to Server Settings > Policies > Disable registration, unmark the checkbox. You may also want to configure the [SMTP settings](/FAQ/FAQ-ServerSettings.md#how-to-configure-smtp-settings-in-btcpay) to allow them to reset their password if they forget it.
 
 ## Are there any limitations in features when using a third party host?
@@ -53,9 +53,9 @@ The limitations happen for technical reasons, mostly because these features requ
 ### Security concerns
 [Trusted third parties are security holes](https://nakamotoinstitute.org/trusted-third-parties/#selection-7.6-6.2). By relying on someone else to manage a server for you, you are potentially exposing yourself to a certain attack vector.
 
-The most significant attack vector when using a third party host is that a malicious and technically skilled host can create a forked version of BTCPay Server and modify it so that it either spy on your transactions or replace your [xpubkey](https://en.bitcoin.it/wiki/Deterministic_wallet_tools#Risks_of_Sharing_an_Extended_Public_Key_.28xpub.29) with his. This means that future payments made to you may end up in a malicious party wallet. 
+The most significant attack vector when using a third party host is that a malicious and technically skilled host can create a forked version of BTCPay Server and modify it so that it either spy on your transactions or replace your [xpubkey](https://en.bitcoin.it/wiki/Deterministic_wallet_tools#Risks_of_Sharing_an_Extended_Public_Key_.28xpub.29) with his. This means that future payments made to you may end up in a malicious party wallet.
 
-In BTCPay, a private key is never required. This means that funds are safe even if the server is hacked, but a malicious host can intercept future payments and steal those funds. If you follow your transactions via a watch-only wallet, you should be able to detect such attack quickly and notice that your orders are being marked as paid, whereas you don't see the transactions in your wallet. 
+In BTCPay, a private key is never required. This means that funds are safe even if the server is hacked, but a malicious host can intercept future payments and steal those funds. If you follow your transactions via a watch-only wallet, you should be able to detect such attack quickly and notice that your orders are being marked as paid, whereas you don't see the transactions in your wallet.
 
 If a third-party host asks for your private key or pre-generates one for you, be sure it's a scam. Never share your private key with anyone. It's called private for a reason.
 
