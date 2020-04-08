@@ -157,6 +157,8 @@ The sender then follows the steps:
 
 After all those checks, the sender can proceed to sign the payjoin transaction.
 
+Our client is able to pay a onion payjoin endpoint, this will allow wallets hosted on BTCPay Server to pay desktop or mobile wallets without any NAT configuration.
+
 Note: 
 
 * The sender **does NOT check** whether ouputs have been removed or modified. This allow flexibility to the receiver to adapt his receiving address type to match the other outputs's address type of the sender, or, on the contrary, to create a payment output which would be considered a change address by common chain analysis heuristic. For example, if the receiver support both P2WPKH and P2SH-P2WPKH, even if the invoice's address in the original transaction was P2WPKH, the receiver may change the address to be P2SH-P2WPKH to match sender's change address format. This is safe because the sender only cares that he does not send too much money in the payjoin transaction. It is also useful if the receiver wants to batch some of his own payments in the transaction.
