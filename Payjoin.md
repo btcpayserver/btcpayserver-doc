@@ -34,7 +34,7 @@ There's multiple reasons for this:
 * You are not using segwit or p2sh wrapped segwit.
 * The payjoin server is not available
 
-## Will my wallet support this?
+## Supported wallets
 
 Please contact and encourage your wallet developers to add support. The more widespread the usage of payjoin, the more broken the heuristics used by blockchain analysis companies become and can effectively harass and censor your money. If you are a wallet developer, please [contact us](Community.md) if you need help or have feedback.
 
