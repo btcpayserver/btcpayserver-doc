@@ -36,7 +36,7 @@ There's multiple reasons for this:
 
 ## Supported wallets
 
-Please contact and encourage your wallet developers to add support. The more widespread the usage of payjoin, the more broken the heuristics used by blockchain analysis companies become and can effectively harass and censor your money. If you are a wallet developer, please [contact us](Community.md) if you need help or have feedback.
+Please contact and encourage your wallet developers to add support. The more widespread the usage of payjoin, the more broken the heuristics used by blockchain analysis companies become and can effectively trace your financial history. If you are a wallet developer, please [contact us](Community.md) if you need help or have feedback.
 
 
 
