@@ -2,7 +2,7 @@
 
 This document explains how to use BTCPay Server's Payjoin feature. For a detailed, technical explanation of how payjoin is implemented, check the [Payjoin Specififcations](Payjoin-spec.md)
 
-# Enabling Payjoin as a merchant
+## Enabling Payjoin as a merchant
 
 1. Create a store
 2. Configure a hot wallet for your derivation scheme
@@ -12,7 +12,7 @@ This document explains how to use BTCPay Server's Payjoin feature. For a detaile
 
 It's important to note that you will need at least 1 UTXO for payjoin to work.
 
-# Paying to Payjoin as a user
+## Paying to Payjoin as a user
 
 The [BTCPay Wallet](Wallet.md) supports Payjoin. 
 
@@ -26,7 +26,7 @@ The [BTCPay Wallet](Wallet.md) supports Payjoin.
 6. If you are using a hardware wallet, you will be asked to sign the payjoin transaction again (the hot wallet feature signs the transaction for you automatically). 
 7. Congratulations, you've just helped improve Bitcoin's fungibility and your financial sovereignity!
 
-# Why did a payjoin not happen?
+## Why did a payjoin not happen?
 
 There's multiple reasons for this:
 * The store did not have any utxos to contribute towards a payjoin
@@ -34,7 +34,7 @@ There's multiple reasons for this:
 * You are not using segwit or p2sh wrapped segwit.
 * The payjoin server is not available
 
-# Will my wallet support this?
+## Will my wallet support this?
 
 Please contact and encourage your wallet developers to add support. The more widespread the usage of payjoin, the more broken the heuristics used by blockchain analysis companies become and can effectively harass and censor your money. If you are a wallet developer, please [contact us](Community.md) if you need help or have feedback.
 
