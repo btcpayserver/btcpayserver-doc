@@ -34,6 +34,7 @@ Please check out our [official website](https://btcpayserver.org/), our [complet
 * Crowdfunding app
 * Payment Requests
 * Internal, full-node reliant wallet with [hardware wallet integration](Vault.md)
+* [Payjoin Support](Payjoin.md)
 
 ## How it works
 
@@ -127,6 +128,8 @@ Enterprises can use it as scalable and secure back-end of their infrastracture w
 * [Accounting](Accounting.md)
 * [Payment Requests](PaymentRequests.md)
 * [Hardware Wallet Integration (BTCPay Vault) ](Vault.md)
+* [Payjoin](Payjoin.md)
+  - [Payjoin Specification](Payjoin-spec.md)
 
 ### Integrations
 
