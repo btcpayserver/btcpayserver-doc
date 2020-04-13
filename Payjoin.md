@@ -12,6 +12,11 @@ This document explains how to use BTCPay Server's Payjoin feature. For a detaile
 
 It's important to note that you will need at least 1 UTXO for payjoin to work.
 
+![](img/payjoin/Payjoin_Guide_Pay_1.png)
+![](img/payjoin/Payjoin_Guide_Pay_2.png) 
+![](img/payjoin/Payjoin_Guide_Pay_3.png) 
+![](img/payjoin/Payjoin_Guide_Pay_4.png) 
+
 ## Paying to Payjoin as a user
 
 The [BTCPay Wallet](Wallet.md) supports Payjoin. 
