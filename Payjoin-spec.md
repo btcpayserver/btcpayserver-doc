@@ -37,6 +37,9 @@ Bustapay is currently not widely deployed, so we are not worried about breaking 
 
 Our implementation is identical to bustapay with the following differences.
 ```diff
+- The standard way of letting a sender know where to send a bustapay transaction is done via a bip21 encoded address. The key value "bpu" (short for "BustaPayUrl") should be used. An example of such address would be bitcoin:2NABbUr9yeRCp1oUCtVmgJF8HGRCo3ifpTT?bpu=https://bp.bustabit.com/submit It is highly encouraged that urls are kept short. 
++ The standard way of letting a sender know where to send a bustapay transaction is done via a bip21 encoded address. The key value "pj" (short for "payjoin URL") should be used. An example of such address would be bitcoin:2NABbUr9yeRCp1oUCtVmgJF8HGRCo3ifpTT?pj=https://example.com/submit It is highly encouraged that urls are kept short.
+
 - Step 1. Sender creates a bitcoin transaction paying the receiver
 + Step 1. Sender creates a bitcoin transaction OR PSBT paying the receiver
 + While we also support the use of raw transaction instead of PSBT, we strongly advise against it.
