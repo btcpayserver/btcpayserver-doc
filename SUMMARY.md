@@ -49,6 +49,8 @@
 * [Accounting](Accounting.md)
 * [Payment Requests](PaymentRequests.md)
 * [Hardware Wallet Integration](Vault.md)
+* [Payjoin](Payjoin.md)
+  - [Payjoin Specification](Payjoin-spec.md)
 
 ## Integrations
 
