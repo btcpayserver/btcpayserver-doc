@@ -2,25 +2,25 @@
 
 ## Introduction
 
-Payjoin is a generic term for any privacy mechanism where a merchant can protect his own privacy and the privacy of his customers by mixing his own UTXOs within the payment of the customer.
+Payjoin is a generic term for any privacy mechanism where merchants can protect their own and the privacy of their customers by mixing merchant's UTXOs with customer's payment.
 
 This has two purposes:
 * It protects the sender by fighting against one of the biggest heuristic used by privacy invading technology: No longer can it be assumed that all the inputs in a transaction belongs to the same entity
-* It allows the receiver to consolidate his UTXOs and [to batch](#batching) his own payments to economize on-chain fee.
+* It allows the receiver to consolidate UTXOs and [batch](#batching) his own payments to economize on-chain fee.
 
 [Bustapay (BIP79)](https://github.com/bitcoin/bips/blob/master/bip-0079.mediawiki) is a specification of such mechanism and has been the first attempt to properly standardize it.
 
 However, we identified some issues in the Bustapay specification, so we needed to deviate from it.
 
-This document attempts at describing the protocol BTCPayServer is using, along with our implementation choices and rational behind all of them.
+This document attempts at describing the protocol BTCPay Server is using, along with our implementation choices and rational behind all of them.
 
-Not only the will allow additional wallets to interoperate with us more easily, but this provide a way to get feedback from the community of things we may have overlooked. We may submit this protocol as a Bitcoin Improvement Proposal once we are confident nothing is missing.
+Not only the will allow additional wallets to interoperate with us more easily, but this provides a way to get feedback from the community of things we may have overlooked. We may submit this protocol as a Bitcoin Improvement Proposal once we are confident nothing is missing.
 
 ## In a nutshell
 
 We are using the same one step process as [bustapay (BIP79)](https://github.com/bitcoin/bips/blob/master/bip-0079.mediawiki), where the sender is creating a PSBT (or transaction) called the `original transaction`, which is a valid payment which can be broadcasted by the receiver as-is if the payjoin fails.
 
-If a payjoin is possible, the receiver send back a `payjoin transaction proposal` which represent a transaction or PSBT signed by the receiver. Such proposal include additional inputs or outputs from the receiver.
+If a payjoin is possible, the receiver sends back a `payjoin transaction proposal` which represents a transaction or PSBT signed by the receiver. Such proposal includes additional inputs or outputs from the receiver.
 
 The sender validates this `payjoin transaction proposal`, sign it and broadcast the resulting valid `payjoin transaction`.
 
@@ -162,7 +162,7 @@ Our client is able to pay a onion payjoin endpoint, this will allow wallets host
 Note: 
 
 * The sender **does NOT check** whether ouputs have been removed or modified. This allow flexibility to the receiver to adapt his receiving address type to match the other outputs's address type of the sender, or, on the contrary, to create a payment output which would be considered a change address by common chain analysis heuristic. For example, if the receiver support both P2WPKH and P2SH-P2WPKH, even if the invoice's address in the original transaction was P2WPKH, the receiver may change the address to be P2SH-P2WPKH to match sender's change address format. This is safe because the sender only cares that he does not send too much money in the payjoin transaction. It is also useful if the receiver wants to batch some of his own payments in the transaction.
-* Our method of checking fee allows the receiver to batch payments in the payjoin transaction as long as he pays the fee above what the sender is expecting. (See [batching](#batching))
+* Our method of checking fee allows the receiver to batch payments in the payjoin transaction as long as he pays the fee above the sender's expected amount. (See [batching](#batching))
 
 \*<a name="calculate-balance"></a>: For calculating the sent amount of the payjoin transaction, you must only include in the calculation the inputs and outputs that were also present in the original PSBT. (in other words, those with HD key paths and public keys set)
 
@@ -189,6 +189,8 @@ A common way to protect your privacy is to donate those spare changes to your fa
 
 However, if you donate via payjoin, it will look like a normal transaction.
 
+On top of this we poison analysis by randomly faking a round amount of satoshi for the additional output. (See [the heuristic section](#heuristics))
+
 ### Blockchain analytics heuristics affected by our implementation <a name="heuristics"></a>
 
 Our implementation of payjoin is breaking the following blockchain:
@@ -202,9 +204,15 @@ Because payjoin is mixing the inputs or the sender and receiver, this heuristic 
 When Alice pays Bob, if Alice is using P2SH but Bob's deposit address is P2WPKH, the heuristic would assume that the P2SH output is the change address of Alice.
 This is however a now broken assumption, as the payjoin receiver has the freedom to mislead analytics by purposefully changing the invoice's address in the payjoin transaction.
 
-If the original address of Bob is P2WPKH and alice is sending from P2SH, then Bob can change the receiving address in the payjoin transaction to be P2SH. Preventing the use of this heuristic.
+If Bob's original address is P2WPKH and Alice is sending from P2SH, then Bob can change the receiving address in the payjoin transaction to be P2SH. Preventing the use of this heuristic.
 
-Alternatively, if the original address of Bob is P2WPKH and alice is also P2WPKH, Bob can change the receiving address in the payjoin to P2SH. The heuristic would wrongfully identify the payjoin's receiving address as the change address of the transaction.
+Alternatively, if the original address of Bob is P2WPKH and Alice is also P2WPKH, Bob can change the receiving address in the payjoin to P2SH. The heuristic would wrongfully identify the payjoin's receiving address as the change address of the transaction.
+
+* Change identification from round change amount
+
+If Alice pays Bob, she might be tempted to pay him a round amount, like `1.23000000 BTC`. When this happen, blockchain analysis often identify the output without the round amount as the change of the transaction.
+
+For this reason, during a [spare change](#spare-change) situation, we randomly round the amount in the output added by the receiver to the payjoin transaction.
 
 ## Future work
 
@@ -212,7 +220,7 @@ Alternatively, if the original address of Bob is P2WPKH and alice is also P2WPKH
 
 In order to be useful, a sender and a receiver must share the same type of bitcoin address. 
 
-Ideally, this means that the receiver could adapt the invoice's payment address and contributed input to match the sender's orginal PSBT. In the context of BTCPay Server, this would mean that one merchant need to setup two wallets for a single store. While this is theorically possible, this require a big refactoring in our code.
+Ideally, this means that the receiver could adapt the invoice's payment address and contributed input to match the sender's orginal PSBT. In the context of BTCPay Server, this would mean that one merchant needs to setup two wallets for a single store. While this is theorically possible, this requires a big refactoring in our code.
 
 Also, even in the event we developed such feature, merchants are rarely technically apt to understand the reason of using two wallets for their store to accomodate such technical limitation.
 
@@ -222,7 +230,7 @@ While P2SH-P2WPKH is [the most common type of inputs](https://transactionfee.inf
 
 ### Receiver's payment batching <a name="batching"></a>
 
-Because the sender is not verifying the outputs that the receiver have the freedom to add output for payments he wants to make.
+Because the sender is not verifying the outputs that the receiver has the freedom to add output for payments he wants to make.
 
 Imagine Alice making transaction of 1 BTC to Bob. Bob decided he wanted to send 2 BTC to an exchange.
 When Alice is negotiating a payjoin, Bob can add 2 BTC in the outputs in addition to his inputs. In such way, he will economize fees.
