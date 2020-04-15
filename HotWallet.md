@@ -26,7 +26,9 @@ Setting up a hot wallet is quite easy.
 7. If you provided an existing seed, a list of preview addresses will be shown. Validate that they are the same as the one on your wallet and Save.
 
 ![](img/hotwallet/Setup1.png)
+
 ![](img/hotwallet/Setup2.png)
+
 ![](img/hotwallet/Setup3.png)
 
 ### Spending funds with BTCPay Hot Wallet
