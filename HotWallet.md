@@ -43,10 +43,10 @@ Once you’ve received funds to your wallet and you decide to spend them, you ca
 
 ## Reducing risk
 
-As mentioned earlier, the hot wallet functionality includes risk of funds being stolen in the case of the server or account being compromised. To mitigate this risk, we advise you to 
+As mentioned above, the hot wallet functionality includes risk of funds being stolen in the case of the server or account being compromised. To mitigate this risk, we advise you to:
 
 * Enable two factor or U2F authentiation
-* Occassionally move funds to your cold storage either manually or by configuring BTC Transmuter with automatic payment forwarding 
+* Occasionally move funds to your cold storage either manually or by configuring [BTC Transmuter](https://github.com/btcpayserver/btcTransmuter) with automatic payment forwarding.
 
 ## Importing seeds with an existing balance
 

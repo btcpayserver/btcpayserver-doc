@@ -35,7 +35,7 @@ Additional free, open-source plugins can be used with your BTCPay.
 
 LibrePatron is a self-hosted, censorship-free, Patreon alternative. LibrePatron uses BTCPay Server to receive Bitcoin payments on a recurring basis. Funds go directly to the creator's wallet. View LibrePatron instructions [here](https://blog.btcpayserver.org/librepatron-patreon-alternative/). 
 
-BTC Transmuter is a self-hosted service that allows you to automate your money and other tasks using BTCPay. Create custom, automated processes using crypto service triggers based on BTCPay. Common use-cases are fiat integration, payment forwarding and email automation. Open lightning channels, detect payments and more, using blockchain data from your own nodes in BTCPay. View BTC Transmuter documentation [here](https://github.com/btcpayserver/btcTransmuter/blob/master/docs/index.md).
+BTC Transmuter is a self-hosted service that allows you to automate your money and other tasks using BTCPay. Create custom, automated processes using crypto service triggers based on BTCPay. Common use-cases are fiat integration, payment forwarding and email automation. Open lightning channels, detect payments and more, using blockchain data from your own nodes in BTCPay. View BTC Transmuter documentation [here](https://github.com/btcpayserver/btcTransmuter).
 
 ## Join The BTCPay Community
 BTCPay Server is an open-source project, not a company. We rely on a network of diverse contributors and users to provide support for numerous use-cases. Join us in improving, learning, and building BTCPay.
