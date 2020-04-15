@@ -22,14 +22,14 @@ We are using the same one step process as [bustapay (BIP79)](https://github.com/
 
 If a payjoin is possible, the receiver sends back a `payjoin transaction proposal` which represents a transaction or PSBT signed by the receiver. Such proposal includes additional inputs or outputs from the receiver.
 
-The sender validates this `payjoin transaction proposal`, sign it and broadcast the resulting valid `payjoin transaction`.
+The sender validates this `payjoin transaction proposal`, signs it and broadcasts the resulting valid `payjoin transaction`.
 
 ## Difference with Bustapay
 
 The [bustapay (BIP79)](https://github.com/bitcoin/bips/blob/master/bip-0079.mediawiki) proposal has been written as a proposal protocol for payjoin.
 
 We initially implemented it, but found out that the specification was missing certain important aspects.
-Also, because this is a new proposal, we expect that even our own proposal will experience breaking changes in the following week and months.
+Also, because this is a new proposal, we expect that even our own proposal will experience breaking changes in the short-term.
 As such, we preferred writing our own specification for the time being.
 Once the specification stabilizes and has gone through review and testing by the community, we will decide whether we will submit to the BIP process, or if we can just modify bustapay BIP79.
 
@@ -71,7 +71,7 @@ Here are the rational for using PSBT instead of raw transactions, and why the re
 
 ### Respecting the minimum relay fee policy
 To be properly relayed, a Bitcoin transaction needs to pay at least 1 satoshi per virtual byte.
-When fees are low, the original transaction is already 1 satoshi per virtual byte, so if the merchant adds his own input, he needs to make sure the fee are increased such that the rate does not drop below 1 satoshi per virtual byte.
+When fees are low, the original transaction is already 1 satoshi per virtual byte, so if the merchant adds their own input, they need to make sure the fee is increased such that the rate does not drop below 1 satoshi per virtual byte.
 
 ### Preventing mempool replacement
 A safe way to implement payjoin, is for both the sender and receiver to try broadcasting the original transaction at some fixed interval period regardless of the state of the payjoin.
@@ -97,10 +97,10 @@ This is not a concern for receivers using end-user wallets such as Wasabi Wallet
 
 ### Receiver side
 
-The BTCPayServer implementation is making the following checks on the original PSBT:
+The BTCPay Server implementation is making the following checks on the original PSBT:
 
 * The original PSBT must be finalized (Fails with error `psbt-not-finalized`)
-* All the inputs must be P2WPKH or P2SH-P2WPKH and only if the the store can have utxos that match the original tx inputs (Fails with error `unsupported-inputs`) [*](#unsupported-inputs)
+* All the inputs must be P2WPKH or P2SH-P2WPKH and only if the the store has utxos that match the original tx inputs (Fails with error `unsupported-inputs`) [*](#unsupported-inputs)
 * The PSBT is sane (Fails with error `insane-psbt`)
 * All inputs have the `witnessUTXO` (Fails with error `need-utxo-information`)
 * Check that there is no global xpubs, HD Key or public key information in the PSBT (Fails with error `leaking-data`)
@@ -164,7 +164,7 @@ Our client is able to pay a onion payjoin endpoint, this will allow wallets host
 
 Note: 
 
-* The sender **does NOT check** whether ouputs have been removed or modified. This allow flexibility to the receiver to adapt his receiving address type to match the other outputs's address type of the sender, or, on the contrary, to create a payment output which would be considered a change address by common chain analysis heuristic. For example, if the receiver support both P2WPKH and P2SH-P2WPKH, even if the invoice's address in the original transaction was P2WPKH, the receiver may change the address to be P2SH-P2WPKH to match sender's change address format. This is safe because the sender only cares that he does not send too much money in the payjoin transaction. It is also useful if the receiver wants to batch some of his own payments in the transaction.
+* The sender **does NOT check** whether ouputs have been removed or modified. This allows flexibility to the receiver to adapt his receiving address type to match the other outputs's address type of the sender, or, on the contrary, to create a payment output which would be considered a change address by common chain analysis heuristic. For example, if the receiver supports both P2WPKH and P2SH-P2WPKH, even if the invoice's address in the original transaction was P2WPKH, the receiver may change the address to be P2SH-P2WPKH to match sender's change address format. This is safe because the sender only cares that they do not send too much money in the payjoin transaction. It is also useful if the receiver wants to batch some of their own payments in the transaction.
 * Our method of checking fee allows the receiver to batch payments in the payjoin transaction as long as he pays the fee above the sender's expected amount. (See [batching](#batching))
 
 \*<a name="calculate-balance"></a>: For calculating the sent amount of the payjoin transaction, you must only include in the calculation the inputs and outputs that were also present in the original PSBT. (in other words, those with HD key paths and public keys set)
