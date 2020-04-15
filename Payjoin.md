@@ -5,7 +5,7 @@ This document explains how to use BTCPay Server's Payjoin feature. For a detaile
 ## Enabling Payjoin as a merchant
 
 1. Create a store
-2. Configure a hot wallet for your derivation scheme
+2. Configure a [hot wallet](HotWallet.md) for your derivation scheme
    * Store => Derivation Scheme => BTC => Modify => Import from => a new/existing seed => Is hot wallet checked and using either segwit or segwit wrapped as an address type => Generate.
    * Don't forget to click Confirm!
 3. Enable Payjoin/P2EP in the "General Settings" and click "Save"
@@ -26,7 +26,7 @@ The [BTCPay Wallet](Wallet.md) supports Payjoin.
    * Scan the QR code with the camera scanning feature
    * Copy the link from the "Open in wallet" button and paste it in the "Parse BIP21" prompt
 2. The send form should be populated with the payment details. You can check if the invoice supports payjoin by expanding the "advanced settings" and see if there is a "Payjoin endoint" input with a url.
-3. Sign your transaction using either BTCPay Server's hardware wallet support via [BTCPay Vault](Vault.md) or the NBXplorer hot wallet feature.
+3. Sign your transaction using either BTCPay Server's hardware wallet support via [BTCPay Vault](Vault.md) or the [hot wallet](HotWallet.md) feature.
 4. Once your original transaction is ready, you will be given the option to either `Broadcast (Payjoin)` or to `Broadcast (Simple)`. Choose `Broadcast (Payjoin)`.
 5. The payjoin server will propose a new special transaction, if possible. If the payjoin server is unable to do the payjoin, the original transaction is broadcast instead.
 6. If you are using a hardware wallet, you will be asked to sign the payjoin transaction again (the hot wallet feature signs the transaction for you automatically). 

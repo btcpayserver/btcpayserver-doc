@@ -38,11 +38,13 @@
   - [Electrum Wallet](ElectrumWallet.md)
     - [ElectrumX](ElectrumX.md)
     - [Electrum Personal Server EPS](ElectrumPersonalServer.md)
+  - [Hot Wallet](HotWallet.md)
 - [(4) What's Next?](WhatsNext.md)
 
 ## Features
 
 * [Wallet](Wallet.md)
+  - [Hot Wallet](HotWallet.md)
 * [Invoices](Invoices.md)
 * [Apps](Apps.md)
 * [Lightning Network](LightningNetwork.md)

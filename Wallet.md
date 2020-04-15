@@ -35,12 +35,13 @@ The Send function allows spending of the funds from the BTCPay wallet.
 
 ![Send from the Wallet](/img/BTCPayWallets3.png)
 
-To spend the funds, user is required to **sign** the transaction. Transaction can be signed with:
+To spend the funds, the user is required to **sign** the transaction. Transactions can be signed with:
 
 - Ledger Hardware Wallet
 - HD Private key or mnemonic seed
 - Wallet supporting PSBT
 - Hardware Wallet (BTCPay Vault)
+- Hot Wallet
 
 #### Signing with Ledger Hardware wallet
 
@@ -63,6 +64,12 @@ Check this tutorial on how to [sign a transaction with ColdCard Hardware Wallet]
 [BTCPay Vault](https://blog.btcpayserver.org/btcpay-vault/) is a cross-platform desktop application that makes it possible to use a wide range of hardware wallets with the BTCPay Wallet.
 
 Check [BTCPay Vault](Vault.md) documentation for instructions on how to set up and sign with a [compatible hardware wallet](https://github.com/bitcoin-core/HWI#device-support).
+
+#### Signing with a Hot Wallet
+
+BTCPay Server also allows stores to generate or import a wallet while also storing its private keys. If your store was configured this way, you'll have the option available in the "Sign with.." dropdown.
+
+[Using the hot wallet feature comes with its own security implications, please be sure to read and understand them over at the Hot Wallet documentation.](HotWallet.md)
 
 ### Receive
 
