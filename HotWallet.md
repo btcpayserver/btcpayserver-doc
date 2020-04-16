@@ -10,7 +10,7 @@ Storing private keys on a public server comes with risks. This is similar to the
 
 ## Requirements for Hot Wallet
 
-By default, you need to be a server admin to use the hot wallet feature. This is because server admins are able to extract the private key easily. If for some reason ( such as allowing individuals that trust you enough with their store), you can enable the hot wallet for non-admins from Server Settings->Policies->"Allow non-admins to create hot wallets for their stores". 
+By default, you need to be a server admin to use the hot wallet feature. This is because server admins are able to extract the private key easily. If for some reason (such as allowing individuals that trust you enough with their store), you can enable the hot wallet for non-admins from Server Settings->Policies->"Allow non-admins to create hot wallets for their stores". 
 
 ![](img/hotwallet/ServerSettings.png)
 
