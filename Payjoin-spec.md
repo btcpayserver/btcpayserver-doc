@@ -219,7 +219,7 @@ For this reason, during a [spare change](#spare-change) situation, we randomly r
 
 ## Future work
 
-### Nested segwit support
+### Supporting P2WPKH and P2SH-P2WPKH for the same store
 
 In order to be useful, a sender and a receiver must share the same type of bitcoin address. 
 
@@ -229,7 +229,9 @@ Also, even in the event we developed such feature, merchants are rarely technica
 
 Another proposition is to allow one wallet to support both, P2WPKH and P2SH-P2WPKH. But this is problematic, this is non standard so no wallet or tool support fund recovery on such type of wallet. 
 
-While P2SH-P2WPKH is [the most common type of inputs](https://transactionfee.info/charts/inputs-segwit-distribution/), we decided to implement P2WPKH first because we plan to add payjoin support to Wasabi Wallet which do not support P2SH-P2WPKH.
+For now, we only support a single wallet for the store of the merchant, P2SH-P2WPKH  or P2WPKH who are [the most common type of inputs](https://transactionfee.info/charts/inputs-segwit-distribution/).
+
+This mean that if the type does not match the sender's wallet type, then the payjoin will not be created and the payment will fallback to a normal transaction.
 
 ### Receiver's payment batching <a name="batching"></a>
 
