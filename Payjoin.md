@@ -6,8 +6,8 @@ This document explains how to use BTCPay Server's Payjoin feature. For a detaile
 
 1. Create a store
 2. Configure a [hot wallet](HotWallet.md) for your derivation scheme
-   * Store => Derivation Scheme => BTC => Modify => Import from => a new/existing seed => Is hot wallet checked and using either segwit or segwit wrapped as an address type => Generate.
-   * Don't forget to click Confirm!
+   - Store => Derivation Scheme => BTC => Modify => Import from => a new/existing seed => Is hot wallet checked and using either segwit or segwit wrapped as an address type => Generate.
+   - Don't forget to click Confirm!
 3. Enable Payjoin/P2EP in the "General Settings" and click "Save"
 
 It's important to note that you will need at least 1 UTXO for payjoin to work.
@@ -51,6 +51,4 @@ There's multiple reasons for this:
 ## Supported wallets
 
 Please contact and encourage your wallet developers to add support. The more widespread the usage of payjoin, the more broken the heuristics used by blockchain analysis companies become and can effectively trace your financial history. If you are a wallet developer, please [contact us](Community.md) if you need help or have feedback.
-
-
 
