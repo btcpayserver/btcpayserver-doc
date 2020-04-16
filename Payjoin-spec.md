@@ -67,7 +67,7 @@ We will refer to the sender's PSBT by the name of `original PSBT` and the receiv
 
 ## Rational
 
-Here are the rational for using PSBT instead of raw transactions, and why the receiver should be responsible to bump the fee of the payjoin transaction.
+Here is the rationale for using PSBT instead of raw transactions, and why the receiver should be responsible to bump the fee of the payjoin transaction.
 
 ### Respecting the minimum relay fee policy
 To be properly relayed, a Bitcoin transaction needs to pay at least 1 satoshi per virtual byte.
@@ -79,10 +79,10 @@ A safe way to implement payjoin, is for both the sender and receiver to try broa
 If the receiver was not properly adding fees to the payjoin transaction, the original transaction would end up replacing the payjoin transaction in the mempool.
 
 ### Defeating heuristics based on the fee calculation
-Most wallet are creating a round fee rate (like 2 sat/b).
-If the payjoin transaction's fee were not increased by the added size, then those payjoin transaction could easily be identifiable on the blockchain.
+Most wallets are creating a round fee rate (like 2 sat/b).
+If the payjoin transaction's fee was not increased by the added size, then those payjoin transaction could easily be identifiable on the blockchain.
 
-Not only those transaction would stand out by not having a round fee (like 1.87 sat/b), but any suspicion of payjoin could be confirmed by making by checking if removing one input would create a round fee rate.
+Not only would those transactions would stand out by not having a round fee (like 1.87 sat/b), but any suspicion of payjoin could be confirmed by checking if removing one input would create a round fee rate.
 
 ### Receiver does not need to be a full node
 Because the receiver needs to bump the fee to keep the same fee rate as the original PSBT, it needs the input's UTXO information to know what is the original fee rate. Without PSBT, light wallets like Wasabi Wallet would not be able to receive a payjoin transaction.
@@ -120,7 +120,7 @@ Then, we proceed to create the payjoin transaction by cloning the original trans
 * If there is only one output, we add a second output [*](#spare-change)
 * We include some of the receiver's inputs
 
-Finally, we need to increase the fees to pay for the increased size of payjoin transaction to pay for additional inputs and outputs of the receiver.
+Finally, we need to increase the fees to pay for the increased size of the payjoin transaction to pay for additional inputs and outputs of the receiver.
 
 * If the sender overpaid the invoice, we substract fees on the overpaid part of the output paying the invoice. [**](#receiver-pay)
 * We substract the rest to other outputs that we assume are change outputs, making sure their value does not go below dust.
@@ -165,7 +165,7 @@ Our client is able to pay a onion payjoin endpoint, this will allow wallets host
 Note: 
 
 * The sender **does NOT check** whether ouputs have been removed or modified. This allows flexibility to the receiver to adapt his receiving address type to match the other outputs's address type of the sender, or, on the contrary, to create a payment output which would be considered a change address by common chain analysis heuristic. For example, if the receiver supports both P2WPKH and P2SH-P2WPKH, even if the invoice's address in the original transaction was P2WPKH, the receiver may change the address to be P2SH-P2WPKH to match sender's change address format. This is safe because the sender only cares that they do not send too much money in the payjoin transaction. It is also useful if the receiver wants to batch some of their own payments in the transaction.
-* Our method of checking fee allows the receiver to batch payments in the payjoin transaction as long as he pays the fee above the sender's expected amount. (See [batching](#batching))
+* Our method of checking fee allows the receiver to batch payments in the payjoin transaction as long as they pay the fee above the sender's expected amount. (See [batching](#batching))
 
 \*<a name="calculate-balance"></a>: For calculating the sent amount of the payjoin transaction, you must only include in the calculation the inputs and outputs that were also present in the original PSBT. (in other words, those with HD key paths and public keys set)
 
@@ -175,7 +175,7 @@ Note:
 
 ### Analysis poisoning
 
-Malicious entities often send very small amount of bitcoin to used tainted address in an effort to deanonymise the receiver.
+Malicious entities often send very small amounts of bitcoin to used, tainted addresses in an effort to deanonymise the receiver.
 
 For example if Mallory knows that address A belongs to Bob, and Mallory wants to know the other unspent outputs of Bob, she can send 1000 satoshi to address A.
 Then Bob would eventually make a payment including this unspent output and other unspent output B and C. Mallory could learn from this that B and C belongs to Bob.
@@ -186,7 +186,7 @@ Another example of analysis poisoning is explained in [the following section](#h
 
 ### Spare change donation <a name="spare-change"></a>
 
-Small changes inside wallets are detrimental to privacy. Mixers like Wasabi wallet, because of its protocol, eventually generate such [small change](https://docs.wasabiwallet.io/using-wasabi/ChangeCoins.html#spend-the-change-with-another-entity-where-you-don-t-mind-if-each-of-the-two-know-that-you-transact-with-the-other-entity).
+Small change inside wallets are detrimental to privacy. Mixers like Wasabi wallet, because of its protocol, eventually generate such [small change](https://docs.wasabiwallet.io/using-wasabi/ChangeCoins.html#spend-the-change-with-another-entity-where-you-don-t-mind-if-each-of-the-two-know-that-you-transact-with-the-other-entity).
 
 A common way to protect your privacy is to donate those spare changes to your favorite developer (ie Nicolas Dorier), to deposit them in an exchange or on your favorite merchant's store account. Those kind of transactions can easily be spotted on the blockchain: There is only one output.
 
@@ -196,24 +196,24 @@ On top of this we poison analysis by randomly faking a round amount of satoshi f
 
 ### Blockchain analytics heuristics affected by our implementation <a name="heuristics"></a>
 
-Our implementation of payjoin is breaking the following blockchain:
+Our implementation of payjoin is breaking the following blockchain heuristics:
 
 * Common inputs heuristics.
 
-Because payjoin is mixing the inputs or the sender and receiver, this heuristic becomes unreliable.
+Because payjoin is mixing the inputs of the sender and receiver, this heuristic becomes unreliable.
 
 * Change identification from scriptPubKey type heuristics.
 
 When Alice pays Bob, if Alice is using P2SH but Bob's deposit address is P2WPKH, the heuristic would assume that the P2SH output is the change address of Alice.
-This is however a now broken assumption, as the payjoin receiver has the freedom to mislead analytics by purposefully changing the invoice's address in the payjoin transaction.
+This is now however a broken assumption, as the payjoin receiver has the freedom to mislead analytics by purposefully changing the invoice's address in the payjoin transaction.
 
-If Bob's original address is P2WPKH and Alice is sending from P2SH, then Bob can change the receiving address in the payjoin transaction to be P2SH. Preventing the use of this heuristic.
+If Bob's original address is P2WPKH and Alice is sending from P2SH, then Bob can change the receiving address in the payjoin transaction to be P2SH, preventing the use of this heuristic.
 
 Alternatively, if the original address of Bob is P2WPKH and Alice is also P2WPKH, Bob can change the receiving address in the payjoin to P2SH. The heuristic would wrongfully identify the payjoin's receiving address as the change address of the transaction.
 
 * Change identification from round change amount
 
-If Alice pays Bob, she might be tempted to pay him a round amount, like `1.23000000 BTC`. When this happen, blockchain analysis often identify the output without the round amount as the change of the transaction.
+If Alice pays Bob, she might be tempted to pay him a round amount, like `1.23000000 BTC`. When this happens, blockchain analysis often identify the output without the round amount as the change of the transaction.
 
 For this reason, during a [spare change](#spare-change) situation, we randomly round the amount in the output added by the receiver to the payjoin transaction.
 
@@ -223,26 +223,26 @@ For this reason, during a [spare change](#spare-change) situation, we randomly r
 
 In order to be useful, a sender and a receiver must share the same type of bitcoin address. 
 
-Ideally, this means that the receiver could adapt the invoice's payment address and contributed input to match the sender's orginal PSBT. In the context of BTCPay Server, this would mean that one merchant needs to setup two wallets for a single store. While this is theorically possible, this requires a big refactoring in our code.
+Ideally, this means that the receiver could adapt the invoice's payment address and contributed input to match the sender's orginal PSBT. In the context of BTCPay Server, this would mean that one merchant needs to setup two wallets for a single store. While this is theorically possible, this requires a big refactoring in our code and is not yet available.
 
-Also, even in the event we developed such feature, merchants are rarely technically apt to understand the reason of using two wallets for their store to accomodate such technical limitation.
+Also, even in the event that we developed such feature, merchants are rarely technically apt to understand the reason of using two wallets for their store to accomodate such technical limitation.
 
-Another proposition is to allow one wallet to support both, P2WPKH and P2SH-P2WPKH. But this is problematic, this is non standard so no wallet or tool support fund recovery on such type of wallet. 
+Another proposition is to allow one wallet to support both, P2WPKH and P2SH-P2WPKH. But this is problematic as it is non standard so no wallet or tool supports fund recovery for such a type of wallet. 
 
-For now, we only support a single wallet for the store of the merchant, P2SH-P2WPKH  or P2WPKH who are [the most common type of inputs](https://transactionfee.info/charts/inputs-segwit-distribution/).
+For now, we only support a single wallet for the store of the merchant, P2SH-P2WPKH or P2WPKH which are [the most common type of inputs](https://transactionfee.info/charts/inputs-segwit-distribution/).
 
-This mean that if the type does not match the sender's wallet type, then the payjoin will not be created and the payment will fallback to a normal transaction.
+This means that if the type does not match the sender's wallet type, the payjoin will not be created and the payment will fallback to a normal transaction.
 
 ### Receiver's payment batching <a name="batching"></a>
 
-Because the sender is not verifying the outputs that the receiver has the freedom to add output for payments he wants to make.
+Because the sender is not verifying the outputs of the payjoin transaction proposal, the receiver has the freedom to add output for payments they want to make.
 
 Imagine Alice making transaction of 1 BTC to Bob. Bob decided he wanted to send 2 BTC to an exchange.
 When Alice is negotiating a payjoin, Bob can add 2 BTC in the outputs in addition to his inputs. In such way, he will economize fees.
 
 ### Analysis poisoning
 
-While our protocol allow the receiver to change the output address in order to break some blockchain analysis heuristic, we are still not taking advantage of it.
+While our protocol allows the receiver to change the output address in order to break some blockchain analysis heuristic, we are still not taking advantage of it.
 
 ## References
 
