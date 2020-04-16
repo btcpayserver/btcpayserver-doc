@@ -74,9 +74,13 @@ Here are some good resources where you learn more about the importance of full n
 ### Trust Concerns 
 Third Party hosts have the ability to enable specific features for their non-admin users which require users to place some level of trust in the Third Party host, if such features are used. 
 
-Specifically, Third Party hosts should not enable the policies "Allow non-admins to create hot wallets for their stores" or "Allow non-admins to import their hot wallets to the node wallet" without understanding that users will be using hot wallets on the server. This feature is disabled by default for non-admins to reduce risk considerations for both Third Party hosts and their users.
+Specifically, Third Party hosts should not enable the following policies without understanding that users will be using hot wallets on the server. These features are disabled by default for non-admins to reduce the risk considerations for both Third Party hosts and their users:
 
-Third Party host users who are granted access to the hot wallet functionality to enable features such as Payjoin, should understand the risk and trust associated with [using hot wallets](HotWallet.md) before choosing to use it. Use one of the [recommended wallets](ConnectWallet.md) which provide an xpubkey to use in your store, if you are unsure which wallet type to use. 
+- Allow non-admins to create hot wallets for their stores
+- Allow non-admins to import their hot wallets to the node wallet
+- Allow non-admins to use the internal lightning node in their stores
+
+Third Party users who are granted access to an internal lightning node or hot wallet functionality to enable features such as Payjoin, should understand the risk and trust associated with [using hot wallets](HotWallet.md) before choosing to use it. Use one of the [recommended wallets](ConnectWallet.md) which provide an xpubkey to use in your store, if you are unsure which wallet type to use. 
 
 ## Summary
 Third-party hosts play an important role in the ecosystem since they provide an easy and cost-effective way for users to try and use  BTCPay. The role of honest hosts who provide free service to others is essential in the early phase of BTCPay Server adoption. However, users should be familiar with the pros, cons and potential risks involved when using a trusted third-party. Find the optimal balance between your use-case, cost, and privacy/security trade-offs.
