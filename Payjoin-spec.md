@@ -67,7 +67,7 @@ We will refer to the sender's PSBT by the name of `original PSBT` and the receiv
 
 ## Rational
 
-Here are the rational for using PSBT instead of raw transactions, and why the receiver should be responsible to bump the fee of the payjoin transaction.
+Here is the rationale for using PSBT instead of raw transactions, and why the receiver should be responsible to bump the fee of the payjoin transaction.
 
 ### Respecting the minimum relay fee policy
 To be properly relayed, a Bitcoin transaction needs to pay at least 1 satoshi per virtual byte.
@@ -79,10 +79,10 @@ A safe way to implement payjoin, is for both the sender and receiver to try broa
 If the receiver was not properly adding fees to the payjoin transaction, the original transaction would end up replacing the payjoin transaction in the mempool.
 
 ### Defeating heuristics based on the fee calculation
-Most wallet are creating a round fee rate (like 2 sat/b).
-If the payjoin transaction's fee were not increased by the added size, then those payjoin transaction could easily be identifiable on the blockchain.
+Most wallets are creating a round fee rate (like 2 sat/b).
+If the payjoin transaction's fee was not increased by the added size, then those payjoin transaction could easily be identifiable on the blockchain.
 
-Not only those transaction would stand out by not having a round fee (like 1.87 sat/b), but any suspicion of payjoin could be confirmed by making by checking if removing one input would create a round fee rate.
+Not only would those transactions would stand out by not having a round fee (like 1.87 sat/b), but any suspicion of payjoin could be confirmed by checking if removing one input would create a round fee rate.
 
 ### Receiver does not need to be a full node
 Because the receiver needs to bump the fee to keep the same fee rate as the original PSBT, it needs the input's UTXO information to know what is the original fee rate. Without PSBT, light wallets like Wasabi Wallet would not be able to receive a payjoin transaction.
@@ -120,7 +120,7 @@ Then, we proceed to create the payjoin transaction by cloning the original trans
 * If there is only one output, we add a second output [*](#spare-change)
 * We include some of the receiver's inputs
 
-Finally, we need to increase the fees to pay for the increased size of payjoin transaction to pay for additional inputs and outputs of the receiver.
+Finally, we need to increase the fees to pay for the increased size of the payjoin transaction to pay for additional inputs and outputs of the receiver.
 
 * If the sender overpaid the invoice, we substract fees on the overpaid part of the output paying the invoice. [**](#receiver-pay)
 * We substract the rest to other outputs that we assume are change outputs, making sure their value does not go below dust.
@@ -165,7 +165,7 @@ Our client is able to pay a onion payjoin endpoint, this will allow wallets host
 Note: 
 
 * The sender **does NOT check** whether ouputs have been removed or modified. This allows flexibility to the receiver to adapt his receiving address type to match the other outputs's address type of the sender, or, on the contrary, to create a payment output which would be considered a change address by common chain analysis heuristic. For example, if the receiver supports both P2WPKH and P2SH-P2WPKH, even if the invoice's address in the original transaction was P2WPKH, the receiver may change the address to be P2SH-P2WPKH to match sender's change address format. This is safe because the sender only cares that they do not send too much money in the payjoin transaction. It is also useful if the receiver wants to batch some of their own payments in the transaction.
-* Our method of checking fee allows the receiver to batch payments in the payjoin transaction as long as he pays the fee above the sender's expected amount. (See [batching](#batching))
+* Our method of checking fee allows the receiver to batch payments in the payjoin transaction as long as they pay the fee above the sender's expected amount. (See [batching](#batching))
 
 \*<a name="calculate-balance"></a>: For calculating the sent amount of the payjoin transaction, you must only include in the calculation the inputs and outputs that were also present in the original PSBT. (in other words, those with HD key paths and public keys set)
 
@@ -186,7 +186,7 @@ Another example of analysis poisoning is explained in [the following section](#h
 
 ### Spare change donation <a name="spare-change"></a>
 
-Small changes inside wallets are detrimental to privacy. Mixers like Wasabi wallet, because of its protocol, eventually generate such [small change](https://docs.wasabiwallet.io/using-wasabi/ChangeCoins.html#spend-the-change-with-another-entity-where-you-don-t-mind-if-each-of-the-two-know-that-you-transact-with-the-other-entity).
+Small change inside wallets are detrimental to privacy. Mixers like Wasabi wallet, because of its protocol, eventually generate such [small change](https://docs.wasabiwallet.io/using-wasabi/ChangeCoins.html#spend-the-change-with-another-entity-where-you-don-t-mind-if-each-of-the-two-know-that-you-transact-with-the-other-entity).
 
 A common way to protect your privacy is to donate those spare changes to your favorite developer (ie Nicolas Dorier), to deposit them in an exchange or on your favorite merchant's store account. Those kind of transactions can easily be spotted on the blockchain: There is only one output.
 
