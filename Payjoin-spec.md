@@ -12,7 +12,7 @@ This has two purposes:
 
 However, we identified some issues in the Bustapay specification, so we needed to deviate from it.
 
-This document attempts at describing the protocol BTCPay Server is using, along with our implementation choices and rational behind all of them.
+This document attempts at describing the protocol BTCPay Server is using, along with our implementation choices and rationale behind all of them.
 
 Not only the will allow additional wallets to interoperate with us more easily, but this provides a way to get feedback from the community of things we may have overlooked. We may submit this protocol as a Bitcoin Improvement Proposal once we are confident nothing is missing.
 
@@ -65,7 +65,9 @@ The rest of the process is similar to bustapay.
 
 We will refer to the sender's PSBT by the name of `original PSBT` and the receiver's payjoin proposal as `payjoin PSBT`.
 
-## Rational
+There is no guarantee concerning the ordering of outputs and inputs in either the `original PSBT` or the `payjoin PSBT`. (Note about [BIP69](#bip69))
+
+## Rationale
 
 Here is the rationale for using PSBT instead of raw transactions, and why the receiver should be responsible to bump the fee of the payjoin transaction.
 
@@ -244,9 +246,20 @@ When Alice is negotiating a payjoin, Bob can add 2 BTC in the outputs in additio
 
 While our protocol allows the receiver to change the output address in order to break some blockchain analysis heuristic, we are still not taking advantage of it.
 
+### Increasing privacy of clients using BIP69 <a name="bip69"></a>
+
+Currently, the sender and the receiver we implemented in BTCPay Server does not make any guarantee on the order of inputs and outputs.
+
+The main reason for the receiver to not order the inputs and outputs of the `payjoin transaction` according to BIP69, is that it would make clear to a blockchain analyst that transactions not following BIP69 are not payjoin transactions.
+
+However, some senders may implement BIP69. In order to improve their privacy, our receiver implementation should make an effort to follow BIP69 as well in such situation.
+
+However, some concerns have been reported that this mean that the distributions of payjoin payments would slightly favor BIP69. This happen because a payjoin transaction compliant with BIP69 would happen in both cases: By chance when randomly ordering the payjoin inputs and outputs, but also by the fact the sender had a BIP69 compliant original transaction.
+
 ## References
 
 * [BIP174: Partially Signed Bitcoin Transaction Format](https://github.com/bitcoin/bips/blob/master/bip-0174.mediawiki)
+* [BIP69: Lexicographical Indexing of Transaction Inputs and Outputs](https://github.com/bitcoin/bips/blob/master/bip-0069.mediawiki)
 * [BIP79: Bustapay](https://github.com/bitcoin/bips/blob/master/bip-0179.mediawiki)
 * [Segwit input type distribution](https://transactionfee.info/charts/inputs-segwit-distribution/)
 * [Wasabi wallet: Privacy best practices on change coins](https://docs.wasabiwallet.io/using-wasabi/ChangeCoins.html#spend-the-change-with-another-entity-where-you-don-t-mind-if-each-of-the-two-know-that-you-transact-with-the-other-entity)
