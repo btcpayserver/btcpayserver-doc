@@ -231,10 +231,10 @@ Tor is activated by default on the docker deployment.
 
 ### How do I disable Tor on my BTCPay Server?
 
-That's really easy: just log in your instance with SSH, and enter the `root/btcpayserver-docker` directory as root. There, type the two following command lines:
+That's really easy: just log in your instance with SSH, and enter as root the enter following commands:
 ```bash
-root/btcpayserver-docker $ BTCPAYGEN_EXCLUDE_FRAGMENTS="$BTCPAYGEN_EXCLUDE_FRAGMENTS;opt-add-tor"
-root/btcpayserver-docker $ . btcpay-setup.sh -i
+BTCPAYGEN_EXCLUDE_FRAGMENTS="$BTCPAYGEN_EXCLUDE_FRAGMENTS;opt-add-tor"
+. btcpay-setup.sh -i
 ```
 Then wait a few minutes for the server to restart, and you're done!
 
@@ -264,7 +264,7 @@ If you want to know more about the philosophy behind all this, you can read our 
 
 To see the .onion address of your BTCPay instance without accessing it through the clearnet and clicking the Tor logo in top left corner, apply the following command:
 ```bash
-tail /var/lib/docker/volumes/generated_tor_servicesdir/_data/BTCPayServer/hostname
+cat /var/lib/docker/volumes/generated_tor_servicesdir/_data/BTCPayServer/hostname
 ```
 ### How can I modify/deactivate environment variables?
 
@@ -315,6 +315,16 @@ No, you need to keep your BTCPay running at all times so that your Bitcoin node 
 ### Can I connect to my BTCPay Bitcoin P2P on port 8333?
 
 No, BTCPay's Bitcoin core node is not exposed externally. For BTCPay purposes, it is not in the interest of the user, as it increases bandwidth requirement. BTCPay is also whitebinding connections to this port, so opening it would expose the node to potential DDoS.
+
+However, we expose a P2P connection to your full node on Tor. You can get the Tor address by running:
+
+```bash
+cat /var/lib/docker/volumes/generated_tor_servicesdir/_data/BTC-P2P/hostname
+```
+
+Or via the `Server Settings` of your BTCPay Server instance, logged as an administrator.
+
+Please do not share this tor hidden service with untrusted parties. Connections to this hidden service are whitelisted by the bitcoin node, malicious peer would be able to DDoS your node.
 
 ### Can I use an existing Nginx server as a reverse proxy with SSL termination?
 
