@@ -67,6 +67,9 @@ We will refer to the sender's PSBT by the name of `original PSBT` and the receiv
 
 There is no guarantee concerning the ordering of outputs and inputs in either the `original PSBT` or the `payjoin PSBT`. (Note about [BIP69](#bip69))
 
+Note: We strongly recommend the sender to submit a PSBT in Base64 format.
+However, we also accept the PSBT or a bitcoin transaction in hex format.
+
 ## Rationale
 
 Here is the rationale for using PSBT instead of raw transactions, and why the receiver should be responsible to bump the fee of the payjoin transaction.
