@@ -259,6 +259,8 @@ However, some senders may implement BIP69. In order to improve their privacy, ou
 
 However, some concerns have been reported that this mean that the distributions of payjoin payments would slightly favor BIP69. This happen because a payjoin transaction compliant with BIP69 would happen in both cases: By chance when randomly ordering the payjoin inputs and outputs, but also by the fact the sender had a BIP69 compliant original transaction.
 
+Existing wallets using BIP69: [Electrum wallet](https://github.com/spesmilo/electrum/commit/e2c05c2400399fe24ddacfe114673cd75b9ba3c1) and [Samourai Wallet](https://github.com/Samourai-Wallet/samourai-wallet-android#bip69).
+
 ## References
 
 * [BIP174: Partially Signed Bitcoin Transaction Format](https://github.com/bitcoin/bips/blob/master/bip-0174.mediawiki)
