@@ -139,7 +139,7 @@ We then send the payjoin transaction proposal back to the sender.
 
 \*\* <a name="receiver-pay"></a>: If the sender overpays the invoice, we can substract fees from his over paid amount. This is especially useful when somebody wants to make a donation from a small unspent output in his own wallet the amount of his change may be overpaying the invoice. If we were not substracting the fees on the output paying the invoice, we would fall into a `not-enough-money` error, as no change exists.
 
-### Sender side
+### Sender side <a name="sender"></a>
 
 Before sending the original PSBT to the receiver, the sender should make sure that the original PSBT is at least attempted to be broadcasted automatically after 1 minute of submission.
 
@@ -221,6 +221,34 @@ Alternatively, if the original address of Bob is P2WPKH and Alice is also P2WPKH
 If Alice pays Bob, she might be tempted to pay him a round amount, like `1.23000000 BTC`. When this happens, blockchain analysis often identify the output without the round amount as the change of the transaction.
 
 For this reason, during a [spare change](#spare-change) situation, we randomly round the amount in the output added by the receiver to the payjoin transaction.
+
+## Risks
+
+### On the receiver side: UTXO probing attack
+
+When the receiver creates a payjoin proposal, they expose one or more inputs belonging to them.
+
+An attacker could create multiple original transactions in order to learn the UTXOs of the receiver, while not broadcasting the payjoin proposal.
+
+While we cannot prevent this type of attack entirely, we implemented the following mitigations:
+
+* When the receiver detects an original transaction being broadcasted, or if the receiver detects that the original transaction has been double spent, then they will reuse the UTXO that was exposed for the next payjoin.
+* Only a single payjoin is possible per invoice.
+* While the exposed UTXO will be reused in priority to not leak other UTXOs, there is no strong guarantee about it. This prevents the attacker from detecting with certainty the next payjoin of the merchant to another peer.
+
+Note that probing attacks are only a problem for automated payment systems such as BTCPay Server. End-user wallets with payjoin capabilities are not affected, as the attacker can't create multiple invoices to force the receiver to expose their UTXOs.
+
+### On the sender side: Double payment risk for hardware wallets
+
+For a successful payjoin to happen, the sender needs to sign two transactions double spending each other: The original transaction and the payjoin proposal.
+
+BTCPay Server or end user wallets can verify that the payjoin proposal is legitimate by following [the sender's steps explained earlier](#sender).
+
+However, a hardware wallet can't verify that this is indeed the case. This means that the security guarantee of the hardware wallet is decreased. If BTCPay Server or the end user wallet is compromised, the hardware wallet would sign two valid transactions, thus sending two payments.
+
+Without payjoin, the maximum amount of money that could be lost by a compromised software is equal to one payment (via address substitution).
+
+With payjoin, the maximum amount of money that can be lost is equals to two payments.
 
 ## Future work
 
