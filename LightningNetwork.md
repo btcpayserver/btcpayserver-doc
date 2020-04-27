@@ -4,7 +4,7 @@ After deploying BTCPay Server, you may want to experiment with an innovative sec
 
 This guide will show you how to set up your Lightning Network node in BTCPay and guide you through the basics.
 
-<strong>Before you proceed, please understand that Lightning Network is still in the experimental stage. Do not put the money you can't afford to lose. There is a high risk of you losing the money. </strong>
+<strong>Before you proceed, please understand that Lightning Network is still in the experimental stage. Do not use Lightning Network for money you cannot afford to lose. There is a high risk of you losing money with the Lightning Network. </strong>
 
 Take time to familiarize yourself with the risk. <strong>There's no backup for LND or c-lightning keys in BTCPay. Your keys are in a hot-wallet</strong>. This means :
 

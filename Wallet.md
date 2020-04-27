@@ -2,7 +2,7 @@
 
 This document explains the features of the internal BTCPay wallet. For frequently asked questions - check the [Wallets FAQ](FAQ/FAQ-Wallet.md)
 
-*Note: A [private key](https://en.bitcoin.it/wiki/Private_key) (xprv) is **never** required for receiving money on-chain to a BTCPay wallet. The software needs a public key (xpubkey) which is a watch-only wallet token. The xpubkey allows BTCPay to generate a new address each time a new invoice is generated. It enables users to observe the wallet balance and transactions without having to share their private key. Exception is [Lightning Network](LightningNetwork.md) which is a hot wallet with keys online.*
+*Note: A [private key](https://en.bitcoin.it/wiki/Private_key) (xprv) is **never** required for receiving money on-chain to a BTCPay wallet. The software needs a public key (xpubkey) which is a watch-only wallet token. The xpubkey allows BTCPay to generate a new address each time a new invoice is generated. It enables users to observe the wallet balance and transactions without having to share their private key. An exception is [Lightning Network](LightningNetwork.md) which is a hot wallet with keys online.*
 
 The on-chain wallet does not generate a private key. Users have to create their own private key externally and import an xpubkey derived from the private key into Store Settings > Derivation scheme.  The public key (xpubkey) can be imported from a compatible hardware wallet or added manually by pasting the key into the field and adding an appropriate suffix. For more information on how to add a derivation scheme to BTCPay, see the [Recommended Wallets](ConnectWallet.md). If you're using a [third-party host](ThirdPartyHosting.md) and are asked to provide a private key, it's certainly a scam. Never share your private key with anyone. It's called private for a reason.
 
@@ -55,7 +55,7 @@ Transactions in BTCPay's wallet can be signed with a private key or mnemonic see
 
 #### Signing with a wallet supporting PSBT
 
-PSBT (Partially Signed Bitcoin transaction) is supported and can be signed with PSBT compatible wallet.
+PSBT (Partially Signed Bitcoin transaction) is supported and can be signed with a PSBT compatible wallet.
 
 Check this tutorial on how to [sign a transaction with ColdCard Hardware Wallet](ColdCardWallet.md#spending-from-btcpay-server-wallet-with-coldcard-psbt) completely air-gaped.
 
@@ -73,7 +73,7 @@ BTCPay Server also allows stores to generate or import a wallet while also stori
 
 ### Receive
 
-Receive tab generates an unused address which can be used to receive payments. The same can be achieved by generating an invoice (Invoices > Create new invoice).
+The receive tab generates an unused address which can be used to receive payments. The same can be achieved by generating an invoice (Invoices > Create new invoice).
 
 ### Advanced Settings
 

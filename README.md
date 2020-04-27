@@ -46,7 +46,7 @@ In layman's terms, BTCPay Server is a self-hosted and automated invoicing system
 
 ### How is it different
 
-BTCPay is code, not a company. There is no third-party between a merchant and a customer. Merchant is always in full control of the funds. There are no processing or subscription fees. BTCPay Server is free to use and completely open-source, so developers or security auditors can always inspect the quality of the code.
+BTCPay is code, not a company. There is no third-party between a merchant and a customer. The merchant is always in full control of the funds. There are no processing or subscription fees, apart from BTC network fees. BTCPay Server is free to use and completely open-source, so developers or security auditors can always inspect the quality of the code.
 
 [![BTCPay Server Simply Explained](img/thumbnails/BTCPayServerSimplyExplained.png)](https://www.youtube.com/watch?v=dbX6qWZlxOw "BTCPay Server Simply Explained")
 
