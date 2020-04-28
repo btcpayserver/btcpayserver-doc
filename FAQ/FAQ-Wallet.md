@@ -44,7 +44,7 @@ We highly recommend you to use an internal wallet in case you need to double-che
 
 ## How to connect my wallet to BTCPay Server?
 
-The process of connecting a wallet to your BTCPay server is the same for both third-party or self-hosted deplopyments. Your private keys are never uploaded nor required by the BTCPay Server. You’re only uploading the xpubkey.
+The process of connecting a wallet to your BTCPay server is the same for both third-party or self-hosted deployments. Your private keys are never uploaded nor required by the BTCPay Server. You’re only uploading the xpubkey.
 
 There are two ways to connect your BTCPay and your wallet:
 
