@@ -1,6 +1,6 @@
 # BTCPay Wallet FAQ
 
-This document contains frequently asked questions and solution to common issues regarding internal or external wallets you're using with or within BTCPay.
+This document contains frequently asked questions and solutions to common issues regarding internal or external wallets you're using with or within BTCPay.
 
 * [What is BTCPay wallet](#what-is-btcpay-wallet)
 * [What is wallet re-scan in BTCPay?](#what-is-wallet-re-scan-in-btcpay)
@@ -22,8 +22,8 @@ You'll have to confirm and sign the transaction on your hardware wallet. BTCPay 
 The Rescan feature is best explained in a real-life situation:
 
 * You use a wallet outside of BTCPay (for example Ledger Nano S with the Ledger Live app)
-* You receive payment worth 1BTC to your Nano S wallet. 
-* After a while you decide to use Ledger wallet with the same xpub key with BTCPay Server. You add this xpub as a derivation scheme in your Store.
+* You receive a payment worth 1BTC to your Nano S wallet. 
+* After a while you decide to add the xpubkey you use with your Ledger to your BTCPay Server. You add this xpub as a derivation scheme in your Store.
 * You then find out that BTCPay has no information about transaction A, and shows 0 BTC balance while Ledger Live shows 1BTC.
 
 This happens because when you use a new derivation scheme with your store, BTCPay Server doesn't know the past transactions of your wallet.
@@ -33,18 +33,18 @@ Once the scan is complete, BTCPay Server will show the correct balance, along wi
 
 ## Recommended external wallets?
 
-We highly recommend you to use an internal wallet in case you need to double-check the transaction. If you wish to use an external wallet, here are our recomendations
+We highly recommend you to use an internal wallet in case you need to double-check the transaction. If you wish to use an external wallet, here are our recomendations:
 
 * Electrum - desktop wallet
 * Ledger Nano S - hardware wallet (other hardware wallets should be added at some point)
 * Zap - Lightning Network LND wallet
 * Spark - Lightning Network c-lightning wallet
-* Sentinel - Watch-only on-chain wallet Android
-* ArcBit / bitWallet - Watch-only on-chain wallet Android
+* Sentinel - Watch-only on-chain wallet for Android
+* ArcBit / bitWallet - Watch-only on-chain wallet for Android
 
 ## How to connect my wallet to BTCPay Server?
 
-The process of connecting a wallet to your BTCPay server is the same for both third-party or self-hosted deplpyment. Your private keys are never uploaded nor required by the BTCPay Server. You’re only uploading the xpubkey.
+The process of connecting a wallet to your BTCPay server is the same for both third-party or self-hosted deployments. Your private keys are never uploaded nor required by the BTCPay Server. You’re only uploading the xpubkey.
 
 There are two ways to connect your BTCPay and your wallet:
 
@@ -57,7 +57,7 @@ Watch the video below or read [this article](https://bitcoinshirt.co/how-to-crea
 
 ## Missing payments in my software or hardware wallet
 
-If your internal BTCPay wallet is showing the transactions and you do not see the funds on your desktop, mobile or hardware wallet, you need to **increase the gap limit** of the external wallet you're using. Do not worry, your funds are safe.
+If your internal BTCPay wallet is showing the transactions and you do not see the funds on your desktop, mobile or hardware wallet, you need to **increase the gap limit** of the external wallet you're using. Do not worry, your funds are safe, they're just not showing yet.
 
 Most wallets, have a gap limit of 20. This means that after 20 consecutive unpaid invoices, wallet will stop fetching the transactions beyond that and won't show them. The solution is to increase the gap limit. Not all wallets have this feature.
 
@@ -73,12 +73,12 @@ Restart your Electrum and verify that the newly set gap limit is correct by ente
 
 `wallet.gap_limit`
 
-There's no good answer to how much you should set the gap limit to. Most merchants set 100-200. If you're a big merchants with high transaction volume, you can try with even higher gap limit. 
+There's no good answer to how much you should set the gap limit to. Most merchants set 100-200. If you're a big merchants with high transaction volume, you can try with an even higher gap limit. 
 
 Be aware that :
 
-* Higher gap limit may slow down the performance of your wallet
-* Not all wallets support the increased gap limit. If you import Electrum recovery seed into another wallet, you may not see all the funds again.
+* A higher gap limit may slow down the performance of your wallet
+* Not all wallets support the increased gap limit. If you import an Electrum recovery seed into another wallet, you may not see all the funds again.
 
 When an invoice is created in BTCPay, it does it for all coins you have setup. You may want to increase the gap limit for altcoins as well in their supported wallets.
 
@@ -86,18 +86,18 @@ If you do not see your funds yet, you may have set up your derivation scheme inc
 
 ## Why is my Ledger not detected by BTCPay Server?
 
-Check that you are running the ledger app with a version equals or above 1.2.4. Make sure to use Google Chrome. Plug your Ledger Nano S into PC. Enter the PIN, and select the coin wallet app, for example > Bitcoin. Try refreshing the browser.
+Check that you are running the Ledger app with a version equal or above 1.2.4. Make sure to use Google Chrome. Plug your Ledger Nano S into your PC. Enter the PIN, and select the coin wallet app, for example > Bitcoin. Try refreshing the browser.
  
-If the problem persists, contact the owner of the BTCPay Server: The reverse proxy of the BTCPay server hosting BTCPay might not support Websocket.
+If the problem persists, contact the owner of the BTCPay Server: The reverse proxy of the BTCPay server hosting BTCPay might not support Websockets.
 
 To confirm this is the issue, create a new invoice and go on its checkout page, you can also go on your store's "Wallet" page.
-You should then you will see this error in the javascript console.
+You should then see this error in the Javascript console:
 
 ```
 WebSocket connection to ‘wss://pay.example.com/i/4yhCmpWxJcHfVG3rV4EmEu/status/ws’ failed: Error during WebSocket handshake: Unexpected response code: 404
 ```
 
-To fix the situation, if your reverse proxy is nginx, make sure that the following is included at the top of `/etc/nginx/conf.d/default.conf`.
+To fix the situation, if your reverse proxy is nginx, make sure that the following is included at the top of `/etc/nginx/conf.d/default.conf` :
 
 ```
 # If we receive Upgrade, set Connection to "upgrade"; otherwise, delete any
@@ -119,11 +119,11 @@ Then restart nginx.
 
 Zap and Electrum are two different wallets. Zap is for [Lightning Network](LightningNetwork.md) and Electrum is for on-chain transactions. They are unrelated and use different private keys. Use Electrum or internal BTCPay wallet to check your on-chain payments and Zap for your Lightning Network payments. 
 
-In future, there will be wallets merging both on-chain and off-chain into one, but for now, you have to use them separately.
+In the future, there will be wallets merging both on-chain and off-chain transactions into one, but for now, you have to use them separately.
 
 ## Can I see my payments on mobile?
 
-If you wish to follow your on-chain payments on a mobile device, you can use a watch-only wallet like [Sentinel for Android](https://play.google.com/store/apps/details?id=com.samourai.sentinel) and [bitWallet](https://itunes.apple.com/us/app/bitwallet-bitcoin-wallet/id777634714) or [ArcBit](https://itunes.apple.com/ca/app/arcbit-bitcoin-wallet/id999487888) for iOS. Watch-only wallets allow xpub import and don't require the private key.
+If you wish to follow your on-chain payments on a mobile device, you can use a watch-only wallet like [Sentinel](https://play.google.com/store/apps/details?id=com.samourai.sentinel) for Android and [bitWallet](https://itunes.apple.com/us/app/bitwallet-bitcoin-wallet/id777634714) or [ArcBit](https://itunes.apple.com/ca/app/arcbit-bitcoin-wallet/id999487888) for iOS. Watch-only wallets allow xpub import and don't require the private key.
 
 ## What is a derivation scheme?
 
