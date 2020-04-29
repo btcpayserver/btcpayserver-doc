@@ -2,14 +2,14 @@
 
 This document covers the most common questions and issues that may occur during BTCPay sync.
 
-* [Why does BTCPay sync?](#why-does-btcpay-sync)
+* [Why does BTCPay Server sync?](#why-does-btcpay-sync)
 * [Can I skip/speed up the sync?](#can-i-skip-the-synchronization)
-* [How do I know that the sync is finished?](#how-do-i-know-that-btcpay-synced-completely)
-* [BTCPay takes forever to synchronize](#btcpay-server-takes-forever-to-synchronize)
-* [BTCPay Server keep showing that my node is always starting](#btcpay-server-keep-showing-that-my-node-is-always-starting)
-* [I already have a synced full node, can I use it with BTCPay?](#im-running-a-full-node-and-have-a-synched-blockchain-can-btcpay-use-it-so-that-it-doesnt-have-to-do-a-full-sync)
+* [How do I know that BTCPay Server synced completely?](#how-do-i-know-that-btcpay-synced-completely)
+* [BTCPay Server takes forever to synchronize](#btcpay-server-takes-forever-to-synchronize)
+* [BTCPay Server keeps showing that my node is always starting](#btcpay-server-keep-showing-that-my-node-is-always-starting)
+* [I already have a synced full node, can I use it with BTCPay Server?](#im-running-a-full-node-and-have-a-synched-blockchain-can-btcpay-use-it-so-that-it-doesnt-have-to-do-a-full-sync)
 
-## Why does BTCPay sync?
+## Why does BTCPay Server sync?
 
 After deployment, your BTCPay Server needs to sync the entire blockchain and validate all the consensus rules. Depending on your machine specification, bandwidth and number of altcoins you added, this process may take between 1-5 days.
 
@@ -17,7 +17,7 @@ It may seem tedious, but it's a critical step of running your own full node and 
 
 ## Can I skip the synchronization?
 
-You can't skip synchronization, but you can drastically decrease sync time. If you're comfortable with using the command line, you can use FastSync to synchronize your node faster. Be sure to [read this FastSync document](https://github.com/btcpayserver/btcpayserver-docker/tree/master/contrib/FastSync) to understand the potential trust issues involved with FastSync.
+You can't skip synchronization, but you can drastically decrease the time it takes. If you're comfortable with using the command line, you can use FastSync to synchronize your node faster. Be sure to [read this FastSync document](https://github.com/btcpayserver/btcpayserver-docker/tree/master/contrib/FastSync) to understand the potential trust issues involved with this feature.
 
 To use FastSync, make sure your deployment has a pruning option enabled by using an `opt-save-storage` [environment variable](FAQ-Deployment.md#how-can-i-modify-deactivate-environment-variables), otherwise bitcoind will not be able to sync. First step is to [ssh into](FAQ-ServerSettings.md#how-to-ssh-into-my-btcpay-running-on-vps) your BTCPayServer instance and run the following commands:
 ```bash
@@ -31,9 +31,12 @@ btcpay-up.sh
 ```
 After FastSync is complete and you have brought back up your instance, refresh your BTCPay domain and wait for remaining blockchain synchronization. You can also follow [this video](https://youtu.be/VNMnd-dX9Q8?t=1730).
 
-If your FastSync returns: `You need to delete your Bitcoin Core wallet` after you load the uxto set, or you find this error: `Last wallet synchronisation goes beyond pruned data` it means that the bitcoin core wallet was created before FastSync and needs to be removed (likely because btcpayserver started without the utxoset at the first boot). WARNING: Do not delete this wallet if you have any funds on it. (For example, this may be the case if you use Eclair or FullyNoded to receive funds). If you agree to remove the wallet to finish syncing with FastSync, use `docker volume rm generated_bitcoin_wallet_datadir` before you run `btcpay-up.sh`
+If your FastSync returns `You need to delete your Bitcoin Core wallet` after you load the uxto set, or you find this error: `Last wallet synchronisation goes beyond pruned data` :
+It means that the bitcoin core wallet needs to be removed because it was created before FastSync, likely because BTCPay Server started without the utxoset at the first boot.
+For example, this may be the case if you use Eclair or FullyNoded to receive funds. If you agree to remove the wallet to finish syncing with FastSync, use `docker volume rm generated_bitcoin_wallet_datadir` before you run `btcpay-up.sh`
+WARNING: Do not delete this wallet if you have any funds on it.
 
-## How do I know that BTCPay synced completely?
+## How do I know that BTCPay Server synced completely?
 
 When you do not see a pop-up message in the bottom right corner, which shows the sync progress, that means that your server is fully synced and you can [begin using it](/RegisterAccount.md).
 
@@ -44,7 +47,7 @@ Synchronizing a Full Bitcoin node should take between 1 and 3 days.
 If this is not the case:
 
 * Not enough CPU
-* Using swap
+* Using swap memory
 
 ### Cause 1: Not enough CPU
 
@@ -71,7 +74,7 @@ If you see very low CPU usage (less than 10%) during synchronization:
 8e7ac41e6e2a        btcpayserver_bitcoind               10%               560.5MiB / 3.853GiB   14.20%              4.17
 ```
 
-Then your hosting provider might throttle your CPU. Please make sure your host supports the high use of CPU for an extended period.
+Your hosting provider might throttle your CPU. Please make sure your host supports the high use of CPU for an extended period.
 
 If they don't allow it, shut down your server until they stop throttling you. Then you can limit the CPU via docker, and restart the server:
 
@@ -81,14 +84,14 @@ docker update btcpayserver_bitcoind --cpus ".8"
 
 ### Cause 2: Using swap memory
 
-If you are synching and don't have enough memory, your server may use swap to continue operating:
+If you are synching and don't have enough memory, your server may use swap memory to continue operating:
 
 ```bash
 sudo su -
 df -h
 ```
 
-If you see swap usage:
+If you see swap memory usage:
 
 ```bash
               total        used        free      shared  buff/cache   available
@@ -98,7 +101,7 @@ Swap:          1.0G        200M      800M
 
 Then it means you need to scale up your server by adding more memory.
 
-## BTCPay Server keep showing that my node is always starting
+## BTCPay Server keeps showing that my node is always starting
 
 Possible cause:
 
@@ -150,9 +153,9 @@ Mem:           2.0G        2.0G        0M         66M        0G        0M
 Swap:            0B          0B          0B
 ```
 
-Then you need more memory. If you have already synched your node, you can add some swap. If you have not yet synched, your server specs are too limited.
+Then you need more memory. If you have already synched your node, you can add some swap memory. If you haven't, your server specs are too limited.
 
-If you already synched, you can add 2G of swap with:
+If you have already synched, you can add 2G of swap memory with:
 
 ```bash
 fallocate -l 2G /mnt/swapfile
@@ -188,11 +191,11 @@ tmpfs           2.0G     0  2.0G   0% /sys/fs/cgroup
 
 Then [prune your node](https://github.com/btcpayserver/btcpayserver-docker#how-i-can-prune-my-nodes).
 
-## I'm running a full node and have a synched blockchain, can BTCPay use it so that it doesn't have to do a full sync?
+## I already have a synced full node, can I use it with BTCPay Server?
 
-Yes you can!  However, before you do that, you'll want to stop bitcoind from updating docker's volume for it, as that job will be taken over by BTCPayServer.
+Yes you can!  However, before you do that, you'll want to stop bitcoind from updating docker's volume for it, as that job will be taken over by BTCPay Server.
 
-If you want to run BTCPay inside a docker-compose, and that you have the data directory (`.bitcoin`) of a fully synched node on your docker host, then you can reuse it easily for BTCPay.
+If you want to run BTCPay Server inside a docker-compose, and that you have the data directory (`.bitcoin`) of a fully synched node on your docker host, then you can reuse it easily for BTCPay Server.
 
 To do that, follow the following steps :
 * Do the normal setup according to [this instruction](https://github.com/btcpayserver/btcpayserver-docker/blob/master/README.md).
