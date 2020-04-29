@@ -1,4 +1,4 @@
-# Deploying BTCPay Server on Raspberry Pi 4
+# Raspberry Pi 4 Deployment
 
 This document guides you step by step on how to run BTCPay Server on a Raspberry Pi 4. See here the [Raspberry Pi 3 instructions](RPi3.md)
 

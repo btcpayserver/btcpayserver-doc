@@ -1,6 +1,6 @@
-# BTCPay Server Deployment
+# Choosing a Deployment Method
 
-There are several different deployment methods available, all using the same BTCPay Server software. Because BTCPay is a free and open-source cryptocurrency payment processor, we support diversity in deployment methods for users. Different solutions work best for [different use cases](UseCase.md). 
+There are several different deployment methods available, all using the same BTCPay Server software. Because BTCPay is a free and open-source cryptocurrency payment processor, we support diversity in deployment methods for users. Different solutions work best for [different use cases](UseCase.md).
 
 Business deployment methods can vary by setup, maintenance, support, price, etc. You can run BTCPay as a self-hosted solution on your own server, or use a third-party host. The self-hosted solution allows you not only to attach an unlimited number of stores and use the [Lightning Network](LightningNetwork.md) but also become a payment processor for others.
 
@@ -26,7 +26,7 @@ Developer deployments are not recommended for production environments and requir
 
 <br>
 
-|Web Solutions                             |1.                            |2.          |Why?          |     
+|Web Solutions                             |1.                            |2.          |Why?          |
 | ---------------------------------------- |:----------------------------:|:----------:|:------------:|
 |Business<br>(Fast Setup)                  |[3rd Party <br> BTCPay Hosts](ThirdPartyHosting.md)  |[LunaNode <br> Web-Wizard](LunaNodeWebDeployment.md)* |- Low Difficulty<br>- BTCPayServer Support (1)<br>- Lightning Network (2)     |
 |Cost / Month                                     | Free                    | $10 |BTC Accepted  |
@@ -45,15 +45,14 @@ Developer deployments are not recommended for production environments and requir
 
 <br>
 
-|Hardware Solutions                    |1.                        |2.        |Why?      |   
+|Hardware Solutions                    |1.                        |2.        |Why?      |
 | ------------------------------------ |:------------------------:|:--------:|:--------:|
 |Business<br>(Hardware Setup)          |   [Lightning<br>in a Box](https://lightninginabox.co/)  | [Nodl.it](https://www.nodl.it/) |- Ready Out Of The Box<br>- Prices Vary By Service<br>- Lightning Network<br>|
 |                                      |                            |            |BTC Accepted|
 
 <br>
 
-|Developer Solutions                     |                     |                   |              |    
+|Developer Solutions                     |                     |                   |              |
 | -------------------------------------- |:-------------------:|:-----------------:|:------------:|
 |Developer<br>(Testing Setup)            |Manual Install       |Manual Build       |Hardware Build|
 |**Not Recommended<br>For New Users**    |[Install From<br>Command Line](http://blog.sipsorcery.com/?p=1052)|[Build Without<br>Docker Image](ManualDeployment.md) |[ARM32v7](https://hub.docker.com/r/btcpayserver/btcpayserver/tags/)<br>[Raspberry Pi](RaspberryPiDeployment.md)<br>[Fast Sync](https://github.com/btcpayserver/btcpayserver-docker/tree/master/contrib/FastSync)<br>[BTCPayBox](HardwareDeployment.md) |
-

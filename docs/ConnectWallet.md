@@ -1,4 +1,6 @@
-# Connecting a wallet to BTCPay
+# (3) Connect a wallet
+
+## Connecting a wallet to BTCPay
 
 After [account registration](RegisterAccount.md), [store creation](CreateStore.md), it's time to connect a wallet to your BTCPay Server.
 

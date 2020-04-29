@@ -1,4 +1,4 @@
-# Azure deployment
+# Azure Deployment
 
 This setup is similar to the [Docker Deployment](DockerDeployment.md), except that the `docker-compose` is hosted by Microsoft Azure.
 

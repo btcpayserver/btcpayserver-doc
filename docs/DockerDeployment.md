@@ -1,4 +1,4 @@
-# Docker deployment
+# Docker Deployment
 
 [The minimal manual setup](ManualDeployment.md) is not good enough for production environment (no reverse proxy, no HTTPS), and is a bit complicated to deploy.
 

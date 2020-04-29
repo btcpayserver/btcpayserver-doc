@@ -1,4 +1,4 @@
-# Google Cloud deployment
+# Google Cloud Deployment
 
 This setup is similar to the [Docker Deployment](DockerDeployment.md), except that the `docker-compose` is hosted by Google Cloud.
 

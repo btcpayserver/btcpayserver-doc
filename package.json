@@ -1,0 +1,27 @@
+{
+  "name": "btcpayserveer-docs",
+  "version": "1.0.0",
+  "description": "BTCPay Server Official Documentation",
+  "author": "BTCPay Server",
+  "license": "MIT",
+  "bugs": "https://github.com/btcpayserver/btcpayserver-doc/issues",
+  "homepage": "https://github.com/btcpayserver/btcpayserver-doc",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/btcpayserver/btcpayserver-doc.git"
+  },
+  "keywords": [
+    "btcpayserver"
+  ],
+  "config": {
+    "dist": "docs/.vuepress/dist"
+  },
+  "scripts": {
+    "prestart": "rm -rf $npm_package_config_dist",
+    "start": "vuepress dev docs",
+    "build": "vuepress build docs"
+  },
+  "devDependencies": {
+    "vuepress": "1.4.1"
+  }
+}

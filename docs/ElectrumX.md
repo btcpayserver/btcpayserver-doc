@@ -1,3 +1,4 @@
+# ElectrumX
 
 This document explains how to connect Electrum Wallet to an ElectrumX Server.
 
