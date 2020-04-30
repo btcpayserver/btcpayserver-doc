@@ -36,7 +36,7 @@ It means that the bitcoin core wallet needs to be removed because it was created
 For example, this may be the case if you use Eclair or FullyNoded to receive funds. If you agree to remove the wallet to finish syncing with FastSync, use `docker volume rm generated_bitcoin_wallet_datadir` before you run `btcpay-up.sh`
 WARNING: Do not delete this wallet if you have any funds on it.
 
-## How do I know that BTCPay Server synced completely?
+## How do I know that BTCPay synced completely?
 
 When you do not see a pop-up message in the bottom right corner, which shows the sync progress, that means that your server is fully synced and you can [begin using it](/RegisterAccount.md).
 
