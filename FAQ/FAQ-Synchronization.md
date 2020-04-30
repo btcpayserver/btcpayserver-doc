@@ -191,7 +191,7 @@ tmpfs           2.0G     0  2.0G   0% /sys/fs/cgroup
 
 Then [prune your node](https://github.com/btcpayserver/btcpayserver-docker#how-i-can-prune-my-nodes).
 
-## I already have a synced full node, can I use it with BTCPay Server?
+## I'm running a full node and have a synched blockchain, can BTCPay use it so that it doesn't have to do a full sync?
 
 Yes you can!  However, before you do that, you'll want to stop bitcoind from updating docker's volume for it, as that job will be taken over by BTCPay Server.
 
