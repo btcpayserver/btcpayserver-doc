@@ -7,7 +7,7 @@ This document covers the most common questions and issues that may occur during 
 * [How do I know that the sync is finished?](#how-do-i-know-that-btcpay-synced-completely)
 * [BTCPay takes forever to synchronize](#btcpay-server-takes-forever-to-synchronize)
 * [BTCPay Server keep showing that my node is always starting](#btcpay-server-keep-showing-that-my-node-is-always-starting)
-* [I already have a synced full node, can I use it with BTCPay Server?](#im-running-a-full-node-and-have-a-synched-blockchain-can-btcpay-use-it-so-that-it-doesnt-have-to-do-a-full-sync)
+* [I already have a synced full node, can I use it with BTCPay?](#im-running-a-full-node-and-have-a-synched-blockchain-can-btcpay-use-it-so-that-it-doesnt-have-to-do-a-full-sync)
 
 ## Why does BTCPay Server sync?
 
