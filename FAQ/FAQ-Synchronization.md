@@ -101,7 +101,7 @@ Swap:          1.0G        200M      800M
 
 Then it means you need to scale up your server by adding more memory.
 
-## BTCPay Server keeps showing that my node is always starting
+## BTCPay Server keep showing that my node is always starting
 
 Possible cause:
 
