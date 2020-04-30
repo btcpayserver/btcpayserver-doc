@@ -2,7 +2,7 @@
 
 This document covers the most common questions and issues that may occur during BTCPay sync.
 
-* [Why does BTCPay Server sync?](#why-does-btcpay-sync)
+* [Why does BTCPay sync?](#why-does-btcpay-sync)
 * [Can I skip/speed up the sync?](#can-i-skip-the-synchronization)
 * [How do I know that BTCPay Server synced completely?](#how-do-i-know-that-btcpay-synced-completely)
 * [BTCPay Server takes forever to synchronize](#btcpay-server-takes-forever-to-synchronize)
