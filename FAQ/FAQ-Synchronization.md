@@ -9,7 +9,7 @@ This document covers the most common questions and issues that may occur during 
 * [BTCPay Server keep showing that my node is always starting](#btcpay-server-keep-showing-that-my-node-is-always-starting)
 * [I already have a synced full node, can I use it with BTCPay?](#im-running-a-full-node-and-have-a-synched-blockchain-can-btcpay-use-it-so-that-it-doesnt-have-to-do-a-full-sync)
 
-## Why does BTCPay Server sync?
+## Why does BTCPay sync?
 
 After deployment, your BTCPay Server needs to sync the entire blockchain and validate all the consensus rules. Depending on your machine specification, bandwidth and number of altcoins you added, this process may take between 1-5 days.
 
