@@ -221,6 +221,27 @@ module.exports = {
             path: "CustomIntegration"
           }
         ]
+      },
+      {
+        title: "Docker",
+        path: "/Docker/",
+        collapsable: false,
+        sidebarDepth: 0,
+        children: [
+          "/Docker/pihole"
+        ]
+      },
+      {
+        title: "Transmuter",
+        path: "/Transmuter/",
+        collapsable: false,
+        sidebarDepth: 0,
+        children: [
+          {
+            title: "Email Receipts Preset",
+            path: "Transmuter/EmailReceiptsPreset"
+          }
+        ]
       }
     ]
   }

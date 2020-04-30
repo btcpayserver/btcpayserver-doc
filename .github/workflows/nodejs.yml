@@ -4,7 +4,14 @@ on:
   push:
     branches:
       - master
+      # TODO: Remove this once we've migrated to vuepress
       - vuepress
+
+  # Used to trigger the build from external docs repos. Can by kicked off via:
+  # curl -X POST -H "Authorization: token $GH_PAT" -H "Accept: application/vnd.github.everest-preview+json" -H "Content-Type: application/json" https://api.github.com/repos/dennisreimann/btcpayserver-doc/dispatches --data '{"event_type": "build_docs"}'
+  repository_dispatch:
+    types:
+      - build_docs
 
 jobs:
   build:
@@ -15,28 +22,40 @@ jobs:
         node-version: [12]
 
     steps:
-    - name: Checkout
-      uses: actions/checkout@v1
-    - name: Setup (Node.js ${{ matrix.node-version }})
-      uses: actions/setup-node@v1
-      with:
-        node-version: ${{ matrix.node-version }}
-    - name: Install
-      run: npm ci
-    - name: Build
-      run: |
-        npm run build
-        # https://github.blog/2009-12-29-bypassing-jekyll-on-github-pages/
-        touch docs/.vuepress/dist/.nojekyll
-        # https://help.github.com/en/articles/managing-a-custom-domain-for-your-github-pages-site
-        # echo docs.btcpayserver.org > docs/.vuepress/dist/CNAME
-        echo btcpaydocs.uix.space > docs/.vuepress/dist/CNAME
-      env:
-        CI: true
-        TRANSIFEX_TOKEN: ${{ secrets.TRANSIFEX_TOKEN }}
-    - name: Deploy
-      if: success()
-      uses: maxheld83/ghpages@v0.2.1
-      env:
-        BUILD_DIR: docs/.vuepress/dist/
-        GH_PAT: ${{ secrets.GH_PAT }}
+      # Checkout doc repo and its dependencies
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: Checkout btcTransmuter repo
+        uses: actions/checkout@v2
+        with:
+          repository: btcpayserver/btcTransmuter
+          path: deps/transmuter
+      - name: Checkout btcTransmuter repo
+        uses: actions/checkout@v2
+        with:
+          repository: btcpayserver/btcpayserver-docker
+          path: deps/docker
+      # Setup Node and link the dependencies
+      - name: Setup (Node.js ${{ matrix.node-version }})
+        uses: actions/setup-node@v1
+        with:
+          node-version: ${{ matrix.node-version }}
+      - name: Setup dependencies
+        run: ./setup-deps.sh
+      # Install and run the build
+      - name: Install
+        run: npm ci
+      - name: Build
+        run: |
+          npm run build
+          # https://github.blog/2009-12-29-bypassing-jekyll-on-github-pages/
+          touch docs/.vuepress/dist/.nojekyll
+          # https://help.github.com/en/articles/managing-a-custom-domain-for-your-github-pages-site
+          # echo docs.btcpayserver.org > docs/.vuepress/dist/CNAME
+          echo btcpaydocs.uix.space > docs/.vuepress/dist/CNAME
+      - name: Deploy
+        if: success()
+        uses: maxheld83/ghpages@v0.2.1
+        env:
+          BUILD_DIR: docs/.vuepress/dist/
+          GH_PAT: ${{ secrets.GH_PAT }}
