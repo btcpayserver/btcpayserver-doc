@@ -4,6 +4,7 @@ set -e
 
 BASE_DIR=$(cd `dirname $0` && pwd)
 DOCS_DIR=$BASE_DIR/docs
+PUBLIC_DIR=$DOCS_DIR/.vuepress/public
 DOCKER_DIR=$BASE_DIR/deps/docker
 TRANSMUTER_DIR=$BASE_DIR/deps/transmuter
 
@@ -34,3 +35,5 @@ fi
 
 cd $TRANSMUTER_DIR
 cp -r README.md docs/* $DOCS_DIR/Transmuter
+mkdir -p $PUBLIC_DIR/Transmuter
+mv $DOCS_DIR/Transmuter/img $PUBLIC_DIR/Transmuter

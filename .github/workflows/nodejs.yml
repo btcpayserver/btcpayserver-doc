@@ -28,7 +28,7 @@ jobs:
         with:
           repository: btcpayserver/btcTransmuter
           path: deps/transmuter
-      - name: Checkout btcTransmuter repo
+      - name: Checkout btcpayserver-docker repo
         uses: actions/checkout@v2
         with:
           repository: btcpayserver/btcpayserver-docker
