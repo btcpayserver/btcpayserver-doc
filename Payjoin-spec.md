@@ -293,7 +293,7 @@ Existing wallets using BIP69: [Electrum wallet](https://github.com/spesmilo/elec
 
 * [BIP174: Partially Signed Bitcoin Transaction Format](https://github.com/bitcoin/bips/blob/master/bip-0174.mediawiki)
 * [BIP69: Lexicographical Indexing of Transaction Inputs and Outputs](https://github.com/bitcoin/bips/blob/master/bip-0069.mediawiki)
-* [BIP79: Bustapay](https://github.com/bitcoin/bips/blob/master/bip-0179.mediawiki)
+* [BIP79: Bustapay](https://github.com/bitcoin/bips/blob/master/bip-0079.mediawiki)
 * [Segwit input type distribution](https://transactionfee.info/charts/inputs-segwit-distribution/)
 * [Wasabi wallet: Privacy best practices on change coins](https://docs.wasabiwallet.io/using-wasabi/ChangeCoins.html#spend-the-change-with-another-entity-where-you-don-t-mind-if-each-of-the-two-know-that-you-transact-with-the-other-entity)
 * [Bitcoin wiki: Payjoin](https://en.bitcoin.it/wiki/PayJoin)
