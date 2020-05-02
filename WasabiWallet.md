@@ -30,7 +30,7 @@ Firstly, give your wallet a name, for example, `BTCPay Server Wallet` and enter 
 
 ![WasabiWallet](/img/WassabiWalletSetupBTCPay3.png)
 
-Before proceeding, it is recuired to test the password, to be sure that the wallet can be accessed without any problems.
+Before proceeding, it is required to test the password, to be sure that the wallet can be accessed without any problems.
 
 To test the password, enter it in the password field, and click `Test Password`. 
 
