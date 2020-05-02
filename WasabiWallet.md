@@ -4,7 +4,7 @@ This documents shows how to connect Wasabi Wallet to BTCPay Server.
 
 1. Create a Store in BTCPay Server
 2. [Download Wasabi Wallet](https://wasabiwallet.io/#download)
-3. Install Wasabi Wallet
+3. [Install Wasabi Wallet](https://docs.wasabiwallet.io/using-wasabi/InstallPackage.html)
 
 ## Wasabi Wallet Setup
 
@@ -16,22 +16,21 @@ After installation, open the Wasabi Wallet by clicking on the icon on your deskt
 2. In Wasabi, Advanced Settings > Wallet info - copy the **Extended Public Key**.
 3. In BTCPay Server, Store Settings > General > Derivation Scheme - Paste the Extended Public Key
 4. In Receive tab in Wasabi, generate a new address.
-5. Compare the addresses in Wasabi and BTCPay Server, they should match. 
-6. Confirm the address match in BTCPay.
+5. Confirm that the addresses in Wasabi and BTCPay Server match.
 
 ## Step by Step
 
 ![WasabiWallet](/img/WassabiWalletSetupBTCPay1.png)
 
-Firstly, give your wallet a name, for example, `BTCPay Server Wallet` and enter the password. Make sure to remember or write down the password. Agree to Terms of Service, and click `Generate` in the right corner.
+Firstly, give your wallet a name, for example, `BTCPay Server Wallet` and enter a secure password. Make sure to write down the password. Agree to Terms of Service, and click `Generate` in the right corner.
 
 ![WasabiWallet](/img/WassabiWalletSetupBTCPay2.png)
 
-**IMPORTANT NOTE:** Write down your recovery words in the order you see them on the screen. Write them down a piece of paper and store it somewhere secure. Take your time and triple check each word. Do not store your seed in a digital format (photograph, text document). Whoever has the access to your seed can access your funds. Confirm that the seed has been properly backed up.
+**IMPORTANT NOTE:** Write down your recovery words in the order you see them on the screen. Write them down a piece of paper and store it somewhere secure. Take your time and triple check each word. Do not store your seed in a digital format (photograph, text document). Whoever has the access to your seed and your password can access your funds. Confirm that the seed has been properly backed up.
 
 ![WasabiWallet](/img/WassabiWalletSetupBTCPay3.png)
 
-Before proceeding, it is recommended to test the password, to be sure that the wallet can be accessed without any problems.
+Before proceeding, it is required to test the password, to be sure that the wallet can be accessed without any problems.
 
 To test the password, enter it in the password field, and click `Test Password`. 
 
@@ -45,9 +44,9 @@ Upon testing the password, click on the `Load Wallet` to access your newly creat
 
 ![WasabiWallet](/img/WassabiWalletSetupBTCPay6.png)
 
-When the wallet loads (it may take few moments), on the right hand sidebar, toggle the `Advanced` options and then click `Wallet Info`
+When the wallet loads (it may take few moments), on the right hand wallet explorer, toggle the `Advanced` options and then click `Wallet Info`.
 
-Select and **copy** the `Extended Account Public Key`. This is the **public** key from which BTCPay will derive addresses.
+Select and **copy** the `Extended Account Public Key`. This is the **public** key from which BTCPay will derive addresses. This cannot be used to derive private keys and spend the bitcoin.
 
 ![WasabiWallet](/img/WassabiWalletSetupBTCPay8.png)
 
@@ -63,7 +62,7 @@ Return to the Wasabi  Wallet. Go to `Receive tab` and `generate a new address`.
 
 ![WasabiWallet](/img/WassabiWalletSetupBTCPay12.png)
 
-Compare the address you see in Wasabi Wallet to Addresses shown in BTCPay Server. If there's a match, `continue`. If there is no match, copy the address from Wasabi and paste it into `Hint Address Form`. If you still can't get the matching, double-check that you're actually pasting `Extended Account Public Key`.
+Compare the address you see in Wasabi Wallet to addresses shown in BTCPay Server. If there's a match, `continue`. If there is no match, copy the address from Wasabi and paste it into `Hint Address Form`. If you still can't get the matching, double-check that you're actually pasting `Extended Account Public Key`.
 
 ![WasabiWallet](/img/WassabiWalletSetupBTCPay13.png)
 
