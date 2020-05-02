@@ -65,7 +65,7 @@ The rest of the process is similar to bustapay.
 
 We will refer to the sender's PSBT by the name of `original PSBT` and the receiver's payjoin proposal as `payjoin PSBT`.
 
-There is no guarantee concerning the ordering of outputs and inputs in either the `original PSBT` or the `payjoin PSBT`. (Note about [BIP69](#bip69))
+There is no guarantee concerning the ordering of outputs and inputs in either the `original PSBT` or the `payjoin PSBT`. (Note about [BIP69](Payjoin-spec.md#increasing-privacy-of-clients-using-bip69))
 
 Note: We strongly recommend the sender to submit a PSBT in Base64 format.
 However, we also accept the PSBT or a bitcoin transaction in hex format.
@@ -170,7 +170,7 @@ Our client is able to pay a onion payjoin endpoint, this will allow wallets host
 Note: 
 
 * The sender **does NOT check** whether ouputs have been removed or modified. This allows flexibility to the receiver to adapt his receiving address type to match the other outputs's address type of the sender, or, on the contrary, to create a payment output which would be considered a change address by common chain analysis heuristic. For example, if the receiver supports both P2WPKH and P2SH-P2WPKH, even if the invoice's address in the original transaction was P2WPKH, the receiver may change the address to be P2SH-P2WPKH to match sender's change address format. This is safe because the sender only cares that they do not send too much money in the payjoin transaction. It is also useful if the receiver wants to batch some of their own payments in the transaction.
-* Our method of checking fee allows the receiver to batch payments in the payjoin transaction as long as they pay the fee above the sender's expected amount. (See [batching](#batching))
+* Our method of checking fee allows the receiver to batch payments in the payjoin transaction as long as they pay the fee above the sender's expected amount. (See [batching](Payjoin-spec.md#receivers-payment-batching))
 
 \*<a name="calculate-balance"></a>: For calculating the sent amount of the payjoin transaction, you must only include in the calculation the inputs and outputs that were also present in the original PSBT. (in other words, those with HD key paths and public keys set)
 
@@ -187,7 +187,7 @@ Then Bob would eventually make a payment including this unspent output and other
 
 However, if Bob is suspicious about those 1000 satoshi and knows about Mallory attempts to deanonymise him, Bob can decide to send those 1000 satoshi to Alice in a payjoin transaction. Mallory would then have her analysis poisoned with the mistaken belief that some of Alice's unspent output belong to Bob.
 
-Another example of analysis poisoning is explained in [the following section](#heuristics).
+Another example of analysis poisoning is explained in [the following section](Payjoin-spec.md#blockchain-analytics-heuristics-affected-by-our-implementation).
 
 ### Spare change donation <a name="spare-change"></a>
 
@@ -197,7 +197,7 @@ A common way to protect your privacy is to donate those spare changes to your fa
 
 However, if you donate via payjoin, it will look like a normal transaction.
 
-On top of this we poison analysis by randomly faking a round amount of satoshi for the additional output. (See [the heuristic section](#heuristics))
+On top of this we poison analysis by randomly faking a round amount of satoshi for the additional output. (See [the heuristic section](Payjoin-spec.md#blockchain-analytics-heuristics-affected-by-our-implementation))
 
 ### Blockchain analytics heuristics affected by our implementation <a name="heuristics"></a>
 
@@ -220,7 +220,7 @@ Alternatively, if the original address of Bob is P2WPKH and Alice is also P2WPKH
 
 If Alice pays Bob, she might be tempted to pay him a round amount, like `1.23000000 BTC`. When this happens, blockchain analysis often identify the output without the round amount as the change of the transaction.
 
-For this reason, during a [spare change](#spare-change) situation, we randomly round the amount in the output added by the receiver to the payjoin transaction.
+For this reason, during a [spare change](Payjoin-spec.md#spare-change-donation) situation, we randomly round the amount in the output added by the receiver to the payjoin transaction.
 
 ## Risks
 
@@ -242,7 +242,7 @@ Note that probing attacks are only a problem for automated payment systems such 
 
 For a successful payjoin to happen, the sender needs to sign two transactions double spending each other: The original transaction and the payjoin proposal.
 
-BTCPay Server or end user wallets can verify that the payjoin proposal is legitimate by following [the sender's steps explained earlier](#sender).
+BTCPay Server or end user wallets can verify that the payjoin proposal is legitimate by following [the sender's steps explained earlier](Payjoin-spec.md#sender-side).
 
 However, a hardware wallet can't verify that this is indeed the case. This means that the security guarantee of the hardware wallet is decreased. If BTCPay Server or the end user wallet is compromised, the hardware wallet would sign two valid transactions, thus sending two payments.
 
