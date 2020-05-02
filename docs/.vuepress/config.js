@@ -17,6 +17,18 @@ module.exports = {
     docsDir: "docs",
     editLinks: true,
     sidebarDepth: 1,
+    algolia: {
+      indexName: 'BTCPayServerDocs',
+      apiKey: '51fb83ef4dd7fe4e43bcd7a97b066df8',
+      // See https://www.algolia.com/doc/api-reference/api-parameters/
+      algoliaOptions: {
+        hitsPerPage: 25
+      },
+      // See https://community.algolia.com/docsearch/behavior.html#autocompleteoptions
+      autocompleteOptions: {
+        openOnFocus: true
+      }
+    },
     nav: [
       {
         text: "Website",
