@@ -1,0 +1,157 @@
+// import this file as a stylus file here, because this is the only way
+// how its styles take precedence over the vuepress theme styles.
+@import "btcpayserver-main"
+
+// VuePress Default Theme Overrides
+
+html,
+body {
+  min-height: 100vh;
+}
+
+// styles originating from .btcpay-header
+.navbar {
+  color: #292929;
+  color: var(--btcpay-color-neutral-900);
+  background-color: #ffffff;
+  background-color: var(--btcpay-color-white);
+}
+
+:root[data-btcpay-theme="dark"] .navbar {
+  color: #ffffff;
+  color: var(--btcpay-color-white);
+  background-color: #222;
+  background-color: var(--btcpay-color-neutral-950)
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-btcpay-theme="light"]) .navbar {
+    color: #ffffff;
+    color: var(--btcpay-color-white);
+    background-color: #222;
+    background-color: var(--btcpay-color-neutral-950)
+  }
+}
+
+#app
+  .navbar {
+    border-color: transparent;
+  }
+
+  .navbar .links {
+    background: transparent;
+  }
+
+  .navbar a {
+    color: var(--btcpay-header-color-link);
+  }
+
+  .nav-links .nav-item,
+  .nav-links .repo-link {
+    margin-left: var(--btcpay-space-xs);
+  }
+
+  .nav-links a {
+    padding: var(--btcpay-space-xs) var(--btcpay-space-s);
+    color: var(--btcpay-header-color-link);
+  }
+
+  .nav-links a svg {
+    display: none;
+  }
+
+  .nav-links a:hover,
+  .nav-links a:focus  {
+    color: var(--btcpay-header-color-link-accent);
+    border-bottom: 2px solid var(--btcpay-header-color-link-accent);
+  }
+
+  .nav-links a.router-link-active {
+    color: var(--btcpay-header-color-link-accent);
+  }
+
+  .site-name {
+    color: inherit;
+  }
+
+  .sidebar {
+    color: var(--btcpay-nav-color-link);
+    background: transparent;
+    border-color: transparent;
+  }
+
+  .sidebar-group-items,
+  .sidebar-group.is-sub-group > .sidebar-heading {
+    font-size: .95rem;
+  }
+
+  a.sidebar-link,
+  .sidebar-heading.clickable {
+    color: var(--btcpay-nav-color-link);
+  }
+
+  a.sidebar-link:focus,
+  a.sidebar-link:hover,
+  .sidebar-heading.clickable:focus,
+  .sidebar-heading.clickable:hover {
+    color: var(--btcpay-nav-color-link-accent);
+  }
+
+  a.sidebar-link.active,
+  .sidebar-heading.clickable.active {
+    color: var(--btcpay-nav-color-link-active);
+    border-color: var(--btcpay-color-primary);
+  }
+
+  .arrow.left {
+    border-right-color: var(--btcpay-border-color-light);
+  }
+
+  .arrow.right {
+    border-left-color: var(--btcpay-border-color-light);
+  }
+
+  .arrow.up {
+    border-bottom-color: var(--btcpay-border-color-light);
+  }
+
+  .arrow.down {
+    border-top-color: var(--btcpay-border-color-light);
+  }
+
+  h2 {
+    border-color: var(--btcpay-border-color-medium);
+  }
+
+  pre,
+  code {
+    font-family: var(--btcpay-font-family-monospace);
+    border-radius: var(--btcpay-border-radius);
+    color: var(--btcpay-code-color);
+    background-color: var(--btcpay-code-bg);
+  }
+
+  div[class*="language-"] {
+    background-color: transparent;
+    border-radius: var(--btcpay-border-radius);
+  }
+
+  tr:nth-child(2n) {
+    background-color: transparent;
+  }
+
+  .page-edit .edit-link a,
+  .page-nav .inner a {
+    color: var(--btcpay-color-secondary);
+  }
+
+  .page-edit .edit-link a:hover,
+  .page-edit .edit-link a:focus,
+  .page-nav .inner a:hover,
+  .page-nav .inner a:focus {
+    color: var(--btcpay-color-secondary-accent);
+  }
+
+  .page-nav .inner {
+    border-top-color: var(--btcpay-border-color-light);
+  }
