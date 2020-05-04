@@ -1,3 +1,18 @@
+const customBlock = require('markdown-it-custom-block')
+const implicitFigures = require('markdown-it-implicit-figures')
+
+const youtubeEmbed = (id, path) => `
+  <div class="ytEmbed" data-id="${id}" style="background-image:url(https://img.youtube.com/vi/${id}/hqdefault.jpg);">
+    <iframe
+      title="YouTube ${id}"
+      data-src="https://www.youtube-nocookie.com/embed/${path}&autoplay=1&autohide=1&modestbranding=1&color=white&rel=0"
+      frameborder="0"
+      allow="autoplay;encrypted-media;picture-in-picture"
+      allowfullscreen
+    ></iframe>
+  </div>`
+
+
 module.exports = {
   title: "BTCPay Server Docs",
   description: "BTCPay Server Official Documentation",
@@ -11,9 +26,25 @@ module.exports = {
     ["meta", { name: "msapplication-TileColor", content: "#0f3b21" }],
     ["meta", { name: "theme-color", content: "#ffffff" }],
     // Styles
-    ["link", { rel: "stylesheet", href: "/styles/btcpayserver-variables.css" }],
-    // ["link", { rel: "stylesheet", href: "/styles/btcpayserver-main.css" }]
+    ["link", { rel: "stylesheet", href: "/styles/btcpayserver-variables.css" }]
   ],
+  markdown: {
+    extendMarkdown (md) {
+      md.use(implicitFigures)
+      md.use(customBlock, {
+        youtube (arg) {
+          const [id, start] = arg.split(',')
+          const path = start ? `${id}?start=${start}` : `${id}?`
+          return youtubeEmbed(id, path)
+        },
+        youtubePlaylist (arg) {
+          const [id, video] = arg.split(',')
+          const path = `${video || ''}?listType=playlist&list=${id}`
+          return youtubeEmbed(video || id, path)
+        }
+      })
+    }
+  },
   themeConfig: {
     logo: "/img/btcpay-logo.svg",
     displayAllHeaders: false,

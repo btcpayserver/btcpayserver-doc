@@ -4,7 +4,7 @@ This section goes through the process of creating an account and store on our pu
 
 You can also follow along in this video:
 
-[![BTCPay - Introduction](img/thumbnails/BTCPayServerWalkthourgh.png)](http://www.youtube.com/watch?v=xh3Eac66qc4 "BTCPay - Introduction")
+@[youtube](xh3Eac66qc4)
 
 ## Create your first invoice
 

@@ -11,8 +11,7 @@ Users can pay requests in partial payments and the request will remain valid unt
 
 ## Payment Requests Video:
 
-[![BTCPay Payment Requests](https://img.youtube.com/vi/j6CvwDPvfzQ/mqdefault.jpg)](https://www.youtube.com/watch?v=j6CvwDPvfzQ "BTCPay Payment Requests")
-
+@[youtube](j6CvwDPvfzQ)
 
 ## Customize Your Payment Requests:
 
@@ -25,8 +24,3 @@ Users can pay requests in partial payments and the request will remain valid unt
 ## Examples:
 
 ![Payment Request](img/PaymentRequests.jpg)
-
-
-
-
-

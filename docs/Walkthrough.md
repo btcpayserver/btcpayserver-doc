@@ -4,7 +4,7 @@ In this article, we will walk you through the BTCPay user interface and show you
 
 Watch video below for an interactive overview of the features.
 
-[![Walkthrough](img/thumbnails/BTCPayServerWalkthourgh.png)](https://www.youtube.com/watch?v=ZIfJyq9RimM "BTCPay - WalkThrough")
+@[youtube](ZIfJyq9RimM)
 
 After you created the account on the BTCPay Server instance hosted by yourself or a third-party, you'll see a variety of options in the navigation menu on top.
 
@@ -30,7 +30,7 @@ Server settings is something only a server admin can access. If you're using som
 - Theme - Customize the front-end appearance of your BTCPay Server.
 - Maintenance - Update your BTCPay to latest version and clean your BTCPay by deleting unused docker images.
 - Logs - Displays most recent logs of the BTCPay Server.
-- Files - After enabling this feature in Services, upload external files and access them via url. 
+- Files - After enabling this feature in Services, upload external files and access them via url.
 
 ## Stores
 
@@ -53,7 +53,7 @@ For more information, check [Apps](Apps.md) or [Apps FAQ](/FAQ/FAQ-Apps.md)
 
 Each store gets an internal wallet upon adding a derivation scheme. Internal BTCPay wallet shows all of your payments and should be used as a reference if some payments are not shown in your software or hardware wallet due to some wallets [not supporting larger gap limit](FAQ.md#i-do-not-see-the-funds-in-my-softwarehardware-wallet). In Wallets, you can see the total balance of your store. The funds from the wallet can only be spent, if the user signs a transaction with a compatible hardware wallet.
 
-Three elements of the internal BTCPay Wallet are: 
+Three elements of the internal BTCPay Wallet are:
 * Transaction - Shows your entire transaction history.
 * Send - Used for sending funds out of your wallet (has to be signed and confirmed on a compatible hardware wallet).
 * Rescan - Enables you to import old wallets into BTCPay more easily and solves the gap limit issue most external wallets have.
@@ -66,7 +66,7 @@ All of the invoices for your user account will be displayed here. You can filter
 
 ## Payment Requests
 
-Each store can have an unlimited number of payment requests which are displayed here. Payment requests are dynamic invoices that can be shared by url and paid at any time using current BTC exchange rates. Here you can edit and view your payment requests. You can see invoice details for your payment requests and even clone previously created payment requests. 
+Each store can have an unlimited number of payment requests which are displayed here. Payment requests are dynamic invoices that can be shared by url and paid at any time using current BTC exchange rates. Here you can edit and view your payment requests. You can see invoice details for your payment requests and even clone previously created payment requests.
 
 For more information, check [Payment Requests](PaymentRequests.md)
 

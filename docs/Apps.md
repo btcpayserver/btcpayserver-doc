@@ -35,7 +35,7 @@ Crowdfunding is an application which you can launch from BTCPay Server interface
 7. Click "Save Settings".
 8. Click "View App" to view your Crowdfund (Contributors can access the crowdfund through that link).
 
-[![BTCPay Crowdfunding](https://img.youtube.com/vi/tFbfyneDj88/mqdefault.jpg)](https://www.youtube.com/watch?v=tFbfyneDj88 "BTCPay crowdfunding")
+@[youtube](tFbfyneDj88)
 
 If you would like to provide digital or physical products to the backers of your crowdfunding campaign, you can [integrate WooCommerce store into it](FAQ/FAQ-Apps.md#how-to-integrate-woocommerce-store-into-a-btcpay-crowdfund-app). You can also set limits on contribution perks using the inventory feature.
 
@@ -47,17 +47,18 @@ Easily-embeddable HTML and highly-customizable payment buttons allow users to re
 3. Customize your button
 4. Copy the generated form and embed it on your website.
 
-[![BTCPay Payment Buttons](https://img.youtube.com/vi/MIWGvl6_WzI/mqdefault.jpg)](https://www.youtube.com/watch?v=MIWGvl6_WzI "BTCPay Payment Button")
+@[youtube](MIWGvl6_WzI)
 
 ## Lightning Network Apps (Lapps)
+
 [Lapps](https://blockstream.com/2018/03/29/blockstreams-week-of-lapps-ends/) are applications built on top of [Lightning Charge](https://blockstream.com/2018/01/16/lightning-charge/), a complimentary package that enables easier development on top of c-lightning. If you decided to use c-lightning, you could easily connect your BTCPay to any of the Lapps.
 
 BTCPay exposes all the necessary information required to connect your internal BTCPay c-lightning node to a Lightning Network App. Go to Server Settings > Services > Lightning charge server > See information > Credentials.
 
 Below are videos that showcase how to connect some of the lapps to BTCPay.
 
-[![c-lightningbtcpay1](https://img.youtube.com/vi/6EHNq1anD1k/mqdefault.jpg)](https://www.youtube.com/watch?v=6EHNq1anD1k "BTCPay - c-lightning and lapps intro")
+@[youtube](6EHNq1anD1k)
 
-[![c-lightningbtcpay2](https://img.youtube.com/vi/ZbM3jcxau0o/mqdefault.jpg)](https://www.youtube.com/watch?v=ZbM3jcxau0o "BTCPay - c-lightning and lapps publisher")
+@[youtube](ZbM3jcxau0o)
 
-[![c-lightningbtcpay3](https://img.youtube.com/vi/EYrsU3LGpbI/mqdefault.jpg)](https://www.youtube.com/watch?v=EYrsU3LGpbI "BTCPay - c-lightning and lapps woo lightning")
+@[youtube](EYrsU3LGpbI)

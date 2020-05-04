@@ -34,6 +34,6 @@ Approximate Cost (unpruned, Bitcoin-only, after Azure $200 free trial): **60 USD
 
 After all your nodes have synced and you've confirmed everything works, follow [this guide](https://github.com/btcpayserver/btcpayserver-doc/blob/master/AzurePennyPinching.md) to fine-tune for savings; costs should drop to **30 or 40 USD per month**.
 
-[![BTCPay - Azure](img/thumbnails/BTCPayServerAzureDeployment.png)](http://www.youtube.com/watch?v=xh3Eac66qc4 "BTCPay - Azure 1-Click")
+@[youtube](xh3Eac66qc4)
 
 Learn more: [btcpayserver/btcpayserver-azure](https://github.com/btcpayserver/btcpayserver-azure)

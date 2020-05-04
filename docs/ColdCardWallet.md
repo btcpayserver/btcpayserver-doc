@@ -1,6 +1,6 @@
 # Connecting Coldcard Wallet to BTCPay Server
 
-This document shows how to connect Coldcard Wallet to BTCPay Server. 
+This document shows how to connect Coldcard Wallet to BTCPay Server.
 
 ## Coldcard Wallet Setup
 
@@ -12,15 +12,15 @@ This guide assumes, you have a Coldcard wallet set up. To configure the Coldcard
 2. Go to Advanced > MicroSD Card > Electrum Wallet > Native Segwit
 3. Insert the MicroSD card back into your PC
 4. In BTCPay Server, Store Settings > General > Derivation Scheme > Import from Hardware Device > Coldcard
-5. Browse and select the wallet file earlier exported from Coldcard. 
+5. Browse and select the wallet file earlier exported from Coldcard.
 6. Click `Submit`
 7. Confirm the address match in BTCPay.
 
 The Coldcard is now connected to your BTCPay. Payments go directly to Coldcard. The video below shows how to connect your BTCPay store to your Coldcard.
 
-[![BTCPay and Coldcard](img/thumbnails/BTCPayServerConnectingColdCard.png)](https://www.youtube.com/watch?v=N0eVwdP_7EQ "Connecting Coldcard to BTCPay")
+@[youtube](N0eVwdP_7EQ)
 
-###  Spending from BTCPay Server wallet with Coldcard (PSBT)
+### Spending from BTCPay Server wallet with Coldcard (PSBT)
 
 Once there are some funds in received to your BTCPay Wallet connected to Coldcard, you can spend them by using [PSBT](https://github.com/bitcoin/bitcoin/blob/master/doc/psbt.md#psbt-in-general) (Partially Signed Bitcoin Transactions). This allows completely offline signing of your transactions, without ever having to connect your hardware wallet to the internet.
 
@@ -40,4 +40,4 @@ Once there are some funds in received to your BTCPay Wallet connected to Coldcar
 
 The video below shows how to connect your BTCPay store to your Coldcard.
 
-[![BTCPay and Coldcard](img/thumbnails/BTCPayServerPSBTcoldcard.png)](https://www.youtube.com/watch?v=oK0h-76Giaw "PSBT Coldcard and BTCPay")
+@[youtube](oK0h-76Giaw)

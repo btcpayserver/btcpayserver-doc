@@ -8,7 +8,7 @@ The ideal architecture is `Docker-Compose`-driven, and looks similar to:
 
 Video below guides you step by step on how to set up BTCPay Server on a VPS with Docker.
 
-[![](img/thumbnails/BTCPayDockerDeploymentVPS.png)](https://www.youtube.com/watch?v=x6hqTFgHqhA)
+@[youtube](x6hqTFgHqhA)
 
 Please visit [btcpayserver/btcpayserver-docker](https://github.com/btcpayserver/btcpayserver-docker) to see this production deployment and how it works.
 

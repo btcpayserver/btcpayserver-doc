@@ -1,14 +1,14 @@
-# BTCPay Vault 
+# BTCPay Vault
 
 [BTCPay Vault](https://github.com/btcpayserver/BTCPayServer.Vault) is a cross-platform desktop application that allows the use of a hardware wallet with a full node inside BTCPay Server.
 
 ## Getting Started with BTCPay Vault
 
-In laymen words, BTCPay Vault is a separate app, locally hosted on your own PC, which BTCPay Server connects to and asks for permission. Once permission is granted, BTCPay is able to integrate with any hardware wallet connected to your PC. 
+In laymen words, BTCPay Vault is a separate app, locally hosted on your own PC, which BTCPay Server connects to and asks for permission. Once permission is granted, BTCPay is able to integrate with any hardware wallet connected to your PC.
 
 You can import your wallet and spend incoming funds with a simple confirmation on your device, with your keys never leaving your hardware device, with all funds being validated against your own Bitcoin full node and no data leakage.
 
-[![](img/thumbnails/BTCPayServerVault.png)](https://www.youtube.com/watch?v=hh_cm8MKl2g)
+@[youtube](hh_cm8MKl2g)
 
 ### Connecting a wallet to a store
 

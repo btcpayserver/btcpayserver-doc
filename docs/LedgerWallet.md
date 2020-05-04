@@ -1,6 +1,6 @@
 # Connecting Ledger Wallet to BTCPay Server
 
-This document shows how to connect Ledger Nano S Wallet to BTCPay Server. 
+This document shows how to connect Ledger Nano S Wallet to BTCPay Server.
 
 ## Ledger Nano S Wallet Setup
 
@@ -9,7 +9,7 @@ This guide assumes, you have a Nano S wallet set up. To configure the Nano S, pl
 ### Requirements
 
 1. Bitcoin App installed on the Ledger
-2. Google Chrome or Firefox 
+2. Google Chrome or Firefox
 3. For Firefox, U2F needs to be enabled in about:config
 4. No other U2F devices plugged in into your PC (Yubikey, other wallets, etc)
 
@@ -29,7 +29,7 @@ Your Ledger wallet is now connected to your BTCPay. Payments go directly to Ledg
 
 #### Manual Setup
 
-If you have more than 20 accounts in your Ledger you might not be able to find the correct account because the select shows a maximum of 20 entries.  
+If you have more than 20 accounts in your Ledger you might not be able to find the correct account because the select shows a maximum of 20 entries.
 In this case you can manually find the xpub for your wanted account in these steps:
 
 1. Open the [Ledger live app](https://shop.ledger.com/pages/ledger-live)
@@ -58,4 +58,4 @@ Once there are some funds in received to your BTCPay Wallet connected to Ledger,
 
 The video below shows how to connect your BTCPay store to your Ledger and how to use Ledger with the [internal BTCPay wallet](Wallet.md).
 
-[![BTCPay and Ledger](img/thumbnails/BTCPayServerConnectingLedgerNanoS.png)](https://www.youtube.com/watch?v=1Sj5mP4TkFI "Ledger Nano S with BTCPay")
+@[youtube](1Sj5mP4TkFI)
