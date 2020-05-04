@@ -1,9 +1,11 @@
 # BTCPay Server Apps
+
 The primary purpose of BTCPay Server is to remove dependencies on trusted third-parties. The Apps are built in applications that obsolete central-authorities and allow users an easy way to extend the [use case](UseCase.md) of the software. Users can self-host all sorts of customizable applications that work out of the box.
 
 To create an app, go to Apps > Create a new app. Apps are store-dependent, which means that each app needs to be connected to a store.
 
 ## Point of Sale App
+
 The web-based PoS app allows users with brick and mortar stores to readily accept cryptocurrencies without fees or a third-party, directly to their wallet. The PoS can be displayed easily on tablets or any other devices which support web browsing. Users can easily create a homescreen shortcut for a quick access to the web-app.
 
 ![BTCPay Pos](img/BTCPayPointOfSale1.jpg)
@@ -40,6 +42,7 @@ Crowdfunding is an application which you can launch from BTCPay Server interface
 If you would like to provide digital or physical products to the backers of your crowdfunding campaign, you can [integrate WooCommerce store into it](FAQ/FAQ-Apps.md#how-to-integrate-woocommerce-store-into-a-btcpay-crowdfund-app). You can also set limits on contribution perks using the inventory feature.
 
 ## Payment Button
+
 Easily-embeddable HTML and highly-customizable payment buttons allow users to receive tips and donations. Online stores can also integrate payment buttons. When a site visitor clicks on the button, BTCPay displays the invoice.
 
 1. Go to > Store > Settings > Pay Button

@@ -5,6 +5,7 @@
 Payjoin is a generic term for any privacy mechanism where merchants can protect their own and the privacy of their customers by mixing merchant's UTXOs with customer's payment.
 
 This has two purposes:
+
 * It protects the sender by fighting against one of the biggest heuristic used by privacy invading technology: No longer can it be assumed that all the inputs in a transaction belongs to the same entity
 * It allows the receiver to consolidate UTXOs and [batch](#batching) his own payments to economize on-chain fee.
 
@@ -36,27 +37,28 @@ Once the specification stabilizes and has gone through review and testing by the
 Bustapay is currently not widely deployed, so we are not worried about breaking backwards compatibility.
 
 Our implementation is identical to bustapay with the following differences.
+
 ```diff
-- The standard way of letting a sender know where to send a bustapay transaction is done via a bip21 encoded address. The key value "bpu" (short for "BustaPayUrl") should be used. An example of such address would be bitcoin:2NABbUr9yeRCp1oUCtVmgJF8HGRCo3ifpTT?bpu=https://bp.bustabit.com/submit It is highly encouraged that urls are kept short. 
+- The standard way of letting a sender know where to send a bustapay transaction is done via a bip21 encoded address. The key value "bpu" (short for "BustaPayUrl") should be used. An example of such address would be bitcoin:2NABbUr9yeRCp1oUCtVmgJF8HGRCo3ifpTT?bpu=https://bp.bustabit.com/submit It is highly encouraged that urls are kept short.
 + The standard way of letting a sender know where to send a bustapay transaction is done via a bip21 encoded address. The key value "pj" (short for "payjoin URL") should be used. An example of such address would be bitcoin:2NABbUr9yeRCp1oUCtVmgJF8HGRCo3ifpTT?pj=https://example.com/submit It is highly encouraged that urls are kept short.
 
 - Step 1. Sender creates a bitcoin transaction paying the receiver
 + Step 1. Sender creates a bitcoin transaction OR PSBT paying the receiver
 + While we also support the use of raw transaction instead of PSBT, we strongly advise against it.
 
-- This transaction must use segwit for all inputs, and be fully valid and signed. The transaction must be eligible for propagation on the network (but not done so at this stage) 
+- This transaction must use segwit for all inputs, and be fully valid and signed. The transaction must be eligible for propagation on the network (but not done so at this stage)
 + If using PSBT, the PSBT must be finalized with witness UTXO information.
 + If using transactions, the transaction must use segwit for all inputs, and be fully valid and signed. The transaction must be eligible for propagation on the network (but not done so at this stage
 
 - Step 2. Sender gives the "template transaction" to the receiver
-+ Step 2. If using PSBT, sender gives "original PSBT" to the receiver, in base64 or hex format. 
++ Step 2. If using PSBT, sender gives "original PSBT" to the receiver, in base64 or hex format.
 + If using transactions, sender gives "original transaction" to the receiver, in hex format.
-- This is done via an HTTP POST request, sent to a "[bustapay] url" 
-+ This is done via an HTTP POST request, sent to a "[payjoin] url" 
+- This is done via an HTTP POST request, sent to a "[bustapay] url"
++ This is done via an HTTP POST request, sent to a "[payjoin] url"
 
 Step 3. Receiver processes the transaction and returns a partially signed coinjoin
 
-- The receiver validates the transaction, and pays himself. The receiver then adds one or more of his own inputs (known as the contributed inputs) and (optionally) increases the output that pays himself (generally by the sum of the contributed inputs). Doing so creates a partial transaction, which the receiver returns to the sender. It is called such as it requires the sender to re-sign his own inputs. 
+- The receiver validates the transaction, and pays himself. The receiver then adds one or more of his own inputs (known as the contributed inputs) and (optionally) increases the output that pays himself (generally by the sum of the contributed inputs). Doing so creates a partial transaction, which the receiver returns to the sender. It is called such as it requires the sender to re-sign his own inputs.
 + The receiver extracts the transaction, optionally verifying it is valid. (by calling testmempoolaccept on the extracted transaction)
 + The receiver extracts the feerate, adds one of his inputs and decreases the change output of the payer by the increased fee difference his input added such that the feerate is the same as the "orginal PSBT" or "original transaction".
 ```
@@ -75,26 +77,30 @@ However, we also accept the PSBT or a bitcoin transaction in hex format.
 Here is the rationale for using PSBT instead of raw transactions, and why the receiver should be responsible to bump the fee of the payjoin transaction.
 
 ### Respecting the minimum relay fee policy
+
 To be properly relayed, a Bitcoin transaction needs to pay at least 1 satoshi per virtual byte.
 When fees are low, the original transaction is already 1 satoshi per virtual byte, so if the merchant adds their own input, they need to make sure the fee is increased such that the rate does not drop below 1 satoshi per virtual byte.
 
 ### Preventing mempool replacement
+
 A safe way to implement payjoin, is for both the sender and receiver to try broadcasting the original transaction at some fixed interval period regardless of the state of the payjoin.
 
 If the receiver was not properly adding fees to the payjoin transaction, the original transaction would end up replacing the payjoin transaction in the mempool.
 
 ### Defeating heuristics based on the fee calculation
+
 Most wallets are creating a round fee rate (like 2 sat/b).
 If the payjoin transaction's fee was not increased by the added size, then those payjoin transaction could easily be identifiable on the blockchain.
 
 Not only would those transactions would stand out by not having a round fee (like 1.87 sat/b), but any suspicion of payjoin could be confirmed by checking if removing one input would create a round fee rate.
 
 ### Receiver does not need to be a full node
+
 Because the receiver needs to bump the fee to keep the same fee rate as the original PSBT, it needs the input's UTXO information to know what is the original fee rate. Without PSBT, light wallets like Wasabi Wallet would not be able to receive a payjoin transaction.
 
 The validation (policy and consensus) of the original transaction is optional: a receiver without a full node can decide to create the payjoin transaction and automatically broadcast the original transaction after a timeout of 1 minute, and only verifying that it has been propagated in the network.
 
-However, automated systems (like BTCPay Server) need to verify the transaction to prevent UTXO probing attacks. 
+However, automated systems (like BTCPay Server) need to verify the transaction to prevent UTXO probing attacks.
 
 This is not a concern for receivers using end-user wallets such as Wasabi Wallet, such receivers can just limit the number of original PSBT proposals of a specific address to one. With such wallets, the attacker has no way to generate new deposit addresses to probe the UTXOs.
 
@@ -122,6 +128,7 @@ Then the original PSBT is deemed valid, however, other checks are done which dep
 
 From this point, the receiver will automatically try to broadcast the original transaction after 1 minute, whatever happens.
 Then, we proceed to create the payjoin transaction by cloning the original transaction:
+
 * If there is only one output, we add a second output [*](#spare-change)
 * We include some of the receiver's inputs
 
@@ -159,15 +166,15 @@ The sender then follows the steps:
 * Fill out only the HD Key paths and public keys of inputs and outputs that were present in the original PSBT.
 * Check that the sent amount in the payjoin transaction is the same as the sent amount of the original transaction. [*](#calculate-balance)
 * If those are different:
-    * Check that the additional paid amount is not more than the additional fee paid in the payjoin transaction.
-    * Check that the additional paid amount is not more than twice the original fee 
-    * Check that the additional paid amount is not more than the expected fee once the payjoin transaction is fully signed [**](#calculate-increased-fee)
+  * Check that the additional paid amount is not more than the additional fee paid in the payjoin transaction.
+  * Check that the additional paid amount is not more than twice the original fee
+  * Check that the additional paid amount is not more than the expected fee once the payjoin transaction is fully signed [**](#calculate-increased-fee)
 
 After all those checks, the sender can proceed to sign the payjoin transaction.
 
 Our client is able to pay a onion payjoin endpoint, this will allow wallets hosted on BTCPay Server to pay desktop or mobile wallets without any NAT configuration.
 
-Note: 
+Note:
 
 * The sender **does NOT check** whether ouputs have been removed or modified. This allows flexibility to the receiver to adapt his receiving address type to match the other outputs's address type of the sender, or, on the contrary, to create a payment output which would be considered a change address by common chain analysis heuristic. For example, if the receiver supports both P2WPKH and P2SH-P2WPKH, even if the invoice's address in the original transaction was P2WPKH, the receiver may change the address to be P2SH-P2WPKH to match sender's change address format. This is safe because the sender only cares that they do not send too much money in the payjoin transaction. It is also useful if the receiver wants to batch some of their own payments in the transaction.
 * Our method of checking fee allows the receiver to batch payments in the payjoin transaction as long as they pay the fee above the sender's expected amount. (See [batching](Payjoin-spec.md#receivers-payment-batching))
@@ -254,13 +261,13 @@ With payjoin, the maximum amount of money that can be lost is equals to two paym
 
 ### Supporting P2WPKH and P2SH-P2WPKH for the same store
 
-In order to be useful, a sender and a receiver must share the same type of bitcoin address. 
+In order to be useful, a sender and a receiver must share the same type of bitcoin address.
 
 Ideally, this means that the receiver could adapt the invoice's payment address and contributed input to match the sender's orginal PSBT. In the context of BTCPay Server, this would mean that one merchant needs to setup two wallets for a single store. While this is theorically possible, this requires a big refactoring in our code and is not yet available.
 
 Also, even in the event that we developed such feature, merchants are rarely technically apt to understand the reason of using two wallets for their store to accomodate such technical limitation.
 
-Another proposition is to allow one wallet to support both, P2WPKH and P2SH-P2WPKH. But this is problematic as it is non standard so no wallet or tool supports fund recovery for such a type of wallet. 
+Another proposition is to allow one wallet to support both, P2WPKH and P2SH-P2WPKH. But this is problematic as it is non standard so no wallet or tool supports fund recovery for such a type of wallet.
 
 For now, we only support a single wallet for the store of the merchant, P2SH-P2WPKH or P2WPKH which are [the most common type of inputs](https://transactionfee.info/charts/inputs-segwit-distribution/).
 

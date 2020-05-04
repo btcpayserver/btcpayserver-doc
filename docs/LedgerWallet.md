@@ -42,7 +42,7 @@ In this case you can manually find the xpub for your wanted account in these ste
 
 ![Ledger Account "Adavanced Logs" info screenshot](/img/LedgerHelpXpub.png)
 
-###  Spending from BTCPay Server wallet with Ledger
+### Spending from BTCPay Server wallet with Ledger
 
 Once there are some funds in received to your BTCPay Wallet connected to Ledger, you can spend them by signing a transaction with your hardware wallet. This allows easy interaction of the Ledger wallet with your full node, without leaking information to third-party servers.
 
