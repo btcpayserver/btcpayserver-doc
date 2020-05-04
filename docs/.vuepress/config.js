@@ -20,7 +20,7 @@ module.exports = {
     repo: "btcpayserver/btcpayserver-doc",
     docsDir: "docs",
     editLinks: true,
-    sidebarDepth: 1,
+    sidebarDepth: 0,
     algolia: {
       indexName: 'BTCPayServerDocs',
       apiKey: '51fb83ef4dd7fe4e43bcd7a97b066df8',
@@ -55,12 +55,10 @@ module.exports = {
       {
         title: "Introduction",
         path: "/",
-        sidebarDepth: 1
       },
       {
         title: "BTCPay Basics",
         collapsable: false,
-        sidebarDepth: 1,
         children: [
           {
             title: "Use Case",
@@ -80,7 +78,6 @@ module.exports = {
       {
         title: "Deployment",
         collapsable: false,
-        sidebarDepth: 0,
         children: [
           "Deployment",
           {
@@ -94,7 +91,6 @@ module.exports = {
             title: "Manual Deployment",
             path: "ManualDeployment",
             collapsable: false,
-            sidebarDepth: 0,
             children: [
               "ManualDeploymentExtended"
             ]
@@ -103,7 +99,6 @@ module.exports = {
           {
             title: "Raspberry Pi Deployment",
             path: "RaspberryPiDeployment",
-            sidebarDepth: 0,
             children: [
               "RPi3",
               "RPi4"
@@ -113,7 +108,6 @@ module.exports = {
           {
             title: "Advanced Deployment",
             collapsable: false,
-            sidebarDepth: 0,
             children: [
               "DynamicDNS",
               "ReverseSSHtunnel"
@@ -124,7 +118,6 @@ module.exports = {
       {
         title: "Getting Started",
         collapsable: false,
-        sidebarDepth: 0,
         children: [
           "RegisterAccount",
           "CreateStore",
@@ -132,7 +125,6 @@ module.exports = {
             title: "(3) Connect a Wallet",
             path: "ConnectWallet",
             collapsable: false,
-            sidebarDepth: 0,
             children: [
               {
                 title: "Ledger Wallet",
@@ -166,13 +158,11 @@ module.exports = {
       {
         title: "Features",
         collapsable: false,
-        sidebarDepth: 0,
         children: [
           {
             title: "Wallet",
             path: "Wallet",
             collapsable: false,
-            sidebarDepth: 0,
             children: [
               {
                 title: "Hot Wallet",
@@ -201,7 +191,6 @@ module.exports = {
           {
             title: "Payjoin",
             path: "Payjoin",
-            sidebarDepth: 0,
             children: [
               {
                 title: "Payjoin Specification",
@@ -214,7 +203,6 @@ module.exports = {
       {
         title: "Integrations",
         collapsable: false,
-        sidebarDepth: 0,
         children: [
           {
             title: "WooCommerce",
@@ -242,7 +230,6 @@ module.exports = {
         title: "Docker",
         path: "/Docker/",
         collapsable: false,
-        sidebarDepth: 0,
         children: [
           "/Docker/pihole"
         ]
@@ -251,7 +238,6 @@ module.exports = {
         title: "Transmuter",
         path: "/Transmuter/",
         collapsable: false,
-        sidebarDepth: 0,
         children: [
           {
             title: "Email Receipts Preset",
