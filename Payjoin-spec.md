@@ -70,6 +70,42 @@ There is no guarantee concerning the ordering of outputs and inputs in either th
 Note: We strongly recommend the sender to submit a PSBT in Base64 format.
 However, we also accept the PSBT or a bitcoin transaction in hex format.
 
+### Optional parameters
+
+When the payjoin sender sends the POST request to the payjoin endpoint, he can optionally specifies the following parameters:
+
+* `v=`, the version number of the payjoin protocol that the client is using. The current version is `1`.
+
+This can be used in the future so the receiver can reject a payjoin if the client is using a version which is not supported via an error HTTP 400, `version-unsupported`.
+If not specified, the receiver will assume the sender is using the same version.
+
+If the version of the sender is above the one of the receiver, the receiver should ignore the parameter.
+
+* `feebumpindex=`, the preferred output from which to increase the fee for the added inputs. (default: `-1`)
+
+If the `feebumpindex` is out of bounds or pointing to the payment ouptut meant for the receiver, the receiver should ignore the parameter.
+
+* `noadjustfee=`, a boolean the sender specifies if they prefer that the receiver does not bump the fee for the added input. (default: `false`)
+
+Note that if `noadjustfee` is `true`, the sender should create a transaction with RBF disabled, as the original transaction could replace the payjoin transaction.
+
+### Error format
+
+The receiver may send errors to the client, the format is the following:
+
+```json
+{
+    "errorCode": "version-unsupported",
+    "message": "The version is not supported anymore"
+}
+```
+
+It is recommended for the sender software to show a properly formatted message from the `errorCode` which are detailed below.
+
+If the sender software does not recognize an `errorCode`, it should show a generic error to the user.
+
+Unknown `errorCode` and `message` should never be shown in the sender's software UI as it could be used by a malicious receiver to mislead a user. However, they could be shown in the debug logs.
+
 ## Rationale
 
 Here is the rationale for using PSBT instead of raw transactions, and why the receiver should be responsible to bump the fee of the payjoin transaction.
