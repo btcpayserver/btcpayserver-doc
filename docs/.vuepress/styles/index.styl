@@ -14,26 +14,18 @@ body {
 
 // styles originating from .btcpay-header
 .navbar {
-  color: #292929;
-  color: var(--btcpay-color-neutral-900);
-  background-color: #ffffff;
-  background-color: var(--btcpay-color-white);
+  color: var(--btcpay-header-color);
+  background-color: var(--btcpay-header-bg);
 }
 
-:root[data-btcpay-theme="dark"] .navbar {
-  color: #ffffff;
-  color: var(--btcpay-color-white);
-  background-color: #222;
-  background-color: var(--btcpay-color-neutral-950)
+.navbar a {
+  color: var(--btcpay-header-color-link);
+  text-decoration: none;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root:not([data-btcpay-theme="light"]) .navbar {
-    color: #ffffff;
-    color: var(--btcpay-color-white);
-    background-color: #222;
-    background-color: var(--btcpay-color-neutral-950)
-  }
+.navbar a:focus,
+.navbar a:hover {
+  color: var(--btcpay-header-color-link-accent);
 }
 
 #app
@@ -47,6 +39,30 @@ body {
 
   .navbar a {
     color: var(--btcpay-header-color-link);
+  }
+
+  .navbar .search-box {
+    order: 10;
+    margin: 0 0 0 var(--btcpay-space-s);
+  }
+
+  .navbar .search-box input {
+    color: var(--btcpay-header-color);
+    background-color: var(--btcpay-header-bg);
+    border-color: var(--btcpay-border-color-medium);
+
+    @media (max-width: 899px) {
+      left: 0;
+    }
+  }
+
+  .navbar .search-box .search-query.ds-hint {
+    display: none !important;
+  }
+
+  .navbar .btcpay-theme-switch {
+    order: 20;
+    margin: 0 0 0 var(--btcpay-space-s);
   }
 
   .nav-links .nav-item,
@@ -145,6 +161,30 @@ body {
 
   tr:nth-child(2n) {
     background-color: transparent;
+  }
+
+  .custom-block {
+    background-color: var(--btcpay-bg-dark);
+  }
+
+  .custom-block a {
+    color: inherit;
+    text-decoration: underline;
+  }
+
+  .custom-block.danger {
+    color: var(--btcpay-color-danger-text);
+    background: var(--btcpay-color-danger-backdrop);
+  }
+
+  .custom-block.warning {
+    color: var(--btcpay-color-warning-text);
+    background: var(--btcpay-color-warning-backdrop);
+  }
+
+  .custom-block.tip {
+    color: var(--btcpay-color-info-text);
+    background: var(--btcpay-color-info-backdrop);
   }
 
   .page-edit .edit-link a,
