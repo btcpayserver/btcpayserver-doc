@@ -72,7 +72,7 @@ However, we also accept the PSBT or a bitcoin transaction in hex format.
 
 ### Optional parameters
 
-When the payjoin sender sends the POST request to the payjoin endpoint, he can optionally specifies the following parameters:
+When the payjoin sender sends the POST request to the payjoin endpoint, he can optionally specify the following parameters:
 
 * `v=`, the version number of the payjoin protocol that the client is using. The current version is `1`.
 
