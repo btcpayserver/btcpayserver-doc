@@ -93,6 +93,48 @@ body {
     color: inherit;
   }
 
+  .algolia-autocomplete .ds-dropdown-menu {
+    position: fixed !important;
+    top: 3.6rem !important;
+    bottom: 0 !important;
+    right: 0 !important;
+    border-radius: 0 !important;
+    overflow-y: auto;
+    margin: 0;
+    border: 0;
+    padding: var(--btcpay-space-m) !important;
+    color: var(--btcpay-header-color);
+    background-color: var(--btcpay-header-bg);
+  }
+
+  .algolia-autocomplete .ds-dropdown-menu::before {
+    content: none;
+  }
+
+  .algolia-autocomplete .ds-dropdown-menu [class^="ds-dataset-"] {
+    border-radius: 0;
+    background: transparent;
+  }
+
+  .algolia-autocomplete .algolia-docsearch-suggestion {
+    background: transparent !important;
+    border: 0 !important;
+  }
+
+  .algolia-autocomplete .suggestions {
+    background: transparent;
+  }
+
+  .algolia-autocomplete .suggestions a {
+    color: var(--btcpay-header-color-link);
+    text-decoration: none;
+  }
+
+  .algolia-autocomplete .suggestions a:focus,
+  .algolia-autocomplete .suggestions a:hover {
+    color: var(--btcpay-header-color-link-accent);
+  }
+
   .sidebar {
     color: var(--btcpay-nav-color-link);
     background: transparent;

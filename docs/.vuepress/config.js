@@ -53,8 +53,8 @@ module.exports = {
     editLinks: true,
     sidebarDepth: 0,
     algolia: {
-      indexName: 'BTCPayServerDocs',
-      apiKey: '51fb83ef4dd7fe4e43bcd7a97b066df8',
+      indexName: 'btcpayserver',
+      apiKey: '6a3a4c4380385cb5c9f9070247fdfca6',
       // See https://www.algolia.com/doc/api-reference/api-parameters/
       algoliaOptions: {
         hitsPerPage: 25
