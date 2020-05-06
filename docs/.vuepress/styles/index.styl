@@ -29,8 +29,35 @@ body {
 }
 
 #app
+  // Max-width, centered layout
+  .theme-container,
+  .navbar {
+    max-width: 1280px;
+    margin: 0 auto;
+  }
+
+  .navbar:before {
+    content: "";
+    position: fixed;
+    z-index: -1;
+    top: 0;
+    left: 0;
+    right: 0;
+    background-color: var(--btcpay-header-bg);
+    height: 58px;
+  }
+
+  .sidebar {
+    left: auto;
+  }
+
+  // Modifications
   .navbar {
     border-color: transparent;
+  }
+
+  .navbar .logo {
+    min-width: unset;
   }
 
   .navbar .links {
@@ -70,9 +97,19 @@ body {
     margin-left: var(--btcpay-space-xs);
   }
 
+  .nav-links {
+    @media (max-width: 899px) {
+      border-bottom-color: var(--btcpay-border-color-medium);
+    }
+  }
+
   .nav-links a {
-    padding: var(--btcpay-space-xs) var(--btcpay-space-s);
     color: var(--btcpay-header-color-link);
+
+    @media (min-width: 900px) {
+      padding: var(--btcpay-space-xs) var(--btcpay-space-s);
+      border-bottom: 2px solid transparent;
+    }
   }
 
   .nav-links a svg {
@@ -82,7 +119,7 @@ body {
   .nav-links a:hover,
   .nav-links a:focus  {
     color: var(--btcpay-header-color-link-accent);
-    border-bottom: 2px solid var(--btcpay-header-color-link-accent);
+    border-bottom-color: var(--btcpay-header-color-link-accent);
   }
 
   .nav-links a.router-link-active {
@@ -137,8 +174,13 @@ body {
 
   .sidebar {
     color: var(--btcpay-nav-color-link);
-    background: transparent;
+    background: var(--btcpay-body-bg);
     border-color: transparent;
+  }
+
+  .sidebar-mask {
+    background: var(--btcpay-header-bg);
+    opacity: .9;
   }
 
   .sidebar-group-items,
