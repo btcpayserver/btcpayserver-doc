@@ -9,6 +9,7 @@ In layman words, think of this feature as a payment processor factory which allo
 ## The list of BTCPay third-party hosts
 
 * [btcpayjungle.com](https://btcpayjungle.com)
+* [btcpaynet.com](https://btcpaynet.com)
 * [btcpaynow.net](https://btcpaynow.net)
 * [btcpayprovider.com](https://btcpayprovider.com/)
 * [exitpay.org](https://exitpay.org/)
