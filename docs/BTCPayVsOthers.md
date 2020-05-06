@@ -1,4 +1,4 @@
-# BTCPay Vs Others
+# BTCPay Server vs. Others
 
 ![How is it different?](img/BTCPay-How-Is-It-Different.png)
 
@@ -27,7 +27,7 @@ Every payment processor has features, here are some BTCPay features:
 * **Lightning** - Rapid Bitcoin microtransactions using the Lightning Network.
 * **Integrations** - Wordpress & WooCommerce, Drupal, Magneto, Prestashop and custom integrations.
 * **Point Of Sale** - POS Interfaces for physical stores.
-* **Crowdfunding** - Set donation goals and raise funding. 
+* **Crowdfunding** - Set donation goals and raise funding.
 * **Payment Buttons** - HTML embeddable donation and pay buttons.
 * **Unlimited Stores** - Merchants can process payments for their own stores, or for others.
 * **Translations** - Customers can pay in 20 different languages.

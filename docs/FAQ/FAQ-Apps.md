@@ -23,7 +23,7 @@ There's no limit. Each app can be created an unlimited amount of times. Apps are
 Yes. Please read our [guide on creating the POS app](/WhatsNext.md#creating-the-pay-button).
 
 ## How can I use BTCPay in a physical store?
-You can use our Point of Sale app. For having a physical PoS, right now, the easiest solution is to utilize PoS App that’s available and then set that as URL within your in-store POS. When you create POS app within BTCPay Server - you will get publicly accessible URL where checkout buttons for products you’ve defined will be displayed. Click on the button creates an invoice. 
+You can use our Point of Sale app. For having a physical PoS, right now, the easiest solution is to utilize PoS App that’s available and then set that as URL within your in-store POS. When you create POS app within BTCPay Server - you will get publicly accessible URL where checkout buttons for products you’ve defined will be displayed. Click on the button creates an invoice.
 
 Please follow our detailed guide on how to use our [PoS App on a mobile device.](https://blog.btcpayserver.org/bitcoin-pos/)
 
@@ -34,9 +34,9 @@ It is very easy to customize the look of the Point of Sale app. [Follow this gui
 The Payment Button is a simple and customizable HTML button you can create and embed into your website. To create a payment button, [follow this guide](/WhatsNext.md#creating-the-point-of-sale-app)
 
 ## How to fix empty spacing around payment button?
-This usually happens in Wordpress. The Wordpress text editor can cause conflicts with the pay button code by adding `<br>`, which is "line break" in HTML, between the hidden lines of the form, thus adding invisible empty lines. 
+This usually happens in Wordpress. The Wordpress text editor can cause conflicts with the pay button code by adding `<br>`, which is "line break" in HTML, between the hidden lines of the form, thus adding invisible empty lines.
 
-You can get rid of that with a simple Wordpress plugin, [Don't muck my markup](https://wordpress.org/plugins/dont-muck-my-markup/). Install, activate it, and then you should see this box on the right of the edit page of your posts :  
+You can get rid of that with a simple Wordpress plugin, [Don't muck my markup](https://wordpress.org/plugins/dont-muck-my-markup/). Install, activate it, and then you should see this box on the right of the edit page of your posts :
 
 ![Dont-muck-markup](/img/Dont-muck-markup.png)
 
@@ -61,10 +61,10 @@ The following tutorial assumes you have a semi-advanced understanding of BTCPay,
 **Important Note**  Make sure that both your WooCommerce store and BTCPay Server **are on a same domain**. Some browsers have aggressive way of blocking the cross-domain embeded content. Quite specifically, Safari on iOS will destroy the cookie when the item is added, which will leaad to empty cart. There's no other way to fix this besides having BTCPay and Woo on a same domain as subdomains at least.
 
 #### Optional WordPress Plugins
-The following plugins are recommended, but not required. You don't have to use them if you're an advanced WordPress user. 
+The following plugins are recommended, but not required. You don't have to use them if you're an advanced WordPress user.
 * [Flexible Checkout Fields](https://wordpress.org/plugins/flexible-checkout-fields/) (to edit checkout and remove redundant checkout fields in Woo)
 * [WooCommerce Direct Checkout](https://wordpress.org/plugins/woocommerce-direct-checkout/) (remove redundant steps in the checkout process and make pledging quicker)
-* [Header and Footer Scripts](https://wordpress.org/plugins/header-and-footer-scripts/) (place <script> code here)
+* [Header and Footer Scripts](https://wordpress.org/plugins/header-and-footer-scripts/) (place `<script>` code here)
 
 ### Instructions
 
@@ -77,7 +77,7 @@ In your BTCPay Server, create two separate stores:
 Add the **same xpub derivation scheme**, so that both stores remain in sync.
 
 #### 2. Modifying CSS in WordPress
-In the first step, you need to remove all the redundancies from the WordPress store and make it clean and simple, so that it embeds smoothly into the crowdfund app. 
+In the first step, you need to remove all the redundancies from the WordPress store and make it clean and simple, so that it embeds smoothly into the crowdfund app.
 
 Place the following custom CSS code into WordPress. Appearance > Customize > **Custom CSS**
 
@@ -174,7 +174,7 @@ display: none;
 }
 .woocommerce-form-coupon-toggle {
     display: none;
-} 
+}
 
 .product:hover{
 background-color:rgba(0,0,255,0.3);
@@ -204,7 +204,7 @@ background-color:rgba(0,0,255,0.5);
 ```
 The code above removes and hides all the unnecessary things from your store (headers, footers, breadcrumbs, and sorting). If you're not using the Storefront theme, you may need to modify it slightly. Besides removing, the bottom part of the code adds a bit of different styling which improves the checkout experience and makes it more KickStarter like. Feel free to modify colors. You should also remove the sidebar.
 
-To remove the redundant fields in WooCommerce checkout, use [Flexible Checkout Fields](https://wordpress.org/plugins/flexible-checkout-fields/). 
+To remove the redundant fields in WooCommerce checkout, use [Flexible Checkout Fields](https://wordpress.org/plugins/flexible-checkout-fields/).
 
 To speed up the checkout process use [WooCommerce Direct Checkout](https://wordpress.org/plugins/woocommerce-direct-checkout/) (remove redundant steps in the checkout process and make pledging quicker)
 
@@ -285,7 +285,7 @@ Next, paste the following code into the **Custom CSS Code** section of your crow
         height: 100%;
         border-left: 1px #e5e5e5 solid;
     }
-} 
+}
 ```
 
 One final thing, make sure to check (enable) **Count all invoices created on the store as part of the crowdfunding goal**
@@ -293,7 +293,7 @@ Save the changes and preview the app.
 
 ## How to create Pay button with a custom amount?
 
-BTCPay Pay Button which can be found in Store Settings > Pay Button, currently does not support custom amounts. 
+BTCPay Pay Button which can be found in Store Settings > Pay Button, currently does not support custom amounts.
 However, you can use a work-around:
 * [Create Point of sale app](/WhatsNext.md#creating-the-point-of-sale-app)
 * Enable `user can input a custom amount` field

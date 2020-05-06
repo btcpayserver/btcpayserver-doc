@@ -85,7 +85,7 @@ module.exports = {
     sidebar: [
       {
         title: "Introduction",
-        path: "/",
+        path: "/"
       },
       {
         title: "BTCPay Basics",
@@ -95,14 +95,11 @@ module.exports = {
             title: "Use Case",
             path: "UseCase"
           },
-          {
-            title: "Walkthrough",
-            path: "Walkthrough"
-          },
-          {
-            title: "BTCPay vs. other processors",
-            path: "BTCPayVsOthers"
-          },
+          // {
+          //   title: "Walkthrough",
+          //   path: "Walkthrough"
+          // },
+          "BTCPayVsOthers",
           "TryItOut"
         ]
       },
@@ -111,37 +108,71 @@ module.exports = {
         collapsable: false,
         children: [
           "Deployment",
+          "ThirdPartyHosting",
           {
-            title: "Web Deployment",
-            path: "LunaNodeWebDeployment"
+            title: "Docker",
+            path: "/DockerDeployment",
+            collapsable: false,
+            children: [
+              // TODO: Add Configurator
+              {
+                title: "Web Deployment",
+                path: "LunaNodeWebDeployment"
+              },
+              {
+                title: "Azure Deployment",
+                path: "/AzureDeployment",
+                children: [
+                  "AzurePennyPinching"
+                ]
+              },
+              "GoogleCloudDeployment",
+              {
+                title: "Hardware Deployment",
+                path: "/HardwareDeployment",
+                children: [
+
+                  {
+                    title: "Advanced Deployment",
+                    collapsable: false,
+                    children: [
+                      "DynamicDNS",
+                      "ReverseSSHtunnel"
+                    ]
+                  }
+                ]
+              },
+              {
+                title: "Raspberry Pi Deployment",
+                path: "/RaspberryPiDeployment",
+                children: [
+                  "RPi3",
+                  "RPi4"
+                ]
+              },
+              {
+                title: "Docker Plugins",
+                children: [
+                  {
+                    title: "Transmuter",
+                    path: "/Transmuter/",
+                    children: [
+                      {
+                        title: "Email Receipts Preset",
+                        path: "Transmuter/EmailReceiptsPreset"
+                      }
+                    ]
+                  },
+                  "/Docker/pihole"
+                ]
+              }
+            ]
           },
-          "AzureDeployment",
-          "DockerDeployment",
-          "GoogleCloudDeployment",
           {
             title: "Manual Deployment",
             path: "ManualDeployment",
-            collapsable: false,
             children: [
               "ManualDeploymentExtended"
-            ]
-          },
-          "HardwareDeployment",
-          {
-            title: "Raspberry Pi Deployment",
-            path: "RaspberryPiDeployment",
-            children: [
-              "RPi3",
-              "RPi4"
-            ]
-          },
-          "ThirdPartyHosting",
-          {
-            title: "Advanced Deployment",
-            collapsable: false,
-            children: [
-              "DynamicDNS",
-              "ReverseSSHtunnel"
             ]
           }
         ]
@@ -158,29 +189,45 @@ module.exports = {
             collapsable: false,
             children: [
               {
-                title: "Ledger Wallet",
-                path: "LedgerWallet"
-              },
-              {
-                title: "ColdCard Wallet",
-                path: "ColdCardWallet"
-              },
-              {
-                title: "Wasabi Wallet",
-                path: "WasabiWallet"
-              },
-              {
-                title: "Electrum Wallet",
-                path: "ElectrumWallet",
+                title: "Connect a hardware wallet",
+                path: "Vault",
                 children: [
-                  "ElectrumX",
-                  "ElectrumPersonalServer"
+                  {
+                    title: "Ledger Wallet",
+                    path: "LedgerWallet"
+                  },
+                  {
+                    title: "ColdCard Wallet",
+                    path: "ColdCardWallet"
+                  }
                 ]
               },
               {
-                title: "Hot Wallet",
-                path: "HotWallet"
+                title: "Connect a software wallet",
+                children: [
+                  {
+                    title: "Electrum Wallet",
+                    path: "ElectrumWallet",
+                    children: [
+                      "ElectrumX",
+                      "ElectrumPersonalServer"
+                    ]
+                  },
+                  {
+                    title: "Wasabi Wallet",
+                    path: "WasabiWallet"
+                  },
+                ]
               },
+              {
+                title: "Create a wallet",
+                children: [
+                  {
+                    title: "Hot Wallet",
+                    path: "HotWallet"
+                  }
+                ]
+              }
             ]
           },
           "WhatsNext"
@@ -191,21 +238,15 @@ module.exports = {
         collapsable: false,
         children: [
           {
-            title: "Wallet",
-            path: "Wallet",
-            collapsable: false,
-            children: [
-              {
-                title: "Hot Wallet",
-                path: "HotWallet"
-              },
-            ]
-          },
-          "Invoices",
-          {
             title: "Apps",
             path: "Apps"
           },
+          {
+            title: "Wallet",
+            path: "Wallet"
+          },
+          "Invoices",
+          "PaymentRequests",
           {
             title: "Lightning Network",
             path: "LightningNetwork"
@@ -213,11 +254,6 @@ module.exports = {
           {
             title: "Accounting",
             path: "Accounting"
-          },
-          "PaymentRequests",
-          {
-            title: "Hardware Wallet Integration",
-            path: "Vault"
           },
           {
             title: "Payjoin",
@@ -258,21 +294,101 @@ module.exports = {
         ]
       },
       {
-        title: "Docker",
-        path: "/Docker/",
-        collapsable: false,
-        children: [
-          "/Docker/pihole"
-        ]
-      },
-      {
-        title: "Transmuter",
-        path: "/Transmuter/",
+        title: "Support and Community",
         collapsable: false,
         children: [
           {
-            title: "Email Receipts Preset",
-            path: "Transmuter/EmailReceiptsPreset"
+            title: "FAQ and common issues",
+            path: "/FAQ/",
+            children: [
+              {
+                title: "General FAQ",
+                path: "/FAQ/FAQ-General.md"
+              },
+              {
+                title: "Deployment FAQ",
+                path: "/FAQ/FAQ-Deployment.md"
+              },
+              {
+                title: "Synchronization FAQ",
+                path: "/FAQ/FAQ-Synchronization.md"
+              },
+              {
+                title: "Integrations FAQ",
+                path: "/FAQ/FAQ-Integrations.md"
+              },
+              {
+                title: "Server Settings FAQ",
+                path: "/FAQ/FAQ-ServerSettings.md"
+              },
+              {
+                title: "Stores FAQ",
+                path: "/FAQ/FAQ-Stores.md"
+              },
+              {
+                title: "Wallet FAQ",
+                path: "/FAQ/FAQ-Wallet.md"
+              },
+              {
+                title: "Apps FAQ",
+                path: "/FAQ/FAQ-Apps.md"
+              },
+              {
+                title: "Lightning Network FAQ",
+                path: "/FAQ/FAQ-LightningNetwork.md"
+              },
+              {
+                title: "Altcoins FAQ",
+                path: "/FAQ/FAQ-Altcoin.md"
+              }
+            ]
+          },
+          {
+            title: "Troubleshooting an issue",
+            path: "Troubleshooting"
+          },
+          {
+            title: "Support",
+            path: "Support"
+          },
+          {
+            title: "Contribute",
+            path: "Contribute"
+          },
+          {
+            title: "Translate",
+            path: "Translate"
+          },
+          {
+            title: "Community",
+            path: "Community"
+          }
+        ]
+      },
+      {
+        title: "Development",
+        collapsable: false,
+        children: [
+          {
+            title: "Clients",
+            children: [
+              {
+                title: "Architecture",
+                path: "Architecture.md"
+              },
+              {
+                title: "Developing Locally",
+                path: "LocalDevelopment.md"
+              },
+              {
+                title: "How to add an Altcoin",
+                path: "Altcoins.md"
+              },
+              {
+                title: "Customizing Themes",
+                path: "Theme.md"
+              }
+            ]
           }
         ]
       }
