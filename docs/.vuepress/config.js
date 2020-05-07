@@ -55,7 +55,7 @@ module.exports = {
   themeConfig: {
     logo: "/img/btcpay-logo.svg",
     displayAllHeaders: false,
-    repo: "btcpayserver/btcpayserver-doc",
+    // repo: "btcpayserver/btcpayserver-doc",
     docsDir: "docs",
     editLinks: true,
     sidebarDepth: 0,
