@@ -28,6 +28,13 @@ module.exports = {
     // Styles
     ["link", { rel: "stylesheet", href: "/styles/btcpayserver-variables.css" }]
   ],
+  plugins: [
+    ['vuepress-plugin-code-copy', {
+      color: '#8F979E',
+      backgroundTransition: false,
+      staticIcon: true
+    }]
+  ],
   markdown: {
     extendMarkdown (md) {
       md.use(implicitFigures)

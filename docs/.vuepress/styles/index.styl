@@ -234,7 +234,6 @@ body {
     margin: var(--btcpay-space-m) 0;
   }
 
-  pre,
   code {
     font-family: var(--btcpay-font-family-monospace);
     border-radius: var(--btcpay-border-radius);
@@ -242,8 +241,20 @@ body {
     background-color: var(--btcpay-code-bg);
   }
 
+  pre {
+    font-family: var(--btcpay-font-family-monospace);
+    border-radius: var(--btcpay-border-radius);
+    color: var(--btcpay-color-white);
+    background-color: #222222;
+  }
+
+  pre code {
+    color: var(--btcpay-color-white);
+    background: transparent;
+  }
+
   div[class*="language-"] {
-    background-color: transparent;
+    background: transparent;
     border-radius: var(--btcpay-border-radius);
   }
 

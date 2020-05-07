@@ -25,6 +25,7 @@
     "@vuepress/plugin-back-to-top": "1.4.1",
     "markdown-it-custom-block": "0.1.1",
     "markdown-it-implicit-figures": "0.10.0",
-    "vuepress": "1.4.1"
+    "vuepress": "1.4.1",
+    "vuepress-plugin-code-copy": "1.0.6"
   }
 }
