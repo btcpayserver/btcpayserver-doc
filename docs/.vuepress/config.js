@@ -95,10 +95,10 @@ module.exports = {
             title: "Use Case",
             path: "UseCase"
           },
-          // {
-          //   title: "Walkthrough",
-          //   path: "Walkthrough"
-          // },
+          {
+            title: "Walkthrough",
+            path: "Walkthrough"
+          },
           "BTCPayVsOthers",
           "TryItOut"
         ]
