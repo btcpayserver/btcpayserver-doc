@@ -100,22 +100,22 @@ module.exports = {
         children: [
           {
             title: "Use Case",
-            path: "UseCase"
+            path: "/UseCase"
           },
           {
             title: "Walkthrough",
-            path: "Walkthrough"
+            path: "/Walkthrough"
           },
-          "BTCPayVsOthers",
-          "TryItOut"
+          "/BTCPayVsOthers",
+          "/TryItOut"
         ]
       },
       {
         title: "Deployment",
         collapsable: false,
         children: [
-          "Deployment",
-          "ThirdPartyHosting",
+          "/Deployment",
+          "/ThirdPartyHosting",
           {
             title: "Docker",
             path: "/DockerDeployment",
@@ -124,27 +124,29 @@ module.exports = {
               // TODO: Add Configurator
               {
                 title: "Web Deployment",
-                path: "LunaNodeWebDeployment"
+                path: "/LunaNodeWebDeployment"
               },
               {
                 title: "Azure Deployment",
                 path: "/AzureDeployment",
                 children: [
-                  "AzurePennyPinching"
+                  "/AzurePennyPinching"
                 ]
               },
-              "GoogleCloudDeployment",
+              {
+                title: "Google Cloud Deployment",
+                path: "/GoogleCloudDeployment"
+              },
               {
                 title: "Hardware Deployment",
                 path: "/HardwareDeployment",
                 children: [
-
                   {
                     title: "Advanced Deployment",
                     collapsable: false,
                     children: [
-                      "DynamicDNS",
-                      "ReverseSSHtunnel"
+                      "/DynamicDNS",
+                      "/ReverseSSHtunnel"
                     ]
                   }
                 ]
@@ -153,8 +155,8 @@ module.exports = {
                 title: "Raspberry Pi Deployment",
                 path: "/RaspberryPiDeployment",
                 children: [
-                  "RPi3",
-                  "RPi4"
+                  "/RPi3",
+                  "/RPi4"
                 ]
               },
               {
@@ -162,11 +164,11 @@ module.exports = {
                 children: [
                   {
                     title: "Transmuter",
-                    path: "/Transmuter/",
+                    path: "/Transmuter",
                     children: [
                       {
                         title: "Email Receipts Preset",
-                        path: "Transmuter/EmailReceiptsPreset"
+                        path: "/Transmuter/EmailReceiptsPreset"
                       }
                     ]
                   },
@@ -177,9 +179,9 @@ module.exports = {
           },
           {
             title: "Manual Deployment",
-            path: "ManualDeployment",
+            path: "/ManualDeployment",
             children: [
-              "ManualDeploymentExtended"
+              "/ManualDeploymentExtended"
             ]
           }
         ]
@@ -188,24 +190,24 @@ module.exports = {
         title: "Getting Started",
         collapsable: false,
         children: [
-          "RegisterAccount",
-          "CreateStore",
+          "/RegisterAccount",
+          "/CreateStore",
           {
             title: "(3) Connect a Wallet",
-            path: "ConnectWallet",
+            path: "/ConnectWallet",
             collapsable: false,
             children: [
               {
                 title: "Connect a hardware wallet",
-                path: "Vault",
+                path: "/Vault",
                 children: [
                   {
                     title: "Ledger Wallet",
-                    path: "LedgerWallet"
+                    path: "/LedgerWallet"
                   },
                   {
                     title: "ColdCard Wallet",
-                    path: "ColdCardWallet"
+                    path: "/ColdCardWallet"
                   }
                 ]
               },
@@ -214,15 +216,15 @@ module.exports = {
                 children: [
                   {
                     title: "Electrum Wallet",
-                    path: "ElectrumWallet",
+                    path: "/ElectrumWallet",
                     children: [
-                      "ElectrumX",
-                      "ElectrumPersonalServer"
+                      "/ElectrumX",
+                      "/ElectrumPersonalServer"
                     ]
                   },
                   {
                     title: "Wasabi Wallet",
-                    path: "WasabiWallet"
+                    path: "/WasabiWallet"
                   },
                 ]
               },
@@ -231,13 +233,13 @@ module.exports = {
                 children: [
                   {
                     title: "Hot Wallet",
-                    path: "HotWallet"
+                    path: "/HotWallet"
                   }
                 ]
               }
             ]
           },
-          "WhatsNext"
+          "/WhatsNext"
         ]
       },
       {
@@ -246,29 +248,36 @@ module.exports = {
         children: [
           {
             title: "Apps",
-            path: "Apps"
+            path: "/Apps"
           },
           {
             title: "Wallet",
-            path: "Wallet"
+            path: "/Wallet"
           },
-          "Invoices",
-          "PaymentRequests",
+
+          {
+            title: "Invoices",
+            path: "/Invoices"
+          },
+          {
+            title: "Payment Requests",
+            path: "/PaymentRequests"
+          },
           {
             title: "Lightning Network",
-            path: "LightningNetwork"
+            path: "/LightningNetwork"
           },
           {
             title: "Accounting",
-            path: "Accounting"
+            path: "/Accounting"
           },
           {
             title: "Payjoin",
-            path: "Payjoin",
+            path: "/Payjoin",
             children: [
               {
                 title: "Payjoin Specification",
-                path: "Payjoin-spec"
+                path: "/Payjoin-spec"
               }
             ]
           }
@@ -280,23 +289,23 @@ module.exports = {
         children: [
           {
             title: "WooCommerce",
-            path: "WooCommerce"
+            path: "/WooCommerce"
           },
           {
             title: "Drupal",
-            path: "Drupal"
+            path: "/Drupal"
           },
           {
             title: "Magento",
-            path: "Magento"
+            path: "/Magento"
           },
           {
             title: "PrestaShop",
-            path: "PrestaShop"
+            path: "/PrestaShop"
           },
           {
             title: "Custom Integration",
-            path: "CustomIntegration"
+            path: "/CustomIntegration"
           }
         ]
       },
@@ -306,69 +315,69 @@ module.exports = {
         children: [
           {
             title: "FAQ and common issues",
-            path: "/FAQ/",
+            path: "/FAQ",
             children: [
               {
                 title: "General FAQ",
-                path: "/FAQ/FAQ-General.md"
+                path: "/FAQ/FAQ-General"
               },
               {
                 title: "Deployment FAQ",
-                path: "/FAQ/FAQ-Deployment.md"
+                path: "/FAQ/FAQ-Deployment"
               },
               {
                 title: "Synchronization FAQ",
-                path: "/FAQ/FAQ-Synchronization.md"
+                path: "/FAQ/FAQ-Synchronization"
               },
               {
                 title: "Integrations FAQ",
-                path: "/FAQ/FAQ-Integrations.md"
+                path: "/FAQ/FAQ-Integrations"
               },
               {
                 title: "Server Settings FAQ",
-                path: "/FAQ/FAQ-ServerSettings.md"
+                path: "/FAQ/FAQ-ServerSettings"
               },
               {
                 title: "Stores FAQ",
-                path: "/FAQ/FAQ-Stores.md"
+                path: "/FAQ/FAQ-Stores"
               },
               {
                 title: "Wallet FAQ",
-                path: "/FAQ/FAQ-Wallet.md"
+                path: "/FAQ/FAQ-Wallet"
               },
               {
                 title: "Apps FAQ",
-                path: "/FAQ/FAQ-Apps.md"
+                path: "/FAQ/FAQ-Apps"
               },
               {
                 title: "Lightning Network FAQ",
-                path: "/FAQ/FAQ-LightningNetwork.md"
+                path: "/FAQ/FAQ-LightningNetwork"
               },
               {
                 title: "Altcoins FAQ",
-                path: "/FAQ/FAQ-Altcoin.md"
+                path: "/FAQ/FAQ-Altcoin"
               }
             ]
           },
           {
             title: "Troubleshooting an issue",
-            path: "Troubleshooting"
+            path: "/Troubleshooting"
           },
           {
             title: "Support",
-            path: "Support"
+            path: "/Support"
           },
           {
             title: "Contribute",
-            path: "Contribute"
+            path: "/Contribute"
           },
           {
             title: "Translate",
-            path: "Translate"
+            path: "/Translate"
           },
           {
             title: "Community",
-            path: "Community"
+            path: "/Community"
           }
         ]
       },
@@ -381,19 +390,19 @@ module.exports = {
             children: [
               {
                 title: "Architecture",
-                path: "Architecture.md"
+                path: "/Architecture"
               },
               {
                 title: "Developing Locally",
-                path: "LocalDevelopment.md"
+                path: "/LocalDevelopment"
               },
               {
                 title: "How to add an Altcoin",
-                path: "Altcoins.md"
+                path: "/Altcoins"
               },
               {
                 title: "Customizing Themes",
-                path: "Theme.md"
+                path: "/Theme"
               }
             ]
           }
