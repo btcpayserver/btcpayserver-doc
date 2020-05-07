@@ -60,7 +60,7 @@ module.exports = {
   themeConfig: {
     logo: "/img/btcpay-logo.svg",
     displayAllHeaders: false,
-    // repo: "btcpayserver/btcpayserver-doc",
+    repo: "btcpayserver/btcpayserver-doc",
     docsDir: "docs",
     editLinks: true,
     sidebarDepth: 0,
@@ -82,7 +82,7 @@ module.exports = {
         link: "https://btcpayserver.org/"
       },
       {
-        text: "GitHub",
+        text: "<span>GitHub</span>",
         link: "https://github.com/btcpayserver/"
       },
       {
@@ -111,16 +111,28 @@ module.exports = {
             title: "Walkthrough",
             path: "/Walkthrough"
           },
-          "/BTCPayVsOthers",
-          "/TryItOut"
+          {
+            title: "BTCPay Server vs. Others",
+            path: "/BTCPayVsOthers"
+          },
+          {
+            title: "Try it out",
+            path: "/TryItOut"
+          }
         ]
       },
       {
         title: "Deployment",
         collapsable: false,
         children: [
-          "/Deployment",
-          "/ThirdPartyHosting",
+          {
+            title: "Choosing a Deployment Method",
+            path: "/Deployment"
+          },
+          {
+            title: "Third-party Hosting",
+            path: "/ThirdPartyHosting"
+          },
           {
             title: "Docker",
             path: "/DockerDeployment",
@@ -182,7 +194,7 @@ module.exports = {
                 children: [
                   {
                     title: "Transmuter",
-                    path: "/Transmuter",
+                    path: "/Transmuter/",
                     children: [
                       {
                         title: "Email Receipts Preset",

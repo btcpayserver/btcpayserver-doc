@@ -92,9 +92,12 @@ body {
     margin: 0 0 0 var(--btcpay-space-s);
   }
 
-  .nav-links .nav-item,
-  .nav-links .repo-link {
+  .nav-links .nav-item {
     margin-left: var(--btcpay-space-xs);
+  }
+
+  .nav-links .repo-link {
+    display: none;
   }
 
   .nav-links {
@@ -196,6 +199,11 @@ body {
     opacity: .75;
   }
 
+  .sidebar-group a.sidebar-link,
+  .sidebar-group.is-sub-group > .sidebar-heading {
+    padding-left: 1.25rem;
+  }
+
   a.sidebar-link,
   .sidebar-heading.clickable {
     color: var(--btcpay-nav-color-link);
@@ -209,8 +217,15 @@ body {
   }
 
   a.sidebar-link.active,
-  .sidebar-heading.clickable.active {
+  .sidebar-heading.clickable.active,
+  .sidebar-heading.clickable.router-link-exact-active {
     color: var(--btcpay-nav-color-link-active);
+    font-weight: 600;
+    border-color: transparent;
+  }
+
+  a.sidebar-link.active,
+  .sidebar-group.depth-1 > .sidebar-heading.clickable.router-link-exact-active  {
     border-color: var(--btcpay-color-primary);
   }
 
@@ -230,8 +245,13 @@ body {
     border-top-color: var(--btcpay-color-neutral-500);
   }
 
+  .page-nav,
+  .page-edit,
   .theme-default-content:not(.custom) {
     max-width: 780px;
+  }
+
+  .theme-default-content:not(.custom) {
     padding: 3.5rem 2.5rem 1rem;
   }
 
