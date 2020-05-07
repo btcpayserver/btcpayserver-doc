@@ -29,6 +29,11 @@ module.exports = {
     ["link", { rel: "stylesheet", href: "/styles/btcpayserver-variables.css" }]
   ],
   plugins: [
+    ['vuepress-plugin-clean-urls', {
+      normalSuffix: '/',
+      indexSuffix: '/',
+      notFoundPath: '/404.html',
+    }],
     ['vuepress-plugin-code-copy', {
       color: '#8F979E',
       backgroundTransition: false,
@@ -130,7 +135,14 @@ module.exports = {
                 title: "Azure Deployment",
                 path: "/AzureDeployment",
                 children: [
-                  "/AzurePennyPinching"
+                  {
+                    title: "Reducing Cost on Azure",
+                    path: "/AzurePennyPinching"
+                  },
+                  {
+                    title: "Changing domain",
+                    path: "/ChangeDomain"
+                  }
                 ]
               },
               {
@@ -145,8 +157,14 @@ module.exports = {
                     title: "Advanced Deployment",
                     collapsable: false,
                     children: [
-                      "/DynamicDNS",
-                      "/ReverseSSHtunnel"
+                      {
+                        title: "Dynamic DNS",
+                        path: "/DynamicDNS"
+                      },
+                      {
+                        title: "Reverse SSH Tunnel",
+                        path: "/ReverseSSHtunnel"
+                      }
                     ]
                   }
                 ]
@@ -218,8 +236,14 @@ module.exports = {
                     title: "Electrum Wallet",
                     path: "/ElectrumWallet",
                     children: [
-                      "/ElectrumX",
-                      "/ElectrumPersonalServer"
+                      {
+                        title: "Electrum X",
+                        path: "/ElectrumX"
+                      },
+                      {
+                        title: "Electrum Personal Server EPS",
+                        path: "/ElectrumPersonalServer"
+                      }
                     ]
                   },
                   {
