@@ -14,7 +14,7 @@ Downside:
 Upside:
 * 50% savings
 
-If you find that your server is too slow: 
+If you find that your server is too slow:
 * Drop support of one coin by editing the setting `BTCPAY_DOCKER_COMPOSE` in `/etc/profile.d/btcpay-env.sh`, or
 * Resize up your Virtual Machine
 
@@ -40,7 +40,7 @@ You can find out how much cost your install by:
 * Timespan 30 days
 * Click on apply
 
-![ShowCost](img/ShowCost.png)
+![ShowCost](/img/ShowCost.png)
 
 As you can see, my install cost `47.00 EUR/Month`, most of the cost spent on the virtual machine.
 
@@ -53,12 +53,12 @@ First let's see what Virtual machine we currently have:
 * Select your resource group
 * Select BTCPayServerVM
 
-![ShowVM](img/ShowVM.png)
+![ShowVM](/img/ShowVM.png)
 
 As you can see the CPU is mainly unused, disk as well. We can probably cut the fat here.
 Also my VM type is `Standard_D1_v2`. As you can see on [Azure Price Website](https://azureprice.net/).
 
-![ShowPrice](img/ShowPrice.png)
+![ShowPrice](/img/ShowPrice.png)
 
 This cost me `0.0573444 EUR/H` or `42.66 EUR/Month`.
 
@@ -71,7 +71,7 @@ sudo su -
 docker stats
 ```
 
-![ShowResources](img/ShowResources.png)
+![ShowResources](/img/ShowResources.png)
 
 As you can see, I have 3.352 GB of RAM, and around 55%.
 
@@ -111,7 +111,7 @@ Swap:         **2.0G**         0B       2.0G
 
 Now, go back to https://azureprice.net/, let's find something cheaper than `0.0573444 EUR/H`.
 
-![ShowB1](img/ShowB1.png)
+![ShowB1](/img/ShowB1.png)
 
 Wow! `Standard_B1ms` cost only `0.02049219 EUR/H`! Let's switch to it!
 
@@ -125,20 +125,20 @@ A quick look at [this article](https://www.singhkays.com/blog/understanding-azur
 * Select `B1MS` (if you don't see, take a look at the [FAQ](#b1ms))
 * Click `Select`
 
-![ShowSize](img/ShowSize.png)
+![ShowSize](/img/ShowSize.png)
 
 Wait between 5 and 15 minutes.
 
 When Azure is happy:
 
-![HappyAzure](img/HappyAzure.png)
+![HappyAzure](/img/HappyAzure.png)
 
 Congratulation, you just cut down the cost by 50% per month! :)
 
 
 ### FAQ: B1MS does not appear in the list <a name="b1ms"></a>
 
-In some situation, you might not see the Virtual Machine B1MS in the list. It means your Azure hardware cluster does not support this type. 
+In some situation, you might not see the Virtual Machine B1MS in the list. It means your Azure hardware cluster does not support this type.
 
 ** Warning: Stopping your Virtual Machine will change the public IP Address of your server. If you configured a A (as opposed to CNAME) record in your domain registar, you'll need to update it. **
 
@@ -148,7 +148,7 @@ You need to go in:
 * `Overview` menu
 * Click on `Stop`
 
-![StopVM](img/StopVM.png)
+![StopVM](/img/StopVM.png)
 
 Wait the Virtual Machine get stopped, then change the size.
 

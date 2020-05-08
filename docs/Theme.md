@@ -17,11 +17,11 @@ You should copy one of our [preexisting themes](https://github.com/btcpayserver/
 To test and play around with the adjustments, you can also use the developer tools of the browser:
 Inspect the `<html>` element and modify the variables in the `:root` section of the styles inspector:
 
-![Theme customizations](img/ThemeCustomization.gif)
+![Theme customizations](/img/ThemeCustomization.gif)
 
 Once you are done with your modifications, you can upload and reference it in the "Custom theme CSS file" field.
 
-![Theme settings](img/ThemeSettings.png)
+![Theme settings](/img/ThemeSettings.png)
 
 ### Developing and extending a custom theme
 
@@ -81,7 +81,7 @@ The Bootstrap theme options are another approach of providing customizations, le
 
 [Bootswatch](https://bootswatch.com/) offers lots of custom theme maintained by the Bootstrap community.
 
-![Bootswatch](img/Bootswatch.png)
+![Bootswatch](/img/Bootswatch.png)
 
 Please note that this approach works best when used with the Classic theme described above.
 
@@ -89,21 +89,21 @@ If you want to change this theme, find a theme on [Bootswatch](https://bootswatc
 
 Copy the link of the theme:
 
-![CopyBootswatch](img/CopyBootswatch.png)
+![CopyBootswatch](/img/CopyBootswatch.png)
 
 Now, go into the settings of your store and paste the link to customize the bootstrap theme:
 
-![ModifyBootstrap](img/ModifyBootstrap.png)
+![ModifyBootstrap](/img/ModifyBootstrap.png)
 
 And enjoy a new theme!
 
-![CustomTheme](img/CustomTheme.png)
+![CustomTheme](/img/CustomTheme.png)
 
 ## Checkout page themes
 
 BTCPay Server checkout page can be customized to fit your branding.
 
-Go to your Store Settings > Checkout Experience, and link to a custom CSS stylesheet. 
+Go to your Store Settings > Checkout Experience, and link to a custom CSS stylesheet.
 
 Server admins can upload their .css file to [File Storage](FAQ/FAQ-ServerSettings.md#how-to-upload-files-to-btcpay) to create a CSS stylesheet link.
 
@@ -111,7 +111,7 @@ Below are examples of businesses that use custom-made checkout themes.
 
 ### [Andreas M. Antonopolous](https://aantonop.com/)
 
-![Aantonop checkout](img/Theme-AantonopShop.png)\
+![Aantonop checkout](/img/Theme-AantonopShop.png)\
 _**Made by:** [@artdesignbySF](https://twitter.com/artdesignbySF) / <artdesignbySF@protonmail.com>_
 <details>
   <summary>Click to view CSS</summary>
@@ -290,7 +290,7 @@ html {
 .invoice {
     background-color: #000000;  /*===MENU BACKGROUND COLOR===*/
   border-radius: 0px; /*===ROUNDED CORNER SETTINGS===*/
-} 
+}
 
 .payment-box {
   height:425px; /*===SIZE IMPORTANT BECAUSE HEIGHT LIGHTNING QR CODE + OUTLINE===*/
@@ -299,7 +299,7 @@ html {
 .payment__scan {
   width:276px;
   height:276px;
-  margin-left:auto; 
+  margin-left:auto;
   margin-right:auto;
   margin-bottom:5px;
   margin-top:0px;
@@ -335,7 +335,7 @@ span {
 #prettydropdown-DefaultLang ul {
   color: #e1e1e1 !important; /* ===TEXT COLOR=== */
   background-color: #252525 !important;   /*===BACKGROUND COLOR===*/
-  border-color: #000000; 
+  border-color: #000000;
   border-radius: 0px;
 }
 
@@ -357,7 +357,7 @@ span {
 
 /*====COPY INFO BOX/TEXTS====*/
 .copyBox {
-  background-color:#252525; 
+  background-color:#252525;
   border-color:#252525;
 }
 
@@ -407,7 +407,7 @@ span {
 
 ### [Bitcoin Fortune Cookie](https://bitcoinfortunecookie.com/)
 
-![Bitcoin Fortune Cookie checkout](img/Theme-BitcoinFortuneCookie.png)\
+![Bitcoin Fortune Cookie checkout](/img/Theme-BitcoinFortuneCookie.png)\
 _**Made by:** [@artdesignbySF](https://twitter.com/artdesignbySF) / <artdesignbySF@protonmail.com>_
 <details>
   <summary>Click to view CSS</summary>
@@ -572,7 +572,7 @@ html {
 .invoice {
     background-color: #408cca;  /*===MENU BACKGROUND COLOR===*/
   border-radius: 6px; /*===ROUNDED CORNER SETTINGS===*/
-} 
+}
 
 .payment-box {
   height:420px; /*===SIZE IMPORTANT BECAUSE HEIGHT LIGHTNING QR CODE + OUTLINE===*/
@@ -581,7 +581,7 @@ html {
 .payment__scan {
   width:276px;
   height:276px;
-  margin-left:auto; 
+  margin-left:auto;
   margin-right:auto;
   margin-bottom:5px;
   margin-top:0px;
@@ -629,7 +629,7 @@ span {
 
 /*====COPY INFO BOX/TEXTS====*/
 .copyBox {
-  background-color:#27384b; 
+  background-color:#27384b;
   border-color:#00c3ff;
 }
 
@@ -678,7 +678,7 @@ span {
 
 ### [Bitma.tk](https://bitma.tk/)
 
-![Bitma.tk checkout](img/Theme-Bitmatk.png)\
+![Bitma.tk checkout](/img/Theme-Bitmatk.png)\
 _**Made by:** [@artdesignbySF](https://twitter.com/artdesignbySF) / <artdesignbySF@protonmail.com>_
 
 <details>
@@ -776,7 +776,7 @@ html {
     border-bottom: 1px solid #fff;  /*===COLORED LINE ABOVE PAYMENT TABS===*/
 }
 
-.payment-tabs__tab:hover { 
+.payment-tabs__tab:hover {
   background-image: linear-gradient(45deg, #16294C, #203D6D); /*===TAB BACKGROUND ON HOVER===*/
 }
 
@@ -834,8 +834,8 @@ background-image: linear-gradient(#16294C, #203D6D);  /*===ACTIVE BUTTON BACKGRO
 }
 
 .payment__currencies_noborder {
-  margin-left:auto; 
-  margin-right:15; 
+  margin-left:auto;
+  margin-right:15;
   white-space: nowrap;
   color:#fff;
   background-image: linear-gradient(120deg, #203D6D, #000000);
@@ -908,12 +908,12 @@ background-image: linear-gradient(#16294C, #203D6D);  /*===ACTIVE BUTTON BACKGRO
 .content{
   border-radius: 5px; /*===ROUNDED CORNER SETTINGS===*/
   background-color: #000000;
-  } 
+  }
 
 .invoice {
   background-image: linear-gradient(120deg, #203D6D, #000000);  /*===MENU BACKGROUND COLOR===*/
   border-radius: 5px; /*===ROUNDED CORNER SETTINGS===*/
-} 
+}
 
 .payment-box {
   height:425px; /*===SIZE IMPORTANT BECAUSE HEIGHT LIGHTNING QR CODE + OUTLINE===*/
@@ -923,7 +923,7 @@ background-image: linear-gradient(#16294C, #203D6D);  /*===ACTIVE BUTTON BACKGRO
 .payment__scan {
   width:276px;
   height:276px;
-  margin-left:auto; 
+  margin-left:auto;
   margin-right:auto;
   margin-bottom:5px;
   margin-top:0px;
@@ -1064,7 +1064,7 @@ span {
 }
 
 .expired__body {
-  color: #fff;  /*  ===TEXT COLOR=== */  
+  color: #fff;  /*  ===TEXT COLOR=== */
 }
 /*===========================*/
 
@@ -1097,7 +1097,7 @@ span {
 
 ### [Blockstream](https://blockstream.com/)
 
-![Blockstream checkout](img/Theme-Blockstream.png)
+![Blockstream checkout](/img/Theme-Blockstream.png)
 
 <details>
   <summary>Click to view CSS</summary>
@@ -1215,7 +1215,7 @@ canvas {
 
 ### [Coincards](https://coincards.com/)
 
-![CoinCards checkout](img/Theme-Coincards.png)
+![CoinCards checkout](/img/Theme-Coincards.png)
 
 <details>
   <summary>Click to view CSS</summary>
@@ -1245,7 +1245,7 @@ CSS file:
 
 ### [CryptoCloaks](https://www.cryptocloaks.com/)
 
-![CryptoCloak checkout](img/Theme-CryptoCloaks.png)\
+![CryptoCloak checkout](/img/Theme-CryptoCloaks.png)\
 _**Made by:** [@artdesignbySF](https://twitter.com/artdesignbySF) / <artdesignbySF@protonmail.com>_
 <details>
   <summary>Click to view CSS</summary>
@@ -1410,7 +1410,7 @@ html {
 .invoice {
     background-color: #cd00b9;  /*===MENU BACKGROUND COLOR===*/
   border-radius: 0px; /*===ROUNDED CORNER SETTINGS===*/
-} 
+}
 
 .payment-box {
   height:425px; /*===SIZE IMPORTANT BECAUSE HEIGHT LIGHTNING QR CODE + OUTLINE===*/
@@ -1419,7 +1419,7 @@ html {
 .payment__scan {
   width:276px;
   height:276px;
-  margin-left:auto; 
+  margin-left:auto;
   margin-right:auto;
   margin-bottom:5px;
   margin-top:0px;
@@ -1467,7 +1467,7 @@ span {
 
 /*====COPY INFO BOX/TEXTS====*/
 .copyBox {
-  background-color:#481b5c; 
+  background-color:#481b5c;
   border-color:#481b5c;
 }
 
@@ -1516,7 +1516,7 @@ span {
 
 ### [Human Rights Foundation](https://hrf.org/)
 
-![Human Rights Foundation checkout](img/Theme-HumanRightsFoundation.png)
+![Human Rights Foundation checkout](/img/Theme-HumanRightsFoundation.png)
 
 <details>
   <summary>Click to view CSS</summary>
@@ -1627,7 +1627,7 @@ html {
     border-bottom: 1px solid #fff;  /*===COLORED LINE ABOVE PAYMENT TABS===*/
 }
 
-.payment-tabs__tab:hover { 
+.payment-tabs__tab:hover {
   background-color: #fff; /*===TAB BACKGROUND ON HOVER===*/
 }
 
@@ -1667,7 +1667,7 @@ html {
 .btnGroupLnd button {
   background-image: linear-gradient(30deg, #e0048b, #ee3129); /*===BUTTON BACKGROUND COLOR GRADIENT===*/
   background-color:#000000; /*===BUTTON BACKGROUND COLOR (IF NO GRADIENT IS WANTED DELETE LINE ABOVE THIS)===*/
-  border-color: #000000; 
+  border-color: #000000;
   border-radius:0px;  /*===BUTTON BORDER COLOR===*/
  /*===ROUNDED CORNER SETTINGS===*/
 }
@@ -1675,7 +1675,7 @@ html {
 .btnGroupLnd button:hover {
   background-image: linear-gradient(30deg, #e0048b, #ee3129); /*===BUTTON BACKGROUND COLOR GRADIENT===*/
   background-color:#000000; /*===BUTTON BACKGROUND COLOR (IF NO GRADIENT IS WANTED DELETE LINE ABOVE THIS)===*/
-  border-color: #000000; 
+  border-color: #000000;
   color:#fff;
   border-radius:0px;  /*===BUTTON BORDER COLOR===*/
  /*===ROUNDED CORNER SETTINGS===*/
@@ -1709,8 +1709,8 @@ html {
 }
 
 .payment__currencies_noborder {
-  margin-left:auto; 
-  margin-right:15; 
+  margin-left:auto;
+  margin-right:15;
   white-space: nowrap;
   color:#fff;
   background-image: linear-gradient(30deg, #ee3129, #e0048b);
@@ -1783,7 +1783,7 @@ html {
 .invoice {
     background-color: #000000;  /*===MENU BACKGROUND COLOR===*/
   border-radius: 0px; /*===ROUNDED CORNER SETTINGS===*/
-} 
+}
 
 .payment-box {
   height:425px; /*===SIZE IMPORTANT BECAUSE HEIGHT LIGHTNING QR CODE + OUTLINE===*/
@@ -1792,7 +1792,7 @@ html {
 .payment__scan {
   width:276px;
   height:276px;
-  margin-left:auto; 
+  margin-left:auto;
   margin-right:auto;
   margin-bottom:5px;
   margin-top:0px;
@@ -1930,7 +1930,7 @@ span {
 }
 
 .expired__body {
-  color: #fff;  /*  ===TEXT COLOR=== */  
+  color: #fff;  /*  ===TEXT COLOR=== */
 }
 /*===========================*/
 
@@ -1963,7 +1963,7 @@ span {
 
 ### [Shiftcrypto](https://shiftcrypto.ch/)
 
-![Shiftcrypto checkout](img/Theme-cryptosecurity.png)
+![Shiftcrypto checkout](/img/Theme-cryptosecurity.png)
 
 <details>
   <summary>Click to view CSS</summary>
@@ -1994,7 +1994,7 @@ CSS file:
 
 ### [Wears My Liberty](https://wearsmyliberty.com)
 
-![WearMyLiberty](img/Theme-WearMyLiberty.png)
+![WearMyLiberty](/img/Theme-WearMyLiberty.png)
 
 <details>
   <summary>Click to view CSS</summary>

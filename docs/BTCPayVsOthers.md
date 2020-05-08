@@ -1,6 +1,6 @@
 # BTCPay Server vs. Others
 
-![How is it different?](img/BTCPay-How-Is-It-Different.png)
+![How is it different?](/img/BTCPay-How-Is-It-Different.png)
 
 Most new merchants will likely only consider the price of the service. Since BTCPay is free, that may have led you here and if so, welcome.
 
@@ -8,12 +8,12 @@ BTCPay is code, not a company. There is no third-party between a merchant and a 
 
 We want users to understand not only BTCPay, but also how payments can be processed on behalf of a merchant. In order to help users understand trade-offs when using various cryptocurrency payment processing methods. We don't know which payment processors provide which services. That will need to be part of your own research. The following list is a good place to start:
 
-* [Features](#Features)
-* [Cost](#Cost)
-* [Security](#Security)
-* [Privacy](#Privacy)
-* [Decentralized](#Decentralized)
-* [Fiat](#Fiat)
+* [Features](#features)
+* [Cost](#cost)
+* [Security](#security)
+* [Privacy](#privacy)
+* [Decentralized](#decentralized)
+* [Fiat](#fiat)
 
 ----
 

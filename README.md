@@ -10,7 +10,7 @@ Only file a [Github issue](https://github.com/btcpayserver/btcpayserver/issues) 
 
 Please check out our [official website](https://btcpayserver.org/), our [complete documentation](https://github.com/btcpayserver/btcpayserver-doc) and [FAQ](https://github.com/btcpayserver/btcpayserver-doc/tree/master/FAQ#btcpay-frequently-asked-questions-and-common-issues) for more details.
 
-![](img/BTCPayServerScreenshot.png)
+![](docs/.vuepress/public/img/BTCPayServerScreenshot.png)
 
 ## Features
 
@@ -38,7 +38,7 @@ Please check out our [official website](https://btcpayserver.org/), our [complet
 
 ## How it works
 
-[![How BTCPay Works](img/thumbnails/HowBTCPayServerWorks.png)](https://www.youtube.com/watch?v=nr0UNbz3AoQ "How BTCPay Server Works")
+[![How BTCPay Works](docs/.vuepress/public/img/thumbnails/HowBTCPayServerWorks.png)](https://www.youtube.com/watch?v=nr0UNbz3AoQ "How BTCPay Server Works")
 
 ### In a nutshell
 
@@ -50,7 +50,7 @@ BTCPay Server is code, not a company. There is no third-party between a merchant
 
 Developers or security auditors can always inspect the quality of the code, and anybody can contribute and help with software improvements.
 
-[![BTCPay Server Simply Explained](img/thumbnails/BTCPayServerSimplyExplained.png)](https://www.youtube.com/watch?v=dbX6qWZlxOw "BTCPay Server Simply Explained")
+[![BTCPay Server Simply Explained](docs/.vuepress/public/img/thumbnails/BTCPayServerSimplyExplained.png)](https://www.youtube.com/watch?v=dbX6qWZlxOw "BTCPay Server Simply Explained")
 
 ### How it keeps funds secure
 
@@ -103,12 +103,12 @@ Pull requests are welcome and appreciated. To contribute to BTCPay Server, first
 
 If you're beginner, take a look at the step by step guide on how to contribute to BTCPay Server documentation below.
 
-[![Contributing to Documentation](img/thumbnails/ContributingDocumentation.png)](https://www.youtube.com/watch?v=bSDROcdSSWw "How BTCPay Server Works")
+[![Contributing to Documentation](docs/.vuepress/public/img/thumbnails/ContributingDocumentation.png)](https://www.youtube.com/watch?v=bSDROcdSSWw "How BTCPay Server Works")
 
 ### Supporters
 
 The BTCPay Server Project is proudly supported by these entities through the [BTCPay Server Foundation](https://foundation.btcpayserver.org/).
 
-![](img/SupportersReadme.PNG)
+![](docs/.vuepress/public/img/SupportersReadme.PNG)
 
 If you'd like to support the project, please visit the [donation page](https://btcpayserver.org/donate/).

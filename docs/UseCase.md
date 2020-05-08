@@ -2,7 +2,7 @@
 
 Built with the community in mind, BTCPay Server is a feature-rich software with plenty of use-cases that can solve problems for different types of users.
 
-![](img/BTCPayUseCaseInfographic.png)
+![](/img/BTCPayUseCaseInfographic.png)
 
 The software usage is by no means limited to the groups of users mentioned in this document.
 
@@ -36,9 +36,9 @@ Privacy-minded individuals can use BTCPay Server internal wallet for their every
 
 ## Freelancers & Bill Pay
 
-Freelancer can request for payment by sharing a [Payment Request](PaymentRequests.md). Content and appearance of the payment request is customizable. With or without expiry, customers can pay the request at any time. BTCPay Server automatically updates the exchange rate when the customer pays the payment request when it's convenient for them. 
+Freelancer can request for payment by sharing a [Payment Request](PaymentRequests.md). Content and appearance of the payment request is customizable. With or without expiry, customers can pay the request at any time. BTCPay Server automatically updates the exchange rate when the customer pays the payment request when it's convenient for them.
 
-Merchants or freelancers can use payment requests for bill pay services. Payment requests can even be used to quickly request money from friends. 
+Merchants or freelancers can use payment requests for bill pay services. Payment requests can even be used to quickly request money from friends.
 
 ## Lightning Network payments
 

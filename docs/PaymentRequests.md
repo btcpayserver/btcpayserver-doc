@@ -23,4 +23,4 @@ Users can pay requests in partial payments and the request will remain valid unt
 
 ## Examples:
 
-![Payment Request](img/PaymentRequests.jpg)
+![Payment Request](/img/PaymentRequests.jpg)

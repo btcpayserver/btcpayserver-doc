@@ -49,23 +49,23 @@ Regardless of the implementation (c-lightning or LND) you've decided to use, the
 
 <strong> Your blockchain needs to be fully synced before you try to connect your Lightning Node, otherwise the connection will fail.</strong>
 
-![LightningNetworkSettup1](img/LightningNetworkNodeSetup1.jpg)
+![LightningNetworkSettup1](/img/LightningNetworkNodeSetup1.jpg)
 
-![LightningNetworkSettup2](img/LightningNetworkNodeSetup2.jpg)
+![LightningNetworkSettup2](/img/LightningNetworkNodeSetup2.jpg)
 
-![LightningNetworkSettup3](img/LightningNetworkNodeSetup3.jpg)
+![LightningNetworkSettup3](/img/LightningNetworkNodeSetup3.jpg)
 
-![LightningNetworkSettup4](img/LightningNetworkNodeSetup4.jpg)
+![LightningNetworkSettup4](/img/LightningNetworkNodeSetup4.jpg)
 
 ## Getting Started with BTCPay and LND
 
 The easiest way to use LND implementation with BTCPay is to use [Ride The Lightning](https://github.com/ShahanaFarooqui/RTL) (RTL).
 
-![RideTheLightningServices](img/RideTheLightning.png)
+![RideTheLightningServices](/img/RideTheLightning.png)
 
 RTL is a device agnostic web user interface for Lightning Network that allows you to operate your node without leaving BTCPay, from your browser.
 
-![RideTheLightningServices](img/RideTheLightningServices.png)
+![RideTheLightningServices](/img/RideTheLightningServices.png)
 
 To initiate RTL in BTCPay, Go to **Server Settings > Services > RTL > See information**.
 
@@ -105,9 +105,9 @@ You can use Spark as an internal or external wallet. Internal wallet allows user
 
 Go to **Server Settings > Services > Spark Server > See information**
 
-![Accessing Spark wallet](img/SparkConnect.jpg)
+![Accessing Spark wallet](/img/SparkConnect.jpg)
 
-![Accessing Spark wallet](img/SparkConnect2.jpg.png)
+![Accessing Spark wallet](/img/SparkConnect2.jpg.png)
 
 ### c-lightning Commands lightning-cli
 

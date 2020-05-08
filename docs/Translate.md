@@ -1,6 +1,6 @@
 # Translate BTCPay Server
 
-## Want to contribute to BTCPay by translating it to another language? 
+## Want to contribute to BTCPay by translating it to another language?
 
 BTCPay uses a translation platform called Transifex to allow users to add a new language translation or modify an existing one. We are currently working on translating the BTCPay checkout page. After a translation has been made on Transifex, the submittal process is automated and merged periodically into the BTCPay git repository.
 
@@ -28,7 +28,7 @@ You will need to know your language-country code. You can look them up [here](ht
     Examples for Portuguese:
      Portuguese (Brazil)(pt_BR)
      Portuguese (Portugal)(pt_PT)
-     
+
 ## Step 3: New Language Translation
 
 Line 1: Translate your Country-Code.
@@ -37,7 +37,7 @@ Line 1: Translate your Country-Code.
      'en' translates to 'pt-BR'
 
 Line 2: The name of your language, in your language.
-    
+
     Example for French
      'English' translates to 'Français'
 
@@ -59,11 +59,11 @@ They should not be translated, but they need to remain in the correct place in y
      "Return to StoreName" translates to "{{storeName}} に戻る"
 
 ### **Notifications**
-To stay up to date with new strings - enable alerts for new strings needing to be translated by enabling the watch language feature in Transifex. 
+To stay up to date with new strings - enable alerts for new strings needing to be translated by enabling the watch language feature in Transifex.
 
 Click on the eye" icon (in red in the following screenshot).
 
-![Transifex Alerts](img/transifex-alert.png)
+![Transifex Alerts](/img/transifex-alert.png)
 
 You have to click it for the each project you wish to follow.
 
@@ -73,5 +73,4 @@ You have to click it for the each project you wish to follow.
 
 Need context for a string?
 
-Visit the BTCPay Server demo store [checkout page](https://store.btcpayserver.org/). 
-
+Visit the BTCPay Server demo store [checkout page](https://store.btcpayserver.org/).
