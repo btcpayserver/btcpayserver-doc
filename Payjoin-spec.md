@@ -74,12 +74,19 @@ However, we also accept the PSBT or a bitcoin transaction in hex format.
 
 When the payjoin sender sends the POST request to the payjoin endpoint, he can optionally specify the following parameters:
 
-* `v=`, the version number of the payjoin protocol that the client is using. The current version is `1`.
+* `v=`, the version number of the payjoin protocol that the sender is using. The current version is `1`.
 
-This can be used in the future so the receiver can reject a payjoin if the client is using a version which is not supported via an error HTTP 400, `version-unsupported`.
-If not specified, the receiver will assume the sender is using the same version.
+This can be used in the future so the receiver can reject a payjoin if the sender is using a version which is not supported via an error HTTP 400, `version-unsupported`.
+If not specified, the receiver will assume the sender is `v=1`.
 
-If the version of the sender is above the one of the receiver, the receiver should ignore the parameter.
+If the receiver does not support the version of the sender, it should send an error with the list of supported versions:
+```json
+{
+    "errorCode": "version-unsupported",
+    "supported" : [ 2, 3, 4 ],
+    "message": "The version is not supported"
+}
+```
 
 * `feebumpindex=`, the preferred output from which to increase the fee for the added inputs. (default: `-1`)
 
@@ -95,8 +102,8 @@ The receiver may send errors to the client, the format is the following:
 
 ```json
 {
-    "errorCode": "version-unsupported",
-    "message": "The version is not supported anymore"
+    "errorCode": "psbt-not-finalized",
+    "message": "You should finalize the PSBT before giving it to the receiver"
 }
 ```
 
