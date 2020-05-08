@@ -82,16 +82,18 @@ module.exports = {
         link: "https://btcpayserver.org/"
       },
       {
-        text: "<span>GitHub</span>",
-        link: "https://github.com/btcpayserver/"
-      },
-      {
         text: "Chat",
         link: "https://chat.btcpayserver.org/"
       },
       {
+        text: "GitHub",
+        link: "https://github.com/btcpayserver/",
+        rel: "noopener noreferrer github"
+      },
+      {
         text: "Twitter",
-        link: "https://twitter.com/BtcpayServer"
+        link: "https://twitter.com/BtcpayServer",
+        rel: "noopener noreferrer twitter"
       }
     ],
     sidebar: [
