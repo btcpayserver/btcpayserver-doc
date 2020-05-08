@@ -97,44 +97,23 @@ module.exports = {
       }
     ],
     sidebar: [
-      {
-        title: "Introduction",
-        path: "/"
-      },
+      ["/", "Introduction"],
       {
         title: "BTCPay Basics",
         collapsable: false,
         children: [
-          {
-            title: "Use Case",
-            path: "/UseCase"
-          },
-          {
-            title: "Walkthrough",
-            path: "/Walkthrough"
-          },
-          {
-            title: "BTCPay Server vs. Others",
-            path: "/BTCPayVsOthers"
-          },
-          {
-            title: "Try it out",
-            path: "/TryItOut"
-          }
+          ["/UseCase", "Use Case"],
+          ["/Walkthrough", "Walkthrough"],
+          ["/BTCPayVsOthers", "BTCPay Server vs. Others"],
+          ["/TryItOut", "Try it out"]
         ]
       },
       {
         title: "Deployment",
         collapsable: false,
         children: [
-          {
-            title: "Choosing a Deployment Method",
-            path: "/Deployment"
-          },
-          {
-            title: "Third-party Hosting",
-            path: "/ThirdPartyHosting"
-          },
+          ["/Deployment", "Choosing a Deployment Method"],
+          ["/ThirdPartyHosting", "Third-party Hosting"],
           {
             title: "Docker",
             path: "/DockerDeployment",
@@ -149,14 +128,8 @@ module.exports = {
                 title: "Azure Deployment",
                 path: "/AzureDeployment",
                 children: [
-                  {
-                    title: "Reducing Cost on Azure",
-                    path: "/AzurePennyPinching"
-                  },
-                  {
-                    title: "Changing domain",
-                    path: "/ChangeDomain"
-                  }
+                  ["/AzurePennyPinching", "Reducing Cost on Azure"],
+                  ["/ChangeDomain", "Changing domain"]
                 ]
               },
               {
@@ -171,14 +144,8 @@ module.exports = {
                     title: "Advanced Deployment",
                     collapsable: false,
                     children: [
-                      {
-                        title: "Dynamic DNS",
-                        path: "/DynamicDNS"
-                      },
-                      {
-                        title: "Reverse SSH Tunnel",
-                        path: "/ReverseSSHtunnel"
-                      }
+                      ["/DynamicDNS", "Dynamic DNS"],
+                      ["/ReverseSSHtunnel", "Reverse SSH Tunnel"]
                     ]
                   }
                 ]
@@ -198,10 +165,7 @@ module.exports = {
                     title: "Transmuter",
                     path: "/Transmuter/",
                     children: [
-                      {
-                        title: "Email Receipts Preset",
-                        path: "/Transmuter/EmailReceiptsPreset"
-                      }
+                      ["/Transmuter/EmailReceiptsPreset", "Email Receipts Preset"]
                     ]
                   },
                   "/Docker/pihole"
@@ -233,14 +197,8 @@ module.exports = {
                 title: "Connect a hardware wallet",
                 path: "/Vault",
                 children: [
-                  {
-                    title: "Ledger Wallet",
-                    path: "/LedgerWallet"
-                  },
-                  {
-                    title: "ColdCard Wallet",
-                    path: "/ColdCardWallet"
-                  }
+                  ["/LedgerWallet", "Ledger Wallet"],
+                  ["/ColdCardWallet", "ColdCard Wallet"]
                 ]
               },
               {
@@ -250,73 +208,39 @@ module.exports = {
                     title: "Electrum Wallet",
                     path: "/ElectrumWallet",
                     children: [
-                      {
-                        title: "Electrum X",
-                        path: "/ElectrumX"
-                      },
-                      {
-                        title: "Electrum Personal Server EPS",
-                        path: "/ElectrumPersonalServer"
-                      }
+                      ["/ElectrumX", "Electrum X"],
+                      ["/ElectrumPersonalServer", "Electrum Personal Server EPS"]
                     ]
                   },
-                  {
-                    title: "Wasabi Wallet",
-                    path: "/WasabiWallet"
-                  },
+                  ["/WasabiWallet", "Wasabi Wallet"]
                 ]
               },
               {
                 title: "Create a wallet",
                 children: [
-                  {
-                    title: "Hot Wallet",
-                    path: "/HotWallet"
-                  }
+                  ["/HotWallet", "Hot Wallet"]
                 ]
               }
             ]
           },
-          "/WhatsNext"
+          ["/WhatsNext", "(4) What's Next?"]
         ]
       },
       {
         title: "Features",
         collapsable: false,
         children: [
-          {
-            title: "Apps",
-            path: "/Apps"
-          },
-          {
-            title: "Wallet",
-            path: "/Wallet"
-          },
-
-          {
-            title: "Invoices",
-            path: "/Invoices"
-          },
-          {
-            title: "Payment Requests",
-            path: "/PaymentRequests"
-          },
-          {
-            title: "Lightning Network",
-            path: "/LightningNetwork"
-          },
-          {
-            title: "Accounting",
-            path: "/Accounting"
-          },
+          ["/Apps", "Apps"],
+          ["/Wallet", "Wallet"],
+          ["/Invoices", "Invoices"],
+          ["/PaymentRequests", "Payment Requests"],
+          ["/LightningNetwork", "Lightning Network"],
+          ["/Accounting", "Accounting"],
           {
             title: "Payjoin",
             path: "/Payjoin",
             children: [
-              {
-                title: "Payjoin Specification",
-                path: "/Payjoin-spec"
-              }
+              ["/Payjoin-spec", "Payjoin Specification"]
             ]
           }
         ]
@@ -325,26 +249,11 @@ module.exports = {
         title: "Integrations",
         collapsable: false,
         children: [
-          {
-            title: "WooCommerce",
-            path: "/WooCommerce"
-          },
-          {
-            title: "Drupal",
-            path: "/Drupal"
-          },
-          {
-            title: "Magento",
-            path: "/Magento"
-          },
-          {
-            title: "PrestaShop",
-            path: "/PrestaShop"
-          },
-          {
-            title: "Custom Integration",
-            path: "/CustomIntegration"
-          }
+          ["/WooCommerce", "WooCommerce"],
+          ["/Drupal", "Drupal"],
+          ["/Magento", "Magento"],
+          ["/PrestaShop", "PrestaShop"],
+          ["/CustomIntegration", "Custom Integration"]
         ]
       },
       {
@@ -355,95 +264,33 @@ module.exports = {
             title: "FAQ and common issues",
             path: "/FAQ",
             children: [
-              {
-                title: "General FAQ",
-                path: "/FAQ/FAQ-General"
-              },
-              {
-                title: "Deployment FAQ",
-                path: "/FAQ/FAQ-Deployment"
-              },
-              {
-                title: "Synchronization FAQ",
-                path: "/FAQ/FAQ-Synchronization"
-              },
-              {
-                title: "Integrations FAQ",
-                path: "/FAQ/FAQ-Integrations"
-              },
-              {
-                title: "Server Settings FAQ",
-                path: "/FAQ/FAQ-ServerSettings"
-              },
-              {
-                title: "Stores FAQ",
-                path: "/FAQ/FAQ-Stores"
-              },
-              {
-                title: "Wallet FAQ",
-                path: "/FAQ/FAQ-Wallet"
-              },
-              {
-                title: "Apps FAQ",
-                path: "/FAQ/FAQ-Apps"
-              },
-              {
-                title: "Lightning Network FAQ",
-                path: "/FAQ/FAQ-LightningNetwork"
-              },
-              {
-                title: "Altcoins FAQ",
-                path: "/FAQ/FAQ-Altcoin"
-              }
+              ["/FAQ/FAQ-General", "General FAQ"],
+              ["/FAQ/FAQ-Deployment", "Deployment FAQ"],
+              ["/FAQ/FAQ-Synchronization", "Synchronization FAQ"],
+              ["/FAQ/FAQ-Integrations", "Integrations FAQ"],
+              ["/FAQ/FAQ-ServerSettings", "Server Settings FAQ"],
+              ["/FAQ/FAQ-Stores", "Stores FAQ"],
+              ["/FAQ/FAQ-Wallet", "Wallet FAQ"],
+              ["/FAQ/FAQ-Apps", "Apps FAQ"],
+              ["/FAQ/FAQ-LightningNetwork", "Lightning Network FAQ"],
+              ["/FAQ/FAQ-Altcoin", "Altcoins FAQ"]
             ]
           },
-          {
-            title: "Troubleshooting an issue",
-            path: "/Troubleshooting"
-          },
-          {
-            title: "Support",
-            path: "/Support"
-          },
-          {
-            title: "Contribute",
-            path: "/Contribute"
-          },
-          {
-            title: "Translate",
-            path: "/Translate"
-          },
-          {
-            title: "Community",
-            path: "/Community"
-          }
+          ["/Troubleshooting", "Troubleshooting an issue"],
+          ["/Support", "Support"],
+          ["/Contribute", "Contribute"],
+          ["/Translate", "Translate"],
+          ["/Community", "Community"]
         ]
       },
       {
         title: "Development",
         collapsable: false,
         children: [
-          {
-            title: "Clients",
-            children: [
-              {
-                title: "Architecture",
-                path: "/Architecture"
-              },
-              {
-                title: "Developing Locally",
-                path: "/LocalDevelopment"
-              },
-              {
-                title: "How to add an Altcoin",
-                path: "/Altcoins"
-              },
-              {
-                title: "Customizing Themes",
-                path: "/Theme"
-              }
-            ]
-          }
+          ["/Architecture", "Architecture"],
+          ["/LocalDevelopment", "Developing Locally"],
+          ["/Altcoins", "How to add an Altcoin"],
+          ["/Theme", "Customizing Themes"]
         ]
       }
     ]
