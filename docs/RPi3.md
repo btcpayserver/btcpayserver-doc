@@ -248,7 +248,7 @@ exit
 
 **Step 16** - Go to `https://btcpay.YourDomain.com` and confirm that your site is up and your nodes are syncing.
 
-Syncing is very slow on a Pi, since each block and transaction needs to go through validation. You can skip this, at your own risk, by using [FastSync](#Fast-Sync). Otherwise, simply leave the node running to sync to 100%; this may take weeks.
+Syncing is very slow on a Pi, since each block and transaction needs to go through validation. You can skip this, at your own risk, by using [FastSync](#fast-sync). Otherwise, simply leave the node running to sync to 100%; this may take weeks.
 
 **Setup Complete!**
 

@@ -4,8 +4,8 @@ BTCPay Server is built on Bootstrap and offers the flexibility to adjust its loo
 
 There are two approaches to customizing the theme of your BTCPay Server.
 
-1. [Developing a custom theme](#1-custom-themes) (requires technical skills)
-2. [Using a pre-made Bootstrap theme](#2-bootstrap-themes) (does not require technical skills)
+1. [Developing a custom theme](#_1-custom-themes) (requires technical skills)
+2. [Using a pre-made Bootstrap theme](#_2-bootstrap-themes) (does not require technical skills)
 
 ## 1. Custom themes
 
@@ -26,10 +26,10 @@ Once you are done with your modifications, you can upload and reference it in th
 ### Developing and extending a custom theme
 
 The BTCPay Server user interface is built on a customized version of Bootstrap that supports [CSS custom properties](https://developer.mozilla.org/en-US/docs/Web/CSS/--*).
-This allows us to change theme related settings like fonts and colors without affecting the [`bootstrap.css`](#Notes-on-bootstrapcss).
+This allows us to change theme related settings like fonts and colors without affecting the [`bootstrap.css`](#notes-on-bootstrap-css).
 Also we can provide just the relevant customized parts instead of shipping a whole `bootstrap.css` file for each theme.
 
-Take a look at the [predefined themes](../BTCPayServer/wwwroot/main/themes) to get an overview of this approach.
+Take a look at the [predefined themes](https://github.com/btcpayserver/btcpayserver/blob/master/BTCPayServer/wwwroot/main/themes/) to get an overview of this approach.
 
 #### Modifying existing themes
 
@@ -41,7 +41,7 @@ The custom property definitions in the `:root` selector are divided into several
 - The third section contains definitions for specific parts of the page, sections or components.
   Here you should try to reuse definitions from above as much as possible to provide a consistent look and feel.
 
-The variables defined in a theme file get used in the [`site.css`](../BTCPayServer/wwwroot/main/site.css) and [`creative.css`](../BTCPayServer/wwwroot/main/bootstrap4-creativestart/creative.css) files.
+The variables defined in a theme file get used in the [`site.css`](https://github.com/btcpayserver/btcpayserver/blob/master/BTCPayServer/wwwroot/main/site.css) and [`creative.css`](https://github.com/btcpayserver/btcpayserver/blob/master/BTCPayServer/wwwroot/main//bootstrap4-creativestart/creative.css) files.
 
 ##### Overriding Bootstrap selectors
 
@@ -55,7 +55,7 @@ This allows us to address individual portions of the styles without affecting ot
 
 For cases in which you want to introduce new variables that are used across all themes, add them to the `site.css` file.
 This file contains our modifications of the Bootstrap styles.
-Refrain from modifying `bootstrap.css` directly – see the [additional notes](#Notes-on-bootstrapcss) for the reasoning behind this.
+Refrain from modifying `bootstrap.css` directly – see the [additional notes](#notes-on-bootstrap-css) for the reasoning behind this.
 
 #### Adding a new theme
 
