@@ -35,5 +35,3 @@ fi
 
 cd $TRANSMUTER_DIR
 cp -r README.md docs/* $DOCS_DIR/Transmuter
-mkdir -p $PUBLIC_DIR/Transmuter
-mv $DOCS_DIR/Transmuter/img $PUBLIC_DIR/Transmuter

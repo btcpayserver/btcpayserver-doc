@@ -9,7 +9,7 @@ Bitcoin is the only focus of the project and its core developers. However, opt-i
 - Dogecoin (DOGE)
 - Feathercoin (FTC)
 - Groestlcoin (GRS)
-- Liquid Bitcoin (LBTC) (comes with Liquid Tether support USDt) 
+- Liquid Bitcoin (LBTC) (comes with Liquid Tether support USDt)
 - Litecoin (LTC)
 - Monacoin (MONA)
 - Monero (XMR)

@@ -1,6 +1,6 @@
 # BTCPay Server vs. Others
 
-![How is it different?](/img/BTCPay-How-Is-It-Different.png)
+![How is it different?](./img/BTCPay-How-Is-It-Different.png)
 
 Most new merchants will likely only consider the price of the service. Since BTCPay is free, that may have led you here and if so, welcome.
 

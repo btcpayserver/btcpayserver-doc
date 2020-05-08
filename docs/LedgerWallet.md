@@ -40,7 +40,7 @@ In this case you can manually find the xpub for your wanted account in these ste
 6. Paste it manually into the "DerivationScheme" textfield
 7. Continue with [Step 7 of the Quick Setup above](#quick-setup)
 
-![Ledger Account "Adavanced Logs" info screenshot](/img/LedgerHelpXpub.png)
+![Ledger Account "Adavanced Logs" info screenshot](./img/LedgerHelpXpub.png)
 
 ### Spending from BTCPay Server wallet with Ledger
 

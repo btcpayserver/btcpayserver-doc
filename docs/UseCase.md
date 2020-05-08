@@ -2,7 +2,7 @@
 
 Built with the community in mind, BTCPay Server is a feature-rich software with plenty of use-cases that can solve problems for different types of users.
 
-![](/img/BTCPayUseCaseInfographic.png)
+![](./img/BTCPayUseCaseInfographic.png)
 
 The software usage is by no means limited to the groups of users mentioned in this document.
 

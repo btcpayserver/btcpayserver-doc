@@ -8,7 +8,7 @@ To create an app, go to Apps > Create a new app. Apps are store-dependent, which
 
 The web-based PoS app allows users with brick and mortar stores to readily accept cryptocurrencies without fees or a third-party, directly to their wallet. The PoS can be displayed easily on tablets or any other devices which support web browsing. Users can easily create a homescreen shortcut for a quick access to the web-app.
 
-![BTCPay Pos](/img/BTCPayPointOfSale1.jpg)
+![BTCPay Pos](./img/BTCPayPointOfSale1.jpg)
 
 Adding new products is easy. The app has a shopping cart feature, tips, product inventory, custom payment options and more.
 

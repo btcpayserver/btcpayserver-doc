@@ -1,9 +1,9 @@
 # Server Settings Frequently Asked Questions
 
-This document covers all the questions and issues related to Server Settings. This option is only available to server admin. Take a look at the [walkthrough page](/Walkthrough.md) to easier understand the navigation 
+This document covers all the questions and issues related to Server Settings. This option is only available to server admin. Take a look at the [walkthrough page](/Walkthrough.md) to easier understand the navigation
 
 ## Maintenance
-    
+
 * [How to update BTCPay Server](FAQ-ServerSettings.md#how-to-update-btcpay-server)
 * [How can I check my BTCPay Server version?](FAQ-ServerSettings.md#how-can-i-see-my-btcpay-version)
 * [How can I check my BTCPay Server version via terminal?](FAQ-ServerSettings.md#how-can-i-see-my-btcpay-version)
@@ -32,13 +32,13 @@ This document covers all the questions and issues related to Server Settings. Th
 
 
 ## Maintenance
-   
+
 ### How to update BTCPay Server
 
 There are 2 ways to update your BTCPay Server :
 1. Updating through the front end: Server Settings > Maintenance > Update.
 
-![Updating BTCPay Server](/img/HowToUpdateBTCPayServer.png)
+![Updating BTCPay Server](../img/HowToUpdateBTCPayServer.png)
 
 2.Updating through SSH: Login into your virtual machine with ssh, then apply following commands:
 
@@ -59,7 +59,7 @@ BTCPay SSH key, enables users to update their server or quickly change the domai
 ### Forgot BTCPay Admin password?
 First, register a new user on your BTCPay Server, by clicking "Register", for example: "newadmin@example.com".
 
-If you can't create a new user because registrations are disabled in your Server Settings > Policies, you need to reset the policies settings. Please skip this step if you can create a new user on the front-end home page using the register button. Run the following command (It also deletes any other server settings currently being used): 
+If you can't create a new user because registrations are disabled in your Server Settings > Policies, you need to reset the policies settings. Please skip this step if you can create a new user on the front-end home page using the register button. Run the following command (It also deletes any other server settings currently being used):
 
 ```bash
 # In root
@@ -108,7 +108,7 @@ WARNING: The BTCPAY_SSHTRUSTEDFINGERPRINTS variable is not set. Defaulting to a 
 
 You can run the following command line to give access to BTCPay to your server via SSH.
 
-```bash 
+```bash
 sudo su -
 cd $BTCPAY_BASE_DIRECTORY/btcpayserver-docker
 git checkout master
@@ -132,11 +132,11 @@ TLS Protocol: ON
 SMTP Username: (your Gmail username)
 SMTP Password: (your Gmail password)
 ```
-For gmail it's important to allow access from less secure apps. To enable go to: Manage Your Google Account > Security > Allow Less Secure Apps (On). Also note Google may automatically turn off this setting if it’s not being used. If your smtp has stopped working, check this setting is not off. 
+For gmail it's important to allow access from less secure apps. To enable go to: Manage Your Google Account > Security > Allow Less Secure Apps (On). Also note Google may automatically turn off this setting if it’s not being used. If your smtp has stopped working, check this setting is not off.
 
 If by any chance you have 2-step verification added to your gmail account, [visit this article](https://support.google.com/mail/answer/185833?hl=en).
 
-Use the test email feature in BTCPay to verify your emails are being sent properly. If you are seeking a more reliable smtp service for your business needs, consider using a dedicated mail service like Mailgun. 
+Use the test email feature in BTCPay to verify your emails are being sent properly. If you are seeking a more reliable smtp service for your business needs, consider using a dedicated mail service like Mailgun.
 
 ### How to SSH into my BTCPay running on VPS?
 
@@ -152,7 +152,7 @@ yourPassword
 ```
 Press Enter
 
-If this is your first time connecting to the server from this computer, you will see the following output. 
+If this is your first time connecting to the server from this computer, you will see the following output.
 ```
 The authenticity of host 'example.com (70.32.86.175)' can't be established.
 RSA key fingerprint is 3c:6d:5c:99:5d:b5:c6:25:5a:d3:78:8e:d2:f5:7a:01.
@@ -201,7 +201,7 @@ To allow other users to register and use your server, in Server Settings > Polic
 
 ### How to hide my BTCPay Server from Search Engines
 
-Discouraging search engines from indexing your site in Server Settings > Policies, adds `<meta name="robots" content="noindex">` to your server header, which informs search engines not to index your pages. 
+Discouraging search engines from indexing your site in Server Settings > Policies, adds `<meta name="robots" content="noindex">` to your server header, which informs search engines not to index your pages.
 
 It is up to search engines to honor this request, and may take time for your pages to disappear completely. Unfortunately, the exact time is beyond our control, it depends on crawl bots of particular search engine like Google.
 
@@ -209,10 +209,10 @@ It is up to search engines to honor this request, and may take time for your pag
 
 ### How to remotely connect to my BTCPay full node?
 
-If you're using an external wallet which allows BTC-P2P connection, you can easily connect it to your BTCPay full node. By doing this, you avoid leaking information to third-party servers and are solely relying on your own full node. 
+If you're using an external wallet which allows BTC-P2P connection, you can easily connect it to your BTCPay full node. By doing this, you avoid leaking information to third-party servers and are solely relying on your own full node.
 To connect to a compatible BTC-P2P wallet, go to **Server Settings > Services > Full node P2P** Reveal the QR code and scan it with a BTC-P2P compatible wallet, or input it by copy-pasting it.
 
-![BTC-P2P](/img/BTC-P2P.png)
+![BTC-P2P](../img/BTC-P2P.png)
 
 If you do not see Full node P2P in your Services, you probably have to [activate Tor on your server](FAQ-Deployment.md#how-do-i-activate-tor-on-my-btcpay-server).
 
@@ -220,4 +220,4 @@ If you do not see Full node P2P in your Services, you probably have to [activate
 
 ### How to upload files to BTCPay
 
-To upload files to your BTCPay Server instance, first under Server Settings > Services, enable the External Storage feature and choose which storage service provider you would like to use. Next, go to Server Settings > Files to browse and upload local files. Depending on the limitations of your storage system, you may have difficulty uploading large files. 
+To upload files to your BTCPay Server instance, first under Server Settings > Services, enable the External Storage feature and choose which storage service provider you would like to use. Next, go to Server Settings > Files to browse and upload local files. Depending on the limitations of your storage system, you may have difficulty uploading large files.

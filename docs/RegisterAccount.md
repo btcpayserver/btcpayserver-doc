@@ -6,7 +6,7 @@ The first step in setting up your BTCPay Server is creating a user account. The 
 
 To register, visit your BTCPay Server URL and fill in the account registration form on the right. Input your password, password confirmation, e-mail and click "Register". You will automatically be logged in. If you're using a [third-party host](ThirdPartyHosting.md), you may be asked to verify your e-mail address to confirm the registration.
 
-![BTCPayRegister1](/img/btcpay-registration-page.jpg)
+![BTCPayRegister1](./img/btcpay-registration-page.jpg)
 
 ### Configuring e-mail
 It's recommended that server admins [configure SMTP settings](FAQ/FAQ-ServerSettings.md#how-to-configure-smtp-settings-in-btcpay). E-mail setup enables easier password reset for the instance users in case of forgotten credentials.

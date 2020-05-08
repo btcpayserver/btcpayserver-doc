@@ -10,11 +10,11 @@ This document explains how to use BTCPay Server's Payjoin feature. For a detaile
 
 It's important to note that you will need at least 1 UTXO for payjoin to work.
 
-![](/img/payjoin/Payjoin_Guide_Receive_1.png)
+![](./img/payjoin/Payjoin_Guide_Receive_1.png)
 
-![](/img/payjoin/Payjoin_Guide_Receive_2.png)
+![](./img/payjoin/Payjoin_Guide_Receive_2.png)
 
-![](/img/payjoin/Payjoin_Guide_Receive_3.png)
+![](./img/payjoin/Payjoin_Guide_Receive_3.png)
 
 ## Paying to Payjoin as a user
 
@@ -30,13 +30,13 @@ The [BTCPay Wallet](Wallet.md) supports Payjoin.
 6. If you are using a hardware wallet, you will be asked to sign the payjoin transaction again (the hot wallet feature signs the transaction for you automatically).
 7. Congratulations, you've just helped improve Bitcoin's fungibility and your financial sovereignity!
 
-![](/img/payjoin/Payjoin_Guide_Pay_1.png)
+![](./img/payjoin/Payjoin_Guide_Pay_1.png)
 
-![](/img/payjoin/Payjoin_Guide_Pay_2.png)
+![](./img/payjoin/Payjoin_Guide_Pay_2.png)
 
-![](/img/payjoin/Payjoin_Guide_Pay_3.png)
+![](./img/payjoin/Payjoin_Guide_Pay_3.png)
 
-![](/img/payjoin/Payjoin_Guide_Pay_4.png)
+![](./img/payjoin/Payjoin_Guide_Pay_4.png)
 
 ## Why did a payjoin not happen?
 

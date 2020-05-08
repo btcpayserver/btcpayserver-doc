@@ -3,6 +3,5 @@
 /node_modules
 
 # External repos
-/docs/.vuepress/public/Transmuter
 /docs/Transmuter
 /docs/Docker
