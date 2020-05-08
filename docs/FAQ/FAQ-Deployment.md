@@ -214,7 +214,7 @@ services:
 If you are running on linux, due to [a limitation of docker](https://github.com/docker/for-linux/issues/264), you will also need to do the following:
 
 * Run `ip route | grep docker0 | awk '{print $9}'`
-  * Add the following at the end of the `bitcoin.custom.yml` file, replacing `$DOCKER_HOST_IP` with the result of the previous command. 
+  * Add the following at the end of the `bitcoin.custom.yml` file, replacing `$DOCKER_HOST_IP` with the result of the previous command.
 ```yml
       extra_hosts:
         - "host.docker.internal:$DOCKER_HOST_IP"
@@ -433,7 +433,7 @@ Notice: If your BTCPay Server install has more than one domain (for example `WOO
 2. Change to your Base install directory `cd "$(dirname "$BTCPAY_ENV_FILE")"`
 3. Delete all volumes in /var/lib/docker/volumes/ with `docker-compose -f $BTCPAY_DOCKER_COMPOSE down --v`
 4. Remove other BTCPay system files with this: `rm /etc/systemd/system/btcpayserver.service && rm /etc/profile.d/btcpay-env.sh`
-5. Go into /usr/local/bin and remove all of the symlinks that BTCPay put in there.  At the time of writing these were: 
+5. Go into /usr/local/bin and remove all of the symlinks that BTCPay put in there.  At the time of writing these were:
 ```
 bitcoin-cli.sh -> /root/BTCPayServer/btcpayserver-docker/bitcoin-cli.sh
 bitcoin-lncli.sh -> /root/BTCPayServer/btcpayserver-docker/bitcoin-lncli.sh
@@ -498,7 +498,7 @@ Now putting local IP in the web-browser works.
 
 #### Cause 2: btcpayserver or letsencrypt-nginx-proxy is not running
 
-To check, run: 
+To check, run:
 ```bash
 sudo  docker ps | less -S
 ```
@@ -571,6 +571,4 @@ You need to open port 80 and 443. Once you did that, restart docker `btcpay-rest
 
 #### Cause N: Other
 
-There could be many causes for 5XX HTTP errors. Please create an [Issue](https://github.com/btcpayserver/btcpayserver-docker/issues) and when cause becomes known add it here in the [Deployment FAQ](https://github.com/btcpayserver/btcpayserver-doc/blob/master/FAQ/FAQ-Deployment.md) doc.
-
-
+There could be many causes for 5XX HTTP errors. Please create an [Issue](https://github.com/btcpayserver/btcpayserver-docker/issues) and when cause becomes known add it here in the [Deployment FAQ](FAQ-Deployment.md) doc.

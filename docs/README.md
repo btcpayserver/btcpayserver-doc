@@ -8,7 +8,7 @@ If you have trouble using BTCPay Server, consider joining the [communities liste
 
 Only file [Github issue](https://github.com/btcpayserver/btcpayserver/issues) for technical issues you can't resolve through other channels or feature requests you've validated with other members of community.
 
-Please check out our [official website](https://btcpayserver.org/), our [complete documentation](https://github.com/btcpayserver/btcpayserver-doc) and [FAQ](https://github.com/btcpayserver/btcpayserver-doc/tree/master/FAQ#btcpay-frequently-asked-questions-and-common-issues) for more details.
+Please check out our [official website](https://btcpayserver.org/), our [complete documentation](https://github.com/btcpayserver/btcpayserver-doc) and [FAQ](FAQ/README.md#btcpay-frequently-asked-questions-and-common-issues) for more details.
 
 ![](/img/BTCPayServerScreenshot.png)
 

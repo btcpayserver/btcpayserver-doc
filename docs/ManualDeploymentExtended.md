@@ -5,7 +5,7 @@ This document lists steps for manually deploying BTCPay Server and additional re
 :::danger
 #### Not recommended for production use
 
-Manual installation is NOT recommended for production use unless you are very confident with your Operating System and Bitcoin security expertise. If you are unsure use the docker deployment or one of the other [deployment options](https://github.com/btcpayserver/btcpayserver-doc/blob/master/Deployment.md).
+Manual installation is NOT recommended for production use unless you are very confident with your Operating System and Bitcoin security expertise. If you are unsure use the docker deployment or one of the other [deployment options](Deployment.md).
 :::
 
 ## Installation Steps Overview
@@ -18,8 +18,8 @@ An example hostname of `mainnet.demo.btcpayserver.org` has been used in certain 
 
 If you do use these instructions to install a BTCPay Server connected to the Bitcoin mainnet then at a minimum you should understand how the wallet mechanisms work. It's highly recommended to read the two articles below and ask questions if anything is not clear.
 
-- [BTCPay Wallet FAQ](https://github.com/btcpayserver/btcpayserver-doc/blob/master/FAQ/FAQ-Wallet.md)
-- [Lightning Network and BTCPay (first section)](https://github.com/btcpayserver/btcpayserver-doc/blob/master/LightningNetwork.md)
+- [BTCPay Wallet FAQ](FAQ/FAQ-Wallet.md)
+- [Lightning Network and BTCPay (first section)](LightningNetwork.md)
 
 As an additional aid below is a lit of iptables rules and instructions which should include all the ports that need to be open. **NO WARRANTY**. Use at your own risk, **including risk of locking yourself out**.
 

@@ -28,15 +28,15 @@ BTCPay is a non-custodial invoicing system which eliminates the involvement of a
 
 ## Why should I choose BTCPay over other processors?
 
-The most significant advantage of BTCPay over other processors is that it is entirely free and open-source, non-custodial software, created by the community. While most of the other processors hold your Bitcoins, BTCPay allows you to receive payments P2P, directly to your software or hardware wallet. 
+The most significant advantage of BTCPay over other processors is that it is entirely free and open-source, non-custodial software, created by the community. While most of the other processors hold your Bitcoins, BTCPay allows you to receive payments P2P, directly to your software or hardware wallet.
 
 BTCPay is a self-hosted software. This means that you are your own payment processor. There are no subscriptions, no transaction fees. There's no third-party involvement which significantly increases the censorship-resistance, privacy, and security for you and your customers. Furthermore, BTCPay enables you to become a processor yourself, so that you can offer different packages and help spread the adoption locally or globally.
 
-With BTCPay, you are your own bank. 
+With BTCPay, you are your own bank.
 
 ## Why is everyone so excited about BTCPay?
 
-The community is excited about BTCPay and often recommends it to merchants or content creators because it offers a direct way for store-owners and charities to receive Bitcoin payments, which significantly improves the privacy of the customers/donors. 
+The community is excited about BTCPay and often recommends it to merchants or content creators because it offers a direct way for store-owners and charities to receive Bitcoin payments, which significantly improves the privacy of the customers/donors.
 
 BTCPay doesn't compromise on censorship-resistance, which is one of the main features of Bitcoin. Besides that, being free and open-source it gives an excellent opportunity for developers to build things and integrations on top of BTCPay.
 
@@ -46,7 +46,7 @@ BTCPay server is a feature-rich software with plenty of use-cases that can solve
 
 ## How much does it cost to run BTCPay Server?
 
-BTCPay is completely free software. The software itself costs nothing. It can be downloaded and used by anyone, free of charge. You can run it **internally** as a self-hosted solution, on a home server, on a low-cost single-board computer like [RaspberryPi](RaspberryPiDeployment.md) or different kind of [in-home hardware](/HardwareDeployment.md) 
+BTCPay is completely free software. The software itself costs nothing. It can be downloaded and used by anyone, free of charge. You can run it **internally** as a self-hosted solution, on a home server, on a low-cost single-board computer like [RaspberryPi](RaspberryPiDeployment.md) or different kind of [in-home hardware](/HardwareDeployment.md)
 
 Hosting BTCPay **externally**, usually means using a Virtual Private Server, enterprise-grade infrastructure, or a [third-party BTCPay hosting](/ThirdPartyHosting.md).
 
@@ -82,7 +82,7 @@ If you don't have the technical knowledge, we recommend that you use our new web
 
 There are several other deployment methods you can check out:
 
-- [How to install BTCPay on Azure - guide](https://github.com/btcpayserver/btcpayserver-doc/blob/master/AzureDeployment.md)
+- [How to install BTCPay on Azure - guide](../AzureDeployment.md)
 - [How to install BTCPay on Azure - video](https://www.youtube.com/watch?v=Bxs95BdEMHY)
 - [How to install BTCPay on LunaNode VPS - article](https://medium.com/@BtcpayServer/hosting-btcpayserver-on-lunanode-bf9ef5fff75b)
 - [How to install BTCPay on LunaNode VPS - video](https://youtu.be/PZXwacAai9E)
@@ -100,7 +100,7 @@ There are several other deployment methods you can check out:
 
 ### How to use BTCPay with Drupal?
 
-- [BTCPay and Drupal installation and configuration](https://github.com/btcpayserver/commerce_btcpay#installation-and-configuration) 
+- [BTCPay and Drupal installation and configuration](https://github.com/btcpayserver/commerce_btcpay#installation-and-configuration)
 - [Drupal Commerce BTCPay module installation walkthrough](https://youtu.be/XBZwyC2v48s)
 
 ### How to use BTCPay with Prestashop?
@@ -118,7 +118,7 @@ Currently, BTCPay has integrations with the following e-commerce platforms:
 - Prestashop
 - Custom integration
 
-If you're a developer, you can develop your own integration, by following the [custom integration instructions](https://github.com/btcpayserver/btcpayserver-doc/blob/master/CustomIntegration.md).
+If you're a developer, you can develop your own integration, by following the [custom integration instructions](../CustomIntegration.md).
 
 ## Do I need to have an online store to accept cryptocurrencies?
 
@@ -171,7 +171,7 @@ At this time, it is not possible to instantly convert your payments into fiat th
 
 BTCPay is an open-source project. It is not a company; there is no e-mail, live-chat or phone support. The software relies on a network of contributors and users to provide support.
 
-If you encountered an issue or have a feature request, please [open an issue on GitHub](https://github.com/btcpayserver/btcpayserver/issues). For more general questions, join our [community on Mattermost](https://chat.btcpayserver.org/). Certain community members offer [premium (paid) support](https://github.com/btcpayserver/btcpayserver-doc/blob/master/Support.md).
+If you encountered an issue or have a feature request, please [open an issue on GitHub](https://github.com/btcpayserver/btcpayserver/issues). For more general questions, join our [community on Mattermost](https://chat.btcpayserver.org/). Certain community members offer [premium (paid) support](../Support.md).
 
 ## How can I contribute to BTCPay?
 
