@@ -38,6 +38,8 @@ module.exports = {
       color: '#8F979E',
       backgroundTransition: false,
       staticIcon: true
+    }],
+    ['vuepress-plugin-medium-zoom', {
     }]
   ],
   markdown: {
