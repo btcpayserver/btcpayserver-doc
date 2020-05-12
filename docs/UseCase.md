@@ -2,7 +2,7 @@
 
 Built with the community in mind, BTCPay Server is a feature-rich software with plenty of use-cases that can solve problems for different types of users.
 
-![](./img/BTCPayUseCaseInfographic.png)
+![BTCPay UseCase Infographic](./img/BTCPayUseCaseInfographic.png)
 
 The software usage is by no means limited to the groups of users mentioned in this document.
 
@@ -18,7 +18,7 @@ By choosing BTCPay Server to process payments, merchants are:
 
 ### Online Store
 
-Merchants running an e-commerce business can easily [deploy BTCPay Server](https://docs.btcpayserver.org/deployment) and connect it to their store via [integration plugins](https://docs.btcpayserver.org/integrations/) in just a few clicks.
+Merchants running an e-commerce business can easily [deploy BTCPay Server](Deployment.md) and connect it to their store via integration plugins in just a few clicks.
 
 BTCPay Server checkout is no different to any other payment gateway. The customer gets an invoice. They pay it by scanning a QR code or by copy-pasting the amount and the address. When their payment is confirmed, the merchant is notified via the e-commerce software, and can ship the item.
 

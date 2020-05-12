@@ -34,7 +34,7 @@ Server settings is something only a server admin can access. If you're using som
 
 ## Stores
 
-Inside BTCPay you can create and manage an unlimited number of stores. Each store has its own wallet, can create apps (Point of Sale or Payment Buttons and Crowdfunds) or be paired with external e-commerce software through one of the [integrations](https://docs.btcpayserver.org/integrations/) available. Admin does not have control over the private keys of the other user's stores. For more information, check [Stores FAQ](/FAQ/FAQ-Stores.md)
+Inside BTCPay you can create and manage an unlimited number of stores. Each store has its own wallet, can create apps (Point of Sale or Payment Buttons and Crowdfunds) or be paired with external e-commerce software through one of the integrations available. Admin does not have control over the private keys of the other user's stores. For more information, check [Stores FAQ](/FAQ/FAQ-Stores.md)
 
 - General settings - Configure individual store settings, set up derivation scheme for your wallet and adjust the number of confirmations or invoice expiration time, etc. Server admins can enable Lightning Network payments.
 - Rates - Set the source for cryptocurrency to fiat [exchange rates for your store](/FAQ/FAQ-Stores.md#how-to-change-the-exchange-rate-provider-for-invoices).

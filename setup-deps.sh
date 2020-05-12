@@ -21,6 +21,11 @@ fi
 
 cd $DOCKER_DIR
 cp -r README.md docs/* $DOCS_DIR/Docker
+sed -ie 's$(docs/$(./$g' $DOCS_DIR/Docker/README.md
+for file in $DOCS_DIR/Docker/*.md; do
+  sed -ie 's$(https://github.com/btcpayserver/btcpayserver-doc/blob/master/$(../$g' $file
+  sed -ie 's$(https://github.com/btcpayserver/btcpayserver-doc/raw/master/$(../$g' $file
+done
 
 # Transmuter
 
@@ -35,3 +40,8 @@ fi
 
 cd $TRANSMUTER_DIR
 cp -r README.md docs/* $DOCS_DIR/Transmuter
+sed -ie 's$(docs/$(./$g' $DOCS_DIR/Transmuter/README.md
+for file in $DOCS_DIR/Transmuter/*.md; do
+  sed -ie 's$(https://github.com/btcpayserver/btcpayserver-doc/blob/master/$(../$g' $file
+  sed -ie 's$(https://github.com/btcpayserver/btcpayserver-doc/raw/master/$(../$g' $file
+done
