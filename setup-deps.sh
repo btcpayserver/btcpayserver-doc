@@ -8,6 +8,15 @@ PUBLIC_DIR=$DOCS_DIR/.vuepress/public
 DOCKER_DIR=$BASE_DIR/deps/docker
 TRANSMUTER_DIR=$BASE_DIR/deps/transmuter
 
+update_external() {
+  sed -ie 's*(https://github.com/btcpayserver/btcpayserver-doc/blob/master/*(../*g' $1
+  sed -ie 's*(https://github.com/btcpayserver/btcpayserver-doc/raw/master/*(../*g' $1
+  sed -ie '1s*^*---\
+editLink: false\
+---\
+*' $1
+}
+
 # Docker
 
 rm -rf $DOCS_DIR/Docker
@@ -23,8 +32,7 @@ cd $DOCKER_DIR
 cp -r README.md docs/* $DOCS_DIR/Docker
 sed -ie 's$(docs/$(./$g' $DOCS_DIR/Docker/README.md
 for file in $DOCS_DIR/Docker/*.md; do
-  sed -ie 's$(https://github.com/btcpayserver/btcpayserver-doc/blob/master/$(../$g' $file
-  sed -ie 's$(https://github.com/btcpayserver/btcpayserver-doc/raw/master/$(../$g' $file
+  update_external $file
 done
 
 # Transmuter
@@ -42,6 +50,5 @@ cd $TRANSMUTER_DIR
 cp -r README.md docs/* $DOCS_DIR/Transmuter
 sed -ie 's$(docs/$(./$g' $DOCS_DIR/Transmuter/README.md
 for file in $DOCS_DIR/Transmuter/*.md; do
-  sed -ie 's$(https://github.com/btcpayserver/btcpayserver-doc/blob/master/$(../$g' $file
-  sed -ie 's$(https://github.com/btcpayserver/btcpayserver-doc/raw/master/$(../$g' $file
+  update_external $file
 done
