@@ -6,8 +6,7 @@ set -e
 touch docs/.vuepress/dist/.nojekyll
 
 # https://help.github.com/en/articles/managing-a-custom-domain-for-your-github-pages-site
-# echo docs.btcpayserver.org > docs/.vuepress/dist/CNAME
-echo btcpaydocs.uix.space > docs/.vuepress/dist/CNAME
+echo docs.btcpayserver.org > docs/.vuepress/dist/CNAME
 
 # Set up redirects
 node create-redirects.js
