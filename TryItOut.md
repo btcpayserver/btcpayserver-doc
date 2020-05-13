@@ -8,10 +8,13 @@ You can also follow along in this video:
 
 ## Create your first invoice
 
+For an in production setup, skip to [Mainnet](TryItOut.md#Mainnet)
+
+### Testnet
 First let's create a new store:
 
 1. Go to the [Testnet website](https://testnet.demo.btcpayserver.org/)
-2. In the top right corner click on **Register** to [create an account](https://testnet.demo.btcpayserver.org/Account/Register)
+2. On the right side click on **Create an account** to [create an account](https://testnet.demo.btcpayserver.org/Account/Register) or **Sign In** if you already have an account.
 3. After having signed in, go to **Stores** and [create a new store](https://testnet.demo.btcpayserver.org/stores)
 
 Let's use Electrum to create a testnet wallet for your store:
@@ -34,12 +37,25 @@ Then you can create an invoice, either through
 * the "Invoice" menu on the website or
 * the process documented on the [Custom integration](CustomIntegration.md)
 
+### Mainnet
+
+First choose where to setup your store.
+Either:
+* Host your store on someone else's BTCPay Server. You can find a list of third-party hosts [here](thirdpartyhosting.md/the-list-of-btcpay-third-party-hosts).
+* Or [deploy your own](deployment.md).
+
+Click on the following links for detailed instructions on how to [Register an account](registeraccount.md), [Create your first store](createstore.md) and [Connect your own wallet](connectwallet.md)
+
+Then you can create an invoice, either through
+* The "Invoice" menu on the website or
+* The process documented on the [Custom integration](CustomIntegration.md)
+
 See the [What's Next](https://docs.btcpayserver.org/getting-started/whatsnext) page for other options on how to continue exploring BTCPay.
 
-## BTCPay Demo
+## BTCPay Server Demo
 
-To see BTCPay in action, visit our demo apps and stores or check out some of the stores using BTCPay in production.
+To see BTCPay Server in action, visit our demo apps and stores or check out some of the stores using BTCPay Server in production.
 
 * [BTCPay Demo Store](https://store.btcpayserver.org/)
 * [Point of Sale Demo](https://mainnet.demo.btcpayserver.org/apps/87kj5yKay8mB4UUZcJhZH5TqDKMD3CznjwLjiu1oYZXe/pos)
-* [In-production stores](https://bitcoinshirt.co/btcpay-stores/)
+* [In-production stores](https://directory.btcpayserver.org)
