@@ -19,7 +19,8 @@
   "scripts": {
     "prestart": "rm -rf $npm_package_config_dist",
     "start": "vuepress dev docs",
-    "build": "vuepress build docs"
+    "build": "vuepress build docs",
+    "predeploy": "./prepare-deployment.sh"
   },
   "devDependencies": {
     "@vuepress/plugin-back-to-top": "1.5.0",

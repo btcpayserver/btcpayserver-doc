@@ -40,17 +40,14 @@ jobs:
           node-version: ${{ matrix.node-version }}
       - name: Setup dependencies
         run: ./setup-deps.sh
-      # Install and run the build
+      # Install and build
       - name: Install
         run: npm ci
       - name: Build
-        run: |
-          npm run build
-          # https://github.blog/2009-12-29-bypassing-jekyll-on-github-pages/
-          touch docs/.vuepress/dist/.nojekyll
-          # https://help.github.com/en/articles/managing-a-custom-domain-for-your-github-pages-site
-          # echo docs.btcpayserver.org > docs/.vuepress/dist/CNAME
-          echo btcpaydocs.uix.space > docs/.vuepress/dist/CNAME
+        run: npm run build
+      # Deploy
+      - name: Predeploy
+        run: npm run predeploy
       - name: Deploy
         if: success()
         uses: maxheld83/ghpages@v0.2.1
