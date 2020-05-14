@@ -1,0 +1,7 @@
+/deps
+/docs/.vuepress/dist
+/node_modules
+
+# External repos
+/docs/Transmuter
+/docs/Docker

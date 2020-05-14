@@ -1,0 +1,46 @@
+name: Node CI
+
+on:
+  push:
+    branches:
+      - master
+
+  # Used to trigger the build from external docs repos. Can by kicked off via:
+  # curl -X POST -H "Authorization: token $GH_PAT" -H "Accept: application/vnd.github.everest-preview+json" -H "Content-Type: application/json" https://api.github.com/repos/dennisreimann/btcpayserver-doc/dispatches --data '{"event_type": "build_docs"}'
+  repository_dispatch:
+    types:
+      - build_docs
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        node-version: [12]
+
+    steps:
+      # Checkout doc repo and its dependencies
+      - name: Checkout
+        uses: actions/checkout@v2
+      # Setup Node and link the dependencies
+      - name: Setup (Node.js ${{ matrix.node-version }})
+        uses: actions/setup-node@v1
+        with:
+          node-version: ${{ matrix.node-version }}
+      - name: Setup dependencies
+        run: ./setup-deps.sh
+      # Install and build
+      - name: Install
+        run: npm ci
+      - name: Build
+        run: npm run build
+      # Deploy
+      - name: Predeploy
+        run: npm run predeploy
+      - name: Deploy
+        if: success()
+        uses: maxheld83/ghpages@v0.2.1
+        env:
+          BUILD_DIR: docs/.vuepress/dist/
+          GH_PAT: ${{ secrets.GH_PAT }}
