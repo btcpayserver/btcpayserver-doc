@@ -21,7 +21,7 @@ Additionally, if you need Lightning Network access, NBXplorer supports connectio
 
 Video below shows BTCPay Architecture in-depth.
 
-[![BTCPay Architecture](./img/btcpay-architecture-advancing-bitcoin.png)](https://vimeo.com/album/5765075/video/316630434)
+[![BTCPay Architecture](./img/btcpay-architecture-advancing-bitcoin.png)](https://www.youtube.com/watch?v=Up0dvorzSNM)
 
 ---
 
