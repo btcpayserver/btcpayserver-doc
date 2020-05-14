@@ -37,7 +37,7 @@ Crowdfunding is an application which you can launch from BTCPay Server interface
 7. Click "Save Settings".
 8. Click "View App" to view your Crowdfund (Contributors can access the crowdfund through that link).
 
-@[youtube](tFbfyneDj88)
+[![BTCPay Server Crowdfunding](https://img.youtube.com/vi/tFbfyneDj88/mqdefault.jpg)](https://www.youtube.com/watch?v=tFbfyneDj88 "BTCPay Server Crowdfunding")
 
 If you would like to provide digital or physical products to the backers of your crowdfunding campaign, you can [integrate WooCommerce store into it](FAQ/FAQ-Apps.md#how-to-integrate-woocommerce-store-into-a-btcpay-crowdfund-app). You can also set limits on contribution perks using the inventory feature.
 
@@ -50,7 +50,7 @@ Easily-embeddable HTML and highly-customizable payment buttons allow users to re
 3. Customize your button
 4. Copy the generated form and embed it on your website.
 
-@[youtube](MIWGvl6_WzI)
+[![BTCPay Server Payment Buttons](https://img.youtube.com/vi/MIWGvl6_WzI/mqdefault.jpg)](https://www.youtube.com/watch?v=MIWGvl6_WzI "BTCPay Server Payment Button")
 
 ## Lightning Network Apps (Lapps)
 
@@ -60,8 +60,8 @@ BTCPay exposes all the necessary information required to connect your internal B
 
 Below are videos that showcase how to connect some of the lapps to BTCPay.
 
-@[youtube](6EHNq1anD1k)
+[![c-lightningbtcpay1](https://img.youtube.com/vi/6EHNq1anD1k/mqdefault.jpg)](https://www.youtube.com/watch?v=6EHNq1anD1k "BTCPay Server - c-lightning and lapps intro")
 
-@[youtube](ZbM3jcxau0o)
+[![c-lightningbtcpay2](https://img.youtube.com/vi/ZbM3jcxau0o/mqdefault.jpg)](https://www.youtube.com/watch?v=ZbM3jcxau0o "BTCPay Server - c-lightning and lapps publisher")
 
-@[youtube](EYrsU3LGpbI)
+[![c-lightningbtcpay3](https://img.youtube.com/vi/EYrsU3LGpbI/mqdefault.jpg)](https://www.youtube.com/watch?v=EYrsU3LGpbI "BTCPay Server - c-lightning and lapps woo lightning")

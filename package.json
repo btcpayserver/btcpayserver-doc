@@ -1,5 +1,5 @@
 {
-  "name": "btcpayserveer-docs",
+  "name": "btcpayserver-docs",
   "version": "1.0.0",
   "description": "BTCPay Server Official Documentation",
   "author": "BTCPay Server",
@@ -24,7 +24,6 @@
   },
   "devDependencies": {
     "@vuepress/plugin-back-to-top": "1.5.0",
-    "markdown-it-custom-block": "0.1.1",
     "markdown-it-implicit-figures": "0.10.0",
     "vuepress": "1.5.0",
     "vuepress-plugin-clean-urls": "1.1.1",

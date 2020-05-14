@@ -1,17 +1,7 @@
-const customBlock = require('markdown-it-custom-block')
+const { resolve } = require('path')
 const implicitFigures = require('markdown-it-implicit-figures')
 
-const youtubeEmbed = (id, path) => `
-  <div class="ytEmbed" data-id="${id}" style="background-image:url(https://img.youtube.com/vi/${id}/hqdefault.jpg);">
-    <iframe
-      title="YouTube ${id}"
-      data-src="https://www.youtube-nocookie.com/embed/${path}&autoplay=1&autohide=1&modestbranding=1&color=white&rel=0"
-      frameborder="0"
-      allow="autoplay;encrypted-media;picture-in-picture"
-      allowfullscreen
-    ></iframe>
-  </div>`
-
+const preprocessMarkdown = resolve(__dirname, 'preprocessMarkdown')
 
 module.exports = {
   title: "BTCPay Server Docs",
@@ -28,6 +18,14 @@ module.exports = {
     // Styles
     ["link", { rel: "stylesheet", href: "/styles/btcpayserver-variables.css" }]
   ],
+  chainWebpack (config, isServer) {
+    config.module
+      .rule('md')
+      .test(/\.md$/)
+      .use(preprocessMarkdown)
+        .loader(preprocessMarkdown)
+        .end()
+  },
   plugins: [
     ['vuepress-plugin-clean-urls', {
       normalSuffix: '/',
@@ -45,18 +43,6 @@ module.exports = {
   markdown: {
     extendMarkdown (md) {
       md.use(implicitFigures)
-      md.use(customBlock, {
-        youtube (arg) {
-          const [id, start] = arg.split(',')
-          const path = start ? `${id}?start=${start}` : `${id}?`
-          return youtubeEmbed(id, path)
-        },
-        youtubePlaylist (arg) {
-          const [id, video] = arg.split(',')
-          const path = `${video || ''}?listType=playlist&list=${id}`
-          return youtubeEmbed(video || id, path)
-        }
-      })
     }
   },
   themeConfig: {

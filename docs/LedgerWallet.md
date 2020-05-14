@@ -58,4 +58,4 @@ Once there are some funds in received to your BTCPay Wallet connected to Ledger,
 
 The video below shows how to connect your BTCPay store to your Ledger and how to use Ledger with the [internal BTCPay wallet](Wallet.md).
 
-@[youtube](1Sj5mP4TkFI)
+[![BTCPay Server and Ledger](./img/thumbnails/BTCPayServerConnectingLedgerNanoS.png)](https://www.youtube.com/watch?v=1Sj5mP4TkFI "Ledger Nano S with BTCPay Server")

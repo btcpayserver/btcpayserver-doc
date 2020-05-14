@@ -8,7 +8,7 @@ The process is basically the following:
 
 Take a look at our video to learn more:
 
-@[youtube](Xo_vApXTZBU)
+[![BTCPay Server - Setup](http://img.youtube.com/vi/Xo_vApXTZBU/mqdefault.jpg)](http://www.youtube.com/watch?v=Xo_vApXTZBU "BTCPay - Setup")
 
 ## Warning: Not recommended to use in production
 

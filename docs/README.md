@@ -38,7 +38,7 @@ Please check out our [official website](https://btcpayserver.org/), our [complet
 
 ## How it works
 
-@[youtube](nr0UNbz3AoQ)
+[![How BTCPay Works](./img/thumbnails/HowBTCPayServerWorks.png)](https://www.youtube.com/watch?v=nr0UNbz3AoQ "How BTCPay Server Works")
 
 ### In a nutshell
 
@@ -48,7 +48,7 @@ In layman's terms, BTCPay Server is a self-hosted and automated invoicing system
 
 BTCPay is code, not a company. There is no third-party between a merchant and a customer. Merchant is always in full control of the funds. There are no processing or subscription fees. BTCPay Server is free to use and completely open-source, so developers or security auditors can always inspect the quality of the code.
 
-@[youtube](dbX6qWZlxOw)
+[![BTCPay Server Simply Explained](./img/thumbnails/BTCPayServerSimplyExplained.png)](https://www.youtube.com/watch?v=dbX6qWZlxOw "BTCPay Server Simply Explained")
 
 ### How it keeps funds secure
 
@@ -99,7 +99,7 @@ Pull requests are welcome and appreciated.
 
 If you're beginner, take a look at the step by step guide on how to contribute to BTCPay Server documentation below.
 
-@[youtube](bSDROcdSSWw)
+[![Contributing to Documentation](./img/thumbnails/ContributingDocumentation.png)](https://www.youtube.com/watch?v=bSDROcdSSWw "How BTCPay Server Works")
 
 ### Supporters
 
