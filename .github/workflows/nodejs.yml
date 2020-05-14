@@ -23,16 +23,6 @@ jobs:
       # Checkout doc repo and its dependencies
       - name: Checkout
         uses: actions/checkout@v2
-      - name: Checkout btcTransmuter repo
-        uses: actions/checkout@v2
-        with:
-          repository: btcpayserver/btcTransmuter
-          path: deps/transmuter
-      - name: Checkout btcpayserver-docker repo
-        uses: actions/checkout@v2
-        with:
-          repository: btcpayserver/btcpayserver-docker
-          path: deps/docker
       # Setup Node and link the dependencies
       - name: Setup (Node.js ${{ matrix.node-version }})
         uses: actions/setup-node@v1
