@@ -76,24 +76,26 @@ Read the [RTL Getting Started Guide](https://medium.com/@suheb.khan/how-to-ride-
 
 For remote use of your LND node on iOS or PC, you can use [Zap wallet integration](https://github.com/LN-Zap/zap-tutorials/blob/master/docs/desktop/btcpay-server.mdx).
 
-@[youtube](CWhTOunTb2Q)
+[![LNDBTCPay](./img/thumbnails/BTCPayServerLightningZap.png)](https://www.youtube.com/watch?v=CWhTOunTb2Q "BTCPay Server - LND and Zap")
 
 Besides Zap, there are a few more wallets that allow remote control of the LND node, [the Nayuta wallet](https://nayuta.co/) and the [ZeusLN](https://github.com/ZeusLN/zeus). Both of which have not yet extensively been tested by the community.
 
 To remotely control your LND node via web browser, you can use Lightning Joule.
 
-@[youtube](a9_uHJhnKR4)
+[![Joule](./img/thumbnails/BTCPayServerLightningJoule.png)](https://www.youtube.com/watch?v=a9_uHJhnKR4 "BTCPay Server - LND and Joule")
 
 ### LND Commands lncli
 
 You can use lncli commands like described in their [API docs](https://api.lightning.community/) but instead of using lncli you use the shell script in of the btcpayserver-docker repository calles bitcoin-lncli.sh.
 
 If you're on Docker make sure you're in docker directory.
-```
+
+```bash
 sudo su -
 cd btcpayserver-docker
 ./bitcoin-lncli.sh
 ```
+
 So instead of running lncli getinfo you would run `./bitcoin-lncli.sh getinfo`
 
 Run `./bitcoin-lncli.sh --help` to see a full list of commands or check above mentioned API docs.
@@ -104,7 +106,7 @@ The most straightforward way to start using the c-lightning implementation in BT
 
 You can use Spark as an internal or external wallet. Internal wallet allows users to use Spark via the web-browser inside their BTCPay Server. You can also connect externally to a Spark mobile or desktop app just by scanning a QR code.
 
-@[youtube](uV1R6IQpmg8)
+[![c-lightningbtcpay](./img/thumbnails/BTCPayServerConnectSpark.png)](https://www.youtube.com/watch?v=uV1R6IQpmg8 "BTCPay Server - c-lightning and Spark")
 
 Go to **Server Settings > Services > Spark Server > See information**
 
@@ -118,23 +120,25 @@ To use clightning CLI it is the same like above for `lncli` but instead you use 
 
 If you're on Docker make sure you're in docker directory.
 
-```
+```bash
 sudo su -
 cd btcpayserver-docker
 ./bitcoin-lightning-cli.sh
 ```
+
 E.g. to list all commands: `./bitcoin-lightning-cli.sh help`
 or show info about the node `./bitcoin-lightning-cli.sh getinfo`
 
 ### Lapps (Lightning Network Apps)
+
 [Lapps](https://blockstream.com/2018/03/29/blockstreams-week-of-lapps-ends/) are applications built on top of the [Lightning Charge](https://blockstream.com/2018/01/16/lightning-charge/), a complimentary package that allows users and developers to easier use and develop on top of c-lightning. If you decided to use c-lightning, you can easily connect your BTCPay to any of the Lapps.
 
 BTCPay exposes all the necessary information required to connect your internal BTCPay c-lightning node to a Lightning Network App.  Go to Server Settings > Services > Lightning charge server > See information > Credentials.
 
 Below are videos that showcase how to connect some of the lapps to your BTCPay.
 
-@[youtube](6EHNq1anD1k)
+[![c-lightningbtcpay1](https://img.youtube.com/vi/6EHNq1anD1k/mqdefault.jpg)](https://www.youtube.com/watch?v=6EHNq1anD1k "BTCPay Server - c-lightning and lapps intro")
 
-@[youtube](ZbM3jcxau0o)
+[![c-lightningbtcpay2](https://img.youtube.com/vi/ZbM3jcxau0o/mqdefault.jpg)](https://www.youtube.com/watch?v=ZbM3jcxau0o "BTCPay Server - c-lightning and lapps publisher")
 
-@[youtube](EYrsU3LGpbI)
+[![c-lightningbtcpay3](https://img.youtube.com/vi/EYrsU3LGpbI/mqdefault.jpg)](https://www.youtube.com/watch?v=EYrsU3LGpbI "BTCPay Server - c-lightning and lapps woo lightning")

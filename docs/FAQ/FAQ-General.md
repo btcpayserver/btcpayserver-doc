@@ -85,7 +85,7 @@ There are several other deployment methods you can check out:
 - [How to install BTCPay on Azure - guide](../AzureDeployment.md)
 - [How to install BTCPay on Azure - video](https://www.youtube.com/watch?v=Bxs95BdEMHY)
 - [How to install BTCPay on LunaNode VPS - article](https://medium.com/@BtcpayServer/hosting-btcpayserver-on-lunanode-bf9ef5fff75b)
-- [How to install BTCPay on LunaNode VPS - video](https://youtu.be/PZXwacAai9E)
+- [How to install BTCPay on LunaNode VPS - video](https://youtube.com/watch?v=PZXwacAai9E)
 - [See all deployments](https://github.com/btcpayserver/btcpayserver-doc#deployment)
 - [BTCPay YouTube channel](https://www.youtube.com/channel/UCpG9WL6TJuoNfFVkaDMp9ug/videos)
 - [Assorted playlist of all BTCPay YouTube videos](https://www.youtube.com/playlist?list=PL7b9Wt9shK2r-WXS6ysG4tafVQRu80biZ)
@@ -101,7 +101,7 @@ There are several other deployment methods you can check out:
 ### How to use BTCPay with Drupal?
 
 - [BTCPay and Drupal installation and configuration](https://github.com/btcpayserver/commerce_btcpay#installation-and-configuration)
-- [Drupal Commerce BTCPay module installation walkthrough](https://youtu.be/XBZwyC2v48s)
+- [Drupal Commerce BTCPay module installation walkthrough](https://youtube.com/watch?v=XBZwyC2v48s)
 
 ### How to use BTCPay with Prestashop?
 

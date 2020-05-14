@@ -29,7 +29,7 @@ cd contrib/FastSync
 # Once FastSync has completed
 btcpay-up.sh
 ```
-After FastSync is complete and you have brought back up your instance, refresh your BTCPay domain and wait for remaining blockchain synchronization. You can also follow [this video](https://youtu.be/VNMnd-dX9Q8?t=1730).
+After FastSync is complete and you have brought back up your instance, refresh your BTCPay domain and wait for remaining blockchain synchronization. You can also follow [this video](https://youtube.com/watch?v=VNMnd-dX9Q8?t=1730).
 
 If your FastSync returns `You need to delete your Bitcoin Core wallet` after you load the uxto set, or you find this error: `Last wallet synchronisation goes beyond pruned data` :
 It means that the bitcoin core wallet needs to be removed because it was created before FastSync, likely because BTCPay Server started without the utxoset at the first boot.
