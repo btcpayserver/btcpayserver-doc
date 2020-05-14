@@ -87,6 +87,53 @@ The process for that is defined in the [setup-deps.sh](./setup-deps.sh) script.
 
 The BTCPay Server Project is proudly supported by these entities through the [BTCPay Server Foundation](https://foundation.btcpayserver.org/).
 
-![](docs/.vuepress/public/img/SupportersReadme.PNG)
+<table>
+  <tbody>
+    <tr>
+      <td align="center" valign="middle">
+        <a href="https://twitter.com/sqcrypto" target="_blank">
+          <img  src="BTCPayServer/wwwroot/img/squarecrypto.svg" alt="Square Crypto" height=100>
+          <br/>
+          <span>Square Crypto</span>
+        </a>
+      </td>
+      <td align="center" valign="middle">
+        <a href="https://www.btse.com" target="_blank">
+          <img  src="BTCPayServer/wwwroot/img/btse.svg" alt="BTSE" height=100>
+          <br/>
+          <span>BTSE</span>
+        </a>
+      </td>
+      <td align="center" valign="middle">
+        <a href="https://www.dglab.com/en/" target="_blank">
+          <img  src="BTCPayServer/wwwroot/img/dglab.svg" alt="DG Lab" height=100>
+          <br/>
+          <span>DG Lab</span>
+        </a>
+      </td>
+       <td align="center" valign="middle">
+        <a href="https://acinq.co/" target="_blank">
+          <img  src="BTCPayServer/wwwroot/img/acinq-logo.svg" alt="ACINQ" height=100>
+          <br/>
+          <span>ACINQ</span>
+        </a>
+      </td>
+      <td align="center" valign="middle">
+        <a href="https://lunanode.com" target="_blank">
+          <img  src="BTCPayServer/wwwroot/img/lunanode.svg" alt="LunaNode" height=100>
+          <br/>
+          <span>LunaNode</span>
+        </a>
+      </td>
+      <td align="center" valign="middle">
+        <a href="https://walletofsatoshi.com/" target="_blank">
+          <img  src="BTCPayServer/wwwroot/img/walletofsatoshi.svg" alt="Wallet of Satoshi" height=100>
+          <br/>
+          <span>Wallet of Satoshi</span>
+        </a>
+      </td>
+    </tr>
+  </tbody>
+</table>
 
 If you'd like to support the project, please visit the [donation page](https://btcpayserver.org/donate/).
