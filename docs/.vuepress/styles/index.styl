@@ -1,0 +1,430 @@
+// import this file as a stylus file here, because this is the only way
+// how its styles take precedence over the vuepress theme styles.
+@import "btcpayserver-main"
+
+// VuePress Default Theme Overrides
+html,
+body {
+  min-height: 100vh;
+}
+
+body {
+  font-size: 16px;
+}
+
+// styles originating from .btcpay-header
+.navbar {
+  color: var(--btcpay-header-color);
+  background-color: var(--btcpay-header-bg);
+}
+
+.navbar a {
+  color: var(--btcpay-header-color-link);
+  text-decoration: none;
+}
+
+.navbar a:focus,
+.navbar a:hover {
+  color: var(--btcpay-header-color-link-accent);
+}
+
+:root[data-btcpay-theme="dark"] a.nav-link[rel]:before {
+  filter: contrast(0) brightness(200%);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-btcpay-theme="light"]) a.nav-link[rel]:before {
+    filter: contrast(0) brightness(200%);
+  }
+}
+
+// image zoom
+.medium-zoom--opened .medium-zoom-overlay {
+  background: var(--btcpay-header-bg) !important;
+  opacity: .9 !important;
+}
+
+#app
+  // Max-width, centered layout
+  .theme-container,
+  .navbar {
+    max-width: 1280px;
+    margin: 0 auto;
+  }
+
+  .navbar:before {
+    content: "";
+    position: fixed;
+    z-index: -1;
+    top: 0;
+    left: 0;
+    right: 0;
+    background-color: var(--btcpay-header-bg);
+    height: 58px;
+  }
+
+  .sidebar {
+    left: auto;
+  }
+
+  // Modifications
+  .navbar {
+    border-color: transparent;
+  }
+
+  .navbar .logo {
+    min-width: unset;
+  }
+
+  .navbar .links {
+    background: transparent;
+  }
+
+  .navbar a {
+    color: var(--btcpay-header-color-link);
+  }
+
+  .navbar .search-box {
+    order: 10;
+    margin: 0 0 0 var(--btcpay-space-s);
+  }
+
+  .navbar .search-box input {
+    color: var(--btcpay-header-color);
+    background-color: var(--btcpay-header-bg);
+    border-color: var(--btcpay-border-color-medium);
+
+    @media (max-width: 899px) {
+      left: 0;
+    }
+  }
+
+  .navbar .search-box .search-query.ds-hint {
+    display: none !important;
+  }
+
+  .navbar .btcpay-theme-switch {
+    order: 20;
+    margin: 0 0 0 var(--btcpay-space-s);
+  }
+
+  .nav-links .nav-item {
+    margin-left: var(--btcpay-space-xs);
+  }
+
+  .nav-links .repo-link {
+    display: none;
+  }
+
+  .nav-links {
+    @media (max-width: 899px) {
+      border-bottom-color: var(--btcpay-border-color-medium);
+    }
+  }
+
+  .nav-links a {
+    color: var(--btcpay-header-color-link);
+
+    @media (min-width: 900px) {
+      padding: var(--btcpay-space-xs) var(--btcpay-space-s);
+      border-bottom: 2px solid transparent;
+    }
+  }
+
+  .nav-links a svg {
+    display: none;
+  }
+
+  .nav-links a:hover,
+  .nav-links a:focus  {
+    color: var(--btcpay-header-color-link-accent);
+    border-bottom-color: var(--btcpay-header-color-link-accent);
+  }
+
+  .nav-links a.router-link-active {
+    color: var(--btcpay-header-color-link-accent);
+  }
+
+  a.nav-link[rel*="github"],
+  a.nav-link[rel*="twitter"] {
+    text-indent: -9999px;
+    display: inline-block;
+    width: 2.5rem;
+    height: 2rem;
+    position: relative;
+  }
+
+  a.nav-link[rel*="github"]:before,
+  a.nav-link[rel*="twitter"]:before {
+    position: absolute;
+    left: .625rem;
+    top: .35rem;
+    display: inline-block;
+    content: '';
+    background-size: cover;
+    width: 1.2rem;
+    height: 1.2rem;
+  }
+
+  a.nav-link[rel*="github"]:before {
+    background: url("data:image/svg+xml;base64,PHN2ZyBhcmlhLWhpZGRlbj0idHJ1ZSIgZGF0YS1wcmVmaXg9ImZhYiIgZGF0YS1pY29uPSJnaXRodWIiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgdmlld0JveD0iMCAwIDQ5NiA1MTIiIGNsYXNzPSJzdmctaW5saW5lLS1mYSBmYS1naXRodWIgZmEtdy0xNiBmYS0zeCI+PHBhdGggZmlsbD0iY3VycmVudENvbG9yIiBkPSJNMTY1LjkgMzk3LjRjMCAyLTIuMyAzLjYtNS4yIDMuNi0zLjMuMy01LjYtMS4zLTUuNi0zLjYgMC0yIDIuMy0zLjYgNS4yLTMuNiAzLS4zIDUuNiAxLjMgNS42IDMuNnptLTMxLjEtNC41Yy0uNyAyIDEuMyA0LjMgNC4zIDQuOSAyLjYgMSA1LjYgMCA2LjItMnMtMS4zLTQuMy00LjMtNS4yYy0yLjYtLjctNS41LjMtNi4yIDIuM3ptNDQuMi0xLjdjLTIuOS43LTQuOSAyLjYtNC42IDQuOS4zIDIgMi45IDMuMyA1LjkgMi42IDIuOS0uNyA0LjktMi42IDQuNi00LjYtLjMtMS45LTMtMy4yLTUuOS0yLjl6TTI0NC44IDhDMTA2LjEgOCAwIDExMy4zIDAgMjUyYzAgMTEwLjkgNjkuOCAyMDUuOCAxNjkuNSAyMzkuMiAxMi44IDIuMyAxNy4zLTUuNiAxNy4zLTEyLjEgMC02LjItLjMtNDAuNC0uMy02MS40IDAgMC03MCAxNS04NC43LTI5LjggMCAwLTExLjQtMjkuMS0yNy44LTM2LjYgMCAwLTIyLjktMTUuNyAxLjYtMTUuNCAwIDAgMjQuOSAyIDM4LjYgMjUuOCAyMS45IDM4LjYgNTguNiAyNy41IDcyLjkgMjAuOSAyLjMtMTYgOC44LTI3LjEgMTYtMzMuNy01NS45LTYuMi0xMTIuMy0xNC4zLTExMi4zLTExMC41IDAtMjcuNSA3LjYtNDEuMyAyMy42LTU4LjktMi42LTYuNS0xMS4xLTMzLjMgMi42LTY3LjkgMjAuOS02LjUgNjkgMjcgNjkgMjcgMjAtNS42IDQxLjUtOC41IDYyLjgtOC41czQyLjggMi45IDYyLjggOC41YzAgMCA0OC4xLTMzLjYgNjktMjcgMTMuNyAzNC43IDUuMiA2MS40IDIuNiA2Ny45IDE2IDE3LjcgMjUuOCAzMS41IDI1LjggNTguOSAwIDk2LjUtNTguOSAxMDQuMi0xMTQuOCAxMTAuNSA5LjIgNy45IDE3IDIyLjkgMTcgNDYuNCAwIDMzLjctLjMgNzUuNC0uMyA4My42IDAgNi41IDQuNiAxNC40IDE3LjMgMTIuMUM0MjguMiA0NTcuOCA0OTYgMzYyLjkgNDk2IDI1MiA0OTYgMTEzLjMgMzgzLjUgOCAyNDQuOCA4ek05Ny4yIDM1Mi45Yy0xLjMgMS0xIDMuMy43IDUuMiAxLjYgMS42IDMuOSAyLjMgNS4yIDEgMS4zLTEgMS0zLjMtLjctNS4yLTEuNi0xLjYtMy45LTIuMy01LjItMXptLTEwLjgtOC4xYy0uNyAxLjMuMyAyLjkgMi4zIDMuOSAxLjYgMSAzLjYuNyA0LjMtLjcuNy0xLjMtLjMtMi45LTIuMy0zLjktMi0uNi0zLjYtLjMtNC4zLjd6bTMyLjQgMzUuNmMtMS42IDEuMy0xIDQuMyAxLjMgNi4yIDIuMyAyLjMgNS4yIDIuNiA2LjUgMSAxLjMtMS4zLjctNC4zLTEuMy02LjItMi4yLTIuMy01LjItMi42LTYuNS0xem0tMTEuNC0xNC43Yy0xLjYgMS0xLjYgMy42IDAgNS45IDEuNiAyLjMgNC4zIDMuMyA1LjYgMi4zIDEuNi0xLjMgMS42LTMuOSAwLTYuMi0xLjQtMi4zLTQtMy4zLTUuNi0yeiIvPjwvc3ZnPg==");
+  }
+
+  a.nav-link[rel*="twitter"]:before {
+    background-image: url("data:image/svg+xml;base64,PHN2ZyBhcmlhLWhpZGRlbj0idHJ1ZSIgZGF0YS1wcmVmaXg9ImZhYiIgZGF0YS1pY29uPSJ0d2l0dGVyIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA1MTIgNTEyIiBjbGFzcz0ic3ZnLWlubGluZS0tZmEgZmEtdHdpdHRlciBmYS13LTE2IGZhLTV4Ij48cGF0aCBmaWxsPSJjdXJyZW50Q29sb3IiIGQ9Ik00NTkuMzcgMTUxLjcxNmMuMzI1IDQuNTQ4LjMyNSA5LjA5Ny4zMjUgMTMuNjQ1IDAgMTM4LjcyLTEwNS41ODMgMjk4LjU1OC0yOTguNTU4IDI5OC41NTgtNTkuNDUyIDAtMTE0LjY4LTE3LjIxOS0xNjEuMTM3LTQ3LjEwNiA4LjQ0Ny45NzQgMTYuNTY4IDEuMjk5IDI1LjM0IDEuMjk5IDQ5LjA1NSAwIDk0LjIxMy0xNi41NjggMTMwLjI3NC00NC44MzItNDYuMTMyLS45NzUtODQuNzkyLTMxLjE4OC05OC4xMTItNzIuNzcyIDYuNDk4Ljk3NCAxMi45OTUgMS42MjQgMTkuODE4IDEuNjI0IDkuNDIxIDAgMTguODQzLTEuMyAyNy42MTQtMy41NzMtNDguMDgxLTkuNzQ3LTg0LjE0My01MS45OC04NC4xNDMtMTAyLjk4NXYtMS4yOTljMTMuOTY5IDcuNzk3IDMwLjIxNCAxMi42NyA0Ny40MzEgMTMuMzE5LTI4LjI2NC0xOC44NDMtNDYuNzgxLTUxLjAwNS00Ni43ODEtODcuMzkxIDAtMTkuNDkyIDUuMTk3LTM3LjM2IDE0LjI5NC01Mi45NTQgNTEuNjU1IDYzLjY3NSAxMjkuMyAxMDUuMjU4IDIxNi4zNjUgMTA5LjgwNy0xLjYyNC03Ljc5Ny0yLjU5OS0xNS45MTgtMi41OTktMjQuMDQgMC01Ny44MjggNDYuNzgyLTEwNC45MzQgMTA0LjkzNC0xMDQuOTM0IDMwLjIxMyAwIDU3LjUwMiAxMi42NyA3Ni42NyAzMy4xMzcgMjMuNzE1LTQuNTQ4IDQ2LjQ1Ni0xMy4zMiA2Ni41OTktMjUuMzQtNy43OTggMjQuMzY2LTI0LjM2NiA0NC44MzMtNDYuMTMyIDU3LjgyNyAyMS4xMTctMi4yNzMgNDEuNTg0LTguMTIyIDYwLjQyNi0xNi4yNDMtMTQuMjkyIDIwLjc5MS0zMi4xNjEgMzkuMzA4LTUyLjYyOCA1NC4yNTN6Ii8+PC9zdmc+")
+  }
+
+  .site-name {
+    color: inherit;
+  }
+
+  .algolia-autocomplete .ds-dropdown-menu {
+    position: fixed !important;
+    top: 3.6rem !important;
+    bottom: 0 !important;
+    right: 0 !important;
+    border-radius: 0 !important;
+    overflow-y: auto;
+    margin: 0;
+    border: 0;
+    padding: var(--btcpay-space-m) !important;
+    color: var(--btcpay-header-color);
+    background-color: var(--btcpay-header-bg);
+  }
+
+  .algolia-autocomplete .ds-dropdown-menu::before {
+    content: none;
+  }
+
+  .algolia-autocomplete .ds-dropdown-menu [class^="ds-dataset-"] {
+    border-radius: 0;
+    background: transparent;
+  }
+
+  .algolia-autocomplete .algolia-docsearch-suggestion {
+    background: transparent !important;
+    border: 0 !important;
+  }
+
+  .algolia-autocomplete .suggestions {
+    background: transparent;
+  }
+
+  .algolia-autocomplete .suggestions a {
+    color: var(--btcpay-header-color-link);
+    text-decoration: none;
+  }
+
+  .algolia-autocomplete .suggestions a:focus,
+  .algolia-autocomplete .suggestions a:hover {
+    color: var(--btcpay-header-color-link-accent);
+  }
+
+  .sidebar {
+    color: var(--btcpay-nav-color-link);
+    background: var(--btcpay-body-bg);
+    border-color: transparent;
+  }
+
+  .sidebar-mask {
+    background: var(--btcpay-header-bg);
+    opacity: .9;
+  }
+
+  .sidebar > .sidebar-links {
+    padding: 2.5rem 0;
+  }
+
+  .sidebar-group-items,
+  .sidebar-group.is-sub-group > .sidebar-heading {
+    font-size: .95rem;
+  }
+
+  // mimic clickable categories
+  .sidebar-group.is-sub-group.collapsable > .sidebar-heading:not(.clickable) {
+    opacity: 1;
+  }
+  .sidebar-group.is-sub-group.collapsable > .sidebar-heading:not(.clickable):hover {
+    color: var(--btcpay-nav-color-link-accent);
+    cursor: pointer;
+  }
+
+  .sidebar-group a.sidebar-link,
+  .sidebar-group.is-sub-group > .sidebar-heading {
+    padding-left: 1.25rem;
+  }
+
+  a.sidebar-link,
+  .sidebar-heading.clickable {
+    color: var(--btcpay-nav-color-link);
+  }
+
+  a.sidebar-link:focus,
+  a.sidebar-link:hover,
+  .sidebar-heading.clickable:focus,
+  .sidebar-heading.clickable:hover {
+    color: var(--btcpay-nav-color-link-accent);
+  }
+
+  a.sidebar-link.active,
+  .sidebar-heading.clickable.active,
+  .sidebar-heading.clickable.router-link-exact-active {
+    color: var(--btcpay-nav-color-link-active);
+    font-weight: 600;
+    border-color: transparent;
+  }
+
+  a.sidebar-link.active,
+  .sidebar-group.depth-1 > .sidebar-heading.clickable.router-link-exact-active  {
+    border-color: var(--btcpay-color-primary);
+  }
+
+  .arrow.left {
+    border-right-color: var(--btcpay-color-neutral-500);
+  }
+
+  .arrow.right {
+    border-left-color: var(--btcpay-color-neutral-500);
+  }
+
+  .arrow.up {
+    border-bottom-color: var(--btcpay-color-neutral-500);
+  }
+
+  .arrow.down {
+    border-top-color: var(--btcpay-color-neutral-500);
+  }
+
+  .page-nav,
+  .page-edit,
+  .theme-default-content:not(.custom) {
+    max-width: 780px;
+  }
+
+  .theme-default-content:not(.custom) {
+    padding: 3.5rem 2.5rem 1rem;
+  }
+
+  h2 {
+    border-color: var(--btcpay-border-color-medium);
+  }
+
+  hr {
+    border-color: var(--btcpay-border-color-light);
+  }
+
+  figure {
+    margin: var(--btcpay-space-m) 0;
+  }
+
+  // hide outbound link markers for videos and images
+  figure a svg.outbound {
+    display: none;
+  }
+
+  code {
+    font-family: var(--btcpay-font-family-monospace);
+    border-radius: var(--btcpay-border-radius);
+    color: var(--btcpay-code-color);
+    background-color: var(--btcpay-code-bg);
+  }
+
+  pre {
+    font-family: var(--btcpay-font-family-monospace);
+    border-radius: var(--btcpay-border-radius);
+    color: var(--btcpay-color-white);
+    background-color: #222222;
+  }
+
+  pre code {
+    color: var(--btcpay-color-white);
+    background: transparent;
+  }
+
+  div[class*="language-"] {
+    background: transparent;
+    border-radius: var(--btcpay-border-radius);
+  }
+
+  tr:nth-child(2n) {
+    background-color: transparent;
+  }
+
+  .custom-block {
+    background-color: var(--btcpay-bg-dark);
+  }
+
+  .custom-block a {
+    color: inherit;
+    text-decoration: underline;
+  }
+
+  .custom-block.danger {
+    color: var(--btcpay-color-danger-text);
+    background: var(--btcpay-color-danger-backdrop);
+  }
+
+  .custom-block.warning {
+    color: var(--btcpay-color-warning-text);
+    background: var(--btcpay-color-warning-backdrop);
+  }
+
+  .custom-block.tip {
+    color: var(--btcpay-color-info-text);
+    background: var(--btcpay-color-info-backdrop);
+  }
+
+  .page-edit .edit-link a,
+  .page-nav .inner a {
+    color: var(--btcpay-color-secondary);
+  }
+
+  .page-edit .edit-link a:hover,
+  .page-edit .edit-link a:focus,
+  .page-nav .inner a:hover,
+  .page-nav .inner a:focus {
+    color: var(--btcpay-color-secondary-accent);
+  }
+
+  .page-nav .inner {
+    border-top-color: var(--btcpay-border-color-light);
+  }
+
+  .ytEmbed {
+    position: relative;
+    margin: 1rem 0 2rem;
+    height: 0;
+    overflow: hidden;
+    max-width: 100%;
+    padding-bottom: 56.25%;
+    background-repeat: no-repeat;
+    background-position: 50%;
+    background-size: cover;
+    background-color: var(--btcpay-bg-dark);
+  }
+
+  .ytEmbed:before {
+    background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAAERklEQVR4nOWbTWhcVRTHb1IJVoxGtNCNdal2JYJReC6GWuO83PM/59yUS3FRFARdFlwYP1CfiojQWt36sRCUurRIdVFXIn41lAoVdRGrG1M01YpKrWjiYmaSl8ybZJL3cd+YA//NLObd3++eO8x79z5jSq5Gw+8kov0AP8vMR5l1BtBZQM4B8ks75wCdZdYZZj5qLZ4hov2Nht9Z9vhKKSIaB/gI4M4w62KeAO6Mte4lYOq20FxrlqqOibhHmeWbvNC9ZfDX1mLae391aN6limO/gwgvAPJbWeAZuSDingdwXTBw7/0IsyaA/Fkh+KqOkD+YNfHej1QKD+y7iVlOhgLvFqFfNJvNGyuBJ+KDAF8MDd0tgS8y64OlgSdJMsysL4cG7SOHkyQZLhTee7+d2R2rAVy/S+Jd7/32ouBHAP4gNNRGQyTHc/84NhqNywZp5rvjjnnvt21aABFeCQ+RLwAf2hQ8s7sv9OCLk6AHNgQvIrvbfzKCD76g/O6cu7lf/iER/aQGgy448pExZmhdegAPhR9sObFWH1gT3lp7DaA/5bkIgJhZPgsNmz02novj+KqeApj1ubwXWe4kdyeznAgNvTpE/HQmvKqOMeuFogTUVQSRno+iaLRLAJF7uIgL9O4ubgL8aWgB7S44mNX+35YpICUiAvS9sBLkq1WzT+NFffl6AuoiApi6NT37h6sWkBIRZGkQ8YtLgyji6e1mBYTqCEBPG2Naz+0BWQgtoGoRgCzEsd9hAN1X5BfnFZASUfrSAFQNsyZ1FJASUVpHiLinDJG8U2cBZYogkrcNs5waBAGdstbeU9zdqpw0gPwwSAI6VUxHyFlDpOcHUUBBIuYNs14aZAE5RVwyzPr3/0EAEY0TyfGNjBWQvwZ +CTSbehfAH29mrID8bET0+0EUkAd8WYDOmqJ3ecsG30yr9wqRfm6Y+a1BEFDEjHfHvWmY9ck6CygHvBVr8Xhtb4ZE5HZA3y8DvBNA1TjnrmXWf+sioMwZX5V/VHXMGGMMoKdDCxCRvRWBdzKzdHEO+EisilbPyopHYqp6S9UCAsz4iojI7hUDAtyXVQgIDd6KnOoaWNkbI6FaPSuZGyMArsi7MZoloB4zviI/Nhr3X95jltwTRQmoIfgisy5ai+me67OI7fE4nrqjrqfK1t0eby0FPRB6oGVlchL3rgnfrq19RKbVBdhV9IOSwJmfmJi4vi/4ThERitwyCxVAFqydshuCX5awhQ9KtmuIWd8IDZED/nXT77rvVVv6sHRKwjYi91poqP7Dr+Y6JJ1VSZIMA3wkPNy6bX+o8Bcm0sXMdwM8Fxo0A3xORPaWBp6uPXsmbxCRD0NDL0dOANhVCXy6iAjMcjbcrMt3RITKwdMVRdFo+y5yvkL4eWZ+zHt/ZVD4dEVRNGotpst+dZZZH8k86lqn2pIvT/eqrNfn2xuyqYPZ8mv7s8pfn/8Pybm4TIjanscAAAAASUVORK5CYII=") no-repeat center center;
+    background-size: auto;
+    background-size: 64px 64px;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    opacity: 0.8;
+    transition: all 0.2s ease-out;
+    content: '';
+    cursor: pointer;
+  }
+
+  iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: none;
+  }
+
+  iframe[src] {
+    display: block;
+  }
