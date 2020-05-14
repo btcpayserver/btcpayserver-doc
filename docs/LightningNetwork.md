@@ -4,9 +4,12 @@ After deploying BTCPay Server, you may want to experiment with an innovative sec
 
 This guide will show you how to set up your Lightning Network node in BTCPay and guide you through the basics.
 
-<strong>Before you proceed, please understand that Lightning Network is still in the experimental stage. Do not put the money you can't afford to lose. There is a high risk of you losing the money. </strong>
+::: danger
+**Before you proceed, please understand that Lightning Network is still in the experimental stage. Do not put the money you can't afford to lose. There is a high risk of you losing the money.**
+:::
 
-Take time to familiarize yourself with the risk. <strong>There's no backup for LND or c-lightning keys in BTCPay. Your keys are in a hot-wallet</strong>. This means :
+Take time to familiarize yourself with the risk.
+**There's no backup for LND or c-lightning keys in BTCPay. Your keys are in a hot-wallet**. This means :
 
 1. If you erase your BTCPay Server or your machine crashes - you lose all the funds.
 2. If your server gets hacked - a hacker can take all of your funds by accessing your keys.
@@ -22,7 +25,7 @@ BTCPay currently offers two implementations of the Lightning Network:
 
 ## Choosing the Lightning Network implementation
 
-On the installation, you'll have the option to choose the implementation. For [web-interface installations](https://medium.com/@BtcpayServer/launch-btcpay-server-via-web-interface-and-deploy-full-bitcoin-node-lnd-in-less-than-a-minute-dc8bc6f06a3), you can simply select the implementation from the drop-down menu. For [docker](https://github.com/btcpayserver/btcpayserver-docker) you need to :
+On the installation, you'll have the option to choose the implementation. For [web-interface installations](LunaNodeWebDeployment.md), you can simply select the implementation from the drop-down menu. For [docker](https://github.com/btcpayserver/btcpayserver-docker) you need to :
 
 ```
 sudo su -

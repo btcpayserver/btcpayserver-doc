@@ -24,8 +24,8 @@ Depending on the CMS you're using, you can easily connect BTCPay to your online 
 
 * [Drupal](Drupal.md)
 * [WooCommerce](WooCommerce.md)
-* [Magneto](https://github.com/btcpayserver/magento-plugin)
-* [PrestaShop](https://github.com/btcpayserver/prestashop-plugin)
+* [Magneto](Magento.md)
+* [PrestaShop](PrestaShop.md)
 * [Custom integration](CustomIntegration.md)
 
 ## Connecting Additional BTCPay Services
