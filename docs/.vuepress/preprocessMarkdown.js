@@ -1,6 +1,6 @@
 // replace youtube links with embed
 module.exports = source =>
-  source.replace(/\[(!.*)\]\((.*youtube\.com.*?)(?:\s"(.*?)")?\)/i, (all, preview, url, text) => {
+  source.replace(/\[(!.*)\]\((.*youtube\.com.*?)(?:\s"(.*?)")?\)/gi, (all, preview, url, text) => {
     const [, query] = url.match(/\?(.*)/)
     const params = query.split('&').reduce((res, param) => {
       const [key, val] = param.split('=')
