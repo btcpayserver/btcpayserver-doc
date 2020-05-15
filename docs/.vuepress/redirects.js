@@ -12,7 +12,7 @@ module.exports = [
   { path: '/deployment/azuredeployment', redirect: '/AzureDeployment/' },
   { path: '/deployment/azuredeployment/azurepennypinching', redirect: '/AzurePennyPinching/' },
   { path: '/deployment/azuredeployment/changedomain', redirect: '/ChangeDomain/' },
-  { path: '/deployment/dockerdeployment', redirect: '/DockerDeployment/' },
+  { path: '/deployment/dockerdeployment', redirect: '/Docker/' },
   { path: '/deployment/googleclouddeployment', redirect: '/GoogleCloudDeployment/' },
   { path: '/deployment/manualdeployment', redirect: '/ManualDeployment/' },
   { path: '/deployment/manualdeployment/manualdeploymentextended', redirect: '/ManualDeploymentExtended/' },
@@ -82,5 +82,7 @@ module.exports = [
   { path: '/support-and-community/support', redirect: '/Support/' },
   { path: '/support-and-community/contribute', redirect: '/Contribute/' },
   { path: '/support-and-community/translate', redirect: '/Translate/' },
-  { path: '/support-and-community/community', redirect: '/Community/' }
+  { path: '/support-and-community/community', redirect: '/Community/' },
+  // Old paths in new docs
+  { path: '/DockerDeployment/', redirect: '/Docker/' }
 ]

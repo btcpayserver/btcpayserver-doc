@@ -31,7 +31,7 @@ From the easiest way to the hardest:
 
 * [Web-Interface LunaNode deployment](LunaNodeWebDeployment.md)
 * [Azure deployment](AzureDeployment.md) (Using a one-click deploy on Microsoft Azure)
-* [Docker deployment](DockerDeployment.md) (Using a `docker-compose.yml` file which bundle all the dependencies together, in almost any environment)
+* [Docker deployment](https://github.com/btcpayserver/btcpayserver-docker/blob/master/README.md) (Using a `docker-compose.yml` file which bundle all the dependencies together, in almost any environment)
 * [Manual deployment](ManualDeployment.md) (Downloading, building and running all the dependencies by yourself)
 
 Some community members also offer [third-party hosting](ThirdPartyHosting.md) (Having someone else manage BTCPayServer for you).
