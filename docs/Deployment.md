@@ -14,7 +14,7 @@ Developer deployments are not recommended for production environments and requir
 
 * [LunaNode Web Deployment](LunaNodeWebDeployment.md) *
 * [Azure Deployment](AzureDeployment.md) *
-* [Docker Deployment](DockerDeployment.md)
+* [Docker Deployment](https://github.com/btcpayserver/btcpayserver-docker/blob/master/README.md)
 * [Google Cloud Deployment](GoogleCloudDeployment.md) *
 * [Hardware Deployment](HardwareDeployment.md) *
 * [Third-Party Hosting](ThirdPartyHosting.md)

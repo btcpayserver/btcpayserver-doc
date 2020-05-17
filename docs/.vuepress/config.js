@@ -104,7 +104,7 @@ module.exports = {
           ["/ThirdPartyHosting", "Third-party Hosting"],
           {
             title: "Docker",
-            path: "/DockerDeployment",
+            path: "/Docker/",
             collapsable: false,
             children: [
               // TODO: Add Configurator

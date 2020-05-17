@@ -1,6 +1,6 @@
 # Google Cloud Deployment
 
-This setup is similar to the [Docker Deployment](DockerDeployment.md), except that the `docker-compose` is hosted by Google Cloud.
+This setup is similar to the [Docker Deployment](https://github.com/btcpayserver/btcpayserver-docker/blob/master/README.md), except that the `docker-compose` is hosted by Google Cloud.
 
 ## Google Cloud shell setup
 
