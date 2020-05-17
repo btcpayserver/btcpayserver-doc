@@ -187,7 +187,7 @@ body {
     overflow-y: auto;
     margin: 0;
     border: 0;
-    padding: var(--btcpay-space-m) !important;
+    padding: 0 !important;
     color: var(--btcpay-header-color);
     background-color: var(--btcpay-header-bg);
   }
@@ -204,6 +204,47 @@ body {
   .algolia-autocomplete .algolia-docsearch-suggestion {
     background: transparent !important;
     border: 0 !important;
+  }
+
+  .algolia-autocomplete .algolia-docsearch-suggestion--no-results {
+    padding: var(--btcpay-space-m) !important;
+  }
+
+  .algolia-docsearch-footer {
+    margin: var(--btcpay-space-s) !important;
+  }
+
+  .algolia-search-wrapper .algolia-autocomplete .ds-dropdown-menu .ds-suggestion {
+    border-color: var(--btcpay-border-color-medium);
+  }
+
+  .algolia-autocomplete .algolia-docsearch-suggestion--category-header {
+    border-color: var(--btcpay-border-color-light);
+  }
+
+  .algolia-search-wrapper .algolia-autocomplete .algolia-docsearch-suggestion .algolia-docsearch-suggestion--subcategory-column {
+    background: var(--btcpay-color-light-backdrop);
+    border-color: var(--btcpay-border-color-medium);
+  }
+
+  .algolia-autocomplete .algolia-docsearch-suggestion--content:before,
+  .algolia-autocomplete .algolia-docsearch-suggestion--subcategory-column:before {
+    background: var(--btcpay-border-color-medium);
+  }
+
+  .ds-cursor .algolia-docsearch-suggestion--content,
+  .algolia-search-wrapper .algolia-autocomplete .algolia-docsearch-suggestion--highlight {
+    color: var(--btcpay-color-light-text) !important;
+    background: var(--btcpay-color-light-backdrop) !important;
+  }
+
+  .algolia-search-wrapper .algolia-autocomplete .algolia-docsearch-suggestion .algolia-docsearch-suggestion--subcategory-column-text {
+    color: var(--btcpay-color-light-text);
+  }
+
+  .algolia-autocomplete .algolia-docsearch-suggestion--text,
+  .algolia-search-wrapper .algolia-autocomplete .algolia-docsearch-suggestion .algolia-docsearch-suggestion--title {
+    color: var(--btcpay-body-color);
   }
 
   .algolia-autocomplete .suggestions {
