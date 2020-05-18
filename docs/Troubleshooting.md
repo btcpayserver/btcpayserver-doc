@@ -42,7 +42,7 @@ Run the commands below to print logs by container name. Replace the container na
 ```
 sudo su -
 docker ps
-docker logs --tail 40 generated_btcpayserver_1
+docker logs --tail 100 generated_btcpayserver_1
 ```
 
 
@@ -63,7 +63,7 @@ Find container name:
 
 Print logs by container name:
 
-`docker logs --tail 40 btcpayserver_lnd_bitcoin`
+`docker logs --tail 100 btcpayserver_lnd_bitcoin`
 
 Alternatively, you can quickly print logs by using container ID (only the first unique ID characters are needed, such as the two furthest left characters):
 
@@ -99,7 +99,7 @@ docker logs 'add your container ID here'
 
 alternatively, use this
 
-`docker logs --tail 40 btcpayserver_clightning_bitcoin`
+`docker logs --tail 100 btcpayserver_clightning_bitcoin`
 
 You can also get log information with c-lightning cli command. 
 
