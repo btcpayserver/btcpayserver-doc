@@ -36,6 +36,8 @@ Please check out our [official website](https://btcpayserver.org/), our [complet
 * Internal, full-node reliant wallet with [hardware wallet integration](Vault.md)
 * [Payjoin Support](Payjoin.md)
 
+[![How BTCPay Server Features Overview](https://img.youtube.com/vi/R-yaXk4NvEs/mqdefault.jpg)](https://www.youtube.com/watch?v=R-yaXk4NvEs)
+
 ## How it works
 
 [![How BTCPay Works](./img/thumbnails/HowBTCPayServerWorks.png)](https://www.youtube.com/watch?v=nr0UNbz3AoQ "How BTCPay Server Works")
