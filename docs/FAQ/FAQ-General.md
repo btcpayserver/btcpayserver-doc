@@ -14,7 +14,7 @@ This page contains general questions about BTCPay. What it is, how it works, how
 * [What e-commerce integrations are available?](FAQ-General.md#what-e-commerce-integrations-are-available)
 * [Do I need to have an online store to accept cryptocurrencies?](FAQ-General.md#do-i-need-to-have-an-online-store-to-accept-cryptocurrencies)
 * [Which cryptocurrencies are supported in BTCPay?](FAQ-General.md#which-cryptocurrencies-are-supported-in-btcpay)
-* [Why can't I just give my public address to a buyer?](FAQ-General.md#why-cant-i-just-give-my-bitcoin-address-to-a-buyer)
+* [Why can't I just give my public address to a buyer?](FAQ-General.md#why-can-t-i-just-give-my-bitcoin-address-to-a-buyer)
 * [Does BTCPay need my private key?](FAQ-General.md#does-btcpay-need-myprivate-key)
 * [Does BTCPay Server support crypto to fiat conversion?](FAQ-General.md#does-btcpay-server-support-crypto-to-fiat-conversion)
 * [Where can I get help and support?](FAQ-General.md#where-can-i-get-help-and-support)
