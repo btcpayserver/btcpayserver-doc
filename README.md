@@ -18,7 +18,7 @@ Pull requests are welcome and appreciated. To contribute to BTCPay Server, first
 
 If you're beginner, take a look at the step by step guide on how to contribute to BTCPay Server documentation below.
 
-[![Contributing to Documentation](./docs/img/thumbnails/ContributingDocumentation.png)](https://www.youtube.com/watch?v=bSDROcdSSWw "How BTCPay Server Works")
+[![Contributing to Documentation](https://img.youtube.com/vi/bSDROcdSSWw/mqdefault.jpg)](https://www.youtube.com/watch?v=bSDROcdSSWw "How BTCPay Server Works")
 
 ### Build the Documentation Locally
 
@@ -70,7 +70,7 @@ bar
 To add a YouTube video with a preview, you can so so by linking to it like this:
 
 ```md
-[![BTCPay Server Crowdfunding](https://img.youtube.com/vi/tFbfyneDj88/mqdefault.jpg)](https://www.youtube.com/watch?v=tFbfyneDj88 "BTCPay Server Crowdfunding")
+[![IMAGE ALT TEXT HERE](https://img.youtube.com/vi/YOUTUBE_VIDEO_ID_HERE/mqdefault.jpg)](https://www.youtube.com/watch?v=YOUTUBE_VIDEO_ID_HERE)
 ```
 
 Note that the link item need to be a preview image (either from YouTube or a custom one) to result in an embedded video.

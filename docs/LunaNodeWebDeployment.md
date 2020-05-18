@@ -6,7 +6,7 @@ Their web-wizard is one of the easiest ways to deploy BTCPay Servers from a very
 
 Video bellow explains all the step and customization of BTCPay.
 
-[![LunaNodeWebWizard](img/thumbnails/BTCPayServerLunaNode1click.png)](https://www.youtube.com/watch?v=NjslXYvp8bk "BTCPay Server - LunaNode Web-Deployment")
+[![LunaNodeWebWizard](https://img.youtube.com/vi/NjslXYvp8bk/mqdefault.jpg)](https://www.youtube.com/watch?v=NjslXYvp8bk "BTCPay Server - LunaNode Web-Deployment")
 
 The installation is also covered in [this article](https://medium.com/@BtcpayServer/launch-btcpay-server-via-web-interface-and-deploy-full-bitcoin-node-lnd-in-less-than-a-minute-dc8bc6f06a3)
 
