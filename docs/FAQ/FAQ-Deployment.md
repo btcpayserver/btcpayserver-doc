@@ -13,15 +13,15 @@ Here are common questions about installation, regardless of the deployment metho
 * [Can I run BTCPay on my hardware?](FAQ-Deployment.md#can-i-run-btcpay-on-my-own-hardware)
 * [Can I deploy on my existing VPS?](FAQ-Deployment.md#can-i-deploy-btcpay-on-my-existing-vps)
 * [Are there free hosts where I can test?](FAQ-Deployment.md#are-there-free-hosts-where-i-can-test)
-* [After initial deployment, I can't register and I don't have a login yet?](FAQ-Deployment.md#after-initial-deployment-i-cant-register-and-i-dont-have-a-login-yet)
+* [After initial deployment, I can't register and I don't have a login yet?](FAQ-Deployment.md#after-initial-deployment-i-can-t-register-and-i-don-t-have-a-login-yet)
 * [With the docker deployment, how to use a different volume for the data?](FAQ-Deployment.md#with-the-docker-deployment-how-to-use-a-different-volume-for-the-data)
 * [How do I activate Tor on my BTCPay Server?](FAQ-Deployment.md#how-do-i-activate-tor-on-my-btcpay-server)
 * [How do I disable Tor on my BTCPay Server?](FAQ-Deployment.md#how-do-i-disable-tor-on-my-btcpay-server)
 * [Why activate Tor? Does it mean that nobody knows who I am?](FAQ-Deployment.md#why-activate-tor-does-it-mean-that-nobody-knows-who-i-am)
 * [How to access the .onion address without clearnet?](FAQ-Deployment.md#how-to-access-the-onion-address-without-clearnet)
-* [How can I modify/deactivate environment variables?](FAQ-Deployment.md#How-can-i-modify-deactivate-environment-variables)
+* [How can I modify/deactivate environment variables?](FAQ-Deployment.md#how-can-i-modify-deactivate-environment-variables)
 * [How can I run BTCPay on testnet?](FAQ-Deployment.md#how-can-i-run-btcpay-on-testnet)
-* [Can I start BTCPay only when I'm expecting a payment?](FAQ-Deployment.md#can-i-start-btcpay-only-when-im-expecting-a-payment)
+* [Can I start BTCPay only when I'm expecting a payment?](FAQ-Deployment.md#can-i-start-btcpay-only-when-i-m-expecting-a-payment)
 * [Can I connect to my BTCPay Bitcoin P2P on port 8333?](FAQ-Deployment.md#can-i-connect-to-my-btcpay-bitcoin-p2p-on-port-8333)
 * [How do I completely uninstall BTCPay from a linux environment (docker version)](FAQ-Deployment.md#how-do-i-completely-uninstall-btcpay-from-a-linux-environment-docker-version)
 
@@ -31,12 +31,12 @@ Here are common questions about installation, regardless of the deployment metho
 * [How to change domain name on my LunaNode BTCPay?](FAQ-Deployment.md#how-to-change-domain-name-on-my-lunanode-btcpay)
 
 ## Manual Deployment FAQ
-* [How to manually install BTCPay on Ubuntu 18.04?](FAQ-Deployment.md#how-to-manually-install-btcpay-on-ubuntu-1804)
+* [How to manually install BTCPay on Ubuntu 18.04?](FAQ-Deployment.md#how-to-manually-install-btcpay-on-ubuntu-18-04)
 * [I get 503 Service Temporarily Unavailable nginx](FAQ-Deployment.md#i-get-503-service-temporarily-unavailable-nginx)
   * [Cause 1: Trying to access my BTCPay by IP address](FAQ-Deployment.md#cause-1-trying-to-access-my-btcpay-by-ip-address)
   * [Cause 2: btcpayserver or letsencrypt-nginx-proxy is not running](FAQ-Deployment.md#cause-2-btcpayserver-or-letsencrypt-nginx-proxy-is-not-running)
   * [Cause 3: Error: BTCPay is expecting you to access this website from](FAQ-Deployment.md#cause-3-btcpay-is-expecting-you-to-access-this-website-from)
-  * [Cause 4: Getting 500 nginx error on a local server https and for http BTCPay is expecting you to access this website from](FAQ-Deployment.md#cause-4-getting-500-nginx-error-on-a-local-server-https-and-for-http-btcpay-is-expecting-you-to-access-this-website-fro)
+  * [Cause 4: Getting 500 nginx error on a local server https and for http BTCPay is expecting you to access this website from](FAQ-Deployment.md#cause-4-getting-500-nginx-error-on-a-local-server-https-and-for-http-btcpay-is-expecting-you-to-access-this-website-from)
 
 
 ## General Deployment
