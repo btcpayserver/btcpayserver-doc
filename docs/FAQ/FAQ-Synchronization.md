@@ -31,10 +31,7 @@ btcpay-up.sh
 ```
 After FastSync is complete and you have brought back up your instance, refresh your BTCPay domain and wait for remaining blockchain synchronization. You can also follow [this video](https://youtube.com/watch?v=VNMnd-dX9Q8?t=1730).
 
-If your FastSync returns `You need to delete your Bitcoin Core wallet` after you load the uxto set, or you find this error: `Last wallet synchronisation goes beyond pruned data` :
-It means that the bitcoin core wallet needs to be removed because it was created before FastSync, likely because BTCPay Server started without the utxoset at the first boot.
-For example, this may be the case if you use Eclair or FullyNoded to receive funds. If you agree to remove the wallet to finish syncing with FastSync, use `docker volume rm generated_bitcoin_wallet_datadir` before you run `btcpay-up.sh`
-WARNING: Do not delete this wallet if you have any funds on it.
+If your FastSync returns `You need to delete your Bitcoin Core wallet` after you load the uxto set, or you find this error: `Last wallet synchronisation goes beyond pruned data`, see cause 4 of [BTCPay Server keep showing that my node is always starting](#btcpay-server-keep-showing-that-my-node-is-always-starting)
 
 ## How do I know that BTCPay synced completely?
 
@@ -108,6 +105,7 @@ Possible cause:
 * Your bitcoin data directory is corrupted
 * You do not have enough RAM
 * You do not have enough storage
+* Your last wallet synchronisation goes beyond pruned data
 
 
 ### Cause 1: Your bitcoin data directory is corrupted
@@ -191,6 +189,18 @@ tmpfs           2.0G     0  2.0G   0% /sys/fs/cgroup
 
 Then [prune your node](https://github.com/btcpayserver/btcpayserver-docker#how-i-can-prune-my-nodes).
 
+### Cause 4: Your last wallet synchronisation goes beyond pruned data
+
+This can happen if you use FastSync or import an already synched blockchain. It means that the bitcoin core wallet needs to be removed because it was created before the utxoset, likely because BTCPay Server started without the utxoset at the first boot. To verify this case, [check the bitcoind log](../Troubleshooting.md#_2-1-btcpay-logs) for this:  
+
+```bash
+Error: Prune: last wallet synchronisation goes beyond pruned data. You need to -reindex (download the whole blockchain again in case of pruned node)
+```
+
+If you see this error and agree to remove the wallet to finish syncing, use `docker volume rm generated_bitcoin_wallet_datadir` after you run `btcpay-down.sh` and before you run `btcpay-up.sh`
+WARNING: Do not delete this wallet if you have any funds on it.
+
+
 ## I'm running a full node and have a synched blockchain, can BTCPay use it so that it doesn't have to do a full sync?
 
 Yes you can!  However, before you do that, you'll want to stop bitcoind from updating docker's volume for it, as that job will be taken over by BTCPay Server.
@@ -208,3 +218,5 @@ To do that, follow the following steps :
 * Start your docker-compose again with `btcpay-up.sh`
 
 Your BTCPay Server should now be fully synched.
+
+If after this BTCPay Server keep showing that your node is always starting, see cause 4 of [BTCPay Server keep showing that my node is always starting](#btcpay-server-keep-showing-that-my-node-is-always-starting)
