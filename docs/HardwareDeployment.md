@@ -12,7 +12,7 @@ The process is basically the following:
 3. Install BTCPayServer-Docker.
 
 While it may be possible to install BTCPayServer or parts of it's architecture on ARM based single board computers (ie. Raspberry Pi, Odroid, OrangePi or NanoPC) the process may require additional skills and knowledge that are beyond the scope of this tutorial.
-For the sake of speed, compatibility and ease of installation it is recommended that you use an Intel/AMD based computer with a minimum of 4Gb RAM and a 500 Gb hard drive.  The Gigabyte Brix or Intel NUC lines of compact computers are a great place to start. They are basically small, fanless boxes that are built using laptop components.
+For the sake of speed, compatibility and ease of installation it is recommended that you use an Intel/AMD based computer with a minimum of 4 GB RAM and a 500 GB hard drive.  The Gigabyte Brix or Intel NUC lines of compact computers are a great place to start. They are basically small, fanless boxes that are built using laptop components.
 
 BTCPayServer can be successfully installed on the following hardware.  The end result is a small, quiet node that is fast enough to sync from block zero.  The total cost is approximately $225 (including tax and delivery).  These are "off the shelf" components that can be purchased from any online retailer (TigerDirect, NewEgg, Amazon, BestBuy etc).   It will take roughly 24 hours to sync the Bitcoin blockchain. You can save little money by cutting the RAM and hard drive size in half.
 
