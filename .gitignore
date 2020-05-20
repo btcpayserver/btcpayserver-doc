@@ -3,6 +3,6 @@
 /node_modules
 
 # External repos
-/docs/Transmuter
-/docs/Docker
+/docs/guide/Transmuter
+/docs/guide/Docker
 /docs/.vuepress/public/API/Greenfield/**/*.json

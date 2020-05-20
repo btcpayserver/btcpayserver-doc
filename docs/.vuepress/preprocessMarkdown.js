@@ -3,8 +3,8 @@ const docsDir = resolve(__dirname, '..')
 
 // external docs: local dir as key, repo base as value
 const EXTERNAL_DOCS = {
-  'Docker': 'https://github.com/btcpayserver/btcpayserver-docker',
-  'Transmuter': 'https://github.com/btcpayserver/btcTransmuter',
+  'guide/Docker': 'https://github.com/btcpayserver/btcpayserver-docker',
+  'guide/Transmuter': 'https://github.com/btcpayserver/btcTransmuter',
 }
 
 const replaceExternalRepoLinks = (source, resourcePath) => {
@@ -14,16 +14,20 @@ const replaceExternalRepoLinks = (source, resourcePath) => {
     const baseUrl = EXTERNAL_DOCS[baseDir]
 
     // rewrite repo internal links to external links
-    const repoLinks = new RegExp(`\\]\\(((?!https?:\/\/|#|\.?\/).*?)\\)`, 'gi')
+    const repoLinks = new RegExp(`\\]\\(((?!https?:\/\/|#|\.?\/|\.\.?\/).*?)\\)`, 'gi')
     processed = processed.replace(repoLinks, (all, path) => all.replace(path, `${baseUrl}/blob/master/${path}`))
 
     // rewrite links to docs to internal VuePress links
-    const docsLinks = new RegExp(`\\]\\((${baseUrl}/blob/master/((README\.md|docs/).*?))\\)`, 'gi')
+    const docsLinks = new RegExp(`(?<!!)\\[.*?\\]\\((${baseUrl}/blob/master/((README\.md|docs/).*?))\\)`, 'gi')
     processed = processed.replace(docsLinks, (all, url, path) => all.replace(url, `/${baseDir}/${path.replace('docs/', '')}`))
 
     // rewrite external links to docs to internal VuePress links
-    const links = new RegExp(`\\]\\((https://docs.btcpayserver.org(.*))\\)`, 'gi')
+    const links = new RegExp(`(?<!!)\\[.*?\\]\\((https://docs.btcpayserver.org(.*))\\)`, 'gi')
     processed = processed.replace(links, (all, url, path) => all.replace(url, path))
+
+    // update image paths
+    // const images = new RegExp(`(?<=!)\\[.*?\\]\\((\./img.*)\\)`, 'gi')
+    // processed = processed.replace(images, (all, imagePath) => all.replace(imagePath, imagePath.replace('./img', '../../img')))
   })
 
   return processed

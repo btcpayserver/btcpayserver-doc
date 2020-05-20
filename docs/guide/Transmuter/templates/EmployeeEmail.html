@@ -1,0 +1,51 @@
+<body style="Margin: 0 auto; width: 600px; padding: 20px 20px 20px">
+    </table>
+        <tr>
+            <td>
+                <h1 style="color: #0f3723; text-align: center; font-weight: bold; padding-bottom: 10px; fontSize: 32px">
+                    Someone just bought a ticket to your event!
+                </h1>
+            </td>
+        </tr>  
+        <tr>
+            <p style="text-align:center">
+                <img src="https://en.bitcoin.it/w/images/en/2/29/BC_Logo_.png" 
+                        style="padding: 20px; height: 150px; width: 150px"
+                        height="100" width="100" />
+            </p>
+        </tr> 
+        <tr>
+            <p style="color: #0f3723; text-align: center; font-weight: bold">
+                    Customer information: <br/> <br/>
+            </p>
+            <p style="color: #0f3723; text-align: center">
+                Customer Email: {{TriggerData.Invoice.Buyer.email}}<br/>
+                Invoice Id: <a target="_blank" href="{{TriggerData.Invoice.Url}}">{{TriggerData.Invoice.Id}}</a><br/>
+                Invoice Status: {{TriggerData.Invoice.Status}}<br/>
+                Amount Paid in BTC: {{TriggerData.Invoice.BtcPaid}}<br/>
+                Amount Due: {{TriggerData.Invoice.Price}}<br/>
+            </p>
+        </tr>
+        <tr>         
+            <td">
+                <table>
+                    <tr>
+                        <td style="width: 20%; text-align: left; padding-left: 40px; padding-right: 40px">
+                            <img src="https://blobscdn.gitbook.com/v0/b/gitbook-28427.appspot.com/o/spaces%2F-LOnsHXOleEK7mXmj8eY%2Favatar.png?generation=1539542429378104&alt=media"
+                                    width="40" />
+                        </td>
+                        <td style="text-align: center">
+                            <span style="color: #1ba000; font-size: 14px">
+                                Automate your money with BTC Transmuter
+                            </span>
+                        </td>
+                        <td style="width: 20%; text-align: right; padding-left: 40px; padding-right: 40px">
+                            <img src="https://github.com/btcpayserver/btcTransmuter/blob/master/BtcTransmuter/wwwroot/assets/logo.png?raw=true"
+                                    width="30"
+                        </td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+    </table>
+</body>

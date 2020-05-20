@@ -68,6 +68,14 @@ module.exports = {
     },
     nav: [
       {
+        text: "Users Guide",
+        link: "/guide/"
+      },
+      {
+        text: "Developers",
+        link: "/dev/"
+      },
+      {
         text: "Website",
         link: "https://btcpayserver.org/"
       },
@@ -86,215 +94,219 @@ module.exports = {
         rel: "noopener noreferrer twitter"
       }
     ],
-    sidebar: [
-      ["/", "Introduction"],
-      {
-        title: "Basics",
-        collapsable: false,
-        children: [
-          ["/UseCase", "Use Case"],
-          ["/Walkthrough", "Walkthrough"],
-          ["/BTCPayVsOthers", "BTCPay Server vs. Others"],
-          ["/TryItOut", "Try it out"]
-        ]
-      },
-      {
-        title: "Deployment",
-        collapsable: false,
-        children: [
-          ["/Deployment", "Choosing a Deployment Method"],
-          ["/ThirdPartyHosting", "Third-party Hosting"],
-          {
-            title: "Docker",
-            path: "/Docker/",
-            collapsable: false,
-            children: [
-              // TODO: Add Configurator
-              {
-                title: "Web Deployment",
-                path: "/LunaNodeWebDeployment"
-              },
-              {
-                title: "Azure Deployment",
-                path: "/AzureDeployment",
-                children: [
-                  ["/AzurePennyPinching", "Reducing Cost on Azure"],
-                  ["/ChangeDomain", "Changing domain"]
-                ]
-              },
-              {
-                title: "Google Cloud Deployment",
-                path: "/GoogleCloudDeployment"
-              },
-              {
-                title: "Hardware Deployment",
-                path: "/HardwareDeployment",
-                children: [
-                  {
-                    title: "Advanced Deployment",
-                    collapsable: false,
-                    children: [
-                      ["/DynamicDNS", "Dynamic DNS"],
-                      ["/ReverseSSHtunnel", "Reverse SSH Tunnel"]
-                    ]
-                  },
-                  {
-                    title: "Hardware As A Service",
-                    path: "/HardwareAsAService"
-                  }
-                ]
-              },
-              {
-                title: "Raspberry Pi Deployment",
-                path: "/RaspberryPiDeployment",
-                children: [
-                  "/RPi3",
-                  "/RPi4"
-                ]
-              },
-              {
-                title: "Docker Plugins",
-                children: [
-                  {
-                    title: "Transmuter",
-                    path: "/Transmuter/",
-                    children: [
-                      ["/Transmuter/DCA", "Dollar Cost Average Preset"],
-                      ["/Transmuter/EmailReceiptsPreset", "Email Receipts Preset"]
-                    ]
-                  },
-                  ["/ElectrumX", "Electrum X"],
-                  ["/ElectrumPersonalServer", "Electrum Personal Server"],
-                  "/Docker/pihole"
-                ]
-              }
-            ]
-          },
-          {
-            title: "Manual Deployment",
-            path: "/ManualDeployment",
-            children: [
-              "/ManualDeploymentExtended"
-            ]
-          }
-        ]
-      },
-      {
-        title: "Getting Started",
-        collapsable: false,
-        children: [
-          "/RegisterAccount",
-          "/CreateStore",
-          {
-            title: "(3) Wallet Setup",
-            path: "/WalletSetup",
-            collapsable: false,
-            children: [
-              {
-                title: "Use existing hardware wallet",
-                path: "/Vault",
-                children: [
-                  ["/ColdCardWallet", "ColdCard Wallet"]
-                ]
-              },
-              {
-                title: "Use existing software wallet",
-                children: [
-                  {
-                    title: "Electrum Wallet",
-                    path: "/ElectrumWallet",
-                  },
-                  ["/WasabiWallet", "Wasabi Wallet"]
-                ]
-              },
-              {
-                title: "Create a new wallet",
-                path: "/CreateWallet",
-                children: [
-                  ["/HotWallet", "Hot Wallet"]
-                ]
-              }
-            ]
-          },
-          ["/WhatsNext", "(4) What's Next?"]
-        ]
-      },
-      {
-        title: "Features",
-        collapsable: false,
-        children: [
-          ["/Apps", "Apps"],
-          ["/Wallet", "Wallet"],
-          ["/Invoices", "Invoices"],
-		  {
-		    title: "Pull Payments",
-            path: "/PullPayments",
-            children: [
-              ["/Refund", "Refunds"]
-		    ]
-		  },
-          ["/PaymentRequests", "Payment Requests"],
-          ["/LightningNetwork", "Lightning Network"],
-          ["/Accounting", "Accounting"],
-          {
-            title: "Payjoin",
-            path: "/Payjoin",
-            children: [
-              ["https://github.com/bitcoin/bips/blob/master/bip-0078.mediawiki", "Payjoin specification", { type: 'external' }]
-            ]
-          }
-        ]
-      },
-      {
-        title: "Integrations",
-        collapsable: false,
-        children: [
-          ["/WooCommerce", "WooCommerce"],
-          ["/Drupal", "Drupal"],
-          ["/Magento", "Magento"],
-          ["/PrestaShop", "PrestaShop"],
-          ["/CustomIntegration", "Custom Integration"]
-        ]
-      },
-      {
-        title: "Support and Community",
-        collapsable: false,
-        children: [
-          {
-            title: "FAQ and common issues",
-            path: "/FAQ",
-            children: [
-              ["/FAQ/FAQ-General", "General FAQ"],
-              ["/FAQ/FAQ-Deployment", "Deployment FAQ"],
-              ["/FAQ/FAQ-Synchronization", "Synchronization FAQ"],
-              ["/FAQ/FAQ-Integrations", "Integrations FAQ"],
-              ["/FAQ/FAQ-ServerSettings", "Server Settings FAQ"],
-              ["/FAQ/FAQ-Stores", "Stores FAQ"],
-              ["/FAQ/FAQ-Wallet", "Wallet FAQ"],
-              ["/FAQ/FAQ-Apps", "Apps FAQ"],
-              ["/FAQ/FAQ-LightningNetwork", "Lightning Network FAQ"],
-              ["/FAQ/FAQ-Altcoin", "Altcoins FAQ"]
-            ]
-          },
-          ["/Troubleshooting", "Troubleshooting an issue"],
-          ["/Support", "Support"],
-          ["/Contribute", "Contribute"],
-          ["/Translate", "Translate"],
-          ["/Community", "Community"]
-        ]
-      },
-      {
-        title: "Development",
-        collapsable: false,
-        children: [
-          ["/Architecture", "Architecture"],
-          ["/LocalDevelopment", "Developing Locally"],
-          ["/Altcoins", "How to add an Altcoin"],
-          ["/Theme", "Customizing Themes"],
-          ["https://docs.btcpayserver.org/API/Greenfield/v1", "Greenfield API v1", { type: 'external' }],
-          ["/GreenFieldExample", "Greenfield example with cURL"]
-        ]
-      }
-    ]
+
+    sidebar: {
+      '/guide/': [
+        ["", "Introduction"],
+        {
+          title: "Basics",
+          collapsable: false,
+          children: [
+            ["UseCase", "Use Case"],
+            ["Walkthrough", "Walkthrough"],
+            ["BTCPayVsOthers", "BTCPay Server vs. Others"],
+            ["TryItOut", "Try it out"]
+          ]
+        },
+        {
+          title: "Deployment",
+          collapsable: false,
+          children: [
+            ["Deployment", "Choosing a Deployment Method"],
+            ["ThirdPartyHosting", "Third-party Hosting"],
+            {
+              title: "Docker",
+              path: "/guide/Docker/",
+              collapsable: false,
+              children: [
+                // TODO: Add Configurator
+                {
+                  title: "Web Deployment",
+                  path: "/guide/LunaNodeWebDeployment"
+                },
+                {
+                  title: "Azure Deployment",
+                  path: "/guide/AzureDeployment",
+                  children: [
+                    ["AzurePennyPinching", "Reducing Cost on Azure"],
+                    ["ChangeDomain", "Changing domain"]
+                  ]
+                },
+                {
+                  title: "Google Cloud Deployment",
+                  path: "/guide/GoogleCloudDeployment"
+                },
+                {
+                  title: "Hardware Deployment",
+                  path: "/guide/HardwareDeployment",
+                  children: [
+                    {
+                      title: "Advanced Deployment",
+                      collapsable: false,
+                      children: [
+                        ["DynamicDNS", "Dynamic DNS"],
+                        ["ReverseSSHtunnel", "Reverse SSH Tunnel"]
+                      ]
+                    },
+                    ["HardwareAsAService", "Hardware As A Service"]
+                  ]
+                },
+                {
+                  title: "Raspberry Pi Deployment",
+                  path: "/guide/RaspberryPiDeployment",
+                  children: [
+                    "RPi3",
+                    "RPi4"
+                  ]
+                },
+                {
+                  title: "Docker Plugins",
+                  children: [
+                    {
+                      title: "Transmuter",
+                      path: "/guide/Transmuter/",
+                      children: [
+                        ["Transmuter/DCA", "Dollar Cost Average Preset"],
+                        ["Transmuter/EmailReceiptsPreset", "Email Receipts Preset"]
+                      ]
+                    },
+                    ["ElectrumX", "Electrum X"],
+                    ["ElectrumPersonalServer", "Electrum Personal Server"],
+                    "Docker/pihole"
+                  ]
+                }
+              ]
+            },
+            {
+              title: "Manual Deployment",
+              path: "/guide/ManualDeployment",
+              children: [
+                "ManualDeploymentExtended"
+              ]
+            }
+          ]
+        },
+        {
+          title: "Getting Started",
+          collapsable: false,
+          children: [
+            "RegisterAccount",
+            "CreateStore",
+            {
+              title: "(3) Wallet Setup",
+              path: "/guide/WalletSetup",
+              collapsable: false,
+              children: [
+                {
+                  title: "Use existing hardware wallet",
+                  path: "/guide/Vault",
+                  children: [
+                    ["ColdCardWallet", "ColdCard Wallet"]
+                  ]
+                },
+                {
+                  title: "Use existing software wallet",
+                  children: [
+                    {
+                      title: "Electrum Wallet",
+                      path: "/guide/ElectrumWallet",
+                    },
+                    ["WasabiWallet", "Wasabi Wallet"]
+                  ]
+                },
+                {
+                  title: "Create a new wallet",
+                  path: "/guide/CreateWallet",
+                  children: [
+                    ["HotWallet", "Hot Wallet"]
+                  ]
+                }
+              ]
+            },
+            ["WhatsNext", "(4) What's Next?"]
+          ]
+        },
+        {
+          title: "Features",
+          collapsable: false,
+          children: [
+            ["Apps", "Apps"],
+            ["Wallet", "Wallet"],
+            ["Invoices", "Invoices"],
+            {
+              title: "Pull Payments",
+              path: "/guide/PullPayments",
+              children: [
+                ["Refund", "Refunds"]
+              ]
+            },
+            ["PaymentRequests", "Payment Requests"],
+            ["LightningNetwork", "Lightning Network"],
+            ["Accounting", "Accounting"],
+            {
+              title: "Payjoin",
+              path: "/guide/Payjoin",
+              children: [
+                ["https://github.com/bitcoin/bips/blob/master/bip-0078.mediawiki", "Payjoin specification", { type: 'external' }]
+              ]
+            }
+          ]
+        },
+        {
+          title: "Integrations",
+          collapsable: false,
+          children: [
+            ["WooCommerce", "WooCommerce"],
+            ["Drupal", "Drupal"],
+            ["Magento", "Magento"],
+            ["PrestaShop", "PrestaShop"],
+            ["CustomIntegration", "Custom Integration"]
+          ]
+        },
+        {
+          title: "Support and Community",
+          collapsable: false,
+          children: [
+            {
+              title: "FAQ and common issues",
+              path: "/guide/FAQ",
+              children: [
+                ["FAQ/FAQ-General", "General FAQ"],
+                ["FAQ/FAQ-Deployment", "Deployment FAQ"],
+                ["FAQ/FAQ-Synchronization", "Synchronization FAQ"],
+                ["FAQ/FAQ-Integrations", "Integrations FAQ"],
+                ["FAQ/FAQ-ServerSettings", "Server Settings FAQ"],
+                ["FAQ/FAQ-Stores", "Stores FAQ"],
+                ["FAQ/FAQ-Wallet", "Wallet FAQ"],
+                ["FAQ/FAQ-Apps", "Apps FAQ"],
+                ["FAQ/FAQ-LightningNetwork", "Lightning Network FAQ"],
+                ["FAQ/FAQ-Altcoin", "Altcoins FAQ"]
+              ]
+            },
+            ["Troubleshooting", "Troubleshooting an issue"],
+            ["Support", "Support"],
+            ["Contribute", "Contribute"],
+            ["Translate", "Translate"],
+            ["Community", "Community"]
+          ]
+        }
+      ],
+
+      '/dev/': [
+        ["Architecture", "Architecture"],
+        ["LocalDevelopment", "Developing Locally"],
+        ["Altcoins", "How to add an Altcoin"],
+        ["Theme", "Customizing Themes"],
+        ["https://docs.btcpayserver.org/API/Greenfield/v1", "Greenfield API v1", { type: 'external' }],
+        ["GreenFieldExample", "Greenfield example with cURL"]
+      ],
+
+      // Fallback
+      '/': [
+        '',
+        'guide/',
+        'dev/'
+      ]
+    }
   }
 }

@@ -21,21 +21,21 @@ exports[`preprocessMarkdown replaces external links to docs with internal VuePre
 "---
 externalRepo: https://github.com/btcpayserver/btcpayserver-docker
 ---
-While [our instructions](/deployment/lunanodewebdeployment) cover how to install BTCPayServer in one click on Azure or Lunanode, BTCPay Server is not limited to those options."
+While [our instructions](/guide/LunaNodeWebDeployment/) cover how to install BTCPayServer in one click on Azure or Lunanode, BTCPay Server is not limited to those options."
 `;
 
 exports[`preprocessMarkdown replaces external repo links with internal links 1`] = `
 "---
 externalRepo: https://github.com/btcpayserver/btcpayserver-docker
 ---
-[opt-unsafe-expose](/Docker/README.md#generated-docker-compose)"
+[opt-unsafe-expose](/guide/Docker/README.md#generated-docker-compose)"
 `;
 
 exports[`preprocessMarkdown replaces links to docs with internal VuePress links 1`] = `
 "---
 externalRepo: https://github.com/btcpayserver/btcpayserver-docker
 ---
-([See the documentation](/Docker/pihole.md))"
+([See the documentation](/guide/Docker/pihole.md))"
 `;
 
 exports[`preprocessMarkdown replaces repo internal links with external links 1`] = `
@@ -50,5 +50,5 @@ By default, the generated file is \`Generated/docker-compose.generated.yml\`, co
 Available \`BTCPAYGEN_ADDITIONAL_FRAGMENTS\` currently are:
 
 * [opt-save-storage](https://github.com/btcpayserver/btcpayserver-docker/blob/master/docker-compose-generator/docker-fragments/opt-save-storage.yml) will keep around 1 year of blocks (prune BTC for 100 GB)
-* [opt-add-pihole](https://github.com/btcpayserver/btcpayserver-docker/blob/master/docker-compose-generator/docker-fragments/opt-add-pihole.yml) ([See the documentation](/Docker/pihole.md))"
+* [opt-add-pihole](https://github.com/btcpayserver/btcpayserver-docker/blob/master/docker-compose-generator/docker-fragments/opt-add-pihole.yml) ([See the documentation](/guide/Docker/pihole.md))"
 `;

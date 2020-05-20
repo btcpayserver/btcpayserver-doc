@@ -1,0 +1,63 @@
+<body style="font-family: sans-serif;">
+    <table cellspacing="0"
+           cellpadding="0"
+           border="0"
+           style="text-align: center; Margin: 0 auto; width: 600px; padding: 20px 20px 20px">
+        <tr>
+            <td>
+                <h1 style="color: #0f3723; font-weight: bold; padding-bottom: 10px; fontSize: 32px; margin-bottom: 0">
+                    You're signed up for the event!
+                </h1>
+                <p style="color: #0f3723; padding-top: 0; margin-top: 0">
+                    Below is your QR code ticket:
+                </p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <img src="https://api.qrserver.com/v1/create-qr-code/?size=300x300&data={{TriggerData.Invoice.Url}}" 
+                     alt="create-qr-code"
+                     style="padding: 20px; height: 250px; width: 250px"
+                     height="100" width="100" />
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <p style="color: #1ba000; padding-bottom: 25px">
+                    Event Location:<br> <br>
+                    Empire State Building<br>
+                    20 W 34th St, New York, NY 10001<br> 
+                </p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <a href="https://btcpayserver.org">
+                    <button type="button">Visit Our Website</button>
+                </a>
+            </td>
+        </tr>
+        <tr>
+            <td style="padding: 30px 0 10px;">
+                <table>
+                    <tr>
+                        <td style="width: 20%; text-align: left; padding-left: 40px; padding-right: 40px">
+                            <img src="https://blobscdn.gitbook.com/v0/b/gitbook-28427.appspot.com/o/spaces%2F-LOnsHXOleEK7mXmj8eY%2Favatar.png?generation=1539542429378104&alt=media"
+                                 width="50" />
+                        </td>
+                        <td style="text-align: center">
+                            <span style="color: #1ba000; font-size: 14px">
+                                Automate your money with BTC Transmuter
+                            </span>
+                        </td>
+                        <td style="width: 20%; text-align: right; padding-left: 40px; padding-right: 40px">
+                            <img src="https://github.com/btcpayserver/btcTransmuter/blob/master/BtcTransmuter/wwwroot/assets/logo.png?raw=true"
+                                 width="40"
+                        </td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+    </table>
+</body>
+</html>

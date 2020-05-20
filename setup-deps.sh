@@ -19,9 +19,6 @@ update_external() {
 
 # BTCPay Server
 
-rm -rf "$DOCS_DIR/BTCPayServer"
-mkdir -p "$DOCS_DIR/BTCPayServer"
-
 if [ ! -d "$BTCPAYSERVER_DIR" ]; then
   git clone https://github.com/btcpayserver/btcpayserver.git "$BTCPAYSERVER_DIR"
 else
@@ -39,8 +36,8 @@ fi
 
 # Docker
 
-rm -rf "$DOCS_DIR/Docker"
-mkdir -p "$DOCS_DIR/Docker"
+rm -rf "$DOCS_DIR/Guide/Docker"
+mkdir -p "$DOCS_DIR/Guide/Docker"
 
 if [ ! -d "$DOCKER_DIR" ]; then
   git clone https://github.com/btcpayserver/btcpayserver-docker.git "$DOCKER_DIR"
@@ -49,16 +46,16 @@ else
 fi
 
 cd "$DOCKER_DIR"
-cp -r README.md docs/* "$DOCS_DIR/Docker"
-sed -ie 's$(docs/$(./$g' "$DOCS_DIR/Docker/README.md"
-for file in "$DOCS_DIR"/Docker/*.md; do
+cp -r README.md docs/* "$DOCS_DIR/Guide/Docker"
+sed -ie 's$(docs/$(./$g' "$DOCS_DIR/Guide/Docker/README.md"
+for file in "$DOCS_DIR"/Guide/Docker/*.md; do
   update_external "$file" https://github.com/btcpayserver/btcpayserver-docker
 done
 
 # Transmuter
 
-rm -rf "$DOCS_DIR/Transmuter"
-mkdir -p "$DOCS_DIR/Transmuter"
+rm -rf "$DOCS_DIR/Guide/Transmuter"
+mkdir -p "$DOCS_DIR/Guide/Transmuter"
 
 if [ ! -d "$TRANSMUTER_DIR" ]; then
   git clone https://github.com/btcpayserver/btcTransmuter.git "$TRANSMUTER_DIR"
@@ -67,9 +64,9 @@ else
 fi
 
 cd "$TRANSMUTER_DIR"
-cp -r README.md docs/* "$DOCS_DIR/Transmuter"
-sed -ie 's$(docs/$(./$g' "$DOCS_DIR/Transmuter/README.md"
-for file in "$DOCS_DIR"/Transmuter/*.md; do
+cp -r README.md docs/* "$DOCS_DIR/Guide/Transmuter"
+sed -ie 's$(docs/$(./$g' "$DOCS_DIR/Guide/Transmuter/README.md"
+for file in "$DOCS_DIR"/Guide/Transmuter/*.md; do
   update_external "$file" https://github.com/btcpayserver/btcTransmuter
 done
 

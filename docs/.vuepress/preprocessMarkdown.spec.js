@@ -20,7 +20,7 @@ Here is a presentation of the global architecture at Advancing Bitcoin conferenc
 
   it('replaces external links to docs with internal VuePress links', () => {
     const md = externalFrontmatter + `
-While [our instructions](https://docs.btcpayserver.org/deployment/lunanodewebdeployment) cover how to install BTCPayServer in one click on Azure or Lunanode, BTCPay Server is not limited to those options.`
+While [our instructions](https://docs.btcpayserver.org/guide/LunaNodeWebDeployment/) cover how to install BTCPayServer in one click on Azure or Lunanode, BTCPay Server is not limited to those options.`
 
     expect(pp(md)).toMatchSnapshot()
   })
@@ -53,4 +53,11 @@ Available \`BTCPAYGEN_ADDITIONAL_FRAGMENTS\` currently are:
 
     expect(pp(md)).toMatchSnapshot()
   })
+
+//   it('updates image references', () => {
+//     const md = externalFrontmatter + `
+// ![TicketApp](./img/TicketApp.png)`
+
+//     expect(pp(md)).toMatchSnapshot()
+//   })
 })
