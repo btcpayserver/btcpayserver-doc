@@ -313,7 +313,7 @@ No, you need to keep your BTCPay running at all times so that your Bitcoin node 
 
 ### Can I connect to my BTCPay Bitcoin P2P on port 8333?
 
-No, BTCPay's Bitcoin core node is not exposed externally. For BTCPay purposes, it is not in the interest of the user, as it increases bandwidth requirement. BTCPay is also whitebinding connections to this port, so opening it would expose the node to potential DDoS.
+BTCPay's Bitcoin core node is not exposed externally by default. For BTCPay purposes, it is typically not in the interest of the user, as it increases the bandwidth requirement. BTCPay is also whitebinding connections to this port, so opening it would expose the node to potential DDoS. 
 
 However, we expose a P2P connection to your full node on Tor. You can get the Tor address by running:
 
@@ -324,6 +324,9 @@ cat /var/lib/docker/volumes/generated_tor_servicesdir/_data/BTC-P2P/hostname
 Or via the `Server Settings` of your BTCPay Server instance, logged as an administrator.
 
 Please do not share this tor hidden service with untrusted parties. Connections to this hidden service are whitelisted by the bitcoin node, malicious peer would be able to DDoS your node.
+
+If you need to unsafely expose bitcoind P2P port 8333 (for example if you require P2P for Bisq, DOJO, Esplora, etc.) and you are using a docker deployment, you can use the [opt-unsafe-expose](https://github.com/btcpayserver/btcpayserver-docker#generated-docker-compose-) 
+additional fragment. WARNING: ONLY USE ON TRUSTED LAN OR WITH FIREWALL RULES WHITELISTING SPECIFIC HOSTS
 
 ### Can I use an existing Nginx server as a reverse proxy with SSL termination?
 
