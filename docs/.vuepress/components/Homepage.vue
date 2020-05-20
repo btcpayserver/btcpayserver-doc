@@ -35,6 +35,12 @@
       </p>
     </header>
 
+    <AlgoliaSearchBox
+      v-if="isAlgoliaSearch"
+      :options="algolia"
+    />
+    <SearchBox v-else-if="$site.themeConfig.search !== false && $page.frontmatter.search !== false" />
+
     <div
       v-if="data.features && data.features.length"
       class="features"
@@ -69,11 +75,17 @@
 // forked from https://github.com/vuejs/vuepress/blob/master/packages/%40vuepress/theme-default/components/Home.vue
 
 import NavLink from '@theme/components/NavLink.vue'
+import AlgoliaSearchBox from '@theme/components/AlgoliaSearchBox.vue'
+import SearchBox from '@vuepress/plugin-search/SearchBox.vue'
 
 export default {
   name: 'Home',
 
-  components: { NavLink },
+  components: {
+    NavLink,
+    AlgoliaSearchBox,
+    SearchBox
+  },
 
   computed: {
     data () {
@@ -85,6 +97,14 @@ export default {
         link: this.data.actionLink,
         text: this.data.actionText
       }
+    },
+
+    algolia () {
+      return this.$themeLocaleConfig.algolia || this.$site.themeConfig.algolia || {}
+    },
+
+    isAlgoliaSearch () {
+      return this.algolia && this.algolia.apiKey && this.algolia.indexName
     }
   }
 }
@@ -97,6 +117,7 @@ export default {
   margin 0px auto
   display block
   .hero
+    position relative
     text-align center
     img
       max-width: 100%
@@ -112,6 +133,10 @@ export default {
       font-size 1.6rem
       line-height 1.3
       color var(--btcpay-color-secondary)
+    .btcpay-theme-switch
+      position absolute
+      top 0
+      right 0
   .action-button
     display inline-block
     font-size 1.2rem
@@ -125,9 +150,31 @@ export default {
     &:focus,
     &:hover
       background-color var(--btcpay-color-primary-accent)
+
+  #search-form.search-box
+    width 100%
+    margin 0 auto
+
+  #search-form.search-box .algolia-autocomplete
+    display block !important
+
+  #search-form.search-box .algolia-autocomplete .ds-dropdown-menu
+    position: static !important;
+    margin-top: 1rem;
+    max-width: none;
+
+  #search-form.search-box input
+    position relative
+    font-size 2rem !important
+    width 100%
+    height 4rem
+    background-size 2rem
+    background-position 1.2rem 50%
+    padding-left 4rem
+
   .features
-    border-top 1px solid var(--btcpay-border-color-medium)
     margin-top 2.5rem
+    margin-bottom 2.5rem
     display flex
     flex-wrap wrap
     justify-content center

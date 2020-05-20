@@ -104,17 +104,18 @@ h5, h6 {
   }
 
   .navbar .search-box input {
-    color: var(--btcpay-header-color);
-    background-color: var(--btcpay-header-bg);
-    border-color: var(--btcpay-border-color-medium);
-    font-size: 1rem;
-
     @media (max-width: 899px) {
       left: 0;
     }
   }
 
-  .navbar .search-box .search-query.ds-hint {
+  .search-box input {
+    color: var(--btcpay-header-color) !important;
+    border-color: var(--btcpay-border-color-medium) !important;
+    font-size: 1rem !important;
+  }
+
+  .search-box .search-query.ds-hint {
     display: none !important;
   }
 
