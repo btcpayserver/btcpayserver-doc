@@ -16,7 +16,7 @@ This document clarifies some of the most common questions and issues users face 
 * [How to see my Lightning Network version?](FAQ-LightningNetwork.md#how-to-see-my-lightning-network-version)
 * [Where can I get Lightning Network Support?](FAQ-LightningNetwork.md#lightning-network-questions-and-support)
 
-## [Lightning Network (LND) FAQ](FAQ-LightningNetwork.md#lightning-network-lnd-faq)
+## [Lightning Network (LND) FAQ](FAQ-LightningNetwork.md#lightning-network-lnd-faq-2)
 * [How to restart my LND?](FAQ-LightningNetwork.md#how-to-restart-my-lnd)
 * [How to see LND logs?](FAQ-LightningNetwork.md#how-to-see-lnd-logs)
 * [What’s the default LND Directory in BTCPay?](FAQ-LightningNetwork.md#whats-the-default-directory-of-lnd-in-btcpay)
@@ -322,6 +322,27 @@ export LIGHTNING_ALIAS="namehere"
 ## Lightning Network (c-lightning) FAQ
 
 Here are some of the common questions about the [c-lightning](https://github.com/ElementsProject/lightning/issues) implementation of the Lightning Network.
+
+### How to announce an IPv6 address?
+First, copy `bitcoin-clightning.yml` into the the docker fragment folder as `bitcoin-clightning.custom.yml`.
+Important: the file must end with `.custom.yml`, or there will be git conflicts whenever you run `btcpay-update.sh`.
+
+Modify the new `bitcoin-clightning.custom.yml` as the following:
+
+```
+services:
+  clightning_bitcoin:
+    environment:
+      LIGHTNINGD_OPT: |
+        announce-addr=[ipv6 here]
+```
+Make sure to insert the address between the two square brackets [].
+
+Then set it up:. ./btcpay-setup.sh -i
+```
+export BTCPAYGEN_ADDITIONAL_FRAGMENTS="bitcoin-clightning.custom"
+
+```
 
 ### How to find an on-chain address in Spark?
 To fund your on-chain wallet in Spark, you need to get an on-chain address. To find your address, click on the version link at the left corner bottom of the Spark wallet (for example v0.2.2).
