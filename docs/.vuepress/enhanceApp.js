@@ -22,6 +22,7 @@ const handleClick = e => {
 
   // youtube previews
   if (e.target.matches('.ytEmbed')) {
+    e.preventDefault()
     openVideo(e.target)
   }
 }
