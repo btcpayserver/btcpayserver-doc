@@ -50,7 +50,7 @@ Then you can create an invoice, either through
 * The "Invoice" menu on the website or
 * The process documented on the [Custom integration](CustomIntegration.md)
 
-See the [What's Next](../whatsnext.md) page for other options on how to continue exploring BTCPay.
+See the [What's Next](./WhatsNext.md) page for other options on how to continue exploring BTCPay.
 
 ## BTCPay Server Demo
 
