@@ -3,46 +3,41 @@
 After [account registration](RegisterAccount.md) and [store creation](CreateStore.md), it's time to configure a wallet in your BTCPay Server, so that you can start receiving payments into it.
 
 There are two ways to set up a wallet in BTCPay Server:
+ 
  - Use an existing wallet
  - Create a brand new wallet
 
 ## Use an existing wallet
 
 :::tip
-When using an existing wallet with BTCPay Server, you're only providing a public key (xpubkey) which is a watch-only wallet token. The public key allows BTCPay Server to generate a new address each time a new invoice is created. Even if a malicious attacker hacked your server, they cannot access your funds.
+When using an existing wallet with BTCPay Server, you're providing an extended public key (xpub) which is a watch-only wallet token. The public key allows BTCPay Server to generate a new address each time a new invoice is created. You can receive payments to your wallet, without BTCPay Server knowing your private key. If a malicious attacker hacked your server and obtained the xpub, they could observe your addresses and balance, but cannot access the funds.
 :::
 
-Connecting an existing wallet assumes that you already have an external wallet created and backed up. In theory, any wallet that provides you with an extended public key
+Using an existing wallet assumes that you already have an external wallet created and backed up. You can:
 
-Below are wallets that meet the above criteria.
+- Use an existing hardware wallet
+- Use an existing software wallet (desktop/mobile)
 
-- [Wasabi Wallet](WasabiWallet.md)
+### Use an existing hardware wallet
+
+Hardware wallets provide best balance between security and ease of use. We've made an app - BTCPay Vault that allows you to set up your hardware wallet with BTCPay Server automatically. Furthermore, if you're self-hosting an instance, it allows your hardware wallet to rely on your full node, further enhancing the privacy. 
+
+:::tip
+If you own a hardware wallet, follow the instructions on [how to use a hardware wallet with your BTCPay Server](Vault.md)
+:::
+
+### Use an existing software wallet
+
+Connecting an existing software wallet assumes that you already have an external wallet created and backed up. In theory, any mobile/desktop wallet that provides an extended public key should work, however, most wallets have technical limitations (gap-limit) that may cause serious user-experience problems for you later on.
+
+For that reason, we recommend that you only use software wallets listed below.
+
+Click on the link below you will be redirected to a step by step tutorial on how to set up particular software wallet with BTCPay Server.
+
 - [Electrum Wallet](ElectrumWallet.md)
+- [Wasabi Wallet](WasabiWallet.md)
 
+To spend and manage the funds received to your external software wallet, you can use an [internal BTCPay Wallet](Wallet.md) and sign a transaction with your private key or simply manage the funds in that external wallet itself.
 
 ## Create a new wallet 
-
-BTCPay is a non-custodial software, which means that all the funds received to your store, will end up directly into your connected wallet.
-
-*Note: A [private key](https://en.bitcoin.it/wiki/Private_key) (xprv) is **never** required for receiving money on-chain to a BTCPay wallet. The software needs a public key (xpubkey) which is a watch-only wallet token. The xpubkey allows BTCPay to generate a new address each time a new invoice is generated. It enables users to observe the wallet balance and transactions without having to share their private key. Exception is [Lightning Network](LightningNetwork.md) which is a hot wallet with keys online.*
-
-To manage the funds received to your BTCPay wallet, you can use an [internal BTCPay Wallet](Wallet.md) or an external wallet. We recommend that you use internal wallet, since it's connected to your full node and does not leak information to third-parties. If you're using an external wallet, we recommend that you use the wallet which:
-
-1. Allows connection to a full node
-2. Allows custom [gap limit](FAQ/FAQ-Wallet.md)
-
-## Recommended wallets
-
-This page lists the recommended wallets for BTCPay Server. Click on the link and you will be redirected to a step by step tutorial on how to set up particular wallet with BTCPay Server.
-
-### Internal BTCPay Wallet
-
-- [Ledger Wallet](LedgerWallet.md)
-- [Coldcard Wallet](ColdcardwWallet.md)
-
-### External Wallets
-
-- [Wasabi Wallet](WasabiWallet.md)
-- [Electrum Wallet](ElectrumWallet.md)
-
 ***Proceed to the next step - [What's Next?](WhatsNext.md).***
