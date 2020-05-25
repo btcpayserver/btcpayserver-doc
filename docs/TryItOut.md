@@ -8,7 +8,7 @@ You can also follow along in this video:
 
 ## Create your first invoice
 
-For an in production setup, skip to [Mainnet](TryItOut.md#mainnet)
+For an in production setup, skip to [Mainnet](TryItOut.md#Mainnet)
 
 ### Testnet
 First let's create a new store:
