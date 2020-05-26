@@ -17,7 +17,7 @@ When using an existing wallet with BTCPay Server, you're providing an extended p
 By using an existing wallet, you can receive payments to the external wallet, without BTCPay Server knowing the wallet's private key. If a malicious attacker hacked your server and obtained the xpub, they could observe your transaction history, but cannot access the funds.
 :::
 
-Externally generated wallet can be used as an:
+Externally generated wallet can be used as:
 - [Existing hardware wallet](#use-an-existing-hardware-wallet)
 - [Existing software wallet](#use-an-existing-software-wallet)
 
