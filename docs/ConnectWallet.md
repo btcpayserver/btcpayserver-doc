@@ -9,23 +9,24 @@ There are two ways to set up a wallet in BTCPay Server:
 
 ## Use an existing wallet
 
-:::tip
+Using an existing wallet assumes that you already have an external wallet created and backed up.
+
 When using an existing wallet with BTCPay Server, you're providing an extended public key (xpub) from an externally generated wallet. Extended public key is a watch-only wallet token. The public key allows BTCPay Server to generate a new address each time a new invoice is created. 
 
-You can receive payments to your wallet, without BTCPay Server knowing your private key. If a malicious attacker hacked your server and obtained the xpub, they could observe your addresses and balance, but cannot access the funds.
+:::tip
+By using an existing wallet, you can receive payments to the external wallet, without BTCPay Server knowing the wallet's private key. If a malicious attacker hacked your server and obtained the xpub, they could observe your transaction history, but cannot access the funds.
 :::
 
-Using an existing wallet assumes that you already have an external wallet created and backed up. You can:
-
-- [Use an existing hardware wallet](#use-an-existing-hardware-wallet)
-- [Use an existing software wallet](#use-an-existing-software-wallet)
+Externally generated wallet can be used as an:
+- [Existing hardware wallet](#use-an-existing-hardware-wallet)
+- [Existing software wallet](#use-an-existing-software-wallet)
 
 ### Use an existing hardware wallet
 
-Hardware wallets provide best balance between security and ease of use. We've made an app - BTCPay Vault that allows you to set up your hardware wallet with BTCPay Server automatically. Furthermore, if you're self-hosting an instance, it allows your hardware wallet to rely on your full node, further enhancing the privacy. 
+Hardware wallets provide a good balance between security and ease of use. If you already have a hardware wallet set up, you can easily use it with your BTCPay Server. Thanks to built-in [hardware wallet integration](Vault.md) the xpub key from the hardware wallet is automatically added to your BTCPay Server. The integration further allows you to spend funds received to your store within BTCPay's [internal wallet](Wallet.md)
 
 :::tip
-If you own a hardware wallet, follow the instructions on how to [use a hardware wallet with your BTCPay Server](Vault.md)
+If you own a hardware wallet, follow the instructions on how to [use a an existing hardware wallet with your BTCPay Server](Vault.md)
 :::
 
 ### Use an existing software wallet
@@ -48,7 +49,7 @@ If you do not have an existing wallet, you can generate it within your BTCPay Se
 :::warning
 When a new wallet is generated, BTCPay Server will show you a twelve word recovery seed. After the initial display, the seed is wiped from the server, unless a [hot wallet option](HotWallet.md) is enabled.
 
-Anyone with access to your recovery seed can also access and steal all your funds. Securely back up your seed by writing it down and keeping it in a safe place. Do not photograph it or store it in a digital format.
+Anyone with access to your recovery seed can also access and steal all your funds. Securely back up your seed by writing it down and keep it in a safe place. Do not photograph it or store it in a digital format.
 :::
 
 Follow the [instructions here to learn how to generate a new wallet](CreateWallet.md).
