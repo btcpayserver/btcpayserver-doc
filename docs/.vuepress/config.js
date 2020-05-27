@@ -87,7 +87,7 @@ module.exports = {
     sidebar: [
       ["/", "Introduction"],
       {
-        title: "BTCPay Basics",
+        title: "Basics",
         collapsable: false,
         children: [
           ["/UseCase", "Use Case"],
@@ -196,7 +196,7 @@ module.exports = {
                     path: "/ElectrumWallet",
                     children: [
                       ["/ElectrumX", "Electrum X"],
-                      ["/ElectrumPersonalServer", "Electrum Personal Server EPS"]
+                      ["/ElectrumPersonalServer", "Electrum Personal Server"]
                     ]
                   },
                   ["/WasabiWallet", "Wasabi Wallet"]
