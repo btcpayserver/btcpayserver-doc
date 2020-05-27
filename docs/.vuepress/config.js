@@ -182,14 +182,14 @@ module.exports = {
             collapsable: false,
             children: [
               {
-                title: "Use an existing hardware wallet",
+                title: "Use existing hardware wallet",
                 path: "/Vault",
                 children: [
                   ["/ColdCardWallet", "ColdCard Wallet"]
                 ]
               },
               {
-                title: "Use an existing software wallet",
+                title: "Use existing software wallet",
                 children: [
                   {
                     title: "Electrum Wallet",
@@ -203,7 +203,7 @@ module.exports = {
                 ]
               },
               {
-                title: "Create a wallet",
+                title: "Create a new wallet",
                 children: [
                   ["/HotWallet", "Hot Wallet"]
                 ]
