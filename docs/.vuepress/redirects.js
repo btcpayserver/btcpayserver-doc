@@ -28,7 +28,7 @@ module.exports = [
   { path: '/getting-started', redirect: '/RegisterAccount/' },
   { path: '/getting-started/registeraccount', redirect: '/RegisterAccount/' },
   { path: '/getting-started/createstore', redirect: '/CreateStore/' },
-  { path: '/getting-started/connectwallet', redirect: '/WalletSetup/' },
+  { path: '/getting-started/connectwallet', redirect: '/ConnectWallet/' },
   { path: '/getting-started/connectwallet/ledgerwallet', redirect: '/LedgerWallet/' },
   { path: '/getting-started/connectwallet/coldcardwallet', redirect: '/ColdCardWallet/' },
   { path: '/getting-started/connectwallet/wasabiwallet', redirect: '/WasabiWallet/' },
