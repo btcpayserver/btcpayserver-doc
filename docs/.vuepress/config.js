@@ -87,7 +87,7 @@ module.exports = {
     sidebar: [
       ["/", "Introduction"],
       {
-        title: "BTCPay Basics",
+        title: "Basics",
         collapsable: false,
         children: [
           ["/UseCase", "Use Case"],
@@ -177,34 +177,33 @@ module.exports = {
           "/RegisterAccount",
           "/CreateStore",
           {
-            title: "(3) Connect a Wallet",
-            path: "/ConnectWallet",
+            title: "(3) Wallet Setup",
+            path: "/WalletSetup",
             collapsable: false,
             children: [
               {
-                title: "Connect a hardware wallet",
+                title: "Use existing hardware wallet",
                 path: "/Vault",
                 children: [
-                  ["/LedgerWallet", "Ledger Wallet"],
                   ["/ColdCardWallet", "ColdCard Wallet"]
                 ]
               },
               {
-                title: "Connect a software wallet",
+                title: "Use existing software wallet",
                 children: [
                   {
                     title: "Electrum Wallet",
                     path: "/ElectrumWallet",
                     children: [
                       ["/ElectrumX", "Electrum X"],
-                      ["/ElectrumPersonalServer", "Electrum Personal Server EPS"]
+                      ["/ElectrumPersonalServer", "Electrum Personal Server"]
                     ]
                   },
                   ["/WasabiWallet", "Wasabi Wallet"]
                 ]
               },
               {
-                title: "Create a wallet",
+                title: "Create a new wallet",
                 children: [
                   ["/HotWallet", "Hot Wallet"]
                 ]
