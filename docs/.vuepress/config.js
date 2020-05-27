@@ -177,12 +177,12 @@ module.exports = {
           "/RegisterAccount",
           "/CreateStore",
           {
-            title: "(3) Connect a Wallet",
-            path: "/ConnectWallet",
+            title: "(3) Wallet Setup",
+            path: "/WalletSetup",
             collapsable: false,
             children: [
               {
-                title: "Connect a hardware wallet",
+                title: "Use a hardware wallet",
                 path: "/Vault",
                 children: [
                   ["/LedgerWallet", "Ledger Wallet"],
@@ -190,7 +190,7 @@ module.exports = {
                 ]
               },
               {
-                title: "Connect a software wallet",
+                title: "Use a software wallet",
                 children: [
                   {
                     title: "Electrum Wallet",
