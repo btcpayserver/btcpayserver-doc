@@ -177,8 +177,8 @@ module.exports = {
           "/RegisterAccount",
           "/CreateStore",
           {
-            title: "(3) Connect a Wallet",
-            path: "/ConnectWallet",
+            title: "(3) Wallet Setup",
+            path: "/WalletSetup",
             collapsable: false,
             children: [
               {

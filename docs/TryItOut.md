@@ -44,7 +44,7 @@ Either:
 * Host your store on someone else's BTCPay Server. You can find a list of third-party hosts [here](thirdpartyhosting.md/the-list-of-btcpay-third-party-hosts).
 * Or [deploy your own](deployment.md).
 
-Click on the following links for detailed instructions on how to [Register an account](registeraccount.md), [Create your first store](createstore.md) and [Connect your own wallet](connectwallet.md)
+Click on the following links for detailed instructions on how to [Register an account](registeraccount.md), [Create your first store](createstore.md) and [Connect your own wallet](WalletSetup.md)
 
 Then you can create an invoice, either through
 * The "Invoice" menu on the website or
