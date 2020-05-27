@@ -37,17 +37,10 @@ The Send function allows spending of the funds from the BTCPay wallet.
 
 To spend the funds, the user is required to **sign** the transaction. Transactions can be signed with:
 
-- Ledger Hardware Wallet
 - HD Private key or mnemonic seed
 - Wallet supporting PSBT
 - Hardware Wallet (BTCPay Vault)
 - Hot Wallet
-
-#### Signing with Ledger Hardware wallet
-
-Ledger Nano S has a native integration and can be used to spend bitcoin and [altcoins](Altcoins.md) from the wallet. Both Nano S and Ledger X can be used with [BTCPay Vault](Vault.md) for smoother experience for bitcoin transactions.
-
-Check this [tutorial on how to sign a transaction with Ledger Nano S](LedgerWallet.md#spending-from-btcpay-server-wallet-with-ledger)
 
 #### Signing with HD Private Key or mnemonic seed
 
