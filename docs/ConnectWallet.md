@@ -11,7 +11,7 @@ There are two ways to set up a wallet in BTCPay Server:
 
 Using an existing wallet assumes that you already have an external wallet created and backed up.
 
-When using an existing wallet with BTCPay Server, you're providing an extended public key (xpub) from an externally generated wallet. Extended public key is a watch-only wallet token. The public key allows BTCPay Server to generate a new address each time a new invoice is created. 
+When using an existing wallet with BTCPay Server, you're providing an extended public key (xpub) from an externally generated wallet. Extended public key is a watch-only wallet token. Providing this public key allows BTCPay Server to generate a new address each time a new invoice is created. 
 
 :::tip
 By using an existing wallet, you can receive payments to the external wallet, without BTCPay Server knowing the wallet's private key. If a malicious attacker hacked your server and obtained the xpub, they could observe your transaction history, but cannot access the funds.
