@@ -10,7 +10,6 @@ TRANSMUTER_DIR=$BASE_DIR/deps/transmuter
 
 update_external() {
   sed -ie 's*(https://github.com/btcpayserver/btcpayserver-doc/blob/master/*(../*g' $1
-  sed -ie 's*(https://github.com/btcpayserver/btcpayserver-doc/raw/master/*(../*g' $1
   sed -ie '1s*^*---\
 editLink: false\
 ---\

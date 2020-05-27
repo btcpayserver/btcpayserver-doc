@@ -83,6 +83,19 @@ Before the build we check out the other repositories, copy their docs into the r
 
 The process for that is defined in the [setup-deps.sh](./setup-deps.sh) script.
 
+External repos can trigger the docs build whenever they change.
+You can use GitHub's [repository_dispatch](https://help.github.com/en/actions/reference/events-that-trigger-workflows#external-events-repository_dispatch) feature for this, which is exposed via the API:
+
+```sh
+curl -X POST https://api.github.com/repos/btcpayserver/btcpayserver-doc/dispatches \
+  -u "${{ secrets.GH_PAT }}" \
+  -H "Accept: application/vnd.github.everest-preview+json" \
+  -H "Content-Type: application/json" \
+  --data '{"event_type": "build_docs"}'
+```
+
+The `GH_PAT` needs to be a [personal access token](https://help.github.com/en/actions/reference/events-that-trigger-workflows#triggering-new-workflows-using-a-personal-access-token).
+
 ## Supporters
 
 The BTCPay Server Project is proudly supported by these entities through the [BTCPay Server Foundation](https://foundation.btcpayserver.org/).
