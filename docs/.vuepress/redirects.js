@@ -5,6 +5,7 @@ module.exports = [
   { path: '/btcpay-basics/walkthrough', redirect: '/Walkthrough/' },
   { path: '/btcpay-basics/btcpayvsothers', redirect: '/BTCPayVsOthers/' },
   { path: '/btcpay-basics/tryitout', redirect: '/TryItOut/' },
+  { path: '/btcpay-basics/gettingstarted', redirect: '/RegisterAccount/' },
   // Deployment
   { path: '/deployment', redirect: '/Deployment/' },
   { path: '/deployment/deployment', redirect: '/Deployment/' },
