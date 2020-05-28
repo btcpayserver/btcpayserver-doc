@@ -130,13 +130,13 @@ The BTCPay Server Project is proudly supported by these entities through the [BT
           <br/>
           <span>DG Lab</span>
         </a>
-        <td align="center" valign="middle">
-        <a href="https://www.okcoin.com/" target="_blank">
-          <img  src="https://raw.githubusercontent.com/btcpayserver/btcpayserver/master/BTCPayServer/wwwroot/img/okcoin.svg?sanitize=true" alt="OKCoin" height=100>
+      </td>
+      <td align="center" valign="top" width="16.66%">
+        <a href="https://www.okcoin.com//" target="_blank">
+          <img  src="https://raw.githubusercontent.com/btcpayserver/btcpayserver/master/BTCPayServer/wwwroot/img/okcoin.svg?sanitize=true" alt="DG Lab" height=100>
           <br/>
           <span>OKCoin</span>
         </a>
-      </td>
       </td>
       <td align="center" valign="top" width="16.66%">
         <a href="https://acinq.co/" target="_blank">
