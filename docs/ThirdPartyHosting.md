@@ -80,12 +80,12 @@ It can be enabled in Server Settings > Policies > Allow non-admins to use the in
 
 ![Enable LN for Others](./img/ThirdPartyEnableLNOthers.png)
 
-::: warning As a third-party host
+:::warning As a third-party host
 All your registrants' funds will go to your own Lightning Wallet. 
 You will have to manually check and redispatch the funds to their respectfull owners. This could potentially become a burden.
 :::
 
-::: danger As an individual using a third-party host
+:::danger As an individual using a third-party host
 All payments made through the Lightning Network will go to your third-party's wallet. 
 Take precautions and only use this option while using a trutworthy third-party host to ensure you get your funds back.
 :::
