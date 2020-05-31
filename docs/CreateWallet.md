@@ -13,7 +13,7 @@ Feel free to select the address format that you prefer. **Do not enable** a hot 
 
 ![](./img/createwallet/createawallet.jpg)
 
-![](./img/createwallet/recoveryseedbackup.png)
+![](./img/createwallet/recoveryseedbackup.jpg)
 
 
 If you did not provide an existing seed, a seed will be generated and shown to you. The public key will automatically be imported in the store and configured to an appropriate format. 
