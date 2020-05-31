@@ -204,6 +204,7 @@ module.exports = {
               },
               {
                 title: "Create a new wallet",
+                path: "/CreateWallet",
                 children: [
                   ["/HotWallet", "Hot Wallet"]
                 ]
