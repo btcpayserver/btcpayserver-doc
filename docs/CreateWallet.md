@@ -11,7 +11,7 @@ Feel free to select the address format that you prefer. **Do not enable** a hot 
 
 ![](./img/hotwallet/Setup1.png)
 
-![](./img/createwallet/createawallet.JPEG)
+![](./img/createwallet/createawallet.jpg)
 
 ![](./img/createwallet/recoveryseedbackup.png)
 
