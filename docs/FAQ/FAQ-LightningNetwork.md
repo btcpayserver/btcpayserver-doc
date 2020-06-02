@@ -33,7 +33,22 @@ Here are some general questions about LN in BTCPay, regardless of the implementa
 
 ### How many users can use Lightning Network in BTCPay?
 
-Only server admin has the access to the Lightning Network node, for technical and security reasons. On a self-hosted server, you can use only one internal Lightning node.
+Since version 1.0.3.128, a BTCPay Server host can enable it's registrants to use the internal Lightning Network node.
+It can be enabled in Server Settings > Policies > Allow non-admins to use the internal lightning node in their stores
+
+![Enable LN for Others](./img/ThirdPartyEnableLNOthers.png)
+
+:::warning As a third-party host
+All your registrants' funds will go to your own Lightning Wallet. 
+You will have to manually check and redispatch the funds to their respectfull owners. This could potentially become a burden.
+:::
+
+:::danger As an individual using a third-party host
+All payments made through the Lightning Network will go to your third-party's wallet. 
+Take precautions and only use this option while using a trutworthy third-party host to ensure you get your funds back.
+:::
+
+On a self-hosted server, you can use only one internal Lightning node.
 
 Server owners can use the same Lightning node for an unlimited number of stores tied to their admin account. Other users can connect to their external nodes. External connection is technically advanced task, and we recommend that if you want Lightning, you should deploy your own server, which comes with all the necessities bundled up.
 
