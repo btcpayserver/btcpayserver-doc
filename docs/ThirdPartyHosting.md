@@ -76,16 +76,4 @@ Third-party users who are granted access to an internal lightning node or hot wa
 ## Can I enable the use of my Lightning Network node to others ?
 
 Yes, you can enable users that have registered on your BTCPay Server instance to use your Lightning Network node.
-It can be enabled in Server Settings > Policies > Allow non-admins to use the internal lightning node in their stores
-
-![Enable LN for Others](./img/ThirdPartyEnableLNOthers.png)
-
-:::warning As a third-party host
-All your registrants' funds will go to your own Lightning Wallet. 
-You will have to manually check and redispatch the funds to their respectfull owners. This could potentially become a burden.
-:::
-
-:::danger As an individual using a third-party host
-All payments made through the Lightning Network will go to your third-party's wallet. 
-Take precautions and only use this option while using a trutworthy third-party host to ensure you get your funds back.
-:::
+[See how](/FAQ/FAQ-LightningNetwork/#how-many-users-can-use-lightning-network-in-btcpay)
