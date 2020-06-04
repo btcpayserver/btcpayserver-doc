@@ -5,6 +5,7 @@ set -e
 BASE_DIR=$(cd `dirname $0` && pwd)
 DOCS_DIR=$BASE_DIR/docs
 PUBLIC_DIR=$DOCS_DIR/.vuepress/public
+BTCPAYSERVER_DIR=$BASE_DIR/deps/btcpayserver
 DOCKER_DIR=$BASE_DIR/deps/docker
 TRANSMUTER_DIR=$BASE_DIR/deps/transmuter
 
@@ -15,6 +16,20 @@ editLink: false\
 ---\
 *' $1
 }
+
+# BTCPay Server
+
+rm -rf $DOCS_DIR/BTCPayServer
+mkdir -p $DOCS_DIR/BTCPayServer
+
+if [ ! -d $BTCPAYSERVER_DIR ]; then
+  git clone https://github.com/btcpayserver/btcpayserver.git $BTCPAYSERVER_DIR
+else
+  cd $BTCPAYSERVER_DIR && git checkout master && git pull
+fi
+
+cd $BTCPAYSERVER_DIR
+jq -rs 'reduce .[] as $item ({}; . * $item)' BTCPayServer/wwwroot/swagger/v1/*.json > $PUBLIC_DIR/API/Greenfield/v1/swagger.json
 
 # Docker
 
