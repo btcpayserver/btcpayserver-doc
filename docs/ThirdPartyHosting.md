@@ -76,4 +76,4 @@ Third-party users who are granted access to an internal lightning node or hot wa
 ## Can I enable the use of my Lightning Network node to others ?
 
 Yes, you can enable users that have registered on your BTCPay Server instance to use your Lightning Network node.
-[See how](/FAQ/FAQ-LightningNetwork/#how-many-users-can-use-lightning-network-in-btcpay)
+[See how](/FAQ/FAQ-LightningNetwork.md/#how-many-users-can-use-lightning-network-in-btcpay)
