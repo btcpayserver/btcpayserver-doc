@@ -22,7 +22,7 @@ Go to Server Settings > Policies > Disable registration, unmark the checkbox. Yo
 
 ## Are there any limitations in features when using a third party host?
 Yes. Here are some restrictions.
-* No [Lightning Network](LightningNetwork.md) by default. Can be enabled by the third-party host but at the cost of a security risk for registrants using that third-party. [More information](#Can-I-enable-the-use-of-my-Lightning-Network-node-to-others)
+* No [Lightning Network](LightningNetwork.md) by default. Can be enabled by the third-party host but at the cost of a security risk for registrants using that third-party. [More information](#can-i-enable-the-use-of-my-lightning-network-node-to-others)
 * No [wallet re-scan](/FAQ/FAQ-Wallet.md#what-is-wallet-re-scan-in-btcpay)
 * No [Server Settings](Walkthrough.md#server-settings) access
 
