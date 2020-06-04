@@ -36,7 +36,7 @@ Here are some general questions about LN in BTCPay, regardless of the implementa
 Since version 1.0.3.128, a BTCPay Server host can enable it's registrants to use the internal Lightning Network node.
 It can be enabled in Server Settings > Policies > Allow non-admins to use the internal lightning node in their stores
 
-![Enable LN for Others](./img/ThirdPartyEnableLNOthers.png)
+![Enable LN for Others](../img/ThirdPartyEnableLNOthers.png)
 
 :::warning As a third-party host
 All your registrants' funds will go to your own Lightning Wallet. 
