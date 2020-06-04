@@ -73,7 +73,7 @@ Specifically, third-party hosts should not enable the following policies without
 
 Third-party users who are granted access to an internal lightning node or hot wallet functionality to enable features such as Payjoin, should understand the risk and trust associated with [using hot wallets](HotWallet.md) before choosing to use it. Use one of the [recommended wallets](WalletSetup.md) which provide an xpubkey to use in your store, if you are unsure which wallet type to use. 
 
-## Can I enable the use of my Lightning Network node to others ?
+## Can I enable the use of my Lightning Network node to others?
 
 Yes, you can enable users that have registered on your BTCPay Server instance to use your Lightning Network node.
 [See how](/FAQ/FAQ-LightningNetwork.md/#how-many-users-can-use-lightning-network-in-btcpay)
