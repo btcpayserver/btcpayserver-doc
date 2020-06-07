@@ -2,9 +2,13 @@
 
 A third-party host is an individual or a business which self-hosts a BTCPay Server instance and enables other users to register and use the server. On a self-hosted server, the owner can add an unlimited amount of users and stores and allow those users to manage their stores independently and receive payments to their own wallets.
 
-While this feature in BTCPay Server exists for complex multi-store business management, community enthusiasts use it to help other users (mostly beginners), sometimes skip an overwhelming step of deploying a self-hosted BTCPay server. Users who want to test or develop applications on top of BTCPay Server also use instances hosted by third parties. Some hosts try to spread the adoption of cryptocurrencies by allowing their local merchants to receive payments for free or for a small sign-up fee.
+While this feature in BTCPay Server exists for complex multi-store business management, community enthusiasts use it to help other users (mostly beginners), sometimes skip an overwhelming step of deploying a self-hosted BTCPay server. Users who want to test or develop applications on top of BTCPay Server also use instances hosted by third-parties. Some hosts try to spread the adoption of cryptocurrencies by allowing their local merchants to receive payments for free or for a small sign-up fee.
 
 In layman words, think of this feature as a payment processor factory which allows anyone to deploy a server and help others receive payments which are validated via the server owners' [full Bitcoin node](https://en.bitcoin.it/wiki/Full_node).
+
+Third-party hosts play an important role in the ecosystem since they provide an easy and cost-effective way for users to try and use BTCPay Server. The role of honest hosts who provide free service to others is essential in the early phase of BTCPay Server adoption. However, users should be familiar with the pros, cons and potential risks involved when using a trusted third-party. Find the optimal balance between your use-case, cost, and privacy/security trade-offs.
+
+Some of the hosts are entirely free to use and maintain the server cost from donations of their users. If you've been using a reliable free host for a while, you should consider donating to them to support them.
 
 ## The list of BTCPay third-party hosts
 
@@ -18,7 +22,7 @@ Go to Server Settings > Policies > Disable registration, unmark the checkbox. Yo
 
 ## Are there any limitations in features when using a third party host?
 Yes. Here are some restrictions.
-* No [Lightning Network](LightningNetwork.md)
+* No [Lightning Network](LightningNetwork.md) by default. Can be enabled by the third-party host but at the cost of a security risk for registrants using that third-party. [More information](#can-i-enable-the-use-of-my-lightning-network-node-to-others)
 * No [wallet re-scan](/FAQ/FAQ-Wallet.md#what-is-wallet-re-scan-in-btcpay)
 * No [Server Settings](Walkthrough.md#server-settings) access
 
@@ -69,7 +73,7 @@ Specifically, third-party hosts should not enable the following policies without
 
 Third-party users who are granted access to an internal lightning node or hot wallet functionality to enable features such as Payjoin, should understand the risk and trust associated with [using hot wallets](HotWallet.md) before choosing to use it. Use one of the [recommended wallets](WalletSetup.md) which provide an xpubkey to use in your store, if you are unsure which wallet type to use. 
 
-## Summary
-Third-party hosts play an important role in the ecosystem since they provide an easy and cost-effective way for users to try and use BTCPay Server. The role of honest hosts who provide free service to others is essential in the early phase of BTCPay Server adoption. However, users should be familiar with the pros, cons and potential risks involved when using a trusted third-party. Find the optimal balance between your use-case, cost, and privacy/security trade-offs.
+## Can I enable the use of my Lightning Network node to others?
 
-Some of the hosts are entirely free to use and maintain the server cost from donations of their users. If you've been using a reliable free host for a while, you should consider donating to them to support them.
+Yes, you can enable users that have registered on your BTCPay Server instance to use your Lightning Network node.
+[See how](/FAQ/FAQ-LightningNetwork.md/#how-many-users-can-use-lightning-network-in-btcpay)
