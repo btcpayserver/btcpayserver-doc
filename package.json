@@ -20,10 +20,12 @@
     "prestart": "rm -rf $npm_package_config_dist",
     "start": "vuepress dev docs",
     "build": "vuepress build docs",
+    "test": "jest",
     "predeploy": "./prepare-deployment.sh"
   },
   "devDependencies": {
     "@vuepress/plugin-back-to-top": "1.5.0",
+    "jest": "26.0.1",
     "markdown-it-implicit-figures": "0.10.0",
     "vuepress": "1.5.0",
     "vuepress-plugin-clean-urls": "1.1.1",
