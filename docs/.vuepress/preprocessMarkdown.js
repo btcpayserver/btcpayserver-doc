@@ -1,17 +1,29 @@
+const { join, relative, resolve } = require('path')
+const docsDir = resolve(__dirname, '..')
+
 // external docs: local dir as key, repo base as value
 const EXTERNAL_DOCS = {
   'Docker': 'https://github.com/btcpayserver/btcpayserver-docker',
   'Transmuter': 'https://github.com/btcpayserver/btcTransmuter',
 }
 
-const replaceExternalDocsLinks = source => {
+const replaceExternalRepoLinks = (source, resourcePath) => {
   let processed = source
 
   Object.keys(EXTERNAL_DOCS).forEach(baseDir => {
     const baseUrl = EXTERNAL_DOCS[baseDir]
-    const regexp = new RegExp(`\\[.*?\\]\\((${baseUrl}/blob/master/(README\.md|docs/.*?))\\)`, 'gi')
 
-    processed = processed.replace(regexp, (all, url, path) => all.replace(url, `/${baseDir}/${path}`))
+    // rewrite repo internal links to external links
+    const repoLinks = new RegExp(`\\]\\(((?!https?:\/\/|#|\.?\/).*?)\\)`, 'gi')
+    processed = processed.replace(repoLinks, (all, path) => all.replace(path, `${baseUrl}/blob/master/${path}`))
+
+    // rewrite links to docs to internal VuePress links
+    const docsLinks = new RegExp(`\\]\\((${baseUrl}/blob/master/(README\.md|docs/.*?))\\)`, 'gi')
+    processed = processed.replace(docsLinks, (all, url, path) => all.replace(url, `/${baseDir}/${path.replace('docs/', '')}`))
+
+    // rewrite external links to docs to internal VuePress links
+    const links = new RegExp(`\\]\\((https://docs.btcpayserver.org(.*))\\)`, 'gi')
+    processed = processed.replace(links, (all, url, path) => all.replace(url, path))
   })
 
   return processed
@@ -36,14 +48,19 @@ const replaceYouTubeLinks = source =>
     allow="autoplay;encrypted-media;picture-in-picture"
     allowfullscreen
   ></iframe>
-</a>`
+</a>`.trim()
   })
 
-module.exports = source => {
+// https://webpack.js.org/api/loaders/
+module.exports = function (source) {
+  const { resourcePath } = this
   let processed = source
 
   processed = replaceYouTubeLinks(processed)
-  processed = replaceExternalDocsLinks(processed)
+
+  if (source.match(`externalRepo: `)) {
+    processed = replaceExternalRepoLinks(processed, resourcePath)
+  }
 
   return processed
 }

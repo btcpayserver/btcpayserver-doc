@@ -18,7 +18,7 @@ module.exports = {
     // Styles
     ["link", { rel: "stylesheet", href: "/styles/btcpayserver-variables.css" }]
   ],
-  chainWebpack (config, isServer) {
+  chainWebpack (config) {
     config.module
       .rule('md')
       .test(/\.md$/)
