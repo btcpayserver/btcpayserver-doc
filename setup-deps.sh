@@ -9,11 +9,8 @@ DOCKER_DIR=$BASE_DIR/deps/docker
 TRANSMUTER_DIR=$BASE_DIR/deps/transmuter
 
 update_external() {
-  sed -ie 's*(https://github.com/btcpayserver/btcpayserver-doc/blob/master/*(../*g' $1
-  sed -ie '1s*^*---\
-editLink: false\
----\
-*' $1
+  # add frontmatter to omit edit links for external docs
+  echo $'---\neditLink: false\nexternalRepo: '"$2"$'\n---\n'"$(cat $1)" > $1
 }
 
 # Docker
@@ -31,7 +28,7 @@ cd $DOCKER_DIR
 cp -r README.md docs/* $DOCS_DIR/Docker
 sed -ie 's$(docs/$(./$g' $DOCS_DIR/Docker/README.md
 for file in $DOCS_DIR/Docker/*.md; do
-  update_external $file
+  update_external $file https://github.com/btcpayserver/btcpayserver-docker
 done
 
 # Transmuter
@@ -49,5 +46,5 @@ cd $TRANSMUTER_DIR
 cp -r README.md docs/* $DOCS_DIR/Transmuter
 sed -ie 's$(docs/$(./$g' $DOCS_DIR/Transmuter/README.md
 for file in $DOCS_DIR/Transmuter/*.md; do
-  update_external $file
+  update_external $file https://github.com/btcpayserver/btcTransmuter
 done

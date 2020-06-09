@@ -30,9 +30,11 @@ jobs:
           node-version: ${{ matrix.node-version }}
       - name: Setup dependencies
         run: ./setup-deps.sh
-      # Install and build
+      # Install, test and build
       - name: Install
         run: npm ci
+      - name: Test
+        run: npm test
       - name: Build
         run: npm run build
       # Deploy
