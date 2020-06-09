@@ -7,7 +7,7 @@ If you are using a [third-party host](ThirdPartyHosting.md), this option needs t
 1. Go to your BTCPay Server’s Store > General Settings > Derivation Scheme > Import from a new/existing seed.
 2. Press Generate
 
-Feel free to select the address format that you prefer. **Do not enable** a hot wallet, unless you've read the [Hot wallet documentation](HotWallet.md) and have the use-case for this advanced feature.
+Feel free to select the address format that you prefer. **Do not enable** a hot wallet, unless you've read the [Hot wallet documentation](http://docs.btcpayserver.org/HotWallet/#btcpay-hot-wallet) and have the use-case for this advanced feature.
 
 ![](./img/hotwallet/Setup1.png)
 
