@@ -21,7 +21,7 @@ The wallet contains following features:
 
 An overview of the incoming (green), outgoing (red) and unconfirmed (grayed out) transactions displayed together with timestamps and balances, sorted by date. You can click on the tx ID to preview the transaction on the block explorer.
 
-![Individual Wallet](./img/walle/WalletTransactions.png)
+![Individual Wallet](./img/wallet/WalletTransactions.png)
 
 ### Send
 
