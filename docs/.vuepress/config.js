@@ -154,8 +154,10 @@ module.exports = {
                     path: "/Transmuter/",
                     children: [
                       ["/Transmuter/EmailReceiptsPreset", "Email Receipts Preset"]
-                    ]
+					]  
                   },
+				  ["/ElectrumX", "Electrum X"],
+                  ["/ElectrumPersonalServer", "Electrum Personal Server"]
                   "/Docker/pihole"
                 ]
               }
@@ -194,10 +196,6 @@ module.exports = {
                   {
                     title: "Electrum Wallet",
                     path: "/ElectrumWallet",
-                    children: [
-                      ["/ElectrumX", "Electrum X"],
-                      ["/ElectrumPersonalServer", "Electrum Personal Server"]
-                    ]
                   },
                   ["/WasabiWallet", "Wasabi Wallet"]
                 ]
