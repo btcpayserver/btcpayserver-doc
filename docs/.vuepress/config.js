@@ -156,8 +156,8 @@ module.exports = {
                       ["/Transmuter/EmailReceiptsPreset", "Email Receipts Preset"]
 					]  
                   },
-				  ["/ElectrumX", "Electrum X"],
-                  ["/ElectrumPersonalServer", "Electrum Personal Server"]
+				 ["/ElectrumX", "Electrum X"],
+				 ["/ElectrumPersonalServer", "Electrum Personal Server"]
                   "/Docker/pihole"
                 ]
               }
