@@ -154,7 +154,7 @@ module.exports = {
                     path: "/Transmuter/",
                     children: [
                       ["/Transmuter/EmailReceiptsPreset", "Email Receipts Preset"]
-					]  
+		]  
                   },
 				 ["/ElectrumX", "Electrum X"],
 				 ["/ElectrumPersonalServer", "Electrum Personal Server"],
