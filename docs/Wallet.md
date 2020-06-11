@@ -66,7 +66,7 @@ Using the hot wallet feature comes with its own security implications, please be
 
 Certain wallet features are available for advanced users. Toggle the `Advanced Settings` within the `Send` tab to preview them.
 
-##### Make sure no change UTXO is created (Advanced mode)
+#### Don't create UTXO change
 
 This option is available in the `Advanced mode` of the `Send` page.
 
