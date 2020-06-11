@@ -70,7 +70,7 @@ Receive tab generates an unused address which can be used to receive payments. T
 
 ### Advanced Settings
 
-#### Make sure no change UTXO is created (Advanced mode)
+#### Don't create UTXO change
 
 This option is available in the `Advanced mode` of the Send page.
 
