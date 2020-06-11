@@ -157,7 +157,7 @@ module.exports = {
 					]  
                   },
 				 ["/ElectrumX", "Electrum X"],
-				 ["/ElectrumPersonalServer", "Electrum Personal Server"]
+				 ["/ElectrumPersonalServer", "Electrum Personal Server"],
                   "/Docker/pihole"
                 ]
               }
