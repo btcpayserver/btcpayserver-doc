@@ -35,12 +35,12 @@ To spend the funds, you are required to **sign** the transaction. Transactions c
 
 - HD Private key or mnemonic seed
 - Wallet supporting PSBT
-- Hardware Wallet (BTCPay Vault)
+- Hardware Wallet
 - Hot Wallet
 
 ##### Signing with HD Private Key or mnemonic seed
 
-Transactions in BTCPay's wallet can be signed with a private key or mnemonic seed. Prior to inputing the private key, make sure to set a proper `AccountKeyPath` in Wallet > Settings.
+If you set up an [existing wallet with your BTCPay Server](WalletSetup/#use-an-existing-wallet), you can spend the funds by inputing your private key into an appropriate field. Make sure to set a proper `AccountKeyPath` in Wallet > Settings otherwise you won't be able to spend.
 
 ##### Signing with a wallet supporting PSBT
 
@@ -48,15 +48,16 @@ PSBT (Partially Signed Bitcoin transaction) is supported and can be signed with 
 
 Check this tutorial on how to [sign a transaction with ColdCard Hardware Wallet](ColdCardWallet.md#spending-from-btcpay-server-wallet-with-coldcard-psbt) completely air-gaped.
 
-##### Signing with Hardware Wallets (BTCPay Vault)
+##### Signing with a hardware wallets
 
-[BTCPay Vault](https://blog.btcpayserver.org/btcpay-vault/) is a cross-platform desktop application that makes it possible to use a wide range of hardware wallets with the BTCPay Wallet.
+BTCPay Server has a built in hardware wallet support allowing you to use your hardware wallet within BTCPay, without leaking information to third-party apps or servers.
 
-Check [BTCPay Vault](Vault.md) documentation for instructions on how to set up and sign with a [compatible hardware wallet](https://github.com/bitcoin-core/HWI#device-support).
+[Check instructions](Vault.md) on how to set up and sign with a [compatible hardware wallet](https://github.com/bitcoin-core/HWI#device-support).
 
-##### Signing with a Hot Wallet
+##### Signing with a hot wallet
 
-BTCPay Server also allows stores to generate or import a wallet while also storing its private keys. If your store was configured this way, you'll have the option available in the "Sign with.." dropdown.
+If you [created a new wallet](CreateWallet.md) when setting up your store and enabled a [hot wallet](HotWallet.md) you can sign a transaction with a private key stored on your server.
+
 :::danger
 Using the hot wallet feature comes with its own security implications, please be sure to read and understand them over at the [Hot Wallet documentation](HotWallet.md)
 :::
@@ -79,16 +80,17 @@ By enabling this feature, BTCPay Server wallet will round up the amount sent to 
 
 Warning: Despite the fact, in this example, that you entered `1.0` in the amount field, the amount that will really be sent to your destination will be `1.1 BTC`.
 
+##### RBF (Replace-by-fee)
+
 ### Receive
 
 Receive tab generates an unused address which can be used to receive payments. The same can be achieved by generating an invoice (Invoices > Create new invoice).
 
 ![Wallet Receive](./img/wallet/WalletReceive.png)
 
-
 ### Re-scan
 
-The Rescan relies on Bitcoin Core 0.17.0's scantxoutset to scan the current state of the blockchain (called UTXO Set) for coins belonging to the derivation scheme being used.
+The Rescan relies on Bitcoin Core 0.17.0's `scantxoutset` to scan the current state of the blockchain (called UTXO Set) for coins belonging to the configured derivation scheme.
 
 ![Wallet Rescan](./img/wallet/WalletRescan.png)
 
