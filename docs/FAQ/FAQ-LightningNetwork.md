@@ -339,12 +339,14 @@ export LIGHTNING_ALIAS="namehere"
 To install ThunderHub on your instance apply the following:
 
 ```
-export BTCPAYGEN_ADDITIONAL_FRAGMENTS="\$BTCPAYGEN_ADDITIONAL_FRAGMENTS;opt-add-thunderhub"
+export BTCPAYGEN_ADDITIONAL_FRAGMENTS="$BTCPAYGEN_ADDITIONAL_FRAGMENTS;opt-add-thunderhub"
 
 . btcpay-setup.sh -i
 ```
 
-If you get the following warning message **Unable to connect to this node** apply the following:
+If you get the following warning message **Unable to connect to this node** it is probably because the certificate used to communicate with LND doesn't have the correct domains. LND doesn't generate new ones unless the previous ones are deleted first.
+
+To delete the old certificate and key and have LND generate new ones, apply the following:
 
 ```
 docker exec btcpayserver_lnd_bitcoin rm /data/tls.cert

@@ -184,6 +184,7 @@ Lightning Network troubleshooting and common problems.
 * [What’s the default LND Directory in BTCPay?](FAQ-LightningNetwork.md#what-s-the-default-directory-of-lnd-in-btcpay)
 * [LND connection issue - cannot get macaroon: root key with id 0 doesn’t exist](FAQ-LightningNetwork.md#lnd-connection-issues-after-an-update)
 * [How to change LND Node alias](FAQ-LightningNetwork.md#how-to-change-my-LND-Node-alias)
+* [How to install ThunderHub](FAQ-LightningNetwork.md#how-to-install-thunderhub)
 
 ### [Lightning Network (c-lightning) FAQ](FAQ-LightningNetwork.md#lightning-network-c-lightning-faq)
 * [How to announce an IPv6 address?](FAQ-LightningNetwork.md#how-to-announce-an-ipv6-address)
