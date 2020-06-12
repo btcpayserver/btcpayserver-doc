@@ -48,7 +48,7 @@ PSBT (Partially Signed Bitcoin transactions) are supported and can be signed wit
 
 Check this tutorial on how to [sign a transaction with ColdCard Hardware Wallet](ColdCardWallet.md#spending-from-btcpay-server-wallet-with-coldcard-psbt) completely air-gaped.
 
-##### Signing with a hardware wallets
+##### Signing with a hardware wallet
 
 BTCPay Server has built-in hardware wallet support allowing you to use your hardware wallet with BTCPay, without leaking information to third-party apps or servers.
 
