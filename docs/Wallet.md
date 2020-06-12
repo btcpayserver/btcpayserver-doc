@@ -2,7 +2,7 @@
 
 BTCPay Server has a built in, full-node reliant wallet that allows easier funds management. 
 
-Each [store](CreateStore.md) and cryptocurrency have a separate wallet displayed on the wallets page. A wallet can be accessed by clicking **Wallets** from the top menu. To access a particular wallet, click **Manage**.
+Each [store](CreateStore.md)'s configured cryptocurrency has a separate wallet displayed on the wallets page. A wallet can be accessed by clicking **Wallets** from the top menu. To access a particular wallet, click **Manage**.
 
 ![Wallets Page BTCPay](./img/wallet/Wallets.png)
 
