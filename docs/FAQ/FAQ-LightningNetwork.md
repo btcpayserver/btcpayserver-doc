@@ -22,6 +22,7 @@ This document clarifies some of the most common questions and issues users face 
 * [What’s the default LND Directory in BTCPay?](FAQ-LightningNetwork.md#what-s-the-default-directory-of-lnd-in-btcpay)
 * [LND connection issue - cannot get macaroon: root key with id 0 doesn’t exist](FAQ-LightningNetwork.md#lnd-connection-issues-after-an-update)
 * [How to change LND Node alias](FAQ-LightningNetwork.md#how-to-change-my-lnd-node-alias)
+* [How to install ThunderHub](FAQ-LightningNetwork.md#how-to-install-thunderhub)
 
 ## [Lightning Network (c-lightning) FAQ](FAQ-LightningNetwork.md#lightning-network-c-lightning-faq)
 * [How to find an on-chain address in Spark?](FAQ-LightningNetwork.md#how-to-find-an-on-chain-address-in-spark)
@@ -332,6 +333,26 @@ sudo su -
 cd btcpayserver-docker
 export LIGHTNING_ALIAS="namehere"
 . ./btcpay-setup.sh -i
+```
+
+### How to install ThunderHub?
+To install ThunderHub on your instance apply the following:
+
+```
+export BTCPAYGEN_ADDITIONAL_FRAGMENTS="$BTCPAYGEN_ADDITIONAL_FRAGMENTS;opt-add-thunderhub"
+
+. btcpay-setup.sh -i
+```
+
+If you get the following warning message **Unable to connect to this node** it is probably because the certificate used to communicate with LND doesn't have the correct domains. LND doesn't generate new ones unless the previous ones are deleted first.
+
+To delete the old certificate and key and have LND generate new ones, apply the following:
+
+```
+docker exec btcpayserver_lnd_bitcoin rm /data/tls.cert
+docker exec btcpayserver_lnd_bitcoin rm /data/tls.key
+docker restart btcpayserver_lnd_bitcoin
+docker restart generated_bitcoin_thub_1
 ```
 
 ## Lightning Network (c-lightning) FAQ
