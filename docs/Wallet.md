@@ -50,7 +50,7 @@ Check this tutorial on how to [sign a transaction with ColdCard Hardware Wallet]
 
 ##### Signing with a hardware wallets
 
-BTCPay Server has a built in hardware wallet support allowing you to use your hardware wallet within BTCPay, without leaking information to third-party apps or servers.
+BTCPay Server has built-in hardware wallet support allowing you to use your hardware wallet with BTCPay, without leaking information to third-party apps or servers.
 
 [Check instructions](Vault.md) on how to set up and sign with a [compatible hardware wallet](https://github.com/bitcoin-core/HWI#device-support).
 
