@@ -44,7 +44,7 @@ If you set up an [existing wallet with your BTCPay Server](WalletSetup/#use-an-e
 
 ##### Signing with a wallet supporting PSBT
 
-PSBT (Partially Signed Bitcoin transaction) is supported and can be signed with PSBT compatible wallet.
+PSBT (Partially Signed Bitcoin transactions) are supported and can be signed with PSBT compatible wallet.
 
 Check this tutorial on how to [sign a transaction with ColdCard Hardware Wallet](ColdCardWallet.md#spending-from-btcpay-server-wallet-with-coldcard-psbt) completely air-gaped.
 
@@ -82,6 +82,22 @@ Warning: Despite the fact, in this example, that you entered `1.0` in the amount
 
 ##### RBF (Replace-by-fee)
 
+##### Coin Selection
+
+Coin selection is a an advanced privacy-enhancing feature that allows you to specifically select coins that you would like to spend when crafting a transaction. For example, paying with coins that are fresh from a coinjoin mix.
+
+To make the selection easier, coin-selection works natively with the wallet labels feature. This allows you to label any incoming funds for smoother UTXO management and spending.
+
+##### Other features
+
+###### Camera QR scan
+
+Scan option in wallet (camera icon) lets you use your device’s camera to scan an invoice when sending from the wallet. It auto-populates the invoice information so you don’t have to manually copy-paste address and amount.
+
+###### Paste BIP21 address
+
+This option decodes a BIP21 payment link. It's useful when you're trying to pay a [Payjoin](Payjoin.md) invoice.
+
 ### Receive
 
 Receive tab generates an unused address which can be used to receive payments. The same can be achieved by generating an invoice (Invoices > Create new invoice).
@@ -111,6 +127,12 @@ Wallet re-scan requires access to the full node which means that this function i
 
 Users who use a third party host should use a newly generated xpub key and also use an external wallet like Electrum which allows them to increase the gap limit.
 
-### PSBT
+### PSBT 
+
+In the Partially Signed Bitcoin Transactions (PSBT) tab, you can upload and decode an earlier signed PSBT from external wallet and broadcast it via BTCPay Wallet. For more information on PSBT check this link.
 
 ### Settings
+
+In the wallet settings field you can adjust certain settings. If you've configured your wallet by [creating a new wallet](CreateWallet) or using an existing wallet via the [hardware wallet integration](Vault.md) these settings will be pre-configured. 
+
+If you manually added the extended public key from an external wallet, you'd need to adjust `AccountKeyPath` that you can find in your external wallet, for example `m/84'/0'/0'` to be able to spend from the BTCPay Wallet.
