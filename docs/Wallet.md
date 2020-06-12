@@ -104,7 +104,7 @@ This option decodes a BIP21 payment link. It's useful when you're trying to pay 
 
 ### Receive
 
-Receive tab generates an unused address which can be used to receive payments. The same can be achieved by generating an invoice (Invoices > Create new invoice).
+The Receive tab generates an unused address which can be used to receive payments. The same can be achieved by generating an invoice (Invoices > Create new invoice).
 
 ![Wallet Receive](./img/wallet/WalletReceive.png)
 
