@@ -8,7 +8,7 @@ Each [store](CreateStore.md)'s configured cryptocurrency has a separate wallet d
 
 ## Wallet features
 
-The wallet contains following features:
+The wallet contains the following features:
 
 1. Transactions
 2. Send
