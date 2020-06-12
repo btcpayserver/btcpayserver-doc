@@ -88,11 +88,15 @@ Coin selection is a an advanced privacy-enhancing feature that allows you to spe
 
 To make the selection easier, coin-selection works natively with the wallet labels feature. This allows you to label any incoming funds for smoother UTXO management and spending.
 
+![Coin Selection](./img/wallet/CoinSelection.png)
+
 ##### Other features
 
 ###### Camera QR scan
 
 Scan option in wallet (camera icon) lets you use your device’s camera to scan an invoice when sending from the wallet. It auto-populates the invoice information so you don’t have to manually copy-paste address and amount.
+
+![QR Scan](./img/wallet/ScanWallet.png)
 
 ###### Paste BIP21 address
 
