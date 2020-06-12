@@ -137,6 +137,6 @@ In the Partially Signed Bitcoin Transactions (PSBT) tab, you can upload and deco
 
 ### Settings
 
-In the wallet settings field you can adjust certain settings. If you've configured your wallet by [creating a new wallet](CreateWallet) or using an existing wallet via the [hardware wallet integration](Vault.md) these settings will be pre-configured. 
+In the wallet settings tab you can adjust certain settings. If you've configured your wallet by [creating a new wallet](CreateWallet) or using an existing wallet via the [hardware wallet integration](Vault.md) these settings will be pre-configured. 
 
 If you manually added the extended public key from an external wallet, you'd need to adjust `AccountKeyPath` that you can find in your external wallet, for example `m/84'/0'/0'` to be able to spend from the BTCPay Wallet.
