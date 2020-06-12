@@ -44,7 +44,7 @@ If you set up an [existing wallet with your BTCPay Server](WalletSetup/#use-an-e
 
 ##### Signing with a wallet supporting PSBT
 
-PSBT (Partially Signed Bitcoin transactions) are supported and can be signed with PSBT compatible wallet.
+PSBT (Partially Signed Bitcoin transactions) are supported and can be signed with PSBT compatible wallets.
 
 Check this tutorial on how to [sign a transaction with ColdCard Hardware Wallet](ColdCardWallet.md#spending-from-btcpay-server-wallet-with-coldcard-psbt) completely air-gaped.
 
