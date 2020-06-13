@@ -56,13 +56,13 @@ It's not easy to solve the gap limit problem. You have two options:
 
 #### 1. Increasing the gap limit
 
-If your external wallets supports configurable gap-limit, the easy fix is to increase it. However, majority of wallets do not allow this. 
+If your [external/existing wallet](/WalletSetup.md/#use-an-existing-wallet) allows gap-limit configuration, the easy fix is to increase it. However, majority of wallets do not allow this. 
 
 The only wallets that allow gap-limit configuration, that we're aware of are [Electrum](/ElectrumWallet.md) and [Wasabi](/WasabiWallet.md)
 
 Unfortunately, with any other wallet you're likely to encounter a problem. 
 
-If you'd like to use an external wallet to manage the funds, we recommend that perform a wallet recovery with one of the two wallets:
+If you'd like to use an [external wallet](/WalletSetup.md/#use-an-existing-wallet) to manage the funds, we recommend that you recover your existing wallet into one of following wallets and increase the gap limit:
 
 - [Increasing the gap limit in Electrum](/ElectrumWallet.md/#configuring-the-gap-limit-in-electrum)
 - [Increasing the gap limit in Wasabi](/WasabiWallet.md/#configuring-the-gap-limit-in-wasabi)
