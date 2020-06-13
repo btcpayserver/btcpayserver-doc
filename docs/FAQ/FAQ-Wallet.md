@@ -13,7 +13,8 @@ This document contains frequently asked questions related to BTCPay Server's [in
 
 ## What is BTCPay Server wallet?
 
-BTCPay Server has an internal wallet which you can use to preview incoming and outgoing transactions and manage your funds. It works like any other wallet, but has enhanced privacy features by default, and also solves certain UX problems you may encounter when using an external wallet with BTCPay Server. 
+BTCPay Server has an internal wallet which you can use to preview incoming and outgoing transactions and manage your funds.
+It works like any other wallet, but has enhanced privacy features by default and also solves certain UX problems you may encounter when using an external wallet with BTCPay Server. 
 
 For more information on how to use the built-in wallet [check this page](/Wallet.md). To use the internal wallet, you first need to [set up the wallet](/WalletSetup.md) with your BTCPay store.
 
