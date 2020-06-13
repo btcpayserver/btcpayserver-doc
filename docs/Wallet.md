@@ -133,7 +133,7 @@ Users who use a third party host should use a newly generated xpub key and also 
 
 ### PSBT 
 
-In the Partially Signed Bitcoin Transactions (PSBT) tab, you can upload and decode an earlier signed PSBT from external wallet and broadcast it via BTCPay Wallet. For more information on PSBT check this link.
+In the Partially Signed Bitcoin Transactions (PSBT) tab, you can upload and decode any PSBT, for example an earlier signed PSBT from external wallet and broadcast it via BTCPay Wallet. For more information on PSBT [check this link](ColdCardWallet.md#spending-from-btcpay-server-wallet-with-coldcard-psbt).
 
 ### Settings
 
