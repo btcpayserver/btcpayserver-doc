@@ -57,7 +57,7 @@ It's not easy to solve the gap limit problem. You have two options:
 
 If your wallets supports configurable gap-limit, the easy fix is to increase it. However, majority of wallets do not allow this. 
 
-The only wallets that allow configurable gap-limit value are [Electrum](/ElectrumWallet.md) and [Wasabi](/WasabiWallet.md)
+The only wallets that allow for a configurable gap-limit value are [Electrum](/ElectrumWallet.md) and [Wasabi](/WasabiWallet.md)
 
 If you'd like to use an external wallet to manage the funds, we recommend that perform a wallet recovery with those two wallets.
 
