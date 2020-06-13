@@ -1,61 +1,72 @@
 # BTCPay Server Wallet FAQ
 
-This document contains frequently asked questions and solutions to common issues related to BTCPay Server's [internal wallet](Wallet.md)
+This document contains frequently questions related to BTCPay Server's [internal wallet](Wallet.md)
 
 * [What is BTCPay Server wallet](#what-is-btcpay-server-wallet)
-* [Do I have to use BTCPay Server wallet?](do-i-have-to-use-btcpay-server-wallet)
-* [How to connect my wallet](#how-to-connect-my-wallet-to-btcpay-server)
-- [Can I use a hardware wallet with BTCPay Server](can-i-use-a-hardware-wallet-with-btcpay-server)
+* [How to set up my wallet with BTCPay Server?](#how-to-set-up-my-wallet-with-btcpay-server)
+* [Can I use a hardware wallet with BTCPay Server](can-i-use-a-hardware-wallet-with-btcpay-server)
+* [Do I have to use BTCPay Server wallet?](#do-i-have-to-use-btcpay-server-wallet)
 * [Missing payments in wallet](#missing-payments-in-my-software-or-hardware-wallet)
 * [Electrum and Zap show different addresses](#receiving-address-in-zap-and-electrum-is-different)
 * [What is a derivation scheme?](#what-is-a-derivation-scheme)
 
 ## What is BTCPay Server wallet?
 
-BTCPay Server has an internal wallet which you can use to preview incoming and outgoing transactions and manage your funds. It works like any other wallet, but has enhanced privacy features by default, and also solves certain UX problems you may encounter when using an external wallet with BTCPay Server. For more information on how to use the built-in wallet [check this page](Wallet.md). To use the internal wallet, you first need to [set up the wallet](WalletSetup.md) with your BTCPay store.
+BTCPay Server has an internal wallet which you can use to preview incoming and outgoing transactions and manage your funds. It works like any other wallet, but has enhanced privacy features by default, and also solves certain UX problems you may encounter when using an external wallet with BTCPay Server. 
+
+For more information on how to use the built-in wallet [check this page](Wallet.md). To use the internal wallet, you first need to [set up the wallet](WalletSetup.md) with your BTCPay store.
 
 ## How to set up my wallet with BTCPay Server?
 
-Check our in-depth documentation on [how to set up your wallet](WalletSetup.md).
+Check our in-depth documentation on [how to set up a wallet](WalletSetup.md).
 
 ## Can I use a hardware wallet with BTCPay Server?
 
-The internal wallet has a [built in hardware wallet integration](Vault.md). You can use a supported hardware wallet with the [BTCPay wallet](Wallet.md). This further means that you're using a hardware wallet without leaking information to third-party apps or servers, since the wallet relays on the full node in your BTCPay.
+The internal wallet has a [built in hardware wallet integration](Vault.md). You can use a supported hardware wallet with the [BTCPay wallet](Wallet.md). 
+
+This  means that you're using a hardware wallet without leaking information to third-party apps or servers, since the wallet relays on the full node in your BTCPay.
  
 ## Do I have to use BTCPay Server wallet?
 
-By default BTCPay Server requires only extended public key. To receive payments to your BTCPay store, you only need to provide an extended public key which you can generate in an external wallet. This means that you do not have to use a built in wallet at all, you can manage funds in your [existing wallet](/WalletSetup/#use-an-existing-wallet).
+By default BTCPay Server requires only extended public key. To receive payments to your BTCPay store, you only need to provide an extended public key which you can generate in an external wallet. You do not have to use a built in wallet at all, you can manage funds in your [existing wallet](/WalletSetup/#use-an-existing-wallet).
 
 However, it's recommended to use a built in wallet for funds management. The built in wallet improves your privacy by default, but also solves user-experience issues like [gap-limit](#missing-payments-in-my-software-or-hardware-wallet).
 
 ## Missing payments in my software or hardware wallet
 
-If your internal BTCPay wallet is showing the transactions and you do not see the funds on your desktop, mobile or hardware wallet, you need to **increase the gap limit** of the external wallet you're using. Do not worry, your funds are safe, they're just not showing yet.
+If you're using an [existing software or a hardware wallet](/WalletSetup/#use-an-existing-wallet) with your BTCPay Server, you may experience a discrepancy between balance in your BTCPay wallet and the external wallet's web, destkop or mobile app. This discrepancy is usually related to a **gap-limit** issue. 
 
-Most wallets, have a gap limit of 20. This means that after 20 consecutive unpaid invoices, wallet will stop fetching the transactions beyond that and won't show them. The solution is to increase the gap limit. Not all wallets have this feature.
+### The gap limit problem
 
-For that reason, it's highly recommended that you use [Electrum wallet](https://electrum.org/). To set increase the gap limit in Electrum, [follow this video](https://www.youtube.com/watch?v=Fi3pYpzGmmo)
+Majority of third party wallets are [SPV wallets](https://en.bitcoinwiki.org/wiki/Simplified_Payment_Verification), they share a node between many users. To  prevent performance issues, SPV wallets limit the amount of addresses without balance they follow on the blockchain. BTCPay Server generates a new address for every invoice. 
 
-Enter following commands in Electrum console:
+With above in mind, after BTCPay Server generates 20 consecutive unpaid invoices, the external wallet stops fetching the transactions, assuming no new transactions occurred. Once 21st, 22nd, etc invoices are paid, your external wallet won't show them.
 
-```
- wallet.change_gap_limit(100)
- wallet.storage.write()
-```
-Restart your Electrum and verify that the newly set gap limit is correct by entering:
+On the other hand, internal BTCPay Server wallet is a full-node reliant wallet. It does not relay on a third-party and is able to always show a correct balance.
 
-`wallet.gap_limit`
+### The gap limit solution
 
-There's no good answer to how much you should set the gap limit to. Most merchants set 100-200. If you're a big merchants with high transaction volume, you can try with an even higher gap limit.
+It's not easy to solve the gap limit problem. You have two options:
 
-Be aware that :
+1. Increase the gap limit in your external wallet
+2. Use internal BTCPay Server wallet
 
-* A higher gap limit may slow down the performance of your wallet
-* Not all wallets support the increased gap limit. If you import an Electrum recovery seed into another wallet, you may not see all the funds again.
+#### 1. Increasing the gap limit
 
-When an invoice is created in BTCPay, it does it for all coins you have setup. You may want to increase the gap limit for altcoins as well in their supported wallets.
+If your wallets supports configurable gap-limit, the easy fix is to increase it. However, majority of wallets do not allow this. 
 
-If you do not see your funds yet, you may have set up your derivation scheme incorrectly.
+The only wallets that allow configurable gap-limit value are [Electrum](ElectrumWallet.md) and [Wasabi](WasabiWallet.md)
+
+If you'd like to use an external wallet to manage the funds, we recommend that perform a wallet recovery with those two wallets.
+
+- [Increasing gap limit in Electrum](/ElectrumWallet.md/#configuring-the-gap-limit-in-electrum)
+- [Increasing gap limit in Wasabi](/WasabiWallet.md/#configuring-the-gap-limit-in-wasabi)
+
+After you've increased the gap limit, the balance in your external wallet and btcpay wallet should match. If they don't you may have set up your derivation scheme incorrectly.
+
+#### 2. Use the internal wallet
+
+For best user-experience and privacy, we recommend that you consider dropping external wallets and start using the [BTCPay Server's internal wallet](/Wallet.md).
 
 ## Receiving address in Zap and Electrum is different?
 
