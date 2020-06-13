@@ -75,7 +75,7 @@ Yes. BTCPay is not limited to the documented deployment methods. You can use whi
 
 ### Are there free hosts where I can test?
 
-On a self-hosted BTCPay, the unlimited amount of users and stores can be attached. That's why there are users who opened their servers for others to use. Most of them are community-driven and free. See this list of [third-party BTCPay hosts](/ThirdPartyHosting.md)
+On a self-hosted BTCPay, the unlimited amount of users and stores can be attached. That's why there are users who opened their servers for others to use. Most of them are community-driven and free. See this list of [third-party BTCPay hosts](/ThirdPartyHosting.md).
 
 ### After initial deployment, I can't register and I don't have a login yet?
 
@@ -270,6 +270,7 @@ cat /var/lib/docker/volumes/generated_tor_servicesdir/_data/BTCPayServer/hostnam
 In BTCPay, various options are activated through environment variables. You can modify or delete any of these options using command lines by exporting the new value with `export {environment variable}="{value}"` and then running `. ./btcpay-setup.sh -i` again.
 
 For example, let's say I want to deactivate Tor for my BTCPay server:
+
 ```bash
 # Login as root
 sudo su -
@@ -325,8 +326,11 @@ Or via the `Server Settings` of your BTCPay Server instance, logged as an admini
 
 Please do not share this tor hidden service with untrusted parties. Connections to this hidden service are whitelisted by the bitcoin node, malicious peer would be able to DDoS your node.
 
-If you need to unsafely expose bitcoind P2P port 8333 (for example if you require P2P for Bisq, DOJO, Esplora, etc.) and you are using a docker deployment, you can use the [opt-unsafe-expose](/Docker/README.md#generated-docker-compose)
-additional fragment. WARNING: ONLY USE ON TRUSTED LAN OR WITH FIREWALL RULES WHITELISTING SPECIFIC HOSTS
+If you need to unsafely expose bitcoind P2P port 8333 (for example if you require P2P for Bisq, DOJO, Esplora, etc.) and you are using a docker deployment, you can use the [opt-unsafe-expose](https://github.com/btcpayserver/btcpayserver-docker/blob/master/README.md#generated-docker-compose) additional fragment.
+
+:::danger WARNING
+ONLY USE ON TRUSTED LAN OR WITH FIREWALL RULES WHITELISTING SPECIFIC HOSTS
+:::
 
 ### Can I use an existing Nginx server as a reverse proxy with SSL termination?
 
@@ -335,7 +339,8 @@ Yes you can! Just make sure to use the proper configuration.
 Create an extra config file for your vhost in `/etc/nginx/sites-available/btcpayserver` and create a symlink for this file at `/etc/nginx/sites-enabled/btcpayserver`
 
 The contents of this vhost file should look like this:
-```
+
+```nginx
 server {
 	listen 80;
 
@@ -395,7 +400,7 @@ server {
 
 Also, put the following in your main Nginx config file at `/etc/nginx/nginx.conf`:
 
-```
+```nginx
 http {
 
 	# ... # Existing stuff
@@ -490,11 +495,9 @@ You can fix this by forcing nginx to route the HTTP request to BTCPay even if th
 Simply, re-run the setup script like this:
 
 ```bash
-
 sudo su -
 
 REVERSEPROXY_DEFAULT_HOST="$BTCPAY_HOST" && . btcpay-setup.sh -i
-
 ```
 
 Now putting local IP in the web-browser works.
@@ -502,9 +505,11 @@ Now putting local IP in the web-browser works.
 #### Cause 2: btcpayserver or letsencrypt-nginx-proxy is not running
 
 To check, run:
+
 ```bash
 sudo  docker ps | less -S
 ```
+
 Press "q" to quit out of less.
 
 The output should contain:
@@ -514,9 +519,11 @@ The output should contain:
 And the status should be "Up"
 
 If the docker container is not running, then check the reason for crash like this:
+
 ```bash
  sudo  docker logs 6a6b9fd75692 --tail 20
 ```
+
 Where 6a6b9fd75692 is the container ID that is having issues.
 
 #### Cause 3: BTCPay is expecting you to access this website from
@@ -533,7 +540,7 @@ Sadly, depending on the configuration of your reverse proxy, either the HTTP HOS
 
 If you use NGinx, here is what you need to have at the top level in `/etc/nginx/conf.d/default.conf`:
 
-```
+```nginx
 map $http_x_forwarded_proto $proxy_x_forwarded_proto {
   default $http_x_forwarded_proto;
   ''      $scheme;
