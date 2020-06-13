@@ -18,7 +18,7 @@ If not using one of the libraries above, the REST API can be accessed manually.
 
 The authentication mechanism is using `BitId`.
 
-With `BitId`, the `client` of the API (like an e-commerce plugin) generates a private key, then inform the `server` (BTCPay) about the `public key`.
+With `BitId`, the `client` of the API (like an e-commerce plugin) generates a private key, then informs the `server` (BTCPay) about the `public key`.
 
 Every requests to the API sent by the client is signed with the client's `private key`.
 
@@ -37,7 +37,7 @@ There is two method of `pairing`, client side pairing and server side pairing.
 
 ### Client side pairing
 
-With client side pairing, the `client` generates a URL from his `public key` which a human user can browse to validate the pairing.
+With client side pairing, the `client` generates a URL from their `public key` which a human user can browse to validate the pairing.
 
 Typically the URL looks like `https://btcpay.example.com/api-access-request?pairingCode=<pairingcode_goes_here>`.
 
