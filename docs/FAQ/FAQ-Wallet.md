@@ -4,7 +4,7 @@ This document contains frequently questions related to BTCPay Server's [internal
 
 * [What is BTCPay Server wallet](#what-is-btcpay-server-wallet)
 * [How to set up my wallet with BTCPay Server?](#how-to-set-up-my-wallet-with-btcpay-server)
-* [Can I use a hardware wallet with BTCPay Server](can-i-use-a-hardware-wallet-with-btcpay-server)
+* [Can I use a hardware wallet with BTCPay Server](#can-i-use-a-hardware-wallet-with-btcpay-server)
 * [Do I have to use BTCPay Server wallet?](#do-i-have-to-use-btcpay-server-wallet)
 * [Missing payments in wallet](#missing-payments-in-my-software-or-hardware-wallet)
 * [Electrum and Zap show different addresses](#receiving-address-in-zap-and-electrum-is-different)
@@ -14,21 +14,21 @@ This document contains frequently questions related to BTCPay Server's [internal
 
 BTCPay Server has an internal wallet which you can use to preview incoming and outgoing transactions and manage your funds. It works like any other wallet, but has enhanced privacy features by default, and also solves certain UX problems you may encounter when using an external wallet with BTCPay Server. 
 
-For more information on how to use the built-in wallet [check this page](Wallet.md). To use the internal wallet, you first need to [set up the wallet](WalletSetup.md) with your BTCPay store.
+For more information on how to use the built-in wallet [check this page](/Wallet.md). To use the internal wallet, you first need to [set up the wallet](/WalletSetup.md) with your BTCPay store.
 
 ## How to set up my wallet with BTCPay Server?
 
-Check our in-depth documentation on [how to set up a wallet](WalletSetup.md).
+Check our in-depth documentation on [how to set up a wallet](/WalletSetup.md).
 
 ## Can I use a hardware wallet with BTCPay Server?
 
-The internal wallet has a [built in hardware wallet integration](Vault.md). You can use a supported hardware wallet with the [BTCPay wallet](Wallet.md). 
+The internal wallet has a [built in hardware wallet integration](/Vault.md). You can use a supported hardware wallet with the [BTCPay wallet](Wallet.md). 
 
 This  means that you're using a hardware wallet without leaking information to third-party apps or servers, since the wallet relays on the full node in your BTCPay.
  
 ## Do I have to use BTCPay Server wallet?
 
-By default BTCPay Server requires only extended public key. To receive payments to your BTCPay store, you only need to provide an extended public key which you can generate in an external wallet. You do not have to use a built in wallet at all, you can manage funds in your [existing wallet](/WalletSetup/#use-an-existing-wallet).
+By default BTCPay Server only requires an extended public key. To receive payments to your BTCPay store, you need to provide an extended public key (xpub) which you can generate in an external wallet. You do not have to use a built in wallet at all, you can manage funds in your [existing wallet](/WalletSetup/#use-an-existing-wallet).
 
 However, it's recommended to use a built in wallet for funds management. The built in wallet improves your privacy by default, but also solves user-experience issues like [gap-limit](#missing-payments-in-my-software-or-hardware-wallet).
 
@@ -55,7 +55,7 @@ It's not easy to solve the gap limit problem. You have two options:
 
 If your wallets supports configurable gap-limit, the easy fix is to increase it. However, majority of wallets do not allow this. 
 
-The only wallets that allow configurable gap-limit value are [Electrum](ElectrumWallet.md) and [Wasabi](WasabiWallet.md)
+The only wallets that allow configurable gap-limit value are [Electrum](/ElectrumWallet.md) and [Wasabi](/WasabiWallet.md)
 
 If you'd like to use an external wallet to manage the funds, we recommend that perform a wallet recovery with those two wallets.
 
@@ -70,7 +70,7 @@ For best user-experience and privacy, we recommend that you consider dropping ex
 
 ## Receiving address in Zap and Electrum is different?
 
-Zap and Electrum are two different wallets. Zap is for [Lightning Network](LightningNetwork.md) and Electrum is for on-chain transactions. They are unrelated and use different private keys. Use Electrum or internal [BTCPay wallet](Wallet.md) to check your on-chain payments and Zap for your Lightning Network payments.
+Zap and Electrum are two different wallets. Zap is for [Lightning Network](/LightningNetwork.md) and Electrum is for on-chain transactions. They are unrelated and use different private keys. Use Electrum or internal [BTCPay wallet](/Wallet.md) to check your on-chain payments and Zap for your Lightning Network payments.
 
 In the future, there will be wallets merging both on-chain and off-chain transactions into one, but for now, you have to use them separately.
 
