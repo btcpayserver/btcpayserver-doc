@@ -1,59 +1,32 @@
-# BTCPay Wallet FAQ
+# BTCPay Server Wallet FAQ
 
-This document contains frequently asked questions and solutions to common issues regarding internal or external wallets you're using with or within BTCPay.
+This document contains frequently asked questions and solutions to common issues related to BTCPay Server's [internal wallet](Wallet.md)
 
-* [What is BTCPay wallet](#what-is-btcpay-wallet)
-* [What is wallet re-scan in BTCPay?](#what-is-wallet-re-scan-in-btcpay)
-* [Recommended external wallets](#recommended-external-wallets)
+* [What is BTCPay Server wallet](#what-is-btcpay-server-wallet)
+* [Do I have to use BTCPay Server wallet?](do-i-have-to-use-btcpay-server-wallet)
 * [How to connect my wallet](#how-to-connect-my-wallet-to-btcpay-server)
+- [Can I use a hardware wallet with BTCPay Server](can-i-use-a-hardware-wallet-with-btcpay-server)
 * [Missing payments in wallet](#missing-payments-in-my-software-or-hardware-wallet)
 * [Electrum and Zap show different addresses](#receiving-address-in-zap-and-electrum-is-different)
-* [How to see payments on a mobile device](#can-i-see-my-payments-on-mobile)
 * [What is a derivation scheme?](#what-is-a-derivation-scheme)
 
-## What is BTCPay wallet?
+## What is BTCPay Server wallet?
 
-BTCPay has an internal wallet which you can use to see the transactions and even send the money out of it. The wallet works only with a supported hardware wallet, like Ledger Nano S.
+BTCPay Server has an internal wallet which you can use to preview incoming and outgoing transactions and manage your funds. It works like any other wallet, but has enhanced privacy features by default, and also solves certain UX problems you may encounter when using an external wallet with BTCPay Server. For more information on how to use the built-in wallet [check this page](Wallet.md). To use the internal wallet, you first need to [set up the wallet](WalletSetup.md) with your BTCPay store.
 
-You'll have to confirm and sign the transaction on your hardware wallet. BTCPay wallet is not a hot wallet. The private keys are secured inside your hardware wallet.
+## How to set up my wallet with BTCPay Server?
 
-## What is wallet re-scan in BTCPay?
+Check our in-depth documentation on [how to set up your wallet](WalletSetup.md).
 
-The Rescan feature is best explained in a real-life situation:
+## Can I use a hardware wallet with BTCPay Server?
 
-* You use a wallet outside of BTCPay (for example Ledger Nano S with the Ledger Live app)
-* You receive a payment worth 1BTC to your Nano S wallet.
-* After a while you decide to add the xpubkey you use with your Ledger to your BTCPay Server. You add this xpub as a derivation scheme in your Store.
-* You then find out that BTCPay has no information about transaction A, and shows 0 BTC balance while Ledger Live shows 1BTC.
+The internal wallet has a [built in hardware wallet integration](Vault.md). You can use a supported hardware wallet with the [BTCPay wallet](Wallet.md). This further means that you're using a hardware wallet without leaking information to third-party apps or servers, since the wallet relays on the full node in your BTCPay.
+ 
+## Do I have to use BTCPay Server wallet?
 
-This happens because when you use a new derivation scheme with your store, BTCPay Server doesn't know the past transactions of your wallet.
+By default BTCPay Server requires only extended public key. To receive payments to your BTCPay store, you only need to provide an extended public key which you can generate in an external wallet. This means that you do not have to use a built in wallet at all, you can manage funds in your [existing wallet](/WalletSetup/#use-an-existing-wallet).
 
-To solve this issue, you need to use the **Rescan feature**. The Rescan relies on Bitcoin Core 0.17.0's [scantxoutset](https://bitcoincore.org/en/doc/0.17.0/rpc/blockchain/scantxoutset/) to scan the current state of the blockchain (called UTXO Set) for coins belonging to your derivation scheme.
-Once the scan is complete, BTCPay Server will show the correct balance, along with some of past transactions of your wallet.
-
-## Recommended external wallets?
-
-We highly recommend you to use an internal wallet in case you need to double-check the transaction. If you wish to use an external wallet, here are our recomendations:
-
-* Electrum - desktop wallet
-* Ledger Nano S - hardware wallet (other hardware wallets should be added at some point)
-* Zap - Lightning Network LND wallet
-* Spark - Lightning Network c-lightning wallet
-* Sentinel - Watch-only on-chain wallet for Android
-* ArcBit / bitWallet - Watch-only on-chain wallet for Android
-
-## How to connect my wallet to BTCPay Server?
-
-The process of connecting a wallet to your BTCPay server is the same for both third-party or self-hosted deployments. Your private keys are never uploaded nor required by the BTCPay Server. You’re only uploading the xpubkey.
-
-There are two ways to connect your BTCPay and your wallet:
-
-1. Automatic with Ledger Nano S hardware wallet
-2. Manual with any wallet supporting xpubkey (Electrum highly recommended)
-
-Watch the video below or read [this article](https://bitcoinshirt.co/how-to-create-store-accept-bitcoin/8/#Connecting-BTCPay-with-your-wallet) for step by step instructions.
-
-[![ConnectBTCPayWallet](https://img.youtube.com/vi/xX6LyQej0NQ/mqdefault.jpg)](https://www.youtube.com/watch?v=xX6LyQej0NQ "BTCPay Server - Connecting Wallet")
+However, it's recommended to use a built in wallet for funds management. The built in wallet improves your privacy by default, but also solves user-experience issues like [gap-limit](#missing-payments-in-my-software-or-hardware-wallet).
 
 ## Missing payments in my software or hardware wallet
 
@@ -84,50 +57,15 @@ When an invoice is created in BTCPay, it does it for all coins you have setup. Y
 
 If you do not see your funds yet, you may have set up your derivation scheme incorrectly.
 
-## Why is my Ledger not detected by BTCPay Server?
-
-Check that you are running the Ledger app with a version equal or above 1.2.4. Make sure to use Google Chrome. Plug your Ledger Nano S into your PC. Enter the PIN, and select the coin wallet app, for example > Bitcoin. Try refreshing the browser.
-
-If the problem persists, contact the owner of the BTCPay Server: The reverse proxy of the BTCPay server hosting BTCPay might not support Websockets.
-
-To confirm this is the issue, create a new invoice and go on its checkout page, you can also go on your store's "Wallet" page.
-You should then see this error in the Javascript console:
-
-```
-WebSocket connection to ‘wss://pay.example.com/i/4yhCmpWxJcHfVG3rV4EmEu/status/ws’ failed: Error during WebSocket handshake: Unexpected response code: 404
-```
-
-To fix the situation, if your reverse proxy is nginx, make sure that the following is included at the top of `/etc/nginx/conf.d/default.conf` :
-
-```
-# If we receive Upgrade, set Connection to "upgrade"; otherwise, delete any
-# Connection header that may have been passed to this server
-map $http_upgrade $proxy_connection {
-  default upgrade;
-  '' close;
-}
-proxy_set_header Upgrade $http_upgrade;
-proxy_set_header Connection $proxy_connection;
-```
-
-Then restart nginx.
-
-```
-/etc/init.d/nginx reload
-```
 ## Receiving address in Zap and Electrum is different?
 
-Zap and Electrum are two different wallets. Zap is for [Lightning Network](LightningNetwork.md) and Electrum is for on-chain transactions. They are unrelated and use different private keys. Use Electrum or internal BTCPay wallet to check your on-chain payments and Zap for your Lightning Network payments.
+Zap and Electrum are two different wallets. Zap is for [Lightning Network](LightningNetwork.md) and Electrum is for on-chain transactions. They are unrelated and use different private keys. Use Electrum or internal [BTCPay wallet](Wallet.md) to check your on-chain payments and Zap for your Lightning Network payments.
 
 In the future, there will be wallets merging both on-chain and off-chain transactions into one, but for now, you have to use them separately.
 
-## Can I see my payments on mobile?
-
-If you wish to follow your on-chain payments on a mobile device, you can use a watch-only wallet like [Sentinel](https://play.google.com/store/apps/details?id=com.samourai.sentinel) for Android and [bitWallet](https://itunes.apple.com/us/app/bitwallet-bitcoin-wallet/id777634714) or [ArcBit](https://itunes.apple.com/ca/app/arcbit-bitcoin-wallet/id999487888) for iOS. Watch-only wallets allow xpub import and don't require the private key.
-
 ## What is a derivation scheme?
 
-In order to receive payments to your BTCPay, you need to connect a wallet in your Store Settings by providing an xpubkey generated by your own wallet software. BTCPay uses what is called a `derivation scheme` to represent the destination of the funds received by your invoices. The destination of those funds will be your wallet, located by the xpubkey that you provide.
+In order to receive payments to your BTCPay Server, you need to connect a wallet in your Store Settings by providing an xpubkey generated by your own wallet software. BTCPay uses what is called a `derivation scheme` to represent the destination of the funds received by your invoices. The destination of those funds will be your wallet, located by the xpubkey that you provide.
 
 Using different derivation schemes with your xpub, you can also choose to create various receiving address types, shown in your store invoices.
 
