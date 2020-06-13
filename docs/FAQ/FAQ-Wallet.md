@@ -1,6 +1,6 @@
 # BTCPay Server Wallet FAQ
 
-This document contains frequently questions related to BTCPay Server's [internal wallet](Wallet.md).
+This document contains frequently asked questions related to BTCPay Server's [internal wallet](Wallet.md).
 
 * [What is BTCPay Server wallet?](#what-is-btcpay-server-wallet)
 * [How to set up my wallet with BTCPay Server?](#how-to-set-up-my-wallet-with-btcpay-server)
