@@ -44,14 +44,14 @@ Majority of third party wallets are [SPV wallets](https://en.bitcoinwiki.org/wik
 
 With above in mind, after BTCPay Server generates 20 consecutive unpaid invoices, the external wallet stops fetching the transactions, assuming no new transactions occurred. Once 21st, 22nd, etc invoices are paid, your external wallet won't show them.
 
-On the other hand, internal BTCPay Server wallet is a full-node reliant wallet. It does not relay on a third-party and is able to always show a correct balance.
+On the other hand, the internal BTCPay Server wallet is a full-node reliant wallet. It does not rely on a third-party and is able to always show a correct balance.
 
 ### The gap limit solution
 
-It's not easy to solve the gap limit problem. You have two options:
+In order to solve the gap limit problem, you have two options:
 
 1. Increase the gap limit in your external wallet
-2. Use internal BTCPay Server wallet
+2. Use the internal BTCPay Server wallet
 
 #### 1. Increasing the gap limit
 
