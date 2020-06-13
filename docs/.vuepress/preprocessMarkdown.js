@@ -18,7 +18,7 @@ const replaceExternalRepoLinks = (source, resourcePath) => {
     processed = processed.replace(repoLinks, (all, path) => all.replace(path, `${baseUrl}/blob/master/${path}`))
 
     // rewrite links to docs to internal VuePress links
-    const docsLinks = new RegExp(`\\]\\((${baseUrl}/blob/master/(README\.md|docs/.*?))\\)`, 'gi')
+    const docsLinks = new RegExp(`\\]\\((${baseUrl}/blob/master/((README\.md|docs/).*?))\\)`, 'gi')
     processed = processed.replace(docsLinks, (all, url, path) => all.replace(url, `/${baseDir}/${path.replace('docs/', '')}`))
 
     // rewrite external links to docs to internal VuePress links
@@ -58,9 +58,7 @@ module.exports = function (source) {
 
   processed = replaceYouTubeLinks(processed)
 
-  if (source.match(`externalRepo: `)) {
-    processed = replaceExternalRepoLinks(processed, resourcePath)
-  }
+  processed = replaceExternalRepoLinks(processed, resourcePath)
 
   return processed
 }

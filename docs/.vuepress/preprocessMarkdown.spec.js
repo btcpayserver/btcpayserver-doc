@@ -46,4 +46,11 @@ Available \`BTCPAYGEN_ADDITIONAL_FRAGMENTS\` currently are:
 
     expect(pp(md)).toMatchSnapshot()
   })
+
+  it('replaces external repo links with internal links', () => {
+    const md = externalFrontmatter + `
+[opt-unsafe-expose](https://github.com/btcpayserver/btcpayserver-docker/blob/master/README.md#generated-docker-compose)`
+
+    expect(pp(md)).toMatchSnapshot()
+  })
 })

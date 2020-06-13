@@ -14,7 +14,7 @@ This document contains frequently asked questions related to BTCPay Server's [in
 
 BTCPay Server has an internal wallet which you can use to view incoming and outgoing associated Bitcoin transactions and spend your funds.
 
-It works like any other wallet, but has enhanced privacy features (non-custodial, no third-parties, verified with a dedicated full node, etc.) by default and also solves certain UX problems you may encounter when [using an existing wallet] with BTCPay Server. 
+It works like any other wallet, but has enhanced privacy features (non-custodial, no third-parties, verified with a dedicated full node, etc.) by default and also solves certain UX problems you may encounter when [using an existing wallet] with BTCPay Server.
 
 For more information on how to use the built-in wallet [check this page](/Wallet.md). To use the internal wallet, you first need to [set up the wallet](/WalletSetup.md) with your BTCPay store.
 
@@ -24,10 +24,10 @@ Check our in-depth documentation on [how to set up a wallet](/WalletSetup.md).
 
 ## Can I use a hardware wallet with BTCPay Server?
 
-The internal wallet has a [built in hardware wallet integration](/Vault.md). You can use a supported hardware wallet with the [BTCPay wallet](Wallet.md). 
+The internal wallet has a [built in hardware wallet integration](/Vault.md). You can use a supported hardware wallet with the [BTCPay wallet](Wallet.md).
 
 This  means that you're using a hardware wallet without leaking information to third-party apps or servers unlike the default software for the devices, since the wallet relies on the full node in your BTCPay.
- 
+
 ## Do I have to use BTCPay Server wallet?
 
 By default BTCPay Server only requires an extended public key. To receive payments to your BTCPay store, you need to provide an extended public key (xpub) which you can generate in an external (existing) wallet. You do not have to use the built in wallet at all, you can manage funds in your [existing wallet](/WalletSetup/#use-an-existing-wallet).
@@ -36,11 +36,11 @@ However, it's recommended to use the built in wallet for funds management. The b
 
 ## Missing payments in my software or hardware wallet
 
-If you're using an [existing software or a hardware wallet](/WalletSetup/#use-an-existing-wallet) with your BTCPay Server, you may experience a discrepancy between balance in your BTCPay wallet and the external wallet's web, destkop or mobile app. This discrepancy is usually related to a **gap-limit** issue. 
+If you're using an [existing software or a hardware wallet](/WalletSetup/#use-an-existing-wallet) with your BTCPay Server, you may experience a discrepancy between balance in your BTCPay wallet and the external wallet's web, destkop or mobile app. This discrepancy is usually related to a **gap-limit** issue.
 
 ### The gap limit problem
 
-The majority of third party wallets are [light wallets](https://en.bitcoin.it/wiki/Lightweight_node), which share a node between many users. To prevent performance issues, both light and full node reliant wallets limit the amount (typically 20) of addresses without balance that they track on the blockchain. BTCPay Server generates a new address for every invoice. 
+The majority of third party wallets are [light wallets](https://en.bitcoin.it/wiki/Lightweight_node), which share a node between many users. To prevent performance issues, both light and full node reliant wallets limit the amount (typically 20) of addresses without balance that they track on the blockchain. BTCPay Server generates a new address for every invoice.
 
 With above in mind, after BTCPay Server generates 20 consecutive unpaid invoices, the external wallet stops fetching the transactions, assuming no new transactions occurred. Once 21st, 22nd, etc invoices are paid, your external wallet won't show them.
 
@@ -55,11 +55,11 @@ It's not easy to solve the gap limit problem. You have two options:
 
 #### 1. Increasing the gap limit
 
-If your [external/existing wallet](/WalletSetup.md/#use-an-existing-wallet) allows gap-limit configuration, the easy fix is to increase it. However, majority of wallets do not allow this. 
+If your [external/existing wallet](/WalletSetup.md/#use-an-existing-wallet) allows gap-limit configuration, the easy fix is to increase it. However, majority of wallets do not allow this.
 
 The only wallets that allow gap-limit configuration, that we're aware of are [Electrum](/ElectrumWallet.md) and [Wasabi](/WasabiWallet.md)
 
-Unfortunately, with any other wallet you're likely to encounter a problem. 
+Unfortunately, with any other wallet you're likely to encounter a problem.
 
 If you'd like to use an [external wallet](/WalletSetup.md/#use-an-existing-wallet) to manage the funds, we recommend that you recover your existing wallet into one of following wallets and increase the gap limit:
 

@@ -52,12 +52,12 @@ If you do not wish to host your own server, you should use a free host. If you p
 If you would like to run Bitcoin and Lightning Network nodes, the minimal requirements are :
 
 * 2GB Ram
-* 80 GB of storage [with enabled pruning](https://github.com/btcpayserver/btcpayserver-docker/blob/master/README.md#generated-docker-compose)
+* 80 GB of storage [with enabled pruning](/Docker/README.md#generated-docker-compose)
 * Docker
 
 ### What is the easiest method to deploy a self-hosted BTCPay Server?
 
-For beginners, we strongly recommend the [web-deployment](/LunaNodeWebDeployment.md) if you want a self-hosted solution or a [third-party host](ThirdPartyHosting.md)
+For beginners, we strongly recommend the [web-deployment](/LunaNodeWebDeployment.md) if you want a self-hosted solution or a [third-party host](/ThirdPartyHosting.md).
 
 If you're going to add more than one crypto coin, you need to expand the storage according to that coin(s) blockchain size.
 
@@ -313,7 +313,7 @@ No, you need to keep your BTCPay running at all times so that your Bitcoin node 
 
 ### Can I connect to my BTCPay Bitcoin P2P on port 8333?
 
-BTCPay's Bitcoin core node is not exposed externally by default. For BTCPay purposes, it is typically not in the interest of the user, as it increases the bandwidth requirement. BTCPay is also whitebinding connections to this port, so opening it would expose the node to potential DDoS. 
+BTCPay's Bitcoin core node is not exposed externally by default. For BTCPay purposes, it is typically not in the interest of the user, as it increases the bandwidth requirement. BTCPay is also whitebinding connections to this port, so opening it would expose the node to potential DDoS.
 
 However, we expose a P2P connection to your full node on Tor. You can get the Tor address by running:
 
@@ -325,7 +325,7 @@ Or via the `Server Settings` of your BTCPay Server instance, logged as an admini
 
 Please do not share this tor hidden service with untrusted parties. Connections to this hidden service are whitelisted by the bitcoin node, malicious peer would be able to DDoS your node.
 
-If you need to unsafely expose bitcoind P2P port 8333 (for example if you require P2P for Bisq, DOJO, Esplora, etc.) and you are using a docker deployment, you can use the [opt-unsafe-expose](https://github.com/btcpayserver/btcpayserver-docker#generated-docker-compose-) 
+If you need to unsafely expose bitcoind P2P port 8333 (for example if you require P2P for Bisq, DOJO, Esplora, etc.) and you are using a docker deployment, you can use the [opt-unsafe-expose](/Docker/README.md#generated-docker-compose)
 additional fragment. WARNING: ONLY USE ON TRUSTED LAN OR WITH FIREWALL RULES WHITELISTING SPECIFIC HOSTS
 
 ### Can I use an existing Nginx server as a reverse proxy with SSL termination?
@@ -477,7 +477,7 @@ Check this [community guide](https://freedomnode.com/blog/114/how-to-setup-btc-a
 
 #### Cause 1: Trying to access my BTCPay by IP address
 
-Your nginx config is set to route the HTTP request to a particular container based on the domain name of the request. For example, the official [deployment on pi 4](../RPi4.md) was to setup the souce domain name to http://raspberrypi.local/ yet getting automatic local domain raspberrypi.local does not always work. You are probably in this situation and trying to type the IP address of your BTCPay into the web-browser.
+Your nginx config is set to route the HTTP request to a particular container based on the domain name of the request. For example, the official [deployment on pi 4](/RPi4.md) was to setup the souce domain name to http://raspberrypi.local/ yet getting automatic local domain raspberrypi.local does not always work. You are probably in this situation and trying to type the IP address of your BTCPay into the web-browser.
 
 Since nginx gets the IP address in the request instead of raspberrypi.local it does not know where to route that request and returns:
 ```

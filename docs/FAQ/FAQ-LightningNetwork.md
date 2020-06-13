@@ -292,7 +292,7 @@ To check the logs of your LND node in BTCPay Server (Docker installations) use t
 
 `docker logs --tail 40 btcpayserver_lnd_bitcoin`
 
-You can change 40 to whatever number you wish. The number represents the lines of code that will be shown. For more information about the logs, see [Troubleshooting page](Troubleshooting.md)
+You can change 40 to whatever number you wish. The number represents the lines of code that will be shown. For more information about the logs, see [Troubleshooting page](/Troubleshooting.md)
 
 ### What’s the default directory of LND in BTCPay?
 
@@ -420,7 +420,7 @@ If you're facing a technical problem with your Lightning Network implementation,
 #### LND Support
 
 * [LND GitHub](https://github.com/lightningnetwork/lnd/issues)
-* [Lightning Community on Slack](lightningcommunity.slack.com)
+* [Lightning Community on Slack](https://lightningcommunity.slack.com)
 * [#lightning-dev](https://webchat.freenode.net/?channels=lightning-dev&uio=d4) on IRC
 
 #### c-lightning Support
