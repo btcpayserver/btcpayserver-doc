@@ -135,13 +135,14 @@ Store settings explained.
 
 Here are some of the questions and problems about wallets in BTCPay.
 
-* [What is BTCPay wallet](FAQ-Wallet.md#what-is-btcpay-wallet)
-* [Recommended external wallets](FAQ-Wallet.md#recommended-external-wallets)
-* [How to connect my wallet](FAQ-Wallet.md#how-to-connect-my-wallet-to-btcpay-server)
-* [Missing payments in wallet](FAQ-Wallet.md#missing-payments-in-my-software-or-hardware-wallet)
+* [What is BTCPay Server wallet?](FAQ-Wallet.md#what-is-btcpay-server-wallet)
+* [How to set up my wallet with BTCPay Server?](FAQ-Wallet.md#how-to-set-up-my-wallet-with-btcpay-server)
+* [Can I use a hardware wallet with BTCPay Server?](FAQ-Wallet.md#can-i-use-a-hardware-wallet-with-btcpay-server)
+* [Do I have to use BTCPay Server wallet?](FAQ-Wallet.md#do-i-have-to-use-btcpay-server-wallet)
+* [Missing payments in wallet?](FAQ-Wallet.md#missing-payments-in-my-software-or-hardware-wallet)
 * [Electrum and Zap show different addresses](FAQ-Wallet.md#receiving-address-in-zap-and-electrum-is-different)
-* [How to see payments on a mobile device](FAQ-Wallet.md#can-i-see-my-payments-on-mobile)
 * [What is a derivation scheme?](FAQ-Wallet.md#what-is-a-derivation-scheme)
+* [I don't see Lightning network payments in BTCPay wallet?](FAQ-Wallet.md#i-dont-see-lightning-network-payments-in-btcpay-wallet)
 
 ## [Apps FAQ](FAQ-Apps.md)
 
