@@ -72,7 +72,7 @@ For best user-experience and privacy, we recommend that you consider dropping ex
 
 ## What is a derivation scheme?
 
-No matter [how you set up your wallet](/WalletSetup.md), BTCPay Server uses `derivation scheme` to represent the destination of the funds received by your invoices. The destination of those funds will be your wallet, located by the xpubkey that you provide.
+No matter [how you set up your wallet](/WalletSetup.md), BTCPay Server uses a `derivation scheme` to represent the destination of the funds received by your invoices. The destination of those funds will be your wallet, located by the xpubkey that you provide.
 
 Using different derivation schemes with your xpub, you can also choose to create various receiving address types, shown in your store invoices.
 
