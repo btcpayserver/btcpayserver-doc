@@ -87,4 +87,5 @@ Using different derivation schemes with your xpub, you can also choose to create
 
 ## I don't see Lightning network payments in BTCPay wallet?
 
-[Lightning Network](/LightningNetwork.md) and BTCPay [wallet](/Wallet.md) are different concepts. Internal BTCPay Server wallet only shows on-chain payments. In the future, they may become unified, but for the time being, to manage your Lightning Network funds, use Ride the Lightning, ThunderHub, externally connected Lightning wallet (Zeus, Zap, Spark), or a command line.
+The [Lightning Network](/LightningNetwork.md) and the BTCPay Server [wallet](/Wallet.md) are different concepts. The internal BTCPay Server wallet only shows on-chain payments.
+In the future they may become unified but for the time being, to manage your Lightning Network funds, use Ride the Lightning, ThunderHub, an externally connected Lightning wallet (Zeus, Zap, Spark), or the Command Line Interface (CLI).
