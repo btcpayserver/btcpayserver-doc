@@ -41,7 +41,7 @@ If you're using an [existing software or a hardware wallet](/WalletSetup/#use-an
 
 ### The gap limit problem
 
-Majority of third party wallets are [SPV wallets](https://en.bitcoinwiki.org/wiki/Simplified_Payment_Verification),share a node between many users. To  prevent performance issues, SPV wallets limit the amount of addresses without balance they follow on the blockchain. BTCPay Server generates a new address for every invoice. 
+Majority of third party wallets are [SPV wallets](https://en.bitcoinwiki.org/wiki/Simplified_Payment_Verification), which share a node between many users. To prevent performance issues, SPV wallets limit the amount of addresses without balance they follow on the blockchain. BTCPay Server generates a new address for every invoice. 
 
 With above in mind, after BTCPay Server generates 20 consecutive unpaid invoices, the external wallet stops fetching the transactions, assuming no new transactions occurred. Once 21st, 22nd, etc invoices are paid, your external wallet won't show them.
 
