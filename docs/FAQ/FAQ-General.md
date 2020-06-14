@@ -42,17 +42,17 @@ BTCPay doesn't compromise on censorship-resistance, which is one of the main fea
 
 ## Who can use BTCPay?
 
-BTCPay server is a feature-rich software with plenty of use-cases that can solve problems for different types of users. Merchants, content creators, lightning network users, exchanges, hosting providers and many others can find it useful. See the [Use Case page](/UseCase.md) for detailed breakdown of BTCPay use-cases.
+BTCPay server is a feature-rich software with plenty of use-cases that can solve problems for different types of users. Merchants, content creators, lightning network users, exchanges, hosting providers and many others can find it useful. See the [Use Case page](../UseCase.md) for detailed breakdown of BTCPay use-cases.
 
 ## How much does it cost to run BTCPay Server?
 
-BTCPay is completely free software. The software itself costs nothing. It can be downloaded and used by anyone, free of charge. You can run it **internally** as a self-hosted solution, on a home server, on a low-cost single-board computer like [Raspberry Pi](/RaspberryPiDeployment.md) or different kind of [in-home hardware](/HardwareDeployment.md)
+BTCPay is completely free software. The software itself costs nothing. It can be downloaded and used by anyone, free of charge. You can run it **internally** as a self-hosted solution, on a home server, on a low-cost single-board computer like [Raspberry Pi](../RaspberryPiDeployment.md) or different kind of [in-home hardware](../HardwareDeployment.md)
 
-Hosting BTCPay **externally**, usually means using a Virtual Private Server, enterprise-grade infrastructure, or a [third-party BTCPay hosting](/ThirdPartyHosting.md).
+Hosting BTCPay **externally**, usually means using a Virtual Private Server, enterprise-grade infrastructure, or a [third-party BTCPay hosting](../ThirdPartyHosting.md).
 
 The price of hosting BTCPay Server obviously depends on the hosting provider.
 
-The low-priced VPS servers tested by the community start at around [9$/month](/LunaNodeWebDepolyment.md), but you're free to explore other hosting providers that suit your budget, as long as they meet the [minimum requirements](FAQ-General.md#what-are-the-minimal-requirements-to-run-btcpay).
+The low-priced VPS servers tested by the community start at around [9$/month](../LunaNodeWebDepolyment.md), but you're free to explore other hosting providers that suit your budget, as long as they meet the [minimum requirements](FAQ-General.md#what-are-the-minimal-requirements-to-run-btcpay).
 
 ### Why do I need a VPS? Can't I just run BTCPay on my home computer?
 
@@ -64,13 +64,13 @@ For all these reasons, while local hosting is suitable for testing, it's not a v
 
 ### Can the cost of running BTCPay on Microsoft Azure be reduced?
 
-Please check out [How to penny-pinch your Azure deployment](/AzurePennyPinching.md).
+Please check out [How to penny-pinch your Azure deployment](../AzurePennyPinching.md).
 
 ## What are the minimal requirements to run BTCPay?
 
 If you would like to run Bitcoin and Lightning Network nodes, the minimal requirements are :
 - 2GB Ram
-- 80 GB of storage (with [pruning](https://github.com/btcpayserver/btcpayserver-docker#generated-docker-compose-) enabled)
+- 80 GB of storage (with [pruning](https://github.com/btcpayserver/btcpayserver-docker/blob/master/README.md#generated-docker-compose) enabled)
 - Docker
 
 ## How to install BTCPay Server?
@@ -82,11 +82,11 @@ If you don't have the technical knowledge, we recommend that you use our new web
 
 There are several other deployment methods you can check out:
 
-- [How to install BTCPay on Azure - guide](/AzureDeployment.md)
+- [How to install BTCPay on Azure - guide](../AzureDeployment.md)
 - [How to install BTCPay on Azure - video](https://www.youtube.com/watch?v=Bxs95BdEMHY)
 - [How to install BTCPay on LunaNode VPS - article](https://medium.com/@BtcpayServer/hosting-btcpayserver-on-lunanode-bf9ef5fff75b)
 - [How to install BTCPay on LunaNode VPS - video](https://youtube.com/watch?v=PZXwacAai9E)
-- [See all deployments](/Deployment.md)
+- [See all deployments](../Deployment.md)
 - [BTCPay YouTube channel](https://www.youtube.com/channel/UCpG9WL6TJuoNfFVkaDMp9ug/videos)
 - [Assorted playlist of all BTCPay YouTube videos](https://www.youtube.com/playlist?list=PL7b9Wt9shK2r-WXS6ysG4tafVQRu80biZ)
 

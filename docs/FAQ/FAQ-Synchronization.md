@@ -31,11 +31,11 @@ btcpay-up.sh
 ```
 After FastSync is complete and you have brought back up your instance, refresh your BTCPay domain and wait for remaining blockchain synchronization. You can also follow [this video](https://youtube.com/watch?v=VNMnd-dX9Q8?t=1730).
 
-If your FastSync returns `You need to delete your Bitcoin Core wallet` after you load the uxto set, or you find this error: `Last wallet synchronisation goes beyond pruned data`, see cause 4 of [BTCPay Server keep showing that my node is always starting](#btcpay-server-keep-showing-that-my-node-is-always-starting)
+If your FastSync returns `You need to delete your Bitcoin Core wallet` after you load the uxto set, or you find this error: `Last wallet synchronisation goes beyond pruned data`, see cause 4 of [BTCPay Server keep showing that my node is always starting](#btcpay-server-keep-showing-that-my-node-is-always-starting).
 
 ## How do I know that BTCPay synced completely?
 
-When you do not see a pop-up message in the bottom right corner, which shows the sync progress, that means that your server is fully synced and you can [begin using it](/RegisterAccount.md).
+When you do not see a pop-up message in the bottom right corner, which shows the sync progress, that means that your server is fully synced and you can [begin using it](../RegisterAccount.md).
 
 ## BTCPay Server takes forever to synchronize
 
@@ -185,13 +185,13 @@ tmpfs           2.0G     0  2.0G   0% /sys/fs/cgroup
 /dev/sdb1       7.8G   18M  7.4G   1% /mnt
 ```
 
-[Choose the docker fragment](https://github.com/btcpayserver/btcpayserver-docker#generated-docker-compose-) for the amount of storage you aim to keep.
+[Choose the docker fragment](https://github.com/btcpayserver/btcpayserver-docker/blob/master/README.md#generated-docker-compose) for the amount of storage you aim to keep.
 
-Then [prune your node](https://github.com/btcpayserver/btcpayserver-docker#how-i-can-prune-my-nodes).
+Then [prune your node](https://github.com/btcpayserver/btcpayserver-docker/blob/master/README.md#how-i-can-prune-my-node-s).
 
 ### Cause 4: Your last wallet synchronisation goes beyond pruned data
 
-This can happen if you use FastSync or import an already synched blockchain. It means that the bitcoin core wallet needs to be removed because it was created before the utxoset, likely because BTCPay Server started without the utxoset at the first boot. To verify this case, [check the bitcoind log](../Troubleshooting.md#_2-1-btcpay-logs) for this:  
+This can happen if you use FastSync or import an already synched blockchain. It means that the bitcoin core wallet needs to be removed because it was created before the utxoset, likely because BTCPay Server started without the utxoset at the first boot. To verify this case, [check the bitcoind log](../Troubleshooting.md#_2-1-btcpay-logs) for this:
 
 ```bash
 Error: Prune: last wallet synchronisation goes beyond pruned data. You need to -reindex (download the whole blockchain again in case of pruned node)
@@ -199,7 +199,6 @@ Error: Prune: last wallet synchronisation goes beyond pruned data. You need to -
 
 If you see this error and agree to remove the wallet to finish syncing, use `docker volume rm generated_bitcoin_wallet_datadir` after you run `btcpay-down.sh` and before you run `btcpay-up.sh`
 WARNING: Do not delete this wallet if you have any funds on it.
-
 
 ## I'm running a full node and have a synched blockchain, can BTCPay use it so that it doesn't have to do a full sync?
 
@@ -219,4 +218,4 @@ To do that, follow the following steps :
 
 Your BTCPay Server should now be fully synched.
 
-If after this BTCPay Server keep showing that your node is always starting, see cause 4 of [BTCPay Server keep showing that my node is always starting](#btcpay-server-keep-showing-that-my-node-is-always-starting)
+If after this BTCPay Server keep showing that your node is always starting, see cause 4 of [BTCPay Server keep showing that my node is always starting](#btcpay-server-keep-showing-that-my-node-is-always-starting).

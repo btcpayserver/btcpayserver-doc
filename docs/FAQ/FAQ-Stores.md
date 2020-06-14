@@ -32,7 +32,7 @@ Explanation of features inside Store > General Settings configured on a store-le
 
 Network fee (cost) is a feature in BTCPay which protects merchants from customers who pay the invoice partially. When an invoice is paid from many outputs, the fee for a merchant who needs to move those funds later will be higher.
 
-For example, the customer created an invoice for 20$ and paid it partially, paying 1$ 20 times until the invoice is paid fully. Merchant now has a larger transaction which increases the mining cost in case the merchant decides to move those funds later. By default, BTCPay applies an **additional network cost** to the total invoice amount to cover that expense for the merchant. 
+For example, the customer created an invoice for 20$ and paid it partially, paying 1$ 20 times until the invoice is paid fully. Merchant now has a larger transaction which increases the mining cost in case the merchant decides to move those funds later. By default, BTCPay applies an **additional network cost** to the total invoice amount to cover that expense for the merchant.
 
 BTCPay offers several options to customize this protection feature. You can apply a network fee :
 
@@ -40,7 +40,7 @@ BTCPay offers several options to customize this protection feature. You can appl
 * On every payment (including the first payment, in our example, the total  will be 20$ + network fee right away, even on the first payment)
 * Never add network fee (disables the network fee entirely)
 
-The network fee in BTCPay is **not the mining fee**. The customers still need to pay for the miner's fee. 
+The network fee in BTCPay is **not the mining fee**. The customers still need to pay for the miner's fee.
 
 The network cost is an optional feature. It's enabled by default, but it's entirely up to a merchant to enable or disable it. The customer sees the "network cost" at the checkout when they expand the invoice information.
 
@@ -71,11 +71,11 @@ In a situation where a customer uses an exchange wallet to pay directly for an i
 
 ##  How to disable email on invoices
 
-To disable the email requirement for your store's invoices, go to Stores > Settings > Checkout Experience > uncheck 'Requires a refund email' box. 
+To disable the email requirement for your store's invoices, go to Stores > Settings > Checkout Experience > uncheck 'Requires a refund email' box.
 
 ## Can I delete invoices from BTCPay?
 
-No, you can't delete invoices in BTCPay. Even if the invoice is expired, invalid, paid (or any other status) you can't delete invoices because they may contain important information. For example, information from the invoice may be needed if the invoice gets paid at a later time. Try [filtering invoices](/Invoices.md#invoice-filtering) instead.
+No, you can't delete invoices in BTCPay. Even if the invoice is expired, invalid, paid (or any other status) you can't delete invoices because they may contain important information. For example, information from the invoice may be needed if the invoice gets paid at a later time. Try [filtering invoices](../Invoices.md#invoice-filtering) instead.
 
 ## How to change the exchange rate provider for invoices?
 

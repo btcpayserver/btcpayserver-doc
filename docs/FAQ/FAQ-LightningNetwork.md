@@ -1,4 +1,4 @@
-This document clarifies some of the most common questions and issues users face with the Lightning Network in BTCPay. Before you start using the off-chain protocol, familiarize yourself with the risks. Additionally, read [Getting Started with Lightning Network in BTCPay](/LightningNetwork.md)
+This document clarifies some of the most common questions and issues users face with the Lightning Network in BTCPay. Before you start using the off-chain protocol, familiarize yourself with the risks. Additionally, read [Getting Started with Lightning Network in BTCPay](../LightningNetwork.md)
 
 ## [Lightning Network General FAQ](FAQ-LightningNetwork.md#lightning-network-general-faq)
 * [How many users can use Lightning Network in BTCPay?](FAQ-LightningNetwork.md#how-many-users-can-use-lightning-network-in-btcpay)
@@ -40,12 +40,12 @@ It can be enabled in Server Settings > Policies > Allow non-admins to use the in
 ![Enable LN for Others](../img/ThirdPartyEnableLNOthers.png)
 
 :::warning As a third-party host
-All your registrants' funds will go to your own Lightning Wallet. 
+All your registrants' funds will go to your own Lightning Wallet.
 You will have to manually check and redispatch the funds to their respectfull owners. This could potentially become a burden.
 :::
 
 :::danger As an individual using a third-party host
-All payments made through the Lightning Network will go to your third-party's wallet. 
+All payments made through the Lightning Network will go to your third-party's wallet.
 Take precautions and only use this option while using a trutworthy third-party host to ensure you get your funds back.
 :::
 
@@ -183,31 +183,36 @@ Here is how it should look like:
 Both LND and c-lightning support pruning.
 
 This will prune your Bitcoin full node to a maximum of 100GB (of blocks):
-```
+
+```bash
 export BTCPAYGEN_ADDITIONAL_FRAGMENTS="opt-save-storage"`
 . ./btcpay-setup.sh -i
 ```
-Other pruning options are [documented here](https://github.com/btcpayserver/btcpayserver-docker#generated-docker-compose-)
+
+Other pruning options are [documented here](https://github.com/btcpayserver/btcpayserver-docker/blob/master/README.md#generated-docker-compose)
 
 ### How to change from c-lightning to LND or vice-versa?
 
 You need to SSH log in into your virtual machine.
 
 To switch to LND:
-```
+
+```bash
 sudo su -
 cd btcpayserver-docker
 export BTCPAYGEN_LIGHTNING="lnd"
 . ./btcpay-setup.sh -i
 ```
+
 To switch to c-lightning:
 
-```
+```bash
 sudo su -
 cd btcpayserver-docker
 export BTCPAYGEN_LIGHTNING="clightning"
 . ./btcpay-setup.sh -i
 ```
+
 ### I switched Lightning Network implementation, but getting "no payment available" error
 
 When you switch from one implementation to another, you need to reconfigure your lightning connection string at a store level, to use adequate implementation. Stores > General Settings > Lightning nodes > Modify > **Connection string**. In connection string, click on the "click here" link.
@@ -217,7 +222,7 @@ When you switch from one implementation to another, you need to reconfigure your
 You can ignore this.
 If you want to set an alias for your lightning node, open the env file:
 
-```
+```bash
 sudo su -
 vim $BTCPAY_ENV_FILE
 ```
@@ -268,6 +273,7 @@ sudo su -
 cd btcpayserver-docker
 ./bitcoin-lncli.sh help
 ```
+
 For c-lightning
 
 ```bash
@@ -282,17 +288,18 @@ Here are some of the common questions about the [LND implementation](https://git
 
 ### How to restart my LND?
 
-```
+```bash
 sudo su -
 docker restart btcpayserver_lnd_bitcoin
 ```
+
 ### How to see LND logs?
 
 To check the logs of your LND node in BTCPay Server (Docker installations) use the following command:
 
 `docker logs --tail 40 btcpayserver_lnd_bitcoin`
 
-You can change 40 to whatever number you wish. The number represents the lines of code that will be shown. For more information about the logs, see [Troubleshooting page](/Troubleshooting.md)
+You can change 40 to whatever number you wish. The number represents the lines of code that will be shown. For more information about the logs, see [Troubleshooting page](../Troubleshooting.md)
 
 ### What’s the default directory of LND in BTCPay?
 
@@ -326,9 +333,10 @@ If a macaroon does not exist, you will see an error message, you can safely igno
 Because this will invalidate the previous macaroons, you need to manually reconnect with Zap with `Server Settings / Services / LND-gRPC`.
 
 ### How to change my LND Node alias?
+
 To change the display name of your LND node, you should ssh log in into your virtual machine and apply the following:
 
-```
+```bash
 sudo su -
 cd btcpayserver-docker
 export LIGHTNING_ALIAS="namehere"
@@ -336,11 +344,11 @@ export LIGHTNING_ALIAS="namehere"
 ```
 
 ### How to install ThunderHub?
+
 To install ThunderHub on your instance apply the following:
 
-```
+```bash
 export BTCPAYGEN_ADDITIONAL_FRAGMENTS="$BTCPAYGEN_ADDITIONAL_FRAGMENTS;opt-add-thunderhub"
-
 . btcpay-setup.sh -i
 ```
 
@@ -348,7 +356,7 @@ If you get the following warning message **Unable to connect to this node** it i
 
 To delete the old certificate and key and have LND generate new ones, apply the following:
 
-```
+```bash
 docker exec btcpayserver_lnd_bitcoin rm /data/tls.cert
 docker exec btcpayserver_lnd_bitcoin rm /data/tls.key
 docker restart btcpayserver_lnd_bitcoin
@@ -360,6 +368,7 @@ docker restart generated_bitcoin_thub_1
 Here are some of the common questions about the [c-lightning](https://github.com/ElementsProject/lightning/issues) implementation of the Lightning Network.
 
 ### How to announce an IPv6 address?
+
 First, copy `bitcoin-clightning.yml` into the the docker fragment folder as `bitcoin-clightning.custom.yml`.
 Important: the file must end with `.custom.yml`, or there will be git conflicts whenever you run `btcpay-update.sh`.
 
@@ -372,15 +381,18 @@ services:
       LIGHTNINGD_OPT: |
         announce-addr=[ipv6 here]
 ```
+
 Make sure to insert the address between the two square brackets [].
 
-Then set it up:. ./btcpay-setup.sh -i
-```
-export BTCPAYGEN_ADDITIONAL_FRAGMENTS="bitcoin-clightning.custom"
+Then set it up:
 
+```bash
+export BTCPAYGEN_ADDITIONAL_FRAGMENTS="bitcoin-clightning.custom"
+. ./btcpay-setup.sh -i
 ```
 
 ### How to find an on-chain address in Spark?
+
 To fund your on-chain wallet in Spark, you need to get an on-chain address. To find your address, click on the version link at the left corner bottom of the Spark wallet (for example v0.2.2).
 
 That should toggle the settings. Click > Console. To generate a new address in RPC Console field, enter `newaddr` for bech32 address or `newaddr p2sh-segwit` click execute. At the bottom you should see the newly generated address.
@@ -390,6 +402,7 @@ You can also toogle help if you need help with other commands in Spark.
 ![BTCPay Checkout](../img/Spark-console2.png)
 
 ## How to withdraw funds from my on-chain Spark wallet?
+
 First if your funds are in channel, you need to close channel and wait for them to get back to your on-chain wallet in Spark. (144 blocks in most cases).
 
 Next, you need to toogle the console mode. Click on the version link at the left corner bottom of the Spark wallet [explained above](FAQ-LightningNetwork.md#lightning-network-c-lightning-faq)
