@@ -7,7 +7,6 @@ This document contains frequently asked questions related to BTCPay Server's [in
 * [Can I use a hardware wallet with BTCPay Server?](#can-i-use-a-hardware-wallet-with-btcpay-server)
 * [Do I have to use BTCPay Server wallet?](#do-i-have-to-use-btcpay-server-wallet)
 * [Missing payments in wallet?](#missing-payments-in-my-software-or-hardware-wallet)
-* [Electrum and Zap show different addresses](#receiving-address-in-zap-and-electrum-is-different)
 * [What is a derivation scheme?](#what-is-a-derivation-scheme)
 * [I don't see Lightning network payments in BTCPay wallet?](#i-dont-see-lightning-network-payments-in-btcpay-wallet)
 
