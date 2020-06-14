@@ -142,7 +142,7 @@ Here are some of the questions and problems about wallets in BTCPay.
 * [Missing payments in wallet?](FAQ-Wallet.md#missing-payments-in-my-software-or-hardware-wallet)
 * [Electrum and Zap show different addresses](FAQ-Wallet.md#receiving-address-in-zap-and-electrum-is-different)
 * [What is a derivation scheme?](FAQ-Wallet.md#what-is-a-derivation-scheme)
-* [I don't see Lightning network payments in BTCPay wallet?](FAQ-Wallet.md#i-don-t-see-lightning-network-payments-in-btcpay-wallet)
+* [I don't see Lightning network payments in BTCPay wallet?](FAQ-Wallet.md#i-dont-see-lightning-network-payments-in-btcpay-wallet)
 
 ## [Apps FAQ](FAQ-Apps.md)
 

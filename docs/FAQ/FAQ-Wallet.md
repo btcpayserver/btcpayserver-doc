@@ -9,7 +9,7 @@ This document contains frequently asked questions related to BTCPay Server's [in
 * [Missing payments in wallet?](#missing-payments-in-my-software-or-hardware-wallet)
 * [Electrum and Zap show different addresses](#receiving-address-in-zap-and-electrum-is-different)
 * [What is a derivation scheme?](#what-is-a-derivation-scheme)
-* [I don't see Lightning network payments in BTCPay wallet?](#i-don-t-see-lightning-network-payments-in-btcpay-wallet)
+* [I don't see Lightning network payments in BTCPay wallet?](#i-dont-see-lightning-network-payments-in-btcpay-wallet)
 
 ## What is BTCPay Server wallet?
 
