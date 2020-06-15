@@ -5,3 +5,4 @@
 # External repos
 /docs/Transmuter
 /docs/Docker
+/docs/.vuepress/public/API/Greenfield/**/*.json
