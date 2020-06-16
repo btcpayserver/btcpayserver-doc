@@ -11,7 +11,6 @@ describe('preprocessMarkdown', () => {
   it('replaces YouTube links', () => {
     const md = `
 Take a look at how BTCPay works in a video below.
-
 [![](https://raw.githubusercontent.com/btcpayserver/btcpayserver-doc/master/img/thumbnails/HowBTCPayServerWorks.png)](https://www.youtube.com/watch?v=nr0UNbz3AoQ)
 
 Here is a presentation of the global architecture at Advancing Bitcoin conference.`

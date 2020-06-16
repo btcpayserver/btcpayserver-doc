@@ -48,7 +48,7 @@ const replaceYouTubeLinks = source =>
     allow="autoplay;encrypted-media;picture-in-picture"
     allowfullscreen
   ></iframe>
-</a>`.trim()
+</a>`
   })
 
 // https://webpack.js.org/api/loaders/
