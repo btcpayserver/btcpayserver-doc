@@ -1,8 +1,14 @@
 # Theming
 
-BTCPay Server is built on Bootstrap and offers the flexibility to adjust its look to your needs.
+BTCPay Server is built on Bootstrap and offers the flexibility to adjust its look to your needs. Learn more about the [standard design specifications used in BTCPay](https://design.btcpayserver.org/).
 
-There are two approaches to customizing the theme of your BTCPay Server.
+## Built-in themes
+
+BTCPay Server currently has several built-in themes available for server admins. Selecting a theme in Server Settings will modify the appearance of the entire server (for all users) without having to make any code changes or additional customizations. 
+
+![Server Theme](./img/ThemeDarkLight.gif)
+
+There are two other approaches to customizing the theme of your BTCPay Server.
 
 1. [Developing a custom theme](#_1-custom-themes) (requires technical skills)
 2. [Using a pre-made Bootstrap theme](#_2-bootstrap-themes) (does not require technical skills)
@@ -13,7 +19,7 @@ This is the way we are building our own themes, like the [Classic](https://githu
 
 With this approach you provide a CSS file containing the variable definitions ([CSS custom properties](https://developer.mozilla.org/en-US/docs/Web/CSS/--*)) to adjust colors, fonts, etc.
 
-You should copy one of our [preexisting themes](https://github.com/btcpayserver/btcpayserver/blob/master/BTCPayServer/wwwroot/main/themes/) and change the variables to fit your needs.
+You should copy one of our [predefined themes](https://github.com/btcpayserver/btcpayserver/blob/master/BTCPayServer/wwwroot/main/themes/) and change the variables to fit your needs.
 To test and play around with the adjustments, you can also use the developer tools of the browser:
 Inspect the `<html>` element and modify the variables in the `:root` section of the styles inspector:
 
