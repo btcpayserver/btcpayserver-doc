@@ -9,7 +9,7 @@ They are suitable for technical users to speed up the installation and intitial 
 Less-technical users will find the 1-click or plug-and-play systems of these services incredibly practical.
 
 Here you can find a non-exhaustive list of companies that provide such a service:
-- [Nodle](https://www.nodl.it/)
+- [Nodl](https://www.nodl.it/)
 - [Hack0](https://www.dglab.com/en/works/hack0/)
 - [LightningInABox](https://lightninginabox.co/)
 - [MyNode](https://mynodebtc.com/)
