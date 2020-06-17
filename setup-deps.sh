@@ -26,7 +26,9 @@ else
 fi
 
 cd $BTCPAYSERVER_DIR
-jq -rs 'reduce .[] as $item ({}; . * $item)' BTCPayServer/wwwroot/swagger/v1/*.json > $PUBLIC_DIR/API/Greenfield/v1/swagger.json
+if command -v jq >/dev/null 2>&1; then
+  jq -rs 'reduce .[] as $item ({}; . * $item)' BTCPayServer/wwwroot/swagger/v1/*.json > "$PUBLIC_DIR/API/Greenfield/v1/swagger.json"
+fi
 
 # Docker
 

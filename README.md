@@ -23,6 +23,7 @@ If you're beginner, take a look at the step by step guide on how to contribute t
 ### Build the Documentation Locally
 
 In order to build the website locally, you'll need [Node.js](https://nodejs.org/) >= 12.16 (or basically the latest LTS version).
+A prerequisite for the `setup-deps.sh` script is [jq](https://stedolan.github.io/jq/).
 
 The setup is straight forward:
 
