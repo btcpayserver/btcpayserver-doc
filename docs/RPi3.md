@@ -302,7 +302,7 @@ By using FastSync, you are exposing yourself to attacks if a [malicious UTXO Set
 
 If you have another trusted node somewhere else, you can check the validity of the UTXO Set gathered by FastSync by following [these instructions](https://github.com/btcpayserver/btcpayserver-docker/blob/master/contrib/FastSync/README.md#dont-trust-verify).
 
-## That's it! Enjoy your BTCPi! 🎉 🎉
+## That's it! Enjoy your BTCPi! 🎉
 
 If you don't have the time or patience to build your own BTCPi, there are a few merchants who can build one for you:
 

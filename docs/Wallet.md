@@ -1,6 +1,6 @@
 # BTCPay Server Wallet
 
-BTCPay Server has a built in, full-node reliant wallet that allows easier funds management. 
+BTCPay Server has a built in, full-node reliant wallet that allows easier funds management.
 
 Each [store](CreateStore.md)'s configured cryptocurrency has a separate wallet displayed on the wallets page. A wallet can be accessed by clicking **Wallets** from the top menu. To access a particular wallet, click **Manage**.
 
@@ -131,12 +131,12 @@ Wallet re-scan requires access to the full node which means that this function i
 
 Users who use a third party host should use a newly generated xpub key and also use an external wallet like Electrum which allows them to increase the gap limit.
 
-### PSBT 
+### PSBT
 
 In the Partially Signed Bitcoin Transactions (PSBT) tab, you can upload and decode any PSBT, for example an earlier signed PSBT from external wallet and broadcast it via BTCPay Wallet. For more information on PSBT [check this link](ColdCardWallet.md#spending-from-btcpay-server-wallet-with-coldcard-psbt).
 
 ### Settings
 
-In the wallet settings tab you can adjust certain settings. If you've configured your wallet by [creating a new wallet](CreateWallet) or using an existing wallet via the [hardware wallet integration](Vault.md) these settings will be pre-configured. 
+In the wallet settings tab you can adjust certain settings. If you've configured your wallet by [creating a new wallet](CreateWallet.md) or using an existing wallet via the [hardware wallet integration](Vault.md) these settings will be pre-configured.
 
 If you manually added the extended public key from an external wallet, you'd need to adjust `AccountKeyPath` that you can find in your external wallet, for example `m/84'/0'/0'` to be able to spend from the BTCPay Wallet.

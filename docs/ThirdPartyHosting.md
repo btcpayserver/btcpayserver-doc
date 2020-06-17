@@ -62,8 +62,8 @@ Here are some good resources where you learn more about the importance of full n
 * [Why Your Business Should Use a Full Node to Accept Bitcoin](https://en.bitcoin.it/wiki/Why_Your_Business_Should_Use_a_Full_Node_to_Accept_Bitcoin)
 * [Clearing Up Misconceptions About Full Nodes](https://en.bitcoin.it/wiki/Clearing_Up_Misconceptions_About_Full_Nodes)
 
-### Trust Concerns 
-Third-party hosts have the ability to enable specific features for their non-admin users which require users to place some level of trust in the third-party host, if such features are used. 
+### Trust Concerns
+Third-party hosts have the ability to enable specific features for their non-admin users which require users to place some level of trust in the third-party host, if such features are used.
 
 Specifically, third-party hosts should not enable the following policies without understanding that users will be using hot wallets on the server. These features are disabled by default for non-admins to reduce the risk considerations for both third-party hosts and their users:
 
@@ -71,9 +71,9 @@ Specifically, third-party hosts should not enable the following policies without
 - Allow non-admins to import their hot wallets to the node wallet
 - Allow non-admins to use the internal lightning node in their stores
 
-Third-party users who are granted access to an internal lightning node or hot wallet functionality to enable features such as Payjoin, should understand the risk and trust associated with [using hot wallets](HotWallet.md) before choosing to use it. Use one of the [recommended wallets](WalletSetup.md) which provide an xpubkey to use in your store, if you are unsure which wallet type to use. 
+Third-party users who are granted access to an internal lightning node or hot wallet functionality to enable features such as Payjoin, should understand the risk and trust associated with [using hot wallets](HotWallet.md) before choosing to use it. Use one of the [recommended wallets](WalletSetup.md) which provide an xpubkey to use in your store, if you are unsure which wallet type to use.
 
 ## Can I enable the use of my Lightning Network node to others?
 
 Yes, you can enable users that have registered on your BTCPay Server instance to use your Lightning Network node.
-[See how](/FAQ/FAQ-LightningNetwork.md/#how-many-users-can-use-lightning-network-in-btcpay)
+[See how](./FAQ/FAQ-LightningNetwork.md#how-many-users-can-use-lightning-network-in-btcpay)

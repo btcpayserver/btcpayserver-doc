@@ -46,3 +46,6 @@ jobs:
         env:
           BUILD_DIR: docs/.vuepress/dist/
           GH_PAT: ${{ secrets.GH_PAT }}
+      - name: Linkcheck
+        if: success()
+        run: blc https://docs.btcpayserver.org -ro --filter-level 2
