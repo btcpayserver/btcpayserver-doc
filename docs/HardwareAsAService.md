@@ -13,6 +13,6 @@ Here you can find a non-exhaustive list of companies that provide such a service
 - [Hack0](https://www.dglab.com/en/works/hack0/)
 - [LightningInABox](https://lightninginabox.co/)
 - [MyNode](https://mynodebtc.com/)
-- [RaspyBlitz](https://shop.fulmo.org/raspiblitz/)
+- [RaspiBlitz](https://shop.fulmo.org/raspiblitz/)
 
 Do you provide Hardware As A Service and are not listed here ? Open an issue to [get added to this list](https://github.com/btcpayserver/btcpayserver-doc/issues)
