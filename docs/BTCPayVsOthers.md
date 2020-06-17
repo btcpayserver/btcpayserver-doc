@@ -58,10 +58,9 @@ Secondly, there is another area of security to consider on the applications laye
 
 * **Option 1**: Most payment processors (including BTCPay) use the [BIP 21][1] standard.
 * **Option 2**: Others use variations of the [BIP 70][2] standard.
-
      * **Note**: [BIP 70 has recently been deprecated in Bitcoin Core][3].
      * Many wallets do not allow payments to BIP 70 invoice urls.
-     * Need help converting obsolete BIP 70 invoice urls to a BIP 21 invoice url? No problem, we can help with that too. <br>Here's our [BIP 70 invoice url converter][4].
+     * Need help converting obsolete BIP 70 invoice urls to a BIP 21 invoice url? No problem, we can help with that too.<br>Here's our [BIP 70 invoice url converter][4].
 
 ----
 

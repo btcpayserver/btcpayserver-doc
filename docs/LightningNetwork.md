@@ -25,9 +25,9 @@ BTCPay currently offers two implementations of the Lightning Network:
 
 ## Choosing the Lightning Network implementation
 
-On the installation, you'll have the option to choose the implementation. For [web-interface installations](LunaNodeWebDeployment.md), you can simply select the implementation from the drop-down menu. For [docker](https://github.com/btcpayserver/btcpayserver-docker) you need to :
+On the installation, you'll have the option to choose the implementation. For [web-interface installations](./LunaNodeWebDeployment.md), you can simply select the implementation from the drop-down menu. For [docker](https://github.com/btcpayserver/btcpayserver-docker) you need to :
 
-```
+```bash
 sudo su -
 cd btcpayserver-docker
 export BTCPAYGEN_LIGHTNING="implementationgoeshere"
@@ -50,7 +50,7 @@ Regardless of the implementation (c-lightning or LND) you've decided to use, the
 5. Enable. Submit.
 6. Test Connection.
 
-<strong> Your blockchain needs to be fully synced before you try to connect your Lightning Node, otherwise the connection will fail.</strong>
+**Your blockchain needs to be fully synced before you try to connect your Lightning Node, otherwise the connection will fail.**
 
 ![LightningNetworkSettup1](./img/LightningNetworkNodeSetup1.jpg)
 

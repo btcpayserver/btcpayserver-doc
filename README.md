@@ -123,14 +123,14 @@ The BTCPay Server Project is proudly supported by these entities through the [BT
           <br/>
           <span>DG Lab</span>
         </a>
-      </td>  
+      </td>
       <td align="center" valign="top" width="14.285714285714285714285714285714%">
         <a href="https://www.okcoin.com//" target="_blank">
           <img  src="https://raw.githubusercontent.com/btcpayserver/btcpayserver/master/BTCPayServer/wwwroot/img/okcoin.svg?sanitize=true" alt="DG Lab" height=100>
           <br/>
           <span>OKCoin</span>
         </a>
-      </td>  
+      </td>
       <td align="center" valign="top" width="14.285714285714285714285714285714%">
         <a href="https://acinq.co/" target="_blank">
           <img  src="https://raw.githubusercontent.com/btcpayserver/btcpayserver/master/BTCPayServer/wwwroot/img/acinq-logo.svg?sanitize=true" alt="ACINQ" height=100>
@@ -139,7 +139,7 @@ The BTCPay Server Project is proudly supported by these entities through the [BT
         </a>
       </td>
       <td align="center" valign="top" width="14.285714285714285714285714285714%">
-        <a href="https://lunanode.com" target="_blank">
+        <a href="https://www.lunanode.com" target="_blank">
           <img  src="https://raw.githubusercontent.com/btcpayserver/btcpayserver/master/BTCPayServer/wwwroot/img/lunanode.svg?sanitize=true" alt="LunaNode" height=100>
           <br/>
           <span>LunaNode</span>

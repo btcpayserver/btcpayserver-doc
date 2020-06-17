@@ -1,6 +1,7 @@
 This document clarifies some of the most common questions and issues users face with the Lightning Network in BTCPay. Before you start using the off-chain protocol, familiarize yourself with the risks. Additionally, read [Getting Started with Lightning Network in BTCPay](../LightningNetwork.md)
 
 ## [Lightning Network General FAQ](FAQ-LightningNetwork.md#lightning-network-general-faq)
+
 * [How many users can use Lightning Network in BTCPay?](FAQ-LightningNetwork.md#how-many-users-can-use-lightning-network-in-btcpay)
 * [How to find node info and open a direct channel with a store using BTCPay?](FAQ-LightningNetwork.md#how-to-find-node-info-and-open-a-direct-channel-with-a-store-using-btcpay)
 * [As a merchant, do I need to open direct channels?](FAQ-LightningNetwork.md#as-a-merchant-do-i-need-to-open-direct-channels)
@@ -17,6 +18,7 @@ This document clarifies some of the most common questions and issues users face 
 * [Where can I get Lightning Network Support?](FAQ-LightningNetwork.md#lightning-network-questions-and-support)
 
 ## [Lightning Network (LND) FAQ](FAQ-LightningNetwork.md#lightning-network-lnd-faq-2)
+
 * [How to restart my LND?](FAQ-LightningNetwork.md#how-to-restart-my-lnd)
 * [How to see LND logs?](FAQ-LightningNetwork.md#how-to-see-lnd-logs)
 * [What’s the default LND Directory in BTCPay?](FAQ-LightningNetwork.md#what-s-the-default-directory-of-lnd-in-btcpay)
@@ -25,6 +27,7 @@ This document clarifies some of the most common questions and issues users face 
 * [How to install ThunderHub](FAQ-LightningNetwork.md#how-to-install-thunderhub)
 
 ## [Lightning Network (c-lightning) FAQ](FAQ-LightningNetwork.md#lightning-network-c-lightning-faq)
+
 * [How to find an on-chain address in Spark?](FAQ-LightningNetwork.md#how-to-find-an-on-chain-address-in-spark)
 * [How to withdraw funds from my on-chain Spark wallet?](FAQ-LightningNetwork.md#how-to-withdraw-funds-from-my-on-chain-spark-wallet)
 
@@ -56,6 +59,7 @@ Server owners can use the same Lightning node for an unlimited number of stores 
 ### How to find node info and open a direct channel with a store using BTCPay?
 
 If you're a customer trying to pay a Lightning Network invoice:
+
 1. make sure to select "Lightning" from coin selection.
 2. Select Copy/Scan
 3. Select Node Info and scan or copy it manually.
@@ -93,7 +97,7 @@ Assuming you are running as root, CLightning will allow call to its API via a un
 
 Once this is done, make sure you start BTCPayServer with
 
-```
+```bash
 -btclightning=/root/.lightning/lightning-rpc
 ```
 
@@ -112,13 +116,13 @@ Then, make sure the port lightning network ports `9735` (BTC) and `9736` (LTC) a
 
 Log as root:
 
-```
+```bash
 sudo su -
 ```
 
 Run
 
-```
+```bash
 cd $DOWNLOAD_ROOT
 wget -O - https://raw.githubusercontent.com/btcpayserver/btcpayserver-azure/master/btcpay-update.sh > btcpay-update.sh
 btcpay-update.sh
@@ -128,24 +132,25 @@ Modify the file `/etc/profile.d/btcpay-env.sh`:
 
 You should have something like:
 
-```
+```bash
 export BTCPAY_DOCKER_COMPOSE="/var/lib/waagent/custom-script/download/0/btcpayserver-docker/Production/docker-compose.btc-ltc.yml"
 ```
 
 Modify by adding `-clightning` at the end:
 
-```
+```bash
 export BTCPAY_DOCKER_COMPOSE="/var/lib/waagent/custom-script/download/0/btcpayserver-docker/Production/docker-compose.btc-ltc-clightning.yml"
 ```
+
 Update your environment variables in current session by running:
 
-```
+```bash
 . /etc/profile.d/btcpay-env.sh
 ```
 
 Then restart your server:
 
-```
+```bash
 btcpay-restart.sh
 ```
 
@@ -230,6 +235,7 @@ vim $BTCPAY_ENV_FILE
 And add or modify the `LIGHTNING_ALIAS` entry to `LIGHTNING_ALIAS=myawesomenode`.
 
 ### How to display my Lightning Node information so that others can connect to me?
+
 The information other users need to connect to your node, is already displayed at the checkout. Sometimes, merchants want to display their node so that their customers can connect beforehand.
 
 There are numerous ways to find your node information, but the easiest way to display it to others is by using Lightning Node info page. Go to Store > General Settings > Lightning nodes > Modify. At the bottom of the page, there is a "Open Public Node Page" button. Click on it to see the information. The page can be embeded into your website with `<iframe>`.
@@ -245,6 +251,7 @@ But once again, please understand that the Lightning Network is still in an expe
 #### Using LND with seed (since [`v1.0.3.138`](https://github.com/btcpayserver/btcpayserver/releases/tag/v1.0.3.138))
 
 You can find the LND Seed Service under:
+
 - Server Settings > Services > LND Seed Backup
 
 ![LND Seed Backup service](../img/LND-Service-Seed-Backup.jpg)
@@ -265,6 +272,7 @@ There are two easy ways to do this:
 2. Store Settings > General settings > Modify > Uncheck the Enabled box to disable on-chain payments
 
 ### How to see my Lightning Network version?
+
 You can check your Lightning Network version from the command line.
 For LND
 
@@ -280,6 +288,7 @@ For c-lightning
 sudo su -
 ./bitcoin-lightning-cli.sh getinfo
 ```
+
 Most of the wallets (RTL, Zap, Spark, etc) that are able to your lightning node remotely will display the version on the front-end as well.
 
 ## Lightning Network (LND) FAQ
@@ -374,7 +383,7 @@ Important: the file must end with `.custom.yml`, or there will be git conflicts 
 
 Modify the new `bitcoin-clightning.custom.yml` as the following:
 
-```
+```yaml
 services:
   clightning_bitcoin:
     environment:

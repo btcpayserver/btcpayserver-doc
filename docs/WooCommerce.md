@@ -37,7 +37,7 @@ To launch your BTCPay server, you can self-host it, or use a third party host.
 
 ### 2.1 Self-hosted BTCPay
 
-There are various ways to [launch a self-hosted BTCPay](Deployment.md). If you do not have technical knowledge, use the [web-wizard method](https://launchbtcpay.lunanode.com) and follow the video below.
+There are various ways to [launch a self-hosted BTCPay](./Deployment.md). If you do not have technical knowledge, use the [web-wizard method](https://launchbtcpay.lunanode.com) and follow the video below.
 
 [![WebBTCPay](https://img.youtube.com/vi/NjslXYvp8bk/mqdefault.jpg)](https://www.youtube.com/watch?v=NjslXYvp8bk "BTCPay Server - LunaNode")
 
@@ -45,7 +45,7 @@ For the self-hosted solutions, you'll have to wait for your node to sync fully b
 
 ### 2.2 Third-party host
 
-For those who want to test BTCPay out, or are okay with the limitations of a third-party hosting (dependency and privacy, as well as lack of some features) can use a one of many [third-party hosts](ThirdPartyHosting.md).
+For those who want to test BTCPay out, or are okay with the limitations of a third-party hosting (dependency and privacy, as well as lack of some features) can use a one of many [third-party hosts](./ThirdPartyHosting.md).
 
 The video below shows you how to connect your store to such a host.
 

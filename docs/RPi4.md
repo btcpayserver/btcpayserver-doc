@@ -1,6 +1,6 @@
 # Raspberry Pi 4 Deployment
 
-This document guides you step by step on how to run BTCPay Server on a Raspberry Pi 4. See here the [Raspberry Pi 3 instructions](RPi3.md)
+This document guides you step by step on how to run BTCPay Server on a Raspberry Pi 4. See here the [Raspberry Pi 3 instructions](./RPi3.md)
 
 The newly released Raspberry Pi 4 is currently the best low-cost single-board computer available. You can use a Raspberry Pi 4 to run your BTCPay Server at home for around $150 worth of parts, described below.
 
@@ -173,6 +173,7 @@ ufw default allow outgoing
 ```
 
 UFW needs default iptables changes and a reboot for the firewall to work:
+
 ```bash
 sudo update-alternatives --set iptables /usr/sbin/iptables-legacy
 sudo reboot
@@ -251,4 +252,4 @@ Run the BTCPay installation:
 
 It should be up and running within a few minutes. Try opening http://raspberrypi.local in your web browser. If everything is correct, you will see BTCPay Server front page.
 
-Now, you just need to wait a day or so for the Bitcoin blockchain to [sync and full verify](FAQ/FAQ-Synchronization.md). The bottom of the BTCPay Server web GUI will show a pop-up dialog box to monitor the progress.
+Now, you just need to wait a day or so for the Bitcoin blockchain to [sync and full verify](./FAQ/FAQ-Synchronization.md). The bottom of the BTCPay Server web GUI will show a pop-up dialog box to monitor the progress.

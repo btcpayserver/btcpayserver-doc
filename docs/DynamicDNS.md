@@ -3,11 +3,13 @@
 ## Motivation
 
 Dynamic DNS is needed if:
+
 1. Install BTCPay Server on a host provider which do not provide a default domain for your server,
 2. You don't want to buy your own domain name (ie, `mybusiness.com`)
 3. Need to access your BTCPay Server over internet via HTTPS. (Your BTCPayServer is accessed by other internet users)
 
 Or
+
 1. BTCPay Server is installed on a hosting provider which does not provide a default domain for your server.
 2. Need to access your BTCPay Server over internet via HTTPS.
 
@@ -26,6 +28,7 @@ BTCPayServer, when configured to use Dynamic DNS, will periodically check and up
 ## How to use
 
 ### Step 1: Create the domain
+
 First, create an account on a Dynamic DNS provider, the most popular providers are:
 
 * [noip](https://www.noip.com/) (free)
@@ -39,7 +42,7 @@ Once you created an account, you can create a free domain name through their web
 
 You need to be administrator of your instance, go to Server Settings / Services / Dynamic DNS.
 
-* Add a Dynamic DNS 
+* Add a Dynamic DNS
 * Select your Dynamic DNS provider
 * Enter the domain that you created in step 1
 * Add the login and password that you created in step 1

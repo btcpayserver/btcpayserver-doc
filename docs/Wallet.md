@@ -2,7 +2,7 @@
 
 BTCPay Server has a built in, full-node reliant wallet that allows easier funds management.
 
-Each [store](CreateStore.md)'s configured cryptocurrency has a separate wallet displayed on the wallets page. A wallet can be accessed by clicking **Wallets** from the top menu. To access a particular wallet, click **Manage**.
+Each [store](./CreateStore.md)'s configured cryptocurrency has a separate wallet displayed on the wallets page. A wallet can be accessed by clicking **Wallets** from the top menu. To access a particular wallet, click **Manage**.
 
 ![Wallets Page BTCPay](./img/wallet/Wallets.png)
 
@@ -40,13 +40,13 @@ To spend the funds, you are required to **sign** the transaction. Transactions c
 
 ##### Signing with HD Private Key or mnemonic seed
 
-If you set up an [existing wallet with your BTCPay Server](WalletSetup/#use-an-existing-wallet), you can spend the funds by inputing your private key into an appropriate field. Make sure to set a proper `AccountKeyPath` in Wallet > Settings otherwise you won't be able to spend.
+If you set up an [existing wallet with your BTCPay Server](./WalletSetup.md#use-an-existing-wallet), you can spend the funds by inputing your private key into an appropriate field. Make sure to set a proper `AccountKeyPath` in Wallet > Settings otherwise you won't be able to spend.
 
 ##### Signing with a wallet supporting PSBT
 
 PSBT (Partially Signed Bitcoin transactions) are supported and can be signed with PSBT compatible wallets.
 
-Check this tutorial on how to [sign a transaction with ColdCard Hardware Wallet](ColdCardWallet.md#spending-from-btcpay-server-wallet-with-coldcard-psbt) completely air-gaped.
+Check this tutorial on how to [sign a transaction with ColdCard Hardware Wallet](./ColdCardWallet.md#spending-from-btcpay-server-wallet-with-coldcard-psbt) completely air-gaped.
 
 ##### Signing with a hardware wallet
 
@@ -56,10 +56,10 @@ BTCPay Server has built-in hardware wallet support allowing you to use your hard
 
 ##### Signing with a hot wallet
 
-If you [created a new wallet](CreateWallet.md) when setting up your store and enabled it as a [hot wallet](HotWallet.md), you can sign a transaction with a private key stored on your server.
+If you [created a new wallet](./CreateWallet.md) when setting up your store and enabled it as a [hot wallet](./HotWallet.md), you can sign a transaction with a private key stored on your server.
 
 :::danger
-Using the hot wallet feature comes with its own security implications, please be sure to read and understand them over at the [Hot Wallet documentation](HotWallet.md)
+Using the hot wallet feature comes with its own security implications, please be sure to read and understand them over at the [Hot Wallet documentation](./HotWallet.md)
 :::
 
 #### Advanced Settings
@@ -100,7 +100,7 @@ Scan option in wallet (camera icon in send screen) lets you use your device’s 
 
 ###### Paste BIP21 address
 
-This option decodes a BIP21 payment link. It's useful when you're trying to pay a [Payjoin](Payjoin.md) invoice.
+This option decodes a BIP21 payment link. It's useful when you're trying to pay a [Payjoin](./Payjoin.md) invoice.
 
 ### Receive
 
@@ -116,7 +116,7 @@ The Rescan relies on Bitcoin Core 0.17.0's `scantxoutset` to scan the current st
 
 Wallet re-scan solves two critical problems for BTCPay users:
 
-1. [Gap limit](FAQ/FAQ-Wallet.md#missing-payments-in-my-software-or-hardware-wallet)
+1. [Gap limit](./FAQ/FAQ-Wallet.md#missing-payments-in-my-software-or-hardware-wallet)
 2. Importing a previously used wallet
 
 **Gap limit**: Most of the wallets have the gap limit set to 20. This means that if a merchant receives 21 or more consecutive unpaid invoices, those wallets show the incorrect balance and some transactions may not be visible.
@@ -133,10 +133,10 @@ Users who use a third party host should use a newly generated xpub key and also 
 
 ### PSBT
 
-In the Partially Signed Bitcoin Transactions (PSBT) tab, you can upload and decode any PSBT, for example an earlier signed PSBT from external wallet and broadcast it via BTCPay Wallet. For more information on PSBT [check this link](ColdCardWallet.md#spending-from-btcpay-server-wallet-with-coldcard-psbt).
+In the Partially Signed Bitcoin Transactions (PSBT) tab, you can upload and decode any PSBT, for example an earlier signed PSBT from external wallet and broadcast it via BTCPay Wallet. For more information on PSBT [check this link](./ColdCardWallet.md#spending-from-btcpay-server-wallet-with-coldcard-psbt).
 
 ### Settings
 
-In the wallet settings tab you can adjust certain settings. If you've configured your wallet by [creating a new wallet](CreateWallet.md) or using an existing wallet via the [hardware wallet integration](Vault.md) these settings will be pre-configured.
+In the wallet settings tab you can adjust certain settings. If you've configured your wallet by [creating a new wallet](./CreateWallet.md) or using an existing wallet via the [hardware wallet integration](./Vault.md) these settings will be pre-configured.
 
 If you manually added the extended public key from an external wallet, you'd need to adjust `AccountKeyPath` that you can find in your external wallet, for example `m/84'/0'/0'` to be able to spend from the BTCPay Wallet.

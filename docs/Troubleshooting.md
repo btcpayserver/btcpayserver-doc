@@ -16,9 +16,9 @@ Logs can provide an essential piece of information. In the next few paragraphs, 
 
 Since the v1.0.3.8, you can easily access BTCPay Server logs from the front-end. If you are a server admin, go to **Server Settings > Logs** and open the logs file. If you don't know what a particular error in the logs means, make sure to mention it when troubleshooting.
 
-If you would like more detailed logs and you're using a Docker deployment, you can view logs of specific Docker containers using the command line. See these [instructions to ssh](FAQ/FAQ-ServerSettings.md#how-to-ssh-into-my-btcpay-running-on-vps) into an instance of BTCPay running on a VPS.
+If you would like more detailed logs and you're using a Docker deployment, you can view logs of specific Docker containers using the command line. See these [instructions to ssh](./FAQ/FAQ-ServerSettings.md#how-to-ssh-into-my-btcpay-running-on-vps) into an instance of BTCPay running on a VPS.
 
-Below is a general list of the container names used for BTCPay. 
+Below is a general list of the container names used for BTCPay.
 
 
 | LOGS FOR | CONTAINER NAME  |
@@ -39,13 +39,11 @@ Below is a general list of the container names used for BTCPay.
 
 Run the commands below to print logs by container name. Replace the container name to view other container logs.
 
-```
+```bash
 sudo su -
 docker ps
 docker logs --tail 100 generated_btcpayserver_1
 ```
-
-
 
 ### 2.2 Lightning Network Logs
 
@@ -101,30 +99,31 @@ alternatively, use this
 
 `docker logs --tail 100 btcpayserver_clightning_bitcoin`
 
-You can also get log information with c-lightning cli command. 
+You can also get log information with c-lightning cli command.
 
 `bitcoin-lightning-cli.sh getlog`
 
 ## 3. Finding a solution yourself (Google, FAQ, GitHub issues)
 
-Even though setups differ, the chances that someone else experienced the same issue as yours are pretty high. Take a few moments, Google around and see if you can solve it yourself. 
+Even though setups differ, the chances that someone else experienced the same issue as yours are pretty high. Take a few moments, Google around and see if you can solve it yourself.
 
 ### 3.1 BTCPay FAQ
 
-We try to document the most common issues on the [Frequently Asked Questions page](/FAQ/readme.md). Take a look there and see if your question is recorded.
+We try to document the most common issues on the [Frequently Asked Questions page](./FAQ/README.md). Take a look there and see if your question is recorded.
 
 ### 3.2 GitHub
 
 When there's an advanced technical issue, users usually open an issue on GitHub. Take a look at the BTCPay GitHub repository and browse [search the closed issues](https://github.com/btcpayserver/btcpayserver/issues?q=is%3Aissue+is%3Aclosed).
 
 ### 3.3 Mattermost
+
 Mattermost chat platform is great for similar issues, other users experienced before you. On the top right-hand corner, click on the search and enter your query.
 
 ## 4. Asking for help
 
-If you're unable to solve the problem yourself, do not worry. There's an amid community ready to help you. 
+If you're unable to solve the problem yourself, do not worry. There's an amid community ready to help you.
 
-The better you describe the problem, the higher are the chances of getting a timely fix. Be concise and provide as much relevant information as possible. Be sure to include the [version you're using](FAQ/FAQ-ServerSettings.md#how-can-i-see-my-btcpay-version) and describe your BTCPay Deployment Setup. Try to explain what you're trying to do and what's the issue. If you can provide the logs. If you think it's relevant, feel free to include a screenshot.
+The better you describe the problem, the higher are the chances of getting a timely fix. Be concise and provide as much relevant information as possible. Be sure to include the [version you're using](./FAQ/FAQ-ServerSettings.md#how-can-i-see-my-btcpay-version) and describe your BTCPay Deployment Setup. Try to explain what you're trying to do and what's the issue. If you can provide the logs. If you think it's relevant, feel free to include a screenshot.
 
 Here's a good example of how to ask a question.
 
@@ -140,7 +139,7 @@ If you have a custom build setup and are facing a complex problem, [open an issu
 
 ### 4.3 Premium Support
 
-Some community members provide paid support. If you want a quicker help, check out the list of [members providing premium support](Support.md).
+Some community members provide paid support. If you want a quicker help, check out the list of [members providing premium support](./Support.md).
 
 ### 4.4 Lightning Network Support
 
@@ -149,7 +148,7 @@ If you're facing a technical problem with your Lightning Network implementation,
 #### 4.4.1 LND Support
 
 * [LND GitHub](https://github.com/lightningnetwork/lnd/issues)
-* [Lightning Community on Slack](lightningcommunity.slack.com)
+* [Lightning Community on Slack](https://lightningcommunity.slack.com)
 * [#lightning-dev](https://webchat.freenode.net/?channels=lightning-dev&uio=d4) on IRC
 
 #### 4.4.2 c-lightning Support

@@ -19,7 +19,8 @@ It may seem tedious, but it's a critical step of running your own full node and 
 
 You can't skip synchronization, but you can drastically decrease the time it takes. If you're comfortable with using the command line, you can use FastSync to synchronize your node faster. Be sure to [read this FastSync document](https://github.com/btcpayserver/btcpayserver-docker/tree/master/contrib/FastSync) to understand the potential trust issues involved with this feature.
 
-To use FastSync, make sure your deployment has a pruning option enabled by using an `opt-save-storage` [environment variable](FAQ-Deployment.md#how-can-i-modify-deactivate-environment-variables), otherwise bitcoind will not be able to sync. First step is to [ssh into](FAQ-ServerSettings.md#how-to-ssh-into-my-btcpay-running-on-vps) your BTCPayServer instance and run the following commands:
+To use FastSync, make sure your deployment has a pruning option enabled by using an `opt-save-storage` [environment variable](./FAQ-Deployment.md#how-can-i-modify-deactivate-environment-variables), otherwise bitcoind will not be able to sync. First step is to [ssh into](./FAQ-ServerSettings.md#how-to-ssh-into-my-btcpay-running-on-vps) your BTCPayServer instance and run the following commands:
+
 ```bash
 sudo su -
 cd $BTCPAY_BASE_DIRECTORY/btcpayserver-docker/
@@ -29,6 +30,7 @@ cd contrib/FastSync
 # Once FastSync has completed
 btcpay-up.sh
 ```
+
 After FastSync is complete and you have brought back up your instance, refresh your BTCPay domain and wait for remaining blockchain synchronization. You can also follow [this video](https://youtube.com/watch?v=VNMnd-dX9Q8?t=1730).
 
 If your FastSync returns `You need to delete your Bitcoin Core wallet` after you load the uxto set, or you find this error: `Last wallet synchronisation goes beyond pruned data`, see cause 4 of [BTCPay Server keep showing that my node is always starting](#btcpay-server-keep-showing-that-my-node-is-always-starting).
@@ -75,7 +77,7 @@ Your hosting provider might throttle your CPU. Please make sure your host suppor
 
 If they don't allow it, shut down your server until they stop throttling you. Then you can limit the CPU via docker, and restart the server:
 
-```
+```bash
 docker update btcpayserver_bitcoind --cpus ".8"
 ```
 
@@ -106,7 +108,6 @@ Possible cause:
 * You do not have enough RAM
 * You do not have enough storage
 * Your last wallet synchronisation goes beyond pruned data
-
 
 ### Cause 1: Your bitcoin data directory is corrupted
 

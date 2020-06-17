@@ -47,7 +47,7 @@ The custom property definitions in the `:root` selector are divided into several
 - The third section contains definitions for specific parts of the page, sections or components.
   Here you should try to reuse definitions from above as much as possible to provide a consistent look and feel.
 
-The variables defined in a theme file get used in the [`site.css`](https://github.com/btcpayserver/btcpayserver/blob/master/BTCPayServer/wwwroot/main/site.css) and [`creative.css`](https://github.com/btcpayserver/btcpayserver/blob/master/BTCPayServer/wwwroot/main//bootstrap4-creativestart/creative.css) files.
+The variables defined in a theme file get used in the [`site.css`](https://github.com/btcpayserver/btcpayserver/blob/master/BTCPayServer/wwwroot/main/site.css) and [`creative.css`](https://github.com/btcpayserver/btcpayserver/blob/master/BTCPayServer/wwwroot/main/bootstrap4-creativestart/creative.css) files.
 
 ##### Overriding Bootstrap selectors
 
@@ -111,7 +111,7 @@ BTCPay Server checkout page can be customized to fit your branding.
 
 Go to your Store Settings > Checkout Experience, and link to a custom CSS stylesheet.
 
-Server admins can upload their .css file to [File Storage](FAQ/FAQ-ServerSettings.md#how-to-upload-files-to-btcpay) to create a CSS stylesheet link.
+Server admins can upload their .css file to [File Storage](./FAQ/FAQ-ServerSettings.md#how-to-upload-files-to-btcpay) to create a CSS stylesheet link.
 
 Below are examples of businesses that use custom-made checkout themes.
 

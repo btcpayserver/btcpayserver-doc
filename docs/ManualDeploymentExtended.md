@@ -5,7 +5,7 @@ This document lists steps for manually deploying BTCPay Server and additional re
 :::danger
 #### Not recommended for production use
 
-Manual installation is NOT recommended for production use unless you are very confident with your Operating System and Bitcoin security expertise. If you are unsure use the docker deployment or one of the other [deployment options](Deployment.md).
+Manual installation is NOT recommended for production use unless you are very confident with your Operating System and Bitcoin security expertise. If you are unsure use the docker deployment or one of the other [deployment options](./Deployment.md).
 :::
 
 ## Installation Steps Overview
@@ -18,8 +18,8 @@ An example hostname of `mainnet.demo.btcpayserver.org` has been used in certain 
 
 If you do use these instructions to install a BTCPay Server connected to the Bitcoin mainnet then at a minimum you should understand how the wallet mechanisms work. It's highly recommended to read the two articles below and ask questions if anything is not clear.
 
-- [BTCPay Wallet FAQ](FAQ/FAQ-Wallet.md)
-- [Lightning Network and BTCPay (first section)](LightningNetwork.md)
+- [BTCPay Wallet FAQ](./FAQ/FAQ-Wallet.md)
+- [Lightning Network and BTCPay (first section)](./LightningNetwork.md)
 
 As an additional aid below is a lit of iptables rules and instructions which should include all the ports that need to be open. **NO WARRANTY**. Use at your own risk, **including risk of locking yourself out**.
 
@@ -1063,13 +1063,13 @@ The advantage of the work that has gone into BTCPay Server is that the RTL web p
 
 ##### 3. Create a configuration file
 
-A sample RTL.conf configuration file is available [here](https://github.com/ShahanaFarooqui/RTL/blob/master/sample-RTL.conf).
+A sample RTL.conf configuration file is available [here](https://github.com/Ride-The-Lightning/RTL/blob/master/sample-RTL-Config.json).
 
 ```bash
 ~$ vi RTL.conf
 ```
 
-```
+```ini
 [SSO]
 rtlSSO=0
 rtlCookiePath=/var/lib/rtl
@@ -1080,6 +1080,7 @@ macaroonPath=/var/lib/lnd/data/chain/bitcoin/mainnet
 lndConfigPath=/etc/lnd/lnd.conf
 nodeAuthType=CUSTOM
 rtlPass=password
+
 [Settings]
 flgSidenavOpened=true
 flgSidenavPinned=true

@@ -19,7 +19,7 @@ Fill in the remaining options: ![Azure Resource Config](./img/AzureResourceConfi
 * Copy the hostname for your Azure deployment, under `DNS name`: ![Azure BTCPayServerPublicIP](./img/AzureBTCPayServerPublicIP.png)
 * Visit it (all major browsers supported)
 * Click 'Register' and create an account - This will be your **admin** account!
-* At your domain registrar, point your domain at this hostname (read more: [DNS configuration](ChangeDomain.md#setting-up-your-dns-record))
+* At your domain registrar, point your domain at this hostname (read more: [DNS configuration](./ChangeDomain.md#setting-up-your-dns-record))
 * Then, visit `https://EXAMPLE.eastus.cloudapp.azure.com/server/maintenance`
 * Enter your domain name and click 'Confirm'
 * (Wait 1-5 minutes)
@@ -32,7 +32,7 @@ For advanced users, you can connect via SSH with the information on `https://EXA
 
 Approximate Cost (unpruned, Bitcoin-only, after Azure $200 free trial): **60 USD per month**
 
-After all your nodes have synced and you've confirmed everything works, follow [this guide](AzurePennyPinching.md) to fine-tune for savings; costs should drop to **30 or 40 USD per month**.
+After all your nodes have synced and you've confirmed everything works, follow [this guide](./AzurePennyPinching.md) to fine-tune for savings; costs should drop to **30 or 40 USD per month**.
 
 [![BTCPay Server - Azure](https://img.youtube.com/vi/xh3Eac66qc4/mqdefault.jpg)](http://www.youtube.com/watch?v=xh3Eac66qc4 "BTCPay Server - Azure 1-Click")
 

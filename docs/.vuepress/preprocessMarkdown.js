@@ -58,7 +58,9 @@ module.exports = function (source) {
 
   processed = replaceYouTubeLinks(processed)
 
-  processed = replaceExternalRepoLinks(processed, resourcePath)
+  if (source.match(`externalRepo: `)) {
+    processed = replaceExternalRepoLinks(processed, resourcePath)
+  }
 
   return processed
 }

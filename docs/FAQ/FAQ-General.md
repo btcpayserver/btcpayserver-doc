@@ -52,7 +52,7 @@ Hosting BTCPay **externally**, usually means using a Virtual Private Server, ent
 
 The price of hosting BTCPay Server obviously depends on the hosting provider.
 
-The low-priced VPS servers tested by the community start at around [9$/month](../LunaNodeWebDepolyment.md), but you're free to explore other hosting providers that suit your budget, as long as they meet the [minimum requirements](FAQ-General.md#what-are-the-minimal-requirements-to-run-btcpay).
+The low-priced VPS servers tested by the community start at around [9$/month](../LunaNodeWebDeployment.md), but you're free to explore other hosting providers that suit your budget, as long as they meet the [minimum requirements](FAQ-General.md#what-are-the-minimal-requirements-to-run-btcpay).
 
 ### Why do I need a VPS? Can't I just run BTCPay on my home computer?
 
@@ -68,7 +68,8 @@ Please check out [How to penny-pinch your Azure deployment](../AzurePennyPinchin
 
 ## What are the minimal requirements to run BTCPay?
 
-If you would like to run Bitcoin and Lightning Network nodes, the minimal requirements are :
+If you would like to run Bitcoin and Lightning Network nodes, the minimal requirements are:
+
 - 2GB Ram
 - 80 GB of storage (with [pruning](https://github.com/btcpayserver/btcpayserver-docker/blob/master/README.md#generated-docker-compose) enabled)
 - Docker

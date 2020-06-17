@@ -215,6 +215,7 @@ If you are running on linux, due to [a limitation of docker](https://github.com/
 
 * Run `ip route | grep docker0 | awk '{print $9}'`
   * Add the following at the end of the `bitcoin.custom.yml` file, replacing `$DOCKER_HOST_IP` with the result of the previous command.
+
 ```yml
       extra_hosts:
         - "host.docker.internal:$DOCKER_HOST_IP"
@@ -231,10 +232,12 @@ Tor is activated by default on the docker deployment.
 ### How do I disable Tor on my BTCPay Server?
 
 That's really easy: just log in your instance with SSH, and enter as root the enter following commands:
+
 ```bash
 BTCPAYGEN_EXCLUDE_FRAGMENTS="$BTCPAYGEN_EXCLUDE_FRAGMENTS;opt-add-tor"
 . btcpay-setup.sh -i
 ```
+
 Then wait a few minutes for the server to restart, and you're done!
 
 ### Why activate Tor? Does it mean that nobody knows who I am?
@@ -242,6 +245,7 @@ Then wait a few minutes for the server to restart, and you're done!
 Tor for BTCPay server is intended more as an improvement of the setup process, and allows for more flexibility for hosting on one's own device at home or in an office.
 
 Having Tor activated would allow for simpler, plug-and-play usage of BTCPay, as it suppress the need for the following configuration steps:
+
 * Opening multiple ports on the firewall
 * Configuring the NAT for port redirection to your device on your local network
 * Setting up a DNS entry to get a HTTPS certificate
@@ -262,9 +266,11 @@ If you want to know more about the philosophy behind all this, you can read our 
 ### How to access the .onion address without clearnet?
 
 To see the .onion address of your BTCPay instance without accessing it through the clearnet and clicking the Tor logo in top left corner, apply the following command:
+
 ```bash
 cat /var/lib/docker/volumes/generated_tor_servicesdir/_data/BTCPayServer/hostname
 ```
+
 ### How can I modify/deactivate environment variables?
 
 In BTCPay, various options are activated through environment variables. You can modify or delete any of these options using command lines by exporting the new value with `export {environment variable}="{value}"` and then running `. ./btcpay-setup.sh -i` again.
