@@ -187,11 +187,11 @@ tmpfs           2.0G     0  2.0G   0% /sys/fs/cgroup
 
 [Choose the docker fragment](https://github.com/btcpayserver/btcpayserver-docker/blob/master/README.md#generated-docker-compose) for the amount of storage you aim to keep.
 
-Then [prune your node](https://github.com/btcpayserver/btcpayserver-docker/blob/master/README.md#how-i-can-prune-my-node-s).
+Then [prune your node](https://github.com/btcpayserver/btcpayserver-docker/blob/master/README.md#how-i-can-prune-my-nodes).
 
 ### Cause 4: Your last wallet synchronisation goes beyond pruned data
 
-This can happen if you use FastSync or import an already synched blockchain. It means that the bitcoin core wallet needs to be removed because it was created before the utxoset, likely because BTCPay Server started without the utxoset at the first boot. To verify this case, [check the bitcoind log](../Troubleshooting.md#_2-1-btcpay-logs) for this:
+This can happen if you use FastSync or import an already synched blockchain. It means that the bitcoin core wallet needs to be removed because it was created before the utxoset, likely because BTCPay Server started without the utxoset at the first boot. To verify this case, [check the bitcoind log](../Troubleshooting.md#2-1-btcpay-logs) for this:
 
 ```bash
 Error: Prune: last wallet synchronisation goes beyond pruned data. You need to -reindex (download the whole blockchain again in case of pruned node)

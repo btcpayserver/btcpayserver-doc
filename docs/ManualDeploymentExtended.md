@@ -554,7 +554,7 @@ Active: active (running) since Thu 2019-05-23 18:23:48 UTC; 21min ago
 }
 ```
 
-##### 👍 Check Tor + Bitcoin
+##### 👍 Check Tor and Bitcoin
 
 If Tor was installed prior to the Bitcoin Daemon then it should have automatically registered and begun listening on a torv2 onion address (note support for torv3 onion addresses is in the [pipeline](https://gist.github.com/laanwj/4fe8470881d7b9499eedc48dc9ef1ad1#file-addrv2-mediawiki)).
 
@@ -995,7 +995,7 @@ May 24 19:21:54 btc lnd[8067]: 2019-05-24 19:21:54.683 [INF] DISC: Broadcasting 
 May 24 19:23:24 btc lnd[8067]: 2019-05-24 19:23:24.683 [INF] DISC: Broadcasting batch of 163 new announcements
 ```
 
-##### 👍 Check Tor + lnd
+##### 👍 Check Tor and LND
 
 As with the Bitcoin daemon if Tor is installed and the configuration file enables it (the one above does) then lnd will automatically register an onion address. In lnd's case torv3 addresses are supported.
 

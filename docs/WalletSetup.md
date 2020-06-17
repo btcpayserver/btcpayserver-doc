@@ -3,7 +3,7 @@
 After [account registration](RegisterAccount.md) and [store creation](CreateStore.md), it's time to configure a wallet in your BTCPay Server, so that you can start receiving payments into it.
 
 There are two ways to set up a wallet in BTCPay Server:
- 
+
  - [Use an existing wallet](#use-an-existing-wallet)
  - [Create a new wallet](#create-a-new-wallet)
 
@@ -11,7 +11,7 @@ There are two ways to set up a wallet in BTCPay Server:
 
 Using an existing wallet assumes that you already have an external wallet created and backed up.
 
-When using an existing wallet with BTCPay Server, you're providing an extended public key (xpub) from an externally generated wallet. Extended public key is a watch-only wallet token. Providing this public key allows BTCPay Server to generate a new address each time a new invoice is created. 
+When using an existing wallet with BTCPay Server, you're providing an extended public key (xpub) from an externally generated wallet. Extended public key is a watch-only wallet token. Providing this public key allows BTCPay Server to generate a new address each time a new invoice is created.
 
 :::tip
 By using an existing wallet, you can receive payments to the external wallet, without BTCPay Server knowing the wallet's private key. If a malicious attacker hacked your server and obtained the xpub, they could observe your transaction history, but cannot access the funds.
@@ -49,7 +49,7 @@ If you do not have an existing wallet, you can generate it within your BTCPay Se
 :::warning
 When a new wallet is generated, BTCPay Server will show you a twelve word recovery seed. After the initial display, the seed is wiped from the server, unless a [hot wallet option](HotWallet.md) is enabled.
 
-Anyone with access to your recovery seed can also access and steal all your funds. Securely back up your seed by writing it down and keep it in a safe place. Do not photograph it or store it in a digital format. Do not rely on your server for storing your private keys, even if you're using a hot wallet. 
+Anyone with access to your recovery seed can also access and steal all your funds. Securely back up your seed by writing it down and keep it in a safe place. Do not photograph it or store it in a digital format. Do not rely on your server for storing your private keys, even if you're using a hot wallet.
 :::
 
 Follow the [instructions here to learn how to generate a new wallet](CreateWallet.md).

@@ -1,6 +1,6 @@
 const { resolve } = require('path')
 const implicitFigures = require('markdown-it-implicit-figures')
-
+const slugify = require('./slugify')
 const preprocessMarkdown = resolve(__dirname, 'preprocessMarkdown')
 
 module.exports = {
@@ -43,7 +43,8 @@ module.exports = {
   markdown: {
     extendMarkdown (md) {
       md.use(implicitFigures)
-    }
+    },
+    slugify
   },
   themeConfig: {
     logo: "/img/btcpay-logo.svg",
@@ -154,7 +155,7 @@ module.exports = {
                     path: "/Transmuter/",
                     children: [
                       ["/Transmuter/EmailReceiptsPreset", "Email Receipts Preset"]
-                    ]  
+                    ]
                   },
                   ["/ElectrumX", "Electrum X"],
                   ["/ElectrumPersonalServer", "Electrum Personal Server"],
