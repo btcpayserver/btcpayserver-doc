@@ -48,4 +48,4 @@ jobs:
           GH_PAT: ${{ secrets.GH_PAT }}
       - name: Linkcheck
         if: success()
-        run: blc https://docs.btcpayserver.org -ro --filter-level 2
+        run: npm run linkcheck

@@ -96,6 +96,12 @@ curl -X POST https://api.github.com/repos/btcpayserver/btcpayserver-doc/dispatch
 
 The `GH_PAT` needs to be a [personal access token](https://help.github.com/en/actions/reference/events-that-trigger-workflows#triggering-new-workflows-using-a-personal-access-token).
 
+### Check for broken links
+
+The GitHub Actions pipeline checks for broken links after deploying the production site.
+You can also run the link check locally using `npm run linkcheck:dev`.
+The dev server needs to be running alongside for this to work.
+
 ## Supporters
 
 The BTCPay Server Project is proudly supported by these entities through the [BTCPay Server Foundation](https://foundation.btcpayserver.org/).

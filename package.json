@@ -21,6 +21,8 @@
     "start": "vuepress dev docs",
     "build": "vuepress build docs",
     "test": "jest",
+    "linkcheck": "blc -ro --filter-level 2 https://docs.btcpayserver.org",
+    "linkcheck:dev": "blc -ro --filter-level 2 http://localhost:8080",
     "predeploy": "./prepare-deployment.sh"
   },
   "devDependencies": {
