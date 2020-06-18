@@ -137,7 +137,7 @@ module.exports = {
                     ]
                   },
 		 							{
-		    						title: "Hardware As A Service"
+		    						title: "Hardware As A Service",
 		    						path: "/HardwareAsAService"
 		  						}
                 ]
