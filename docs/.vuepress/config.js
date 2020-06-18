@@ -135,7 +135,7 @@ module.exports = {
                       ["/DynamicDNS", "Dynamic DNS"],
                       ["/ReverseSSHtunnel", "Reverse SSH Tunnel"]
                     ]
-                  }
+                  },
 		 							{
 		    						title: "Hardware As A Service"
 		    						path: "/HardwareAsAService"
