@@ -14,15 +14,21 @@
     "btcpayserver"
   ],
   "config": {
-    "dist": "docs/.vuepress/dist"
+    "dist": "docs/.vuepress/dist",
+    "port": "8080",
+    "linkcheck": {
+      "excludes": "--exclude btcpayserver-doc/edit/master/docs --exclude directory.btcpayserver.org --exclude foundation.btcpayserver.org --exclude install.btcpayserver.org --exclude drupal.org --exclude dyn.com --exclude facebook.com --exclude linkedin.com --exclude pi-hole.net --exclude t.me --exclude wiki.ion.radar.tech"
+    }
   },
   "scripts": {
     "prestart": "rm -rf $npm_package_config_dist",
-    "start": "vuepress dev docs",
+    "start": "vuepress dev docs -p $npm_package_config_port",
     "build": "vuepress build docs",
     "test": "jest",
-    "linkcheck": "blc -ro --filter-level 2 https://docs.btcpayserver.org",
-    "linkcheck:dev": "blc -ro --filter-level 2 http://localhost:8080",
+    "linkcheck": "start-server-and-test linkcheck:serve $npm_package_config_port linkcheck:local",
+    "linkcheck:serve": "serve -p $npm_package_config_port $npm_package_config_dist",
+    "linkcheck:local": "blc -ro --filter-level 2 --requests 1 http://localhost:$npm_package_config_port $npm_package_config_linkcheck_excludes",
+    "linkcheck:prod": "blc -ro --filter-level 2 --requests 1 https://docs.btcpayserver.org $npm_package_config_linkcheck_excludes",
     "predeploy": "./prepare-deployment.sh"
   },
   "devDependencies": {
@@ -30,6 +36,8 @@
     "broken-link-checker": "^0.7.8",
     "jest": "26.0.1",
     "markdown-it-implicit-figures": "0.10.0",
+    "serve": "11.3.2",
+    "start-server-and-test": "1.11.0",
     "vuepress": "1.5.1",
     "vuepress-plugin-clean-urls": "1.1.1",
     "vuepress-plugin-code-copy": "1.0.6",

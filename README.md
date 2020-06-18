@@ -100,7 +100,7 @@ The `GH_PAT` needs to be a [personal access token](https://help.github.com/en/ac
 ### Check for broken links
 
 The GitHub Actions pipeline checks for broken links after deploying the production site.
-You can also run the link check locally using `npm run linkcheck:dev`.
+You can also run the link check locally using `npm run linkcheck:local`.
 The dev server needs to be running alongside for this to work.
 
 ## Supporters
