@@ -7,14 +7,17 @@ Please do this **Only after your nodes are fully synched**. During synchronizati
 Penny-pinching is an opportunity for you to better understand the resources you are consuming and tailor your configuration to your workload.
 
 Downside:
+
 * Running `btcpay-update.sh` or rebooting will take longer
 * You might see `502 Bad Gateway` and your node taking lot's of time to start
 * Your server might becomes very slower
 
 Upside:
+
 * 50% savings
 
 If you find that your server is too slow:
+
 * Drop support of one coin by editing the setting `BTCPAY_DOCKER_COMPOSE` in `/etc/profile.d/btcpay-env.sh`, or
 * Resize up your Virtual Machine
 
@@ -76,6 +79,7 @@ docker stats
 As you can see, I have 3.352 GB of RAM, and around 55%.
 
 The free command also seems to tell me I have approximately 1GB of RAM in fat:
+
 ```
 root@BTCPayServerVM:~# free --human
              total       used       free     shared    buffers     cached
@@ -91,7 +95,7 @@ Now we know that 2 GB of RAM, and a less powerful CPU will probably do the trick
 But first, you don't want your machine to crash if it runs out of RAM, so you need to add some swap:
 Note that `/mnt` is used in Azure for temporary data, and is optimized for low latency, this is why we set the swapfile here.
 
-```
+```bash
 sudo su -
 fallocate -l 2G /mnt/swapfile
 chmod 600 /mnt/swapfile
@@ -101,6 +105,7 @@ echo "/mnt/swapfile   none    swap    sw    0   0" >> /etc/fstab
 ```
 
 As you can see, the swap got added:
+
 ```
 root@BTCPayServerVM:~# free -h
              total       used       free     shared    buffers     cached
@@ -134,7 +139,6 @@ When Azure is happy:
 ![HappyAzure](./img/HappyAzure.png)
 
 Congratulation, you just cut down the cost by 50% per month! :)
-
 
 ### FAQ: B1MS does not appear in the list <a name="b1ms"></a>
 

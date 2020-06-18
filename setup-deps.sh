@@ -63,3 +63,6 @@ sed -ie 's$(docs/$(./$g' $DOCS_DIR/Transmuter/README.md
 for file in $DOCS_DIR/Transmuter/*.md; do
   update_external $file https://github.com/btcpayserver/btcTransmuter
 done
+
+# Monkey patch VuePress to properly handle clean URLs
+sed -ie "s%, '.html%, '/%" "$BASE_DIR/node_modules/@vuepress/markdown/lib/link.js"

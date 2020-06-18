@@ -4,5 +4,5 @@ For your Bitcoin experience to be truly self-sovereign and trustless, you should
 
 Here's a list of Raspberry Pi deployment documentation. Click on a link below to visit step by step tutorials.
 
-- [Run BTCPay Server on Raspberry Pi 3](RPi3.md)
-- [Run BTCPay Server on Raspberry Pi 4](RPi4.md)
+- [Run BTCPay Server on Raspberry Pi 3](./RPi3.md)
+- [Run BTCPay Server on Raspberry Pi 4](./RPi4.md)

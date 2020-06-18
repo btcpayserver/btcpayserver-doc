@@ -1,6 +1,6 @@
 # Raspberry Pi 3 Deployment
 
-This document guides you step by step on how to run BTCPay Server on a Raspberry Pi 3. See here the [Raspberry Pi 4 instructions](RPi4.md)
+This document guides you step by step on how to run BTCPay Server on a Raspberry Pi 3. See here the [Raspberry Pi 4 instructions](./RPi4.md)
 
 The overall process is as follows:
 
@@ -67,6 +67,7 @@ So: `ssh pi@raspberrypi.local`.
 If `raspberrypi.local` doesn't work, you will have to either look up the Pi's IP address on your router, or run `ifconfig` on the Pi directly for the `eth0` `inet` address.
 
 **Step 8 - ⚠️ IMPORTANT!** - Change your password:
+
 ```bash
 passwd
 ```
@@ -86,6 +87,7 @@ To get your router's IP:
 `fail2ban` bans IPs that attempt to connect to your server and show malicious signs. `git` allows you to clone and manage repositories on github.com.
 
 So, open a new terminal window and type the following command:
+
 ```bash
 sudo apt update && sudo apt install -y fail2ban git
 ```
@@ -95,11 +97,13 @@ sudo apt update && sudo apt install -y fail2ban git
 **Step 12** - Install `ufw` (Uncomplicated Firewall) and allow only specific ports. UFW is a user-friendly frontend for managing iptables firewall rules and its main goal is to make managing iptables easier, or as the name says: uncomplicated.
 
 Install UFW:
+
 ```bash
 sudo apt install ufw
 ```
 
 This command allows SSH connections from internal networks only:
+
 ```bash
 sudo ufw allow from 10.0.0.0/8 to any port 22 proto tcp
 sudo ufw allow from 172.16.0.0/12 to any port 22 proto tcp
@@ -111,6 +115,7 @@ sudo ufw allow from ff00::/8 to any port 22 proto tcp
 ```
 
 These ports need to be accessible from anywhere (The default subnet is 'any' unless you specify one):
+
 ```bash
 sudo ufw allow 80
 sudo ufw allow 443
@@ -118,11 +123,13 @@ sudo ufw allow 9735
 ```
 
 Verify your configuration:
+
 ```bash
 sudo ufw status
 ```
 
 Enable your firewall:
+
 ```bash
 sudo ufw enable
 ```
@@ -135,6 +142,7 @@ The command `sudo fdisk -l` shows a list of the connected storage devices. Assum
 called `/dev/sda`. Double-check that `/dev/sda` exists, and that its storage capacity matches your flash memory.
 
 Delete existing flash drive partition:
+
 ```bash
 sudo fdisk /dev/sda
 # Press 'd'
@@ -142,6 +150,7 @@ sudo fdisk /dev/sda
 ```
 
 Create new primary flash drive partition:
+
 ```bash
 sudo fdisk /dev/sda
 # Press 'n'
@@ -153,6 +162,7 @@ sudo fdisk /dev/sda
 ```
 
 Format partition as ext4:
+
 ```bash
 sudo mkfs.ext4 /dev/sda1
 # Create folder for mount.
@@ -164,11 +174,13 @@ echo "UUID=$UUID /mnt/usb ext4 defaults,nofail 0" | sudo tee -a /etc/fstab
 ```
 
 Test changes to `fstab` file:
+
 ```bash
 sudo mount -a
 ```
 
 Verify that drive is mounted:
+
 ```bash
 df -h
 ```
@@ -176,6 +188,7 @@ df -h
 `/dev/sda1` should appear as mounted on `/mnt/usb`.
 
 Create symlink to flash drive for Docker:
+
 ```bash
 sudo mkdir /mnt/usb/docker
 sudo ln -s /mnt/usb/docker /var/lib/docker
@@ -184,6 +197,7 @@ sudo ln -s /mnt/usb/docker /var/lib/docker
 **Step 14** - Finally, move Swapfile to USB and increase its size.
 
 Edit its configuration file:
+
 ```bash
 sudo nano /etc/dphys-swapfile
 ```
@@ -191,11 +205,11 @@ sudo nano /etc/dphys-swapfile
 Change the CONF_SWAPFILE line to:
 `CONF_SWAPFILE=/mnt/usb/swapfile`
 
-
 Change the CONF_SWAPSIZE line to:
 `CONF_SWAPSIZE=2048`
 
 Stop and restart the swapfile service:
+
 ```bash
 sudo /etc/init.d/dphys-swapfile stop
 sudo /etc/init.d/dphys-swapfile start
@@ -204,23 +218,27 @@ sudo /etc/init.d/dphys-swapfile start
 **Step 15** - Install BTCPayServer!
 
 Login as `root`:
+
 ```bash
 sudo su -
 ```
 
 Create a folder for BTCPayServer:
+
 ```bash
 mkdir btcpayserver
 cd btcpayserver
 ```
 
 Clone the BTCPayServer-Docker repository into the folder:
+
 ```bash
 git clone https://github.com/btcpayserver/btcpayserver-docker
 cd btcpayserver-docker
 ```
 
 Set your environment variables. Make sure the `BTCPAY_HOST` value uses your own domain & subdomain. As usual, run each command separately:
+
 ```bash
 export BTCPAY_HOST="btcpay.YourDomain.com"
 export NBITCOIN_NETWORK="mainnet"
@@ -231,9 +249,10 @@ export BTCPAYGEN_ADDITIONAL_FRAGMENTS="opt-save-storage-xs;opt-save-memory"
 export BTCPAY_ENABLE_SSH=true
 ```
 
-Adding the `opt-save-storage-xs` fragment will tell Bitcoin Core to keep around 3 months of blocks, or 25 GB of disk space. See other pruning levels [here](https://github.com/btcpayserver/btcpayserver-docker#generated-docker-compose-). Pruning is necessary for FastSync to work.
+Adding the `opt-save-storage-xs` fragment will tell Bitcoin Core to keep around 3 months of blocks, or 25 GB of disk space. See other pruning levels [here](https://github.com/btcpayserver/btcpayserver-docker/blob/master/README.md#generated-docker-compose). Pruning is necessary for FastSync to work.
 
 If you want to use multiple hostnames, add them via the optional `BTCPAY_ADDITIONAL_HOSTS` variable:
+
 ```bash
 export BTCPAY_ADDITIONAL_HOSTS="raspberrypi.local,btcpay.local"
 ```
@@ -241,6 +260,7 @@ export BTCPAY_ADDITIONAL_HOSTS="raspberrypi.local,btcpay.local"
 In case you want to restrict access to your local network only, please note that you need to use a `.local` domain.
 
 Finally, run the BTCPayServer setup script:
+
 ```bash
 . ./btcpay-setup.sh -i
 exit
@@ -270,6 +290,7 @@ cd FastSync
 ```
 
 FastSync currently takes about 30 minutes on a high-speed internet connection. After FastSync finishes, run the following command to restart BTCPayServer:
+
 ```bash
 cd ../..
 ./btcpay-up.sh
@@ -281,8 +302,7 @@ By using FastSync, you are exposing yourself to attacks if a [malicious UTXO Set
 
 If you have another trusted node somewhere else, you can check the validity of the UTXO Set gathered by FastSync by following [these instructions](https://github.com/btcpayserver/btcpayserver-docker/blob/master/contrib/FastSync/README.md#dont-trust-verify).
 
-
-## That's it! Enjoy your BTCPi! 🎉 🎉
+## That's it! Enjoy your BTCPi! 🎉
 
 If you don't have the time or patience to build your own BTCPi, there are a few merchants who can build one for you:
 

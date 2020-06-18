@@ -4,15 +4,15 @@ This project is open source, and is not a company. Instead we rely on a network 
 
 ## Free support
 
-Problem? Don't worry, someone else has probably been through that before you. 
+Problem? Don't worry, someone else has probably been through that before you.
 
-* First have a look at our [user documentation](README.md) and [Frequently Asked Questions](/FAQ/readme.md).
+* First have a look at our [user documentation](./README.md) and [Frequently Asked Questions](./FAQ/readme.md).
 
 * If your issue is not referenced there, or you want to request a new feature, please open a [github issue](https://github.com/btcpayserver/btcpayserver/issues).
- 
+
 * If you have more general questions about BTCPay, the way it works and why you should use it, you're welcome on our [Mattermost Chat](https://chat.btcpayserver.org/) or [Telegram](https://t.me/btcpayserver)
 
-Getting a proper support also depends on how you formulate your questions. Read our [troubleshooting guidelines](Troubleshooting.md).
+Getting a proper support also depends on how you formulate your questions. Read our [troubleshooting guidelines](./Troubleshooting.md).
 
 ## Paid support
 
@@ -32,7 +32,7 @@ Contact: hubik.tomas@gmail.com
 
 ### Norman Moore
 
-> BTCPayServer local or cloud installation (Azure/other VPS).  Can also help with WooCommerce Plugin configuration and BTCPayServer Store/App creation.  
+> BTCPayServer local or cloud installation (Azure/other VPS).  Can also help with WooCommerce Plugin configuration and BTCPayServer Store/App creation.
 
 Contact: support@lightninginabox.co, [Web](https://lightninginabox.co)
 

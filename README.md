@@ -96,6 +96,12 @@ curl -X POST https://api.github.com/repos/btcpayserver/btcpayserver-doc/dispatch
 
 The `GH_PAT` needs to be a [personal access token](https://help.github.com/en/actions/reference/events-that-trigger-workflows#triggering-new-workflows-using-a-personal-access-token).
 
+### Check for broken links
+
+The GitHub Actions pipeline checks for broken links after deploying the production site.
+You can also run the link check locally using `npm run linkcheck:dev`.
+The dev server needs to be running alongside for this to work.
+
 ## Supporters
 
 The BTCPay Server Project is proudly supported by these entities through the [BTCPay Server Foundation](https://foundation.btcpayserver.org/).
@@ -123,14 +129,14 @@ The BTCPay Server Project is proudly supported by these entities through the [BT
           <br/>
           <span>DG Lab</span>
         </a>
-      </td>  
+      </td>
       <td align="center" valign="top" width="14.285714285714285714285714285714%">
         <a href="https://www.okcoin.com//" target="_blank">
           <img  src="https://raw.githubusercontent.com/btcpayserver/btcpayserver/master/BTCPayServer/wwwroot/img/okcoin.svg?sanitize=true" alt="DG Lab" height=100>
           <br/>
           <span>OKCoin</span>
         </a>
-      </td>  
+      </td>
       <td align="center" valign="top" width="14.285714285714285714285714285714%">
         <a href="https://acinq.co/" target="_blank">
           <img  src="https://raw.githubusercontent.com/btcpayserver/btcpayserver/master/BTCPayServer/wwwroot/img/acinq-logo.svg?sanitize=true" alt="ACINQ" height=100>
@@ -139,7 +145,7 @@ The BTCPay Server Project is proudly supported by these entities through the [BT
         </a>
       </td>
       <td align="center" valign="top" width="14.285714285714285714285714285714%">
-        <a href="https://lunanode.com" target="_blank">
+        <a href="https://www.lunanode.com" target="_blank">
           <img  src="https://raw.githubusercontent.com/btcpayserver/btcpayserver/master/BTCPayServer/wwwroot/img/lunanode.svg?sanitize=true" alt="LunaNode" height=100>
           <br/>
           <span>LunaNode</span>

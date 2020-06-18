@@ -1,6 +1,6 @@
 # BTCPay Server Apps
 
-The primary purpose of BTCPay Server is to remove dependencies on trusted third-parties. The Apps are built in applications that obsolete central-authorities and allow users an easy way to extend the [use case](UseCase.md) of the software. Users can self-host all sorts of customizable applications that work out of the box.
+The primary purpose of BTCPay Server is to remove dependencies on trusted third-parties. The Apps are built in applications that obsolete central-authorities and allow users an easy way to extend the [use case](./UseCase.md) of the software. Users can self-host all sorts of customizable applications that work out of the box.
 
 To create an app, go to Apps > Create a new app. Apps are store-dependent, which means that each app needs to be connected to a store.
 
@@ -22,7 +22,7 @@ Point of sale app can also be used for receiving donations or even as a small e-
 6. Click "Save Settings".
 7. Click "View App" to view your PoS (Your customers can access the PoS through that link).
 
-You can change the appearance of your Point of Sale app by following the [theme customization guide](Theme.md).
+You can change the appearance of your Point of Sale app by following the [theme customization guide](./Theme.md).
 
 ## Crowdfunding App
 
@@ -39,7 +39,7 @@ Crowdfunding is an application which you can launch from BTCPay Server interface
 
 [![BTCPay Server Crowdfunding](https://img.youtube.com/vi/tFbfyneDj88/mqdefault.jpg)](https://www.youtube.com/watch?v=tFbfyneDj88 "BTCPay Server Crowdfunding")
 
-If you would like to provide digital or physical products to the backers of your crowdfunding campaign, you can [integrate WooCommerce store into it](FAQ/FAQ-Apps.md#how-to-integrate-woocommerce-store-into-a-btcpay-crowdfund-app). You can also set limits on contribution perks using the inventory feature.
+If you would like to provide digital or physical products to the backers of your crowdfunding campaign, you can [integrate WooCommerce store into it](./FAQ/FAQ-Apps.md#how-to-integrate-woocommerce-store-into-a-btcpay-crowdfund-app). You can also set limits on contribution perks using the inventory feature.
 
 ## Payment Button
 

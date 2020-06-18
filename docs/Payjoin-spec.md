@@ -67,7 +67,7 @@ The rest of the process is similar to bustapay.
 
 We will refer to the sender's PSBT by the name of `original PSBT` and the receiver's payjoin proposal as `payjoin PSBT`.
 
-There is no guarantee concerning the ordering of outputs and inputs in either the `original PSBT` or the `payjoin PSBT`. (Note about [BIP69](Payjoin-spec.md#increasing-privacy-of-clients-using-bip69))
+There is no guarantee concerning the ordering of outputs and inputs in either the `original PSBT` or the `payjoin PSBT`. (Note about [BIP69](./Payjoin-spec.md#increasing-privacy-of-clients-using-bip69))
 
 Note: We strongly recommend the sender to submit a PSBT in Base64 format.
 However, we also accept the PSBT or a bitcoin transaction in hex format.
@@ -146,7 +146,7 @@ We then send the payjoin transaction proposal back to the sender.
 
 \*\* <a name="receiver-pay"></a>: If the sender overpays the invoice, we can substract fees from his over paid amount. This is especially useful when somebody wants to make a donation from a small unspent output in his own wallet the amount of his change may be overpaying the invoice. If we were not substracting the fees on the output paying the invoice, we would fall into a `not-enough-money` error, as no change exists.
 
-### Sender side <a name="sender"></a>
+### Sender side
 
 Before sending the original PSBT to the receiver, the sender should make sure that the original PSBT is at least attempted to be broadcasted automatically after 1 minute of submission.
 

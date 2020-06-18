@@ -24,6 +24,13 @@ externalRepo: https://github.com/btcpayserver/btcpayserver-docker
 While [our instructions](/deployment/lunanodewebdeployment) cover how to install BTCPayServer in one click on Azure or Lunanode, BTCPay Server is not limited to those options."
 `;
 
+exports[`preprocessMarkdown replaces external repo links with internal links 1`] = `
+"---
+externalRepo: https://github.com/btcpayserver/btcpayserver-docker
+---
+[opt-unsafe-expose](/Docker/README.md#generated-docker-compose)"
+`;
+
 exports[`preprocessMarkdown replaces links to docs with internal VuePress links 1`] = `
 "---
 externalRepo: https://github.com/btcpayserver/btcpayserver-docker

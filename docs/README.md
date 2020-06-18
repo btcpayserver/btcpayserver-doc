@@ -8,7 +8,7 @@ If you have trouble using BTCPay Server, consider joining the [communities liste
 
 Only file [Github issue](https://github.com/btcpayserver/btcpayserver/issues) for technical issues you can't resolve through other channels or feature requests you've validated with other members of community.
 
-Please check out our [official website](https://btcpayserver.org/), our [complete documentation](https://github.com/btcpayserver/btcpayserver-doc) and [FAQ](FAQ/README.md#btcpay-frequently-asked-questions-and-common-issues) for more details.
+Please check out our [official website](https://btcpayserver.org/), our [complete documentation](https://github.com/btcpayserver/btcpayserver-doc) and [FAQ](./FAQ/README.md#btcpay-frequently-asked-questions-and-common-issues) for more details.
 
 ![](./img/BTCPayServerScreenshot.png)
 
@@ -26,15 +26,15 @@ Please check out our [official website](https://btcpayserver.org/), our [complet
 * SegWit support
 * Lightning Network support (LND, c-lightning, Eclair and Ptarmigan)
 * Tor support
-* Opt-in [altcoin](Altcoins.md) integrations
+* Opt-in [altcoin](./Altcoins.md) integrations
 * Full compatibility with BitPay API (easy migration)
 * Process payments for others
 * Easy-embeddable Payment buttons
 * Point of sale app
 * Crowdfunding app
 * Payment Requests
-* Internal, full-node reliant wallet with [hardware wallet integration](Vault.md)
-* [Payjoin Support](Payjoin.md)
+* Internal, full-node reliant wallet with [hardware wallet integration](./Vault.md)
+* [Payjoin Support](./Payjoin.md)
 
 [![How BTCPay Server Features Overview](https://img.youtube.com/vi/R-yaXk4NvEs/mqdefault.jpg)](https://www.youtube.com/watch?v=R-yaXk4NvEs)
 
@@ -56,7 +56,7 @@ BTCPay is code, not a company. There is no third-party between a merchant and a 
 
 Payments via BTCPay Server are direct, peer to peer. The merchant receives the coins directly to their wallet, with no intermediary. Securing funds comes down to the merchant securing their own private keys, which is standard for most cryptocurrency wallets.
 
-There is an [internal wallet](Wallet.md) inside BTCPay Server that merchants can use to view and spend funds received by their customers. The funds from that wallet can only be spent, if a transaction is signed with the merchant's compatible hardware wallet or a private key. This allows merchants to have complete control of funds received.
+There is an [internal wallet](./Wallet.md) inside BTCPay Server that merchants can use to view and spend funds received by their customers. The funds from that wallet can only be spent, if a transaction is signed with the merchant's compatible hardware wallet or a private key. This allows merchants to have complete control of funds received.
 
 ### How it keeps data private
 
@@ -71,11 +71,11 @@ The data is shared only between two parties - the buyer and a seller. Other paym
 
 BTCPay Server does not have a central point of failure since nobody is controlling it except for the user running it. If run on the cloud server, the hosting providers can potentially censor users by suspending hosting accounts or disabling access to virtual machines. This is always a risk for anyone using a hosting provider. Since no private keys are stored on the server, a censored individual can easily re-deploy the server with another host. Your coins are always inside your wallet.
 
-If an invoice is paid while your BTCPay Server is down, the software will automatically determine and notify the merchant of offline invoice payments when your server is back up. If a hosting provider suspends the server, and there was no proper backup, server settings and invoice data may be lost, but on-chain payments are always in your wallet. For ultimate censorship-resistance, users should run [BTCPay on their own hardware](HardwareDeployment.md). The software can even be run on a single-board computer, like [Raspberry Pi](RaspberryPiDeployment.md) from the comfort of your home.
+If an invoice is paid while your BTCPay Server is down, the software will automatically determine and notify the merchant of offline invoice payments when your server is back up. If a hosting provider suspends the server, and there was no proper backup, server settings and invoice data may be lost, but on-chain payments are always in your wallet. For ultimate censorship-resistance, users should run [BTCPay on their own hardware](./HardwareDeployment.md). The software can even be run on a single-board computer, like [Raspberry Pi](./RaspberryPiDeployment.md) from the comfort of your home.
 
 ### Beyond payment processing
 
-BTCPay Server is often misconceived as being the payment processor used by the merchants only. In reality, the [use-cases](UseCase.md) are limitless.
+BTCPay Server is often misconceived as being the payment processor used by the merchants only. In reality, the [use-cases](./UseCase.md) are limitless.
 
 BTCPay is a tech-stack that glues lots of complex components into an easy-to-use and coherent interface. The software can be used by self-sovereign individuals as a way to run a full node at home with a full-node reliant wallet.
 
@@ -130,14 +130,14 @@ The BTCPay Server Project is proudly supported by these entities through the [BT
           <br/>
           <span>DG Lab</span>
         </a>
-      </td>  
+      </td>
       <td align="center" valign="top" width="14.285714285714285714285714285714%">
         <a href="https://www.okcoin.com//" target="_blank">
           <img  src="https://raw.githubusercontent.com/btcpayserver/btcpayserver/master/BTCPayServer/wwwroot/img/okcoin.svg?sanitize=true" alt="DG Lab" height=100>
           <br/>
           <span>OKCoin</span>
         </a>
-      </td>  
+      </td>
       <td align="center" valign="top" width="14.285714285714285714285714285714%">
         <a href="https://acinq.co/" target="_blank">
           <img  src="https://raw.githubusercontent.com/btcpayserver/btcpayserver/master/BTCPayServer/wwwroot/img/acinq-logo.svg?sanitize=true" alt="ACINQ" height=100>

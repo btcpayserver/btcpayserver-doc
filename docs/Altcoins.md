@@ -18,7 +18,7 @@ Bitcoin is the only focus of the project and its core developers. However, opt-i
 
 Altcoins are maintained by their respective communities.
 
-For more information, check the [Altcoin FAQ page](FAQ/FAQ-Altcoin.md).
+For more information, check the [Altcoin FAQ page](./FAQ/FAQ-Altcoin.md).
 
 ## How can I add an altcoin to BTCPayServer?
 
