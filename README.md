@@ -27,11 +27,11 @@ In order to build the website locally, you'll need [Node.js](https://nodejs.org/
 The setup is straight forward:
 
 ```bash
-# Link external doc repos
-./setup-deps.sh
-
 # Install dependencies
 npm install
+
+# Link external doc repos
+./setup-deps.sh
 
 # Serve locally (by default on port 8080)
 npm start

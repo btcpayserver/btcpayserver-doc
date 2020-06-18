@@ -23,16 +23,18 @@ jobs:
       # Checkout doc repo and its dependencies
       - name: Checkout
         uses: actions/checkout@v2
-      # Setup Node and link the dependencies
+      # Setup Node
       - name: Setup (Node.js ${{ matrix.node-version }})
         uses: actions/setup-node@v1
         with:
           node-version: ${{ matrix.node-version }}
-      - name: Setup dependencies
-        run: ./setup-deps.sh
       # Install, test and build
       - name: Install
         run: npm ci
+      # Link the dependencies
+      - name: Setup dependencies
+        run: ./setup-deps.sh
+      # Test and build
       - name: Test
         run: npm test
       - name: Build
