@@ -136,10 +136,10 @@ module.exports = {
                       ["/ReverseSSHtunnel", "Reverse SSH Tunnel"]
                     ]
                   },
-		 							{
-		    						title: "Hardware As A Service",
-		    						path: "/HardwareAsAService"
-		  						}
+                  {
+                    title: "Hardware As A Service",
+                    path: "/HardwareAsAService"
+                  }
                 ]
               },
               {
