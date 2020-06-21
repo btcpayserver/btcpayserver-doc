@@ -153,7 +153,8 @@ module.exports = {
                   {
                     title: "Transmuter",
                     path: "/Transmuter/",
-                    children: [
+                    children: [                      
+                      ["/Transmuter/DCA", "Dollar Cost Average Preset"]
                       ["/Transmuter/EmailReceiptsPreset", "Email Receipts Preset"]
                     ]
                   },
