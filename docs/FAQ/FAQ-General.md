@@ -174,7 +174,6 @@ At this time, it is not possible to instantly convert your payments into fiat th
 BTCPay Server is an open-source self-hosted software stack, not a company. The community and contributors behind BTCPay Server have no control over who uses the software or how they use it.
 If you paid an invoice to a merchant and didn't receive the product/service you paid for, please contact the merchant directly to see what happened.
 
-If the problem arises because of a bug, *the merchant* (not you) should [open an issue on GitHub](https://github.com/btcpayserver/btcpayserver/issues).
 
 ## Where can I get help and support?
 
