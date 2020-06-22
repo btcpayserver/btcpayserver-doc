@@ -1,6 +1,6 @@
 # General BTCPay FAQ
 
-This page contains general questions about BTCPay. What it is, how it works, how to install it.
+This page contains general questions and answers about BTCPay. What it is, how it works, how to install it.
 
 # [General FAQ](FAQ-General.md)
 
@@ -17,6 +17,7 @@ This page contains general questions about BTCPay. What it is, how it works, how
 * [Why can't I just give my public address to a buyer?](FAQ-General.md#why-can-t-i-just-give-my-bitcoin-address-to-a-buyer)
 * [Does BTCPay need my private key?](FAQ-General.md#does-btcpay-need-myprivate-key)
 * [Does BTCPay Server support crypto to fiat conversion?](FAQ-General.md#does-btcpay-server-support-crypto-to-fiat-conversion)
+* [What if I have a problem with a paid invoice?](FAQ-General.md#what-if-i-have-a-problem-with-a-paid-invoice)
 * [Where can I get help and support?](FAQ-General.md#where-can-i-get-help-and-support)
 * [How can I contribute to BTCPay?](FAQ-General.md#how-can-i-contribute-to-btcpay)
 
@@ -167,6 +168,13 @@ BTCPay generates a different address for each invoice. The address is derived fr
 ## Does BTCPay Server support crypto to fiat conversion?
 
 At this time, it is not possible to instantly convert your payments into fiat through BTCPay. This feature is planned for the future, but there is no ETA.
+
+## What if I have a problem with a paid invoice?
+
+BTCPay Server is an open-source self-hosted software stack, not a company. The community and contributors behind BTCPay Server have no control over who uses the software or how they use it.
+If you paid an invoice to a merchant and didn't receive the product/service you paid for, please contact the merchant directly to see what happened.
+
+If the problem arised because of a bug, *the merchant* (not you) should [open an issue on GitHub](https://github.com/btcpayserver/btcpayserver/issues).
 
 ## Where can I get help and support?
 
