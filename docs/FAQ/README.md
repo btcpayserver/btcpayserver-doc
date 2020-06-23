@@ -208,7 +208,7 @@ Lightning Network troubleshooting and common problems.
 
 ## [Altcoins FAQ](./FAQ-Altcoin.md)
 
-* [Which coins BTCPay Server supports?](./FAQ-Altcoin.md#which-coins-btcpay-server-supports)
+* [Which coins does BTCPay Server support?](./FAQ-Altcoin.md#which-coins-does-btcpay-server-support)
 * [Can an XYZ coin be added in BTCPay?](./FAQ-Altcoin.md#can-an-xyz-coin-be-added-in-btcpay)
 * [How to add an altcoin to BTCPay?](./FAQ-Altcoin.md#how-to-add-an-altcoin-in-btcpay)
 * [How to add an altcoin to an existing BTCPay deployment?](./FAQ-Altcoin.md#how-to-add-an-altcoin-to-an-existing-btcpay-deployment)
