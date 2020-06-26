@@ -22,7 +22,7 @@
 
 * copy the ssh public key over to the VPS (fill in the VPS_IP_ADDRESS).
 Will be prompted for the root password of the VPS.
-`$ cat ~/.ssh/id_rsa.pub | ssh root@VPS_IP_ADDRESS 'cat >> ~/.ssh/authorized_keys && chmod -R 700 ~/.ssh/'`
+`$ ssh-copy-id -i ~/.ssh/id_rsa.pub root@VPS_IP_ADDRESS`
 
 ## Working on the VPS
 
