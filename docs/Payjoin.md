@@ -1,6 +1,6 @@
 # BTCPay Server Payjoin Guide
 
-This document explains how to use BTCPay Server's Payjoin feature. For a detailed, technical explanation of how payjoin is implemented, check the [Payjoin Specififcations](./Payjoin-spec.md)
+This document explains how to use BTCPay Server's Payjoin feature. For a detailed, technical explanation of how payjoin is implemented, check [BIP78](https://github.com/bitcoin/bips/blob/master/bip-0078.mediawiki)
 
 ## Enabling Payjoin as a merchant
 
