@@ -9,12 +9,12 @@ However, what about reversing the role?
 What if, instead of a sender `pushing` the payment, the sender allows the receiver to `pull` the payment at a time the receiver seems fit?
 This is the concept of `Pull payment`. This allows several new applications such as:
 
-* A subscription service (where the subscriber allows the service to pull money every month)
+* A subscription service (where the subscriber allows the service to pull money every x amount of time)
 * Refunds (where the merchant allows the customer to pull the refund money to his wallet when it seems fit)
-* Time based billing freelancing (where the person hiring allows the freelance to pull money to his wallet as time get reported)
-* Patronage (where the patron allows the recipient to pull money every month to continue supporting his work)
-* Automatic selling (where a customer of an exchange would allow an exchange to pull money from his wallet to automatically sell every month)
-* Balance withdraw system (where a high volume service allows users to request withdrawals from their balance, the service can then easily batch all the payouts to many users, at fixed intervals)
+* Time-based billing for freelancers (where the person hiring allows the freelance to pull money to his wallet as time get reported)
+* Patronage (where the patron allows the recipient to pull money every month to continue supporting their work)
+* Automatic selling (where a customer of an exchange would allow an exchange to pull money from their wallet to automatically sell every month)
+* Balance withdraw system (where a high-volume service allows users to request withdrawals from their balance, the service can then easily batch all the payouts to many users, at fixed intervals)
 
 ## Concept
 
@@ -26,7 +26,7 @@ When a sender configures a `Pull payment`, they can configure a number of proper
 * A unit (such as USD, BTC, Hours)
 * Available payment methods
 
-After this, the sender can share the pull payment with the receiver, allowing the receiver to `create a payout`.
+After this, the sender can share the pull payment using a link with the receiver, allowing the receiver to `create a payout`.
 The receiver will choose for their payout:
 * Which payment method to use
 * Where to send the money
@@ -34,7 +34,7 @@ The receiver will choose for their payout:
 Once a payout is created, it will count toward the `pull payment's limit` for the current `period`.
 The sender will then approve the payout by setting the `rate` in which the payout will be sent, and proceed to payment.
 
-For the sender, we provide an easy to use way to batch the payment of several payouts from the wallet of their BTCPay Server instance.
+For the sender, we provide an easy to use way to batch the payment of several payouts from the [BTCPay Internal Wallet](./Wallet.md).
 
 ```
 
@@ -70,7 +70,7 @@ For the sender, we provide an easy to use way to batch the payment of several pa
       v                            v
 ```
 
-Note that BTCPay Server does not approve and pay a payout automatically.
+Note that BTCPay Server does not approve and pay a payout automatically. In future releases, we will look into payouts which are approved to be paid out automatically under the correct conditions.
 Instead, a notification will appear for the sender, giving the sender the choice to approve and pay the payouts.
 
 ## Greenfield API
