@@ -1,6 +1,6 @@
 const { resolve } = require('path')
 const implicitFigures = require('markdown-it-implicit-figures')
-
+const slugify = require('./slugify')
 const preprocessMarkdown = resolve(__dirname, 'preprocessMarkdown')
 
 module.exports = {
@@ -18,7 +18,7 @@ module.exports = {
     // Styles
     ["link", { rel: "stylesheet", href: "/styles/btcpayserver-variables.css" }]
   ],
-  chainWebpack (config, isServer) {
+  chainWebpack (config) {
     config.module
       .rule('md')
       .test(/\.md$/)
@@ -43,7 +43,8 @@ module.exports = {
   markdown: {
     extendMarkdown (md) {
       md.use(implicitFigures)
-    }
+    },
+    slugify
   },
   themeConfig: {
     logo: "/img/btcpay-logo.svg",
@@ -156,9 +157,10 @@ module.exports = {
                   {
                     title: "Transmuter",
                     path: "/Transmuter/",
-                    children: [
+                    children: [                      
+                      ["/Transmuter/DCA", "Dollar Cost Average Preset"],
                       ["/Transmuter/EmailReceiptsPreset", "Email Receipts Preset"]
-                    ]  
+                    ]
                   },
                   ["/ElectrumX", "Electrum X"],
                   ["/ElectrumPersonalServer", "Electrum Personal Server"],
@@ -206,6 +208,7 @@ module.exports = {
               },
               {
                 title: "Create a new wallet",
+                path: "/CreateWallet",
                 children: [
                   ["/HotWallet", "Hot Wallet"]
                 ]
@@ -222,6 +225,7 @@ module.exports = {
           ["/Apps", "Apps"],
           ["/Wallet", "Wallet"],
           ["/Invoices", "Invoices"],
+          ["/PullPayments", "Pull payments"],
           ["/PaymentRequests", "Payment Requests"],
           ["/LightningNetwork", "Lightning Network"],
           ["/Accounting", "Accounting"],
@@ -229,7 +233,7 @@ module.exports = {
             title: "Payjoin",
             path: "/Payjoin",
             children: [
-              ["/Payjoin-spec", "Payjoin Specification"]
+              ["https://github.com/bitcoin/bips/blob/master/bip-0078.mediawiki", "Payjoin specification", { type: 'external' }]
             ]
           }
         ]
@@ -279,7 +283,8 @@ module.exports = {
           ["/Architecture", "Architecture"],
           ["/LocalDevelopment", "Developing Locally"],
           ["/Altcoins", "How to add an Altcoin"],
-          ["/Theme", "Customizing Themes"]
+          ["/Theme", "Customizing Themes"],
+          ["https://docs.btcpayserver.org/API/Greenfield/v1", "Greenfield API v1", { type: 'external' }]
         ]
       }
     ]

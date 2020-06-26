@@ -8,7 +8,7 @@ You can also follow along in this video:
 
 ## Create your first invoice
 
-For an in production setup, skip to [Mainnet](TryItOut.md#mainnet)
+For an in production setup, skip to [Mainnet](./TryItOut.md#mainnet)
 
 ### Testnet
 First let's create a new store:
@@ -35,20 +35,20 @@ Let's configure the store so it uses your Electrum wallet:
 
 Then you can create an invoice, either through
 * the "Invoice" menu on the website or
-* the process documented on the [Custom integration](CustomIntegration.md)
+* the process documented on the [Custom integration](./CustomIntegration.md)
 
 ### Mainnet
 
 First choose where to setup your store.
 Either:
 * Host your store on someone else's BTCPay Server. You can find a list of third-party hosts [here](./ThirdPartyHosting.md#the-list-of-btcpay-third-party-hosts).
-* Or [deploy your own](deployment.md).
+* Or [deploy your own](./Deployment.md).
 
-Click on the following links for detailed instructions on how to [Register an account](registeraccount.md), [Create your first store](createstore.md) and [Connect your own wallet](WalletSetup.md)
+Click on the following links for detailed instructions on how to [Register an account](./RegisterAccount.md), [Create your first store](./CreateStore.md) and [Connect your own wallet](./WalletSetup.md)
 
 Then you can create an invoice, either through
 * The "Invoice" menu on the website or
-* The process documented on the [Custom integration](CustomIntegration.md)
+* The process documented on the [Custom integration](./CustomIntegration.md)
 
 See the [What's Next](./WhatsNext.md) page for other options on how to continue exploring BTCPay.
 

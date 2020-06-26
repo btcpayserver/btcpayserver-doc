@@ -1,0 +1,54 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`preprocessMarkdown replaces YouTube links 1`] = `
+"
+Take a look at how BTCPay works in a video below.
+
+<a href=\\"https://www.youtube.com/watch?v=nr0UNbz3AoQ\\" class=\\"ytEmbed\\" data-id=\\"nr0UNbz3AoQ\\" style=\\"background-image:url(https://img.youtube.com/vi/nr0UNbz3AoQ/hqdefault.jpg);\\">
+  <iframe
+    title=\\"YouTube: nr0UNbz3AoQ\\"
+    data-src=\\"https://www.youtube-nocookie.com/embed/nr0UNbz3AoQ?&autoplay=1&autohide=1&modestbranding=1&color=white&rel=0\\"
+    frameborder=\\"0\\"
+    allow=\\"autoplay;encrypted-media;picture-in-picture\\"
+    allowfullscreen
+  ></iframe>
+</a>
+
+Here is a presentation of the global architecture at Advancing Bitcoin conference."
+`;
+
+exports[`preprocessMarkdown replaces external links to docs with internal VuePress links 1`] = `
+"---
+externalRepo: https://github.com/btcpayserver/btcpayserver-docker
+---
+While [our instructions](/deployment/lunanodewebdeployment) cover how to install BTCPayServer in one click on Azure or Lunanode, BTCPay Server is not limited to those options."
+`;
+
+exports[`preprocessMarkdown replaces external repo links with internal links 1`] = `
+"---
+externalRepo: https://github.com/btcpayserver/btcpayserver-docker
+---
+[opt-unsafe-expose](/Docker/README.md#generated-docker-compose)"
+`;
+
+exports[`preprocessMarkdown replaces links to docs with internal VuePress links 1`] = `
+"---
+externalRepo: https://github.com/btcpayserver/btcpayserver-docker
+---
+([See the documentation](/Docker/pihole.md))"
+`;
+
+exports[`preprocessMarkdown replaces repo internal links with external links 1`] = `
+"---
+externalRepo: https://github.com/btcpayserver/btcpayserver-docker
+---
+When you run \`btcpay-setup.sh\`, your environment variables are used by [build.sh](https://github.com/btcpayserver/btcpayserver-docker/blob/master/build.sh) (or [build.ps1](https://github.com/btcpayserver/btcpayserver-docker/blob/master/build.ps1)) to generate a docker-compose adapted for your needs.
+For the full list of options, see: [Environment variables](#environment-variables)
+
+By default, the generated file is \`Generated/docker-compose.generated.yml\`, constructed from the relevant [Docker fragments](https://github.com/btcpayserver/btcpayserver-docker/blob/master/docker-compose-generator/docker-fragments) for your setup.
+
+Available \`BTCPAYGEN_ADDITIONAL_FRAGMENTS\` currently are:
+
+* [opt-save-storage](https://github.com/btcpayserver/btcpayserver-docker/blob/master/docker-compose-generator/docker-fragments/opt-save-storage.yml) will keep around 1 year of blocks (prune BTC for 100 GB)
+* [opt-add-pihole](https://github.com/btcpayserver/btcpayserver-docker/blob/master/docker-compose-generator/docker-fragments/opt-add-pihole.yml) ([See the documentation](/Docker/pihole.md))"
+`;

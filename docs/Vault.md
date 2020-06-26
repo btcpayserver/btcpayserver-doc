@@ -18,7 +18,7 @@ Setting up BTCPay Vault is quite easy. You only need to have already set up BTCP
 2. Install the Vault on your PC (Windows, MacOS or Linux)
 3. Open the BTCPay Vault app
 4. Plug in the hardware wallet into your PC and make sure it’s in a wake up state
-5. Go to your BTCPay Server’s Store > General Settings > Derivation Scheme > **Import from the Vault**
+5. Go to your BTCPay Server’s Store > General Settings > Derivation Scheme > **Import from a hardware wallet**
 6. Grant the permission
 7. The public key will automatically be imported in the store and configured to an appropriate format
 8. Validate that address shown on BTCPay is the same as the one on your device
@@ -46,7 +46,7 @@ Once you’ve received funds to your wallet and you decide to spend them, you ca
 2. Plug in the hardware wallet and make sure it’s in wake up state
 3. In BTCPay Server, go to > Wallets > Manage > Send
 4. Fill in the Destination address and the Amount
-5. Select Sign with the Vault
+5. Select Sign with a hardware wallet
 6. Verify the transaction on your hardware wallet and confirm it
 7. Broadcast the transaction
 

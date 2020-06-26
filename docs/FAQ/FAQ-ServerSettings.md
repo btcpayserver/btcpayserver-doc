@@ -1,35 +1,38 @@
 # Server Settings Frequently Asked Questions
 
-This document covers all the questions and issues related to Server Settings. This option is only available to server admin. Take a look at the [walkthrough page](/Walkthrough.md) to easier understand the navigation
+This document covers all the questions and issues related to Server Settings. This option is only available to server admin. Take a look at the [walkthrough page](../Walkthrough.md) to easier understand the navigation
 
 ## Maintenance
 
-* [How to update BTCPay Server](FAQ-ServerSettings.md#how-to-update-btcpay-server)
-* [How can I check my BTCPay Server version?](FAQ-ServerSettings.md#how-can-i-see-my-btcpay-version)
-* [How can I check my BTCPay Server version via terminal?](FAQ-ServerSettings.md#how-can-i-see-my-btcpay-version)
-* [What is BTCPay SSH key file](FAQ-ServerSettings.md#what-is-btcpay-ssh-key-file)
-* [Error the BTCPAY_SSHKEYFILE variable is not set/ Unable to update](FAQ-ServerSettings.md#btcpay_sshkeyfile-is-not-set-when-running-the-docker-install-or-unable-to-update-through-server-settings--maintenance)
-* [Forgot BTCPay Admin password](FAQ-ServerSettings.md#forgot-btcpay-admin-password)
-* [How to disable U2F and 2FA for a user](FAQ-ServerSettings.md#how-to-disable-u2f-and-2fa-for-a-user)
-* [How to configure SMTP settings in BTCPay?](FAQ-ServerSettings.md#how-to-configure-smtp-settings-in-btcpay)
-* [How to SSH into my BTCPay running on VPS?](FAQ-ServerSettings.md#how-to-ssh-into-my-btcpay-running-on-vps)
-* [Error: Your local changes to the following files would be overwritten by merge](FAQ-ServerSettings.md#error-your-local-changes-to-the-following-files-would-be-overwritten-by-merge)
+* [How to update BTCPay Server](./FAQ-ServerSettings.md#how-to-update-btcpay-server)
+* [How can I check my BTCPay Server version?](./FAQ-ServerSettings.md#how-can-i-see-my-btcpay-version)
+* [How can I check my BTCPay Server version via terminal?](./FAQ-ServerSettings.md#how-can-i-see-my-btcpay-version)
+* [What is BTCPay SSH key file](./FAQ-ServerSettings.md#what-is-btcpay-ssh-key-file)
+* [Error the BTCPAY_SSHKEYFILE variable is not set/ Unable to update](./FAQ-ServerSettings.md#btcpay-sshkeyfile-is-not-set-when-running-the-docker-install-or-unable-to-update-through-server-settings-maintenance)
+* [Forgot BTCPay Admin password](./FAQ-ServerSettings.md#forgot-btcpay-admin-password)
+* [How to disable U2F and 2FA for a user](./FAQ-ServerSettings.md#how-to-disable-u2f-and-2fa-for-a-user)
+* [How to configure SMTP settings in BTCPay?](./FAQ-ServerSettings.md#how-to-configure-smtp-settings-in-btcpay)
+* [How to SSH into my BTCPay running on VPS?](./FAQ-ServerSettings.md#how-to-ssh-into-my-btcpay-running-on-vps)
+* [Error: Your local changes to the following files would be overwritten by merge](./FAQ-ServerSettings.md#error-your-local-changes-to-the-following-files-would-be-overwritten-by-merge)
 
 ## Theme / Customization
-* [How to customize my BTCPay theme style](FAQ-ServerSettings.md#how-to-customize-my-btcpay-theme-style)
-* [How to add Google Analytics code to BTCPay](FAQ-ServerSettings.md#how-to-add-google-analytics-code-to-btcpay)
-* [How to modify BTCPay checkout page](FAQ-ServerSettings.md#how-to-modify-the-checkout-page)
+
+* [How to customize my BTCPay theme style](./FAQ-ServerSettings.md#how-to-customize-my-btcpay-theme-style)
+* [How to add Google Analytics code to BTCPay](./FAQ-ServerSettings.md#how-to-add-google-analytics-code-to-btcpay)
+* [How to modify BTCPay checkout page](./FAQ-ServerSettings.md#how-to-modify-the-checkout-page)
 
 ## Policies
-* [How to allow registration on my BTCPay Server](FAQ-ServerSettings.md#how-to-allow-registration-on-my-btcpay-server)
-* [How to hide my BTCPay Server from Search Engines](FAQ-ServerSettings.md#how-to-hide-my-btcpay-server-from-search-engines)
+
+* [How to allow registration on my BTCPay Server](./FAQ-ServerSettings.md#how-to-allow-registration-on-my-btcpay-server)
+* [How to hide my BTCPay Server from Search Engines](./FAQ-ServerSettings.md#how-to-hide-my-btcpay-server-from-search-engines)
 
 ## Services
-* [How to remotely connect to my BTCPay full node?](FAQ-ServerSettings.md#how-to-remotely-connect-to-my-btcpay-full-node)
+
+* [How to remotely connect to my BTCPay full node?](./FAQ-ServerSettings.md#how-to-remotely-connect-to-my-btcpay-full-node)
 
 ## Files
-* [How to upload files to BTCPay](FAQ-ServerSettings.md#how-to-upload-files-to-btcpay)
 
+* [How to upload files to BTCPay](./FAQ-ServerSettings.md#how-to-upload-files-to-btcpay)
 
 ## Maintenance
 
@@ -42,21 +45,25 @@ There are 2 ways to update your BTCPay Server :
 
 2.Updating through SSH: Login into your virtual machine with ssh, then apply following commands:
 
-```
+```bash
 sudo su -
 btcpay-update.sh
 ```
 
 ### How can I see my BTCPay version?
+
 You can see your BTCPay version in the bottom right of the page footer when you're logged in as a server admin.
 
 ### How can I check my BTCPay Server version via terminal?
+
 In the btcpayserver-docker folder:`bitcoin-cli.sh getnetworkinfo`
 
 ### What is BTCPay SSH key file?
+
 BTCPay SSH key, enables users to update their server or quickly change the domain name from btcpay website, the front-end.
 
 ### Forgot BTCPay Admin password?
+
 First, register a new user on your BTCPay Server, by clicking "Register", for example: "newadmin@example.com".
 
 If you can't create a new user because registrations are disabled in your Server Settings > Policies, you need to reset the policies settings. Please skip this step if you can create a new user on the front-end home page using the register button. Run the following command (It also deletes any other server settings currently being used):
@@ -72,6 +79,7 @@ cd $BTCPAY_BASE_DIRECTORY/btcpayserver-docker/
 Head back to your BTCPay Server and click on the "Register" button which should now be enabled. In case you don't see the Register link in the menu, that's probably because of the caching. Restart your btcpay with `btcpay-restart.sh`.
 
 Next, add the newly registered user `newadmin@example.com` as an admin:
+
 ```bash
 # Set new user as admin
 ./btcpay-admin.sh set-user-admin newadmin@example.com
@@ -164,11 +172,13 @@ yes
 Or see this [LunaNode example](https://github.com/JeffVandrewJr/patron/blob/master/SSH.md) with PuTTY.
 
 ### Error: Your local changes to the following files would be overwritten by merge
+
 Sometimes, an accidentally edited file can break the update mechanism with the following error:
 
 ```bash
 error: Your local changes to the following files would be overwritten by merge:
 ```
+
 To fix the this, [ssh into your server](https://github.com/JeffVandrewJr/patron/blob/master/SSH.md)
 
 ```bash
@@ -182,7 +192,7 @@ git reset --hard origin/master
 ### How to customize my BTCPay theme style
 
 There are two ways to customize the theme of your BTCPay.
-The easy way is to head over to the **Server Settings > Theme** and follow the instructions on how to [change your Bootstrap theme](/Theme.md#bootstrap-themes).
+The easy way is to head over to the **Server Settings > Theme** and follow the instructions on how to [change your Bootstrap theme](../Theme.md#bootstrap-themes).
 
 For advanced theme changes, you'll most likely need to fork  BTCPay repository and apply desired design changes. Build and publish the docker image to Docker Hub. Set the `BTCPAY_IMAGE` environment variable to your docker image tag(`export BTCPAY_IMAGE="your custom btcpay docker image"`) and run the setup (`. ./btcpay-setup.sh -i`) as usual from [BTCPay Docker](https://github.com/btcpayserver/btcpayserver-docker). Modify generated docker compose to use your custom docker image. **You will need to create a new image manually and follow these steps for EACH BTCPay update so it is advised to stick with the default setup.**
 
@@ -191,7 +201,8 @@ For advanced theme changes, you'll most likely need to fork  BTCPay repository a
 You should be able to do what you want by injecting your GA code to `~/wwwroot/checkout/js/core.js.` Might be the easiest way but you have to redo it every time you update BTCPay to the latest version. Then you won’t have the hassle of forking the code, deploying it manually. Every time there is an update. Just do the docker update and add the same lines to the js file.
 
 ### How to modify the checkout page?
-You can easily change the appearance of your BTCPay's checkout page by following the [instructions here](/Theme.md#checkout-page-theme)
+
+You can easily change the appearance of your BTCPay's checkout page by following the [instructions here](../Theme.md#checkout-page-theme)
 
 ## Policies
 

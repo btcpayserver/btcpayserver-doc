@@ -10,10 +10,10 @@ A bitcoin payment plugin for PrestaShop using BTCPay Server.
 
 ## Prerequisites
 
-* [Self-hosted BTCPay](Deployment.md) or a server [hosted by a third-party](ThirdPartyHosting.md)
-* [Registered account on the instance](RegisterAccount.md)
-* [Created BTCPay store](CreateStore.md)
-* [Connected wallet to a store](WalletSetup.md)
+* [Self-hosted BTCPay](./Deployment.md) or a server [hosted by a third-party](./ThirdPartyHosting.md)
+* [Registered account on the instance](./RegisterAccount.md)
+* [Created BTCPay store](./CreateStore.md)
+* [Connected wallet to a store](./WalletSetup.md)
 
 If you want to test in test mode, just paste an other btcpayserver url with testing port.
 

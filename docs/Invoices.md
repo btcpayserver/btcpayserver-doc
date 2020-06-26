@@ -1,6 +1,6 @@
 # Invoices
 
-The invoices page lists the invoices from all stores and [apps](Apps.md) and [payment requests](PaymentRequests.md). It cumulatively sorts invoices by date and allows plenty of customization options for a better invoice management.
+The invoices page lists the invoices from all stores and [apps](./Apps.md) and [payment requests](./PaymentRequests.md). It cumulatively sorts invoices by date and allows plenty of customization options for a better invoice management.
 
 ## Managing Invoices
 
@@ -14,7 +14,7 @@ Invoices can be filtered via the quick filters located next to the search button
 
 ### Invoice Export
 
-Invoices can be exported in CSV or JSON format. For more information about invoice export and accounting, [see this page](Accounting.md).
+Invoices can be exported in CSV or JSON format. For more information about invoice export and accounting, [see this page](./Accounting.md).
 
 ## Invoice Statuses
 
@@ -23,7 +23,7 @@ Table below lists and describes common invoice statuses in BTCPay and suggests c
 | Invoice Status         | Description                                                  | Action        |
 | ---------------------- | ------------------------------------------------------------ | ------------- |
 | New                    | Not paid, invoice timer still has not expired                | None          |
-| New (paidPartial)      | Not paid in full, invoice timer still has not expired        | None          |                     
+| New (paidPartial)      | Not paid in full, invoice timer still has not expired        | None          |
 | Expired                | Not paid, invoice timer expired                              | None          |
 | Paid                   | Paid, but has not received sufficient amount of confirmations specified in the Store Settings | Wait for confirmations (The invoice should become - complete) |
 | Confirmed*             | Paid, confirmed, by reaching the number of confirmations in store settings but has not received the default number (6) of confirmations in BTCPay. | Wait for remaining confirmations, or proceed if store settings confirmations is acceptable  |
@@ -37,6 +37,6 @@ Table below lists and describes common invoice statuses in BTCPay and suggests c
 | Invalid (marked)       | Status was manually changed to invalid from a complete or expired status | Store admin has marked the payment as invalid |
 | Invalid (paidOver)     | Paid more than the invoice amount, but failed to receive sufficient amount of confirmations within the time specified in store settings | Check the transaction on a blockchain explorer, if it received sufficient confirmations, mark as complete |
 
-* *Invoices paid via the [Lightning Network](LightningNetwork.md) immediately go to a completed state, as their confirmation is instant.
+* *Invoices paid via the [Lightning Network](./LightningNetwork.md) immediately go to a completed state, as their confirmation is instant.
 * **Paid Partial invoice usually happens when a buyer pays the invoice from the exchange wallet  which takes a fee for their service and deducts it from a total. In some cases, it happens when buyer enters an  incorrect amount in their wallet.
-* ***Invalid - If you're receiving a lot of invalid invoices in your store, you may want to [adjust invalid invoice time in store settings](FAQ/FAQ-Stores.md#payment-invalid-if-transactions-fails-to-confirm--minutes-after-invoice-expiration).
+* ***Invalid - If you're receiving a lot of invalid invoices in your store, you may want to [adjust invalid invoice time in store settings](./FAQ/FAQ-Stores.md#payment-invalid-if-transactions-fails-to-confirm-minutes-after-invoice-expiration).

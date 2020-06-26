@@ -1,11 +1,17 @@
 # Theming
 
-BTCPay Server is built on Bootstrap and offers the flexibility to adjust its look to your needs.
+BTCPay Server is built on Bootstrap and offers the flexibility to adjust its look to your needs. Learn more about the [standard design specifications used in BTCPay](https://design.btcpayserver.org/).
 
-There are two approaches to customizing the theme of your BTCPay Server.
+## Built-in themes
 
-1. [Developing a custom theme](#_1-custom-themes) (requires technical skills)
-2. [Using a pre-made Bootstrap theme](#_2-bootstrap-themes) (does not require technical skills)
+BTCPay Server currently has several built-in themes available for server admins. Selecting a theme in Server Settings will modify the appearance of the entire server (for all users) without having to make any code changes or additional customizations. 
+
+![Server Theme](./img/ThemeDarkLight.gif)
+
+There are two other approaches to customizing the theme of your BTCPay Server.
+
+1. [Developing a custom theme](#1-custom-themes) (requires technical skills)
+2. [Using a pre-made Bootstrap theme](#2-bootstrap-themes) (does not require technical skills)
 
 ## 1. Custom themes
 
@@ -13,7 +19,7 @@ This is the way we are building our own themes, like the [Classic](https://githu
 
 With this approach you provide a CSS file containing the variable definitions ([CSS custom properties](https://developer.mozilla.org/en-US/docs/Web/CSS/--*)) to adjust colors, fonts, etc.
 
-You should copy one of our [preexisting themes](https://github.com/btcpayserver/btcpayserver/blob/master/BTCPayServer/wwwroot/main/themes/) and change the variables to fit your needs.
+You should copy one of our [predefined themes](https://github.com/btcpayserver/btcpayserver/blob/master/BTCPayServer/wwwroot/main/themes/) and change the variables to fit your needs.
 To test and play around with the adjustments, you can also use the developer tools of the browser:
 Inspect the `<html>` element and modify the variables in the `:root` section of the styles inspector:
 
@@ -41,7 +47,7 @@ The custom property definitions in the `:root` selector are divided into several
 - The third section contains definitions for specific parts of the page, sections or components.
   Here you should try to reuse definitions from above as much as possible to provide a consistent look and feel.
 
-The variables defined in a theme file get used in the [`site.css`](https://github.com/btcpayserver/btcpayserver/blob/master/BTCPayServer/wwwroot/main/site.css) and [`creative.css`](https://github.com/btcpayserver/btcpayserver/blob/master/BTCPayServer/wwwroot/main//bootstrap4-creativestart/creative.css) files.
+The variables defined in a theme file get used in the [`site.css`](https://github.com/btcpayserver/btcpayserver/blob/master/BTCPayServer/wwwroot/main/site.css) and [`creative.css`](https://github.com/btcpayserver/btcpayserver/blob/master/BTCPayServer/wwwroot/main/bootstrap4-creativestart/creative.css) files.
 
 ##### Overriding Bootstrap selectors
 
@@ -105,7 +111,7 @@ BTCPay Server checkout page can be customized to fit your branding.
 
 Go to your Store Settings > Checkout Experience, and link to a custom CSS stylesheet.
 
-Server admins can upload their .css file to [File Storage](FAQ/FAQ-ServerSettings.md#how-to-upload-files-to-btcpay) to create a CSS stylesheet link.
+Server admins can upload their .css file to [File Storage](./FAQ/FAQ-ServerSettings.md#how-to-upload-files-to-btcpay) to create a CSS stylesheet link.
 
 Below are examples of businesses that use custom-made checkout themes.
 

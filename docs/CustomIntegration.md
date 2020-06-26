@@ -8,7 +8,7 @@ While Bitpay only allows one account for one merchant, BTCPay allows a user to m
 
 # Official Client Libraries
 
-BTCPay maintains official client libraries for [C#](https://github.com/MetacoSA/NBitpayClient), [Python](https://github.com/btcpayserver/btcpay-python) and [NodeJS](https://github.com/btcpayserver/node-btcpay). 
+BTCPay maintains official client libraries for [C#](https://github.com/MetacoSA/NBitpayClient), [Python](https://github.com/btcpayserver/btcpay-python) and [NodeJS](https://github.com/btcpayserver/node-btcpay).
 
 In addition, there are forked repositories of Bitpay's [PHP](https://github.com/btcpayserver/btcpayserver-php-client) and [Ruby](https://github.com/bitpay/ruby-client) clients.
 
@@ -18,7 +18,7 @@ If not using one of the libraries above, the REST API can be accessed manually.
 
 The authentication mechanism is using `BitId`.
 
-With `BitId`, the `client` of the API (like an e-commerce plugin) generates a private key, then inform the `server` (BTCPay) about the `public key`.
+With `BitId`, the `client` of the API (like an e-commerce plugin) generates a private key, then informs the `server` (BTCPay) about the `public key`.
 
 Every requests to the API sent by the client is signed with the client's `private key`.
 
@@ -37,7 +37,7 @@ There is two method of `pairing`, client side pairing and server side pairing.
 
 ### Client side pairing
 
-With client side pairing, the `client` generates a URL from his `public key` which a human user can browse to validate the pairing.
+With client side pairing, the `client` generates a URL from their `public key` which a human user can browse to validate the pairing.
 
 Typically the URL looks like `https://btcpay.example.com/api-access-request?pairingCode=<pairingcode_goes_here>`.
 
@@ -65,47 +65,48 @@ There is only one difference: Bitpay only allows one account for one merchant, B
 ## Modal Checkout
 
 To geneate a pop-up modal experience:
+
 1. Include the btcpay.js script in your html page
 
-```
-    <script src ="https://your.btcpay.url/modal/btcpay.js"></script>
+```html
+<script src ="https://your.btcpay.url/modal/btcpay.js"></script>
 ```
 
 2. Call the invoice API to generate an invoice (example code). This is sample backend code as it contains an auth token that should not be exposed in your front-end.
 
-```
-    const axiosClient = axios.create({
-      baseURL: BTCPAY_URL,
-      timeout: 5000,
-      responseType: 'json',
-      headers: {
-        'Content-Type': 'application/json',
-        'Authorization': BTCPAY_AUTH
-      }
-    });
+```js
+const axiosClient = axios.create({
+  baseURL: BTCPAY_URL,
+  timeout: 5000,
+  responseType: 'json',
+  headers: {
+    'Content-Type': 'application/json',
+    'Authorization': BTCPAY_AUTH
+  }
+});
 
-    const invoiceCreation = {
-      "price": 12345,
-      "currency": "USD",
-      "orderId": "something",
-      "itemDesc": "item description",
-      "notificationUrl": "https://webhook.after.checkout.com/goeshere",
-      "redirectURL": "https://go.here.after.checkout.com"
-    };
+const invoiceCreation = {
+  "price": 12345,
+  "currency": "USD",
+  "orderId": "something",
+  "itemDesc": "item description",
+  "notificationUrl": "https://webhook.after.checkout.com/goeshere",
+  "redirectURL": "https://go.here.after.checkout.com"
+};
 
-    const response = await axiosClient.post("/invoices", invoiceCreation);
-    const invoiceId = response.data.data.id;
+const response = await axiosClient.post("/invoices", invoiceCreation);
+const invoiceId = response.data.data.id;
 ```
 
 3. Use the invoiceId to pop up the modal
 
-```
-      window.btcpay.showInvoice(invoiceId);
+```js
+window.btcpay.showInvoice(invoiceId);
 ```
 
 4. You'll often want to do something like refresh the state of your page when the invoice is paid, or note some kind of state before the modal pops up. You can attach event listeners like this:
 
-```
-      window.btcpay.onModalWillEnter(yourCallbackFunction);
-      window.btcpay.onModalWillLeave(yourCallbackFunction);
+```js
+window.btcpay.onModalWillEnter(yourCallbackFunction);
+window.btcpay.onModalWillLeave(yourCallbackFunction);
 ```

@@ -1,6 +1,6 @@
 # Electrum Personal Server (EPS) integration
 
-[Electrum Personal Server or EPS](https://github.com/chris-belcher/electrum-personal-server) is a personal version of public Electrum servers like [ElectrumX](ElectrumX.md).
+[Electrum Personal Server or EPS](https://github.com/chris-belcher/electrum-personal-server) is a personal version of public Electrum servers like [ElectrumX](./ElectrumX.md).
 
 EPS can be integrated into BTCPay Server using the optional docker fragment [opt-add-electrum-ps.yml](https://github.com/btcpayserver/btcpayserver-docker/blob/master/docker-compose-generator/docker-fragments/opt-add-electrum-ps.yml). Use EPS when you want to use your own full node (included in BTCPay Server) to verify your own transactions privately when using Electrum Wallet.
 
@@ -42,6 +42,7 @@ Once all syncing for both bitcoin and EPS have finished synching, you can procee
 ## How to connect Electrum Wallet to EPS
 
 There are three ways to use your server from Electrum Wallet:
+
 1. By editing the configuration file
 2. By running Electrum by the command line
 3. Via the user interface (not recommended, bad privacy)
