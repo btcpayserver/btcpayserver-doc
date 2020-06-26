@@ -228,11 +228,7 @@ module.exports = {
             title: "Payjoin",
             path: "/Payjoin",
             children: [
-              { 
-                title: "Payjoin specification",
-                path: '/Payjoin-spec',
-                redirect: 'https://github.com/bitcoin/bips/blob/master/bip-0078.mediawiki'
-              }
+              ["https://github.com/bitcoin/bips/blob/master/bip-0078.mediawiki", "Payjoin specification", { type: 'external' }]
             ]
           }
         ]
