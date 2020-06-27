@@ -222,6 +222,7 @@ module.exports = {
           ["/Wallet", "Wallet"],
           ["/Invoices", "Invoices"],
           ["/PullPayments", "Pull payments"],
+          ["/Refund", "Refunds"],
           ["/PaymentRequests", "Payment Requests"],
           ["/LightningNetwork", "Lightning Network"],
           ["/Accounting", "Accounting"],
