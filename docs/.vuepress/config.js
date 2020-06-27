@@ -284,7 +284,8 @@ module.exports = {
           ["/LocalDevelopment", "Developing Locally"],
           ["/Altcoins", "How to add an Altcoin"],
           ["/Theme", "Customizing Themes"],
-          ["https://docs.btcpayserver.org/API/Greenfield/v1", "Greenfield API v1", { type: 'external' }]
+          ["https://docs.btcpayserver.org/API/Greenfield/v1", "Greenfield API v1", { type: 'external' }],
+          ["/GreenFieldExample", "Greenfield example with cURL"]
         ]
       }
     ]
