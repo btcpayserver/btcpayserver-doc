@@ -195,4 +195,4 @@ The original BTCPay Server API is compatible for the most part with [BitPay's AP
 
 In 2020, BTCPay Server started releasing a new Greenfield API. This new API will replace the existing API and allow full usage of all BTCPay Server features, without requiring the UI. You can find the current [Greenfield API documentation](https://docs.btcpayserver.org/API/Greenfield/v1/) and a [usage example here](https://docs.btcpayserver.org/GreenFieldExample/).
 
-BTCPay Server functionality that is not found in the Greenfield API documentation means it is not fully implemented yet in the new API and users should use the original API instead. Users can join the discussion on the development of the new Greenfield API [here](https://github.com/btcpayserver/btcpayserver/issues/1320). 
+A BTCPay Server functionality that is not found in the Greenfield API documentation means it isn't fully implemented yet in the new API and users should use the original API instead. The discussion on the development of the new Greenfield API can be found [here](https://github.com/btcpayserver/btcpayserver/issues/1320). 
