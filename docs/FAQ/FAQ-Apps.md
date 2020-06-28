@@ -19,7 +19,7 @@ Apps are plugins (features) you can use to expand the use case of your BTCPay.
 
 ## Is there a limit on the number of Apps I can create?
 
-There's no limit. Apps are added on the store level. You need to have a store already created, to create an app which belongs to that store. You can create as many apps as you like for each store. 
+Apps are added on the store level. To create one, you need to have a store already setup. There is no limit to the number of apps that can be assigned to a store.
 
 ## Is there a Point of Sale feature in BTCPay?
 
@@ -27,7 +27,8 @@ Yes. Please read our [guide on creating the POS app](../WhatsNext.md#creating-th
 
 ## How can I use BTCPay in a physical store?
 
-You can use our Point of Sale (PoS) app. When you create a PoS app within BTCPay Server it will be publicly accessible via URL where checkout buttons for products you’ve created for your PoS will be displayed. For having a physical PoS, the easiest solution (currently) is to create a PoS App in BTCPay and display it on any web device such as a phone, tablet or pc.
+You can use our Point of Sale (PoS) app. When you create a PoS app within BTCPay Server, it will be publicly accessible via a URL where checkout buttons for products you’ve created for your PoS will be displayed.
+To have a physical PoS, the easiest solution (currently) is to create a PoS App in BTCPay and display it on any web device such as a phone, tablet or pc.
 
 Please follow our detailed guide on how to use our [PoS App on a mobile device](https://blog.btcpayserver.org/bitcoin-pos/). Also note that Section 2.3 Connecting a Wallet is covered much more in-depth here in the [wallet section](../WalletSetup.md).
 
@@ -41,7 +42,7 @@ The Payment Button is a simple and customizable HTML button you can create and e
 
 ## How to create a Pay Button with a custom amount?
 
-BTCPay Pay Button which can be found in Store Settings > Pay Button, currently does not support custom amounts.
+The BTCPay Server Pay Button which can be found in Store Settings > Pay Button, currently does not support custom amounts.
 However, you can use a work-around:
 
 * [Create Point of sale app](../WhatsNext.md#creating-the-point-of-sale-app)
@@ -56,7 +57,7 @@ However, you can use a work-around:
 
 ## How to map a domain name to an app?
 
-BTCPay Apps can have a domain name that's different from the servers domain. Let's assume you have BTCPay server at mybtcpayserver.com and want to display your PoS app on mybtcpaypos.com instead mybtcpayserver.com/apps/pos/abc123
+BTCPay Server Apps can have a domain name that's different from the servers domain. Let's assume you have BTCPay Server at mybtcpayserver.com and want to display your PoS app on mybtcpaypos.com instead mybtcpayserver.com/apps/pos/abc123
 First, [configure DNS settings](../ChangeDomain.md#setting-up-your-dns-record) of mypointofsale.com and make sure it's pointing to the external ip of your BTCPay Server.
 
 Next, add additional domain or subdomain name(s) by adding a new environment variable through ssh:
@@ -95,7 +96,7 @@ You can get rid of that with a simple Wordpress plugin, [Don't muck my markup](h
 
 ![Dont-muck-markup](../img/Dont-muck-markup.png)
 
-Just chose where you want to insert the pay button in, and the problem should be solved.
+Simply choose where you want to insert the pay button, and the problem should be solved.
 
 If the same problem occurs with other CMS, please check that the text editor does not add `<br>` tags automatically in the HTML code of your post.
 
@@ -286,7 +287,6 @@ Next, paste the following code into the **Custom CSS Code** section of your crow
 
 One final thing, make sure to check (enable) **Count all invoices created on the store as part of the crowdfunding goal**
 Save the changes and preview the app.
-
 
 
 
