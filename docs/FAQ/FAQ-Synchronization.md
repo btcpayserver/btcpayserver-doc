@@ -208,7 +208,7 @@ Yes you can!  However, before you do that, you'll want to stop bitcoind from upd
 If you want to run BTCPay Server inside a docker-compose, and that you have the data directory (`.bitcoin`) of a fully synched node on your docker host, then you can reuse it easily for BTCPay Server.
 
 To do that, follow the following steps :
-* Do the normal setup according to [this instruction](https://github.com/btcpayserver/btcpayserver-docker/blob/master/README.md).
+* Do the normal setup according to [this instruction](https://github.com/btcpayserver/btcpayserver-docker/blob/master/README.md). Note the `opt-save-storage` environment variable, which is used to enable various pruning levels. If you do not want to prune your exiting data directory, then omit the following line in your BTCPay docker deployment: `export BTCPAYGEN_ADDITIONAL_FRAGMENTS="opt-save-storage-s"`.
 * Once `btcpay-setup.sh` is over, turn down the docker compose with `btcpay-down.sh`.
 * Login as root with `sudo su -`.
 * Open the docker's volume for bitcoind : `cd /var/lib/docker/volumes/generated_bitcoin_datadir/`, and check its content with `ls -la`. You should see only one directory named `_data`.
