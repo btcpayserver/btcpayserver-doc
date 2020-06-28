@@ -160,15 +160,17 @@ Here are some of the questions and problems about wallets in BTCPay.
 Frequent questions about the applications in BTCPay.
 
 * [What are the Apps in BTCPay?](./FAQ-Apps.md#what-are-the-apps-in-btcpay)
-* [Is there a limit on the number of Apps I can deploy?](./FAQ-Apps.md#is-there-a-limit-on-the-number-of-apps-i-can-deploy)
+* [Is there a limit on the number of Apps I can create?](./FAQ-Apps.md#is-there-a-limit-on-the-number-of-apps-i-can-create)
 * [Is there a Point of Sale feature in BTCPay?](./FAQ-Apps.md#is-there-a-point-of-sale-feature-in-btcpay)
 * [How can I use BTCPay in a physical store?](./FAQ-Apps.md#how-can-i-use-btcpay-in-a-physical-store)
 * [How to customize the appearance of POS in BTCPay?](./FAQ-Apps.md#how-to-customize-the-appearance-of-Point-of-Sale-App-in-BTCPay)
 * [What is a Payment Button?](./FAQ-Apps.md#what-is-a-payment-button)
+* [How to create a Pay Button with a custom amount?](./FAQ-Apps.md#how-to-create-a-pay-button-with-a-custom-amount)
+* [How to map a domain name to an app?](./FAQ-Apps.md#how-to-map-a-domain-name-to-an-app)
 * [How to fix empty spacing around payment button](./FAQ-Apps.md#how-to-fix-empty-spacing-around-payment-button)
 * [How to integrate WooCommerce Store in BTCPay Crowdfund app?](./FAQ-Apps.md#how-to-integrate-woocommerce-store-into-a-btcpay-crowdfund-app)
-* [How to create Pay button with a custom amount?](./FAQ-Apps.md#how-to-create-pay-button-with-a-custom-amount)
-* [How to map a domain name to an app?](./FAQ-Apps.md#how-to-map-a-domain-name-to-an-app)
+
+
 
 ## [Lightning Network FAQ](./FAQ-LightningNetwork.md)
 
