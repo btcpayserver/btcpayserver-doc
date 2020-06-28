@@ -22,7 +22,7 @@ General, non-technical questions about BTCPay. What it is, how it works, what ar
 * [What if I have a problem with a paid invoice?](./FAQ-General.md#what-if-i-have-a-problem-with-a-paid-invoice)
 * [Where can I get help and support?](./FAQ-General.md#where-can-i-get-help-and-support)
 * [How can I contribute to BTCPay?](./FAQ-General.md#how-can-i-contribute-to-btcpay)
-* [How can I use the BTCPay Server API?](FAQ-General.md#how-can-i-use-the-btcpay-api)
+* [How can I use the BTCPay Server API?](FAQ-General.md#how-can-i-use-the-btcpay-server-api)
 
 ## [Deployment FAQ](./FAQ-Deployment.md)
 
