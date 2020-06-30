@@ -81,6 +81,16 @@ export default ({ router }) => {
             })
           }
         }, 250)
+
+        // temporary fix for https://github.com/vuejs/vuepress/issues/2428
+        setTimeout(() => {
+          const { hash } = document.location
+          if (hash.length > 1) {
+            const id = hash.substring(1)
+            const element = document.getElementById(id)
+            if (element) element.scrollIntoView()
+          }
+        }, 500)
       })
 
       document.addEventListener('click', handleClick)
