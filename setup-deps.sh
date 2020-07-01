@@ -29,6 +29,10 @@ else
 fi
 
 cd "$BTCPAYSERVER_DIR"
+
+# Checkout latest release tag, so that we do not publish docs for unreleased APIs yet.
+git checkout $(git describe --tags `git rev-list --tags --max-count=1`)
+
 if command -v jq >/dev/null 2>&1; then
   jq -rs 'reduce .[] as $item ({}; . * $item)' BTCPayServer/wwwroot/swagger/v1/*.json > "$PUBLIC_DIR/API/Greenfield/v1/swagger.json"
 fi
