@@ -1,6 +1,6 @@
 # Refunds
 
-Refunds are one of the applications built on top of the `Pull Payments` feature.
+Refunds are one of the applications built on top of the [Pull Payments](./PullPayments.md) feature.
 
 Up until now, merchants had to manually issue refunds.
 The process required a lot of back and forth between a sender and a receiver. The merchant had to ask for a refund address, calculate the preferred rate, manually add that to the wallet and broadcast the transaction.
