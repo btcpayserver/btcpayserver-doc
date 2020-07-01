@@ -8,7 +8,7 @@ The process required a lot of back and forth between a sender and a receiver. Th
 A merchant just needs to go to the invoice, click Issue refund , select the appropriate rate and share a link with a customer.
 
 The customer will then input their address and claim a refund. Once a customer claims a refund, the merchant will get a notification and can authorize it in a click.
-In future releases, we will look into payouts which are approved to be paid out instantly, without the authorization, in case a merchant prefers that.
+Future versions of BTCPay Server will enable instant payouts as an option, without the need for merchant approval.
 
 ## Create a refund
 
