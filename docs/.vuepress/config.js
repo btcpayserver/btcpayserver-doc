@@ -227,7 +227,7 @@ module.exports = {
             children: [
               ["/Refund", "Refunds"]
 		    ]
-		  }
+		  },
           ["/PaymentRequests", "Payment Requests"],
           ["/LightningNetwork", "Lightning Network"],
           ["/Accounting", "Accounting"],
