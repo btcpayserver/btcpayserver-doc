@@ -24,6 +24,6 @@ In future releases, we will look into payouts which are approved to be paid out 
 
 ![11](./img/pull-payments/11.png)
 
-* You can now share the pull payment link with the customer
+* Share the pull payment link with the customer
 
 ![12](./img/pull-payments/12.png)
