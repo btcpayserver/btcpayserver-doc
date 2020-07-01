@@ -17,7 +17,7 @@
     "dist": "docs/.vuepress/dist",
     "port": "8080",
     "linkcheck": {
-      "excludes": "--exclude btcpayserver-doc/edit/master/docs --exclude directory.btcpayserver.org --exclude foundation.btcpayserver.org --exclude install.btcpayserver.org --exclude drupal.org --exclude dyn.com --exclude facebook.com --exclude linkedin.com --exclude pi-hole.net --exclude t.me --exclude wiki.ion.radar.tech"
+      "excludes": "--exclude btcpayserver-doc/edit/master/docs --exclude directory.btcpayserver.org --exclude foundation.btcpayserver.org --exclude install.btcpayserver.org --exclude drupal.org --exclude dyn.com --exclude facebook.com --exclude linkedin.com --exclude luxnode.io --exclude pi-hole.net --exclude t.me --exclude wiki.ion.radar.tech"
     }
   },
   "scripts": {
