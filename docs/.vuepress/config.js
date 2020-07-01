@@ -225,7 +225,13 @@ module.exports = {
           ["/Apps", "Apps"],
           ["/Wallet", "Wallet"],
           ["/Invoices", "Invoices"],
-          ["/PullPayments", "Pull payments"],
+		  {
+		    title: "Pull Payments",
+            path: "/PullPayments",
+            children: [
+              ["/Refund", "Refunds"]
+		    ]
+		  },
           ["/PaymentRequests", "Payment Requests"],
           ["/LightningNetwork", "Lightning Network"],
           ["/Accounting", "Accounting"],

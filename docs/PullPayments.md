@@ -3,7 +3,7 @@
 ## Introduction
 
 Traditionally, to make a Bitcoin payment, a receiver shares their bitcoin address and the sender later sends money to this address.
-Such system is called `Push payment` as the sender initiates the payment while the receiver may be unavailable, in effect `pushing` the payment to the receiver.
+Such a system is called `Push payment` as the sender initiates the payment while the receiver may be unavailable, in effect `pushing` the payment to the receiver.
 
 However, what about reversing the role?
 What if, instead of a sender `pushing` the payment, the sender allows the receiver to `pull` the payment at a time the receiver seems fit?
@@ -110,14 +110,6 @@ The user interface only allows a subset of what is possible.
 Clicking on Confirm selected payouts will use the current exchange rate of your wallet's store settings. The rate is then fixed, even if you don't complete the payment. Payments made at a later time will use this previously confirmed rate.
 :::
 
-### Create a refund
+## Additionnal use cases for the Pull Payments feature
 
-Another way of using pull payments is by the invoice refund mechanism:
-* After an invoice has been confirmed, go in the Invoices page and click `Details` on the invoice.
-![9](./img/pull-payments/9.png)
-* Click `Issue a refund`
-![10](./img/pull-payments/10.png)
-* Select the way you want to issue the refund
-![11](./img/pull-payments/11.png)
-* You can now share the pull payment link with the customer
-![12](./img/pull-payments/12.png)
+The Pull Payment feature can be used in multiple applications, the first one being [Refunds](../Refund.md).
