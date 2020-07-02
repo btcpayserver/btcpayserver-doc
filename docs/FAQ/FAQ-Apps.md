@@ -130,6 +130,10 @@ In the first step, you need to remove all the redundancies from the WordPress st
 
 Place the following custom CSS code into WordPress. Appearance > Customize > **Custom CSS**
 
+<details>
+  <summary>Click to view CSS</summary>
+
+CSS file:
 ```css
 #header,
 #masthead,
@@ -179,6 +183,7 @@ ul.products li.product .button {
   background-color:rgba(0,0,255,0.5);
 }
 ```
+</details>
 
 The code above removes and hides all the unnecessary things from your store (headers, footers, breadcrumbs, and sorting). If you're not using the Storefront theme, you may need to modify it slightly. Besides removing, the bottom part of the code adds a bit of different styling which improves the checkout experience and makes it more KickStarter like. Feel free to modify colors. You should also remove the sidebar.
 
@@ -191,12 +196,10 @@ To speed up the checkout process use [WooCommerce Direct Checkout](https://wordp
 Insert the following code at the bottom of your child theme's **functions.php** file.
 
 ```php
-* Code goes in theme functions.php.
-*/
+// Code goes in theme functions.php
 add_action( 'after_setup_theme', 'wc_remove_frame_options_header', 11 );
-/**
-* Allow rendering of checkout and account pages in iframes.
-*/
+
+// Allow rendering of checkout and account pages in iframes
 function wc_remove_frame_options_header() {
     remove_action( 'template_redirect', 'wc_send_frame_options_header' );
 }
@@ -233,6 +236,11 @@ Replace it with the URL of your WooCommerce Store page.
 ![EmbedIframeCrowdfund](../img/CrowdfundCodeEmbed.png)
 
 Next, paste the following code into the **Custom CSS Code** section of your crowdfunding app:
+
+<details>
+  <summary>Click to view CSS</summary>
+
+CSS file:
 
 ```css
 #crowdfund-body-header-tagline-container,
@@ -271,6 +279,7 @@ Next, paste the following code into the **Custom CSS Code** section of your crow
     }
 }
 ```
+</details>
 
 One final thing, make sure to check (enable) **Count all invoices created on the store as part of the crowdfunding goal**
 Save the changes and preview the app.
