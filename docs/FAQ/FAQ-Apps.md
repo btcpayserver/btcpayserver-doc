@@ -10,7 +10,6 @@ This document covers frequently asked questions about the Apps in BTCPay.
 * [What is a Payment Button?](#what-is-a-payment-button)
 * [How to create a Pay Button with a custom amount?](#how-to-create-a-pay-button-with-a-custom-amount)
 * [How to map a domain name to an app?](#how-to-map-a-domain-name-to-an-app)
-* [How to fix empty spacing around payment button](#how-to-fix-empty-spacing-around-payment-button)
 * [How to integrate WooCommerce Store in BTCPay Crowdfund app?](#how-to-integrate-woocommerce-store-into-a-btcpay-crowdfund-app)
 
 ## What are the Apps in BTCPay?
@@ -87,18 +86,6 @@ Enter domain name, select a previously created app from the drop down menu and c
 If any of the additionally added hosts do not have a properly configured DNS, Let's Encrypt will not be able to renew the certificate for any of the domains, including the main domain. If you're using additional hosts and facing https issues with the main domain, try removing a domain from the `BTCPAY_ADDITIONAL_HOSTS` and re-run the setup. The https issue also occurs if [Dynamic DNS](../DynamicDNS.md) has not been renewed and is configured as an additional host.
 
 If for any reason, you want an app to be on the same domain as your BTCPay Server homepage, you can select to display it on the root. In that case, no DNS configuration is needed, since your domain is already pointing properly. Using an app on the root domain of BTCPay Server means you'll have to access the login and other pages manually. The easiest way is to append a page route such as `/apps` or `/stores` to your root domain. (Ex: `mybtcpayserver.com/apps`). This will make navigation to your root displayed app easier, but navigation to other pages (such as Login) more challenging for users. 
-
-## How to fix empty spacing around Payment Button?
-
-This usually happens in Wordpress. The Wordpress text editor can cause conflicts with the pay button code by adding `<br>`, which is "line break" in HTML, between the hidden lines of the form, thus adding invisible empty lines.
-
-You can get rid of that with a simple Wordpress plugin, [Don't muck my markup](https://wordpress.org/plugins/dont-muck-my-markup/). Install, activate it, and then you should see this box on the right of the edit page of your posts :
-
-![Dont-muck-markup](../img/Dont-muck-markup.png)
-
-Simply choose where you want to insert the pay button, and the problem should be solved.
-
-If the same problem occurs with other CMS, please check that the text editor does not add `<br>` tags automatically in the HTML code of your post.
 
 ## How to integrate WooCommerce Store into a BTCPay Crowdfund app?
 
