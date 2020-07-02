@@ -3,23 +3,22 @@
 This document covers frequently asked questions about the Apps in BTCPay.
 
 * [What are the Apps in BTCPay?](#what-are-the-apps-in-btcpay)
-* [Is there a limit on the number of Apps I can deploy?](#is-there-a-limit-on-the-number-of-apps-i-can-deploy)
+* [Is there a limit on the number of Apps I can create?](#is-there-a-limit-on-the-number-of-apps-i-can-create)
 * [Is there a Point of Sale feature in BTCPay?](#is-there-a-point-of-sale-feature-in-btcpay)
 * [How can I use BTCPay in a physical store?](#how-can-i-use-btcpay-in-a-physical-store)
 * [How to customize the appearance of Point of Sale App in BTCPay?](#how-to-customize-the-appearance-of-point-of-sale-app-in-btcpay)
 * [What is a Payment Button?](#what-is-a-payment-button)
-* [How to fix empty spacing around payment button](#how-to-fix-empty-spacing-around-payment-button)
-* [How to integrate WooCommerce Store in BTCPay Crowdfund app?](#how-to-integrate-woocommerce-store-into-a-btcpay-crowdfund-app)
-* [How to create Pay button with a custom amount?](#how-to-create-pay-button-with-a-custom-amount)
+* [How to create a Pay Button with a custom amount?](#how-to-create-a-pay-button-with-a-custom-amount)
 * [How to map a domain name to an app?](#how-to-map-a-domain-name-to-an-app)
+* [How to integrate WooCommerce Store in BTCPay Crowdfund app?](#how-to-integrate-woocommerce-store-into-a-btcpay-crowdfund-app)
 
 ## What are the Apps in BTCPay?
 
 Apps are plugins (features) you can use to expand the use case of your BTCPay.
 
-## Is there a limit on the number of Apps I can deploy?
+## Is there a limit on the number of Apps I can create?
 
-There's no limit. Each app can be created an unlimited amount of times. Apps are added on a store level; you need to have a store to create an app.
+Apps are added on the store level. To create one, you need to have a store already setup. There is no limit to the number of apps that can be assigned to a store.
 
 ## Is there a Point of Sale feature in BTCPay?
 
@@ -27,9 +26,10 @@ Yes. Please read our [guide on creating the POS app](../WhatsNext.md#creating-th
 
 ## How can I use BTCPay in a physical store?
 
-You can use our Point of Sale app. For having a physical PoS, right now, the easiest solution is to utilize PoS App that’s available and then set that as URL within your in-store POS. When you create POS app within BTCPay Server - you will get publicly accessible URL where checkout buttons for products you’ve defined will be displayed. Click on the button creates an invoice.
+You can use our Point of Sale (PoS) app. When you create a PoS app within BTCPay Server, it will be publicly accessible via a URL where checkout buttons for products you’ve created for your PoS will be displayed.
+To have a physical PoS, the easiest solution (currently) is to create a PoS App in BTCPay and display it on any web device such as a phone, tablet or pc.
 
-Please follow our detailed guide on how to use our [PoS App on a mobile device.](https://blog.btcpayserver.org/bitcoin-pos/)
+Please follow our detailed guide on how to use our [PoS App on a mobile device](https://blog.btcpayserver.org/bitcoin-pos/). Also note that Section 2.3 Connecting a Wallet is covered much more in-depth here in the [wallet section](../WalletSetup.md).
 
 ## How to customize the appearance of Point of Sale App in BTCPay
 
@@ -37,19 +37,55 @@ It is very easy to customize the look of the Point of Sale app. [Follow this gui
 
 ## What is a Payment Button?
 
-The Payment Button is a simple and customizable HTML button you can create and embed into your website. To create a payment button, [follow this guide](../WhatsNext.md#creating-the-point-of-sale-app)
+The Payment Button is a simple and customizable HTML button you can create and embed into your website. To create a payment button, [follow this guide](../WhatsNext.md#creating-the-point-of-sale-app). 
 
-## How to fix empty spacing around payment button?
+## How to create a Pay Button with a custom amount?
 
-This usually happens in Wordpress. The Wordpress text editor can cause conflicts with the pay button code by adding `<br>`, which is "line break" in HTML, between the hidden lines of the form, thus adding invisible empty lines.
+The BTCPay Server Pay Button which can be found in Store Settings > Pay Button, currently does not support custom amounts.
+However, you can use a work-around:
 
-You can get rid of that with a simple Wordpress plugin, [Don't muck my markup](https://wordpress.org/plugins/dont-muck-my-markup/). Install, activate it, and then you should see this box on the right of the edit page of your posts :
+* [Create Point of sale app](../WhatsNext.md#creating-the-point-of-sale-app)
+* Enable `user can input a custom amount` field
+* Remove all the products from the automatically generated template.
+* Save settings.
+* Click on the `Embed payment button linking to PoS item` at the bottom of the page and copy the expanded code. Paste it into html page of your website.
+* Remove the extra fields you do not need, especially `<input name="price" type="hidden" value="10" />` so that button redirects to the point of sale.
 
-![Dont-muck-markup](../img/Dont-muck-markup.png)
+![Custom Amount Pay Button](../img/BTCPayPayButtonDynamic2.png)
+![Custom Amount Pay Button](../img/BTCPayPayButtonDynamic.png)
 
-Just tick the case in the post you want to stick the pay button in, and the problem should be solved.
+## How to map a domain name to an app?
 
-If the same problem occurs with other CMS, please check that the text editor does not add `<br>` tag automatically in the HTML code of your post.
+BTCPay Server Apps can have a domain name that's different from the servers domain. Let's assume you have BTCPay Server at mybtcpayserver.com and want to display your PoS app on mybtcpaypos.com instead mybtcpayserver.com/apps/pos/abc123
+First, [configure DNS settings](../ChangeDomain.md#setting-up-your-dns-record) of mypointofsale.com and make sure it's pointing to the external ip of your BTCPay Server.
+
+Next, add additional domain or subdomain name(s) by adding a new environment variable through ssh:
+
+```bash
+sudo su -
+export BTCPAY_ADDITIONAL_HOSTS="mybtcpaypos.com"
+. btcpay-setup.sh -i
+```
+
+If you want to add multiple domains, you just need to update the env variables again:
+
+```bash
+sudo su -
+export BTCPAY_ADDITIONAL_HOSTS="mybtcpaypos.com,subdomain.domain2.com,domain3.com"
+. btcpay-setup.sh -i
+```
+
+Finally, in Server Settings > Policies click on the `Map specific domains to specific apps`
+
+![App domain mapping](../img/domainmapping1.png)
+
+Enter domain name, select a previously created app from the drop down menu and click `save` to map the app to specific domain.
+
+![App domain mapping](../img/domainmapping2.png)
+
+If any of the additionally added hosts do not have a properly configured DNS, Let's Encrypt will not be able to renew the certificate for any of the domains, including the main domain. If you're using additional hosts and facing https issues with the main domain, try removing a domain from the `BTCPAY_ADDITIONAL_HOSTS` and re-run the setup. The https issue also occurs if [Dynamic DNS](../DynamicDNS.md) has not been renewed and is configured as an additional host.
+
+If for any reason, you want an app to be on the same domain as your BTCPay Server homepage, you can select to display it on the root. In that case, no DNS configuration is needed, since your domain is already pointing properly. Using an app on the root domain of BTCPay Server means you'll have to access the login and other pages manually. The easiest way is to append a page route such as `/apps` or `/stores` to your root domain. (Ex: `mybtcpayserver.com/apps`). This will make navigation to your root displayed app easier, but navigation to other pages (such as Login) more challenging for users. 
 
 ## How to integrate WooCommerce Store into a BTCPay Crowdfund app?
 
@@ -94,6 +130,10 @@ In the first step, you need to remove all the redundancies from the WordPress st
 
 Place the following custom CSS code into WordPress. Appearance > Customize > **Custom CSS**
 
+<details>
+  <summary>Click to view CSS</summary>
+
+CSS file:
 ```css
 #header,
 #masthead,
@@ -143,6 +183,7 @@ ul.products li.product .button {
   background-color:rgba(0,0,255,0.5);
 }
 ```
+</details>
 
 The code above removes and hides all the unnecessary things from your store (headers, footers, breadcrumbs, and sorting). If you're not using the Storefront theme, you may need to modify it slightly. Besides removing, the bottom part of the code adds a bit of different styling which improves the checkout experience and makes it more KickStarter like. Feel free to modify colors. You should also remove the sidebar.
 
@@ -155,12 +196,10 @@ To speed up the checkout process use [WooCommerce Direct Checkout](https://wordp
 Insert the following code at the bottom of your child theme's **functions.php** file.
 
 ```php
-* Code goes in theme functions.php.
-*/
+// Code goes in theme functions.php
 add_action( 'after_setup_theme', 'wc_remove_frame_options_header', 11 );
-/**
-* Allow rendering of checkout and account pages in iframes.
-*/
+
+// Allow rendering of checkout and account pages in iframes
 function wc_remove_frame_options_header() {
     remove_action( 'template_redirect', 'wc_send_frame_options_header' );
 }
@@ -197,6 +236,11 @@ Replace it with the URL of your WooCommerce Store page.
 ![EmbedIframeCrowdfund](../img/CrowdfundCodeEmbed.png)
 
 Next, paste the following code into the **Custom CSS Code** section of your crowdfunding app:
+
+<details>
+  <summary>Click to view CSS</summary>
+
+CSS file:
 
 ```css
 #crowdfund-body-header-tagline-container,
@@ -235,54 +279,10 @@ Next, paste the following code into the **Custom CSS Code** section of your crow
     }
 }
 ```
+</details>
 
 One final thing, make sure to check (enable) **Count all invoices created on the store as part of the crowdfunding goal**
 Save the changes and preview the app.
 
-## How to create Pay button with a custom amount?
 
-BTCPay Pay Button which can be found in Store Settings > Pay Button, currently does not support custom amounts.
-However, you can use a work-around:
 
-* [Create Point of sale app](../WhatsNext.md#creating-the-point-of-sale-app)
-* Enable `user can input a custom amount` field
-* Remove all the products from the automatically generated template.
-* Save settings.
-* Click on the `Embed payment button linking to PoS item` at the bottom of the page and copy the expanded code. Paste it into html page of your website.
-* Remove the extra fields you do not need, especially `<input name="price" type="hidden" value="10" />` so that button redirects to the point of sale.
-
-![Custom Amount Pay Button](../img/BTCPayPayButtonDynamic2.png)
-![Custom Amount Pay Button](../img/BTCPayPayButtonDynamic.png)
-
-## How to map a domain name to an app?
-
-BTCPay Apps can have a domain name that's different from the servers domain. Let's assume you have BTCPay server at mybtcpayserver.com and want to display your PoS app on mybtcpaypos.com instead mybtcpayserver.com/apps/pos/abc123
-First, [configure DNS settings](../ChangeDomain.md#setting-up-your-dns-record) of mypointofsale.com and make sure it's pointing to the external ip of your BTCPay Server.
-
-Next, add additional domain or subdomain name(s) by adding a new enviroment variable through ssh:
-
-```bash
-sudo su -
-export BTCPAY_ADDITIONAL_HOSTS="mybtcpaypos.com"
-. btcpay-setup.sh -i
-```
-
-If you want to add multiple domains, you just need to update the env variables again
-
-```bash
-sudo su -
-export BTCPAY_ADDITIONAL_HOSTS="mybtcpaypos.com,subdomain.domain2.com,domain3.com"
-. btcpay-setup.sh -i
-```
-
-Finally, in Server Settings > Policies click on the `Map specific domains to specific apps`
-
-![App domain mapping](../img/domainmapping1.png)
-
-Enter domain name, select a previously created app from the drop down menu and click `save` to map the app to specific domain.
-
-![App domain mapping](../img/domainmapping2.png)
-
-If any of the additionally added hosts do not have a properly configured DNS, Let's Encrypt will not be able to renew the certificate for any of the domains, including the main domain. If you're using additional hosts and facing https issues with the main domain, try removing a domain from the `BTCPAY_ADDITIONAL_HOSTS` and re-run the setup. The https issue also occurs if [Dynamic DNS](../DynamicDNS.md) has not been renewed and is configured as an additional host.
-
-If for any reason, you want an app to be on the same domain as your BTCPay Server homepage, you can select to display it on the root. In that case, no DNS configuration is needed, since your domain is already pointing properly. Using an app on a root domain, means you'll have to access the log in page manually adding `Account/Login` in domain URL. We don't recommend setting up your app on a root, as it makes navigation harder.
