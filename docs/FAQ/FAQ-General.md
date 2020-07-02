@@ -20,6 +20,7 @@ This page contains general questions and answers about BTCPay. What it is, how i
 * [What if I have a problem with a paid invoice?](FAQ-General.md#what-if-i-have-a-problem-with-a-paid-invoice)
 * [Where can I get help and support?](FAQ-General.md#where-can-i-get-help-and-support)
 * [How can I contribute to BTCPay?](FAQ-General.md#how-can-i-contribute-to-btcpay)
+* [How can I use the BTCPay Server API?](FAQ-General.md#how-can-i-use-the-btcpay-server-api)
 
 ## What is BTCPay Server?
 
@@ -187,3 +188,11 @@ If you encountered an issue or have a feature request, please [open an issue on 
 There are many ways in which you can contribute to an open-source project like BTCPay.
 
 The easiest way is to use the software, provide feedback and report any bugs or issues you or your customers encounter. If you're a developer, you can help us develop and improve the software by contributing on the GitHub. Translating BTCPay into your native language, helping us with documentation writing are ways in which you can help us out, even if you're not a developer or tech-savvy. We appreciate every contributor to the project.
+
+## How can I use the BTCPay Server API?
+
+The original BTCPay Server API is compatible for the most part with [BitPay's API](https://bitpay.com/api/) to allow merchants to smoothly transition to using BTCPay if they prefer a free, open source, payment processing alternative. 
+
+In 2020, BTCPay Server started releasing a new Greenfield API. This new API will co-exist with the original API and allow full usage of all BTCPay Server features, without requiring the UI. You can find the current [Greenfield API documentation](https://docs.btcpayserver.org/API/Greenfield/v1/) and a [usage example here](https://docs.btcpayserver.org/GreenFieldExample/).
+
+A BTCPay Server functionality that is not found in the Greenfield API documentation means it isn't fully implemented yet in the new API and users should use the original API instead. The discussion on the development of the new Greenfield API can be found [here](https://github.com/btcpayserver/btcpayserver/issues/1320). 
