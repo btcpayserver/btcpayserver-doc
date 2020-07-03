@@ -74,7 +74,7 @@ To disable the email requirement for your store's invoices, go to Stores > Setti
 
 ## Can I delete invoices from BTCPay?
 
-No, you can't delete invoices in BTCPay. Even if the invoice is expired, invalid, paid (or any other status) you can't delete invoices because they may contain important information. For example, information from the invoice may be needed if the invoice gets paid at a later time. Try [filtering invoices](../Invoices.md#invoice-filtering) instead.
+Invoices in BTCPay Server can't be deleted, but can be archived. Archiving an invoice removes it from the `Invoices` page. To archive an invoice, on the invoice you would like to archive, click the `Archive` button in top right corner. An invoice can be unarchived by clicking the same button afterwards.
 
 ## How to change the exchange rate provider for invoices?
 
