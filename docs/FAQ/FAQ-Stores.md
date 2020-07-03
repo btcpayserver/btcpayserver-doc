@@ -74,7 +74,11 @@ To disable the email requirement for your store's invoices, go to Stores > Setti
 
 ## Can I delete invoices from BTCPay?
 
-Invoices in BTCPay Server can't be deleted, but can be archived. Archiving an invoice removes it from the `Invoices` page. To archive an invoice, on the invoice you would like to archive, click the `Archive` button in top right corner. An invoice can be unarchived by clicking the same button afterwards.
+Invoices in BTCPay Server can't be deleted, but can be archived. 
+To archive an invoice, select the one you would like to archive, click the `Archive` button in top right corner. 
+This action removes it from the `Invoices` page.
+
+An invoice can be restored by clicking the `Archived` button.
 
 ## How to change the exchange rate provider for invoices?
 
