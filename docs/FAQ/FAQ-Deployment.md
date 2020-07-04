@@ -1,6 +1,6 @@
 # BTCPay Deployment Frequently Asked Questions
 
-This document covers the most common questions, errors, and issues you may encounter prior and during the installation of the software. For a detailed list of deployments method and instructions for each, please see [Deployment page](../Deployment.md).
+This document covers the most common questions, errors, and issues you may encounter prior and during the installation of the software. For a detailed list of deployment methods and instructions for each, please see [Deployment page](../Deployment.md).
 
 ## General Deployment FAQ
 
@@ -8,44 +8,45 @@ Here are common questions about installation, regardless of the deployment metho
 
 * [How much does it cost to run BTCPay Server?](FAQ-Deployment.md#how-much-does-it-cost-to-run-btcpay-server)
 * [What are the minimal requirements for BTCPay?](FAQ-Deployment.md#what-are-the-minimal-requirements-for-btcpay)
-* [What is the easiest method to deploy a self-hosted BTCPay Server?](FAQ-Deployment.md#what-are-the-minimal-requirements-for-btcpay)
+* [What is the easiest method to deploy a self-hosted BTCPay Server?](FAQ-Deployment.md#what-is-the-easiest-method-to-deploy-a-self-hosted-btcpay-server)
 * [How to choose a proper deployment method?](FAQ-Deployment.md#how-to-choose-a-proper-deployment-method)
 * [Can I run BTCPay on my hardware?](FAQ-Deployment.md#can-i-run-btcpay-on-my-own-hardware)
 * [Can I deploy on my existing VPS?](FAQ-Deployment.md#can-i-deploy-btcpay-on-my-existing-vps)
 * [Are there free hosts where I can test?](FAQ-Deployment.md#are-there-free-hosts-where-i-can-test)
 * [After initial deployment, I can't register and I don't have a login yet?](FAQ-Deployment.md#after-initial-deployment-i-can-t-register-and-i-don-t-have-a-login-yet)
-* [With the docker deployment, how to use a different volume for the data?](FAQ-Deployment.md#with-the-docker-deployment-how-to-use-a-different-volume-for-the-data)
 * [How do I activate Tor on my BTCPay Server?](FAQ-Deployment.md#how-do-i-activate-tor-on-my-btcpay-server)
 * [How do I disable Tor on my BTCPay Server?](FAQ-Deployment.md#how-do-i-disable-tor-on-my-btcpay-server)
 * [Why activate Tor? Does it mean that nobody knows who I am?](FAQ-Deployment.md#why-activate-tor-does-it-mean-that-nobody-knows-who-i-am)
 * [How to access the .onion address without clearnet?](FAQ-Deployment.md#how-to-access-the-onion-address-without-clearnet)
-* [How can I modify/deactivate environment variables?](FAQ-Deployment.md#how-can-i-modify-deactivate-environment-variables)
+* [How can I modify or deactivate environment variables?](FAQ-Deployment.md#how-can-i-modify-or-deactivate-environment-variables)
 * [How can I run BTCPay on testnet?](FAQ-Deployment.md#how-can-i-run-btcpay-on-testnet)
 * [Can I start BTCPay only when I'm expecting a payment?](FAQ-Deployment.md#can-i-start-btcpay-only-when-i-m-expecting-a-payment)
 * [Can I connect to my BTCPay Bitcoin P2P on port 8333?](FAQ-Deployment.md#can-i-connect-to-my-btcpay-bitcoin-p2p-on-port-8333)
-* [How do I completely uninstall BTCPay from a linux environment (docker version)](FAQ-Deployment.md#how-do-i-completely-uninstall-btcpay-from-a-linux-environment-docker-version)
 
 ## Web Deployment FAQ
 
 ### Luna Node Web Deployment FAQ
+
 * [How to change domain name on my LunaNode BTCPay?](FAQ-Deployment.md#how-to-change-domain-name-on-my-lunanode-btcpay)
 
 ## Manual Deployment FAQ
+
 * [How to manually install BTCPay on Ubuntu 18.04?](FAQ-Deployment.md#how-to-manually-install-btcpay-on-ubuntu-18-04)
+* [How do I completely uninstall BTCPay from a linux environment (docker version)](FAQ-Deployment.md#how-do-i-completely-uninstall-btcpay-from-a-linux-environment-docker-version)
+* [How to deploy BTCPay Server alongside existing Bitcoin full node?](./FAQ-Deployment.md#how-to-deploy-btcpay-server-alongside-existing-bitcoin-node)
+* [With the docker deployment, how to use a different volume for the data?](FAQ-Deployment.md#with-the-docker-deployment-how-to-use-a-different-volume-for-the-data)
 * [I get 503 Service Temporarily Unavailable nginx](FAQ-Deployment.md#i-get-503-service-temporarily-unavailable-nginx)
   * [Cause 1: Trying to access my BTCPay by IP address](FAQ-Deployment.md#cause-1-trying-to-access-my-btcpay-by-ip-address)
   * [Cause 2: btcpayserver or letsencrypt-nginx-proxy is not running](FAQ-Deployment.md#cause-2-btcpayserver-or-letsencrypt-nginx-proxy-is-not-running)
   * [Cause 3: Error: BTCPay is expecting you to access this website from](FAQ-Deployment.md#cause-3-btcpay-is-expecting-you-to-access-this-website-from)
   * [Cause 4: Getting 500 nginx error on a local server https and for http BTCPay is expecting you to access this website from](FAQ-Deployment.md#cause-4-getting-500-nginx-error-on-a-local-server-https-and-for-http-btcpay-is-expecting-you-to-access-this-website-from)
 
-
 ## General Deployment
 
 ### How much does it cost to run BTCPay Server?
 
 BTCPay is a 100% free and open-source software. We do not charge you anything.
-However, to run it, you should host it. You can run it as a self-hosted solution on your own local server, or use a cloud hosting provider, which is what a majority of users do. Advanced users can run BTCPay on [their own hardware](../HardwareDeployment.md) Visit our [Deployment Page](../Deployment.md) to see various ways in which you can run BTCPay.
-If you do not wish to host your own server, you should use a free host. If you prefer to have control over your node and additional features, you can use a cloud solution, which goes from 5$ to 65$ /month depending on the provider you choose.
+However, to run it, you should host it. You can run it as a self-hosted solution on your own local server, or use a cloud hosting provider, which is what a majority of users do. Advanced users can run BTCPay on [their own hardware](../HardwareDeployment.md). Less technical users can use [Hardware As A Service options](../HardwareAsAService.md). If you do not wish to host your own server, you can use a free [Third-Party Host](../ThirdPartyHosting.md). Visit our [Deployment Page](../Deployment.md) for more information on the various ways in which you can run BTCPay.
 
 ### What are the minimal requirements for BTCPay?
 
@@ -63,7 +64,7 @@ If you're going to add more than one crypto coin, you need to expand the storage
 
 ### How to choose a proper deployment method?
 
-Please see [Deployment page](../Deployment.md) for comparison of different installation methods and choose the one that suits your needs and skill level the most.
+Please see the [Deployment page](../Deployment.md) for comparison of different installation methods and choose the one that suits your needs and skill level the most.
 
 ### Can I run BTCPay on my own hardware?
 
@@ -75,155 +76,11 @@ Yes. BTCPay is not limited to the documented deployment methods. You can use whi
 
 ### Are there free hosts where I can test?
 
-On a self-hosted BTCPay, the unlimited amount of users and stores can be attached. That's why there are users who opened their servers for others to use. Most of them are community-driven and free. See this list of [third-party BTCPay hosts](../ThirdPartyHosting.md).
+On a self-hosted BTCPay, an unlimited amount of users and stores can be attached. Some community users have open registration on their servers for others to use their BTCPay Server mainly for testing and learning. Most of them are community-driven and free. See the [third-party hosts documentation](../ThirdPartyHosting.md) for more information.
 
 ### After initial deployment, I can't register and I don't have a login yet?
 
 When you deploy your BTCPay Server, you should first register a user (during server synchronization). This user is automatically the server admin. If your BTCPay only shows Login in the header menu, and you are unable to register the first user after initial deployment, someone else has registered on your server as the admin. Although this is unlikely to occur (the user would need to know and watch your BTCPay domain name), they had access to your ssh private keys, thus you should redeploy a new server for security reasons.
-
-### With the docker deployment, how to use a different volume for the data?
-
-First, you need to make sure that btcpayserver and docker is not running
-```bash
-sudo su -
-btcpay-down.sh
-systemctl stop docker
-```
-
-Now, you need to format your drive. If you already did you can skip this step.
-
-```bash
-# Step 1: Unplug the drive
-lsblk
-
-# Step 2: Plug the drive
-lsblk
-```
-The second `lsblk` should show the drive you just plugged in. (of TYPE `disk`)
-Make sure you don't make a mistake as the next command will erase all data on this disk.
-
-For the sake of the example, let's suppose it has the NAME `/dev/sdd`.
-
-```bash
-# Save the name in a variable
-DEVICE_NAME="/dev/sdd"
-# Set the partition name
-PARTITION_NAME="/dev/sdd1"
-```
-
-Now we can partition the disk and format the partition:
-```bash
-echo "Partitioning the external drive $DEVICE_NAME..."
-### DANGER ZONE ###
-(
-	echo o # Create a new empty DOS partition table
-	echo n # Add a new partition
-	echo p # Primary partition
-	echo 1 # Partition number
-	echo   # First sector (Accept default: 1)
-	echo   # Last sector (Accept default: varies)
-	echo w # Write changes
-) | fdisk ${DEVICE_NAME}
-partprobe ${DEVICE_NAME}
-while ! lsblk $PARTITION_NAME &> /dev/null; do
-	sleep 1
-done
-mkfs.ext4 -F "$PARTITION_NAME"
-```
-
-Then we need to mount the partition on the linux filesystem.
-
-```bash
-# Mounting the partition
-MOUNT_DIR="/mnt/external"
-mkdir "$MOUNT_DIR"
-mount -o defaults,noatime "$PARTITION_NAME" "$MOUNT_DIR"
-
-# Make sure the partition exists at the next reboot, we use UUID in case
-# the partition name is different in the next reboot
-if ! grep -qF "$MOUNT_DIR" /etc/fstab; then
-	UUID="$(sudo blkid -s UUID -o value $PARTITION_NAME)"
-	echo "UUID=$UUID $MOUNT_DIR ext4 defaults,noatime,nofail 0 2" >> /etc/fstab
-fi
-```
-
-Then, we need to make sure that docker not start before the mount.
-
-```bash
-MOUNT_UNIT="$(systemd-escape --path "$MOUNT_DIR").mount"
-docker_service="/lib/systemd/system/docker.service"
-if ! grep -qF "After=$MOUNT_UNIT" "$docker_service"; then
-	sed -i "s/After=/After=$MOUNT_UNIT /g" "$docker_service"
-fi
-```
-
-Now, imagine you want to put all the docker volume data on the previous partition
-
-```bash
-DOCKER_VOLUMES="/var/lib/docker/volumes"
-# Copy all the data from our volume to the mount directory (this can take a while)
-cp -a -r "$DOCKER_VOLUMES/." "$MOUNT_DIR"
-# Make the folder a mountpoint
-rm -rf "$DOCKER_VOLUMES"
-mkdir -p "$DOCKER_VOLUMES"
-mount --bind "$MOUNT_DIR" "$DOCKER_VOLUMES"
-# Make sure the mountpoint is mounted after reboot
-if ! grep -qF "$DOCKER_VOLUMES" /etc/fstab; then
-	echo "$MOUNT_DIR $DOCKER_VOLUMES none bind,nobootwait 0 2" >> /etc/fstab
-fi
-```
-
-Now restart docker and btcpayserver
-
-```bash
-systemctl start docker
-btcpay-up.sh
-```
-
-Note: We use mount bind instead of symbolic link because docker would complain when running `docker volume rm`.
-
-
-### How to deploy BTCPay Server alongside existing Bitcoin node?
-
-The instructions below are valid for Docker deployments:
-
-* Run setup as described in [btcpayserver-docker](https://github.com/btcpayserver/btcpayserver-docker#full-installation-for-technical-users) up until `. ./btcpay-setup.sh -i`
-* Create `bitcoin.custom.yml` in the `docker-compose-generator/docker-fragments/` folder.
-
-```yml
-version: "3"
-
-services:
-  btcpayserver:
-      environment:
-        BTCPAY_CHAINS: "btc"
-        BTCPAY_BTCEXPLORERURL: http://nbxplorer:32838/
-  nbxplorer:
-      environment:
-        NBXPLORER_CHAINS: "btc"
-        NBXPLORER_BTCRPCURL: http://host.docker.internal:43782/
-        NBXPLORER_BTCNODEENDPOINT: host.docker.internal:39388
-      volumes:
-        - "localBitcoinfolder:/root/.bitcoin"
-```
-
-* Replace: `43782` with your bitcoin node's configured RPC port
-* Replace: `39388` with your bitcoin node's configured p2p port
-* Replace `localBitcoinfolder` with the path to your bitcoin data folder
-
-If you are running on linux, due to [a limitation of docker](https://github.com/docker/for-linux/issues/264), you will also need to do the following:
-
-* Run `ip route | grep docker0 | awk '{print $9}'`
-  * Add the following at the end of the `bitcoin.custom.yml` file, replacing `$DOCKER_HOST_IP` with the result of the previous command.
-
-```yml
-      extra_hosts:
-        - "host.docker.internal:$DOCKER_HOST_IP"
-```
-
-* Run `BTCPAYGEN_EXCLUDE_FRAGMENTS="bitcoin"`
-* Run `BTCPAYGEN_ADDITIONAL_FRAGMENTS="$BTCPAYGEN_ADDITIONAL_FRAGMENTS"`
-* Run `. ./btcpay-setup.sh -i`
 
 ### How do I activate Tor on my BTCPay Server?
 
@@ -271,7 +128,7 @@ To see the .onion address of your BTCPay instance without accessing it through t
 cat /var/lib/docker/volumes/generated_tor_servicesdir/_data/BTCPayServer/hostname
 ```
 
-### How can I modify/deactivate environment variables?
+### How can I modify or deactivate environment variables?
 
 In BTCPay, various options are activated through environment variables. You can modify or delete any of these options using command lines by exporting the new value with `export {environment variable}="{value}"` and then running `. ./btcpay-setup.sh -i` again.
 
@@ -284,7 +141,7 @@ sudo su -
 # Go to the root/btcpayserver-docker directory
 cd /root/btcpayserver-docker
 
-# Print the complete list of options that you are running (for the sake of the demonstration, let's say that beside Tor you have pruning mode activated too)
+# Print the complete list of options that you are running (for the sake of the demonstration, let's say that besides Tor you have pruning mode activated too)
 echo $BTCPAYGEN_ADDITIONAL_FRAGMENTS
 opt-save-storage-s;opt-add-tor
 
@@ -295,6 +152,12 @@ export BTCPAYGEN_ADDITIONAL_FRAGMENTS="opt-save-storage-s"
 . btcpay-setup.sh -i
 
 exit
+```
+
+Similarly if you are adding an environment variable, the export command would instead look like this:
+```bash
+# Enable Tor in addition to your existing environment variables (such as pruning)
+export BTCPAYGEN_ADDITIONAL_FRAGMENTS="$BTCPAYGEN_ADDITIONAL_FRAGMENTS;opt-add-tor"
 ```
 
 If you need to figure out which environment variable you need to modify, have a look at [this list](https://github.com/btcpayserver/btcpayserver-docker#environment-variables).
@@ -441,6 +304,26 @@ BTCPAYGEN_EXCLUDE_FRAGMENTS="$BTCPAYGEN_EXCLUDE_FRAGMENTS;nginx-https"
 
 Notice: If your BTCPay Server install has more than one domain (for example `WOOCOMMERCE_HOST` or `BTCPAY_ADDITIONAL_HOSTS`) you will need to modify your config for each domain name. The example above only covers 1 domain name called `btcpay.domain.com`.
 
+## Web-deployment
+
+Here you can find common questions and solutions to BTCPay web-deployments.
+
+### LunaNode web-deployment
+
+#### How to change domain name on my LunaNode BTCPay?
+
+1. In your LunaNode dashboard, click on Virtual Machines > Your Virtual Machine > General Tab > External IP. Copy the external IP.
+2. Go to your DNS provider and create an A record. Paste the external IP.
+3. Go to Server Settings > Maintenance > Change Domain. Paste yourdomain.com without http or https prefix.
+
+Additional documentation can be found on [domain change page](../ChangeDomain.md).
+
+## Manual Deployment
+
+#### How to manually install BTCPay on Ubuntu 18.04?
+
+Check this [community guide](https://freedomnode.com/blog/114/how-to-setup-btc-and-lightning-payment-gateway-with-btcpayserver-on-linux-manual-install).
+
 ### How do I completely uninstall BTCPay from a linux environment (docker version)
 
 1. Shutdown BTCPay Server (after you ensure you have required backups etc) with `btcpay-down.sh` and cleanup the install with `btcpay-clean.sh`.
@@ -463,26 +346,148 @@ changedomain.sh -> /root/BTCPayServer/btcpayserver-docker/changedomain.sh
 6. Remove your BTCPay installation folder with `rm -r "$(dirname "$BTCPAY_ENV_FILE")"`
 7. Just to make sure, run `docker system prune` after a reboot to get rid of any other docker related artifacts.
 
+### How to deploy BTCPay Server alongside existing Bitcoin node?
 
-## Web-deployment
+The instructions below are valid for Docker deployments:
 
-Here you can find common questions and solutions to BTCPay web-deployments.
+* Run setup as described in [btcpayserver-docker](https://github.com/btcpayserver/btcpayserver-docker#full-installation-for-technical-users) up until `. ./btcpay-setup.sh -i`
+* Create `bitcoin.custom.yml` in the `docker-compose-generator/docker-fragments/` folder.
 
-### LunaNode web-deployment
+```yml
+version: "3"
 
-#### How to change domain name on my LunaNode BTCPay?
+services:
+  btcpayserver:
+      environment:
+        BTCPAY_CHAINS: "btc"
+        BTCPAY_BTCEXPLORERURL: http://nbxplorer:32838/
+  nbxplorer:
+      environment:
+        NBXPLORER_CHAINS: "btc"
+        NBXPLORER_BTCRPCURL: http://host.docker.internal:43782/
+        NBXPLORER_BTCNODEENDPOINT: host.docker.internal:39388
+      volumes:
+        - "localBitcoinfolder:/root/.bitcoin"
+```
 
-1. In your LunaNode dashboard, click on Virtual Machines > Your Virtual Machine > General Tab > External IP. Copy the external IP.
-2. Go to your DNS provider and create an A record. Paste the external IP.
-3. Go to Server Settings > Maintenance > Change Domain. Paste yourdomain.com without http or https prefix.
+* Replace: `43782` with your bitcoin node's configured RPC port
+* Replace: `39388` with your bitcoin node's configured p2p port
+* Replace `localBitcoinfolder` with the path to your bitcoin data folder
 
-Additional documentation can be found on [domain change page](../ChangeDomain.md).
+If you are running on linux, due to [a limitation of docker](https://github.com/docker/for-linux/issues/264), you will also need to do the following:
 
-## Manual Deployment
+* Run `ip route | grep docker0 | awk '{print $9}'`
+  * Add the following at the end of the `bitcoin.custom.yml` file, replacing `$DOCKER_HOST_IP` with the result of the previous command.
 
-#### How to manually install BTCPay on Ubuntu 18.04?
+```yml
+      extra_hosts:
+        - "host.docker.internal:$DOCKER_HOST_IP"
+```
 
-Check this [community guide](https://freedomnode.com/blog/114/how-to-setup-btc-and-lightning-payment-gateway-with-btcpayserver-on-linux-manual-install).
+* Run `BTCPAYGEN_EXCLUDE_FRAGMENTS="bitcoin"`
+* Run `BTCPAYGEN_ADDITIONAL_FRAGMENTS="$BTCPAYGEN_ADDITIONAL_FRAGMENTS"`
+* Run `. ./btcpay-setup.sh -i`
+
+### With the docker deployment, how to use a different volume for the data?
+
+First, you need to make sure that btcpayserver and docker is not running
+```bash
+sudo su -
+btcpay-down.sh
+systemctl stop docker
+```
+
+Now, you need to format your drive. If you have already done it, you can skip this step.
+
+```bash
+# Step 1: Unplug the drive
+lsblk
+
+# Step 2: Plug the drive
+lsblk
+```
+The second `lsblk` should show the drive you just plugged in. (of TYPE `disk`)
+Make sure you don't make a mistake as the next command will erase all data on this disk.
+
+For the sake of the example, let's suppose it has the NAME `/dev/sdd`.
+
+```bash
+# Save the name in a variable
+DEVICE_NAME="/dev/sdd"
+# Set the partition name
+PARTITION_NAME="/dev/sdd1"
+```
+
+Now we can partition the disk and format the partition:
+```bash
+echo "Partitioning the external drive $DEVICE_NAME..."
+### DANGER ZONE ###
+(
+	echo o # Create a new empty DOS partition table
+	echo n # Add a new partition
+	echo p # Primary partition
+	echo 1 # Partition number
+	echo   # First sector (Accept default: 1)
+	echo   # Last sector (Accept default: varies)
+	echo w # Write changes
+) | fdisk ${DEVICE_NAME}
+partprobe ${DEVICE_NAME}
+while ! lsblk $PARTITION_NAME &> /dev/null; do
+	sleep 1
+done
+mkfs.ext4 -F "$PARTITION_NAME"
+```
+
+Then we need to mount the partition on the linux filesystem.
+
+```bash
+# Mounting the partition
+MOUNT_DIR="/mnt/external"
+mkdir "$MOUNT_DIR"
+mount -o defaults,noatime "$PARTITION_NAME" "$MOUNT_DIR"
+
+# Make sure the partition exists at the next reboot, we use UUID in case
+# the partition name is different in the next reboot
+if ! grep -qF "$MOUNT_DIR" /etc/fstab; then
+	UUID="$(sudo blkid -s UUID -o value $PARTITION_NAME)"
+	echo "UUID=$UUID $MOUNT_DIR ext4 defaults,noatime,nofail 0 2" >> /etc/fstab
+fi
+```
+
+Then, we need to make sure that docker not start before the mount.
+
+```bash
+MOUNT_UNIT="$(systemd-escape --path "$MOUNT_DIR").mount"
+docker_service="/lib/systemd/system/docker.service"
+if ! grep -qF "After=$MOUNT_UNIT" "$docker_service"; then
+	sed -i "s/After=/After=$MOUNT_UNIT /g" "$docker_service"
+fi
+```
+
+Now, imagine you want to put all the docker volume data on the previous partition
+
+```bash
+DOCKER_VOLUMES="/var/lib/docker/volumes"
+# Copy all the data from our volume to the mount directory (this can take a while)
+cp -a -r "$DOCKER_VOLUMES/." "$MOUNT_DIR"
+# Make the folder a mountpoint
+rm -rf "$DOCKER_VOLUMES"
+mkdir -p "$DOCKER_VOLUMES"
+mount --bind "$MOUNT_DIR" "$DOCKER_VOLUMES"
+# Make sure the mountpoint is mounted after reboot
+if ! grep -qF "$DOCKER_VOLUMES" /etc/fstab; then
+	echo "$MOUNT_DIR $DOCKER_VOLUMES none bind,nobootwait 0 2" >> /etc/fstab
+fi
+```
+
+Now restart docker and btcpayserver
+
+```bash
+systemctl start docker
+btcpay-up.sh
+```
+
+Note: We use mount bind instead of symbolic link because docker would complain when running `docker volume rm`.
 
 ### I get 503 Service Temporarily Unavailable nginx
 
