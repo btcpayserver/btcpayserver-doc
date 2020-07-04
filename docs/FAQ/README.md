@@ -181,7 +181,7 @@ Lightning Network troubleshooting and common problems.
 * [How to find node info and open a direct channel with a store using BTCPay?](./FAQ-LightningNetwork.md#how-to-find-node-info-and-open-a-direct-channel-with-a-store-using-btcpay)
 * [As a merchant, do I need to open direct channels?](./FAQ-LightningNetwork.md#as-a-merchant-do-i-need-to-open-direct-channels)
 * [How can I get inbound capacity to my node?](./FAQ-LightningNetwork.md#how-can-i-get-inbound-capacity-to-my-node)
-* [Previously installed BTCPay without the integrated LN support, can I migrate?](./FAQ-LightningNetwork.md#i-previously-installed-btcpayserver-without-lightning-can-i-enable-it)
+* [Previously installed BTCPay without Lightning, can I enable it?](./FAQ-LightningNetwork.md#i-previously-installed-btcpayserver-without-lightning-can-i-enable-it)
 * [Can I use a pruned node with LN in BTCPay?](./FAQ-LightningNetwork.md#can-i-use-a-pruned-node-with-ln-in-btcpay)
 * [How to change from c-lightning to LND or vice-versa?](./FAQ-LightningNetwork.md#how-to-change-from-c-lightning-to-lnd-or-vice-versa)
 * [Switched Lightning Network implementation, getting "no payment available" error](./FAQ-LightningNetwork.md#i-switched-lightning-network-implementation-but-getting-no-payment-available-error)
