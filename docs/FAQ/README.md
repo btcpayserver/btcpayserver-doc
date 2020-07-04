@@ -32,23 +32,20 @@ Questions and solutions to BTCPay installation.
 
 * [How much does it cost to run BTCPay Server?](./FAQ-Deployment.md#how-much-does-it-cost-to-run-btcpay-server)
 * [What are the minimal requirements for BTCPay?](./FAQ-Deployment.md#what-are-the-minimal-requirements-for-btcpay)
-* [What is the easiest method to deploy a self-hosted BTCPay Server?](./FAQ-Deployment.md#what-are-the-minimal-requirements-for-btcpay)
+* [What is the easiest method to deploy a self-hosted BTCPay Server?](./FAQ-Deployment.md#what-is-the-easiest-method-to-deploy-a-self-hosted-btcpay-server)
 * [How to choose a proper deployment method?](./FAQ-Deployment.md#how-to-choose-a-proper-deployment-method)
 * [Can I run BTCPay on my hardware?](./FAQ-Deployment.md#can-i-run-btcpay-on-my-own-hardware)
 * [Can I deploy on my existing VPS?](./FAQ-Deployment.md#can-i-deploy-btcpay-on-my-existing-vps)
 * [Are there free hosts where I can test?](./FAQ-Deployment.md#are-there-free-hosts-where-i-can-test)
 * [After initial deployment, I can't register and I don't have a login yet?](./FAQ-Deployment.md#after-initial-deployment-i-can-t-register-and-i-don-t-have-a-login-yet)
-* [With the docker deployment, how to use a different volume for the data?](./FAQ-Deployment.md#with-the-docker-deployment-how-to-use-a-different-volume-for-the-data)
 * [How do I activate Tor on my BTCPay Server?](./FAQ-Deployment.md#how-do-i-activate-tor-on-my-btcpay-server)
 * [How do I disable Tor on my BTCPay Server?](./FAQ-Deployment.md#how-do-i-disable-tor-on-my-btcpay-server)
-* [How to deploy BTCPay Server alongside existing Bitcoin full node?](./FAQ-Deployment.md#how-to-deploy-btcpay-server-alongside-existing-bitcoin-node)
 * [Why activate Tor? Does it mean that nobody knows who I am?](./FAQ-Deployment.md#why-activate-tor-does-it-mean-that-nobody-knows-who-i-am)
 * [How to access the .onion address without clearnet?](./FAQ-Deployment.md#how-to-access-the-onion-address-without-clearnet)
-* [How can I modify/deactivate environment variables?](./FAQ-Deployment.md#how-can-i-modify-deactivate-environment-variables)
+* [How can I modify or deactivate environment variables?](./FAQ-Deployment.md#how-can-i-modify-or-deactivate-environment-variables)
 * [How can I run BTCPay on testnet?](./FAQ-Deployment.md#how-can-i-run-btcpay-on-testnet)
 * [Can I start BTCPay only when I'm expecting a payment?](./FAQ-Deployment.md#can-i-start-btcpay-only-when-i-m-expecting-a-payment)
 * [Can I connect to my BTCPay Bitcoin P2P on port 8333?](./FAQ-Deployment.md#can-i-connect-to-my-btcpay-bitcoin-p2p-on-port-8333)
-* [How do I completely uninstall BTCPay from a linux environment (docker version)](./FAQ-Deployment.md#how-do-i-completely-uninstall-btcpay-from-a-linux-environment-docker-version)
 
 ### [Web Deployment FAQ](./FAQ-Deployment.md#web-deployment-faq)
 
@@ -58,8 +55,11 @@ Questions and solutions to BTCPay installation.
 
 ### [Manual Deployment FAQ](./FAQ-Deployment.md#manual-deployment)
 
-* [Getting 500 nginx error on a local server https and for http (BTCPay is expecting you to access this website from)](./FAQ-Deployment.md#cause-4-getting-500-nginx-error-on-a-local-server-https-and-for-http-btcpay-is-expecting-you-to-access-this-website-from)
 * [How to manually install BTCPay on Ubuntu 18.04?](./FAQ-Deployment.md#how-to-manually-install-btcpay-on-ubuntu-18-04)
+* [How do I completely uninstall BTCPay from a linux environment (docker version)](./FAQ-Deployment.md#how-do-i-completely-uninstall-btcpay-from-a-linux-environment-docker-version)
+* [How to deploy BTCPay Server alongside existing Bitcoin full node?](./FAQ-Deployment.md#how-to-deploy-btcpay-server-alongside-existing-bitcoin-node)
+* [With the docker deployment, how to use a different volume for the data?](./FAQ-Deployment.md#with-the-docker-deployment-how-to-use-a-different-volume-for-the-data)
+* [Getting 500 nginx error on a local server https and for http (BTCPay is expecting you to access this website from)](./FAQ-Deployment.md#cause-4-getting-500-nginx-error-on-a-local-server-https-and-for-http-btcpay-is-expecting-you-to-access-this-website-from)
 * [Error: BTCPay is expecting you to access this website from...](./FAQ-Deployment.md#cause-3-btcpay-is-expecting-you-to-access-this-website-from)
 * [You access BTCPay Server over an unsecured network](./FAQ-Deployment.md#cause-3-btcpay-is-expecting-you-to-access-this-website-from)
 
