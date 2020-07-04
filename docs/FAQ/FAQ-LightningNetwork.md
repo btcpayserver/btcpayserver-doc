@@ -6,7 +6,7 @@ This document clarifies some of the most common questions and issues users face 
 * [How to find node info and open a direct channel with a store using BTCPay?](FAQ-LightningNetwork.md#how-to-find-node-info-and-open-a-direct-channel-with-a-store-using-btcpay)
 * [As a merchant, do I need to open direct channels?](FAQ-LightningNetwork.md#as-a-merchant-do-i-need-to-open-direct-channels)
 * [How can I get inbound capacity to my node?](FAQ-LightningNetwork.md#how-can-i-get-inbound-capacity-to-my-node)
-* [Previously installed BTCPay without the integrated LN support, can I migrate?](FAQ-LightningNetwork.md#i-previously-installed-btcpayserver-without-the-integrated-lightning-support-can-i-migrate)
+* [Previously installed BTCPay without the integrated LN support, can I migrate?](FAQ-LightningNetwork.md#i-previously-installed-btcpayserver-without-lightning-can-i-enable-it)
 * [Can I use a pruned node with LN in BTCPay?](FAQ-LightningNetwork.md#can-i-use-a-pruned-node-with-ln-in-btcpay)
 * [How to change from c-lightning to LND or vice-versa?](FAQ-LightningNetwork.md#how-to-change-from-c-lightning-to-lnd-or-vice-versa)
 * [Switched Lightning Network implementation, getting "no payment available" error](FAQ-LightningNetwork.md#i-switched-lightning-network-implementation-but-getting-no-payment-available-error)
@@ -37,8 +37,10 @@ Here are some general questions about LN in BTCPay, regardless of the implementa
 
 ### How many users can use Lightning Network in BTCPay?
 
+On a self-hosted server, you can use only one internal Lightning node. Server owners can use the same Lightning node for an unlimited number of stores tied to their admin account.
+
 Since version 1.0.3.128, a BTCPay Server host can enable it's registrants to use the internal Lightning Network node.
-It can be enabled in Server Settings > Policies > Allow non-admins to use the internal lightning node in their stores
+It can be enabled in Server Settings > Policies > Allow non-admins to use the internal lightning node in their stores. 
 
 ![Enable LN for Others](../img/ThirdPartyEnableLNOthers.png)
 
@@ -49,12 +51,10 @@ You will have to manually check and redispatch the funds to their respectfull ow
 
 :::danger As an individual using a third-party host
 All payments made through the Lightning Network will go to your third-party's wallet.
-Take precautions and only use this option while using a trutworthy third-party host to ensure you get your funds back.
+Take precautions and only use this option while using a trustworthy third-party host to ensure you get your funds back.
 :::
 
-On a self-hosted server, you can use only one internal Lightning node.
-
-Server owners can use the same Lightning node for an unlimited number of stores tied to their admin account. Other users can connect to their external nodes. External connection is technically advanced task, and we recommend that if you want Lightning, you should deploy your own server, which comes with all the necessities bundled up.
+Non-admin users can also connect to their own external nodes. Lightning node external connections are a technically advanced task. We recommend that if you want Lightning, you should deploy your own server instead, which comes with all the necessities bundled up.
 
 ### How to find node info and open a direct channel with a store using BTCPay?
 
@@ -70,14 +70,15 @@ The exact procedure of opening a direct Lightning Network channel depends on the
 
 ### As a merchant, do I need to open direct channels?
 
-Merchants need incoming channels - other people opening a channel with them, providing liquidity.
-Your customer should be able to open a direct channel with you. You can also ask well-connected nodes to open a direct channel with you. Opening a channel is not spending funds, it’s more like putting the funds on a pre-paid card, and spending it later, or withdrawing it by closing a channel.
+Merchants need incoming channels. Other people opening a channel with them provides liquidity to the merchant. Your customer should be able to open a direct channel with you. 
+
+You can also ask well-connected nodes to open a direct channel with you. Opening a channel is not spending funds, it’s more like putting the funds on a pre-paid card, and spending it later, or withdrawing it by closing a channel.
 
 ### How can I get inbound capacity to my node?
 There are many ways in which one can get an inbound capacity. We recommend that you read this great article that provides [practical tips to inbound capacity](https://medium.com/lightningto-me/practical-solutions-to-inbound-capacity-problem-in-lightning-network-60224aa13393).
-When asking for an inboud capacity, consider policy fees a node opening a channel back to you may have. [This document](https://webcache.googleusercontent.com/search?q=cache:0JvB3GjtsQgJ:https://wiki.ion.radar.tech/tutorials/bootstrapping-liquidity+&cd=1&hl=en) provides an overview of what kind of fees to expect from well-known nodes offering the service.
+When asking for inbound capacity, consider any routing policy fees the service may have. [This document](https://webcache.googleusercontent.com/search?q=cache:0JvB3GjtsQgJ:https://wiki.ion.radar.tech/tutorials/bootstrapping-liquidity+&cd=1&hl=en) provides an overview of what kind of fees to expect from well-known nodes offering the service.
 
-### I previously installed BTCPayServer without the integrated lightning support, can I migrate?
+### I previously installed BTCPayServer without lightning, can I enable it?
 
 The integrated lightning support is only useful for scenario where you are at the same time the host and the merchant of BTCPay Server.
 
@@ -185,7 +186,7 @@ Here is how it should look like:
 
 ### Can I use a pruned node with LN in BTCPay?
 
-Both LND and c-lightning support pruning.
+Both LND and c-lightning support pruning. It's not possible to use pruning with Eclair. 
 
 This will prune your Bitcoin full node to a maximum of 100GB (of blocks):
 
@@ -238,14 +239,14 @@ And add or modify the `LIGHTNING_ALIAS` entry to `LIGHTNING_ALIAS=myawesomenode`
 
 The information other users need to connect to your node, is already displayed at the checkout. Sometimes, merchants want to display their node so that their customers can connect beforehand.
 
-There are numerous ways to find your node information, but the easiest way to display it to others is by using Lightning Node info page. Go to Store > General Settings > Lightning nodes > Modify. At the bottom of the page, there is a "Open Public Node Page" button. Click on it to see the information. The page can be embeded into your website with `<iframe>`.
+There are numerous ways to find your node information, but the easiest way to display it to others is by using Lightning Node info page. Go to Store > General Settings > Lightning nodes > Modify. At the bottom of the page, there is a "Open Public Node Page" button. Click on it to see the information. The page can be embedded into your website with `<iframe>`.
 
 ![BTCPay Checkout](../img/LightningNodepPageInfo.png)
 
 ### Where can I find recovery seed backup for my Lightning Network wallet in BTCPay Server?
 
-Originally BTCPay did use `noseedbackup`, so you couldn’t backup your LN wallet or get your recovery seed. This was because in Lightning Network there’s was no solution for backing up funds in channels, just in your on-chain wallet.
-By now LND has functionality like static channel backup that depends seed presence.
+Originally BTCPay did use `noseedbackup`, so you couldn’t backup your LN wallet or get your recovery seed. This was because in Lightning Network there was no solution for backing up funds in channels, just in your on-chain wallet.
+By now LND has functionality like static channel backup that depends on seed presence.
 But once again, please understand that the Lightning Network is still in an experimental phase and do not put funds into it, which you're not [willing to lose](https://www.youtube.com/watch?v=5fMv8MpzLgQ).
 
 #### Using LND with seed (since [`v1.0.3.138`](https://github.com/btcpayserver/btcpayserver/releases/tag/v1.0.3.138))
@@ -405,7 +406,7 @@ export BTCPAYGEN_ADDITIONAL_FRAGMENTS="bitcoin-clightning.custom"
 To fund your on-chain wallet in Spark, you need to get an on-chain address. To find your address, click on the version link at the left corner bottom of the Spark wallet (for example v0.2.2).
 
 That should toggle the settings. Click > Console. To generate a new address in RPC Console field, enter `newaddr` for bech32 address or `newaddr p2sh-segwit` click execute. At the bottom you should see the newly generated address.
-You can also toogle help if you need help with other commands in Spark.
+You can also toggle help if you need help with other commands in Spark.
 
 ![BTCPay Checkout](../img/Spark-console1.png)
 ![BTCPay Checkout](../img/Spark-console2.png)
@@ -414,11 +415,11 @@ You can also toogle help if you need help with other commands in Spark.
 
 First if your funds are in channel, you need to close channel and wait for them to get back to your on-chain wallet in Spark. (144 blocks in most cases).
 
-Next, you need to toogle the console mode. Click on the version link at the left corner bottom of the Spark wallet [explained above](FAQ-LightningNetwork.md#lightning-network-c-lightning-faq)
+Next, you need to toggle the console mode. Click on the version link at the left corner bottom of the Spark wallet [explained above](FAQ-LightningNetwork.md#lightning-network-c-lightning-faq)
 
 That should toggle the settings. Click > Console.
 
-In console mode there are help commands. The command needed for withdrwawing from an on-chain wallet is called `withdraw`.
+In console mode there are help commands. The command needed for withdrawing from an on-chain wallet is called `withdraw`.
 
 ```
 withdraw destination satoshi [feerate] [minconf]
@@ -435,7 +436,7 @@ Note that the address format needs to be SegWit, bech32 (starting with bc1).
 
 ## Lightning Network Questions and Support
 
-Community support for Lightning Network question is pretty limited, since the protocol is fairly new.
+Community support for Lightning Network questions is pretty limited, since the protocol is fairly new.
 
 If you're facing a technical problem with your Lightning Network implementation, that's not documented here you may want to ask questions in their respective communities.
 
