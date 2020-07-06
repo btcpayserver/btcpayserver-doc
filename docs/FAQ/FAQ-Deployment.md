@@ -10,6 +10,7 @@ Here are common questions about installation, regardless of the deployment metho
 * [What are the minimal requirements for BTCPay?](FAQ-Deployment.md#what-are-the-minimal-requirements-for-btcpay)
 * [What is the easiest method to deploy a self-hosted BTCPay Server?](FAQ-Deployment.md#what-is-the-easiest-method-to-deploy-a-self-hosted-btcpay-server)
 * [How to choose a proper deployment method?](FAQ-Deployment.md#how-to-choose-a-proper-deployment-method)
+* [Why do I need a VPS? Can't I just run BTCPay on my home computer?](FAQ-Deployment.md#can-i-run-btcpay-on-my-home-computer)
 * [Can I run BTCPay on my hardware?](FAQ-Deployment.md#can-i-run-btcpay-on-my-own-hardware)
 * [Can I deploy on my existing VPS?](FAQ-Deployment.md#can-i-deploy-btcpay-on-my-existing-vps)
 * [Are there free hosts where I can test?](FAQ-Deployment.md#are-there-free-hosts-where-i-can-test)
@@ -307,6 +308,10 @@ Notice: If your BTCPay Server install has more than one domain (for example `WOO
 ## Web-deployment
 
 Here you can find common questions and solutions to BTCPay web-deployments.
+
+### Can I run BTCPay on my home computer?
+
+Similar to the requirements for hosting a website, a web server is required for a BTCPay Server instance. While it is possible to run BTCPay Server locally on your PC, it would have to meet the minimal requirements and also run 24/7 if you don't want interruptions of service. You might also not want to expose your home IP address for the activity related to BTCPay Server payments. For all these reasons, while local hosting is suitable for testing, it's not a viable solution for production. A Virtual Private Server (VPS) is commonly used to address these problems. 
 
 ### LunaNode web-deployment
 
