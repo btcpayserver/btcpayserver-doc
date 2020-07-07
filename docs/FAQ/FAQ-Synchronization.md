@@ -19,7 +19,7 @@ It may seem tedious, but it's a critical step of running your own full node and 
 
 You can't skip synchronization, but you can drastically decrease the time it takes. If you're comfortable with using the command line, you can use FastSync to synchronize your node faster. Be sure to [read this FastSync document](https://github.com/btcpayserver/btcpayserver-docker/tree/master/contrib/FastSync) to understand the potential trust issues involved with this feature.
 
-To use FastSync, make sure your deployment has a pruning option enabled by using an `opt-save-storage` [environment variable](./FAQ-Deployment.md#how-can-i-modify-deactivate-environment-variables), otherwise bitcoind will not be able to sync. First step is to [ssh into](./FAQ-ServerSettings.md#how-to-ssh-into-my-btcpay-running-on-vps) your BTCPayServer instance and run the following commands:
+To use FastSync, make sure your deployment has a pruning option enabled by using an `opt-save-storage` [environment variable](./FAQ-Deployment.md#how-can-i-modify-or-deactivate-environment-variables), otherwise bitcoind will not be able to sync. First step is to [ssh into](./FAQ-ServerSettings.md#how-to-ssh-into-my-btcpay-running-on-vps) your BTCPayServer instance and run the following commands:
 
 ```bash
 sudo su -
