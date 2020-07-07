@@ -81,9 +81,9 @@ Merchants connect a wallet to each of their stores that they want to receive pay
 
 ## Does BTCPay need my private key?
 
-Absolutely not. Private keys are never uploaded or required by BTCPay. The fact that BTCPay Server never needs access to your master private key for on-chain transactions is a huge security advantage. Even if your server gets hacked, your funds from the on-chain transactions are always safe. Securing your on-chain funds comes down to [securing your wallet](https://btcinformation.org/en/secure-your-wallet). 
+Private keys are not required for using BTCPay with an existing wallet. The fact that BTCPay Server does not need access to your master private key for on-chain transactions is a huge security advantage. Even if your server gets hacked, your funds from the on-chain transactions are always safe. Securing your on-chain funds comes down to [securing your wallet](https://btcinformation.org/en/secure-your-wallet). Using an [existing wallet with BTCPay Server](https://docs.btcpayserver.org/WalletSetup/#use-an-existing-wallet) only requires the public key from your wallet.
 
-If you have a lightning node, BTCPay technically has access to the keys (macaroons) of your LN.
+It is possible to generate new wallets using BTCPay Server which are hot wallets stored on the server. If you have a lightning node, BTCPay technically has access to the keys (macaroons) of your Lightning funds as well. If these are features that you would like to use, be sure to understand the [security implications and the risks](https://docs.btcpayserver.org/HotWallet/#security-implications) associated with these experimental features.
 
 ## Does BTCPay Server support crypto to fiat conversion?
 
