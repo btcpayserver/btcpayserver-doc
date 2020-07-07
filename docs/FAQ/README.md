@@ -81,13 +81,13 @@ Questions about e-commerce and other integrations.
 
 * [What e-commerce integrations are available?](./FAQ-Integrations.md#what-e-commerce-integrations-are-available)
 * [Does BTCPay have a Shopify plugin?](./FAQ-Integrations.md#does-btcpay-have-a-shopify-plugin)
-* [Can I use BTCPay without an integration](./FAQ-Integrations.md#can-i-use-btcpay-without-an-integration)
+* [Can I use BTCPay without an integration?](./FAQ-Integrations.md#can-i-use-btcpay-without-an-integration)
 
 ### [WooCommerce FAQ](./FAQ-Integrations.md#woocommerce-faq-2)
 
 * [How to configure order status in WooCommerce?](./FAQ-Integrations.md#how-to-configure-order-status-in-woocommerce)
 * [How to customize e-mail confirmations in WooCommerce?](./FAQ-Integrations.md#how-to-customize-e-mail-confirmations-in-woocommerce)
-* [Error: If you use an alternative order numbering system, please see class-wc-gateway-btcpay.php to apply a search filter](./FAQ-Integrations.md#error-if-you-use-an-alternative-order-numbering-system-please-see-class-wc-gateway-btcpay-php-to-apply-a-search-filter)
+* [Error: If you use an alternative order numbering system, please see class-wc-gateway-btcpay.php to apply a search filter](./FAQ-Integrations.md#error-if-you-use-an-alternative-order-numbering-system-please-see-class-wc-gateway-btcpayphp-to-apply-a-search-filter)
 
 ## [Server Settings FAQ](./FAQ-ServerSettings.md)
 
