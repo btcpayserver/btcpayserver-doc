@@ -17,7 +17,7 @@
     "dist": "docs/.vuepress/dist",
     "port": "8080",
     "linkcheck": {
-      "command": "linkinator -r --concurrency 2 --timeout 2500 --silent --skip (btcpayserver-doc/edit/master/docs|directory.btcpayserver.org|foundation.btcpayserver.org|install.btcpayserver.org|drupal.org|dyn.com|facebook.com|linkedin.com|luxnode.io|pi-hole.net|t.me|wiki.ion.radar.tech|wiki.openstreetmap.org)"
+      "command": "linkinator -r --concurrency 1 --timeout 2500 --silent --skip (btcpayserver-doc/edit/master/docs|directory.btcpayserver.org|foundation.btcpayserver.org|install.btcpayserver.org|drupal.org|dyn.com|facebook.com|linkedin.com|luxnode.io|pi-hole.net|t.me|wiki.ion.radar.tech|wiki.openstreetmap.org)"
     }
   },
   "scripts": {
