@@ -1,39 +1,56 @@
 # Forward ports with a reverse SSH tunnel
 
-## Advantages:
+## Advantages
 
 * no port forwarding needed on the LAN of the host
 * encrypted connection
 * hides the IP of the host
 
-## Requirements:
+## Requirements
 
 * a Virtual Private Server (VPS) - eg. a minimal package on Lunanode for ~3.5$/month
 * root access on the VPS - only root can forward ports under no. 1000
 * ssh access to the host computer (where the ports will be forwarded from)
 
-## On the host computer
+## Setup
 
-* Check for an ssh public key:
-`$ cat ./.ssh/*.pub`
+### On the host computer
 
-* if there is none generate one (keep pressing ENTER):
-`$ ssh-keygen -t rsa -b 4096`
+Check for an ssh public key:
 
-* copy the ssh public key over to the VPS (fill in the VPS_IP_ADDRESS).
-Will be prompted for the root password of the VPS.
-`$ ssh-copy-id -i ~/.ssh/id_rsa.pub root@VPS_IP_ADDRESS`
+```bash
+cat ~/.ssh/*.pub
+```
 
-## Working on the VPS
+If there is none generate one (keep pressing ENTER):
 
-* login as root or run:
-`sudo su -`
+```bash
+ssh-keygen -t rsa -b 4096
+```
 
-* edit the sshd config:
-`sudo nano /etc/ssh/sshd_config`
+Copy the ssh public key over to the VPS (fill in the `VPS_IP_ADDRESS`).
+You will be prompted for the root password of the VPS.
 
-* make sure these entries are active (uncommented, meaning there is no `#` at the beggining of the line).
-Can just paste these on the end of the file:
+```bash
+ssh-copy-id -i ~/.ssh/id_rsa.pub root@VPS_IP_ADDRESS
+```
+
+### Working on the VPS
+
+Login as root or run:
+
+```bash
+sudo su -
+```
+
+Edit the sshd config:
+
+```bash
+sudo nano /etc/ssh/sshd_config
+```
+
+Make sure these entries are active (meaning there is no `#` at the beggining of the line).
+Alternatively, you can just paste these on the end of the file:
 
 ```
 RSAAuthentication yes
@@ -45,17 +62,29 @@ ClientAliveInterval 60
 
 CTRL+O, ENTER to save, CTRL+X to exit.
 
-* restart the sshd service (WARNING: you can lose access at this point if the config is wrong):
-`sudo systemctl restart sshd`
+<br>
 
-## Back to the host computer
+:::warning
+You can lose access at this point if the sshd config is wrong. Please double-check!
+:::
 
-### Set up a systemd service
+Restart the sshd service:
 
-* create the service file:
-`sudo nano /etc/systemd/system/autossh-tunnel.service`
+```bash
+sudo systemctl restart sshd
+```
 
-* Paste the following and fill in the VPS_IP_ADDRESS.
+### Back to the host computer
+
+#### Set up a systemd service
+
+Create the service file:
+
+```bash
+sudo nano /etc/systemd/system/autossh-tunnel.service
+```
+
+Paste the following and fill in the `VPS_IP_ADDRESS`.
 Add or remove ports as required.
 
 ```ini
@@ -74,23 +103,31 @@ StandardOutput=journal
 WantedBy=multi-user.target
 ```
 
-* Enable and start the service:
-`$ sudo systemctl enable autossh-tunnel`
-`$ sudo systemctl start autossh-tunnel`
+Enable and start the service:
 
-* The port forwarding with a reverse ssh-tunnel is now complete.
+```bash
+sudo systemctl enable autossh-tunnel
+sudo systemctl start autossh-tunnel
+```
+
+The port forwarding with a reverse ssh-tunnel is now complete.
 You should be able access the ports/services of the host computer through the IP of the VPS.
 
 ## Monitoring
 
-* Check if there are any errors on the host computer:
-`$ sudo journalctl -f -n 20  -u autossh-tunnel`
+Check if there are any errors on the host computer:
 
-* To check if tunnel is active on the VPS:
-`$ netstat -tulpn`
+```bash
+sudo journalctl -f -n 20  -u autossh-tunnel
+```
+
+To check if tunnel is active on the VPS:
+
+```bash
+netstat -tulpn
+```
 
 ## Resources
 
-https://github.com/rootzoll/raspiblitz/blob/master/FAQ.md#how-to-setup-port-forwarding-with-a-ssh-tunnel
-
-https://stadicus.github.io/RaspiBolt/raspibolt_21_security.html#login-with-ssh-keys
+* Raspiblitz FAQ: [How to setup port-forwarding with a SSH tunnel?](https://github.com/rootzoll/raspiblitz/blob/master/FAQ.md#how-to-setup-port-forwarding-with-a-ssh-tunnel)
+* RaspiBolt Docs: [Login with SSH keys](https://stadicus.github.io/RaspiBolt/raspibolt_21_security.html#login-with-ssh-keys)
