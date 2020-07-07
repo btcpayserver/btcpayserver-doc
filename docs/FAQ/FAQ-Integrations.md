@@ -5,13 +5,13 @@ This page covers questions about BTCPay integrations.
 
 * [What e-commerce integrations are available?](FAQ-Integrations.md#what-e-commerce-integrations-are-available)
 * [Does BTCPay have a Shopify plugin?](FAQ-Integrations.md#does-btcpay-have-a-shopify-plugin)
-* [Can I use BTCPay without an integration](FAQ-Integrations.md#can-i-use-btcpay-without-an-integration)
+* [Can I use BTCPay without an integration?](FAQ-Integrations.md#can-i-use-btcpay-without-an-integration)
 
 ## [WooCommerce FAQ](FAQ-Integrations.md#woocommerce-faq-1)
 
 * [How to configure order status in WooCommerce?](FAQ-Integrations.md#how-to-configure-order-status-in-woocommerce)
 * [How to customize e-mail confirmations in WooCommerce?](FAQ-Integrations.md#how-to-customize-e-mail-confirmations-in-woocommerce)
-* [Error: If you use an alternative order numbering system, please see class-wc-gateway-btcpay.php to apply a search filter](FAQ-Integrations.md#error-if-you-use-an-alternative-order-numbering-system-please-see-class-wc-gateway-btcpay-php-to-apply-a-search-filter)
+* [Error: If you use an alternative order numbering system, please see class-wc-gateway-btcpay.php to apply a search filter](FAQ-Integrations.md#error-if-you-use-an-alternative-order-numbering-system-please-see-class-wc-gateway-btcpayphp-to-apply-a-search-filter)
 
 ## Integrations General FAQ
 
@@ -68,7 +68,10 @@ If by any chance you use a different order numbering than standard in WooCommerc
 
 > [Error] The BTCPay payment plugin was called to process an IPN message but could not retrieve the order details for order_id: "ON123". If you use an alternative order numbering system, please see class-wc-gateway-btcpay.php to apply a search filter.
 
-Paste the following code at the bottom of your child's theme **functions.php** file:
+Paste the following code at the bottom of your child theme's **functions.php** file:
+
+<details>
+  <summary>Click to view</summary>
 
 ```php
 function get_order_id_from_custom_order_style($orderid){
@@ -81,3 +84,4 @@ function get_order_id_from_custom_order_style($orderid){
 
 add_filter('woocommerce_order_id_from_number', 'get_order_id_from_custom_order_style', 1);
 ```
+</details>
