@@ -17,7 +17,7 @@
     "dist": "docs/.vuepress/dist",
     "port": "8080",
     "linkcheck": {
-      "excludes": "--exclude btcpayserver-doc/edit/master/docs --exclude directory.btcpayserver.org --exclude foundation.btcpayserver.org --exclude install.btcpayserver.org --exclude drupal.org --exclude dyn.com --exclude facebook.com --exclude linkedin.com --exclude luxnode.io --exclude pi-hole.net --exclude t.me --exclude wiki.ion.radar.tech"
+      "command": "linkinator -r --concurrency 2 --timeout 2500 --silent --skip (btcpayserver-doc/edit/master/docs|directory.btcpayserver.org|foundation.btcpayserver.org|install.btcpayserver.org|drupal.org|dyn.com|facebook.com|linkedin.com|luxnode.io|pi-hole.net|t.me|wiki.ion.radar.tech|wiki.openstreetmap.org)"
     }
   },
   "scripts": {
@@ -27,14 +27,14 @@
     "test": "jest",
     "linkcheck": "start-server-and-test linkcheck:serve $npm_package_config_port linkcheck:local",
     "linkcheck:serve": "serve -p $npm_package_config_port $npm_package_config_dist",
-    "linkcheck:local": "blc -ro --filter-level 2 --requests 1 http://localhost:$npm_package_config_port $npm_package_config_linkcheck_excludes",
-    "linkcheck:prod": "blc -ro --filter-level 2 --requests 1 https://docs.btcpayserver.org $npm_package_config_linkcheck_excludes",
+    "linkcheck:local": "$npm_package_config_linkcheck_command http://localhost:$npm_package_config_port",
+    "linkcheck:prod": "$npm_package_config_linkcheck_command https://docs.btcpayserver.org",
     "predeploy": "./prepare-deployment.sh"
   },
   "devDependencies": {
-    "@vuepress/plugin-back-to-top": "1.5.1",
-    "broken-link-checker": "^0.7.8",
-    "jest": "26.0.1",
+    "@vuepress/plugin-back-to-top": "1.5.2",
+    "jest": "26.1.0",
+    "linkinator": "2.1.1",
     "markdown-it-implicit-figures": "0.10.0",
     "serve": "11.3.2",
     "start-server-and-test": "1.11.0",
