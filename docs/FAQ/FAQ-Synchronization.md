@@ -6,14 +6,14 @@ This document covers the most common questions and issues that may occur during 
 * [Can I skip/speed up the sync?](#can-i-skip-the-synchronization)
 * [How do I know that the sync is finished?](#how-do-i-know-that-btcpay-synced-completely)
 * [BTCPay takes forever to synchronize](#btcpay-server-takes-forever-to-synchronize)
-* [BTCPay Server keep showing that my node is always starting](#btcpay-server-keep-showing-that-my-node-is-always-starting)
+* [BTCPay Server keeps showing that my node is always starting](#btcpay-server-keeps-showing-that-my-node-is-always-starting)
 * [I already have a synced full node, can I use it with BTCPay?](#im-running-a-full-node-and-have-a-synched-blockchain-can-btcpay-use-it-so-that-it-doesnt-have-to-do-a-full-sync)
 
 ## Why does BTCPay sync?
 
-After deployment, your BTCPay Server needs to sync the entire blockchain and validate all the consensus rules. Depending on your machine specification, bandwidth and number of altcoins you added, this process may take between 1-5 days.
+After deployment, your BTCPay Server needs to sync the entire blockchain and validate all the consensus rules. Depending on your machine specifications, bandwidth and number of altcoins you added, this process may take between 1-5 days.
 
-It may seem tedious, but it's a critical step of running your own full node and not having to trust or rely on anyone. Your node will not only download 200GB of data (less if you're using a pruned node) but also validate all the rules of the consensus. You can find more information about the importance of blockchain synchronization in [this video](https://www.youtube.com/watch?v=OrYDehC-8TU).
+It may seem tedious, but it's a critical step of running your own full node and not having to trust or rely on anyone. Your node will not only download ~300GB of data (less if you're using a pruned node) but also validate all the rules of the consensus. You can find more information about the importance of blockchain synchronization in [this video](https://www.youtube.com/watch?v=OrYDehC-8TU).
 
 ## Can I skip the synchronization?
 
@@ -33,7 +33,7 @@ btcpay-up.sh
 
 After FastSync is complete and you have brought back up your instance, refresh your BTCPay domain and wait for remaining blockchain synchronization. You can also follow [this video](https://youtube.com/watch?v=VNMnd-dX9Q8?t=1730).
 
-If your FastSync returns `You need to delete your Bitcoin Core wallet` after you load the uxto set, or you find this error: `Last wallet synchronisation goes beyond pruned data`, see cause 4 of [BTCPay Server keep showing that my node is always starting](#btcpay-server-keep-showing-that-my-node-is-always-starting).
+If your FastSync returns `You need to delete your Bitcoin Core wallet` after you load the uxto set, or you find this error: `Last wallet synchronisation goes beyond pruned data`, see the cause of [BTCPay Server keeps showing that my node is always starting](#btcpay-server-keeps-showing-that-my-node-is-always-starting).
 
 ## How do I know that BTCPay synced completely?
 
@@ -41,9 +41,9 @@ When you do not see a pop-up message in the bottom right corner, which shows the
 
 ## BTCPay Server takes forever to synchronize
 
-Synchronizing a Full Bitcoin node should take between 1 and 3 days.
+Synchronizing a Full Bitcoin node should take between 1 and 5 days. It should sync quickly at first and more slowly at the end. 
 
-If this is not the case:
+If the node appears to not be syncing, verify:
 
 * Not enough CPU
 * Using swap memory
@@ -100,7 +100,7 @@ Swap:          1.0G        200M      800M
 
 Then it means you need to scale up your server by adding more memory.
 
-## BTCPay Server keep showing that my node is always starting
+## BTCPay Server keeps showing that my node is always starting
 
 Possible cause:
 
@@ -219,4 +219,4 @@ To do that, follow the following steps :
 
 Your BTCPay Server should now be fully synched.
 
-If after this BTCPay Server keep showing that your node is always starting, see cause 4 of [BTCPay Server keep showing that my node is always starting](#btcpay-server-keep-showing-that-my-node-is-always-starting).
+If after this BTCPay Server keeps showing that your node is always starting, see the cause of [BTCPay Server keeps showing that my node is always starting](#btcpay-server-keeps-showing-that-my-node-is-always-starting).
