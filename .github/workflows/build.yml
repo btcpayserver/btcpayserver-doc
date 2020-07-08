@@ -1,4 +1,4 @@
-name: Node CI
+name: Build
 
 on:
   # Run the build for pushes and pull requests targeting master
@@ -41,8 +41,6 @@ jobs:
         run: npm test
       - name: Build
         run: npm run build
-      - name: Linkcheck
-        run: npm run linkcheck
       # Deploy, limited to the master branch
       - name: Predeploy
         if: success() && github.ref == 'refs/heads/master'

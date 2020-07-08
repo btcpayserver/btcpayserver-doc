@@ -1,0 +1,28 @@
+name: Linkcheck
+
+on:
+  schedule:
+    - cron:  '* 21 * * *'
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node-version: [14]
+
+    steps:
+      # Checkout doc repo and its dependencies
+      - name: Checkout
+        uses: actions/checkout@v2
+      # Setup Node
+      - name: Setup (Node.js ${{ matrix.node-version }})
+        uses: actions/setup-node@v1
+        with:
+          node-version: ${{ matrix.node-version }}
+      # Install
+      - name: Install
+        run: npm ci
+      # Run linkcheck
+      - name: Linkcheck
+        run: npm run linkcheck:prod
