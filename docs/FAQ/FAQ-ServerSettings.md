@@ -1,30 +1,30 @@
 # Server Settings Frequently Asked Questions
 
-This document covers all the questions and issues related to Server Settings. This option is only available to server admin. Take a look at the [walkthrough page](../Walkthrough.md) to easier understand the navigation
+This document covers all the questions and issues related to Server Settings. These settings are only available to the server admin. Take a look at the [walkthrough page](../Walkthrough.md) to learn more.
 
 ## Maintenance
 
-* [How to update BTCPay Server](./FAQ-ServerSettings.md#how-to-update-btcpay-server)
+* [How to update BTCPay Server?](./FAQ-ServerSettings.md#how-to-update-btcpay-server)
 * [How can I check my BTCPay Server version?](./FAQ-ServerSettings.md#how-can-i-see-my-btcpay-version)
 * [How can I check my BTCPay Server version via terminal?](./FAQ-ServerSettings.md#how-can-i-see-my-btcpay-version)
-* [What is BTCPay SSH key file](./FAQ-ServerSettings.md#what-is-btcpay-ssh-key-file)
+* [What is BTCPay SSH key file?](./FAQ-ServerSettings.md#what-is-btcpay-ssh-key-file)
 * [Error the BTCPAY_SSHKEYFILE variable is not set/ Unable to update](./FAQ-ServerSettings.md#btcpay-sshkeyfile-is-not-set-when-running-the-docker-install-or-unable-to-update-through-server-settings-maintenance)
 * [Forgot BTCPay Admin password](./FAQ-ServerSettings.md#forgot-btcpay-admin-password)
-* [How to disable U2F and 2FA for a user](./FAQ-ServerSettings.md#how-to-disable-u2f-and-2fa-for-a-user)
+* [How to disable U2F and 2FA for a user?](./FAQ-ServerSettings.md#how-to-disable-u2f-and-2fa-for-a-user)
 * [How to configure SMTP settings in BTCPay?](./FAQ-ServerSettings.md#how-to-configure-smtp-settings-in-btcpay)
 * [How to SSH into my BTCPay running on VPS?](./FAQ-ServerSettings.md#how-to-ssh-into-my-btcpay-running-on-vps)
 * [Error: Your local changes to the following files would be overwritten by merge](./FAQ-ServerSettings.md#error-your-local-changes-to-the-following-files-would-be-overwritten-by-merge)
 
 ## Theme / Customization
 
-* [How to customize my BTCPay theme style](./FAQ-ServerSettings.md#how-to-customize-my-btcpay-theme-style)
-* [How to add Google Analytics code to BTCPay](./FAQ-ServerSettings.md#how-to-add-google-analytics-code-to-btcpay)
-* [How to modify BTCPay checkout page](./FAQ-ServerSettings.md#how-to-modify-the-checkout-page)
+* [How to customize my BTCPay theme style?](./FAQ-ServerSettings.md#how-to-customize-my-btcpay-theme-style)
+* [How to add Google Analytics code to BTCPay?](./FAQ-ServerSettings.md#how-to-add-google-analytics-code-to-btcpay)
+* [How to modify the BTCPay checkout page?](./FAQ-ServerSettings.md#how-to-modify-the-checkout-page)
 
 ## Policies
 
-* [How to allow registration on my BTCPay Server](./FAQ-ServerSettings.md#how-to-allow-registration-on-my-btcpay-server)
-* [How to hide my BTCPay Server from Search Engines](./FAQ-ServerSettings.md#how-to-hide-my-btcpay-server-from-search-engines)
+* [How to allow registration on my BTCPay Server?](./FAQ-ServerSettings.md#how-to-allow-registration-on-my-btcpay-server)
+* [How to hide my BTCPay Server from Search Engines?](./FAQ-ServerSettings.md#how-to-hide-my-btcpay-server-from-search-engines)
 
 ## Services
 
@@ -32,7 +32,7 @@ This document covers all the questions and issues related to Server Settings. Th
 
 ## Files
 
-* [How to upload files to BTCPay](./FAQ-ServerSettings.md#how-to-upload-files-to-btcpay)
+* [How to upload files to BTCPay?](./FAQ-ServerSettings.md#how-to-upload-files-to-btcpay)
 
 ## Maintenance
 

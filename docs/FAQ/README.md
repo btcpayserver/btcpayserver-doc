@@ -95,7 +95,7 @@ Common problems and questions server admins have.
 
 ### [Maintenance FAQ](./FAQ-ServerSettings.md#maintainance)
 
-* [How to update BTCPay Server](./FAQ-ServerSettings.md#how-to-update-btcpay-server)
+* [How to update BTCPay Server?](./FAQ-ServerSettings.md#how-to-update-btcpay-server)
 * [How can I check my BTCPay Server version?](./FAQ-ServerSettings.md#how-can-i-see-my-btcpay-version)
 * [How can I check my BTCPay Server version via terminal?](./FAQ-ServerSettings.md#how-can-i-see-my-btcpay-version)
 * [What is BTCPay SSH key file](./FAQ-ServerSettings.md#what-is-btcpay-ssh-key-file)
@@ -108,15 +108,15 @@ Common problems and questions server admins have.
 
 ### [Theme / Customization FAQ](./FAQ-ServerSettings/#theme-customization)
 
-* [How to customize my BTCPay theme style](./FAQ-ServerSettings.md#how-to-customize-my-btcpay-theme-style)
-* [How to add Google Analytics code to BTCPay](./FAQ-ServerSettings.md#how-to-add-google-analytics-code-to-btcpay)
-* [How to modify BTCPay checkout page](./FAQ-ServerSettings.md#how-to-modify-the-checkout-page)
-* [How to customize POS app theme?](../Theme.md)
+* [How to customize my BTCPay theme style?](./FAQ-ServerSettings.md#how-to-customize-my-btcpay-theme-style)
+* [How to add Google Analytics code to BTCPay?](./FAQ-ServerSettings.md#how-to-add-google-analytics-code-to-btcpay)
+* [How to modify BTCPay the checkout page?](./FAQ-ServerSettings.md#how-to-modify-the-checkout-page)
+* [How to customize the POS app theme?](../Theme.md)
 
 ### [Policies FAQ](./FAQ-ServerSettings.md#policies)
 
-* [How to allow registration on my BTCPay Server](./FAQ-ServerSettings.md#how-to-allow-registration-on-my-btcpay-server)
-* [How to hide my BTCPay Server from Search Engines](./FAQ-ServerSettings.md#how-to-hide-my-btcpay-server-from-search-engines)
+* [How to allow registration on my BTCPay Server?](./FAQ-ServerSettings.md#how-to-allow-registration-on-my-btcpay-server)
+* [How to hide my BTCPay Server from Search Engines?](./FAQ-ServerSettings.md#how-to-hide-my-btcpay-server-from-search-engines)
 
 ### [Services FAQ](./FAQ-ServerSettings.md#services)
 
@@ -124,7 +124,7 @@ Common problems and questions server admins have.
 
 ### [Files FAQ](./FAQ-ServerSettings.md#files)
 
-* [How to upload files to BTCPay](./FAQ-ServerSettings.md#how-to-upload-files-to-btcpay)
+* [How to upload files to BTCPay?](./FAQ-ServerSettings.md#how-to-upload-files-to-btcpay)
 
 ## [Stores FAQ](./FAQ-Stores.md)
 
