@@ -77,6 +77,11 @@ module.exports = [
   { path: '/support-and-community/contribute', redirect: '/Contribute/' },
   { path: '/support-and-community/translate', redirect: '/Translate/' },
   { path: '/support-and-community/community', redirect: '/Community/' },
+  // Development
+  { path: '/Architecture/', redirect: '/Development/' },
+  { path: '/LocalDevelopment/', redirect: '/Development/LocalDevelopment/' },
+  { path: '/Altcoins/', redirect: '/Development/Altcoins/' },
+  { path: '/Theme/', redirect: '/Development/Theme/' },
   // Old paths in new docs
   { path: '/DockerDeployment/', redirect: '/Docker/' }
 ]

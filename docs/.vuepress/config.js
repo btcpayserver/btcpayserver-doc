@@ -97,7 +97,7 @@ module.exports = {
 
     sidebar: {
       '/Development/': [
-        ["Architecture", "Architecture"],
+        ["", "Architecture"],
         {
           title: "Development",
           collapsable: false,
