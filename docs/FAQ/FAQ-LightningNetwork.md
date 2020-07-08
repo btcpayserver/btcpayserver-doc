@@ -42,7 +42,7 @@ On a self-hosted server, you can use only one internal Lightning node. Server ow
 Since version 1.0.3.128, a BTCPay Server host can enable it's registrants to use the internal Lightning Network node.
 It can be enabled in Server Settings > Policies > Allow non-admins to use the internal lightning node in their stores.
 
-![Enable LN for Others](.././img/ThirdPartyEnableLNOthers.png)
+![Enable LN for Others](../img/ThirdPartyEnableLNOthers.png)
 
 :::warning As a third-party host
 All your registrants' funds will go to your own Lightning Wallet.
@@ -64,7 +64,7 @@ If you're a customer trying to pay a Lightning Network invoice:
 2. Select Copy/Scan
 3. Select Node Info and scan or copy it manually.
 
-![BTCPay Checkout](.././img/btcpay-node-info.jpg)
+![BTCPay Checkout](../img/btcpay-node-info.jpg)
 
 The exact procedure of opening a direct Lightning Network channel depends on the wallet you’re using. But, you should be able to figure it out easily now that you have merchant’s node information.
 
@@ -84,7 +84,7 @@ The integrated lightning support is only useful for scenario where you are at th
 
 When logged as admin of your server you will then have a nice link to connect to plug your lightning node to BTCPay Server.
 
-![LightningNode](.././img/setuplightningnode.png)
+![LightningNode](../img/setuplightningnode.png)
 
 You can then click on `Test Connection` in this page to see if you successfully configured your lightning node.
 
@@ -182,7 +182,7 @@ Rule 2:
 
 Here is how it should look like:
 
-![SecurityRules](.././img/azuresecurityrule.png)
+![SecurityRules](../img/azuresecurityrule.png)
 
 ### Can I use a pruned node with LN in BTCPay?
 
@@ -241,7 +241,7 @@ The information other users need to connect to your node, is already displayed a
 
 There are numerous ways to find your node information, but the easiest way to display it to others is by using Lightning Node info page. Go to Store > General Settings > Lightning nodes > Modify. At the bottom of the page, there is a "Open Public Node Page" button. Click on it to see the information. The page can be embedded into your website with `<iframe>`.
 
-![BTCPay Checkout](.././img/LightningNodepPageInfo.png)
+![BTCPay Checkout](../img/LightningNodepPageInfo.png)
 
 ### Where can I find recovery seed backup for my Lightning Network wallet in BTCPay Server?
 
@@ -255,11 +255,11 @@ You can find the LND Seed Service under:
 
 - Server Settings > Services > LND Seed Backup
 
-![LND Seed Backup service](.././img/LND-Service-Seed-Backup.jpg)
+![LND Seed Backup service](../img/LND-Service-Seed-Backup.jpg)
 
 Safely backup and store your recovery seed. The seed is a backup of your on-chain Lightning wallet, but is also necessary to perform static channel backups.
 
-![LND Seed Backup example](.././img/LND-With-Seed-Example.jpg)
+![LND Seed Backup example](../img/LND-With-Seed-Example.jpg)
 
 If you backed it up safely you can remove it from the server.
 
@@ -408,8 +408,8 @@ To fund your on-chain wallet in Spark, you need to get an on-chain address. To f
 That should toggle the settings. Click > Console. To generate a new address in RPC Console field, enter `newaddr` for bech32 address or `newaddr p2sh-segwit` click execute. At the bottom you should see the newly generated address.
 You can also toggle help if you need help with other commands in Spark.
 
-![BTCPay Checkout](.././img/Spark-console1.png)
-![BTCPay Checkout](.././img/Spark-console2.png)
+![BTCPay Checkout](../img/Spark-console1.png)
+![BTCPay Checkout](../img/Spark-console2.png)
 
 ## How to withdraw funds from my on-chain Spark wallet?
 
@@ -430,7 +430,7 @@ If you want to withdraw 1000 sats to bc1qjl8uwezzlech793lpnyuzy0h2cdkvxvh54v3dn,
 
 `withdraw bc1qjl8uwezzlech793lpnyuzy0h2cdkvxvh54v3dn 1000` click *execute*.
 
-![Spark Withdraw](.././img/SparkWalletWithdrawConsole.png)
+![Spark Withdraw](../img/SparkWalletWithdrawConsole.png)
 
 Note that the address format needs to be SegWit, bech32 (starting with bc1).
 

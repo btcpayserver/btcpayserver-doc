@@ -51,8 +51,8 @@ However, you can use a work-around:
 * Click on the `Embed payment button linking to PoS item` at the bottom of the page and copy the expanded code. Paste it into html page of your website.
 * Remove the extra fields you do not need, especially `<input name="price" type="hidden" value="10" />` so that button redirects to the point of sale.
 
-![Custom Amount Pay Button](.././img/BTCPayPayButtonDynamic2.png)
-![Custom Amount Pay Button](.././img/BTCPayPayButtonDynamic.png)
+![Custom Amount Pay Button](../img/BTCPayPayButtonDynamic2.png)
+![Custom Amount Pay Button](../img/BTCPayPayButtonDynamic.png)
 
 ## How to map a domain name to an app?
 
@@ -77,11 +77,11 @@ export BTCPAY_ADDITIONAL_HOSTS="mybtcpaypos.com,subdomain.domain2.com,domain3.co
 
 Finally, in Server Settings > Policies click on the `Map specific domains to specific apps`
 
-![App domain mapping](.././img/domainmapping1.png)
+![App domain mapping](../img/domainmapping1.png)
 
 Enter domain name, select a previously created app from the drop down menu and click `save` to map the app to specific domain.
 
-![App domain mapping](.././img/domainmapping2.png)
+![App domain mapping](../img/domainmapping2.png)
 
 If any of the additionally added hosts do not have a properly configured DNS, Let's Encrypt will not be able to renew the certificate for any of the domains, including the main domain. If you're using additional hosts and facing https issues with the main domain, try removing a domain from the `BTCPAY_ADDITIONAL_HOSTS` and re-run the setup. The https issue also occurs if [Dynamic DNS](../DynamicDNS.md) has not been renewed and is configured as an additional host.
 
@@ -91,7 +91,7 @@ If for any reason, you want an app to be on the same domain as your BTCPay Serve
 
 If you want to provide a way for your backers to receive digital files and physical products, you can embed WooCommerce store into your Crowdfunding app.
 
-![Crowdfunding WooCommerce Integration Preview](.././img/CrowdfundingWoo.gif)
+![Crowdfunding WooCommerce Integration Preview](../img/CrowdfundingWoo.gif)
 
 The following tutorial assumes you have a semi-advanced understanding of BTCPay, WordPress and WooCommerce.
 
@@ -233,7 +233,7 @@ In your BTCPay, Apps > Create New App > Crowdfunding.
 In the description of your app, toggle the code and paste the following code and add `<iframe src="http://yourdomain/shop/"></iframe>`
 Replace it with the URL of your WooCommerce Store page.
 
-![EmbedIframeCrowdfund](.././img/CrowdfundCodeEmbed.png)
+![EmbedIframeCrowdfund](../img/CrowdfundCodeEmbed.png)
 
 Next, paste the following code into the **Custom CSS Code** section of your crowdfunding app:
 

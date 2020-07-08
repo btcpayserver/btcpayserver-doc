@@ -42,7 +42,7 @@ This document covers all the questions and issues related to Server Settings. Th
 There are 2 ways to update your BTCPay Server :
 1. Updating through the user interface: Server Settings > Maintenance > Update.
 
-![Updating BTCPay Server](.././img/HowToUpdateBTCPayServer.png)
+![Updating BTCPay Server](../img/HowToUpdateBTCPayServer.png)
 
 2.Updating through SSH: Login into your virtual machine with ssh, then apply following commands:
 
@@ -229,7 +229,7 @@ It is up to search engines to honor this request, and may take time for your pag
 If you're using an external wallet which allows BTC-P2P connection, you can easily connect it to your BTCPay full node. By doing this, you avoid leaking information to third-party servers and are solely relying on your own full node.
 To connect to a compatible BTC-P2P wallet, go to **Server Settings > Services > Full node P2P** Reveal the QR code and scan it with a BTC-P2P compatible wallet, or input it by copy-pasting it.
 
-![BTC-P2P](.././img/BTC-P2P.png)
+![BTC-P2P](../img/BTC-P2P.png)
 
 If you do not see Full node P2P in your Services, you probably have to [activate Tor on your server](FAQ-Deployment.md#how-do-i-activate-tor-on-my-btcpay-server).
 
