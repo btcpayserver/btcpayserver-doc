@@ -41,6 +41,10 @@ jobs:
         run: npm test
       - name: Build
         run: npm run build
+      # Run linkcheck
+      - name: Linkcheck
+        run: npm run linkcheck
+        continue-on-error: true
       # Deploy, limited to the master branch
       - name: Predeploy
         if: success() && github.ref == 'refs/heads/master'
