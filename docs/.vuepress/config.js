@@ -69,11 +69,11 @@ module.exports = {
     nav: [
       {
         text: "Users Guide",
-        link: "/guide/"
+        link: "/Guide"
       },
       {
         text: "Developers",
-        link: "/dev/"
+        link: "/Development/"
       },
       {
         text: "Website",
@@ -96,8 +96,30 @@ module.exports = {
     ],
 
     sidebar: {
-      '/guide/': [
-        ["", "Introduction"],
+      '/Development/': [
+        ["Architecture", "Architecture"],
+        {
+          title: "Development",
+          collapsable: false,
+          children: [
+            ["LocalDevelopment", "Developing Locally"],
+            ["Altcoins", "How to add an Altcoin"],
+            ["Theme", "Customizing Themes"],
+          ]
+        },
+        {
+          title: "Greenfield API",
+          collapsable: false,
+          children: [
+            ["https://docs.btcpayserver.org/API/Greenfield/v1", "Greenfield API v1", { type: 'external' }],
+            ["GreenFieldExample", "Greenfield example with cURL"]
+          ]
+        }
+      ],
+
+      // Fallback
+      '/': [
+        ["Guide", "Introduction"],
         {
           title: "Basics",
           collapsable: false,
@@ -116,17 +138,17 @@ module.exports = {
             ["ThirdPartyHosting", "Third-party Hosting"],
             {
               title: "Docker",
-              path: "/guide/Docker/",
+              path: "/Docker/",
               collapsable: false,
               children: [
                 // TODO: Add Configurator
                 {
                   title: "Web Deployment",
-                  path: "/guide/LunaNodeWebDeployment"
+                  path: "/LunaNodeWebDeployment"
                 },
                 {
                   title: "Azure Deployment",
-                  path: "/guide/AzureDeployment",
+                  path: "/AzureDeployment",
                   children: [
                     ["AzurePennyPinching", "Reducing Cost on Azure"],
                     ["ChangeDomain", "Changing domain"]
@@ -134,11 +156,11 @@ module.exports = {
                 },
                 {
                   title: "Google Cloud Deployment",
-                  path: "/guide/GoogleCloudDeployment"
+                  path: "/GoogleCloudDeployment"
                 },
                 {
                   title: "Hardware Deployment",
-                  path: "/guide/HardwareDeployment",
+                  path: "/HardwareDeployment",
                   children: [
                     {
                       title: "Advanced Deployment",
@@ -153,7 +175,7 @@ module.exports = {
                 },
                 {
                   title: "Raspberry Pi Deployment",
-                  path: "/guide/RaspberryPiDeployment",
+                  path: "/RaspberryPiDeployment",
                   children: [
                     "RPi3",
                     "RPi4"
@@ -164,7 +186,7 @@ module.exports = {
                   children: [
                     {
                       title: "Transmuter",
-                      path: "/guide/Transmuter/",
+                      path: "/Transmuter/",
                       children: [
                         ["Transmuter/DCA", "Dollar Cost Average Preset"],
                         ["Transmuter/EmailReceiptsPreset", "Email Receipts Preset"]
@@ -179,7 +201,7 @@ module.exports = {
             },
             {
               title: "Manual Deployment",
-              path: "/guide/ManualDeployment",
+              path: "/ManualDeployment",
               children: [
                 "ManualDeploymentExtended"
               ]
@@ -194,12 +216,12 @@ module.exports = {
             "CreateStore",
             {
               title: "(3) Wallet Setup",
-              path: "/guide/WalletSetup",
+              path: "/WalletSetup",
               collapsable: false,
               children: [
                 {
                   title: "Use existing hardware wallet",
-                  path: "/guide/Vault",
+                  path: "/Vault",
                   children: [
                     ["ColdCardWallet", "ColdCard Wallet"]
                   ]
@@ -209,14 +231,14 @@ module.exports = {
                   children: [
                     {
                       title: "Electrum Wallet",
-                      path: "/guide/ElectrumWallet",
+                      path: "/ElectrumWallet",
                     },
                     ["WasabiWallet", "Wasabi Wallet"]
                   ]
                 },
                 {
                   title: "Create a new wallet",
-                  path: "/guide/CreateWallet",
+                  path: "/CreateWallet",
                   children: [
                     ["HotWallet", "Hot Wallet"]
                   ]
@@ -235,7 +257,7 @@ module.exports = {
             ["Invoices", "Invoices"],
             {
               title: "Pull Payments",
-              path: "/guide/PullPayments",
+              path: "/PullPayments",
               children: [
                 ["Refund", "Refunds"]
               ]
@@ -245,7 +267,7 @@ module.exports = {
             ["Accounting", "Accounting"],
             {
               title: "Payjoin",
-              path: "/guide/Payjoin",
+              path: "/Payjoin",
               children: [
                 ["https://github.com/bitcoin/bips/blob/master/bip-0078.mediawiki", "Payjoin specification", { type: 'external' }]
               ]
@@ -269,7 +291,7 @@ module.exports = {
           children: [
             {
               title: "FAQ and common issues",
-              path: "/guide/FAQ",
+              path: "/FAQ",
               children: [
                 ["FAQ/FAQ-General", "General FAQ"],
                 ["FAQ/FAQ-Deployment", "Deployment FAQ"],
@@ -290,22 +312,6 @@ module.exports = {
             ["Community", "Community"]
           ]
         }
-      ],
-
-      '/dev/': [
-        ["Architecture", "Architecture"],
-        ["LocalDevelopment", "Developing Locally"],
-        ["Altcoins", "How to add an Altcoin"],
-        ["Theme", "Customizing Themes"],
-        ["https://docs.btcpayserver.org/API/Greenfield/v1", "Greenfield API v1", { type: 'external' }],
-        ["GreenFieldExample", "Greenfield example with cURL"]
-      ],
-
-      // Fallback
-      '/': [
-        '',
-        'guide/',
-        'dev/'
       ]
     }
   }

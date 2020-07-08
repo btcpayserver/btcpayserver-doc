@@ -3,8 +3,8 @@ const docsDir = resolve(__dirname, '..')
 
 // external docs: local dir as key, repo base as value
 const EXTERNAL_DOCS = {
-  'guide/Docker': 'https://github.com/btcpayserver/btcpayserver-docker',
-  'guide/Transmuter': 'https://github.com/btcpayserver/btcTransmuter',
+  'Docker': 'https://github.com/btcpayserver/btcpayserver-docker',
+  'Transmuter': 'https://github.com/btcpayserver/btcTransmuter',
 }
 
 const replaceExternalRepoLinks = (source, resourcePath) => {
