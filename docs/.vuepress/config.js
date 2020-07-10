@@ -58,7 +58,7 @@ module.exports = {
       apiKey: '6a3a4c4380385cb5c9f9070247fdfca6',
       // See https://www.algolia.com/doc/api-reference/api-parameters/
       algoliaOptions: {
-        hitsPerPage: 25
+        hitsPerPage: 10
       },
       // See https://community.algolia.com/docsearch/behavior.html#autocompleteoptions
       autocompleteOptions: {
@@ -157,7 +157,7 @@ module.exports = {
                   {
                     title: "Transmuter",
                     path: "/Transmuter/",
-                    children: [                      
+                    children: [
                       ["/Transmuter/DCA", "Dollar Cost Average Preset"],
                       ["/Transmuter/EmailReceiptsPreset", "Email Receipts Preset"]
                     ]
