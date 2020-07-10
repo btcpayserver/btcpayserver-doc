@@ -42,6 +42,16 @@ h5, h6 {
   }
 }
 
+:root[data-btcpay-theme="dark"] #app .navbar .search-box input {
+  background-color: var(--btcpay-color-neutral-800) !important;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-btcpay-theme="dark"]) #app .navbar .search-box input {
+    background-color: var(--btcpay-body-bg) !important;
+  }
+}
+
 // image zoom
 .medium-zoom--opened .medium-zoom-overlay {
   background: var(--btcpay-header-bg) !important;
