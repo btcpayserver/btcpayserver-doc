@@ -17,6 +17,7 @@ General, non-technical questions about BTCPay. What it is, how it works, what ar
 * [How does BTCPay create a new address for each invoice?](./FAQ-General.md#how-does-btcpay-create-a-new-address-for-each-invoice)
 * [Does BTCPay need my private key?](./FAQ-General.md#does-btcpay-need-myprivate-key)
 * [Does BTCPay Server support crypto to fiat conversion?](./FAQ-General.md#does-btcpay-server-support-crypto-to-fiat-conversion)
+* [What if I have a problem paying a BTCPay Server invoice?](./FAQ-General.md#what-if-i-have-a-problem-paying-an-invoice)
 * [What if I have a problem with a paid invoice?](./FAQ-General.md#what-if-i-have-a-problem-with-a-paid-invoice)
 * [Where can I get help and support?](./FAQ-General.md#where-can-i-get-help-and-support)
 * [How can I contribute to BTCPay?](./FAQ-General.md#how-can-i-contribute-to-btcpay)

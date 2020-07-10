@@ -15,6 +15,7 @@ This page contains general questions and answers about BTCPay. What it is, how i
 * [How does BTCPay create a new address for each invoice?](FAQ-General.md#how-does-btcpay-create-a-new-address-for-each-invoice)
 * [Does BTCPay need my private key?](FAQ-General.md#does-btcpay-need-myprivate-key)
 * [Does BTCPay Server support crypto to fiat conversion?](FAQ-General.md#does-btcpay-server-support-crypto-to-fiat-conversion)
+* [What if I have a problem paying a BTCPay Server invoice?](FAQ-General.md#what-if-i-have-a-problem-paying-an-invoice)
 * [What if I have a problem with a paid invoice?](FAQ-General.md#what-if-i-have-a-problem-with-a-paid-invoice)
 * [Where can I get help and support?](FAQ-General.md#where-can-i-get-help-and-support)
 * [How can I contribute to BTCPay?](FAQ-General.md#how-can-i-contribute-to-btcpay)
@@ -88,6 +89,18 @@ It is possible to generate new wallets using BTCPay Server which are hot wallets
 ## Does BTCPay Server support crypto to fiat conversion?
 
 At this time, it is possible to do automated conversions using the BTCPay Server plugin called [BTCTransmuter](https://github.com/btcpayserver/btcTransmuter). Please note this software is currently in *alpha state*. 
+
+## What if I have a problem paying an invoice?
+
+If you have an issue paying a BTCPay Server invoice, it is likely do to one of the following reasons:
+
+1. You are trying to pay using a non-segwit wallet and the merchant's invoices use Bech32 format.
+
+This is a fairly common issue but can be confusing to the user who will likely receive wallet errors similar to `invalid address` when making a payment to an invoice. The solution for this (by the customer) is to use a [SegWit compatible wallet](https://en.bitcoin.it/wiki/Bech32_adoption) which supports sending to Bech32 addresses. The solution for this (by the merchant) is to [modify your extended public key (xpub)](./FAQ-Wallet.md#what-is-a-derivation-scheme) you are providing in your BTCPay Server store to use the format `-[p2sh]` which will wrap your addresses with a Pay to Script Hash and allow both SegWit and non-SegWit wallets to make payments to your addresses. 
+
+2. The invoice receives payment, but it is not paid in full.
+
+Users may try to pay an invoice from an exchange or other custodial service where part of the payment is deducted as a fee from the payment. A solution is to pay the amount due (provided that the invoice has not expired) or contact the merchant for a refund or a way to pay the remainder of payment due.
 
 ## What if I have a problem with a paid invoice?
 
