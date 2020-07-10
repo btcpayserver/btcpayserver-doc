@@ -140,8 +140,6 @@ If you're beginner, take a look at the step by step guide on how to contribute t
             <span>DG Lab</span>
           </a>
         </td>
-      </tr>
-      <tr>
         <td align="center" valign="top">
           <a href="https://www.okcoin.com/" target="_blank">
             <img  src="https://raw.githubusercontent.com/btcpayserver/btcpayserver/master/BTCPayServer/wwwroot/img/okcoin.svg?sanitize=true" alt="DG Lab" height=100>

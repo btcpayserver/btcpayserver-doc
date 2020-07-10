@@ -10,29 +10,21 @@
         :alt="data.heroAlt || $title"
       >
 
-      <h1
-        v-if="data.heroText !== null"
-        id="main-title"
-      >
-        {{ data.heroText || $title }}
-      </h1>
+      <div>
+        <h1
+          v-if="data.heroText !== null"
+          id="main-title"
+        >
+          {{ data.heroText || $title }}
+        </h1>
 
-      <p
-        v-if="data.tagline !== null"
-        class="description"
-      >
-        {{ data.tagline || $description }}
-      </p>
-
-      <p
-        v-if="data.actionText && data.actionLink"
-        class="action"
-      >
-        <NavLink
-          class="action-button"
-          :item="actionLink"
-        />
-      </p>
+        <p
+          v-if="data.tagline !== null"
+          class="description"
+        >
+          {{ data.tagline || $description }}
+        </p>
+      </div>
     </header>
 
     <AlgoliaSearchBox
@@ -112,31 +104,37 @@ export default {
 
 <style lang="stylus">
 .homepage
-  padding $navbarHeight 2rem 0
   max-width $homePageWidth
   margin 0px auto
   display block
+  padding  1rem
   .hero
+    padding 3rem 1rem
+    display flex
+    align-items center
+    justify-content center
     position relative
     text-align center
     img
-      max-width: 100%
-      max-height 140px
-      display block
-      margin 3rem auto 1.5rem
+      max-width 100%
+      max-height 100px
+      min-height 60px
+      margin-right 2.5rem
     h1
-      font-size 3rem
-    h1, .description, .action
-      margin 1.8rem auto
+      margin 0 auto
+      font-size 2.5rem
     .description
-      max-width 35rem
-      font-size 1.6rem
+      font-size 1.25rem
+      margin .5rem auto 0
       line-height 1.3
       color var(--btcpay-color-secondary)
     .btcpay-theme-switch
       position absolute
-      top 0
-      right 0
+      top 1rem
+      right 1rem
+  h3
+    color var(--btcpay-color-secondary)
+    font-weight var(--btcpay-font-weight-normal)
   .action-button
     display inline-block
     font-size 1.2rem
@@ -151,6 +149,12 @@ export default {
     &:hover
       background-color var(--btcpay-color-primary-accent)
 
+  #search-form
+    display block
+    width 80%
+    max-width 500px
+    margin 0 auto
+
   #search-form.search-box
     width 100%
     margin 0 auto
@@ -159,18 +163,20 @@ export default {
     display block !important
 
   #search-form.search-box .algolia-autocomplete .ds-dropdown-menu
-    position: static !important;
-    margin-top: 1rem;
-    max-width: none;
+    position static !important
+    margin-top 1rem
+    max-width none
 
   #search-form.search-box input
     position relative
-    font-size 2rem !important
+    font-size 1.4rem !important
+    display block
     width 100%
-    height 4rem
-    background-size 2rem
+    height 3.5rem
+    background-size 1.4rem
     background-position 1.2rem 50%
-    padding-left 4rem
+    background-color var(--btcpay-header-bg) !important
+    padding-left 3.25rem
 
   .features
     margin-top 2.5rem
@@ -179,16 +185,44 @@ export default {
     flex-wrap wrap
     justify-content center
   .feature
-    flex 1 1 50%
+    flex 0 0 250px
     text-align center
     padding 2rem 1rem
     h2
       font-size 1.4rem
-      font-weight 500
+      font-weight var(--btcpay-font-weight-normal)
       border-bottom none
       margin-top 0
       padding-bottom 0
       color var(--btcpay-color-secondary)
+    .action-button
+      display inline-block
+      width 250px
+
+  .topics
+    text-align center
+    margin-bottom 4rem
+    ul
+      list-style none
+      display flex
+      flex-wrap wrap
+      justify-content center
+      padding 0
+    li
+      flex 0 0 282px
+      text-align center
+      padding 1rem
+    a
+      display flex
+      align-items center
+      justify-content center
+      width 100%
+      height 5.5em
+      border 1px solid var(--btcpay-border-color-medium)
+      border-radius 4px
+      padding 1rem
+      background-color var(--btcpay-header-bg)
+
   .footer
     padding 2.5rem
     border-top 1px solid var(--btcpay-border-color-medium)
@@ -197,29 +231,35 @@ export default {
 
 @media (max-width: $MQMobile)
   .homepage
+    .hero
+      img
+        margin-right 1.6rem
+      h1
+        font-size 1.6rem
+      .description
+        font-size 1rem
     .features
       flex-direction column
-    .feature
-      flex 1 1 100%
+    .feature,
+    .topics div a
+      flex 1 1 40%
+
 
 @media (max-width: $MQMobileNarrow)
   .homepage
-    padding-left 1.5rem
-    padding-right 1.5rem
     .hero
-      img
-        max-height 210px
-        margin 2rem auto 1.2rem
       h1
-        font-size 2rem
-      h1, .description, .action
-        margin 1.2rem auto
+        font-size 1.6rem
+      img
+        margin-right 0
       .description
-        font-size 1.2rem
+        display none
       .action-button
         font-size 1rem
         padding 0.6rem 1.2rem
     .feature
       h2
         font-size 1.25rem
+    .topics div a
+      flex 1 1 100%
 </style>
