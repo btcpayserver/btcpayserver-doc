@@ -48,7 +48,9 @@ The most significant attack vector when using a third-party host is that a malic
 
 In BTCPay Server, a private key is never required. This means that funds are safe even if the server is hacked, but a malicious host can intercept future payments and steal those funds. If you follow your transactions via a watch-only wallet, you should be able to detect such attack quickly and notice that your orders are being marked as paid, whereas you don't see the transactions in your wallet.
 
-If a third-party host asks for your private key or pre-generates one for you, be sure it's a scam. Never share your private key with anyone. It's called private for a reason.
+:::danger
+If a third-party host asks for your private key or pre-generates one for you, be sure it's a scam. Never share your private key with anyone. It's called private for a reason. 
+:::
 
 Xpubkey replacement attack applies to a self-hosted server as well. A malicious hacker can try to hack your server and try to replace an xpubkey.
 

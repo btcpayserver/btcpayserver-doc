@@ -25,7 +25,7 @@ This page contains general questions and answers about BTCPay. What it is, how i
 
 BTCPay Server is a free and open-source cryptocurrency payment processor which allows you to receive payments in Bitcoin (on-chain and via the Lightning Network) and altcoins directly, with no fees, transaction cost or a middleman.
 
-BTCPay is a non-custodial invoicing system which eliminates the involvement of a third-party. Payments with BTCPay go directly to your wallet, which increases the privacy and security. Your private keys are never uploaded to the server. There is no address re-use since each invoice generates a new address deriving from your xpubkey.
+BTCPay is a non-custodial invoicing system which eliminates the involvement of a third-party. Payments with BTCPay go directly to your wallet, which increases the privacy and security. Your private keys are never required to receive payments to your BTCPay Server. There is [no address re-use](#how-does-btcpay-create-a-new-address-for-each-invoice) since each invoice uses a new address for receiving payments to your wallet.
 
 ## Why should I choose BTCPay over other processors?
 
@@ -78,13 +78,17 @@ After a customer makes a payment, the BTCPay Server software notifies your store
 
 ## How does BTCPay create a new address for each invoice?
 
-Merchants connect a wallet to each of their stores that they want to receive payments to. The invoices produced in a store are linked directly to the merchant's connected wallet. The invoice addresses are derived from the [xpubkey](https://bitcointalk.org/index.php?topic=2828777.0) of the wallet associated with the store. The software only needs your extended public key of a wallet to produce new addresses.
+BTCPay Server includes an important feature which eliminates the known privacy issue of address re-use. It does this by providing a new address each time an invoice is requested for payment. This is all done automatically and the merchant does not need to keep track of which addresses belong to which wallet, store, etc. BTCPay Server organizes all the payment information in a detailed invoicing system for the merchant. 
+
+The way it works is fairly simple. Merchants connect a wallet to each of their stores that they want to receive payments to. The invoices produced for store payments are linked directly to the merchant's connected wallet. The invoice addresses are derived from the [xpubkey](https://bitcointalk.org/index.php?topic=2828777.0) of the wallet associated with the store. The software only needs your extended public key of a wallet to produce new addresses for each payment. These addresses are monitored by BTCPay Server as they move through the blockchain. The status of the payments to those addresses are detailed in the merchant's invoice page for each store. 
 
 ## Does BTCPay need my private key?
 
-Private keys are not required for using BTCPay with an existing wallet. The fact that BTCPay Server does not need access to your master private key for on-chain transactions is a huge security advantage. Even if your server gets hacked, your funds from the on-chain transactions are always safe. Securing your on-chain funds comes down to [securing your wallet](https://btcinformation.org/en/secure-your-wallet). Using an [existing wallet with BTCPay Server](https://docs.btcpayserver.org/WalletSetup/#use-an-existing-wallet) only requires the public key from your wallet.
+Private keys are not required for using BTCPay with an existing wallet. The fact that BTCPay Server does not require access to your master private key for on-chain transactions is a huge security advantage. Even if your server gets hacked, your funds from the on-chain transactions are always safe. Securing your on-chain funds comes down to [securing your wallet](https://btcinformation.org/en/secure-your-wallet). Using an [existing wallet with BTCPay Server](https://docs.btcpayserver.org/WalletSetup/#use-an-existing-wallet) only requires the public key from your wallet.
 
-It is possible to generate new wallets using BTCPay Server which are hot wallets stored on the server. If you have a lightning node, BTCPay technically has access to the keys (macaroons) of your Lightning funds as well. If these are features that you would like to use, be sure to understand the [security implications and the risks](https://docs.btcpayserver.org/HotWallet/#security-implications) associated with these experimental features.
+It is possible to generate new wallets using BTCPay Server which are hot wallets stored on the server. If you have a lightning node, BTCPay technically has access to the keys (macaroons) of your Lightning funds as well. If these are features that you would like to use, be sure to understand the [security implications and the risks](https://docs.btcpayserver.org/HotWallet/#security-implications) associated with these experimental features. 
+
+If you're using a Third-Party BTCPay host, you should be familiar with the [security concerns](http://docs.btcpayserver.org/ThirdPartyHosting/#security-concerns) associated with private keys. 
 
 ## Does BTCPay Server support crypto to fiat conversion?
 
