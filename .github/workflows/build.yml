@@ -1,4 +1,4 @@
-name: Node CI
+name: Build
 
 on:
   # Run the build for pushes and pull requests targeting master
@@ -41,8 +41,10 @@ jobs:
         run: npm test
       - name: Build
         run: npm run build
+      # Run linkcheck, propagate linkcheck failure through grep pipe
       - name: Linkcheck
-        run: npm run linkcheck
+        run: set -o pipefail; npm run linkcheck 2>/dev/null | grep "Getting links from\|BROKEN"
+        continue-on-error: true
       # Deploy, limited to the master branch
       - name: Predeploy
         if: success() && github.ref == 'refs/heads/master'
