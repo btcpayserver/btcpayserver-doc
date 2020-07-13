@@ -133,6 +133,7 @@ Store settings explained.
 
 * [How to create a store in BTCPay?](./FAQ-Stores.md#how-to-create-a-store-in-btcpay)
 * [How many stores can I create?](./FAQ-Stores.md#how-many-stores-can-i-create)
+* [Why are invoices without payment showing as complete?](./FAQ-Stores.md#why-are-invoices-without-payment-showing-as-complete)
 * [Store General Settings](./FAQ-Stores.md#store-general-settings)
 * [Add network fee to invoice (vary with mining fees)?](./FAQ-Stores.md#add-network-fee-to-invoice-vary-with-mining-fees)
 * [Allow anyone to create invoice?](./FAQ-Stores.md#allow-anyone-to-create-invoice)
