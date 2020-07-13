@@ -25,9 +25,11 @@ To create your first store, go to > Stores from the header menu and click "creat
 
 There's no limit on a number of stores you can create in BTCPay.
 
-## why are invoices without payment showing as complete?
+## Why are invoices without payment showing as complete?
 
 When an invoice is created to receive a payment value of 0 (zero amount due) the invoice by definition, is already paid. The invoice will appear as complete as soon as it's created. 
+
+The purpose of this type of invoice is typically for when a merchant would like to observe user interest in an event or giveaway using BTCPay Server invoices without requiring the user to provide funds. Another use case is for developers who are testing the invoice process allowing them to bypass providing actual funds to verify the software is working properly. 
 
 ## Store General Settings
 
