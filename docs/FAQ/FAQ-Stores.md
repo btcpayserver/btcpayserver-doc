@@ -4,6 +4,7 @@ This page shows common issues and frequently asked questions about Stores in BTC
 
 * [How to create a store in BTCPay?](./FAQ-Stores.md#how-to-create-a-store-in-btcpay)
 * [How many stores can I create?](./FAQ-Stores.md#how-many-stores-can-i-create)
+* [Why are invoices without payment showing as complete?](./FAQ-Stores.md#why-are-invoices-without-payment-showing-as-complete)
 * [Store General Settings](./FAQ-Stores.md#store-general-settings)
 * [Add network fee to invoice (vary with mining fees)?](./FAQ-Stores.md#add-network-fee-to-invoice-vary-with-mining-fees)
 * [Allow anyone to create invoice?](./FAQ-Stores.md#allow-anyone-to-create-invoice)
@@ -23,6 +24,12 @@ To create your first store, go to > Stores from the header menu and click "creat
 ## How many stores can I create?
 
 There's no limit on a number of stores you can create in BTCPay.
+
+## Why are invoices without payment showing as complete?
+
+When an invoice is created to receive a payment value of 0 (zero amount due) the invoice by definition, is already paid. The invoice will appear as complete as soon as it's created. 
+
+The purpose of this type of invoice is typically for when a merchant would like to observe user interest in an event or giveaway using BTCPay Server invoices without requiring the user to provide funds. Another use case is for developers who are testing the invoice process allowing them to bypass providing actual funds to verify the software is working properly. 
 
 ## Store General Settings
 
