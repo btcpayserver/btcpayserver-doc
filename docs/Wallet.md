@@ -82,7 +82,7 @@ Warning: Despite the fact, in this example, that you entered `1.0` in the amount
 
 ##### RBF (Replace-by-fee)
 
-Replace-by-fee (RBF) is an advanced privacy-enhancing feature that allows you to replace a previously broadcast transaction (while unconfirmed) to randomize your wallet's transaction fingerprint, or simply for replacing it with a higher fee rate to move the transaction higher in the queue of confirmation (mining) priority. This will effectively replace the original transaction as the higher fee rate will be prioritized and once confirmed, invalidating the original one (double spend). 
+Replace-by-fee (RBF) is a Bitcoin protocol feature that allows you to replace a previously broadcast transaction (while unconfirmed) to randomize your wallet's transaction fingerprint, or simply for replacing it with a higher fee rate to move the transaction higher in the queue of confirmation (mining) priority. This will effectively replace the original transaction as the higher fee rate will be prioritized and once confirmed, invalidating the original one (double spend). 
 
 Press the `Advanced Settings` button to view the RBF options:
 
