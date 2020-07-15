@@ -8,6 +8,7 @@ This document contains frequently asked questions related to BTCPay Server's [in
 * [Do I have to use BTCPay Server wallet?](#do-i-have-to-use-btcpay-server-wallet)
 * [Missing payments in wallet?](#missing-payments-in-my-software-or-hardware-wallet)
 * [What is a derivation scheme?](#what-is-a-derivation-scheme)
+* [What is a Replace-By-Fee (RBF) transaction?](#what-is-a-replace-by-fee-rbf-transaction)
 * [I don't see Lightning network payments in BTCPay wallet?](#i-dont-see-lightning-network-payments-in-btcpay-wallet)
 
 ## What is BTCPay Server wallet?
@@ -86,6 +87,12 @@ Using different derivation schemes with your xpub, you can also choose to create
 |Multi-sig P2WSH	| 2-of-xpub1...-xpub2... |
 |Multi-sig P2SH-P2WSH	| 2-of-xpub1...-xpub2...-[p2sh] |
 |Multi-sig P2SH |	2-of-xpub1...-xpub2...-[legacy] |
+
+## What is a Replace-By-Fee (RBF) transaction?
+
+A Replace-By-Fee (RBF) transaction is a feature of the Bitcoin protocol. Learn more about what it is, why it happens and the different types of RBF [here](https://bitcoin.stackexchange.com/a/54457/85016). 
+
+RBF capability is enabled by default when using the BTCPay Server internal wallet, for enhanced privacy. In order to disable it, see the advanced options of the BTCPay Server [internal wallet](../Wallet.md#rbf-replace-by-fee). 
 
 ## I don't see Lightning network payments in BTCPay wallet?
 

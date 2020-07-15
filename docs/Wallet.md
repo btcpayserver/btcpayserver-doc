@@ -40,7 +40,7 @@ To spend the funds, you are required to **sign** the transaction. Transactions c
 
 ##### Signing with HD Private Key or mnemonic seed
 
-If you set up an [existing wallet with your BTCPay Server](./WalletSetup.md#use-an-existing-wallet), you can spend the funds by inputing your private key into an appropriate field. Make sure to set a proper `AccountKeyPath` in Wallet > Settings otherwise you won't be able to spend.
+If you set up an [existing wallet with your BTCPay Server](./WalletSetup.md#use-an-existing-wallet), you can spend the funds by inputting your private key into an appropriate field. Make sure to set a proper `AccountKeyPath` in Wallet > Settings otherwise you won't be able to spend.
 
 ##### Signing with a wallet supporting PSBT
 
@@ -80,11 +80,21 @@ By enabling this feature, BTCPay Server wallet will round up the amount sent to 
 
 Warning: Despite the fact, in this example, that you entered `1.0` in the amount field, the amount that will really be sent to your destination will be `1.1 BTC`.
 
-##### RBF (Replace-by-fee)
+##### RBF (Replace-By-Fee)
+
+Replace-By-Fee (RBF) is a Bitcoin protocol feature that allows you to replace a previously broadcast transaction (while unconfirmed) to randomize your wallet's transaction fingerprint, or simply for replacing it with a higher fee rate to move the transaction higher in the queue of confirmation (mining) priority. This will effectively replace the original transaction as the higher fee rate will be prioritized and once confirmed, invalidating the original one (double spend). 
+
+Press the `Advanced Settings` button to view the RBF options:
+
+![RBF Options](./img/wallet/WalletRBF.png)
+
+- Option 1 (Enabled by Default): Allow the transaction to be replaced automatically for randomization of transaction fingerprint (increased privacy)
+- Option 2: Yes, Allow the transaction to be replaced explicitly (not replaced by default)
+- Option 3: No, Do not allow the transaction to be replaced (ignore replacement)
 
 ##### Coin Selection
 
-Coin selection is a an advanced privacy-enhancing feature that allows you to specifically select coins that you would like to spend when crafting a transaction. For example, paying with coins that are fresh from a coinjoin mix.
+Coin selection is an advanced privacy-enhancing feature that allows you to specifically select coins that you would like to spend when crafting a transaction. For example, paying with coins that are fresh from a coinjoin mix.
 
 To make the selection easier, coin-selection works natively with the wallet labels feature. This allows you to label any incoming funds for smoother UTXO management and spending.
 
