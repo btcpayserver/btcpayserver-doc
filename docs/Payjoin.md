@@ -2,6 +2,10 @@
 
 This document explains how to use BTCPay Server's Payjoin feature. For a detailed, technical explanation of how payjoin is implemented, check [BIP78](https://github.com/bitcoin/bips/blob/master/bip-0078.mediawiki)
 
+You can follow this video to better understand what payjoin is and how to use it.
+
+[![How to use Payjoin with BTCPay Server](https://img.youtube.com/vi/-Wrqv6nSmAM/mqdefault.jpg)](https://www.youtube.com/watch?v=-Wrqv6nSmAM "How to use Payjoin with BTCPay Server")
+
 ## Enabling Payjoin as a merchant
 
 1. Create a store
