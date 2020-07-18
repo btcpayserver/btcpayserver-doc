@@ -52,6 +52,7 @@ module.exports = {
     repo: "btcpayserver/btcpayserver-doc",
     docsDir: "docs",
     editLinks: true,
+    notSatisfiedLinks: true, // our own addition, see theme/components/PageEdit.vue
     sidebarDepth: 0,
     algolia: {
       indexName: 'btcpayserver',
