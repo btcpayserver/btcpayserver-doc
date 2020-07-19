@@ -149,7 +149,7 @@ Covered further in Bitcoin and Lightning Network Daemon sections.
 ##### 👍 Check
 
 ```bash
-~$ netstat -tlnp | grep tor # (lines below correspond to the tor control port and SOCKS proxy)
+~$ sudo netstat -tlnp | grep tor # (lines below correspond to the tor control port and SOCKS proxy)
 tcp        0      0 127.0.0.1:9050          0.0.0.0:*               LISTEN      1376/tor
 tcp        0      0 127.0.0.1:9051          0.0.0.0:*               LISTEN      1376/tor
 ```
