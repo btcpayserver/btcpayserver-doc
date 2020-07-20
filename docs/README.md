@@ -6,15 +6,15 @@ tagline: Start Accepting Bitcoin Payments With 0% Fees & No Third-party
 features:
 - title: User Guide
   details: Guide for users and merchants using BTCPay Server.
-  actionText: User Guide  ❯
+  actionText: User Docs  ❯
   actionLink: /Guide/
 - title: Deployment
   details: Setting up and maintaining your BTCPay Server.
-  actionText: Deployment Guide  ❯
+  actionText: Deployment Docs  ❯
   actionLink: /Deployment/
 - title: Development
   details: Docs for developers building on BTCPay Server.
-  actionText: Developers Guide  ❯
+  actionText: Developers Docs  ❯
   actionLink: /Development/
 footer:  Content Released under MIT license.
 ---
@@ -53,10 +53,10 @@ footer:  Content Released under MIT license.
 </div>
 
 <div class="supporters">
-  <h3>Supporters</h3>
+  <h3>Our Supporters</h3>
   <p>
-    The BTCPay Server Project is proudly supported by these entities through the
-    <a href="https://foundation.btcpayserver.org/" target="_blank" rel="noopener noreferrer">BTCPay Server Foundation</a>.
+    The BTCPay&nbsp;Server Project is proudly supported by these entities through the
+    <a href="https://foundation.btcpayserver.org/" target="_blank" rel="noopener noreferrer">BTCPay&nbsp;Server Foundation</a>.
   </p>
   <table>
     <tbody>
@@ -89,6 +89,8 @@ footer:  Content Released under MIT license.
             <span>DG Lab</span>
           </a>
         </td>
+      </tr>
+      <tr>
         <td align="center" valign="top">
           <a href="https://www.okcoin.com/" target="_blank">
             <img  src="https://raw.githubusercontent.com/btcpayserver/btcpayserver/master/BTCPayServer/wwwroot/img/okcoin.svg?sanitize=true" alt="DG Lab">

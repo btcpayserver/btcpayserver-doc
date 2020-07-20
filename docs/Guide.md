@@ -104,10 +104,10 @@ If you're beginner, take a look at the step by step guide on how to contribute t
 [![Contributing to Documentation](https://img.youtube.com/vi/bSDROcdSSWw/mqdefault.jpg)](https://www.youtube.com/watch?v=bSDROcdSSWw "How BTCPay Server Works")
 
 <div class="supporters">
-  <h3>Supporters</h3>
+  <h3>Our Supporters</h3>
   <p>
-    The BTCPay Server Project is proudly supported by these entities through the
-    <a href="https://foundation.btcpayserver.org/" target="_blank" rel="noopener noreferrer">BTCPay Server Foundation</a>.
+    The BTCPay&nbsp;Server Project is proudly supported by these entities through the
+    <a href="https://foundation.btcpayserver.org/" target="_blank" rel="noopener noreferrer">BTCPay&nbsp;Server Foundation</a>.
   </p>
   <table>
     <tbody>
@@ -140,6 +140,8 @@ If you're beginner, take a look at the step by step guide on how to contribute t
             <span>DG Lab</span>
           </a>
         </td>
+      </tr>
+      <tr>
         <td align="center" valign="top">
           <a href="https://www.okcoin.com/" target="_blank">
             <img  src="https://raw.githubusercontent.com/btcpayserver/btcpayserver/master/BTCPayServer/wwwroot/img/okcoin.svg?sanitize=true" alt="DG Lab" height=100>
