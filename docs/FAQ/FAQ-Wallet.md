@@ -10,6 +10,7 @@ This document contains frequently asked questions related to BTCPay Server's [in
 * [What is a derivation scheme?](#what-is-a-derivation-scheme)
 * [What is a Replace-By-Fee (RBF) transaction?](#what-is-a-replace-by-fee-rbf-transaction)
 * [I don't see Lightning network payments in BTCPay wallet?](#i-dont-see-lightning-network-payments-in-btcpay-wallet)
+* [Is there a mobile app for BTCPay Server wallet?](#is-there-a-mobile-app-for-btcpay-server-wallet)
 
 ## What is BTCPay Server wallet?
 
@@ -99,3 +100,21 @@ RBF capability is enabled by default when using the BTCPay Server internal walle
 The [Lightning Network](../LightningNetwork.md) and the BTCPay Server [wallet](../Wallet.md) are different concepts. The internal BTCPay Server wallet only shows on-chain payments.
 
 In the future they may become unified but for the time being, to manage your Lightning Network funds, use Ride the Lightning, ThunderHub, an externally connected Lightning wallet (Zeus, Zap, Spark, etc), or the Command Line Interface (CLI).
+
+## Is there a mobile app for BTCPay Server wallet?
+
+BTCPay Server is a web app (not a mobile app) and may be viewed using any device that can display a web browser. There are mobile apps which allow you to connect to your BTCPay Server Lightning node (Zeus, Zap, Spark, etc). 
+
+You can also use mobile apps to connect to your Bitcoin full node using either P2P or RPC. If you are on iOS you can easily connect to your Bitcoin full node using Fully Noded. 
+
+To connect your BTCPay node to Fully Noded:
+
+    1. Download Fully Noded from the App store.
+    2. In BTCPay, go to Server Settings > Services and click on the Full Node RPC.
+    3. Open your Fully Noded app, Quick Connect QR.
+    4. Scan the QR code displayed on your BTCPay.
+    5. Your Bitcoin full node is now connected to Fully Noded.
+
+Here are some node statuses and network information you can easily monitor from your Fully Noded:
+
+![Fully Noded](../img/FullyNoded.png)
