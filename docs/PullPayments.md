@@ -110,6 +110,6 @@ The user interface only allows a subset of what is possible.
 Clicking on Confirm selected payouts will use the current exchange rate of your wallet's store settings. The rate is then fixed, even if you don't complete the payment. Payments made at a later time will use this previously confirmed rate.
 :::
 
-## Additionnal use cases for the Pull Payments feature
+## Additional use cases for the Pull Payments feature
 
-The Pull Payment feature can be used in multiple applications, the first one being [Refunds](../Refund.md).
+The Pull Payment feature can be used in multiple applications, the first one being [Refunds](./Refund.md).
