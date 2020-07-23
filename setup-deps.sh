@@ -30,6 +30,7 @@ fi
 
 cd "$BTCPAYSERVER_DIR"
 
+cp SECURITY.md "$DOCS_DIR/BTCPayServer/Security.md"
 cp BTCPayServer.Tests/README.md "$DOCS_DIR/BTCPayServer/LocalDevSetup.md"
 line=$(grep -n '## How to' $DOCS_DIR/BTCPayServer/LocalDevSetup.md | cut -d ":" -f 1)
 { cat "$DOCS_DIR/LocalDev.md"; echo; tail -n +$line "$DOCS_DIR/BTCPayServer/LocalDevSetup.md"; } > "$DOCS_DIR/LocalDevelopment.md"
