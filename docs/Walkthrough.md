@@ -17,13 +17,13 @@ After you created the account on the BTCPay Server instance hosted by yourself o
 * Invoices
 * Payment requests
 * My settings
+* Notifications
 
 ## Server settings
 
 Server settings is something only a server admin can access. If you're using someone else's server, you won't see Server Settings. Inside the settings, you can perform tasks such as controlling users, rates, updating the server, etc. For more information, check [Server Settings FAQ](./FAQ/FAQ-ServerSettings.md)
 
 - Users - Add, remove or manage users of your BTCPay Server.
-- Rates - Set the source for cryptocurrency to fiat rates used by the server.
 - Email server - If you want users to verify e-mail address when registering set up the SMTP settings.
 - Policies - Enable or disable user registration, e-mail verification, search engine indexing, display apps on website root.
 - Services - GRPC, REST and RTL used for connecting your LN node, SSH keys and uploaded file storage setup.
@@ -56,7 +56,12 @@ Each store gets an internal wallet upon adding a derivation scheme. Internal BTC
 Three elements of the internal BTCPay Wallet are:
 * Transaction - Shows your entire transaction history.
 * Send - Used for sending funds out of your wallet (has to be signed and confirmed on a compatible hardware wallet).
+* Receive - Used to manually generate a new address.
 * Rescan - Enables you to import old wallets into BTCPay more easily and solves the gap limit issue most external wallets have.
+* Pull Payments - Used to create and manage Pull Payments. For more information on this feature, check [Pull Payments](PullPayments.md).
+* Payouts - Used to manage Pull Payment requests.
+* PSBT - Used to sign multi-signature transacions through the PSBT standard.
+* Settings - Used to view and adjust additionnal settings for your wallet.
 
 For more information, check [Wallet](./Wallet.md) or [Wallet FAQ](./FAQ/FAQ-Wallet.md)
 
@@ -73,3 +78,10 @@ For more information, check [Payment Requests](PaymentRequests.md)
 ## My Settings
 
 My Settings are user settings. Modify your e-mail address, password or set up two-factor authentication. The U2F feature allows users to further enhance the security of their accounts by physically confirming authentication with a U2F compatible device.
+
+## Notifications
+
+Notifications inform the user that an event has accured on the BTCPay Server instance.
+The event that is notified can for example be a received or failed payment, an overpaid or underpaid invoice.
+
+By clicking on the icon you can access the Notifications page, where you can view past Notifications and optionally delete them.
