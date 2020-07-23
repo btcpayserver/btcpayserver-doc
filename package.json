@@ -35,8 +35,8 @@
     "jest": "26.1.0",
     "markdown-it-implicit-figures": "0.10.0",
     "serve": "11.3.2",
-    "start-server-and-test": "1.11.0",
-    "vuepress": "1.5.1",
+    "start-server-and-test": "1.11.2",
+    "vuepress": "1.5.2",
     "vuepress-plugin-clean-urls": "1.1.1",
     "vuepress-plugin-code-copy": "1.0.6",
     "vuepress-plugin-medium-zoom": "1.1.8"
