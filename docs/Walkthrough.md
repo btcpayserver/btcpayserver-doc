@@ -59,7 +59,7 @@ Three elements of the internal BTCPay Wallet are:
 * Receive - Used to manually generate a new address.
 * Rescan - Enables you to import old wallets into BTCPay more easily and solves the gap limit issue most external wallets have.
 * Pull Payments - Used to create and manage Pull Payments. For more information on this feature, check [Pull Payments](PullPayments.md).
-* Payouts - Used to manage PullPayment requests.
+* Payouts - Used to manage Pull Payment requests.
 * PSBT - Used to sign multi-signature transacions through the PSBT standard.
 * Settings - Used to view and adjust additionnal settings for your wallet.
 
