@@ -85,4 +85,3 @@ Notifications inform the user that an event has accured on the BTCPay Server ins
 The event that is notified can for example be a received or failed payment, an overpaid or underpaid invoice.
 
 By clicking on the icon you can access the Notifications page, where you can view past Notifications and optionally delete them.
-For the time being, it is not possible to select Notification preferences.
