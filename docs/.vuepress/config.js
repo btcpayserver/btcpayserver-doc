@@ -176,6 +176,12 @@ module.exports = {
             children: [
               "/ManualDeploymentExtended"
             ]
+          },
+          {
+            title: "Bonus",
+            children: [
+              "/Bonus/StatusScript"
+            ]
           }
         ]
       },
@@ -226,13 +232,13 @@ module.exports = {
           ["/Apps", "Apps"],
           ["/Wallet", "Wallet"],
           ["/Invoices", "Invoices"],
-		  {
-		    title: "Pull Payments",
-            path: "/PullPayments",
-            children: [
-              ["/Refund", "Refunds"]
-		    ]
-		  },
+          {
+            title: "Pull Payments",
+                path: "/PullPayments",
+                children: [
+                  ["/Refund", "Refunds"]
+            ]
+          },
           ["/PaymentRequests", "Payment Requests"],
           ["/LightningNetwork", "Lightning Network"],
           ["/Accounting", "Accounting"],
