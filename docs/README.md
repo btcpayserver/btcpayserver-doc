@@ -103,73 +103,76 @@ If you're beginner, take a look at the step by step guide on how to contribute t
 
 [![Contributing to Documentation](https://img.youtube.com/vi/bSDROcdSSWw/mqdefault.jpg)](https://www.youtube.com/watch?v=bSDROcdSSWw "How BTCPay Server Works")
 
-### Supporters
-
-The BTCPay Server Project is proudly supported by these entities through the [BTCPay Server Foundation](https://foundation.btcpayserver.org/).
-
-<table>
-  <tbody>
-    <tr>
-    <td align="center" valign="top" width="14.285714285714285714285714285714%">
-        <a href="https://twitter.com/krakenfx" target="_blank">
-          <img  src="https://raw.githubusercontent.com/btcpayserver/btcpayserver-doc/master/docs/img/kraken-logo-stacked-purple-RGB-2019.svg?sanitize=true" alt="Kraken" height=100>
-          <br/>
-          <span>Kraken</span>
-        </a>
-      </td>
-      <td align="center" valign="top" width="14.285714285714285714285714285714%">
-        <a href="https://twitter.com/sqcrypto" target="_blank">
-          <img  src="https://raw.githubusercontent.com/btcpayserver/btcpayserver/master/BTCPayServer/wwwroot/img/squarecrypto.svg?sanitize=true" alt="Square Crypto" height=100>
-          <br/>
-          <span>Square Crypto</span>
-        </a>
-      </td>
-      <td align="center" valign="top" width="14.285714285714285714285714285714%">
-        <a href="https://www.btse.com" target="_blank">
-          <img  src="https://raw.githubusercontent.com/btcpayserver/btcpayserver/master/BTCPayServer/wwwroot/img/btse.svg?sanitize=trueg" alt="BTSE" height=100>
-          <br/>
-          <span>BTSE</span>
-        </a>
-      </td>
-      <td align="center" valign="top" width="14.285714285714285714285714285714%">
-        <a href="https://www.dglab.com/en/" target="_blank">
-          <img  src="https://raw.githubusercontent.com/btcpayserver/btcpayserver/master/BTCPayServer/wwwroot/img/dglab.svg?sanitize=true" alt="DG Lab" height=100>
-          <br/>
-          <span>DG Lab</span>
-        </a>
-      </td>
-    </tr>
-    <tr>
-      <td align="center" valign="top" width="14.285714285714285714285714285714%">
-        <a href="https://www.okcoin.com/" target="_blank">
-          <img  src="https://raw.githubusercontent.com/btcpayserver/btcpayserver/master/BTCPayServer/wwwroot/img/okcoin.svg?sanitize=true" alt="DG Lab" height=100>
-          <br/>
-          <span>OKCoin</span>
-        </a>
-      </td>
-      <td align="center" valign="top" width="14.285714285714285714285714285714%">
-        <a href="https://acinq.co/" target="_blank">
-          <img  src="https://raw.githubusercontent.com/btcpayserver/btcpayserver/master/BTCPayServer/wwwroot/img/acinq-logo.svg?sanitize=true" alt="ACINQ" height=100>
-          <br/>
-          <span>ACINQ</span>
-        </a>
-      </td>
-      <td align="center" valign="top" width="14.285714285714285714285714285714%">
-        <a href="https://lunanode.com" target="_blank">
-          <img  src="https://raw.githubusercontent.com/btcpayserver/btcpayserver/master/BTCPayServer/wwwroot/img/lunanode.svg?sanitize=true" alt="LunaNode" height=100>
-          <br/>
-          <span>LunaNode</span>
-        </a>
-      </td>
-      <td align="center" valign="top" width="14.285714285714285714285714285714%">
-        <a href="https://walletofsatoshi.com/" target="_blank">
-          <img  src="https://raw.githubusercontent.com/btcpayserver/btcpayserver/master/BTCPayServer/wwwroot/img/walletofsatoshi.svg?sanitize=true" alt="Wallet of Satoshi" height=100>
-          <br/>
-          <span>Wallet of Satoshi</span>
-        </a>
-      </td>
-    </tr>
-  </tbody>
-</table>
+<div class="supporters">
+  <h3>Our Supporters</h3>
+  <p>
+    The BTCPay&nbsp;Server Project is proudly supported by these entities through the
+    <a href="https://foundation.btcpayserver.org/" target="_blank" rel="noopener noreferrer">BTCPay&nbsp;Server Foundation</a>.
+  </p>
+  <table>
+    <tbody>
+      <tr>
+        <td align="center" valign="top" width="14.285714285714285714285714285714%">
+          <a href="https://twitter.com/krakenfx" target="_blank">
+            <img  src="https://raw.githubusercontent.com/btcpayserver/btcpayserver-doc/master/docs/img/kraken-logo-stacked-purple-RGB-2019.svg?sanitize=true" alt="Kraken" height=100>
+            <br/>
+            <span>Kraken</span>
+          </a>
+        </td>
+        <td align="center" valign="top" width="14.285714285714285714285714285714%">
+          <a href="https://twitter.com/sqcrypto" target="_blank">
+            <img  src="https://raw.githubusercontent.com/btcpayserver/btcpayserver/master/BTCPayServer/wwwroot/img/squarecrypto.svg?sanitize=true" alt="Square Crypto" height=100>
+            <br/>
+            <span>Square Crypto</span>
+          </a>
+        </td>
+        <td align="center" valign="top" width="14.285714285714285714285714285714%">
+          <a href="https://www.btse.com" target="_blank">
+            <img  src="https://raw.githubusercontent.com/btcpayserver/btcpayserver/master/BTCPayServer/wwwroot/img/btse.svg?sanitize=trueg" alt="BTSE" height=100>
+            <br/>
+            <span>BTSE</span>
+          </a>
+        </td>
+        <td align="center" valign="top" width="14.285714285714285714285714285714%">
+          <a href="https://www.dglab.com/en/" target="_blank">
+            <img  src="https://raw.githubusercontent.com/btcpayserver/btcpayserver/master/BTCPayServer/wwwroot/img/dglab.svg?sanitize=true" alt="DG Lab" height=100>
+            <br/>
+            <span>DG Lab</span>
+          </a>
+        </td>
+      </tr>
+      <tr>
+        <td align="center" valign="top" width="14.285714285714285714285714285714%">
+          <a href="https://www.okcoin.com/" target="_blank">
+            <img  src="https://raw.githubusercontent.com/btcpayserver/btcpayserver/master/BTCPayServer/wwwroot/img/okcoin.svg?sanitize=true" alt="DG Lab" height=100>
+            <br/>
+            <span>OKCoin</span>
+          </a>
+        </td>
+        <td align="center" valign="top" width="14.285714285714285714285714285714%">
+          <a href="https://acinq.co/" target="_blank">
+            <img  src="https://raw.githubusercontent.com/btcpayserver/btcpayserver/master/BTCPayServer/wwwroot/img/acinq-logo.svg?sanitize=true" alt="ACINQ" height=100>
+            <br/>
+            <span>ACINQ</span>
+          </a>
+        </td>
+        <td align="center" valign="top" width="14.285714285714285714285714285714%">
+          <a href="https://lunanode.com" target="_blank">
+            <img  src="https://raw.githubusercontent.com/btcpayserver/btcpayserver/master/BTCPayServer/wwwroot/img/lunanode.svg?sanitize=true" alt="LunaNode" height=100>
+            <br/>
+            <span>LunaNode</span>
+          </a>
+        </td>
+        <td align="center" valign="top" width="14.285714285714285714285714285714%">
+          <a href="https://walletofsatoshi.com/" target="_blank">
+            <img  src="https://raw.githubusercontent.com/btcpayserver/btcpayserver/master/BTCPayServer/wwwroot/img/walletofsatoshi.svg?sanitize=true" alt="Wallet of Satoshi" height=100>
+            <br/>
+            <span>Wallet of Satoshi</span>
+          </a>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
 
 If you'd like to support the project, please visit the [donation page](https://btcpayserver.org/donate/).
