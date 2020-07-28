@@ -360,7 +360,7 @@ nginx version: nginx/1.18.0 (Ubuntu)
 ```
 
 ```bash
-~$ sudo sudo netstat -tlnp | grep nginx
+~$ sudo netstat -tlnp | grep nginx
 tcp        0      0 0.0.0.0:443             0.0.0.0:*               LISTEN      266275/nginx: maste
 tcp        0      0 0.0.0.0:80              0.0.0.0:*               LISTEN      266275/nginx: maste
 tcp6       0      0 :::443                  :::*                    LISTEN      266275/nginx: maste
