@@ -2,6 +2,8 @@
 
 This document lists steps for manually deploying BTCPay Server and additional related components. Following these steps is likely to take a long time. A shorter and more pragmatic approach is to use a [docker based deployment](https://github.com/btcpayserver/btcpayserver-docker).
 
+The instructions also build all the application components from source which can be an advantage for certain audit and/or security scenarios.
+
 :::danger
 #### Not recommended for production use
 
@@ -10,9 +12,9 @@ Manual installation is NOT recommended for production use unless you are very co
 
 ## Installation Steps Overview
 
-The instructions in this article have been tested on Ubuntu 18.04. They should be applicable to other Linux based distributions. They are also based on all components being on the same host or virtual machine. It is possible to split the components across different hosts but these instructions don't describe that.
+The instructions in this article have been tested on Ubuntu 20.04. They should be applicable to other Linux based distributions. They are also based on all components being on the same host or virtual machine. It is possible to split the components across different hosts but these instructions don't describe that.
 
-An example hostname of `mainnet.demo.btcpayserver.org` has been used in certain places in these instructions. It needs to be replaced with the hostname you are using for your BTCPay Server.
+An example hostname of `mainnet.demo.btcpayserver.org` has been used, it needs to be replaced with the hostname you are using for your BTCPay Server.
 
 ### Security
 
@@ -21,7 +23,7 @@ If you do use these instructions to install a BTCPay Server connected to the Bit
 - [BTCPay Wallet FAQ](./FAQ/FAQ-Wallet.md)
 - [Lightning Network and BTCPay (first section)](./LightningNetwork.md)
 
-As an additional aid below is a lit of iptables rules and instructions which should include all the ports that need to be open. **NO WARRANTY**. Use at your own risk, **including risk of locking yourself out**.
+As an additional aid below is a list of iptables rules and instructions which should include all the ports that need to be open. **NO WARRANTY**. Use at your own risk, **including risk of locking yourself out**.
 
 ```bash
 ~$ vi iptables.txt
@@ -34,11 +36,11 @@ As an additional aid below is a lit of iptables rules and instructions which sho
 :FORWARD ACCEPT [0:0]
 :OUTPUT ACCEPT [0:0]
 -A INPUT -i lo -j ACCEPT
--A INPUT -p tcp -m tcp --dport 22 -j ACCEPT
--A INPUT -p tcp -m tcp --dport 80 -j ACCEPT
--A INPUT -p tcp -m tcp --dport 443 -j ACCEPT
--A INPUT -p tcp -m tcp --dport 8333 -j ACCEPT
--A INPUT -p tcp -m tcp --dport 9375 -j ACCEPT
+-A INPUT -p tcp -m tcp --dport 22 -j ACCEPT     # SSH
+-A INPUT -p tcp -m tcp --dport 80 -j ACCEPT     # BTCPay HTTP
+-A INPUT -p tcp -m tcp --dport 443 -j ACCEPT    # BTCPay HTTPS
+-A INPUT -p tcp -m tcp --dport 8333 -j ACCEPT   # Bitcoind P2P
+-A INPUT -p tcp -m tcp --dport 9375 -j ACCEPT   # Lightning P2P
 -A INPUT -m conntrack --ctstate ESTABLISHED,RELATED -j ACCEPT
 COMMIT
 # Completed on Mon May 27 18:48:11 2019
@@ -78,7 +80,7 @@ These instructions configure everything to run under an unprivileged user called
 
 ### Application Components
 
-- Bitcoin Daemon<sup>1</sup>
+- Bitcoin Daemon<sup>1,2</sup>
 - NBXplorer<sup>1,2</sup>
 - BTCPay Server<sup>1,2</sup>
 - Lightning Network Daemon (lnd)<sup>2</sup>
@@ -86,7 +88,7 @@ These instructions configure everything to run under an unprivileged user called
 
 <sup>1</sup> The bare minimum install of a BTCPay server only requires these items. Using a bare minimum configuration reduces the functionality: no lightning payments, no auto-renewal of TLS certificates, less reliable data store, less capable of handling NAT and more.
 
-<sup>2</sup> Built from source code (note if you'd like to build the Bitcoin Daemon from source the instruction are [here](https://github.com/bitcoin/bitcoin/blob/master/doc/build-unix.md)).
+<sup>2</sup> Built from source code.
 
 ## Postgresql
 
@@ -106,10 +108,10 @@ Covered in BTCPay Server Configuration.
 
 ```bash
 ~$ psql --version
-psql (PostgreSQL) 10.8 (Ubuntu 10.8-0ubuntu0.18.04.1)
+psql (PostgreSQL) 12.2 (Ubuntu 12.2-4)
 ~$ sudo systemctl status postgresql
 ~$ sudo -u postgres psql
-psql (10.8 (Ubuntu 10.8-0ubuntu0.18.04.1))
+psql (12.2 (Ubuntu 12.2-4))
 Type "help" for help.
 
 postgres=# \q
@@ -122,17 +124,12 @@ Tor can be used by the following components to provide enhanced privacy and/or h
 - Bitcoin-core Daemon
 - Lightning Network Daemon (lnd).
 
+Additional information running Bitcoin Core with Tor support can be found [here](https://github.com/bitcoin/bitcoin/blob/master/doc/tor.md).
+
 ##### 🚚 Install
 
 ```bash
-~$ sudo apt install apt-transport-https
-~$ sudo vi /etc/apt/sources.list # (and append two lines below)
-deb https://deb.torproject.org/torproject.org bionic main
-deb-src https://deb.torproject.org/torproject.org bionic main
-~$ curl https://deb.torproject.org/torproject.org/A3C4F0F979CAA22CDBA8F512EE8CBC9E886DDD89.asc | gpg --import
-~$ gpg --export A3C4F0F979CAA22CDBA8F512EE8CBC9E886DDD89 | sudo apt-key add -
-~$ sudo apt update
-~$ sudo apt install tor deb.torproject.org-keyring
+~$ sudo apt install tor
 ```
 
 ##### ✒️ Configuration
@@ -149,6 +146,8 @@ Covered further in Bitcoin and Lightning Network Daemon sections.
 ##### 👍 Check
 
 ```bash
+~$ tor --version
+Tor version 0.4.2.7
 ~$ sudo netstat -tlnp | grep tor # (lines below correspond to the tor control port and SOCKS proxy)
 tcp        0      0 127.0.0.1:9050          0.0.0.0:*               LISTEN      1376/tor
 tcp        0      0 127.0.0.1:9051          0.0.0.0:*               LISTEN      1376/tor
@@ -171,9 +170,7 @@ Let's Encrypt is a free service for procuring and renewing TLS certificates. The
 ##### 2. Install Let's Encrypt
 
 ```bash
-~$ sudo add-apt-repository ppa:certbot/certbot
-~$ sudo apt update
-~$ sudo apt install certbot python-certbot-nginx
+~$ sudo apt install certbot python3-certbot-nginx
 ```
 
 ##### ✒️ Configuration
@@ -196,7 +193,7 @@ The configuration file below has been copied from the BTCPay Server docker insta
 Search for "mainnet.demo.btcpayserver.org" and replace it with your own domain name.
 
 ```bash
-~$ vi default.conf
+~$ vi /etc/nginx/conf.d/default.conf
 ```
 
 ```
@@ -257,7 +254,7 @@ proxy_set_header Proxy "";
 
 server {
         server_name mainnet.demo.btcpayserver.org;
-        listen 80 ;
+        listen 80;
         access_log /var/log/nginx/access.log vhost;
         return 301 https://$host$request_uri;
 }
@@ -304,8 +301,14 @@ server {
 ```
 
 ```bash
-~$ sudo cp default.conf /etc/nginx/conf.d
 ~$ sudo systemctl restart nginx
+~$ sudo systemctl status nginx
+```
+
+If there is an error message restarting `nginx` try:
+
+```bash
+sudo journalctl -xe --unit nginx
 ```
 
 ##### 👍 Check
@@ -353,17 +356,36 @@ Congratulations, all renewals succeeded. The following certs have been renewed:
 
 ```bash
 ~$ sudo nginx -v
- nginx version: nginx/1.14.0 (Ubuntu)
+nginx version: nginx/1.18.0 (Ubuntu)
 ```
 
 ```bash
 ~$ sudo sudo netstat -tlnp | grep nginx
- nginx version: nginx/1.14.0 (Ubuntu)
+tcp        0      0 0.0.0.0:443             0.0.0.0:*               LISTEN      266275/nginx: maste
+tcp        0      0 0.0.0.0:80              0.0.0.0:*               LISTEN      266275/nginx: maste
+tcp6       0      0 :::443                  :::*                    LISTEN      266275/nginx: maste
+tcp6       0      0 :::80                   :::*                    LISTEN      266275/nginx: maste
 ```
 
 ```bash
 ~$ sudo journalctl -xe --unit nginx --follow
--- Unit nginx.service has finished starting up.
+--
+-- A start job for unit nginx.service has finished successfully.
+--
+-- The job identifier is 19471.
+```
+
+Attempt to open your web site in a browser. At this point it is expected that a `502 Bad Gateway`error will occur. The `nginx` logs can be checked to verify that the connection attempt was received.
+
+```bash
+~$ tail /var/log/nginx/access.log
+mainnet.demo.btcpayserver.org 127.0.0.1 - - [27/Jul/2020:12:19:57 +0100] "GET / HTTP/2.0" 502 552 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/84.0.4147.89 Safari/537.36"
+```
+
+If there is a problem then the `nginx` error log can also be checked.
+
+```bash
+~$ tail /var/log/nginx/error.log
 ```
 
 ## Bitcoin Daemon
@@ -372,40 +394,53 @@ The gateway to the Bitcoin network for BTCPay Server components.
 
 ##### 🚚 Install
 
-##### 1. Download the latest binaries from a trusted source such as [https://bitcoincore.org/en/download/](https://bitcoincore.org/en/download/)
+The full instructions to build Bitcoin Core from source are [here](https://github.com/bitcoin/bitcoin/blob/master/doc/build-unix.md).
+
+The alternative to building from source is to download a signed binary distribution from [https://bitcoincore.org/en/download/](https://bitcoincore.org/en/download/).
 
 ```bash
-~$ wget https://bitcoincore.org/bin/bitcoin-core-0.19.1/bitcoin-0.19.1-x86_64-linux-gnu.tar.gz
-~$ wget https://bitcoincore.org/bin/bitcoin-core-0.19.1/SHA256SUMS.asc
+~$ wget https://bitcoincore.org/bin/bitcoin-core-0.20.0/bitcoin-0.20.0-x86_64-linux-gnu.tar.gz
+~$ wget https://bitcoincore.org/bin/bitcoin-core-0.20.0/SHA256SUMS.asc
 ```
 
-##### 2. Verify the authenticity of the downloads
+##### 1. Install Pre-requisites and dependencies
 
-The Bitcoin Core code signing key is currently:
-
-> "Wladimir J. van der Laan (Bitcoin Core binary release signing key) <laanwj@gmail.com>")
-> public key: 01EA5486DE18A882D4C2684590C8019E36C2E964
-
-It's advisable to double check the signing key corresponds with other available sources. A good one is [https://github.com/bitcoin/bitcoin/tree/master/contrib/verifybinaries](https://github.com/bitcoin/bitcoin/tree/master/contrib/verifybinaries).
+These instructions do not build the Bitcoin Core GUI components as they are not needed for `BTCPay Server`.
 
 ```bash
-~$ gpg --receive-key 0x01EA5486DE18A882D4C2684590C8019E36C2E964
-~$ gpg --verify SHA256SUMS.asc
- gpg: Good signature from "Wladimir J. van der Laan (Bitcoin Core binary release signing key) <laanwj@gmail.com>" [unknown]
-~$ sha256sum --ignore-missing -c SHA256SUMS.asc
- bitcoin-0.19.1-x86_64-linux-gnu.tar.gz: OK
+~$ sudo apt install build-essential libtool autotools-dev automake pkg-config bsdmainutils python3
+~$ sudo apt install libevent-dev libboost-system-dev libboost-filesystem-dev libboost-test-dev libboost-thread-dev libminiupnpc-dev libzmq3-dev
 ```
 
-##### 3. Install the binaries
+##### 2. Download and Build Source
+
+Before cloning the `Bitcoin Core` repository identify the most recent stable version. One convenient way to do this is on the GitHub repository page look at the latest version under the "Releases" heading. At the time of writing the stable version is `0.20.0`. Adjust the tag in the `git clone` command below for the stable version you want to build.
 
 ```bash
-~$ tar zxf bitcoin-0.19.1-x86_64-linux-gnu.tar.gz
-~$ pushd bitcoin-0.19.1/bin; sudo cp bitcoind bitcoin-cli /usr/bin; popd;
-~$ bitcoind --version
-Bitcoin Core version v0.19.1
+~$ cd src
+~/src$ git clone --depth 1 --branch v0.20.0 https://github.com/bitcoin/bitcoin.git
+~/src$ cd bitcoin
 ```
 
-##### 4. Create the configuration file
+A specific version of the Berkeley DB dependency needs to be installed.
+
+```bash
+~/src/bitcoin$ ./contrib/install_db4.sh `pwd`
+```
+
+Use the `autoconf` scripts to generate the make files and then build.
+
+```bash
+~/src/bitcoin$ ./autogen.sh
+~/src/bitcoin$ export BDB_PREFIX='/home/admin/src/bitcoin/db4'
+~/src/bitcoin$ ./configure BDB_LIBS="-L${BDB_PREFIX}/lib -ldb_cxx-4.8" BDB_CFLAGS="-I${BDB_PREFIX}/include"
+~/src/bitcoin$ make
+~/src/bitcoin$ sudo make install 
+~/src/bitcoin$ bitcoind -version
+Bitcoin Core version v0.20.0
+```
+
+##### 3. Create the configuration file
 
 An example configuration file is available on the Bitcoin Core repository at https://github.com/bitcoin/bitcoin/blob/master/share/examples/bitcoin.conf.
 
@@ -416,14 +451,13 @@ Create a bitcoin.conf file to suit your needs. An example file that is suitable 
 ```
 
 ```
-mainnet=1
 server=1                              # need RPC for btcpay.
 rpcbind=127.0.0.1                     # loopback is default for 0.18.0 but no harm making sure.
 whitelist=127.0.0.1                   # for nbxplorer.
 rpcallowip=127.0.0.1/32               # loopback is default but again no harm.
-disablewallet=1                       # btcpay does not host a bitcoin wallet.
 zmqpubrawblock=tcp://127.0.0.1:28332  # needed for lightning.
 zmqpubrawtx=tcp://127.0.0.1:28333     # needed for lightning.
+#prune=5000                           # Recommended if not enough disk space for full 600+GB blockchain.
 ```
 
 Copy the file to the directory specified in the systemd service file and assign read permissions to all users.
@@ -440,7 +474,7 @@ An example systemd service file is available in the Bitcoin Core  repository at 
 
 Edit the service file depending on your needs.
 
-In the example below the **User** and **Group** have been changed and the permissions on the **ConfigurationDirectory** have been modified to make it usable without needing to explicitly set ownership see [this issue](https://github.com/bitcoin/bitcoin/pull/15995).
+In the example below the **User** and **Group** have been changed to use the `admin` user instead of requiring a new `bitcoin` user. If the `admin` user on your system is intended for running `BTCPayServer` this is a reasonable choice. Otherwise consider creating a dedicated `bitcoin` user.
 
 ```bash
 ~$ vi bitcoind.service
@@ -457,15 +491,19 @@ ExecStart=/usr/bin/bitcoind -daemon \
                             -conf=/etc/bitcoin/bitcoin.conf \
                             -datadir=/var/lib/bitcoind
 
+# Make sure the config directory is readable by the service user
+PermissionsStartOnly=true
+ExecStartPre=/bin/chgrp admin /etc/bitcoin
+
 # Process management
 ####################
 
 Type=forking
 PIDFile=/run/bitcoind/bitcoind.pid
 Restart=on-failure
+TimeoutStopSec=600
 
-# Directory creation and permissions
-####################################
+# Run as admin:admin
 User=admin
 Group=admin
 
@@ -475,7 +513,7 @@ RuntimeDirectoryMode=0710
 
 # /etc/bitcoin
 ConfigurationDirectory=bitcoin
-ConfigurationDirectoryMode=0755
+ConfigurationDirectoryMode=0710
 
 # /var/lib/bitcoind
 StateDirectory=bitcoind
@@ -485,6 +523,9 @@ StateDirectoryMode=0710
 ####################
 # Provide a private /tmp and /var/tmp.
 PrivateTmp=true
+
+# Deny access to /home, /root and /run/user
+ProtectHome=true
 
 # Mount /usr, /boot/ and /etc read-only for the process.
 ProtectSystem=full
@@ -500,9 +541,6 @@ PrivateDevices=true
 # Deny the creation of writable and executable memory mappings.
 MemoryDenyWriteExecute=true
 
-# Deny access to /home.
-ProtectHome=true
-
 [Install]
 WantedBy=multi-user.target
 ```
@@ -511,8 +549,16 @@ Once the service file is ready complete the commands below.
 
 ```bash
 ~$ sudo cp bitcoind.service /etc/systemd/system
-~$ sudo systemctl enable bitcoind
-~$ sudo systemctl start bitcoind
+~$ sudo systemctl enable --now bitcoind
+~$ sudo systemctl status bitcoind
+...
+Jul 26 21:51:52 ubuntu systemd[1]: Started Bitcoin daemon.
+```
+
+If the start attempt shows an error message check the log using:
+
+```bash
+sudo journalctl -xe --unit bitcoind
 ```
 
 ##### 6. Create a symbolic link to the bitcoind cookie file
@@ -536,29 +582,63 @@ It will take Bitcoin anywhere from a few hours to a few days to synchronise the 
 
 ```bash
 ~$ sudo systemctl status bitcoind
-Active: active (running) since Thu 2019-05-23 18:23:48 UTC; 21min ago
+Active: active (running) since Sun 2020-07-26 21:51:52 IST; 2min 47s ago
 ```
 
 ```bash
 ~$ tail /var/lib/bitcoind/debug.log -f
-20800000 log2_work=90.667233 tx=416658838 date='2019-05-23T18:46:27Z' progress=1.000000 cache=13.6MiB(103874txo) warning='32 of last 100 blocks have unexpected version'
+...
+2020-07-26T20:55:09Z UpdateTip: new best=0000000000000361c37dfb6fa905ef967b95411fa96f7dcb4eca5dd4434d9e59 height=126732 version=0x00000001 log2_work=62.952182 tx=560114 date='2011-05-25T21:26:08Z' progress=0.001018 cache=43.6MiB(291168txo)
+...
 ```
 
 ```bash
 ~$ bitcoin-cli getblockchaininfo
 {
   "chain": "main",
-  "blocks": 577444,
-  "headers": 577444,
+  "blocks": 133015,
+  "headers": 640929,
+  "bestblockhash": "0000000000000e81b67de8d61eab726f40585bed954b1dd59f86ab10e4e55398",
+  "difficulty": 876954.4935135372,
+  "mediantime": 1308897947,
+  "verificationprogress": 0.001530462018729556,
   ...
 }
 ```
 
+When the `verificationprogress` gets to either `0.99..` or `1.0` your node has synchronised. To double check you can also use a public block explorer such as [https://blockstream.info/](https://blockstream.info/) to view the latest `Bitcoin` block and compare it to the `blocks` value from the `bitcoin-cli getblockchaininfo` result.
+
 ##### 👍 Check Tor and Bitcoin
 
-If Tor was installed prior to the Bitcoin Daemon then it should have automatically registered and begun listening on a torv2 onion address (note support for torv3 onion addresses is in the [pipeline](https://gist.github.com/laanwj/4fe8470881d7b9499eedc48dc9ef1ad1#file-addrv2-mediawiki)).
+If Tor was installed prior to the Bitcoin Daemon then it should have automatically registered and begun listening on a torv2 onion address (note support for torv3 onion addresses is in the [pipeline](https://github.com/bitcoin/bitcoin/issues/18884)).
 
-The easiest way to get your Bitcoin Daemon torv2 address is from the log file:
+The easiest way to get your Bitcoin Daemon torv2 address is using `bitcoin-cli`:
+
+```bash
+bitcoin-cli getnetworkinfo
+{
+  "version": 200100,
+  "subversion": "/Satoshi:0.20.1/",
+  "protocolversion": 70015,
+  "localservices": "0000000000000409",
+  ...
+    "localaddresses": [
+    {
+      "address": "192.168.11.4",
+      "port": 8333,
+      "score": 1
+    },
+    {
+      "address": "v5j6hfz4xafmeckf.onion",
+      "port": 8333,
+      "score": 156
+    }
+  ],
+  "warnings": ""
+}
+```
+
+An alternative approach is to search the Bitcoin Dameon log file:
 
 ```bash
 ~$ cat /var/lib/bitcoind/debug.log | grep onion
@@ -566,14 +646,28 @@ The easiest way to get your Bitcoin Daemon torv2 address is from the log file:
 2019-05-23T18:24:22Z AddLocal(4d4al7v4hj5p7bb6.onion:8333,4)
 ```
 
+If there is a problem and no onion address can be found in the log file then check for "tor" related error messages:
+
+```bash
+~$ cat /var/lib/bitcoind/debug.log | grep tor
+2020-07-27T08:03:28Z torcontrol thread start
+2020-07-27T08:03:28Z tor: Authentication cookie /run/tor/control.authcookie could not be opened (check permissions)
+```
+
+The above error message can occur if the user accounts running the `Bitcoin` service does not have read access to the `Tor` authentication cookie file, [more info](https://github.com/bitcoin/bitcoin/blob/master/doc/tor.md#3-automatically-listen-on-tor). To fix this particular error add the required user account to the `debian-tor` group.
+
+```bash
+sudo usermod -a -G debian-tor admin
+```
+
 To change your onion address:
 
 ```bash
 ~$ rm /var/lib/bitcoind/onion_private_key
 ~$ sudo systemctl restart bitcoind
-~$ cat /var/lib/bitcoind/debug.log | grep onion
-2019-05-23T19:06:30Z tor: Got service ID zrzoqb4e5bengdju, advertising service zrzoqb4e5bengdju.onion:8333
-2019-05-23T19:06:30Z AddLocal(zrzoqb4e5bengdju.onion:8333,4)
+~$ bitcoin-cli getnetworkinfo | grep onion
+      "name": "onion",
+      "address": "qud5iwbntqxlfwjv.onion",
 ```
 
 To check your onion address from a remote host with tor installed:
@@ -610,19 +704,19 @@ NBXplorer is a dotnet core application that monitors the Bitcoin blockchain for 
 
 ##### 🚚 Install
 
-##### 1. Install dotnet core
+##### 1. Install .Net Core
 
-Check [download link for latest version](https://dotnet.microsoft.com/download/dotnet-core) (.Net Core 3.1 at the time of writing)
+Check [follow the install instuctions](https://docs.microsoft.com/en-us/dotnet/core/install/linux-ubuntu#2004-) (.Net Core 3.1.6 at the time of writing)
 
 ```bash
-~$ wget -q https://packages.microsoft.com/config/ubuntu/18.04/packages-microsoft-prod.deb
+~$ wget https://packages.microsoft.com/config/ubuntu/20.04/packages-microsoft-prod.deb -O packages-microsoft-prod.deb
 ~$ sudo dpkg -i packages-microsoft-prod.deb
-~$ sudo add-apt-repository universe
-~$ sudo apt-get install apt-transport-https
-~$ sudo apt-get update
-~$ sudo apt-get install dotnet-sdk-3.1
+~$ sudo apt update
+~$ sudo apt install apt-transport-https
+~$ sudo apt update
+~$ sudo apt install dotnet-sdk-3.1
 ~$ dotnet --version
-3.1.1
+3.1.302
 ```
 
 ##### 2. Build NBXplorer
@@ -663,8 +757,7 @@ WantedBy=multi-user.target
 
 ```bash
 ~$ sudo cp nbxplorer.service /etc/systemd/system
-~$ sudo systemctl enable nbxplorer
-~$ sudo systemctl start nbxplorer
+~$ sudo systemctl enable --now nbxplorer
 ```
 
 ##### 👍 Check
@@ -697,8 +790,7 @@ Updating could break things. Be careful on a live system.
 
 ## BTCPay Server
 
-Like NBXplorer the BTCPay Server application is also dotnet core. The install steps assume dotnet core was installed in the
-previous step.
+Like NBXplorer the BTCPay Server application is also .NET Core. The install steps assume .NET Core was previosuly installed.
 
 ##### 🚚 Install
 
@@ -713,7 +805,7 @@ previous step.
 
 ##### 2. Create Postgresql Database.
 
-By default BTCPay Server will store data in a single SQLite file. A more robust option is to use Postgresql which requires the appropriate database and user exist.
+By default BTCPay Server will store data in a single SQLite file. A more robust option is to use Postgresql which requires the appropriate database and user to exist.
 
 ```bash
 ~$ sudo -u postgres psql
@@ -732,9 +824,6 @@ $ vi btcpay.config
 ```
 ### Database ###
 postgres=User ID=btcpay;Password=urpassword;Host=localhost;Port=5432;Database=btcpay;
-
-### Application ###
-rootPath="/btcpay"  # if you'd like to run BTCPay Server along side other apps
 ```
 
 ```bash
@@ -759,6 +848,7 @@ After=nbxplorer.service
 
 [Service]
 WorkingDirectory=/home/admin/src/btcpayserver
+Environment=BTCPAY_BTCEXTERNALRTL="server=https://mainnet.demo.btcpayserver.org/rtl;cookiefile=/var/lib/rtl/.cookie"
 ExecStart=/home/admin/src/btcpayserver/run.sh --conf=/etc/btcpay/btcpay.config
 User=admin
 Group=admin
@@ -772,8 +862,7 @@ WantedBy=multi-user.target
 
 ```bash
 ~$ sudo cp btcpay.service /etc/systemd/system
-~$ sudo systemctl enable btcpay
-~$ sudo systemctl start btcpay
+~$ sudo systemctl enable --now btcpay
 ```
 
 ##### 👍 Check
@@ -790,7 +879,7 @@ If it doesn't start correctly stop the service and run the application directly 
 
 ```bash
 ~$ sudo systemctl stop btcpay
-~$ cd ~; pushd ~/src/btcpayserver --conf=/etc/btcpay/btcpay.config; ./run.sh; popd;
+~$ cd ~; pushd ~/src/btcpayserver; ./run.sh --conf=/etc/btcpay/btcpay.config; popd;
 ```
 
 An example of checking information in the database.
@@ -802,6 +891,8 @@ btcpay=# \dt
 btcpay=# select * from "Invoices";
 btcpay=# \q
 ```
+
+Attempting to open your BTCPay Server domain in a browser now should show the "Welcome to your BTCPay Server" page. If you are not using a Lightning Node this is the end of the install.
 
 ##### 🚨 Update
 
@@ -817,30 +908,34 @@ Updating could break things. Be careful on a live system.
 
 ##### 🚚 Install
 
+Full [instructions](https://github.com/lightningnetwork/lnd/blob/master/docs/INSTALL.md).
+
 ##### 1. Install Go
 
 ```bash
 ~$ sudo apt install make
-~$ wget https://dl.google.com/go/go1.12.3.linux-amd64.tar.gz
-~$ sha256sum go1.12.3.linux-amd64.tar.gz | awk -F " " '{ print $1 }'
- 3924819eed16e55114f02d25d03e77c916ec40b7fd15c8acb5838b63135b03df
-~$ sudo tar -C /usr/local -xzf go1.12.3.linux-amd64.tar.gz
-~$ export PATH=$PATH:/usr/local/go/bin:$GOPATH/bin
+~$ wget https://dl.google.com/go/go1.13.linux-amd64.tar.gz
+~$ sha256sum go1.13.linux-amd64.tar.gz
+68a2297eb099d1a76097905a2ce334e3155004ec08cdea85f24527be3c48e856  go1.13.linux-amd64.tar.gz
+~$ sudo tar -C /usr/local -xzf go1.13.linux-amd64.tar.gz
+~$ export PATH=$PATH:/usr/local/go/bin
 ~$ export GOPATH=~/gocode
+~$ export PATH=$PATH:$GOPATH/bin
 ~$ go version
- go version go1.12.3 linux/amd64
+go version go1.13 linux/amd64
  ```
 
 ##### 2. Build and install lnd
 
 ```bash
-~$ go get -d github.com/lightningnetwork/lnd
-~$ cd $GOPATH/src/github.com/lightningnetwork/lnd
+~$ cd ~; mkdir -p src; cd src
+~$ git clone https://github.com/lightningnetwork/lnd
+~$ cd lnd
 ~$ make
-~$ make install # installs to /home/admin/gocode/bin which is $GOPATH/bin
-~$ lnd --version
-lnd version 0.6.1-beta commit=v0.6.1-beta-12-gf8c824fb1d6c5ef8524148f59ea5650af65af98b
+~$ make install # installs to a directory in $GOPATH/bin
 ~$ sudo cp $GOPATH/bin/lnd $GOPATH/bin/lncli /usr/bin
+~$ lnd --version
+lnd version 0.10.99-beta commit=clock/v1.0.0-229-ge64e71d86dc1ac716c30a80f85a22e8fb544697f
 ```
 
 ##### 3. Create a symbolic link to the Bitcoin configuration file.
@@ -922,8 +1017,7 @@ WantedBy=multi-user.target
 
 ```bash
 ~$ sudo cp lnd.service /etc/systemd/system
-~$ sudo systemctl enable lnd
-~$ sudo systemctl start lnd
+~$ sudo systemctl enable --now lnd
 ```
 
 ##### ✒️ Configuration
@@ -951,7 +1045,16 @@ The first time the lnd is started a new wallet must be created and the backup se
 ```bash
 ~$ lncli create
 Input wallet password:
-Confirm wallet password:
+Confirm password:
+
+Do you have an existing cipher seed mnemonic you want to use? (Enter y/n): n
+
+Your cipher seed can optionally be encrypted.
+Input your passphrase if you wish to encrypt it (or press enter to proceed without a cipher seed passphrase):
+
+Generating fresh cipher seed...
+
+!!!YOU MUST WRITE DOWN THIS SEED TO BE ABLE TO RESTORE THE WALLET!!!
 ---------------BEGIN LND CIPHER SEED---------------
  1. above      2. catch    3. start     4. tape
  5. sound      6. friend   7. water     8. royal
@@ -960,6 +1063,10 @@ Confirm wallet password:
 17. idle      18. catch   19. robot    20. clay
 21. resemble  22. angry   23. work     24. until
 ---------------END LND CIPHER SEED-----------------
+
+!!!YOU MUST WRITE DOWN THIS SEED TO BE ABLE TO RESTORE THE WALLET!!!
+
+lnd successfully initialized!
 ```
 
 Note that if the symbolic directory link from the previous step **was not** created the command is:
@@ -980,8 +1087,9 @@ Every time lnd is restarted the wallet needs to be unlocked. This is not ideal f
 
 ```bash
 ~$ lncli getinfo
- {
-   "version": "0.6.1-beta commit=v0.6.1-beta-12-gf8c824fb1d6c5ef8524148f59ea5650af65af98b",
+{
+    "version": "0.10.99-beta commit=clock/v1.0.0-229-ge64e71d86dc1ac716c30a80f85a22e8fb544697f",
+    "commit_hash": "e64e71d86dc1ac716c30a80f85a22e8fb544697f",
    ...
  }
 ```
@@ -991,13 +1099,20 @@ Check the service:
 ```bash
 ~$ sudo journalctl -xe --unit lnd --follow
 ...
-May 24 19:21:54 btc lnd[8067]: 2019-05-24 19:21:54.683 [INF] DISC: Broadcasting batch of 27 new announcements
-May 24 19:23:24 btc lnd[8067]: 2019-05-24 19:23:24.683 [INF] DISC: Broadcasting batch of 163 new announcements
+Jul 27 15:46:29 ubuntu lnd[654474]: 2020-07-27 15:46:29.909 [INF] DISC: Attempting to bootstrap with: BOLT-0010 DNS Seed: [[nodes.lightning.directory soa.nodes.lightning.directory] [lseed.bitcoinstats.com ]]
+Jul 27 15:49:41 ubuntu lnd[654474]: 2020-07-27 15:49:41.939 [INF] DISC: Attempting to bootstrap with: Authenticated Channel Graph
+Jul 27 15:49:41 ubuntu lnd[654474]: 2020-07-27 15:49:41.940 [ERR] SRVR: Unable to retrieve initial bootstrap peers: no addresses found
+```
+
+The **Lightning Node Connection String** to use with `BTCPay Server` is:
+
+```bash
+type=lnd-rest;server=https://127.0.0.1:8080/;macaroonfilepath=/home/admin/.lnd/data/chain/bitcoin/mainnet/admin.macaroon;allowinsecure=true
 ```
 
 ##### 👍 Check Tor and LND
 
-As with the Bitcoin daemon if Tor is installed and the configuration file enables it (the one above does) then lnd will automatically register an onion address. In lnd's case torv3 addresses are supported.
+As with the Bitcoin daemon if Tor is installed and the configuration file enables it (the one above does) then `lnd`  will automatically register an onion address. In lnd's case torv3 addresses are supported.
 
 The torv3 onion address below is a lot longer than the torv2 one from the Bitcoin daemon section (16 characters compared to 56 characters).
 
@@ -1014,15 +1129,16 @@ Updating could break things. Be careful on a live system.
 
 ```bash
 ~$ sudo systemctl stop lnd
-~$ export PATH=$PATH:/usr/local/go/bin:$GOPATH/bin
+~$ export PATH=$PATH:/usr/local/go/bin
 ~$ export GOPATH=~/gocode
-~$ go get -d github.com/lightningnetwork/lnd
-~$ cd $GOPATH/src/github.com/lightningnetwork/lnd
+~$ export PATH=$PATH:$GOPATH/bin
+~$ cd ~/src/lnd
+~$ git pull
 ~$ make
-~$ make install # installs to /home/admin/gocode/bin which is $GOPATH/bin
-~$ lnd --version
-lnd version 0.6.1-beta commit=v0.6.1-beta-12-gf8c824fb1d6c5ef8524148f59ea5650af65af98b
+~$ make install # installs to a directory in $GOPATH/bin
 ~$ sudo cp $GOPATH/bin/lnd $GOPATH/bin/lncli /usr/bin
+~$ lnd --version
+lnd version 0.10.99-beta commit=clock/v1.0.0-229-ge64e71d86dc1ac716c30a80f85a22e8fb544697f
 ~$ sudo systemctl start lnd
 ```
 
@@ -1032,7 +1148,7 @@ After the daemon has been restarted the wallet needs to be unlocked:
 ~$ lncli unlock
 ```
 
-If RTL is installed it may have stopped when lnd disappeared so it will also need to be restarted.
+If `Ride The Lightning (RTL)` is installed, see next section, it may have stopped when lnd disappeared so it will also need to be restarted.
 
 ```bash
 ~$ sudo systemctl start rtl
@@ -1056,54 +1172,63 @@ The advantage of the work that has gone into BTCPay Server is that the RTL web p
 
 ```bash
 ~$ cd ~/src
-~$ git clone https://github.com/ShahanaFarooqui/RTL.git
+~$ git clone https://github.com/Ride-The-Lightning/RTL.git
 ~$ cd RTL
-~$ npm install
+~$ npm install --only=prod
 ```
 
 ##### 3. Create a configuration file
 
-A sample RTL.conf configuration file is available [here](https://github.com/Ride-The-Lightning/RTL/blob/master/sample-RTL-Config.json).
+Copy the sample config file from `sample-RTL-Config.json` and adjust accordingly. An example that works with the rest of the instructions in this document is shown below.
 
 ```bash
-~$ vi RTL.conf
+~$ cp src/RTL/sample-RTL-Config.json RTL-Config.json
+~$ vi RTL-Config.json
 ```
 
-```ini
-[SSO]
-rtlSSO=0
-rtlCookiePath=/var/lib/rtl
-logoutRedirectLink=/login
-
-[Authentication]
-macaroonPath=/var/lib/lnd/data/chain/bitcoin/mainnet
-lndConfigPath=/etc/lnd/lnd.conf
-nodeAuthType=CUSTOM
-rtlPass=password
-
-[Settings]
-flgSidenavOpened=true
-flgSidenavPinned=true
-menu=Vertical
-menuType=Regular
-theme=dark-blue
-satsToBTC=false
-bitcoindConfigPath=/etc/bitcoin/bitcoin.conf
-enableLogging=true
-port=3000
-lndServerUrl=https://localhost:8080/v1
+```json
+{
+  "port": "3000",
+  "defaultNodeIndex": 1,
+  "SSO": {
+    "rtlSSO": 1,
+    "rtlCookiePath": "/var/lib/rtl/.cookie",  # Needs to match the value in BTCPay systemd settings.
+    "logoutRedirectLink": "https://mainnet.demo.btcpayserver.org/Account/login"
+  },
+  "nodes": [
+    {
+      "index": 1,
+      "lnNode": "Node 1",
+      "lnImplementation": "LND",
+      "Authentication": {
+        "macaroonPath": "/var/lib/lnd/data/chain/bitcoin/mainnet",
+        "configPath": "/etc/lnd/lnd.conf"
+      },
+      "Settings": {
+        "userPersona": "MERCHANT",
+        "themeMode": "DAY",
+        "themeColor": "PURPLE",
+        "channelBackupPath": "/home/admin/rtl/backup/node-1",
+        "enableLogging": false,
+        "lnServerUrl": "https://localhost:8080/v1",
+        "swapServerUrl": "http://localhost:8081/v1",
+        "fiatConversion": false
+      }
+    }
+  ]
+}
 ```
 
 Note that RTL has different behaviour and requirements compared to the other services documented in theses instructions, specifically:
 
 1. The configuration file needs to exist in RTL's data directory,
-2. The RTL process writes to the configuration file. The main change it will do is convert any cleartext password set with `rtlPass` to a hashed version with `rtlPassHashed`.
+2. The RTL process may write update to the configuration file.
 
 ```bash
 ~$ sudo mkdir -p /var/lib/rtl
+~$ sudo cp ~/RTL-Config.json /var/lib/rtl
 ~$ sudo chown admin:admin -R /var/lib/rtl
-~$ sudo cp ~/RTL.conf /var/lib/rtl
-~$ sudo chmod 644 /var/lib/rtl/RTL.conf
+~$ sudo chmod 644 /var/lib/rtl/RTL-Config.json
 ```
 
 ##### 4. Create a systemd service
@@ -1119,7 +1244,7 @@ Requires=lnd.service
 After=lnd.service
 
 [Service]
-Environment="RTL_CONFIG_PATH=/var/lib/rtl/RTL.conf"
+Environment="RTL_CONFIG_PATH=/var/lib/rtl"
 WorkingDirectory=/var/lib/rtl
 ExecStart=/usr/bin/node /home/admin/src/RTL/rtl
 User=admin
@@ -1134,8 +1259,7 @@ WantedBy=multi-user.target
 
 ```bash
 ~$ sudo cp rtl.service /etc/systemd/system
-~$ sudo systemctl enable rtl
-~$ sudo systemctl start rtl
+~$ sudo systemctl enable --now rtl
 ```
 
 ##### 👍 Check
@@ -1145,17 +1269,18 @@ Check the service:
 ```bash
 ~$ sudo journalctl -xe --unit rtl --follow
 ...
-May 24 19:38:01 btc node[8072]: Console:
-May 24 19:38:01 btc node[8072]: Transactions: 10: 1558726681366: INFO: Transaction Received: {}
+Jul 27 18:27:52 ubuntu node[988638]: Server is up and running, please open the UI at http://localhost:3000
 ```
 
 If it doesn't start correctly stop the service and run the application directly to get any error messages.
 
 ```bash
 ~$ sudo systemctl stop rtl
-~$ export RTL_CONFIG_PATH=/var/lib/rtl/RTL.conf; pushd ~/src/RTL; node rtl; popd;
+~$ export RTL_CONFIG_PATH=/var/lib/rtl; pushd ~/src/RTL; node rtl; popd;
 Server is up and running, please open the UI at http://localhost:3000
 ```
+
+From the `BTCPay Server` web page the `RTL` interface should be accessible from `Server Settings->Services` under the "Crypto services exposed by your server" heading. 
 
 ##### 🚨 Update
 
