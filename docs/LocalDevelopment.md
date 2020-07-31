@@ -115,7 +115,7 @@ dotnet test -c Altcoins-Debug
 
 ## HTTPS support for local development
 
-Some browser security features may requires that you use HTTPS to be properly tested.
+Some browser security features may require that you use HTTPS to be properly tested.
 
 In this case, use `Bitcoin-HTTPS` (or `Altcoin-HTTPS`) launch profile. This will create a self signed certificate for your development purpose.
 
@@ -128,7 +128,7 @@ dotnet dev-certs https --trust
 
 ## Test utilities
 
-There is some useful scripts that you can use during development time to simulate payments.
+There are some useful scripts that you can use during development time to simulate payments.
 
 Please, see [README of the test project](https://github.com/btcpayserver/btcpayserver/blob/master/BTCPayServer.Tests/README.md).
 
