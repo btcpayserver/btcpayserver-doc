@@ -14,15 +14,15 @@ This guide assumes, you have a Coldcard wallet set up. To configure the Coldcard
 4. In BTCPay Server, Store Settings > General > Derivation Scheme > Import from Hardware Device > Coldcard
 5. Browse and select the wallet file earlier exported from Coldcard.
 6. Click `Submit`
-7. Confirm the address match in BTCPay.
+7. Confirm the address match in BTCPay Server.
 
-The Coldcard is now connected to your BTCPay. Payments go directly to Coldcard. The video below shows how to connect your BTCPay store to your Coldcard.
+The Coldcard is now connected to your BTCPay Server. Payments go directly to Coldcard. The video below shows how to connect your BTCPay Server store to your Coldcard.
 
-[![BTCPay and Coldcard](https://img.youtube.com/vi/N0eVwdP_7EQ/mqdefault.jpg)](https://www.youtube.com/watch?v=N0eVwdP_7EQ "Connecting Coldcard to BTCPay Server")
+[![BTCPay Server and Coldcard](https://img.youtube.com/vi/N0eVwdP_7EQ/mqdefault.jpg)](https://www.youtube.com/watch?v=N0eVwdP_7EQ "Connecting Coldcard to BTCPay Server")
 
 ### Spending from BTCPay Server wallet with Coldcard (PSBT)
 
-Once there are some funds in received to your BTCPay Wallet connected to Coldcard, you can spend them by using [PSBT](https://github.com/bitcoin/bitcoin/blob/master/doc/psbt.md#psbt-in-general) (Partially Signed Bitcoin Transactions). This allows completely offline signing of your transactions, without ever having to connect your hardware wallet to the internet.
+Once there are some funds in received to your BTCPay Server Wallet connected to Coldcard, you can spend them by using [PSBT](https://github.com/bitcoin/bitcoin/blob/master/doc/psbt.md#psbt-in-general) (Partially Signed Bitcoin Transactions). This allows completely offline signing of your transactions, without ever having to connect your hardware wallet to the internet.
 
 1. Wallets > Manage > Send
 2. Fill in destination address and the amount
@@ -33,11 +33,11 @@ Once there are some funds in received to your BTCPay Wallet connected to Coldcar
 7. In Coldcard, click on the `Ready To Sign`
 8. Review the transaction information, and click OK button to sign it.
 9. Transaction will be saved onto MicroSD.
-10. In BTCPay, go to PSBT tab of the wallet and upload the signed PSBT file.
+10. In BTCPay Server, go to PSBT tab of the wallet and upload the signed PSBT file.
 11. Click `Decode`
 12. Click `Other Actions` and select `Review`
 13. Review your transactions and click `Broadcast` to broadcast it on the network.
 
-The video below shows how to connect your BTCPay store to your Coldcard.
+The video below shows how to connect your BTCPay Server store to your Coldcard.
 
 [![BTCPay Server and Coldcard](https://img.youtube.com/vi/oK0h-76Giaw/mqdefault.jpg)](https://www.youtube.com/watch?v=oK0h-76Giaw "PSBT Coldcard and BTCPay Server")
