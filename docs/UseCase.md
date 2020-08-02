@@ -2,7 +2,7 @@
 
 Built with the community in mind, BTCPay Server is a feature-rich software with plenty of use-cases that can solve problems for different types of users.
 
-![BTCPay UseCase Infographic](./img/BTCPayUseCaseInfographic.png)
+![BTCPay Server UseCase Infographic](./img/BTCPayUseCaseInfographic.png)
 
 The software usage is by no means limited to the groups of users mentioned in this document.
 
@@ -42,19 +42,19 @@ Merchants or freelancers can use payment requests for bill pay services. Payment
 
 ## Lightning Network payments
 
-BTCPay Server offers a very easy way to get started with receiving or sending payments on the Lightning Network. You can use and experiment with this innovative second-layer solution build on top of Bitcoin by [following this guide](./LightningNetwork.md). Both merchants and customers can use BTCPay to receive or make payments off-chain with instant confirmations and neglectable network fees.
+BTCPay Server offers a very easy way to get started with receiving or sending payments on the Lightning Network. You can use and experiment with this innovative second-layer solution build on top of Bitcoin by [following this guide](./LightningNetwork.md). Both merchants and customers can use BTCPay Server to receive or make payments off-chain with instant confirmations and neglectable network fees.
 
 ## Charities and Content Creators (Donations)
 
 Charities, non-profits, content creators, and other organizations that want to accept cryptocurrency donations in a more private way than the traditional single bitcoin address method can utilize the [Pay Button](./WhatsNext.md#creating-the-pay-button), [POS app](./WhatsNext.md#creating-the-point-of-sale-app), and [Crowdfunding app](./Apps.md#crowdfunding-app) for a better user experience.
 
-Benefits of using BTCPay for accepting donations:
+Benefits of using BTCPay Server for accepting donations:
 
 * Saving money (no fees, no subscriptions)
 * Cutting out the middle-man (Payments go directly to their wallet)
 * Enhancing privacy for them and their donors (no address re-use, no IP leaks to third parties)
 
-It is particularly important to mention that BTCPay Sever prevents address reuse, as many people has been reusing address for donations in the past. Here is why you SHOULD NOT reuse Bitcoin address:
+It is particularly important to mention that BTCPay Server prevents address reuse, as many people has been reusing address for donations in the past. Here is why you SHOULD NOT reuse Bitcoin address:
 
 * Privacy: reusing the same address for donations not only makes it incredibly easy to link it to your identity, it also compromises the privacy of your donors and every person that interacts with you
 * Security: by compromising your privacy, address reuse increases your attack surface, as people that want to steal from you or harm you would have A LOT of information about you and your donors
@@ -72,13 +72,13 @@ Take a look at the list of [third-party hosts](./ThirdPartyHosting.md).
 
 ## Cryptocurrency Exchanges
 
-The [number of merchants](https://directory.btcpayserver.org) using BTCPay Server grows each day, and cryptocurrency exchanges could benefit from it by developing integration with BTCPay and allow instant conversion of cryptocurrency payments into local fiat currencies.
+The [number of merchants](https://directory.btcpayserver.org) using BTCPay Server grows each day, and cryptocurrency exchanges could benefit from it by developing integration with BTCPay Server and allow instant conversion of cryptocurrency payments into local fiat currencies.
 
 Being an open-sourced project, BTCPay Server doesn't have the power to impose anything on exchanges, meaning that any of them could build on top of it, regardless of their size or the country they operate.
 
 ## Hosting Providers
 
-Hosting providers can (and some already did) create easy 1-click BTCPay deployment solutions for their customers. With the growing interest in BTCPay Server, hosting companies can tap into this source of new customers and make money by hosting easily-deployable BTCPay instances for merchants.
+Hosting providers can (and some already did) create easy 1-click BTCPay Server deployment solutions for their customers. With the growing interest in BTCPay Server, hosting companies can tap into this source of new customers and make money by hosting easily-deployable BTCPay Server instances for merchants.
 
 ## Developers
 
@@ -86,4 +86,4 @@ BTCPay Server community is amiable and open-minded. Developers can not only lear
 
 ---
 
-These are some of the many ways in which you can use BTCPay. Unleash your creativity and feel free to build your own solutions to solve problems.
+These are some of the many ways in which you can use BTCPay Server. Unleash your creativity and feel free to build your own solutions to solve problems.
