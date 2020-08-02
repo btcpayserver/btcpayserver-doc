@@ -18,7 +18,7 @@ Invoices can be exported in CSV or JSON format. For more information about invoi
 
 ## Invoice Statuses
 
-Table below lists and describes common invoice statuses in BTCPay and suggests common actions. Actions are just recommendations. It's up to users to define best course of action for their use-case and business.
+Table below lists and describes common invoice statuses in BTCPay Server and suggests common actions. Actions are just recommendations. It's up to users to define best course of action for their use-case and business.
 
 | Invoice Status         | Description                                                  | Action        |
 | ---------------------- | ------------------------------------------------------------ | ------------- |
@@ -26,7 +26,7 @@ Table below lists and describes common invoice statuses in BTCPay and suggests c
 | New (paidPartial)      | Not paid in full, invoice timer still has not expired        | None          |
 | Expired                | Not paid, invoice timer expired                              | None          |
 | Paid                   | Paid, but has not received sufficient amount of confirmations specified in the Store Settings | Wait for confirmations (The invoice should become - complete) |
-| Confirmed*             | Paid, confirmed, by reaching the number of confirmations in store settings but has not received the default number (6) of confirmations in BTCPay. | Wait for remaining confirmations, or proceed if store settings confirmations is acceptable  |
+| Confirmed*             | Paid, confirmed, by reaching the number of confirmations in store settings but has not received the default number (6) of confirmations in BTCPay Server. | Wait for remaining confirmations, or proceed if store settings confirmations is acceptable  |
 | Complete               | Paid, completed, received sufficient amount of confirmations in store | Fulfil the order |
 | Complete (marked)      | Status was manually changed to complete from an invalid or expired status | Store admin has marked the payment as complete |
 | Expired (paidPartial)**| Paid, not in full amount, and expired                    | Contact buyer to arrange a refund or ask for them to pay their due. Optionally mark invoice as complete or invalid |
