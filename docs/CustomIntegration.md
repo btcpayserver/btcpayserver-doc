@@ -1,10 +1,10 @@
 # Using the BTCPay API for Custom Integration
 
-BTCPay implements the same API as Bitpay for creating and managing invoices.
+BTCPay Server implements the same API as Bitpay for creating and managing invoices.
 
-Migrating from BitPay to BTCPay normally is as easy as changing a URL.
+Migrating from BitPay to BTCPay Server normally is as easy as changing a URL.
 
-While Bitpay only allows one account for one merchant, BTCPay allows a user to manage multiple stores.
+While Bitpay only allows one account for one merchant, BTCPay Server allows a user to manage multiple stores.
 
 # Official Client Libraries
 
@@ -18,11 +18,11 @@ If not using one of the libraries above, the REST API can be accessed manually.
 
 The authentication mechanism is using `BitId`.
 
-With `BitId`, the `client` of the API (like an e-commerce plugin) generates a private key, then informs the `server` (BTCPay) about the `public key`.
+With `BitId`, the `client` of the API (like an e-commerce plugin) generates a private key, then informs the `server` (BTCPay Server) about the `public key`.
 
 Every requests to the API sent by the client is signed with the client's `private key`.
 
-We call `pairing` the process to inform BTCPay about your `public key`.
+We call `pairing` the process to inform BTCPay Server about your `public key`.
 
 ## Pairing process
 
@@ -56,11 +56,11 @@ The second way, is to generate your private key via some bitcoin library then:
 
 ## Note
 
-BTCPay Server has an API compatible with Bitpay; changing your e-commerce application from Bitpay to BTCPay should take minimal effort.
+BTCPay Server has an API compatible with Bitpay; changing your e-commerce application from Bitpay to BTCPay Server should take minimal effort.
 
 You can read the full API documentation [on Bitpay's website](https://bitpay.com/api#resource-Invoices).
 
-There is only one difference: Bitpay only allows one account for one merchant, BTCPay allows a user to manage multiple stores.
+There is only one difference: Bitpay only allows one account for one merchant, BTCPay Server allows a user to manage multiple stores.
 
 ## Modal Checkout
 
