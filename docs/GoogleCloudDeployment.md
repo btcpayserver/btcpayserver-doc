@@ -4,7 +4,7 @@ This setup is similar to the [Docker Deployment](https://github.com/btcpayserver
 
 ## Google Cloud shell setup
 
-Google Cloud is alternative way to set up BTCPayServer.
+Google Cloud is alternative way to set up BTCPay Server.
 
 Start by clicking the following button:
 
@@ -15,7 +15,7 @@ You can log into [Google Cloud Console](https://console.cloud.google.com) with y
 Final installation steps:
 
 * On Google cloud shell, Set the default project and zone where to deploy instance
-* Change yaml file to configure VM instance and BTCPay server: ![GCE and BTCPay Config](./img/gcloud-yaml.png)
+* Change yaml file to configure VM instance and BTCPay Server: ![GCE and BTCPay Server Config](./img/gcloud-yaml.png)
 * Change mode 755 for shell scripts  and run 'deploy.sh \<any deployname\>' to start depolyment
 * (Wait for Google Cloud deployment for a minute)
 * A static IP is shown on the Google cloud shell
@@ -29,7 +29,7 @@ Final installation steps:
 For advanced users, you can connect via SSH with the information on `https://EXAMPLE.MYSITE.com/server/services/ssh`, and:
 
 * Run `docker ps` and `docker logs xxx` to view running processes
-* Run `btcpay-down.sh` and `btcpay-up.sh` to stop and start the BTCPayServer
+* Run `btcpay-down.sh` and `btcpay-up.sh` to stop and start the BTCPay Server
 
 Approximate Cost : **70 USD per month**
 
