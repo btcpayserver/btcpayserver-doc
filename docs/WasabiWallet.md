@@ -46,7 +46,7 @@ Upon testing the password, click on the `Load Wallet` to access your newly creat
 
 When the wallet loads (it may take few moments), on the right hand wallet explorer, toggle the `Advanced` options and then click `Wallet Info`.
 
-Select and **copy** the `Extended Account Public Key`. This is the **public** key from which BTCPay will derive addresses. This cannot be used to derive private keys and spend the bitcoin.
+Select and **copy** the `Extended Account Public Key`. This is the **public** key from which BTCPay Server will derive addresses. This cannot be used to derive private keys and spend the bitcoin.
 
 ![WasabiWallet](./img/WassabiWalletSetupBTCPay8.png)
 
@@ -68,9 +68,9 @@ Compare the address you see in Wasabi Wallet to addresses shown in BTCPay Server
 
 ### Connecting Wasabi to BTCPay Server Full Node (If you're self-hosting BTCPay)
 
-After wallets are connected, it is highly-recommended to connect Wasabi to your full node in BTCPay. The process is easy, but can only be done if you self-host BTCPay and are logged in as `Admin`. Tor has to be enabled in BTCPay (it is enabled by default). This process enhances privacy even further.
+After wallets are connected, it is highly-recommended to connect Wasabi to your full node in BTCPay Server. The process is easy, but can only be done if you self-host BTCPay Server and are logged in as `Admin`. Tor has to be enabled in BTCPay Server (it is enabled by default). This process enhances privacy even further.
 
-In BTCPay, go Server Settings > Services > **Full node P2P > See Information**.
+In BTCPay Server, go Server Settings > Services > **Full node P2P > See Information**.
 On the BTCP-P2P page, click on the `Show Confidential QR Code`. Bellow the QR Code, there's a link `See QR Code information by clicking here`, so click on the link to reveal your string. Copy the string but remove `bitcoin-p2p://` part.
 
 In `Alternative Block Source / Bitcoin P2P Endpoint`, paste the endpoint.
@@ -86,4 +86,4 @@ There's no good answer to how much you should set the gap limit to. Most merchan
 
 For more details about the [Gap Limit, check the FAQ](./FAQ/FAQ-Wallet.md#missing-payments-in-my-software-or-hardware-wallet).
 
-Wasabi Wallet and BTCPay Server are now connected. Any payments received to your BTCPay will be visible in Wasabi, where you can further spend or mix them.
+Wasabi Wallet and BTCPay Server are now connected. Any payments received to your BTCPay Server will be visible in Wasabi, where you can further spend or mix them.
