@@ -1,6 +1,6 @@
 # How to change the domain name of your BTCPay Server
 
-This article assumes you used either [Azure](https://github.com/btcpayserver/btcpayserver-azure) deployment or [BTCPay Docker](https://github.com/btcpayserver/btcpayserver-docker) deployment.
+This article assumes you used either [Azure](https://github.com/btcpayserver/btcpayserver-azure) deployment or [BTCPay Server Docker](https://github.com/btcpayserver/btcpayserver-docker) deployment.
 
 Let's assume I used Azure. After initially deploying, I get an invalid certificate (this is normal during setup):
 
@@ -34,7 +34,7 @@ Hostname: "myawesomedemobtcpay.westeurope.cloudapp.azure.com." !! DO NOT FORGET 
 
 Then I click 'Create'. (Note that if you want to point directly to an IP address instead, you would use a type `A` record.)
 
-**Congratulations! Now let's set it up on the other side, the BTCPayServer host.**
+**Congratulations! Now let's set it up on the other side, the BTCPay Server host.**
 
 ## From your browser
 
