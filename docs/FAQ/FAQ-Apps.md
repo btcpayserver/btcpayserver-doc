@@ -1,20 +1,29 @@
 # BTCPay Apps Frequently Asked Questions
 
-This document covers frequently asked questions about the Apps in BTCPay.
+This document covers frequently asked questions about the Apps in BTCPay Server.
 
-* [What are the Apps in BTCPay?](#what-are-the-apps-in-btcpay)
-* [Is there a limit on the number of Apps I can create?](#is-there-a-limit-on-the-number-of-apps-i-can-create)
-* [Is there a Point of Sale feature in BTCPay?](#is-there-a-point-of-sale-feature-in-btcpay)
-* [How can I use BTCPay in a physical store?](#how-can-i-use-btcpay-in-a-physical-store)
-* [How to customize the appearance of Point of Sale App in BTCPay?](#how-to-customize-the-appearance-of-point-of-sale-app-in-btcpay)
-* [What is a Payment Button?](#what-is-a-payment-button)
-* [How to create a Pay Button with a custom amount?](#how-to-create-a-pay-button-with-a-custom-amount)
-* [How to map a domain name to an app?](#how-to-map-a-domain-name-to-an-app)
-* [How to integrate WooCommerce Store in BTCPay Crowdfund app?](#how-to-integrate-woocommerce-store-into-a-btcpay-crowdfund-app)
+- [BTCPay Apps Frequently Asked Questions](#btcpay-apps-frequently-asked-questions)
+  - [What are the Apps in BTCPay?](#what-are-the-apps-in-btcpay)
+  - [Is there a limit on the number of Apps I can create?](#is-there-a-limit-on-the-number-of-apps-i-can-create)
+  - [Is there a Point of Sale feature in BTCPay?](#is-there-a-point-of-sale-feature-in-btcpay)
+  - [How can I use BTCPay in a physical store?](#how-can-i-use-btcpay-in-a-physical-store)
+  - [How to customize the appearance of Point of Sale App in BTCPay](#how-to-customize-the-appearance-of-point-of-sale-app-in-btcpay)
+  - [What is a Payment Button?](#what-is-a-payment-button)
+  - [How to create a Pay Button with a custom amount?](#how-to-create-a-pay-button-with-a-custom-amount)
+  - [How to map a domain name to an app?](#how-to-map-a-domain-name-to-an-app)
+  - [How to integrate WooCommerce Store into a BTCPay Crowdfund app?](#how-to-integrate-woocommerce-store-into-a-btcpay-crowdfund-app)
+    - [Requirements](#requirements)
+      - [Optional WordPress Plugins](#optional-wordpress-plugins)
+    - [Instructions](#instructions)
+      - [1. Connecting two stores to a single wallet](#1-connecting-two-stores-to-a-single-wallet)
+      - [2. Modifying CSS in WordPress](#2-modifying-css-in-wordpress)
+      - [2. Modifing WordPress functions](#2-modifing-wordpress-functions)
+      - [3. Adding script to WordPress](#3-adding-script-to-wordpress)
+      - [4. Modifying the Crowdfunding app](#4-modifying-the-crowdfunding-app)
 
 ## What are the Apps in BTCPay?
 
-Apps are plugins (features) you can use to expand the use case of your BTCPay.
+Apps are plugins (features) you can use to expand the use case of your BTCPay Server.
 
 ## Is there a limit on the number of Apps I can create?
 
@@ -27,7 +36,7 @@ Yes. Please read our [guide on creating the POS app](../WhatsNext.md#creating-th
 ## How can I use BTCPay in a physical store?
 
 You can use our Point of Sale (PoS) app. When you create a PoS app within BTCPay Server, it will be publicly accessible via a URL where checkout buttons for products you’ve created for your PoS will be displayed.
-To have a physical PoS, the easiest solution (currently) is to create a PoS App in BTCPay and display it on any web device such as a phone, tablet or pc.
+To have a physical PoS, the easiest solution (currently) is to create a PoS App in BTCPay Server and display it on any web device such as a phone, tablet or pc.
 
 Please follow our detailed guide on how to use our [PoS App on a mobile device](https://blog.btcpayserver.org/bitcoin-pos/). Also note that Section 2.3 Connecting a Wallet is covered much more in-depth here in the [wallet section](../WalletSetup.md).
 
@@ -93,17 +102,17 @@ If you want to provide a way for your backers to receive digital files and physi
 
 ![Crowdfunding WooCommerce Integration Preview](../img/CrowdfundingWoo.gif)
 
-The following tutorial assumes you have a semi-advanced understanding of BTCPay, WordPress and WooCommerce.
+The following tutorial assumes you have a semi-advanced understanding of BTCPay Server, WordPress and WooCommerce.
 
 ### Requirements
 
 1. Wordpress Website
 2. [WooCommerce Plugin](https://wordpress.org/plugins/woocommerce/)
-3. [BTCPay for WooCommerce Plugin](https://wordpress.org/plugins/btcpay-for-woocommerce/)
+3. [BTCPay Server for WooCommerce Plugin](https://wordpress.org/plugins/btcpay-for-woocommerce/)
 4. [Storefront Theme](https://wordpress.org/themes/storefront/) (if you're using another theme, you may need to modify the CSS code to fit your theme.
 5. BTCPay Server
 
-**Important Note**  Make sure that both your WooCommerce store and BTCPay Server **are on a same domain**. Some browsers have aggressive way of blocking the cross-domain embeded content. Quite specifically, Safari on iOS will destroy the cookie when the item is added, which will leaad to empty cart. There's no other way to fix this besides having BTCPay and Woo on a same domain as subdomains at least.
+**Important Note**  Make sure that both your WooCommerce store and BTCPay Server **are on a same domain**. Some browsers have aggressive way of blocking the cross-domain embeded content. Quite specifically, Safari on iOS will destroy the cookie when the item is added, which will leaad to empty cart. There's no other way to fix this besides having BTCPay Server and Woo on a same domain as subdomains at least.
 
 #### Optional WordPress Plugins
 
@@ -228,7 +237,7 @@ This piece of code makes sure that each click on the product area adds it to car
 
 #### 4. Modifying the Crowdfunding app
 
-In your BTCPay, Apps > Create New App > Crowdfunding.
+In your BTCPay Server, Apps > Create New App > Crowdfunding.
 
 In the description of your app, toggle the code and paste the following code and add `<iframe src="http://yourdomain/shop/"></iframe>`
 Replace it with the URL of your WooCommerce Store page.
