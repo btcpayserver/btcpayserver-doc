@@ -4,7 +4,7 @@ BTCPay Server has a built in, full-node reliant wallet that allows easier funds 
 
 Each [store](./CreateStore.md)'s configured cryptocurrency has a separate wallet displayed on the wallets page. A wallet can be accessed by clicking **Wallets** from the top menu. To access a particular wallet, click **Manage**.
 
-![Wallets Page BTCPay](./img/wallet/Wallets.png)
+![Wallets Page BTCPay Server](./img/wallet/Wallets.png)
 
 ## Wallet features
 
@@ -25,7 +25,7 @@ An overview of the incoming (green), outgoing (red) and unconfirmed (grayed out)
 
 ### Send
 
-The Send function allows spending of the funds from the BTCPay wallet.
+The Send function allows spending of the funds from the BTCPay Server wallet.
 
 ![Send from the Wallet](./img/wallet/WalletSend.png)
 
@@ -50,7 +50,7 @@ Check this tutorial on how to [sign a transaction with ColdCard Hardware Wallet]
 
 ##### Signing with a hardware wallet
 
-BTCPay Server has built-in hardware wallet support allowing you to use your hardware wallet with BTCPay, without leaking information to third-party apps or servers.
+BTCPay Server has built-in hardware wallet support allowing you to use your hardware wallet with BTCPay Server, without leaking information to third-party apps or servers.
 
 [Check instructions](Vault.md) on how to set up and sign with a [compatible hardware wallet](https://github.com/bitcoin-core/HWI#device-support).
 
@@ -124,14 +124,14 @@ The Rescan relies on Bitcoin Core 0.17.0's `scantxoutset` to scan the current st
 
 ![Wallet Rescan](./img/wallet/WalletRescan.png)
 
-Wallet re-scan solves two critical problems for BTCPay users:
+Wallet re-scan solves two critical problems for BTCPay Server users:
 
 1. [Gap limit](./FAQ/FAQ-Wallet.md#missing-payments-in-my-software-or-hardware-wallet)
 2. Importing a previously used wallet
 
 **Gap limit**: Most of the wallets have the gap limit set to 20. This means that if a merchant receives 21 or more consecutive unpaid invoices, those wallets show the incorrect balance and some transactions may not be visible.
 
-**Wallet import**: When users add a derivation scheme of a wallet that had transactions in the past (previously used wallet), BTCPay won't be able to show the balance and transactions from the past.
+**Wallet import**: When users add a derivation scheme of a wallet that had transactions in the past (previously used wallet), BTCPay Server won't be able to show the balance and transactions from the past.
 
 ![Wallet rescan progress](./img/wallet/WalletRescanProgress.png)
 
@@ -143,10 +143,10 @@ Users who use a third party host should use a newly generated xpub key and also 
 
 ### PSBT
 
-In the Partially Signed Bitcoin Transactions (PSBT) tab, you can upload and decode any PSBT, for example an earlier signed PSBT from external wallet and broadcast it via BTCPay Wallet. For more information on PSBT [check this link](./ColdCardWallet.md#spending-from-btcpay-server-wallet-with-coldcard-psbt).
+In the Partially Signed Bitcoin Transactions (PSBT) tab, you can upload and decode any PSBT, for example an earlier signed PSBT from external wallet and broadcast it via BTCPay Server Wallet. For more information on PSBT [check this link](./ColdCardWallet.md#spending-from-btcpay-server-wallet-with-coldcard-psbt).
 
 ### Settings
 
 In the wallet settings tab you can adjust certain settings. If you've configured your wallet by [creating a new wallet](./CreateWallet.md) or using an existing wallet via the [hardware wallet integration](./Vault.md) these settings will be pre-configured.
 
-If you manually added the extended public key from an external wallet, you'd need to adjust `AccountKeyPath` that you can find in your external wallet, for example `m/84'/0'/0'` to be able to spend from the BTCPay Wallet.
+If you manually added the extended public key from an external wallet, you'd need to adjust `AccountKeyPath` that you can find in your external wallet, for example `m/84'/0'/0'` to be able to spend from the BTCPay Server Wallet.
