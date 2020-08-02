@@ -18,7 +18,7 @@ The project can be found [here](https://drupal.org/project/commerce_btcpay) on d
 
 #### Generate pairing code on BTCPay server
 
-1. BTCPay server: [create and configure a store](./CreateStore.md#creating-a-store-in-btcpay)
+1. BTCPay Server: [create and configure a store](./CreateStore.md#creating-a-store-in-btcpay)
 2. in store settings go to "**Access Tokens**"
 3. click on **[Create a new token]**
 4. **Label:** enter some label (eg. my store)
@@ -38,6 +38,6 @@ The project can be found [here](https://drupal.org/project/commerce_btcpay) on d
 5. add payment method "BTCPay"
     * **Mode**: Test or Live (you can configure both individually)
     * **Test/Live server host**: enter your URL without https:// prefix e.g. btcpay.yourserver.com (note valid SSL certificate needed)
-    * **Test/Live Paring code**: enter the 7-digit pairing code from BTCPay "Access tokens" page
+    * **Test/Live Paring code**: enter the 7-digit pairing code from BTCPay Server "Access tokens" page
     * **Save**
       You should see a message that the tokens were successfully created.
