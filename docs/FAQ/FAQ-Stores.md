@@ -1,8 +1,8 @@
 # BTCPay Stores Frequently Asked Questions.
 
-This page shows common issues and frequently asked questions about Stores in BTCPay.
+This page shows common issues and frequently asked questions about Stores in BTCPay Server.
 
-* [How to create a store in BTCPay?](./FAQ-Stores.md#how-to-create-a-store-in-btcpay)
+* [How to create a store in BTCPay Server?](./FAQ-Stores.md#how-to-create-a-store-in-btcpay)
 * [How many stores can I create?](./FAQ-Stores.md#how-many-stores-can-i-create)
 * [Why are invoices without payment showing as complete?](./FAQ-Stores.md#why-are-invoices-without-payment-showing-as-complete)
 * [Store General Settings](./FAQ-Stores.md#store-general-settings)
@@ -13,7 +13,7 @@ This page shows common issues and frequently asked questions about Stores in BTC
 * [Consider the invoice confirmed when the payment transaction?](./FAQ-Stores.md#consider-the-invoice-confirmed-when-the-payment-transaction)
 * [Consider the invoice paid even if the paid amount is ... % less than expected?](./FAQ-Stores.md#consider-the-invoice-paid-even-if-the-paid-amount-is-less-than-expected)
 * [How to disable email on invoices?](./FAQ-Stores.md#how-to-disable-email-on-invoices)
-* [Can I delete invoices from BTCPay?](./FAQ-Stores.md#can-i-delete-invoices-from-btcpay)
+* [Can I delete invoices from BTCPay Server?](./FAQ-Stores.md#can-i-delete-invoices-from-btcpay)
 * [How to change the exchange rate provider for invoices?](./FAQ-Stores.md#how-to-change-the-exchange-rate-provider-for-invoices)
 * [Getting GetRatesAsync was called on coinaverage error](./FAQ-Stores.md#getting-getratesasync-was-called-on-coinaverage-error)
 
@@ -23,7 +23,7 @@ To create your first store, go to > Stores from the header menu and click "creat
 
 ## How many stores can I create?
 
-There's no limit on a number of stores you can create in BTCPay.
+There's no limit on a number of stores you can create in BTCPay Server.
 
 ## Why are invoices without payment showing as complete?
 
@@ -37,17 +37,17 @@ Explanation of features inside Store > General Settings configured on a store-le
 
 ## Add network fee to invoice (vary with mining fees)?
 
-Network fee (cost) is a feature in BTCPay which protects merchants from customers who pay the invoice partially. When an invoice is paid from many outputs, the fee for a merchant who needs to move those funds later will be higher.
+Network fee (cost) is a feature in BTCPay Server which protects merchants from customers who pay the invoice partially. When an invoice is paid from many outputs, the fee for a merchant who needs to move those funds later will be higher.
 
-For example, the customer created an invoice for 20$ and paid it partially, paying 1$ 20 times until the invoice is paid fully. Merchant now has a larger transaction which increases the mining cost in case the merchant decides to move those funds later. By default, BTCPay applies an **additional network cost** to the total invoice amount to cover that expense for the merchant.
+For example, the customer created an invoice for 20$ and paid it partially, paying 1$ 20 times until the invoice is paid fully. Merchant now has a larger transaction which increases the mining cost in case the merchant decides to move those funds later. By default, BTCPay Server applies an **additional network cost** to the total invoice amount to cover that expense for the merchant.
 
-BTCPay offers several options to customize this protection feature. You can apply a network fee :
+BTCPay Server offers several options to customize this protection feature. You can apply a network fee :
 
 * Only if the customer makes more than one payment for the invoice (In the above example, if the customer created an invoice for 20$ and paid 1$, total invoice due is now 19$ + the network fee. The network fee is applied **after the first payment**)
-* On every payment (including the first payment, in our example, the total  will be 20$ + network fee right away, even on the first payment)
+* On every payment (including the first payment, in our example, the total will be 20$ + network fee right away, even on the first payment)
 * Never add network fee (disables the network fee entirely)
 
-The network fee in BTCPay is **not the mining fee**. The customers still need to pay for the miner's fee.
+The network fee in BTCPay Server is **not the mining fee**. The customers still need to pay for the miner's fee.
 
 The network cost is an optional feature. It's enabled by default, but it's entirely up to a merchant to enable or disable it. The customer sees the "network cost" at the checkout when they expand the invoice information.
 
@@ -89,14 +89,14 @@ An invoice can be restored by clicking the `Archived` button.
 
 ## How to change the exchange rate provider for invoices?
 
-The default fiat to cryptocurreny exchange rate provider used in your BTCPay invoices can be modified by navigating to your Store Settings > Rates > Preferred price source. There are several exchange rate provider options available. Each store may use different settings.
+The default fiat to cryptocurreny exchange rate provider used in your BTCPay Server invoices can be modified by navigating to your Store Settings > Rates > Preferred price source. There are several exchange rate provider options available. Each store may use different settings.
 
 ## Getting GetRatesAsync was called on coinaverage error
 
 Coinaverage discontinued their free tier API. As a result the following error may appear:
 
 ```
-GetRatesAsync was called on coinaverage when the rate is outdated. It should never happen, let BTCPayServer developers know about this.
+GetRatesAsync was called on coinaverage when the rate is outdated. It should never happen, let BTCPay Server developers know about this.
 ```
 
 The issue can be fixed by [selecting a different rate source provider](./FAQ-Stores.md#how-to-change-the-exchange-rate-provider-for-invoices) in Stores > Settings > Rates, or by [updating your BTCPay Server](./FAQ-ServerSettings.md#how-to-update-btcpay-server) if you're running verison 1.0.3.146 or older. The update will automatically replace Coinaverage with CoinGecko.
