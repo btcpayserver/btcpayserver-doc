@@ -28,7 +28,7 @@ Fill in the remaining options: ![Azure Resource Config](./img/AzureResourceConfi
 For advanced users, you can connect via SSH with the information on `https://EXAMPLE.MYSITE.com/server/services/ssh`, and:
 
 * Run `docker ps` and `docker logs xxx` to view running processes
-* Run `btcpay-down.sh` and `btcpay-up.sh` to stop and start the BTCPayServer
+* Run `btcpay-down.sh` and `btcpay-up.sh` to stop and start the BTCPay Server
 
 Approximate Cost (unpruned, Bitcoin-only, after Azure $200 free trial): **60 USD per month**
 
