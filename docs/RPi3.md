@@ -8,7 +8,7 @@ The overall process is as follows:
 2. Install Raspbian Lite operating system, configure networking
 3. Install BTCPayServer-Docker
 
-BTCPayServer can be successfully installed on the following hardware:
+BTCPay Server can be successfully installed on the following hardware:
 
 1. Raspberry Pi 3 Model B+<br/>
 
@@ -36,7 +36,7 @@ Once you have the hardware and other requirements, you're ready to begin!
 Login to your domain registrar and create an `A` record pointing your domain to the external IP address of your Pi's internet connection:
 
 - IP Address: Visit [ipchicken.com](https://ipchicken.com) or search the web for "what's my ip" from any device on the network
-- Domain / Hostname: `btcpay.YourDomain.com`. Name the subdomain where BTCPayServer will run (e.g. `btcpay`).
+- Domain / Hostname: `btcpay.YourDomain.com`. Name the subdomain where BTCPay Server will run (e.g. `btcpay`).
 - TTL: Shortest, or Default
 
 It can take several hours for DNS changes to propagate worldwide, so you should do this step first.
@@ -215,7 +215,7 @@ sudo /etc/init.d/dphys-swapfile stop
 sudo /etc/init.d/dphys-swapfile start
 ```
 
-**Step 15** - Install BTCPayServer!
+**Step 15** - Install BTCPay Server !
 
 Login as `root`:
 
@@ -223,7 +223,7 @@ Login as `root`:
 sudo su -
 ```
 
-Create a folder for BTCPayServer:
+Create a folder for BTCPay Server:
 
 ```bash
 mkdir btcpayserver
@@ -259,7 +259,7 @@ export BTCPAY_ADDITIONAL_HOSTS="raspberrypi.local,btcpay.local"
 
 In case you want to restrict access to your local network only, please note that you need to use a `.local` domain.
 
-Finally, run the BTCPayServer setup script:
+Finally, run the BTCPay Server setup script:
 
 ```bash
 . ./btcpay-setup.sh -i
@@ -274,7 +274,7 @@ Syncing is very slow on a Pi, since each block and transaction needs to go throu
 
 ## Fast Sync
 
-BTCPayServer's complete FastSync documentation is [available here](https://github.com/btcpayserver/btcpayserver-docker/tree/master/contrib/FastSync).
+BTCPay Server's complete FastSync documentation is [available here](https://github.com/btcpayserver/btcpayserver-docker/tree/master/contrib/FastSync).
 
 Please read very carefully to understand what FastSync is and why it's important to verify the UTXO set yourself.
 
@@ -289,7 +289,7 @@ cd FastSync
 ./load-utxo-set.sh
 ```
 
-FastSync currently takes about 30 minutes on a high-speed internet connection. After FastSync finishes, run the following command to restart BTCPayServer:
+FastSync currently takes about 30 minutes on a high-speed internet connection. After FastSync finishes, run the following command to restart BTCPay Server:
 
 ```bash
 cd ../..
