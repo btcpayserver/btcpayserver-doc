@@ -20,8 +20,8 @@ An example hostname of `mainnet.demo.btcpayserver.org` has been used, it needs t
 
 If you do use these instructions to install a BTCPay Server connected to the Bitcoin mainnet then at a minimum you should understand how the wallet mechanisms work. It's highly recommended to read the two articles below and ask questions if anything is not clear.
 
-- [BTCPay Wallet FAQ](./FAQ/FAQ-Wallet.md)
-- [Lightning Network and BTCPay (first section)](./LightningNetwork.md)
+- [BTCPay Server Wallet FAQ](./FAQ/FAQ-Wallet.md)
+- [Lightning Network and BTCPay Server (first section)](./LightningNetwork.md)
 
 As an additional aid below is a list of iptables rules and instructions which should include all the ports that need to be open. **NO WARRANTY**. Use at your own risk, **including risk of locking yourself out**.
 
@@ -86,7 +86,7 @@ These instructions configure everything to run under an unprivileged user called
 - Lightning Network Daemon (lnd)<sup>2</sup>
 - Ride The Lightning (RTL)<sup>2</sup>
 
-<sup>1</sup> The bare minimum install of a BTCPay server only requires these items. Using a bare minimum configuration reduces the functionality: no lightning payments, no auto-renewal of TLS certificates, less reliable data store, less capable of handling NAT and more.
+<sup>1</sup> The bare minimum install of a BTCPay Server only requires these items. Using a bare minimum configuration reduces the functionality: no lightning payments, no auto-renewal of TLS certificates, less reliable data store, less capable of handling NAT and more.
 
 <sup>2</sup> Built from source code.
 
@@ -451,7 +451,7 @@ Create a bitcoin.conf file to suit your needs. An example file that is suitable 
 ```
 
 ```
-server=1                              # need RPC for btcpay.
+server=1                              # need RPC for BTCPay Server.
 rpcbind=127.0.0.1                     # loopback is default for 0.18.0 but no harm making sure.
 whitelist=127.0.0.1                   # for nbxplorer.
 rpcallowip=127.0.0.1/32               # loopback is default but again no harm.
@@ -474,7 +474,7 @@ An example systemd service file is available in the Bitcoin Core  repository at 
 
 Edit the service file depending on your needs.
 
-In the example below the **User** and **Group** have been changed to use the `admin` user instead of requiring a new `bitcoin` user. If the `admin` user on your system is intended for running `BTCPayServer` this is a reasonable choice. Otherwise consider creating a dedicated `bitcoin` user.
+In the example below the **User** and **Group** have been changed to use the `admin` user instead of requiring a new `bitcoin` user. If the `admin` user on your system is intended for running `BTCPay Server` this is a reasonable choice. Otherwise consider creating a dedicated `bitcoin` user.
 
 ```bash
 ~$ vi bitcoind.service
@@ -1158,7 +1158,7 @@ If `Ride The Lightning (RTL)` is installed, see next section, it may have stoppe
 
 Ride the Lightning is a Node.js application to manage your Lightning peers, channels, wallet etc.
 
-The advantage of the work that has gone into BTCPay Server is that the RTL web page can be controlled and accessed in the same manner as the BTCPay site.
+The advantage of the work that has gone into BTCPay Server is that the RTL web page can be controlled and accessed in the same manner as the BTCPay Server site.
 
 ##### 🚚 Install
 
