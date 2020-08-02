@@ -28,6 +28,8 @@ This document clarifies some of the most common questions and issues users face 
 
 ## [Lightning Network (c-lightning) FAQ](FAQ-LightningNetwork.md#lightning-network-c-lightning-faq)
 
+* [How to restart my c-lightning?](FAQ-LightningNetwork.md#how-to-restart-my-c-lightning)
+* [How to announce an IPv6 address?](FAQ-LightningNetwork.md#how-to-announce-an-ipv6-address)
 * [How to find an on-chain address in Spark?](FAQ-LightningNetwork.md#how-to-find-an-on-chain-address-in-spark)
 * [How to withdraw funds from my on-chain Spark wallet?](FAQ-LightningNetwork.md#how-to-withdraw-funds-from-my-on-chain-spark-wallet)
 
@@ -376,6 +378,13 @@ docker restart generated_bitcoin_thub_1
 ## Lightning Network (c-lightning) FAQ
 
 Here are some of the common questions about the [c-lightning](https://github.com/ElementsProject/lightning/issues) implementation of the Lightning Network.
+
+### How to restart my c-lightning?
+
+```bash
+sudo su -
+docker restart btcpayserver_clightning_bitcoin
+```
 
 ### How to announce an IPv6 address?
 
