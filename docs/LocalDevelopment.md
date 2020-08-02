@@ -32,14 +32,14 @@ We recommend using Visual Studio Code (cross platform) or Visual Studio 2019 (Wi
 You can of course use VIM if you are hardcore, .NET Core is command-line environment friendly.
 
 Visual Studio Code, Visual Studio and Rider will run the debug profile Docker-Regtest.
-This will run a BTCPayServer instance connecting to the services in your Docker service, so you can easily debug and step through the code.
+This will run a BTCPay Server instance connecting to the services in your Docker service, so you can easily debug and step through the code.
 
 ## Videos
 
 For more information check out these videos:
 
 * [How to contribute to BTCPay Server Development (Windows)](https://youtube.com/watch?v=ZePbMPSIvHM) by Nicolas Dorier
-* [Setting up BTCPayServer development environment on Linux (Ubuntu)](https://youtube.com/watch?v=j486T_Rk-yw) by RockStarDev
+* [Setting up BTCPay Server development environment on Linux (Ubuntu)](https://youtube.com/watch?v=j486T_Rk-yw) by RockStarDev
 * [BTCPay Server Development - Testing pull request, payments (MacOS)](https://youtube.com/watch?v=GWR_CcMsEV0) by Pavlenex
 
 and these notes:
