@@ -2,7 +2,7 @@
 
 This document explains how to connect Electrum Wallet to an ElectrumX Server.
 
-**Note:** the [docker version of BTCPay Server](https://github.com/btcpayserver/btcpayserver-docker) (since Nov 7th 2019, version 1.0.3.137) supports full integration with [ElectrumX](https://electrumx.readthedocs.io/en/latest/features.html) is the most widely implemented software used for Electrum public servers that your local Electrum wallet relies upon to get all the details of, or broadcast transactions to the bitcoin blockchain.  Skip to Section 2 below, to read more on what this all means, and how to set it up on your BTCPay stack.
+**Note:** the [docker version of BTCPay Server](https://github.com/btcpayserver/btcpayserver-docker) (since Nov 7th 2019, version 1.0.3.137) supports full integration with [ElectrumX](https://electrumx.readthedocs.io/en/latest/features.html) is the most widely implemented software used for Electrum public servers that your local Electrum wallet relies upon to get all the details of, or broadcast transactions to the bitcoin blockchain.  Skip to Section 2 below, to read more on what this all means, and how to set it up on your BTCPay Server stack.
 
 ## How to integrate ElectrumX into your BTCPay Server and connect your Electrum Wallet to it for your complete privacy
 
@@ -25,25 +25,25 @@ While using Electrum Wallet with "Select Server Automatically" on is the easiest
 ### Prerequisites (mandatory):
 
 1. Docker only: Only the [Docker version of BTCPay Server](https://github.com/btcpayserver/btcpayserver-docker/blob/master/README.md) is supported.
-2. Unpruned BTCPay node: Make sure your BTCPay implementation is NOT [pruned](./FAQ/FAQ-Synchronization.md#can-i-skip-the-synchronization) (i.e. you have synched and stored from genesis block. Check that you do NOT use the opt-save-storage [Environment Variable](https://github.com/btcpayserver/btcpayserver-docker/blob/master/README.md#generated-docker-compose))
+2. Unpruned BTCPay Server node: Make sure your BTCPay Server implementation is NOT [pruned](./FAQ/FAQ-Synchronization.md#can-i-skip-the-synchronization) (i.e. you have synched and stored from genesis block. Check that you do NOT use the opt-save-storage [Environment Variable](https://github.com/btcpayserver/btcpayserver-docker/blob/master/README.md#generated-docker-compose))
 3. Drive space: At least 400GB of drive space on the device where your docker volumes are stored is required (as at the writing of this documentation on 9th Nov 2019, the total hard drive space used is 333GB - with full node and ElectrumX enabled - and of course this will grow further over time).
-4. Additional Fragments: You are familiar with how to use BTCPay's [Additional Fragment](https://github.com/btcpayserver/btcpayserver-docker/blob/master/README.md#environment-variables) feature as part of your environment variable setup.
+4. Additional Fragments: You are familiar with how to use BTCPay Server's [Additional Fragment](https://github.com/btcpayserver/btcpayserver-docker/blob/master/README.md#environment-variables) feature as part of your environment variable setup.
 5. Server architecture: The (official) [ElectrumX docker](https://github.com/lukechilds/docker-electrumx) used here is only tested on a BTCPay Server running on x86_64 architecture. So far it is tested extensively on Ubuntu 18.04 and Debian Buster. Unless it is overhauled and tested well on Raspberry Pi (and other architectures) it likely will not work.
 6. Basic Linux command line knowledge: is assumed.
 
 ### How will enabling ElectrumX Server affect an existing BTCPay implementation?:
 
-Fundamentally, setting up ElectrumX in BTCPay server is simple, and will not affect the rest of your implementation. The only pre-requisites are as above. The [ElectrumX official docker release](https://github.com/lukechilds/docker-electrumx) is enabled in BTCPay by activating the [additional fragment](https://github.com/btcpayserver/btcpayserver-docker/blob/master/README.md#generated-docker-compose) called [`opt-add-electumx`](https://github.com/btcpayserver/btcpayserver-docker/blob/master/docker-compose-generator/docker-fragments/opt-add-electrumx.yml). This fragment will not only enable and start the ElectrumX server, it will also enable `txindex=1` in your bitcoin full node.  `txindex=1` (Transaction Index=ON) is a bitcoin core feature required for ElectrumX to be able to serve your Electrum Wallet detailed transaction data for any transaction, directly from the blockchain, without getting it from any third party server.
+Fundamentally, setting up ElectrumX in BTCPay Server is simple, and will not affect the rest of your implementation. The only pre-requisites are as above. The [ElectrumX official docker release](https://github.com/lukechilds/docker-electrumx) is enabled in BTCPay Server by activating the [additional fragment](https://github.com/btcpayserver/btcpayserver-docker/blob/master/README.md#generated-docker-compose) called [`opt-add-electumx`](https://github.com/btcpayserver/btcpayserver-docker/blob/master/docker-compose-generator/docker-fragments/opt-add-electrumx.yml). This fragment will not only enable and start the ElectrumX server, it will also enable `txindex=1` in your bitcoin full node.  `txindex=1` (Transaction Index=ON) is a bitcoin core feature required for ElectrumX to be able to serve your Electrum Wallet detailed transaction data for any transaction, directly from the blockchain, without getting it from any third party server.
 
 If you have been running your BTCPay Server for a while but haven't had `txindex=1` set until now, then it might take a few hours to build the index, this is no issue and it should not involve downtime of more than a few hours - better to set this to run overnight though when nobody will be using your node. Note: If you want to rebuild the index from scratch, launch bitcoind once with the `reindex=1` option (warning: this reindex option may take a VERY long time, and is not enabled out of the box as you likely dont need it, and hence is not in scope of this document).
 
 ### Steps to enable ElectrumX Server in BTCPay:
 
-Here are all the steps to enable ElectrumX Server in your BTCPay node (read carefully as you may need to adjust for your specific setup, especially if you use other custom or conflicting "fragments" (pruning, less-memory etc.  To reiterate, you should NOT proceed further here if you run a pruned BTCPay node.
+Here are all the steps to enable ElectrumX Server in your BTCPay Server node (read carefully as you may need to adjust for your specific setup, especially if you use other custom or conflicting "fragments" (pruning, less-memory etc.  To reiterate, you should NOT proceed further here if you run a pruned BTCPay Server node.
 
 1. ElectrumX Server is accessible for Electrum Wallets via TCP port 50002.  You need to open this port up fully at least to be available within your own network to any PC or Android device running Electrum Wallet, and turn on port forwarding (you can also port forward 50002 from your Internet/WAN, to enable other Electrum Wallet users from the Internet to query your server).
 
-2. Enable the Docker Additional Fragment on your BTCPay node by running the following commands (this is assuming a brand new BTCPay installation with LND and ElectrumX, please tweak accordingly using the [relevant documentation](https://github.com/btcpayserver/btcpayserver-docker/blob/master/README.md#generated-docker-compose):
+2. Enable the Docker Additional Fragment on your BTCPay Server node by running the following commands (this is assuming a brand new BTCPay Server installation with LND and ElectrumX, please tweak accordingly using the [relevant documentation](https://github.com/btcpayserver/btcpayserver-docker/blob/master/README.md#generated-docker-compose):
 
 3. Follow the [normal setup and install of BTCPay Server](https://github.com/btcpayserver/btcpayserver-docker#full-installation-for-technical-users), then after this command `cd btcpayserver-docker`, follow the below instructions instead of those in the link.  If you already have a BTCPay Server running, then just follow from the next step.
 
@@ -60,7 +60,7 @@ export LETSENCRYPT_EMAIL="you@example.com"
 export BTCPAYGEN_ADDITIONAL_FRAGMENTS="opt-add-electrumx;opt-more-memory"
 ```
 
-You can run all of that as one command after you tweak it to your needs.  The main part for our purposes in this guide of course is `BTCPAYGEN_ADDITIONAL_FRAGMENTS="opt-add-electrumx"`.  Note: `opt-more-memory` can be removed if you like, but I really recommend it if your system has more than 1GB of RAM/memory that you can assign to BTCPay server, it will speed synching your node and the general performance of ElectrumX up drastically.
+You can run all of that as one command after you tweak it to your needs.  The main part for our purposes in this guide of course is `BTCPAYGEN_ADDITIONAL_FRAGMENTS="opt-add-electrumx"`.  Note: `opt-more-memory` can be removed if you like, but I really recommend it if your system has more than 1GB of RAM/memory that you can assign to BTCPay Server, it will speed synching your node and the general performance of ElectrumX up drastically.
 
 5. Set up or reconfigure BTCPay Server with ElectrumX:
 
@@ -69,7 +69,7 @@ You can run all of that as one command after you tweak it to your needs.  The ma
     This will setup (or re-setup) your server with everything needed including ElectrumX, and it all should "just work".  But, it will trigger at least a couple of hours of syncing the `txindex`, and if it is a new server, could be a couple of days depending on your hardware.
 
 6. WAIT for your node to fully sync:
-    You can check the status of bitcoin core sync by going to your domain for BTCPay server, and it will show you on the front page.  Or, you can check from the command line as well, using these commands:
+    You can check the status of bitcoin core sync by going to your domain for BTCPay Server, and it will show you on the front page.  Or, you can check from the command line as well, using these commands:
 
     `docker logs btcpayserver_bitcoind` - this will show you the bitcoin core blockchain sync status (and ALL other info about your node, including any errors)
 
