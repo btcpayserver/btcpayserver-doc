@@ -2,15 +2,20 @@
 
 This document contains frequently asked questions related to BTCPay Server's [internal wallet](../Wallet.md).
 
-* [What is BTCPay Server wallet?](#what-is-btcpay-server-wallet)
-* [How to set up my wallet with BTCPay Server?](#how-to-set-up-my-wallet-with-btcpay-server)
-* [Can I use a hardware wallet with BTCPay Server?](#can-i-use-a-hardware-wallet-with-btcpay-server)
-* [Do I have to use BTCPay Server wallet?](#do-i-have-to-use-btcpay-server-wallet)
-* [Missing payments in wallet?](#missing-payments-in-my-software-or-hardware-wallet)
-* [What is a derivation scheme?](#what-is-a-derivation-scheme)
-* [What is a Replace-By-Fee (RBF) transaction?](#what-is-a-replace-by-fee-rbf-transaction)
-* [I don't see Lightning network payments in BTCPay wallet?](#i-dont-see-lightning-network-payments-in-btcpay-wallet)
-* [Is there a mobile app for BTCPay Server wallet?](#is-there-a-mobile-app-for-btcpay-server-wallet)
+- [BTCPay Server Wallet FAQ](#btcpay-server-wallet-faq)
+  - [What is BTCPay Server wallet?](#what-is-btcpay-server-wallet)
+  - [How to set up my wallet with BTCPay Server?](#how-to-set-up-my-wallet-with-btcpay-server)
+  - [Can I use a hardware wallet with BTCPay Server?](#can-i-use-a-hardware-wallet-with-btcpay-server)
+  - [Do I have to use BTCPay Server wallet?](#do-i-have-to-use-btcpay-server-wallet)
+  - [Missing payments in my software or hardware wallet](#missing-payments-in-my-software-or-hardware-wallet)
+    - [The gap limit problem](#the-gap-limit-problem)
+    - [The gap limit solution](#the-gap-limit-solution)
+      - [1. Increasing the gap limit](#1-increasing-the-gap-limit)
+      - [2. Use the internal wallet](#2-use-the-internal-wallet)
+  - [What is a derivation scheme?](#what-is-a-derivation-scheme)
+  - [What is a Replace-By-Fee (RBF) transaction?](#what-is-a-replace-by-fee-rbf-transaction)
+  - [I don't see Lightning network payments in BTCPay wallet?](#i-dont-see-lightning-network-payments-in-btcpay-wallet)
+  - [Is there a mobile app for BTCPay Server wallet?](#is-there-a-mobile-app-for-btcpay-server-wallet)
 
 ## What is BTCPay Server wallet?
 
@@ -18,7 +23,7 @@ BTCPay Server has an internal wallet which you can use to view incoming and outg
 
 It works like any other wallet, but has enhanced privacy features (non-custodial, no third-parties, verified with a dedicated full node, etc.) by default and also solves certain UX problems you may encounter when [using an existing wallet] with BTCPay Server.
 
-For more information on how to use the built-in wallet [check this page](../Wallet.md). To use the internal wallet, you first need to [set up the wallet](../WalletSetup.md) with your BTCPay store.
+For more information on how to use the built-in wallet [check this page](../Wallet.md). To use the internal wallet, you first need to [set up the wallet](../WalletSetup.md) with your BTCPay Server store.
 
 ## How to set up my wallet with BTCPay Server?
 
@@ -26,19 +31,19 @@ Check our in-depth documentation on [how to set up a wallet](../WalletSetup.md).
 
 ## Can I use a hardware wallet with BTCPay Server?
 
-The internal wallet has a [built in hardware wallet integration](../Vault.md). You can use a supported hardware wallet with the [BTCPay wallet](../Wallet.md).
+The internal wallet has a [built in hardware wallet integration](../Vault.md). You can use a supported hardware wallet with the [BTCPay Server wallet](../Wallet.md).
 
-This  means that you're using a hardware wallet without leaking information to third-party apps or servers unlike the default software for the devices, since the wallet relies on the full node in your BTCPay.
+This  means that you're using a hardware wallet without leaking information to third-party apps or servers unlike the default software for the devices, since the wallet relies on the full node in your BTCPay Server.
 
 ## Do I have to use BTCPay Server wallet?
 
-By default BTCPay Server only requires an extended public key. To receive payments to your BTCPay store, you need to provide an extended public key (xpub) which you can generate in an external (existing) wallet. You do not have to use the built in wallet at all, you can manage funds in your [existing wallet](../WalletSetup.md#use-an-existing-wallet).
+By default BTCPay Server only requires an extended public key. To receive payments to your BTCPay Server store, you need to provide an extended public key (xpub) which you can generate in an external (existing) wallet. You do not have to use the built in wallet at all, you can manage funds in your [existing wallet](../WalletSetup.md#use-an-existing-wallet).
 
 However, it's recommended to use the built in wallet for funds management. The built in wallet not only improves your privacy by default, but also solves user-experience issues like [gap-limit](#missing-payments-in-my-software-or-hardware-wallet).
 
 ## Missing payments in my software or hardware wallet
 
-If you're using an [existing software or a hardware wallet](../WalletSetup.md#use-an-existing-wallet) with your BTCPay Server, you may experience a discrepancy between balance in your BTCPay wallet and the external wallet's web, destkop or mobile app. This discrepancy is usually related to a **gap-limit** issue.
+If you're using an [existing software or a hardware wallet](../WalletSetup.md#use-an-existing-wallet) with your BTCPay Server, you may experience a discrepancy between balance in your BTCPay Server wallet and the external wallet's web, destkop or mobile app. This discrepancy is usually related to a **gap-limit** issue.
 
 ### The gap limit problem
 
@@ -68,7 +73,7 @@ If you'd like to use an [external wallet](../WalletSetup.md#use-an-existing-wall
 - [Increasing the gap limit in Electrum](../ElectrumWallet.md#configuring-the-gap-limit-in-electrum)
 - [Increasing the gap limit in Wasabi](../WasabiWallet.md#configuring-the-gap-limit-in-wasabi)
 
-After you've increased the gap limit, the balance in your external wallet and BTCPay wallet should match. If they don't, you may have set up your derivation scheme incorrectly.
+After you've increased the gap limit, the balance in your external wallet and BTCPay Server wallet should match. If they don't, you may have set up your derivation scheme incorrectly.
 
 #### 2. Use the internal wallet
 
@@ -107,12 +112,12 @@ BTCPay Server is a web app (not a mobile app) and may be viewed using any device
 
 You can also use mobile apps to connect to your Bitcoin full node using either P2P or RPC. If you are on iOS you can easily connect to your Bitcoin full node using Fully Noded. 
 
-To connect your BTCPay node to Fully Noded:
+To connect your BTCPay Server node to Fully Noded:
 
     1. Download Fully Noded from the App store.
-    2. In BTCPay, go to Server Settings > Services and click on the Full Node RPC.
+    2. In BTCPay Server, go to Server Settings > Services and click on the Full Node RPC.
     3. Open your Fully Noded app, Quick Connect QR.
-    4. Scan the QR code displayed on your BTCPay.
+    4. Scan the QR code displayed on your BTCPay Server.
     5. Your Bitcoin full node is now connected to Fully Noded.
 
 Here are some node statuses and network information you can easily monitor from your Fully Noded:
