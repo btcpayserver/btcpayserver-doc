@@ -54,7 +54,7 @@ The 500GB SSD allows you to keep a full copy of the Bitcoin blockchain, until it
 
 ## Install Linux on the Raspberry Pi
 
-Start by downloading [Raspbian Linux](https://www.raspberrypi.org/downloads/raspbian/) to your existing computer. The “Lite” distribution is fine for BTCPay setup, but if you want to use your Raspberry Pi for other things, you might want the full image.
+Start by downloading [Raspbian Linux](https://www.raspberrypi.org/downloads/raspbian/) to your existing computer. The “Lite” distribution is fine for BTCPay Server setup, but if you want to use your Raspberry Pi for other things, you might want the full image.
 
 ![RPI4 Linux Installation](./img/RPI4Linux.png)
 
@@ -223,7 +223,7 @@ git clone https://github.com/btcpayserver/btcpayserver-docker
 cd btcpayserver-docker
 ```
 
-Configure BTCPay by setting some [environment variables](https://github.com/btcpayserver/btcpayserver-docker#environment-variables):
+Configure BTCPay Server by setting some [environment variables](https://github.com/btcpayserver/btcpayserver-docker#environment-variables):
 
 ```bash
 export BTCPAY_HOST="raspberrypi.local"
@@ -244,7 +244,7 @@ export BTCPAY_ADDITIONAL_HOSTS="btcpay.YourDomain.com,btcpay.local"
 
 In case you want to restrict access to your local network only, please note that you need to use a `.local` domain.
 
-Run the BTCPay installation:
+Run the BTCPay Server installation:
 
 ```bash
 . ./btcpay-setup.sh -i
