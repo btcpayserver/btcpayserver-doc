@@ -8,7 +8,7 @@ To create an app, go to Apps > Create a new app. Apps are store-dependent, which
 
 The web-based PoS app allows users with brick and mortar stores to readily accept cryptocurrencies without fees or a third-party, directly to their wallet. The PoS can be displayed easily on tablets or any other devices which support web browsing. Users can easily create a homescreen shortcut for a quick access to the web-app.
 
-![BTCPay Pos](./img/BTCPayPointOfSale1.jpg)
+![BTCPay Server Pos](./img/BTCPayPointOfSale1.jpg)
 
 Adding new products is easy. The app has a shopping cart feature, tips, product inventory, custom payment options and more.
 
@@ -43,7 +43,7 @@ If you would like to provide digital or physical products to the backers of your
 
 ## Payment Button
 
-Easily-embeddable HTML and highly-customizable payment buttons allow users to receive tips and donations. Online stores can also integrate payment buttons. When a site visitor clicks on the button, BTCPay displays the invoice.
+Easily-embeddable HTML and highly-customizable payment buttons allow users to receive tips and donations. Online stores can also integrate payment buttons. When a site visitor clicks on the button, BTCPay Server displays the invoice.
 
 1. Go to > Store > Settings > Pay Button
 2. Allow anyone to create invoices
@@ -54,11 +54,11 @@ Easily-embeddable HTML and highly-customizable payment buttons allow users to re
 
 ## Lightning Network Apps (Lapps)
 
-[Lapps](https://blockstream.com/2018/03/29/blockstreams-week-of-lapps-ends/) are applications built on top of [Lightning Charge](https://blockstream.com/2018/01/16/lightning-charge/), a complimentary package that enables easier development on top of c-lightning. If you decided to use c-lightning, you could easily connect your BTCPay to any of the Lapps.
+[Lapps](https://blockstream.com/2018/03/29/blockstreams-week-of-lapps-ends/) are applications built on top of [Lightning Charge](https://blockstream.com/2018/01/16/lightning-charge/), a complimentary package that enables easier development on top of c-lightning. If you decided to use c-lightning, you could easily connect your BTCPay Server to any of the Lapps.
 
-BTCPay exposes all the necessary information required to connect your internal BTCPay c-lightning node to a Lightning Network App. Go to Server Settings > Services > Lightning charge server > See information > Credentials.
+BTCPay Server exposes all the necessary information required to connect your internal BTCPay Server c-lightning node to a Lightning Network App. Go to Server Settings > Services > Lightning charge server > See information > Credentials.
 
-Below are videos that showcase how to connect some of the lapps to BTCPay.
+Below are videos that showcase how to connect some of the lapps to BTCPay Server.
 
 [![c-lightningbtcpay1](https://img.youtube.com/vi/6EHNq1anD1k/mqdefault.jpg)](https://www.youtube.com/watch?v=6EHNq1anD1k "BTCPay Server - c-lightning and lapps intro")
 
