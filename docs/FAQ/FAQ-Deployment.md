@@ -7,11 +7,11 @@ This document covers the most common questions, errors, and issues you may encou
 Here are common questions about installation, regardless of the deployment method.
 
 * [How much does it cost to run BTCPay Server?](FAQ-Deployment.md#how-much-does-it-cost-to-run-btcpay-server)
-* [What are the minimal requirements for BTCPay?](FAQ-Deployment.md#what-are-the-minimal-requirements-for-btcpay)
+* [What are the minimal requirements for BTCPay Server?](FAQ-Deployment.md#what-are-the-minimal-requirements-for-btcpay)
 * [What is the easiest method to deploy a self-hosted BTCPay Server?](FAQ-Deployment.md#what-is-the-easiest-method-to-deploy-a-self-hosted-btcpay-server)
 * [How to choose a proper deployment method?](FAQ-Deployment.md#how-to-choose-a-proper-deployment-method)
-* [Why do I need a VPS? Can't I just run BTCPay on my home computer?](FAQ-Deployment.md#can-i-run-btcpay-on-my-home-computer)
-* [Can I run BTCPay on my hardware?](FAQ-Deployment.md#can-i-run-btcpay-on-my-own-hardware)
+* [Why do I need a VPS? Can't I just run BTCPay Server on my home computer?](FAQ-Deployment.md#can-i-run-btcpay-on-my-home-computer)
+* [Can I run BTCPay Server on my hardware?](FAQ-Deployment.md#can-i-run-btcpay-on-my-own-hardware)
 * [Can I deploy on my existing VPS?](FAQ-Deployment.md#can-i-deploy-btcpay-on-my-existing-vps)
 * [Are there free hosts where I can test?](FAQ-Deployment.md#are-there-free-hosts-where-i-can-test)
 * [After initial deployment, I can't register and I don't have a login yet?](FAQ-Deployment.md#after-initial-deployment-i-can-t-register-and-i-don-t-have-a-login-yet)
@@ -20,34 +20,34 @@ Here are common questions about installation, regardless of the deployment metho
 * [Why activate Tor? Does it mean that nobody knows who I am?](FAQ-Deployment.md#why-activate-tor-does-it-mean-that-nobody-knows-who-i-am)
 * [How to access the .onion address without clearnet?](FAQ-Deployment.md#how-to-access-the-onion-address-without-clearnet)
 * [How can I modify or deactivate environment variables?](FAQ-Deployment.md#how-can-i-modify-or-deactivate-environment-variables)
-* [How can I run BTCPay on testnet?](FAQ-Deployment.md#how-can-i-run-btcpay-on-testnet)
-* [Can I start BTCPay only when I'm expecting a payment?](FAQ-Deployment.md#can-i-start-btcpay-only-when-i-m-expecting-a-payment)
-* [Can I connect to my BTCPay Bitcoin P2P on port 8333?](FAQ-Deployment.md#can-i-connect-to-my-btcpay-bitcoin-p2p-on-port-8333)
+* [How can I run BTCPay Server on testnet?](FAQ-Deployment.md#how-can-i-run-btcpay-on-testnet)
+* [Can I start BTCPay Server only when I'm expecting a payment?](FAQ-Deployment.md#can-i-start-btcpay-only-when-i-m-expecting-a-payment)
+* [Can I connect to my BTCPay Server Bitcoin P2P on port 8333?](FAQ-Deployment.md#can-i-connect-to-my-btcpay-bitcoin-p2p-on-port-8333)
 
 ## Web Deployment FAQ
 
 ### Luna Node Web Deployment FAQ
 
-* [How to change domain name on my LunaNode BTCPay?](FAQ-Deployment.md#how-to-change-domain-name-on-my-lunanode-btcpay)
+* [How to change domain name on my LunaNode BTCPay Server?](FAQ-Deployment.md#how-to-change-domain-name-on-my-lunanode-btcpay)
 
 ## Manual Deployment FAQ
 
-* [How to manually install BTCPay on Ubuntu 18.04?](FAQ-Deployment.md#how-to-manually-install-btcpay-on-ubuntu-18-04)
-* [How do I completely uninstall BTCPay from a linux environment (docker version)](FAQ-Deployment.md#how-do-i-completely-uninstall-btcpay-from-a-linux-environment-docker-version)
+* [How to manually install BTCPay Server on Ubuntu 18.04?](FAQ-Deployment.md#how-to-manually-install-btcpay-on-ubuntu-18-04)
+* [How do I completely uninstall BTCPay Server from a linux environment (docker version)](FAQ-Deployment.md#how-do-i-completely-uninstall-btcpay-from-a-linux-environment-docker-version)
 * [How to deploy BTCPay Server alongside existing Bitcoin full node?](./FAQ-Deployment.md#how-to-deploy-btcpay-server-alongside-existing-bitcoin-node)
 * [With the docker deployment, how to use a different volume for the data?](FAQ-Deployment.md#with-the-docker-deployment-how-to-use-a-different-volume-for-the-data)
 * [I get 503 Service Temporarily Unavailable nginx](FAQ-Deployment.md#i-get-503-service-temporarily-unavailable-nginx)
-  * [Cause 1: Trying to access my BTCPay by IP address](FAQ-Deployment.md#cause-1-trying-to-access-my-btcpay-by-ip-address)
-  * [Cause 2: btcpayserver or letsencrypt-nginx-proxy is not running](FAQ-Deployment.md#cause-2-btcpayserver-or-letsencrypt-nginx-proxy-is-not-running)
-  * [Cause 3: Error: BTCPay is expecting you to access this website from](FAQ-Deployment.md#cause-3-btcpay-is-expecting-you-to-access-this-website-from)
-  * [Cause 4: Getting 500 nginx error on a local server https and for http BTCPay is expecting you to access this website from](FAQ-Deployment.md#cause-4-getting-500-nginx-error-on-a-local-server-https-and-for-http-btcpay-is-expecting-you-to-access-this-website-from)
+  * [Cause 1: Trying to access my BTCPay Server by IP address](FAQ-Deployment.md#cause-1-trying-to-access-my-btcpay-by-ip-address)
+  * [Cause 2: BTCPay Server or letsencrypt-nginx-proxy is not running](FAQ-Deployment.md#cause-2-btcpayserver-or-letsencrypt-nginx-proxy-is-not-running)
+  * [Cause 3: Error: BTCPay Server is expecting you to access this website from](FAQ-Deployment.md#cause-3-btcpay-is-expecting-you-to-access-this-website-from)
+  * [Cause 4: Getting 500 nginx error on a local server https and for http BTCPay Server is expecting you to access this website from](FAQ-Deployment.md#cause-4-getting-500-nginx-error-on-a-local-server-https-and-for-http-btcpay-is-expecting-you-to-access-this-website-from)
 
 ## General Deployment
 
 ### How much does it cost to run BTCPay Server?
 
-BTCPay is a 100% free and open-source software. We do not charge you anything.
-However, to run it, you should host it. You can run it as a self-hosted solution on your own local server, or use a cloud hosting provider, which is what a majority of users do. Advanced users can run BTCPay on [their own hardware](../HardwareDeployment.md). Less technical users can use [Hardware As A Service options](../HardwareAsAService.md). If you do not wish to host your own server, you can use a free [Third-Party Host](../ThirdPartyHosting.md). Visit our [Deployment Page](../Deployment.md) for more information on the various ways in which you can run BTCPay.
+BTCPay Server is a 100% free and open-source software. We do not charge you anything.
+However, to run it, you should host it. You can run it as a self-hosted solution on your own local server, or use a cloud hosting provider, which is what a majority of users do. Advanced users can run BTCPay Server on [their own hardware](../HardwareDeployment.md). Less technical users can use [Hardware As A Service options](../HardwareAsAService.md). If you do not wish to host your own server, you can use a free [Third-Party Host](../ThirdPartyHosting.md). Visit our [Deployment Page](../Deployment.md) for more information on the various ways in which you can run BTCPay Server.
 
 ### What are the minimal requirements for BTCPay?
 
@@ -73,15 +73,15 @@ Yes, you can. Check our the [Hardware Deployment page](../HardwareDeployment.md)
 
 ### Can I deploy BTCPay on my existing VPS?
 
-Yes. BTCPay is not limited to the documented deployment methods. You can use whichever hosting solution you prefer, that fits the minimal requirements.
+Yes. BTCPay Server is not limited to the documented deployment methods. You can use whichever hosting solution you prefer, that fits the minimal requirements.
 
 ### Are there free hosts where I can test?
 
-On a self-hosted BTCPay, an unlimited amount of users and stores can be attached. Some community users have open registration on their servers for others to use their BTCPay Server mainly for testing and learning. Most of them are community-driven and free. See the [third-party hosts documentation](../ThirdPartyHosting.md) for more information.
+On a self-hosted BTCPay Server, an unlimited amount of users and stores can be attached. Some community users have open registration on their servers for others to use their BTCPay Server mainly for testing and learning. Most of them are community-driven and free. See the [third-party hosts documentation](../ThirdPartyHosting.md) for more information.
 
 ### After initial deployment, I can't register and I don't have a login yet?
 
-When you deploy your BTCPay Server, you should first register a user (during server synchronization). This user is automatically the server admin. If your BTCPay only shows Login in the header menu, and you are unable to register the first user after initial deployment, someone else has registered on your server as the admin. Although this is unlikely to occur (the user would need to know and watch your BTCPay domain name), they had access to your ssh private keys, thus you should redeploy a new server for security reasons.
+When you deploy your BTCPay Server, you should first register a user (during server synchronization). This user is automatically the server admin. If your BTCPay Server only shows Login in the header menu, and you are unable to register the first user after initial deployment, someone else has registered on your server as the admin. Although this is unlikely to occur (the user would need to know and watch your BTCPay Server domain name), they had access to your ssh private keys, thus you should redeploy a new server for security reasons.
 
 ### How do I activate Tor on my BTCPay Server?
 
@@ -100,22 +100,22 @@ Then wait a few minutes for the server to restart, and you're done!
 
 ### Why activate Tor? Does it mean that nobody knows who I am?
 
-Tor for BTCPay server is intended more as an improvement of the setup process, and allows for more flexibility for hosting on one's own device at home or in an office.
+Tor for BTCPay Server is intended more as an improvement of the setup process, and allows for more flexibility for hosting on one's own device at home or in an office.
 
-Having Tor activated would allow for simpler, plug-and-play usage of BTCPay, as it suppress the need for the following configuration steps:
+Having Tor activated would allow for simpler, plug-and-play usage of BTCPay Server, as it suppress the need for the following configuration steps:
 
 * Opening multiple ports on the firewall
 * Configuring the NAT for port redirection to your device on your local network
 * Setting up a DNS entry to get a HTTPS certificate
 * Having a fixed IP for Lightning
 
-While these steps are usually not a problem when BTCPay is hosted on a VPS, it can be difficult to solve for non-technical users on home or office networks.
+While these steps are usually not a problem when BTCPay Server is hosted on a VPS, it can be difficult to solve for non-technical users on home or office networks.
 
 Tor just solves all these issues in one shot, all you have to do is plug your device on the local network. It is especially useful for POS application.
 
 But if you're looking for perfect privacy and security, **activating Tor with your BTCPay just won't do it.**
 
-Tor is a really tricky software to use for developers, as the slightest mistake can tear down the anonymity it provides. As BTCPay is evolving into a rather complex service and adding more and more plugins, even if we tried to route all this traffic through Tor, we couldn't guarantee that there would never be leaks of data in clear.
+Tor is a really tricky software to use for developers, as the slightest mistake can tear down the anonymity it provides. As BTCPay Server is evolving into a rather complex service and adding more and more plugins, even if we tried to route all this traffic through Tor, we couldn't guarantee that there would never be leaks of data in clear.
 
 We think that the illusion of security is more dangerous that no security, or at least security we know is imperfect. So be aware that activating Tor doesn't prevent others to connect to your instance website, your bitcoin or lightning node in clear, **it doesn't make you anonymous at all.**
 
@@ -123,7 +123,7 @@ If you want to know more about the philosophy behind all this, you can read our 
 
 ### How to access the .onion address without clearnet?
 
-To see the .onion address of your BTCPay instance without accessing it through the clearnet and clicking the Tor logo in top left corner, apply the following command:
+To see the .onion address of your BTCPay Server instance without accessing it through the clearnet and clicking the Tor logo in top left corner, apply the following command:
 
 ```bash
 cat /var/lib/docker/volumes/generated_tor_servicesdir/_data/BTCPayServer/hostname
@@ -131,9 +131,9 @@ cat /var/lib/docker/volumes/generated_tor_servicesdir/_data/BTCPayServer/hostnam
 
 ### How can I modify or deactivate environment variables?
 
-In BTCPay, various options are activated through environment variables. You can modify or delete any of these options using command lines by exporting the new value with `export {environment variable}="{value}"` and then running `. ./btcpay-setup.sh -i` again.
+In BTCPay Server, various options are activated through environment variables. You can modify or delete any of these options using command lines by exporting the new value with `export {environment variable}="{value}"` and then running `. ./btcpay-setup.sh -i` again.
 
-For example, let's say I want to deactivate Tor for my BTCPay server:
+For example, let's say I want to deactivate Tor for my BTCPay Server:
 
 ```bash
 # Login as root
@@ -165,7 +165,7 @@ If you need to figure out which environment variable you need to modify, have a 
 
 ### How can I run BTCPay on testnet?
 
-Building on the section above, this is how you configure BTCPay to use `testnet` instead of the default `mainnet`:
+Building on the section above, this is how you configure BTCPay Server to use `testnet` instead of the default `mainnet`:
 
 ```bash
 # Export the NBITCOIN_NETWORK variable switching to testnet
@@ -176,15 +176,15 @@ export NBITCOIN_NETWORK="testnet"
 ```
 
 If you just want to test things quickly without deploying everything yourself, have a look at the [Try It Out](../TryItOut.md) section.
-It provides links and explanations for a BTCPay testnet instance hosted by us.
+It provides links and explanations for a BTCPay Server testnet instance hosted by us.
 
 ### Can I start BTCPay only when I'm expecting a payment?
 
-No, you need to keep your BTCPay running at all times so that your Bitcoin node stays in sync with the blockchain to verify transactions. If you only start it up every now and then, it would take a long time to catch up on verifying recent blocks, and your payments would not show up until much later.
+No, you need to keep your BTCPay Server running at all times so that your Bitcoin node stays in sync with the blockchain to verify transactions. If you only start it up every now and then, it would take a long time to catch up on verifying recent blocks, and your payments would not show up until much later.
 
 ### Can I connect to my BTCPay Bitcoin P2P on port 8333?
 
-BTCPay's Bitcoin core node is not exposed externally by default. For BTCPay purposes, it is typically not in the interest of the user, as it increases the bandwidth requirement. BTCPay is also whitebinding connections to this port, so opening it would expose the node to potential DDoS.
+BTCPay Server's Bitcoin core node is not exposed externally by default. For BTCPay Server purposes, it is typically not in the interest of the user, as it increases the bandwidth requirement. BTCPay Server is also whitebinding connections to this port, so opening it would expose the node to potential DDoS.
 
 However, we expose a P2P connection to your full node on Tor. You can get the Tor address by running:
 
@@ -296,7 +296,7 @@ http {
 
 Now test your Nginx config with `service nginx configtest` and reload the config with `service nginx reload`.
 
-Then, you need to make sure that BTCPayServer does not try to handle HTTPS on its side, you can do this by disabling it on your BTCPayServer instance.
+Then, you need to make sure that BTCPay Server does not try to handle HTTPS on its side, you can do this by disabling it on your BTCPay Server instance.
 
 ```bash
 BTCPAYGEN_EXCLUDE_FRAGMENTS="$BTCPAYGEN_EXCLUDE_FRAGMENTS;nginx-https"
@@ -307,7 +307,7 @@ Notice: If your BTCPay Server install has more than one domain (for example `WOO
 
 ## Web-deployment
 
-Here you can find common questions and solutions to BTCPay web-deployments.
+Here you can find common questions and solutions to BTCPay Server web-deployments.
 
 ### Can I run BTCPay on my home computer?
 
@@ -334,8 +334,8 @@ Check this [community guide](https://freedomnode.com/blog/114/how-to-setup-btc-a
 1. Shutdown BTCPay Server (after you ensure you have required backups etc) with `btcpay-down.sh` and cleanup the install with `btcpay-clean.sh`.
 2. Change to your Base install directory `cd "$(dirname "$BTCPAY_ENV_FILE")"`
 3. Delete all volumes in /var/lib/docker/volumes/ with `docker-compose -f $BTCPAY_DOCKER_COMPOSE down --v`
-4. Remove other BTCPay system files with this: `rm /etc/systemd/system/btcpayserver.service && rm /etc/profile.d/btcpay-env.sh`
-5. Go into /usr/local/bin and remove all of the symlinks that BTCPay put in there.  At the time of writing these were:
+4. Remove other BTCPay Server system files with this: `rm /etc/systemd/system/btcpayserver.service && rm /etc/profile.d/btcpay-env.sh`
+5. Go into /usr/local/bin and remove all of the symlinks that BTCPay Server put in there.  At the time of writing these were:
 ```
 bitcoin-cli.sh -> /root/BTCPayServer/btcpayserver-docker/bitcoin-cli.sh
 bitcoin-lncli.sh -> /root/BTCPayServer/btcpayserver-docker/bitcoin-lncli.sh
@@ -348,7 +348,7 @@ btcpay-up.sh -> /root/BTCPayServer/btcpayserver-docker/btcpay-up.sh
 btcpay-update.sh -> /root/BTCPayServer/btcpayserver-docker/btcpay-update.sh
 changedomain.sh -> /root/BTCPayServer/btcpayserver-docker/changedomain.sh
 ```
-6. Remove your BTCPay installation folder with `rm -r "$(dirname "$BTCPAY_ENV_FILE")"`
+6. Remove your BTCPay Server installation folder with `rm -r "$(dirname "$BTCPAY_ENV_FILE")"`
 7. Just to make sure, run `docker system prune` after a reboot to get rid of any other docker related artifacts.
 
 ### How to deploy BTCPay Server alongside existing Bitcoin node?
@@ -395,7 +395,7 @@ If you are running on linux, due to [a limitation of docker](https://github.com/
 
 ### With the docker deployment, how to use a different volume for the data?
 
-First, you need to make sure that btcpayserver and docker is not running
+First, you need to make sure that BTCPay Server and docker is not running
 ```bash
 sudo su -
 btcpay-down.sh
@@ -485,7 +485,7 @@ if ! grep -qF "$DOCKER_VOLUMES" /etc/fstab; then
 fi
 ```
 
-Now restart docker and btcpayserver
+Now restart docker and BTCPay Server
 
 ```bash
 systemctl start docker
@@ -498,7 +498,7 @@ Note: We use mount bind instead of symbolic link because docker would complain w
 
 #### Cause 1: Trying to access my BTCPay by IP address
 
-Your nginx config is set to route the HTTP request to a particular container based on the domain name of the request. For example, the official [deployment on pi 4](../RPi4.md) was to setup the souce domain name to http://raspberrypi.local/ yet getting automatic local domain raspberrypi.local does not always work. You are probably in this situation and trying to type the IP address of your BTCPay into the web-browser.
+Your nginx config is set to route the HTTP request to a particular container based on the domain name of the request. For example, the official [deployment on pi 4](../RPi4.md) was to setup the souce domain name to http://raspberrypi.local/ yet getting automatic local domain raspberrypi.local does not always work. You are probably in this situation and trying to type the IP address of your BTCPay Server into the web-browser.
 
 Since nginx gets the IP address in the request instead of raspberrypi.local it does not know where to route that request and returns:
 ```
@@ -507,7 +507,7 @@ Since nginx gets the IP address in the request instead of raspberrypi.local it d
 nginx
 ```
 
-You can fix this by forcing nginx to route the HTTP request to BTCPay even if the request domain name is not recognized.
+You can fix this by forcing nginx to route the HTTP request to BTCPay Server even if the request domain name is not recognized.
 Simply, re-run the setup script like this:
 
 ```bash
@@ -548,7 +548,7 @@ You might also see the following error: `You access BTCPay Server over an unsecu
 
 You might see this error on the front page of your BTCPay Server since version `1.0.3.73`.
 
-This is caused by a breaking change made in BTCPay to be able to handle different domain on the same server.
+This is caused by a breaking change made in BTCPay Server to be able to handle different domain on the same server.
 
 It happens because your BTCPay Server is not exposed directly on internet, instead a reverse proxy (like nginx or IIS) receive the request and forward it to BTCPay Server.
 
