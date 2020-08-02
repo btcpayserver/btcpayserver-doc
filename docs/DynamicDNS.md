@@ -6,9 +6,9 @@ Dynamic DNS is needed if:
 
 * You are running BTCPay Server with a hosting provider that does not provide a default domain for your server
 * You don't want to buy your own domain name (e.g. `mybusiness.com`)
-* You need to access your BTCPay Server over internet via HTTPS. (Your BTCPayServer is accessed by other internet users)
+* You need to access your BTCPay Server over internet via HTTPS. (Your BTCPay Server is accessed by other internet users)
 
-Then you want to use BTCPayServer Dynamic DNS service.
+Then you want to use BTCPay Server Dynamic DNS service.
 
 You **don't need** Dynamic DNS Service if:
 
@@ -47,7 +47,7 @@ Go to Server Settings > Services > Dynamic DNS.
 
 ### Step 3: Configure your BTCPay docker install to provide HTTPS certificates
 
-If you are using a docker deployment, you also need to update your BTCPayServer install.
+If you are using a docker deployment, you also need to update your BTCPay Server install.
 Connect via SSH to your instance and run:
 
 ```bash
