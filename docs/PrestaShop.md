@@ -10,12 +10,12 @@ A bitcoin payment plugin for PrestaShop using BTCPay Server.
 
 ## Prerequisites
 
-* [Self-hosted BTCPay](./Deployment.md) or a server [hosted by a third-party](./ThirdPartyHosting.md)
+* [Self-hosted BTCPay Server](./Deployment.md) or a server [hosted by a third-party](./ThirdPartyHosting.md)
 * [Registered account on the instance](./RegisterAccount.md)
-* [Created BTCPay store](./CreateStore.md)
+* [Created BTCPay Server store](./CreateStore.md)
 * [Connected wallet to a store](./WalletSetup.md)
 
-If you want to test in test mode, just paste an other btcpayserver url with testing port.
+If you want to test in test mode, just paste an other BTCPay Server url with testing port.
 
 ## Making a release
 
@@ -37,7 +37,7 @@ If you want to test in test mode, just paste an other btcpayserver url with test
 1. Download the latest release from [https://github.com/btcpayserver/prestashop-plugin/releases](https://github.com/btcpayserver/prestashop-plugin/releases)
 2. Go to your PrestaShop administration. Under "Modules and services" select "Upload a module" (v1.7)
 3. Go to your "installed modules" -> "BTCPay" and click [Configure]<br />
-4. Go on your BTCPay server, in your store and display access tokens.
+4. Go on your BTCPay Server, in your store and display access tokens.
 5. Click on "Create a new token API", select your store and then approve
 6. You will see: "Server initiated pairing code: XXXX". Go back to prestashop and enter your pairing code.
 7. Validate.
@@ -48,7 +48,7 @@ If you want to test in test mode, just paste an other btcpayserver url with test
 ### Tested successfully
 
 * Prestashop 1.7.x
-* BTCPay server v1.0.1 and v1.0.2
+* BTCPay Server v1.0.1 and v1.0.2
 
 ### Contribute
 
