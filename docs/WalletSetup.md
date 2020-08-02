@@ -18,12 +18,16 @@ By using an existing wallet, you can receive payments to the external wallet, wi
 :::
 
 Externally generated wallet can be used as:
-- [Existing hardware wallet](#use-an-existing-hardware-wallet)
-- [Existing software wallet](#use-an-existing-software-wallet)
+- [(3) Wallet Setup](#3-wallet-setup)
+  - [Use an existing wallet](#use-an-existing-wallet)
+    - [Use an existing hardware wallet](#use-an-existing-hardware-wallet)
+    - [Use an existing software wallet](#use-an-existing-software-wallet)
+  - [Create a new wallet](#create-a-new-wallet)
+  - [Summary](#summary)
 
 ### Use an existing hardware wallet
 
-Hardware wallets provide a good balance between security and ease of use. If you already have a hardware wallet set up, you can easily use it with your BTCPay Server. Thanks to built-in [hardware wallet integration](./Vault.md) the xpub key from the hardware wallet is automatically added to your BTCPay Server. The integration further allows you to spend funds received to your store within BTCPay's [internal wallet](./Wallet.md)
+Hardware wallets provide a good balance between security and ease of use. If you already have a hardware wallet set up, you can easily use it with your BTCPay Server. Thanks to built-in [hardware wallet integration](./Vault.md) the xpub key from the hardware wallet is automatically added to your BTCPay Server. The integration further allows you to spend funds received to your store within BTCPay Server's [internal wallet](./Wallet.md)
 
 :::tip
 If you own a hardware wallet, follow the instructions on how to [use a an existing hardware wallet with your BTCPay Server](./Vault.md)
@@ -40,7 +44,7 @@ For that reason, we recommend that you only use software wallets listed below.
 
 Click on the link above you will be redirected to a step by step tutorial on how to set up particular software wallet with BTCPay Server.
 
-To spend and manage the funds received to your external software wallet, you can use an [internal BTCPay Wallet](./Wallet.md) and sign a transaction with your private key or simply manage the funds in that external wallet itself.
+To spend and manage the funds received to your external software wallet, you can use an [internal BTCPay Server Wallet](./Wallet.md) and sign a transaction with your private key or simply manage the funds in that external wallet itself.
 
 ## Create a new wallet
 
