@@ -10,15 +10,15 @@ First and foremost, try to determine when the issue happens. Try to replicate th
 
 ## 2. Looking through the logs
 
-Logs can provide an essential piece of information. In the next few paragraphs, we will describe how to get the log information for various parts of BTCPay.
+Logs can provide an essential piece of information. In the next few paragraphs, we will describe how to get the log information for various parts of BTCPay Server.
 
 ### 2.1 BTCPay Logs
 
 Since the v1.0.3.8, you can easily access BTCPay Server logs from the front-end. If you are a server admin, go to **Server Settings > Logs** and open the logs file. If you don't know what a particular error in the logs means, make sure to mention it when troubleshooting.
 
-If you would like more detailed logs and you're using a Docker deployment, you can view logs of specific Docker containers using the command line. See these [instructions to ssh](./FAQ/FAQ-ServerSettings.md#how-to-ssh-into-my-btcpay-running-on-vps) into an instance of BTCPay running on a VPS.
+If you would like more detailed logs and you're using a Docker deployment, you can view logs of specific Docker containers using the command line. See these [instructions to ssh](./FAQ/FAQ-ServerSettings.md#how-to-ssh-into-my-btcpay-running-on-vps) into an instance of BTCPay Server running on a VPS.
 
-Below is a general list of the container names used for BTCPay.
+Below is a general list of the container names used for BTCPay Server.
 
 
 | LOGS FOR | CONTAINER NAME  |
@@ -113,7 +113,7 @@ We try to document the most common issues on the [Frequently Asked Questions pag
 
 ### 3.2 GitHub
 
-When there's an advanced technical issue, users usually open an issue on GitHub. Take a look at the BTCPay GitHub repository and browse [search the closed issues](https://github.com/btcpayserver/btcpayserver/issues?q=is%3Aissue+is%3Aclosed).
+When there's an advanced technical issue, users usually open an issue on GitHub. Take a look at the BTCPay Server GitHub repository and browse [search the closed issues](https://github.com/btcpayserver/btcpayserver/issues?q=is%3Aissue+is%3Aclosed).
 
 ### 3.3 Mattermost
 
@@ -123,15 +123,15 @@ Mattermost chat platform is great for similar issues, other users experienced be
 
 If you're unable to solve the problem yourself, do not worry. There's an amid community ready to help you.
 
-The better you describe the problem, the higher are the chances of getting a timely fix. Be concise and provide as much relevant information as possible. Be sure to include the [version you're using](./FAQ/FAQ-ServerSettings.md#how-can-i-see-my-btcpay-version) and describe your BTCPay Deployment Setup. Try to explain what you're trying to do and what's the issue. If you can provide the logs. If you think it's relevant, feel free to include a screenshot.
+The better you describe the problem, the higher are the chances of getting a timely fix. Be concise and provide as much relevant information as possible. Be sure to include the [version you're using](./FAQ/FAQ-ServerSettings.md#how-can-i-see-my-btcpay-version) and describe your BTCPay Server Deployment Setup. Try to explain what you're trying to do and what's the issue. If you can provide the logs. If you think it's relevant, feel free to include a screenshot.
 
 Here's a good example of how to ask a question.
 
-> I'm having a problem with XYZ. I can replicate the problem. My BTCPay version is 0.100.31, and I deployed my server on Digital Ocean by following Docker deployment guide. I've searched through the FAQ and closed GitHub issues, but there's no solution to my problem. My BTCPay Setup is XYZ, and the issue is occurring when I do XYZ. Here are the logs I was able to get from my BTCPay instance. You can see the error in the image I attached.
+> I'm having a problem with XYZ. I can replicate the problem. My BTCPay Server version is 0.100.31, and I deployed my server on Digital Ocean by following Docker deployment guide. I've searched through the FAQ and closed GitHub issues, but there's no solution to my problem. My BTCPay Server Setup is XYZ, and the issue is occurring when I do XYZ. Here are the logs I was able to get from my BTCPay Server instance. You can see the error in the image I attached.
 
 ### 4.1 Asking the community (general problems)
 
-For quick answers to fundamental problems, it's best to post a question in #support channel on [BTCPay Mattermost](https://chat.btcpayserver.org/btcpayserver/channels/support).
+For quick answers to fundamental problems, it's best to post a question in #support channel on [BTCPay Server Mattermost](https://chat.btcpayserver.org/btcpayserver/channels/support).
 
 ### 4.2 Opening an Issue on GitHub (advanced problems)
 
