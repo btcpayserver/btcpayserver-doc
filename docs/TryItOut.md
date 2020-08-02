@@ -1,10 +1,10 @@
 # Try it out
 
-This section goes through the process of creating an account and store on our public BTCPay server. (For evaluation purpose)
+This section goes through the process of creating an account and store on our public BTCPay Server. (For evaluation purpose)
 
 You can also follow along in this video:
 
-[![BTCPay - Introduction](https://img.youtube.com/vi/xh3Eac66qc4/mqdefault.jpg)](http://www.youtube.com/watch?v=xh3Eac66qc4 "BTCPay - Introduction")
+[![BTCPay Server - Introduction](https://img.youtube.com/vi/xh3Eac66qc4/mqdefault.jpg)](http://www.youtube.com/watch?v=xh3Eac66qc4 "BTCPay - Introduction")
 
 ## Create your first invoice
 
@@ -27,11 +27,11 @@ Let's use Electrum to create a testnet wallet for your store:
 
 Let's configure the store so it uses your Electrum wallet:
 
-1. Go to the Settings page of your store in BTCPay
+1. Go to the Settings page of your store in BTCPay Server
 2. On the "General Settings" page you will find the "Derivation Scheme" section - click the "Modify" action for BTC
 3. Paste the "Master Public Key" copied from Electrum into the "Derivation Scheme" text field and click "Continue"
-4. Confirm the addresses by clicking on "Receive" in Electrum: The "Receiving address" should match the first address shown in BTCPay
-5. After that your test wallet should appear on the [Wallets page](https://testnet.demo.btcpayserver.org/wallets) of your BTCPay account
+4. Confirm the addresses by clicking on "Receive" in Electrum: The "Receiving address" should match the first address shown in BTCPay Server
+5. After that your test wallet should appear on the [Wallets page](https://testnet.demo.btcpayserver.org/wallets) of your BTCPay Server account
 
 Then you can create an invoice, either through
 * the "Invoice" menu on the website or
@@ -50,12 +50,12 @@ Then you can create an invoice, either through
 * The "Invoice" menu on the website or
 * The process documented on the [Custom integration](./CustomIntegration.md)
 
-See the [What's Next](./WhatsNext.md) page for other options on how to continue exploring BTCPay.
+See the [What's Next](./WhatsNext.md) page for other options on how to continue exploring BTCPay Server.
 
 ## BTCPay Server Demo
 
 To see BTCPay Server in action, visit our demo apps and stores or check out some of the stores using BTCPay Server in production.
 
-* [BTCPay Demo Store](https://store.btcpayserver.org/)
+* [BTCPay Server Demo Store](https://store.btcpayserver.org/)
 * [Point of Sale Demo](https://mainnet.demo.btcpayserver.org/apps/87kj5yKay8mB4UUZcJhZH5TqDKMD3CznjwLjiu1oYZXe/pos)
 * [In-production stores](https://directory.btcpayserver.org)
