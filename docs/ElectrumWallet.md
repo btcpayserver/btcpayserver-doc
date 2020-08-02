@@ -22,7 +22,7 @@ After the installation, open Electrum Wallet by clicking on the icon on your des
 3. In BTCPay Server, Store Settings > General > Derivation Scheme - Paste the Extended Public Key
 4. Go to Receive tab in Electrum.
 5. Compare the addresses in Electrum and BTCPay Server, they should match.
-6. Confirm the address match in BTCPay.
+6. Confirm the address match in BTCPay Server.
 
 ## Step by Step
 
@@ -58,7 +58,7 @@ When the wallet loads (it may take few moments), in the top menu, click on the `
 
 ![ElectrumWallet](./img/ElectrumWallet9.png)
 
-Select and **copy** the `Master Public Key`. This is the **public** key from which BTCPay will derive addresses.
+Select and **copy** the `Master Public Key`. This is the **public** key from which BTCPay Server will derive addresses.
 
 ![ElectrumWallet](./img/ElectrumWallet10.png)
 
@@ -101,4 +101,4 @@ There's no good answer to how much you should set the gap limit to.  Most mercha
 
 For more details about the [Gap Limit, check the FAQ](./FAQ/FAQ-Wallet.md#missing-payments-in-my-software-or-hardware-wallet).
 
-Electrum and BTCPay Server are now connected. Any payments received to your BTCPay will be visible in Electrum, where you can further spend them.
+Electrum and BTCPay Server are now connected. Any payments received to your BTCPay Server will be visible in Electrum, where you can further spend them.
