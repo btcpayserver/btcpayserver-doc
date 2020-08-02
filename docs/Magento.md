@@ -4,7 +4,7 @@ If you're using Magento, an an open-source e-commerce platform written in PHP, y
 
 ## Magento 1
 
-1. Download [BTCPay Magento Plugin](https://github.com/btcpayserver/magento-plugin)
+1. Download [BTCPay Server Magento Plugin](https://github.com/btcpayserver/magento-plugin)
 2. Follow the [quick-start guide here](https://github.com/btcpayserver/magento-plugin/blob/master/GUIDE.md)
 
 ## Magento 2
