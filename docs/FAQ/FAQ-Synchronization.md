@@ -1,13 +1,20 @@
 # BTCPay Synchronization Issues
 
-This document covers the most common questions and issues that may occur during BTCPay sync.
+This document covers the most common questions and issues that may occur during BTCPay Server sync.
 
-* [Why does BTCPay sync?](#why-does-btcpay-sync)
-* [Can I skip/speed up the sync?](#can-i-skip-the-synchronization)
-* [How do I know that the sync is finished?](#how-do-i-know-that-btcpay-synced-completely)
-* [BTCPay takes forever to synchronize](#btcpay-server-takes-forever-to-synchronize)
-* [BTCPay Server keeps showing that my node is always starting](#btcpay-server-keeps-showing-that-my-node-is-always-starting)
-* [I already have a synced full node, can I use it with BTCPay?](#im-running-a-full-node-and-have-a-synched-blockchain-can-btcpay-use-it-so-that-it-doesnt-have-to-do-a-full-sync)
+- [BTCPay Synchronization Issues](#btcpay-synchronization-issues)
+  - [Why does BTCPay sync?](#why-does-btcpay-sync)
+  - [Can I skip the synchronization?](#can-i-skip-the-synchronization)
+  - [How do I know that BTCPay synced completely?](#how-do-i-know-that-btcpay-synced-completely)
+  - [BTCPay Server takes forever to synchronize](#btcpay-server-takes-forever-to-synchronize)
+    - [Cause 1: Not enough CPU](#cause-1-not-enough-cpu)
+    - [Cause 2: Using swap memory](#cause-2-using-swap-memory)
+  - [BTCPay Server keeps showing that my node is always starting](#btcpay-server-keeps-showing-that-my-node-is-always-starting)
+    - [Cause 1: Your bitcoin data directory is corrupted](#cause-1-your-bitcoin-data-directory-is-corrupted)
+    - [Cause 2: You do not have enough RAM](#cause-2-you-do-not-have-enough-ram)
+    - [Cause 3: You do not have enough storage](#cause-3-you-do-not-have-enough-storage)
+    - [Cause 4: Your last wallet synchronisation goes beyond pruned data](#cause-4-your-last-wallet-synchronisation-goes-beyond-pruned-data)
+  - [I'm running a full node and have a synched blockchain, can BTCPay use it so that it doesn't have to do a full sync?](#im-running-a-full-node-and-have-a-synched-blockchain-can-btcpay-use-it-so-that-it-doesnt-have-to-do-a-full-sync)
 
 ## Why does BTCPay sync?
 
@@ -19,7 +26,7 @@ It may seem tedious, but it's a critical step of running your own full node and 
 
 You can't skip synchronization, but you can drastically decrease the time it takes. If you're comfortable with using the command line, you can use FastSync to synchronize your node faster. Be sure to [read this FastSync document](https://github.com/btcpayserver/btcpayserver-docker/tree/master/contrib/FastSync) to understand the potential trust issues involved with this feature.
 
-To use FastSync, make sure your deployment has a pruning option enabled by using an `opt-save-storage` [environment variable](./FAQ-Deployment.md#how-can-i-modify-or-deactivate-environment-variables), otherwise bitcoind will not be able to sync. First step is to [ssh into](./FAQ-ServerSettings.md#how-to-ssh-into-my-btcpay-running-on-vps) your BTCPayServer instance and run the following commands:
+To use FastSync, make sure your deployment has a pruning option enabled by using an `opt-save-storage` [environment variable](./FAQ-Deployment.md#how-can-i-modify-or-deactivate-environment-variables), otherwise bitcoind will not be able to sync. First step is to [ssh into](./FAQ-ServerSettings.md#how-to-ssh-into-my-btcpay-running-on-vps) your BTCPay Server instance and run the following commands:
 
 ```bash
 sudo su -
@@ -31,7 +38,7 @@ cd contrib/FastSync
 btcpay-up.sh
 ```
 
-After FastSync is complete and you have brought back up your instance, refresh your BTCPay domain and wait for remaining blockchain synchronization. You can also follow [this video](https://youtube.com/watch?v=VNMnd-dX9Q8?t=1730).
+After FastSync is complete and you have brought back up your instance, refresh your BTCPay Server domain and wait for remaining blockchain synchronization. You can also follow [this video](https://youtube.com/watch?v=VNMnd-dX9Q8?t=1730).
 
 If your FastSync returns `You need to delete your Bitcoin Core wallet` after you load the uxto set, or you find this error: `Last wallet synchronisation goes beyond pruned data`, see the cause of [BTCPay Server keeps showing that my node is always starting](#btcpay-server-keeps-showing-that-my-node-is-always-starting).
 
@@ -208,7 +215,7 @@ Yes you can!  However, before you do that, you'll want to stop bitcoind from upd
 If you want to run BTCPay Server inside a docker-compose, and that you have the data directory (`.bitcoin`) of a fully synched node on your docker host, then you can reuse it easily for BTCPay Server.
 
 To do that, follow the following steps :
-* Do the normal setup according to [this instruction](https://github.com/btcpayserver/btcpayserver-docker/blob/master/README.md). Note the `opt-save-storage` environment variable, which is used to enable various pruning levels. If you do not want to prune your exiting data directory, then omit the following line in your BTCPay docker deployment: `export BTCPAYGEN_ADDITIONAL_FRAGMENTS="opt-save-storage-s"`.
+* Do the normal setup according to [this instruction](https://github.com/btcpayserver/btcpayserver-docker/blob/master/README.md). Note the `opt-save-storage` environment variable, which is used to enable various pruning levels. If you do not want to prune your exiting data directory, then omit the following line in your BTCPay Server docker deployment: `export BTCPAYGEN_ADDITIONAL_FRAGMENTS="opt-save-storage-s"`.
 * Once `btcpay-setup.sh` is over, turn down the docker compose with `btcpay-down.sh`.
 * Login as root with `sudo su -`.
 * Open the docker's volume for bitcoind : `cd /var/lib/docker/volumes/generated_bitcoin_datadir/`, and check its content with `ls -la`. You should see only one directory named `_data`.
