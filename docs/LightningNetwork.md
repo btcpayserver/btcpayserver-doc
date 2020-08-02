@@ -2,7 +2,7 @@
 
 After deploying BTCPay Server, you may want to experiment with an innovative second-layer payment system built on top of Bitcoin protocol - the [Lightning Network](https://en.bitcoin.it/wiki/Lightning_Network).
 
-This guide will show you how to set up your Lightning Network node in BTCPay and guide you through the basics.
+This guide will show you how to set up your Lightning Network node in BTCPay Server and guide you through the basics.
 
 ::: danger
 **Before you proceed, please understand that Lightning Network is still in the experimental stage. Do not put the money you can't afford to lose. There is a high risk of you losing the money.**
@@ -16,9 +16,9 @@ Take time to familiarize yourself with the risk.
 
 While the keys from your Lightning Network don't have a backup and someone can steal them theoretically, your on-chain Bitcoin funds are safe and are never uploaded on the server.
 
-As the technology matures and develops, things like a proper backup will be easier to implement in BTCPay.
+As the technology matures and develops, things like a proper backup will be easier to implement in BTCPay Server.
 
-BTCPay currently offers two implementations of the Lightning Network:
+BTCPay Server currently offers two implementations of the Lightning Network:
 
 * [LND](https://github.com/lightningnetwork/lnd)
 * [c-lightning](https://github.com/ElementsProject/lightning)
@@ -62,15 +62,15 @@ Regardless of the implementation (c-lightning or LND) you've decided to use, the
 
 ## Getting Started with BTCPay and LND
 
-The easiest way to use LND implementation with BTCPay is to use [Ride The Lightning](https://github.com/ShahanaFarooqui/RTL) (RTL).
+The easiest way to use LND implementation with BTCPay Server is to use [Ride The Lightning](https://github.com/ShahanaFarooqui/RTL) (RTL).
 
 ![RideTheLightningServices](./img/RideTheLightning.png)
 
-RTL is a device agnostic web user interface for Lightning Network that allows you to operate your node without leaving BTCPay, from your browser.
+RTL is a device agnostic web user interface for Lightning Network that allows you to operate your node without leaving BTCPay Server, from your browser.
 
 ![RideTheLightningServices](./img/RideTheLightningServices.png)
 
-To initiate RTL in BTCPay, Go to **Server Settings > Services > RTL > See information**.
+To initiate RTL in BTCPay Server, Go to **Server Settings > Services > RTL > See information**.
 
 Read the [RTL Getting Started Guide](https://medium.com/@suheb.khan/how-to-ride-the-lightning-447af999dcd2) for more details.
 
@@ -102,7 +102,7 @@ Run `./bitcoin-lncli.sh --help` to see a full list of commands or check above me
 
 ## Getting Started with BTCPay and c-lightning
 
-The most straightforward way to start using the c-lightning implementation in BTCPay is to use [Spark Wallet](https://github.com/shesek/spark-wallet) integration. Just like Zap for LND, Spark is a graphical interface of your internal c-lightning node.
+The most straightforward way to start using the c-lightning implementation in BTCPay Server is to use [Spark Wallet](https://github.com/shesek/spark-wallet) integration. Just like Zap for LND, Spark is a graphical interface of your internal c-lightning node.
 
 You can use Spark as an internal or external wallet. Internal wallet allows users to use Spark via the web-browser inside their BTCPay Server. You can also connect externally to a Spark mobile or desktop app just by scanning a QR code.
 
@@ -131,11 +131,11 @@ or show info about the node `./bitcoin-lightning-cli.sh getinfo`
 
 ### Lapps (Lightning Network Apps)
 
-[Lapps](https://blockstream.com/2018/03/29/blockstreams-week-of-lapps-ends/) are applications built on top of the [Lightning Charge](https://blockstream.com/2018/01/16/lightning-charge/), a complimentary package that allows users and developers to easier use and develop on top of c-lightning. If you decided to use c-lightning, you can easily connect your BTCPay to any of the Lapps.
+[Lapps](https://blockstream.com/2018/03/29/blockstreams-week-of-lapps-ends/) are applications built on top of the [Lightning Charge](https://blockstream.com/2018/01/16/lightning-charge/), a complimentary package that allows users and developers to easier use and develop on top of c-lightning. If you decided to use c-lightning, you can easily connect your BTCPay Server to any of the Lapps.
 
-BTCPay exposes all the necessary information required to connect your internal BTCPay c-lightning node to a Lightning Network App.  Go to Server Settings > Services > Lightning charge server > See information > Credentials.
+BTCPay Server exposes all the necessary information required to connect your internal BTCPay Server c-lightning node to a Lightning Network App.  Go to Server Settings > Services > Lightning charge server > See information > Credentials.
 
-Below are videos that showcase how to connect some of the lapps to your BTCPay.
+Below are videos that showcase how to connect some of the lapps to your BTCPay Server.
 
 [![c-lightningbtcpay1](https://img.youtube.com/vi/6EHNq1anD1k/mqdefault.jpg)](https://www.youtube.com/watch?v=6EHNq1anD1k "BTCPay Server - c-lightning and lapps intro")
 
