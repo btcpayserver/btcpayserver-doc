@@ -33,10 +33,12 @@ This will run a BTCPayServer instance connecting to the services in your Docker 
 A build configuration defines how to build BTCPay Server. For example, whether to include some source files, whether to optimize for debugging or performance.
 
 There are several build configurations:
+
 * `Debug`
 * `Release`
 * `Altcoins-Debug`
 * `Altcoins-Release`
+
 How to use a different one during your local development depends on your IDE.
 By default `Debug` is used, this is a Bitcoin only build excluding any altcoin dependencies. How to use a different one during your local development depends on your IDE.
 
@@ -54,7 +56,8 @@ Those parameters are wrapped into the dotnet concept of `launch profile`.
 
 The launch profiles are specified in the [launchSettings.json](https://github.com/btcpayserver/btcpayserver/blob/master/BTCPayServer/Properties/launchSettings.json).
 
-There are currently three launch profiles: 
+There are currently three launch profiles:
+
 * `Bitcoin`
 * `Bitcoin-HTTPS`
 * `Altcoins-HTTPS`
@@ -63,7 +66,7 @@ By default, `Bitcoin` is used. How to use a different one during your local deve
 
 If you use command line, `dotnet run` allows you to select the launch profile of your choice:
 
-```
+```bash
 dotnet run --launch-profile Bitcoin
 ```
 
@@ -122,17 +125,10 @@ In this case, use `Bitcoin-HTTPS` (or `Altcoin-HTTPS`) launch profile. This will
 However, your browser will not trust it, making it difficult to debug.
 
 You can instruct your OS to trust this development time certificate by running:
+
 ```bash
 dotnet dev-certs https --trust
 ```
-
-## Test utilities
-
-There are some useful scripts that you can use during development time to simulate payments.
-
-Please, see [README of the test project](https://github.com/btcpayserver/btcpayserver/blob/master/BTCPayServer.Tests/README.md).
-
-## Configuration
 
 ## Videos
 
