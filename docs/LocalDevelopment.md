@@ -30,7 +30,7 @@ This will run a BTCPayServer instance connecting to the services in your Docker 
 
 ## Build configuration
 
-A build configuration defines how to build BTCPay Server. For example, Whether to include some source files, whether to optimize for debugging or performance.
+A build configuration defines how to build BTCPay Server. For example, whether to include some source files, whether to optimize for debugging or performance.
 
 There are several build configurations:
 * `Debug`
