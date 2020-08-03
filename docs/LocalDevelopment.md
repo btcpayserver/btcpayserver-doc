@@ -54,7 +54,7 @@ Those parameters are wrapped into what the dotnet concept of `launch profile`.
 
 The launch profiles are specified in the [launchSettings.json](https://github.com/btcpayserver/btcpayserver/blob/master/BTCPayServer/Properties/launchSettings.json).
 
-There is currently three launch profiles: 
+There are currently three launch profiles: 
 * `Bitcoin`
 * `Bitcoin-HTTPS`
 * `Altcoins-HTTPS`
