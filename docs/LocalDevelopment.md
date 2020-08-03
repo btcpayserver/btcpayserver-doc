@@ -50,7 +50,7 @@ dotnet run -c Release
 
 When you start BTCPay Server locally for local development, it needs the right parameter so it can connect to the development time dependencies in the docker-compose file.
 
-Those parameters are wrapped into what the dotnet concept of `launch profile`.
+Those parameters are wrapped into the dotnet concept of `launch profile`.
 
 The launch profiles are specified in the [launchSettings.json](https://github.com/btcpayserver/btcpayserver/blob/master/BTCPayServer/Properties/launchSettings.json).
 
