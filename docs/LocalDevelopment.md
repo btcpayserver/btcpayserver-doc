@@ -76,7 +76,7 @@ cd BTCPayServer.Tests
 dotnet test
 ```
 
-The concept of `launch profile` does not apply for tests, but the concept build configuration do, for example if I want to run tests on the Release build:
+The concept of `launch profile` does not apply for tests, but the concept of build configuration does. For example, if I want to run tests on the Release build:
 
 ```bash
 dotnet test -c Release
