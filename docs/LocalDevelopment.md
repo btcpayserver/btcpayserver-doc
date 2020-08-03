@@ -92,7 +92,7 @@ If you use an IDE, consult your IDE documentation to run tests or switch to diff
 
 By default, your IDE or simple `dotnet run` will use `Bitcoin` launch profile on `Debug` build.
 
-* This mean that BTCPay Server will be hosted on a local HTTP port, building without altcoin support,
+* This means that BTCPay Server will be hosted on a local HTTP port, building without altcoin support,
 * Run BTCPay Server to connect to Bitcoin only dependencies specified in [BTCPayServer.Tests/docker-compose.yml](https://github.com/btcpayserver/btcpayserver/blob/master/BTCPayServer.Tests/docker-compose.yml).
 
 If you want to develop with altcoins support you need to use the `Altcoins-HTTPS` launch profile, on the `Altcoins-Debug` build, and run the [BTCPayServer.Tests/docker-compose.altcoins.yml](https://github.com/btcpayserver/btcpayserver/blob/master/BTCPayServer.Tests/docker-compose.altcoins.yml).
