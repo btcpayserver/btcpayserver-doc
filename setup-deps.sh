@@ -30,6 +30,15 @@ fi
 
 cd "$BTCPAYSERVER_DIR"
 
+cp SECURITY.md "$DOCS_DIR/BTCPayServer/Security.md"
+cp BTCPayServer.Tests/README.md "$DOCS_DIR/BTCPayServer/LocalDevSetup.md"
+line=$(grep -n '## How to' $DOCS_DIR/BTCPayServer/LocalDevSetup.md | cut -d ":" -f 1)
+{ cat "$DOCS_DIR/LocalDev.md"; echo; tail -n +$line "$DOCS_DIR/BTCPayServer/LocalDevSetup.md"; } > "$DOCS_DIR/LocalDevelopment.md"
+
+for file in "$DOCS_DIR"/BTCPayServer/*.md; do
+  update_external "$file" https://github.com/btcpayserver/btcpayserver
+done
+
 # Checkout latest release tag, so that we do not publish docs for unreleased APIs yet.
 git checkout $(git describe --tags `git rev-list --tags --max-count=1`)
 
