@@ -82,7 +82,7 @@ How BTCPay Server ensures privacy:
 * Self-hosted users [run a full node][5].
 * No address re-use.
 * Tor support
-* Payjoin support
+* [Payjoin](./Payjoin.md) support
 
 ----
 
@@ -121,7 +121,7 @@ As the BTCPay Server community continues to grow, more deployment methods, use c
 
 Currently, BTCPay Server is a processor **without fiat conversion** capabilities out of the box. As a merchant, this may be a difficult if business costs require fiat. Not providing fiat conversion out of the box allows BTCPay Server merchants to avoid KYC and AML identification verification. This also allows BTCPay Server to be free and available for anyone to use.
 
-However, a fiat conversion plugin is available for BTCPay Server. Since merchants are always the owners of their private keys, they can always freely convert their coins manually, but for now there's no instant-fiat conversion. More info on the [Transmuter](https://github.com/btcpayserver/btcTransmuter)
+However, a fiat conversion plugin is available for BTCPay Server. Since merchants are always the owners of their private keys, they can always freely convert their coins manually, but for now there's no instant-fiat conversion. More info on the [Transmuter](https://github.com/btcpayserver/btcTransmuter).
 
 ----
 
