@@ -32,6 +32,7 @@ Line 1: Translate your Country-Code.
      'en' translates to 'pt-BR'
 
 Line 2: The name of your language, in your language.
+
 :::tip
 This is the language name that will appear in user interface language dropdowns. 
 :::
