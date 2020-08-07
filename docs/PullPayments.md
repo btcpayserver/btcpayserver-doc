@@ -16,6 +16,10 @@ This is the concept of `Pull payment`. This allows several new applications such
 * Automatic selling (where a customer of an exchange would allow an exchange to pull money from their wallet to automatically sell every month)
 * Balance withdraw system (where a high-volume service allows users to request withdrawals from their balance, the service can then easily batch all the payouts to many users, at fixed intervals)
 
+You can also follow this video:
+
+[![What is a pull payment](https://img.youtube.com/vi/-e8lPd9NtPs/mqdefault.jpg)](https://youtu.be/-e8lPd9NtPs "What is a pull payment")
+
 ## Concept
 
 When a sender configures a `Pull payment`, they can configure a number of properties:
