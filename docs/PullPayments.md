@@ -18,7 +18,7 @@ This is the concept of `Pull payment`. This allows several new applications such
 
 You can also follow this video:
 
-[![What is a pull payment](https://img.youtube.com/vi/-e8lPd9NtPs/mqdefault.jpg)](https://youtu.be/-e8lPd9NtPs "What is a pull payment")
+[![What is a pull payment](https://img.youtube.com/vi/-e8lPd9NtPs/mqdefault.jpg)](https://www.youtube.com/watch?v=-e8lPd9NtPs "What is a pull payment")
 
 ## Concept
 
