@@ -13,9 +13,11 @@ The wallet contains the following features:
 1. Transactions
 2. Send
 3. Receive
-4. Re-scan
-5. PSBT
-6. Settings
+4. Pull payments
+5. Payouts
+6. Re-scan
+7. PSBT
+8. Settings
 
 ### Transactions
 
@@ -117,6 +119,18 @@ This option decodes a BIP21 payment link. It's useful when you're trying to pay 
 The Receive tab generates an unused address which can be used to receive payments. The same can be achieved by generating an invoice (Invoices > Create new invoice).
 
 ![Wallet Receive](./img/wallet/WalletReceive.png)
+
+### Pull Payments
+
+This feature gives you the ability to create a Pull Payment, so that an outside individual may `pull` funds frop his wallet.
+
+For more informations, see [Pull Payments](./pullpayments.md).
+
+### Payouts
+
+This section lets you manage Pull Payments and gives you the ability to accept or decline payouts requested by outside individuals.
+
+For more informations, see [Payouts](./pullpayments.md#approve-and-pay-a-payout).
 
 ### Re-scan
 
