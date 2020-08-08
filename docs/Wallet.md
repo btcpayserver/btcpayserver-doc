@@ -122,7 +122,7 @@ The Receive tab generates an unused address which can be used to receive payment
 
 ### Pull Payments
 
-This feature gives you the ability to create a Pull Payment, so that an outside individual may `pull` funds frop his wallet.
+This feature gives you the ability to create a Pull Payment, so that an outside individual may request to `pull` funds from your wallet.
 
 For more informations, see [Pull Payments](./pullpayments.md).
 
