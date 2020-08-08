@@ -130,7 +130,7 @@ For more information, see [Pull Payments](./PullPayments.md).
 
 This section lets you manage Pull Payments and gives you the ability to accept or decline payouts requested by outside individuals.
 
-For more informations, see [Payouts](./pullpayments.md#approve-and-pay-a-payout).
+For more information, see [Payouts](./PullPayments.md#approve-and-pay-a-payout).
 
 ### Re-scan
 
