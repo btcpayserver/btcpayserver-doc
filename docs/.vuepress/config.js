@@ -189,6 +189,7 @@ module.exports = {
             title: "(3) Wallet Setup",
             path: "/WalletSetup",
             collapsable: false,
+            initialOpenGroupIndex: -1,
             children: [
               {
                 title: "Use existing hardware wallet",
