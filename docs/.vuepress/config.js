@@ -260,6 +260,7 @@ module.exports = {
       {
         title: "Support and Community",
         collapsable: false,
+        initialOpenGroupIndex: -1,
         children: [
           {
             title: "FAQ and common issues",
