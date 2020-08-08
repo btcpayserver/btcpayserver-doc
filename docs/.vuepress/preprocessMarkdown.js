@@ -30,10 +30,14 @@ const replaceExternalRepoLinks = (source, resourcePath) => {
 }
 
 const replaceYouTubeLinks = source =>
-  source.replace(/\[(!.*)\]\((.*youtube\.com.*?)(?:\s"(.*?)")?\)/gi, (all, preview, url, text) => {
-    const [, query] = url.match(/\?(.*)/)
+  source.replace(/\[(!.*)\]\((.*(youtube\.com\/watch|youtu\.be).*?)(?:\s"(.*?)")?\)/gi, (all, preview, url, text) => {
+    const [, query] = url.match(/\?(.*)/) || url.match(/.*youtu\.be\/(.*)/)
     const params = query.split('&').reduce((res, param) => {
-      const [key, val] = param.split('=')
+      let [key, val] = param.split('=')
+      if (param === key) {
+        key = 'v'
+        val = param
+      }
       return Object.assign(res, { [key]: val })
     }, {})
     const { v, t } = params
@@ -42,7 +46,7 @@ const replaceYouTubeLinks = source =>
     return `
 <a href="${url}" class="ytEmbed" data-id="${v}" style="background-image:url(https://img.youtube.com/vi/${v}/hqdefault.jpg);">
   <iframe
-    title="YouTube: ${text || v}"
+    title="YouTube"
     data-src="https://www.youtube-nocookie.com/embed/${path}&autoplay=1&autohide=1&modestbranding=1&color=white&rel=0"
     frameborder="0"
     allow="autoplay;encrypted-media;picture-in-picture"

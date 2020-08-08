@@ -13,7 +13,10 @@ describe('preprocessMarkdown', () => {
 Take a look at how BTCPay works in a video below.
 [![](https://raw.githubusercontent.com/btcpayserver/btcpayserver-doc/master/img/thumbnails/HowBTCPayServerWorks.png)](https://www.youtube.com/watch?v=nr0UNbz3AoQ)
 
-Here is a presentation of the global architecture at Advancing Bitcoin conference.`
+Here is a presentation of the global architecture at Advancing Bitcoin conference.
+
+Short link:
+[![What is a pull payment](https://img.youtube.com/vi/-e8lPd9NtPs/mqdefault.jpg)](https://youtu.be/-e8lPd9NtPs "What is a pull payment")`
 
     expect(pp(md)).toMatchSnapshot()
   })
