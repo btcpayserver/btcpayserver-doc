@@ -36,7 +36,7 @@ The table below lists the various transaction labels used by BTCPay.
 | payjoin-exposed   | Utxo was exposed through an invoice payjoin proposal         |
 | payout            | Payment was sent through a payout or refund                  |
 
-You can also create your own custom transaction labels or transaction comments.
+You can also create your own [custom transaction labels and comments](./FAQ/FAQ-Wallet.md#how-to-add-custom-labels-and-comments-to-transactions).
 
 ### Send
 
