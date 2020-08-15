@@ -157,6 +157,7 @@ Here are some of the questions and problems about wallets in BTCPay.
 * [Missing payments in wallet?](./FAQ-Wallet.md#missing-payments-in-my-software-or-hardware-wallet)
 * [What is a derivation scheme?](./FAQ-Wallet.md#what-is-a-derivation-scheme)
 * [What is a Replace-By-Fee (RBF) transaction?](./FAQ-Wallet.md#what-is-a-replace-by-fee-rbf-transaction)
+* [How to add custom labels and comments to transactions?](./FAQ-Wallet.md#how-to-add-custom-labels-and-comments-to-transactions)
 * [I don't see Lightning network payments in BTCPay wallet?](./FAQ-Wallet.md#i-dont-see-lightning-network-payments-in-btcpay-wallet)
 * [Is there a mobile app for BTCPay Server wallet?](./FAQ-Wallet.md#is-there-a-mobile-app-for-btcpay-server-wallet)
 

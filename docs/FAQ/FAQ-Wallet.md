@@ -9,6 +9,7 @@ This document contains frequently asked questions related to BTCPay Server's [in
 * [Missing payments in wallet?](#missing-payments-in-my-software-or-hardware-wallet)
 * [What is a derivation scheme?](#what-is-a-derivation-scheme)
 * [What is a Replace-By-Fee (RBF) transaction?](#what-is-a-replace-by-fee-rbf-transaction)
+* [How to add custom labels and comments to transactions?](#how-to-add-custom-labels-and-comments-to-transactions)
 * [I don't see Lightning network payments in BTCPay wallet?](#i-dont-see-lightning-network-payments-in-btcpay-wallet)
 * [Is there a mobile app for BTCPay Server wallet?](#is-there-a-mobile-app-for-btcpay-server-wallet)
 
@@ -94,6 +95,12 @@ Using different derivation schemes with your xpub, you can also choose to create
 A Replace-By-Fee (RBF) transaction is a feature of the Bitcoin protocol. Learn more about what it is, why it happens and the different types of RBF [here](https://bitcoin.stackexchange.com/a/54457/85016). 
 
 RBF capability is enabled by default when using the BTCPay Server internal wallet, for enhanced privacy. In order to disable it, see the advanced options of the BTCPay Server [internal wallet](../Wallet.md#rbf-replace-by-fee). 
+
+## How to add custom labels and comments to transactions?
+
+In addition to the [automatic labels](../Wallet.md#transaction-labels), you can easily create your own custom transaction labels. Labels can be used for filtering transactions in the wallet view. You can also add individual comments to transactions to leave a note or description about the payment.
+
+![Custom Transaction Labels](../img/wallet/WalletTxComment.png)
 
 ## I don't see Lightning network payments in BTCPay wallet?
 
