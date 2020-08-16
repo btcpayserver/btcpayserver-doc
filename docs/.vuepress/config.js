@@ -280,7 +280,17 @@ module.exports = {
           },
           ["/Troubleshooting", "Troubleshooting an issue"],
           ["/Support", "Support"],
-          ["/Contribute", "Contribute"],
+          {
+            title: "Contribute",
+            path: "/Contribute",
+            children: [
+              ["/Contribute/ContributeWrite", "Writing"],
+              ["/Contribute/ContributeDeveloppement", "Developpement"],
+              ["/Contribute/ContributeTranslate", "Translation"],
+              ["/Contribute/ContributeDesign", "Design"],
+              ["/Contribute/ContributeMarketingSEO", "Marketing & SEO"]
+            ]
+          },
           ["/Translate", "Translate"],
           ["/Community", "Community"]
         ]
