@@ -68,7 +68,7 @@ To stay up to date with new strings - enable alerts for new strings needing to b
 
 Click on the "eye" icon (in red in the following screenshot).
 
-![Transifex Alerts](./img/transifex-alert.png)
+![Transifex Alerts](../img/transifex-alert.png)
 
 You have to click it for the each project you wish to follow.
 
