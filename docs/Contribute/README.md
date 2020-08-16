@@ -12,19 +12,19 @@ Contributors looking to do something a bit more challenging, before opening a pu
 
 We are actively looking for developers who can take on and resolve GitHub issues and help with development. If you would like to help us, but need some guidance, the [#dev channel on Mattermost](https://chat.btcpayserver.org/btcpayserver/channels/dev) is the place to ask questions.
 
-If you are interested in getting started as a developer or tester of the software behind BTCPay Server, check out the [local development](./LocalDevelopment.md) guide.
+If you are interested in getting started as a developer or tester of the software behind BTCPay Server, check out the [local development](../LocalDevelopment.md) guide.
 
 ## Community
 
 You can help BTCPay Server even if you're not a developer.
 
-The easiest way is to use the software as a business or individual, provide feedback and [report any bugs or issues](https://github.com/btcpayserver/btcpayserver/issues) you or your customers encounter. Another great way is to join the [community](./Community.md) and help others troubleshoot by sharing information you may have from your experience using BTCPay Server.
+The easiest way is to use the software as a business or individual, provide feedback and [report any bugs or issues](https://github.com/btcpayserver/btcpayserver/issues) you or your customers encounter. Another great way is to join the [community](../Community.md) and help others troubleshoot by sharing information you may have from your experience using BTCPay Server.
 
 Consider helping newcomers like the community helped you.
 
 ## Translations
 
-Find out how you can help [Translating](./Translate.md) BTCPay Server into your language.
+Find out how you can help [Translating](./ContributeTranslate.md) BTCPay Server into your language.
 
 ## Documentation & Blog
 
@@ -43,7 +43,7 @@ Making videos that promote some features or that show how BTCPay Server works is
 
 ## Hosting Providers
 
-The BTCPay Server community is looking for more VPS hosting providers to implement [1-Click BTCPay Server deployment](./LunaNodeWebDeployment.md) and make the deployment of software more accessible, decentralized and widely-available.
+The BTCPay Server community is looking for more VPS hosting providers to implement [1-Click BTCPay Server deployment](../LunaNodeWebDeployment.md) and make the deployment of software more accessible, decentralized and widely-available.
 
 ## Spreading the word
 
