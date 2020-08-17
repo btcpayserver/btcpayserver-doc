@@ -10,6 +10,8 @@ Writing contributors can help in a number of places:
 
 * [Contribute to the Documentation](#contribute-to-documentation)
 
+* [Contribute to the Directory](#contribute-to-the-directory)
+
 * [Review other's work](#review-others-work)
 
 * [Get help from the community](#get-help-from-the-community)
@@ -45,23 +47,23 @@ Writing on the software stack makes changes directly to the BTCPay Server softwa
 
 Fork/Clone the main repository ([BTCPay Server](https://github.com/btcpayserver/btcpayserver/)) using Github Desktop and publish it.
 
-![ContributeCloneRepo](../IMG/Contribute/ContributeCloneRepo.jpg)
+![ContributeCloneRepo](../img/Contribute/ContributeCloneRepo.jpg)
 
-![ContributeCloneRepo2](../IMG/Contribute/ContributeCloneRepo2.jpg)
+![ContributeCloneRepo2](../img/Contribute/ContributeCloneRepo2.jpg)
 
 **Step 2**
 
 Create a branch and name it (for example what file you're working on).
 
-![ContributeCreateBranch](../IMG/Contribute/ContributeCreateBranch.jpg)
+![ContributeCreateBranch](../img/Contribute/ContributeCreateBranch.jpg)
 
-![ContributeCreateBranch2](../IMG/Contribute/ContributeCreateBranch2.jpg)
+![ContributeCreateBranch2](../img/Contribute/ContributeCreateBranch2.jpg)
 
 **Step 3**
 
 Now open your branch in your file explorer.
 
-![ContributeFindFile](../IMG/Contribute/ContributeFindFile.jpg)
+![ContributeFindFile](../img/Contribute/ContributeFindFile.jpg)
 
 You're all set ! 
 Open the file you wish to edit and work on it.
@@ -75,19 +77,19 @@ See your changes on the right hand side.
 Name your contribution and describe it.
 Click the `Commit` button in the bottom left.
 
-![ContributeCommit](../IMG/Contribute/ContributeCommit.jpg)
+![ContributeCommit](../img/Contribute/ContributeCommit.jpg)
 
-![ContributeCommit2](../IMG/Contribute/ContributeCommit2.jpg)
+![ContributeCommit2](../img/Contribute/ContributeCommit2.jpg)
 
 **Step 5**
 
 Next, create a `Pull Request` by clicking the `Create Pull Request` button on the right to open a browser page.
 
-![ContributeCreatePR](../IMG/Contribute/ContributeCreatePR.jpg)
+![ContributeCreatePR](../img/Contribute/ContributeCreatePR.jpg)
 
 Then describe what your `Pull Request` changes, give it a title, and click `Create Pull Request`.
 
-![ContributeOpenPR](../IMG/Contribute/ContributeOpenPR.jpg)
+![ContributeOpenPR](../img/Contribute/ContributeOpenPR.jpg)
 
 ----
 
