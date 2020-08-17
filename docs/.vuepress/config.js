@@ -284,6 +284,7 @@ module.exports = {
             title: "Contribute to BTCPay Server",
             path: "/Contribute",
             children: [
+              ["/Contribute/ContributeWrite", "Write"],
               ["/Contribute/ContributeTranslate", "Translate"]
             ]
           },
