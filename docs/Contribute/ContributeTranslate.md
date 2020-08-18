@@ -1,8 +1,10 @@
-# Why translations matter
+# Translating BTCPay Server
+
+## Why translations matter
 
 Translating BTCPay Server into multiple languages lets us reach a broader user base for the software and also decreases friction in the invoice checkout for customers that might not understand English perfectly.
 
-# Translating BTCPay Server
+## Requirements
 
 BTCPay Server uses a translation platform called Transifex to allow contributers to translate it into more languages.
 The community is currently working on translating the invoice checkout page and the official website.
