@@ -1,11 +1,13 @@
-# Why translations matter
+# Translating BTCPay Server
+
+## Why translations matter
 
 Translating BTCPay Server into multiple languages lets us reach a broader user base for the software and also decreases friction in the invoice checkout for customers that might not understand English perfectly.
 
-# Translating BTCPay Server
+## Requirements
 
 BTCPay Server uses a translation platform called Transifex to allow contributers to translate it into more languages.
-The community is currently working on translating the invoice checkout page and the official website.
+The community is currently working on translating the [invoice checkout page](https://www.transifex.com/btcpayserver/btcpayserver/dashboard/) and the [official website](https://www.transifex.com/btcpayserver/btcpayserver-website/dashboard/).
 
 After a translation has been made on Transifex, the submittal process is completely automated and merged periodically into the BTCPay repository. Translations provided outside of Transifex, such as pull requests in Github will not be accepted. 
 
@@ -80,6 +82,6 @@ Need context for a string?
 
 Visit the BTCPay Server demo store [checkout page](https://store.btcpayserver.org/).
 
-# More informations on Translating BTCPay Server
+# More information on Translating BTCPay Server
 
 If you have any questions about translating, join the [#Translations channel](https://chat.btcpayserver.org/btcpayserver/channels/translations) on Mattermost.
