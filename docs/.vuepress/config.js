@@ -280,8 +280,13 @@ module.exports = {
           },
           ["/Troubleshooting", "Troubleshooting an issue"],
           ["/Support", "Support"],
-          ["/Contribute", "Contribute"],
-          ["/Translate", "Translate"],
+          {
+            title: "Contribute to BTCPay Server",
+            path: "/Contribute",
+            children: [
+              ["/Contribute/ContributeTranslate", "Translate"]
+            ]
+          },
           ["/Community", "Community"]
         ]
       },
