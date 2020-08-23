@@ -25,6 +25,19 @@ An overview of the incoming (green), outgoing (red) and unconfirmed (grayed out)
 
 ![Individual Wallet](./img/wallet/WallettTransactions.png)
 
+#### Transaction Labels
+
+The table below lists the various transaction labels used by BTCPay.  
+
+| Transaction Type  | Description                                                  |
+| ----------------- | ------------------------------------------------------------ |
+| invoice           | Payment was received through an invoice                      |
+| payjoin           | Not paid, invoice timer still has not expired                | 
+| payjoin-exposed   | Utxo was exposed through an invoice payjoin proposal         |
+| payout            | Payment was sent through a payout or refund                  |
+
+You can also create your own [custom transaction labels and comments](./FAQ/FAQ-Wallet.md#how-to-add-custom-labels-and-comments-to-transactions).
+
 ### Send
 
 The Send function allows spending of the funds from the BTCPay wallet.
