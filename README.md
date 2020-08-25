@@ -132,6 +132,13 @@ The BTCPay Server Project is proudly supported by these entities through the [BT
         </a>
       </td>
       <td align="center" valign="middle">
+        <a href="https://www.okcoin.com/" target="_blank">
+          <img  src="https://raw.githubusercontent.com/btcpayserver/btcpayserver/master/BTCPayServer/wwwroot/img/okcoin.svg?sanitize=true" alt="OKCoin" height=100>
+          <br/>
+          <span>OKCoin</span>
+        </a>
+      </td>
+      <td align="center" valign="middle">
         <a href="https://www.dglab.com/en/" target="_blank">
           <img  src="https://raw.githubusercontent.com/btcpayserver/btcpayserver/master/BTCPayServer/wwwroot/img/dglab.svg?sanitize=true" alt="DG Lab" height=100>
           <br/>
@@ -140,13 +147,6 @@ The BTCPay Server Project is proudly supported by these entities through the [BT
       </td>
     </tr>
     <tr>
-      <td align="center" valign="middle">
-        <a href="https://www.okcoin.com/" target="_blank">
-          <img  src="https://raw.githubusercontent.com/btcpayserver/btcpayserver/master/BTCPayServer/wwwroot/img/okcoin.svg?sanitize=true" alt="OKCoin" height=100>
-          <br/>
-          <span>OKCoin</span>
-        </a>
-      </td>
        <td align="center" valign="middle">
         <a href="https://acinq.co/" target="_blank">
           <img  src="https://raw.githubusercontent.com/btcpayserver/btcpayserver/master/BTCPayServer/wwwroot/img/acinq-logo.svg?sanitize=true" alt="ACINQ" height=100>
