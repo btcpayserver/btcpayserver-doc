@@ -134,6 +134,13 @@ If you're beginner, take a look at the step by step guide on how to contribute t
           </a>
         </td>
         <td align="center" valign="top" width="14.285714285714285714285714285714%">
+          <a href="https://www.okcoin.com/" target="_blank">
+            <img  src="https://raw.githubusercontent.com/btcpayserver/btcpayserver/master/BTCPayServer/wwwroot/img/okcoin.svg?sanitize=true" alt="DG Lab" height=100>
+            <br/>
+            <span>OKCoin</span>
+          </a>
+        </td>
+        <td align="center" valign="top" width="14.285714285714285714285714285714%">
           <a href="https://www.dglab.com/en/" target="_blank">
             <img  src="https://raw.githubusercontent.com/btcpayserver/btcpayserver/master/BTCPayServer/wwwroot/img/dglab.svg?sanitize=true" alt="DG Lab" height=100>
             <br/>
@@ -142,13 +149,6 @@ If you're beginner, take a look at the step by step guide on how to contribute t
         </td>
       </tr>
       <tr>
-        <td align="center" valign="top" width="14.285714285714285714285714285714%">
-          <a href="https://www.okcoin.com/" target="_blank">
-            <img  src="https://raw.githubusercontent.com/btcpayserver/btcpayserver/master/BTCPayServer/wwwroot/img/okcoin.svg?sanitize=true" alt="DG Lab" height=100>
-            <br/>
-            <span>OKCoin</span>
-          </a>
-        </td>
         <td align="center" valign="top" width="14.285714285714285714285714285714%">
           <a href="https://acinq.co/" target="_blank">
             <img  src="https://raw.githubusercontent.com/btcpayserver/btcpayserver/master/BTCPayServer/wwwroot/img/acinq-logo.svg?sanitize=true" alt="ACINQ" height=100>
@@ -170,6 +170,13 @@ If you're beginner, take a look at the step by step guide on how to contribute t
             <span>Wallet of Satoshi</span>
           </a>
         </td>
+        <td align="center" valign="top" width="14.285714285714285714285714285714%">
+          <a href="https://nomics.com/" target="_blank">
+            <img  src="https://raw.githubusercontent.com/btcpayserver/btcpayserver/master/BTCPayServer/wwwroot/img/nomics.svg?sanitize=true" alt="Nomics" height=100>
+            <br/>
+            <span>Nomics</span>
+          </a>
+        </td> 
       </tr>
     </tbody>
   </table>
