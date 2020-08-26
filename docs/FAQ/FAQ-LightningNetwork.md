@@ -42,7 +42,7 @@ Here are some general questions about LN in BTCPay, regardless of the implementa
 On a self-hosted server, you can use only one internal Lightning node. Server owners can use the same Lightning node for an unlimited number of stores tied to their admin account.
 
 Since version 1.0.3.128, a BTCPay Server host can enable it's registrants to use the internal Lightning Network node.
-It can be enabled in Server Settings > Policies > Allow non-admins to use the internal lightning node in their stores. 
+It can be enabled in Server Settings > Policies > Allow non-admins to use the internal lightning node in their stores.
 
 ![Enable LN for Others](../img/ThirdPartyEnableLNOthers.png)
 
@@ -72,11 +72,12 @@ The exact procedure of opening a direct Lightning Network channel depends on the
 
 ### As a merchant, do I need to open direct channels?
 
-Merchants need incoming channels. Other people opening a channel with them provides liquidity to the merchant. Your customer should be able to open a direct channel with you. 
+Merchants need incoming channels. Other people opening a channel with them provides liquidity to the merchant. Your customer should be able to open a direct channel with you.
 
 You can also ask well-connected nodes to open a direct channel with you. Opening a channel is not spending funds, it’s more like putting the funds on a pre-paid card, and spending it later, or withdrawing it by closing a channel.
 
 ### How can I get inbound capacity to my node?
+
 There are many ways in which one can get an inbound capacity. We recommend that you read this great article that provides [practical tips to inbound capacity](https://medium.com/lightningto-me/practical-solutions-to-inbound-capacity-problem-in-lightning-network-60224aa13393).
 When asking for inbound capacity, consider any routing policy fees the service may have. [This document](https://webcache.googleusercontent.com/search?q=cache:0JvB3GjtsQgJ:https://wiki.ion.radar.tech/tutorials/bootstrapping-liquidity+&cd=1&hl=en) provides an overview of what kind of fees to expect from well-known nodes offering the service.
 
@@ -188,7 +189,7 @@ Here is how it should look like:
 
 ### Can I use a pruned node with LN in BTCPay?
 
-Both LND and c-lightning support pruning. It's not possible to use pruning with Eclair. 
+Both LND and c-lightning support pruning. It's not possible to use pruning with Eclair.
 
 This will prune your Bitcoin full node to a maximum of 100GB (of blocks):
 
@@ -316,6 +317,15 @@ You can change 40 to whatever number you wish. The number represents the lines o
 ### What’s the default directory of LND in BTCPay?
 
 `/var/lib/docker/volumes/generated_lnd_bitcoin_datadir/_data`
+
+### Which macaroon needs to be provided for external nodes?
+
+BTCPay Server needs the `admin.macaroon` to check whether the lightning node is fully synced before creating an invoice.
+If you want to tailor a macaroon specific to the BTCPay Server connection, use the LND macaroon bakery:
+
+```bash
+lncli bakemacaroon address:read address:write info:read invoices:read invoices:write onchain:read
+```
 
 ### LND connection issues after an update
 
