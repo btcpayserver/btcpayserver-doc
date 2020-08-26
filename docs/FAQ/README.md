@@ -207,6 +207,7 @@ Lightning Network troubleshooting and common problems.
 
 ### [Lightning Network (c-lightning) FAQ](./FAQ-LightningNetwork.md#lightning-network-c-lightning-faq)
 
+* [How to restart my c-lightning?](./FAQ-LightningNetwork.md#how-to-restart-my-c-lightning)
 * [How to announce an IPv6 address?](./FAQ-LightningNetwork.md#how-to-announce-an-ipv6-address)
 * [How to find an on-chain address in Spark?](./FAQ-LightningNetwork.md#how-to-find-an-on-chain-address-in-spark)
 * [How to withdraw funds from my on-chain Spark wallet?](./FAQ-LightningNetwork.md#how-to-withdraw-funds-from-my-on-chain-spark-wallet)
