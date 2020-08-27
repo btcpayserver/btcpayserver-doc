@@ -27,7 +27,7 @@ Writing contributors can help in a number of places like the Software stack, the
 
 ### Requirements
 
-In order to contribute to BTCPayServer as a writer there are some requirements.
+In order to contribute to BTCPay Server as a writer there are some requirements.
 
 Since most of the writen done in BTCPay Server is done through Github, you must have a [Github account](https://github.com/).
 It's also on Github that you can review the work done by others.
