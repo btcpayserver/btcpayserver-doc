@@ -45,8 +45,14 @@ The `Markdown All In One` extension in VS Code is also recommended, for visual c
 
 ## Contribute to the Software Stack
 
-Writing on the software stack makes changes directly to the BTCPay Server software that everyone uses.
 
+:::warning
+Writing on the *software stack* makes changes directly to the BTCPay Server software that everyone uses. **Do not** change the code if you aren't familiar with it.
+:::
+
+::: tip
+If you have trouble finding a string or contributing to the software stack, ask the [community](../Community.md)
+:::
 
 **Step 1**
 
