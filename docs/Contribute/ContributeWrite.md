@@ -14,7 +14,7 @@
 
 ## Why writing matters
 
-By giving essential and concise informations on software, or creating these documentation pages to help wrap your mind around the software stack, writers contributing to BTCPayServer are as important as any other contributer.
+By giving essential and concise informations on software, or creating these documentation pages to help wrap your mind around the software stack, writers contributing to BTCPay Server are as important as any other contributor.
 
 If you have writing skills, if you have a fair knowledge of the English language, then you can contribute to BTCPay Server or review the work of other contributors.
 
