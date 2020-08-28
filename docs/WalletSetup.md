@@ -44,12 +44,12 @@ To spend and manage the funds received to your external software wallet, you can
 
 ## Create a new wallet
 
-If you do not have an existing wallet, you can generate it within your BTCPay Server. If are using a [third-party host](./ThirdPartyHosting.md), this option needs to be explicitly enabled by the server admin. Generating a new wallet in an environment you are not sure is trustworthy, is discouraged.
+If you do not have an existing wallet, you can generate a new one within your BTCPay Server. If are using a [third-party host](./ThirdPartyHosting.md), this option needs to be explicitly enabled by the server admin. Generating a new wallet in an environment you are not sure is trustworthy, is discouraged.
 
 :::warning
-When a new wallet is generated, BTCPay Server will show you a twelve word recovery seed. After the initial display, the seed is wiped from the server, unless a [hot wallet option](./HotWallet.md) is enabled.
+When a new wallet is generated, BTCPay Server will show you a twelve word recovery seed. After the initial display, the recovery seed is wiped from the server, unless a [hot wallet option](./HotWallet.md) is enabled.
 
-Anyone with access to your recovery seed can also access and steal all your funds. Securely back up your seed by writing it down and keep it in a safe place. Do not photograph it or store it in a digital format. Do not rely on your server for storing your private keys, even if you're using a hot wallet.
+Anyone with access to your recovery seed can also access and steal all your funds, since a private key is derived from a recovery seed. Securely back up your seed by writing it down and keep it in a safe place. Do not photograph it or store it in a digital format. Do not rely on your server for storing your recovery seed, even if you're using a hot wallet.
 :::
 
 Follow the [instructions here to learn how to generate a new wallet](./CreateWallet.md).
