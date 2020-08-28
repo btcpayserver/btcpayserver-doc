@@ -22,7 +22,7 @@ Create a branch and name it (for example what file you're working on).
 
 ![ContributeCreateBranch](../../img/Contribute/ContributeCreateBranch.jpg)
 
-![ContributeCreateBranch2](..//..img/Contribute/ContributeCreateBranch2.jpg)
+![ContributeCreateBranch2](../../img/Contribute/ContributeCreateBranch2.jpg)
 
 ## **Step 3**
 
