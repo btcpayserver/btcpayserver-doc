@@ -293,7 +293,7 @@ module.exports = {
                   ["/ContributeWrite/WriteDirectory", "Directory"],
                   ["/ContributeWrite/WriteBlog", "Blog"]
                 ]  
-                }
+                },
               ["/Contribute/ContributeTranslate", "Translate"]
             ]
           },
