@@ -5,7 +5,7 @@ Writing on the *software stack* makes changes directly to the BTCPay Server soft
 :::
 
 ::: tip
-If you have trouble finding a string or contributing to the software stack, ask the [community](../Community.md)
+If you have trouble finding a string or contributing to the software stack, ask the [community](../../Community.md)
 :::
 
 ## **Step 1**
