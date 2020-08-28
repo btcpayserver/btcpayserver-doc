@@ -7,7 +7,7 @@ If you have writing skills, if you have a fair knowledge of the English language
 Writing contributors can help in a number of places like the Software stack, the documentation or the directory for example.
 
 
-**Important note**: Contributions explained in this documentation are meant to be done in **English** only. If you wish to contribute in other languages, see [Translations](./ContributeTranslate.md/)
+**Important note**: Contributions explained in this documentation are meant to be done in **English** only. If you wish to contribute in other languages, see [Translations](../ContributeTranslate.md/)
 
 ## Requirements and recommended software
 
