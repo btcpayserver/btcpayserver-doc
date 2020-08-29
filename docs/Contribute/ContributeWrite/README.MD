@@ -29,4 +29,4 @@ It is also recommended to have a Rich-Text editor.
 For more advanced users, [Visual Studio Code (VS Code)](https://visualstudio.microsoft.com/) is a good choice.
 The `Markdown All In One` extension in VS Code is also recommended, for visual comfort while editing and the ability to preview Markdown changes.
 
-These are only recommended: If you already use other similar software that you're accustomed to, you are free to continu using them.
+These are only recommended: If you already use other similar software that you're accustomed to, you are free to continue using them.
