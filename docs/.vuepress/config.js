@@ -286,13 +286,13 @@ module.exports = {
             children: [
               {
                 title: "Write",
-                path: "/ContributeWrite",
-                children: [
-                  ["/ContributeWrite/WriteSoftware", "Software Stack"],
-                  ["/ContributeWrite/WriteDocs", "Documentation"],
-                  ["/ContributeWrite/WriteBlog", "Blog"]
-                ]  
-                },
+                path: "/Contribute/ContributeWrite/",
+                 children: [
+                   ["/Contribute/ContributeWrite/WriteSoftware", "Software Stack"],
+                   ["/Contribute/ContributeWrite/WriteDocs", "Documentation"],
+                   ["/Contribute/ContributeWrite/WriteBlog", "Blog"]
+                 ]
+              },
               ["/Contribute/ContributeTranslate", "Translate"]
             ]
           },
