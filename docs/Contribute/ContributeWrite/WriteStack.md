@@ -10,7 +10,7 @@ If you have trouble finding a string or contributing to the software stack, ask 
 
 ## **Step 1**
 
-Fork/Clone the main repository ([BTCPay Server](https://github.com/btcpayserver/btcpayserver/)) using Github Desktop and publish it.
+Fork/Clone the main repository ([BTCPay Server](https://github.com/btcpayserver/btcpayserver/)) using Github and publish it.
 
 ![ContributeCloneRepo](../../img/Contribute/ContributeCloneRepo.jpg)
 
