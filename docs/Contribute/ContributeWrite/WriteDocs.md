@@ -11,4 +11,4 @@ Contributing to documentation follows the same process as contributing for the S
 
 Fork/Clone the main documentation repository ([BTCPay Server Documentation](https://github.com/btcpayserver/btcpayserver-doc)) using Github Desktop and publish it.
 
-**Then** follow **steps 2 through 5** of the [Software Stack](./WriteStack.md) contribution page that explains creating branches and modifying files with Guthub Desktop.
+**Then** follow **steps 2 through 5** of the [Software Stack](./WriteStack.md) contribution page that explains creating branches and modifying files with Github.
