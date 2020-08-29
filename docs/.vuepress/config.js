@@ -290,7 +290,6 @@ module.exports = {
                 children: [
                   ["/ContributeWrite/WriteStack", "Software Stack"],
                   ["/ContributeWrite/WriteDocs", "Documentation"],
-                  ["/ContributeWrite/WriteDirectory", "Directory"],
                   ["/ContributeWrite/WriteBlog", "Blog"]
                 ]  
                 },
