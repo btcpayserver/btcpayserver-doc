@@ -60,4 +60,4 @@ Then describe what your `Pull Request` changes, give it a title, and click `Crea
 
 There, it's done ! 
 
-You made your very first contribution to BTCPayServer. Congratulations ! 
+You made your very first contribution to BTCPay Server. Congratulations ! 
