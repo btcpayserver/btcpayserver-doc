@@ -30,7 +30,7 @@ Now open your branch in your file explorer.
 
 ![ContributeFindFile](../../img/Contribute/ContributeFindFile.jpg)
 
-You're all set ! 
+You're all set! 
 Open the file you wish to edit and work on it.
 Once finished, save it.
 
