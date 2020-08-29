@@ -1,9 +1,5 @@
 # Contribute to the Software Stack
 
-:::warning
-Writing on the *software stack* makes changes directly to the BTCPay Server software that everyone uses. **Do not** change the code if you aren't familiar with it.
-:::
-
 ::: tip
 If you have trouble finding a string or contributing to the software stack, ask the [community](../../Community.md)
 :::
