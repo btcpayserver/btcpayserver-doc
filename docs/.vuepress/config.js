@@ -288,7 +288,7 @@ module.exports = {
                 title: "Write",
                 path: "/ContributeWrite",
                 children: [
-                  ["/ContributeWrite/WriteStack", "Software Stack"],
+                  ["/ContributeWrite/WriteSoftware", "Software Stack"],
                   ["/ContributeWrite/WriteDocs", "Documentation"],
                   ["/ContributeWrite/WriteBlog", "Blog"]
                 ]  
