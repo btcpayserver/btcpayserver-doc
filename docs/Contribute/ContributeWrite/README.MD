@@ -4,7 +4,7 @@ By giving essential and concise informations on software, or creating these docu
 
 If you have writing skills, if you have a fair knowledge of the English language, then you can contribute to BTCPay Server or review the work of other contributors.
 
-Writing contributors can help in a number of places like the Software stack, the documentation or the directory for example.
+Writing contributors can help in a number of places like the software, the documentation or the directory for example.
 
 
 **Important note**: Contributions explained in this documentation are meant to be done in **English** only. If you wish to contribute in other languages, see [Translations](../ContributeTranslate.md/)
@@ -28,3 +28,5 @@ It is also recommended to have a Rich-Text editor.
 
 For more advanced users, [Visual Studio Code (VS Code)](https://visualstudio.microsoft.com/) is a good choice.
 The `Markdown All In One` extension in VS Code is also recommended, for visual comfort while editing and the ability to preview Markdown changes.
+
+These are only recommended: If you use already use other similar software that you're accustomed to, you are free to continu using them.
