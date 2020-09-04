@@ -136,5 +136,6 @@ If you want to use Docker Commands when developing locally, you can run the foll
 - Stop Docker containers `docker-compose down`
 - Destroy Docker containers `docker-compoose down --v`
 
+## Questions
 
-
+If you have questions about the BTCPay Server local development setup, you can join the [community chat](https://chat.btcpayserver.org/). If you have questions about any of the other tools or commands, etc. it's likely you can find answers to your questions by doing a search on the internet or on [StackOverflow](https://stackoverflow.com/). 
