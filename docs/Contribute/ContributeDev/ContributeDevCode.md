@@ -7,8 +7,8 @@ If you are looking for how to make a simple code change such as fixing a typo or
 ## Developer Resources
 
 - [Github Guides](https://guides.github.com/)
-- [BTCPay Commands and Concepts](../LocalDev.md)
-- [Environment Setup Videos (Linux, Mac, Windows)](../LocalDev.md#videos)
+- [BTCPay Commands and Concepts](../../LocalDev.md)
+- [Environment Setup Videos (Linux, Mac, Windows)](../../LocalDev.md#videos)
 
 ## Windows Setup Software
 
@@ -34,7 +34,7 @@ Note: _This guide assumes installations in default locations. Take note if you h
 ### Clone BTCPayServer Repository
 
 - In GitHub Desktop, use the `Add` button and see the option clone repository. 
-- If you are using your www.Github.com credentials in GitHub Desktop, you will see your BTCPayServer repository that you just forked on www.Github.com. Select it and take note of the local path shown below. (by default it will be something like C:\Users\SatoshisComputer\Documents\GitHub\btcpayserver for clarity, lets call it our: _clone local path_) then press clone. 
+- If you are using your www.Github.com credentials in GitHub Desktop, you will see your BTCPayServer repository that you just forked on www.Github.com. Select it and take note of the local path shown below. (by default it will be something like `C:\Users\SatoshisComputer\Documents\GitHub\btcpayserver` for clarity, lets call it our: _clone local path_) then press clone. 
 - Now you will see the BTCPayServer repository has been cloned in your GitHub Desktop and you will be on the _master branch_.
 
 ### Create a Development Feature Branch
@@ -94,7 +94,7 @@ Note: _This guide assumes installations in default locations. Take note if you h
 ## Sync Forked BTCPayServer Repository
 
 - With many contributors adding code changes to the Master BTCPayServer Repository, sometimes your forked copy can fall behind, unless you merge new changes into your fork.
-- If you go to your Fork of BTCPayServer on www.Github.com you will see a message saying that your branch is behind by some commits. Example: This branch is 32 commits behind btcpayserver:master.
+- If you go to your Fork of BTCPayServer on www.Github.com you will see a message saying that your branch is behind by some commits. Example: `This branch is 32 commits behind btcpayserver:master`.
 - To update, you can use GitBash or simply use Github Desktop by clicking through the synchronization prompts.
 - Open a GitBash terminal and update your BTCPayServer repository with the following commands.
 - First always navigate to your _clone local path_ with the command: `$ cd Documents/Github/btcpayserver` and make sure you are on `master` branch.
@@ -132,14 +132,15 @@ See your new branch has been created on you www.Github.com BTCPayServer Fork, re
 
 ## Create a Branch of a Pull Request
 
-A great way to contribute without having to be an advanced developer is by testing other contributor's pull requests. Manual testing is a great way to help other's and ensure that BTCPayServer code changes are working properly. Here is an example of how to make a branch of someone else's pull request, using this previous PoS Pull Request https://github.com/btcpayserver/btcpayserver/pull/454. Open a GitBash terminal and navigate to your _clone local path_ with the command: $ cd Documents/Github/btcpayserver and use `git status` to check you don't have any other staged commits (git status is clear).
+A great way to contribute without having to be an advanced developer is by testing other contributor's pull requests. Manual testing is a great way to help other's and ensure that BTCPayServer code changes are working properly. Here is an example of how to make a branch of someone else's pull request, using this previous PoS Pull Request https://github.com/btcpayserver/btcpayserver/pull/454. Open a GitBash terminal and navigate to your _clone local path_ with the command: `$ cd Documents/Github/btcpayserver` and use `git status` to check you don't have any other staged commits (git status is clear).
 
 ```bash
 $ git status
 $ git fetch upstream pull/454/head:pos-new-design
 $ git branch (to your new testing branch called pos-new-design)
-Note: Be sure to change the /454/ pull request number to the number of the one you would like to test. You can typically leave /head: as is, and add the name of the pull request branch after it. Here is another example using this Pull Request #1851:
 ```
+
+Note: Be sure to change the /454/ pull request number to the number of the one you would like to test. You can typically leave /head: as is, and add the name of the pull request branch after it.
 
 ## Delete Local Branch
 

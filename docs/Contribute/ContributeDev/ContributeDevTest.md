@@ -34,7 +34,7 @@ Open a new Powershell terminal and navigate to your `BTCPayServer.Tests` directo
 
 `.\docker-bitcoin-cli.ps1 sendtoaddress "bcrt1qym96l8gztggldraywdumgmfw27u8p8h5w7h9kc" 0.00097449` then press `Enter`.
 
-Notice that your invoice has now been paid in your local BTCPay Server
+Notice that your invoice has now been paid in your local BTCPay Server.
 
 ![Test Paid Invoice](../../img/Contribute/regtest-paid-invoice.png)
 
@@ -42,4 +42,4 @@ Notice that your invoice has now been paid in your local BTCPay Server
 
 ### Start Debugging gives Error: No connection could be made because the target machine actively refused it. 127.0.0.1:39372
 
-If you see this error, it means you did not set up your Regtest Network using the `Docker-Compose up dev` command in the `BTCPayServer.Tests` directory. This command will set up all the dependencies you need for services used by BTCPay in the local development environment. You must run it before you try to start debugging. 
+If you see this error, it means you did not set up your Regtest Network using the `docker-compose up dev` command in the `BTCPayServer.Tests` directory. This command will set up all the dependencies you need for services used by BTCPay in the local development environment. You must run it before you try to start debugging. 
