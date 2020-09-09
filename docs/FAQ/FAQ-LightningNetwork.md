@@ -203,7 +203,10 @@ Other pruning options are [documented here](https://github.com/btcpayserver/btcp
 
 ### Can I use my existing LN node with BTCPay?
 
-If you already have a well connected lightning node with sufficient inbound liquidity, you may want to use it with BTCPay instead of the included lightning node. While it is technically possible to do so, the BTCPay documentation does not include all information for custom deployments, including this scenario. Any contributor who would like to include this information should make a PR to this repository for review.
+If you already have a well connected lightning node with sufficient inbound liquidity, you may want to use it with BTCPay instead of the included lightning node. 
+To do so, go to the lightning node settings page of your store (Store > Settings > Lightning nodes > Modify). 
+On this page you can edit the connection string to integrate an external node.
+The connection strings vary per lightning implementation, the settings page contains the documentation for the connection settings to give you further guidance.
 
 ### How to change from c-lightning to LND or vice-versa?
 
