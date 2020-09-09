@@ -187,6 +187,7 @@ Lightning Network troubleshooting and common problems.
 * [How can I get inbound capacity to my node?](./FAQ-LightningNetwork.md#how-can-i-get-inbound-capacity-to-my-node)
 * [Previously installed BTCPay without Lightning, can I enable it?](./FAQ-LightningNetwork.md#i-previously-installed-btcpayserver-without-lightning-can-i-enable-it)
 * [Can I use a pruned node with LN in BTCPay?](./FAQ-LightningNetwork.md#can-i-use-a-pruned-node-with-ln-in-btcpay)
+* [Can I use my existing LN node with BTCPay?](./FAQ-LightningNetwork.md#can-i-use-my-existing-ln-node-with-btcpay)
 * [How to change from c-lightning to LND or vice-versa?](./FAQ-LightningNetwork.md#how-to-change-from-c-lightning-to-lnd-or-vice-versa)
 * [Switched Lightning Network implementation, getting "no payment available" error](./FAQ-LightningNetwork.md#i-switched-lightning-network-implementation-but-getting-no-payment-available-error)
 * [WARNING: The LIGHTNING_ALIAS variable is not set. Defaulting to a blank string" when starting container](./FAQ-LightningNetwork.md#i-get-warning-the-lightning-alias-variable-is-not-set-defaulting-to-a-blank-string-when-starting-container)

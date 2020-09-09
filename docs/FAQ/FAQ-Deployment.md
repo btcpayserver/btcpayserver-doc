@@ -393,6 +393,8 @@ If you are running on linux, due to [a limitation of docker](https://github.com/
 * Run `BTCPAYGEN_ADDITIONAL_FRAGMENTS="$BTCPAYGEN_ADDITIONAL_FRAGMENTS"`
 * Run `. ./btcpay-setup.sh -i`
 
+If you are looking for how to deploy alongside existing Lightning node [see this](FAQ-LightningNetwork.md/#can-i-use-my-existing-ln-node-with-btcpay).
+
 ### With the docker deployment, how to use a different volume for the data?
 
 First, you need to make sure that btcpayserver and docker is not running
