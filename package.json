@@ -30,15 +30,15 @@
     "predeploy": "./prepare-deployment.sh"
   },
   "devDependencies": {
-    "@vuepress/plugin-back-to-top": "1.5.3",
+    "@vuepress/plugin-back-to-top": "1.5.4",
     "broken-link-checker": "0.7.8",
-    "jest": "26.2.2",
+    "jest": "26.4.2",
     "markdown-it-implicit-figures": "0.10.0",
     "serve": "11.3.2",
-    "start-server-and-test": "1.11.2",
-    "vuepress": "1.5.3",
-    "vuepress-plugin-clean-urls": "1.1.1",
+    "start-server-and-test": "1.11.3",
+    "vuepress": "1.5.4",
+    "vuepress-plugin-clean-urls": "1.1.2",
     "vuepress-plugin-code-copy": "1.0.6",
-    "vuepress-plugin-medium-zoom": "1.1.8"
+    "vuepress-plugin-medium-zoom": "1.1.9"
   }
 }
