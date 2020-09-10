@@ -3,7 +3,7 @@
 Table of contents:
 
 - [Testing BTCPay Server](#testing-btcpay-server)
-  - [Setup Regtest Network & Local BTCPay](#setup-regtest-network--local-btcpay)
+  - [Setup Regtest Network & Local BTCPay Server](#setup-regtest-network--local-btcpay-server)
   - [Create Invoice](#create-invoice)
   - [Pay Invoice](#pay-invoice)
   - [Testers FAQ](#testers-faq)
@@ -15,7 +15,7 @@ Since the software is open source, anyone can test and audit the code. Some merc
 
 This guide will show you how to manually test some common BTCPay features and assumes you already have your [Local Development Environment](ContributeDevCode.md) set up. Once you understand the basic testing actions, most other features can be manually tested in a similar way. 
 
-## Setup Regtest Network & Local BTCPay
+## Setup Regtest Network & Local BTCPay Server
 
 First, be sure you have completed the following:
 
