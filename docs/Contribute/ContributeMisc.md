@@ -4,6 +4,7 @@
   - [Create Videos & Graphics](#create-videos--graphics)
   - [Hosting Providers](#hosting-providers)
   - [Contribute to the Directory](#contribute-to-the-directory)
+  - [Community](#community)
   - [Spreading the word](#spreading-the-word)
 
 ## Create Videos & Graphics
@@ -27,6 +28,14 @@ Anyone can [add a person or an organisation](https://directory.btcpayserver.org/
 If you know how to use Github, you can directly create a Pull Request and add an entry by editing the `.vuepress/list.js` file.
 
 Please note that only websites that use BTCPay Server are accepted in the Directory and entries are expected to be in English language.
+
+## Community
+
+You can help BTCPay Server even if you're not a developer.
+
+The easiest way is to use the software as a business or individual, provide feedback and [report any bugs or issues](https://github.com/btcpayserver/btcpayserver/issues) you or your customers encounter. Another great way is to join the [community](../Community.md) and help others troubleshoot by sharing information you may have from your experience using BTCPay Server.
+
+Consider helping newcomers like the community helped you.
 
 ## Spreading the word
 
