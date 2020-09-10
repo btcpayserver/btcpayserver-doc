@@ -9,14 +9,14 @@ Table of content:
   - [Developer Resources](#developer-resources)
   - [Windows Setup Software](#windows-setup-software)
   - [Git Setup](#git-setup)
-    - [Fork BTCPayServer Repository](#fork-btcpayserver-repository)
-    - [Clone BTCPayServer Repository](#clone-btcpayserver-repository)
+    - [Fork BTCPay Server Repository](#fork-btcpay-server-repository)
+    - [Clone BTCPay Server Repository](#clone-btcpay-server-repository)
     - [Create a Development Feature Branch](#create-a-development-feature-branch)
   - [Visual Studio Setup](#visual-studio-setup)
   - [Bitcoin Regtest Network Setup](#bitcoin-regtest-network-setup)
-  - [Build Local BTCPayServer](#build-local-btcpayserver)
-  - [Visual Studio Code Changes In Your Local BTCPayServer](#visual-studio-code-changes-in-your-local-btcpayserver)
-  - [Sync Forked BTCPayServer Repository](#sync-forked-btcpayserver-repository)
+  - [Build Local BTCPay Server](#build-local-btcpay-server)
+  - [Visual Studio Code Changes In Your Local BTCPay Server](#visual-studio-code-changes-in-your-local-btcpay-server)
+  - [Sync Forked BTCPay Server Repository](#sync-forked-btcpay-server-repository)
   - [Commit Code To Make Pull Request](#commit-code-to-make-pull-request)
   - [Create a Branch of a Pull Request](#create-a-branch-of-a-pull-request)
   - [Delete Local Branch](#delete-local-branch)
@@ -45,78 +45,78 @@ Note: _This guide assumes installations in default locations. Take note if you h
 
 ## Git Setup
 
-### Fork BTCPayServer Repository
+### Fork BTCPay Server Repository
 
 - Open a web browser and login to your www.Github.com account.
-- Navigate to the [BTCPayServer Repository](https://github.com/btcpayserver/btcpayserver) and press the `Fork` button to create your own copy of the BTCPayServer repository on Github.
+- Navigate to the [BTCPay Server Repository](https://github.com/btcpayserver/btcpayserver) and press the `Fork` button to create your own copy of the BTCPay Server repository on Github.
 - Next open Github Desktop and login so that Github Desktop knows about your www.Github.com account and connects to it. 
 
-### Clone BTCPayServer Repository
+### Clone BTCPay Server Repository
 
 - In GitHub Desktop, use the `Add` button and see the option clone repository. 
-- If you are using your www.Github.com credentials in GitHub Desktop, you will see your BTCPayServer repository that you just forked on www.Github.com. Select it and take note of the local path shown below. (by default it will be something like `C:\Users\SatoshisComputer\Documents\GitHub\btcpayserver` for clarity, lets call it our: _clone local path_) then press clone. 
-- Now you will see the BTCPayServer repository has been cloned in your GitHub Desktop and you will be on the _master branch_.
+- If you are using your www.Github.com credentials in GitHub Desktop, you will see your BTCPay Server repository that you just forked on www.Github.com. Select it and take note of the local path shown below. (by default it will be something like `C:\Users\SatoshisComputer\Documents\GitHub\btcpayserver` for clarity, lets call it our: _clone local path_) then press clone. 
+- Now you will see the BTCPay Server repository has been cloned in your GitHub Desktop and you will be on the _master branch_.
 
 ### Create a Development Feature Branch
 
-- Next we will practice working with our BTCPayServer repository that we just cloned to our computer using Github Desktop.
+- Next we will practice working with our BTCPay Server repository that we just cloned to our computer using Github Desktop.
 - When developing, you may want to work on different features at once. To do that, we typically want to create multiple feature branches instead of making all changes to the master branch.
 - We're using GitBash and some Git commands, so open GitBash. (If you prefer to only use GitHub desktop instead of GitBash, you can create branches there instead.)
-- Once you have a GitBash terminal open, we need to change directory to our clone of BTCPayServer repository.
+- Once you have a GitBash terminal open, we need to change directory to our clone of BTCPay Server repository.
 - To do this, navigate to our _clone local path_ with the change directory command: `$ cd Documents/Github/btcpayserver`
-- You can see your clone of BTCPayServer is on the branch called `master`
+- You can see your clone of BTCPay Server is on the branch called `master`
 - Make a copy of your master branch to do some development on it, with the command: `$ git branch OurNewDevelopmentBranch`
 - Let's view all the branches we have now, with the command: `$ git branch` you can see we have master and OurNewDevelopmentBranch
-- In Git, we now have a copy of our forked BTCPayServer repository (our clone). When we want to switch between branches (copies of our clone), we need to tell Git which branch our development code changes should be assigned to. We do this by checking out our branch, with the command: `$ git checkout OurNewDevelopmentBranch`
+- In Git, we now have a copy of our forked BTCPay Server repository (our clone). When we want to switch between branches (copies of our clone), we need to tell Git which branch our development code changes should be assigned to. We do this by checking out our branch, with the command: `$ git checkout OurNewDevelopmentBranch`
 - Now you are now on OurNewDevelopmentBranch in GitBash.
 - Open your GitHub Desktop and you can see you are no longer on master and you are now on `OurNewDevelopmentBranch`
 - In the top menu in Github Desktop click: `Repository > Show In Explorer` 
 
 ## Visual Studio Setup
 
-- It will open a File Explorer to the BTCPayServer repository folder. Without opening any of the folders shown, look for the `btcpayserver.sln` item and right click it to `Open with > Visual Studio`. You may need to choose Open with > Choose another app ... and look for Visual Studio if you have never opened this kind of file before. 
-- To get your Visual Studio set up choose `View > Solution Explorer` from the top menu. In this solution explorer you will see all the BTCPayServer files and folders. 
-- The top project is BTCPayServer, make sure it's in bold. If it isn't, right click it and choose Set as StartUp Project.
+- It will open a File Explorer to the BTCPay Server repository folder. Without opening any of the folders shown, look for the `btcpayserver.sln` item and right click it to `Open with > Visual Studio`. You may need to choose Open with > Choose another app ... and look for Visual Studio if you have never opened this kind of file before. 
+- To get your Visual Studio set up choose `View > Solution Explorer` from the top menu. In this solution explorer you will see all the BTCPay Server files and folders. 
+- The top project is BTCPay Server, make sure it's in bold. If it isn't, right click it and choose Set as StartUp Project.
 - Your Visual Studio is now set up and ready.
 
 ![VS Solution Explorer](../../img/Contribute/vs-solution-explorer.png)
 
 ## Bitcoin Regtest Network Setup
 
-- For the next step make sure that you have Docker-Compose installed (included with Docker Desktop). Open a PowerShell terminal and navigate to your _clone local path_ and into the BTCPayServer.Tests directory with the command: `$ cd Documents/Github/btcpayserver/BTCPayServer.Tests`
-- The BTCPayServer.Tests project contains the docker files needed to run our docker commands that will start all the project dependencies and create a local Regtest network.
-- In Powershell, start the docker services with the command: `docker-compose up dev`(you must be in the BTCPayServer.Tests to run this command).
+- For the next step make sure that you have Docker-Compose installed (included with Docker Desktop). Open a PowerShell terminal and navigate to your _clone local path_ and into the BTCPay Server.Tests directory with the command: `$ cd Documents/Github/btcpayserver/BTCPayServer.Tests`
+- The BTCPay Server.Tests project contains the docker files needed to run our docker commands that will start all the project dependencies and create a local Regtest network.
+- In Powershell, start the docker services with the command: `docker-compose up dev`(you must be in the BTCPay Server.Tests to run this command).
 - In your PowerShell terminal you will first see the necessary docker images being pulled, then containers being built. If the build is successful the containers will all show as done. 
 
 ![BTCPayServer.Tests powershell terminal](../../img/Contribute/docker-compose-up-dev.png)
 
-## Build Local BTCPayServer
+## Build Local BTCPay Server
 
 - Back in Visual Studio, click: `Build > Build Solution`
 - In the output window, a successful build will look something like this: `========== Build: 6 succeeded, 0 failed, 0 up-to-date, 0 skipped ==========`
 - Next press `Debug > Start Debugging`
-- First a Visual Studio debug console will open which shows information about the status of your local BTCPayServer. 
+- First a Visual Studio debug console will open which shows information about the status of your local BTCPay Server. 
 - Next a local BTCPay Server will be created in a web browser, showing on the home page that it's in `REGTEST` mode.
-- You now will have three windows to view: BTCPayServer browser session, our Visual Studio debug console and our BTCPayServer.Tests powershell terminal. 
+- You now will have three windows to view: BTCPay Server browser session, our Visual Studio debug console and our BTCPay Server.Tests powershell terminal. 
 - Register a new user in your BTCPay Server and see the registration event is shown in your Visual Studio debug console. 
 
 ![VS Debug Console](../../img/Contribute/vs-debug-console.png)
 
 ![Local Regtest BTCPay](../../img/Contribute/regtest-btcpay.png)
 
-## Visual Studio Code Changes In Your Local BTCPayServer
+## Visual Studio Code Changes In Your Local BTCPay Server
 
 - Make changes to code in Visual Studio (Ex: modify the `Welcome to your BTCPay` text in the `~\BTCPayServer\Views\Account\Login.cshtml` file)
 - Refresh the page to see your text changes on the home page.
 - Some code changes require re-start of Debugging for changes to take effect.
-- Add breakpoints in Visual Studio and see those breakpoints get hit when you try to use a feature in your local BTCPayServer instance.
+- Add breakpoints in Visual Studio and see those breakpoints get hit when you try to use a feature in your local BTCPay Server instance.
 
-## Sync Forked BTCPayServer Repository
+## Sync Forked BTCPay Server Repository
 
-- With many contributors adding code changes to the Master BTCPayServer Repository, sometimes your forked copy can fall behind, unless you merge new changes into your fork.
-- If you go to your Fork of BTCPayServer on www.Github.com you will see a message saying that your branch is behind by some commits. Example: `This branch is 32 commits behind btcpayserver:master`.
+- With many contributors adding code changes to the Master BTCPay Server Repository, sometimes your forked copy can fall behind, unless you merge new changes into your fork.
+- If you go to your Fork of BTCPay Server on www.Github.com you will see a message saying that your branch is behind by some commits. Example: `This branch is 32 commits behind btcpayserver:master`.
 - To update, you can use GitBash or simply use Github Desktop by clicking through the synchronization prompts.
-- Open a GitBash terminal and update your BTCPayServer repository with the following commands.
+- Open a GitBash terminal and update your BTCPay Server repository with the following commands.
 - First always navigate to your _clone local path_ with the command: `$ cd Documents/Github/btcpayserver` and make sure you are on `master` branch.
 
 ```bash
@@ -132,7 +132,7 @@ $ git push origin master
 
 ## Commit Code To Make Pull Request
 
-- After you have made some code changes on a feature branch (Example: A feature branch called `Fix/BugBranch`) and you want to make a Pull Request to the BTCPayServer Repository. Open a GitBash terminal and navigate to your _clone local path_ with the command: `$ cd Documents/Github/btcpayserver` and make sure you are on the **correct branch** that you want to commit and use git status to check the files changed are the ones you want to commit.
+- After you have made some code changes on a feature branch (Example: A feature branch called `Fix/BugBranch`) and you want to make a Pull Request to the BTCPay Server Repository. Open a GitBash terminal and navigate to your _clone local path_ with the command: `$ cd Documents/Github/btcpayserver` and make sure you are on the **correct branch** that you want to commit and use git status to check the files changed are the ones you want to commit.
 
 ```bash
 $ git status 
@@ -148,11 +148,11 @@ Close Editor with: Enter
 
 $ git push origin Fix/BugBranch
 ```
-See your new branch has been created on you www.Github.com BTCPayServer Fork, review changes and create Pull Request.  
+See your new branch has been created on you www.Github.com BTCPay Server Fork, review changes and create Pull Request.  
 
 ## Create a Branch of a Pull Request
 
-A great way to contribute without having to be an advanced developer is by testing other contributor's pull requests. Manual testing is a great way to help other's and ensure that BTCPayServer code changes are working properly. Here is an example of how to make a branch of someone else's pull request, using this previous PoS Pull Request https://github.com/btcpayserver/btcpayserver/pull/454. Open a GitBash terminal and navigate to your _clone local path_ with the command: `$ cd Documents/Github/btcpayserver` and use `git status` to check you don't have any other staged commits (git status is clear).
+A great way to contribute without having to be an advanced developer is by testing other contributor's pull requests. Manual testing is a great way to help other's and ensure that BTCPay Server code changes are working properly. Here is an example of how to make a branch of someone else's pull request, using this previous PoS Pull Request https://github.com/btcpayserver/btcpayserver/pull/454. Open a GitBash terminal and navigate to your _clone local path_ with the command: `$ cd Documents/Github/btcpayserver` and use `git status` to check you don't have any other staged commits (git status is clear).
 
 ```bash
 $ git status
