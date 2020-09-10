@@ -311,7 +311,7 @@ Here you can find common questions and solutions to BTCPay web-deployments.
 
 ### Can I run BTCPay on my home computer?
 
-Similar to the requirements for hosting a website, a web server is required for a BTCPay Server instance. While it is possible to run BTCPay Server locally on your PC, it would have to meet the minimal requirements and also run 24/7 if you don't want interruptions of service. You might also not want to expose your home IP address for the activity related to BTCPay Server payments. For all these reasons, while local hosting is suitable for testing, it's not a viable solution for production. A Virtual Private Server (VPS) is commonly used to address these problems. 
+Similar to the requirements for hosting a website, a web server is required for a BTCPay Server instance. While it is possible to run BTCPay Server locally on your PC, it would have to meet the minimal requirements and also run 24/7 if you don't want interruptions of service. You might also not want to expose your home IP address for the activity related to BTCPay Server payments. For all these reasons, while local hosting is suitable for testing, it's not a viable solution for production. A Virtual Private Server (VPS) is commonly used to address these problems.
 
 ### LunaNode web-deployment
 
@@ -393,11 +393,12 @@ If you are running on linux, due to [a limitation of docker](https://github.com/
 * Run `BTCPAYGEN_ADDITIONAL_FRAGMENTS="$BTCPAYGEN_ADDITIONAL_FRAGMENTS"`
 * Run `. ./btcpay-setup.sh -i`
 
-If you are looking for how to deploy alongside existing Lightning node [see this](./FAQ-LightningNetwork.md/#can-i-use-my-existing-ln-node-with-btcpay).
+If you are looking for how to deploy alongside existing Lightning node [see this](./FAQ-LightningNetwork.md#can-i-use-my-existing-ln-node-with-btcpay).
 
 ### With the docker deployment, how to use a different volume for the data?
 
 First, you need to make sure that btcpayserver and docker is not running
+
 ```bash
 sudo su -
 btcpay-down.sh
@@ -413,6 +414,7 @@ lsblk
 # Step 2: Plug the drive
 lsblk
 ```
+
 The second `lsblk` should show the drive you just plugged in. (of TYPE `disk`)
 Make sure you don't make a mistake as the next command will erase all data on this disk.
 

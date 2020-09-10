@@ -16,7 +16,7 @@
   "config": {
     "dist": "docs/.vuepress/dist",
     "port": "8080",
-    "linkcheck": "blc -ro --filter-level 2 --requests 1 --exclude btcpayserver-doc/edit/master/docs --exclude btcpayserver-doc/issues/new --exclude directory.btcpayserver.org --exclude foundation.btcpayserver.org --exclude install.btcpayserver.org --exclude drupal.org --exclude dyn.com --exclude facebook.com --exclude linkedin.com --exclude luxnode.io --exclude pi-hole.net --exclude t.me --exclude wiki.ion.radar.tech"
+    "linkcheck": "blc -ro --filter-level 2 --requests 1 --exclude btcpayserver-doc/edit/master/docs --exclude btcpayserver-doc/issues/new --exclude directory.btcpayserver.org --exclude foundation.btcpayserver.org --exclude install.btcpayserver.org --exclude drupal.org --exclude dyn.com --exclude facebook.com --exclude linkedin.com --exclude luxnode.io --exclude pi-hole.net --exclude t.me --exclude transifex.com --exclude wiki.ion.radar.tech"
   },
   "scripts": {
     "prestart": "rm -rf $npm_package_config_dist",

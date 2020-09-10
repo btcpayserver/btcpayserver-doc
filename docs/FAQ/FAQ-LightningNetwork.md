@@ -23,6 +23,7 @@ This document clarifies some of the most common questions and issues users face 
 * [How to restart my LND?](FAQ-LightningNetwork.md#how-to-restart-my-lnd)
 * [How to see LND logs?](FAQ-LightningNetwork.md#how-to-see-lnd-logs)
 * [What’s the default LND Directory in BTCPay?](FAQ-LightningNetwork.md#what-s-the-default-directory-of-lnd-in-btcpay)
+* [Which macaroon needs to be provided for external nodes?](FAQ-LightningNetwork.md#which-macaroon-needs-to-be-provided-for-external-nodes)
 * [LND connection issue - cannot get macaroon: root key with id 0 doesn’t exist](FAQ-LightningNetwork.md#lnd-connection-issues-after-an-update)
 * [How to change LND Node alias](FAQ-LightningNetwork.md#how-to-change-my-lnd-node-alias)
 * [How to install ThunderHub](FAQ-LightningNetwork.md#how-to-install-thunderhub)
@@ -203,8 +204,8 @@ Other pruning options are [documented here](https://github.com/btcpayserver/btcp
 
 ### Can I use my existing LN node with BTCPay?
 
-If you already have a well connected lightning node with sufficient inbound liquidity, you may want to use it with BTCPay instead of the included lightning node. 
-To do so, go to the lightning node settings page of your store (Store > Settings > Lightning nodes > Modify). 
+If you already have a well connected lightning node with sufficient inbound liquidity, you may want to use it with BTCPay instead of the included lightning node.
+To do so, go to the lightning node settings page of your store (Store > Settings > Lightning nodes > Modify).
 On this page you can edit the connection string to integrate an external node.
 The connection strings vary per lightning implementation, the settings page contains the documentation for the connection settings to give you further guidance.
 
