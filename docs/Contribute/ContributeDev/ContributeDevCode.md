@@ -4,6 +4,26 @@ This guide will help you set up your developer environment to prepare you for la
 
 If you are looking for how to make a simple code change such as fixing a typo or copy change, check out the simplified [WriteSoftware](ContributeWrite/WriteSoftware.md) tutorial instead. If you are an advanced developer with a local environment already set up for development, you can skip ahead to the [LocalDevelopment](../LocalDev.md) documentation.
 
+Table of content:
+- [Setup Developer Environment](#setup-developer-environment)
+  - [Developer Resources](#developer-resources)
+  - [Windows Setup Software](#windows-setup-software)
+  - [Git Setup](#git-setup)
+    - [Fork BTCPayServer Repository](#fork-btcpayserver-repository)
+    - [Clone BTCPayServer Repository](#clone-btcpayserver-repository)
+    - [Create a Development Feature Branch](#create-a-development-feature-branch)
+  - [Visual Studio Setup](#visual-studio-setup)
+  - [Bitcoin Regtest Network Setup](#bitcoin-regtest-network-setup)
+  - [Build Local BTCPayServer](#build-local-btcpayserver)
+  - [Visual Studio Code Changes In Your Local BTCPayServer](#visual-studio-code-changes-in-your-local-btcpayserver)
+  - [Sync Forked BTCPayServer Repository](#sync-forked-btcpayserver-repository)
+  - [Commit Code To Make Pull Request](#commit-code-to-make-pull-request)
+  - [Create a Branch of a Pull Request](#create-a-branch-of-a-pull-request)
+  - [Delete Local Branch](#delete-local-branch)
+  - [Working with Docker Containers](#working-with-docker-containers)
+  - [Questions](#questions)
+
+
 ## Developer Resources
 
 - [Github Guides](https://guides.github.com/)
