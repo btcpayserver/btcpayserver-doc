@@ -8,7 +8,7 @@
 
 ## Why coding matters
 
-By helping the project grow, become more mature, advanced and elaborate, coders workingon BTCPay Server are a central compenent of the project.
+By helping the project grow, become more mature, advanced and elaborate, coders working on BTCPay Server are a central component of the project.
 
 If you have coding skills, be it writing or reviewing code, you can contribute to BTCPay Server.
 
