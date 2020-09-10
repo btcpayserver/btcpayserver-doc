@@ -1,5 +1,14 @@
 # Testing BTCPay Server
 
+Table of contents:
+
+- [Testing BTCPay Server](#testing-btcpay-server)
+  - [Setup Regtest Network & Local BTCPay](#setup-regtest-network--local-btcpay)
+  - [Create Invoice](#create-invoice)
+  - [Pay Invoice](#pay-invoice)
+  - [Testers FAQ](#testers-faq)
+    - [Start Debugging gives Error: No connection could be made because the target machine actively refused it. 127.0.0.1:39372](#start-debugging-gives-error-no-connection-could-be-made-because-the-target-machine-actively-refused-it-12700139372)
+
 Testing the software is a great way to contribute to the project. There are many different ways that someone can _test_ the software. Users who manually test (QA) the software and features to provide user experience, feedback or bugs to the project developers and designers is always appreciated. 
 
 Since the software is open source, anyone can test and audit the code. Some merchants or other technical users may want verify new or existing features by testing the software themselves. Developers working on the code can also benefit from understanding how to manually test certain actions in BTCPay.
