@@ -14,7 +14,7 @@ Please check out our [official website](https://btcpayserver.org/), our [complet
 
 ## Contributing
 
-Pull requests are welcome and appreciated. To contribute to BTCPay Server, first check the [contributing guidelines](docs/Contribute.md).
+Pull requests are welcome and appreciated. To contribute to BTCPay Server, first check the [contributing guidelines](docs/Contribute/README.md).
 
 If you're beginner, take a look at the step by step guide on how to contribute to BTCPay Server documentation below.
 
