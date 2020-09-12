@@ -21,7 +21,7 @@ Table of content:
 
 This guide will help you set up your developer environment to prepare you for later contributions to the BTCPay Server repositories. A variety of beginner tools are used in the guide below to help you get started with development. Once you understand the general setup process, feel free to use any tools that you like. 
 
-If you are looking for how to make a simple code change such as fixing a typo or copy change, check out the simplified [WriteSoftware](ContributeWrite/WriteSoftware.md) tutorial instead. If you are an advanced developer with a local environment already set up for development, you can skip ahead to the [LocalDevelopment](../LocalDev.md) documentation.
+If you are looking for how to make a simple code change such as fixing a typo or copy change, check out the simplified [WriteSoftware](ContributeWrite/WriteSoftware.md) tutorial instead. If you are an advanced developer with a local environment already set up for development, you can skip ahead to the [LocalDevelopment](../../LocalDev.md) documentation.
 
 ## Developer Resources
 
