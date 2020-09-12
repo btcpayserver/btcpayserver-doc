@@ -48,7 +48,11 @@ Once you’ve received funds to your wallet and you decide to spend them, you ca
 
 As mentioned above, the hot wallet functionality includes risk of funds being stolen in the case of the server or account being compromised. To mitigate this risk, we advise you to:
 
-* Enable two factor or U2F authentiation
+:::danger
+Do not give anyone else access to your server's SSH keys or server Admin account credentials when using a hot wallet. Anyone with access to your admin account can spend the funds from your hot wallet. If you need to allow admin access to employees, developers, etc. use an [xpub connected wallet](WalletSetup.md#use-an-existing-wallet) instead.
+:::
+
+* Enable two factor or U2F authentication
 * Occasionally move funds to your cold storage either manually or by configuring [BTC Transmuter](https://github.com/btcpayserver/btcTransmuter/blob/master/README.md) with automatic payment forwarding.
 
 ## Importing seeds with an existing balance
