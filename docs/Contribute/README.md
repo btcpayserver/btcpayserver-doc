@@ -11,4 +11,4 @@ Contributors can help in a number of ways:
 * [Translating for BTCPay Server](ContributeTranslate.md)
 * [Miscellanious](ContributeMisc.md)
 
-Every contribution is important and if help is needed, hit the [community](../community.md/) with your questions.
+Every contribution is important and if help is needed, hit the [community](../Community.md/) with your questions.
