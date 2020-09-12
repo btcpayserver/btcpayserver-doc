@@ -84,11 +84,11 @@ The way it works is fairly simple. Merchants connect a wallet to each of their s
 
 ## Does BTCPay need my private key?
 
-Private keys are not required for using BTCPay with an existing wallet. The fact that BTCPay Server does not require access to your master private key for on-chain transactions is a huge security advantage. Even if your server gets hacked, your funds from the on-chain transactions are always safe. Securing your on-chain funds comes down to [securing your wallet](https://btcinformation.org/en/secure-your-wallet). Using an [existing wallet with BTCPay Server](https://docs.btcpayserver.org/WalletSetup/#use-an-existing-wallet) only requires the public key from your wallet.
+Private keys are not required for using BTCPay with an existing wallet. The fact that BTCPay Server does not require access to your master private key for on-chain transactions is a huge security advantage. Even if your server gets hacked, your funds from the on-chain transactions are always safe. Securing your on-chain funds comes down to [securing your wallet](https://btcinformation.org/en/secure-your-wallet). Using an [existing wallet with BTCPay Server](../WalletSetup.md/#use-an-existing-wallet) only requires the public key from your wallet.
 
-It is possible to generate new wallets using BTCPay Server which are hot wallets stored on the server. If you have a lightning node, BTCPay technically has access to the keys (macaroons) of your Lightning funds as well. If these are features that you would like to use, be sure to understand the [security implications and the risks](https://docs.btcpayserver.org/HotWallet/#security-implications) associated with these experimental features. 
+It is possible to generate new wallets using BTCPay Server which are hot wallets stored on the server. If you have a lightning node, BTCPay technically has access to the keys (macaroons) of your Lightning funds as well. If these are features that you would like to use, be sure to understand the [security implications and the risks](../HotWallet.md/#security-implications) associated with these experimental features. 
 
-If you're using a Third-Party BTCPay host, you should be familiar with the [security concerns](http://docs.btcpayserver.org/ThirdPartyHosting/#security-concerns) associated with private keys. 
+If you're using a Third-Party BTCPay host, you should be familiar with the [security concerns](../ThirdPartyHosting.md/#security-concerns) associated with private keys. 
 
 ## Does BTCPay Server support crypto to fiat conversion?
 
@@ -129,6 +129,6 @@ The easiest way is to use the software, provide feedback and report any bugs or 
 
 The original BTCPay Server API is compatible for the most part with [BitPay's API](https://bitpay.com/api/) to allow merchants to smoothly transition to using BTCPay if they prefer a free, open source, payment processing alternative. 
 
-In 2020, BTCPay Server started releasing a new Greenfield API. This new API will co-exist with the original API and allow full usage of all BTCPay Server features, without requiring the UI. You can find the current [Greenfield API documentation](https://docs.btcpayserver.org/API/Greenfield/v1/) and a [usage example here](https://docs.btcpayserver.org/GreenFieldExample/).
+In 2020, BTCPay Server started releasing a new Greenfield API. This new API will co-exist with the original API and allow full usage of all BTCPay Server features, without requiring the UI. You can find the current [Greenfield API documentation](https://docs.btcpayserver.org/API/Greenfield/v1/) and a [usage example here](../GreenFieldExample.md).
 
 A BTCPay Server functionality that is not found in the Greenfield API documentation means it isn't fully implemented yet in the new API and users should use the original API instead. The discussion on the development of the new Greenfield API can be found [here](https://github.com/btcpayserver/btcpayserver/issues/1320). 
