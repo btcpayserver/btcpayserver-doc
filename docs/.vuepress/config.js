@@ -69,11 +69,13 @@ module.exports = {
     nav: [
       {
         text: "Website",
-        link: "https://btcpayserver.org/"
+        link: "https://btcpayserver.org/",
+        rel: "noopener noreferrer website"
       },
       {
         text: "Chat",
-        link: "https://chat.btcpayserver.org/"
+        link: "https://chat.btcpayserver.org/",
+        rel: "noopener noreferrer chat"
       },
       {
         text: "GitHub",
