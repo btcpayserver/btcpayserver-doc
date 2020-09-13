@@ -287,6 +287,14 @@ module.exports = {
             path: "/Contribute",
             children: [
               {
+                title: "Develop",
+                path: "/Contribute/ContributeDev/",
+                 children: [
+                   ["/Contribute/ContributeDev/ContributeDevCode", "Code"],
+                   ["/Contribute/ContributeDev/ContributeDevTest", "Test"]
+                 ]
+              },
+              {
                 title: "Write",
                 path: "/Contribute/ContributeWrite/",
                  children: [
@@ -295,7 +303,9 @@ module.exports = {
                    ["/Contribute/ContributeWrite/WriteBlog", "Blog"]
                  ]
               },
-              ["/Contribute/ContributeTranslate", "Translate"]
+              ["/Contribute/ContributeDesign", "Design"],
+              ["/Contribute/ContributeTranslate", "Translate"],
+              ["/Contribute/ContributeMisc", "Miscellaneous"],
             ]
           },
           ["/Community", "Community"]
