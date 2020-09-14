@@ -1,7 +1,7 @@
 # How to contribute to BTCPay Server?
 
 BTCPay Server is built and maintained entirely by volunteer contributors around the internet.
-We welcome and appreciate new contributions, whether you're a developper, a five language speaking individual or an average Joe or Jane that want's to help in any way possible.
+We welcome and appreciate new contributions, whether you're a developer, a five language speaking individual or an average Joe or Jane that want's to help in any way possible.
 
 
 Contributors can help in a number of ways:
