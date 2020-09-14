@@ -21,7 +21,7 @@ Contributors looking to do something a bit more challenging, before opening a pu
 We are actively looking for developers who can take on and resolve GitHub issues and help with development. If you would like to help us, but need some guidance, the [#dev channel on Mattermost](https://chat.btcpayserver.org/btcpayserver/channels/dev) is the place to ask questions.
 
 If you are interested in getting started as a developer or tester of the software behind BTCPay Server, check out the [local development](../../LocalDev.md) and [Tester](../ContributeDev/ContributeDevTest.md) guides.
-For a full step by step developer environnement setup, see [Setup Developer Environnement](../ContributeDev/ContributeDevCode.md).
+For a full step by step developer environment setup, see [Setup Developer Environment](../ContributeDev/ContributeDevCode.md).
 
 ## Requirements
 
