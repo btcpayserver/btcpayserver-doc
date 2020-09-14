@@ -18,7 +18,7 @@ Translating BTCPay Server into multiple languages lets us reach a broader user b
 
 ## Requirements
 
-BTCPay Server uses a translation platform called Transifex to allow contributers to translate it into more languages.
+BTCPay Server uses a translation platform called Transifex to allow contributors to translate it into more languages.
 
 The community is currently working on translating the [invoice checkout page](https://www.transifex.com/btcpayserver/btcpayserver/dashboard/) and the [official website](https://www.transifex.com/btcpayserver/btcpayserver-website/dashboard/). 
 
