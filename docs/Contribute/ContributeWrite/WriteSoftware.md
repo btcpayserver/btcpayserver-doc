@@ -4,6 +4,12 @@
 If you have trouble finding a string or contributing to the software stack, ask the [community](../../Community.md)
 :::
 
+
+::: tip
+If your textual change is significant [open an issue on GitHub](https://github.com/btcpayserver/btcpayserver/issues/new/choose) and explain what you'd like to change and why.
+:::
+
+
 ## **Step 1**
 
 Fork/Clone the main repository ([BTCPay Server](https://github.com/btcpayserver/btcpayserver/)) using Github and publish it.
@@ -52,8 +58,4 @@ Then describe what your `Pull Request` changes, give it a title, and click `Crea
 
 ![ContributeOpenPR](../../img/Contribute/ContributeOpenPR.jpg)
 
-----
-
-There, it's done ! 
-
-You made your very first contribution to BTCPay Server. Congratulations ! 
+Once your pull request is submitted, it has to be reviewed by the maintainers and contributors. If it gets accepted - congratulations, you've made your first contribution.
