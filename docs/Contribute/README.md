@@ -7,7 +7,7 @@ We welcome, appreciate and encourage new contributions.
 Depending on your skills and interest, you can help in a number of ways:
 
 * [Code and development](../Contribute/ContributeDev/README.md)
-*  [Testing](../Contribute/ContributeDev/ContributeDevTest.md)
+  *  [Testing](../Contribute/ContributeDev/ContributeDevTest.md)
 * [Writing](../Contribute/ContributeWrite/README.md)
 * [Designing](ContributeDesign.md)
 * [Translating](ContributeTranslate.md)
