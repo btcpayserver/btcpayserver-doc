@@ -6,7 +6,8 @@ If you have trouble finding a string or contributing to the software stack, ask 
 
 
 ::: tip
-If your text change is significant, contextual change [open an issue on GitHub](https://github.com/btcpayserver/btcpayserver/issues/new/choose) and explain what you'd like to change and why.:::
+If your textual change is significant [open an issue on GitHub](https://github.com/btcpayserver/btcpayserver/issues/new/choose) and explain what you'd like to change and why.
+:::
 
 
 ## **Step 1**
