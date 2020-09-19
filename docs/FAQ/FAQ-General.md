@@ -121,9 +121,11 @@ If you encountered an issue or have a feature request, please [open an issue on 
 
 ## How can I contribute to BTCPay?
 
-There are many ways in which you can contribute to an open-source project like BTCPay.
+There are many ways in which you can contribute to an open-source project like BTCPay. 
 
-The easiest way is to use the software, provide feedback and report any bugs or issues you or your customers encounter. If you're a developer, you can help us develop and improve the software by contributing in any of the BTCPay Server [GitHub repositories](https://github.com/btcpayserver). Translating BTCPay into your native language on [Transifex](https://www.transifex.com/btcpayserver/btcpayserver/), helping us with documentation and writing are ways in which you can help us out, even if you're not a developer or tech-savvy. We appreciate every contributor to the project.
+The easiest way is to use the software, provide feedback and report any bugs or issues you or your customers encounter. If you're a developer, you can help us develop and improve the software by contributing in any of the BTCPay Server [GitHub repositories](https://github.com/btcpayserver). Translating BTCPay into your native language on [Transifex](https://www.transifex.com/btcpayserver/btcpayserver/), helping us with documentation and writing are ways in which you can help us out, even if you're not a developer or tech-savvy. We appreciate every contributor to the project. 
+
+Check out the [contribute section](../Contribute/README.md) for all the ways to contribute and help improve the project.
 
 ## How can I use the BTCPay Server API?
 
