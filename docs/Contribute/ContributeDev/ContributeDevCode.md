@@ -189,7 +189,7 @@ If you want to use Docker Commands when developing locally, you can run the foll
 
 ## Greenfield API Development
 
-The BTCPay Greenfield API [currently being developed](../../FAQ/FAQ-General.md#how-can-i-use-the-btcpay-server-api). You can find a [usage example here](../../GreenFieldExample.md). The official Greenfield [API reference documentation](https://docs.btcpayserver.org/API/Greenfield/v1/) is available for developers who want to develop with the BTCPay REST API. 
+The BTCPay Greenfield API is [currently being developed](../../FAQ/FAQ-General.md#how-can-i-use-the-btcpay-server-api). You can find a [usage example here](../../GreenFieldExample.md). The official Greenfield [API reference documentation](https://docs.btcpayserver.org/API/Greenfield/v1/) is available for developers who want to develop with the BTCPay REST API. 
 
 Developers who would like to contribute to the Greenfield API should follow the [developer guidelines](https://github.com/btcpayserver/btcpayserver/blob/master/docs/greenfield-development.md) used by the BTCPay project for additions or modifications. If you feel these guidelines are not clear, consider discussing your ideas in the community chat (development channel) or [open a github issue](https://github.com/btcpayserver/btcpayserver/issues/new/choose) to discuss endpoint implementation ideas.
 
