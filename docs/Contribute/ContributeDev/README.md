@@ -25,4 +25,4 @@ For a full step by step developer environment setup, see [Setup Developer Enviro
 
 ## Requirements
 
-Software requirements (ie. IDE) can also be found in [local developement](../../LocalDev.md#which-ide).
+Software requirements (ie. IDE) can also be found in [local development](../../LocalDev.md#which-ide).
