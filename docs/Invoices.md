@@ -40,3 +40,11 @@ Table below lists and describes common invoice statuses in BTCPay and suggests c
 * *Invoices paid via the [Lightning Network](./LightningNetwork.md) immediately go to a completed state, as their confirmation is instant.
 * **Paid Partial invoice usually happens when a buyer pays the invoice from the exchange wallet  which takes a fee for their service and deducts it from a total. In some cases, it happens when buyer enters an  incorrect amount in their wallet.
 * ***Invalid - If you're receiving a lot of invalid invoices in your store, you may want to [adjust invalid invoice time in store settings](./FAQ/FAQ-Stores.md#payment-invalid-if-transactions-fails-to-confirm-minutes-after-invoice-expiration).
+
+## Invoice translating
+
+Some payment processors still use an deprecated standard to generate invoice.
+To translate such an invoice, every BTCPay Server instance also hosts a translation tool, that you can access by adding `/translate` to your BTCPay Server URL.
+Example: [https://mainnet.demo.btcpayserver.org/translate](mainnet.demo.btcpayserver.org/translate)
+
+Simply input the invoice URL that you where given in the field to get it translated to a format most wallets will recognise.
