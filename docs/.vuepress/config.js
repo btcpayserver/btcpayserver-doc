@@ -37,8 +37,7 @@ module.exports = {
       backgroundTransition: false,
       staticIcon: true
     }],
-    ['vuepress-plugin-medium-zoom', {
-    }]
+    ['@vuepress/medium-zoom']
   ],
   markdown: {
     extendMarkdown (md) {
