@@ -47,4 +47,4 @@ Some payment processors still use an deprecated standard to generate invoice.
 To translate such an invoice, every BTCPay Server instance also hosts a translation tool, that you can access by adding `/translate` to your BTCPay Server URL.
 Example: [https://mainnet.demo.btcpayserver.org/translate](mainnet.demo.btcpayserver.org/translate)
 
-Simply input the invoice URL that you where given in the field to get it translated to a format most wallets will recognise.
+Simply input the invoice URL that you were given in the field to get it translated to a format most wallets will recognise.
