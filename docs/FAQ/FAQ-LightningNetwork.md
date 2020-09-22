@@ -191,7 +191,11 @@ Here is how it should look like:
 
 ### Can I use a pruned node with LN in BTCPay?
 
-Both LND and c-lightning support pruning. It's not possible to use pruning with Eclair.
+It is recommended to use c-lightning because the implementation supports pruned nodes. 
+
+:::warning
+It is possible in BTCPay to enable LND with a pruned node, however the LND implementation does not officially support it and for reasons [listed here](https://github.com/lightningnetwork/lnd/blob/master/docs/safety.md#pruned-bitcoind-node). It's not possible to use pruning with Eclair.
+:::
 
 This will prune your Bitcoin full node to a maximum of 100GB (of blocks):
 
