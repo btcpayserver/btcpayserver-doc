@@ -61,10 +61,15 @@ First rule of Bitcoin is always keep your private keys *private*. Using a secure
 Secondly, there is another area of security to consider on the applications layer where you have two main options:
 
 * **Option 1**: Most payment processors (including BTCPay Server) use the [BIP 21][1] standard.
+
 * **Option 2**: Others use variations of the [BIP 70][2] standard.
-     * **Note**: [BIP 70 has recently been deprecated in Bitcoin Core][3].
-     * Many wallets do not allow payments to BIP 70 invoice urls.
-     * Need help converting obsolete BIP 70 invoice urls to a BIP 21 invoice url? No problem, we can help with that too.<br>Here's our [BIP 70 invoice url converter][4].
+**Note**: [BIP 70 has recently been deprecated in Bitcoin Core][3].
+Some payment processors still use this depreciated standard, but some wallets will not be compatible. To be able to pay to a BIP 70 invoice, you need to translate it.
+In order to do so, every BTCPay Server instance also hosts a translation tool, that you can access by adding `/translate` to your BTCPay Server URL.
+
+Example: [mainnet.demo.btcpayserver.org/translate](https://mainnet.demo.btcpayserver.org/translate/)
+
+Simply input the invoice URL that you were given in the field to get it translated to a format most wallets will recognise.
 
 ----
 
