@@ -8,6 +8,7 @@ This document covers the most common questions and issues that may occur during 
 * [BTCPay takes forever to synchronize](#btcpay-server-takes-forever-to-synchronize)
 * [BTCPay Server keeps showing that my node is always starting](#btcpay-server-keeps-showing-that-my-node-is-always-starting)
 * [I already have a synced full node, can I use it with BTCPay?](#im-running-a-full-node-and-have-a-synched-blockchain-can-btcpay-use-it-so-that-it-doesnt-have-to-do-a-full-sync)
+* [How to disable Bitcoin node pruning?](#how-to-enable-bitcoin-node-pruning)
 
 ## Why does BTCPay sync?
 
@@ -220,3 +221,23 @@ To do that, follow the following steps :
 Your BTCPay Server should now be fully synched.
 
 If after this BTCPay Server keeps showing that your node is always starting, see the cause of [BTCPay Server keeps showing that my node is always starting](#btcpay-server-keeps-showing-that-my-node-is-always-starting).
+
+## How to disable Bitcoin node pruning?
+
+To disable pruning of your Bitcoin node in BTCPay, first ensure you have enough memory to store the entire blockchain and BTCPayServer on your system. Then disable the opt-save-storage environment variable:
+
+```bash
+sudo su -
+export BTCPAYGEN_ADDITIONAL_FRAGMENTS=""
+. btcpay-setup.sh -i
+```
+
+Then run the following commands to recreate the blockchain without pruning:
+
+```
+btcpay-down.sh
+# Delete 'blocks' and 'chainstate' folders
+rm -rf /var/lib/docker/volumes/generated_bitcoin_datadir/_data/blocks
+rm -rf /var/lib/docker/volumes/generated_bitcoin_datadir/_data/chainstate
+btcpay-up.sh
+```
