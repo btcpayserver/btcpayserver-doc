@@ -21,7 +21,7 @@ It may seem tedious, but it's a critical step of running your own full node and 
 
 You can't skip synchronization, but you can drastically decrease the time it takes. If you're comfortable with using the command line, you can use FastSync to synchronize your node faster. Be sure to [read this FastSync document](https://github.com/btcpayserver/btcpayserver-docker/tree/master/contrib/FastSync) to understand the potential trust issues involved with this feature.
 
-To use FastSync, make sure your deployment has a pruning option enabled by using an `opt-save-storage` [environment variable](./FAQ-Deployment.md#how-can-i-modify-or-deactivate-environment-variables), otherwise bitcoind will not be able to sync. First step is to [ssh into](./FAQ-ServerSettings.md#how-to-ssh-into-my-btcpay-running-on-vps) your BTCPayServer instance and run the following commands:
+To use FastSync, make sure your deployment has a [pruning option enabled](#how-to-enable-bitcoin-node-pruning) by using an `opt-save-storage` environment variable, otherwise bitcoind will not be able to sync. First step is to [ssh into](./FAQ-ServerSettings.md#how-to-ssh-into-my-btcpay-running-on-vps) your BTCPayServer instance and run the following commands:
 
 ```bash
 sudo su -
@@ -106,38 +106,13 @@ Then it means you need to scale up your server by adding more memory.
 
 Possible cause:
 
-* Your bitcoin data directory is corrupted
 * You do not have enough RAM
 * You do not have enough storage
+* You accidentally disabled pruning
+* Your bitcoin data directory is corrupted
 * Your last wallet synchronisation goes beyond pruned data
 
-### Cause 1: Your bitcoin data directory is corrupted
-
-Check the logs of your node:
-
-```bash
-sudo su -
-docker logs --tail 10 btcpayserver_bitcoind
-```
-
-If you see:
-
-```bash
-Please restart with -reindex or -reindex-chainstate to recover.
-```
-
-Then your bitcoin data directory has been corrupted. It may be physical damage or failure of the hard drive.
-To reindex your node:
-
-```bash
-btcpay-down.sh
-# Delete 'blocks' and 'chainstate' folders
-rm -rf /var/lib/docker/volumes/generated_bitcoin_datadir/_data/blocks
-rm -rf /var/lib/docker/volumes/generated_bitcoin_datadir/_data/chainstate
-btcpay-up.sh
-```
-
-### Cause 2: You do not have enough RAM
+### Cause 1: You do not have enough RAM
 
 Check your RAM:
 
@@ -166,7 +141,7 @@ swapon /mnt/swapfile
 echo "/mnt/swapfile   none    swap    sw    0   0" >> /etc/fstab
 ```
 
-### Cause 3: You do not have enough storage
+### Cause 2: You do not have enough storage
 
 Check the storage of your machine:
 
@@ -188,11 +163,43 @@ tmpfs           2.0G     0  2.0G   0% /sys/fs/cgroup
 /dev/sdb1       7.8G   18M  7.4G   1% /mnt
 ```
 
-[Choose the docker fragment](https://github.com/btcpayserver/btcpayserver-docker/blob/master/README.md#generated-docker-compose) for the amount of storage you aim to keep.
+[Choose the docker fragment](https://github.com/btcpayserver/btcpayserver-docker/blob/master/README.md#generated-docker-compose) for the amount of storage you aim to keep. Then [prune your node](https://github.com/btcpayserver/btcpayserver-docker/blob/master/README.md#how-i-can-prune-my-nodes).
 
-Then [prune your node](https://github.com/btcpayserver/btcpayserver-docker/blob/master/README.md#how-i-can-prune-my-nodes).
+### Cause 3: You accidentally disabled pruning
 
-### Cause 4: Your last wallet synchronisation goes beyond pruned data
+If you have recently tried to modify your environment variables using the `export BTCPAYGEN_ADDITIONAL_FRAGMENTS="xyz"` command to add an additional fragment, but forgot to include your current ones, you may have disabled pruning.
+
+If you don't have enough memory to store the entire Bitcoin blockchain and you don't have an `opt-save-storage` listed when you [print the complete list of options](https://github.com/btcpayserver/btcpayserver-doc/blob/b0873a216f871b0f7dc4958c8fa63c17c35b603d/docs/FAQ/FAQ-Deployment.md#how-can-i-modify-or-deactivate-environment-variables) that you are running, it is very likely you have disabled pruning. 
+
+You can simply [re-enable pruning](#how-to-enable-bitcoin-node-pruning) to solve the issue.
+
+### Cause 4: Your bitcoin data directory is corrupted
+
+Check the logs of your node:
+
+```bash
+sudo su -
+docker logs --tail 10 btcpayserver_bitcoind
+```
+
+If you see:
+
+```bash
+Please restart with -reindex or -reindex-chainstate to recover.
+```
+
+Then your bitcoin data directory has been corrupted. It may be physical damage or failure of the hard drive.
+To reindex your node:
+
+```bash
+btcpay-down.sh
+# Delete 'blocks' and 'chainstate' folders
+rm -rf /var/lib/docker/volumes/generated_bitcoin_datadir/_data/blocks
+rm -rf /var/lib/docker/volumes/generated_bitcoin_datadir/_data/chainstate
+btcpay-up.sh
+```
+
+### Cause 5: Your last wallet synchronisation goes beyond pruned data
 
 This can happen if you use FastSync or import an already synched blockchain. It means that the bitcoin core wallet needs to be removed because it was created before the utxoset, likely because BTCPay Server started without the utxoset at the first boot. To verify this case, [check the bitcoind log](../Troubleshooting.md#2-1-btcpay-logs) for this:
 
@@ -228,18 +235,19 @@ If after this BTCPay Server keeps showing that your node is always starting, see
 This will prune your Bitcoin full node to a maximum of 100GB (of blocks):
 
 ```bash
+sudo su -
+cd btcpayserver-docker
 export BTCPAYGEN_ADDITIONAL_FRAGMENTS="opt-save-storage"
 . ./btcpay-setup.sh -i
 ```
 
-Other pruning options are [documented here](https://github.com/btcpayserver/btcpayserver-docker/blob/master/README.md#generated-docker-compose)
+Other pruning options are [documented here](https://github.com/btcpayserver/btcpayserver-docker/blob/master/README.md#generated-docker-compose). See [this example](./FAQ-Deployment.md#how-can-i-modify-or-deactivate-environment-variables) for use with other additional fragments.
 
 ## How to disable Bitcoin node pruning?
 
 To disable pruning of your Bitcoin node in BTCPay, first ensure you have enough memory to store the entire blockchain and BTCPayServer on your system. Then disable the `opt-save-storage` environment variable. See [this example](https://github.com/btcpayserver/btcpayserver-doc/blob/master/docs/FAQ/FAQ-Deployment.md#how-can-i-modify-or-deactivate-environment-variables) to view your fragment list and select only one for removal. The following example will remove **all** additional fragments: 
 
 ```bash
-sudo su -
 export BTCPAYGEN_ADDITIONAL_FRAGMENTS=""
 . ./btcpay-setup.sh -i
 ```
