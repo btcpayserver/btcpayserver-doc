@@ -171,6 +171,23 @@ If you have recently tried to modify your environment variables using the `expor
 
 If you don't have enough memory to store the entire Bitcoin blockchain and you don't have an `opt-save-storage` listed when you [print the complete list of options](https://github.com/btcpayserver/btcpayserver-doc/blob/b0873a216f871b0f7dc4958c8fa63c17c35b603d/docs/FAQ/FAQ-Deployment.md#how-can-i-modify-or-deactivate-environment-variables) that you are running, it is very likely you have disabled pruning. 
 
+You can verify by checking your Bitcoind logs:
+
+```bash
+sudo su -
+cd btcpayserver-docker
+docker logs --tail 100 btcpayserver_bitcoind
+```
+
+If you see:
+
+```bash
+Block files have previously been pruned.
+You need to rebuild the database using -reindex to go back to unpruned mode.  
+This will redownload the entire blockchain. 
+Please restart with -reindex or -reindex-chainstate to recover.
+```
+
 You can simply [re-enable pruning](#how-to-enable-bitcoin-node-pruning) to solve the issue.
 
 ### Cause 4: Your bitcoin data directory is corrupted
