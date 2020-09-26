@@ -26,4 +26,9 @@ If private apps are disabled, enable private apps development.
 ![Shopify Setup 3](./img/Shopify/Shopify3.png)
 ![Shopify Setup 4](./img/Shopify/Shopify4.png)
 ![Shopify Setup 5](./img/Shopify/Shopify5.png)
+![Shopify Setup 6](./img/Shopify/Shopify6.png)
+![Shopify Setup 7](./img/Shopify/Shopify7.png)
+![Shopify Setup 8](./img/Shopify/Shopify8.png)
+![Shopify Setup 9](./img/Shopify/Shopify9.png)
+![Shopify Setup 10](./img/Shopify/Shopify10.png)
 
