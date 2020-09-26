@@ -20,3 +20,10 @@ If private apps are disabled, enable private apps development.
 * If you get the following error `Scripts could not automatically be added`, copy the script from the Integration page of your BTCPay Server.
 * In Shopify Settings > Checkout > Order processing > `Additional Scripts` and paste the script.
 * In Shopify Settings > Payment Providers > Manual Payment Methods add a `Custom payment methods` named  `Bitcoin with BTCPay Server` and `Activate` it.
+
+![Shopify Setup 1](./img/Shopify/Shopify1.png)
+![Shopify Setup 2](./img/Shopify/Shopify2.png)
+![Shopify Setup 3](./img/Shopify/Shopify3.png)
+![Shopify Setup 4](./img/Shopify/Shopify4.png)
+![Shopify Setup 5](./img/Shopify/Shopify5.png)
+
