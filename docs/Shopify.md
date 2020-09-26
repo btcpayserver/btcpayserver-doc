@@ -1,6 +1,13 @@
 # BTCPay Server and Shopify Integration
 
-To integrate BTCPay Server into Shopify, you need to be running BTCPay Server v1.0.5.5 or later.
+The following documents guides you through setting up BTCPay Server with Shopify.
+
+## Prerequisites:
+
+- [BTCPay Server](Deployment.md) self-hosted or run by a [third-party host](ThirdPartyHosting.md) v1.0.5.5 or later.
+- [Created BTCPay Server store](CreateStore.md) with [wallet set up](WalletSetup.md)
+
+## Setting up BTCPay Server with Shopify
 
 * In your Shopify, go to Apps > Manage Private apps (at the bottom of the page) and `Create a private app`
 If private apps are disabled, enable private apps development.
