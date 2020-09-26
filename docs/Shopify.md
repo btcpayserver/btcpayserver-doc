@@ -29,6 +29,7 @@ The following document guides you through setting up BTCPay Server with [Shopify
 
 ![Shopify Setup 5](./img/Shopify/Shopify5.png)
 
+![Shopify Setup 5a](./img/Shopify/Shopify5a.png)
 
 7. On the BTCPay Server Integration page, copy the script shown in the yellow box. Go back to Shopify Settings > Checkout > Order processing > `Additional Scripts` and paste the script (including the opening and closing tag `</script>` ).
 
