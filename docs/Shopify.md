@@ -1,10 +1,11 @@
 # BTCPay Server and Shopify Integration
 
-The following documents guides you through setting up BTCPay Server with Shopify.
+The following document guides you through setting up BTCPay Server with [Shopify](https://www.shopify.com/).
 
 ## Prerequisites:
 
-- [BTCPay Server](Deployment.md) self-hosted or run by a [third-party host](ThirdPartyHosting.md) v1.0.5.5 or later.
+- Shopify account
+- [BTCPay Server](Deployment.md) self-hosted or run by a [third-party host](ThirdPartyHosting.md) v1.0.5.6 or later.
 - [Created BTCPay Server store](CreateStore.md) with [wallet set up](WalletSetup.md)
 
 ## Setting up BTCPay Server with Shopify
@@ -14,10 +15,14 @@ The following documents guides you through setting up BTCPay Server with Shopify
 * Enable  `Script tags - Read and write` and `Orders - Read and write` and `Save`
 * Copy the `Example URL` from the Admin API section.
 
-* In your BTCPay Server go to > Store > `Integrations`
+* In your BTCPay Server go to Store > Settings > `Integrations`
 * Paste the `Example URL` from Shopify and click `Connect to Shopify`
-* If you get the following error `Scripts could not automatically be added`, copy the script from the Integration page of your BTCPay Server.
-* In Shopify Settings > Checkout > Order processing > `Additional Scripts` and paste the script.
+
+:::tip
+If you get the following error `Scripts could not automatically be added` on BTCPay Server Integration page, copy the script shown in the yellow warrning box. Go back to Shopify Settings > Checkout > Order processing > `Additional Scripts` and paste the script (including the opening and closing tag `<script>`).
+:::
+
+![Shopify Setup 6](./img/Shopify/Shopify6.png)
 
 * Finally, in Shopify Settings > Payment Providers > Manual Payment Methods add a `Custom payment methods` named  `Bitcoin with BTCPay Server` and `Activate` it.
 
@@ -30,8 +35,6 @@ The following documents guides you through setting up BTCPay Server with Shopify
 ![Shopify Setup 4](./img/Shopify/Shopify4.png)
 
 ![Shopify Setup 5](./img/Shopify/Shopify5.png)
-
-![Shopify Setup 6](./img/Shopify/Shopify6.png)
 
 ![Shopify Setup 7](./img/Shopify/Shopify7.png)
 
