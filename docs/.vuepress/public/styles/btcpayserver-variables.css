@@ -8,6 +8,7 @@
 	--btcpay-brand-tertiary: #1e7a44;
 	--btcpay-brand-dark: #0F3B21;
 	--btcpay-color-white: #ffffff;
+	--btcpay-color-neutral-0: var(--btcpay-color-white);
 	--btcpay-color-neutral-100: #f8f9fa;
 	--btcpay-color-neutral-200: #e9ecef;
 	--btcpay-color-neutral-300: #dee2e6;
@@ -18,6 +19,7 @@
 	--btcpay-color-neutral-800: #343a40;
 	--btcpay-color-neutral-900: #292929;
 	--btcpay-color-neutral-950: #222;
+	--btcpay-color-neutral-1000: var(--btcpay-color-black);
 	--btcpay-color-black: #000;
 	--btcpay-color-primary: var(--btcpay-brand-primary);
 	--btcpay-color-primary-accent: var(--btcpay-brand-tertiary);
@@ -68,25 +70,121 @@
 	--btcpay-font-weight-normal: 400;
 	--btcpay-font-weight-semibold: 600;
 	--btcpay-font-weight-bold: 700;
-	--btcpay-bg-tile: var(--btcpay-color-white);
-	--btcpay-bg-dark: var(--btcpay-brand-dark);
-	--btcpay-body-bg: var(--btcpay-color-neutral-100);
-	--btcpay-body-color: var(--btcpay-color-neutral-900);
-	--btcpay-body-color-link: var(--btcpay-color-primary);
-	--btcpay-body-color-link-accent: var(--btcpay-color-primary);
-	--btcpay-header-bg: var(--btcpay-color-white);
-	--btcpay-header-color: var(--btcpay-body-color);
-	--btcpay-header-color-link: var(--btcpay-header-color);
-	--btcpay-header-color-link-accent: var(--btcpay-header-color);
-	--btcpay-footer-bg: var(--btcpay-brand-dark);
-	--btcpay-footer-color: var(--btcpay-color-neutral-400);
-	--btcpay-footer-color-link: var(--btcpay-color-neutral-400);
-	--btcpay-footer-color-link-accent: var(--btcpay-color-neutral-100);
-	--btcpay-code-color: var(--btcpay-body-color);
-	--btcpay-code-bg: var(--btcpay-color-neutral-200);
-	--btcpay-border-color-light: var(--btcpay-color-neutral-200);
-	--btcpay-border-color-medium: var(--btcpay-color-neutral-300);
-	--btcpay-nav-color-link: var(--btcpay-color-neutral-600);
-	--btcpay-nav-color-link-accent: var(--btcpay-color-neutral-700);
-	--btcpay-nav-color-link-active: var(--btcpay-color-neutral-900);
+}
+:root {
+  --btcpay-bg-tile: var(--btcpay-color-white);
+  --btcpay-bg-dark: var(--btcpay-brand-dark);
+
+  --btcpay-body-bg: var(--btcpay-color-neutral-100);
+  --btcpay-body-color: var(--btcpay-color-neutral-900);
+  --btcpay-body-color-link: var(--btcpay-color-primary);
+  --btcpay-body-color-link-accent: var(--btcpay-color-primary);
+
+  --btcpay-header-bg: var(--btcpay-color-white);
+  --btcpay-header-color: var(--btcpay-body-color);
+  --btcpay-header-color-link: var(--btcpay-header-color);
+  --btcpay-header-color-link-accent: var(--btcpay-header-color);
+
+  --btcpay-footer-bg: var(--btcpay-brand-dark);
+  --btcpay-footer-color: var(--btcpay-color-neutral-400);
+  --btcpay-footer-color-link: var(--btcpay-color-neutral-400);
+  --btcpay-footer-color-link-accent: var(--btcpay-color-neutral-100);
+
+  --btcpay-code-color: var(--btcpay-body-color);
+  --btcpay-code-bg: var(--btcpay-color-neutral-200);
+  --btcpay-pre-color: var(--btcpay-color-white);
+  --btcpay-pre-bg: var(--btcpay-color-neutral-950);
+
+  --btcpay-bg-color-light: var(--btcpay-color-neutral-0);
+  --btcpay-bg-color-medium: var(--btcpay-color-neutral-300);
+  --btcpay-border-color-light: var(--btcpay-color-neutral-200);
+  --btcpay-border-color-medium: var(--btcpay-color-neutral-300);
+
+  --btcpay-nav-color-link: var(--btcpay-color-neutral-600);
+  --btcpay-nav-color-link-accent: var(--btcpay-color-neutral-700);
+  --btcpay-nav-color-link-active: var(--btcpay-color-neutral-900);
+}
+
+:root[data-btcpay-theme="dark"] {
+  --btcpay-color-primary-text: var(--btcpay-color-white);
+  --btcpay-color-primary-backdrop: #389725;
+  --btcpay-color-secondary-accent: var(--btcpay-color-neutral-300);
+  --btcpay-color-light: var(--btcpay-color-neutral-800);
+  --btcpay-color-light-backdrop: var(--btcpay-color-neutral-800);
+  --btcpay-color-light-accent: var(--btcpay-color-black);
+  --btcpay-color-light-text: var(--btcpay-color-neutral-200);
+  --btcpay-color-dark: var(--btcpay-color-neutral-200);
+  --btcpay-color-dark-backdrop: var(--btcpay-color-neutral-200);
+  --btcpay-color-dark-accent: var(--btcpay-color-neutral-400);
+  --btcpay-color-dark-text: var(--btcpay-color-neutral-800);
+
+  --btcpay-bg-dark: var(--btcpay-color-neutral-950);
+  --btcpay-bg-tile: var(--btcpay-bg-dark);
+
+  --btcpay-body-bg: var(--btcpay-color-neutral-900);
+  --btcpay-body-color: var(--btcpay-color-white);
+  --btcpay-body-color-link: var(--btcpay-color-primary);
+  --btcpay-body-color-link-accent: var(--btcpay-color-primary);
+
+  --btcpay-header-bg: var(--btcpay-bg-dark);
+  --btcpay-header-color: var(--btcpay-body-color);
+  --btcpay-header-color-link: var(--btcpay-header-color);
+  --btcpay-header-color-link-accent: var(--btcpay-header-color);
+
+  --btcpay-footer-bg: var(--btcpay-bg-dark);
+  --btcpay-footer-color: var(--btcpay-color-neutral-600);
+  --btcpay-footer-color-link: var(--btcpay-color-neutral-600);
+  --btcpay-footer-color-link-accent: var(--btcpay-color-neutral-300);
+
+  --btcpay-code-bg: var(--btcpay-bg-dark);
+
+  --btcpay-bg-color-light: var(--btcpay-color-neutral-800);
+  --btcpay-bg-color-medium: var(--btcpay-color-neutral-700);
+  --btcpay-border-color-light: var(--btcpay-color-neutral-600);
+  --btcpay-border-color-medium: var(--btcpay-color-neutral-700);
+
+  --btcpay-nav-color-link: var(--btcpay-color-neutral-500);
+  --btcpay-nav-color-link-accent: var(--btcpay-color-neutral-300);
+  --btcpay-nav-color-link-active: var(--btcpay-color-white);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-btcpay-theme="light"]) {
+    --btcpay-color-primary-text: var(--btcpay-color-white);
+    --btcpay-color-primary-backdrop: #389725;
+    --btcpay-color-secondary-accent: var(--btcpay-color-neutral-300);
+    --btcpay-color-light: var(--btcpay-color-neutral-800);
+    --btcpay-color-light-backdrop: var(--btcpay-color-neutral-800);
+    --btcpay-color-light-accent: var(--btcpay-color-black);
+    --btcpay-color-light-text: var(--btcpay-color-neutral-200);
+    --btcpay-color-dark: var(--btcpay-color-neutral-200);
+    --btcpay-color-dark-backdrop: var(--btcpay-color-neutral-200);
+    --btcpay-color-dark-accent: var(--btcpay-color-neutral-400);
+    --btcpay-color-dark-text: var(--btcpay-color-neutral-800);
+
+    --btcpay-bg-dark: var(--btcpay-color-neutral-950);
+    --btcpay-bg-tile: var(--btcpay-bg-dark);
+
+    --btcpay-body-bg: var(--btcpay-color-neutral-900);
+    --btcpay-body-color: var(--btcpay-color-white);
+    --btcpay-body-color-link: var(--btcpay-color-primary);
+    --btcpay-body-color-link-accent: var(--btcpay-color-primary);
+
+    --btcpay-header-bg: var(--btcpay-bg-dark);
+    --btcpay-header-color: var(--btcpay-body-color);
+    --btcpay-header-color-link: var(--btcpay-header-color);
+    --btcpay-header-color-link-accent: var(--btcpay-header-color);
+
+    --btcpay-footer-bg: var(--btcpay-bg-dark);
+    --btcpay-footer-color: var(--btcpay-color-neutral-600);
+    --btcpay-footer-color-link: var(--btcpay-color-neutral-600);
+    --btcpay-footer-color-link-accent: var(--btcpay-color-neutral-300);
+
+    --btcpay-border-color-light: var(--btcpay-color-neutral-600);
+    --btcpay-border-color-medium: var(--btcpay-color-neutral-700);
+
+    --btcpay-nav-color-link: var(--btcpay-color-neutral-500);
+    --btcpay-nav-color-link-accent: var(--btcpay-color-neutral-300);
+    --btcpay-nav-color-link-active: var(--btcpay-color-white);
+  }
 }
