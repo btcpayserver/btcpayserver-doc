@@ -253,6 +253,7 @@ module.exports = {
         collapsable: false,
         children: [
           ["/WooCommerce", "WooCommerce"],
+          ["/Shopify", "Shopify"],          
           ["/Drupal", "Drupal"],
           ["/Magento", "Magento"],
           ["/PrestaShop", "PrestaShop"],
