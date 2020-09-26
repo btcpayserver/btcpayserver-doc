@@ -12,10 +12,7 @@ The following document guides you through setting up BTCPay Server with [Shopify
 
 1. In your Shopify, go to Apps > Manage Private apps (at the bottom of the page) and `Create a private app`. If private apps are disabled, enable private apps development.
 2. Fill in required  details (name and email) and click on the `Show inactive Admin API permissions`
-3. Enable  `Script tags - Read and write` and `Orders - Read and write` and `Save`
-4. Copy the `Example URL` from the Admin API section.
-5. In your BTCPay Server go to Store > Settings > `Integrations`
-6. Paste the `Example URL` from Shopify and click `Connect to Shopify`
+3. Give `Read and write` permission tp `Orders` and `Save`
 
 ![Shopify Setup 1](./img/Shopify/Shopify1.png)
 
@@ -23,13 +20,16 @@ The following document guides you through setting up BTCPay Server with [Shopify
 
 ![Shopify Setup 3](./img/Shopify/Shopify3.png)
 
+
+4. Copy the `Example URL` from the Admin API section.
+5. In your BTCPay Server go to Store > Settings > `Integrations`
+6. Paste the `Example URL` from Shopify and click `Connect to Shopify`
+7. On the BTCPay Server Integration page, copy the script shown in the yellow box. Go back to Shopify Settings > Checkout > Order processing > `Additional Scripts` and paste the script (including the opening and closing tag `</script>` ).
+
+
 ![Shopify Setup 4](./img/Shopify/Shopify4.png)
 
 ![Shopify Setup 5](./img/Shopify/Shopify5.png)
-
-:::tip
-If you get the following error `Scripts could not automatically be added` on BTCPay Server Integration page, copy the script shown in the yellow warrning box. Go back to Shopify Settings > Checkout > Order processing > `Additional Scripts` and paste the script (including the opening and closing tag `<script>`).
-:::
 
 ![Shopify Setup 6](./img/Shopify/Shopify6.png)
 
@@ -42,4 +42,9 @@ If you get the following error `Scripts could not automatically be added` on BTC
 ![Shopify Setup 9](./img/Shopify/Shopify9.png)
 
 ![Shopify Setup 10](./img/Shopify/Shopify10.png)
+
+:::tip
+Custom Payment method name **must** contain at least one of the following words: `bitcoin`, `btcpayserver`, `btcpay server` or `btc` to work.
+:::
+
 
