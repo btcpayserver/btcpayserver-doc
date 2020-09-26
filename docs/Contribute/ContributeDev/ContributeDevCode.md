@@ -204,14 +204,14 @@ Start your BTCPay in your local environment and view your debug console to find 
 
 Next, open your PgAdmin and select: `Servers > Create > Server...` to connect to your server. Provide a name for your server and provide your host connection details from your Visual Studio debug console:
 
-![PgAdmin Connection](../../img/Contribute/DB-Connect.png)
+![PgAdmin Connection](../../img/Contribute/DB-Connect.PNG)
 
 Save to connect to your development btcpayserver database. In the btcpayserver database look for: 
 `Schemas > public > Tables` to see the tables which contain the BTCPay Server data. 
 
 As an example, you can see all the users registered to your development btcpay by viewing the rows of the `AspNetUsers` table. Try changing the username of a registered user in the database, then `Save Changes` and `Refresh (F5)`. Now log into your btcpay using the new username and original password.
 
-![PgAdmin Connection](../../img/Contribute/DB-Edit.png)
+![PgAdmin Edit](../../img/Contribute/DB-Edit.png)
 
 ## Questions
 
