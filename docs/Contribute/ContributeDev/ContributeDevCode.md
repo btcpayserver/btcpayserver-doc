@@ -196,7 +196,7 @@ Developers who would like to contribute to the Greenfield API should follow the 
 
 ## Working with the Database
 
-BTCPay uses a PostgreSQL database by default. During development you can easily connect to your local BTCPay database. This is helpful if you want to view how data is saved, modify records or use it to find issues during development. You can use the free tool [PgAdmin4](https://www.pgadmin.org/download/) to do this. 
+BTCPay uses a PostgreSQL database by default. During development you can easily connect to it. This is helpful if you want to view how data is saved, modify records or use it to find issues during development. You can use the free tool [PgAdmin4(https://www.pgadmin.org/download/) to do this. 
 
 Start your BTCPay in your local environment and view your debug console to find your database connection details:
 
@@ -209,7 +209,7 @@ Next, open your PgAdmin and select: `Servers > Create > Server...` to connect to
 Save to connect to your development btcpayserver database. In the btcpayserver database look for: 
 `Schemas > public > Tables` to see the tables which contain the BTCPay Server data. 
 
-As an example, you can see all the users registered to your development btcpay by viewing the rows of the `AspNetUsers` table. Try changing the username of a registered user in the database, then `Save Changes` and `Refresh (F5)`. Now log into your btcpay using the new username and original password.
+As an example, you can see all the users registered to your development BTCPay by viewing the rows of the `AspNetUsers` table. Try changing the username of a registered user in the database, then `Save Changes` and `Refresh (F5)`. Now log into your BTCPay using the new username and original password.
 
 ![PgAdmin Edit](../../img/Contribute/DB-Edit.png)
 
