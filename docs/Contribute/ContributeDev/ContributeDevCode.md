@@ -204,7 +204,7 @@ Start your BTCPay in your local environment and view your debug console to find 
 
 Next, open your PgAdmin and select: `Servers > Create > Server...` to connect to your server. Provide a name for your server and provide your host connection details from your Visual Studio debug console:
 
-![PgAdmin Connection](../../img/Contribute/DB-Connect.PNG)
+![PgAdmin Connection](../../img/Contribute/DB-Connect.png)
 
 Save to connect to your development btcpayserver database. In the btcpayserver database look for: 
 `Schemas > public > Tables` to see the tables which contain the BTCPay Server data. 
