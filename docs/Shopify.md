@@ -2,6 +2,8 @@
 
 The following document guides you through setting up BTCPay Server with [Shopify](https://www.shopify.com/).
 
+[![BTCPay Server and Shopify](https://img.youtube.com/vi/0Z8vraKab64/mqdefault.jpg)](https://www.youtube.com/watch?v=0Z8vraKab64 "BTCPay Server Shopify Integration")
+
 ## Prerequisites:
 
 - Shopify account
