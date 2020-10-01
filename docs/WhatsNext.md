@@ -22,8 +22,9 @@ Pay buttons are great when you have a fixed amount for a product or a donation. 
 
 Depending on the CMS you're using, you can easily connect BTCPay to your online store. Currently, BTCPay offers following integrations :
 
-* [Drupal](./Drupal.md)
 * [WooCommerce](./WooCommerce.md)
+* [Shopify](./Shopify.md)
+* [Drupal](./Drupal.md)
 * [Magneto](./Magento.md)
 * [PrestaShop](./PrestaShop.md)
 * [Custom integration](./CustomIntegration.md)

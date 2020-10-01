@@ -45,7 +45,7 @@ If you're a developer, you can develop your own integration, by following the [c
 
 ### Does BTCPay have a Shopify plugin?
 
-At this time, BTCPay does not have a Shopify integration.
+Yes, there is a BTCPay and Shopify integration. To get started, check out our [Shopify Integration Guide](../Shopify.md)
 
 ### Can I use BTCPay without an integration?
 

@@ -28,7 +28,7 @@ Every payment processor has features, here are some BTCPay Server features:
 * **Self-hosted** - Your node, your coins. No middleman. No KYC/AML. Non-custodial (complete control over the private key). [Hardware wallet integration](./Vault.md) support.
 * **Bitcoin & Altcoins** - Accept Bitcoin natively. Opt-in [altcoin](./FAQ/FAQ-Altcoin.md) integrations.
 * **Cutting-edge** - Native Segwit support. Rapid Bitcoin microtransactions using the Lightning Network (LND, c-lightning, Eclair and Ptarmigan).
-* **CMS Integrations** - Wordpress & WooCommerce, Drupal, Magneto, Prestashop and custom integrations.
+* **CMS Integrations** - Wordpress & WooCommerce, Shopify, Drupal, Magneto, Prestashop and custom integrations.
 * **Apps** - Point-Of-Sale interface for physical stores. Crowdfunding interface for donation goals and fundraisers.
 * **Payment Buttons** - Easy-embeddable HTML donation and pay buttons.
 * **Unlimited Stores** - Merchants can process payments for their own stores, or for others.
