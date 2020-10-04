@@ -111,8 +111,7 @@ Yes, you can enable users that have registered on your BTCPay Server instance to
 Third party hosts can see the following:
 
 - Total number of users
-- The email username of those users
+- The email and username of those users
 
 Note: If additional features are enabled such as non-admin lightning wallet or transmuter, the server admin can see additional information related to those features. 
-
 
