@@ -86,7 +86,11 @@ Enter following commands in Electrum console and press `enter`on your keyboard.
 
 ```
  wallet.change_gap_limit(100)
- wallet.storage.write()
+```
+If you are running a version older than Electrum 4, also enter the following command and press 'enter'
+
+```
+wallet.storage.write()
 ```
 
 ![ElectrumWallet](./img/ElectrumWallet12.png)
