@@ -49,9 +49,11 @@ Since BTCPay Server requires a blockchain sync, it's easiest to use an already d
 
 ![LunaNode Fork](../../img/Contribute/lunanode-fork.png)
 
+Note: If you are testing the altcoin build, deploy your server to use the altcoin `BTCPAY_BUILD_CONFIGURATION`.
+
 Step 5:
 
-Inside of your btcpayserver root directory there are Dockerfiles prefixed by the following amd64, arm32v7, arm64v8. We need to build and push the custom image using the Dockerfile for the OS being used. If you are using Windows for example, the following can be used:
+Inside of your btcpayserver root directory there are Dockerfiles prefixed by the following amd64, arm32v7, arm64v8. We need to build and push the custom image using the Dockerfile for the OS being used. Replace yourRepo and tag in the following commands:
 
 ```
 #build image
@@ -63,11 +65,15 @@ docker push <yourRepo>/btcpayserver:1.0.0.1
 
 Step 6: 
 
-Check that your image appears in your Docker Hub repository and the version tag matches the one you have supplied in the push command above
+Check that your image appears in your Docker Hub repository and the version tag matches the one you have supplied in the push command above.
 
 Step 7: 
 
-Update docker-compose file with repo name and tag version
+Locate the [btcpayserver.yml docker-fragment](https://github.com/btcpayserver/btcpayserver-docker/tree/master/docker-compose-generator/docker-fragments) in your local `docker-branch`. Update the btcpayserver image's referenced repository (example: satoshi) and tag version (example: 1.0.0.1) with the one you have supplied in your push command above.
+
+```yaml
+image: ${BTCPAY_IMAGE:satoshi/btcpayserver:1.0.0.1$<BTCPAY_BUILD_CONFIGURATION>?}
+```
 
 Step 8: 
 
