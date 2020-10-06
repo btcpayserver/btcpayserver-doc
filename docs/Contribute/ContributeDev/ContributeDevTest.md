@@ -3,7 +3,7 @@
 Table of contents:
 
 - [Testing BTCPay Server](#testing-btcpay-server)
-  - [Setup Regtest Network and Local BTCPay Server](#setup-regtest-network-and-local-btcpay-server)
+  - [Setup Regtest Network and Local BTCPay Server](#setup-regtest-network-local-btcpay-server)
   - [Using Docker Images for Mainnet Testing](#using-docker-images-for-mainnet-testing)
   - [Create Invoice](#create-invoice)
   - [Pay Invoice](#pay-invoice)
