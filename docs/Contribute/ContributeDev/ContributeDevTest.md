@@ -79,13 +79,6 @@ SSH into your vps and update your server.
 
 Now you can test your feature as if it was already released!
 
-
-
-
-. 
-
-
-
 ## Create Invoice
 
 Creating an invoice and sending payment is an important feature in BTCPay and in order to manually test this, you must first:
