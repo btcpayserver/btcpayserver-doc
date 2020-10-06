@@ -31,13 +31,13 @@ Some features are not suitable for testing using a localhost development environ
 
 Step 1: 
 
-[Fork, clone and create a branch](./ContributeDevCode#git-setup) of the [BTCPay Server repository](https://github.com/btcpayserver/btcpayserver) and name your branch: `btcpay-branch`. 
+[Fork, clone and create a branch](./ContributeDevCode.md#git-setup) of the [BTCPay Server repository](https://github.com/btcpayserver/btcpayserver) and name your branch: `btcpay-branch`. 
 
 For simplicity, let's say the feature you want to test has already been merged into master, which is not yet released. This way our branch can be based off master. To test a specific unreleased feature, merge it into your branch instead.
 
 Step 2: 
 
-[Fork, clone and create a branch](./ContributeDevCode#git-setup) of the [BTCPay Server Docker repository](https://github.com/btcpayserver/btcpayserver-docker) and name your branch: `docker-branch`. 
+[Fork, clone and create a branch](./ContributeDevCode.md#git-setup) of the [BTCPay Server Docker repository](https://github.com/btcpayserver/btcpayserver-docker) and name your branch: `docker-branch`. 
 
 Step 3: 
 
@@ -53,7 +53,7 @@ Note: If you are testing the altcoin build, deploy your server to use the altcoi
 
 Step 5:
 
-Inside of your btcpayserver root directory there are Dockerfiles prefixed by the following amd64, arm32v7, arm64v8. We need to build and push the custom image using the Dockerfile for the OS being used. Replace yourRepo and tag in the following commands:
+Inside the root directory of your `btcpay-branch` there are Dockerfiles prefixed by the following amd64, arm32v7, arm64v8. We need to build and push a custom image using the Dockerfile for the OS being used. Replace `<yourRepo>` and tag `1.0.0.1` in the following commands:
 
 ```
 #build image
