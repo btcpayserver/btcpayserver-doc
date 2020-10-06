@@ -25,7 +25,7 @@ To get your first Point of Sale app running, follow theses few simple steps:
 2. Add a `name` for your app
 3. Choose `app type` > Point Of Sale
 4. Select the `store` to associate with the app.
-5. Customize your PoS by choosing a `view` (static, Cart, Light), adding your own `items` with prices, photos, and a description.
+5. Customize your PoS by choosing a `view` (Static, Cart, Light), adding your own `items` with prices, photos, and a description.
 6. Click `Save Settings`.
 7. Click `View App` to view your PoS (Your customers can access the PoS through that link).
 
