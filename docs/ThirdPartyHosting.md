@@ -45,18 +45,22 @@ Table of contents:
 ### Security Concerns
 [Trusted third parties are security holes](https://nakamotoinstitute.org/trusted-third-parties/#selection-7.6-6.2). By relying on someone else to manage a server for you, you are potentially exposing yourself to a certain attack vector.
 
-The most significant attack vector when using a third-party host is that a malicious and technically skilled host can create a forked version of BTCPay Server and modify it so that it either spy on your transactions or replace your [xpubkey](https://en.bitcoin.it/wiki/Deterministic_wallet_tools#Risks_of_Sharing_an_Extended_Public_Key_.28xpub.29) with his. This means that future payments made to you may end up in a malicious party wallet. 
+The most significant attack vector when using a third-party host is the chance that this host will gain access to the management of your funds. This can occur in two ways.
 
-It is impossible to know for certain, if the third party host was using a malicious fork. If you do not personally know the third party host (and even so) it is best to minimize trust in your third party host by doing the following:
+First, a host may allow you to create [hot wallets](https://en.bitcoin.it/wiki/Hot_wallet) on their server. This gives the host complete access to your funds. They will act as a custodian of your private keys and thus your funds. This means you must trust they will not spend your funds. This type of wallet is NOT recommended for use with third-party hosts.
+
+Secondly, a malicious and technically skilled host can create a forked version of BTCPay Server and modify it to be able to either spy on your transactions or replace your [xpubkey](https://en.bitcoin.it/wiki/Deterministic_wallet_tools#Risks_of_Sharing_an_Extended_Public_Key_.28xpub.29) with their own. This means that future payments made to you may end up in this malicious party's wallet. 
+
+While an xpub connected wallet IS recommended for use with third-party hosts, It's impossible to know for certain, if the third party host is using a malicious fork. If you don't trust the third party host it is best to do the following:
 
 - Do not use hot wallet on the third party server, use an xpub key
 - Use it mainly for testing, learning and getting started with BTCPay
 - Do not use it with high volume payments or extremely valuable transactions 
 
-In BTCPay Server, a private key is never required. This means that funds are safe even if the server is hacked, but a malicious host can intercept future payments and steal those funds. If you follow your transactions via a watch-only wallet, you should be able to detect such attack quickly and notice that your orders are being marked as paid, whereas you don't see the transactions in your wallet.
+In BTCPay Server, a private key is never *required*. This means that funds are safe even if the server is hacked, but a malicious host can intercept future payments and steal those funds. If you follow your transactions via a watch-only wallet, you should be able to detect such attack quickly and notice that your orders are being marked as paid, whereas you don't see the transactions in your wallet.
 
 :::danger
-If a third-party host asks for your private key or pre-generates one for you, be sure it's a scam. Never share your private key with anyone. It's called private for a reason. 
+If a third-party host asks for your private key or pre-generates one for you, be sure it's a scam. Never share your private key with anyone. It's called private for a reason.
 :::
 
 Xpubkey replacement attack applies to a self-hosted server as well. A malicious hacker can try to hack your server and try to replace an xpubkey.
@@ -107,11 +111,13 @@ The limitations happen for technical reasons, mostly because these features requ
 Yes, you can enable users that have registered on your BTCPay Server instance to use your Lightning Network node.
 [See how](./FAQ/FAQ-LightningNetwork.md#how-many-users-can-use-lightning-network-in-btcpay)
 
-## What does the third-party host know about their users?
-Third party hosts can see the following:
+## What does the trusted third-party host know about their users?
+Third party hosts (non-malicious) can see the following:
 
 - Total number of users
 - The email and username of those users
 
-Note: If additional features are enabled such as non-admin lightning wallet or transmuter, the server admin can see additional information related to those features. 
+Note: If additional features are enabled such as non-admin lightning wallet, hot wallets or transmuter, the server admin can see additional information related to those features. Since it's impossible to know if the third party host is using a malicious fork, it's best to assume they may know all details about your BTCPay Server usage.
+
+If you are worried about the information a third party host knows about you, please consider [deploying your own](./Deployment.md) self-hosted server.
 
