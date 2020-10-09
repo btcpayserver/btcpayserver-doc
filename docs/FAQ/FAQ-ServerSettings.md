@@ -78,9 +78,11 @@ Or see this [LunaNode example](https://github.com/JeffVandrewJr/patron/blob/mast
 
 ### How can I see my BTCPay version?
 
-You can see your BTCPay version in the bottom right of the page footer when you're logged in as a server admin.
+You can see your BTCPay version in the **bottom right of the page footer** when you're logged in as a server admin.
 
-Server admins can also enable notifications to alert when a new BTCPay Server update has been released. Enable it in Server Settings > Policies > Check releases on GitHub.
+Deployments using v1.0.5.7 and later will automatically receive notifications to alert when a new BTCPay Server version has been released. Server admins can disable these notifications by disabling the policy in Server Settings > Policies > Check releases on GitHub. 
+
+![Version](../img/notifications/notification-version.png)
 
 ### How can I check my BTCPay Server version via terminal?
 
