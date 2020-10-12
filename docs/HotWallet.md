@@ -1,6 +1,6 @@
 # BTCPay Hot Wallet
 
-BTCPay Server also allows stores to generate or import a wallet while also (optionally) storing its private keys. This enables generating new wallets entirely within BTCPay, [Payjoin support](./Payjoin.md) and is a requirement for [Liquid support](https://github.com/btcpayserver/btcpayserver/issues/1282).
+BTCPay Server also allows stores to **generate or import a wallet** while also (optionally) storing its private keys. This enables generating new wallets entirely within BTCPay, [Payjoin support](./Payjoin.md) and is a requirement for [Liquid support](https://github.com/btcpayserver/btcpayserver/issues/1282).
 
 
 ## Security Implications
@@ -12,11 +12,11 @@ Storing private keys on a public server comes with risks. This is similar to the
 
 By default, you need to be a server admin to use the hot wallet feature. This is because server admins are able to extract the private key easily. If for some reason (such as allowing individuals that trust you enough with their store), you can enable the hot wallet for non-admins from Server Settings->Policies->"Allow non-admins to create hot wallets for their stores".
 
-![](./img/hotwallet/ServerSettings.png)
+![BTCPay Server settings](./img/hotwallet/ServerSettings.png "BTCPay Server settings")
 
 ### Setting up your store
 
-Setting up a hot wallet is quite easy.
+Setting up a **hot wallet** is quite easy.
 
 1. Go to your BTCPay Server’s Store > General Settings > Derivation Scheme > **Import from a new/existing seed.**
 2. If you have already generated a seed, you can provide it to the hot wallet.
@@ -26,11 +26,11 @@ Setting up a hot wallet is quite easy.
 6. The public key will automatically be imported in the store and configured to an appropriate format.
 7. If you provided an existing seed, a list of preview addresses will be shown. Validate that they are the same as the one on your wallet and Save.
 
-![](./img/hotwallet/Setup1.png)
+![BTCPay Server wallet derivation scheme](./img/hotwallet/Setup1.png "BTCPay Server wallet derivation scheme")
 
-![](./img/hotwallet/Setup2.png)
+![BTCPay Server wallet seed](./img/hotwallet/Setup2.png "BTCPay Server Wallet seed")
 
-![](./img/hotwallet/Setup3.png)
+![BTCPay Server wallet settings](./img/hotwallet/Setup3.png "BTCPay Server wallet settings")
 
 ### Spending funds with BTCPay Hot Wallet
 
@@ -41,7 +41,7 @@ Once you’ve received funds to your wallet and you decide to spend them, you ca
 3. Select Sign with the seed saved in NBXplorer
 4. Broadcast the transaction
 
-![](./img/hotwallet/WalletSend.png)
+![BTCPay Server Send tab](./img/hotwallet/WalletSend.png "BTCPay Server Send tab")
 
 
 ## Reducing risk
@@ -57,4 +57,4 @@ Do not give anyone else access to your server's SSH keys or server account crede
 
 ## Importing seeds with an existing balance
 
-You can import an existing seed with an existing balance but will need to [rescan it](./Wallet.md#re-scan).
+You can **import an existing seed** with an existing balance but will need to [rescan it](./Wallet.md#re-scan).

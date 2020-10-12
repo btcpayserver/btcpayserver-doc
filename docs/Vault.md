@@ -1,10 +1,10 @@
 # BTCPay Vault
 
-[BTCPay Vault](https://github.com/btcpayserver/BTCPayServer.Vault) is a cross-platform desktop application that allows the use of a hardware wallet with a full node inside BTCPay Server.
+[BTCPay Vault](https://github.com/btcpayserver/BTCPayServer.Vault) is a cross-platform desktop application that allows the **use of a hardware wallet with a full node inside BTCPay Server**.
 
 ## Getting Started with BTCPay Vault
 
-In laymen words, BTCPay Vault is a separate app, locally hosted on your own PC, which BTCPay Server connects to and asks for permission. Once permission is granted, BTCPay is able to integrate with any hardware wallet connected to your PC.
+In laymen words, **BTCPay Vault** is a separate app, locally hosted on your own PC, which BTCPay Server connects to and asks for permission. Once permission is granted, BTCPay is able to integrate with any hardware wallet connected to your PC.
 
 You can import your wallet and spend incoming funds with a simple confirmation on your device, with your keys never leaving your hardware device, with all funds being validated against your own Bitcoin full node and no data leakage.
 
@@ -24,19 +24,19 @@ Setting up BTCPay Vault is quite easy. You only need to have already set up BTCP
 8. Validate that address shown on BTCPay is the same as the one on your device
 9. Save
 
-![](./img/BTCPayVaultStoreSetup1.png)
+![BTCPay Server Vault configuration](./img/BTCPayVaultStoreSetup1.png "BTCPay Server Vault configuration")
 
-![](./img/BTCPayVaultStoreSetup2.png)
+![BTCPay Server Vault configuration](./img/BTCPayVaultStoreSetup2.png "BTCPay Server Vault configuration")
 
-![](./img/BTCPayVaultStoreSetup3.png)
+![BTCPay Server Vault configuration](./img/BTCPayVaultStoreSetup3.png "BTCPay Server Vault configuration")
 
-![](./img/BTCPayVaultStoreSetup4.png)
+![BTCPay Server Vault configuration](./img/BTCPayVaultStoreSetup4.png "BTCPay Server Vault configuration")
 
-![](./img/BTCPayVaultStoreSetup5.png)
+![BTCPay Server Vault configuration](./img/BTCPayVaultStoreSetup5.png "BTCPay Server Vault configuration")
 
-![](./img/BTCPayVaultStoreSetup6.png)
+![BTCPay Server Vault configuration](./img/BTCPayVaultStoreSetup6.png "BTCPay Server Vault configuration")
 
-![](./img/BTCPayVaultStoreSetup7.png)
+![BTCPay Server Vault configuration](./img/BTCPayVaultStoreSetup7.png "BTCPay Server Vault configuration")
 
 ### Spending funds with BTCPay Wallet
 
@@ -50,9 +50,9 @@ Once you’ve received funds to your wallet and you decide to spend them, you ca
 6. Verify the transaction on your hardware wallet and confirm it
 7. Broadcast the transaction
 
-![](./img/BTCPayVaultWalletSend1.png)
+![Send Bitcoin via BTCPay Vault](./img/BTCPayVaultWalletSend1.png "Send Bitcoin via BTCPay Vault")
 
-![](./img/BTCPayVaultWalletSend2.png)
+![Send Bitcoin via BTCPay Vault](./img/BTCPayVaultWalletSend2.png "Send Bitcoin via BTCPay Vault")
 
 ## Supported Hardware Wallets
 

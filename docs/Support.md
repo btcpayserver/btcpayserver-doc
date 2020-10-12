@@ -1,6 +1,6 @@
 # Support
 
-This project is open source, and is not a company. Instead we rely on a network of contributors and users to provide support.
+This project is open source, and is not a company. Instead **we rely on a network of contributors and users to provide support**.
 
 ## Free support
 

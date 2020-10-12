@@ -1,14 +1,14 @@
 # BTCPay Server Walkthrough
 
-In this article, we will walk you through the BTCPay user interface and show you how to navigate through different options.
+In this article, we will walk you through the **BTCPay user interface** and show you how to navigate through different options.
 
 Watch video below for an interactive overview of the features.
 
-[![Walkthrough](https://img.youtube.com/vi/ZIfJyq9RimM/mqdefault.jpg)](https://www.youtube.com/watch?v=ZIfJyq9RimM "BTCPay Server - WalkThrough")
+[![BTCPay Server Walkthrough](https://img.youtube.com/vi/ZIfJyq9RimM/mqdefault.jpg)](https://www.youtube.com/watch?v=ZIfJyq9RimM "BTCPay Server - WalkThrough")
 
 After you created the account on the BTCPay Server instance hosted by yourself or a third-party, you'll see a variety of options in the navigation menu on top.
 
-![BTCPayNavigation](./img/BTCPay-Navigation.jpg)
+![BTCPay Server Navigation](./img/BTCPay-Navigation.jpg "BTCPay Server Navigation")
 
 * Server settings
 * Stores
@@ -21,7 +21,7 @@ After you created the account on the BTCPay Server instance hosted by yourself o
 
 ## Server settings
 
-Server settings is something only a server admin can access. If you're using someone else's server, you won't see Server Settings. Inside the settings, you can perform tasks such as controlling users, rates, updating the server, etc. For more information, check [Server Settings FAQ](./FAQ/FAQ-ServerSettings.md)
+**Server settings** is something only a server admin can access. If you're using someone else's server, you won't see Server Settings. Inside the settings, you can perform tasks such as controlling users, rates, updating the server, etc. For more information, check [Server Settings FAQ](./FAQ/FAQ-ServerSettings.md)
 
 - Users - Add, remove or manage users of your BTCPay Server.
 - Email server - If you want users to verify e-mail address when registering set up the SMTP settings.
@@ -34,7 +34,7 @@ Server settings is something only a server admin can access. If you're using som
 
 ## Stores
 
-Inside BTCPay you can create and manage an unlimited number of stores. Each store has its own wallet, can create apps (Point of Sale or Payment Buttons and Crowdfunds) or be paired with external e-commerce software through one of the integrations available. Admin does not have control over the private keys of the other user's stores. For more information, check [Stores FAQ](./FAQ/FAQ-Stores.md)
+Inside BTCPay you can **create and manage an unlimited number of stores**. Each store has its own wallet, can create apps (Point of Sale or Payment Buttons and Crowdfunds) or be paired with external e-commerce software through one of the integrations available. Admin does not have control over the private keys of the other user's stores. For more information, check [Stores FAQ](./FAQ/FAQ-Stores.md)
 
 - General settings - Configure individual store settings, set up derivation scheme for your wallet and adjust the number of confirmations or invoice expiration time, etc. Server admins can enable Lightning Network payments.
 - Rates - Set the source for cryptocurrency to fiat [exchange rates for your store](./FAQ/FAQ-Stores.md#how-to-change-the-exchange-rate-provider-for-invoices).
@@ -45,13 +45,13 @@ Inside BTCPay you can create and manage an unlimited number of stores. Each stor
 
 ## Apps
 
-Each store has access to different apps. Applications built on top of BTCPay extend the [use case](./UseCase.md) of the software and cater to different type of users. Here you can create a new app and connect it to the store and customize it. A good example is the Point of Sale app which you can use to receive payments in physical stores or even donations.
+Each store has access to different apps. **Applications built on top of BTCPay** extend the [use case](./UseCase.md) of the software and cater to different type of users. Here you can create a new app and connect it to the store and customize it. A good example is the Point of Sale app which you can use to receive payments in physical stores or even donations.
 
 For more information, check [Apps](./Apps.md) or [Apps FAQ](./FAQ/FAQ-Apps.md)
 
 ## Wallets
 
-Each store gets an internal wallet upon adding a derivation scheme. Internal BTCPay wallet shows all of your payments and should be used as a reference if some payments are not shown in your software or hardware wallet due to some wallets [not supporting larger gap limit](./FAQ/FAQ-Wallet.md#missing-payments-in-my-software-or-hardware-wallet). In Wallets, you can see the total balance of your store. The funds from the wallet can only be spent, if the user signs a transaction with a compatible hardware wallet.
+Each store gets an internal wallet upon adding a derivation scheme. **Internal BTCPay wallet** shows all of your payments and should be used as a reference if some payments are not shown in your software or hardware wallet due to some wallets [not supporting larger gap limit](./FAQ/FAQ-Wallet.md#missing-payments-in-my-software-or-hardware-wallet). In Wallets, you can see the total balance of your store. The funds from the wallet can only be spent, if the user signs a transaction with a compatible hardware wallet.
 
 Three elements of the internal BTCPay Wallet are:
 * Transaction - Shows your entire transaction history.
@@ -67,21 +67,21 @@ For more information, check [Wallet](./Wallet.md) or [Wallet FAQ](./FAQ/FAQ-Wall
 
 ## Invoices
 
-All of the invoices for your user account will be displayed here. You can filter the invoices by the status, order, item, store or date. You can also create invoices manually. Invoices are sorted by date from new to old. You can open an individual invoice for more information. Use the export button to save a file (.json or .csv) detailing all invoices.
+All of the **invoices** for your user account will be displayed here. You can filter the invoices by the status, order, item, store or date. You can also create invoices manually. Invoices are sorted by date from new to old. You can open an individual invoice for more information. Use the export button to save a file (.json or .csv) detailing all invoices.
 
 ## Payment Requests
 
-Each store can have an unlimited number of payment requests which are displayed here. Payment requests are dynamic invoices that can be shared by url and paid at any time using current BTC exchange rates. Here you can edit and view your payment requests. You can see invoice details for your payment requests and even clone previously created payment requests.
+Each store can have an unlimited number of **payment requests** which are displayed here. Payment requests are dynamic invoices that can be shared by url and paid at any time using current BTC exchange rates. Here you can edit and view your payment requests. You can see invoice details for your payment requests and even clone previously created payment requests.
 
 For more information, check [Payment Requests](PaymentRequests.md)
 
 ## My Settings
 
-My Settings are user settings. Modify your e-mail address, password or set up two-factor authentication. The U2F feature allows users to further enhance the security of their accounts by physically confirming authentication with a U2F compatible device.
+My Settings are **user settings**. Modify your e-mail address, password or set up two-factor authentication. The U2F feature allows users to further enhance the security of their accounts by physically confirming authentication with a U2F compatible device.
 
 ## Notifications
 
-Notifications inform the user that an event has accured on the BTCPay Server instance.
+Notifications inform the user that **an event has accured on the BTCPay Server instance**.
 The event that is notified can for example be a received or failed payment, an overpaid or underpaid invoice.
 
 By clicking on the icon you can access the Notifications page, where you can view past Notifications and optionally delete them.

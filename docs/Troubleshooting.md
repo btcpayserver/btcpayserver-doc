@@ -1,16 +1,16 @@
 # Troubleshooting an issue in BTCPay Server
 
-Facing a problem is never fun. This document explains the most common workflow and steps you should take to identify the issue you're having more easily and hopefully solve it yourself or with community help.
+Facing a problem is never fun. This document explains the most common workflow and steps you should take to **identify the issue** you're having more easily and hopefully solve it yourself or with community help.
 
 Identifying the problem is crucial.
 
 ## 1. Replicating the issue
 
-First and foremost, try to determine when the issue happens. Try to replicate the problem. If you think it will describe your issue better, take a screenshot.
+First and foremost, try to determine when the issue happens. Try to **replicate** the problem. If you think it will describe your issue better, take a screenshot.
 
 ## 2. Looking through the logs
 
-Logs can provide an essential piece of information. In the next few paragraphs, we will describe how to get the log information for various parts of BTCPay.
+Logs can provide an essential piece of information. In the next few paragraphs, we will describe how to get the **log information for various parts of BTCPay**.
 
 ### 2.1 BTCPay Logs
 

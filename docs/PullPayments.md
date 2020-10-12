@@ -30,7 +30,7 @@ When a sender configures a `Pull payment`, they can configure a number of proper
 * A unit (such as USD, BTC, Hours)
 * Available payment methods
 
-After this, the sender can share the pull payment using a link with the receiver, allowing the receiver to `create a payout`.
+After this, the sender can **share the pull payment** using a link with the receiver, allowing the receiver to `create a payout`.
 The receiver will choose for their payout:
 * Which payment method to use
 * Where to send the money
@@ -90,16 +90,16 @@ The user interface only allows a subset of what is possible.
 ### Create a pull payment
 
 1. Go to your wallet page / pull payments
-![1](./img/pull-payments/1.png)
+![BTCPay Server Pull Payment](./img/pull-payments/1.png "BTCPay Server Pull Payment")
 2. Click on `Create a new pull payment`
-![2](./img/pull-payments/2.png)
+![BTCPay Server Pull Payment](./img/pull-payments/2.png "BTCPay Server Pull Payment")
 3. Fill out the pull payment information, click `Create`
-![3](./img/pull-payments/3.png)
+![BTCPay Server Pull Payment](./img/pull-payments/3.png "BTCPay Server Pull Payment")
 4. Go to the pull payment page by clicking on `View`
 5. Share this page with the payment receiver
-![4](./img/pull-payments/4.png)
+![BTCPay Server Pull Payment](./img/pull-payments/4.png "BTCPay Server Pull Payment")
 5. As the receiver, fill out how much `USD` you claim, and to which address should the money be sent.
-![5](./img/pull-payments/5.png)
+![BTCPay Server Pull Payment](./img/pull-payments/5.png "BTCPay Server Pull Payment")
 
 ### Approve and pay a payout
 1. The sender get notified when the receiver is pulling money
@@ -116,4 +116,4 @@ Clicking on Confirm selected payouts will use the current exchange rate of your 
 
 ## Additional use cases for the Pull Payments feature
 
-The Pull Payment feature can be used in multiple applications, the first one being [Refunds](./Refund.md).
+The **Pull Payment feature** can be used in multiple applications, the first one being [Refunds](./Refund.md).

@@ -1,6 +1,6 @@
 # Connecting Ledger Wallet to BTCPay Server
 
-This document shows how to connect Ledger Nano S Wallet to BTCPay Server.
+This document shows **how to connect Ledger Nano S Wallet to BTCPay Server**.
 
 :::warning
 Direct Ledger Nano S integration is **no longer supported**. For Bitcoin wallets, you can use your Ledger hardware wallet regularly via the [new hardware wallet integration](./Vault.md).
@@ -48,7 +48,7 @@ In this case you can manually find the xpub for your wanted account in these ste
 6. Paste it manually into the "DerivationScheme" textfield
 7. Continue with [Step 7 of the Quick Setup above](#quick-setup)
 
-![Ledger Account "Adavanced Logs" info screenshot](./img/LedgerHelpXpub.png)
+![Ledger Account "Adavanced Logs" info screenshot](./img/LedgerHelpXpub.png "Ledger Account Advanced Logs")
 
 ### Spending from BTCPay Server wallet with Ledger
 
@@ -66,4 +66,4 @@ Once there are some funds in received to your BTCPay Wallet connected to Ledger,
 
 The video below shows how to connect your BTCPay store to your Ledger and how to use Ledger with the [internal BTCPay wallet](./Wallet.md).
 
-[![BTCPay Server and Ledger](https://img.youtube.com/vi/1Sj5mP4TkFI/mqdefault.jpg)](https://www.youtube.com/watch?v=1Sj5mP4TkFI "Ledger Nano S with BTCPay Server")
+[![BTCPay Server and Ledger](https://img.youtube.com/vi/1Sj5mP4TkFI/mqdefault.jpg "BTCPay Server and Ledger")](https://www.youtube.com/watch?v=1Sj5mP4TkFI "Ledger Nano S with BTCPay Server")

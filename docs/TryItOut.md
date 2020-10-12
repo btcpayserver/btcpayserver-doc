@@ -1,6 +1,6 @@
 # Try it out
 
-This section goes through the process of creating an account and store on our public BTCPay server. (For evaluation purpose)
+This section goes through the process of **creating an account and store on our public BTCPay server**. (For evaluation purpose)
 
 You can also follow along in this video:
 
