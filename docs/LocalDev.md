@@ -2,14 +2,14 @@
 
 ## Prerequisites
 
-For the development environment you need to install these tools:
+For the **development environment** you need to install these tools:
 
 * [.NET Core 3.1 SDK](https://dotnet.microsoft.com/download)
 * Docker: [Windows](https://docs.docker.com/docker-for-windows/install/) | [Mac OS](https://docs.docker.com/docker-for-mac/install/) | [Linux](https://docs.docker.com/install/linux/docker-ce/ubuntu/)
 
 ## Dependencies
 
-To execute tests and run the project for debugging, you need to run a number of dependencies.
+To execute tests and run the project for debugging, you need to run a number of **dependencies**.
 
 We wrapped all our dependencies in a docker-compose file that you can use to bootstrap the development environment:
 The file [BTCPayServer.Tests/docker-compose.yml](https://github.com/btcpayserver/btcpayserver/blob/master/BTCPayServer.Tests/docker-compose.yml) can be used to spin everything up:
@@ -26,11 +26,11 @@ We recommend using Visual Studio Code (cross platform) or Visual Studio 2019 (Wi
 You can of course use VIM if you are hardcore, .NET Core is command-line environment friendly.
 
 Visual Studio Code, Visual Studio and Rider will run the launch profile `Bitcoin`.
-This will run a BTCPayServer instance connecting to the services in your Docker service, so you can easily debug and step through the code.
+This will run a **BTCPay Server instance connecting to the services in your Docker service**, so you can easily debug and step through the code.
 
 ## Build configuration
 
-A build configuration defines how to build BTCPay Server. For example, whether to include some source files, whether to optimize for debugging or performance.
+A build configuration defines how to **build BTCPay Server**. For example, whether to include some source files, whether to optimize for debugging or performance.
 
 There are several build configurations:
 
@@ -50,7 +50,7 @@ dotnet run -c Release
 
 ## Launch profiles
 
-When you start BTCPay Server locally for local development, it needs the right parameter so it can connect to the development time dependencies in the docker-compose file.
+When you **start BTCPay Server locally for local development**, it needs the right parameter so it can connect to the development time dependencies in the docker-compose file.
 
 Those parameters are wrapped into the dotnet concept of `launch profile`.
 
@@ -98,7 +98,7 @@ By default, your IDE or simple `dotnet run` will use `Bitcoin` launch profile on
 * This means that BTCPay Server will be hosted on a local HTTP port, building without altcoin support,
 * Run BTCPay Server to connect to Bitcoin only dependencies specified in [BTCPayServer.Tests/docker-compose.yml](https://github.com/btcpayserver/btcpayserver/blob/master/BTCPayServer.Tests/docker-compose.yml).
 
-If you want to develop with altcoins support you need to use the `Altcoins-HTTPS` launch profile, on the `Altcoins-Debug` build, and run the [BTCPayServer.Tests/docker-compose.altcoins.yml](https://github.com/btcpayserver/btcpayserver/blob/master/BTCPayServer.Tests/docker-compose.altcoins.yml).
+If you want to **develop with altcoins support** you need to use the `Altcoins-HTTPS` launch profile, on the `Altcoins-Debug` build, and run the [BTCPayServer.Tests/docker-compose.altcoins.yml](https://github.com/btcpayserver/btcpayserver/blob/master/BTCPayServer.Tests/docker-compose.altcoins.yml).
 
 If using command line:
 
@@ -118,7 +118,7 @@ dotnet test -c Altcoins-Debug
 
 ## HTTPS support for local development
 
-Some browser security features may require that you use HTTPS to be properly tested.
+Some browser security features may require that you use **HTTPS** to be properly tested.
 
 In this case, use `Bitcoin-HTTPS` (or `Altcoin-HTTPS`) launch profile. This will create a self signed certificate for your development purpose.
 

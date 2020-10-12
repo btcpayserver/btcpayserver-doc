@@ -4,7 +4,7 @@ Warning this is a Beta version. Use it at your own risk.
 
 ## Description
 
-A bitcoin payment plugin for PrestaShop using BTCPay Server.
+A bitcoin payment plugin for **PrestaShop** using BTCPay Server.
 
 # Using the BTCPay plugin for Prestashop
 

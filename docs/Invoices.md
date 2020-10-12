@@ -1,24 +1,29 @@
 # Invoices
 
-The invoices page lists the invoices from all stores and [apps](./Apps.md) and [payment requests](./PaymentRequests.md). It cumulatively sorts invoices by date and allows plenty of customization options for a better invoice management.
+The invoices page lists the **invoices from all stores and [apps](./Apps.md) and [payment requests](./PaymentRequests.md) in BTCPay Server**.
+It cumulatively sorts invoices by date and allows plenty of customization options for a better invoice management.
 
 ## Managing Invoices
 
-![Invoices Interface](./img/Invoices.png)
+![Invoices Interface](./img/Invoices.png "BTCPay Server invoices")
 
 ### Invoice Filtering
 
-Invoices can be filtered via the quick filters located next to the search button or via the advanced filters which can be toggled by clicking the (Help) link on the top of the page. Users can filter invoices by store, order id, item id, status or a date.
+Invoices can be filtered via the quick filters located next to the search button or via the advanced filters which can be toggled by clicking the (Help) link on the top of the page.
+Users can **filter invoices** by store, order id, item id, status or a date.
 
-![Invoice Filtering](./img/InvoiceFiltering.gif)
+![Invoice Filtering](./img/InvoiceFiltering.gif "Filter BTCPay Server invoices")
 
 ### Invoice Export
 
-Invoices can be exported in CSV or JSON format. For more information about invoice export and accounting, [see this page](./Accounting.md).
+**BTCPay Server Invoices can be exported in CSV or JSON format**.
+For more information about invoice export and accounting, [see this page](./Accounting.md).
 
 ## Invoice Statuses
 
-Table below lists and describes common invoice statuses in BTCPay and suggests common actions. Actions are just recommendations. It's up to users to define best course of action for their use-case and business.
+Table below lists and describes common invoice statuses in BTCPay and suggests common actions.
+Actions are just recommendations.
+It's up to users to define best course of action for their use-case and business.
 
 | Invoice Status         | Description                                                  | Action        |
 | ---------------------- | ------------------------------------------------------------ | ------------- |

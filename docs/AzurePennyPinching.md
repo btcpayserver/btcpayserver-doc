@@ -5,7 +5,7 @@ This guide is for [Azure-deployed](https://github.com/btcpayserver/btcpayserver-
 Please do this **only after your nodes are fully synched**.
 During synchronization you need a powerful setup.
 
-Penny-pinching is an opportunity for you to better understand the resources you are consuming and tailor the configuration to your workload.
+**Penny-pinching** is an opportunity for you to better understand the resources you are consuming and tailor the configuration to your workload.
 
 Downside:
 
@@ -40,7 +40,7 @@ Find out how much your installation costs:
 * Timespan 30 days
 * Click on apply
 
-![ShowCost](./img/ShowCost.png)
+![Show Cost Microsoft Azure](./img/ShowCost.png "Show Cost Microsoft Azure")
 
 As you can see, my install costs `47.00 EUR/Month`.
 Most of the cost is spent on the virtual machine.
@@ -54,12 +54,12 @@ First see what Virtual machine you currently have:
 * Select your resource group
 * Select BTCPayServerVM
 
-![ShowVM](./img/ShowVM.png)
+![Show Microsoft Azure VM](./img/ShowVM.png "Show Microsoft Azure VM")
 
 As you can see the CPU is mainly unused, disk as well. We can probably cut some fat here.
 Also my VM type is `Standard_D1_v2`. As you can see on [Azure Price Website](https://azureprice.net/).
 
-![ShowPrice](./img/ShowPrice.png)
+![Show Azure Price](./img/ShowPrice.png "Show Azure Price")
 
 This cost me `0.0573444 EUR/H` or `42.66 EUR/Month`.
 
@@ -73,7 +73,7 @@ sudo su -
 docker stats
 ```
 
-![ShowResources](./img/ShowResources.png)
+![Show Azure Resources](./img/ShowResources.png "Show Azure Resources")
 
 As you can see, I have 3.352 GB of RAM, and around 55%.
 
@@ -116,7 +116,7 @@ Swap:         **2.0G**         0B       2.0G
 
 Now, go back to [azureprice.net](https://azureprice.net/) and find something cheaper than `0.0573444 EUR/H`.
 
-![ShowB1](./img/ShowB1.png)
+![Azure VM comparison](./img/ShowB1.png "Azure VM comparison")
 
 Wow! `Standard_B1ms` cost only `0.02049219 EUR/H` – let's switch to it!
 
@@ -130,13 +130,13 @@ A quick look at [this article](https://www.singhkays.com/blog/understanding-azur
 * Select `B1MS` (if you don't see, take a look at the [FAQ](#b1ms))
 * Click `Select`
 
-![ShowSize](./img/ShowSize.png)
+![Show Azure VM Size](./img/ShowSize.png "Show Azure VM Size")
 
 Wait between 5 and 15 minutes.
 
 When Azure is happy:
 
-![HappyAzure](./img/HappyAzure.png)
+![Happy Microsoft Azure](./img/HappyAzure.png "Happy Microsoft Azure")
 
 🎉 Congratulation! You just cut down the cost by 50% per month! :)
 
@@ -155,7 +155,7 @@ You need to go in:
 * `Overview` menu
 * Click on `Stop`
 
-![StopVM](./img/StopVM.png)
+![Stop Azure VM](./img/StopVM.png "Stop Azure VM")
 
 Wait until the Virtual Machine has stopped, then change the size.
 

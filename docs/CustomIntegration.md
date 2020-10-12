@@ -1,8 +1,8 @@
 # Using the BTCPay API for Custom Integration
 
-BTCPay implements the same API as Bitpay for creating and managing invoices.
+**BTCPay implements the same API as Bitpay** for creating and managing invoices.
 
-Migrating from BitPay to BTCPay normally is as easy as changing a URL.
+**Migrating from BitPay to BTCPay** normally is as easy as changing a URL.
 
 While Bitpay only allows one account for one merchant, BTCPay allows a user to manage multiple stores.
 
@@ -56,7 +56,7 @@ The second way, is to generate your private key via some bitcoin library then:
 
 ## Note
 
-BTCPay Server has an API compatible with Bitpay; changing your e-commerce application from Bitpay to BTCPay should take minimal effort.
+**BTCPay Server has an API compatible with Bitpay**; changing your e-commerce application **from Bitpay to BTCPay** should take minimal effort.
 
 You can read the full API documentation [on Bitpay's website](https://bitpay.com/api#resource-Invoices).
 

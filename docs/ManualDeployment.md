@@ -16,11 +16,11 @@ The process is basically the following:
 
 Take a look at our video to learn more:
 
-[![BTCPay Server - Setup](http://img.youtube.com/vi/Xo_vApXTZBU/mqdefault.jpg)](http://www.youtube.com/watch?v=Xo_vApXTZBU "BTCPay - Setup")
+[![BTCPay Server - Setup](http://img.youtube.com/vi/Xo_vApXTZBU/mqdefault.jpg "BTCPay Server - Setup")](http://www.youtube.com/watch?v=Xo_vApXTZBU "BTCPay - Setup")
 
 ## Warning: Not recommended to use in production
 
-Manual installation is NOT recommended in production. It should be only used for learning purpose.
+**Manual installation** is NOT recommended in production. It should be only used for learning purpose.
 
 Instead you should use the [docker deployment](https://github.com/btcpayserver/btcpayserver-docker).
 
