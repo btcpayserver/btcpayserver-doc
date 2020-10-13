@@ -10,6 +10,7 @@ This document covers all the questions and issues related to Server Settings. Th
 * [How can I check my BTCPay Server version via terminal?](./FAQ-ServerSettings.md#how-can-i-check-my-btcpay-server-version-via-terminal)
 * [What is BTCPay SSH key file?](./FAQ-ServerSettings.md#what-is-btcpay-ssh-key-file)
 * [Forgot BTCPay Admin password](./FAQ-ServerSettings.md#forgot-btcpay-admin-password)
+* [How to add a new user by invite?](./FAQ-ServerSettings.md#how-to-add-a-new-user-by-invite)
 * [How to disable U2F and 2FA for a user?](./FAQ-ServerSettings.md#how-to-disable-u2f-and-2fa-for-a-user)
 * [How to configure SMTP settings in BTCPay?](./FAQ-ServerSettings.md#how-to-configure-smtp-settings-in-btcpay)
 * [Error: Your local changes to the following files would be overwritten by merge](./FAQ-ServerSettings.md#error-your-local-changes-to-the-following-files-would-be-overwritten-by-merge)
@@ -113,6 +114,14 @@ Next, add the newly registered user `newadmin@example.com` as an admin:
 Now you can access with `newadmin@example.com` as admin.
 
 When you apply the changes, you'll notice that the newly created user isn't a member of any stores. In that case, [follow this guide](https://gist.github.com/justinmoon/8128e66fc11d90ae5732f2491570bfc5) to add the new user to all or certain stores.
+
+### How to add a new user by invite?
+
+Server admins can add new users by creating an invite link to share with them. This can allow admins to disable public registration on the server, or to invite specific users by clicking: Server Settings > Add User (do not provide password) > Create account
+
+![Invite User](../img/InviteUser.png)
+
+A shareable link will be displayed for the server admin to distribute. An email will be sent (if email is configured on the server) to set the password. The new user will create a password upon first visit to the invite link.
 
 ### How to disable U2F and 2FA for a user?
 
