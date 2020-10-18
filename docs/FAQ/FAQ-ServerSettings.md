@@ -121,7 +121,7 @@ Server admins can add new users by creating an invite link to share with them. T
 
 ![Invite User](../img/InviteUser.png)
 
-A shareable link will be displayed for the server admin to distribute. An email will be sent (if email is configured on the server) to set the password. The new user will create a password upon first visit to the invite link.
+A shareable link will be displayed for the server admin to distribute. An email will be sent (if email is [configured on the server](#how-to-configure-smtp-settings-in-btcpay) to set the password. The new user will create a password upon first visit to the invite link.
 
 ### How to disable U2F and 2FA for a user?
 
