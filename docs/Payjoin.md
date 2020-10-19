@@ -28,7 +28,7 @@ The [BTCPay Wallet](./Wallet.md) supports Payjoin.
    * Scan the QR code with the camera scanning feature
    * Copy the link from the "Open in wallet" button and paste it in the "Parse BIP21" prompt
 2. The send form should be populated with the payment details. You can check if the invoice supports payjoin by expanding the "advanced settings" and see if there is a "Payjoin endoint" input with a url.
-3. Sign your transaction using either BTCPay Server's hardware wallet support via [BTCPay Vault](./Vault.md) or the [hot wallet](./HotWallet.md) feature.
+3. Sign your transaction using either BTCPay Server's hardware wallet support via [BTCPay Vault](./HardwareWalletIntegration.md) or the [hot wallet](./HotWallet.md) feature.
 4. Once your original transaction is ready, you will be given the option to either `Broadcast (Payjoin)` or to `Broadcast (Simple)`. Choose `Broadcast (Payjoin)`.
 5. The payjoin server will propose a new special transaction, if possible. If the payjoin server is unable to do the payjoin, the original transaction is broadcast instead.
 6. If you are using a hardware wallet, you will be asked to sign the payjoin transaction again (the hot wallet feature signs the transaction for you automatically).

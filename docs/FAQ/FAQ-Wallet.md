@@ -27,7 +27,7 @@ Check our in-depth documentation on [how to set up a wallet](../WalletSetup.md).
 
 ## Can I use a hardware wallet with BTCPay Server?
 
-The internal wallet has a [built in hardware wallet integration](../Vault.md). You can use a supported hardware wallet with the [BTCPay wallet](../Wallet.md).
+The internal wallet has a [built in hardware wallet integration](../HardwareWalletIntegration.md). You can use a supported hardware wallet with the [BTCPay wallet](../Wallet.md).
 
 This  means that you're using a hardware wallet without leaking information to third-party apps or servers unlike the default software for the devices, since the wallet relies on the full node in your BTCPay.
 

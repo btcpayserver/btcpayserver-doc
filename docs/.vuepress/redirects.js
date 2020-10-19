@@ -48,7 +48,8 @@ module.exports = [
   { path: '/features/lightningnetwork', redirect: '/LightningNetwork/' },
   { path: '/features/accounting', redirect: '/Accounting/' },
   { path: '/features/paymentrequests', redirect: '/PaymentRequests/' },
-  { path: '/features/vault', redirect: '/Vault/' },
+  { path: '/features/vault', redirect: '/HardwareWalletIntegration/' },
+  { path: '/Vault', redirect: '/HardwareWalletIntegration/' },
   { path: '/features/payjoin', redirect: '/Payjoin/' },
   { path: '/features/payjoin/payjoin-spec', redirect: '/Payjoin-spec/' },
   // Integrations
