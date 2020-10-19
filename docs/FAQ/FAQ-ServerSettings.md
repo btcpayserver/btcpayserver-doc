@@ -81,11 +81,11 @@ Or see this [LunaNode example](https://github.com/JeffVandrewJr/patron/blob/mast
 
 You can see your BTCPay version in the **bottom right of the page footer** when you're logged in as a server admin.
 
-Deployments using v1.0.5.7 and later will automatically receive notifications to alert when a new BTCPay Server version has been released. 
+Deployments using v1.0.5.7 and later will automatically receive notifications to alert when a new BTCPay Server version has been released.
 
 ![Version](../img/notifications/notification-version.png)
 
-Note: This feature will automatically set the `BTCPAY_UPDATEURL` environment variable in the BTCPay Server container to make a single daily request to [this Github endpoint](https://api.github.com/repos/btcpayserver/btcpayserver/releases/latestServer). Server admins can disable these notifications by disabling the policy in Server Settings > Policies > Check releases on GitHub. 
+Note: This feature will automatically set the `BTCPAY_UPDATEURL` environment variable in the BTCPay Server container to make a single daily request to [this Github endpoint](https://api.github.com/repos/btcpayserver/btcpayserver/releases/latest). Server admins can disable these notifications by disabling the policy in Server Settings > Policies > Check releases on GitHub.
 
 ### How can I check my BTCPay Server version via terminal?
 
@@ -213,7 +213,7 @@ The easy way is to choose or provide custom theme preferences in your BTCPay as 
 
 For advanced theme changes, you'll most likely need to fork  BTCPay repository and apply desired design changes. Build and publish the docker image to Docker Hub. Set the `BTCPAY_IMAGE` environment variable to your docker image tag(`export BTCPAY_IMAGE="your custom btcpay docker image"`) and run the setup (`. ./btcpay-setup.sh -i`) as usual from [BTCPay Docker](https://github.com/btcpayserver/btcpayserver-docker). Modify generated docker compose to use your custom docker image.
 
-:::warning 
+:::warning
 A forked BTCPay Server will need to create a new image manually and follow these steps for EACH BTCPay update so it is advised to stick with the default setup and theme options.
 :::
 
