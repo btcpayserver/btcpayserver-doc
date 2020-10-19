@@ -194,7 +194,7 @@ module.exports = {
             children: [
               {
                 title: "Use existing hardware wallet",
-                path: "/Vault",
+                path: "/HardwareWalletIntegration",
                 children: [
                   ["/ColdCardWallet", "ColdCard Wallet"]
                 ]
