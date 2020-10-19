@@ -23,10 +23,10 @@ Externally generated wallet can be used as:
 
 ### Use an existing hardware wallet
 
-Hardware wallets provide a good balance between security and ease of use. If you already have a hardware wallet set up, you can easily use it with your BTCPay Server. Thanks to built-in [hardware wallet integration](./HardwareWalletIntegration.md) the xpub key from the hardware wallet is automatically added to your BTCPay Server. The integration further allows you to spend funds received to your store within BTCPay's [internal wallet](./Wallet.md)
+Hardware wallets provide a good balance between security and ease of use. If you already have a hardware wallet set up, you can easily use it with your BTCPay Server. Thanks to built-in [hardware wallet integration](HardwareWalletIntegration.md) the xpub key from the hardware wallet is automatically added to your BTCPay Server. The integration further allows you to spend funds received to your store within BTCPay's [internal wallet](./Wallet.md)
 
 :::tip
-If you own a hardware wallet, follow the instructions on how to [use a an existing hardware wallet with your BTCPay Server](.HardwareWalletIntegration.md)
+If you own a hardware wallet, follow the instructions on how to [use a an existing hardware wallet with your BTCPay Server](HardwareWalletIntegration.md)
 :::
 
 ### Use an existing software wallet
