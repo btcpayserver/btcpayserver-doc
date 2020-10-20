@@ -51,3 +51,7 @@ Once you’ve received funds to your wallet and you decide to spend them, you ca
 ## Supported Hardware Wallets
 
 The list of supported hardware wallets is available [on this link](https://github.com/bitcoin-core/HWI#device-support).
+
+:::warning
+The hardware wallet integration only works with Bitcoin. Altcoin wallets aren't supported.
+:::
