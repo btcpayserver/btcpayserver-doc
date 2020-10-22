@@ -10,6 +10,7 @@ This document covers all the questions and issues related to Server Settings. Th
 * [How can I check my BTCPay Server version via terminal?](./FAQ-ServerSettings.md#how-can-i-check-my-btcpay-server-version-via-terminal)
 * [What is BTCPay SSH key file?](./FAQ-ServerSettings.md#what-is-btcpay-ssh-key-file)
 * [Forgot BTCPay Admin password](./FAQ-ServerSettings.md#forgot-btcpay-admin-password)
+* [How to add a new user by invite?](./FAQ-ServerSettings.md#how-to-add-a-new-user-by-invite)
 * [How to disable U2F and 2FA for a user?](./FAQ-ServerSettings.md#how-to-disable-u2f-and-2fa-for-a-user)
 * [How to configure SMTP settings in BTCPay?](./FAQ-ServerSettings.md#how-to-configure-smtp-settings-in-btcpay)
 * [Error: Your local changes to the following files would be overwritten by merge](./FAQ-ServerSettings.md#error-your-local-changes-to-the-following-files-would-be-overwritten-by-merge)
@@ -78,7 +79,13 @@ Or see this [LunaNode example](https://github.com/JeffVandrewJr/patron/blob/mast
 
 ### How can I see my BTCPay version?
 
-You can see your BTCPay version in the bottom right of the page footer when you're logged in as a server admin.
+You can see your BTCPay version in the **bottom right of the page footer** when you're logged in as a server admin.
+
+Deployments using v1.0.5.7 and later will automatically receive notifications to alert when a new BTCPay Server version has been released.
+
+![Version](../img/notifications/notification-version.png)
+
+Note: This feature will automatically set the `BTCPAY_UPDATEURL` environment variable in the BTCPay Server container to make a single daily request to [this Github endpoint](https://api.github.com/repos/btcpayserver/btcpayserver/releases/latest). Server admins can disable these notifications by disabling the policy in Server Settings > Policies > Check releases on GitHub.
 
 ### How can I check my BTCPay Server version via terminal?
 
@@ -113,6 +120,14 @@ Next, add the newly registered user `newadmin@example.com` as an admin:
 Now you can access with `newadmin@example.com` as admin.
 
 When you apply the changes, you'll notice that the newly created user isn't a member of any stores. In that case, [follow this guide](https://gist.github.com/justinmoon/8128e66fc11d90ae5732f2491570bfc5) to add the new user to all or certain stores.
+
+### How to add a new user by invite?
+
+Server admins can add new users by creating an invite link to share with them. This can allow admins to disable public registration on the server, or to invite specific users by clicking: Server Settings > Add User (do not provide password) > Create account
+
+![Invite User](../img/InviteUser.png)
+
+A shareable link will be displayed for the server admin to distribute. An email will be sent (if email is [configured on the server](#how-to-configure-smtp-settings-in-btcpay) to set the password. The new user will create a password upon first visit to the invite link.
 
 ### How to disable U2F and 2FA for a user?
 
@@ -198,7 +213,7 @@ The easy way is to choose or provide custom theme preferences in your BTCPay as 
 
 For advanced theme changes, you'll most likely need to fork  BTCPay repository and apply desired design changes. Build and publish the docker image to Docker Hub. Set the `BTCPAY_IMAGE` environment variable to your docker image tag(`export BTCPAY_IMAGE="your custom btcpay docker image"`) and run the setup (`. ./btcpay-setup.sh -i`) as usual from [BTCPay Docker](https://github.com/btcpayserver/btcpayserver-docker). Modify generated docker compose to use your custom docker image.
 
-:::warning 
+:::warning
 A forked BTCPay Server will need to create a new image manually and follow these steps for EACH BTCPay update so it is advised to stick with the default setup and theme options.
 :::
 
