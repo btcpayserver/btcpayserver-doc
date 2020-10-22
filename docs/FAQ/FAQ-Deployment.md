@@ -128,7 +128,7 @@ If you want to know more about the philosophy behind all this, you can read our 
 To see the .onion address of your BTCPay instance without accessing it through the clearnet and clicking the Tor logo in top left corner, apply the following command:
 
 ```bash
-cat /var/lib/docker/volumes/generated_tor_servicesdir/_data/BTCPayServer/hostname
+cat /var/lib/docker/volumes/generated_tor_servicesdir/_data/BTC-P2P/hostname
 ```
 
 ### How can I modify or deactivate environment variables?
