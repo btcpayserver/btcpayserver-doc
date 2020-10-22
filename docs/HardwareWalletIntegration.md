@@ -53,5 +53,5 @@ Once you’ve received funds to your wallet and you decide to spend them, you ca
 The list of supported hardware wallets is available [on this link](https://github.com/bitcoin-core/HWI#device-support).
 
 :::warning
-The hardware wallet integration only works with Bitcoin. Altcoin wallets aren't supported.
+The hardware wallet integration in BTCPay Server only supports Bitcoin. [Altcoin](Altcoins.md) wallets enabled on your server won't work.
 :::
