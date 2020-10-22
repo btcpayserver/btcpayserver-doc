@@ -3,6 +3,7 @@ const docsDir = resolve(__dirname, '..')
 
 // external docs: local dir as key, repo base as value
 const EXTERNAL_DOCS = {
+  'Configurator': 'https://github.com/btcpayserver/btcpayserver-configurator',
   'Docker': 'https://github.com/btcpayserver/btcpayserver-docker',
   'Transmuter': 'https://github.com/btcpayserver/btcTransmuter',
 }
