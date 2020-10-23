@@ -20,8 +20,8 @@
   },
   "scripts": {
     "prestart": "rm -rf $npm_package_config_dist",
-    "start": "vuepress dev docs -p $npm_package_config_port",
-    "build": "vuepress build docs",
+    "start": "NODE_ENV=development vuepress dev docs -p $npm_package_config_port",
+    "build": "NODE_ENV=production vuepress build docs",
     "test": "jest",
     "linkcheck": "start-server-and-test linkcheck:serve $npm_package_config_port linkcheck:local",
     "linkcheck:serve": "serve -p $npm_package_config_port $npm_package_config_dist",
