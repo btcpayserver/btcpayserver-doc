@@ -24,6 +24,12 @@ Here are some members of the community that you can contact to get additional pa
 
 Contact: evilkukka@gmail.com, @Kukks on [Mattermost](https://chat.btcpayserver.org/), [Twitter](https://twitter.com/MrKukks), [LinkedIn](https://www.linkedin.com/in/camilleriandrew/)
 
+### Esky33
+
+  > BTCPayServer local or cloud installation (Lunanode/other VPS). I can help with the initial setup/deployment,  
+
+ Contact: support@btcpayjungle.com - @Esky33 on [Mattermost](https://chat.btcpayserver.org/) -  [Twitter](https://twitter.com/Esky33junglist)
+ 
 ### Hubik Tomas
 
 > I can help with initial setup/deployment (currently with Azure, but I am planning to play with non-Azure as wll) and integration with PrestaShop. I was also playing with design customization of the payment window, scripting of exchange rates etc.
