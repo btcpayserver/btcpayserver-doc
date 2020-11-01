@@ -26,7 +26,7 @@ BTCPay currently offers three implementations of the Lightning Network:
 
 ## Choosing the Lightning Network implementation
 
-First, read [here](./FAQ/FAQ-LightningNetwork/#can-i-use-a-pruned-node-with-ln-in-btcpay) about using pruned Bitcoin nodes with lightning network implementations before deploying.
+First, read [here](./FAQ/FAQ-LightningNetwork.md/#can-i-use-a-pruned-node-with-ln-in-btcpay) about using pruned Bitcoin nodes with lightning network implementations before deploying.
 
 On the installation, you'll have the option to choose the implementation. For [web-interface installations](./LunaNodeWebDeployment.md), you can simply select the implementation from the drop-down menu. For other [docker](https://github.com/btcpayserver/btcpayserver-docker) based [deployment methods](./Deployment.md) you need to:
 
