@@ -16,7 +16,7 @@ Take time to familiarize yourself with the risks associated with using the Light
 
 While the keys from your Lightning Network don't have a backup and someone can steal them theoretically, your on-chain Bitcoin funds are safe and are never uploaded on the server.
 
-As the technology matures and develops, things like a proper backup will be easier to implement in BTCPay. As of [v1.0.3.138](https://blog.btcpayserver.org/btcpay-lnd-migration/), LND is the only lightning network implementation that allows for [lightning seed backups with BTCPay Server](./FAQ/FAQ-LightningNetwork.md/#where-can-i-find-recovery-seed-backup-for-my-lightning-network-wallet-in-btcpay-server).
+As the technology matures and develops, things like a proper backup will be easier to implement in BTCPay. As of [v1.0.3.138](https://blog.btcpayserver.org/btcpay-lnd-migration/), LND is the only lightning network implementation that allows for [lightning seed backups with BTCPay Server](./FAQ/FAQ-LightningNetwork.md#where-can-i-find-recovery-seed-backup-for-my-lightning-network-wallet-in-btcpay-server).
 
 BTCPay currently offers three implementations of the Lightning Network:
 
@@ -26,7 +26,7 @@ BTCPay currently offers three implementations of the Lightning Network:
 
 ## Choosing the Lightning Network implementation
 
-First, read [here](./FAQ/FAQ-LightningNetwork.md/#can-i-use-a-pruned-node-with-ln-in-btcpay) about using pruned Bitcoin nodes with lightning network implementations before deploying.
+First, read [here](./FAQ/FAQ-LightningNetwork.md#can-i-use-a-pruned-node-with-ln-in-btcpay) about using pruned Bitcoin nodes with lightning network implementations before deploying.
 
 On the installation, you'll have the option to choose the implementation. For [web-interface installations](./LunaNodeWebDeployment.md), you can simply select the implementation from the drop-down menu. For other [docker](https://github.com/btcpayserver/btcpayserver-docker) based [deployment methods](./Deployment.md) you need to:
 
