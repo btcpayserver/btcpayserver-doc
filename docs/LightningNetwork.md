@@ -5,27 +5,30 @@ After deploying BTCPay Server, you may want to experiment with an innovative sec
 This guide will show you how to set up your Lightning Network node in BTCPay and guide you through the basics.
 
 ::: danger
-**Before you proceed, please understand that Lightning Network is still in the experimental stage. Do not put the money you can't afford to lose. There is a high risk of you losing the money.**
+**Before you proceed, please understand that the Lightning Network is still in the experimental stage. Do not put the money you can't afford to lose. There is a high risk of you losing the money.**
 :::
 
-Take time to familiarize yourself with the risk.
-**There's no backup for LND or c-lightning keys in BTCPay. Your keys are in a hot-wallet**. This means :
+Take time to familiarize yourself with the risks associated with using the Lightning Network.
+**Your keys are in a hot-wallet. Some implementations do not have a backup for lightning keys in BTCPay.** This means:
 
 1. If you erase your BTCPay Server or your machine crashes - you lose all the funds.
 2. If your server gets hacked - a hacker can take all of your funds by accessing your keys.
 
 While the keys from your Lightning Network don't have a backup and someone can steal them theoretically, your on-chain Bitcoin funds are safe and are never uploaded on the server.
 
-As the technology matures and develops, things like a proper backup will be easier to implement in BTCPay.
+As the technology matures and develops, things like a proper backup will be easier to implement in BTCPay. As of [v1.0.3.138](https://blog.btcpayserver.org/btcpay-lnd-migration/), LND is the only lightning network implementation that allows for [lightning seed backups with BTCPay Server](./FAQ/FAQ-LightningNetwork.md/#where-can-i-find-recovery-seed-backup-for-my-lightning-network-wallet-in-btcpay-server).
 
-BTCPay currently offers two implementations of the Lightning Network:
+BTCPay currently offers three implementations of the Lightning Network:
 
 * [LND](https://github.com/lightningnetwork/lnd)
 * [c-lightning](https://github.com/ElementsProject/lightning)
+* [eclair](https://github.com/ACINQ/eclair)
 
 ## Choosing the Lightning Network implementation
 
-On the installation, you'll have the option to choose the implementation. For [web-interface installations](./LunaNodeWebDeployment.md), you can simply select the implementation from the drop-down menu. For [docker](https://github.com/btcpayserver/btcpayserver-docker) you need to :
+First, read [here](./FAQ/FAQ-LightningNetwork/#can-i-use-a-pruned-node-with-ln-in-btcpay) about using pruned Bitcoin nodes with lightning network implementations before deploying.
+
+On the installation, you'll have the option to choose the implementation. For [web-interface installations](./LunaNodeWebDeployment.md), you can simply select the implementation from the drop-down menu. For other [docker](https://github.com/btcpayserver/btcpayserver-docker) based [deployment methods](./Deployment.md) you need to:
 
 ```bash
 sudo su -
@@ -34,10 +37,15 @@ export BTCPAYGEN_LIGHTNING="implementationgoeshere"
 . ./btcpay-setup.sh -i
 ```
 
-For c-lightning use `export BTCPAYGEN_LIGHTNING="clightning"`
-For LND use `export BTCPAYGEN_LIGHTNING="lnd"`
+For **c-lightning** use `export BTCPAYGEN_LIGHTNING="clightning"`
 
-To begin using Lightning, your blockchain needs to be fully synced.
+For **LND** use `export BTCPAYGEN_LIGHTNING="lnd"`
+
+For **eclair** use `export BTCPAYGEN_LIGHTNING="eclair"`
+
+For eclair it also requires `export BTCPAYGEN_ADDITIONAL_FRAGMENTS="opt-txindex"`
+
+Finally, to begin using Lightning, your blockchain needs to be fully synced.
 
 ## Connecting your internal Lightning Node in BTCPay
 
@@ -45,10 +53,11 @@ Regardless of the implementation (c-lightning or LND) you've decided to use, the
 
 1. If you do not have a store, create one.
 2. Store Settings > General Settings > Lightning Network Experimental (located at the bottom of the page, scroll)
-3. Under Crypto tab, select cryptocurrency > Modify.
+3. Under Lightning nodes (Experimental), select Modify.
 4. At the next page, at the bottom under "connection string", click on the "click here" link. Your node information will be automatically added.
-5. Enable. Submit.
-6. Test Connection.
+5. Test Connection
+6. Submit.
+7. Save (located at the bottom of the page, scroll)
 
 **Your blockchain needs to be fully synced before you try to connect your Lightning Node, otherwise the connection will fail.**
 
