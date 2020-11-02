@@ -99,6 +99,7 @@ Common problems and questions server admins have.
 ### [Maintenance FAQ](./FAQ-ServerSettings.md#maintainance)
 
 * [How to update BTCPay Server?](./FAQ-ServerSettings.md#how-to-update-btcpay-server)
+* [How to restart BTCPay Server?](./FAQ-ServerSettings.md#how-to-restart-btcpay-server)
 * [How to SSH into my BTCPay running on VPS?](./FAQ-ServerSettings.md#how-to-ssh-into-my-btcpay-running-on-vps)
 * [How can I check my BTCPay Server version?](./FAQ-ServerSettings.md#how-can-i-see-my-btcpay-version)
 * [How can I check my BTCPay Server version via terminal?](./FAQ-ServerSettings.md#how-can-i-check-my-btcpay-server-version-via-terminal)

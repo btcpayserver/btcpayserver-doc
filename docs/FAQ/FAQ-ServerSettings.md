@@ -5,6 +5,7 @@ This document covers all the questions and issues related to Server Settings. Th
 ## Maintenance
 
 * [How to update BTCPay Server?](./FAQ-ServerSettings.md#how-to-update-btcpay-server)
+* [How to restart BTCPay Server?](./FAQ-ServerSettings.md#how-to-restart-btcpay-server)
 * [How to SSH into my BTCPay running on VPS?](./FAQ-ServerSettings.md#how-to-ssh-into-my-btcpay-running-on-vps)
 * [How can I check my BTCPay Server version?](./FAQ-ServerSettings.md#how-can-i-see-my-btcpay-version)
 * [How can I check my BTCPay Server version via terminal?](./FAQ-ServerSettings.md#how-can-i-check-my-btcpay-server-version-via-terminal)
@@ -40,16 +41,32 @@ This document covers all the questions and issues related to Server Settings. Th
 
 ### How to update BTCPay Server?
 
-There are 2 ways to update your BTCPay Server :
-1. Updating through the user interface: Server Settings > Maintenance > Update.
+There are 2 ways to update your BTCPay Server:
+1. Updating in the user interface: Server Settings > Maintenance > Update.
 
 ![Updating BTCPay Server](../img/HowToUpdateBTCPayServer.png)
 
-2.Updating through SSH: Login into your virtual machine with ssh, then apply following commands:
+2. Updating using SSH: Login into your virtual machine with ssh, then apply following commands:
 
 ```bash
 sudo su -
+cd btcpayserver-docker
 btcpay-update.sh
+```
+
+### How to restart BTCPay Server?
+
+There are 2 ways to restart your BTCPay Server:
+1. Restarting in the user interface: Server Settings > Maintenance > Restart.
+
+![Restarting BTCPay Server](../img/HowToRestartBTCPayServer.png)
+
+2. Updating using SSH: Login into your virtual machine with ssh, then apply following commands:
+
+```bash
+sudo su -
+cd btcpayserver-docker
+btcpay-restart.sh
 ```
 
 ### How to SSH into my BTCPay running on VPS?
