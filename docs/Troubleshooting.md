@@ -129,6 +129,10 @@ Here's a good example of how to ask a question.
 
 > I'm having a problem with XYZ. I can replicate the problem. My BTCPay version is 0.100.31, and I deployed my server on Digital Ocean by following Docker deployment guide. I've searched through the FAQ and closed GitHub issues, but there's no solution to my problem. My BTCPay Setup is XYZ, and the issue is occurring when I do XYZ. Here are the logs I was able to get from my BTCPay instance. You can see the error in the image I attached.
 
+:::danger
+The community will only provide extensive support for production deployments. i.e. [Manual Deployments](ManualDeployment.md).
+:::
+
 ### 4.1 Asking the community (general problems)
 
 For quick answers to fundamental problems, it's best to post a question in #support channel on [BTCPay Mattermost](https://chat.btcpayserver.org/btcpayserver/channels/support).
