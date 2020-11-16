@@ -6,6 +6,7 @@ BASE_DIR=$(cd `dirname $0` && pwd)
 DOCS_DIR="$BASE_DIR/docs"
 PUBLIC_DIR="$DOCS_DIR/.vuepress/public"
 BTCPAYSERVER_DIR="$BASE_DIR/deps/btcpayserver"
+CONFIGURATOR_DIR="$BASE_DIR/deps/configurator"
 DOCKER_DIR="$BASE_DIR/deps/docker"
 TRANSMUTER_DIR="$BASE_DIR/deps/transmuter"
 
@@ -45,6 +46,24 @@ git checkout $(git tag --sort=-refname | awk 'match($0, /^v[0-9]+\./)' | head -n
 if command -v jq >/dev/null 2>&1; then
   jq -rs 'reduce .[] as $item ({}; . * $item)' BTCPayServer/wwwroot/swagger/v1/*.json > "$PUBLIC_DIR/API/Greenfield/v1/swagger.json"
 fi
+
+# Configurator
+
+rm -rf "$DOCS_DIR/Configurator"
+mkdir -p "$DOCS_DIR/Configurator"
+
+if [ ! -d "$CONFIGURATOR_DIR" ]; then
+  git clone https://github.com/btcpayserver/btcpayserver-configurator.git "$CONFIGURATOR_DIR"
+else
+  cd "$CONFIGURATOR_DIR" && git checkout master && git pull
+fi
+
+cd "$CONFIGURATOR_DIR"
+cp -r README.md docs/* "$DOCS_DIR/Configurator"
+sed -ie 's$(./docs/$(./$g' "$DOCS_DIR/Configurator/README.md"
+for file in "$DOCS_DIR"/Configurator/*.md; do
+  update_external "$file" https://github.com/btcpayserver/btcpayserver-configurator
+done
 
 # Docker
 

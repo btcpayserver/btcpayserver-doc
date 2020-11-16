@@ -4,6 +4,7 @@
 
 # External repos
 /docs/BTCPayServer
+/docs/Configurator
 /docs/Transmuter
 /docs/Docker
 /docs/.vuepress/public/API/Greenfield/**/*.json

@@ -110,7 +110,6 @@ module.exports = {
             path: "/Docker/",
             collapsable: false,
             children: [
-              // TODO: Add Configurator
               {
                 title: "Web Deployment",
                 path: "/LunaNodeWebDeployment"
@@ -177,6 +176,10 @@ module.exports = {
             children: [
               "/ManualDeploymentExtended"
             ]
+          },
+          {
+            title: "Configurator",
+            path: "/Configurator/"
           }
         ]
       },
@@ -194,7 +197,7 @@ module.exports = {
             children: [
               {
                 title: "Use existing hardware wallet",
-                path: "/Vault",
+                path: "/HardwareWalletIntegration",
                 children: [
                   ["/ColdCardWallet", "ColdCard Wallet"]
                 ]
@@ -252,7 +255,7 @@ module.exports = {
         collapsable: false,
         children: [
           ["/WooCommerce", "WooCommerce"],
-          ["/Shopify", "Shopify"],          
+          ["/Shopify", "Shopify"],
           ["/Drupal", "Drupal"],
           ["/Magento", "Magento"],
           ["/PrestaShop", "PrestaShop"],

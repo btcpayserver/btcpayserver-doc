@@ -33,7 +33,7 @@ Please check out our [official website](https://btcpayserver.org/), our [complet
 * Point of sale app
 * Crowdfunding app
 * Payment Requests
-* Internal, full-node reliant wallet with [hardware wallet integration](./Vault.md)
+* Internal, full-node reliant wallet with [hardware wallet integration](./HardwareWalletIntegration.md)
 * [Payjoin Support](./Payjoin.md)
 
 [![How BTCPay Server Features Overview](https://img.youtube.com/vi/R-yaXk4NvEs/mqdefault.jpg)](https://www.youtube.com/watch?v=R-yaXk4NvEs)
