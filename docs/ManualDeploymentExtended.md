@@ -8,6 +8,7 @@ The instructions also build all the application components from source which can
 #### Not recommended for production use
 
 Manual installation is NOT recommended for production use unless you are very confident with your Operating System and Bitcoin security expertise. If you are unsure use the docker deployment or one of the other [deployment options](./Deployment.md).
+#### You must have technical literacy and be able to resolve any issues on your own. The community will not provide extensive support for this deployment.
 :::
 
 ## Installation Steps Overview
