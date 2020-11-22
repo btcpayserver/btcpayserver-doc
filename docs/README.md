@@ -85,7 +85,6 @@ Enterprises can use it as scalable and secure back-end of their infrastracture w
 
 ### Community articles
 
-* [The Ultimate Guide to BTCPay - The free and open-source Bitcoin Payment processor](https://www.reddit.com/r/Bitcoin/comments/8f1eqf/the_ultimate_guide_to_btcpay_the_free_and/)
 * [The Ultimate List of BTCPay Server Hosts and Merchants](https://bitcoinshirt.co/btcpay-stores/)
 * [BTCPay Server official youtube channel](https://www.youtube.com/channel/UCpG9WL6TJuoNfFVkaDMp9ug)
 * [BTCPay Server Manual Install](http://blog.sipsorcery.com/?p=1052)

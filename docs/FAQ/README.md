@@ -72,6 +72,7 @@ Common questions and issues that may occur during the initial sync of BTCPay.
 * [Why does BTCPay sync?](./FAQ-Synchronization.md#why-does-btcpay-sync)
 * [Can I skip/speed up the sync?](./FAQ-Synchronization.md#can-i-skip-the-synchronization)
 * [How do I know that the sync is finished?](./FAQ-Synchronization.md#how-do-i-know-that-btcpay-synced-completely)
+* [How can I check the block height of my bitcoin node?](./FAQ-Synchronization.md#how-can-i-check-the-block-height-of-my-bitcoin-node)
 * [BTCPay takes forever to synchronize](./FAQ-Synchronization.md#btcpay-server-takes-forever-to-synchronize)
 * [BTCPay Server keeps showing that my node is always starting](./FAQ-Synchronization.md#btcpay-server-keeps-showing-that-my-node-is-always-starting)
 * [I already have a synced full node, can I use it with BTCPay?](./FAQ-Synchronization.md#im-running-a-full-node-and-have-a-synched-blockchain-can-btcpay-use-it-so-that-it-doesnt-have-to-do-a-full-sync)

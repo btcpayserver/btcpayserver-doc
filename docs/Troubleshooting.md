@@ -61,6 +61,7 @@ Run the commands below to print logs by container name. Replace the container na
 
 ```bash
 sudo su -
+cd btcpayserver-docker
 docker ps
 docker logs --tail 100 generated_btcpayserver_1
 ```
@@ -74,6 +75,10 @@ Use the following if you're having a problem with the Lightning Network.
 There are a few ways to access your LND logs when using Docker. First log in as root:
 
 `sudo su -`
+
+Navigate to the correct directory:
+
+`cd btcpayserver-docker`
 
 Find container name:
 
@@ -122,6 +127,14 @@ alternatively, use this
 You can also get log information with c-lightning cli command.
 
 `bitcoin-lightning-cli.sh getlog`
+
+## 2.3 - Bitcoin Node Logs
+
+In addition to [looking at logs](#2-looking-through-the-logs) of your Bitcoind container, you can also use any of the [bitcoin-cli commands](https://developer.bitcoin.org/reference/rpc/index.html) to obtain information from your bitcoin node. BTCPay includes a script to allow you to communicate with your Bitcoin node easily.
+
+Inside the `btcpayserver-docker` folder, get the blockchain information using your node: 
+
+`bitcoin-cli.sh getblockchaininfo`
 
 ## 3. Finding a solution yourself (Google, FAQ, GitHub issues)
 
