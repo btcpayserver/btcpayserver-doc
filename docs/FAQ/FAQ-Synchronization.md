@@ -48,7 +48,7 @@ If you want to check that your BTCPay Server Bitcoin node is synchronized with t
 
 ## How can I check the block height of my bitcoin node?
 
-To verify the sync status of your Bitcoin node, you can use bitcoin-cli commands inside your server's Bitcoin container. SSH into your server and navigate to the directory where you [view Bitcoin logs](../Troubleshooting.md#23-bitcoin-node-logs)) run the command: `bitcoin-cli.sh getblockcount` to view the current block of your server's Bitcoin node.
+To verify the sync status of your Bitcoin node, you can use bitcoin-cli commands inside your server's Bitcoin container. SSH into your server and navigate to the directory where you [view Bitcoin logs](../Troubleshooting.md#23-bitcoin-node-logs) run the command: `bitcoin-cli.sh getblockcount` to view the current block of your server's Bitcoin node.
 
 ## BTCPay Server takes forever to synchronize
 
