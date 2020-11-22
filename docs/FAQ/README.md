@@ -46,6 +46,8 @@ Questions and solutions to BTCPay installation.
 * [How can I run BTCPay on testnet?](./FAQ-Deployment.md#how-can-i-run-btcpay-on-testnet)
 * [Can I start BTCPay only when I'm expecting a payment?](./FAQ-Deployment.md#can-i-start-btcpay-only-when-i-m-expecting-a-payment)
 * [Can I connect to my BTCPay Bitcoin P2P on port 8333?](./FAQ-Deployment.md#can-i-connect-to-my-btcpay-bitcoin-p2p-on-port-8333)
+* [How can I renew my SSL certificate?](./FAQ-Deployment.md#how-can-i-renew-my-ssl-certificate)
+* [Can I use an existing Nginx server as a reverse proxy with SSL termination?](./FAQ-Deployment.md#can-i-use-an-existing-nginx-server-as-a-reverse-proxy-with-ssl-termination)
 
 ### [Web Deployment FAQ](./FAQ-Deployment.md#web-deployment-faq)
 

@@ -6,7 +6,27 @@ Identifying the problem is crucial.
 
 ## 1. Replicating the issue
 
-First and foremost, try to determine when the issue happens. Try to replicate the problem. If you think it will describe your issue better, take a screenshot.
+First and foremost, try to determine when the issue happens. Try to replicate the problem. Try to update and restart your server to verify you can reproduce your issue. If you think it will describe your issue better, take a screenshot.
+
+### 1.1 Updating the server
+
+Check [your version of BTCPay](./FAQ/FAQ-ServerSettings.md#how-can-i-see-my-btcpay-version). If it is much older than the [latest version](https://github.com/btcpayserver/btcpayserver/releases) of BTCPay, [updating your server](./FAQ/FAQ-ServerSettings.md#how-to-update-btcpay-server) may resolve the issue.
+
+### 1.2 Restarting the server
+
+Restarting your server is an easy way to solve many of the most common BTCPay Server issues. You may need to [SSH into your server](./FAQ/FAQ-ServerSettings.md#how-to-ssh-into-my-btcpay-running-on-vps) to restart it. 
+
+### 1.3 Restarting a service 
+
+Some issues you may only need to restart a particular service in your BTCPay Server deployment. Such as restarting the letsencrypt container to renew the SSL certificate. 
+
+```bash
+sudo su -
+cd btcpayserver-docker
+docker restart letsencrypt-nginx-proxy-companion
+```
+
+Use `docker ps` to find the name of a different service you would like to restart.
 
 ## 2. Looking through the logs
 
