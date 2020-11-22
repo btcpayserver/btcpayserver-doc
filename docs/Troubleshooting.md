@@ -108,6 +108,14 @@ You can also get log information with c-lightning cli command.
 
 `bitcoin-lightning-cli.sh getlog`
 
+## 2.3 - Bitcoin Node Logs
+
+In addition to printing logs of your Bitoind container, you can also use any of the [bitcoin-cli commands](https://developer.bitcoin.org/reference/rpc/index.html) to obtain information from your bitcoin node. BTCPay includes a script to allow you to communicate with your Bitcoin node easily.
+
+Inside the `btcpayserver-docker` folder, get the blockchain information using your node: 
+
+`bitcoin-cli.sh getblockchaininfo`
+
 ## 3. Finding a solution yourself (Google, FAQ, GitHub issues)
 
 Even though setups differ, the chances that someone else experienced the same issue as yours are pretty high. Take a few moments, Google around and see if you can solve it yourself.
