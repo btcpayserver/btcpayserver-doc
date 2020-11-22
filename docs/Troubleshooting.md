@@ -110,7 +110,7 @@ You can also get log information with c-lightning cli command.
 
 ## 2.3 - Bitcoin Node Logs
 
-In addition to printing logs of your Bitoind container, you can also use any of the [bitcoin-cli commands](https://developer.bitcoin.org/reference/rpc/index.html) to obtain information from your bitcoin node. BTCPay includes a script to allow you to communicate with your Bitcoin node easily.
+In addition to [looking at logs](#2-looking-through-the-logs) of your Bitcoind container, you can also use any of the [bitcoin-cli commands](https://developer.bitcoin.org/reference/rpc/index.html) to obtain information from your bitcoin node. BTCPay includes a script to allow you to communicate with your Bitcoin node easily.
 
 Inside the `btcpayserver-docker` folder, get the blockchain information using your node: 
 
