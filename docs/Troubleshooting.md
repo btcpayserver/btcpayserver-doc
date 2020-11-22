@@ -41,6 +41,7 @@ Run the commands below to print logs by container name. Replace the container na
 
 ```bash
 sudo su -
+cd btcpayserver-docker
 docker ps
 docker logs --tail 100 generated_btcpayserver_1
 ```
@@ -54,6 +55,10 @@ Use the following if you're having a problem with the Lightning Network.
 There are a few ways to access your LND logs when using Docker. First log in as root:
 
 `sudo su -`
+
+Navigate to the correct directory:
+
+`cd btcpayserver-docker`
 
 Find container name:
 
