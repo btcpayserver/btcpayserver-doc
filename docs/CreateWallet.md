@@ -6,7 +6,7 @@ If you are using a [third-party host](./ThirdPartyHosting.md), this option needs
 
 1. Go to your BTCPay Server’s Store > Settings > Wallet > Click Setup
 
-![](./img/createwallet/Setup0.png)
+![](./img/createwallet/Setup.png)
 
 2. Click Import from a new/existing seed > Press Generate
 
