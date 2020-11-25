@@ -18,7 +18,7 @@ By default, you need to be a server admin to use the hot wallet feature. This is
 
 Setting up a hot wallet is quite easy.
 
-1. Go to your BTCPay Server’s Store > General Settings > Derivation Scheme > **Import from a new/existing seed.**
+1. Go to your BTCPay Server’s Store > Settings > Wallet > Setup > Derivation Scheme > **Import from a new/existing seed.**
 2. If you have already generated a seed, you can provide it to the hot wallet.
 3. Be sure to tick "Is hot wallet" for the key to be stored (not ticking this will not store any private key).
 4. Press Generate

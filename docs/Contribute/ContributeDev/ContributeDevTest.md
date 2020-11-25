@@ -89,8 +89,8 @@ Now you can test your feature as if it was already released!
 
 Creating an invoice and sending payment is an important feature in BTCPay and in order to manually test this, you must first:
 
-- Create a Store 
-- Modify your store Derivation Scheme 
+- Create a Store
+- Setup a Wallet
 
 :::tip
 Use the hot wallet for fastest wallet setup during testing. Import from ... > a new/existing seed > check Is hot wallet > Generate
