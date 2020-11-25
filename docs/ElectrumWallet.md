@@ -19,7 +19,7 @@ After the installation, open Electrum Wallet by clicking on the icon on your des
 
 1. Create a new Electrum Wallet
 2. In Electrum, Wallet > Wallet Information - copy the **Master Public Key**.
-3. In BTCPay Server, Store Settings > General > Derivation Scheme - Paste the Extended Public Key
+3. In BTCPay Server, Store > Settings > Setup > Wallet > In the Derivation Scheme Box - Paste the Extended Public Key
 4. Go to Receive tab in Electrum.
 5. Compare the addresses in Electrum and BTCPay Server, they should match.
 6. Confirm the address match in BTCPay.
@@ -62,13 +62,13 @@ Select and **copy** the `Master Public Key`. This is the **public** key from whi
 
 ![ElectrumWallet](./img/ElectrumWallet10.png)
 
-Return to your BTCPay Server. Click on the `Stores` in the header menu and scroll until you see `Derivation Scheme` section. Click on the `Modify` link.
+Return to your BTCPay Server. Click on the `Stores` in the header menu and select Settings. Find Wallet and click on the `Setup` button.
 
-![WasabiWallet](./img/WassabiWalletSetupBTCPay10.png)
+![ElectrumWallet](./img/wallet/SetupWallet.png)
 
 Paste the `Master Public Key` into derivation scheme field as it is, without adding anything else. Make sure that `Enabled` checkbox is ticked and click `Continue`.
 
-![WasabiWallet](./img/WassabiWalletSetupBTCPay11.png)
+![ElectrumWallet](./img/WassabiWalletSetupBTCPay11.png)
 
 Return to the Electrum Wallet. Go to `Receive tab` which shows your wallet receiving address.
 
