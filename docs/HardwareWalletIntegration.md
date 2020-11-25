@@ -12,7 +12,7 @@ The hardware wallet integration within BTCPay Server allows you to import your h
 2. Install the Vault on your PC (Windows, MacOS or Linux)
 3. Open the BTCPay Vault app
 4. Plug in the hardware wallet into your PC and make sure it’s in a wake up state
-5. Go to your BTCPay Server’s Store > General Settings > Derivation Scheme > **Import from a hardware wallet**
+5. Go to your BTCPay Server’s Store > Settings > Wallet > Modify > **Import from a hardware wallet**
 6. Grant the permission
 7. The public key will automatically be imported in the store and configured to an appropriate format
 8. Validate that address shown on BTCPay is the same as the one on your device
