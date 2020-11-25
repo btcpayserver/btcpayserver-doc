@@ -224,7 +224,7 @@ Install [Header and Footer Scripts](https://wordpress.org/plugins/header-and-foo
 </script>
 ```
 
-This piece of code makes sure that each click on the product area adds it to cart and prevents users from viewing product description, which is completely uncecessary for our use-case.
+This piece of code makes sure that each click on the product area adds it to cart and prevents users from viewing product description, which is completely unnecessary for our use-case.
 
 #### 4. Modifying the Crowdfunding app
 
