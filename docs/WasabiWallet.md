@@ -52,11 +52,11 @@ Select and **copy** the `Extended Account Public Key`. This is the **public** ke
 
 Return to your BTCPay Server. Click on the `Stores` in the header menu and scroll until you see `Derivation Scheme` section. Click on the `Modify` link.
 
-![WasabiWallet](./img/WassabiWalletSetupBTCPay10.png)
+![WasabiWallet](./img/createwallet/SetupWallet.png)
 
 Paste the `Extended Account Public Key` into derivation scheme field as it is, without adding anything else. Make sure that `Enabled` checkbox is ticked and click `Continue`.
 
-![WasabiWallet](./img/WassabiWalletSetupBTCPay11.png)
+![WasabiWallet](./img/createwallet/SetupWalletXpub.png)
 
 Return to the Wasabi  Wallet. Go to `Receive tab` and `generate a new address`.
 
