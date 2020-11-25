@@ -28,7 +28,7 @@ Let's use Electrum to create a testnet wallet for your store:
 Let's configure the store so it uses your Electrum wallet:
 
 1. Go to the Settings page of your store in BTCPay
-2. On the "General Settings" page you will find the "Derivation Scheme" section - click the "Modify" action for BTC
+2. On the "General Settings" page you will find the "Wallet" section - click the "Setup" button for configuring an on-chain wallet.
 3. Paste the "Master Public Key" copied from Electrum into the "Derivation Scheme" text field and click "Continue"
 4. Confirm the addresses by clicking on "Receive" in Electrum: The "Receiving address" should match the first address shown in BTCPay
 5. After that your test wallet should appear on the [Wallets page](https://testnet.demo.btcpayserver.org/wallets) of your BTCPay account
