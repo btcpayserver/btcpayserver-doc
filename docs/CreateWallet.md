@@ -4,8 +4,11 @@ If you are using a [third-party host](./ThirdPartyHosting.md), this option needs
 
 ## How to create a new wallet
 
-1. Go to your BTCPay Server’s Store > General Settings > Derivation Scheme > Import from a new/existing seed.
-2. Press Generate
+1. Go to your BTCPay Server’s Store > Settings > Wallet > Click Setup
+
+![](./img/createwallet/Setup0.png)
+
+2. Click Import from a new/existing seed > Press Generate
 
 Feel free to select the address format that you prefer. **Do not enable** a hot wallet, unless you've read the [Hot wallet documentation](./HotWallet.md) and have the use-case for this advanced feature.
 
