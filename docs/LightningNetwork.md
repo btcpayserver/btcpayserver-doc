@@ -52,16 +52,16 @@ Finally, to begin using Lightning, your blockchain needs to be fully synced.
 Regardless of the implementation (c-lightning or LND) you've decided to use, the process of connecting your internal Lightning Node in BTCPay Server is the same.
 
 1. If you do not have a store, create one.
-2. Store Settings > General Settings > Lightning Network Experimental (located at the bottom of the page, scroll)
-3. Under Lightning nodes (Experimental), select Modify.
+2. Store > Settings > Lightning (Off-chain payments)
+3. Click Setup
 4. At the next page, at the bottom under "connection string", click on the "click here" link. Your node information will be automatically added.
 5. Test Connection
 6. Submit.
-7. Save (located at the bottom of the page, scroll)
+7. Save Store Settings (located at the bottom of the page, scroll)
 
 **Your blockchain needs to be fully synced before you try to connect your Lightning Node, otherwise the connection will fail.**
 
-![LightningNetworkSettup1](./img/LightningNetworkNodeSetup1.jpg)
+![Lightning NetworkSettup1](./img/LightningNetworkNodeSetup1.png)
 
 ![LightningNetworkSettup2](./img/LightningNetworkNodeSetup2.jpg)
 
