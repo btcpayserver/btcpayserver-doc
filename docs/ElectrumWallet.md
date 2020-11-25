@@ -64,11 +64,11 @@ Select and **copy** the `Master Public Key`. This is the **public** key from whi
 
 Return to your BTCPay Server. Click on the `Stores` in the header menu and select Settings. Find Wallet and click on the `Setup` button.
 
-![ElectrumWallet](./img/wallet/SetupWallet.png)
+![ElectrumWallet](./img/createwallet/SetupWallet.png)
 
 Paste the `Master Public Key` into derivation scheme field as it is, without adding anything else. Make sure that `Enabled` checkbox is ticked and click `Continue`.
 
-![ElectrumWallet](./img/WassabiWalletSetupBTCPay11.png)
+![ElectrumWallet](./img/createwallet/SetupWalletXpub.png)
 
 Return to the Electrum Wallet. Go to `Receive tab` which shows your wallet receiving address.
 
