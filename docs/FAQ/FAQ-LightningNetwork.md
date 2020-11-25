@@ -200,7 +200,7 @@ It is possible in BTCPay to enable LND with a pruned node, however the LND imple
 ### Can I use my existing LN node with BTCPay?
 
 If you already have a well connected lightning node with sufficient inbound liquidity, you may want to use it with BTCPay instead of the included lightning node.
-To do so, go to the lightning node settings page of your store (Store > Settings > Lightning nodes > Modify).
+To do so, go to the lightning node settings page of your store (Store > Settings > Lightning > Setup).
 On this page you can edit the connection string to integrate an external node.
 The connection strings vary per lightning implementation, the settings page contains the documentation for the connection settings to give you further guidance.
 
@@ -228,7 +228,7 @@ export BTCPAYGEN_LIGHTNING="clightning"
 
 ### I switched Lightning Network implementation, but getting "no payment available" error
 
-When you switch from one implementation to another, you need to reconfigure your lightning connection string at a store level, to use adequate implementation. Stores > General Settings > Lightning nodes > Modify > **Connection string**. In connection string, click on the "click here" link.
+When you switch from one implementation to another, you need to reconfigure your lightning connection string at a store level, to use adequate implementation. Stores > Settings > Lightning > Setup > **Connection string**. In connection string, click on the "click here" link.
 
 ### I get "WARNING: The LIGHTNING_ALIAS variable is not set. Defaulting to a blank string" when starting container
 
@@ -246,7 +246,7 @@ And add or modify the `LIGHTNING_ALIAS` entry to `LIGHTNING_ALIAS=myawesomenode`
 
 The information other users need to connect to your node, is already displayed at the checkout. Sometimes, merchants want to display their node so that their customers can connect beforehand.
 
-There are numerous ways to find your node information, but the easiest way to display it to others is by using Lightning Node info page. Go to Store > General Settings > Lightning nodes > Modify. At the bottom of the page, there is a "Open Public Node Page" button. Click on it to see the information. The page can be embedded into your website with `<iframe>`.
+There are numerous ways to find your node information, but the easiest way to display it to others is by using Lightning Node info page. Go to Store > Settings > Lightning > Modify. At the bottom of the page, there is a "Open Public Node Page" button. Click on it to see the information. The page can be embedded into your website with `<iframe>`.
 
 ![BTCPay Checkout](../img/LightningNodepPageInfo.png)
 
@@ -276,8 +276,8 @@ If you migrate from an older version to `v1.0.3.138` [this blog post on how to d
 
 There are two easy ways to do this:
 
-1. Store Settings > Checkout experience > Choose default payment method at checkout
-2. Store Settings > General settings > Modify > Uncheck the Enabled box to disable on-chain payments
+1. Store > Settings > Checkout experience > Choose default payment method at checkout
+2. Store > Settings > Modify > Uncheck the Enabled box to disable on-chain payments
 
 ### How to see my Lightning Network version?
 
