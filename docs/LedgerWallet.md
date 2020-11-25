@@ -25,7 +25,7 @@ This guide assumes, you have a Nano S wallet set up. To configure the Nano S, pl
 
 1. Plug in Ledger Nano S into your PC.
 2. Open the Bitcoin app on your Ledger.
-3. In BTCPay Server, Store Settings > General > Derivation Scheme > Import from Hardware Device > Ledger wallet
+3. In BTCPay Server, Store > Settings > Wallet > Setup > Derivation Scheme > Import from Hardware Device > Ledger wallet
 4. Select the account which you want to use, in most cases it's the `Account 0`
 5. Confirm the `Export public key` on the wallet.
 6. The xpubkey will now automatically be added from Ledger to your BTCPay Server Store.
