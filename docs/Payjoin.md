@@ -9,7 +9,7 @@ You can follow this video to better understand what payjoin is and how to use it
 ## Enabling Payjoin as a merchant
 
 1. Create a store
-2. Configure a [hot wallet](./HotWallet.md) for your derivation scheme (Store => Derivation Scheme => BTC => Modify => Import from => a new/existing seed => Is hot wallet checked and using either segwit or segwit wrapped as an address type => Generate. Don't forget to click Confirm!)
+2. Configure a [hot wallet](./HotWallet.md) for your derivation scheme. Be sure to use either segwit or segwit wrapped as the address type.
 3. Enable Payjoin/P2EP in the "General Settings" and click "Save"
 
 It's important to note that you will need at least 1 UTXO for payjoin to work.
