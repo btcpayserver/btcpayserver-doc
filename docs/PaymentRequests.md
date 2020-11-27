@@ -23,8 +23,6 @@ Store owners can also print payment requests (or export invoice data) for record
 
 Click Payment Requests > Create new payment request
 
-![Payment Request](./img/PaymentRequests.png)
-
 ![Create Payment Request](./img/payment-requests/CreatePaymentRequest.png)
 
 Provide the Request Name, Amount, Display Denomination, Associated Store, Expiration Time & Description (Optional)
@@ -37,7 +35,7 @@ Payment requests are store-dependent, which means that each payment request is a
 
 Click Save & View to review your payment request.
 
-![View New Payment Request](./img/payment-requests/ViewNewPaymentRequest.png)
+![View New Payment Request](./img/payment-requests/NewPaymentRequest.png)
 
 BTCPay creates a URL for the payment request. Share this URL to view your payment request.
 
@@ -45,7 +43,7 @@ BTCPay creates a URL for the payment request. Share this URL to view your paymen
 
 Both the payee and requester can view the status of the payment request after sending payment. The status will appear as **Settled** if payment has been received in full. If only partial payment was made, the Amount Due will show the balance due.
 
-![View Paid Payment Request](./img/payment-requests/ViewPaidPaymentRequest.png)
+![View Paid Payment Request](./img/payment-requests/PaidPaymentRequest.png)
 
 ## Customize Payment Requests
 
