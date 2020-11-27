@@ -4,8 +4,6 @@ Payment Requests are a feature which allows BTCPay store owners to create custom
 
 ![Payment Request](./img/PaymentRequests.png)
 
-![Payment Request](./img/PaymentRequests2.png)
-
 To create a shareable Payment Request:
 
 - Click on the header item: Payment Requests
