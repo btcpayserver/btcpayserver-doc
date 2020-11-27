@@ -3,9 +3,10 @@
 ## Introduction
 
 Traditionally, to make a Bitcoin payment, a receiver shares their bitcoin address and the sender later sends money to this address.
-Such a system is called `Push payment` as the sender initiates the payment while the receiver may be unavailable, in effect `pushing` the payment to the receiver.
+Such system is called `Push payment` as the sender initiates the payment while the receiver may be unavailable, in effect `pushing` the payment to the receiver.
 
 However, what about reversing the role?
+
 What if, instead of a sender `pushing` the payment, the sender allows the receiver to `pull` the payment at a time the receiver seems fit?
 This is the concept of `Pull payment`. This allows several new applications such as:
 
