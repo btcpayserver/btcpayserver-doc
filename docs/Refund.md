@@ -12,18 +12,20 @@ Future versions of BTCPay Server will enable instant payouts as an option, witho
 
 ## Create a refund
 
-* After an invoice has been confirmed, go in the Invoices page and click `Details` on the invoice.
+1. After an invoice has been confirmed, go in the Invoices page and click `Details` on the invoice.
 
 ![9](./img/pull-payments/9.png)
 
-* Click `Issue a refund`
+2. Click `Issue a refund`
 
 ![10](./img/pull-payments/10.png)
 
-* Select the way you want to issue the refund
+3. Select the way you want to issue the refund
 
 ![11](./img/pull-payments/11.png)
 
-* Share the pull payment link with the customer
+4. Share the pull payment link with the customer
 
 ![12](./img/pull-payments/12.png)
+
+![13](./img/pull-payments/12.png)
