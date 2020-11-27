@@ -1,8 +1,8 @@
 # Payment Requests
 
-Payment Requests are a feature which allows BTCPay store owners to create custom invoices which can be shared with others, by sending a link to the custom payment request. Funds paid to a payment request use the exchange rate at the time of payment. This allows users to make payments at their convenience without having to negotiate or verify exchange rates with the store owner at the time of payment.
+Payment Requests are a feature which allows BTCPay store owners to create long-lived invoices. Funds paid to a payment request use the exchange rate at the time of payment. This allows users to make payments at their convenience without having to negotiate or verify exchange rates with the store owner at the time of payment.
 
-Users can pay requests in partial payments. The request will remain valid until it is paid in full or if the store owner requires an expiration time. Addresses are never reused. A new address is generated each time the user clicks pay to create an invoice for the payment request. 
+Users can pay requests in partial payments. The payment request will remain valid until it is paid in full or if the store owner requires an expiration time. Addresses are never reused. A new address is generated each time the user clicks pay to create an invoice for the payment request. 
 
 Store owners can also print payment requests (or export invoice data) for record keeping and accounting. BTCPay automatically labels invoices as Payment Requests in your store's invoice list.
 
