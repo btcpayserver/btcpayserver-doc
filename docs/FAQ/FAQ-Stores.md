@@ -12,6 +12,7 @@ This page shows common issues and frequently asked questions about Stores in BTC
 * [Consider the invoice confirmed when the payment transaction?](./FAQ-Stores.md#consider-the-invoice-confirmed-when-the-payment-transaction)
 * [Consider the invoice paid even if the paid amount is ... % less than expected?](./FAQ-Stores.md#consider-the-invoice-paid-even-if-the-paid-amount-is-less-than-expected)
 * [How to disable email on invoices?](./FAQ-Stores.md#how-to-disable-email-on-invoices)
+* [How to redirect store invoices after payment?](./FAQ-Stores.md#how-to-redirect-store-invoices-after-payment)
 * [Can I delete invoices from BTCPay?](./FAQ-Stores.md#can-i-delete-invoices-from-btcpay)
 * [How to change the exchange rate provider for invoices?](./FAQ-Stores.md#how-to-change-the-exchange-rate-provider-for-invoices)
 * [Getting GetRatesAsync was called on coinaverage error](./FAQ-Stores.md#getting-getratesasync-was-called-on-coinaverage-error)
@@ -73,6 +74,18 @@ In a situation where a customer uses an exchange wallet to pay directly for an i
 ##  How to disable email on invoices
 
 To disable the email requirement for your store's invoices, go to Stores > Settings > Checkout Experience > uncheck 'Requires a refund email' box.
+
+## How to redirect store invoices after payment?
+
+To automatically redirect paid invoices for a store, enable the setting in: Stores > Settings > Checkout experience > check 'Redirect invoice to redirect url automatically after paid' box.
+
+This setting is typically used for redirecting invoices made directly to the store, such as with a [Payment Button](../Apps.md#payment-button). After payment, the invoice would return to the original page where the payment button was embedded.
+
+When this feature is not enabled, the customer will be prompted in the invoice to return to the original payment page.
+
+![Redirect Paid Store Invoices](../img/invoice/PaidInvoice.png)
+
+To redirect to a specific URL in the Point of Sale app, use the [PoS Redirect](../FAQ/FAQ-Apps.md#how-to-redirect-to-another-site-after-payment) instead.
 
 ## Can I delete invoices from BTCPay?
 
