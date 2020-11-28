@@ -149,6 +149,7 @@ Store settings explained.
 * [Consider the invoice confirmed when the payment transaction?](./FAQ-Stores.md#consider-the-invoice-confirmed-when-the-payment-transaction)
 * [Consider the invoice paid even if the paid amount is ... % less than expected?](./FAQ-Stores.md#consider-the-invoice-paid-even-if-the-paid-amount-is-less-than-expected)
 * [How to disable email on invoices?](./FAQ-Stores.md#how-to-disable-email-on-invoices)
+* [How to redirect store invoices after payment?](./FAQ-Stores.md#how-to-redirect-store-invoices-after-payment)
 * [Can I delete invoices from BTCPay?](./FAQ-Stores.md#can-i-delete-invoices-from-btcpay)
 * [How to change the exchange rate provider for invoices?](./FAQ-Stores.md#how-to-change-the-exchange-rate-provider-for-invoices)
 * [Getting GetRatesAsync was called on coinaverage error](./FAQ-Stores.md#getting-getratesasync-was-called-on-coinaverage-error)
@@ -180,6 +181,7 @@ Frequent questions about the applications in BTCPay.
 * [What is a Payment Button?](./FAQ-Apps.md#what-is-a-payment-button)
 * [How to create a Pay Button with a custom amount?](./FAQ-Apps.md#how-to-create-a-pay-button-with-a-custom-amount)
 * [How to map a domain name to an app?](./FAQ-Apps.md#how-to-map-a-domain-name-to-an-app)
+* [How to redirect to another site after payment?](./FAQ-Apps.md#how-to-redirect-to-another-site-after-payment)
 * [How to integrate WooCommerce Store in BTCPay Crowdfund app?](./FAQ-Apps.md#how-to-integrate-woocommerce-store-into-a-btcpay-crowdfund-app)
 
 ## [Lightning Network FAQ](./FAQ-LightningNetwork.md)
