@@ -31,9 +31,11 @@ The table below lists the various transaction labels used by BTCPay.
 
 | Transaction Type  | Description                                                  |
 | ----------------- | ------------------------------------------------------------ |
+| app               | Payment was received through an app created invoice          |
 | invoice           | Payment was received through an invoice                      |
 | payjoin           | Not paid, invoice timer still has not expired                | 
-| payjoin-exposed   | Utxo was exposed through an invoice payjoin proposal         |
+| payjoin-exposed   | UTXO was exposed through an invoice payjoin proposal         |
+| payment-request   | Payment was received through a payment request               |
 | payout            | Payment was sent through a payout or refund                  |
 
 You can also create your own [custom transaction labels and comments](./FAQ/FAQ-Wallet.md#how-to-add-custom-labels-and-comments-to-transactions).
