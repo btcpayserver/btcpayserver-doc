@@ -20,6 +20,7 @@ By using an existing wallet, you can receive payments to the external wallet, wi
 Externally generated wallet can be used as:
 - [Existing hardware wallet](#use-an-existing-hardware-wallet)
 - [Existing software wallet](#use-an-existing-software-wallet)
+- [Existing mobile wallet](#use-an-existing-mobile-wallet)
 
 ### Use an existing hardware wallet
 
@@ -41,6 +42,8 @@ For that reason, we recommend that you only use software wallets listed below.
 Click on the link above you will be redirected to a step by step tutorial on how to set up particular software wallet with BTCPay Server.
 
 To spend and manage the funds received to your external software wallet, you can use an [internal BTCPay Wallet](./Wallet.md) and sign a transaction with your private key or simply manage the funds in that external wallet itself.
+
+#### Use an existing mobile wallet
 
 ## Create a new wallet
 
