@@ -79,7 +79,7 @@ To disable the email requirement for your store's invoices, go to Stores > Setti
 
 To automatically redirect paid invoices for a store, enable the setting in: Stores > Settings > Checkout experience > check 'Redirect invoice to redirect url automatically after paid' box.
 
-This setting is typically used for redirecting invoices made directly to the store, such as with a [Payment Button](../Apps.md#payment-button). After payment, the invoice would return to the original page where the payment button was embedded.
+This setting is typically used for redirecting invoices made directly to the store, such as with a [Payment Button](../Apps.md#payment-button). After payment, the invoice would return to the original page where the payment button was embedded or to the redirect URL provided on the Edit Payment Button page.
 
 When this feature is not enabled, the customer will be prompted in the invoice to return to the original payment page.
 

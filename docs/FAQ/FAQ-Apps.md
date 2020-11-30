@@ -109,8 +109,9 @@ In PoS settings these are the following options for redirects on paid invoices:
    - Enable/disable automatic redirect to the PoS App on the [store level](../FAQ/FAQ-Stores.md#how-to-redirect-store-invoices-after-payment).
 
 Notes: 
-1. Provide the Redirect URL in the App Settings (above the redirect option).
+1. Provide the Redirect URL in the App Settings (above the redirect option). 
 2. Expired or partially paid [invoices](../Invoices.md#invoice-statuses) will not redirect, even if the setting is enabled. This feature is for paid invoices only.
+3. Alternatively, redirect URLs can be specified via the API (i.e. Embedded PoS).
 
 ## How to integrate WooCommerce Store into a BTCPay Crowdfund app?
 
