@@ -2,8 +2,6 @@
 
 Bitcoin is the only focus of the project and its core developers. However, opt-in integrations are available for several altcoins:
 
-- BGold (BTG) (also known as Bitcoin Gold)
-- BPlus (XBC) (also known as Bitcoin Plus)
 - Bitcore (BTX)
 - Dash (DASH)
 - Dogecoin (DOGE)
@@ -15,6 +13,7 @@ Bitcoin is the only focus of the project and its core developers. However, opt-i
 - Monero (XMR)
 - Polis (POLIS)
 - Viacoin (VIA)
+- BGold (BTG)
 
 Altcoins are maintained by their respective communities.
 
