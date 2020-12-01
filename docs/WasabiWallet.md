@@ -38,7 +38,7 @@ To test the password, enter it in the password field, and click `Test Password`.
 
 The green message on the left bottom side of the screen will appear if the password is correct.  If by any chance your password is incorrect, delete the wallet and start from scratch.
 
-![WasabiWallet](./img/wasabi/WasabiWalletSetupBTCPay5.png)
+![WasabiWallet](./img/Wasabi/WasabiWalletSetupBTCPay5.png)
 
 Upon testing the password, click on the `Load Wallet` to access your newly created wallet.
 
