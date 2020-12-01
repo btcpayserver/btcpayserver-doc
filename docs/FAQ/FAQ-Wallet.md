@@ -12,6 +12,7 @@ This document contains frequently asked questions related to BTCPay Server's [in
 * [How to add custom labels and comments to transactions?](#how-to-add-custom-labels-and-comments-to-transactions)
 * [I don't see Lightning network payments in BTCPay wallet?](#i-dont-see-lightning-network-payments-in-btcpay-wallet)
 * [Is there a mobile app for BTCPay Server wallet?](#is-there-a-mobile-app-for-btcpay-server-wallet)
+* [Can I connect my mobile wallet to BTCPay?](#can-i-connect-my-mobile-wallet-to-btcpay)
 
 ## What is BTCPay Server wallet?
 
@@ -125,3 +126,27 @@ To connect your BTCPay node to Fully Noded:
 Here are some node statuses and network information you can easily monitor from your Fully Noded:
 
 ![Fully Noded](../img/FullyNoded.png)
+
+## Can I connect my mobile wallet to BTCPay?
+
+If your mobile wallet will allow you to export either:
+
+1: QR Code of your extended public key (xpub)
+
+Generate a QR Code of your xpub in your wallet. During the wallet setup process for your BTCPay store, select the option: Import from a QR Code.
+
+Make sure your BTCPay installed device has a camera to scan the QR code. Hold your code to the camera when the scan prompt appears. Next select Submit or Retry if needed. 
+
+:::warning
+Be sure to verify that the addresses shown in your BTCPay Server match the addresses produced in your mobile wallet. If they do NOT match, do NOT attempt to receive payments to your BTCPay.
+:::
+
+
+2. Your wallet's private key
+
+During the wallet setup process for your BTCPay store, select the option: Import from a new/existing seed. Provide your Existing Seed (private key). 
+
+:::warning
+Be sure to verify that the addresses shown in your BTCPay Server match the addresses produced in your mobile wallet. If they do NOT match, do NOT attempt to receive payments to your BTCPay.
+:::
+

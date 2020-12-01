@@ -167,6 +167,7 @@ Here are some of the questions and problems about wallets in BTCPay.
 * [How to add custom labels and comments to transactions?](./FAQ-Wallet.md#how-to-add-custom-labels-and-comments-to-transactions)
 * [I don't see Lightning network payments in BTCPay wallet?](./FAQ-Wallet.md#i-dont-see-lightning-network-payments-in-btcpay-wallet)
 * [Is there a mobile app for BTCPay Server wallet?](./FAQ-Wallet.md#is-there-a-mobile-app-for-btcpay-server-wallet)
+* [Can I connect my mobile wallet to BTCPay?](./FAQ-Wallet.md#can-i-connect-my-mobile-wallet-to-btcpay)
 
 ## [Apps FAQ](./FAQ-Apps.md)
 

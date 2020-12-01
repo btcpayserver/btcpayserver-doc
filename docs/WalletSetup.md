@@ -45,6 +45,12 @@ To spend and manage the funds received to your external software wallet, you can
 
 #### Use an existing mobile wallet
 
+Some mobile wallets (i.e. [Blue Wallet](https://bluewallet.io/)) allow you to create a wallet and export the extended public key using a QR Code. You can easily connect your BTCPay Server to a [QR Coded xpub](FAQ/FAQ-Wallet/#can-i-connect-my-mobile-wallet-to-btcpay).
+
+The common [(gap-limit)](FAQ/FAQ-Wallet/#missing-payments-in-my-software-or-hardware-wallet) issue is likely to occur using any mobile wallet, unless they have a way to adjust it.
+
+To spend and manage funds with the [internal BTCPay Wallet](./Wallet.md) you will need to provide your private key (used to generate the xpub QR Code) or simply receive funds through your BTCPay and manage the funds in the external wallet.
+
 ## Create a new wallet
 
 If you do not have an existing wallet, you can generate a new one within your BTCPay Server. If are using a [third-party host](./ThirdPartyHosting.md), this option needs to be explicitly enabled by the server admin. Generating a new wallet in an environment you are not sure is trustworthy, is discouraged.
