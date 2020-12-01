@@ -131,7 +131,7 @@ Here are some node statuses and network information you can easily monitor from 
 
 If your mobile wallet will allow you to export either:
 
-1: QR Code of your extended public key (xpub)
+### 1. QR Code of your extended public key (xpub)
 
 Generate a QR Code of your xpub in your wallet. During the wallet setup process for your BTCPay store, select the option: Import from a QR Code.
 
@@ -142,7 +142,7 @@ Be sure to verify that the addresses shown in your BTCPay Server match the addre
 :::
 
 
-2. Your wallet's private key
+### 2. Your wallet's private key
 
 During the wallet setup process for your BTCPay store, select the option: Import from a new/existing seed. Provide your Existing Seed (private key). 
 
