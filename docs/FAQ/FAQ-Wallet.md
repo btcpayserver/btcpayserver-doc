@@ -141,7 +141,6 @@ Make sure your BTCPay installed device has a camera to scan the QR code. Hold yo
 Be sure to verify that the addresses shown in your BTCPay Server match the addresses produced in your mobile wallet. If they do NOT match, do NOT attempt to receive payments to your BTCPay.
 :::
 
-
 ### 2. Your wallet's private key
 
 During the wallet setup process for your BTCPay store, select the option: Import from a new/existing seed. Provide your Existing Seed (private key). 

@@ -32,7 +32,7 @@ If you own a hardware wallet, follow the instructions on how to [use a an existi
 
 ### Use an existing software wallet
 
-Using an existing software wallet assumes that you already have an external wallet created and backed up. In theory, any mobile/desktop wallet that provides an extended public key should work, however, most wallets have technical limitations [(gap-limit)](FAQ/FAQ-Wallet.md/#missing-payments-in-my-software-or-hardware-wallet) that may cause serious user-experience problems for you later on.
+Using an existing software wallet assumes that you already have an external wallet created and backed up. In theory, any mobile/desktop wallet that provides an extended public key should work, however, most wallets have technical limitations [(gap-limit)](FAQ/FAQ-Wallet.md#missing-payments-in-my-software-or-hardware-wallet) that may cause serious user-experience problems for you later on.
 
 For that reason, we recommend that you only use software wallets listed below.
 
@@ -45,9 +45,9 @@ To spend and manage the funds received to your external software wallet, you can
 
 #### Use an existing mobile wallet
 
-Some mobile wallets (i.e. [Blue Wallet](https://bluewallet.io/)) allow you to create a wallet and export the extended public key using a QR Code. You can easily connect your BTCPay Server with a [QR Coded xpub](FAQ/FAQ-Wallet.md/#can-i-connect-my-mobile-wallet-to-btcpay).
+Some mobile wallets (i.e. [Blue Wallet](https://bluewallet.io/)) allow you to create a wallet and export the extended public key using a QR Code. You can easily connect your BTCPay Server with a [QR Coded xpub](FAQ/FAQ-Wallet.md#can-i-connect-my-mobile-wallet-to-btcpay).
 
-The common [(gap-limit)](FAQ/FAQ-Wallet.md/#missing-payments-in-my-software-or-hardware-wallet) issue is likely to occur using any mobile wallet, unless they have a way to adjust it.
+The common [(gap-limit)](FAQ/FAQ-Wallet.md#missing-payments-in-my-software-or-hardware-wallet) issue is likely to occur using any mobile wallet, unless they have a way to adjust it.
 
 To spend and manage funds with the [internal BTCPay Wallet](./Wallet.md) you will need to provide your private key (used to generate the xpub QR Code) or simply receive funds through your BTCPay and manage the funds in the external wallet.
 
