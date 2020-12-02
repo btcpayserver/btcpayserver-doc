@@ -15,7 +15,8 @@ update_external() {
   repo="$2"
   base="$3"
   path="${file#${base}}"
-  [[ $path = "README.md" ]] && folder="" || folder="docs/"
+  [[ $path = "Security.md" ]] && path="SECURITY.md"
+  [[ $path = "README.md" || $path = "SECURITY.md" ]] && folder="" || folder="docs/"
   content=$(cat "$file")
   # add frontmatter to omit edit links for external docs
   echo $'---\neditLink: '"$repo/edit/master/$folder$path"$'\nexternalRepo: '"$repo"$'\n---\n'"$content" > "$file"
