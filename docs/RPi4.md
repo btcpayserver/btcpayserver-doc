@@ -1,8 +1,8 @@
 # Raspberry Pi 4 Deployment
 
-This document guides you step by step on how to run BTCPay Server on a Raspberry Pi 4. See here the [Raspberry Pi 3 instructions](./RPi3.md)
+This document guides you step by step on **how to run BTCPay Server on a Raspberry Pi 4**. See here the [Raspberry Pi 3 instructions](./RPi3.md)
 
-The newly released Raspberry Pi 4 is currently the best low-cost single-board computer available. You can use a Raspberry Pi 4 to run your BTCPay Server at home for around $150 worth of parts, described below.
+The newly released **Raspberry Pi 4** is currently the best low-cost single-board computer available. You can **use a Raspberry Pi 4 to run your BTCPay Server** at home for around $150 worth of parts, described below.
 
 ## Required Hardware
 
@@ -50,13 +50,13 @@ The 500GB SSD allows you to keep a full copy of the Bitcoin blockchain, until it
 - Connect the SSD to one of the blue colored USB 3 ports
 - Prepare the USB Power Adapter but don’t plug it in yet
 
-![RPI4 Components](./img/RPI4Components.jpeg)
+![RPI4 Components](./img/RPI4Components.jpeg "Raspberry Pi 4 Components")
 
 ## Install Linux on the Raspberry Pi
 
 Start by downloading [Raspbian Linux](https://www.raspberrypi.org/downloads/raspbian/) to your existing computer. The “Lite” distribution is fine for BTCPay setup, but if you want to use your Raspberry Pi for other things, you might want the full image.
 
-![RPI4 Linux Installation](./img/RPI4Linux.png)
+![RPI4 Linux Installation](./img/RPI4Linux.png "Raspberry Pi 4 Linux Installation")
 
 ### Flash your SD card with Raspbian Linux
 
@@ -71,7 +71,7 @@ You can find a more in-depth instruction guide to flashing to your SD card at th
 
 If you used balenaEtcher to flash, the SD card will already have been ejected. Simply take the SD card out and put it back in. The SD card should now be labelled as `boot`. Next, enable SSH at bootup so you can remotely login by creating an empty file in the SD card root folder called `ssh`. Eject the SD card through your OS before taking it out of the SD card reader.
 
-![RPI4 Console](./img/RPI4Terminal4.png)
+![RPI4 Console](./img/RPI4Terminal4.png "Raspberry Pi 4 Console")
 
 ## Booting up the Raspberry Pi
 
@@ -95,7 +95,7 @@ Next, let’s change the password for the “pi” user:
 passwd pi
 ```
 
-![RPI4 Console](./img/RPI4Terminal4.png)
+![RPI4 Console](./img/RPI4Terminal4.png "Raspberry Pi 4 Console")
 
 After that, switch to the `root` user, which we will use for the remaining part of the tutorial:
 
@@ -114,7 +114,7 @@ update-rc.d dphys-swapfile remove
 systemctl disable dphys-swapfile
 ```
 
-![RPI4 Console](./img/RPI4Terminal5.png)
+![RPI4 Console](./img/RPI4Terminal5.png "Raspberry Pi 4 Console")
 
 Partition your SSD:
 

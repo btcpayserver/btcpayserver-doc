@@ -1,6 +1,6 @@
 # GreenField API example with cURL
 
-The [GreenField API](https://docs.btcpayserver.org/API/Greenfield/v1/) (also available on your instance on `/docs`) allows you to operate BTCPay Server via an easy to use REST API.
+The **[GreenField API](https://docs.btcpayserver.org/API/Greenfield/v1/)** (also available on your instance on `/docs`) allows you to operate BTCPay Server via an easy to use REST API.
 
 Note that you can partially generate clients in the language of your choice by using the [Swagger file](https://docs.btcpayserver.org/API/Greenfield/v1/swagger.json).
 
