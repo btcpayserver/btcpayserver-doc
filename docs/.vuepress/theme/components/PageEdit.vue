@@ -68,14 +68,18 @@ export default {
         docsRepo = repo
       } = this.$site.themeConfig
 
-      if (showEditLink && docsRepo && this.$page.relativePath) {
-        return this.createEditLink(
-          repo,
-          docsRepo,
-          docsDir,
-          docsBranch,
-          this.$page.relativePath
-        )
+      if (showEditLink) {
+        if (typeof this.$page.frontmatter.editLink === 'string') {
+          return this.$page.frontmatter.editLink
+        } else if (docsRepo && this.$page.relativePath) {
+          return this.createEditLink(
+            repo,
+            docsRepo,
+            docsDir,
+            docsBranch,
+            this.$page.relativePath
+          )
+        }
       }
       return null
     },

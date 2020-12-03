@@ -13,9 +13,13 @@ TRANSMUTER_DIR="$BASE_DIR/deps/transmuter"
 update_external() {
   file="$1"
   repo="$2"
+  base="$3"
+  path="${file#${base}}"
+  [[ $path = "Security.md" ]] && path="SECURITY.md"
+  [[ $path = "README.md" || $path = "SECURITY.md" ]] && folder="" || folder="docs/"
   content=$(cat "$file")
   # add frontmatter to omit edit links for external docs
-  echo $'---\neditLink: false\nexternalRepo: '"$repo"$'\n---\n'"$content" > "$file"
+  echo $'---\neditLink: '"$repo/edit/master/$folder$path"$'\nexternalRepo: '"$repo"$'\n---\n'"$content" > "$file"
 }
 
 # BTCPay Server
@@ -34,10 +38,10 @@ cd "$BTCPAYSERVER_DIR"
 cp SECURITY.md "$DOCS_DIR/BTCPayServer/Security.md"
 cp BTCPayServer.Tests/README.md "$DOCS_DIR/BTCPayServer/LocalDevSetup.md"
 line=$(grep -n '## How to' $DOCS_DIR/BTCPayServer/LocalDevSetup.md | cut -d ":" -f 1)
-{ cat "$DOCS_DIR/LocalDev.md"; echo; tail -n +$line "$DOCS_DIR/BTCPayServer/LocalDevSetup.md"; } > "$DOCS_DIR/LocalDevelopment.md"
+{ echo $'---\neditLink: https://github.com/btcpayserver/btcpayserver-doc/edit/master/docs/LocalDev.md\n---\n'; cat "$DOCS_DIR/LocalDev.md"; echo; tail -n +$line "$DOCS_DIR/BTCPayServer/LocalDevSetup.md"; } > "$DOCS_DIR/LocalDevelopment.md"
 
 for file in "$DOCS_DIR"/BTCPayServer/*.md; do
-  update_external "$file" https://github.com/btcpayserver/btcpayserver
+  update_external "$file" https://github.com/btcpayserver/btcpayserver "$DOCS_DIR"/BTCPayServer/
 done
 
 # Checkout latest release tag, so that we do not publish docs for unreleased APIs yet.
@@ -62,7 +66,7 @@ cd "$CONFIGURATOR_DIR"
 cp -r README.md docs/* "$DOCS_DIR/Configurator"
 sed -ie 's$(./docs/$(./$g' "$DOCS_DIR/Configurator/README.md"
 for file in "$DOCS_DIR"/Configurator/*.md; do
-  update_external "$file" https://github.com/btcpayserver/btcpayserver-configurator
+  update_external "$file" https://github.com/btcpayserver/btcpayserver-configurator "$DOCS_DIR"/Configurator/
 done
 
 # Docker
@@ -80,7 +84,7 @@ cd "$DOCKER_DIR"
 cp -r README.md docs/* "$DOCS_DIR/Docker"
 sed -ie 's$(docs/$(./$g' "$DOCS_DIR/Docker/README.md"
 for file in "$DOCS_DIR"/Docker/*.md; do
-  update_external "$file" https://github.com/btcpayserver/btcpayserver-docker
+  update_external "$file" https://github.com/btcpayserver/btcpayserver-docker "$DOCS_DIR"/Docker/
 done
 
 # Transmuter
@@ -98,7 +102,7 @@ cd "$TRANSMUTER_DIR"
 cp -r README.md docs/* "$DOCS_DIR/Transmuter"
 sed -ie 's$(docs/$(./$g' "$DOCS_DIR/Transmuter/README.md"
 for file in "$DOCS_DIR"/Transmuter/*.md; do
-  update_external "$file" https://github.com/btcpayserver/btcTransmuter
+  update_external "$file" https://github.com/btcpayserver/btcTransmuter "$DOCS_DIR"/Transmuter/
 done
 
 # Monkey patch VuePress to properly handle clean URLs
