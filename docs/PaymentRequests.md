@@ -59,4 +59,24 @@ The request's description content can be edited using the payment request's text
 If you want to use additional color themes or custom css styling, both options are available.
 
 Non-technical users can use a [bootstrap theme](./Theme.md#2-bootstrap-themes).
-Further customization can be done by providing additional CSS code.
+Further customization can be done by providing additional CSS code, like shown below …
+
+```css
+:root {
+  --btcpay-font-family-base: "Source Sans Pro", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  --btcpay-color-primary: #7D4698;
+  --btcpay-color-primary-accent: #59316B;
+  --btcpay-body-color: #333A41;
+  --btcpay-body-bg: #FFF;
+  --btcpay-bg-tile: #F8F9FA;
+}
+#mainNav {
+  color: white;
+  background: linear-gradient(#59316B, #331840);
+}
+#mainNav .btn-link {
+  color: white;
+}
+```
+
+![Customized Payment Request css](./img/payment-requests/PaymentRequestCustomCSS.png)
