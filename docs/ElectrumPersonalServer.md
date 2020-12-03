@@ -2,9 +2,9 @@
 
 [Electrum Personal Server or EPS](https://github.com/chris-belcher/electrum-personal-server) is a personal version of public Electrum servers like [ElectrumX](./ElectrumX.md).
 
-EPS can be integrated into BTCPay Server using the optional docker fragment [opt-add-electrum-ps.yml](https://github.com/btcpayserver/btcpayserver-docker/blob/master/docker-compose-generator/docker-fragments/opt-add-electrum-ps.yml). Use EPS when you want to use your own full node (included in BTCPay Server) to verify your own transactions privately when using Electrum Wallet.
+**EPS can be integrated into BTCPay Server** using the optional docker fragment [opt-add-electrum-ps.yml](https://github.com/btcpayserver/btcpayserver-docker/blob/master/docker-compose-generator/docker-fragments/opt-add-electrum-ps.yml). Use EPS when you want to use your own full node (included in BTCPay Server) to verify your own transactions privately when using Electrum Wallet.
 
-The biggest difference with public Electrum servers (eg. ElectrumX), is that EPS is for monitoring only your own wallet(s).  The "XPUB" (extended public key) of the wallet you use in Electrum must be shared with EPS in order for it to function all all. Other than this, it functions (from an end user perspective) in the same way as ElectrumX etc.  It is easy to integrate into BTCPay just follow the instructions below.
+The biggest difference with public Electrum servers (eg. ElectrumX), is that **EPS is for monitoring only your own wallet(s)**.  The "XPUB" (extended public key) of the wallet you use in Electrum must be shared with EPS in order for it to function all all. Other than this, it functions (from an end user perspective) in the same way as ElectrumX etc.  It is **easy to integrate into BTCPay** just follow the instructions below.
 
 EPS does not require `txindex` and works on a pruned node.
 
@@ -49,7 +49,7 @@ There are three ways to use your server from Electrum Wallet:
 
 #### Option 1: Connect to your EPS Server by directly editing Electrum Wallet config file (before even opening the Electrum wallet GUI - recommended for full privacy):
 
-You can setup your Electrum server by editing the configuration file.
+You can **setup your Electrum server** by editing the configuration file.
 
 In the [Electrum Wallet folder](https://electrum.readthedocs.io/en/latest/faq.html#where-is-my-wallet-file-located), open and edit the `config` file like this:
 
@@ -73,11 +73,11 @@ If you use Tor, add `-p socks5:localhost:9150`.
 
 1. Open Electrum Wallet.  When you click the traffic light (green or red) at the bottom of your Electrum Wallet, you will see a screen with a list of all the available Electrum servers that your wallet can connect to, normally with the `Select Server Automatically` box already checked:
 
-![ElectrumWalletServerList](https://user-images.githubusercontent.com/1388507/68437521-8a5eb580-01c1-11ea-9ece-0666353a6742.png)
+![ElectrumWalletServerList](https://user-images.githubusercontent.com/1388507/68437521-8a5eb580-01c1-11ea-9ece-0666353a6742.png "Electrum Wallet Server List")
 
 2. Now is the time to UNCHECK that `Select Server Automatically` setting, which will enable you to enter the IP address or domain or hostname of your EPS Server.  In the case below, the EPS server is on the local network at `192.168.1.3` so we enter that manually (leave port as 50002) and press `close`.
 
-![EnterElectrumServerIP](https://user-images.githubusercontent.com/1388507/68496320-4e276580-0252-11ea-8caf-facc8a246d70.png)
+![EnterElectrumServerIP](https://user-images.githubusercontent.com/1388507/68496320-4e276580-0252-11ea-8caf-facc8a246d70.png "Electrum Wallet Server IP")
 
 4. (**If you use Tor**) Go to proxy, then click on `Use Tor Proxy at port 9150`.
 
@@ -85,7 +85,7 @@ If you use Tor, add `-p socks5:localhost:9150`.
 
 ### Reflection on what has been achieved:
 
-You are now running your very own private EPS Server.  All Electrum Wallet related data transfer happens directly between your EPS Server and the bitcoin blockchain, without going over any other 3rd party servers.  You have attained full bitcoin transaction privacy (at least from the perspective of your blockchain queries and transactions, payment/receive addresses etc - nobody except you and the blockchain can see what you are doing).
+You are now running your very **own private EPS Server**.  All Electrum Wallet related data transfer happens directly between your EPS Server and the bitcoin blockchain, without going over any other 3rd party servers.  You have attained full bitcoin transaction privacy (at least from the perspective of your blockchain queries and transactions, payment/receive addresses etc - nobody except you and the blockchain can see what you are doing).
 
 ### Troubleshooting:
 
@@ -95,6 +95,6 @@ So there is one thing you may encounter, where even after you did everything cor
 
 Inside the Electrum Wallet folder (in this case below, it is what it looks like on a Mac) locate the `certs` directory and delete the certificate for the server you are trying to connect to, in this case `192.168.1.3`, by dragging it to the Trash.
 
-![Certs](https://user-images.githubusercontent.com/1388507/68497330-9a73a500-0254-11ea-9349-71bdb3bd9511.png)
+![Certs](https://user-images.githubusercontent.com/1388507/68497330-9a73a500-0254-11ea-9349-71bdb3bd9511.png "Certificates")
 
-Start up Electrum Wallet again, and connect to your EPS server.  If it is fully synched, it will now likely show a green traffic light, and you are good to go.
+Start up Electrum Wallet again, and connect to your **EPS server**.  If it is fully synched, it will now likely show a green traffic light, and you are good to go.

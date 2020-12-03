@@ -12,7 +12,7 @@ The project can be found [here](https://drupal.org/project/commerce_btcpay) on d
 
 ### Quick walkthrough screencast
 
-[![Drupal Commerce](https://img.youtube.com/vi/XBZwyC2v48s/mqdefault.jpg)](https://youtube.com/watch?v=XBZwyC2v48s "BTCPay Server - Drupal Commerce 2.x quick walkthrough")
+[![Drupal Commerce](https://img.youtube.com/vi/XBZwyC2v48s/mqdefault.jpg "BTCPay Server - Drupal Commerce")](https://youtube.com/watch?v=XBZwyC2v48s "BTCPay Server - Drupal Commerce 2.x quick walkthrough")
 
 ### Quick walkthrough steps
 

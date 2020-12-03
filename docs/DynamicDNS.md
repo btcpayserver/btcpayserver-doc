@@ -2,13 +2,13 @@
 
 ## Motivation
 
-Dynamic DNS is needed if:
+**Dynamic DNS** is needed if:
 
 * You are running BTCPay Server with a hosting provider that does not provide a default domain for your server
 * You don't want to buy your own domain name (e.g. `mybusiness.com`)
 * You need to access your BTCPay Server over internet via HTTPS. (Your BTCPayServer is accessed by other internet users)
 
-Then you want to use BTCPayServer Dynamic DNS service.
+Then you want to use **BTCPayServer Dynamic DNS service**.
 
 You **don't need** Dynamic DNS Service if:
 
@@ -16,7 +16,7 @@ You **don't need** Dynamic DNS Service if:
 * Your BTCPay Server should be only accessed by yourself (just use Tor browser and the Tor address of you instance)
 * Your hosting provider provides a domain name for your server by default (i.e. Lunanode for example provides a subdomain of `.lndyn.com` for free, and Azure provides for `.azurewebsites.net`)
 
-A Dynamic DNS Providers allows you to have a free domain like `example.ddns.net` for your server.
+A **Dynamic DNS Providers** allows you to have a free domain like `example.ddns.net` for your server.
 Additionally Dynamic DNS Providers expose a simple API to update the DNS record automatically when your BTCPay Server instance changes its external IP address.
 
 BTCPay Server, when configured to use Dynamic DNS, will periodically check and update the DNS record if an external IP change is detected.

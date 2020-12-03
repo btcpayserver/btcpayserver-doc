@@ -6,20 +6,20 @@ To create an app, go to Apps > Create a new app. Apps are store-dependent, which
 
 ## Point of Sale App
 
-The web-based PoS app allows users with brick and mortar stores to readily accept cryptocurrencies without fees or a third-party, directly to their wallet. The PoS can be displayed easily on tablets or any other devices which support web browsing. Users can easily create a homescreen shortcut for a quick access to the web-app.
+The **web-based PoS app** allows users with brick and mortar stores to readily **accept cryptocurrencies without fees or a third-party**, directly to their wallet. The **PoS** can be displayed easily on tablets or any other devices which support web browsing. Users can easily create a homescreen shortcut for a quick access to the web-app.
 
-![BTCPay Pos](./img/BTCPayPointOfSale1.jpg)
+![BTCPay Pos](./img/BTCPayPointOfSale1.jpg "BTCPay Pos")
 
-Adding new products is easy. The app has a shopping cart feature, tips, product inventory, custom payment options and more.
+Adding new products is easy. The app has a **shopping cart feature**, **tips**, **product inventory**, **custom payment options** and more.
 
-Point of sale app can also be used for receiving donations or even as a small e-shop, depending on the customizations applied.
+**Point of sale app** can also be used for receiving donations or even as a small e-shop, depending on the customizations applied.
 
-Curently, the Point of Sale app supports three different views: 
+Curently, the **Point of Sale app** supports three different views: 
 * A `Static` view representing only the items for sale.
 * A `Cart` view including items for sale and a cart for checkout.
 * A `Light` view consisting only of a keypad for easy and quick payments (Starting from [v1.0.5.6](https://blog.btcpayserver.org/btcpay-server-1-0-5-6/#simplePOS)).
 
-To get your first Point of Sale app running, follow theses few simple steps:
+To get your first **Point of Sale app** running, follow theses few simple steps:
 
 1. Go to `Apps` and `Create a new app`
 2. Add a `name` for your app
@@ -29,11 +29,11 @@ To get your first Point of Sale app running, follow theses few simple steps:
 6. Click `Save Settings`.
 7. Click `View App` to view your PoS (Your customers can access the PoS through that link).
 
-You can change the appearance of your Point of Sale app by following the [theme customization guide](./Theme.md).
+You can change the appearance of your **Point of Sale app** by following the [theme customization guide](./Theme.md).
 
 ## Crowdfunding App
 
-Crowdfunding is an application which you can launch from BTCPay Server interface that allows you to create a self-hosted funding campaign, similar to Kickstarter or Indiegogo. Unlike traditional crowdfunding platforms, the creator of the campaign is the owner of the platform. Funds go directly to the creator’s wallet without any fees.
+**Crowdfunding** is an application which you can launch from BTCPay Server interface that allows you to create a **self-hosted funding campaign**, similar to Kickstarter or Indiegogo. Unlike traditional **crowdfunding platforms**, the creator of the campaign is the owner of the platform. Funds go directly to the creator’s wallet **without any fees**.
 
 1. Go to > Apps
 2. Add a name of your app
@@ -46,11 +46,11 @@ Crowdfunding is an application which you can launch from BTCPay Server interface
 
 [![BTCPay Server Crowdfunding](https://img.youtube.com/vi/tFbfyneDj88/mqdefault.jpg)](https://www.youtube.com/watch?v=tFbfyneDj88 "BTCPay Server Crowdfunding")
 
-If you would like to provide digital or physical products to the backers of your crowdfunding campaign, you can [integrate WooCommerce store into it](./FAQ/FAQ-Apps.md#how-to-integrate-woocommerce-store-into-a-btcpay-crowdfund-app). You can also set limits on contribution perks using the inventory feature.
+If you would like to provide digital or physical products to the backers of your **crowdfunding campaign**, you can [integrate WooCommerce store into it](./FAQ/FAQ-Apps.md#how-to-integrate-woocommerce-store-into-a-btcpay-crowdfund-app). You can also set limits on contribution perks using the inventory feature.
 
 ## Payment Button
 
-Easily-embeddable HTML and highly-customizable payment buttons allow users to receive tips and donations. Online stores can also integrate payment buttons. When a site visitor clicks on the button, BTCPay displays the invoice.
+Easily-embeddable HTML and highly-customizable **payment buttons** allow users to receive tips and donations. Online stores can also integrate payment buttons. When a site visitor clicks on the button, BTCPay displays the **invoice**.
 
 1. Go to > Store > Settings > Pay Button
 2. Allow anyone to create invoices
@@ -61,9 +61,9 @@ Easily-embeddable HTML and highly-customizable payment buttons allow users to re
 
 ## Lightning Network Apps (Lapps)
 
-[Lapps](https://blockstream.com/2018/03/29/blockstreams-week-of-lapps-ends/) are applications built on top of [Lightning Charge](https://blockstream.com/2018/01/16/lightning-charge/), a complimentary package that enables easier development on top of c-lightning. If you decided to use c-lightning, you could easily connect your BTCPay to any of the Lapps.
+[Lapps](https://blockstream.com/2018/03/29/blockstreams-week-of-lapps-ends/) are applications built on top of [Lightning Charge](https://blockstream.com/2018/01/16/lightning-charge/), a complimentary package that enables easier development on top of **c-lightning**. If you decided to use c-lightning, you could easily connect your BTCPay to any of the **Lapps**.
 
-BTCPay exposes all the necessary information required to connect your internal BTCPay c-lightning node to a Lightning Network App. Go to Server Settings > Services > Lightning charge server > See information > Credentials.
+BTCPay exposes all the necessary information required to connect your internal **BTCPay c-lightning node** to a **Lightning Network App**. Go to Server Settings > Services > Lightning charge server > See information > Credentials.
 
 Below are videos that showcase how to connect some of the lapps to BTCPay.
 
