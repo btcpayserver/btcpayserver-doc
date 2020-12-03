@@ -3,6 +3,8 @@ const implicitFigures = require('markdown-it-implicit-figures')
 const slugify = require('./slugify')
 const preprocessMarkdown = resolve(__dirname, 'preprocessMarkdown')
 
+const baseUrl = 'https://docs.btcpayserver.org'
+
 module.exports = {
   title: "BTCPay Server Docs",
   description: "BTCPay Server Official Documentation",
@@ -36,6 +38,10 @@ module.exports = {
       color: '#8F979E',
       backgroundTransition: false,
       staticIcon: true
+    }],
+    ['sitemap', {
+      hostname: baseUrl,
+      exclude: ['/404.html']
     }],
     ['@vuepress/medium-zoom']
   ],
@@ -322,7 +328,7 @@ module.exports = {
           ["/LocalDevelopment", "Developing Locally"],
           ["/Altcoins", "How to add an Altcoin"],
           ["/Theme", "Customizing Themes"],
-          ["https://docs.btcpayserver.org/API/Greenfield/v1", "Greenfield API v1", { type: 'external' }],
+          [`${baseUrl}/API/Greenfield/v1`, "Greenfield API v1", { type: 'external' }],
           ["/GreenFieldExample", "Greenfield example with cURL"],
           ["/BTCPayServer/Security", "Security Disclosures"],
         ]
