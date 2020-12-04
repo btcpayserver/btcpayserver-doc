@@ -43,7 +43,7 @@ h5, h6 {
 }
 
 :root[data-btcpay-theme="dark"] #app .navbar .search-box input {
-  background-color: var(--btcpay-color-neutral-800) !important;
+  background-color: var(--btcpay-color-neutral-900) !important;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -257,24 +257,21 @@ h5, h6 {
   }
 
   .algolia-autocomplete .algolia-docsearch-suggestion--category-header {
-    border-color: var(--btcpay-border-color-light);
-  }
-
-  .algolia-search-wrapper .algolia-autocomplete .algolia-docsearch-suggestion .algolia-docsearch-suggestion--subcategory-column {
     color: var(--btcpay-color-light-text) !important;
     background: var(--btcpay-color-light-backdrop) !important;
     border-color: var(--btcpay-border-color-medium);
+    padding: var(--btcpay-space-s) var(--btcpay-space-m) !important;
   }
 
-  .algolia-search-wrapper .algolia-autocomplete .algolia-docsearch-suggestion .algolia-docsearch-suggestion--subcategory-column,
-  .algolia-search-wrapper .algolia-autocomplete .algolia-docsearch-suggestion .algolia-docsearch-suggestion--content {
-    padding: var(--btcpay-space-xs) var(--btcpay-space-s) !important;
+  .algolia-search-wrapper .algolia-autocomplete .algolia-docsearch-suggestion .algolia-docsearch-suggestion--subcategory-column {
+    display: none;
+  }
 
-    @media (max-width: 768px) {
+  .algolia-search-wrapper .algolia-autocomplete .algolia-docsearch-suggestion .algolia-docsearch-suggestion--content {
       display: block !important;
       width: 100% !important;
       text-align: left !important;
-    }
+      padding: var(--btcpay-space-s) var(--btcpay-space-m) !important;
   }
 
   .algolia-docsearch-suggestion--subcategory-column-text:after {
