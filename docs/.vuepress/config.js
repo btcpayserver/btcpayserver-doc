@@ -64,7 +64,8 @@ module.exports = {
       apiKey: '6a3a4c4380385cb5c9f9070247fdfca6',
       // See https://www.algolia.com/doc/api-reference/api-parameters/
       algoliaOptions: {
-        hitsPerPage: 10
+        // hitsPerPage: 10,
+        typoTolerance: 'min'
       },
       // See https://community.algolia.com/docsearch/behavior.html#autocompleteoptions
       autocompleteOptions: {
