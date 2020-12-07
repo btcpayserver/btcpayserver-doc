@@ -1,6 +1,6 @@
 # BTCPay Server Payjoin Guide
 
-This document explains how to use BTCPay Server's Payjoin feature. For a detailed, technical explanation of how payjoin is implemented, check [BIP78](https://github.com/bitcoin/bips/blob/master/bip-0078.mediawiki)
+This document explains how to use BTCPay Server's **Payjoin** feature. For a detailed, technical explanation of how payjoin is implemented, check [BIP78](https://github.com/bitcoin/bips/blob/master/bip-0078.mediawiki)
 
 You can follow this video to better understand what payjoin is and how to use it.
 
@@ -9,16 +9,16 @@ You can follow this video to better understand what payjoin is and how to use it
 ## Enabling Payjoin as a merchant
 
 1. Create a store
-2. Configure a [hot wallet](./HotWallet.md) for your derivation scheme (Store => Derivation Scheme => BTC => Modify => Import from => a new/existing seed => Is hot wallet checked and using either segwit or segwit wrapped as an address type => Generate. Don't forget to click Confirm!)
+2. Configure a [hot wallet](./HotWallet.md) for your derivation scheme. Be sure to use either segwit or segwit wrapped as the address type.
 3. Enable Payjoin/P2EP in the "General Settings" and click "Save"
 
 It's important to note that you will need at least 1 UTXO for payjoin to work.
 
-![](./img/payjoin/Payjoin_Guide_Receive_1.png)
+![Receive PayJoin in BTCPay Server](./img/payjoin/Payjoin_Guide_Receive_1.png "Receive PayJoin in BTCPay Server")
 
-![](./img/payjoin/Payjoin_Guide_Receive_2.png)
+![Receive PayJoin in BTCPay Server](./img/payjoin/Payjoin_Guide_Receive_2.png "Receive PayJoin in BTCPay Server")
 
-![](./img/payjoin/Payjoin_Guide_Receive_3.png)
+![Receive PayJoin in BTCPay Server](./img/payjoin/Payjoin_Guide_Receive_3.png "Receive PayJoin in BTCPay Server")
 
 ## Paying to Payjoin as a user
 
@@ -34,13 +34,13 @@ The [BTCPay Wallet](./Wallet.md) supports Payjoin.
 6. If you are using a hardware wallet, you will be asked to sign the payjoin transaction again (the hot wallet feature signs the transaction for you automatically).
 7. Congratulations, you've just helped improve Bitcoin's fungibility and your financial sovereignity!
 
-![](./img/payjoin/Payjoin_Guide_Pay_1.png)
+![Receive PayJoin in BTCPay Server](./img/payjoin/Payjoin_Guide_Pay_1.png "Receive PayJoin in BTCPay Server")
 
-![](./img/payjoin/Payjoin_Guide_Pay_2.png)
+![Receive PayJoin in BTCPay Server](./img/payjoin/Payjoin_Guide_Pay_2.png "Receive PayJoin in BTCPay Server")
 
-![](./img/payjoin/Payjoin_Guide_Pay_3.png)
+![Receive PayJoin in BTCPay Server](./img/payjoin/Payjoin_Guide_Pay_3.png "Receive PayJoin in BTCPay Server")
 
-![](./img/payjoin/Payjoin_Guide_Pay_4.png)
+![Receive PayJoin in BTCPay Server](./img/payjoin/Payjoin_Guide_Pay_4.png "Receive PayJoin in BTCPay Server")
 
 ## Why did a payjoin not happen?
 
@@ -53,4 +53,4 @@ There's multiple reasons for this:
 
 ## Supported wallets
 
-Please contact and encourage your wallet developers to add support. The more widespread the usage of payjoin, the more broken the heuristics used by blockchain analysis companies become and can effectively trace your financial history. If you are a wallet developer, please [contact us](./Community.md) if you need help or have feedback.
+Please contact and encourage your wallet developers to add support. The more widespread the **usage of payjoin**, the more broken the heuristics used by blockchain analysis companies become and can effectively trace your financial history. If you are a wallet developer, please [contact us](./Community.md) if you need help or have feedback.

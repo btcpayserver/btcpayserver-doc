@@ -10,6 +10,7 @@ This document covers frequently asked questions about the Apps in BTCPay.
 * [What is a Payment Button?](#what-is-a-payment-button)
 * [How to create a Pay Button with a custom amount?](#how-to-create-a-pay-button-with-a-custom-amount)
 * [How to map a domain name to an app?](#how-to-map-a-domain-name-to-an-app)
+* [How to redirect to another site after payment?](#how-to-redirect-to-another-site-after-payment)
 * [How to integrate WooCommerce Store in BTCPay Crowdfund app?](#how-to-integrate-woocommerce-store-into-a-btcpay-crowdfund-app)
 
 ## What are the Apps in BTCPay?
@@ -79,13 +80,38 @@ Finally, in Server Settings > Policies click on the `Map specific domains to spe
 
 ![App domain mapping](../img/domainmapping1.png)
 
+
 Enter domain name, select a previously created app from the drop down menu and click `save` to map the app to specific domain.
 
 ![App domain mapping](../img/domainmapping2.png)
 
 If any of the additionally added hosts do not have a properly configured DNS, Let's Encrypt will not be able to renew the certificate for any of the domains, including the main domain. If you're using additional hosts and facing https issues with the main domain, try removing a domain from the `BTCPAY_ADDITIONAL_HOSTS` and re-run the setup. The https issue also occurs if [Dynamic DNS](../DynamicDNS.md) has not been renewed and is configured as an additional host.
 
-If for any reason, you want an app to be on the same domain as your BTCPay Server homepage, you can select to display it on the root. In that case, no DNS configuration is needed, since your domain is already pointing properly. Using an app on the root domain of BTCPay Server means you'll have to access the login and other pages manually. The easiest way is to append a page route such as `/apps` or `/stores` to your root domain. (Ex: `mybtcpayserver.com/apps`). This will make navigation to your root displayed app easier, but navigation to other pages (such as Login) more challenging for users. 
+If for any reason, you want an app to be on the same domain as your BTCPay Server homepage, you can select to display it on the root. In that case, no DNS configuration is needed, since your domain is already pointing properly. Using an app on the root domain of BTCPay Server means you'll have to access the login and other pages manually. The easiest way is to append a page route such as `/apps` or `/stores` to your root domain. (Ex: `mybtcpayserver.com/apps`). This will make navigation to your root displayed app easier, but navigation to other pages (such as Login) more challenging for users.
+
+## How to redirect to another site after payment?
+
+Point of Sale apps allow redirecting customers to any URL after an invoice is paid. Modify the redirect functionality in Apps > Settings
+
+![Set Point of Sale Redirects](../img/point-of-sale/AppRedirect.png)
+
+In PoS settings these are the following options for redirects on paid invoices: 
+
+- **No** - *Without* Redirect URL
+   - Invoice displays a prompt for the user to return to the PoS App (Default setting).
+- **No** - *With* Redirect URL
+   - Invoice displays a prompt for the user to return to the provided App Redirect URL.
+- **Yes** - *Without* Redirect URL
+   - Paid invoice automatically redirects to the PoS App.
+- **Yes** - *With* Redirect URL
+   - Paid invoice automatically redirects to the provided App Redirect URL.
+- **Use Store Settings**
+   - Enable/disable automatic redirect to the PoS App on the [store level](../FAQ/FAQ-Stores.md#how-to-redirect-store-invoices-after-payment).
+
+Notes: 
+1. Provide the Redirect URL in the App Settings (above the redirect option). 
+2. Expired or partially paid [invoices](../Invoices.md#invoice-statuses) will not redirect, even if the setting is enabled. This feature is for paid invoices only.
+3. Alternatively, redirect URLs can be specified via the API (i.e. Embedded PoS).
 
 ## How to integrate WooCommerce Store into a BTCPay Crowdfund app?
 
@@ -103,7 +129,7 @@ The following tutorial assumes you have a semi-advanced understanding of BTCPay,
 4. [Storefront Theme](https://wordpress.org/themes/storefront/) (if you're using another theme, you may need to modify the CSS code to fit your theme.
 5. BTCPay Server
 
-**Important Note**  Make sure that both your WooCommerce store and BTCPay Server **are on a same domain**. Some browsers have aggressive way of blocking the cross-domain embeded content. Quite specifically, Safari on iOS will destroy the cookie when the item is added, which will leaad to empty cart. There's no other way to fix this besides having BTCPay and Woo on a same domain as subdomains at least.
+**Important Note**  Make sure that both your WooCommerce store and BTCPay Server **are on a same domain**. Some browsers have aggressive way of blocking the cross-domain embedded content. Quite specifically, Safari on iOS will destroy the cookie when the item is added, which will lead to empty cart. There's no other way to fix this besides having BTCPay and Woo on a same domain as subdomains at least.
 
 #### Optional WordPress Plugins
 
@@ -224,7 +250,7 @@ Install [Header and Footer Scripts](https://wordpress.org/plugins/header-and-foo
 </script>
 ```
 
-This piece of code makes sure that each click on the product area adds it to cart and prevents users from viewing product description, which is completely uncecessary for our use-case.
+This piece of code makes sure that each click on the product area adds it to cart and prevents users from viewing product description, which is completely unnecessary for our use-case.
 
 #### 4. Modifying the Crowdfunding app
 

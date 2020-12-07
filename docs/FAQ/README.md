@@ -46,6 +46,8 @@ Questions and solutions to BTCPay installation.
 * [How can I run BTCPay on testnet?](./FAQ-Deployment.md#how-can-i-run-btcpay-on-testnet)
 * [Can I start BTCPay only when I'm expecting a payment?](./FAQ-Deployment.md#can-i-start-btcpay-only-when-i-m-expecting-a-payment)
 * [Can I connect to my BTCPay Bitcoin P2P on port 8333?](./FAQ-Deployment.md#can-i-connect-to-my-btcpay-bitcoin-p2p-on-port-8333)
+* [How can I renew my SSL certificate?](./FAQ-Deployment.md#how-can-i-renew-my-ssl-certificate)
+* [Can I use an existing Nginx server as a reverse proxy with SSL termination?](./FAQ-Deployment.md#can-i-use-an-existing-nginx-server-as-a-reverse-proxy-with-ssl-termination)
 
 ### [Web Deployment FAQ](./FAQ-Deployment.md#web-deployment-faq)
 
@@ -70,6 +72,7 @@ Common questions and issues that may occur during the initial sync of BTCPay.
 * [Why does BTCPay sync?](./FAQ-Synchronization.md#why-does-btcpay-sync)
 * [Can I skip/speed up the sync?](./FAQ-Synchronization.md#can-i-skip-the-synchronization)
 * [How do I know that the sync is finished?](./FAQ-Synchronization.md#how-do-i-know-that-btcpay-synced-completely)
+* [How can I check the block height of my bitcoin node?](./FAQ-Synchronization.md#how-can-i-check-the-block-height-of-my-bitcoin-node)
 * [BTCPay takes forever to synchronize](./FAQ-Synchronization.md#btcpay-server-takes-forever-to-synchronize)
 * [BTCPay Server keeps showing that my node is always starting](./FAQ-Synchronization.md#btcpay-server-keeps-showing-that-my-node-is-always-starting)
 * [I already have a synced full node, can I use it with BTCPay?](./FAQ-Synchronization.md#im-running-a-full-node-and-have-a-synched-blockchain-can-btcpay-use-it-so-that-it-doesnt-have-to-do-a-full-sync)
@@ -99,6 +102,7 @@ Common problems and questions server admins have.
 ### [Maintenance FAQ](./FAQ-ServerSettings.md#maintainance)
 
 * [How to update BTCPay Server?](./FAQ-ServerSettings.md#how-to-update-btcpay-server)
+* [How to restart BTCPay Server?](./FAQ-ServerSettings.md#how-to-restart-btcpay-server)
 * [How to SSH into my BTCPay running on VPS?](./FAQ-ServerSettings.md#how-to-ssh-into-my-btcpay-running-on-vps)
 * [How can I check my BTCPay Server version?](./FAQ-ServerSettings.md#how-can-i-see-my-btcpay-version)
 * [How can I check my BTCPay Server version via terminal?](./FAQ-ServerSettings.md#how-can-i-check-my-btcpay-server-version-via-terminal)
@@ -145,6 +149,7 @@ Store settings explained.
 * [Consider the invoice confirmed when the payment transaction?](./FAQ-Stores.md#consider-the-invoice-confirmed-when-the-payment-transaction)
 * [Consider the invoice paid even if the paid amount is ... % less than expected?](./FAQ-Stores.md#consider-the-invoice-paid-even-if-the-paid-amount-is-less-than-expected)
 * [How to disable email on invoices?](./FAQ-Stores.md#how-to-disable-email-on-invoices)
+* [How to redirect store invoices after payment?](./FAQ-Stores.md#how-to-redirect-store-invoices-after-payment)
 * [Can I delete invoices from BTCPay?](./FAQ-Stores.md#can-i-delete-invoices-from-btcpay)
 * [How to change the exchange rate provider for invoices?](./FAQ-Stores.md#how-to-change-the-exchange-rate-provider-for-invoices)
 * [Getting GetRatesAsync was called on coinaverage error](./FAQ-Stores.md#getting-getratesasync-was-called-on-coinaverage-error)
@@ -176,6 +181,7 @@ Frequent questions about the applications in BTCPay.
 * [What is a Payment Button?](./FAQ-Apps.md#what-is-a-payment-button)
 * [How to create a Pay Button with a custom amount?](./FAQ-Apps.md#how-to-create-a-pay-button-with-a-custom-amount)
 * [How to map a domain name to an app?](./FAQ-Apps.md#how-to-map-a-domain-name-to-an-app)
+* [How to redirect to another site after payment?](./FAQ-Apps.md#how-to-redirect-to-another-site-after-payment)
 * [How to integrate WooCommerce Store in BTCPay Crowdfund app?](./FAQ-Apps.md#how-to-integrate-woocommerce-store-into-a-btcpay-crowdfund-app)
 
 ## [Lightning Network FAQ](./FAQ-LightningNetwork.md)

@@ -16,7 +16,7 @@
   "config": {
     "dist": "docs/.vuepress/dist",
     "port": "8080",
-    "linkcheck": "blc -ro --filter-level 2 --requests 1 --exclude btcpayserver-doc/edit/master/docs --exclude btcpayserver-doc/issues/new --exclude directory.btcpayserver.org --exclude foundation.btcpayserver.org --exclude install.btcpayserver.org --exclude drupal.org --exclude dyn.com --exclude electrondust.com --exclude facebook.com --exclude figma.com --exclude linkedin.com --exclude luxnode.io --exclude pi-hole.net --exclude t.me --exclude transifex.com --exclude wiki.ion.radar.tech"
+    "linkcheck": "blc -ro --filter-level 2 --requests 1 --exclude edit/master --exclude issues/new --exclude directory.btcpayserver.org --exclude foundation.btcpayserver.org --exclude install.btcpayserver.org --exclude drupal.org --exclude dyn.com --exclude electrondust.com --exclude facebook.com --exclude figma.com --exclude linkedin.com --exclude luxnode.io --exclude pi-hole.net --exclude t.me --exclude transifex.com --exclude wiki.ion.radar.tech"
   },
   "scripts": {
     "prestart": "rm -rf $npm_package_config_dist",
@@ -33,12 +33,13 @@
     "@vuepress/plugin-back-to-top": "1.7.1",
     "@vuepress/plugin-medium-zoom": "1.7.1",
     "broken-link-checker": "0.7.8",
-    "jest": "26.6.0",
+    "jest": "26.6.3",
     "markdown-it-implicit-figures": "0.10.0",
     "serve": "11.3.2",
-    "start-server-and-test": "1.11.5",
+    "start-server-and-test": "1.11.6",
     "vuepress": "1.7.1",
     "vuepress-plugin-clean-urls": "1.1.2",
-    "vuepress-plugin-code-copy": "1.0.6"
+    "vuepress-plugin-code-copy": "1.0.6",
+    "vuepress-plugin-sitemap": "2.3.1"
   }
 }

@@ -22,6 +22,7 @@ Here are common questions about installation, regardless of the deployment metho
 - [How can I run BTCPay on testnet?](#how-can-i-run-btcpay-on-testnet)
 - [Can I start BTCPay only when I'm expecting a payment?](#can-i-start-btcpay-only-when-im-expecting-a-payment)
 - [Can I connect to my BTCPay Bitcoin P2P on port 8333?](#can-i-connect-to-my-btcpay-bitcoin-p2p-on-port-8333)
+- [How can I renew my SSL certificate?](#how-can-i-renew-my-ssl-certificate)
 - [Can I use an existing Nginx server as a reverse proxy with SSL termination?](#can-i-use-an-existing-nginx-server-as-a-reverse-proxy-with-ssl-termination)
 
 
@@ -203,6 +204,10 @@ If you need to unsafely expose bitcoind P2P port 8333 (for example if you requir
 :::danger WARNING
 ONLY USE ON TRUSTED LAN OR WITH FIREWALL RULES WHITELISTING SPECIFIC HOSTS
 :::
+
+### How can I renew my SSL certificate?
+
+If your SSL certificate has expired for your BTCPay Server, you can manually renew it. For Docker deployments the easiest way to do this is to [restart the container](../Troubleshooting.md#1-3-restarting-a-service) named `letsencrypt-nginx-proxy-companion` on your server. 
 
 ### Can I use an existing Nginx server as a reverse proxy with SSL termination?
 

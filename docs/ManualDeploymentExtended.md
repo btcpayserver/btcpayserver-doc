@@ -1,6 +1,6 @@
 # Extended Manual Setup
 
-This document lists steps for manually deploying BTCPay Server and additional related components. Following these steps is likely to take a long time. A shorter and more pragmatic approach is to use a [docker based deployment](https://github.com/btcpayserver/btcpayserver-docker).
+This document lists steps for **manually deploying BTCPay Server** and additional related components. Following these steps is likely to take a long time. A shorter and more pragmatic approach is to use a [docker based deployment](https://github.com/btcpayserver/btcpayserver-docker).
 
 The instructions also build all the application components from source which can be an advantage for certain audit and/or security scenarios.
 
@@ -8,6 +8,7 @@ The instructions also build all the application components from source which can
 #### Not recommended for production use
 
 Manual installation is NOT recommended for production use unless you are very confident with your Operating System and Bitcoin security expertise. If you are unsure use the docker deployment or one of the other [deployment options](./Deployment.md).
+#### You must have technical literacy and be able to resolve any issues on your own. The community will not provide extensive support for this deployment.
 :::
 
 ## Installation Steps Overview
@@ -66,7 +67,7 @@ If you subsequently change the iptables rules and want to save them across reboo
 
 ## Unprivileged user
 
-These instructions configure everything to run under an unprivileged user called `admin`.  Create this user before proceeding:
+These instructions configure everything to run under an **unprivileged user** called `admin`.  Create this user before proceeding:
 
 ```bash
 ~$ sudo useradd -m -s /dev/null admin
@@ -92,7 +93,7 @@ These instructions configure everything to run under an unprivileged user called
 
 ## Postgresql
 
-Postgresql can be used by BTCPay Server in place of the default SQLite file based storage. It's also possible to use MySQL.
+**Postgresql** can be used by BTCPay Server in place of the default SQLite file based storage. It's also possible to use MySQL.
 
 ##### 🚚 Install
 
@@ -119,7 +120,7 @@ postgres=# \q
 
 ## Tor
 
-Tor can be used by the following components to provide enhanced privacy and/or help with NAT traversal:
+**Tor** can be used by the following components to provide enhanced privacy and/or help with NAT traversal:
 
 - Bitcoin-core Daemon
 - Lightning Network Daemon (lnd).
@@ -155,7 +156,7 @@ tcp        0      0 127.0.0.1:9051          0.0.0.0:*               LISTEN      
 
 ## NGINX and Let's Encrypt
 
-NGINX is used as a web server to manage HTTP requests to BTCPay Server and Ride The Lightning. Paired with Let's Encrypt it allows seamless procurement and renewal of a TLS certificate for your BTCPay Server instance.
+**NGINX** is used as a web server to manage HTTP requests to BTCPay Server and Ride The Lightning. Paired with **Let's Encrypt** it allows seamless procurement and renewal of a TLS certificate for your BTCPay Server instance.
 
 Let's Encrypt is a free service for procuring and renewing TLS certificates. The service comes with scripts that can be installed to automatically manage the whole process.
 
@@ -394,7 +395,7 @@ The gateway to the Bitcoin network for BTCPay Server components.
 
 ##### 🚚 Install
 
-The full instructions to build Bitcoin Core from source are [here](https://github.com/bitcoin/bitcoin/blob/master/doc/build-unix.md).
+The full instructions to **build Bitcoin Core from source** are [here](https://github.com/bitcoin/bitcoin/blob/master/doc/build-unix.md).
 
 The alternative to building from source is to download a signed binary distribution from [https://bitcoincore.org/en/download/](https://bitcoincore.org/en/download/).
 
@@ -442,9 +443,9 @@ Bitcoin Core version v0.20.0
 
 ##### 3. Create the configuration file
 
-An example configuration file is available on the Bitcoin Core repository at https://github.com/bitcoin/bitcoin/blob/master/share/examples/bitcoin.conf.
+An example **configuration file** is available on the Bitcoin Core repository at https://github.com/bitcoin/bitcoin/blob/master/share/examples/bitcoin.conf.
 
-Create a bitcoin.conf file to suit your needs. An example file that is suitable for BTCPay Server is shown below. This configuration does not prune blocks which means as of May 2019 you will require 235 GB for the Bitcoin blockchain.
+Create a **bitcoin.conf file** to suit your needs. An example file that is suitable for BTCPay Server is shown below. This configuration does not prune blocks which means as of May 2019 you will require 235 GB for the Bitcoin blockchain.
 
 ```bash
 ~$ vi bitcoin.conf
@@ -470,7 +471,7 @@ Copy the file to the directory specified in the systemd service file and assign 
 
 ##### 5. Create a systemd service
 
-An example systemd service file is available in the Bitcoin Core  repository at https://raw.githubusercontent.com/bitcoin/bitcoin/master/contrib/init/bitcoind.service.
+An example **systemd service** file is available in the Bitcoin Core  repository at https://raw.githubusercontent.com/bitcoin/bitcoin/master/contrib/init/bitcoind.service.
 
 Edit the service file depending on your needs.
 
@@ -700,7 +701,7 @@ To connect another `bitcoind` instance to your new node:
 
 ## NBXplorer
 
-NBXplorer is a dotnet core application that monitors the Bitcoin blockchain for transactions of interest to your BTCPay Server.
+**NBXplorer** is a dotnet core application that monitors the Bitcoin blockchain for transactions of interest to your BTCPay Server.
 
 ##### 🚚 Install
 
@@ -730,7 +731,7 @@ Check [follow the install instuctions](https://docs.microsoft.com/en-us/dotnet/c
 
 ##### 3. Create a systemd service
 
-An example systemd service file is shown below. Adjust the paths, User and Group accordingly.
+An example **systemd service** file is shown below. Adjust the paths, User and Group accordingly.
 
 ```bash
 ~$ vi nbxplorer.service
@@ -805,7 +806,7 @@ Like NBXplorer the BTCPay Server application is also .NET Core. The install step
 
 ##### 2. Create Postgresql Database.
 
-By default BTCPay Server will store data in a single SQLite file. A more robust option is to use Postgresql which requires the appropriate database and user to exist.
+By default BTCPay Server will store data in a single SQLite file. A more robust option is to use **Postgresql** which requires the appropriate database and user to exist.
 
 ```bash
 ~$ sudo -u postgres psql
@@ -834,7 +835,7 @@ postgres=User ID=btcpay;Password=urpassword;Host=localhost;Port=5432;Database=bt
 
 ##### 4. Create a systemd service.
 
-An example systemd service file is shown below. Adjust the paths, User and Group accordingly.
+An example **systemd service** file is shown below. Adjust the paths, User and Group accordingly.
 
 ```bash
 ~$ vi btcpay.service
@@ -984,7 +985,7 @@ tor.v3=true
 
 ##### 5. Create a systemd service
 
-An example systemd service file is shown below. Adjust the paths, User and Group accordingly.
+An example **systemd service** file is shown below. Adjust the paths, User and Group accordingly.
 
 ```bash
 ~$ vi lnd.service
@@ -1077,7 +1078,7 @@ lncli --lnddir /var/lib/lnd create
 
 ##### 3. Unlock the wallet
 
-Every time lnd is restarted the wallet needs to be unlocked. This is not ideal for a BTCPay Server that can is designed to run unattended but Lighting is still in its infancy.
+Every time lnd is restarted the wallet **needs to be unlocked**. This is not ideal for a BTCPay Server that can is designed to run unattended but Lighting is still in its infancy.
 
 ```bash
 ~$ lncli unlock
@@ -1156,7 +1157,7 @@ If `Ride The Lightning (RTL)` is installed, see next section, it may have stoppe
 
 ## Ride The Lightning (RTL)
 
-Ride the Lightning is a Node.js application to manage your Lightning peers, channels, wallet etc.
+**Ride the Lightning** is a Node.js application to manage your Lightning peers, channels, wallet etc.
 
 The advantage of the work that has gone into BTCPay Server is that the RTL web page can be controlled and accessed in the same manner as the BTCPay site.
 

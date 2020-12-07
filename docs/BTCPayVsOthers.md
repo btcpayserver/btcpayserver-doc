@@ -1,12 +1,12 @@
 # BTCPay Server vs. Others
 
-![How is it different?](./img/BTCPay-How-Is-It-Different.png)
+![BTCPay Server vs other payment processors](./img/BTCPay-How-Is-It-Different.png "BTCPay Server vs other payment processors")
 
-Most new merchants will likely only consider the price of the service. Since BTCPay Server is free, that may have led you here and if so, welcome.
+Most new merchants will likely only consider the price of the service. Since **BTCPay Server is free**, that may have led you here and if so, welcome.
 
-BTCPay Server is code, not a company. There is no third-party between a merchant and a customer. The merchant is always in full control of their funds. There are no processing or subscription fees. BTCPay Server is free to use and completely open-source, so developers or security auditors can always inspect the quality of the code.
+**BTCPay Server is code**, not a company. There is **no third-party between a merchant and a customer**. The merchant is always in full control of their funds. There are no processing or subscription fees. BTCPay Server is free to use and completely open-source, so developers or security auditors can always inspect the quality of the code.
 
-We want users to understand not only BTCPay Server, but also how payments can be processed on behalf of a merchant. In order to help users understand trade-offs when using various cryptocurrency payment processing methods. We don't know which payment processors provide which services. That will need to be part of your own research. The following list is a good place to start:
+We want users to understand not only BTCPay Server, but also how payments can be processed on behalf of a merchant. In order to help users understand trade-offs when using various **cryptocurrency payment processing methods**. We don't know which **payment processors** provide which services. That will need to be part of your own research. The following list is a good place to start:
 
 - [BTCPay Server vs. Others](#btcpay-server-vs-others)
   - [Features](#features)
@@ -43,7 +43,7 @@ Every payment processor has features, here are some BTCPay Server features:
 
 It's important to note that payments made using the Bitcoin Network *always* require a transaction (miner) fee for it to be included in the blockchain. The Bitcoin Network determines if the transaction is authorized and when it is confirmed.
 
-BTCPay Server creates direct payment invoices for merchants to provide to their customers. It also monitors the blockchain and stores the confirmation status of each payment or donation. To do this BTCPay Server requires being hosted on a server which merchants can deploy on their own hardware, purchase a VPS (less than $10/mo), or use someone else's BTCPay Server instance to host your account (free or paid options).
+**BTCPay Server creates direct payment invoices** for merchants to provide to their customers. It also **monitors the blockchain** and stores the confirmation status of each payment or donation. To do this BTCPay Server requires being hosted on a server which merchants can deploy on their own hardware, purchase a VPS (less than $10/mo), or use someone else's BTCPay Server instance to host your account (free or paid options).
 
 If you deploy BTCPay Server using a VPS, the following types of fees are **never charged**:
 
@@ -56,7 +56,7 @@ If you deploy BTCPay Server using a VPS, the following types of fees are **never
 
 ## Security
 
-First rule of Bitcoin is always keep your private keys *private*. Using a secure wallet is recommended for new merchants as the only provider (creator) of private keys. If there is a chance that someone else (such as a website) knows, stores, or provides your private keys to you, it's generally accepted that they are not actually private.
+First rule of Bitcoin is always keep your private keys *private*. Using a **secure wallet** is recommended for new merchants as the only provider (creator) of private keys. If there is a chance that someone else (such as a website) knows, stores, or provides your private keys to you, it's generally accepted that they are not actually private.
 
 Secondly, there is another area of security to consider on the applications layer where you have two main options:
 
@@ -80,7 +80,7 @@ BTCPay Server will never ask a merchant for any personal identification.
 Typically, when converting to or from fiat on behalf of a merchant, payment processors are required to collect personal information for Know Your Customer (KYC) and Anti-money laundering (AML) banking requirements. This may include personal information such as passport ID, phone number, address, bank account, etc.
 
 Fortunately, the Bitcoin Network does not use or collect these types of personal information, and therefore neither does BTCPay Server. 
-How BTCPay Server ensures privacy:
+How **BTCPay Server ensures privacy**:
 
 * No middleman involved.
 * Information is shared between customer and seller only.
@@ -93,7 +93,7 @@ How BTCPay Server ensures privacy:
 
 ## Censorship-Resistance
 
-BTCPay Server is Censorship-Resistant. Nobody controls it except for the user running it. No central point of failure.
+**BTCPay Server is Censorship-Resistant**. Nobody controls it except for the user running it. No central point of failure.
 BTCPay Server can be run on a users' own hardware.
 
 ----
@@ -110,13 +110,13 @@ However, if a processor makes any of the following claims, they are most likely 
 * If the payment processor has terms and conditions stating they can hold or freeze your account.
 * Fees for using the payment processor are automatically taken out from the customer's payment to the merchant.
 
-Payment processors are able act as middlemen by using **custodial wallets**. A payment processor can use an internal custodial wallet for altering customer payments before routing them to merchants. This is how they can collect fees, hold payments for verification and processing, etc. This type of wallet is an intermediary between the merchant wallet and the customer wallet. It's the middleman wallet.
+**Payment processors** are able act as middlemen by using **custodial wallets**. A payment processor can use an internal custodial wallet for altering customer payments before routing them to merchants. This is how they can collect fees, hold payments for verification and processing, etc. This type of wallet is an intermediary between the merchant wallet and the customer wallet. It's the middleman wallet.
 
 The payment processor may also provide a custodial wallet for the merchant to use. As mentioned above, this is advised against because your private keys may be compromised. If they claim to not save your private keys after giving them to you, it's likely you will not know the truth until it's too late. Centralized services may seem like an easier solution for the merchant. Unfortunately the trade-off is sacrifices in privacy, security and self-sovereignty which is normally obtained using the Bitcoin Network.
 
 ----
 
-That's why BTCPay Server was created. To help merchants remove third party dependencies and simply use the Bitcoin Network freely and securely. Merchants have their own copy of the BTCPay Server software which runs on their own server or VPS of their choice and validates their own payments using their own node. It's a self-hosted Peer-to-Peer payment processor. The trade-off in this case is some technical understanding is required for initial setup.
+That's why BTCPay Server was created. To **help merchants remove third party dependencies and simply use the Bitcoin Network freely and securely**. Merchants have their own copy of the BTCPay Server software which runs on their own server or VPS of their choice and validates their own payments using their own node. It's a self-hosted Peer-to-Peer payment processor. The trade-off in this case is some technical understanding is required for initial setup.
 
 As the BTCPay Server community continues to grow, more deployment methods, use cases and tutorials are continually being added to make it easier for non-technical users. BTCPay Server is completely open source. Anyone can join the community to suggest or create improvements, features, guides, etc. Feedback is always welcome.
 

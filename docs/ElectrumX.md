@@ -1,8 +1,8 @@
 # ElectrumX
 
-This document explains how to connect Electrum Wallet to an ElectrumX Server.
+This document explains how to **connect Electrum Wallet to an ElectrumX Server**.
 
-**Note:** the [docker version of BTCPay Server](https://github.com/btcpayserver/btcpayserver-docker) (since Nov 7th 2019, version 1.0.3.137) supports full integration with [ElectrumX](https://electrumx.readthedocs.io/en/latest/features.html) is the most widely implemented software used for Electrum public servers that your local Electrum wallet relies upon to get all the details of, or broadcast transactions to the bitcoin blockchain.  Skip to Section 2 below, to read more on what this all means, and how to set it up on your BTCPay stack.
+**Note:** the [docker version of BTCPay Server](https://github.com/btcpayserver/btcpayserver-docker) (since Nov 7th 2019, version 1.0.3.137) supports full integration with [ElectrumX](https://electrumx.readthedocs.io/en/latest/features.html) is the most widely implemented software used for Electrum public servers that your local Electrum wallet relies upon to get all the details of, or broadcast transactions to the bitcoin blockchain. Skip to Section 2 below, to read more on what this all means, and how to set it up on your BTCPay stack.
 
 ## How to integrate ElectrumX into your BTCPay Server and connect your Electrum Wallet to it for your complete privacy
 
@@ -12,11 +12,11 @@ Before we proceed, it is important to understand how your Electrum wallet on you
 
 When you click the little traffic light at the bottom of your Electrum Wallet here:
 
-![ElectrumWalletMainScreenLight](https://user-images.githubusercontent.com/1388507/68437133-5636c500-01c0-11ea-822c-6e72bd6d60ea.png)
+![ElectrumWalletMainScreenLight](https://user-images.githubusercontent.com/1388507/68437133-5636c500-01c0-11ea-822c-6e72bd6d60ea.png "Electrum Wallet History")
 
 You will see this screen with a list of all the available Electrum servers that your wallet can connect to, normally with "Select Server Automatically" already checked:
 
-![ElectrumWalletServerList](https://user-images.githubusercontent.com/1388507/68437521-8a5eb580-01c1-11ea-9ece-0666353a6742.png)
+![ElectrumWalletServerList](https://user-images.githubusercontent.com/1388507/68437521-8a5eb580-01c1-11ea-9ece-0666353a6742.png "Electrum Wallet Network")
 
 While using Electrum Wallet with "Select Server Automatically" on is the easiest, every transaction that you make/browse/broadcast in your Electrum Wallet will be done via someone else's server - this is a privacy risk, that will be mitigated by setting up and using your own ElectrumX Server.
 
@@ -39,7 +39,7 @@ If you have been running your BTCPay Server for a while but haven't had `txindex
 
 ### Steps to enable ElectrumX Server in BTCPay:
 
-Here are all the steps to enable ElectrumX Server in your BTCPay node (read carefully as you may need to adjust for your specific setup, especially if you use other custom or conflicting "fragments" (pruning, less-memory etc.  To reiterate, you should NOT proceed further here if you run a pruned BTCPay node.
+Here are all the steps to **enable ElectrumX Server in your BTCPay node** (read carefully as you may need to adjust for your specific setup, especially if you use other custom or conflicting "fragments" (pruning, less-memory etc.  To reiterate, you should NOT proceed further here if you run a pruned BTCPay node.
 
 1. ElectrumX Server is accessible for Electrum Wallets via TCP port 50002.  You need to open this port up fully at least to be available within your own network to any PC or Android device running Electrum Wallet, and turn on port forwarding (you can also port forward 50002 from your Internet/WAN, to enable other Electrum Wallet users from the Internet to query your server).
 
@@ -85,19 +85,19 @@ Read all of this first before proceeding.  You may wish to do just the "Protip" 
 
 Open Electrum Wallet.  When you click the traffic light at the bottom of your Electrum Wallet:
 
-![ElectrumWalletMainScreenLight](https://user-images.githubusercontent.com/1388507/68437133-5636c500-01c0-11ea-822c-6e72bd6d60ea.png)
+![ElectrumWalletMainScreenLight](https://user-images.githubusercontent.com/1388507/68437133-5636c500-01c0-11ea-822c-6e72bd6d60ea.png "Open Electrum Wallet network config")
 
 You will see this screen with a list of all the available Electrum servers that your wallet can connect to, normally with `Select Server Automatically` already checked:
 
-![ElectrumWalletServerList](https://user-images.githubusercontent.com/1388507/68437521-8a5eb580-01c1-11ea-9ece-0666353a6742.png)
+![ElectrumWalletServerList](https://user-images.githubusercontent.com/1388507/68437521-8a5eb580-01c1-11ea-9ece-0666353a6742.png "Electrum Wallet Network tab")
 
 Now is the time to UNCHECK that `Select Server Automatically` setting, which will enable you to enter the IP address or domain or hostname of your ElectrumX Server.  In the case below, the ElectrumX server is on the local network at `192.168.1.3` so we enter that manually (leave port as 50002) and press `close`.
 
-![EnterElectrumXServerIP](https://user-images.githubusercontent.com/1388507/68496320-4e276580-0252-11ea-8caf-facc8a246d70.png)
+![EnterElectrumXServerIP](https://user-images.githubusercontent.com/1388507/68496320-4e276580-0252-11ea-8caf-facc8a246d70.png "Electrum Wallet personal ElectrumX")
 
 If all of the above worked well, and your node is healthy, you will get a green traffic light down the bottom right of the wallet interface as pictured here - that means success!:
 
-![ElectrumWalletMainScreenLight](https://user-images.githubusercontent.com/1388507/68437133-5636c500-01c0-11ea-822c-6e72bd6d60ea.png)
+![ElectrumWalletMainScreenLight](https://user-images.githubusercontent.com/1388507/68437133-5636c500-01c0-11ea-822c-6e72bd6d60ea.png "Electrum Wallet main tab")
 
 #### Protip - optionally perform the above steps directly in Electrum Wallet config file before even opening the wallet GUI:
 If you prefer to avoid connecting to other servers from the outset when you open Electrum Wallet, do the following before you open Electrum Wallet GUI.
@@ -114,7 +114,7 @@ These 3 steps optional but recommended for full privacy by locking down Electrum
 
 ### Reflection on what has been achieved:
 
-You are now running your very own private ElectrumX Server.  All Electrum Wallet related data transfer happens directly between your ElectrumX Server and the bitcoin blockchain, without going over any other 3rd party servers.  You have attained full bitcoin transaction privacy (at least from the perspective of your blockchain queries and transactions, payment/receive addresses etc - nobody except you and the blockchain can see what you are doing).
+You are now running your very **own private ElectrumX Server**.  All Electrum Wallet related data transfer happens directly between your ElectrumX Server and the bitcoin blockchain, without going over any other 3rd party servers.  You have attained full bitcoin transaction privacy (at least from the perspective of your blockchain queries and transactions, payment/receive addresses etc - nobody except you and the blockchain can see what you are doing).
 
 ### Troubleshooting:
 
@@ -124,6 +124,6 @@ So there is one thing you may encounter, where even after you did everything cor
 
 Inside the Electrum Wallet folder (in this case below, it is what it looks like on a Mac) locate the `certs` directory and delete the certificate for the server you are trying to connect to, in this case `192.168.1.3`, by dragging it to the Trash.
 
-![Certs](https://user-images.githubusercontent.com/1388507/68497330-9a73a500-0254-11ea-9349-71bdb3bd9511.png)
+![Certs](https://user-images.githubusercontent.com/1388507/68497330-9a73a500-0254-11ea-9349-71bdb3bd9511.png "Certificates")
 
 Start up Electrum Wallet again, and connect to your ElectrumX server.  If it is fully synched, it will now likely show a green traffic light, and you are good to go.

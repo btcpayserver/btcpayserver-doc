@@ -1,6 +1,6 @@
 # BTCPay Server Wallet
 
-BTCPay Server has a built in, full-node reliant wallet that allows easier funds management.
+BTCPay Server has a built in, **full-node reliant wallet** that allows easier funds management.
 
 Each [store](./CreateStore.md)'s configured cryptocurrency has a separate wallet displayed on the wallets page. A wallet can be accessed by clicking **Wallets** from the top menu. To access a particular wallet, click **Manage**.
 
@@ -21,26 +21,28 @@ The wallet contains the following features:
 
 ### Transactions
 
-An overview of the incoming (green), outgoing (red) and unconfirmed (grayed out) transactions displayed together with timestamps and balances, sorted by date. You can click on the tx ID to preview the transaction on the block explorer.
+An overview of the incoming (green), outgoing (red) and unconfirmed (grayed out) **transactions** displayed together with timestamps and balances, sorted by date. You can click on the tx ID to preview the transaction on the block explorer.
 
-![Individual Wallet](./img/wallet/WallettTransactions.png)
+![Individual Wallet](./img/wallet/WallettTransactions.png "BTCPay Server Wallet Transactions")
 
 #### Transaction Labels
 
-The table below lists the various transaction labels used by BTCPay.  
+The table below lists the various **transaction labels used by BTCPay**.  
 
 | Transaction Type  | Description                                                  |
 | ----------------- | ------------------------------------------------------------ |
+| app               | Payment was received through an app created invoice          |
 | invoice           | Payment was received through an invoice                      |
 | payjoin           | Not paid, invoice timer still has not expired                | 
-| payjoin-exposed   | Utxo was exposed through an invoice payjoin proposal         |
+| payjoin-exposed   | UTXO was exposed through an invoice payjoin proposal         |
+| payment-request   | Payment was received through a payment request               |
 | payout            | Payment was sent through a payout or refund                  |
 
 You can also create your own [custom transaction labels and comments](./FAQ/FAQ-Wallet.md#how-to-add-custom-labels-and-comments-to-transactions).
 
 ### Send
 
-The Send function allows spending of the funds from the BTCPay wallet.
+The Send function allows **spending of the funds from the BTCPay wallet**.
 
 ![Send from the Wallet](./img/wallet/WalletSend.png)
 
@@ -59,19 +61,19 @@ If you set up an [existing wallet with your BTCPay Server](./WalletSetup.md#use-
 
 ##### Signing with a wallet supporting PSBT
 
-PSBT (Partially Signed Bitcoin transactions) are supported and can be signed with PSBT compatible wallets.
+PSBT (**Partially Signed Bitcoin transactions**) are supported and can be signed with PSBT compatible wallets.
 
 Check this tutorial on how to [sign a transaction with ColdCard Hardware Wallet](./ColdCardWallet.md#spending-from-btcpay-server-wallet-with-coldcard-psbt) completely air-gaped.
 
 ##### Signing with a hardware wallet
 
-BTCPay Server has built-in hardware wallet support allowing you to use your hardware wallet with BTCPay, without leaking information to third-party apps or servers.
+BTCPay Server has built-in hardware wallet support allowing you to **use your hardware wallet with BTCPay**, without leaking information to third-party apps or servers.
 
 [Check instructions](HardwareWalletIntegration.md) on how to set up and sign with a [compatible hardware wallet](https://github.com/bitcoin-core/HWI#device-support).
 
 ##### Signing with a hot wallet
 
-If you [created a new wallet](./CreateWallet.md) when setting up your store and enabled it as a [hot wallet](./HotWallet.md), you can sign a transaction with a private key stored on your server.
+If you [created a new wallet](./CreateWallet.md) when setting up your store and enabled it as a [hot wallet](./HotWallet.md), you can sign a transaction with a **private key stored on your server**.
 
 :::danger
 Using the hot wallet feature comes with its own security implications, please be sure to read and understand them over at the [Hot Wallet documentation](./HotWallet.md)
@@ -109,47 +111,47 @@ Press the `Advanced Settings` button to view the RBF options:
 
 ##### Coin Selection
 
-Coin selection is an advanced privacy-enhancing feature that allows you to specifically select coins that you would like to spend when crafting a transaction. For example, paying with coins that are fresh from a coinjoin mix.
+Coin selection is an advanced **privacy-enhancing feature that allows you to specifically select coins** that you would like to spend when crafting a transaction. For example, paying with coins that are fresh from a coinjoin mix.
 
 To make the selection easier, coin-selection works natively with the wallet labels feature. This allows you to label any incoming funds for smoother UTXO management and spending.
 
-![Coin Selection](./img/wallet/CoinSelection.png)
+![Coin Selection](./img/wallet/CoinSelection.png "Coin Selection")
 
 ##### Other features
 
 ###### Camera QR scan
 
-Scan option in wallet (camera icon in send screen) lets you use your device’s camera to scan a QR code containing an address or BIP21 payment link. It auto-populates the sending information so that you don’t have to manually copy-paste an address and amount.
+Scan option in wallet (camera icon in send screen) lets you **use your device’s camera to scan a QR code containing an address or BIP21 payment link**. It auto-populates the sending information so that you don’t have to manually copy-paste an address and amount.
 
 ![QR Scan](./img/wallet/ScanWallet.png)
 
 ###### Paste BIP21 address
 
-This option decodes a BIP21 payment link. It's useful when you're trying to pay a [Payjoin](./Payjoin.md) invoice.
+This option **decodes a BIP21 payment link**. It's useful when you're trying to pay a [Payjoin](./Payjoin.md) invoice.
 
 ### Receive
 
-The Receive tab generates an unused address which can be used to receive payments. The same can be achieved by generating an invoice (Invoices > Create new invoice).
+The Receive tab **generates an unused address which can be used to receive payments**. The same can be achieved by generating an invoice (Invoices > Create new invoice).
 
-![Wallet Receive](./img/wallet/WalletReceive.png)
+![Wallet Receive](./img/wallet/WalletReceive.png "Receive in BTCPay")
 
 ### Pull Payments
 
-This feature gives you the ability to create a Pull Payment, so that an outside individual may request to `pull` funds from your wallet.
+This feature gives you the ability to **create a Pull Payment**, so that an outside individual may request to `pull` funds from your wallet.
 
 For more information, see [Pull Payments](./PullPayments.md).
 
 ### Payouts
 
-This section lets you manage Pull Payments and gives you the ability to accept or decline payouts requested by outside individuals.
+This section lets you manage Pull Payments and gives you the ability to **accept or decline payouts requested by outside individuals**.
 
 For more information, see [Payouts](./PullPayments.md#approve-and-pay-a-payout).
 
 ### Re-scan
 
-The Rescan relies on Bitcoin Core 0.17.0's `scantxoutset` to scan the current state of the blockchain (called UTXO Set) for coins belonging to the configured derivation scheme.
+The Rescan relies on Bitcoin Core 0.17.0's `scantxoutset` to **scan the current state of the blockchain** (called UTXO Set) for coins belonging to the configured derivation scheme.
 
-![Wallet Rescan](./img/wallet/WalletRescan.png)
+![Wallet Rescan](./img/wallet/WalletRescan.png "Rescan Wallet in BTCPay")
 
 Wallet re-scan solves two critical problems for BTCPay users:
 
@@ -160,7 +162,7 @@ Wallet re-scan solves two critical problems for BTCPay users:
 
 **Wallet import**: When users add a derivation scheme of a wallet that had transactions in the past (previously used wallet), BTCPay won't be able to show the balance and transactions from the past.
 
-![Wallet rescan progress](./img/wallet/WalletRescanProgress.png)
+![Wallet rescan progress](./img/wallet/WalletRescanProgress.png "Rescan Wallet in BTCPay")
 
 Re-scan is a feature that solves both of these problems. Once the scan is complete, BTCPay Server will show the correct balance, along with the past transactions of the wallet.
 
@@ -170,7 +172,7 @@ Users who use a third party host should use a newly generated xpub key and also 
 
 ### PSBT
 
-In the Partially Signed Bitcoin Transactions (PSBT) tab, you can upload and decode any PSBT, for example an earlier signed PSBT from external wallet and broadcast it via BTCPay Wallet. For more information on PSBT [check this link](./ColdCardWallet.md#spending-from-btcpay-server-wallet-with-coldcard-psbt).
+In the **Partially Signed Bitcoin Transactions** (PSBT) tab, you can upload and decode any PSBT, for example an earlier signed PSBT from external wallet and broadcast it via BTCPay Wallet. For more information on PSBT [check this link](./ColdCardWallet.md#spending-from-btcpay-server-wallet-with-coldcard-psbt).
 
 ### Settings
 

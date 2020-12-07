@@ -9,6 +9,8 @@ Table of contents:
   - [Pay Invoice](#pay-invoice)
   - [Testers FAQ](#testers-faq)
     - [Start Debugging gives Error: No connection could be made because the target machine actively refused it. 127.0.0.1:39372](#start-debugging-gives-error-no-connection-could-be-made-because-the-target-machine-actively-refused-it-12700139372)
+    - [Regtest payments are not showing as confirmed](#regtest-payments-are-not-showing-as-confirmed)
+    - [Which branch should be tested for major releases?](#which-branch-should-be-tested-for-major-releases)
 
 Testing the software is a great way to contribute to the project. There are many different ways that someone can _test_ the software. Users who manually test (QA) the software and features to provide user experience, feedback or bugs to the project developers and designers is always appreciated. 
 
@@ -89,8 +91,8 @@ Now you can test your feature as if it was already released!
 
 Creating an invoice and sending payment is an important feature in BTCPay and in order to manually test this, you must first:
 
-- Create a Store 
-- Modify your store Derivation Scheme 
+- Create a Store
+- Setup a Wallet
 
 :::tip
 Use the hot wallet for fastest wallet setup during testing. Import from ... > a new/existing seed > check Is hot wallet > Generate
@@ -108,8 +110,26 @@ Notice that your invoice has now been paid in your local BTCPay Server.
 
 ![Test Paid Invoice](../../img/Contribute/regtest-paid-invoice.png)
 
+To pay other types of payments see [this guide](https://github.com/btcpayserver/btcpayserver/blob/master/BTCPayServer.Tests/README.md).
+
 ## Testers FAQ
 
 ### Start Debugging gives Error: No connection could be made because the target machine actively refused it. 127.0.0.1:39372
 
-If you see this error, it means you did not set up your Regtest Network using the `docker-compose up dev` command in the `BTCPayServer.Tests` directory. This command will set up all the dependencies you need for services used by BTCPay in the local development environment. You must run it before you try to start debugging. 
+If you see this error, it means you did not set up your Regtest Network using the `docker-compose up dev` command in the `BTCPayServer.Tests` directory. This command will set up all the dependencies you need for services used by BTCPay in the local development environment. You must run it before you try to start debugging.
+
+### Regtest payments are not showing as confirmed?
+
+If you make a [test payment](#pay-invoice) and it's stuck as unconfirmed, you should mine some blocks to add confirmations to your transaction. 
+
+```powershell
+.\docker-bitcoin-generate.ps1 3
+```
+
+If you are missing things like test payment notifications or other expected events, this may be the reason. 
+
+### Which branch should be tested for major releases?
+
+Testing master branch is acceptable because it will include the release changes. However, other commits which are not yet released may also be in master. It is always good to find issues before the release so master (or a specific PR) is the ideal branch to test.
+
+You can check the [latest release](https://github.com/btcpayserver/btcpayserver/releases) to see the changes which are available for current deployments as well as the unreleased commits.

@@ -12,25 +12,25 @@ The hardware wallet integration within BTCPay Server allows you to import your h
 2. Install the Vault on your PC (Windows, MacOS or Linux)
 3. Open the BTCPay Vault app
 4. Plug in the hardware wallet into your PC and make sure it’s in a wake up state
-5. Go to your BTCPay Server’s Store > General Settings > Derivation Scheme > **Import from a hardware wallet**
+5. Go to your BTCPay Server’s Store > Settings > Wallet > Setup > **Import from a hardware wallet**
 6. Grant the permission
 7. The public key will automatically be imported in the store and configured to an appropriate format
 8. Validate that address shown on BTCPay is the same as the one on your device
 9. Save
 
-![](./img/BTCPayVaultStoreSetup1.png)
+![BTCPay Server Vault configuration](./img/BTCPayVaultStoreSetup1.png "BTCPay Server Vault configuration")
 
-![](./img/BTCPayVaultStoreSetup2.png)
+![BTCPay Server Vault configuration](./img/BTCPayVaultStoreSetup2.png "BTCPay Server Vault configuration")
 
-![](./img/BTCPayVaultStoreSetup3.png)
+![BTCPay Server Vault configuration](./img/BTCPayVaultStoreSetup3.png "BTCPay Server Vault configuration")
 
-![](./img/BTCPayVaultStoreSetup4.png)
+![BTCPay Server Vault configuration](./img/BTCPayVaultStoreSetup4.png "BTCPay Server Vault configuration")
 
-![](./img/BTCPayVaultStoreSetup5.png)
+![BTCPay Server Vault configuration](./img/BTCPayVaultStoreSetup5.png "BTCPay Server Vault configuration")
 
-![](./img/BTCPayVaultStoreSetup6.png)
+![BTCPay Server Vault configuration](./img/BTCPayVaultStoreSetup6.png "BTCPay Server Vault configuration")
 
-![](./img/BTCPayVaultStoreSetup7.png)
+![BTCPay Server Vault configuration](./img/BTCPayVaultStoreSetup7.png "BTCPay Server Vault configuration")
 
 ### Spending funds
 
@@ -44,9 +44,9 @@ Once you’ve received funds to your wallet and you decide to spend them, you ca
 6. Verify the transaction on your hardware wallet and confirm it
 7. Broadcast the transaction
 
-![](./img/BTCPayVaultWalletSend1.png)
+![Send Bitcoin via BTCPay Vault](./img/BTCPayVaultWalletSend1.png "Send Bitcoin via BTCPay Vault")
 
-![](./img/BTCPayVaultWalletSend2.png)
+![Send Bitcoin via BTCPay Vault](./img/BTCPayVaultWalletSend2.png "Send Bitcoin via BTCPay Vault")
 
 ## Supported Hardware Wallets
 

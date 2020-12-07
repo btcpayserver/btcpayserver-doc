@@ -1,6 +1,6 @@
 # Architecture
 
-BTCPayServer is a project which ties together several Bitcoin-related components into a coherent user experience for installing and managing your own payment processor.
+BTCPayServer is a project which ties together **several Bitcoin-related components** into a coherent user experience for installing and managing your own payment processor.
 
 ![Architecture](./img/Architecture.png)
 
@@ -19,9 +19,9 @@ Additionally, if you need Lightning Network access, NBXplorer supports connectio
 * Lightning Charge
 * LND (via the REST interface)
 
-Video below shows BTCPay Architecture in-depth.
+Video below shows **BTCPay Architecture** in-depth.
 
-[![BTCPay Architecture](./img/btcpay-architecture-advancing-bitcoin.png)](https://www.youtube.com/watch?v=Up0dvorzSNM)
+[![BTCPay Architecture](./img/btcpay-architecture-advancing-bitcoin.png "BTCPay Architecture")](https://www.youtube.com/watch?v=Up0dvorzSNM)
 
 ---
 

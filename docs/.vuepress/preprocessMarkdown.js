@@ -1,5 +1,3 @@
-const { join, relative, resolve } = require('path')
-const docsDir = resolve(__dirname, '..')
 const isDev = process.env.NODE_ENV === 'development'
 
 // external docs: local dir as key, repo base as value

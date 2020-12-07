@@ -1,6 +1,6 @@
 # Try it out
 
-This section goes through the process of creating an account and store on our public BTCPay server. (For evaluation purpose)
+This section goes through the process of **creating an account and store on our public BTCPay server**. (For evaluation purpose)
 
 You can also follow along in this video:
 
@@ -28,7 +28,7 @@ Let's use Electrum to create a testnet wallet for your store:
 Let's configure the store so it uses your Electrum wallet:
 
 1. Go to the Settings page of your store in BTCPay
-2. On the "General Settings" page you will find the "Derivation Scheme" section - click the "Modify" action for BTC
+2. On the "General Settings" page you will find the "Wallet" section - click the "Setup" button for configuring an on-chain wallet.
 3. Paste the "Master Public Key" copied from Electrum into the "Derivation Scheme" text field and click "Continue"
 4. Confirm the addresses by clicking on "Receive" in Electrum: The "Receiving address" should match the first address shown in BTCPay
 5. After that your test wallet should appear on the [Wallets page](https://testnet.demo.btcpayserver.org/wallets) of your BTCPay account
@@ -41,7 +41,7 @@ Then you can create an invoice, either through
 
 First choose where to setup your store.
 Either:
-* Host your store on someone else's BTCPay Server. You can find a list of third-party hosts [here](./ThirdPartyHosting.md#the-list-of-btcpay-third-party-hosts).
+* Host your store on someone else's BTCPay Server. You can find a list of third-party hosts [here](./ThirdPartyHosting.md#where-is-the-list-of-btcpay-third-party-hosts).
 * Or [deploy your own](./Deployment.md).
 
 Click on the following links for detailed instructions on how to [Register an account](./RegisterAccount.md), [Create your first store](./CreateStore.md) and [Connect your own wallet](./WalletSetup.md)

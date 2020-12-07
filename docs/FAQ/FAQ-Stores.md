@@ -5,7 +5,6 @@ This page shows common issues and frequently asked questions about Stores in BTC
 * [How to create a store in BTCPay?](./FAQ-Stores.md#how-to-create-a-store-in-btcpay)
 * [How many stores can I create?](./FAQ-Stores.md#how-many-stores-can-i-create)
 * [Why are invoices without payment showing as complete?](./FAQ-Stores.md#why-are-invoices-without-payment-showing-as-complete)
-* [Store General Settings](./FAQ-Stores.md#store-general-settings)
 * [Add network fee to invoice (vary with mining fees)?](./FAQ-Stores.md#add-network-fee-to-invoice-vary-with-mining-fees)
 * [Allow anyone to create invoice?](./FAQ-Stores.md#allow-anyone-to-create-invoice)
 * [Invoice expires if the full amount has not been paid after ... minutes?](./FAQ-Stores.md#invoice-expires-if-the-full-amount-has-not-been-paid-after-minutes)
@@ -13,6 +12,7 @@ This page shows common issues and frequently asked questions about Stores in BTC
 * [Consider the invoice confirmed when the payment transaction?](./FAQ-Stores.md#consider-the-invoice-confirmed-when-the-payment-transaction)
 * [Consider the invoice paid even if the paid amount is ... % less than expected?](./FAQ-Stores.md#consider-the-invoice-paid-even-if-the-paid-amount-is-less-than-expected)
 * [How to disable email on invoices?](./FAQ-Stores.md#how-to-disable-email-on-invoices)
+* [How to redirect store invoices after payment?](./FAQ-Stores.md#how-to-redirect-store-invoices-after-payment)
 * [Can I delete invoices from BTCPay?](./FAQ-Stores.md#can-i-delete-invoices-from-btcpay)
 * [How to change the exchange rate provider for invoices?](./FAQ-Stores.md#how-to-change-the-exchange-rate-provider-for-invoices)
 * [Getting GetRatesAsync was called on coinaverage error](./FAQ-Stores.md#getting-getratesasync-was-called-on-coinaverage-error)
@@ -30,10 +30,6 @@ There's no limit on a number of stores you can create in BTCPay.
 When an invoice is created to receive a payment value of 0 (zero amount due) the invoice by definition, is already paid. The invoice will appear as complete as soon as it's created. 
 
 The purpose of this type of invoice is typically for when a merchant would like to observe user interest in an event or giveaway using BTCPay Server invoices without requiring the user to provide funds. Another use case is for developers who are testing the invoice process allowing them to bypass providing actual funds to verify the software is working properly. 
-
-## Store General Settings
-
-Explanation of features inside Store > General Settings configured on a store-level.
 
 ## Add network fee to invoice (vary with mining fees)?
 
@@ -78,6 +74,18 @@ In a situation where a customer uses an exchange wallet to pay directly for an i
 ##  How to disable email on invoices
 
 To disable the email requirement for your store's invoices, go to Stores > Settings > Checkout Experience > uncheck 'Requires a refund email' box.
+
+## How to redirect store invoices after payment?
+
+To automatically redirect paid invoices for a store, enable the setting in: Stores > Settings > Checkout experience > check 'Redirect invoice to redirect url automatically after paid' box.
+
+This setting is typically used for redirecting invoices made directly to the store, such as with a [Payment Button](../Apps.md#payment-button). After payment, the invoice would return to the original page where the payment button was embedded or to the redirect URL provided on the Edit Payment Button page.
+
+When this feature is not enabled, the customer will be prompted in the invoice to return to the original payment page.
+
+![Redirect Paid Store Invoices](../img/invoice/PaidInvoice.png)
+
+To redirect to a specific URL in the Point of Sale app, use the [PoS Redirect](../FAQ/FAQ-Apps.md#how-to-redirect-to-another-site-after-payment) instead.
 
 ## Can I delete invoices from BTCPay?
 

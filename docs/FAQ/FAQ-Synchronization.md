@@ -5,6 +5,7 @@ This document covers the most common questions and issues that may occur during 
 * [Why does BTCPay sync?](#why-does-btcpay-sync)
 * [Can I skip/speed up the sync?](#can-i-skip-the-synchronization)
 * [How do I know that the sync is finished?](#how-do-i-know-that-btcpay-synced-completely)
+* [How can I check the block height of my bitcoin node?](#how-can-i-check-the-block-height-of-my-bitcoin-node)
 * [BTCPay takes forever to synchronize](#btcpay-server-takes-forever-to-synchronize)
 * [BTCPay Server keeps showing that my node is always starting](#btcpay-server-keeps-showing-that-my-node-is-always-starting)
 * [I already have a synced full node, can I use it with BTCPay?](#im-running-a-full-node-and-have-a-synched-blockchain-can-btcpay-use-it-so-that-it-doesnt-have-to-do-a-full-sync)
@@ -17,9 +18,11 @@ After deployment, your BTCPay Server needs to sync the entire blockchain and val
 
 It may seem tedious, but it's a critical step of running your own full node and not having to trust or rely on anyone. Your node will not only download ~300GB of data (less if you're using a pruned node) but also validate all the rules of the consensus. You can find more information about the importance of blockchain synchronization in [this video](https://www.youtube.com/watch?v=OrYDehC-8TU).
 
+If you are only interested in learning about BTCPay Server i.e. simply [trying it out](../TryItOut.md) without deploying your own instance, you can avoid sync by using a [Third-Party host](../ThirdPartyHosting.md).
+
 ## Can I skip the synchronization?
 
-You can't skip synchronization, but you can drastically decrease the time it takes. If you're comfortable with using the command line, you can use FastSync to synchronize your node faster. Be sure to [read this FastSync document](https://github.com/btcpayserver/btcpayserver-docker/tree/master/contrib/FastSync) to understand the potential trust issues involved with this feature.
+You can't skip synchronization if you are deploying a BTCPay Server, but you can drastically decrease the time it takes. If you're comfortable with using the command line, you can use FastSync to synchronize your node faster. Be sure to [read this FastSync document](https://github.com/btcpayserver/btcpayserver-docker/tree/master/contrib/FastSync) to understand the potential trust issues involved with this feature.
 
 To use FastSync, make sure your deployment has a [pruning option enabled](#how-to-enable-bitcoin-node-pruning) by using an `opt-save-storage` environment variable, otherwise bitcoind will not be able to sync. First step is to [ssh into](./FAQ-ServerSettings.md#how-to-ssh-into-my-btcpay-running-on-vps) your BTCPayServer instance and run the following commands:
 
@@ -40,6 +43,12 @@ If your FastSync returns `You need to delete your Bitcoin Core wallet` after you
 ## How do I know that BTCPay synced completely?
 
 When you do not see a pop-up message in the bottom right corner, which shows the sync progress, that means that your server is fully synced and you can [begin using it](../RegisterAccount.md).
+
+If you want to check that your BTCPay Server Bitcoin node is synchronized with the most recent block in the Bitcoin blockchain, [check your node height](#how-can-i-check-the-block-height-of-my-bitcoin-node) matches the current block height using any blockchain explorer. 
+
+## How can I check the block height of my bitcoin node?
+
+To verify the sync status of your Bitcoin node, you can use bitcoin-cli commands inside your server's Bitcoin container. SSH into your server and navigate to the directory where you [view Bitcoin logs](../Troubleshooting.md#23-bitcoin-node-logs) run the command: `bitcoin-cli.sh getblockcount` to view the current block of your server's Bitcoin node.
 
 ## BTCPay Server takes forever to synchronize
 
