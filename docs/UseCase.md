@@ -30,6 +30,8 @@ For brick and mortar stores, BTCPay Server has a [web-based Point of Sale](./App
 
 Take a look at [our demo POS app](https://mainnet.demo.btcpayserver.org/apps/3utBTfSKkW4gK7aQMd2hW5Bh9Fpa/pos).
 
+[![BTCPay Server for local communities](https://img.youtube.com/vi/9n81qnzlPf8/mqdefault.jpg)](https://www.youtube.com/watch?v=9n81qnzlPf8 "BTCPay Server for local communities")
+
 ## Self-sovereign individuals
 
 **Privacy-minded individuals** can use BTCPay Server internal wallet for their everyday crypocurrency transactions without providing a private key. For self-hosted servers, the [internal wallet](./Wallet.md) relies on a full node, significantly enhances the privacy. [Hardware wallet integration](./HardwareWalletIntegration.md) allows the usage of a hardware wallet with a [full node](https://en.bitcoin.it/wiki/Full_node) and avoids leaks to a third-party server.
