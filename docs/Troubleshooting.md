@@ -63,6 +63,7 @@ Below is a general list of the container names used for BTCPay.
 | c-lightning | btcpayserver_clightning_bitcoin |
 | LND | btcpayserver_lnd_bitcoin |
 | RTL | generated_lnd_bitcoin_rtl_1 |
+| Thunderhub| generated_bitcoin_thub_1 |
 | LibrePatron | librepatron |
 | Tor | tor-gen |
 | Tor | tor |
