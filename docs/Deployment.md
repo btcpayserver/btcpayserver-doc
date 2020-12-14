@@ -10,7 +10,6 @@ BTCPay is a non-custodial invoicing system which eliminates the involvement of a
 Developer deployments are not recommended for production environments and require the user to have technical knowledge related to the build.
 :::
 
-![Decision diagram](./img/DecisionDiagInstallBTCPayServer.png "BTCPay Server Infographic")
 
 ## What are my options?
 
@@ -24,36 +23,7 @@ Developer deployments are not recommended for production environments and requir
 
 (*): Those deployments are using the Docker Deployment under the hood.
 
-## To chose one that will best suit your needs, consider the following:
-
-<br>
-
-|Web Solutions                             |1.                            |2.          |Why?          |
-| ---------------------------------------- |:----------------------------:|:----------:|:------------:|
-|Business<br>(Fast Setup)                  |[3rd Party <br> BTCPay Hosts](./ThirdPartyHosting.md)  |[LunaNode <br> Web-Wizard](./LunaNodeWebDeployment.md)* |- Low Difficulty<br>- BTCPayServer Support (1)<br>- Lightning Network (2)     |
-|Cost / Month                                     | Free                    | $10 |BTC Accepted  |
-
-**LunaNode Web-Wizard is a VPS solution, deployable from an easy-web interface.**
-
-<br>
-
-|VPS Solutions                 |1.               |2.          |3.       |4.       |5.       |Why?     |
-| ---------------------------- |:---------------:|:----------:|:-------:|:-------:|:-------:|:-------:|
-|Business<br>(Self Setup)      |[LunaNode](https://medium.com/@BtcpayServer/hosting-btcpayserver-on-lunanode-bf9ef5fff75b)|[Digital<br>Ocean](https://medium.com/@molthoff/running-btcpay-on-digital-ocean-for-10-month-how-to-add-other-coins-7a497339fb2f)|[Amazon<br>AWS EC2](https://wiki.ion.radar.tech/tutorials/nodes/btcpay-+-aws-ec2)|[Microsoft<br>Azure](./AzureDeployment.md)    |[Google<br>Cloud](./GoogleCloudDeployment.md) |- Moderate Difficulty<br>- Docker Compose<br>- Lightning Network    |
-|Cost / Month          |$10 | $10 | $35 | $60 | $70  |BTC Accepted (1)|
-
-*- BTCPay can also be deployed on any VPS that meets the [minimal requirements](./FAQ/FAQ-Deployment.md#what-are-the-minimal-requirements-for-btcpay).*<br>
-*- VPS providers that use OpenVZ are not supported.*
-
-<br>
-
-|Hardware Solutions                    |1.                        |2.        |Why?      |
-| ------------------------------------ |:------------------------:|:--------:|:--------:|
-|Business<br>(Hardware Setup)          |   [Lightning<br>in a Box](https://lightninginabox.co/)  | [Nodl.it](https://www.nodl.it/) |- Ready Out Of The Box<br>- Prices Vary By Service<br>- Lightning Network<br>|
-|                                      |                            |            |BTC Accepted|
-
-<br>
-
+## To chose one that will best suit your needs, consider the following:<br>
 
 |Choosing a deployment <br>method      |   Difficulty   |    Production/Dev |      All features <br>available     |             Approx. cost<br> per month      |
 | -------------------------------- |:--------------:|:----------------------:|:---------------:|:-------------:|:-------------:|
@@ -61,7 +31,7 @@ Developer deployments are not recommended for production environments and requir
 |**[Third-Party Hosts](./ThirdPartyHosting.md)**<br>[Non-exhaustive list](https://directory.btcpayserver.org/filter/hosts)        |Easy     |Production| **Host:** Yes<br>**Hostee:** No| **Free** or **Paid** hosting,<br>depending on provider.
 |**Hardware As A Service:**<br>- [Lightning in a Box](https://lightninginabox.co/)<br>- [Nodl.it](https://www.nodl.it/)    |Easy to Moderate   |Production| Yes| Varies on provider 
 |**Virtual Private Server:** <br>OpenVZ not supported<br>- [LunaNode](https://medium.com/@BtcpayServer/hosting-btcpayserver-on-lunanode-bf9ef5fff75b)<br>- [Microsoft Azure](./AzureDeployment.md)<br>- [Digital Ocean](https://medium.com/@molthoff/running-btcpay-on-digital-ocean-for-10-month-how-to-add-other-coins-7a497339fb2f)<br>- [Amazon AWS EC2](https://wiki.ion.radar.tech/tutorials/nodes/btcpay-+-aws-ec2)<br>- [Google Cloud](./GoogleCloudDeployment.md)<br>- Other VPS <br> ([minimal requirements](./FAQ/FAQ-Deployment.md#what-are-the-minimal-requirements-for-btcpay))           |Moderate to Hard             |Production| Yes| $10-70<br>depending on provider
-|**Manual Installation:**<br>- [Install From Command Line](http://blog.sipsorcery.com/?p=1052)<br>- [Build Without Docker Image](./ManualDeployment.md)       |Very hard       |Developement| Yes| Components + Electricity 
+|**Manual Deployment:**<br>- [Install From Command Line](http://blog.sipsorcery.com/?p=1052)<br>- [Build Without Docker Image](./ManualDeployment.md)       |Very hard       |Developement| Yes| Components + Electricity 
 |**Hardware build:**<br>- [ARM32v7](https://hub.docker.com/r/btcpayserver/btcpayserver/tags/)<br>- [Raspberry Pi](./RaspberryPiDeployment.md)<br>- [BTCPayBox](./HardwareDeployment.md)      |Very hard         |Developement| Yes|  Components + Electricity
 
 *Notes:*<br>
