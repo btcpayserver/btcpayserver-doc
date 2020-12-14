@@ -11,17 +11,7 @@ Developer deployments are not recommended for production environments and requir
 :::
 
 
-## What are my options?
 
-* [LunaNode Web Deployment](./LunaNodeWebDeployment.md) *
-* [Azure Deployment](./AzureDeployment.md) *
-* [Docker Deployment](https://github.com/btcpayserver/btcpayserver-docker/blob/master/README.md)
-* [Google Cloud Deployment](./GoogleCloudDeployment.md) *
-* [Hardware Deployment](./HardwareDeployment.md) *
-* [Third-Party Hosting](./ThirdPartyHosting.md)
-* [Manual Deployment](./ManualDeployment.md) **Not intended for production use**
-
-(*): Those deployments are using the Docker Deployment under the hood.
 
 ## To chose one that will best suit your needs, consider the following:<br>
 
@@ -37,3 +27,13 @@ Developer deployments are not recommended for production environments and requir
 *Notes:*<br>
 *- VPS providers that use OpenVZ are not supported.*<br>
 *- [Fast Sync](https://github.com/btcpayserver/btcpayserver-docker/tree/master/contrib/FastSync) can be used to accelerate the intitial setup sync time for most deployments.*
+
+**For more information on each deployment method, see related documentation:**
+
+* [LunaNode Web Deployment](./LunaNodeWebDeployment.md) 
+* [Azure Deployment](./AzureDeployment.md) 
+* [Docker Deployment](https://docs.btcpayserver.org/Docker/)
+* [Google Cloud Deployment](./GoogleCloudDeployment.md) 
+* [Hardware Deployment](./HardwareDeployment.md) 
+* [Third-Party Hosting](./ThirdPartyHosting.md)
+* [Manual Deployment](./ManualDeployment.md)
