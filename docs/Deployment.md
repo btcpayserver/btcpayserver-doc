@@ -13,7 +13,7 @@ Manual deployments and Hardware builds are not recommended for production enviro
 
 
 
-## To chose one that will best suit your needs, consider the following:<br>
+## To choose one that will best suit your needs, consider the following:<br>
 
 |Deployment method <br>method      |   Difficulty   |    Production/Dev |      All features <br>available     |             Approx. cost<br> per month      |
 | -------------------------------- |:--------------:|:----------------------:|:---------------:|:-------------:|
