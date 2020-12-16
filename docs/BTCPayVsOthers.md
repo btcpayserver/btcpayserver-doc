@@ -67,9 +67,12 @@ Secondly, there is another area of security to consider on the applications laye
 Some payment processors still use this depreciated standard, but some wallets will not be compatible. To be able to pay to a BIP 70 invoice, you need to translate it.
 In order to do so, every BTCPay Server instance also hosts a translation tool, that you can access by adding `/translate` to your BTCPay Server URL.
 
-Example: [mainnet.demo.btcpayserver.org/translate](https://mainnet.demo.btcpayserver.org/translate/)
-
 Simply input the invoice URL that you were given in the field to get it translated to a format most wallets will recognise.
+
+:::Hint
+The Translator feature has been depreciated and will not be available for BTCPay Server v1.0.6.3 and above.
+:::
+
 
 ----
 
