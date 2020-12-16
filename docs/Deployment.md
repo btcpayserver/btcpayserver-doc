@@ -16,7 +16,7 @@ Developer deployments are not recommended for production environments and requir
 ## To chose one that will best suit your needs, consider the following:<br>
 
 |Choosing a deployment <br>method      |   Difficulty   |    Production/Dev |      All features <br>available     |             Approx. cost<br> per month      |
-| -------------------------------- |:--------------:|:----------------------:|:---------------:|:-------------:|:-------------:|
+| -------------------------------- |:--------------:|:----------------------:|:---------------:|:-------------:|
 |**Lunanode**<br>[1-click install](./LunaNodeWebDeployment.md)     |Easy          |Production| Yes| $10
 |**Third-Party Hosts**<br>[Non-exhaustive list](https://directory.btcpayserver.org/filter/hosts)        |Easy     |Production| **Host:** Yes<br>**Hostee:** No| **Free** or **Paid** hosting,<br>depending on provider.
 |**Hardware As A Service:**<br>- [Lightning in a Box](https://lightninginabox.co/)<br>- [Nodl.it](https://www.nodl.it/)    |Easy to Moderate   |Production| Yes| Varies on provider 
