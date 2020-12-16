@@ -58,21 +58,6 @@ If you deploy BTCPay Server using a VPS, the following types of fees are **never
 
 First rule of Bitcoin is always keep your private keys *private*. Using a **secure wallet** is recommended for new merchants as the only provider (creator) of private keys. If there is a chance that someone else (such as a website) knows, stores, or provides your private keys to you, it's generally accepted that they are not actually private.
 
-Secondly, there is another area of security to consider on the applications layer where you have two main options:
-
-* **Option 1**: Most payment processors (including BTCPay Server) use the [BIP 21][1] standard.
-
-* **Option 2**: Others use variations of the [BIP 70][2] standard.
-**Note**: [BIP 70 has recently been deprecated in Bitcoin Core][3].
-Some payment processors still use this depreciated standard, but some wallets will not be compatible. To be able to pay to a BIP 70 invoice, you need to translate it.
-In order to do so, every BTCPay Server instance also hosts a translation tool, that you can access by adding `/translate` to your BTCPay Server URL.
-
-Simply input the invoice URL that you were given in the field to get it translated to a format most wallets will recognise.
-
-:::Hint
-The Translator feature has been depreciated and will not be available for BTCPay Server v1.0.6.3 and above.
-:::
-
 
 ----
 
