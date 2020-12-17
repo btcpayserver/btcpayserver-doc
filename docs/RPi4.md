@@ -54,7 +54,7 @@ The 500GB SSD allows you to keep a full copy of the Bitcoin blockchain, until it
 
 ## Install Linux on the Raspberry Pi
 
-Start by downloading [Raspbian Linux](https://www.raspberrypi.org/downloads/raspbian/) to your existing computer. The “Lite” distribution is fine for BTCPay setup, but if you want to use your Raspberry Pi for other things, you might want the full image.
+Start by downloading [Raspberry Pi for Linux](https://www.raspberrypi.org/software/operating-systems/) to your existing computer. The “Lite” distribution is fine for BTCPay setup, but if you want to use your Raspberry Pi for other things, you might want the full image.
 
 ![RPI4 Linux Installation](./img/RPI4Linux.png "Raspberry Pi 4 Linux Installation")
 
