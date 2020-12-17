@@ -58,9 +58,9 @@ Start by downloading [Raspberry Pi for Linux](https://www.raspberrypi.org/softwa
 
 ![RPI4 Linux Installation](./img/RPI4Linux.png "Raspberry Pi 4 Linux Installation")
 
-### Flash your SD card with Raspbian Linux
+### Flash your SD card with the Raspberry Pi OS for Linux
 
-- Extract the downloaded Raspbian Linux zip file
+- Extract the downloaded `Raspberry Pi OS for Linux` zip file
 - Download the latest version of [balenaEtcher](https://www.balena.io/etcher/) and install it.
 - Connect an SD card reader with the SD card inside.
 - Open balenaEtcher and select from your hard drive the Raspberry Pi .img from the extracted zip file you wish to write to the SD card.
