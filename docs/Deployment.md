@@ -18,7 +18,7 @@ Manual deployments and Hardware builds are not recommended for production enviro
 |Deployment method <br>method      |   Difficulty   |    Production/Dev |      All features <br>available     |             Approx. cost<br> per month      |
 | -------------------------------- |:--------------:|:----------------------:|:---------------:|:-------------:|
 |**Lunanode**<br>[1-click install](./LunaNodeWebDeployment.md)     |Easy          |Production| Yes| $10
-|**Third-Party Hosts**<br>[Non-exhaustive list](https://directory.btcpayserver.org/filter/hosts)        |Easy     |Production| **Host:** Yes<br>**Hostee:** No| **Free** or **Paid** hosting,<br>depending on provider.
+|**Third-Party Hosts**<br>[What is this ?](./ThirdPartyHosting.md)        |Easy     |Production| **Host:** Yes<br>**Hostee:** No| **Free** or **Paid** hosting,<br>depending on provider.
 |**Hardware As A Service:**<br>- [Lightning in a Box](https://lightninginabox.co/)<br>- [Nodl.it](https://www.nodl.it/)    |Easy to Moderate   |Production| Yes| Varies on provider 
 |**Virtual Private Server:** <br>OpenVZ not supported<br>- [LunaNode](https://medium.com/@BtcpayServer/hosting-btcpayserver-on-lunanode-bf9ef5fff75b)<br>- [Microsoft Azure](./AzureDeployment.md)<br>- [Digital Ocean](https://medium.com/@molthoff/running-btcpay-on-digital-ocean-for-10-month-how-to-add-other-coins-7a497339fb2f)<br>- [Amazon AWS EC2](https://wiki.ion.radar.tech/tutorials/nodes/btcpay-+-aws-ec2)<br>- [Google Cloud](./GoogleCloudDeployment.md)<br>- Other VPS <br> ([minimal requirements](./FAQ/FAQ-Deployment.md#what-are-the-minimal-requirements-for-btcpay))           |Moderate to Hard             |Production| Yes| $10-70<br>depending on provider
 |**Manual Deployment:**<br>- [Install From Command Line](http://blog.sipsorcery.com/?p=1052)<br>- [Build Without Docker Image](./ManualDeployment.md)       |Very hard       |Developement| Yes| Components + Electricity 
@@ -28,12 +28,3 @@ Manual deployments and Hardware builds are not recommended for production enviro
 *- VPS providers that use OpenVZ are not supported.*<br>
 *- [Fast Sync](https://github.com/btcpayserver/btcpayserver-docker/tree/master/contrib/FastSync) can be used to accelerate the initial setup sync time for most deployments.*
 
-**For more information on each deployment method, see related documentation:**
-
-* [LunaNode Web Deployment](./LunaNodeWebDeployment.md) 
-* [Azure Deployment](./AzureDeployment.md) 
-* [Docker Deployment](https://docs.btcpayserver.org/Docker/)
-* [Google Cloud Deployment](./GoogleCloudDeployment.md) 
-* [Hardware Deployment](./HardwareDeployment.md) 
-* [Third-Party Hosting](./ThirdPartyHosting.md)
-* [Manual Deployment](./ManualDeployment.md)
