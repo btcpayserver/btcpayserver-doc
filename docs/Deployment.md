@@ -10,12 +10,13 @@ BTCPay is a non-custodial invoicing system which eliminates the involvement of a
 Manual deployments and Hardware builds are not recommended for production environments and require the user to have technical knowledge related to the build.
 :::
 
+![Decision diagram](./img/DecisionDiagInstallBTCPayServer.png "BTCPay Server Infographic")
 
 
 
 ## To choose one that will best suit your needs, consider the following:<br>
 
-|Deployment method <br>method      |   Difficulty   |    Production/Dev |      All features <br>available     |             Approx. cost<br> per month      |
+|Deployment method     |   Difficulty   |    Production/Dev |      All features <br>available     |             Approx. cost<br> per month      |
 | -------------------------------- |:--------------:|:----------------------:|:---------------:|:-------------:|
 |**Lunanode**<br>[1-click install](./LunaNodeWebDeployment.md)     |Easy          |Production| Yes| $10
 |**Third-Party Hosts**<br>[What is this ?](./ThirdPartyHosting.md)        |Easy     |Production| **Host:** Yes<br>**Hostee:** No| **Free** or **Paid** hosting,<br>depending on provider.
