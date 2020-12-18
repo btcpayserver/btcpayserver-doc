@@ -28,12 +28,6 @@ Manual deployments and Hardware builds are not recommended for production enviro
 *- VPS providers that use OpenVZ are not supported.*<br>
 *- [Fast Sync](https://github.com/btcpayserver/btcpayserver-docker/tree/master/contrib/FastSync) can be used to accelerate the initial setup sync time for most deployments.*
 
-**For more information on each deployment method, see related documentation:**
-
-* [LunaNode Web Deployment](./LunaNodeWebDeployment.md) 
-* [Azure Deployment](./AzureDeployment.md) 
+ 
 * [Docker Deployment](https://docs.btcpayserver.org/Docker/)
-* [Google Cloud Deployment](./GoogleCloudDeployment.md) 
-* [Hardware Deployment](./HardwareDeployment.md) 
-* [Third-Party Hosting](./ThirdPartyHosting.md)
-* [Manual Deployment](./ManualDeployment.md)
+
