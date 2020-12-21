@@ -10,7 +10,7 @@ BTCPay is a non-custodial invoicing system which eliminates the involvement of a
 Manual deployments and Hardware builds are not recommended for production environments and require the user to have technical knowledge related to the build.
 :::
 
-![Decision diagram](./img/DecisionDiagInstallBTCPayServer.png "BTCPay Server Infographic")
+![Decision diagram](./img/infographics/DecisionDiagInstallBTCPayServer.png "BTCPay Server Infographic")
 
 
 
