@@ -33,7 +33,7 @@ This  means that you're using a hardware wallet without leaking information to t
 
 ## Do I have to use BTCPay Server wallet?
 
-By default BTCPay Server only requires an extended public key. To receive payments to your BTCPay store, you need to provide an extended public key (xpub) which you can generate in an external (existing) wallet. You do not have to use the built in wallet at all, you can manage funds in your [existing wallet](../WalletSetup.md#use-an-existing-wallet).
+By default BTCPay Server only requires an extended public key. To receive payments to your BTCPay store, you need to provide an extended public key which you can generate in an external (existing) wallet. You do not have to use the built in wallet at all, you can manage funds in your [existing wallet](../WalletSetup.md#use-an-existing-wallet).
 
 However, it's recommended to use the built in wallet for funds management. The built in wallet not only improves your privacy by default, but also solves user-experience issues like [gap-limit](#missing-payments-in-my-software-or-hardware-wallet).
 
@@ -77,9 +77,9 @@ For best user-experience and privacy, we recommend that you consider dropping ex
 
 ## What is a derivation scheme?
 
-No matter [how you set up your wallet](../WalletSetup.md), BTCPay Server uses a `derivation scheme` to represent the destination of the funds received by your invoices. The destination of those funds will be your wallet, located by the xpubkey that you provide.
+No matter [how you set up your wallet](../WalletSetup.md), BTCPay Server uses a `derivation scheme` to represent the destination of the funds received by your invoices. The destination of those funds will be your wallet, located by the extended public key that you provide.
 
-Using different derivation schemes with your xpub, you can also choose to create various receiving address types, shown in your store invoices.
+Using different derivation schemes with your extended public key, you can also choose to create various receiving address types, shown in your store invoices.
 
 |Address Type|	Example |
 |:--|:--:|
