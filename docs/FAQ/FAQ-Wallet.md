@@ -90,6 +90,10 @@ Using different derivation schemes with your xpub, you can also choose to create
 |Multi-sig P2SH-P2WSH	| 2-of-xpub1...-xpub2...-[p2sh] |
 |Multi-sig P2SH |	2-of-xpub1...-xpub2...-[legacy] |
 
+:::tip
+On top of the Xpub extended public key formats shown above, BTCPay Server supports Ypub and Zpub formats. Please note that these will be converted to Xpub once the wallet setup is completed. This has no effect on how you receive or send funds.
+:::
+
 ## What is a Replace-By-Fee (RBF) transaction?
 
 A Replace-By-Fee (RBF) transaction is a feature of the Bitcoin protocol. Learn more about what it is, why it happens and the different types of RBF [here](https://bitcoin.stackexchange.com/a/54457/85016). 
