@@ -148,7 +148,7 @@ In your BTCPay Server, create two separate stores:
 1. Store for WooCommerce
 2. Store for Crowdfunding app
 
-Add the **same xpub derivation scheme**, so that both stores remain in sync.
+Add the **same extended public key derivation scheme**, so that both stores remain in sync.
 
 #### 2. Modifying CSS in WordPress
 

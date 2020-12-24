@@ -49,11 +49,11 @@ The most significant attack vector when using a third-party host is the chance t
 
 First, a host may allow you to create [hot wallets](https://en.bitcoin.it/wiki/Hot_wallet) on their server. This gives the host complete access to your funds. They will act as a custodian of your private keys and thus your funds. This means you must trust they will not spend your funds. This type of wallet is NOT recommended for use with third-party hosts.
 
-Secondly, a malicious and technically skilled host can create a forked version of BTCPay Server and modify it to be able to either spy on your transactions or replace your [xpubkey](https://en.bitcoin.it/wiki/Deterministic_wallet_tools#Risks_of_Sharing_an_Extended_Public_Key_.28xpub.29) with their own. This means that future payments made to you may end up in this malicious party's wallet. 
+Secondly, a malicious and technically skilled host can create a forked version of BTCPay Server and modify it to be able to either spy on your transactions or replace your [extended public key](https://en.bitcoin.it/wiki/Deterministic_wallet_tools#Risks_of_Sharing_an_Extended_Public_Key_.28xpub.29) with their own. This means that future payments made to you may end up in this malicious party's wallet. 
 
-While an xpub connected wallet IS recommended for use with third-party hosts, It's impossible to know for certain, if the third party host is using a malicious fork. If you don't trust the third party host it is best to do the following:
+While a wallet connected with an extended public key IS recommended for use with third-party hosts, It's impossible to know for certain, if the third party host is using a malicious fork. If you don't trust the third party host it is best to do the following:
 
-- Do not use hot wallet on the third party server, use an xpub key
+- Do not use hot wallet on the third party server, use an extended public key
 - Use it mainly for testing, learning and getting started with BTCPay
 - Do not use it with high volume payments or extremely valuable transactions 
 
@@ -63,10 +63,10 @@ In BTCPay Server, a private key is never *required*. This means that funds are s
 If a third-party host asks for your private key or pre-generates one for you, be sure it's a scam. Never share your private key with anyone. It's called private for a reason.
 :::
 
-Xpubkey replacement attack applies to a self-hosted server as well. A malicious hacker can try to hack your server and try to replace an xpubkey.
+An extended public key replacement attack applies to a self-hosted server as well. A malicious hacker can try to hack your server and try to replace an extended public key.
 
 ### Privacy Concerns
-BTCPay Server does not allow server hosts to view the stores of other users nor have access to any personal data (except for registration email address). The xpubkey and even balances of other users can't be seen. However, as mentioned, a malicious third-party could modify that by creating a fork that can look like BTCPay Server on the front but be something completely different in reality.
+BTCPay Server does not allow server hosts to view the stores of other users nor have access to any personal data (except for registration email address). The extended public key and even balances of other users can't be seen. However, as mentioned, a malicious third-party could modify that by creating a fork that can look like BTCPay Server on the front but be something completely different in reality.
 
 The biggest concern, which happens when using a third-party host (even if the owner of a self-hosted server is not malicious) comes from the nature of the Bitcoin itself. If a user is not running a full node but instead relies on someone else's node, his transactions can be listened to by the owner of that node. Running a full node is not just a convenience that gives you features and enables privacy, it gives you better security and the right to "vote" and validate all the transactions yourself. Don't trust, verify.
 
@@ -84,7 +84,7 @@ Specifically, third-party hosts should not enable the following policies without
 - Allow non-admins to import their hot wallets to the node wallet
 - Allow non-admins to use the internal lightning node in their stores
 
-Third-party users who are granted access to an internal lightning node or hot wallet functionality to enable features such as Payjoin, should understand the risk and trust associated with [using hot wallets](./HotWallet.md) before choosing to use it. Use one of the [recommended wallets](./WalletSetup.md) which provide an xpubkey to use in your store, if you are unsure which wallet type to use.
+Third-party users who are granted access to an internal lightning node or hot wallet functionality to enable features such as Payjoin, should understand the risk and trust associated with [using hot wallets](./HotWallet.md) before choosing to use it. Use one of the [recommended wallets](./WalletSetup.md) which provide an extended public key to use in your store, if you are unsure which wallet type to use.
 
 ## Third Party Hosting FAQ
 
