@@ -46,7 +46,7 @@ User emails will only be sent if SMTP is enabled for the server.
 :::
 
 - [Forgot Password](#forgot-password-email)
-- [New User Confirmation](#user-confirmation-email)
+- [New User Confirmation](#new-user-confirmation-email)
 - [New User Invitation](#new-user-invitation-email)
 - [Custom Emails](#custom-emails)
 
