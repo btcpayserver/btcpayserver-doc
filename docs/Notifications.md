@@ -52,7 +52,7 @@ User emails will only be sent if SMTP is enabled for the server.
 
 ## Forgot Password Email
 
-This email can be sent to users who have lost their password. If SMTP is not enabled on the server, there is [no easy way](./FAQ-ServerSettings.md#forgot-btcpay-admin-password) to reset any user passwords including the server admin's password. Be sure to save your password in a safe place or setup email for your server.
+This email can be sent to users who have lost their password. If SMTP is not enabled on the server, there is [no easy way](./FAQ/FAQ-ServerSettings.md#forgot-btcpay-admin-password) to reset any user passwords including the server admin's password. Be sure to save your password in a safe place or setup email for your server.
 
 ## New User Confirmation Email
 
