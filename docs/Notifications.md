@@ -46,21 +46,21 @@ User emails will only be sent if SMTP is enabled for the server.
 :::
 
 - [Forgot Password](#forgot-password-email)
-- [User Verification](#user-verification-email)
+- [New User Confirmation](#user-confirmation-email)
 - [New User Invitation](#new-user-invitation-email)
 - [Custom Emails](#custom-emails)
 
 ## Forgot Password Email
 
-This email can be sent to users who have lost their password. If SMTP is not enabled on the server, there is no way to reset any user passwords including the server admin's password. Be sure to save your password in a safe place or setup email for your server.
+This email can be sent to users who have lost their password. If SMTP is not enabled on the server, there is [no easy way](./FAQ-ServerSettings.md#forgot-btcpay-admin-password) to reset any user passwords including the server admin's password. Be sure to save your password in a safe place or setup email for your server.
 
-## User Verification Email
+## New User Confirmation Email
 
-This email is used to verify newly registered users.
+This email is used to confirm new user account registration. In order to reduce spam account registration, email confirmation may be required by the server admin (set in server settings policies). New users can click the link in this email to verify their account to complete their registration process. 
 
 ## New User Invitation Email
 
-When adding a new user to the server, if a password is not provided and SMTP is enabled on the server, a welcome email will be sent to the user. The email will invite the user to create a new password during registration. This can be used to keep server registration closed to the public but still invite new users.
+Send an invitation email to [invite a new user](./FAQ/FAQ-ServerSettings.md#how-to-add-a-new-user-by-invite) to register an account on your server. This can be used to keep server registration closed to the public but still invite new users.
 
 ## Custom Emails
-Custom emails can be created using the BTCPay Server Transmuter preset [Email Receipts](https://docs.btcpayserver.org/Transmuter/EmailReceiptsPreset/#transmuter-email-receipts-setup) 
+Custom emails can be created using the BTCPay Server Transmuter preset [Email Receipts](https://docs.btcpayserver.org/Transmuter/EmailReceiptsPreset/#transmuter-email-receipts-setup). 
