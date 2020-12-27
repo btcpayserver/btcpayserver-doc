@@ -12,6 +12,7 @@ This page shows common issues and frequently asked questions about Stores in BTC
 * [Consider the invoice confirmed when the payment transaction?](./FAQ-Stores.md#consider-the-invoice-confirmed-when-the-payment-transaction)
 * [Consider the invoice paid even if the paid amount is ... % less than expected?](./FAQ-Stores.md#consider-the-invoice-paid-even-if-the-paid-amount-is-less-than-expected)
 * [How to disable email on invoices?](./FAQ-Stores.md#how-to-disable-email-on-invoices)
+* [How to collect additional buyer information?](./FAQ-Stores.md#how-to-collect-additional-buyer-information)
 * [How to redirect store invoices after payment?](./FAQ-Stores.md#how-to-redirect-store-invoices-after-payment)
 * [Can I delete invoices from BTCPay?](./FAQ-Stores.md#can-i-delete-invoices-from-btcpay)
 * [How to change the exchange rate provider for invoices?](./FAQ-Stores.md#how-to-change-the-exchange-rate-provider-for-invoices)
@@ -94,6 +95,14 @@ To archive an invoice, select the one you would like to archive, click the `Arch
 This action removes it from the `Invoices` page.
 
 An invoice can be restored by clicking the `Archived` button.
+
+## How to collect additional buyer information?
+
+The invoice details page contains all information related to an invoice. This includes information such as Invoice Information, Product Information and Buyer Information. 
+
+Invoice information is populated automatically based on the invoice status, exchange rate, etc. Product information is populated automatically if the invoice was created with product information such as in  the Point of Sale app. 
+
+The Buyer information section is only used for custom solutions such as integrations, like WooCommerce or API invoice creation. Currently there is no way to collect Buyer Information using the BTCPayServer interface. 
 
 ## How to change the exchange rate provider for invoices?
 
