@@ -98,11 +98,7 @@ An invoice can be restored by clicking the `Archived` button.
 
 ## How to collect additional buyer information?
 
-The invoice details page contains all information related to an invoice. This includes information such as Invoice Information, Product Information and Buyer Information. 
-
-Invoice information is populated automatically based on the invoice status, exchange rate, etc. Product information is populated automatically if the invoice was created with product information such as in  the Point of Sale app. 
-
-The Buyer information section is only used for custom solutions such as integrations, like WooCommerce or API invoice creation. Currently there is no way to collect Buyer Information using the BTCPayServer interface. 
+The Buyer information section of the invoice details page is only used for custom solutions such as integrations, like WooCommerce or API invoice creation. Currently there is no way to collect Buyer Information using the BTCPayServer interface. 
 
 ## How to change the exchange rate provider for invoices?
 
