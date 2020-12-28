@@ -119,7 +119,7 @@ Below are examples of businesses that use custom-made checkout themes.
 
 ### [Andreas M. Antonopolous](https://aantonop.com/)
 
-![Aantonop checkout](./img/Theme-AantonopShop.png "Aantonop BTCPay Checkout)\
+![Aantonop checkout](./img/Theme-AantonopShop.png "Aantonop BTCPay Checkout")\
 _**Made by:** [@artdesignbySF](https://twitter.com/artdesignbySF) / <artdesignbySF@protonmail.com>_
 <details>
   <summary>Click to view CSS</summary>
