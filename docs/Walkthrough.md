@@ -26,7 +26,7 @@ After you created the account on the BTCPay Server instance hosted by yourself o
 - Users - Add, remove or manage users of your BTCPay Server.
 - Email server - If you want users to verify e-mail address when registering set up the SMTP settings.
 - Policies - Enable or disable user registration, e-mail verification, search engine indexing, display apps on website root.
-- Services - GRPC, REST and RTL used for connecting your LN node, SSH keys and uploaded file storage setup.
+- Services - gRPC, REST and RTL used for connecting your LN node, SSH keys and uploaded file storage setup.
 - Theme - Customize the front-end appearance of your BTCPay Server.
 - Maintenance - Update your BTCPay to latest version and clean your BTCPay by deleting unused docker images.
 - Logs - Displays most recent logs of the BTCPay Server.
@@ -60,8 +60,8 @@ Three elements of the internal BTCPay Wallet are:
 * Rescan - Enables you to import old wallets into BTCPay more easily and solves the gap limit issue most external wallets have.
 * Pull Payments - Used to create and manage Pull Payments. For more information on this feature, check [Pull Payments](PullPayments.md).
 * Payouts - Used to manage Pull Payment requests.
-* PSBT - Used to sign multi-signature transacions through the PSBT standard.
-* Settings - Used to view and adjust additionnal settings for your wallet.
+* PSBT - Used to sign multi-signature transactions through the PSBT standard.
+* Settings - Used to view and adjust additional settings for your wallet.
 
 For more information, check [Wallet](./Wallet.md) or [Wallet FAQ](./FAQ/FAQ-Wallet.md)
 
@@ -81,7 +81,8 @@ My Settings are **user settings**. Modify your e-mail address, password or set u
 
 ## Notifications
 
-Notifications inform the user that **an event has accured on the BTCPay Server instance**.
+Notifications inform the user that **an event has occurred on the BTCPay Server instance**.
 The event that is notified can for example be a received or failed payment, an overpaid or underpaid invoice.
 
 By clicking on the icon you can access the Notifications page, where you can view past Notifications and optionally delete them.
+Learn more about all BTCPay notifications [here](./Notifications.md).
