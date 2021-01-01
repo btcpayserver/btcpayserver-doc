@@ -19,6 +19,12 @@ Users can **filter invoices** by store, order id, item id, status or a date.
 **BTCPay Server Invoices can be exported in CSV or JSON format**.
 For more information about invoice export and accounting, [see this page](./Accounting.md).
 
+### Invoice Details
+
+The invoice details page contains all information related to an invoice. 
+
+Invoice information is created automatically based on invoice status, exchange rate, etc. Product information is created automatically if the invoice was created with product information such as in the Point of Sale app. Read about collecting Buyer information [here](./FAQ/FAQ-Stores.md#how-to-collect-additional-buyer-information).
+
 ## Invoice Statuses
 
 Table below lists and describes common invoice statuses in BTCPay and suggests common actions.
