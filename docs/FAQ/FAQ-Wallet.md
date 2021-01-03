@@ -6,6 +6,7 @@ This document contains frequently asked questions related to BTCPay Server's [in
 * [How to set up my wallet with BTCPay Server?](#how-to-set-up-my-wallet-with-btcpay-server)
 * [Can I use a hardware wallet with BTCPay Server?](#can-i-use-a-hardware-wallet-with-btcpay-server)
 * [Do I have to use BTCPay Server wallet?](#do-i-have-to-use-btcpay-server-wallet)
+* [Why is sending a transaction in BTCPay Server using Trezor failing?](#why-is-sending-a-transaction-using-trezor-failing)
 * [Missing payments in wallet?](#missing-payments-in-my-software-or-hardware-wallet)
 * [What is a derivation scheme?](#what-is-a-derivation-scheme)
 * [What is a Replace-By-Fee (RBF) transaction?](#what-is-a-replace-by-fee-rbf-transaction)
@@ -37,9 +38,13 @@ By default BTCPay Server only requires an extended public key. To receive paymen
 
 However, it's recommended to use the built in wallet for funds management. The built in wallet not only improves your privacy by default, but also solves user-experience issues like [gap-limit](#missing-payments-in-my-software-or-hardware-wallet).
 
+## Why is sending a transaction using Trezor failing?
+
+If you are experiencing problems (such as "user refused" or unresponsive Trezor) while trying to send a transaction using the BTCPay [HWI (Vault)](../HardwareWalletIntegration.md) and your Trezor wallet, enable the **Always include non-witness UTXO if available** setting by expanding the Advanced Settings on the Send page.
+
 ## Missing payments in my software or hardware wallet
 
-If you're using an [existing software or a hardware wallet](../WalletSetup.md#use-an-existing-wallet) with your BTCPay Server, you may experience a discrepancy between balance in your BTCPay wallet and the external wallet's web, destkop or mobile app. This discrepancy is usually related to a **gap-limit** issue.
+If you're using an [existing software or a hardware wallet](../WalletSetup.md#use-an-existing-wallet) with your BTCPay Server, you may experience a discrepancy between balance in your BTCPay wallet and the external wallet's web, desktop or mobile app. This discrepancy is usually related to a **gap-limit** issue.
 
 ### The gap limit problem
 
