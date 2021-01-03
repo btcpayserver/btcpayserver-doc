@@ -40,7 +40,7 @@ However, it's recommended to use the built in wallet for funds management. The b
 
 ## Why is sending a transaction using Trezor failing?
 
-If you are experiencing problems (such as "user refused" or unresponsive Trezor) while trying to send a transaction using the BTCPay [HWI (Vault)](../HardwareWalletIntegration.md) and your Trezor wallet, enable the **Always include non-witness UTXO if available** setting by expanding the Advanced Settings on the Send page.
+If you are experiencing problems (such as "user refused" or unresponsive Trezor) while trying to send a (PSBT) transaction using the BTCPay [HWI (Vault)](../HardwareWalletIntegration.md) and your Trezor wallet, enable the **Always include non-witness UTXO if available** setting by expanding the Advanced Settings on the Send page.
 
 ## Missing payments in my software or hardware wallet
 
