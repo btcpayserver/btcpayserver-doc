@@ -46,6 +46,12 @@ Once you’ve received funds to your wallet and you decide to spend them, you ca
 
 ![Send Bitcoin via BTCPay Vault](./img/BTCPayVaultWalletSend1.png "Send Bitcoin via BTCPay Vault")
 
+## Advanced Settings
+
+Additional transaction settings can be found by clicking on the [Advanced Settings](Wallet.md#advanced-settings) button. If you are not familiar with these types of settings, you may leave them as is to use the default settings.
+
+If you are experiencing issues sending transactions from a Trezor wallet, you may need to enable [this advanced setting](FAQ/FAQ-Wallet.md#why-is-sending-a-transaction-using-trezor-failing).
+
 ![Send Bitcoin via BTCPay Vault](./img/BTCPayVaultWalletSend2.png "Send Bitcoin via BTCPay Vault")
 
 ## Supported Hardware Wallets

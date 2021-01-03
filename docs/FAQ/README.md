@@ -163,6 +163,7 @@ Here are some of the questions and problems about wallets in BTCPay.
 * [How to set up my wallet with BTCPay Server?](./FAQ-Wallet.md#how-to-set-up-my-wallet-with-btcpay-server)
 * [Can I use a hardware wallet with BTCPay Server?](./FAQ-Wallet.md#can-i-use-a-hardware-wallet-with-btcpay-server)
 * [Do I have to use BTCPay Server wallet?](./FAQ-Wallet.md#do-i-have-to-use-btcpay-server-wallet)
+* [Why is sending a transaction using Trezor failing?](./FAQ-Wallet.md#why-is-sending-a-transaction-using-trezor-failing)
 * [Missing payments in wallet?](./FAQ-Wallet.md#missing-payments-in-my-software-or-hardware-wallet)
 * [What is a derivation scheme?](./FAQ-Wallet.md#what-is-a-derivation-scheme)
 * [What is a Replace-By-Fee (RBF) transaction?](./FAQ-Wallet.md#what-is-a-replace-by-fee-rbf-transaction)
