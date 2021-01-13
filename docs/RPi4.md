@@ -175,8 +175,14 @@ ufw default allow outgoing
 UFW needs default iptables changes and a reboot for the firewall to work:
 
 ```bash
-sudo update-alternatives --set iptables /usr/sbin/iptables-legacy
-sudo reboot
+update-alternatives --set iptables /usr/sbin/iptables-legacy
+reboot
+```
+
+Switch back to root after rebooting:
+
+```bash
+sudo su -
 ```
 
 This command allows SSH connections from internal networks only:
@@ -200,16 +206,16 @@ ufw allow 8333/tcp
 ufw allow 9735/tcp
 ```
 
-Verify your configuration:
-
-```bash
-ufw status
-```
-
 Enable your firewall:
 
 ```bash
 ufw enable
+```
+
+Verify your configuration:
+
+```bash
+ufw status
 ```
 
 ## Setup BTCPay Server
