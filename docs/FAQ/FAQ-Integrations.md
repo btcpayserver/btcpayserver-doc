@@ -40,8 +40,7 @@ If you're a developer, you can develop your own integration, by following the [c
 
 ### How to use BTCPay with Prestashop?
 
-- [BTCPay and Prestashop - getting started guide](https://github.com/btcpayserver/prestashop-plugin#description)
-- [Using the BTCPay plugin for Prestashop](https://github.com/adapp-tech/prestashop-plugin/blob/master/GUIDE.md#using-the-btcpay-plugin-for-prestashop)
+- [Using the BTCPay plugin for Prestashop](../PrestaShop.md)
 
 ### Does BTCPay have a Shopify plugin?
 
