@@ -43,7 +43,7 @@ It is recommended to have a Rich-Text editor.
 [Notepad++](https://notepad-plus-plus.org/downloads/) is a decent software and easy to use for the newer contributors.
 
 For more advanced users, [Visual Studio Code (VS Code)](https://visualstudio.microsoft.com/) is a good choice.
-The `Markdown All In One` extension in VS Code is also recommended, for visual comfort while editing and the ability to preview Markdown changes. This is helpful for the BTCPay documentation which is written primarily in Markdown documentation.
+The `Markdown All In One` extension in VS Code is also recommended, for visual comfort while editing and the ability to preview Markdown changes. This is helpful for the BTCPay documentation which is written primarily in Markdown.
 
 These are only recommended: If you already use other similar software that you're accustomed to, you are free to continue using them.
 
