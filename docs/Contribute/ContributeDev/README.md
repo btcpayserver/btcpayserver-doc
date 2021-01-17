@@ -1,9 +1,12 @@
 # Coding BTCPay Server
 
-- [Coding BTCPay Server](#coding-btcpay-server)
-  - [Why coding matters](#why-coding-matters)
-  - [Where to start](#where-to-start)
-  - [Requirements](#requirements)
+- [Why coding matters](#why-coding-matters)
+- [Where to start](#where-to-start)
+   - [Setup Developer Environment](#setup-developer-environment)
+   - [Local BTCPay Development](#local-btcpay-development)
+   - [Local BTCPay Testing](#local-btcpay-testing)
+- [Requirements](#requirements)
+- [Videos](#videos)
 
 
 ## Why coding matters
@@ -20,9 +23,22 @@ Contributors looking to do something a bit more challenging, before opening a pu
 
 We are actively looking for developers who can take on and resolve GitHub issues and help with development. If you would like to help us, but need some guidance, the [#dev channel on Mattermost](https://chat.btcpayserver.org/btcpayserver/channels/dev) is the place to ask questions.
 
-If you are interested in getting started as a developer or tester of the software behind BTCPay Server, check out the [local development](../../LocalDev.md) and [Tester](../ContributeDev/ContributeDevTest.md) guides.
-For a full step by step developer environment setup, see [Setup Developer Environment](../ContributeDev/ContributeDevCode.md).
+### Setup Developer Environment
+
+If you are interested in getting started as a developer or tester of the software behind BTCPay Server, check out the [Setup Developer Environment](../ContributeDev/ContributeDevCode.md) guide that will walk you step by step through every software used in development with BTCPay such as Git, GitBash, Github, Docker, Visual Studio, Postgres, etc. If you have never coded before and you are looking to learn something new, start here. 
+
+### Local BTCPay Development
+
+If you already have a developer environment setup you can start with the BTCPay specific [Local Development](../../LocalDev.md) documentation.
+
+### Local BTCPay Testing
+
+Once you have your development environment tools setup and your local BTCPay Server running, view the [Local Testing](../ContributeDev/ContributeDevTest.md) guide. This shows you how to use BTCPay in regtest mode for use in development and for users who want to test new features before they are released.
 
 ## Requirements
 
 Software requirements (ie. IDE) can also be found in [local development](../../LocalDev.md#which-ide).
+
+## Videos
+
+BTCPay Server development videos can be found [here](../../LocalDev.md#videos) or on the [BTCPayServer YouTube](https://www.youtube.com/channel/UCpG9WL6TJuoNfFVkaDMp9ug) channel.
