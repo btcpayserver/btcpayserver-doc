@@ -4,6 +4,7 @@
   - [Create Videos & Graphics](#create-videos--graphics)
   - [Hosting Providers](#hosting-providers)
   - [Contribute to the Directory](#contribute-to-the-directory)
+  - [Project Discussions](#project-discussions)
   - [Community](#community)
   - [Spreading the word](#spreading-the-word)
 
@@ -12,7 +13,7 @@
 Making videos that promote some features or that show how BTCPay Server works is a great way to help.
 Video tutorials also help new users navigate around what BTCPay Server can offer them.
 
-You can see examples of videos that are already on the Official BTCPay Server [Youtube channel](https://www.youtube.com/channel/UCpG9WL6TJuoNfFVkaDMp9ug/) for inspiration.
+You can see examples of videos that are already on the Official BTCPay Server [YouTube channel](https://www.youtube.com/channel/UCpG9WL6TJuoNfFVkaDMp9ug/) for inspiration.
 
 ## Hosting Providers
 
@@ -29,6 +30,10 @@ If you know how to use Github, you can directly create a Pull Request and add an
 
 Please note that only websites that use BTCPay Server are accepted in the Directory and entries are expected to be in English language.
 
+## Project Discussions
+
+Check out the [BTCPay Discussions Page](https://github.com/btcpayserver/btcpayserver/discussions) and provide feedback on new feature ideas and other project topics. Features that may be good ideas for the project but aren't ready for development yet, can be found here. 
+
 ## Community
 
 You can help BTCPay Server even if you're not a developer.
@@ -39,4 +44,4 @@ Consider helping newcomers like the community helped you.
 
 ## Spreading the word
 
-You like BTCPay Server, what it stands for and what it offers ? Spread the word ! It's the easiest way to contribute and help the community.
+You like BTCPay Server, what it stands for and what it offers? Spread the word! It's the easiest way to contribute and help the community.
