@@ -2,9 +2,9 @@
 
 - [Why coding matters](#why-coding-matters)
 - [Where to start](#where-to-start)
-   - [Setup Developer Environment](../ContributeDev/ContributeDevCode.md)
-   - [Local BTCPay Development](../../LocalDev.md)
-   - [Local BTCPay Testing](../ContributeDev/ContributeDevTest.md)
+   - [Setup Developer Environment](#setup-developer-environment)
+   - [Local BTCPay Development](#local-btcpay-development)
+   - [Local BTCPay Testing](#local-btcpay-testing)
 - [Requirements](#requirements)
 - [Videos](#videos)
 
@@ -29,11 +29,11 @@ If you are interested in getting started as a developer or tester of the softwar
 
 ### Local BTCPay Development
 
-If you already have a developer environment setup you can start with the BTCPay specific [local development](../../LocalDev.md) documentation.
+If you already have a developer environment setup you can start with the BTCPay specific [Local Development](../../LocalDev.md) documentation.
 
 ### Local BTCPay Testing
 
-Once you have your development environment tools setup and your local BTCPay Server running in development, view the [Tester](../ContributeDev/ContributeDevTest.md) guides. This guide shows you how to use BTCPay in regtest mode for use in development and for users who want to test new features before they are released.
+Once you have your development environment tools setup and your local BTCPay Server running, view the [Local Testing](../ContributeDev/ContributeDevTest.md) guide. This shows you how to use BTCPay in regtest mode for use in development and for users who want to test new features before they are released.
 
 ## Requirements
 
