@@ -6,10 +6,11 @@ We welcome, appreciate and encourage new contributions.
 
 Depending on your skills and interest, you can help in a number of ways:
 
-* [Code and development](../Contribute/ContributeDev/README.md)
-  *  [Testing](../Contribute/ContributeDev/ContributeDevTest.md)
+* [Software](../Contribute/ContributeDev/README.md)
+  * [Development](../Contribute/ContributeDev/ContributeDevCode.md)
+  * [Testing](../Contribute/ContributeDev/ContributeDevTest.md)
 * [Writing](../Contribute/ContributeWrite/README.md)
-  * [Software](../Contribute/ContributeWrite/WriteSoftware.md)
+  * [Tools](../Contribute/ContributeWrite/WriteSoftware.md)
   * [Documentation](../Contribute/ContributeWrite/WriteDocs.md)
   * [Blog](../Contribute/ContributeWrite/WriteBlog.md)
 * [Designing](ContributeDesign.md)
