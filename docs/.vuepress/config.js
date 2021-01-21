@@ -4,6 +4,7 @@ const slugify = require('./slugify')
 const preprocessMarkdown = resolve(__dirname, 'preprocessMarkdown')
 
 const baseUrl = 'https://docs.btcpayserver.org'
+const pageSuffix = '/'
 
 module.exports = {
   title: "BTCPay Server Docs",
@@ -30,8 +31,8 @@ module.exports = {
   },
   plugins: [
     ['vuepress-plugin-clean-urls', {
-      normalSuffix: '/',
-      indexSuffix: '/',
+      normalSuffix: pageSuffix,
+      indexSuffix: pageSuffix,
       notFoundPath: '/404.html',
     }],
     ['vuepress-plugin-code-copy', {
@@ -49,6 +50,7 @@ module.exports = {
     extendMarkdown (md) {
       md.use(implicitFigures)
     },
+    pageSuffix,
     slugify
   },
   themeConfig: {
