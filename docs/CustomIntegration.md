@@ -64,7 +64,7 @@ There is only one difference: Bitpay only allows one account for one merchant, B
 
 ## Modal Checkout
 
-To geneate a pop-up modal experience:
+To generate a pop-up modal experience:
 
 1. Include the btcpay.js script in your html page
 
