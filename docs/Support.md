@@ -20,7 +20,7 @@ Here are some members of the community that you can contact to get additional pa
 
 ### Andrew Camilleri(Kukks)
 
-> I can assist with your BTCPay requirements end-to-end. I develop features of any scope to BTCPay and can assist with integration and deployments. Some of the features I can help with are: New Coins, New Apis, Client Libraries, Client Library Integrations (such as the woocommerce plugin), Custom Apps, Docker Functionality etc.
+> I can assist with your BTCPay requirements around development. I develop features of any scope to BTCPay and can assist with integration and custom development. Some of the features I can help with are: New Coins, New Apis, Client Libraries, Client Library Integrations (such as the woocommerce plugin), Custom Apps, Docker Functionality etc.
 
 Contact: evilkukka@gmail.com, @Kukks on [Mattermost](https://chat.btcpayserver.org/), [Twitter](https://twitter.com/MrKukks), [LinkedIn](https://www.linkedin.com/in/camilleriandrew/)
 
