@@ -261,16 +261,7 @@ module.exports = {
         title: "Integrations",
         collapsable: false,
         children: [
-          {
-            title: "WooCommerce",
-            path: "/WooCommerce",
-            children: [
-              {
-                title: "WooCommerce additional tokens",
-                path: "/WooCommerceAdditionalTokens"
-              }
-            ]
-          },
+          ["/WooCommerce", "WooCommerce"],
           ["/Shopify", "Shopify"],
           ["/Drupal", "Drupal"],
           ["/Magento", "Magento"],
