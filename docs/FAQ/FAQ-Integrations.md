@@ -99,7 +99,7 @@ With using the additional token configuration you will be able to have separate 
 
 #### Requirements
 - all tokens you configure on the WooCommerce side need to be available in your store on BTCPay Server side
-- to use promotional tokens you need to have [Liquid Assets plugin](https://TODO_LINK_TO_LIQUID_ASSETS_PLUGIN) installed on BTCPay Server
+- to use promotional tokens you need to have [Liquid Assets plugin](https://https://github.com/btcpayserver/btcpayserver-plugins) installed on BTCPay Server
 
 #### Token types
 ##### Payment tokens
@@ -132,10 +132,10 @@ In the BTCPay payment method settings you have a new setting **“Additional tok
    url to token symbol shown during checkout (can be empty but be sure to include the quotes). You can upload the icon in media manager and copy the url or you can use a link to external site or CDN.
 
 :::danger   
-**Important:** All the columns text needs to be enclosed by double quotes `"` and separated by semicolon `; each asset has to be put in a new line.
+**Important:** All the columns text needs to be enclosed by double quotes `"` and separated by semicolon `; each asset has to be put in a new line.   
 :::
 
-###### Example token config
+###### Example additional token config
 ```
 "BTC_OFFCHAIN";"Lightning BTC";"payment";""
 "USDt";"USDt (Liquid Theter)";"payment";"https://example.com/wp-content/uploads/2021/01/usdt.png"
@@ -144,7 +144,7 @@ In the BTCPay payment method settings you have a new setting **“Additional tok
 
 After saving you will see each asset to be available as payment method. You can enable/disable them like any other payment method. They won’t have any settings itself for now though (everything is configured by the CSV data). But you can use them together with e.g. woocommerce payment plugins to allow discounts for certain payment methods etc.
 
-// todo: add screenshot
+![Each additional additional token available as payment token](../img/woocommerce/woocommerce_at_payment-methods.png)
 
 
 #### Common WooCommerce use-cases using the Additional Token Support feature
@@ -154,7 +154,7 @@ Free plugin used: [Country Based Restrictions for WooCommerce](https://wordpress
 After installing and activating the plugin go to a product in “Product data” block there is a new tab “Country restrictions”. You can configure the restrictions you want there.
 
 Example configuration:   
-// todo: add screenshot
+![Product restricted to US only](../img/woocommerce/woocommerce_at_product-country-restriction.png)
 
 ##### Use-case 2: (Promotion) products should have free shipping
 This adds the ability to offer free shipping when a customer pays with a selected Currency, Asset, Altcoin or Token.
@@ -162,9 +162,9 @@ This is doable with woocommerce out of the box (no plugins needed):
 
 1. In shipping settings add a new shipping class e.g. “free-shipping”
 2. On your shipping zones / shipping method config you need to make sure you set the rate to be 0 for that shipping class but also that “cost” is empty or 0. And your “no shipping class cost” is set to the normal rate (using flat-rate as example):   
-   // todo: add screenshot
+   ![Flat rate, free shipping example configuration](../img/woocommerce/woocommerce_at_free-shipping-flat-rate-config.png)
 3. In product settings "Product data" block you have a tab "Shipping", there you set the above created "Free-shipping" class and it will taken care during checkout.   
-   // todo: add screenshot
+   ![Free shipping class set on product settings](../img/woocommerce/woocommerce_at_free-shipping-product-setting.png)
 
 ##### Use-case 3: limit product payment methods
 E.g. allow only a certain Currency, Asset, Altcoin or Token to be used as payment for promotional product(s)
@@ -172,7 +172,7 @@ E.g. allow only a certain Currency, Asset, Altcoin or Token to be used as paymen
 Free plugin used: [Conditional Payments for WooCommerce](https://wordpress.org/plugins/conditional-payments-for-woocommerce/)
 
 This plugin provides a condition rules builder where you can enable/disable available payment methods for products. See example config in the screenshot:   
-// todo: add screenshot
+![Conditional payment rules overview](../img/woocommerce/woocommerce_at_limit-payment-methods-rules.png)
 
 ##### Use-case 4: discount per payment method
 Adds the ability to offer a discount when customer uses a selected Currency, Asset, Altcoin or Token as payment.
@@ -181,7 +181,7 @@ Free plugin used: [Discounts Per Payment Method for WooCommerce](https://wordpre
 
 In the now available “Discount per Payment” setting in your WooCommerce settings you have a list of all payment methods and can give percentage or fixed discounts.
 
-// todo: add screenshot
+![Settings for discounts per available payment method](../img/woocommerce/woocommerce_at_payment-method-discount.png)
 
 ##### Use-case 5: make sure promotional products can only be purchased exclusively
 
@@ -189,11 +189,7 @@ This is needed because payment methods based on a selected Currency, Asset, Altc
 
 In product settings on the right sidebar you have “Product tags” enter a new tag “promotion”
 
-// todo: add screenshot
-
-:::warning   
-THIS CODE BELOW WILL PROBABLY GO INTO THE WOOCOMMERCE PLUGIN BEFORE FINISHING THIS DOC.
-:::
+![Product edit screen promotion tag set](../img/woocommerce/woocommerce_at_product_promotion_tag.png)
 
 Paste the following code at the bottom of your child theme's **functions.php** file:
 
