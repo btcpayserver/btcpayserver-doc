@@ -97,7 +97,7 @@ In the now available “Discount per Payment” setting in your WooCommerce sett
 
 ### Use-case 5: make sure promotional products can only be purchased exclusively
 
-This is needed because promotion token payment methods need to override the product price with 1 (per quantity). Otherwise a user could mix normal products with promo products during checkout, which you want to avoid.
+This is needed because payment methods based on a selected Currency, Asset, Altcoin or Token - used as promotional token - need to override the product price with 1 (per quantity) to allow users to pay with 1 promotion token per quantity. Otherwise, a user could mix normal products with promo products during checkout and pay both with the promotional tokens, which you want to avoid.
 
 In product settings on the right sidebar you have “Product tags” enter a new tag “promotion”
 
