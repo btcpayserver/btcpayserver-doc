@@ -1,6 +1,6 @@
 # WooCommerce Additional Tokens
 
-With using the additional token configuration you will be able to have separate payment methods for each configured token/currency. This means you can have separate payment methods for BTC, Lightning Network, LTC, ETH (and ERC20 tokens), Liquid assets, ... you name it. This allows you to issue and use [Liquid Assets](https://help.blockstream.com/hc/en-us/articles/900001543146-What-are-Liquid-assets-) as coupons or vouchers, see more details below.)
+With using the additional token configuration you will be able to have separate payment methods for each configured Currency, Asset, Altcoin or Token. This means you can have separate payment methods for BTC, Lightning Network, LTC, ETH (and ERC20 tokens), Liquid assets, ... you name it. This allows you to issue and use [Liquid Assets](https://help.blockstream.com/hc/en-us/articles/900001543146-What-are-Liquid-assets-) as coupons or vouchers, see more details below.)
 
 ## Use cases
 - give away products for free via promotional tokens
@@ -59,7 +59,7 @@ After saving you will see each asset to be available as payment method. You can 
 // todo: add screenshot
 
 
-## Common WooCommerce use-cases with other plugins
+## Common WooCommerce use-cases using the Additionnal Token Support feature
 
 ### Use-case 1: limit product to a region/shipping zone
 Free plugin used: [Country Based Restrictions for WooCommerce](https://wordpress.org/plugins/woo-product-country-base-restrictions/)
@@ -69,6 +69,7 @@ Example configuration:
 // todo: add screenshot
 
 ### Use-case 2: (Promotion) products should have free shipping
+This adds the ability to offer free shipping when a customer pays with a selected Currency, Asset, Altcoin or Token.
 This is doable with woocommerce out of the box (no plugins needed):
 
 1. In shipping settings add a new shipping class e.g. “free-shipping”
@@ -78,7 +79,7 @@ This is doable with woocommerce out of the box (no plugins needed):
    // todo: add screenshot
 
 ### Use-case 3: limit product payment methods
-E.g. allow only a special token payment for promotional product(s)
+E.g. allow only a certain Currency, Asset, Altcoin or Token to be used as payment for promotional product(s)
 
 Free plugin used: [Conditional Payments for WooCommerce](https://wordpress.org/plugins/conditional-payments-for-woocommerce/)
 
@@ -86,6 +87,7 @@ This plugin provides a condition rules builder where you can enable/disable avai
 // todo: add screenshot
 
 ### Use-case 4: discount per payment method
+Adds the ability to offer a discount when customer uses a selected Currency, Asset, Altcoin or Token as payment.
 
 Free plugin used: [Discounts Per Payment Method for WooCommerce](https://wordpress.org/plugins/woo-payment-discounts/)
 
@@ -135,9 +137,11 @@ add_filter('woocommerce_add_to_cart_validation', 'btcpay_check_promotion_product
 ```
 
 ### Use-case 6: Limit the checkout of only 1 piece of a product
+Adds the ability to limit the number of a Currency, Asset, Altcoin or Token that can be spent by a customer in a single checkout. 
+
+Useful for coupon-style promotions that are limited to one discount per checkout.
 
 This is also solved already by WooCommerce. You can activate this on a per product level in Product settings: Tab “**Inventory**”:    
 set the checkbox [x] “*Enable this to only allow one of this item to be bought in a single order*”
-
 
 
