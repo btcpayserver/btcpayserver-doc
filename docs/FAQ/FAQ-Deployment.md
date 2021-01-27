@@ -377,12 +377,16 @@ services:
       environment:
         NBXPLORER_CHAINS: "btc"
         NBXPLORER_BTCRPCURL: http://host.docker.internal:43782/
+        NBXPLORER_BTCRPCUSER: "rpc-username"
+        NBXPLORER_BTCRPCPASSWORD: "rpc-password"
         NBXPLORER_BTCNODEENDPOINT: host.docker.internal:39388
       volumes:
         - "localBitcoinfolder:/root/.bitcoin"
 ```
 
 * Replace: `43782` with your bitcoin node's configured RPC port
+* Replace: `rpc-username` with your bitcoin node's configured RCP username
+* Replace: `rpc-password` with your bitcoin node's configured RCP password
 * Replace: `39388` with your bitcoin node's configured p2p port
 * Replace `localBitcoinfolder` with the path to your bitcoin data folder
 
