@@ -385,8 +385,8 @@ services:
 ```
 
 * Replace: `43782` with your bitcoin node's configured RPC port
-* Replace: `rpc-username` with your bitcoin node's configured RCP username
-* Replace: `rpc-password` with your bitcoin node's configured RCP password
+* Replace: `rpc-username` with your bitcoin node's configured RPC username
+* Replace: `rpc-password` with your bitcoin node's configured RPC password
 * Replace: `39388` with your bitcoin node's configured p2p port
 * Replace `localBitcoinfolder` with the path to your bitcoin data folder
 
