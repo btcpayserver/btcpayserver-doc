@@ -30,6 +30,11 @@ Contact: evilkukka@gmail.com, @Kukks on [Mattermost](https://chat.btcpayserver.o
 
  Contact: support@btcpayjungle.com - @Esky33 on [Mattermost](https://chat.btcpayserver.org/) -  [Twitter](https://twitter.com/Esky33junglist)
  
+ ### Graeme Conradie
+
+> I can help you implement BTCPay Server inside your environment and also help with the supporting systems, your site, your hosting architecture, your security. I find what people need is a good solid starting point, and some basic guidance on best practice.
+Contact: graeme@fintechsystems.ltd, @GraemeConradie on [Mattermost](https://chat.btcpayserver.org/), [Twitter](https://twitter.com/GraemeConradie), [LinkedIn](https://www.linkedin.com/in/GraemeConradie/)
+ 
 ### Hubik Tomas
 
 > I can help with initial setup/deployment (currently with Azure, but I am planning to play with non-Azure as wll) and integration with PrestaShop. I was also playing with design customization of the payment window, scripting of exchange rates etc.
