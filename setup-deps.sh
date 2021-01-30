@@ -24,6 +24,8 @@ update_external() {
 
 # BTCPay Server
 
+echo "Setup dependency: BTCPayServer"
+
 rm -rf "$DOCS_DIR/BTCPayServer"
 mkdir -p "$DOCS_DIR/BTCPayServer"
 
@@ -37,7 +39,7 @@ cd "$BTCPAYSERVER_DIR"
 
 cp SECURITY.md "$DOCS_DIR/BTCPayServer/Security.md"
 cp BTCPayServer.Tests/README.md "$DOCS_DIR/BTCPayServer/LocalDevSetup.md"
-line=$(grep -n '## How to' $DOCS_DIR/BTCPayServer/LocalDevSetup.md | cut -d ":" -f 1)
+line=$(grep -n '## How to manually test payments' $DOCS_DIR/BTCPayServer/LocalDevSetup.md | cut -d ":" -f 1)
 { echo $'---\neditLink: https://github.com/btcpayserver/btcpayserver-doc/edit/master/docs/LocalDev.md\n---\n'; cat "$DOCS_DIR/LocalDev.md"; echo; tail -n +$line "$DOCS_DIR/BTCPayServer/LocalDevSetup.md"; } > "$DOCS_DIR/LocalDevelopment.md"
 
 for file in "$DOCS_DIR"/BTCPayServer/*.md; do
@@ -52,6 +54,8 @@ if command -v jq >/dev/null 2>&1; then
 fi
 
 # Configurator
+
+echo "Setup dependency: Configurator"
 
 rm -rf "$DOCS_DIR/Configurator"
 mkdir -p "$DOCS_DIR/Configurator"
@@ -71,6 +75,8 @@ done
 
 # Docker
 
+echo "Setup dependency: Docker"
+
 rm -rf "$DOCS_DIR/Docker"
 mkdir -p "$DOCS_DIR/Docker"
 
@@ -88,6 +94,8 @@ for file in "$DOCS_DIR"/Docker/*.md; do
 done
 
 # Transmuter
+
+echo "Setup dependency: Transmuter"
 
 rm -rf "$DOCS_DIR/Transmuter"
 mkdir -p "$DOCS_DIR/Transmuter"
