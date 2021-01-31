@@ -37,7 +37,7 @@ Contact: graeme@fintechsystems.ltd, @GraemeConradie on [Mattermost](https://chat
  
 ### Hubik Tomas
 
-> I can help with initial setup/deployment (currently with Azure, but I am planning to play with non-Azure as wll) and integration with PrestaShop. I was also playing with design customization of the payment window, scripting of exchange rates etc.
+> I can help with initial setup/deployment (currently with Azure, but I am planning to play with non-Azure as well) and integration with PrestaShop. I was also playing with design customization of the payment window, scripting of exchange rates etc.
 
 Contact: hubik.tomas@gmail.com
 
