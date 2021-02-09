@@ -70,7 +70,7 @@ If you subsequently change the iptables rules and want to save them across reboo
 These instructions configure everything to run under an **unprivileged user** called `admin`.  Create this user before proceeding:
 
 ```bash
-~$ sudo useradd -m -s /dev/null admin
+~$ sudo useradd -M admin && sudo usermod -L admin
 ```
 
 ### Prerequisites
