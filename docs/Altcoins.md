@@ -1,23 +1,8 @@
 # Altcoins
 
-Bitcoin is the only focus of the project and its core developers. However, opt-in integrations are available for several altcoins:
+Bitcoin is the only focus of the project and its core developers. However, opt-in integrations are available for several altcoins.
 
-- Bitcore (BTX)
-- Dash (DASH)
-- Dogecoin (DOGE)
-- Feathercoin (FTC)
-- Groestlcoin (GRS)
-- Liquid Bitcoin (LBTC) (comes with Liquid Tether support USDt)
-- Litecoin (LTC)
-- Monacoin (MONA)
-- Monero (XMR)
-- Polis (POLIS)
-- Viacoin (VIA)
-- BGold (BTG)
-
-Altcoins are maintained by their respective communities.
-
-For more information, check the [Altcoin FAQ page](./FAQ/FAQ-Altcoin.md).
+For more information and the full list of integrated altcoins, check the [Altcoin FAQ page](./FAQ/FAQ-Altcoin.md).
 
 ## How can I add an altcoin to BTCPayServer?
 
