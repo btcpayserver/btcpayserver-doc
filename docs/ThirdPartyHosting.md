@@ -10,7 +10,6 @@ In layman words, think of this feature as a payment processor factory which allo
 
 Some of the hosts are entirely free to use and maintain the server cost from donations of their users. If you've been using a reliable free host for a while, you should consider donating to them to support them.
 
-Table of contents:
 - [Third-party hosting](#third-party-hosting)
   - [Advantages and disadvantages](#advantages-and-disadvantages)
     - [Pros](#pros)
@@ -125,4 +124,3 @@ Third party hosts (non-malicious) can see the following:
 Note: If additional features are enabled such as non-admin lightning wallet, hot wallets or transmuter, the server admin can see additional information related to those features. Since it's impossible to know if the third party host is using a malicious fork, it's best to assume they may know all details about your BTCPay Server usage.
 
 If you are worried about the information a third party host knows about you, please consider [deploying your own](./Deployment.md) self-hosted server.
-
