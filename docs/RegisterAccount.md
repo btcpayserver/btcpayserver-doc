@@ -4,7 +4,7 @@ This page relates to registering an account on a BTCPay Server instance of your 
 
 To register a demo account, visit the [official demo](https://mainnet.demo.btcpayserver.org/Account/Login).
 
-To deploy an instance of your own, see [Choosing a deployment method](./Deployment.md).
+To deploy an instance of your own, see [choosing a deployment method](./Deployment.md).
 
 A non-exhaustive list of third-party hosts can be found on the BTCPay Server [directory](https://directory.btcpayserver.org/filter/hosts).
 
