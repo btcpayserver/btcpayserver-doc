@@ -53,7 +53,7 @@ BTCPay Server is not a company. To use BTCPay Server, [deploy](./Deployment.md) 
 
  To explore what BTCPay Server has to offer, head over to the [official demo](https://mainnet.demo.btcpayserver.org/Account/Login).
 
-While using BTCPay Server, there is no third-party between a merchant and a customer. The merchant is always in full control of their funds. There are no processing or subscription fees. BTCPay Server is free to use and completely open-source, so developers or security auditors can always inspect the quality of the code.
+While using BTCPay Server, there is no payment processing intermediary. Accept payments directly and stay in full control of received funds. There are no processing or subscription fees. BTCPay Server is free to use and completely open-source, so developers or security auditors can always inspect the quality of the code.
 
 [![BTCPay Server Simply Explained](https://img.youtube.com/vi/dbX6qWZlxOw/mqdefault.jpg)](https://www.youtube.com/watch?v=dbX6qWZlxOw "BTCPay Server Simply Explained")
 
