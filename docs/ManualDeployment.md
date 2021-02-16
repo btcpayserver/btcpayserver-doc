@@ -84,6 +84,12 @@ git checkout latest
 bitcoind
 ```
 
+or if you're running in testnet mode
+
+```bash
+bitcoind -testnet 
+```
+
 ### 6) Run NBXplorer
 
 ```bash
@@ -91,11 +97,25 @@ cd ~/NBXplorer
 ./run.sh
 ```
 
+or if you're running in testnet mode
+
+```bash
+cd ~/NBXplorer
+./run.sh --network=testnet
+```
+
 ### 7) Run BTCPayServer
 
 ```bash
 cd ~/btcpayserver
 ./run.sh --port 8080 --bind 0.0.0.0
+```
+
+or if you're running in testnet mode
+
+```bash
+cd ~/btcpayserver
+./run.sh --port 8080 --bind 0.0.0.0 --network testnet
 ```
 
 Now you can browse your server on port 8080.
