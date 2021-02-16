@@ -30,6 +30,7 @@ The docker deployment will provide you easy update system and make sure that all
 
 This steps have been done on Ubuntu 18.04, adapt for your own install.
 
+For Testnet specific deployment, after installing Bitcoin, .NET Core, NBXplorer and BTCPayServer, see [Commands for Running in Testnet Mode](#testnet-specific-deployments)
 
 ### 1) Install Bitcoin Core 0.19.1
 
@@ -84,24 +85,11 @@ git checkout latest
 bitcoind
 ```
 
-or if you're running in testnet mode
-
-```bash
-bitcoind -testnet 
-```
-
 ### 6) Run NBXplorer
 
 ```bash
 cd ~/NBXplorer
 ./run.sh
-```
-
-or if you're running in testnet mode
-
-```bash
-cd ~/NBXplorer
-./run.sh --network=testnet
 ```
 
 ### 7) Run BTCPayServer
@@ -111,14 +99,33 @@ cd ~/btcpayserver
 ./run.sh --port 8080 --bind 0.0.0.0
 ```
 
-or if you're running in testnet mode
+
+Now you can browse your server on port 8080.
+
+## Testnet Specific Deployments
+Follow the instructions for installing Bitcoin, .NET Core, NBXplorer and BTCPayServer above.
+
+Then when running them use:
+
+### Run bitcoind in testnet mode
+
+```bash
+bitcoind -testnet 
+```
+
+### Run NBXplorer in testnet mode
+
+```bash
+cd ~/NBXplorer
+./run.sh --network=testnet
+```
+
+### Run BTCPayServer in testnet mode
 
 ```bash
 cd ~/btcpayserver
 ./run.sh --port 8080 --bind 0.0.0.0 --network testnet
 ```
-
-Now you can browse your server on port 8080.
 
 ## Additional links
 
