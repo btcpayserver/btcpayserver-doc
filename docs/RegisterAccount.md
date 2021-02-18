@@ -1,5 +1,13 @@
 # (1) Register account
 
+This page relates to registering an account on a BTCPay Server instance of your own, or using a third-party host.
+
+To register a demo account, visit the [official demo](https://mainnet.demo.btcpayserver.org/Account/Login).
+
+To deploy an instance of your own, see [choosing a deployment method](./Deployment.md).
+
+A non-exhaustive list of third-party hosts can be found on the BTCPay Server [directory](https://directory.btcpayserver.org/filter/hosts).
+
 ## Account Registration
 
 The first step in setting up your BTCPay Server is creating a user account. The **first created account** on a newly-deployed BTCPay Server is automatically - **admin**.

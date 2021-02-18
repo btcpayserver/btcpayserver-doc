@@ -10,20 +10,20 @@ In layman words, think of this feature as a payment processor factory which allo
 
 Some of the hosts are entirely free to use and maintain the server cost from donations of their users. If you've been using a reliable free host for a while, you should consider donating to them to support them.
 
-Table of contents:
-- [Advantages and Disadvantages](#advantages-and-disadvantages)
-   - [Pros](#pros)
-   - [Cons](#cons)
-- [Concerns For Use](#concerns-for-use)
-   - [Security](#security-concerns)
-   - [Privacy](#privacy-concerns)
-   - [Trust](#trust-concerns)
-- [Third Party Hosting FAQ](#third-party-hosting-faq)
+- [Third-party hosting](#third-party-hosting)
+  - [Advantages and disadvantages](#advantages-and-disadvantages)
+    - [Pros](#pros)
+    - [Cons](#cons)
+  - [Concerns For Use](#concerns-for-use)
+    - [Security Concerns](#security-concerns)
+    - [Privacy Concerns](#privacy-concerns)
+    - [Trust Concerns](#trust-concerns)
+  - [Third Party Hosting FAQ](#third-party-hosting-faq)
   - [Where is the list of BTCPay third-party hosts?](#where-is-the-list-of-btcpay-third-party-hosts)
   - [How can one become a third-party host?](#how-can-one-become-a-third-party-host)
   - [Are there any limitations in features when using a third-party host?](#are-there-any-limitations-in-features-when-using-a-third-party-host)
   - [Can I enable the use of my Lightning Network node to others?](#can-i-enable-the-use-of-my-lightning-network-node-to-others)
-  - [What does the third-party host know about their users?](#what-does-the-third-party-host-know-about-their-users)
+  - [What does the trusted third-party host know about their users?](#what-does-the-trusted-third-party-host-know-about-their-users)
 
 ## Advantages and disadvantages
 
@@ -92,7 +92,9 @@ Third-party users who are granted access to an internal lightning node or hot wa
 
 Feel free to chat with the [Community](./Community.md) to find the appropriate host for your needs, but also make sure to choose one that is trustworthy. Read the rest of this document to better understand the pros and cons of using a third-party host.
 
+:::tip
 The BTCPay Server [Directory](https://directory.btcpayserver.org/filter/hosts) lists multiple free or paid third-party hosts that you can register to, to start exploring BTCPay Server.
+:::
 
 ## How can one become a third-party host?
 To become a third-party host, you need to self-host a BTCPay Server and enable registration for other users.
@@ -122,4 +124,3 @@ Third party hosts (non-malicious) can see the following:
 Note: If additional features are enabled such as non-admin lightning wallet, hot wallets or transmuter, the server admin can see additional information related to those features. Since it's impossible to know if the third party host is using a malicious fork, it's best to assume they may know all details about your BTCPay Server usage.
 
 If you are worried about the information a third party host knows about you, please consider [deploying your own](./Deployment.md) self-hosted server.
-
