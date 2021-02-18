@@ -38,7 +38,7 @@ If you've used a custom domain,
 7. Run the following commands.
 ```bash
 $ sudo su -
-$ export BTCPAY_HOST=btc.helpers.fun
+$ export BTCPAY_HOST=your.cool.domain
 $ export BTCPAY_PROTOCOL=https
 $ export REVERSEPROXY_DEFAULT_HOST="$BTCPAY_HOST"
 $ cd btcpayserver-docker
