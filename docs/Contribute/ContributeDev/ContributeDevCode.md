@@ -10,7 +10,8 @@ Table of contents:
 - [Local BTCPay Setup](#local-btcpay-setup)
   - [Visual Studio Setup](#visual-studio-setup)
   - [Bitcoin Regtest Network Setup](#bitcoin-regtest-network-setup)
-  - [Build Local BTCPay Server](#build-local-btcpay-server)
+  - [Build Local BTCPay Server in Debug Mode](#build-local-btcpay-server-in-debug-mode)
+  - [Build Local BTCPay Server in Browser Mode](#build-local-btcpay-server-in-browser-mode)
   - [Visual Studio Code Changes In Your Local BTCPay Server](#visual-studio-code-changes-in-your-local-btcpay-server)
 - [Git Maintenance](#git-maintenance)
   - [Sync Forked BTCPay Server Repository](#sync-forked-btcpay-server-repository)
@@ -72,29 +73,41 @@ Note: _This guide assumes installations in default locations. Take note if you h
 - In Git, we now have a copy of our forked BTCPay Server repository (our clone). When we want to switch between branches (copies of our clone), we need to tell Git which branch our development code changes should be assigned to. We do this by checking out our branch, with the command: `$ git checkout OurNewDevelopmentBranch`
 - Now you are now on OurNewDevelopmentBranch in GitBash.
 - Open your GitHub Desktop and you can see you are no longer on master and you are now on `OurNewDevelopmentBranch`
-- In the top menu in Github Desktop click: `Repository > Show In Explorer` 
+- In the top menu in Github Desktop click: `Repository > Show In Explorer` to see the location of the files.
 
 ## Local BTCPay Setup
 
-### Visual Studio Setup
-
-- It will open a File Explorer to the BTCPay Server repository folder. Without opening any of the folders shown, look for the `btcpayserver.sln` item and right click it to `Open with > Visual Studio`. You may need to choose Open with > Choose another app ... and look for Visual Studio if you have never opened this kind of file before. 
-- To get your Visual Studio set up choose `View > Solution Explorer` from the top menu. In this solution explorer you will see all the BTCPay Server files and folders. 
-- The top project is BTCPay Server, make sure it's in bold. If it isn't, right click it and choose Set as StartUp Project.
-- Your Visual Studio is now set up and ready.
-
-![VS Solution Explorer](../../img/Contribute/vs-solution-explorer.png)
-
 ### Bitcoin Regtest Network Setup
 
-- For the next step make sure that you have Docker-Compose installed (included with Docker Desktop). Open a PowerShell terminal and navigate to your _clone local path_ and into the BTCPay Server.Tests directory with the command: `$ cd Documents/Github/btcpayserver/BTCPayServer.Tests`
+- For the next step make sure that you have Docker-Compose installed (included with Docker Desktop). Open a PowerShell terminal and navigate to your _clone local path_ and into the BTCPayServer.Tests directory with the command: `$ cd Documents/Github/btcpayserver/BTCPayServer.Tests`
 - The BTCPay Server.Tests project contains the docker files needed to run our docker commands that will start all the project dependencies and create a local Regtest network.
 - In Powershell, start the docker services with the command: `docker-compose up dev`(you must be in the BTCPay Server.Tests to run this command).
 - In your PowerShell terminal you will first see the necessary docker images being pulled, then containers being built. If the build is successful the containers will all show as done. 
 
 ![BTCPayServer.Tests powershell terminal](../../img/Contribute/docker-compose-up-dev.png)
 
-### Build Local BTCPay Server
+### Build Local BTCPay Server in Browser Mode
+
+If you don't want to do any coding and you simply want to create a local BTCPay Server for testing features in the interface, you can start a local BTCPay from the command line. 
+
+After building your [regtest network](#bitcoin-regtest-network-setup), navigate to your `btcpayserver\BTCPayServer` directory and run the following command:
+
+```
+dotnet run --launch-profile Bitcoin
+```
+
+Open a new browser and visit: http://127.0.0.1:14142
+
+### Visual Studio Setup
+
+- Open a file explorer to the BTCPay Server repository folder. Without opening any of the folders shown, look for the `btcpayserver.sln` item and right click it to `Open with > Visual Studio`. You may need to choose Open with > Choose another app ... and look for Visual Studio if you have never opened this kind of file before. 
+- To get your Visual Studio set up choose `View > Solution Explorer` from the top menu. In this solution explorer you will see all the BTCPay Server files and folders. 
+- The top project is BTCPay Server, make sure it's in bold. If it isn't, right click it and choose Set as StartUp Project.
+- Your Visual Studio is now set up and ready.
+
+![VS Solution Explorer](../../img/Contribute/vs-solution-explorer.png)
+
+### Build Local BTCPay Server in Debug Mode
 
 - Back in Visual Studio, click: `Build > Build Solution`
 - In the output window, a successful build will look something like this: `========== Build: 6 succeeded, 0 failed, 0 up-to-date, 0 skipped ==========`
