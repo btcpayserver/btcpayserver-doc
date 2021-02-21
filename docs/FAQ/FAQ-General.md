@@ -20,6 +20,7 @@ This page contains general questions and answers about BTCPay. What it is, how i
 * [Where can I get help and support?](FAQ-General.md#where-can-i-get-help-and-support)
 * [How can I contribute to BTCPay?](FAQ-General.md#how-can-i-contribute-to-btcpay)
 * [How can I use the BTCPay Server API?](FAQ-General.md#how-can-i-use-the-btcpay-server-api)
+* [How can I backup my BTCPay Server?](FAQ-General.md#how-can-i-backup-my-btcpay-server)
 
 ## What is BTCPay Server?
 
@@ -134,3 +135,7 @@ The original BTCPay Server API is compatible for the most part with [BitPay's AP
 In 2020, BTCPay Server started releasing a new Greenfield API. This new API will co-exist with the original API and allow full usage of all BTCPay Server features, without requiring the UI. You can view the current [Greenfield API documentation](https://docs.btcpayserver.org/API/Greenfield/v1/).
 
 A BTCPay Server functionality that is not found in the Greenfield API documentation means it isn't fully implemented yet in the new API and users should use the original API instead. The discussion on the development of the new Greenfield API can be found [here](https://github.com/btcpayserver/btcpayserver/issues/1320). 
+
+## How can I backup my BTCPay Server?
+
+It's possible to [create backups of your BTCPay Server](https://github.com/btcpayserver/btcpayserver-docker#how-can-i-back-up-my-btcpay-server) instance and it's data. Please keep in mind that the backup scripts have not been thoroughly tested for all types of BTCPay Server setups and custom deployments. Be sure to use your backup to verify it properly recreates your setup, before relying on it.
