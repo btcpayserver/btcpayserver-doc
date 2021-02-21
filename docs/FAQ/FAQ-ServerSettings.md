@@ -182,7 +182,7 @@ Maintenance feature requires access to SSH properly configured in BTCPayServer c
 
 ### Error: Maintenance feature requires access to SSH properly configured in BTCPayServer configuration
 
-Sometimes an issue with Docker can temporarily cause your BTCPay Server's SSH to be misconfigured. This issue is typically fixed by restarting your BTCPay Server. Unfortunately when this error appears in the interface, the restart button will be disabled. You will need to [restart using ssh](FAQ-ServerSettings.md#how-to-restart-btcpay-server).
+Sometimes an issue with Docker can temporarily cause your BTCPay Server's maintenance features to be misconfigured. This issue is typically fixed by restarting your BTCPay Server. Unfortunately when this error appears in the interface, the restart button will be disabled. You will need to [restart using ssh](FAQ-ServerSettings.md#how-to-restart-btcpay-server) to resolve the issue.
 
 ### Error: Your local changes to the following files would be overwritten by merge
 
