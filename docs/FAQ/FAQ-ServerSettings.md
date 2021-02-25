@@ -14,8 +14,9 @@ This document covers all the questions and issues related to Server Settings. Th
 * [How to add a new user by invite?](./FAQ-ServerSettings.md#how-to-add-a-new-user-by-invite)
 * [How to disable U2F and 2FA for a user?](./FAQ-ServerSettings.md#how-to-disable-u2f-and-2fa-for-a-user)
 * [How to configure SMTP settings in BTCPay?](./FAQ-ServerSettings.md#how-to-configure-smtp-settings-in-btcpay)
+* [Error: Maintenance feature requires access to SSH properly configured in BTCPayServer configuration](./FAQ-ServerSettings.md#error-maintenance-feature-requires-access-to-SSH-properly-configured-in-btcpayserver-configuration)
 * [Error: Your local changes to the following files would be overwritten by merge](./FAQ-ServerSettings.md#error-your-local-changes-to-the-following-files-would-be-overwritten-by-merge)
-* [Error: the BTCPAY_SSHKEYFILE variable is not set/ Unable to update](./FAQ-ServerSettings.md#btcpay-sshkeyfile-is-not-set-when-running-the-docker-install-or-unable-to-update-through-server-settings-maintenance)
+* [Error: the BTCPAY_SSHKEYFILE variable is not set/ Unable to update](./FAQ-ServerSettings.md#error-btcpay-sshkeyfile-is-not-set-when-running-the-docker-install-or-unable-to-update-through-server-settings-maintenance)
 
 ## Theme / Customization
 
@@ -61,7 +62,7 @@ There are 2 ways to restart your BTCPay Server:
 
 ![Restarting BTCPay Server](../img/HowToRestartBTCPayServer.png)
 
-2. Updating using SSH: Login into your virtual machine with ssh, then apply following commands:
+2. Restarting using SSH: Login into your virtual machine with ssh, then apply following commands:
 
 ```bash
 sudo su -
@@ -177,6 +178,12 @@ If by any chance you have 2-step verification added to your gmail account, [visi
 
 Use the test email feature in BTCPay to verify your emails are being sent properly. If you are seeking a more reliable smtp service for your business needs, consider using a dedicated mail service like Mailgun.
 
+Maintenance feature requires access to SSH properly configured in BTCPayServer configuration
+
+### Error: Maintenance feature requires access to SSH properly configured in BTCPayServer configuration
+
+Sometimes an issue with Docker can temporarily cause your BTCPay Server's maintenance features to be misconfigured. This issue is typically fixed by restarting your BTCPay Server. Unfortunately when this error appears in the interface, the restart button will be disabled. You will need to [restart using ssh](FAQ-ServerSettings.md#how-to-restart-btcpay-server) to resolve the issue.
+
 ### Error: Your local changes to the following files would be overwritten by merge
 
 Sometimes, an accidentally edited file can break the update mechanism with the following error:
@@ -193,7 +200,7 @@ cd btcpayserver-docker
 git reset --hard origin/master
 ```
 
-## BTCPAY_SSHKEYFILE is not set when running the docker install, or unable to update through Server Settings / Maintenance
+### Error: BTCPAY_SSHKEYFILE is not set when running the docker install, or unable to update through Server Settings / Maintenance
 
 You may see such the following message when you run your docker-compose (either via `btcpay-up.sh` or `btcpay-setup.sh`):
 
