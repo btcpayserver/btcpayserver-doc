@@ -53,5 +53,4 @@ jobs:
           GH_PAT: ${{ secrets.GH_PAT }}
       # Run linkcheck, propagate linkcheck failure through grep pipe
       - name: Linkcheck
-        continue-on-error: true
         run: set -o pipefail; npm run linkcheck 2>/dev/null | grep "Getting links from\|BROKEN"
