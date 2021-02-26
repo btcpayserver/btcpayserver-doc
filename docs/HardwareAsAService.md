@@ -12,8 +12,8 @@ Here you can find a non-exhaustive list of companies that provide such a service
 - [Nodl](https://www.nodl.it/)
 - [Hack0](https://www.dglab.com/en/works/hack0/)
 - [LightningInABox](https://lightninginabox.co/)
-- [LuxNode](https://luxnode.io/)
 - [MyNode](https://mynodebtc.com/)
 - [RaspiBlitz](https://shop.fulmo.org/raspiblitz/)
+- [Umbrel](https://getumbrel.com/)
 
 Do you provide Hardware As A Service and are not listed here ? Open an issue to [get added to this list](https://github.com/btcpayserver/btcpayserver-doc/issues)
