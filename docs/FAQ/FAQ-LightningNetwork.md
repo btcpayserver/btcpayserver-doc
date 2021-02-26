@@ -81,7 +81,7 @@ You can also ask well-connected nodes to open a direct channel with you. Opening
 ### How can I get inbound capacity to my node?
 
 There are many ways in which one can get an inbound capacity. We recommend that you read this great article that provides [practical tips to inbound capacity](https://medium.com/lightningto-me/practical-solutions-to-inbound-capacity-problem-in-lightning-network-60224aa13393).
-When asking for inbound capacity, consider any routing policy fees the service may have. [This document](https://webcache.googleusercontent.com/search?q=cache:0JvB3GjtsQgJ:https://wiki.ion.radar.tech/tutorials/bootstrapping-liquidity+&cd=1&hl=en) provides an overview of what kind of fees to expect from well-known nodes offering the service.
+When asking for inbound capacity, consider any routing policy fees the service may have. [This document](https://wiki.ion.radar.tech/tutorials/bootstrapping-liquidity) provides an overview of what kind of fees to expect from well-known nodes offering the service.
 
 ### I previously installed BTCPayServer without lightning, can I enable it?
 
