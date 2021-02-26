@@ -41,9 +41,6 @@ jobs:
         run: npm test
       - name: Build
         run: npm run build
-      # Run linkcheck, propagate linkcheck failure through grep pipe
-      - name: Linkcheck
-        run: set -o pipefail; npm run linkcheck 2>/dev/null | grep "Getting links from\|BROKEN"
       # Deploy, limited to the master branch
       - name: Predeploy
         if: success() && github.ref == 'refs/heads/master'
@@ -54,3 +51,7 @@ jobs:
         env:
           BUILD_DIR: docs/.vuepress/dist/
           GH_PAT: ${{ secrets.GH_PAT }}
+      # Run linkcheck, propagate linkcheck failure through grep pipe
+      - name: Linkcheck
+        continue-on-error: true
+        run: set -o pipefail; npm run linkcheck 2>/dev/null | grep "Getting links from\|BROKEN"
