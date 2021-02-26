@@ -944,7 +944,7 @@ lnd version 0.10.99-beta commit=clock/v1.0.0-229-ge64e71d86dc1ac716c30a80f85a22e
 lnd looks for bitcoin.conf in a specific location to get necessary RPC and zeromq details.
 
 ```bash
-~$ ln -s /etc/bitcoin/bitcoin.conf ~/.bitcoin/bitcoin.conf
+~$ ln -s ~/.bitcoin/bitcoin.conf /etc/bitcoin/bitcoin.conf
 ```
 
 ##### 4. Create a configuration file.
