@@ -72,7 +72,7 @@ If `raspberrypi.local` doesn't work, you will have to either look up the Pi's IP
 passwd
 ```
 
-**Step 9** - Give your Pi a static IP address and a DHCP reservation on your local network, via your router. Optionally, setup WiFi. There are a few different ways to do this and you will find a ton of articles online. Here's a pretty simple one to follow: [Setting up Raspberry Pi WiFi with Static IP on Raspbian Stretch Lite](https://electrondust.com/2017/11/25/setting-raspberry-pi-wifi-static-ip-raspbian-stretch-lite/).
+**Step 9** - Give your Pi a static IP address and a DHCP reservation on your local network, via your router. Optionally, setup WiFi. There are a few different ways to do this and you will find a ton of articles online.
 
 To get your router's IP:
 
