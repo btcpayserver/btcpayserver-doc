@@ -268,6 +268,7 @@ module.exports = {
           ["/Drupal", "Drupal"],
           ["/Magento", "Magento"],
           ["/PrestaShop", "PrestaShop"],
+          ["https://github.com/lampsolutions/LampSBtcPayShopware", "Shopware", { type: 'external' }],
           ["/CustomIntegration", "Custom Integration"]
         ]
       },
