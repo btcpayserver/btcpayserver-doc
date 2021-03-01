@@ -59,7 +59,7 @@ module.exports = [
   { path: '/integrations/magento', redirect: '/Magento/' },
   { path: '/integrations/prestashop', redirect: '/PrestaShop/' },
   { path: '/integrations/customintegration', redirect: '/CustomIntegration/' },
-  // Deveelopment
+  // Development
   { path: '/development', redirect: '/Architecture/' },
   { path: '/development/architecture', redirect: '/Architecture/' },
   { path: '/development/localdevelopment', redirect: '/LocalDevelopment/' },
