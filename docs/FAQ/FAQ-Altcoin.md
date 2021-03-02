@@ -27,7 +27,7 @@ Bitcoin is the only focus of the project and its core developers. However, opt i
 - Viacoin (VIA)
 - Ethereum (ETH) and related tokens [notes on deployment)](https://github.com/btcpayserver/btcpayserver/pull/1730)
 
-Altcoins are maintained by their respective communities and are listed here only for convenience. For support regarding Altcoin deployment, functionnalities or issues, please contact the Altcoin maintainer or community directly.
+Altcoins are maintained by their respective communities and are listed here only for convenience. For support regarding Altcoin deployment, functionalities or issues, please contact the Altcoin maintainer or community directly.
 
 ## Can an XYZ coin be added in BTCPay?
 
