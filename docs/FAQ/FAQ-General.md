@@ -21,6 +21,7 @@ This page contains general questions and answers about BTCPay. What it is, how i
 * [How can I contribute to BTCPay?](FAQ-General.md#how-can-i-contribute-to-btcpay)
 * [How can I use the BTCPay Server API?](FAQ-General.md#how-can-i-use-the-btcpay-server-api)
 * [How can I backup my BTCPay Server?](FAQ-General.md#how-can-i-backup-my-btcpay-server)
+* [How can I charge for using my BTCPay Server instance?](FAQ-General.md#how-can-i-charge-for-using-my-btcpay-server-instance)
 
 ## What is BTCPay Server?
 
@@ -139,3 +140,8 @@ A BTCPay Server functionality that is not found in the Greenfield API documentat
 ## How can I backup my BTCPay Server?
 
 It's possible to [create backups of your BTCPay Server](https://github.com/btcpayserver/btcpayserver-docker#how-can-i-back-up-my-btcpay-server) instance and it's data. Please keep in mind that the backup scripts have not been thoroughly tested for all types of BTCPay Server setups and custom deployments. Be sure to use your backup to verify it properly recreates your setup, before relying on it.
+
+## How can I charge for using my BTCPay Server instance?
+
+Currently charging users for using your BTCPay Server instance, whether it's a percentage of transactions or a registration fee, is not supported natively.
+Enabling such a feature could be possible, using the [Transmuter](https://docs.btcpayserver.org/Transmuter/) and/or the [Greenfield API](https://docs.btcpayserver.org/API/Greenfield/v1/) but will require moderate to extensive technical knowledge.
