@@ -186,9 +186,9 @@ Here's a good example of how to ask a question.
 
 > I'm having a problem with XYZ. I can replicate the problem. My BTCPay version is 0.100.31, and I deployed my server on Digital Ocean by following Docker deployment guide. I've searched through the FAQ and closed GitHub issues, but there's no solution to my problem. My BTCPay Setup is XYZ, and the issue is occurring when I do XYZ. Here are the logs I was able to get from my BTCPay instance. You can see the error in the image I attached.
 
-:::danger
+:::warning Please note:
 The community will not provide extensive support for custom deployments.
-I.e. Variations of [Manual Deployments](ManualDeployment.md) are expected to be used only for development purposes and by users with technical literacy with the ability to **resolve deployment and maintenance issues on their own**.
+I.e. variations of [Manual Deployments](ManualDeployment.md) are expected to be used only for development purposes and by users with technical literacy with the ability to **resolve deployment and maintenance issues on their own**. This includes [Hardware-As-A-Service](HardwareAsAService.md) products (Nodl, RaspiBlitz, Umbrel, etc ...)
 :::
 
 ### 4.1 Asking the community (general problems)
