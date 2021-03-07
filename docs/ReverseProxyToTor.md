@@ -78,8 +78,13 @@ ln -s /etc/systemd/system/http-to-socks-proxy\@.service /etc/systemd/system/mult
 # start
 systemctl start http-to-socks-proxy@btcpayserver
 
-# check status
+# check service status
 systemctl status http-to-socks-proxy@btcpayserver
+
+# check if tunnel is active
+netstat -tulpn | grep socat
+# should give something like this:
+# tcp        0      0 127.0.0.1:9081          0.0.0.0:*               LISTEN      951/socat
 ```
 
 #### Webserver configuration
@@ -136,4 +141,5 @@ Now, visiting `mydomain.com` should show your BTCPay Server instance.
 ## Resources
 
 * [Nginx reverse proxy to .onion site in TOR network](https://itgala.xyz/nginx-reverse-proxy-to-onion-site-in-tor-network/)
+* [Tor-to-IP tunnel service](https://github.com/openoms/bitcoin-tutorials/blob/master/tor2ip_tunnel.md)
 * [How to make a nginx reverse proxy direct to tor hidden service](https://stackoverflow.com/questions/55487324/how-to-make-a-nginx-reverse-proxy-direct-to-tor-hidden-service)
