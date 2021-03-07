@@ -101,7 +101,7 @@ server {
   server_name mydomain.com;
 
   location / {
-    return 301 https://mydomain.com$request_uri;
+    return 301 https://$server_name$request_uri;
   }
 }
 
