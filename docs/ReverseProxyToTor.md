@@ -17,7 +17,7 @@ You will create a nginx reverse proxy and a `socat` service, which forwards requ
 
 ### On the host server
 
-Get the Tor `.onion` address of yoyr BTCPay Server via the `Server settings > Services` page.
+Get the Tor `.onion` address of your BTCPay Server via the `Server settings > Services` page.
 See information in the "HTTP-based TOR hidden services" section.
 
 ### On the VPS
@@ -49,7 +49,16 @@ ExecStart=/usr/bin/socat tcp4-LISTEN:${LOCAL_PORT},reuseaddr,fork,keepalive,bind
 WantedBy=multi-user.target
 ```
 
-Create the configuration for the service in `/etc/http-to-socks-proxy/btcpayserver.conf`.
+Create the configuration for the service in `/etc/http-to-socks-proxy/btcpayserver.conf`:
+
+```bash
+# create the directory
+mkdir -p /etc/http-to-socks-proxy/
+
+# create the file with the content below
+nano /etc/systemd/system/http-to-socks-proxy@.service
+```
+
 Replace the `REMOTE_HOST` and adapt the ports if needed:
 
 ```conf
@@ -60,7 +69,7 @@ REMOTE_HOST=heregoesthebtcpayserverhiddenserviceaddress.onion
 REMOTE_PORT=80
 ```
 
-Ceate a symlink in `/etc/systemd/system/multi-user.target.wants` to enable the service and start it:
+Create a symlink in `/etc/systemd/system/multi-user.target.wants` to enable the service and start it:
 
 ```bash
 # enable
