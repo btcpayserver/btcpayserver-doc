@@ -144,7 +144,8 @@ module.exports = {
                     collapsable: false,
                     children: [
                       ["/DynamicDNS", "Dynamic DNS"],
-                      ["/ReverseSSHtunnel", "Reverse SSH Tunnel"]
+                      ["/ReverseSSHtunnel", "Reverse SSH Tunnel"],
+                      ["/ReverseProxyToTor", "Reverse Proxy to Tor"]
                     ]
                   },
                   {
