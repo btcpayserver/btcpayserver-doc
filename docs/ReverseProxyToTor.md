@@ -11,16 +11,12 @@
 * a Virtual Private Server (VPS) - eg. a minimal package on Lunanode for ~3.5$/month
 * root access on the VPS - you need to set up webserver and install packages
 
-## Setup
-
-You will create a nginx reverse proxy and a `socat` service, which forwards requests to your BTCPay Server.
-
-### On the host server
-
 Get the Tor `.onion` address of your BTCPay Server via the `Server settings > Services` page.
 See information in the "HTTP-based TOR hidden services" section.
 
-### On the VPS
+## VPS Setup
+
+You will create a nginx reverse proxy and a `socat` service, which forwards requests to your BTCPay Server.
 
 Login as root and install the required dependencies: (example assumes a Debian based system)
 
@@ -29,10 +25,11 @@ Login as root and install the required dependencies: (example assumes a Debian b
 sudo su -
 
 # install dependencies
-apt-get install -y nginx socat tor
+apt update
+apt install -y certbot nginx socat tor
 ```
 
-#### Socat setup
+### Socat setup
 
 Create the service file `/etc/systemd/system/http-to-socks-proxy@.service`:
 
@@ -87,7 +84,21 @@ netstat -tulpn | grep socat
 # tcp        0      0 127.0.0.1:9081          0.0.0.0:*               LISTEN      951/socat
 ```
 
-#### Webserver configuration
+### Webserver setup
+
+#### Prepare SSL and Let's Encrypt
+
+```bash
+# generate 4096 bit DH params to strengthen the security, may take a while
+openssl dhparam -out /etc/ssl/certs/dhparam.pem 4096
+
+# create directory for Let's Encrypt files
+mkdir -p /var/lib/letsencrypt/.well-known
+chgrp www-data /var/lib/letsencrypt
+chmod g+s /var/lib/letsencrypt
+```
+
+#### nginx configuration: http
 
 Create a variable mapping to forward the correct protocol setting, e.g. `/etc/nginx/conf.d/map.conf`:
 
@@ -105,17 +116,74 @@ server {
   listen 80;
   server_name mydomain.com;
 
+  # Let's Encrypt verification requests
+  location ^~ /.well-known/acme-challenge/ {
+    allow all;
+    root /var/lib/letsencrypt/;
+    default_type "text/plain";
+    try_files $uri =404;
+  }
+
+  # Redirect everything else to https
   location / {
     return 301 https://$server_name$request_uri;
   }
 }
+```
 
+We will configure the https server part in the same config file once we obtained the SSL certificate.
+
+Enable the web server config by creating a symlink and restarting nginx:
+
+```bash
+ln -s /etc/nginx/sites-available/btcpayserver.conf /etc/nginx/sites-enabled/btcpayserver.conf
+
+systemctl restart nginx
+```
+
+#### Obtain SSL certificate via Let's Encrypt
+
+Run the following command with adapted email and domain parameters:
+
+```bash
+certbot certonly --agree-tos --email admin@mydomain.com --webroot -w /var/lib/letsencrypt/ -d mydomain.com
+```
+
+#### nginx configuration: https
+
+Now that we have a valid SSL certificate, add the https server part at the end of `/etc/nginx/sites-available/btcpayserver.conf`:
+
+```nginx
 server {
   listen 443 ssl http2;
   server_name mydomain.com;
 
-  # SSL config goes here …
+  # SSL settings
+  ssl on;
+  ssl_stapling on;
+  ssl_stapling_verify on;
 
+  ssl_session_timeout 1d;
+  ssl_session_cache shared:SSL:10m;
+  ssl_session_tickets off;
+
+  # Update this with the path of your certificate files
+  ssl_certificate /etc/letsencrypt/live/mydomain.com/fullchain.pem;
+  ssl_certificate_key /etc/letsencrypt/live/mydomain.com/privkey.pem;
+
+  ssl_dhparam /etc/ssl/certs/dhparam.pem;
+  ssl_protocols TLSv1.2 TLSv1.3;
+  ssl_ciphers ECDHE-ECDSA-AES128-GCM-SHA256:ECDHE-RSA-AES128-GCM-SHA256:ECDHE-ECDSA-AES256-GCM-SHA384:ECDHE-RSA-AES256-GCM-SHA384:ECDHE-ECDSA-CHACHA20-POLY1305:ECDHE-RSA-CHACHA20-POLY1305:DHE-RSA-AES128-GCM-SHA256:DHE-RSA-AES256-GCM-SHA384;
+  ssl_prefer_server_ciphers off;
+
+  resolver 8.8.8.8 8.8.4.4 valid=300s;
+  resolver_timeout 30s;
+
+  add_header Strict-Transport-Security "max-age=63072000" always;
+  add_header X-Frame-Options SAMEORIGIN;
+  add_header X-Content-Type-Options nosniff;
+
+  # Proxy requests to the socat service
   location / {
     proxy_pass http://127.0.0.1:9081/;
     proxy_set_header Host $host;
@@ -128,12 +196,10 @@ server {
 }
 ```
 
-Enable it by creating a symlink and restart nginx:
+Restart nginx once more:
 
 ```bash
-ln -s /etc/nginx/sites-available/btcpayserver.conf /etc/nginx/sites-enabled/btcpayserver.conf
-
-sudo systemctl restart nginx
+systemctl restart nginx
 ```
 
 Now, visiting `mydomain.com` should show your BTCPay Server instance.
@@ -143,3 +209,4 @@ Now, visiting `mydomain.com` should show your BTCPay Server instance.
 * [Nginx reverse proxy to .onion site in TOR network](https://itgala.xyz/nginx-reverse-proxy-to-onion-site-in-tor-network/)
 * [Tor-to-IP tunnel service](https://github.com/openoms/bitcoin-tutorials/blob/master/tor2ip_tunnel.md)
 * [How to make a nginx reverse proxy direct to tor hidden service](https://stackoverflow.com/questions/55487324/how-to-make-a-nginx-reverse-proxy-direct-to-tor-hidden-service)
+* [Secure Nginx with Let's Encrypt on Debian 10 Linux](https://linuxize.com/post/secure-nginx-with-let-s-encrypt-on-debian-10/)
