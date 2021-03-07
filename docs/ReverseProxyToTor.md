@@ -29,7 +29,7 @@ Login as root and install the required dependencies: (example assumes a Debian b
 sudo su -
 
 # install dependencies
-apt-get install -y nginx socat
+apt-get install -y nginx socat tor
 ```
 
 #### Socat setup
