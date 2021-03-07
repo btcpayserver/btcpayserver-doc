@@ -84,7 +84,16 @@ systemctl status http-to-socks-proxy@btcpayserver
 
 #### Webserver configuration
 
-Create a config files for the domain, e.g. `/etc/nginx/sites-available/btcpayserver.conf`:
+Create a variable mapping to forward the correct protocol setting, e.g. `/etc/nginx/conf.d/map.conf`:
+
+```nginx
+map $http_x_forwarded_proto $proxy_x_forwarded_proto {
+  default $http_x_forwarded_proto;
+  ''      $scheme;
+}
+```
+
+Create a config file for the domain, e.g. `/etc/nginx/sites-available/btcpayserver.conf`:
 
 ```nginx
 server {
