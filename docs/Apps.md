@@ -1,3 +1,12 @@
+---
+description: Apps allow users an easy way to extend BTCPay Server.
+tags:
+- BTCPay Server
+- Apps
+- Point of Sale
+- Crowdfunding
+- Payment Button
+---
 # BTCPay Server Apps
 
 The primary purpose of BTCPay Server is to remove dependencies on trusted third-parties. The Apps are built in applications that obsolete central-authorities and allow users an easy way to extend the [use case](./UseCase.md) of the software. Users can self-host all sorts of customizable applications that work out of the box.
@@ -14,7 +23,7 @@ Adding new products is easy. The app has a **shopping cart feature**, **tips**, 
 
 **Point of sale app** can also be used for receiving donations or even as a small e-shop, depending on the customizations applied.
 
-Curently, the **Point of Sale app** supports three different views: 
+Curently, the **Point of Sale app** supports three different views:
 * A `Static` view representing only the items for sale.
 * A `Cart` view including items for sale and a cart for checkout.
 * A `Light` view consisting only of a keypad for easy and quick payments (Starting from [v1.0.5.6](https://blog.btcpayserver.org/btcpay-server-1-0-5-6/#simplePOS)).

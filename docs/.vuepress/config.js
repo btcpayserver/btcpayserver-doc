@@ -10,6 +10,10 @@ const info = {
   name: title,
   twitter: 'btcpayserver'
 }
+const extractDescription = text =>
+  text.match(/^[A-Za-z].*(?:\n[A-Za-z].*)*/m)
+    .toString()
+    .replace(/[\*\_\(\)\[\]]/g, '')
 
 module.exports = {
   title,
@@ -23,7 +27,6 @@ module.exports = {
     ["link", { rel: "mask-icon", href: "/safari-pinned-tab.svg", color: "#51b13e" }],
     ["meta", { name: "msapplication-TileColor", content: "#0f3b21" }],
     ["meta", { name: "theme-color", content: "#ffffff" }],
-    ["meta", { property: "twitter:image", content: `${baseUrl}/card.png` }],
 
     // Styles
     ["link", { rel: "stylesheet", href: "/styles/btcpayserver-variables.css" }]
@@ -37,10 +40,16 @@ module.exports = {
         .end()
   },
   plugins: [
-    ['autometa', {
-      author: info,
-      site: info,
-      canonical_base: baseUrl
+    ['seo', {
+      siteTitle: (_, $site) => $site.title,
+      title: $page => $page.title,
+      description: $page => $page.frontmatter.description || extractDescription($page._strippedContent),
+      author: (_, $site) => info,
+      tags: $page => ($page.frontmatter.tags || ['BTCPay Server']),
+      twitterCard: _ => 'summary',
+      type: $page => 'article',
+      url: (_, $site, path) => `${baseUrl}${path.replace('.html', pageSuffix)}`,
+      image: ($page, $site) => `${baseUrl}/card.png`
     }],
     ['clean-urls', {
       normalSuffix: pageSuffix,
@@ -66,6 +75,7 @@ module.exports = {
     slugify
   },
   themeConfig: {
+    domain: baseUrl,
     logo: "/img/btcpay-logo.svg",
     displayAllHeaders: false,
     repo: "btcpayserver/btcpayserver-doc",
