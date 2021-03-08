@@ -3,11 +3,16 @@ const implicitFigures = require('markdown-it-implicit-figures')
 const slugify = require('./slugify')
 const preprocessMarkdown = resolve(__dirname, 'preprocessMarkdown')
 
+const title = 'BTCPay Server Docs'
 const baseUrl = 'https://docs.btcpayserver.org'
 const pageSuffix = '/'
+const info = {
+  name: title,
+  twitter: 'btcpayserver'
+}
 
 module.exports = {
-  title: "BTCPay Server Docs",
+  title,
   description: "BTCPay Server Official Documentation",
   head: [
     // Favicon
@@ -18,6 +23,8 @@ module.exports = {
     ["link", { rel: "mask-icon", href: "/safari-pinned-tab.svg", color: "#51b13e" }],
     ["meta", { name: "msapplication-TileColor", content: "#0f3b21" }],
     ["meta", { name: "theme-color", content: "#ffffff" }],
+    ["meta", { property: "twitter:image", content: `${baseUrl}/card.png` }],
+
     // Styles
     ["link", { rel: "stylesheet", href: "/styles/btcpayserver-variables.css" }]
   ],
@@ -30,12 +37,17 @@ module.exports = {
         .end()
   },
   plugins: [
-    ['vuepress-plugin-clean-urls', {
+    ['autometa', {
+      author: info,
+      site: info,
+      canonical_base: baseUrl
+    }],
+    ['clean-urls', {
       normalSuffix: pageSuffix,
       indexSuffix: pageSuffix,
       notFoundPath: '/404.html',
     }],
-    ['vuepress-plugin-code-copy', {
+    ['code-copy', {
       color: '#8F979E',
       backgroundTransition: false,
       staticIcon: true
