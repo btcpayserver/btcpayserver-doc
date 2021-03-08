@@ -10,10 +10,11 @@ const info = {
   name: title,
   twitter: 'btcpayserver'
 }
-const extractDescription = text =>
-  text.match(/^[A-Za-z].*(?:\n[A-Za-z].*)*/m)
-    .toString()
-    .replace(/[\*\_\(\)\[\]]/g, '')
+const extractDescription = text => {
+  if (!text) return
+  const paragraph = text.match(/^[A-Za-z].*(?:\n[A-Za-z].*)*/m)
+  return paragraph ? paragraph.toString().replace(/[\*\_\(\)\[\]]/g, '') : null
+}
 
 module.exports = {
   title,
