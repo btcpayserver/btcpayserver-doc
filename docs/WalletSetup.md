@@ -11,15 +11,17 @@ There are two ways to set up a wallet in BTCPay Server:
 
 Using an existing wallet assumes that you already have an external wallet created and backed up.
 
-When using an existing wallet with BTCPay Server, you're providing an extended public key from an externally generated wallet. Extended public key is a watch-only wallet token. Providing this public key allows BTCPay Server to generate a new address each time a new invoice is created.
+When using an existing wallet with BTCPay Server, typically you're providing an extended public key from an externally generated wallet. Extended public key is a watch-only wallet token. Providing this public key allows BTCPay Server to generate a new address each time a new invoice is created.
 
 :::tip
-When you input an extended public key starting with yPub or zPub as a derivation scheme, BTCPay Server automatically converts it to the xPub format. This has no incidence on how you receive or send funds.
+When you input an extended public key starting with yPub or zPub as a derivation scheme, BTCPay Server automatically converts it to the xPub format. This **format** has no affect on how your xpub receives or sends funds.
 :::
 
 :::tip
 By using an existing wallet, you can receive payments to the external wallet, without BTCPay Server knowing the wallet's private key. If a malicious attacker hacked your server and obtained the xpub, they could observe your transaction history, but cannot access the funds.
 :::
+
+Importing an existing wallet's seed words is another way to create a wallet in BTCPay. Although it is not recommended, this method can save private keys on the server (in addition to the xpub). 
 
 Externally generated wallet can be used as:
 - [Existing hardware wallet](#use-an-existing-hardware-wallet)
@@ -42,13 +44,13 @@ For that reason, we recommend that you only use software wallets listed below.
 - [Electrum Wallet](./ElectrumWallet.md)
 - [Wasabi Wallet](./WasabiWallet.md)
 
-Click on the link above you will be redirected to a step by step tutorial on how to set up particular software wallet with BTCPay Server.
+Click on the links above and you will be redirected to a step by step tutorial on how to set up each particular software wallet with BTCPay Server.
 
-To spend and manage the funds received to your external software wallet, you can use an [internal BTCPay Wallet](./Wallet.md) and sign a transaction with your private key or simply manage the funds in that external wallet itself.
+To spend and manage the funds received to your external software wallet, you can use the [internal BTCPay Wallet](./Wallet.md) and sign a transaction with your private key or simply manage the funds in that external wallet itself.
 
 ## Create a new wallet
 
-If you do not have an existing wallet, you can generate a new one within your BTCPay Server. If are using a [third-party host](./ThirdPartyHosting.md), this option needs to be explicitly enabled by the server admin. Generating a new wallet in an environment you are not sure is trustworthy, is discouraged.
+If you do not have an existing wallet, you can generate a new one within your BTCPay Server. If you are using a [third-party host](./ThirdPartyHosting.md), this option needs to be explicitly enabled by the server admin. Generating a new wallet in an environment you are not sure is trustworthy, is discouraged.
 
 :::warning
 When a new wallet is generated, BTCPay Server will show you a twelve word recovery seed. After the initial display, the recovery seed is wiped from the server, unless a [hot wallet option](./HotWallet.md) is enabled.
