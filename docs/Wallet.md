@@ -1,6 +1,6 @@
 # BTCPay Server Wallet
 
-BTCPay Server has a built in, **full-node reliant wallet** that allows easier funds management.
+BTCPay Server has a built in, **full-node reliant wallet** that allows for easy funds management.
 
 Each [store](./CreateStore.md)'s configured cryptocurrency has a separate wallet displayed on the wallets page. A wallet can be accessed by clicking **Wallets** from the top menu. To access a particular wallet, click **Manage**.
 
@@ -13,9 +13,9 @@ The wallet contains the following features:
 1. Transactions
 2. Send
 3. Receive
-4. Pull payments
-5. Payouts
-6. Re-scan
+4. Rescan
+5. Pull payments
+6. Payouts
 7. PSBT
 8. Settings
 
