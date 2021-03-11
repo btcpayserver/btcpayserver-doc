@@ -14,11 +14,11 @@ Using an existing wallet assumes that you already have an external wallet create
 When using an existing wallet with BTCPay Server, typically you're providing an extended public key from an externally generated wallet. Extended public key is a watch-only wallet token. Providing this public key allows BTCPay Server to generate a new address each time a new invoice is created.
 
 :::tip
-When you input an extended public key starting with yPub or zPub as a derivation scheme, BTCPay Server automatically converts it to the xPub format. This **format** has no affect on how your xpub receives or sends funds.
+When you input an extended public key starting with yPub or zPub as a derivation scheme, BTCPay Server automatically converts it to the xPub format. This **format** has no affect on how your xPub receives or sends funds.
 :::
 
 :::tip
-By using an existing wallet, you can receive payments to the external wallet, without BTCPay Server knowing the wallet's private key. If a malicious attacker hacked your server and obtained the xpub, they could observe your transaction history, but cannot access the funds.
+By using an existing wallet, you can receive payments to the external wallet, without BTCPay Server knowing the wallet's private key. If a malicious attacker hacked your server and obtained the xPub, they could observe your transaction history, but cannot access the funds.
 :::
 
 Importing an existing wallet's seed words is another way to create a wallet in BTCPay. Although it is not recommended, this method can save private keys on the server (in addition to the xpub). 
