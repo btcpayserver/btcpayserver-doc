@@ -66,6 +66,26 @@ bar
 :::
 ```
 
+### SEO improvements
+
+We are using the [Vuepress SEO plugin](https://www.npmjs.com/package/vuepress-plugin-seo) to add relevant meta tags to the site and individual pages.
+
+To improve the meta attributes of a specific page, you can add them as YAML frontmatter like this: (see the WooCommerce page for an example)
+
+```text
+---
+description: How to integrate BTCPay Server into your WooCommerce store.
+tags:
+- WooCommerce
+- WordPress
+- Plugin
+- eCommerce
+---
+# WooCommerce integration
+
+This document explains how to **integrate BTCPay Server into your WooCommerce store**.
+```
+
 ### Embedding YouTube videos
 
 To add a YouTube video with a preview, you can so so by linking to it like this:
