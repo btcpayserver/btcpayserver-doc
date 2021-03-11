@@ -111,7 +111,7 @@ Press the `Advanced Settings` button to view the RBF options:
 
 ##### Coin Selection
 
-Coin selection is an advanced **privacy-enhancing feature that allows you to specifically select coins** that you would like to spend when crafting a transaction. For example, paying with coins that are fresh from a coinjoin mix.
+Coin selection is an advanced **privacy-enhancing feature** that allows you to **specifically select coins** that you would like to spend when crafting a transaction. For example, paying with coins that are fresh from a coinjoin mix.
 
 To make the selection easier, coin-selection works natively with the wallet labels feature. This allows you to label any incoming funds for smoother UTXO management and spending.
 
@@ -158,7 +158,7 @@ Wallet re-scan solves two critical problems for BTCPay users:
 1. [Gap limit](./FAQ/FAQ-Wallet.md#missing-payments-in-my-software-or-hardware-wallet)
 2. Importing a previously used wallet
 
-**Gap limit**: Most of the wallets have the gap limit set to 20. This means that if a merchant receives 21 or more consecutive unpaid invoices, those wallets show the incorrect balance and some transactions may not be visible.
+**Gap limit**: Most wallets typically have the address gap limit set to 20. This means that if a merchant receives 21 or more consecutive unpaid invoices, those wallets show the incorrect balance and some transactions may not be visible.
 
 **Wallet import**: When users add a derivation scheme of a wallet that had transactions in the past (previously used wallet), BTCPay won't be able to show the balance and transactions from the past.
 
@@ -168,11 +168,11 @@ Re-scan is a feature that solves both of these problems. Once the scan is comple
 
 Wallet re-scan requires access to the full node which means that this function is only available for server owners.
 
-Users who use a third party host should use a newly generated xpub key and also use an external wallet like Electrum which allows them to increase the gap limit.
+Users who use a third-party host should use a newly generated xpub key and also use an external wallet like Electrum which allows them to increase the gap limit.
 
 ### PSBT
 
-In the **Partially Signed Bitcoin Transactions** (PSBT) tab, you can upload and decode any PSBT, for example an earlier signed PSBT from external wallet and broadcast it via BTCPay Wallet. For more information on PSBT [check this link](./ColdCardWallet.md#spending-from-btcpay-server-wallet-with-coldcard-psbt).
+In the **Partially Signed Bitcoin Transactions** (PSBT) tab, you can upload and decode any PSBT. For example, a signed PSBT from your external wallet can be broadcast via BTCPay Wallet. For more information on PSBT [check this link](./ColdCardWallet.md#spending-from-btcpay-server-wallet-with-coldcard-psbt).
 
 ### Settings
 
