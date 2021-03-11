@@ -1,7 +1,7 @@
 Besides using an [existing wallet](./WalletSetup.md#use-an-existing-wallet) you can create a brand-new **wallet within your BTCPay Server**.
 
 :::warning
-If you are using a [third-party host](./ThirdPartyHosting.md), this option needs to be explicitly enabled by the server admin. **Do not enable** a hot wallets, unless you've read the [Hot wallet documentation](./HotWallet.md) and have the use-case for this advanced feature.
+If you are using a [third-party host](./ThirdPartyHosting.md), this option needs to be explicitly enabled by the server admin. **Do not enable** hot wallets, unless you've read the [Hot wallet documentation](./HotWallet.md) and have the use-case for this advanced feature.
 :::
 
 ## How to create a new wallet
