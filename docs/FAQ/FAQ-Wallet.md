@@ -96,7 +96,7 @@ Using different derivation schemes with your extended public key, you can also c
 |Multi-sig P2SH |	2-of-xpub1...-xpub2...-[legacy] |
 
 :::tip
-On top of the xPub extended public key formats shown above, BTCPay Server supports yPub and zPub formats. Please note that these will be converted to xPub once the wallet setup is completed.
+On top of the xPub extended public key formats shown above, BTCPay Server supports yPub and zPub formats. Please note that these will be converted to xPub once the wallet setup is completed. This has no effect on how you receive or send funds.
 :::
 
 ## What is a Replace-By-Fee (RBF) transaction?
