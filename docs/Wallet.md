@@ -21,9 +21,9 @@ The wallet contains the following features:
 
 ### Transactions
 
-An overview of the incoming (green), outgoing (red) and unconfirmed (grayed out) **transactions** displayed together with timestamps and balances, sorted by date. You can click on the tx ID to preview the transaction on the block explorer.
+An overview of the incoming (green), outgoing (red) and unconfirmed (grayed out) **transactions** displayed together with timestamps and balances, sorted by date. You can click on the transaction ID to view the transaction details on the block explorer.
 
-![Individual Wallet](./img/wallet/WallettTransactions.png "BTCPay Server Wallet Transactions")
+![Individual Wallet](./img/wallet/WalletTransactions.png "BTCPay Server Wallet Transactions")
 
 #### Transaction Labels
 
