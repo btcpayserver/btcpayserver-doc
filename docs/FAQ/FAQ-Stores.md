@@ -91,10 +91,10 @@ To redirect to a specific URL in the Point of Sale app, use the [PoS Redirect](.
 ## Can I delete invoices from BTCPay?
 
 Invoices in BTCPay Server can't be deleted, but can be archived. 
-To archive an invoice, select the one you would like to archive, click the `Archive` button in top right corner. 
+To archive an invoice, select the one you would like to archive from the list of invoices and mark as archived from the actions dropdown. Or from the invoice details page click the `Archive` button in top right corner. 
 This action removes it from the `Invoices` page.
 
-An invoice can be restored by clicking the `Archived` button.
+An invoice can be restored by clicking the `Archived` button or by using the archive search filter to display them. Find out more about archived invoices [here](../Invoices.md#archived-invoices).
 
 ## How to collect additional buyer information?
 
