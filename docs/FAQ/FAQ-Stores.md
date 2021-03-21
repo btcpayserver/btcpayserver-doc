@@ -102,7 +102,7 @@ The Buyer information section of the invoice details page is only used for custo
 
 ## How to change the exchange rate provider for invoices?
 
-The default fiat to cryptocurreny exchange rate provider used in your BTCPay invoices can be modified by navigating to your Store Settings > Rates > Preferred price source. There are several exchange rate provider options available. Each store may use different settings.
+The default fiat to cryptocurrency exchange rate provider used in your BTCPay invoices can be modified by navigating to your Store Settings > Rates > Preferred price source. There are several exchange rate provider options available. Each store may use different settings.
 
 ## Getting GetRatesAsync was called on coinaverage error
 
@@ -112,4 +112,4 @@ Coinaverage discontinued their free tier API. As a result the following error ma
 GetRatesAsync was called on coinaverage when the rate is outdated. It should never happen, let BTCPayServer developers know about this.
 ```
 
-The issue can be fixed by [selecting a different rate source provider](./FAQ-Stores.md#how-to-change-the-exchange-rate-provider-for-invoices) in Stores > Settings > Rates, or by [updating your BTCPay Server](./FAQ-ServerSettings.md#how-to-update-btcpay-server) if you're running verison 1.0.3.146 or older. The update will automatically replace Coinaverage with CoinGecko.
+The issue can be fixed by [selecting a different rate source provider](./FAQ-Stores.md#how-to-change-the-exchange-rate-provider-for-invoices) in Stores > Settings > Rates, or by [updating your BTCPay Server](./FAQ-ServerSettings.md#how-to-update-btcpay-server) if you're running version 1.0.3.146 or older. The update will automatically replace Coinaverage with CoinGecko.
