@@ -20,13 +20,6 @@ module.exports = {
   title,
   description: "BTCPay Server Official Documentation",
   head: [
-    // Favicon
-    ["link", { rel: "apple-touch-icon", href: "/apple-touch-icon.png", sizes: "180x180" }],
-    ["link", { rel: "manifest", href: "/site.webmanifest" }],
-    ["meta", { name: "msapplication-TileColor", content: "#0f3b21" }],
-    ["meta", { name: "theme-color", content: "#ffffff" }],
-
-    // Styles
     ["link", { rel: "stylesheet", href: "/styles/btcpayserver-variables.css" }]
   ],
   chainWebpack (config) {
