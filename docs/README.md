@@ -180,6 +180,14 @@ If you're beginner, take a look at the step by step guide on how to contribute t
             <br/>
             <span>Nomics</span>
           </a>
+        </td>
+        </td>
+        <td align="center" valign="top" width="14.285714285714285714285714285714%">
+          <a href="https://coincards.com/" target="_blank">
+            <img  src="https://raw.githubusercontent.com/btcpayserver/btcpayserver/master/BTCPayServer/wwwroot/img/coincards.svg?sanitize=true" alt="Coincards" loading="lazy" height=100>
+            <br/>
+            <span>Coincards</span>
+          </a>
         </td> 
       </tr>
     </tbody>
