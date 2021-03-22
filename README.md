@@ -195,6 +195,13 @@ The BTCPay Server Project is proudly supported by these entities through the [BT
           <span>Nomics</span>
         </a>
       </td>
+      <td align="center" valign="middle">
+        <a href="https://coincards.com/" target="_blank">
+          <img  src="https://raw.githubusercontent.com/btcpayserver/btcpayserver/master/BTCPayServer/wwwroot/img/coincards.svg?sanitize=true" alt="Coincards" height=100>
+          <br/>
+          <span>Coincards</span>
+        </a>
+      </td>
     </tr>
   </tbody>
 </table>
