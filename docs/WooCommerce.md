@@ -1,3 +1,11 @@
+---
+description: How to integrate BTCPay Server into your WooCommerce store.
+tags:
+- WooCommerce
+- WordPress
+- Plugin
+- eCommerce
+---
 # WooCommerce integration
 
 This document explains how to **integrate BTCPay Server into your WooCommerce store**.

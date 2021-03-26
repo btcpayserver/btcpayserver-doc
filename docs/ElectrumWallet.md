@@ -19,7 +19,7 @@ After the installation, open **Electrum Wallet** by clicking on the icon on your
 
 1. Create a new Electrum Wallet
 2. In Electrum, Wallet > Wallet Information - copy the **Master Public Key**.
-3. In BTCPay Server, Store > Settings > Setup > Wallet > In the Derivation Scheme Box - Paste the Extended Public Key
+3. In BTCPay Server, Store > Settings > Setup > Wallet > Connect an existing wallet > Enter extended public key
 4. Go to Receive tab in Electrum.
 5. Compare the addresses in Electrum and BTCPay Server, they should match.
 6. Confirm the address match in BTCPay.

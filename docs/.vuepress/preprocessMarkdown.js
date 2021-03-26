@@ -27,7 +27,7 @@ const replaceExternalRepoLinks = (source, externalRepoUrl, resourcePath) => {
     }
 
     // rewrite external links to docs to internal VuePress links
-    const links = new RegExp(`\\]\\((https://docs.btcpayserver.org(.*))\\)`, 'gi')
+    const links = new RegExp(`\\]\\((https:\\/\\/docs.btcpayserver.org((?!\\/API\\/Greenfield).*))\\)`, 'gi')
     processed = processed.replace(links, (all, url, path) => replace(all, url, path, 3))
   })
 
@@ -73,9 +73,7 @@ module.exports = function (source) {
   processed = replaceYouTubeLinks(processed)
 
   const [, externalRepo] = source.match(/externalRepo: (.*)/) || []
-  if (externalRepo) {
-    processed = replaceExternalRepoLinks(processed, externalRepo, resourcePath)
-  }
+  processed = replaceExternalRepoLinks(processed, externalRepo, resourcePath)
 
   return processed
 }

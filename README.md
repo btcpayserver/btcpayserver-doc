@@ -66,6 +66,26 @@ bar
 :::
 ```
 
+### SEO improvements
+
+We are using the [Vuepress SEO plugin](https://www.npmjs.com/package/vuepress-plugin-seo) to add relevant meta tags to the site and individual pages.
+
+To improve the meta attributes of a specific page, you can add them as YAML frontmatter like this: (see the WooCommerce page for an example)
+
+```text
+---
+description: How to integrate BTCPay Server into your WooCommerce store.
+tags:
+- WooCommerce
+- WordPress
+- Plugin
+- eCommerce
+---
+# WooCommerce integration
+
+This document explains how to **integrate BTCPay Server into your WooCommerce store**.
+```
+
 ### Embedding YouTube videos
 
 To add a YouTube video with a preview, you can so so by linking to it like this:
@@ -173,6 +193,13 @@ The BTCPay Server Project is proudly supported by these entities through the [BT
           <img  src="https://raw.githubusercontent.com/btcpayserver/btcpayserver/master/BTCPayServer/wwwroot/img/nomics.svg?sanitize=true" alt="Nomics" height=100>
           <br/>
           <span>Nomics</span>
+        </a>
+      </td>
+      <td align="center" valign="middle">
+        <a href="https://coincards.com/" target="_blank">
+          <img  src="https://raw.githubusercontent.com/btcpayserver/btcpayserver/master/BTCPayServer/wwwroot/img/coincards.svg?sanitize=true" alt="Coincards" height=100>
+          <br/>
+          <span>Coincards</span>
         </a>
       </td>
     </tr>
