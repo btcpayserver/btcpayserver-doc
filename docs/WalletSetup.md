@@ -15,8 +15,8 @@ Using an existing wallet assumes that you already have an external wallet create
 
 By using an existing wallet, you can receive payments to the external wallet, without BTCPay Server knowing the wallet's private key. If a malicious attacker hacked your server and obtained the xpub, they could observe your transaction history, but cannot access the funds.
 
-- [Connect hardware wallet (Recommended)](#use-an-existing-hardware-wallet)
-- [Import Wallet file (Recommended)](#use-an-existing-software-wallet)
+- [Connect hardware wallet (Recommended)](#connect-hardware-wallet)
+- [Import Wallet file (Recommended)](#import-wallet-file)
 - [Enter extended public key](#enter-extended-public-key)
 - [Scan wallet QR code](#scan-wallet-qr-code)
 - [Enter wallet seed (Not Recommended)](#enter-wallet-seed)
