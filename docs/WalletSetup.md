@@ -38,7 +38,7 @@ For that reason, we recommend that you only use software wallets listed below.
 - [Electrum Wallet](./ElectrumWallet.md)
 - [Wasabi Wallet](./WasabiWallet.md)
 
-Click on the link above you will be redirected to a step by step tutorial on how to set up particular software wallet with BTCPay Server.
+Click on the links above and you will be redirected to a step by step tutorial on how to set up each particular software wallet with BTCPay Server.
 
 To spend and manage the funds received to your external software wallet, you can use the [internal BTCPay Wallet](./Wallet.md) and sign a transaction with your private key or simply manage the funds in that external wallet itself.
 

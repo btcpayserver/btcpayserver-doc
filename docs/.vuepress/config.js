@@ -3,22 +3,23 @@ const implicitFigures = require('markdown-it-implicit-figures')
 const slugify = require('./slugify')
 const preprocessMarkdown = resolve(__dirname, 'preprocessMarkdown')
 
+const title = 'BTCPay Server Docs'
 const baseUrl = 'https://docs.btcpayserver.org'
 const pageSuffix = '/'
+const info = {
+  name: title,
+  twitter: 'btcpayserver'
+}
+const extractDescription = text => {
+  if (!text) return
+  const paragraph = text.match(/^[A-Za-z].*(?:\n[A-Za-z].*)*/m)
+  return paragraph ? paragraph.toString().replace(/[\*\_\(\)\[\]]/g, '') : null
+}
 
 module.exports = {
-  title: "BTCPay Server Docs",
+  title,
   description: "BTCPay Server Official Documentation",
   head: [
-    // Favicon
-    ["link", { rel: "apple-touch-icon", href: "/apple-touch-icon.png", sizes: "180x180" }],
-    ["link", { rel: "icon", type: "image/png", sizes: "32x32", href: "/favicon-32x32.png" }],
-    ["link", { rel: "icon", type: "image/png", sizes: "16x16", href: "/favicon-16x16.png" }],
-    ["link", { rel: "manifest", href: "/site.webmanifest" }],
-    ["link", { rel: "mask-icon", href: "/safari-pinned-tab.svg", color: "#51b13e" }],
-    ["meta", { name: "msapplication-TileColor", content: "#0f3b21" }],
-    ["meta", { name: "theme-color", content: "#ffffff" }],
-    // Styles
     ["link", { rel: "stylesheet", href: "/styles/btcpayserver-variables.css" }]
   ],
   chainWebpack (config) {
@@ -30,12 +31,23 @@ module.exports = {
         .end()
   },
   plugins: [
-    ['vuepress-plugin-clean-urls', {
+    ['seo', {
+      siteTitle: (_, $site) => $site.title,
+      title: $page => $page.title,
+      description: $page => $page.frontmatter.description || extractDescription($page._strippedContent),
+      author: (_, $site) => info,
+      tags: $page => ($page.frontmatter.tags || ['BTCPay Server']),
+      twitterCard: _ => 'summary',
+      type: $page => 'article',
+      url: (_, $site, path) => `${baseUrl}${path.replace('.html', pageSuffix)}`,
+      image: ($page, $site) => `${baseUrl}/card.png`
+    }],
+    ['clean-urls', {
       normalSuffix: pageSuffix,
       indexSuffix: pageSuffix,
       notFoundPath: '/404.html',
     }],
-    ['vuepress-plugin-code-copy', {
+    ['code-copy', {
       color: '#8F979E',
       backgroundTransition: false,
       staticIcon: true
@@ -54,6 +66,7 @@ module.exports = {
     slugify
   },
   themeConfig: {
+    domain: baseUrl,
     logo: "/img/btcpay-logo.svg",
     displayAllHeaders: false,
     repo: "btcpayserver/btcpayserver-doc",
@@ -144,7 +157,8 @@ module.exports = {
                     collapsable: false,
                     children: [
                       ["/DynamicDNS", "Dynamic DNS"],
-                      ["/ReverseSSHtunnel", "Reverse SSH Tunnel"]
+                      ["/ReverseSSHtunnel", "Reverse SSH Tunnel"],
+                      ["/ReverseProxyToTor", "Reverse Proxy to Tor"]
                     ]
                   },
                   {
