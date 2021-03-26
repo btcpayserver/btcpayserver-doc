@@ -4,10 +4,12 @@ After [account registration](./RegisterAccount.md) and [store creation](./Create
 
 There are two ways to set up a wallet in BTCPay Server:
 
- - [Use an existing wallet](#use-an-existing-wallet)
+ - [Connect an existing wallet](#connect-an-existing-wallet)
  - [Create a new wallet](#create-a-new-wallet)
 
-## Use an existing wallet
+## Connect an existing wallet
+
+![Import Existing Wallet](./img/createwallet/ImportWallet.png)
 
 Using an existing wallet assumes that you already have an external wallet created and backed up.
 
@@ -47,6 +49,8 @@ Click on the link above you will be redirected to a step by step tutorial on how
 To spend and manage the funds received to your external software wallet, you can use an [internal BTCPay Wallet](./Wallet.md) and sign a transaction with your private key or simply manage the funds in that external wallet itself.
 
 ## Create a new wallet
+
+![Create New Wallet](./img/hotwallet/HotWallet.png)
 
 If you do not have an existing wallet, you can generate a new one within your BTCPay Server. If are using a [third-party host](./ThirdPartyHosting.md), this option needs to be explicitly enabled by the server admin. Generating a new wallet in an environment you are not sure is trustworthy, is discouraged.
 
