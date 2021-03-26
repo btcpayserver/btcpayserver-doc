@@ -31,7 +31,7 @@ If you own a hardware wallet, follow the instructions on how to [use a an existi
 
 ### Import Wallet file
 
-Using an existing software wallet assumes that you already have an external wallet created and backed up. In theory, any mobile/desktop wallet that provides an extended public key should work, however, most wallets have technical limitations [(gap-limit)](FAQ/FAQ-Wallet.md/#missing-payments-in-my-software-or-hardware-wallet) that may cause serious user-experience problems for you later on.
+Using an existing software wallet assumes that you already have an external wallet created and backed up. In theory, any mobile/desktop wallet that provides an extended public key should work, however, most wallets have technical limitations [(gap-limit)](./FAQ/FAQ-Wallet.md#missing-payments-in-my-software-or-hardware-wallet) that may cause serious user-experience problems for you later on.
 
 For that reason, we recommend that you only use software wallets listed below.
 
@@ -50,7 +50,7 @@ This method requires you to configure your wallet connection manually and should
 
 ### Scan wallet QR code
 
-Some wallets allow you to create a wallet and export the extended public key (xPub) using a QR Code. You can easily connect your BTCPay Server to these types of wallets with the scan QR code option. The common [(gap-limit)](FAQ/FAQ-Wallet.md#missing-payments-in-my-software-or-hardware-wallet) issue is likely to occur using any xPub, unless the wallet provider has a way to adjust it.
+Some wallets allow you to create a wallet and export the extended public key (xPub) using a QR Code. You can easily connect your BTCPay Server to these types of wallets with the scan QR code option. The common [(gap-limit)](./FAQ/FAQ-Wallet.md#missing-payments-in-my-software-or-hardware-wallet) issue is likely to occur using any xPub, unless the wallet provider has a way to adjust it.
 
 To spend and manage the funds in your [internal BTCPay Wallet](./Wallet.md) you will need to provide the private key (used to generate the xpub QR Code) during transaction signing or simply receive funds through your BTCPay and manage the funds in the external wallet.
 
@@ -82,7 +82,7 @@ Anyone with access to your recovery seed can also access and steal all your fund
 
 Similar to the hot wallet, the watch-only wallet can get your store connected to a wallet instantly. In contrast, this option does not store the private keys on the server. As a result the wallet becomes "watch-only" for any received funds. 
 
-In order to spend the funds you would need to manually provide your seed words each time. Alternatively you can spend funds in another external wallet where you have imported your BTCPay Server produced seed words. Be sure to consider the [gap limit issue](FAQ/FAQ-Wallet.md#missing-payments-in-my-software-or-hardware-wallet) if you're using an external wallet with your watch-only wallet.
+In order to spend the funds you would need to manually provide your seed words each time. Alternatively you can spend funds in another external wallet where you have imported your BTCPay Server produced seed words. Be sure to consider the [gap limit issue](./FAQ/FAQ-Wallet.md#missing-payments-in-my-software-or-hardware-wallet) if you're using an external wallet with your watch-only wallet.
 
 ## Summary
 
