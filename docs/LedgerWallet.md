@@ -48,7 +48,7 @@ In this case you can manually find the extended public key for your wanted accou
 6. Paste it manually into the "DerivationScheme" textfield
 7. Continue with [Step 7 of the Quick Setup above](#quick-setup)
 
-![Ledger Account "Adavanced Logs" info screenshot](./img/LedgerHelpXpub.png "Ledger Account Advanced Logs")
+![Ledger Account "Advanced Logs" info screenshot](./img/LedgerHelpXpub.png "Ledger Account Advanced Logs")
 
 ### Spending from BTCPay Server wallet with Ledger
 
