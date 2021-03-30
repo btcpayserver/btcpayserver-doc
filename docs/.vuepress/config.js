@@ -219,28 +219,12 @@ module.exports = {
             initialOpenGroupIndex: -1,
             children: [
               {
-                title: "Use existing hardware wallet",
-                path: "/HardwareWalletIntegration",
-                children: [
-                  ["/ColdCardWallet", "ColdCard Wallet"]
-                ]
-              },
-              {
-                title: "Use existing software wallet",
-                children: [
-                  {
-                    title: "Electrum Wallet",
-                    path: "/ElectrumWallet",
-                  },
-                  ["/WasabiWallet", "Wasabi Wallet"]
-                ]
+                title: "Connect an existing wallet",
+                path: "/HardwareWalletIntegration"
               },
               {
                 title: "Create a new wallet",
-                path: "/CreateWallet",
-                children: [
-                  ["/HotWallet", "Hot Wallet"]
-                ]
+                path: "/HotWallet"
               }
             ]
           },
