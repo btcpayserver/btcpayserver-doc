@@ -1,0 +1,700 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Extended Manual Setup | BTCPay Server Docs</title>
+    <meta name="generator" content="VuePress 1.8.2">
+    <link rel="stylesheet" href="/styles/btcpayserver-variables.css">
+    <meta name="description" content="BTCPay Server Official Documentation">
+    <meta property="og:site_name" content="BTCPay Server Docs">
+    <meta property="og:title" content="Extended Manual Setup">
+    <meta property="og:description" content="This document lists steps for manually deploying BTCPay Server and additional related components. Following these steps is likely to take a long time. A shorter and more pragmatic approach is to use a docker based deploymenthttps://github.com/btcpayserver/btcpayserver-docker.">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://docs.btcpayserver.org/ManualDeploymentExtended/">
+    <meta property="og:image" content="https://docs.btcpayserver.org/card.png">
+    <meta name="twitter:title" content="Extended Manual Setup">
+    <meta name="twitter:description" content="This document lists steps for manually deploying BTCPay Server and additional related components. Following these steps is likely to take a long time. A shorter and more pragmatic approach is to use a docker based deploymenthttps://github.com/btcpayserver/btcpayserver-docker.">
+    <meta name="twitter:url" content="https://docs.btcpayserver.org/ManualDeploymentExtended/">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:image" content="https://docs.btcpayserver.org/card.png">
+    <meta name="twitter:label1" content="Written by">
+    <meta name="twitter:data1" content="BTCPay Server Docs">
+    <meta name="twitter:creator" content="btcpayserver">
+    <meta name="twitter:label2" content="Filed under">
+    <meta name="twitter:data2" content="BTCPay Server">
+    <meta property="article:tag" content="BTCPay Server">
+    
+    <link rel="preload" href="/assets/css/0.styles.aa878b9c.css" as="style"><link rel="preload" href="/assets/js/app.3e743670.js" as="script"><link rel="preload" href="/assets/js/3.aa1712e0.js" as="script"><link rel="preload" href="/assets/js/89.a318c3fc.js" as="script"><link rel="preload" href="/assets/js/28.ed6af585.js" as="script"><link rel="prefetch" href="/assets/js/10.3a0a5d27.js"><link rel="prefetch" href="/assets/js/11.b1b70333.js"><link rel="prefetch" href="/assets/js/12.fbb2d827.js"><link rel="prefetch" href="/assets/js/13.12a8698e.js"><link rel="prefetch" href="/assets/js/14.3ce62c2f.js"><link rel="prefetch" href="/assets/js/15.af63728e.js"><link rel="prefetch" href="/assets/js/16.07a14b03.js"><link rel="prefetch" href="/assets/js/17.a8920303.js"><link rel="prefetch" href="/assets/js/18.e0b1b1ec.js"><link rel="prefetch" href="/assets/js/19.abd6aa6d.js"><link rel="prefetch" href="/assets/js/20.d3ed4617.js"><link rel="prefetch" href="/assets/js/21.e078310c.js"><link rel="prefetch" href="/assets/js/22.310d1a38.js"><link rel="prefetch" href="/assets/js/23.93964d5d.js"><link rel="prefetch" href="/assets/js/24.ef7f693b.js"><link rel="prefetch" href="/assets/js/25.c62a0aa4.js"><link rel="prefetch" href="/assets/js/26.93ad068b.js"><link rel="prefetch" href="/assets/js/27.d34e5e35.js"><link rel="prefetch" href="/assets/js/29.1927e873.js"><link rel="prefetch" href="/assets/js/30.3d119335.js"><link rel="prefetch" href="/assets/js/31.a3699e8e.js"><link rel="prefetch" href="/assets/js/32.7e916537.js"><link rel="prefetch" href="/assets/js/33.6b95d9f1.js"><link rel="prefetch" href="/assets/js/34.a64b838b.js"><link rel="prefetch" href="/assets/js/35.7c8fa13d.js"><link rel="prefetch" href="/assets/js/36.30643837.js"><link rel="prefetch" href="/assets/js/37.b86058d8.js"><link rel="prefetch" href="/assets/js/38.d8a24972.js"><link rel="prefetch" href="/assets/js/39.39ffaad0.js"><link rel="prefetch" href="/assets/js/4.32b4e6f9.js"><link rel="prefetch" href="/assets/js/40.326657e1.js"><link rel="prefetch" href="/assets/js/41.1ec23881.js"><link rel="prefetch" href="/assets/js/42.a2429534.js"><link rel="prefetch" href="/assets/js/43.d82659dc.js"><link rel="prefetch" href="/assets/js/44.62c03fa6.js"><link rel="prefetch" href="/assets/js/45.32d3962a.js"><link rel="prefetch" href="/assets/js/46.33bb47d4.js"><link rel="prefetch" href="/assets/js/47.53b2b36d.js"><link rel="prefetch" href="/assets/js/48.0274a01c.js"><link rel="prefetch" href="/assets/js/49.8ec72738.js"><link rel="prefetch" href="/assets/js/5.3a8c8f4b.js"><link rel="prefetch" href="/assets/js/50.53cfdd93.js"><link rel="prefetch" href="/assets/js/51.9a71d339.js"><link rel="prefetch" href="/assets/js/52.1d073968.js"><link rel="prefetch" href="/assets/js/53.1266553e.js"><link rel="prefetch" href="/assets/js/54.6f9a3666.js"><link rel="prefetch" href="/assets/js/55.b7d0ab4b.js"><link rel="prefetch" href="/assets/js/56.f9d9f536.js"><link rel="prefetch" href="/assets/js/57.dfe9eb68.js"><link rel="prefetch" href="/assets/js/58.98363b8a.js"><link rel="prefetch" href="/assets/js/59.539a99cb.js"><link rel="prefetch" href="/assets/js/6.2b5d9249.js"><link rel="prefetch" href="/assets/js/60.5d34424d.js"><link rel="prefetch" href="/assets/js/61.e828e58a.js"><link rel="prefetch" href="/assets/js/62.67d4d43d.js"><link rel="prefetch" href="/assets/js/63.0d098f54.js"><link rel="prefetch" href="/assets/js/64.48dbc6c2.js"><link rel="prefetch" href="/assets/js/65.98ed2be4.js"><link rel="prefetch" href="/assets/js/66.acf9dd81.js"><link rel="prefetch" href="/assets/js/67.365a5a7e.js"><link rel="prefetch" href="/assets/js/68.fe0dd8cc.js"><link rel="prefetch" href="/assets/js/69.e714b843.js"><link rel="prefetch" href="/assets/js/7.8964f754.js"><link rel="prefetch" href="/assets/js/70.eaf0d684.js"><link rel="prefetch" href="/assets/js/71.db7c72c5.js"><link rel="prefetch" href="/assets/js/72.6a51ce83.js"><link rel="prefetch" href="/assets/js/73.1f772bd8.js"><link rel="prefetch" href="/assets/js/74.4caaf1f4.js"><link rel="prefetch" href="/assets/js/75.540c7ae1.js"><link rel="prefetch" href="/assets/js/76.e7ae2c11.js"><link rel="prefetch" href="/assets/js/77.a9920ba7.js"><link rel="prefetch" href="/assets/js/78.a922a4ae.js"><link rel="prefetch" href="/assets/js/79.08cf98ca.js"><link rel="prefetch" href="/assets/js/8.2a1e7b10.js"><link rel="prefetch" href="/assets/js/80.56fbed8c.js"><link rel="prefetch" href="/assets/js/81.a1320e9b.js"><link rel="prefetch" href="/assets/js/82.da6c518d.js"><link rel="prefetch" href="/assets/js/83.2bc79146.js"><link rel="prefetch" href="/assets/js/84.17126a4b.js"><link rel="prefetch" href="/assets/js/85.66f91d91.js"><link rel="prefetch" href="/assets/js/86.32ac9882.js"><link rel="prefetch" href="/assets/js/87.1d161495.js"><link rel="prefetch" href="/assets/js/88.c1f12b5f.js"><link rel="prefetch" href="/assets/js/9.c4ffd9e7.js"><link rel="prefetch" href="/assets/js/90.c30abebb.js"><link rel="prefetch" href="/assets/js/91.1633d59a.js"><link rel="prefetch" href="/assets/js/92.f1745853.js"><link rel="prefetch" href="/assets/js/93.cbff83c7.js"><link rel="prefetch" href="/assets/js/94.964fd8e6.js"><link rel="prefetch" href="/assets/js/95.eaca7976.js"><link rel="prefetch" href="/assets/js/96.c788081d.js"><link rel="prefetch" href="/assets/js/97.741a1b7e.js"><link rel="prefetch" href="/assets/js/98.b1eb9e6e.js"><link rel="prefetch" href="/assets/js/99.e6f02097.js"><link rel="prefetch" href="/assets/js/vendors~docsearch.3818bd5d.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.aa878b9c.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><img src="/img/btcpay-logo.svg" alt="BTCPay Server Docs" class="logo"> <span class="site-name can-hide">BTCPay Server Docs</span></a> <div class="links"><form id="search-form" role="search" class="algolia-search-wrapper search-box"><input id="algolia-search-input" class="search-query"></form> <nav class="nav-links can-hide"><div class="nav-item"><a href="https://btcpayserver.org/" target="_blank" rel="noopener noreferrer website" class="nav-link external">
+  Website
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></div><div class="nav-item"><a href="https://chat.btcpayserver.org/" target="_blank" rel="noopener noreferrer chat" class="nav-link external">
+  Chat
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></div><div class="nav-item"><a href="https://github.com/btcpayserver/" target="_blank" rel="noopener noreferrer github" class="nav-link external">
+  GitHub
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></div><div class="nav-item"><a href="https://twitter.com/BtcpayServer" target="_blank" rel="noopener noreferrer twitter" class="nav-link external">
+  Twitter
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></div> <a href="https://github.com/btcpayserver/btcpayserver-doc" target="_blank" rel="noopener noreferrer" class="repo-link">
+    GitHub
+    <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="https://btcpayserver.org/" target="_blank" rel="noopener noreferrer website" class="nav-link external">
+  Website
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></div><div class="nav-item"><a href="https://chat.btcpayserver.org/" target="_blank" rel="noopener noreferrer chat" class="nav-link external">
+  Chat
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></div><div class="nav-item"><a href="https://github.com/btcpayserver/" target="_blank" rel="noopener noreferrer github" class="nav-link external">
+  GitHub
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></div><div class="nav-item"><a href="https://twitter.com/BtcpayServer" target="_blank" rel="noopener noreferrer twitter" class="nav-link external">
+  Twitter
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></div> <a href="https://github.com/btcpayserver/btcpayserver-doc" target="_blank" rel="noopener noreferrer" class="repo-link">
+    GitHub
+    <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></nav>  <ul class="sidebar-links"><li><a href="/" aria-current="page" class="sidebar-link">Introduction</a></li><li><section class="sidebar-group depth-0"><p class="sidebar-heading"><span>Basics</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/UseCase/" class="sidebar-link">Use Case</a></li><li><a href="/Walkthrough/" class="sidebar-link">Walkthrough</a></li><li><a href="/BTCPayVsOthers/" class="sidebar-link">BTCPay Server vs. Others</a></li><li><a href="/TryItOut/" class="sidebar-link">Try it out</a></li></ul></section></li><li><section class="sidebar-group depth-0"><p class="sidebar-heading open"><span>Deployment</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/Deployment/" class="sidebar-link">Choosing a Deployment Method</a></li><li><a href="/ThirdPartyHosting/" class="sidebar-link">Third-party Hosting</a></li><li><section class="sidebar-group is-sub-group depth-1"><a href="/Docker/" class="sidebar-heading clickable"><span>Docker</span> <!----></a> <ul class="sidebar-links sidebar-group-items"><li><a href="/LunaNodeWebDeployment/" class="sidebar-link">Web Deployment</a></li><li><section class="sidebar-group collapsable is-sub-group depth-2"><a href="/AzureDeployment" class="sidebar-heading clickable"><span>Azure Deployment</span> <span class="arrow right"></span></a> <!----></section></li><li><a href="/GoogleCloudDeployment/" class="sidebar-link">Google Cloud Deployment</a></li><li><section class="sidebar-group collapsable is-sub-group depth-2"><a href="/HardwareDeployment" class="sidebar-heading clickable"><span>Hardware Deployment</span> <span class="arrow right"></span></a> <!----></section></li><li><section class="sidebar-group collapsable is-sub-group depth-2"><a href="/RaspberryPiDeployment" class="sidebar-heading clickable"><span>Raspberry Pi Deployment</span> <span class="arrow right"></span></a> <!----></section></li><li><section class="sidebar-group collapsable is-sub-group depth-2"><p class="sidebar-heading"><span>Docker Plugins</span> <span class="arrow right"></span></p> <!----></section></li></ul></section></li><li><section class="sidebar-group collapsable is-sub-group depth-1"><a href="/ManualDeployment" class="sidebar-heading clickable open"><span>Manual Deployment</span> <span class="arrow down"></span></a> <ul class="sidebar-links sidebar-group-items"><li><a href="/ManualDeploymentExtended/" aria-current="page" class="active sidebar-link">Extended Manual Setup</a></li></ul></section></li><li><a href="/Configurator/" class="sidebar-link">Configurator</a></li></ul></section></li><li><section class="sidebar-group depth-0"><p class="sidebar-heading"><span>Getting Started</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/RegisterAccount/" class="sidebar-link">(1) Register account</a></li><li><a href="/CreateStore/" class="sidebar-link">(2) Create a store</a></li><li><section class="sidebar-group is-sub-group depth-1"><a href="/WalletSetup" class="sidebar-heading clickable"><span>(3) Wallet Setup</span> <!----></a> <ul class="sidebar-links sidebar-group-items"><li><a href="/HardwareWalletIntegration/" class="sidebar-link">Connect an existing wallet</a></li><li><a href="/HotWallet/" class="sidebar-link">Create a new wallet</a></li></ul></section></li><li><a href="/WhatsNext/" class="sidebar-link">(4) What's Next?</a></li></ul></section></li><li><section class="sidebar-group depth-0"><p class="sidebar-heading"><span>Features</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/Apps/" class="sidebar-link">Apps</a></li><li><a href="/Wallet/" class="sidebar-link">Wallet</a></li><li><a href="/Invoices/" class="sidebar-link">Invoices</a></li><li><section class="sidebar-group collapsable is-sub-group depth-1"><a href="/PullPayments" class="sidebar-heading clickable"><span>Pull Payments</span> <span class="arrow right"></span></a> <!----></section></li><li><a href="/PaymentRequests/" class="sidebar-link">Payment Requests</a></li><li><a href="/LightningNetwork/" class="sidebar-link">Lightning Network</a></li><li><a href="/Accounting/" class="sidebar-link">Accounting</a></li><li><section class="sidebar-group collapsable is-sub-group depth-1"><a href="/Payjoin" class="sidebar-heading clickable"><span>Payjoin</span> <span class="arrow right"></span></a> <!----></section></li></ul></section></li><li><section class="sidebar-group depth-0"><p class="sidebar-heading"><span>Integrations</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/WooCommerce/" class="sidebar-link">WooCommerce</a></li><li><a href="/Shopify/" class="sidebar-link">Shopify</a></li><li><a href="/Drupal/" class="sidebar-link">Drupal</a></li><li><a href="/Magento/" class="sidebar-link">Magento</a></li><li><a href="/PrestaShop/" class="sidebar-link">PrestaShop</a></li><li><a href="https://github.com/lampsolutions/LampSBtcPayShopware" target="_blank" rel="noopener noreferrer" class="sidebar-link">Shopware<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li><li><a href="/CustomIntegration/" class="sidebar-link">Custom Integration</a></li></ul></section></li><li><section class="sidebar-group depth-0"><p class="sidebar-heading"><span>Support and Community</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><section class="sidebar-group collapsable is-sub-group depth-1"><a href="/FAQ" class="sidebar-heading clickable"><span>FAQ and common issues</span> <span class="arrow right"></span></a> <!----></section></li><li><a href="/Troubleshooting/" class="sidebar-link">Troubleshooting an issue</a></li><li><a href="/Support/" class="sidebar-link">Support</a></li><li><section class="sidebar-group collapsable is-sub-group depth-1"><a href="/Contribute" class="sidebar-heading clickable"><span>Contribute to BTCPay Server</span> <span class="arrow right"></span></a> <!----></section></li><li><a href="/Community/" class="sidebar-link">Community</a></li></ul></section></li><li><section class="sidebar-group depth-0"><p class="sidebar-heading"><span>Development</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/Architecture/" class="sidebar-link">Architecture</a></li><li><a href="/LocalDevelopment/" class="sidebar-link">Developing Locally</a></li><li><a href="/Altcoins/" class="sidebar-link">How to add an Altcoin</a></li><li><a href="/Theme/" class="sidebar-link">Customizing Themes</a></li><li><a href="https://docs.btcpayserver.org/API/Greenfield/v1" target="_blank" rel="noopener noreferrer" class="sidebar-link">Greenfield API v1<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li><li><a href="/GreenFieldExample/" class="sidebar-link">Greenfield example with cURL</a></li><li><a href="/BTCPayServer/Security/" class="sidebar-link">Security Disclosures</a></li></ul></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="extended-manual-setup"><a href="#extended-manual-setup" class="header-anchor">#</a> Extended Manual Setup</h1> <p>This document lists steps for <strong>manually deploying BTCPay Server</strong> and additional related components. Following these steps is likely to take a long time. A shorter and more pragmatic approach is to use a <a href="https://github.com/btcpayserver/btcpayserver-docker" target="_blank" rel="noopener noreferrer">docker based deployment<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a>.</p> <p>The instructions also build all the application components from source which can be an advantage for certain audit and/or security scenarios.</p> <div class="custom-block danger"><p class="custom-block-title">WARNING</p> <h4 id="not-recommended-for-production-use"><a href="#not-recommended-for-production-use" class="header-anchor">#</a> Not recommended for production use</h4> <p>Manual installation is NOT recommended for production use unless you are very confident with your Operating System and Bitcoin security expertise. If you are unsure use the docker deployment or one of the other <a href="/Deployment/">deployment options</a>.</p> <h4 id="you-must-have-technical-literacy-and-be-able-to-resolve-any-issues-on-your-own-the-community-will-not-provide-extensive-support-for-this-deployment"><a href="#you-must-have-technical-literacy-and-be-able-to-resolve-any-issues-on-your-own-the-community-will-not-provide-extensive-support-for-this-deployment" class="header-anchor">#</a> You must have technical literacy and be able to resolve any issues on your own. The community will not provide extensive support for this deployment.</h4></div> <h2 id="installation-steps-overview"><a href="#installation-steps-overview" class="header-anchor">#</a> Installation Steps Overview</h2> <p>The instructions in this article have been tested on Ubuntu 20.04. They should be applicable to other Linux based distributions. They are also based on all components being on the same host or virtual machine. It is possible to split the components across different hosts but these instructions don't describe that.</p> <p>An example hostname of <code>mainnet.demo.btcpayserver.org</code> has been used, it needs to be replaced with the hostname you are using for your BTCPay Server.</p> <h3 id="security"><a href="#security" class="header-anchor">#</a> Security</h3> <p>If you do use these instructions to install a BTCPay Server connected to the Bitcoin mainnet then at a minimum you should understand how the wallet mechanisms work. It's highly recommended to read the two articles below and ask questions if anything is not clear.</p> <ul><li><a href="/FAQ/FAQ-Wallet/">BTCPay Wallet FAQ</a></li> <li><a href="/LightningNetwork/">Lightning Network and BTCPay (first section)</a></li></ul> <p>As an additional aid below is a list of iptables rules and instructions which should include all the ports that need to be open. <strong>NO WARRANTY</strong>. Use at your own risk, <strong>including risk of locking yourself out</strong>.</p> <div class="language-bash extra-class"><pre class="language-bash"><code>~$ <span class="token function">vi</span> iptables.txt
+</code></pre></div><div class="language- extra-class"><pre class="language-text"><code># Generated by iptables-save v1.6.1 on Mon May 27 18:48:11 2019
+*filter
+:INPUT ACCEPT [0:0]
+:FORWARD ACCEPT [0:0]
+:OUTPUT ACCEPT [0:0]
+-A INPUT -i lo -j ACCEPT
+-A INPUT -p tcp -m tcp --dport 22 -j ACCEPT     # SSH
+-A INPUT -p tcp -m tcp --dport 80 -j ACCEPT     # BTCPay HTTP
+-A INPUT -p tcp -m tcp --dport 443 -j ACCEPT    # BTCPay HTTPS
+-A INPUT -p tcp -m tcp --dport 8333 -j ACCEPT   # Bitcoind P2P
+-A INPUT -p tcp -m tcp --dport 9375 -j ACCEPT   # Lightning P2P
+-A INPUT -m conntrack --ctstate ESTABLISHED,RELATED -j ACCEPT
+COMMIT
+# Completed on Mon May 27 18:48:11 2019
+</code></pre></div><div class="language-bash extra-class"><pre class="language-bash"><code>~$ <span class="token function">sudo</span> iptables-restore <span class="token operator">&lt;</span> iptables.txt
+</code></pre></div><p>At this point if you are still connected to you ssh session it's a good sign. If not the rules are temporary and you can use whatever mechanism you have to remotely reboot your server and try again.</p> <p>The rules have now been temporarily applied. To apply the rules automatically each time your server starts use the <code>iptables-persistent</code> package.</p> <div class="language-bash extra-class"><pre class="language-bash"><code>~$ <span class="token function">sudo</span> <span class="token function">apt</span> <span class="token function">install</span> iptables-persistent
+</code></pre></div><p>If you subsequently change the iptables rules and want to save them across reboots use the command below.</p> <div class="language-bash extra-class"><pre class="language-bash"><code>~$ <span class="token function">sudo</span> netfilter-persistent save
+</code></pre></div><h2 id="unprivileged-user"><a href="#unprivileged-user" class="header-anchor">#</a> Unprivileged user</h2> <p>These instructions configure everything to run under an <strong>unprivileged user</strong> called <code>admin</code>.  Create this user before proceeding:</p> <div class="language-bash extra-class"><pre class="language-bash"><code>~$ <span class="token function">sudo</span> <span class="token function">useradd</span> -M admin <span class="token operator">&amp;&amp;</span> <span class="token function">sudo</span> <span class="token function">usermod</span> -L admin
+</code></pre></div><h3 id="prerequisites"><a href="#prerequisites" class="header-anchor">#</a> Prerequisites</h3> <ul><li>Postgresql</li> <li>Tor</li> <li>NGINX and Let's Encrypt</li></ul> <h3 id="application-components"><a href="#application-components" class="header-anchor">#</a> Application Components</h3> <ul><li>Bitcoin Daemon<sup>1,2</sup></li> <li>NBXplorer<sup>1,2</sup></li> <li>BTCPay Server<sup>1,2</sup></li> <li>Lightning Network Daemon (lnd)<sup>2</sup></li> <li>Ride The Lightning (RTL)<sup>2</sup></li></ul> <p><sup>1</sup> The bare minimum install of a BTCPay server only requires these items. Using a bare minimum configuration reduces the functionality: no lightning payments, no auto-renewal of TLS certificates, less reliable data store, less capable of handling NAT and more.</p> <p><sup>2</sup> Built from source code.</p> <h2 id="postgresql"><a href="#postgresql" class="header-anchor">#</a> Postgresql</h2> <p><strong>Postgresql</strong> can be used by BTCPay Server in place of the default SQLite file based storage. It's also possible to use MySQL.</p> <h5 id="-install"><a href="#-install" class="header-anchor">#</a> 🚚 Install</h5> <div class="language-bash extra-class"><pre class="language-bash"><code>~$ <span class="token function">sudo</span> <span class="token function">apt</span> <span class="token function">install</span> postgresql postgresql-contrib
+</code></pre></div><h5 id="✒️-configuration"><a href="#✒️-configuration" class="header-anchor">#</a> ✒️ Configuration</h5> <p>Covered in BTCPay Server Configuration.</p> <h5 id="-check"><a href="#-check" class="header-anchor">#</a> 👍 Check</h5> <div class="language-bash extra-class"><pre class="language-bash"><code>~$ psql --version
+psql <span class="token punctuation">(</span>PostgreSQL<span class="token punctuation">)</span> <span class="token number">12.2</span> <span class="token punctuation">(</span>Ubuntu <span class="token number">12.2</span>-4<span class="token punctuation">)</span>
+~$ <span class="token function">sudo</span> systemctl status postgresql
+~$ <span class="token function">sudo</span> -u postgres psql
+psql <span class="token punctuation">(</span><span class="token number">12.2</span> <span class="token punctuation">(</span>Ubuntu <span class="token number">12.2</span>-4<span class="token punctuation">))</span>
+Type <span class="token string">&quot;help&quot;</span> <span class="token keyword">for</span> help.
+
+<span class="token assign-left variable">postgres</span><span class="token operator">=</span><span class="token comment"># \q</span>
+</code></pre></div><h2 id="tor"><a href="#tor" class="header-anchor">#</a> Tor</h2> <p><strong>Tor</strong> can be used by the following components to provide enhanced privacy and/or help with NAT traversal:</p> <ul><li>Bitcoin-core Daemon</li> <li>Lightning Network Daemon (lnd).</li></ul> <p>Additional information running Bitcoin Core with Tor support can be found <a href="https://github.com/bitcoin/bitcoin/blob/master/doc/tor.md" target="_blank" rel="noopener noreferrer">here<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a>.</p> <h5 id="-install-2"><a href="#-install-2" class="header-anchor">#</a> 🚚 Install</h5> <div class="language-bash extra-class"><pre class="language-bash"><code>~$ <span class="token function">sudo</span> <span class="token function">apt</span> <span class="token function">install</span> tor
+</code></pre></div><h5 id="✒️-configuration-2"><a href="#✒️-configuration-2" class="header-anchor">#</a> ✒️ Configuration</h5> <div class="language-bash extra-class"><pre class="language-bash"><code>~$ <span class="token function">sudo</span> <span class="token function">vi</span> /etc/tor/torrc  <span class="token comment"># (and uncomment two lines below)</span>
+ControlPort <span class="token number">9051</span>
+CookieAuthentication <span class="token number">1</span>
+~$ <span class="token function">sudo</span> systemctl restart tor
+</code></pre></div><p>Covered further in Bitcoin and Lightning Network Daemon sections.</p> <h5 id="-check-2"><a href="#-check-2" class="header-anchor">#</a> 👍 Check</h5> <div class="language-bash extra-class"><pre class="language-bash"><code>~$ tor --version
+Tor version <span class="token number">0.4</span>.2.7
+~$ <span class="token function">sudo</span> <span class="token function">netstat</span> -tlnp <span class="token operator">|</span> <span class="token function">grep</span> tor <span class="token comment"># (lines below correspond to the tor control port and SOCKS proxy)</span>
+tcp        <span class="token number">0</span>      <span class="token number">0</span> <span class="token number">127.0</span>.0.1:9050          <span class="token number">0.0</span>.0.0:*               LISTEN      <span class="token number">1376</span>/tor
+tcp        <span class="token number">0</span>      <span class="token number">0</span> <span class="token number">127.0</span>.0.1:9051          <span class="token number">0.0</span>.0.0:*               LISTEN      <span class="token number">1376</span>/tor
+</code></pre></div><h2 id="nginx-and-lets-encrypt"><a href="#nginx-and-lets-encrypt" class="header-anchor">#</a> NGINX and Let's Encrypt</h2> <p><strong>NGINX</strong> is used as a web server to manage HTTP requests to BTCPay Server and Ride The Lightning. Paired with <strong>Let's Encrypt</strong> it allows seamless procurement and renewal of a TLS certificate for your BTCPay Server instance.</p> <p>Let's Encrypt is a free service for procuring and renewing TLS certificates. The service comes with scripts that can be installed to automatically manage the whole process.</p> <h5 id="-install-3"><a href="#-install-3" class="header-anchor">#</a> 🚚 Install</h5> <h5 id="1-install-nginx"><a href="#1-install-nginx" class="header-anchor">#</a> 1. Install NGINX.</h5> <div class="language-bash extra-class"><pre class="language-bash"><code>~$ <span class="token function">sudo</span> <span class="token function">apt</span> <span class="token function">install</span> nginx
+</code></pre></div><h5 id="2-install-lets-encrypt"><a href="#2-install-lets-encrypt" class="header-anchor">#</a> 2. Install Let's Encrypt</h5> <div class="language-bash extra-class"><pre class="language-bash"><code>~$ <span class="token function">sudo</span> <span class="token function">apt</span> <span class="token function">install</span> certbot python3-certbot-nginx
+</code></pre></div><h5 id="✒️-configuration-3"><a href="#✒️-configuration-3" class="header-anchor">#</a> ✒️ Configuration</h5> <h5 id="1-lets-encrypt-tls-certificate"><a href="#1-lets-encrypt-tls-certificate" class="header-anchor">#</a> 1. Let's Encrypt TLS certificate</h5> <p>You must create an A or AAAA record for <strong>&lt;your domain name&gt;</strong> that points to the IP address of your server instance.
+If your server is behind NAT then you need to forward port 80 to your instance.</p> <p>The <strong>certbot</strong> script works by checking for a specific file on the web server hosting the requested domain. If it can't get the file the TLS certificate won't be issued. If the initial attempt fails it will be periodically re-attempted or you can simply re-run the command.</p> <div class="language-bash extra-class"><pre class="language-bash"><code><span class="token function">sudo</span> certbot --nginx -d <span class="token operator">&lt;</span>your domain name<span class="token operator">&gt;</span> <span class="token comment"># (e.g: sudo certbot --nginx -d mainnet.demo.btcpayserver.org)</span>
+</code></pre></div><h5 id="2-add-nginx-configuration-file"><a href="#2-add-nginx-configuration-file" class="header-anchor">#</a> 2. Add NGINX configuration file</h5> <p>The configuration file below has been copied from the BTCPay Server docker install.</p> <p>Search for &quot;mainnet.demo.btcpayserver.org&quot; and replace it with your own domain name.</p> <div class="language-bash extra-class"><pre class="language-bash"><code>~$ <span class="token function">vi</span> /etc/nginx/conf.d/default.conf
+</code></pre></div><div class="language- extra-class"><pre class="language-text"><code># If we receive X-Forwarded-Proto, pass it through; otherwise, pass along the
+# scheme used to connect to this server
+map $http_x_forwarded_proto $proxy_x_forwarded_proto {
+  default $http_x_forwarded_proto;
+  ''      $scheme;
+}
+# If we receive X-Forwarded-Port, pass it through; otherwise, pass along the
+# server port the client connected to
+map $http_x_forwarded_port $proxy_x_forwarded_port {
+  default $http_x_forwarded_port;
+  ''      $server_port;
+}
+# If we receive Upgrade, set Connection to &quot;upgrade&quot;; otherwise, delete any
+# Connection header that may have been passed to this server
+map $http_upgrade $proxy_connection {
+  default upgrade;
+  '' close;
+}
+# Apply fix for very long server names
+server_names_hash_bucket_size 128;
+# Prevent Nginx Information Disclosure
+server_tokens off;
+# Default dhparam
+# Set appropriate X-Forwarded-Ssl header
+map $scheme $proxy_x_forwarded_ssl {
+  default off;
+  https on;
+}
+
+gzip_types text/plain text/css application/javascript application/json application/x-javascript text/xml application/xml application/xml+rss text/javascript;
+log_format vhost '$host $remote_addr - $remote_user [$time_local] '
+                 '&quot;$request&quot; $status $body_bytes_sent '
+                 '&quot;$http_referer&quot; &quot;$http_user_agent&quot;';
+access_log off;
+# HTTP 1.1 support
+proxy_http_version 1.1;
+proxy_buffering off;
+proxy_set_header Host $http_host;
+proxy_set_header Upgrade $http_upgrade;
+proxy_set_header Connection $proxy_connection;
+proxy_set_header X-Real-IP $remote_addr;
+proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+proxy_set_header X-Forwarded-Proto $proxy_x_forwarded_proto;
+proxy_set_header X-Forwarded-Ssl $proxy_x_forwarded_ssl;
+proxy_set_header X-Forwarded-Port $proxy_x_forwarded_port;
+proxy_buffer_size          128k;
+proxy_buffers              4 256k;
+proxy_busy_buffers_size    256k;
+client_header_buffer_size 500k;
+large_client_header_buffers 4 500k;
+http2_max_field_size       500k;
+http2_max_header_size      500k;
+# Mitigate httpoxy attack (see README for details)
+proxy_set_header Proxy &quot;&quot;;
+
+server {
+        server_name mainnet.demo.btcpayserver.org;
+        listen 80;
+        access_log /var/log/nginx/access.log vhost;
+        return 301 https://$host$request_uri;
+}
+server {
+        client_max_body_size 100M;
+        server_name mainnet.demo.btcpayserver.org;
+        listen 443 ssl http2 ;
+        access_log /var/log/nginx/access.log vhost;
+        ssl_protocols TLSv1.2;
+        ssl_ciphers 'ECDHE-ECDSA-AES256-GCM-SHA384:ECDHE-RSA-AES256-GCM-SHA384:ECDHE-ECDSA-CHACHA20-POLY1305:ECDHE-RSA-CHACHA20-POLY1305:ECDHE-ECDSA-AES128-GCM-SHA256:ECDHE-RSA-AES128-GCM-SHA256:ECDHE-ECDSA-AES256-SHA384:ECDHE-RSA-AES256-SHA384:ECDHE-ECDSA-AES128-SHA256:ECDHE-RSA-AES128-SHA256';
+        ssl_prefer_server_ciphers on;
+        ssl_session_timeout 5m;
+        ssl_session_cache shared:SSL:50m;
+        ssl_session_tickets off;
+        ssl_certificate /etc/letsencrypt/live/mainnet.demo.btcpayserver.org/cert.pem;
+        ssl_certificate_key /etc/letsencrypt/live/mainnet.demo.btcpayserver.org/privkey.pem;
+        ssl_dhparam /etc/letsencrypt/ssl-dhparams.pem;
+        ssl_stapling on;
+        ssl_stapling_verify on;
+                ssl_trusted_certificate /etc/letsencrypt/live/mainnet.demo.btcpayserver.org/fullchain.pem;
+        add_header Strict-Transport-Security &quot;max-age=31536000&quot; always;
+        #include /etc/nginx/vhost.d/default;
+
+        # Here is the main BTCPay Server application
+        location / {
+                proxy_pass http://127.0.0.1:23000;
+        }
+
+        # Include the next two stanzas if and only if you want to expose your lightning gRPC &amp; RPC interfaces to the internet
+        location /lnrpc.Lightning {
+                grpc_pass grpcs://127.0.0.1:10009;
+        }
+
+        location /lnd-rest/btc/ {
+                rewrite ^/lnd-rest/btc/(.*) /$1 break;
+                proxy_pass https://127.0.0.1:8080/;
+        }
+
+        # Include this stanza if you are planning to set up Ride The Lightning (RTL)
+        location /rtl/ {
+                proxy_pass http://127.0.0.1:3000/rtl/;
+        }
+}
+</code></pre></div><div class="language-bash extra-class"><pre class="language-bash"><code>~$ <span class="token function">sudo</span> systemctl restart nginx
+~$ <span class="token function">sudo</span> systemctl status nginx
+</code></pre></div><p>If there is an error message restarting <code>nginx</code> try:</p> <div class="language-bash extra-class"><pre class="language-bash"><code><span class="token function">sudo</span> journalctl -xe --unit nginx
+</code></pre></div><h5 id="-check-3"><a href="#-check-3" class="header-anchor">#</a> 👍 Check</h5> <h5 id="1-check-lets-encrypt"><a href="#1-check-lets-encrypt" class="header-anchor">#</a> 1. Check Let's Encrypt</h5> <p>It can be a little bit tricky to get everything set up correctly for the Let's Encrypt script to work correctly. Some additional commands are listed below to help with any troubleshooting.</p> <div class="language-bash extra-class"><pre class="language-bash"><code>~$ <span class="token function">sudo</span> certbot certificates
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+Found the following certs:
+  Certificate Name: mainnet.demo.btcpayserver.org
+    Domains: mainnet.demo.btcpayserver.org
+    Expiry Date: <span class="token number">2019</span>-08-10 <span class="token number">18</span>:00:31+00:00 <span class="token punctuation">(</span>VALID: <span class="token number">79</span> days<span class="token punctuation">)</span>
+    Certificate Path: /etc/letsencrypt/live/mainnet.demo.btcpayserver.org/fullchain.pem
+    Private Key Path: /etc/letsencrypt/live/mainnet.demo.btcpayserver.org/privkey.pem
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+</code></pre></div><div class="language-bash extra-class"><pre class="language-bash"><code>~$ <span class="token function">cat</span> /etc/cron.d/certbot <span class="token comment"># (check the cron job exists)</span>
+<span class="token number">0</span> */12 * * * root <span class="token builtin class-name">test</span> -x /usr/bin/certbot -a <span class="token punctuation">\</span><span class="token operator">!</span> -d /run/systemd/system <span class="token operator">&amp;&amp;</span> perl -e <span class="token string">'sleep int(rand(43200))'</span> <span class="token operator">&amp;&amp;</span> certbot -q renew
+</code></pre></div><div class="language-bash extra-class"><pre class="language-bash"><code>~$ <span class="token function">sudo</span> <span class="token function">tail</span> /var/log/letsencrypt/letsencrypt.log <span class="token comment"># (check for problems)</span>
+<span class="token number">2019</span>-05-22 <span class="token number">19</span>:36:36,062:DEBUG:certbot.main:certbot version: <span class="token number">0.31</span>.0
+</code></pre></div><div class="language-bash extra-class"><pre class="language-bash"><code>~$ <span class="token function">sudo</span> certbot renew --dry-run <span class="token comment"># (test renewal)</span>
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+** DRY RUN: simulating <span class="token string">'certbot renew'</span> close to cert expiry
+**          <span class="token punctuation">(</span>The <span class="token builtin class-name">test</span> certificates below have not been saved.<span class="token punctuation">)</span>
+
+Congratulations, all renewals succeeded. The following certs have been renewed:
+  /etc/letsencrypt/live/mainnet.demo.btcpayserver.org/fullchain.pem <span class="token punctuation">(</span>success<span class="token punctuation">)</span>
+** DRY RUN: simulating <span class="token string">'certbot renew'</span> close to cert expiry
+**          <span class="token punctuation">(</span>The <span class="token builtin class-name">test</span> certificates above have not been saved.<span class="token punctuation">)</span>
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+</code></pre></div><h5 id="2-check-nginx"><a href="#2-check-nginx" class="header-anchor">#</a> 2. Check NGINX.</h5> <div class="language-bash extra-class"><pre class="language-bash"><code>~$ <span class="token function">sudo</span> nginx -v
+nginx version: nginx/1.18.0 <span class="token punctuation">(</span>Ubuntu<span class="token punctuation">)</span>
+</code></pre></div><div class="language-bash extra-class"><pre class="language-bash"><code>~$ <span class="token function">sudo</span> <span class="token function">netstat</span> -tlnp <span class="token operator">|</span> <span class="token function">grep</span> nginx
+tcp        <span class="token number">0</span>      <span class="token number">0</span> <span class="token number">0.0</span>.0.0:443             <span class="token number">0.0</span>.0.0:*               LISTEN      <span class="token number">266275</span>/nginx: maste
+tcp        <span class="token number">0</span>      <span class="token number">0</span> <span class="token number">0.0</span>.0.0:80              <span class="token number">0.0</span>.0.0:*               LISTEN      <span class="token number">266275</span>/nginx: maste
+tcp6       <span class="token number">0</span>      <span class="token number">0</span> :::443                  :::*                    LISTEN      <span class="token number">266275</span>/nginx: maste
+tcp6       <span class="token number">0</span>      <span class="token number">0</span> :::80                   :::*                    LISTEN      <span class="token number">266275</span>/nginx: maste
+</code></pre></div><div class="language-bash extra-class"><pre class="language-bash"><code>~$ <span class="token function">sudo</span> journalctl -xe --unit nginx --follow
+--
+-- A start job <span class="token keyword">for</span> unit nginx.service has finished successfully.
+--
+-- The job identifier is <span class="token number">19471</span>.
+</code></pre></div><p>Attempt to open your web site in a browser. At this point it is expected that a <code>502 Bad Gateway</code>error will occur. The <code>nginx</code> logs can be checked to verify that the connection attempt was received.</p> <div class="language-bash extra-class"><pre class="language-bash"><code>~$ <span class="token function">tail</span> /var/log/nginx/access.log
+mainnet.demo.btcpayserver.org <span class="token number">127.0</span>.0.1 - - <span class="token punctuation">[</span><span class="token number">27</span>/Jul/2020:12:19:57 +0100<span class="token punctuation">]</span> <span class="token string">&quot;GET / HTTP/2.0&quot;</span> <span class="token number">502</span> <span class="token number">552</span> <span class="token string">&quot;-&quot;</span> <span class="token string">&quot;Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/84.0.4147.89 Safari/537.36&quot;</span>
+</code></pre></div><p>If there is a problem then the <code>nginx</code> error log can also be checked.</p> <div class="language-bash extra-class"><pre class="language-bash"><code>~$ <span class="token function">tail</span> /var/log/nginx/error.log
+</code></pre></div><h2 id="bitcoin-daemon"><a href="#bitcoin-daemon" class="header-anchor">#</a> Bitcoin Daemon</h2> <p>The gateway to the Bitcoin network for BTCPay Server components.</p> <h5 id="-install-4"><a href="#-install-4" class="header-anchor">#</a> 🚚 Install</h5> <p>The full instructions to <strong>build Bitcoin Core from source</strong> are <a href="https://github.com/bitcoin/bitcoin/blob/master/doc/build-unix.md" target="_blank" rel="noopener noreferrer">here<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a>.</p> <p>The alternative to building from source is to download a signed binary distribution from <a href="https://bitcoincore.org/en/download/" target="_blank" rel="noopener noreferrer">https://bitcoincore.org/en/download/<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a>.</p> <div class="language-bash extra-class"><pre class="language-bash"><code>~$ <span class="token function">wget</span> https://bitcoincore.org/bin/bitcoin-core-0.20.0/bitcoin-0.20.0-x86_64-linux-gnu.tar.gz
+~$ <span class="token function">wget</span> https://bitcoincore.org/bin/bitcoin-core-0.20.0/SHA256SUMS.asc
+</code></pre></div><h5 id="1-install-pre-requisites-and-dependencies"><a href="#1-install-pre-requisites-and-dependencies" class="header-anchor">#</a> 1. Install Pre-requisites and dependencies</h5> <p>These instructions do not build the Bitcoin Core GUI components as they are not needed for <code>BTCPay Server</code>.</p> <div class="language-bash extra-class"><pre class="language-bash"><code>~$ <span class="token function">sudo</span> <span class="token function">apt</span> <span class="token function">install</span> build-essential libtool autotools-dev automake pkg-config bsdmainutils python3
+~$ <span class="token function">sudo</span> <span class="token function">apt</span> <span class="token function">install</span> libevent-dev libboost-system-dev libboost-filesystem-dev libboost-test-dev libboost-thread-dev libminiupnpc-dev libzmq3-dev
+</code></pre></div><h5 id="2-download-and-build-source"><a href="#2-download-and-build-source" class="header-anchor">#</a> 2. Download and Build Source</h5> <p>Before cloning the <code>Bitcoin Core</code> repository identify the most recent stable version. One convenient way to do this is on the GitHub repository page look at the latest version under the &quot;Releases&quot; heading. At the time of writing the stable version is <code>0.20.0</code>. Adjust the tag in the <code>git clone</code> command below for the stable version you want to build.</p> <div class="language-bash extra-class"><pre class="language-bash"><code>~$ <span class="token builtin class-name">cd</span> src
+~/src$ <span class="token function">git</span> clone --depth <span class="token number">1</span> --branch v0.20.0 https://github.com/bitcoin/bitcoin.git
+~/src$ <span class="token builtin class-name">cd</span> bitcoin
+</code></pre></div><p>A specific version of the Berkeley DB dependency needs to be installed.</p> <div class="language-bash extra-class"><pre class="language-bash"><code>~/src/bitcoin$ ./contrib/install_db4.sh <span class="token variable"><span class="token variable">`</span><span class="token builtin class-name">pwd</span><span class="token variable">`</span></span>
+</code></pre></div><p>Use the <code>autoconf</code> scripts to generate the make files and then build.</p> <div class="language-bash extra-class"><pre class="language-bash"><code>~/src/bitcoin$ ./autogen.sh
+~/src/bitcoin$ <span class="token builtin class-name">export</span> <span class="token assign-left variable">BDB_PREFIX</span><span class="token operator">=</span><span class="token string">'/home/admin/src/bitcoin/db4'</span>
+~/src/bitcoin$ ./configure <span class="token assign-left variable">BDB_LIBS</span><span class="token operator">=</span><span class="token string">&quot;-L<span class="token variable">${BDB_PREFIX}</span>/lib -ldb_cxx-4.8&quot;</span> <span class="token assign-left variable">BDB_CFLAGS</span><span class="token operator">=</span><span class="token string">&quot;-I<span class="token variable">${BDB_PREFIX}</span>/include&quot;</span>
+~/src/bitcoin$ <span class="token function">make</span>
+~/src/bitcoin$ <span class="token function">sudo</span> <span class="token function">make</span> <span class="token function">install</span> 
+~/src/bitcoin$ bitcoind -version
+Bitcoin Core version v0.20.0
+</code></pre></div><h5 id="3-create-the-configuration-file"><a href="#3-create-the-configuration-file" class="header-anchor">#</a> 3. Create the configuration file</h5> <p>An example <strong>configuration file</strong> is available on the Bitcoin Core repository at https://github.com/bitcoin/bitcoin/blob/master/share/examples/bitcoin.conf.</p> <p>Create a <strong>bitcoin.conf file</strong> to suit your needs. An example file that is suitable for BTCPay Server is shown below. This configuration does not prune blocks which means as of May 2019 you will require 235 GB for the Bitcoin blockchain.</p> <div class="language-bash extra-class"><pre class="language-bash"><code>~$ <span class="token function">vi</span> bitcoin.conf
+</code></pre></div><div class="language- extra-class"><pre class="language-text"><code>server=1                              # need RPC for btcpay.
+rpcbind=127.0.0.1                     # loopback is default for 0.18.0 but no harm making sure.
+whitelist=127.0.0.1                   # for nbxplorer.
+rpcallowip=127.0.0.1/32               # loopback is default but again no harm.
+zmqpubrawblock=tcp://127.0.0.1:28332  # needed for lightning.
+zmqpubrawtx=tcp://127.0.0.1:28333     # needed for lightning.
+#prune=5000                           # Recommended if not enough disk space for full 600+GB blockchain.
+</code></pre></div><p>Copy the file to the directory specified in the systemd service file and assign read permissions to all users.</p> <div class="language-bash extra-class"><pre class="language-bash"><code>~$ <span class="token function">sudo</span> <span class="token function">mkdir</span> -p /etc/bitcoin
+~$ <span class="token function">sudo</span> <span class="token function">cp</span> bitcoin.conf /etc/bitcoin
+~$ <span class="token function">sudo</span> <span class="token function">chmod</span> <span class="token number">644</span> /etc/bitcoin/bitcoin.conf
+</code></pre></div><h5 id="5-create-a-systemd-service"><a href="#5-create-a-systemd-service" class="header-anchor">#</a> 5. Create a systemd service</h5> <p>An example <strong>systemd service</strong> file is available in the Bitcoin Core  repository at https://raw.githubusercontent.com/bitcoin/bitcoin/master/contrib/init/bitcoind.service.</p> <p>Edit the service file depending on your needs.</p> <p>In the example below the <strong>User</strong> and <strong>Group</strong> have been changed to use the <code>admin</code> user instead of requiring a new <code>bitcoin</code> user. If the <code>admin</code> user on your system is intended for running <code>BTCPayServer</code> this is a reasonable choice. Otherwise consider creating a dedicated <code>bitcoin</code> user.</p> <div class="language-bash extra-class"><pre class="language-bash"><code>~$ <span class="token function">vi</span> bitcoind.service
+</code></pre></div><div class="language- extra-class"><pre class="language-text"><code>[Unit]
+Description=Bitcoin daemon
+After=network.target
+
+[Service]
+ExecStart=/usr/bin/bitcoind -daemon \
+                            -pid=/run/bitcoind/bitcoind.pid \
+                            -conf=/etc/bitcoin/bitcoin.conf \
+                            -datadir=/var/lib/bitcoind
+
+# Make sure the config directory is readable by the service user
+PermissionsStartOnly=true
+ExecStartPre=/bin/chgrp admin /etc/bitcoin
+
+# Process management
+####################
+
+Type=forking
+PIDFile=/run/bitcoind/bitcoind.pid
+Restart=on-failure
+TimeoutStopSec=600
+
+# Run as admin:admin
+User=admin
+Group=admin
+
+# /run/bitcoind
+RuntimeDirectory=bitcoind
+RuntimeDirectoryMode=0710
+
+# /etc/bitcoin
+ConfigurationDirectory=bitcoin
+ConfigurationDirectoryMode=0710
+
+# /var/lib/bitcoind
+StateDirectory=bitcoind
+StateDirectoryMode=0710
+
+# Hardening measures
+####################
+# Provide a private /tmp and /var/tmp.
+PrivateTmp=true
+
+# Deny access to /home, /root and /run/user
+ProtectHome=true
+
+# Mount /usr, /boot/ and /etc read-only for the process.
+ProtectSystem=full
+
+# Disallow the process and all of its children to gain
+# new privileges through execve().
+NoNewPrivileges=true
+
+# Use a new /dev namespace only populated with API pseudo devices
+# such as /dev/null, /dev/zero and /dev/random.
+PrivateDevices=true
+
+# Deny the creation of writable and executable memory mappings.
+MemoryDenyWriteExecute=true
+
+[Install]
+WantedBy=multi-user.target
+</code></pre></div><p>Once the service file is ready complete the commands below.</p> <div class="language-bash extra-class"><pre class="language-bash"><code>~$ <span class="token function">sudo</span> <span class="token function">cp</span> bitcoind.service /etc/systemd/system
+~$ <span class="token function">sudo</span> systemctl <span class="token builtin class-name">enable</span> --now bitcoind
+~$ <span class="token function">sudo</span> systemctl status bitcoind
+<span class="token punctuation">..</span>.
+Jul <span class="token number">26</span> <span class="token number">21</span>:51:52 ubuntu systemd<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span>: Started Bitcoin daemon.
+</code></pre></div><p>If the start attempt shows an error message check the log using:</p> <div class="language-bash extra-class"><pre class="language-bash"><code><span class="token function">sudo</span> journalctl -xe --unit bitcoind
+</code></pre></div><h5 id="6-create-a-symbolic-link-to-the-bitcoind-cookie-file"><a href="#6-create-a-symbolic-link-to-the-bitcoind-cookie-file" class="header-anchor">#</a> 6. Create a symbolic link to the bitcoind cookie file</h5> <p>The <code>bitcoin-cli</code> client needs to authenticate to <code>bitcoind</code> for RPC calls. The easiest way to allow this is to create a symbolic link to the cookie file.</p> <div class="language-bash extra-class"><pre class="language-bash"><code>~$ <span class="token builtin class-name">cd</span> ~
+~$ <span class="token function">ln</span> -s /var/lib/bitcoind/.cookie .bitcoin/.cookie
+</code></pre></div><p>It's not vital to perform this step but if not done then every <code>bitcoin-cli</code> command needs to specify the path to the cookie file as below.</p> <div class="language-bash extra-class"><pre class="language-bash"><code>~$ bitcoin-cli -rpccookiefile<span class="token operator">=</span>/var/lib/bitcoind/.cookie getblockchaininfo
+</code></pre></div><h5 id="-check-4"><a href="#-check-4" class="header-anchor">#</a> 👍 Check</h5> <p>It will take Bitcoin anywhere from a few hours to a few days to synchronise the blockchain. Use any or all of the commands below to check its status.</p> <div class="language-bash extra-class"><pre class="language-bash"><code>~$ <span class="token function">sudo</span> systemctl status bitcoind
+Active: active <span class="token punctuation">(</span>running<span class="token punctuation">)</span> since Sun <span class="token number">2020</span>-07-26 <span class="token number">21</span>:51:52 IST<span class="token punctuation">;</span> 2min 47s ago
+</code></pre></div><div class="language-bash extra-class"><pre class="language-bash"><code>~$ <span class="token function">tail</span> /var/lib/bitcoind/debug.log -f
+<span class="token punctuation">..</span>.
+<span class="token number">2020</span>-07-26T20:55:09Z UpdateTip: new <span class="token assign-left variable">best</span><span class="token operator">=</span>0000000000000361c37dfb6fa905ef967b95411fa96f7dcb4eca5dd4434d9e59 <span class="token assign-left variable">height</span><span class="token operator">=</span><span class="token number">126732</span> <span class="token assign-left variable">version</span><span class="token operator">=</span>0x00000001 <span class="token assign-left variable">log2_work</span><span class="token operator">=</span><span class="token number">62.952182</span> <span class="token assign-left variable">tx</span><span class="token operator">=</span><span class="token number">560114</span> <span class="token assign-left variable">date</span><span class="token operator">=</span><span class="token string">'2011-05-25T21:26:08Z'</span> <span class="token assign-left variable">progress</span><span class="token operator">=</span><span class="token number">0.001018</span> <span class="token assign-left variable">cache</span><span class="token operator">=</span><span class="token number">43</span>.6MiB<span class="token punctuation">(</span>291168txo<span class="token punctuation">)</span>
+<span class="token punctuation">..</span>.
+</code></pre></div><div class="language-bash extra-class"><pre class="language-bash"><code>~$ bitcoin-cli getblockchaininfo
+<span class="token punctuation">{</span>
+  <span class="token string">&quot;chain&quot;</span><span class="token builtin class-name">:</span> <span class="token string">&quot;main&quot;</span>,
+  <span class="token string">&quot;blocks&quot;</span><span class="token builtin class-name">:</span> <span class="token number">133015</span>,
+  <span class="token string">&quot;headers&quot;</span><span class="token builtin class-name">:</span> <span class="token number">640929</span>,
+  <span class="token string">&quot;bestblockhash&quot;</span><span class="token builtin class-name">:</span> <span class="token string">&quot;0000000000000e81b67de8d61eab726f40585bed954b1dd59f86ab10e4e55398&quot;</span>,
+  <span class="token string">&quot;difficulty&quot;</span><span class="token builtin class-name">:</span> <span class="token number">876954.4935135372</span>,
+  <span class="token string">&quot;mediantime&quot;</span><span class="token builtin class-name">:</span> <span class="token number">1308897947</span>,
+  <span class="token string">&quot;verificationprogress&quot;</span><span class="token builtin class-name">:</span> <span class="token number">0.001530462018729556</span>,
+  <span class="token punctuation">..</span>.
+<span class="token punctuation">}</span>
+</code></pre></div><p>When the <code>verificationprogress</code> gets to either <code>0.99..</code> or <code>1.0</code> your node has synchronised. To double check you can also use a public block explorer such as <a href="https://blockstream.info/" target="_blank" rel="noopener noreferrer">https://blockstream.info/<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a> to view the latest <code>Bitcoin</code> block and compare it to the <code>blocks</code> value from the <code>bitcoin-cli getblockchaininfo</code> result.</p> <h5 id="-check-tor-and-bitcoin"><a href="#-check-tor-and-bitcoin" class="header-anchor">#</a> 👍 Check Tor and Bitcoin</h5> <p>If Tor was installed prior to the Bitcoin Daemon then it should have automatically registered and begun listening on a torv2 onion address (note support for torv3 onion addresses is in the <a href="https://github.com/bitcoin/bitcoin/issues/18884" target="_blank" rel="noopener noreferrer">pipeline<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a>).</p> <p>The easiest way to get your Bitcoin Daemon torv2 address is using <code>bitcoin-cli</code>:</p> <div class="language-bash extra-class"><pre class="language-bash"><code>bitcoin-cli getnetworkinfo
+<span class="token punctuation">{</span>
+  <span class="token string">&quot;version&quot;</span><span class="token builtin class-name">:</span> <span class="token number">200100</span>,
+  <span class="token string">&quot;subversion&quot;</span><span class="token builtin class-name">:</span> <span class="token string">&quot;/Satoshi:0.20.1/&quot;</span>,
+  <span class="token string">&quot;protocolversion&quot;</span><span class="token builtin class-name">:</span> <span class="token number">70015</span>,
+  <span class="token string">&quot;localservices&quot;</span><span class="token builtin class-name">:</span> <span class="token string">&quot;0000000000000409&quot;</span>,
+  <span class="token punctuation">..</span>.
+    <span class="token string">&quot;localaddresses&quot;</span><span class="token builtin class-name">:</span> <span class="token punctuation">[</span>
+    <span class="token punctuation">{</span>
+      <span class="token string">&quot;address&quot;</span><span class="token builtin class-name">:</span> <span class="token string">&quot;192.168.11.4&quot;</span>,
+      <span class="token string">&quot;port&quot;</span><span class="token builtin class-name">:</span> <span class="token number">8333</span>,
+      <span class="token string">&quot;score&quot;</span><span class="token builtin class-name">:</span> <span class="token number">1</span>
+    <span class="token punctuation">}</span>,
+    <span class="token punctuation">{</span>
+      <span class="token string">&quot;address&quot;</span><span class="token builtin class-name">:</span> <span class="token string">&quot;v5j6hfz4xafmeckf.onion&quot;</span>,
+      <span class="token string">&quot;port&quot;</span><span class="token builtin class-name">:</span> <span class="token number">8333</span>,
+      <span class="token string">&quot;score&quot;</span><span class="token builtin class-name">:</span> <span class="token number">156</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">]</span>,
+  <span class="token string">&quot;warnings&quot;</span><span class="token builtin class-name">:</span> <span class="token string">&quot;&quot;</span>
+<span class="token punctuation">}</span>
+</code></pre></div><p>An alternative approach is to search the Bitcoin Dameon log file:</p> <div class="language-bash extra-class"><pre class="language-bash"><code>~$ <span class="token function">cat</span> /var/lib/bitcoind/debug.log <span class="token operator">|</span> <span class="token function">grep</span> onion
+<span class="token number">2019</span>-05-23T18:24:22Z tor: Got <span class="token function">service</span> ID 4d4al7v4hj5p7bb6, advertising <span class="token function">service</span> 4d4al7v4hj5p7bb6.onion:8333
+<span class="token number">2019</span>-05-23T18:24:22Z AddLocal<span class="token punctuation">(</span>4d4al7v4hj5p7bb6.onion:8333,4<span class="token punctuation">)</span>
+</code></pre></div><p>If there is a problem and no onion address can be found in the log file then check for &quot;tor&quot; related error messages:</p> <div class="language-bash extra-class"><pre class="language-bash"><code>~$ <span class="token function">cat</span> /var/lib/bitcoind/debug.log <span class="token operator">|</span> <span class="token function">grep</span> tor
+<span class="token number">2020</span>-07-27T08:03:28Z torcontrol thread start
+<span class="token number">2020</span>-07-27T08:03:28Z tor: Authentication cookie /run/tor/control.authcookie could not be opened <span class="token punctuation">(</span>check permissions<span class="token punctuation">)</span>
+</code></pre></div><p>The above error message can occur if the user accounts running the <code>Bitcoin</code> service does not have read access to the <code>Tor</code> authentication cookie file, <a href="https://github.com/bitcoin/bitcoin/blob/master/doc/tor.md#3-automatically-listen-on-tor" target="_blank" rel="noopener noreferrer">more info<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a>. To fix this particular error add the required user account to the <code>debian-tor</code> group.</p> <div class="language-bash extra-class"><pre class="language-bash"><code><span class="token function">sudo</span> <span class="token function">usermod</span> -a -G debian-tor admin
+</code></pre></div><p>To change your onion address:</p> <div class="language-bash extra-class"><pre class="language-bash"><code>~$ <span class="token function">rm</span> /var/lib/bitcoind/onion_private_key
+~$ <span class="token function">sudo</span> systemctl restart bitcoind
+~$ bitcoin-cli getnetworkinfo <span class="token operator">|</span> <span class="token function">grep</span> onion
+      <span class="token string">&quot;name&quot;</span><span class="token builtin class-name">:</span> <span class="token string">&quot;onion&quot;</span>,
+      <span class="token string">&quot;address&quot;</span><span class="token builtin class-name">:</span> <span class="token string">&quot;qud5iwbntqxlfwjv.onion&quot;</span>,
+</code></pre></div><p>To check your onion address from a remote host with tor installed:</p> <div class="language-bash extra-class"><pre class="language-bash"><code>~$ torsocks --shell
+~$ telnet 4d4al7v4hj5p7bb6.onion <span class="token number">8333</span>
+ Trying <span class="token number">127.42</span>.42.0<span class="token punctuation">..</span>.
+ Connected to <span class="token number">127.42</span>.42.0.
+ Escape character is <span class="token string">'^]'</span><span class="token builtin class-name">.</span>
+~$ <span class="token builtin class-name">exit</span>
+</code></pre></div><p>To connect another <code>bitcoind</code> instance to your new node:</p> <div class="language-bash extra-class"><pre class="language-bash"><code>~$ bitcoin-cli addnode <span class="token string">&quot;4d4al7v4hj5p7bb6.onion&quot;</span> <span class="token string">&quot;add&quot;</span>
+~$ bitcoin-cli getaddednodeinfo
+<span class="token punctuation">{</span>
+   <span class="token string">&quot;addednode&quot;</span><span class="token builtin class-name">:</span> <span class="token string">&quot;4d4al7v4hj5p7bb6.onion&quot;</span>,
+   <span class="token string">&quot;connected&quot;</span><span class="token builtin class-name">:</span> true,
+   <span class="token string">&quot;addresses&quot;</span><span class="token builtin class-name">:</span> <span class="token punctuation">[</span>
+     <span class="token punctuation">{</span>
+       <span class="token string">&quot;address&quot;</span><span class="token builtin class-name">:</span> <span class="token string">&quot;4d4al7v4hj5p7bb6.onion:8333&quot;</span>,
+       <span class="token string">&quot;connected&quot;</span><span class="token builtin class-name">:</span> <span class="token string">&quot;outbound&quot;</span>
+     <span class="token punctuation">}</span>
+   <span class="token punctuation">]</span>
+ <span class="token punctuation">}</span>
+</code></pre></div><h2 id="nbxplorer"><a href="#nbxplorer" class="header-anchor">#</a> NBXplorer</h2> <p><strong>NBXplorer</strong> is a dotnet core application that monitors the Bitcoin blockchain for transactions of interest to your BTCPay Server.</p> <h5 id="-install-5"><a href="#-install-5" class="header-anchor">#</a> 🚚 Install</h5> <h5 id="1-install-net-core"><a href="#1-install-net-core" class="header-anchor">#</a> 1. Install .Net Core</h5> <p>Check <a href="https://docs.microsoft.com/en-us/dotnet/core/install/linux-ubuntu#2004-" target="_blank" rel="noopener noreferrer">follow the install instuctions<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a> (.Net Core 3.1.6 at the time of writing)</p> <div class="language-bash extra-class"><pre class="language-bash"><code>~$ <span class="token function">wget</span> https://packages.microsoft.com/config/ubuntu/20.04/packages-microsoft-prod.deb -O packages-microsoft-prod.deb
+~$ <span class="token function">sudo</span> dpkg -i packages-microsoft-prod.deb
+~$ <span class="token function">sudo</span> <span class="token function">apt</span> update
+~$ <span class="token function">sudo</span> <span class="token function">apt</span> <span class="token function">install</span> apt-transport-https
+~$ <span class="token function">sudo</span> <span class="token function">apt</span> update
+~$ <span class="token function">sudo</span> <span class="token function">apt</span> <span class="token function">install</span> dotnet-sdk-3.1
+~$ dotnet --version
+<span class="token number">3.1</span>.302
+</code></pre></div><h5 id="2-build-nbxplorer"><a href="#2-build-nbxplorer" class="header-anchor">#</a> 2. Build NBXplorer</h5> <div class="language-bash extra-class"><pre class="language-bash"><code>~$ <span class="token builtin class-name">cd</span> ~<span class="token punctuation">;</span> <span class="token function">mkdir</span> -p src<span class="token punctuation">;</span> <span class="token builtin class-name">cd</span> src
+~/src$ <span class="token function">git</span> clone https://github.com/dgarage/NBXplorer
+~/src$ <span class="token builtin class-name">cd</span> NBXplorer
+~/src/NBXplorer$ ./build.sh
+</code></pre></div><h5 id="3-create-a-systemd-service"><a href="#3-create-a-systemd-service" class="header-anchor">#</a> 3. Create a systemd service</h5> <p>An example <strong>systemd service</strong> file is shown below. Adjust the paths, User and Group accordingly.</p> <div class="language-bash extra-class"><pre class="language-bash"><code>~$ <span class="token function">vi</span> nbxplorer.service
+</code></pre></div><div class="language- extra-class"><pre class="language-text"><code>[Unit]
+Description=NBXplorer daemon
+Requires=bitcoind.service
+After=bitcoind.service
+
+[Service]
+WorkingDirectory=/home/admin/src/NBXplorer
+ExecStart=/home/admin/src/NBXplorer/run.sh
+User=admin
+Group=admin
+Type=simple
+PIDFile=/run/nbxplorer/nbxplorer.pid
+Restart=on-failure
+
+[Install]
+WantedBy=multi-user.target
+</code></pre></div><div class="language-bash extra-class"><pre class="language-bash"><code>~$ <span class="token function">sudo</span> <span class="token function">cp</span> nbxplorer.service /etc/systemd/system
+~$ <span class="token function">sudo</span> systemctl <span class="token builtin class-name">enable</span> --now nbxplorer
+</code></pre></div><h5 id="-check-5"><a href="#-check-5" class="header-anchor">#</a> 👍 Check</h5> <div class="language-bash extra-class"><pre class="language-bash"><code>~$ <span class="token function">sudo</span> journalctl -xe --unit nbxplorer --follow
+May <span class="token number">23</span> <span class="token number">19</span>:13:35 btc run.sh<span class="token punctuation">[</span><span class="token number">8065</span><span class="token punctuation">]</span>: info: Configuration:  Data Directory: /home/admin/.nbxplorer/Main
+May <span class="token number">23</span> <span class="token number">19</span>:13:35 btc run.sh<span class="token punctuation">[</span><span class="token number">8065</span><span class="token punctuation">]</span>: info: Configuration:  Configuration File: /home/admin/.nbxplorer/Main/settings.config
+May <span class="token number">23</span> <span class="token number">19</span>:13:35 btc run.sh<span class="token punctuation">[</span><span class="token number">8065</span><span class="token punctuation">]</span>: info: Configuration:  Network: Mainnet
+<span class="token punctuation">..</span>.
+May <span class="token number">23</span> <span class="token number">19</span>:20:04 btc run.sh<span class="token punctuation">[</span><span class="token number">8065</span><span class="token punctuation">]</span>: info: Events:         BTC: New block 0000000000000000000c405ba5df5f5533359a4393247a0c52d26c458d4dd989 <span class="token punctuation">(</span><span class="token number">577449</span><span class="token punctuation">)</span>
+</code></pre></div><p>If it doesn't start correctly stop the service and run the application directly to get any error messages.</p> <div class="language-bash extra-class"><pre class="language-bash"><code>~$ <span class="token function">sudo</span> systemctl stop nbxplorer
+~$ <span class="token builtin class-name">cd</span> ~<span class="token punctuation">;</span> <span class="token function">pushd</span> ./src/NBXplorer<span class="token punctuation">;</span> ./run.sh<span class="token punctuation">;</span> <span class="token function">popd</span>
+</code></pre></div><h5 id="-update"><a href="#-update" class="header-anchor">#</a> 🚨 Update</h5> <p>Updating could break things. Be careful on a live system.</p> <div class="language-bash extra-class"><pre class="language-bash"><code>~$ <span class="token function">sudo</span> systemctl stop nbxplorer
+~$ <span class="token builtin class-name">cd</span> ~<span class="token punctuation">;</span> <span class="token function">pushd</span> ~/src/NBXplorer<span class="token punctuation">;</span> <span class="token function">git</span> pull<span class="token punctuation">;</span> ./build.sh<span class="token punctuation">;</span> <span class="token function">popd</span><span class="token punctuation">;</span>
+~$ <span class="token function">sudo</span> systemctl start nbxplorer
+</code></pre></div><h2 id="btcpay-server"><a href="#btcpay-server" class="header-anchor">#</a> BTCPay Server</h2> <p>Like NBXplorer the BTCPay Server application is also .NET Core. The install steps assume .NET Core was previosuly installed.</p> <h5 id="-install-6"><a href="#-install-6" class="header-anchor">#</a> 🚚 Install</h5> <h5 id="1-build-btcpay-server"><a href="#1-build-btcpay-server" class="header-anchor">#</a> 1. Build BTCPay Server</h5> <div class="language-bash extra-class"><pre class="language-bash"><code>~$ <span class="token builtin class-name">cd</span> ~<span class="token punctuation">;</span> <span class="token function">mkdir</span> -p src<span class="token punctuation">;</span> <span class="token builtin class-name">cd</span> src
+~/src$ <span class="token function">git</span> clone https://github.com/btcpayserver/btcpayserver.git
+~/src$ <span class="token builtin class-name">cd</span> btcpayserver
+~/src/btcpayserver$ ./build.sh
+</code></pre></div><h5 id="2-create-postgresql-database"><a href="#2-create-postgresql-database" class="header-anchor">#</a> 2. Create Postgresql Database.</h5> <p>By default BTCPay Server will store data in a single SQLite file. A more robust option is to use <strong>Postgresql</strong> which requires the appropriate database and user to exist.</p> <div class="language-bash extra-class"><pre class="language-bash"><code>~$ <span class="token function">sudo</span> -u postgres psql
+<span class="token assign-left variable">postgres</span><span class="token operator">=</span><span class="token comment"># create database btcpay;</span>
+<span class="token assign-left variable">postgres</span><span class="token operator">=</span><span class="token comment"># create user btcpay with encrypted password 'urpassword';</span>
+<span class="token assign-left variable">postgres</span><span class="token operator">=</span><span class="token comment"># grant all privileges on database btcpay to btcpay;</span>
+<span class="token assign-left variable">postgres</span><span class="token operator">=</span><span class="token comment">#\q</span>
+</code></pre></div><h5 id="3-create-a-configuration-file"><a href="#3-create-a-configuration-file" class="header-anchor">#</a> 3. Create a configuration file</h5> <div class="language-bash extra-class"><pre class="language-bash"><code>$ <span class="token function">vi</span> btcpay.config
+</code></pre></div><div class="language- extra-class"><pre class="language-text"><code>### Database ###
+postgres=User ID=btcpay;Password=urpassword;Host=localhost;Port=5432;Database=btcpay;
+</code></pre></div><div class="language-bash extra-class"><pre class="language-bash"><code>~$ <span class="token function">sudo</span> <span class="token function">mkdir</span> /etc/btcpay
+~$ <span class="token function">sudo</span> <span class="token function">cp</span> btcpay.config /etc/btcpay
+~$ <span class="token function">sudo</span> <span class="token function">chmod</span> <span class="token number">644</span> /etc/btcpay/btcpay.config
+</code></pre></div><h5 id="4-create-a-systemd-service"><a href="#4-create-a-systemd-service" class="header-anchor">#</a> 4. Create a systemd service.</h5> <p>An example <strong>systemd service</strong> file is shown below. Adjust the paths, User and Group accordingly.</p> <div class="language-bash extra-class"><pre class="language-bash"><code>~$ <span class="token function">vi</span> btcpay.service
+</code></pre></div><div class="language- extra-class"><pre class="language-text"><code>[Unit]
+Description=BTCPay Server
+Requires=nbxplorer.service
+After=nbxplorer.service
+
+[Service]
+WorkingDirectory=/home/admin/src/btcpayserver
+Environment=BTCPAY_BTCEXTERNALRTL=&quot;server=https://mainnet.demo.btcpayserver.org/rtl;cookiefile=/var/lib/rtl/.cookie&quot;
+ExecStart=/home/admin/src/btcpayserver/run.sh --conf=/etc/btcpay/btcpay.config
+User=admin
+Group=admin
+Type=simple
+PIDFile=/run/btcpayserver/btcpayserver.pid
+Restart=on-failure
+
+[Install]
+WantedBy=multi-user.target
+</code></pre></div><div class="language-bash extra-class"><pre class="language-bash"><code>~$ <span class="token function">sudo</span> <span class="token function">cp</span> btcpay.service /etc/systemd/system
+~$ <span class="token function">sudo</span> systemctl <span class="token builtin class-name">enable</span> --now btcpay
+</code></pre></div><h5 id="-check-6"><a href="#-check-6" class="header-anchor">#</a> 👍 Check</h5> <div class="language-bash extra-class"><pre class="language-bash"><code>~$ <span class="token function">sudo</span> journalctl -xe --unit btcpay --follow
+-- The start-up result is RESULT.
+May <span class="token number">23</span> <span class="token number">20</span>:01:25 btc run.sh<span class="token punctuation">[</span><span class="token number">10263</span><span class="token punctuation">]</span>: info: Configuration:  Data Directory: /home/admin/.btcpayserver/Main
+May <span class="token number">23</span> <span class="token number">20</span>:01:25 btc run.sh<span class="token punctuation">[</span><span class="token number">10263</span><span class="token punctuation">]</span>: info: Configuration:  Configuration File: /etc/btcpay/btcpay.config
+May <span class="token number">23</span> <span class="token number">20</span>:01:25 btc run.sh<span class="token punctuation">[</span><span class="token number">10263</span><span class="token punctuation">]</span>: info: Configuration:  Network: Mainnet
+</code></pre></div><p>If it doesn't start correctly stop the service and run the application directly to get any error messages.</p> <div class="language-bash extra-class"><pre class="language-bash"><code>~$ <span class="token function">sudo</span> systemctl stop btcpay
+~$ <span class="token builtin class-name">cd</span> ~<span class="token punctuation">;</span> <span class="token function">pushd</span> ~/src/btcpayserver<span class="token punctuation">;</span> ./run.sh --conf<span class="token operator">=</span>/etc/btcpay/btcpay.config<span class="token punctuation">;</span> <span class="token function">popd</span><span class="token punctuation">;</span>
+</code></pre></div><p>An example of checking information in the database.</p> <div class="language-bash extra-class"><pre class="language-bash"><code>~$ <span class="token function">sudo</span> -u postgres psql
+<span class="token assign-left variable">postgres</span><span class="token operator">=</span><span class="token comment"># \connect btcpay;</span>
+<span class="token assign-left variable">btcpay</span><span class="token operator">=</span><span class="token comment"># \dt</span>
+<span class="token assign-left variable">btcpay</span><span class="token operator">=</span><span class="token comment"># select * from &quot;Invoices&quot;;</span>
+<span class="token assign-left variable">btcpay</span><span class="token operator">=</span><span class="token comment"># \q</span>
+</code></pre></div><p>Attempting to open your BTCPay Server domain in a browser now should show the &quot;Welcome to your BTCPay Server&quot; page. If you are not using a Lightning Node this is the end of the install.</p> <h5 id="-update-2"><a href="#-update-2" class="header-anchor">#</a> 🚨 Update</h5> <p>Updating could break things. Be careful on a live system.</p> <div class="language-bash extra-class"><pre class="language-bash"><code>~$ <span class="token function">sudo</span> systemctl stop btcpay
+~$ <span class="token builtin class-name">cd</span> ~<span class="token punctuation">;</span> <span class="token function">pushd</span> ~/src/btcpayserver<span class="token punctuation">;</span> <span class="token function">git</span> pull<span class="token punctuation">;</span> ./build.sh<span class="token punctuation">;</span> <span class="token function">popd</span><span class="token punctuation">;</span>
+~$ <span class="token function">sudo</span> systemctl start btcpay
+</code></pre></div><h2 id="lightning-network-daemon-lnd"><a href="#lightning-network-daemon-lnd" class="header-anchor">#</a> Lightning Network Daemon (lnd)</h2> <h5 id="-install-7"><a href="#-install-7" class="header-anchor">#</a> 🚚 Install</h5> <p>Full <a href="https://github.com/lightningnetwork/lnd/blob/master/docs/INSTALL.md" target="_blank" rel="noopener noreferrer">instructions<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a>.</p> <h5 id="1-install-go"><a href="#1-install-go" class="header-anchor">#</a> 1. Install Go</h5> <div class="language-bash extra-class"><pre class="language-bash"><code>~$ <span class="token function">sudo</span> <span class="token function">apt</span> <span class="token function">install</span> <span class="token function">make</span>
+~$ <span class="token function">wget</span> https://dl.google.com/go/go1.13.linux-amd64.tar.gz
+~$ sha256sum go1.13.linux-amd64.tar.gz
+68a2297eb099d1a76097905a2ce334e3155004ec08cdea85f24527be3c48e856  go1.13.linux-amd64.tar.gz
+~$ <span class="token function">sudo</span> <span class="token function">tar</span> -C /usr/local -xzf go1.13.linux-amd64.tar.gz
+~$ <span class="token builtin class-name">export</span> <span class="token assign-left variable"><span class="token environment constant">PATH</span></span><span class="token operator">=</span><span class="token environment constant">$PATH</span>:/usr/local/go/bin
+~$ <span class="token builtin class-name">export</span> <span class="token assign-left variable">GOPATH</span><span class="token operator">=</span>~/gocode
+~$ <span class="token builtin class-name">export</span> <span class="token assign-left variable"><span class="token environment constant">PATH</span></span><span class="token operator">=</span><span class="token environment constant">$PATH</span><span class="token builtin class-name">:</span><span class="token variable">$GOPATH</span>/bin
+~$ go version
+go version go1.13 linux/amd64
+</code></pre></div><h5 id="2-build-and-install-lnd"><a href="#2-build-and-install-lnd" class="header-anchor">#</a> 2. Build and install lnd</h5> <div class="language-bash extra-class"><pre class="language-bash"><code>~$ <span class="token builtin class-name">cd</span> ~<span class="token punctuation">;</span> <span class="token function">mkdir</span> -p src<span class="token punctuation">;</span> <span class="token builtin class-name">cd</span> src
+~$ <span class="token function">git</span> clone https://github.com/lightningnetwork/lnd
+~$ <span class="token builtin class-name">cd</span> lnd
+~$ <span class="token function">make</span>
+~$ <span class="token function">make</span> <span class="token function">install</span> <span class="token comment"># installs to a directory in $GOPATH/bin</span>
+~$ <span class="token function">sudo</span> <span class="token function">cp</span> <span class="token variable">$GOPATH</span>/bin/lnd <span class="token variable">$GOPATH</span>/bin/lncli /usr/bin
+~$ lnd --version
+lnd version <span class="token number">0.10</span>.99-beta <span class="token assign-left variable">commit</span><span class="token operator">=</span>clock/v1.0.0-229-ge64e71d86dc1ac716c30a80f85a22e8fb544697f
+</code></pre></div><h5 id="3-create-a-symbolic-link-to-the-bitcoin-configuration-file"><a href="#3-create-a-symbolic-link-to-the-bitcoin-configuration-file" class="header-anchor">#</a> 3. Create a symbolic link to the Bitcoin configuration file.</h5> <p>lnd looks for bitcoin.conf in a specific location to get necessary RPC and zeromq details.</p> <div class="language-bash extra-class"><pre class="language-bash"><code>~$ <span class="token function">ln</span> -s ~/.bitcoin/bitcoin.conf /etc/bitcoin/bitcoin.conf
+</code></pre></div><h5 id="4-create-a-configuration-file"><a href="#4-create-a-configuration-file" class="header-anchor">#</a> 4. Create a configuration file.</h5> <div class="language-bash extra-class"><pre class="language-bash"><code>~$ <span class="token function">vi</span> lnd.conf
+</code></pre></div><div class="language- extra-class"><pre class="language-text"><code>[Application Options]
+datadir=/var/lib/lnd/data
+tlscertpath=/var/lib/lnd/tls.cert
+tlskeypath=/var/lib/lnd/tls.key
+logdir=/var/lib/lnd/logs
+maxlogfiles=3
+maxlogfilesize=10
+#externalip=1.1.1.1 # change to your public IP address if required.
+alias=i_luv_btcpay
+listen=0.0.0.0:9375
+
+[Bitcoin]
+bitcoin.active=1
+bitcoin.node=bitcoind
+bitcoin.mainnet=true
+
+[tor]
+tor.active=true
+tor.v3=true
+</code></pre></div><div class="language-bash extra-class"><pre class="language-bash"><code>~$ <span class="token function">sudo</span> <span class="token function">mkdir</span> -p /etc/lnd
+~$ <span class="token function">sudo</span> <span class="token function">mkdir</span> -p /var/lib/lnd
+~$ <span class="token function">sudo</span> <span class="token function">chown</span> admin:admin -R /var/lib/lnd
+~$ <span class="token function">sudo</span> <span class="token function">cp</span> lnd.conf /etc/lnd
+~$ <span class="token function">sudo</span> <span class="token function">chmod</span> <span class="token number">644</span> /etc/lnd/lnd.conf
+</code></pre></div><h5 id="5-create-a-systemd-service-2"><a href="#5-create-a-systemd-service-2" class="header-anchor">#</a> 5. Create a systemd service</h5> <p>An example <strong>systemd service</strong> file is shown below. Adjust the paths, User and Group accordingly.</p> <div class="language-bash extra-class"><pre class="language-bash"><code>~$ <span class="token function">vi</span> lnd.service
+</code></pre></div><div class="language- extra-class"><pre class="language-text"><code>[Unit]
+Description=LND Lightning Network Daemon
+Requires=bitcoind.service
+After=bitcoind.service
+
+[Service]
+ExecStart=/usr/bin/lnd --configfile=/etc/lnd/lnd.conf
+ExecStop=/usr/bin/lncli --lnddir /var/lib/lnd stop
+PIDFile= /run/lnd/lnd.pid
+
+User=admin
+Group=admin
+
+Type=simple
+KillMode=process
+TimeoutStartSec=60
+TimeoutStopSec=60
+Restart=always
+RestartSec=60
+
+[Install]
+WantedBy=multi-user.target
+</code></pre></div><div class="language-bash extra-class"><pre class="language-bash"><code>~$ <span class="token function">sudo</span> <span class="token function">cp</span> lnd.service /etc/systemd/system
+~$ <span class="token function">sudo</span> systemctl <span class="token builtin class-name">enable</span> --now lnd
+</code></pre></div><h5 id="✒️-configuration-4"><a href="#✒️-configuration-4" class="header-anchor">#</a> ✒️ Configuration</h5> <p><strong>Running a Bitcoin Lightning daemon requires a hot wallet on your BTCPay Server.</strong></p> <p>Repeating for emphasis.</p> <p><strong>Running a Bitcoin Lightning daemon requires a hot wallet on your BTCPay Server.</strong></p> <p>With Bitcoin the protocol has evolved and deterministic key derivation means the keys for your wallet can be kept in a different location to the BTCPay Server. Lightning daemons do not have this facility. Any Bitcoins committed or received in your lightning channels are controlled by private keys that are on your BTCPay Server.</p> <h5 id="1-create-a-symbolic-link-to-the-lnd-data-directory"><a href="#1-create-a-symbolic-link-to-the-lnd-data-directory" class="header-anchor">#</a> 1. Create a symbolic link to the lnd data directory</h5> <p>The install steps above use <code>/var/lib/lnd</code> as the data directory rather than the default <code>/home/user/.lnd</code>. In order to save typing when using the <code>lncli</code> client it's useful to add a symbolic directory link.</p> <div class="language-bash extra-class"><pre class="language-bash"><code><span class="token function">ln</span> -s /var/lib/lnd .lnd
+</code></pre></div><h5 id="2-create-lightning-wallet"><a href="#2-create-lightning-wallet" class="header-anchor">#</a> 2. Create Lightning wallet</h5> <p>The first time the lnd is started a new wallet must be created and the backup seed safely recorded (if someone else gets your seed they can steal your funds so keep it safe).</p> <div class="language-bash extra-class"><pre class="language-bash"><code>~$ lncli create
+Input wallet password:
+Confirm password:
+
+Do you have an existing cipher seed mnemonic you want to use? <span class="token punctuation">(</span>Enter y/n<span class="token punctuation">)</span>: n
+
+Your cipher seed can optionally be encrypted.
+Input your passphrase <span class="token keyword">if</span> you wish to encrypt it <span class="token punctuation">(</span>or press enter to proceed without a cipher seed passphrase<span class="token punctuation">)</span>:
+
+Generating fresh cipher seed<span class="token punctuation">..</span>.
+
+<span class="token operator">!</span><span class="token operator">!</span><span class="token operator">!</span>YOU MUST WRITE DOWN THIS SEED TO BE ABLE TO RESTORE THE WALLET<span class="token operator">!</span><span class="token operator">!</span><span class="token operator">!</span>
+---------------BEGIN LND CIPHER SEED---------------
+ <span class="token number">1</span>. above      <span class="token number">2</span>. catch    <span class="token number">3</span>. start     <span class="token number">4</span>. tape
+ <span class="token number">5</span>. sound      <span class="token number">6</span>. friend   <span class="token number">7</span>. water     <span class="token number">8</span>. royal
+ <span class="token number">9</span>. solid     <span class="token number">10</span>. poet    <span class="token number">11</span>. wisdom   <span class="token number">12</span>. match
+<span class="token number">13</span>. virtual   <span class="token number">14</span>. zero    <span class="token number">15</span>. slender  <span class="token number">16</span>. thrive
+<span class="token number">17</span>. idle      <span class="token number">18</span>. catch   <span class="token number">19</span>. robot    <span class="token number">20</span>. clay
+<span class="token number">21</span>. resemble  <span class="token number">22</span>. angry   <span class="token number">23</span>. work     <span class="token number">24</span>. <span class="token keyword">until</span>
+---------------END LND CIPHER SEED-----------------
+
+<span class="token operator">!</span><span class="token operator">!</span><span class="token operator">!</span>YOU MUST WRITE DOWN THIS SEED TO BE ABLE TO RESTORE THE WALLET<span class="token operator">!</span><span class="token operator">!</span><span class="token operator">!</span>
+
+lnd successfully initialized<span class="token operator">!</span>
+</code></pre></div><p>Note that if the symbolic directory link from the previous step <strong>was not</strong> created the command is:</p> <div class="language-bash extra-class"><pre class="language-bash"><code>lncli --lnddir /var/lib/lnd create
+</code></pre></div><h5 id="3-unlock-the-wallet"><a href="#3-unlock-the-wallet" class="header-anchor">#</a> 3. Unlock the wallet</h5> <p>Every time lnd is restarted the wallet <strong>needs to be unlocked</strong>. This is not ideal for a BTCPay Server that can is designed to run unattended but Lighting is still in its infancy.</p> <div class="language-bash extra-class"><pre class="language-bash"><code>~$ lncli unlock
+</code></pre></div><h5 id="-check-7"><a href="#-check-7" class="header-anchor">#</a> 👍 Check</h5> <div class="language-bash extra-class"><pre class="language-bash"><code>~$ lncli getinfo
+<span class="token punctuation">{</span>
+    <span class="token string">&quot;version&quot;</span><span class="token builtin class-name">:</span> <span class="token string">&quot;0.10.99-beta commit=clock/v1.0.0-229-ge64e71d86dc1ac716c30a80f85a22e8fb544697f&quot;</span>,
+    <span class="token string">&quot;commit_hash&quot;</span><span class="token builtin class-name">:</span> <span class="token string">&quot;e64e71d86dc1ac716c30a80f85a22e8fb544697f&quot;</span>,
+   <span class="token punctuation">..</span>.
+ <span class="token punctuation">}</span>
+</code></pre></div><p>Check the service:</p> <div class="language-bash extra-class"><pre class="language-bash"><code>~$ <span class="token function">sudo</span> journalctl -xe --unit lnd --follow
+<span class="token punctuation">..</span>.
+Jul <span class="token number">27</span> <span class="token number">15</span>:46:29 ubuntu lnd<span class="token punctuation">[</span><span class="token number">654474</span><span class="token punctuation">]</span>: <span class="token number">2020</span>-07-27 <span class="token number">15</span>:46:29.909 <span class="token punctuation">[</span>INF<span class="token punctuation">]</span> DISC: Attempting to bootstrap with: BOLT-0010 DNS Seed: <span class="token punctuation">[</span><span class="token punctuation">[</span>nodes.lightning.directory soa.nodes.lightning.directory<span class="token punctuation">]</span> <span class="token punctuation">[</span>lseed.bitcoinstats.com <span class="token punctuation">]</span><span class="token punctuation">]</span>
+Jul <span class="token number">27</span> <span class="token number">15</span>:49:41 ubuntu lnd<span class="token punctuation">[</span><span class="token number">654474</span><span class="token punctuation">]</span>: <span class="token number">2020</span>-07-27 <span class="token number">15</span>:49:41.939 <span class="token punctuation">[</span>INF<span class="token punctuation">]</span> DISC: Attempting to bootstrap with: Authenticated Channel Graph
+Jul <span class="token number">27</span> <span class="token number">15</span>:49:41 ubuntu lnd<span class="token punctuation">[</span><span class="token number">654474</span><span class="token punctuation">]</span>: <span class="token number">2020</span>-07-27 <span class="token number">15</span>:49:41.940 <span class="token punctuation">[</span>ERR<span class="token punctuation">]</span> SRVR: Unable to retrieve initial bootstrap peers: no addresses found
+</code></pre></div><p>The <strong>Lightning Node Connection String</strong> to use with <code>BTCPay Server</code> is:</p> <div class="language-bash extra-class"><pre class="language-bash"><code><span class="token assign-left variable">type</span><span class="token operator">=</span>lnd-rest<span class="token punctuation">;</span><span class="token assign-left variable">server</span><span class="token operator">=</span>https://127.0.0.1:8080/<span class="token punctuation">;</span><span class="token assign-left variable">macaroonfilepath</span><span class="token operator">=</span>/home/admin/.lnd/data/chain/bitcoin/mainnet/admin.macaroon<span class="token punctuation">;</span><span class="token assign-left variable">allowinsecure</span><span class="token operator">=</span>true
+</code></pre></div><h5 id="-check-tor-and-lnd"><a href="#-check-tor-and-lnd" class="header-anchor">#</a> 👍 Check Tor and LND</h5> <p>As with the Bitcoin daemon if Tor is installed and the configuration file enables it (the one above does) then <code>lnd</code>  will automatically register an onion address. In lnd's case torv3 addresses are supported.</p> <p>The torv3 onion address below is a lot longer than the torv2 one from the Bitcoin daemon section (16 characters compared to 56 characters).</p> <div class="language-bash extra-class"><pre class="language-bash"><code>~$ lncli getinfo <span class="token operator">|</span> <span class="token function">grep</span> onion
+<span class="token string">&quot;029b0e3c05595074afcffdca0fb22fb68a95a9c4698dd20962f647de4891eceabd@liyuvwbbycrvvuzcrsd5rq7svwckabejlsymcxiwzkj3smvlwcsqpjyd.onion:9735&quot;</span>
+</code></pre></div><p>The Tor address created by lnd can be used to connect to other Lighting peers on the Tor network. The Tor address can work in parallel with an IPv4 or IPv6 address. To register one of those make sure the <code>externalip</code> is set in the lnd configuration file.</p> <h5 id="-update-3"><a href="#-update-3" class="header-anchor">#</a> 🚨 Update</h5> <p>Updating could break things. Be careful on a live system.</p> <div class="language-bash extra-class"><pre class="language-bash"><code>~$ <span class="token function">sudo</span> systemctl stop lnd
+~$ <span class="token builtin class-name">export</span> <span class="token assign-left variable"><span class="token environment constant">PATH</span></span><span class="token operator">=</span><span class="token environment constant">$PATH</span>:/usr/local/go/bin
+~$ <span class="token builtin class-name">export</span> <span class="token assign-left variable">GOPATH</span><span class="token operator">=</span>~/gocode
+~$ <span class="token builtin class-name">export</span> <span class="token assign-left variable"><span class="token environment constant">PATH</span></span><span class="token operator">=</span><span class="token environment constant">$PATH</span><span class="token builtin class-name">:</span><span class="token variable">$GOPATH</span>/bin
+~$ <span class="token builtin class-name">cd</span> ~/src/lnd
+~$ <span class="token function">git</span> pull
+~$ <span class="token function">make</span>
+~$ <span class="token function">make</span> <span class="token function">install</span> <span class="token comment"># installs to a directory in $GOPATH/bin</span>
+~$ <span class="token function">sudo</span> <span class="token function">cp</span> <span class="token variable">$GOPATH</span>/bin/lnd <span class="token variable">$GOPATH</span>/bin/lncli /usr/bin
+~$ lnd --version
+lnd version <span class="token number">0.10</span>.99-beta <span class="token assign-left variable">commit</span><span class="token operator">=</span>clock/v1.0.0-229-ge64e71d86dc1ac716c30a80f85a22e8fb544697f
+~$ <span class="token function">sudo</span> systemctl start lnd
+</code></pre></div><p>After the daemon has been restarted the wallet needs to be unlocked:</p> <div class="language-bash extra-class"><pre class="language-bash"><code>~$ lncli unlock
+</code></pre></div><p>If <code>Ride The Lightning (RTL)</code> is installed, see next section, it may have stopped when lnd disappeared so it will also need to be restarted.</p> <div class="language-bash extra-class"><pre class="language-bash"><code>~$ <span class="token function">sudo</span> systemctl start rtl
+</code></pre></div><h2 id="ride-the-lightning-rtl"><a href="#ride-the-lightning-rtl" class="header-anchor">#</a> Ride The Lightning (RTL)</h2> <p><strong>Ride the Lightning</strong> is a Node.js application to manage your Lightning peers, channels, wallet etc.</p> <p>The advantage of the work that has gone into BTCPay Server is that the RTL web page can be controlled and accessed in the same manner as the BTCPay site.</p> <h5 id="-install-8"><a href="#-install-8" class="header-anchor">#</a> 🚚 Install</h5> <h5 id="1-install-dependencies"><a href="#1-install-dependencies" class="header-anchor">#</a> 1. Install dependencies</h5> <div class="language-bash extra-class"><pre class="language-bash"><code>~$ <span class="token function">sudo</span> <span class="token function">apt</span> <span class="token function">install</span> nodejs build-essential <span class="token function">npm</span>
+</code></pre></div><h5 id="2-build-rtl"><a href="#2-build-rtl" class="header-anchor">#</a> 2. Build RTL</h5> <div class="language-bash extra-class"><pre class="language-bash"><code>~$ <span class="token builtin class-name">cd</span> ~/src
+~$ <span class="token function">git</span> clone https://github.com/Ride-The-Lightning/RTL.git
+~$ <span class="token builtin class-name">cd</span> RTL
+~$ <span class="token function">npm</span> <span class="token function">install</span> --only<span class="token operator">=</span>prod
+</code></pre></div><h5 id="3-create-a-configuration-file-2"><a href="#3-create-a-configuration-file-2" class="header-anchor">#</a> 3. Create a configuration file</h5> <p>Copy the sample config file from <code>sample-RTL-Config.json</code> and adjust accordingly. An example that works with the rest of the instructions in this document is shown below.</p> <div class="language-bash extra-class"><pre class="language-bash"><code>~$ <span class="token function">cp</span> src/RTL/sample-RTL-Config.json RTL-Config.json
+~$ <span class="token function">vi</span> RTL-Config.json
+</code></pre></div><div class="language-json extra-class"><pre class="language-json"><code><span class="token punctuation">{</span>
+  <span class="token property">&quot;port&quot;</span><span class="token operator">:</span> <span class="token string">&quot;3000&quot;</span><span class="token punctuation">,</span>
+  <span class="token property">&quot;defaultNodeIndex&quot;</span><span class="token operator">:</span> <span class="token number">1</span><span class="token punctuation">,</span>
+  <span class="token property">&quot;SSO&quot;</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token property">&quot;rtlSSO&quot;</span><span class="token operator">:</span> <span class="token number">1</span><span class="token punctuation">,</span>
+    <span class="token property">&quot;rtlCookiePath&quot;</span><span class="token operator">:</span> <span class="token string">&quot;/var/lib/rtl/.cookie&quot;</span><span class="token punctuation">,</span>  # Needs to match the value in BTCPay systemd settings.
+    <span class="token property">&quot;logoutRedirectLink&quot;</span><span class="token operator">:</span> <span class="token string">&quot;https://mainnet.demo.btcpayserver.org/Account/login&quot;</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token property">&quot;nodes&quot;</span><span class="token operator">:</span> <span class="token punctuation">[</span>
+    <span class="token punctuation">{</span>
+      <span class="token property">&quot;index&quot;</span><span class="token operator">:</span> <span class="token number">1</span><span class="token punctuation">,</span>
+      <span class="token property">&quot;lnNode&quot;</span><span class="token operator">:</span> <span class="token string">&quot;Node 1&quot;</span><span class="token punctuation">,</span>
+      <span class="token property">&quot;lnImplementation&quot;</span><span class="token operator">:</span> <span class="token string">&quot;LND&quot;</span><span class="token punctuation">,</span>
+      <span class="token property">&quot;Authentication&quot;</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+        <span class="token property">&quot;macaroonPath&quot;</span><span class="token operator">:</span> <span class="token string">&quot;/var/lib/lnd/data/chain/bitcoin/mainnet&quot;</span><span class="token punctuation">,</span>
+        <span class="token property">&quot;configPath&quot;</span><span class="token operator">:</span> <span class="token string">&quot;/etc/lnd/lnd.conf&quot;</span>
+      <span class="token punctuation">}</span><span class="token punctuation">,</span>
+      <span class="token property">&quot;Settings&quot;</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+        <span class="token property">&quot;userPersona&quot;</span><span class="token operator">:</span> <span class="token string">&quot;MERCHANT&quot;</span><span class="token punctuation">,</span>
+        <span class="token property">&quot;themeMode&quot;</span><span class="token operator">:</span> <span class="token string">&quot;DAY&quot;</span><span class="token punctuation">,</span>
+        <span class="token property">&quot;themeColor&quot;</span><span class="token operator">:</span> <span class="token string">&quot;PURPLE&quot;</span><span class="token punctuation">,</span>
+        <span class="token property">&quot;channelBackupPath&quot;</span><span class="token operator">:</span> <span class="token string">&quot;/home/admin/rtl/backup/node-1&quot;</span><span class="token punctuation">,</span>
+        <span class="token property">&quot;enableLogging&quot;</span><span class="token operator">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span>
+        <span class="token property">&quot;lnServerUrl&quot;</span><span class="token operator">:</span> <span class="token string">&quot;https://localhost:8080/v1&quot;</span><span class="token punctuation">,</span>
+        <span class="token property">&quot;swapServerUrl&quot;</span><span class="token operator">:</span> <span class="token string">&quot;http://localhost:8081/v1&quot;</span><span class="token punctuation">,</span>
+        <span class="token property">&quot;fiatConversion&quot;</span><span class="token operator">:</span> <span class="token boolean">false</span>
+      <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">]</span>
+<span class="token punctuation">}</span>
+</code></pre></div><p>Note that RTL has different behaviour and requirements compared to the other services documented in theses instructions, specifically:</p> <ol><li>The configuration file needs to exist in RTL's data directory,</li> <li>The RTL process may write update to the configuration file.</li></ol> <div class="language-bash extra-class"><pre class="language-bash"><code>~$ <span class="token function">sudo</span> <span class="token function">mkdir</span> -p /var/lib/rtl
+~$ <span class="token function">sudo</span> <span class="token function">cp</span> ~/RTL-Config.json /var/lib/rtl
+~$ <span class="token function">sudo</span> <span class="token function">chown</span> admin:admin -R /var/lib/rtl
+~$ <span class="token function">sudo</span> <span class="token function">chmod</span> <span class="token number">644</span> /var/lib/rtl/RTL-Config.json
+</code></pre></div><h5 id="4-create-a-systemd-service-2"><a href="#4-create-a-systemd-service-2" class="header-anchor">#</a> 4. Create a systemd service</h5> <div class="language-bash extra-class"><pre class="language-bash"><code>~$ <span class="token function">vi</span> rtl.service
+</code></pre></div><div class="language- extra-class"><pre class="language-text"><code>[Unit]
+Description=Ride The Lightning
+Requires=lnd.service
+After=lnd.service
+
+[Service]
+Environment=&quot;RTL_CONFIG_PATH=/var/lib/rtl&quot;
+WorkingDirectory=/var/lib/rtl
+ExecStart=/usr/bin/node /home/admin/src/RTL/rtl
+User=admin
+Group=admin
+Type=simple
+PIDFile=/run/rtl/rtl.pid
+Restart=on-failure
+
+[Install]
+WantedBy=multi-user.target
+</code></pre></div><div class="language-bash extra-class"><pre class="language-bash"><code>~$ <span class="token function">sudo</span> <span class="token function">cp</span> rtl.service /etc/systemd/system
+~$ <span class="token function">sudo</span> systemctl <span class="token builtin class-name">enable</span> --now rtl
+</code></pre></div><h5 id="-check-8"><a href="#-check-8" class="header-anchor">#</a> 👍 Check</h5> <p>Check the service:</p> <div class="language-bash extra-class"><pre class="language-bash"><code>~$ <span class="token function">sudo</span> journalctl -xe --unit rtl --follow
+<span class="token punctuation">..</span>.
+Jul <span class="token number">27</span> <span class="token number">18</span>:27:52 ubuntu node<span class="token punctuation">[</span><span class="token number">988638</span><span class="token punctuation">]</span>: Server is up and running, please <span class="token function">open</span> the UI at http://localhost:3000
+</code></pre></div><p>If it doesn't start correctly stop the service and run the application directly to get any error messages.</p> <div class="language-bash extra-class"><pre class="language-bash"><code>~$ <span class="token function">sudo</span> systemctl stop rtl
+~$ <span class="token builtin class-name">export</span> <span class="token assign-left variable">RTL_CONFIG_PATH</span><span class="token operator">=</span>/var/lib/rtl<span class="token punctuation">;</span> <span class="token function">pushd</span> ~/src/RTL<span class="token punctuation">;</span> node rtl<span class="token punctuation">;</span> <span class="token function">popd</span><span class="token punctuation">;</span>
+Server is up and running, please <span class="token function">open</span> the UI at http://localhost:3000
+</code></pre></div><p>From the <code>BTCPay Server</code> web page the <code>RTL</code> interface should be accessible from <code>Server Settings-&gt;Services</code> under the &quot;Crypto services exposed by your server&quot; heading.</p> <h5 id="-update-4"><a href="#-update-4" class="header-anchor">#</a> 🚨 Update</h5> <p>Updating could break things. Be careful on a live system.</p> <div class="language-bash extra-class"><pre class="language-bash"><code>~$ <span class="token function">sudo</span> systemctl stop rtl
+~$ <span class="token builtin class-name">cd</span> ~<span class="token punctuation">;</span> <span class="token function">pushd</span> ~/src/RTL<span class="token punctuation">;</span> <span class="token function">git</span> pull<span class="token punctuation">;</span> <span class="token function">npm</span> <span class="token function">install</span><span class="token punctuation">;</span> <span class="token function">popd</span><span class="token punctuation">;</span>
+~$ <span class="token function">sudo</span> systemctl start rtl
+</code></pre></div><h2 id="-the-end"><a href="#-the-end" class="header-anchor">#</a> 🏁 The End</h2></div> <footer class="page-edit"><div class="edit-link"><a href="https://github.com/btcpayserver/btcpayserver-doc/edit/master/docs/ManualDeploymentExtended.md" target="_blank" rel="noopener noreferrer">Edit this page</a> <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></div> <div class="edit-link"><a href="https://github.com/btcpayserver/btcpayserver-doc/issues/new?title=Improve%20Extended%20Manual%20Setup&amp;body=I%20could%20not%20find%20the%20information%20I%20was%20looking%20for%20on%20the%20%22Extended%20Manual%20Setup%22%20page%20(%60%2FManualDeploymentExtended%2F%60).%0A%0A%5BPLEASE%20DESCRIBE%20HOW%20THE%20PAGE%20CAN%20BE%20IMPROVED%5D&amp;labels=question" target="_blank" rel="noopener noreferrer">Didn't find an answer?</a> <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></div> <!----></footer> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/Docker/pihole/" class="prev">
+        Pi-Hole support
+      </a></span> <span class="next"><a href="/Configurator/">
+        Configurator
+      </a>
+      →
+    </span></p></div> </main></div><div class="global-ui"></div></div>
+    <script src="/assets/js/app.3e743670.js" defer></script><script src="/assets/js/3.aa1712e0.js" defer></script><script src="/assets/js/89.a318c3fc.js" defer></script><script src="/assets/js/28.ed6af585.js" defer></script>
+  </body>
+</html>
