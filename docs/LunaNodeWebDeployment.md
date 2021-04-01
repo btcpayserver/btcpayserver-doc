@@ -1,6 +1,6 @@
 # Deploying BTCPay - LunaNode Web-Wizard
 
-This article explains the **deployment of BTCPay Server through LunaNode Web-Wizard**. [LunaNode](http://lunanode.com/) is Canadian based hosting provider that accept Bitcoin payments and requires no personal identification except for a phone number verification.
+This article explains the **deployment of BTCPay Server through LunaNode Web-Wizard**. [LunaNode](https://www.lunanode.com/) is Canadian based hosting provider that accept Bitcoin payments and requires no personal identification except for a phone number verification.
 
 Their web-wizard is one of the easiest ways to **deploy BTCPay Servers from a very user-friendly interface**. This method is highly recommended if you don't have a lot of technical knowledge. LunaNode will provide you with a generic domain for your server to get you started. If you want to set up a custom domain you will need to have some comfort with the command line interface. 
 
@@ -26,7 +26,7 @@ Once your account has been verified, and credits added, go to the API section an
 
 ## 3. Web-Wizard Deployment
 
-1. Go to [launchbtcpay.lunanode.com](http://launchbtcpay.lunanode.com/)
+1. Go to [launchbtcpay.lunanode.com](https://launchbtcpay.lunanode.com/)
 2. Paste the API Key and API ID created in step 2. and continue.
 3. Use your own domain or automatically-generated one by LunaNode.
 4. Customize the web-wizard settings according to your needs.

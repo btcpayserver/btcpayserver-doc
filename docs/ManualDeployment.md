@@ -16,7 +16,7 @@ The process is basically the following:
 
 Take a look at our video to learn more:
 
-[![BTCPay Server - Setup](http://img.youtube.com/vi/Xo_vApXTZBU/mqdefault.jpg "BTCPay Server - Setup")](http://www.youtube.com/watch?v=Xo_vApXTZBU "BTCPay - Setup")
+[![BTCPay Server - Setup](https://img.youtube.com/vi/Xo_vApXTZBU/mqdefault.jpg "BTCPay Server - Setup")](https://www.youtube.com/watch?v=Xo_vApXTZBU "BTCPay - Setup")
 
 ## Warning: Not recommended to use in production
 

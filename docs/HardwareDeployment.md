@@ -51,7 +51,7 @@ To find your external IP address Google "whats my ip".
 - Insert RAM
 - Install hard drive using included cage.
 
-**Step 3** - Download [Ubuntu 18.04 Desktop Image](http://releases.ubuntu.com/18.04/)
+**Step 3** - Download [Ubuntu 18.04 Desktop Image](https://releases.ubuntu.com/18.04/)
 
 **Step 4** - Download and install [Etcher](https://etcher.io/).  Etcher is software that is used to flash OS images to SD cards and USB Drives.
 In this case we will be using Etcher to flash our USB Thumb Drive with the Ubuntu OS.
@@ -96,7 +96,7 @@ From another PC on your network login in to your BTCPB via SSH.
 
 If you are using Windows
 
-- download [Putty](http://releases.ubuntu.com/18.04/) and create a connection to your BTCPB.
+- download [Putty](https://releases.ubuntu.com/18.04/) and create a connection to your BTCPB.
 
 If you are using another Linux machine open a new terminal and type in the following.
 You will be prompted for your password.

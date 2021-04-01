@@ -4,7 +4,7 @@ This section goes through the process of **creating an account and store on our 
 
 You can also follow along in this video:
 
-[![BTCPay - Introduction](https://img.youtube.com/vi/xh3Eac66qc4/mqdefault.jpg)](http://www.youtube.com/watch?v=xh3Eac66qc4 "BTCPay - Introduction")
+[![BTCPay - Introduction](https://img.youtube.com/vi/xh3Eac66qc4/mqdefault.jpg)](https://www.youtube.com/watch?v=xh3Eac66qc4 "BTCPay - Introduction")
 
 ## Create your first invoice
 
