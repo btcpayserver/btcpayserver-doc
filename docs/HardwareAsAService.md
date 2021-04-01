@@ -21,6 +21,7 @@ Here you can find a non-exhaustive list of companies that provide such a service
 - [MyNode](https://mynodebtc.com/)
 - [RaspiBlitz](https://shop.fulmo.org/raspiblitz/)
 - [Umbrel](https://getumbrel.com/)
+- [Embassy](https://start9labs.com/)
 
 Do you provide Hardware As A Service and are not listed here?
 Open an issue to [get added to this list](https://github.com/btcpayserver/btcpayserver-doc/issues)
