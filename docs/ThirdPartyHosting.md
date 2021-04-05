@@ -84,7 +84,7 @@ Specifically, third-party hosts should not enable the following policies without
 - Allow non-admins to import their hot wallets to the node wallet
 - Allow non-admins to use the internal lightning node in their stores
 
-Third-party users who are granted access to an internal lightning node or hot wallet functionality to enable features such as Payjoin, should understand the risk and trust associated with [using hot wallets](./HotWallet.md) before choosing to use it. Use one of the [recommended wallets](./WalletSetup.md) which provide an extended public key to use in your store, if you are unsure which wallet type to use.
+Third-party users who are granted access to an internal lightning node or hot wallet functionality to enable features such as Payjoin, should understand the risk and trust associated with [using hot wallets](./CreateWallet.md#hot-wallet) before choosing to use it. Use one of the [recommended wallets](./WalletSetup.md) which provide an extended public key to use in your store, if you are unsure which wallet type to use.
 
 ## Third Party Hosting FAQ
 

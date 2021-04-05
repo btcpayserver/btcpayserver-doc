@@ -88,7 +88,7 @@ The way it works is fairly simple. Merchants connect a wallet to each of their s
 
 Private keys are not required for using BTCPay with an existing wallet. The fact that BTCPay Server does not require access to your master private key for on-chain transactions is a huge security advantage. Even if your server gets hacked, your funds from the on-chain transactions are always safe. Securing your on-chain funds comes down to [securing your wallet](https://btcinformation.org/en/secure-your-wallet). Using an [existing wallet with BTCPay Server](../WalletSetup.md#use-an-existing-wallet) only requires the public key from your wallet.
 
-It is possible to generate new wallets using BTCPay Server which are hot wallets stored on the server. If you have a lightning node, BTCPay technically has access to the keys (macaroons) of your Lightning funds as well. If these are features that you would like to use, be sure to understand the [security implications and the risks](../HotWallet.md#security-implications) associated with these experimental features. 
+It is possible to generate new wallets using BTCPay Server which are hot wallets stored on the server. If you have a lightning node, BTCPay technically has access to the keys (macaroons) of your Lightning funds as well. If these are features that you would like to use, be sure to understand the [security implications and the risks](../CreateWallet.md#security-implications) associated with these experimental features. 
 
 If you're using a Third-Party BTCPay host, you should be familiar with the [security concerns](../ThirdPartyHosting.md#security-concerns) associated with private keys. 
 

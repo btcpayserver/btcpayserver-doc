@@ -37,13 +37,11 @@ module.exports = [
   { path: '/getting-started/connectwallet/electrumwallet', redirect: '/ElectrumWallet/' },
   { path: '/getting-started/connectwallet/electrumwallet/electrumx', redirect: '/ElectrumX/' },
   { path: '/getting-started/connectwallet/electrumwallet/electrumpersonalserver', redirect: '/ElectrumPersonalServer/' },
-  { path: '/getting-started/connectwallet/hotwallet', redirect: '/HotWallet/' },
   { path: '/getting-started/whatsnext', redirect: '/WhatsNext/' },
   // Features
   { path: '/features', redirect: '/Apps/' },
   { path: '/features/apps', redirect: '/Apps/' },
   { path: '/features/wallet', redirect: '/Wallet/' },
-  { path: '/features/wallet/hotwallet', redirect: '/HotWallet/' },
   { path: '/features/invoices', redirect: '/Invoices/' },
   { path: '/features/lightningnetwork', redirect: '/LightningNetwork/' },
   { path: '/features/accounting', redirect: '/Accounting/' },

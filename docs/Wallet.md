@@ -73,10 +73,10 @@ BTCPay Server has built-in hardware wallet support allowing you to **use your ha
 
 ##### Signing with a hot wallet
 
-If you [created a new wallet](./CreateWallet.md) when setting up your store and enabled it as a [hot wallet](./HotWallet.md), you can sign a transaction with a **private key stored on your server**.
+If you [created a new wallet](./CreateWallet.md) when setting up your store and enabled it as a [hot wallet](./CreateWallet.md#hot-wallet), you can sign a transaction with a **private key stored on your server**.
 
 :::danger
-Using the hot wallet feature comes with its own security implications, please be sure to read and understand them over at the [Hot Wallet documentation](./HotWallet.md)
+Using the hot wallet feature comes with its own security implications, please be sure to read and understand them over at the [Hot Wallet documentation](./CreateWallet.md#hot-wallet)
 :::
 
 #### Advanced Settings
