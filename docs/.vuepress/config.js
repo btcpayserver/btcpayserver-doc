@@ -219,12 +219,12 @@ module.exports = {
             initialOpenGroupIndex: -1,
             children: [
               {
-                title: "Connect an existing wallet",
-                path: "/HardwareWalletIntegration"
+                title: "Connect Wallet",
+                path: "/ConnectWallet"
               },
               {
-                title: "Create a new wallet",
-                path: "/HotWallet"
+                title: "Create Wallet",
+                path: "/CreateWallet"
               }
             ]
           },
