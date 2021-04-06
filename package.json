@@ -22,6 +22,7 @@
     "prestart": "rm -rf $npm_package_config_dist",
     "start": "NODE_ENV=development vuepress dev docs -p $npm_package_config_port",
     "build": "NODE_ENV=production vuepress build docs",
+    "netlify": "./setup-deps.sh && npm run build",
     "test": "jest",
     "linkcheck": "start-server-and-test linkcheck:serve $npm_package_config_port linkcheck:local",
     "linkcheck:serve": "serve -p $npm_package_config_port $npm_package_config_dist",
