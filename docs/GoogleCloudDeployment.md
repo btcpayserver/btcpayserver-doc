@@ -8,7 +8,7 @@ Google Cloud is alternative way to set up BTCPayServer.
 
 Start by clicking the following button:
 
-[![Open in Cloud Shell](http://gstatic.com/cloudssh/images/open-btn.svg "Cloud Shell")](https://console.cloud.google.com/cloudshell/open?git_repo=https%3A%2F%2Fgithub.com%2Fbtcpayserver%2Fbtcpayserver-googlecloud&page=editor)
+[![Open in Cloud Shell](https://gstatic.com/cloudssh/images/open-btn.svg "Cloud Shell")](https://console.cloud.google.com/cloudshell/open?git_repo=https%3A%2F%2Fgithub.com%2Fbtcpayserver%2Fbtcpayserver-googlecloud&page=editor)
 
 You can log into [Google Cloud Console](https://console.cloud.google.com) with your Google account.
 
