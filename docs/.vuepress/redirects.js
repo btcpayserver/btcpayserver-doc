@@ -85,5 +85,7 @@ module.exports = [
   { path: '/support-and-community/translate', redirect: '/Translate/' },
   { path: '/support-and-community/community', redirect: '/Community/' },
   // Old paths in new docs
-  { path: '/DockerDeployment/', redirect: '/Docker/' }
+  { path: '/DockerDeployment/', redirect: '/Docker/' },
+  { path: '/HotWallet/', redirect: '/CreateWallet/' },
+  { path: '/HardwareWalletIntegration/', redirect: '/ConnectWallet/' }
 ]
