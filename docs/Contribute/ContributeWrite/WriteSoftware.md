@@ -59,3 +59,11 @@ Then describe what your `Pull Request` changes, give it a title, and click `Crea
 ![ContributeOpenPR](../../img/Contribute/ContributeOpenPR.jpg)
 
 Once your pull request is submitted, it has to be reviewed by the maintainers and contributors. If it gets accepted - congratulations, you've made your first contribution.
+
+## **Step 6**
+
+If your Pull Request adds information in the [Documentation](https://github.com/btcpayserver/btcpayserver-doc/), [Website](https://github.com/btcpayserver/btcpayserver.org/) or [Directory](https://github.com/btcpayserver/directory.btcpayserver.org/) repositories, you can preview the changes directly in your web browser once your Pull Request is posted.
+
+Simply click the `details` button as shown in the screenshot below. Then locate the file or section that you edited and verify that everything appears as you intended.
+
+![NetlifyDeploymentPreview](../../img/Contribute/Netlify_preview.png)
