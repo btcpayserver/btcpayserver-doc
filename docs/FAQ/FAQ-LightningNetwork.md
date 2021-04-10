@@ -196,9 +196,10 @@ It is possible in BTCPay to enable LND with a pruned node, however the LND imple
 ### Can I use my existing LN node with BTCPay?
 
 If you already have a well connected lightning node with sufficient inbound liquidity, you may want to use it with BTCPay instead of the included lightning node.
-To do so, go to the lightning node settings page of your store (Store > Settings > Lightning > Setup).
-On this page you can edit the connection string to integrate an external node.
-The connection strings vary per lightning implementation, the settings page contains the documentation for the connection settings to give you further guidance.
+
+To do so, go to the lightning node settings page of your store (Store > Settings > Lightning > Modify). Here on the lightning node setting page, select the option for Use a custom lightning node.
+
+The connection strings vary per lightning implementation, the [settings page](../LightningNetwork.md#connecting-an-external-lightning-node-in-btcpay) contains the documentation for the connection settings to give you further guidance.
 
 ### How to change from c-lightning to LND or vice-versa?
 
