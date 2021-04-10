@@ -114,7 +114,7 @@ If before you were using `docker-compose -f "$(pwd)/Production/docker-compose.bt
 
 Then, make sure the port lightning network ports `9735` (BTC) and `9736` (LTC) are open on your firewalls.
 
-#### Case3: You are using Azure
+#### Case 3: You are using Azure
 
 Log as root:
 
