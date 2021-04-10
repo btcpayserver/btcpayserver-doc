@@ -1,6 +1,9 @@
 # Using the BTCPay API for Custom Integration
 
-**BTCPay implements the same API as Bitpay** for creating and managing invoices.
+BTCPay Server provides 2 APIS in order to integrate with it:
+
+* [GreenField API](./GreenFieldExample.md) - A RESTful API that aims to allow you to use BTCPay Server headless. This is the recommended API for projects which do not wish to recycle code from a Bitpay integration.
+* Bitpay Invoice API - BTCPay implements the same API as Bitpay for creating and managing invoices.
 
 **Migrating from BitPay to BTCPay** normally is as easy as changing a URL.
 
