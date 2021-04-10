@@ -58,22 +58,28 @@ Finally, to begin using Lightning, your blockchain needs to be fully synced.
 Regardless of the implementation (c-lightning or LND) you've decided to use, the process of **connecting your internal Lightning Node in BTCPay Server** is the same.
 
 1. If you do not have a store, create one.
-2. Store > Settings > Lightning (Off-chain payments)
-3. Click Setup
-4. At the next page, at the bottom under "connection string", click on the "click here" link. Your node information will be automatically added.
-5. Test Connection
-6. Submit.
-7. Save Store Settings (located at the bottom of the page, scroll)
+1. If you have lightning enabled on your server go to next step, otherwise add it like [this](./FAQ/FAQ-LightningNetwork.md#choosing-the-lightning-network-implementation)
+1. Store > Settings > Lightning > Modify
+1. Select Use the internal Lightning node
+1. Make sure it is Enabled
+1. Click Submit
+1. See BTC Lightning node modified message
+1. Click Test connection
+1. See Connection success message
 
 **Your blockchain needs to be fully synced before you try to connect your Lightning Node, otherwise the connection will fail.**
 
-![BTCPay Server Lightning Network Setup 1](./img/LightningNetworkNodeSetup1.png "BTCPay Server Lightning Network Setup 1")
+![BTCPay Server Lightning Network Setup 1](./img/lightning-node-setup/LightningNetworkNodeSetup1.png "BTCPay Server Lightning Network Setup 1")
 
-![BTCPay Server Lightning Network Setup 2](./img/LightningNetworkNodeSetup2.jpg "BTCPay Server Lightning Network Setup 2")
+![BTCPay Server Lightning Network Setup 2](./img/lightning-node-setup/LightningNetworkNodeSetup2.png "BTCPay Server Lightning Network Setup 2")
 
-![BTCPay Server Lightning Network Setup 3](./img/LightningNetworkNodeSetup3.jpg "BTCPay Server Lightning Network Setup 3")
+![BTCPay Server Lightning Network Setup 3](./img/lightning-node-setup/LightningNetworkNodeSetup3.png "BTCPay Server Lightning Network Setup 3")
 
-![BTCPay Server Lightning Network Setup 4](./img/LightningNetworkNodeSetup4.jpg "BTCPay Server Lightning Network Setup 4")
+![BTCPay Server Lightning Network Setup 4](./img/lightning-node-setup/LightningNetworkNodeSetup4.png "BTCPay Server Lightning Network Setup 4")
+
+If you would like to provide your own lightning node connection string, select the option to Use a custom Lightning node. If you aren't sure of which settings to use, there are some examples provided on this page to help guide you. This is typically used to connect an external lightning node to a BTCPay Server. 
+
+![BTCPay Server Lightning Network Setup Custom](./img/lightning-node-setup/LightningNetworkNodeSetupCustom.png "BTCPay Server Lightning Network Setup Custom")
 
 ## Getting Started with BTCPay and LND
 
