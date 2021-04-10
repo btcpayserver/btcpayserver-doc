@@ -92,7 +92,7 @@ The easiest way to use **LND implementation with BTCPay** is to use **[Ride The 
 
 RTL is a device agnostic **web user interface for Lightning Network** that allows you to operate your node without leaving BTCPay, from your browser.
 
-![Ride The Lightning Service in BTCPay Server](./img/RideTheLightningServices.png "Ride The Lightning Service in BTCPay Server")
+![Ride The Lightning Service in BTCPay Server](./img/server-settings/services/RideTheLightningServices.png "Ride The Lightning Service in BTCPay Server")
 
 To initiate RTL in BTCPay, Go to **Server Settings > Services > RTL > See information**.
 
