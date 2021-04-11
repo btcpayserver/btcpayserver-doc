@@ -76,7 +76,7 @@ To ensure that your lightning node is connected and accessible for use in your s
 
 ![BTCPay Server Lightning Network Setup 4](./img/lightning-node-setup/LightningNetworkNodeSetup4.png "BTCPay Server Lightning Network Setup 4")
 
-If you still are unable to connect to your lightning node, try [restarting your server](./FAQ/FAQ-ServerSettings.md#how-to-restart-btcpay-server) or reviewing our [troubleshooting guide](./LunaNodeWebDeployment.md). You will not be able to accept lightning payments in your store until your test connection shows as successful.
+If you are unable to connect to your lightning node, try [restarting your server](./FAQ/FAQ-ServerSettings.md#how-to-restart-btcpay-server) or reviewing our [troubleshooting guide](./Troubleshooting.md). You will not be able to accept lightning payments in your store until your test connection shows as successful.
 
 ## Connecting an external Lightning Node in BTCPay
 
