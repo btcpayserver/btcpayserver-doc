@@ -21,7 +21,7 @@ The **web-based PoS app** allows users with brick and mortar stores to readily *
 
 Adding new products is easy. The app has a **shopping cart feature**, **tips**, **product inventory**, **custom payment options** and more.
 
-**Point of sale app** can also be used to receive donations, tips or even be used as a small e-shop, depending on the options or customizations applied.
+The **Point of sale app** can also be used to receive donations, tips or even be used as a small e-shop, depending on the options or customizations applied.
 
 Curently, the **Point of Sale app** supports three different views:
 * A `Static` view representing only the items for sale.
