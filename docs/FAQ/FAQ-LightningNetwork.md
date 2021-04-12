@@ -85,13 +85,9 @@ When asking for inbound capacity, consider any routing policy fees the service m
 
 ### I previously installed BTCPayServer without lightning, can I enable it?
 
-The integrated lightning support is only useful for scenario where you are at the same time the host and the merchant of BTCPay Server.
+If you did not deploy your server with a lightning implementation provided, you will need to add it to your server manually. You can do this by sshing into your server, adding the lightning option and re-running the setup script. This is also the process for changing from one lightning provider to another. The instructions can be found [here](#how-to-change-from-c-lightning-to-lnd-or-vice-versa).
 
-When logged as admin of your server you will then have a nice link to connect to plug your lightning node to BTCPay Server.
-
-![LightningNode](../img/setuplightningnode.png)
-
-You can then click on `Test Connection` in this page to see if you successfully configured your lightning node.
+Once your server has restarted, you can then click on `Test Connection` in your you store settings to verify that you have successfully configured your lightning node.
 
 Depending on how you deployed BTCPayServer you might have different step to do:
 
@@ -111,14 +107,14 @@ If you are using CLightning for Litecoin, use the parameter `-ltclightning` inst
 
 Then, make sure the port lightning network ports `9735` (BTC) and `9736` (LTC) are open on your firewalls.
 
-#### Case2: You are using docker (without Azure)
+#### Case 2: You manually installed and you are using docker (without Azure)
 
 In this case, you only have to change the docker-compose you are using.
 If before you were using `docker-compose -f "$(pwd)/Production/docker-compose.btc-ltc.yml" up -d` (as documented [here](https://github.com/btcpayserver/btcpayserver-docker#for-docker-noobs)), then you need to change to `docker-compose -f "$(pwd)/Production/docker-compose.btc-ltc-clightning.yml" up -d`.
 
 Then, make sure the port lightning network ports `9735` (BTC) and `9736` (LTC) are open on your firewalls.
 
-#### Case3: You are using Azure
+#### Case 3: You are using Azure
 
 Log as root:
 
@@ -200,9 +196,10 @@ It is possible in BTCPay to enable LND with a pruned node, however the LND imple
 ### Can I use my existing LN node with BTCPay?
 
 If you already have a well connected lightning node with sufficient inbound liquidity, you may want to use it with BTCPay instead of the included lightning node.
-To do so, go to the lightning node settings page of your store (Store > Settings > Lightning > Setup).
-On this page you can edit the connection string to integrate an external node.
-The connection strings vary per lightning implementation, the settings page contains the documentation for the connection settings to give you further guidance.
+
+To do so, go to the lightning node settings page of your store (Store > Settings > Lightning > Modify). Here on the lightning node setting page, select the option for Use a custom lightning node.
+
+The connection strings vary per lightning implementation, the [settings page](../LightningNetwork.md#connecting-an-external-lightning-node-in-btcpay) contains the documentation for the connection settings to give you further guidance.
 
 ### How to change from c-lightning to LND or vice-versa?
 
