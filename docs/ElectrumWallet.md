@@ -17,9 +17,11 @@ After the installation, open **Electrum Wallet** by clicking on the icon on your
 
 ### Quick Setup
 
+The easiest way to setup your Electrum wallet with BTCPay is to import an a wallet file backup to your BTCPay Server.
+
 1. Create a new Electrum Wallet
-2. In Electrum, Wallet > Wallet Information - copy the **Master Public Key**.
-3. In BTCPay Server, Store > Settings > Setup > Wallet > Connect an existing wallet > Enter extended public key
+2. In Electrum, File > Save Backup > Save in folder
+3. In BTCPay Server, Store > Settings > Setup > Import Wallet File > Choose File > Continue
 4. Go to Receive tab in Electrum.
 5. Compare the addresses in Electrum and BTCPay Server, they should match.
 6. Confirm the address match in BTCPay.
@@ -48,11 +50,32 @@ From the multiple choice menu, select `SegWit` and `Next`
 
 **IMPORTANT NOTE 2:** Write down your recovery words in the order you see them on the screen. Write them down a piece of paper and store it somewhere secure. Take your time and triple check each word. Do not store your seed in a digital format (photograph, text document). Whoever has the access to your seed can access your funds. Confirm that the seed has been properly backed up by re-entering it in the same order. Once the seed is validated, proceed to the next step.
 
-![ElectrumWallet](./img/ElectrumWallet6.png "Backup Electrum seed")
+Copy and paste your seed words to complete your wallet creation in Electrum. Your wallet must be unencrypted to import it into your BTCPay Server. Once you have completed the setup of your wallet in BTCPay you can always add password encryption later in Electrum.
 
-It's highly recommended that you encrypt your wallet. Select a password that you can easily remember and mark make sure `Encrypt Wallet File` is marked. Proceed by clicking `Next`.
+![ElectrumWallet](./img/electrum/electrum-create-1.gif)
 
-![ElectrumWallet](./img/ElectrumWallet7.png "Encrypt Electrum wallet")
+Export and save a backup copy of your wallet.
+
+![ElectrumWallet](./img/electrum/electrum-create-2-export.gif)
+
+Import your wallet into your BTCPay store.
+
+![ElectrumWallet](./img/electrum/electrum-create-3-import.gif)
+
+Compare your addresses in your BTCPay store.
+
+![ElectrumWallet](./img/electrum/electrum-create-4-compare-addresses.gif)
+
+### Alternative Setup
+
+Instead of importing a wallet file you can instead transfer the public key to your BTCPay Server. This can be useful if your wallet is encrypted and you do not want to unencrypt it.
+
+1. Create a new Electrum Wallet
+2. In Electrum, Wallet > Wallet Information - copy the **Master Public Key**.
+3. In BTCPay Server, Store > Settings > Setup > Connect an existing wallet > Enter extended public key
+4. Go to Receive tab in Electrum.
+5. Compare the addresses in Electrum and BTCPay Server, they should match.
+6. Confirm the address match in BTCPay.
 
 When the wallet loads (it may take few moments), in the top menu, click on the `Wallet` and then`Information` .
 

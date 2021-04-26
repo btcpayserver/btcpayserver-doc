@@ -50,6 +50,9 @@ Select and **copy** the `Extended Account Public Key`. This is the **public** ke
 
 ![Connect Wasabi Wallet to BTCPay Server](./img/Wasabi/WasabiWalletSetupBTCPay8.png "Connect Wasabi Wallet to BTCPay Server")
 
+1. Return to your BTCPay Server. Click on the `Stores` in the header menu
+2. Click Settings > Setup > Connect an existing wallet > `Enter extended public key`
+
 Return to your BTCPay Server. Click on the `Stores` in the header menu and look for the `Wallet` section. Click on the `Setup` button.
 
 ![Connect Wasabi Wallet to BTCPay Server](./img/createwallet/SetupWallet.png "Connect Wasabi Wallet to BTCPay Server")

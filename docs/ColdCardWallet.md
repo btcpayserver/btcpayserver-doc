@@ -11,9 +11,9 @@ This guide assumes, you have a Coldcard wallet set up. To configure the **Coldca
 1. Insert the MicroSD card into the Coldcard wallet.
 2. Go to Advanced > MicroSD Card > Electrum Wallet > Native-Segwit
 3. Insert the MicroSD card back into your PC
-4. In BTCPay Server, Store > Settings > Wallet > Setup > Derivation Scheme > `Import from a wallet file`
-5. Browse and select the wallet file earlier exported from Coldcard.
-6. Click `Submit`
+4. In BTCPay Server, Stores > Settings > Setup > Connect an existing wallet > `Import wallet file`
+5. Choose File > select the wallet file earlier exported from Coldcard.
+6. Click `Continue`
 7. Confirm the addresses match the ones shown in your BTCPay Server.
 
 The **Coldcard is now connected to your BTCPay Server**. Payments go directly to Coldcard. The video below shows how to connect your BTCPay store to your Coldcard.
