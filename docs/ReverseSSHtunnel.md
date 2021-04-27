@@ -14,7 +14,7 @@
 
 ## Setup
 
-### On the host computer
+### On the host (your BTCPay Server instance)
 
 Check for an ssh public key:
 
@@ -28,20 +28,34 @@ If there is none generate one (keep pressing ENTER):
 ssh-keygen -t rsa -b 4096
 ```
 
-Copy the ssh public key over to the VPS (fill in the `VPS_IP_ADDRESS`).
+This will generate the SSH keypair `id_rsa` (private key) and `id_rsa.pub` inside `~/.ssh`.
+
+The private key needs to get added to the ssh-agent:
+
+```bash
+# start the ssh-agent in the background
+eval $(ssh-agent -s)
+
+# add private key to ssh-agent
+ssh-add ~/.ssh/id_rsa
+```
+
+Copy the public key over to the VPS (fill in the `VPS_IP_ADDRESS`).
 You will be prompted for the root password of the VPS.
 
 ```bash
 ssh-copy-id -i ~/.ssh/id_rsa.pub root@VPS_IP_ADDRESS
 ```
 
-### Working on the VPS
-
-Login as root or run:
+To verify that it works, SSH into the VPS – this should not prompt for the password anymore:
 
 ```bash
-sudo su -
+ssh root@VPS_IP_ADDRESS
 ```
+
+### On the VPS
+
+You can either reuse the connection from before or login as root.
 
 Edit the sshd config:
 
@@ -62,8 +76,6 @@ ClientAliveInterval 60
 
 CTRL+O, ENTER to save, CTRL+X to exit.
 
-<br>
-
 :::warning
 You can lose access at this point if the sshd config is wrong. Please double-check!
 :::
@@ -74,9 +86,15 @@ Restart the sshd service:
 sudo systemctl restart sshd
 ```
 
-### Back to the host computer
+### Back to the host
 
-#### Set up a systemd service
+#### Install and set up autossh
+
+Install the `autossh` dependency:
+
+```bash
+sudo apt-get install autossh
+```
 
 Create the service file:
 
@@ -96,7 +114,7 @@ After=network.target
 User=root
 Group=root
 Environment="AUTOSSH_GATETIME=0"
-ExecStart=/usr/bin/autossh -C -M 0 -v -N -o "ServerAliveInterval=60" -R 9735:localhost:9735 -R 443:localhost:443 -R 80:localhost:80 -R root@VPS_IP_ADDRESS
+ExecStart=/usr/bin/autossh -C -M 0 -v -N -o "ServerAliveInterval=60" -R 9735:localhost:9735 -R 443:localhost:443 -R 80:localhost:80 root@VPS_IP_ADDRESS
 StandardOutput=journal
 
 [Install]
@@ -118,7 +136,7 @@ You should be able access the ports/services of the host computer through the IP
 Check if there are any errors on the host computer:
 
 ```bash
-sudo journalctl -f -n 20  -u autossh-tunnel
+sudo journalctl -f -n 20 -u autossh-tunnel
 ```
 
 To check if tunnel is active on the VPS:
