@@ -117,6 +117,7 @@ Make sure the tokens you will configure on your WooCommerce store are available 
 Make sure to have the latest woocommerce plugin installed.
 
 ##### Setup your additional tokens
+###### Setting: Additional token configuration
 In the BTCPay payment method settings you have a new setting **“Additional token configuration”** where you can input the token configuration in a specific CSV format of 4 columns.
 
 1. **token symbol**:   
@@ -135,7 +136,7 @@ In the BTCPay payment method settings you have a new setting **“Additional tok
 **Important:** All the columns text needs to be enclosed by double quotes `"` and separated by semicolon `; each asset has to be put in a new line.   
 :::
 
-###### Example additional token config
+####### Example additional token config
 ```
 "BTC_OFFCHAIN";"Lightning BTC";"payment";""
 "USDt";"USDt (Liquid Theter)";"payment";"https://example.com/wp-content/uploads/2021/01/usdt.png"
@@ -146,6 +147,8 @@ After saving you will see each asset to be available as payment method. You can 
 
 ![Each additional additional token available as payment token](../img/woocommerce/woocommerce_at_payment-methods.png)
 
+###### Setting: Additional tokens: Enforce payment tokens
+The default payment method of BTCPay Server (Bitcoin) will **not** enforce any configured Currency, Asset, Altcoin or Token. This means when you have the default payment method "Bitcoin" enabled the user can select all the configured Currency, Asset, Altcoin or Tokens (which have an exchange rate) on the BTCPay Server payment page. You may not want this but enforce/limit which payment options will be available. By selecting this checkbox only the the Currency, Asset, Altcoin or Tokens of type "payment" listed in the setting [Setting: Additional token configuration](#setting-additional-token-configuration)
 
 #### Common WooCommerce use-cases using the Additional Token Support feature
 
