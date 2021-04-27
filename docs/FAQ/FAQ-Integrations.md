@@ -136,7 +136,7 @@ In the BTCPay payment method settings you have a new setting **“Additional tok
 **Important:** All the columns text needs to be enclosed by double quotes `"` and separated by semicolon `; each asset has to be put in a new line.   
 :::
 
-####### Example additional token config
+**Example additional token config**   
 ```
 "BTC_OFFCHAIN";"Lightning BTC";"payment";""
 "USDt";"USDt (Liquid Theter)";"payment";"https://example.com/wp-content/uploads/2021/01/usdt.png"
