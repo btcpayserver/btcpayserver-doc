@@ -88,6 +88,9 @@ add_filter('woocommerce_order_id_from_number', 'get_order_id_from_custom_order_s
 
 ### How to configure Additional Token Support
 
+::: tip Note
+The Wordpress and Woocommerce plugins used in this integrations are neither endorsed nor have they been thoroughly verified or vetted by the BTCPay Server team. Use them at your own risks.
+
 With using the additional token configuration you will be able to have separate payment methods for each configured Currency, Asset, Altcoin or Token. This means you can have separate payment methods for BTC, Lightning Network, LTC, ETH (and ERC20 tokens), Liquid assets, ... you name it. This allows you to issue and use [Liquid Assets](https://help.blockstream.com/hc/en-us/articles/900001543146-What-are-Liquid-assets-) as coupons or vouchers, see more details below.)
 
 #### Use cases
@@ -99,7 +102,7 @@ With using the additional token configuration you will be able to have separate 
 
 #### Requirements
 - all tokens you configure on the WooCommerce side need to be available in your store on BTCPay Server side
-- to use promotional tokens you need to have [Liquid Assets plugin](https://https://github.com/btcpayserver/btcpayserver-plugins) installed on BTCPay Server
+- to use promotional tokens you need to have [Liquid Assets plugin](https://github.com/btcpayserver/btcpayserver-plugins) installed on BTCPay Server
 
 #### Token types
 ##### Payment tokens
@@ -148,7 +151,7 @@ After saving you will see each asset to be available as payment method. You can 
 ![Each additional additional token available as payment token](../img/woocommerce/woocommerce_at_payment-methods.png)
 
 ###### Setting: Additional tokens: Enforce payment tokens
-The default payment method of BTCPay Server (Bitcoin) will **not** enforce any configured Currency, Asset, Altcoin or Token. This means when you have the default payment method "Bitcoin" enabled the user can select all the configured Currency, Asset, Altcoin or Tokens (which have an exchange rate) on the BTCPay Server payment page. You may not want this but enforce/limit which payment options will be available. By selecting this checkbox only the the Currency, Asset, Altcoin or Tokens of type "payment" listed in the setting [Setting: Additional token configuration](#setting-additional-token-configuration)
+The default payment method of BTCPay Server (Bitcoin) will **not** enforce any configured Currency, Asset, Altcoin or Token. This means when you have the default payment method "Bitcoin" enabled the user can select all the configured Currency, Asset, Altcoin or Tokens (which have an exchange rate) on the BTCPay Server payment page. You may not want this but enforce/limit which payment options will be available. By selecting this checkbox only the Currency, Asset, Altcoin or Tokens of type "payment" listed in the setting [Setting: Additional token configuration](#setting-additional-token-configuration)
 
 #### Common WooCommerce use-cases using the Additional Token Support feature
 
