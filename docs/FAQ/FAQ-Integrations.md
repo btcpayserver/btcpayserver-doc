@@ -89,7 +89,8 @@ add_filter('woocommerce_order_id_from_number', 'get_order_id_from_custom_order_s
 ### How to configure Additional Token Support
 
 ::: tip Note
-The Wordpress and Woocommerce plugins used in this integrations are neither endorsed nor have they been thoroughly verified or vetted by the BTCPay Server team. Use them at your own risks.
+The Wordpress and Woocommerce plugins used in this integration are neither endorsed nor have they been thoroughly verified or vetted by the BTCPay Server team. Use them at your own risks.
+:::
 
 With using the additional token configuration you will be able to have separate payment methods for each configured Currency, Asset, Altcoin or Token. This means you can have separate payment methods for BTC, Lightning Network, LTC, ETH (and ERC20 tokens), Liquid assets, ... you name it. This allows you to issue and use [Liquid Assets](https://help.blockstream.com/hc/en-us/articles/900001543146-What-are-Liquid-assets-) as coupons or vouchers, see more details below.)
 
