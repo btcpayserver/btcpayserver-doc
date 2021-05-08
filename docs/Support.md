@@ -47,9 +47,3 @@ Contact: hubik.tomas@gmail.com
 > BTCPayServer local or cloud installation (Azure/other VPS).  Can also help with WooCommerce Plugin configuration and BTCPayServer Store/App creation.
 
 Contact: support@lightninginabox.co, [Web](https://lightninginabox.co)
-
-### Spas Vutov
-
-> I can assist with initial configuration for BTCPay to work with Bitcoin Gold (BTG, also referred as BGold), Bitcoin Gold LND and any docker, no-docker setup for BTCPay with Bitcoin Gold. I would accept tips if the work done was useful, but definitely not mandatory for anyone to pay me for any help.
-
-Contact: VutovSpas@gmail.com, [Mattermost](https://chat.btcpayserver.org/), [BTG Discord](https://forum.bitcoingold.org/t/btg-discord-invite/138) - on both @Spas
