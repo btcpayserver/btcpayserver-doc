@@ -48,7 +48,7 @@ In layman's terms, BTCPay Server is a self-hosted and automated invoicing system
 
 ### How is it different
 
-BTCPay Server is free, open-source, self-hostable software. 
+BTCPay Server is free, open-source, self-hostable software.
 BTCPay Server is not a company. To use BTCPay Server, [deploy](./Deployment.md) your own instance, or use a [third-party host](./ThirdPartyHosting.md).
 
  To explore what BTCPay Server has to offer, head over to the [official demo](https://mainnet.demo.btcpayserver.org/Account/Login).
@@ -131,29 +131,6 @@ If you're beginner, take a look at the step by step guide on how to contribute t
           </a>
         </td>
         <td align="center" valign="top" width="14.285714285714285714285714285714%">
-          <a href="https://www.btse.com" target="_blank">
-            <img  src="https://raw.githubusercontent.com/btcpayserver/btcpayserver/master/BTCPayServer/wwwroot/img/btse.svg?sanitize=trueg" alt="BTSE" loading="lazy" height=100>
-            <br/>
-            <span>BTSE</span>
-          </a>
-        </td>
-        <td align="center" valign="top" width="14.285714285714285714285714285714%">
-          <a href="https://www.okcoin.com/" target="_blank">
-            <img  src="https://raw.githubusercontent.com/btcpayserver/btcpayserver/master/BTCPayServer/wwwroot/img/okcoin.svg?sanitize=true" alt="DG Lab" loading="lazy" height=100>
-            <br/>
-            <span>OKCoin</span>
-          </a>
-        </td>
-        <td align="center" valign="top" width="14.285714285714285714285714285714%">
-          <a href="https://www.dglab.com/en/" target="_blank">
-            <img  src="https://raw.githubusercontent.com/btcpayserver/btcpayserver/master/BTCPayServer/wwwroot/img/dglab.svg?sanitize=true" alt="DG Lab" loading="lazy" height=100>
-            <br/>
-            <span>DG Lab</span>
-          </a>
-        </td>
-      </tr>
-      <tr>
-        <td align="center" valign="top" width="14.285714285714285714285714285714%">
           <a href="https://acinq.co/" target="_blank">
             <img  src="https://raw.githubusercontent.com/btcpayserver/btcpayserver/master/BTCPayServer/wwwroot/img/acinq-logo.svg?sanitize=true" alt="ACINQ" loading="lazy" height=100>
             <br/>
@@ -167,6 +144,8 @@ If you're beginner, take a look at the step by step guide on how to contribute t
             <span>LunaNode</span>
           </a>
         </td>
+        </tr>
+        <tr>
         <td align="center" valign="top" width="14.285714285714285714285714285714%">
           <a href="https://walletofsatoshi.com/" target="_blank">
             <img  src="https://raw.githubusercontent.com/btcpayserver/btcpayserver/master/BTCPayServer/wwwroot/img/walletofsatoshi.svg?sanitize=true" alt="Wallet of Satoshi" loading="lazy" height=100>
@@ -188,7 +167,7 @@ If you're beginner, take a look at the step by step guide on how to contribute t
             <br/>
             <span>Coincards</span>
           </a>
-        </td> 
+        </td>
       </tr>
     </tbody>
   </table>
