@@ -145,29 +145,6 @@ The BTCPay Server Project is proudly supported by these entities through the [BT
         </a>
       </td>
       <td align="center" valign="middle">
-        <a href="https://www.btse.com" target="_blank">
-          <img  src="https://raw.githubusercontent.com/btcpayserver/btcpayserver/master/BTCPayServer/wwwroot/img/btse.svg?sanitize=true" alt="BTSE" height=100>
-          <br/>
-          <span>BTSE</span>
-        </a>
-      </td>
-      <td align="center" valign="middle">
-        <a href="https://www.okcoin.com/" target="_blank">
-          <img  src="https://raw.githubusercontent.com/btcpayserver/btcpayserver/master/BTCPayServer/wwwroot/img/okcoin.svg?sanitize=true" alt="OKCoin" height=100>
-          <br/>
-          <span>OKCoin</span>
-        </a>
-      </td>
-      <td align="center" valign="middle">
-        <a href="https://www.dglab.com/en/" target="_blank">
-          <img  src="https://raw.githubusercontent.com/btcpayserver/btcpayserver/master/BTCPayServer/wwwroot/img/dglab.svg?sanitize=true" alt="DG Lab" height=100>
-          <br/>
-          <span>DG Lab</span>
-        </a>
-      </td>
-    </tr>
-    <tr>
-       <td align="center" valign="middle">
         <a href="https://acinq.co/" target="_blank">
           <img  src="https://raw.githubusercontent.com/btcpayserver/btcpayserver/master/BTCPayServer/wwwroot/img/acinq-logo.svg?sanitize=true" alt="ACINQ" height=100>
           <br/>
@@ -188,6 +165,8 @@ The BTCPay Server Project is proudly supported by these entities through the [BT
           <span>Wallet of Satoshi</span>
         </a>
       </td>
+      </tr>
+      <tr>
       <td align="center" valign="middle">
         <a href="https://nomics.com/" target="_blank">
           <img  src="https://raw.githubusercontent.com/btcpayserver/btcpayserver/master/BTCPayServer/wwwroot/img/nomics.svg?sanitize=true" alt="Nomics" height=100>
