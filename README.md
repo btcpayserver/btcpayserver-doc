@@ -158,6 +158,8 @@ The BTCPay Server Project is proudly supported by these entities through the [BT
           <span>LunaNode</span>
         </a>
       </td>
+      </tr>
+      <tr>
       <td align="center" valign="middle">
         <a href="https://walletofsatoshi.com/" target="_blank">
           <img  src="https://raw.githubusercontent.com/btcpayserver/btcpayserver/master/BTCPayServer/wwwroot/img/walletofsatoshi.svg?sanitize=true" alt="Wallet of Satoshi" height=100>
@@ -165,8 +167,7 @@ The BTCPay Server Project is proudly supported by these entities through the [BT
           <span>Wallet of Satoshi</span>
         </a>
       </td>
-      </tr>
-      <tr>
+
       <td align="center" valign="middle">
         <a href="https://nomics.com/" target="_blank">
           <img  src="https://raw.githubusercontent.com/btcpayserver/btcpayserver/master/BTCPayServer/wwwroot/img/nomics.svg?sanitize=true" alt="Nomics" height=100>
