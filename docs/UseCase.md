@@ -63,7 +63,7 @@ Benefits of using BTCPay for accepting donations:
 * Cutting out the middle-man (Payments go directly to their wallet)
 * Enhancing privacy for them and their donors (no address re-use, no IP leaks to third parties)
 
-It is particularly important to mention that BTCPay Sever prevents address reuse, as many people has been reusing address for donations in the past. Here is why you SHOULD NOT reuse Bitcoin address:
+It is particularly important to mention that BTCPay Sever prevents address reuse, as many people have been reusing addresses for donations in the past. Here is why you SHOULD NOT reuse a Bitcoin address:
 
 * Privacy: reusing the same address for donations not only makes it incredibly easy to link it to your identity, it also compromises the privacy of your donors and every person that interacts with you
 * Security: by compromising your privacy, address reuse increases your attack surface, as people that want to steal from you or harm you would have A LOT of information about you and your donors
