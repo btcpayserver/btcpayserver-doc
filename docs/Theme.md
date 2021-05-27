@@ -49,7 +49,7 @@ The custom property definitions in the `:root` selector are divided into several
 - The third section contains definitions for specific parts of the page, sections or components.
   Here you should try to reuse definitions from above as much as possible to provide a consistent look and feel.
 
-The variables defined in a theme file get used in the [`site.css`](https://github.com/btcpayserver/btcpayserver/blob/master/BTCPayServer/wwwroot/main/site.css) and [`creative.css`](https://github.com/btcpayserver/btcpayserver/blob/master/BTCPayServer/wwwroot/main/bootstrap4-creativestart/creative.css) files.
+The variables defined in a theme file get used in the [`site.css`](https://github.com/btcpayserver/btcpayserver/blob/master/BTCPayServer/wwwroot/main/site.css) and [`creative.css`](https://github.com/btcpayserver/btcpayserver/blob/master/BTCPayServer/wwwroot/main/bootstrap/creative.css) files.
 
 ##### Overriding Bootstrap selectors
 
