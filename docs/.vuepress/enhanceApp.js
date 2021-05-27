@@ -53,7 +53,7 @@ export default ({ router }) => {
       const { app } = router
 
       // redirects
-      router.addRoutes(redirects)
+      redirects.forEach(route => router.addRoute(route))
 
       // initial page rendering
       app.$once('hook:mounted', () => {
