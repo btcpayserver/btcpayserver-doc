@@ -53,7 +53,7 @@ Create the configuration for the service in `/etc/http-to-socks-proxy/btcpayserv
 mkdir -p /etc/http-to-socks-proxy/
 
 # create the file with the content below
-nano /etc/systemd/system/http-to-socks-proxy@.service
+nano /etc/http-to-socks-proxy/btcpayserver.conf
 ```
 
 Replace the `REMOTE_HOST` and adapt the ports if needed:
