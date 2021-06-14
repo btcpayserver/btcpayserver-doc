@@ -145,11 +145,20 @@ The BTCPay Server Project is proudly supported by these entities through the [BT
         </a>
       </td>
       <td align="center" valign="middle">
+        <a href="https://www.pnxbet.com" target="_blank">
+          <img  src="https://raw.githubusercontent.com/btcpayserver/btcpayserver/master/BTCPayServer/wwwroot/img/pnxbet.png?sanitize=true" alt="PNXBET" height=100>
+          <br/>
+          <span>PNXBET</span>
+        </a>
+      </td>
+      <td align="center" valign="middle">
         <a href="https://acinq.co/" target="_blank">
           <img  src="https://raw.githubusercontent.com/btcpayserver/btcpayserver/master/BTCPayServer/wwwroot/img/acinq-logo.svg?sanitize=true" alt="ACINQ" height=100>
           <br/>
           <span>ACINQ</span>
         </a>
+      </tr>
+      <tr>
       </td>
       <td align="center" valign="middle">
         <a href="https://lunanode.com" target="_blank">
