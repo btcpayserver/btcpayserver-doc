@@ -64,9 +64,9 @@ Further customization can be done by providing additional CSS code, like shown b
 ```css
 :root {
   --btcpay-font-family-base: "Source Sans Pro", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-  --btcpay-color-primary: #7D4698;
-  --btcpay-color-primary-accent: #59316B;
-  --btcpay-body-color: #333A41;
+  --btcpay-primary: #7D4698;
+  --btcpay-primary-accent: #59316B;
+  --btcpay-body-text: #333A41;
   --btcpay-body-bg: #FFF;
   --btcpay-bg-tile: #F8F9FA;
 }

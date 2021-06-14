@@ -706,107 +706,68 @@
 
 @media (prefers-reduced-motion: reduce) {
   * {
-    animation: none !important;
+    -webkit-animation: none !important;
+            animation: none !important;
     transition: none !important;
   }
 }
 
 body {
-  font-family: "Open Sans"
-,
-"Helvetica Neue"
-,
-Arial
-,
-sans-serif;
   font-family: var(--btcpay-font-family-base);
-  font-size: var(--btcpay-font-size-m);
-  font-size: var(--btcpay-font-size-body, var(--btcpay-font-size-m));
-  font-weight: 400;
+  font-size: var(--btcpay-font-size-base);
   font-weight: var(--btcpay-font-weight-normal);
   line-height: 1.6;
-  color: var(--btcpay-body-color);
+  color: var(--btcpay-body-text);
   background-color: var(--btcpay-body-bg);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
 code {
-  font-family: SFMono-Regular
-,
-Menlo
-,
-Monaco
-,
-Consolas
-,
-"Liberation Mono"
-,
-"Courier New"
-,
-monospace;
   font-family: var(--btcpay-font-family-monospace);
-  border-radius: 4px;
   border-radius: var(--btcpay-border-radius);
-  padding: 5px;
   padding: var(--btcpay-space-xs);
-  color: var(--btcpay-code-color);
+  color: var(--btcpay-code-text);
   background-color: var(--btcpay-code-bg);
 }
 
 pre {
-  font-family: SFMono-Regular
-,
-Menlo
-,
-Monaco
-,
-Consolas
-,
-"Liberation Mono"
-,
-"Courier New"
-,
-monospace;
   font-family: var(--btcpay-font-family-monospace);
-  border-radius: 4px;
   border-radius: var(--btcpay-border-radius);
-  padding: 20px;
   padding: var(--btcpay-space-m);
-  color: var(--btcpay-pre-color);
+  color: var(--btcpay-pre-text);
   background-color: var(--btcpay-pre-bg);
 }
 
 pre code {
-  color: #ffffff;
-  color: var(--btcpay-color-white);
+  color: var(--btcpay-white);
   background: transparent;
 }
 
 a {
-  color: var(--btcpay-body-color-link);
+  color: var(--btcpay-body-link);
 }
 
 a:focus,
 a:hover {
-  color: var(--btcpay-body-color-link-accent);
+  color: var(--btcpay-body-link-accent);
 }
 
 /* components */
 
 .btcpay-header {
-  color: var(--btcpay-header-color);
+  color: var(--btcpay-header-text);
   background-color: var(--btcpay-header-bg);
 }
 
 .btcpay-header a {
-  color: var(--btcpay-header-color-link);
+  color: var(--btcpay-header-link);
   text-decoration: none;
 }
 
 .btcpay-header a:focus,
-  .btcpay-header a:hover {
-  color: var(--btcpay-header-color-link-accent);
+.btcpay-header a:hover {
+  color: var(--btcpay-header-link-accent);
 }
 
 .btcpay-header-columns {
@@ -822,14 +783,13 @@ a:hover {
 }
 
 .btcpay-theme-switch {
-  --btcpay-theme-switch-light-color: var(--btcpay-color-white);
-  --btcpay-theme-switch-dark-color: var(--btcpay-color-neutral-900);
+  --btcpay-theme-switch-light: var(--btcpay-white);
+  --btcpay-theme-switch-dark: var(--btcpay-neutral-900);
   --btcpay-theme-switch-icon-size: 1.25rem;
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  color: #ffffff;
-  color: var(--btcpay-color-white);
+  color: var(--btcpay-white);
   background: none;
   cursor: pointer;
   height: 40px;
@@ -849,17 +809,17 @@ a:hover {
 
 .btcpay-theme-switch:hover .btcpay-theme-switch-light,
 .btcpay-theme-switch:focus .btcpay-theme-switch-light {
-  fill: var(--btcpay-theme-switch-light-color);
+  fill: var(--btcpay-theme-switch-light);
 }
 
 .btcpay-theme-switch:hover .btcpay-theme-switch-dark,
 .btcpay-theme-switch:focus .btcpay-theme-switch-dark {
-  fill: var(--btcpay-theme-switch-dark-color);
+  fill: var(--btcpay-theme-switch-dark);
 }
 
 .btcpay-theme-switch-dark {
   display: inline-block;
-  stroke: var(--btcpay-theme-switch-dark-color);
+  stroke: var(--btcpay-theme-switch-dark);
 }
 
 :root[data-btcpay-theme="dark"] .btcpay-theme-switch-dark {
@@ -874,7 +834,7 @@ a:hover {
 
 .btcpay-theme-switch-light {
   display: none;
-  stroke: var(--btcpay-theme-switch-light-color);
+  stroke: var(--btcpay-theme-switch-light);
 }
 
 :root[data-btcpay-theme="dark"] .btcpay-theme-switch-light {
@@ -888,18 +848,18 @@ a:hover {
 }
 
 .btcpay-footer {
-  color: var(--btcpay-footer-color);
+  color: var(--btcpay-footer-text);
   background-color: var(--btcpay-footer-bg);
 }
 
 .btcpay-footer a {
-  color: var(--btcpay-footer-color-link);
+  color: var(--btcpay-footer-link);
   text-decoration: none;
 }
 
 .btcpay-footer a:focus,
-  .btcpay-footer a:hover {
-  color: var(--btcpay-footer-color-link-accent);
+.btcpay-footer a:hover {
+  color: var(--btcpay-footer-link-accent);
 }
 
 .btcpay-footer-columns {
@@ -910,16 +870,13 @@ a:hover {
 
 .btcpay-footer-columns > * {
   flex: 1 1 100%;
-  margin-bottom: 20px;
   margin-bottom: var(--btcpay-space-m);
 }
 
 .btcpay-footer-columns h4,
-  .btcpay-footer-columns h5,
-  .btcpay-footer-columns h6 {
-  margin: 20px 0;
+.btcpay-footer-columns h5,
+.btcpay-footer-columns h6 {
   margin: var(--btcpay-space-m) 0;
-  font-weight: 700;
   font-weight: var(--btcpay-font-weight-bold);
 }
 
@@ -930,7 +887,6 @@ a:hover {
 }
 
 .btcpay-footer-columns ul li {
-  padding: 5px 0;
   padding: var(--btcpay-space-xs) 0;
 }
 
@@ -939,7 +895,6 @@ a:hover {
     flex: 1;
   }
   .btcpay-footer-columns > * + * {
-    margin-left: 20px;
     margin-left: var(--btcpay-space-m);
   }
 }
