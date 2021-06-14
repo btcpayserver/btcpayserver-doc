@@ -131,6 +131,13 @@ If you're beginner, take a look at the step by step guide on how to contribute t
           </a>
         </td>
         <td align="center" valign="top" width="14.285714285714285714285714285714%">
+          <a href="https://pnxbet.com" target="_blank">
+            <img  src="https://raw.githubusercontent.com/btcpayserver/btcpayserver/master/BTCPayServer/wwwroot/img/pnxbet.png?sanitize=true" alt="PNXBET" loading="lazy" height=100>
+            <br/>
+            <span>PNXBET</span>
+          </a>
+        </td>
+        <td align="center" valign="top" width="14.285714285714285714285714285714%">
           <a href="https://acinq.co/" target="_blank">
             <img  src="https://raw.githubusercontent.com/btcpayserver/btcpayserver/master/BTCPayServer/wwwroot/img/acinq-logo.svg?sanitize=true" alt="ACINQ" loading="lazy" height=100>
             <br/>
