@@ -19,18 +19,18 @@ h5, h6 {
 
 // styles originating from .btcpay-header
 .navbar {
-  color: var(--btcpay-header-color);
+  color: var(--btcpay-header-text);
   background-color: var(--btcpay-header-bg);
 }
 
 .navbar a {
-  color: var(--btcpay-header-color-link);
+  color: var(--btcpay-header-link);
   text-decoration: none;
 }
 
 .navbar a:focus,
 .navbar a:hover {
-  color: var(--btcpay-header-color-link-accent);
+  color: var(--btcpay-header-link-accent);
 }
 
 :root[data-btcpay-theme="dark"] a.nav-link[rel]:before {
@@ -44,7 +44,7 @@ h5, h6 {
 }
 
 :root[data-btcpay-theme="dark"] #app .navbar .search-box input {
-  background-color: var(--btcpay-color-neutral-900) !important;
+  background-color: var(--btcpay-neutral-900) !important;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -96,7 +96,7 @@ h5, h6 {
   }
 
   .navbar a {
-    color: var(--btcpay-header-color-link);
+    color: var(--btcpay-header-link);
   }
 
   .navbar .search-box {
@@ -105,9 +105,9 @@ h5, h6 {
   }
 
   .navbar .search-box input {
-    color: var(--btcpay-header-color);
+    color: var(--btcpay-header-text);
     background-color: var(--btcpay-header-bg);
-    border-color: var(--btcpay-border-color-medium);
+    border-color: var(--btcpay-body-border-medium);
     font-size: 1rem;
 
     @media (max-width: 899px) {
@@ -140,12 +140,12 @@ h5, h6 {
 
   .nav-links {
     @media (max-width: 899px) {
-      border-bottom-color: var(--btcpay-border-color-medium);
+      border-bottom-color: var(--btcpay-body-border-medium);
     }
   }
 
   .nav-links a {
-    color: var(--btcpay-header-color-link);
+    color: var(--btcpay-header-link);
 
     @media (min-width: 900px) {
       padding: var(--btcpay-space-xs) var(--btcpay-space-s);
@@ -159,12 +159,12 @@ h5, h6 {
 
   .nav-links a:hover,
   .nav-links a:focus  {
-    color: var(--btcpay-header-color-link-accent);
-    border-bottom-color: var(--btcpay-header-color-link-accent);
+    color: var(--btcpay-header-link-accent);
+    border-bottom-color: var(--btcpay-header-link-accent);
   }
 
   .nav-links a.router-link-active {
-    color: var(--btcpay-header-color-link-accent);
+    color: var(--btcpay-header-link-accent);
   }
 
   a.nav-link[rel*="website"],
@@ -223,7 +223,7 @@ h5, h6 {
     margin: 0;
     border: 0;
     padding: 0 !important;
-    color: var(--btcpay-header-color);
+    color: var(--btcpay-header-text);
     background-color: var(--btcpay-header-bg);
   }
 
@@ -250,7 +250,7 @@ h5, h6 {
   }
 
   .algolia-search-wrapper .algolia-autocomplete .ds-dropdown-menu .ds-suggestion {
-    border-color: var(--btcpay-border-color-medium);
+    border-color: var(--btcpay-body-border-medium);
   }
 
   .algolia-docsearch-suggestion--wrapper {
@@ -258,9 +258,9 @@ h5, h6 {
   }
 
   .algolia-autocomplete .algolia-docsearch-suggestion--category-header {
-    color: var(--btcpay-color-light-text) !important;
-    background: var(--btcpay-color-light-backdrop) !important;
-    border-color: var(--btcpay-border-color-medium);
+    color: var(--btcpay-light-text) !important;
+    background: var(--btcpay-light-dim-bg) !important;
+    border-color: var(--btcpay-body-border-medium);
     padding: var(--btcpay-space-s) var(--btcpay-space-m) !important;
   }
 
@@ -281,22 +281,22 @@ h5, h6 {
 
   .algolia-autocomplete .algolia-docsearch-suggestion--content:before,
   .algolia-autocomplete .algolia-docsearch-suggestion--subcategory-column:before {
-    background: var(--btcpay-border-color-medium);
+    background: var(--btcpay-body-border-medium);
   }
 
   .ds-cursor .algolia-docsearch-suggestion--content,
   .algolia-search-wrapper .algolia-autocomplete .algolia-docsearch-suggestion--highlight {
-    color: var(--btcpay-color-light-text) !important;
-    background: var(--btcpay-color-light-backdrop) !important;
+    color: var(--btcpay-light-text) !important;
+    background: var(--btcpay-light-dim-bg) !important;
   }
 
   .algolia-search-wrapper .algolia-autocomplete .algolia-docsearch-suggestion .algolia-docsearch-suggestion--subcategory-column-text {
-    color: var(--btcpay-color-light-text);
+    color: var(--btcpay-light-text);
   }
 
   .algolia-autocomplete .algolia-docsearch-suggestion--text,
   .algolia-search-wrapper .algolia-autocomplete .algolia-docsearch-suggestion .algolia-docsearch-suggestion--title {
-    color: var(--btcpay-body-color);
+    color: var(--btcpay-body-text);
   }
 
   .algolia-autocomplete .suggestions {
@@ -304,17 +304,23 @@ h5, h6 {
   }
 
   .algolia-autocomplete .suggestions a {
-    color: var(--btcpay-header-color-link);
+    color: var(--btcpay-header-link);
     text-decoration: none;
   }
 
   .algolia-autocomplete .suggestions a:focus,
   .algolia-autocomplete .suggestions a:hover {
-    color: var(--btcpay-header-color-link-accent);
+    color: var(--btcpay-header-link-accent);
+  }
+
+  .algolia-autocomplete .algolia-docsearch-suggestion--category-header .algolia-docsearch-suggestion--category-header-lvl0 .algolia-docsearch-suggestion--highlight,
+  .algolia-autocomplete .algolia-docsearch-suggestion--category-header .algolia-docsearch-suggestion--category-header-lvl1 .algolia-docsearch-suggestion--highlight,
+  .algolia-autocomplete .algolia-docsearch-suggestion--text .algolia-docsearch-suggestion--highlight {
+    box-shadow: inset 0 -2px 0 0 var(--btcpay-body-link-accent);
   }
 
   .sidebar {
-    color: var(--btcpay-nav-color-link);
+    color: var(--btcpay-nav-link);
     background: var(--btcpay-body-bg);
     border-color: transparent;
   }
@@ -342,7 +348,7 @@ h5, h6 {
     opacity: 1;
   }
   .sidebar-group.is-sub-group.collapsable > .sidebar-heading:not(.clickable):hover {
-    color: var(--btcpay-nav-color-link-accent);
+    color: var(--btcpay-nav-link-accent);
     cursor: pointer;
   }
 
@@ -353,43 +359,43 @@ h5, h6 {
 
   a.sidebar-link,
   .sidebar-heading.clickable {
-    color: var(--btcpay-nav-color-link);
+    color: var(--btcpay-nav-link);
   }
 
   a.sidebar-link:focus,
   a.sidebar-link:hover,
   .sidebar-heading.clickable:focus,
   .sidebar-heading.clickable:hover {
-    color: var(--btcpay-nav-color-link-accent);
+    color: var(--btcpay-nav-link-accent);
   }
 
   a.sidebar-link.active,
   .sidebar-heading.clickable.active,
   .sidebar-heading.clickable.router-link-exact-active {
-    color: var(--btcpay-nav-color-link-active);
+    color: var(--btcpay-nav-link-active);
     font-weight: 600;
     border-color: transparent;
   }
 
   a.sidebar-link.active,
   .sidebar-group.depth-1 > .sidebar-heading.clickable.router-link-exact-active  {
-    border-color: var(--btcpay-color-primary);
+    border-color: var(--btcpay-primary);
   }
 
   .arrow.left {
-    border-right-color: var(--btcpay-color-neutral-500);
+    border-right-color: var(--btcpay-neutral-500);
   }
 
   .arrow.right {
-    border-left-color: var(--btcpay-color-neutral-500);
+    border-left-color: var(--btcpay-neutral-500);
   }
 
   .arrow.up {
-    border-bottom-color: var(--btcpay-color-neutral-500);
+    border-bottom-color: var(--btcpay-neutral-500);
   }
 
   .arrow.down {
-    border-top-color: var(--btcpay-color-neutral-500);
+    border-top-color: var(--btcpay-neutral-500);
   }
 
   .page-nav,
@@ -403,15 +409,20 @@ h5, h6 {
   }
 
   h2 {
-    border-color: var(--btcpay-border-color-medium);
+    border-color: var(--btcpay-body-border-medium);
   }
 
   hr {
-    border-color: var(--btcpay-border-color-light);
+    border-color: var(--btcpay-body-border-light);
   }
 
   figure {
     margin: var(--btcpay-space-m) 0;
+  }
+
+  blockquote {
+    color: var(--btcpay-body-text-muted);
+    border-left-color: var(--btcpay-body-border-medium);
   }
 
   // hide outbound link markers for videos and images
@@ -422,7 +433,7 @@ h5, h6 {
   code {
     font-family: var(--btcpay-font-family-monospace);
     border-radius: var(--btcpay-border-radius);
-    color: var(--btcpay-code-color);
+    color: var(--btcpay-code-text);
     background-color: var(--btcpay-code-bg);
     word-break: break-word;
   }
@@ -430,17 +441,17 @@ h5, h6 {
   pre {
     font-family: var(--btcpay-font-family-monospace);
     border-radius: var(--btcpay-border-radius);
-    color: var(--btcpay-color-white);
-    background-color: #222222;
+    color: var(--btcpay-pre-text);
+    background-color: var(--btcpay-pre-bg);
   }
 
   pre code {
-    color: var(--btcpay-color-white);
+    color: var(--btcpay-white);
     background: transparent;
   }
 
   th, td {
-    border-color: var(--btcpay-border-color-light);
+    border-color: var(--btcpay-body-border-light);
   }
 
   div[class*="language-"] {
@@ -456,45 +467,47 @@ h5, h6 {
     background-color: var(--btcpay-bg-dark);
   }
 
+  .custom-block .custom-block-title {
+    color: inherit;
+  }
+
   .custom-block a {
     color: inherit;
     text-decoration: underline;
   }
 
   .custom-block.danger {
-    color: var(--btcpay-color-danger-text);
-    background: var(--btcpay-color-danger-backdrop);
+    color: var(--btcpay-danger-text);
+    background: var(--btcpay-danger);
+    border-color: var(--btcpay-danger-bg-hover);
   }
 
   .custom-block.warning {
-    color: var(--btcpay-color-warning-text);
-    background: var(--btcpay-color-warning-backdrop);
-    border-color: #c1a000;
-  }
-
-  .custom-block.warning .custom-block-title {
-    color: #735f00;
+    color: var(--btcpay-warning-text);
+    background: var(--btcpay-warning);
+    border-color: var(--btcpay-warning-bg-hover);
   }
 
   .custom-block.tip {
-    color: var(--btcpay-color-info-text);
-    background: var(--btcpay-color-info-backdrop);
+    color: var(--btcpay-info-text);
+    background: var(--btcpay-info);
+    border-color: var(--btcpay-info-bg-hover);
   }
 
   .page-edit .edit-link a,
   .page-nav .inner a {
-    color: var(--btcpay-color-secondary);
+    color: var(--btcpay-secondary);
   }
 
   .page-edit .edit-link a:hover,
   .page-edit .edit-link a:focus,
   .page-nav .inner a:hover,
   .page-nav .inner a:focus {
-    color: var(--btcpay-color-secondary-accent);
+    color: var(--btcpay-secondary-accent);
   }
 
   .page-nav .inner {
-    border-top-color: var(--btcpay-border-color-light);
+    border-top-color: var(--btcpay-body-border-light);
   }
 
   .supporters {
@@ -530,7 +543,7 @@ h5, h6 {
   }
 
   .supporters td a {
-    color: var(--btcpay-color-secondary);
+    color: var(--btcpay-secondary);
     line-height: 1;
   }
 
