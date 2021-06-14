@@ -52,7 +52,7 @@ To spend the funds, you are required to **sign** the transaction. Transactions c
 
 - Hardware Wallet
 - Wallet supporting PSBT
-- Private key or recovery seed
+- HD private key or recovery seed
 - Hot Wallet
 
 ##### Signing with HD Private Key or mnemonic seed
