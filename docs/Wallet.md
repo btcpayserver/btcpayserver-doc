@@ -50,9 +50,9 @@ The Send function allows **spending of the funds from the BTCPay wallet**.
 
 To spend the funds, you are required to **sign** the transaction. Transactions can be signed with:
 
-- HD Private key or mnemonic seed
-- Wallet supporting PSBT
 - Hardware Wallet
+- Wallet supporting PSBT
+- HD private key or recovery seed
 - Hot Wallet
 
 ##### Signing with HD Private Key or mnemonic seed
@@ -61,9 +61,19 @@ If you set up an [existing wallet with your BTCPay Server](./WalletSetup.md#use-
 
 ##### Signing with a wallet supporting PSBT
 
-PSBT (**Partially Signed Bitcoin transactions**) are supported and can be signed with PSBT compatible wallets.
+PSBT (**Partially Signed Bitcoin transactions**) is an interchange format for Bitcoin transactions that are not fully signed yet.
+PSBT is supported in BTCPay Server and can be signed with compatible hardware and software wallets.
 
-Check this tutorial on how to [sign a transaction with ColdCard Hardware Wallet](./ColdCardWallet.md#spending-from-btcpay-server-wallet-with-coldcard-psbt) completely air-gaped.
+The construction of a fully signed Bitcoin transaction goes through the following steps:
+
+- A PSBT gets constructed with certain inputs and outputs, but no signatures
+- The exported PSBT can be imported by a wallet that supports this format
+- The transaction data can be inspected and signed using the wallet
+- The signed PSBT file gets exported from the wallet and imported with BTCPay Server
+- BTCPay Server produces the final Bitcoin transaction
+- You verify the result and broadcast it to the network
+
+Check this tutorial on how to [sign a PSBT transaction with ColdCard Hardware Wallet](./ColdCardWallet.md#spending-from-btcpay-server-wallet-with-coldcard-psbt), completely offline/air-gapped.
 
 ##### Signing with a hardware wallet
 
