@@ -100,12 +100,17 @@ chmod g+s /var/lib/letsencrypt
 
 #### nginx configuration: http
 
-Create a variable mapping to forward the correct protocol setting, e.g. `/etc/nginx/conf.d/map.conf`:
+Create a variable mapping to forward the correct protocol setting and check if the Upgrade header is sent by the client, e.g. `/etc/nginx/conf.d/map.conf`:
 
 ```nginx
 map $http_x_forwarded_proto $proxy_x_forwarded_proto {
   default $http_x_forwarded_proto;
   ''      $scheme;
+}
+
+map $http_upgrade $connection_upgrade {
+  default upgrade;
+  ''      close;
 }
 ```
 
@@ -186,12 +191,13 @@ server {
   # Proxy requests to the socat service
   location / {
     proxy_pass http://127.0.0.1:9081/;
+    proxy_http_version 1.1;
     proxy_set_header Host $host;
     proxy_set_header X-Real-IP $remote_addr;
     proxy_set_header X-Forwarded-For $remote_addr;
     proxy_set_header X-Forwarded-Proto $proxy_x_forwarded_proto;
     proxy_set_header Upgrade $http_upgrade;
-    proxy_set_header Connection "upgrade";
+    proxy_set_header Connection $connection_upgrade;
   }
 }
 ```
@@ -210,3 +216,4 @@ Now, visiting `mydomain.com` should show your BTCPay Server instance.
 * [Tor-to-IP tunnel service](https://github.com/openoms/bitcoin-tutorials/blob/master/tor2ip_tunnel.md)
 * [How to make a nginx reverse proxy direct to tor hidden service](https://stackoverflow.com/questions/55487324/how-to-make-a-nginx-reverse-proxy-direct-to-tor-hidden-service)
 * [Secure Nginx with Let's Encrypt on Debian 10 Linux](https://linuxize.com/post/secure-nginx-with-let-s-encrypt-on-debian-10/)
+* [Nginx WebSocket proxying](http://nginx.org/en/docs/http/websocket.html)
