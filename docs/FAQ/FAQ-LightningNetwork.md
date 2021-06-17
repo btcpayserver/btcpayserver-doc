@@ -187,7 +187,7 @@ Here is how it should look like:
 
 ### Can I use a pruned node with LN in BTCPay?
 
-It is recommended to use c-lightning because the implementation supports pruned nodes. 
+It is recommended to use c-lightning because the implementation supports pruned nodes.
 
 :::warning
 It is possible in BTCPay to enable LND with a pruned node, however the LND implementation does not officially support it for reasons [listed here](https://github.com/lightningnetwork/lnd/blob/master/docs/safety.md#pruned-bitcoind-node). It's not possible to use pruning with Eclair.
@@ -464,9 +464,9 @@ If you're facing a technical problem with your Lightning Network implementation,
 
 * [LND GitHub](https://github.com/lightningnetwork/lnd/issues)
 * [Lightning Community on Slack](https://lightningcommunity.slack.com)
-* [#lightning-dev](https://webchat.freenode.net/?channels=lightning-dev&uio=d4) on IRC
 
 #### c-lightning Support
 
 * [c-lightning GitHub](https://github.com/ElementsProject/lightning/issues)
-* [#lightning-dev](https://webchat.freenode.net/?channels=lightning-dev&uio=d4) on IRC
+* [c-lightning Telegram Group](https://t.me/lightningd)
+* [c-lightning docs](https://lightning.readthedocs.io/)

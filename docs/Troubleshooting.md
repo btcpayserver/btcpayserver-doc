@@ -212,11 +212,9 @@ If you're facing a technical problem with your Lightning Network implementation,
 
 * [LND GitHub](https://github.com/lightningnetwork/lnd/issues)
 * [Lightning Community on Slack](https://lightningcommunity.slack.com)
-* [#lightning-dev](https://webchat.freenode.net/?channels=lightning-dev&uio=d4) on IRC
 
 #### 4.4.2 c-lightning Support
 
 * [c-lightning GitHub](https://github.com/ElementsProject/lightning/issues)
 * [c-lightning Telegram Group](https://t.me/lightningd)
-* [#c-lightning](https://webchat.freenode.net/?channels=c-lightning&uio=d4) on IRC
 * [c-lightning docs](https://lightning.readthedocs.io/)
