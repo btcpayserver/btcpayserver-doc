@@ -90,6 +90,7 @@ const sidebarUserGuide = [
     title: 'Integrations',
     collapsable: false,
     children: [
+      ["/Zapier", "Zapier"],
       ['/WooCommerce', 'WooCommerce'],
       ['/Shopify', 'Shopify'],
       ['/Drupal', 'Drupal'],
