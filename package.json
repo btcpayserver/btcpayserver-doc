@@ -28,7 +28,7 @@
     "linkcheck:serve": "serve -p $npm_package_config_port $npm_package_config_dist",
     "linkcheck:local": "$npm_package_config_linkcheck http://localhost:$npm_package_config_port",
     "linkcheck:prod": "$npm_package_config_linkcheck https://docs.btcpayserver.org",
-    "predeploy": "./prepare-deployment.sh"
+    "redirects": "node create-redirects.js"
   },
   "devDependencies": {
     "@vuepress/plugin-back-to-top": "1.8.2",

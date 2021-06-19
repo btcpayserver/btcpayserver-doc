@@ -42,15 +42,18 @@ jobs:
       - name: Build
         run: npm run build
       # Deploy, limited to the master branch
-      - name: Predeploy
+      - name: Redirects
         if: success() && github.ref == 'refs/heads/master'
-        run: npm run predeploy
+        run: npm run redirects
       - name: Deploy
         if: success() && github.ref == 'refs/heads/master'
-        uses: maxheld83/ghpages@v0.2.1
-        env:
-          BUILD_DIR: docs/.vuepress/dist/
-          GH_PAT: ${{ secrets.GH_PAT }}
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          publish_dir: ./docs/.vuepress/dist
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          cname: docs.btcpayserver.org
+          user_name: 'github-actions[bot]'
+          user_email: 'github-actions[bot]@users.noreply.github.com'
       # Run linkcheck, propagate linkcheck failure through grep pipe
       - name: Linkcheck
         run: set -o pipefail; npm run linkcheck 2>/dev/null | grep "Getting links from\|BROKEN"
