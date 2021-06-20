@@ -10,6 +10,7 @@
 
 * a Virtual Private Server (VPS) - eg. a minimal package on Lunanode for ~3.5$/month
 * root access on the VPS - you need to set up webserver and install packages
+* a domain or subdomain - this will be setup on the proxy webserver
 
 Get the Tor `.onion` address of your BTCPay Server via the `Server settings > Services` page.
 See information in the "HTTP-based TOR hidden services" section.
@@ -85,6 +86,10 @@ netstat -tulpn | grep socat
 ```
 
 ### Webserver setup
+
+#### Point domain to the VPS
+
+Create the A record on the DNS server of your domain/subdomain and point it to your VPS IP address.
 
 #### Prepare SSL and Let's Encrypt
 
