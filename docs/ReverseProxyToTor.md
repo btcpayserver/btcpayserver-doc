@@ -185,7 +185,7 @@ server {
   resolver_timeout 30s;
 
   add_header Strict-Transport-Security "max-age=63072000" always;
-  add_header X-Frame-Options SAMEORIGIN;
+  add_header Content-Security-Policy "frame-ancestors 'self';";
   add_header X-Content-Type-Options nosniff;
 
   # Proxy requests to the socat service
