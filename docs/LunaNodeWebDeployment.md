@@ -50,7 +50,7 @@ $ . btcpay-restart.sh -i
 
 Now you need to wait for blockchain to sync fully. Depending on the plan you used and the number of coins you added, that can take 1-7 days. If you enable CPU utilization, with Bitcoin and LND, it will take 1-2 days. There is a US$ 3 one-time charge for faster sync if you enable the CPU utilization. The sync pop-up window will disappear when your node fully syncs.
 
-## 4. Additionnal customization (optional)
+## 4. Additional customization (optional)
 
 Once your BTCPay Server instance is setup, as with any deployment method, you can add environment variables such as activating keysend and autopilot for LND as well as get access to your own transmuter.
 For more information, visit the available [environment variable list](https://docs.btcpayserver.org/Docker/#generated-docker-compose). This requires knowledge of how to [SSH into your server](./FAQ/FAQ-ServerSettings.md#how-to-ssh-into-my-btcpay-running-on-vps).
