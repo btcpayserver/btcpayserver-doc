@@ -93,6 +93,7 @@ h5, h6 {
 
   .navbar .links {
     background: transparent;
+    line-height: initial;
   }
 
   .navbar a {
@@ -125,7 +126,7 @@ h5, h6 {
   }
 
   .navbar .nav-links {
-    margin: -3px 10px 0;
+    margin: 0 10px;
   }
 
   .nav-links .nav-item {
@@ -138,18 +139,11 @@ h5, h6 {
     display: none;
   }
 
-  .nav-links {
-    @media (max-width: 899px) {
-      border-bottom-color: var(--btcpay-body-border-medium);
-    }
-  }
-
   .nav-links a {
     color: var(--btcpay-header-link);
 
     @media (min-width: 900px) {
       padding: var(--btcpay-space-xs) var(--btcpay-space-s);
-      border-bottom: 2px solid transparent;
     }
   }
 
