@@ -209,7 +209,7 @@ Developers who would like to contribute to the Greenfield API should follow the 
 
 ## Working with the Database
 
-BTCPay uses a PostgreSQL database by default. During development you can easily connect to it. This is helpful if you want to view how data is saved, modify records or use it to find issues during development. You can use the free tool [PgAdmin4(https://www.pgadmin.org/download/) to do this. 
+BTCPay uses a PostgreSQL database by default. During development you can easily connect to it. This is helpful if you want to view how data is saved, modify records or use it to find issues during development. You can use the free tool [PgAdmin4](https://www.pgadmin.org/download/) to do this. 
 
 Start your BTCPay in your local environment and view your debug console to find your database connection details:
 
