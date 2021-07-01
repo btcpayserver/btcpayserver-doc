@@ -219,6 +219,7 @@ Lightning Network troubleshooting and common problems.
 * [Which macaroon needs to be provided for external nodes?](./FAQ-LightningNetwork.md#which-macaroon-needs-to-be-provided-for-external-nodes)
 * [LND connection issue - cannot get macaroon: root key with id 0 doesn’t exist](./FAQ-LightningNetwork.md#lnd-connection-issues-after-an-update)
 * [How to change LND Node alias](./FAQ-LightningNetwork.md#how-to-change-my-LND-Node-alias)
+* [How to edit lnd.conf](./FAQ-LightningNetwork.md#how-to-edit-lndconf)
 * [How to install ThunderHub](./FAQ-LightningNetwork.md#how-to-install-thunderhub)
 
 ### [Lightning Network (c-lightning) FAQ](./FAQ-LightningNetwork.md#lightning-network-c-lightning-faq)

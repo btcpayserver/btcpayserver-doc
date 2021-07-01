@@ -26,6 +26,7 @@ This document clarifies some of the most common questions and issues users face 
 * [Which macaroon needs to be provided for external nodes?](FAQ-LightningNetwork.md#which-macaroon-needs-to-be-provided-for-external-nodes)
 * [LND connection issue - cannot get macaroon: root key with id 0 doesn’t exist](FAQ-LightningNetwork.md#lnd-connection-issues-after-an-update)
 * [How to change LND Node alias](FAQ-LightningNetwork.md#how-to-change-my-lnd-node-alias)
+* [How to edit lnd.conf](FAQ-LightningNetwork.md#how-to-edit-lndconf)
 * [How to install ThunderHub](FAQ-LightningNetwork.md#how-to-install-thunderhub)
 
 ## [Lightning Network (c-lightning) FAQ](FAQ-LightningNetwork.md#lightning-network-c-lightning-faq)
@@ -370,6 +371,30 @@ cd btcpayserver-docker
 export LIGHTNING_ALIAS="namehere"
 . ./btcpay-setup.sh -i
 ```
+
+### How to edit lnd.conf?
+
+To customize LND settings which are not available as environment variables, you can [create a custom fragment](../Docker/README.md#how-can-i-customize-the-generated-docker-compose-file) in `docker-compose-generator/docker-fragments/opt-lnd-config.custom.yml` like this:
+
+```yml
+version: "3"
+services:
+  lnd_bitcoin:
+    environment:
+      LND_EXTRA_ARGS: |
+        minchansize=1234567
+```
+
+You can add your customizations in the `LND_EXTRA_ARGS` value, like shown by setting the `minchansize` value.
+
+Afterwards the configuration has to be added to the additional fragments and setup needs to be run:
+
+```bash
+export BTCPAYGEN_ADDITIONAL_FRAGMENTS="$BTCPAYGEN_ADDITIONAL_FRAGMENTS;opt-lnd-config.custom"
+. ./btcpay-setup.sh -i
+```
+
+This way your custom settings gets added to the config and they will persist updates.
 
 ### How to install ThunderHub?
 
