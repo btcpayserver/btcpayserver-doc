@@ -204,7 +204,7 @@ The connection strings vary per lightning implementation, the [settings page](..
 ### How to change from c-lightning to LND or vice-versa?
 
 :::warning
-LND and c-lightning are two seperate products/services. Be sure to have closed all channels and removed both on-chain and Lightning funds from the node before switching from one to the other.
+Be sure to have closed all channels and removed both on-chain and Lightning funds from the Lightning node before switching from one to the other.
 
 :::
 
