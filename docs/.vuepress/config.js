@@ -261,6 +261,7 @@ module.exports = {
         title: "Integrations",
         collapsable: false,
         children: [
+          ["/ApiKeys", "API Keys"],
           ["/WooCommerce", "WooCommerce"],
           ["/Shopify", "Shopify"],
           ["/Drupal", "Drupal"],
