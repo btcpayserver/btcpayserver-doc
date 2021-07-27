@@ -230,7 +230,7 @@ Code behind the image
 ### SocaTor = SOCAT + TOR
 Based on https://github.com/Arno0x/Docker-Socator
 
-It uses socat to listen on a given TCP port (5000 in this example) and to redirect incoming traffic to a tor hidden service specified through environment variables. Itacts as a relay between the standard web and a hidden service on the tor network. You can optionally restrict the IP addresses that are allowed to connect to this service by specifying an `ALLOWED_RANGE` environment variable and using CIDR notation.
+It uses socat to listen on a given TCP port (5000 in this example) and to redirect incoming traffic to a Tor hidden service specified through environment variables. It acts as a relay between the standard web and a hidden service on the Tor network. You can optionally restrict the IP addresses that are allowed to connect to this service by specifying an `ALLOWED_RANGE` environment variable and using CIDR notation.
 
 ### Usage
 
