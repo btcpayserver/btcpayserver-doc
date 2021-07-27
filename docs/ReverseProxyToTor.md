@@ -226,7 +226,7 @@ Code behind the image
 
   https://github.com/beacloudgenius/socator
 
-```
+
 ### SocaTor = SOCAT + TOR
 Based on https://github.com/Arno0x/Docker-Socator
 
@@ -241,39 +241,47 @@ Selectively expose the BTC Pay Server payment gateway and API to clearnet using 
 
 ##### build
 
-    docker build -t cloudgenius/socator .
+```sh
+docker build -t cloudgenius/socator .
+```
 
 ##### push
 
-    docker push cloudgenius/socator
+```sh
+docker push cloudgenius/socator
+``
 
 ##### Start the image in background (*daemon mode*) with IP address restriction:
 
-    docker run -d \
+```sh
+docker run -d \
         -p 5000:5000 \
         -e "ALLOWED_RANGE=192.168.1.0/24" \
         -e "TOR_SITE=zqktlwiuavvvqqt4ybvgvi7tyo4hjl5xgfuvpdf6otjiycgwqbym2qad.onion" \
         -e "TOR_SITE_PORT=80" \
         --name socator \
         cloudgenius/socator
+```
 
 ##### Start the image in foreground:
 
-    docker run --rm -ti \
+```sh
+docker run --rm -ti \
         -p 5000:5000 \
         -e "TOR_SITE=zqktlwiuavvvqqt4ybvgvi7tyo4hjl5xgfuvpdf6otjiycgwqbym2qad.onion" \
         -e "TOR_SITE_PORT=80" \
         --name socator \
         cloudgenius/socato
+```
 
 Now http://localhost:5000 should show you the tor hidden service you specified in the above command.
 
-```
+
 
 
 ## Use that Docker container in a Kubernetes Cluster using these manifests
 
-```
+```yaml
 ---
 apiVersion: apps/v1
 kind: Deployment
