@@ -215,6 +215,127 @@ systemctl restart nginx
 
 Now, visiting `mydomain.com` should show your BTCPay Server instance.
 
+
+## Do all this in a Docker container
+
+Ready made docker image 
+
+  https://hub.docker.com/r/cloudgenius/socator
+
+Code behing the image
+
+  https://github.com/beacloudgenius/socator
+
+```
+### SocaTor = SOCAT + TOR
+Based on https://github.com/Arno0x/Docker-Socator
+
+It uses socat to listen on a given TCP port (5000 in this example) and to redirect incoming traffic to a tor hidden service specified through environment variables. Itacts as a relay between the standard web and a hidden service on the tor network. You can optionally restrict the IP addresses that are allowed to connect to this service by specifying an `ALLOWED_RANGE` environment variable and using CIDR notation.
+
+### Usage
+
+Break free from cloud services providers limitations, secure and protect your bitcoin full node, connect that with a BTC Pay server, all behind TOR.
+Selectively expose the BTC Pay Server payment gateway and API to clearnet using socat+tor running on the Internet.
+
+--------------
+
+##### build
+
+    docker build -t cloudgenius/socator .
+
+##### push
+
+    docker push cloudgenius/socator
+
+##### Start the image in background (*daemon mode*) with IP address restriction:
+
+    docker run -d \
+        -p 5000:5000 \
+        -e "ALLOWED_RANGE=192.168.1.0/24" \
+        -e "TOR_SITE=zqktlwiuavvvqqt4ybvgvi7tyo4hjl5xgfuvpdf6otjiycgwqbym2qad.onion" \
+        -e "TOR_SITE_PORT=80" \
+        --name socator \
+        cloudgenius/socator
+
+##### Start the image in foreground:
+
+    docker run --rm -ti \
+        -p 5000:5000 \
+        -e "TOR_SITE=zqktlwiuavvvqqt4ybvgvi7tyo4hjl5xgfuvpdf6otjiycgwqbym2qad.onion" \
+        -e "TOR_SITE_PORT=80" \
+        --name socator \
+        cloudgenius/socato
+
+Now http://localhost:5000 should show you the tor hidden service you specified in the above command.
+
+```
+
+
+## Use that Docker container in a Kubernetes Cluster using these manifests
+
+```
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: socator
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      role: socator
+  template:
+    metadata:
+      labels:
+        role: socator
+    spec:
+      containers:
+      - image: cloudgenius/socator # code https://github.com/beacloudgenius/socator
+        imagePullPolicy: IfNotPresent
+        name: socator
+        env:
+          - name: TOR_SITE
+            value: "zqktlwiuavvvqqt4ybvgvi7tyo4hjl5xgfuvpdf6otjiycgwqbym2qad.onion" # BTCpayserver tor address => docker exec tor cat /var/lib/tor/app-btcpay-server/hostname
+          - name: TOR_SITE_PORT
+            value: "80"
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: socator
+spec:
+  ports:
+    - name: http
+      port: 5000
+  selector:
+    role: socator
+---
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: socator
+  annotations:
+    kubernetes.io/ingress.class: nginx
+    cert-manager.io/cluster-issuer: letsencrypt-prod
+spec:
+  rules:
+    - host: btcpayserver.mydomain.com
+      http:
+        paths:
+          - backend:
+              service:
+                name: socator
+                port:
+                  number: 5000
+            path: /
+            pathType: Prefix
+  tls:
+    - hosts:
+        - btcpayserver.mydomain.com
+      secretName: socator-tls
+
+```
+
 ## Resources
 
 * [Nginx reverse proxy to .onion site in TOR network](https://itgala.xyz/nginx-reverse-proxy-to-onion-site-in-tor-network/)
