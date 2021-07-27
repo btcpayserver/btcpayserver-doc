@@ -254,7 +254,7 @@ docker build -t cloudgenius/socator .
 
 ```sh
 docker push cloudgenius/socator
-``
+```
 
 ##### Start the image in background (*daemon mode*) with IP address restriction:
 
@@ -289,6 +289,8 @@ Now http://localhost:5000 should show you the tor hidden service you specified i
 These manifest assumes a typical Kubernetes cluster that exposes internal services (like socator running internallly at port 5000) to the clearnet/public internet via Nginx Ingress https://github.com/kubernetes/ingress-nginx and provide automated Let's Encrypt TLS/SSL certificates via https://github.com/jetstack/cert-manager. 
 
 
+Deployment manifest
+
 ```yaml
 ---
 apiVersion: apps/v1
@@ -314,6 +316,11 @@ spec:
             value: "zqktlwiuavvvqqt4ybvgvi7tyo4hjl5xgfuvpdf6otjiycgwqbym2qad.onion" # BTCpayserver tor address => docker exec tor cat /var/lib/tor/app-btcpay-server/hostname
           - name: TOR_SITE_PORT
             value: "80"
+```
+
+Service manifest
+
+```yaml
 ---
 apiVersion: v1
 kind: Service
@@ -325,6 +332,11 @@ spec:
       port: 5000
   selector:
     role: socator
+```
+
+Ingress manifest
+
+```yaml
 ---
 apiVersion: networking.k8s.io/v1
 kind: Ingress
