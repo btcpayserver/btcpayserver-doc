@@ -276,7 +276,7 @@ docker run --rm -ti \
         -e "TOR_SITE=zqktlwiuavvvqqt4ybvgvi7tyo4hjl5xgfuvpdf6otjiycgwqbym2qad.onion" \
         -e "TOR_SITE_PORT=80" \
         --name socator \
-        cloudgenius/socato
+        cloudgenius/socator
 ```
 
 Now http://localhost:5000 should show you the tor hidden service you specified in the above command.
