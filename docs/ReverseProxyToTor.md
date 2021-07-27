@@ -222,7 +222,7 @@ Ready made docker image
 
   https://hub.docker.com/r/cloudgenius/socator
 
-Code behing the image
+Code behind the image
 
   https://github.com/beacloudgenius/socator
 
