@@ -277,8 +277,6 @@ Now http://localhost:5000 should show you the tor hidden service you specified i
 ## Use that Docker container in a Kubernetes Cluster using these manifests
 
 These manifest assumes a typical Kubernetes cluster that exposes internal services (like socator running internallly at port 5000) to the clearnet/public internet via Nginx Ingress https://github.com/kubernetes/ingress-nginx and provide automated Let's Encrypt TLS/SSL certificates via https://github.com/jetstack/cert-manager. 
-
-
 Deployment manifest
 
 ```yaml
