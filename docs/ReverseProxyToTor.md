@@ -229,8 +229,6 @@ It uses socat to listen on a given TCP port (5000 in this example) and to redire
 Please note: 
 
 This container does not have any nginx component because Kubernetes provides for it. 
-
-
 ### Usage
 
 Break free from cloud services providers limitations, secure and protect your bitcoin full node, connect that with a BTC Pay server, all behind TOR.
