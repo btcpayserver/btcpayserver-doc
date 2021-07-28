@@ -222,7 +222,7 @@ Ready made [docker image](https://hub.docker.com/r/cloudgenius/socator) ([Code](
 
 
 ### SocaTor = SOCAT + TOR
-Based on https://github.com/Arno0x/Docker-Socator
+Based on [Docker-Socator](https://github.com/Arno0x/Docker-Socator)
 
 It uses socat to listen on a given TCP port (5000 in this example) and to redirect incoming traffic to a Tor hidden service specified through environment variables. It acts as a relay between the standard web and a hidden service on the Tor network. You can optionally restrict the IP addresses that are allowed to connect to this service by specifying an `ALLOWED_RANGE` environment variable and using CIDR notation.
 
