@@ -234,7 +234,7 @@ This container does not have any nginx component because Kubernetes provides for
 ### Usage
 
 Break free from cloud services providers limitations, secure and protect your bitcoin full node, connect that with a BTC Pay server, all behind TOR.
-Selectively expose the BTC Pay Server payment gateway and API to clearnet using socat+tor running on the Internet.
+Selectively expose the BTCPay Server payment gateway and API to clearnet using socat+tor running on the Internet.
 
 --------------
 
