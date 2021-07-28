@@ -15,6 +15,8 @@
 Get the Tor `.onion` address of your BTCPay Server via the `Server settings > Services` page.
 See information in the "HTTP-based TOR hidden services" section.
 
+Note: There is also a [Docker version](#do-all-this-in-a-docker-container) of this setup.
+
 ## VPS Setup
 
 You will create a nginx reverse proxy and a `socat` service, which forwards requests to your BTCPay Server.
