@@ -303,7 +303,7 @@ spec:
         name: socator
         env:
           - name: TOR_SITE
-            value: "zqktlwiuavvvqqt4ybvgvi7tyo4hjl5xgfuvpdf6otjiycgwqbym2qad.onion" # BTCpayserver tor address => docker exec tor cat /var/lib/tor/app-btcpay-server/hostname
+            value: "zqktlwiuavvvqqt4ybvgvi7tyo4hjl5xgfuvpdf6otjiycgwqbym2qad.onion" # BTCPay Server Tor address => docker exec tor cat /var/lib/tor/app-btcpay-server/hostname
           - name: TOR_SITE_PORT
             value: "80"
 ```
