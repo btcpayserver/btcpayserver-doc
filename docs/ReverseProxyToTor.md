@@ -356,7 +356,7 @@ spec:
 
 ## Resources
 
-* [Nginx reverse proxy to .onion site in TOR network](https://itgala.xyz/nginx-reverse-proxy-to-onion-site-in-tor-network/)
+* [nginx reverse proxy to .onion site in Tor network](https://itgala.xyz/nginx-reverse-proxy-to-onion-site-in-tor-network/)
 * [Tor-to-IP tunnel service](https://github.com/openoms/bitcoin-tutorials/blob/master/tor2ip_tunnel.md)
 * [How to make a nginx reverse proxy direct to tor hidden service](https://stackoverflow.com/questions/55487324/how-to-make-a-nginx-reverse-proxy-direct-to-tor-hidden-service)
 * [Secure Nginx with Let's Encrypt on Debian 10 Linux](https://linuxize.com/post/secure-nginx-with-let-s-encrypt-on-debian-10/)
