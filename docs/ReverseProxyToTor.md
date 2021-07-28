@@ -15,6 +15,8 @@
 Get the Tor `.onion` address of your BTCPay Server via the `Server settings > Services` page.
 See information in the "HTTP-based TOR hidden services" section.
 
+Note: There is also a [Docker version](#do-all-this-in-a-docker-container) of this setup.
+
 ## VPS Setup
 
 You will create a nginx reverse proxy and a `socat` service, which forwards requests to your BTCPay Server.
@@ -215,9 +217,144 @@ systemctl restart nginx
 
 Now, visiting `mydomain.com` should show your BTCPay Server instance.
 
+
+## Do all this in a Docker container
+
+Ready made [Docker image](https://hub.docker.com/r/cloudgenius/socator) ([Code](https://github.com/beacloudgenius/socator))
+
+### SocaTor = SOCAT + TOR
+Based on [Docker-Socator](https://github.com/Arno0x/Docker-Socator)
+
+It uses socat to listen on a given TCP port (5000 in this example) and to redirect incoming traffic to a Tor hidden service specified through environment variables. It acts as a relay between the standard web and a hidden service on the Tor network. You can optionally restrict the IP addresses that are allowed to connect to this service by specifying an `ALLOWED_RANGE` environment variable and using CIDR notation.
+
+Please note: 
+
+This container does not have any nginx component because Kubernetes provides for it. 
+### Usage
+
+Break free from cloud services providers limitations, secure and protect your bitcoin full node, connect that with a BTC Pay server, all behind TOR.
+Selectively expose the BTCPay Server payment gateway and API to clearnet using socat+tor running on the Internet.
+
+--------------
+
+##### build
+
+```sh
+docker build -t cloudgenius/socator .
+```
+
+##### push
+
+```sh
+docker push cloudgenius/socator
+```
+
+##### Start the image in background (*daemon mode*) with IP address restriction:
+
+```sh
+docker run -d \
+        -p 5000:5000 \
+        -e "ALLOWED_RANGE=192.168.1.0/24" \
+        -e "TOR_SITE=zqktlwiuavvvqqt4ybvgvi7tyo4hjl5xgfuvpdf6otjiycgwqbym2qad.onion" \
+        -e "TOR_SITE_PORT=80" \
+        --name socator \
+        cloudgenius/socator
+```
+
+##### Start the image in foreground:
+
+```sh
+docker run --rm -ti \
+        -p 5000:5000 \
+        -e "TOR_SITE=zqktlwiuavvvqqt4ybvgvi7tyo4hjl5xgfuvpdf6otjiycgwqbym2qad.onion" \
+        -e "TOR_SITE_PORT=80" \
+        --name socator \
+        cloudgenius/socator
+```
+
+Now http://localhost:5000 should show you the tor hidden service you specified in the above command.
+
+## Use that Docker container in a Kubernetes Cluster using these manifests
+
+These manifest assumes a typical Kubernetes cluster that exposes internal services (like socator running internallly at port 5000) to the clearnet/public internet via Nginx Ingress https://github.com/kubernetes/ingress-nginx and provide automated Let's Encrypt TLS/SSL certificates via https://github.com/jetstack/cert-manager. 
+Deployment manifest
+
+```yaml
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: socator
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      role: socator
+  template:
+    metadata:
+      labels:
+        role: socator
+    spec:
+      containers:
+      - image: cloudgenius/socator # code https://github.com/beacloudgenius/socator
+        imagePullPolicy: IfNotPresent
+        name: socator
+        env:
+          - name: TOR_SITE
+            value: "zqktlwiuavvvqqt4ybvgvi7tyo4hjl5xgfuvpdf6otjiycgwqbym2qad.onion" # BTCPay Server Tor address => docker exec tor cat /var/lib/tor/app-btcpay-server/hostname
+          - name: TOR_SITE_PORT
+            value: "80"
+```
+
+Service manifest
+
+```yaml
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: socator
+spec:
+  ports:
+    - name: http
+      port: 5000
+  selector:
+    role: socator
+```
+
+Ingress manifest
+
+```yaml
+---
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: socator
+  annotations:
+    kubernetes.io/ingress.class: nginx
+    cert-manager.io/cluster-issuer: letsencrypt-prod
+spec:
+  rules:
+    - host: btcpayserver.mydomain.com
+      http:
+        paths:
+          - backend:
+              service:
+                name: socator
+                port:
+                  number: 5000
+            path: /
+            pathType: Prefix
+  tls:
+    - hosts:
+        - btcpayserver.mydomain.com
+      secretName: socator-tls
+
+```
+
 ## Resources
 
-* [Nginx reverse proxy to .onion site in TOR network](https://itgala.xyz/nginx-reverse-proxy-to-onion-site-in-tor-network/)
+* [nginx reverse proxy to .onion site in Tor network](https://itgala.xyz/nginx-reverse-proxy-to-onion-site-in-tor-network/)
 * [Tor-to-IP tunnel service](https://github.com/openoms/bitcoin-tutorials/blob/master/tor2ip_tunnel.md)
 * [How to make a nginx reverse proxy direct to tor hidden service](https://stackoverflow.com/questions/55487324/how-to-make-a-nginx-reverse-proxy-direct-to-tor-hidden-service)
 * [Secure Nginx with Let's Encrypt on Debian 10 Linux](https://linuxize.com/post/secure-nginx-with-let-s-encrypt-on-debian-10/)
