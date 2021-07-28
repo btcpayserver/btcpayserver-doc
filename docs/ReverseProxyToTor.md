@@ -218,8 +218,7 @@ Now, visiting `mydomain.com` should show your BTCPay Server instance.
 
 ## Do all this in a Docker container
 
-Ready made [docker image](https://hub.docker.com/r/cloudgenius/socator) ([Code](https://github.com/beacloudgenius/socator))
-
+Ready made [Docker image](https://hub.docker.com/r/cloudgenius/socator) ([Code](https://github.com/beacloudgenius/socator))
 
 ### SocaTor = SOCAT + TOR
 Based on [Docker-Socator](https://github.com/Arno0x/Docker-Socator)
