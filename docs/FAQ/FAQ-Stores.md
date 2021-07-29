@@ -12,6 +12,7 @@ This page shows common issues and frequently asked questions about Stores in BTC
 * [Consider the invoice confirmed when the payment transaction?](./FAQ-Stores.md#consider-the-invoice-confirmed-when-the-payment-transaction)
 * [Consider the invoice paid even if the paid amount is ... % less than expected?](./FAQ-Stores.md#consider-the-invoice-paid-even-if-the-paid-amount-is-less-than-expected)
 * [How to disable email on invoices?](./FAQ-Stores.md#how-to-disable-email-on-invoices)
+* [How to denominate invoices in sats?](./FAQ-Stores.md#how-to-denominate-invoices-in-sats)
 * [How to collect additional buyer information?](./FAQ-Stores.md#how-to-collect-additional-buyer-information)
 * [How to redirect store invoices after payment?](./FAQ-Stores.md#how-to-redirect-store-invoices-after-payment)
 * [Can I delete invoices from BTCPay?](./FAQ-Stores.md#can-i-delete-invoices-from-btcpay)
@@ -28,9 +29,9 @@ There's no limit on a number of stores you can create in BTCPay.
 
 ## Why are invoices without payment showing as complete?
 
-When an invoice is created to receive a payment value of 0 (zero amount due) the invoice by definition, is already paid. The invoice will appear as complete as soon as it's created. 
+When an invoice is created to receive a payment value of 0 (zero amount due) the invoice by definition, is already paid. The invoice will appear as complete as soon as it's created.
 
-The purpose of this type of invoice is typically for when a merchant would like to observe user interest in an event or giveaway using BTCPay Server invoices without requiring the user to provide funds. Another use case is for developers who are testing the invoice process allowing them to bypass providing actual funds to verify the software is working properly. 
+The purpose of this type of invoice is typically for when a merchant would like to observe user interest in an event or giveaway using BTCPay Server invoices without requiring the user to provide funds. Another use case is for developers who are testing the invoice process allowing them to bypass providing actual funds to verify the software is working properly.
 
 ## Add network fee to invoice (vary with mining fees)?
 
@@ -72,9 +73,15 @@ The invoice is considered "paid," as soon as it's visible on the blockchain. Whe
 
 In a situation where a customer uses an exchange wallet to pay directly for an invoice, the exchange takes a small amount of fee. This means that such invoice is not considered fully completed. The invoice gets status "paid partially." If a merchant wants to accept underpaid invoices, you can set the percentage rate here.
 
-##  How to disable email on invoices
+## How to disable email on invoices
 
 To disable the email requirement for your store's invoices, go to Stores > Settings > Checkout Experience > uncheck 'Requires a refund email' box.
+
+## How to denominate invoices in sats
+
+To use Satoshis as the invoice currency unit, you can simply use `SATS` (e.g. instead of `BTC`).
+
+Alternatively you can also use the Store > Settings > Checkout Experience > Display Lightning payment amounts in Satoshis option.
 
 ## How to redirect store invoices after payment?
 
@@ -90,15 +97,15 @@ To redirect to a specific URL in the Point of Sale app, use the [PoS Redirect](.
 
 ## Can I delete invoices from BTCPay?
 
-Invoices in BTCPay Server can't be deleted, but can be archived. 
-To archive an invoice, select the one you would like to archive from the list of invoices and mark as archived from the actions dropdown. Or from the invoice details page click the `Archive` button in top right corner. 
+Invoices in BTCPay Server can't be deleted, but can be archived.
+To archive an invoice, select the one you would like to archive from the list of invoices and mark as archived from the actions dropdown. Or from the invoice details page click the `Archive` button in top right corner.
 This action removes it from the `Invoices` page.
 
 An invoice can be restored by clicking the `Archived` button or by using the archive search filter to display them. Find out more about archived invoices [here](../Invoices.md#archived-invoices).
 
 ## How to collect additional buyer information?
 
-The Buyer information section of the invoice details page is only used for custom solutions such as integrations, like WooCommerce or API invoice creation. Currently there is no way to collect Buyer Information using the BTCPayServer interface. 
+The Buyer information section of the invoice details page is only used for custom solutions such as integrations, like WooCommerce or API invoice creation. Currently there is no way to collect Buyer Information using the BTCPayServer interface.
 
 ## How to change the exchange rate provider for invoices?
 
