@@ -152,6 +152,7 @@ Store settings explained.
 * [Consider the invoice confirmed when the payment transaction?](./FAQ-Stores.md#consider-the-invoice-confirmed-when-the-payment-transaction)
 * [Consider the invoice paid even if the paid amount is ... % less than expected?](./FAQ-Stores.md#consider-the-invoice-paid-even-if-the-paid-amount-is-less-than-expected)
 * [How to disable email on invoices?](./FAQ-Stores.md#how-to-disable-email-on-invoices)
+* [How to denominate invoices in sats?](./FAQ-Stores.md#how-to-denominate-invoices-in-sats)
 * [How to collect additional buyer information?](./FAQ-Stores.md#how-to-collect-additional-buyer-information)
 * [How to redirect store invoices after payment?](./FAQ-Stores.md#how-to-redirect-store-invoices-after-payment)
 * [Can I delete invoices from BTCPay?](./FAQ-Stores.md#can-i-delete-invoices-from-btcpay)
