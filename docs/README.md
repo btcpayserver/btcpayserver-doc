@@ -175,6 +175,13 @@ If you're beginner, take a look at the step by step guide on how to contribute t
             <span>Coincards</span>
           </a>
         </td>
+        <td align="center" valign="top" width="14.285714285714285714285714285714%">
+          <a href="https://www.bailliegifford.com/" target="_blank">
+            <img  src="https://raw.githubusercontent.com/btcpayserver/btcpayserver/master/BTCPayServer/wwwroot/img/bailliegifford.svg?sanitize=true" alt="Baillie Gifford" loading="lazy" height=100>
+            <br/>
+            <span>Baillie Gifford</span>
+          </a>
+        </td>
       </tr>
     </tbody>
   </table>
