@@ -128,7 +128,7 @@ Users may try to pay an invoice from an exchange or other custodial service wher
 ## What if I have a problem with a paid invoice?
 
 :::tip
-To request a refund from a merchant, please contact the merchant directly! BTCPay Server has no relationship to the merchant you purchased the product or service from.
+To request a refund from a merchant, you must contact the merchant directly! BTCPay Server has no relationship to the merchant you purchased the product or service from.
 :::
 
 BTCPay Server is an open-source self-hosted software stack, not a company. The community and contributors behind BTCPay Server have no control over who uses the software or how they use it.
