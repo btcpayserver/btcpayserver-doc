@@ -1,5 +1,9 @@
 # Refunds
 
+:::tip
+If you are looking for information about claiming a refund from a merchant, please refer to this [FAQ](./FAQ/FAQ-General.md#what-if-i-have-a-problem-with-a-paid-invoice)
+:::
+
 **Refunds** are one of the applications built on top of the [Pull Payments](./PullPayments.md) feature.
 
 Up until now, merchants had to manually issue refunds.

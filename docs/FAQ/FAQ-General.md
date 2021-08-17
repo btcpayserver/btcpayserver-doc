@@ -1,3 +1,9 @@
+---
+description: FAQs in the generic category
+tags:
+- refund
+- merchant refund
+---
 # General BTCPay FAQ
 
 This page contains general questions and answers about BTCPay. What it is, how it works, how to install it.
@@ -47,7 +53,7 @@ BTCPay doesn't compromise on censorship-resistance, which is one of the main fea
 
 BTCPay server is a feature-rich software with plenty of use-cases that can solve problems for different types of users. Merchants, content creators, lightning network users, exchanges, hosting providers and many others can find it useful. See the [Use Case page](../UseCase.md) for detailed breakdown of BTCPay use-cases.
 
-BTCPay is licensed under the [MIT License](https://github.com/btcpayserver/btcpayserver/blob/master/LICENSE). 
+BTCPay is licensed under the [MIT License](https://github.com/btcpayserver/btcpayserver/blob/master/LICENSE).
 
 ## How to install BTCPay Server?
 
@@ -80,21 +86,21 @@ After a customer makes a payment, the BTCPay Server software notifies your store
 
 ## How does BTCPay create a new address for each invoice?
 
-BTCPay Server includes an important feature which eliminates the known privacy issue of address re-use. It does this by providing a new address each time an invoice is requested for payment. This is all done automatically and the merchant does not need to keep track of which addresses belong to which wallet, store, etc. BTCPay Server organizes all the payment information in a detailed invoicing system for the merchant. 
+BTCPay Server includes an important feature which eliminates the known privacy issue of address re-use. It does this by providing a new address each time an invoice is requested for payment. This is all done automatically and the merchant does not need to keep track of which addresses belong to which wallet, store, etc. BTCPay Server organizes all the payment information in a detailed invoicing system for the merchant.
 
-The way it works is fairly simple. Merchants connect a wallet to each of their stores that they want to receive payments to. The invoices produced for store payments are linked directly to the merchant's connected wallet. The invoice addresses are derived from the [xpubkey](https://bitcointalk.org/index.php?topic=2828777.0) of the wallet associated with the store. The software only needs your extended public key of a wallet to produce new addresses for each payment. These addresses are monitored by BTCPay Server as they move through the blockchain. The status of the payments to those addresses are detailed in the merchant's invoice page for each store. 
+The way it works is fairly simple. Merchants connect a wallet to each of their stores that they want to receive payments to. The invoices produced for store payments are linked directly to the merchant's connected wallet. The invoice addresses are derived from the [xpubkey](https://bitcointalk.org/index.php?topic=2828777.0) of the wallet associated with the store. The software only needs your extended public key of a wallet to produce new addresses for each payment. These addresses are monitored by BTCPay Server as they move through the blockchain. The status of the payments to those addresses are detailed in the merchant's invoice page for each store.
 
 ## Does BTCPay need my private key?
 
 Private keys are not required for using BTCPay with an existing wallet. The fact that BTCPay Server does not require access to your master private key for on-chain transactions is a huge security advantage. Even if your server gets hacked, your funds from the on-chain transactions are always safe. Securing your on-chain funds comes down to [securing your wallet](https://btcinformation.org/en/secure-your-wallet). Using an [existing wallet with BTCPay Server](../WalletSetup.md#use-an-existing-wallet) only requires the public key from your wallet.
 
-It is possible to generate new wallets using BTCPay Server which are hot wallets stored on the server. If you have a lightning node, BTCPay technically has access to the keys (macaroons) of your Lightning funds as well. If these are features that you would like to use, be sure to understand the [security implications and the risks](../CreateWallet.md#security-implications) associated with these experimental features. 
+It is possible to generate new wallets using BTCPay Server which are hot wallets stored on the server. If you have a lightning node, BTCPay technically has access to the keys (macaroons) of your Lightning funds as well. If these are features that you would like to use, be sure to understand the [security implications and the risks](../CreateWallet.md#security-implications) associated with these experimental features.
 
-If you're using a Third-Party BTCPay host, you should be familiar with the [security concerns](../ThirdPartyHosting.md#security-concerns) associated with private keys. 
+If you're using a Third-Party BTCPay host, you should be familiar with the [security concerns](../ThirdPartyHosting.md#security-concerns) associated with private keys.
 
 ## Does BTCPay Server support crypto to fiat conversion?
 
-At this time, it is possible to do automated conversions using the BTCPay Server plugin called [BTCTransmuter](https://github.com/btcpayserver/btcTransmuter). Please note this software is currently in *alpha state*. 
+At this time, it is possible to do automated conversions using the BTCPay Server plugin called [BTCTransmuter](https://github.com/btcpayserver/btcTransmuter). Please note this software is currently in *alpha state*.
 
 ## What if I have a problem paying an invoice?
 
@@ -102,14 +108,14 @@ If you have an issue paying a BTCPay Server invoice, it is likely do to one of t
 
 1. You are trying to pay using a non-segwit wallet and the merchant's invoices use Bech32 format.
 
-This is a fairly common issue but can be confusing to the user who will likely receive wallet errors similar to `invalid address` when making a payment to an invoice. The solution for this (by the customer) is to use a [SegWit compatible wallet](https://en.bitcoin.it/wiki/Bech32_adoption) which supports sending to Bech32 addresses. 
+This is a fairly common issue but can be confusing to the user who will likely receive wallet errors similar to `invalid address` when making a payment to an invoice. The solution for this (by the customer) is to use a [SegWit compatible wallet](https://en.bitcoin.it/wiki/Bech32_adoption) which supports sending to Bech32 addresses.
 
 The solution for this (by the merchant) is to modify your extended public key (xPub) you are providing in your BTCPay Server store. To do this, you can append your xPub with `-[p2sh]` which will automatically modify your invoice addresses to allow both SegWit and non-SegWit wallets to make payments to your addresses. The BTCPay Server wallet will do this by wrapping the xPub's addresses with a Pay to Script Hash (p2sh) which produces more widely accepted addresses. It's important to understand how this can affect your wallet and the payments received before and after implementing this solution in your BTCPay Server store. Modifying your store's xPub will generate an entirely new wallet from the perspective of your BTCPay Server store. Please understand the following before blindly implementing the solution:
 
-- If you are using a hot wallet generated by your BTCPay Server, modifying the xpub will not create new seed words and your previous hot wallet seed words will **no longer be stored** on the server. 
+- If you are using a hot wallet generated by your BTCPay Server, modifying the xpub will not create new seed words and your previous hot wallet seed words will **no longer be stored** on the server.
    - As a result, you will not be able to spend your new funds. Instead, create a new store and a new BTCPay Server hot wallet and select the option `Segwit wrapped (Compatible with old wallets)` address type, and migrate funds to this new store's wallet.)
-- If you imported your xPub from another wallet (such as a hardware or software wallet) your external wallet will not detect the payments after modifying your xPub. 
-   - As a result, you will still be able to spend the funds using your BTCPay Server internal wallet using the Hardware Wallet Integration (Vault, recommended) or by signing with seed (not recommended). 
+- If you imported your xPub from another wallet (such as a hardware or software wallet) your external wallet will not detect the payments after modifying your xPub.
+   - As a result, you will still be able to spend the funds using your BTCPay Server internal wallet using the Hardware Wallet Integration (Vault, recommended) or by signing with seed (not recommended).
 - Older funds and transactions which were previously displayed in your store's wallet will not appear anymore.
    - As a result, you may want to consider creating a second store with the modified xpub, to retain the previous transaction history of your transactions.
 
@@ -121,8 +127,12 @@ Users may try to pay an invoice from an exchange or other custodial service wher
 
 ## What if I have a problem with a paid invoice?
 
+:::tip
+To request a refund from a merchant, please contact the merchant directly! BTCPay Server has no relationship to the merchant you purchased the product or service from.
+:::
+
 BTCPay Server is an open-source self-hosted software stack, not a company. The community and contributors behind BTCPay Server have no control over who uses the software or how they use it.
-If you paid an invoice to a merchant and have a problem with your order, you must contact the merchant directly to see what happened. 
+If you paid an invoice to a merchant and have a problem with your order, you must contact the merchant directly to see what happened.
 
 Each merchant running the software controls their own store and the connected wallets that receive funds. The BTCPay Server community does not hold or have access to any funds of a store using the BTCPay Server software, only the merchant does.
 
@@ -134,19 +144,19 @@ If you encountered an issue or have a feature request, please [open an issue on 
 
 ## How can I contribute to BTCPay?
 
-There are many ways in which you can contribute to an open-source project like BTCPay. 
+There are many ways in which you can contribute to an open-source project like BTCPay.
 
-The easiest way is to use the software, provide feedback and report any bugs or issues you or your customers encounter. If you're a developer, you can help us develop and improve the software by contributing in any of the BTCPay Server [GitHub repositories](https://github.com/btcpayserver). Translating BTCPay into your native language on [Transifex](https://www.transifex.com/btcpayserver/btcpayserver/), helping us with documentation and writing are ways in which you can help us out, even if you're not a developer or tech-savvy. We appreciate every contributor to the project. 
+The easiest way is to use the software, provide feedback and report any bugs or issues you or your customers encounter. If you're a developer, you can help us develop and improve the software by contributing in any of the BTCPay Server [GitHub repositories](https://github.com/btcpayserver). Translating BTCPay into your native language on [Transifex](https://www.transifex.com/btcpayserver/btcpayserver/), helping us with documentation and writing are ways in which you can help us out, even if you're not a developer or tech-savvy. We appreciate every contributor to the project.
 
 Check out the [contribute section](../Contribute/README.md) for all the ways to contribute and help improve the project.
 
 ## How can I use the BTCPay Server API?
 
-The original BTCPay Server API is compatible for the most part with [BitPay's API](https://bitpay.com/api/) to allow merchants to smoothly transition to using BTCPay if they prefer a free, open source, payment processing alternative. 
+The original BTCPay Server API is compatible for the most part with [BitPay's API](https://bitpay.com/api/) to allow merchants to smoothly transition to using BTCPay if they prefer a free, open source, payment processing alternative.
 
 In 2020, BTCPay Server started releasing a new Greenfield API. This new API will co-exist with the original API and allow full usage of all BTCPay Server features, without requiring the UI. You can view the current [Greenfield API documentation](https://docs.btcpayserver.org/API/Greenfield/v1/).
 
-A BTCPay Server functionality that is not found in the Greenfield API documentation means it isn't fully implemented yet in the new API and users should use the original API instead. The discussion on the development of the new Greenfield API can be found [here](https://github.com/btcpayserver/btcpayserver/issues/1320). 
+A BTCPay Server functionality that is not found in the Greenfield API documentation means it isn't fully implemented yet in the new API and users should use the original API instead. The discussion on the development of the new Greenfield API can be found [here](https://github.com/btcpayserver/btcpayserver/issues/1320).
 
 ## How can I backup my BTCPay Server?
 
