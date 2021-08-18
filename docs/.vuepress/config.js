@@ -256,9 +256,10 @@ module.exports = {
             ]
           },
           {
-            title: "Vault",
-            path: "/Vault",
+            title: "Hardware Wallet Integration",
+            path: "/HardwareWalletIntegration",
             children: [
+              ["/Vault/", "Vault"],
               ["/Vault/HowToVerify", "How To Verify"]
             ]
           }
