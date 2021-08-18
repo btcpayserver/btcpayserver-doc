@@ -8,6 +8,7 @@ PUBLIC_DIR="$DOCS_DIR/.vuepress/public"
 BTCPAYSERVER_DIR="$BASE_DIR/deps/btcpayserver"
 CONFIGURATOR_DIR="$BASE_DIR/deps/configurator"
 DOCKER_DIR="$BASE_DIR/deps/docker"
+VAULT_DIR="$BASE_DIR/deps/vault"
 TRANSMUTER_DIR="$BASE_DIR/deps/transmuter"
 
 update_external() {
@@ -52,6 +53,26 @@ git checkout $(git tag --sort=-refname | awk 'match($0, /^v[0-9]+\./)' | head -n
 if command -v jq >/dev/null 2>&1; then
   jq -rs 'reduce .[] as $item ({}; . * $item)' BTCPayServer/wwwroot/swagger/v1/*.json > "$PUBLIC_DIR/API/Greenfield/v1/swagger.json"
 fi
+
+# Vault
+
+echo "Setup dependency: Vault"
+
+rm -rf "$DOCS_DIR/Vault"
+mkdir -p "$DOCS_DIR/Vault"
+
+if [ ! -d "$VAULT_DIR" ]; then
+  git clone https://github.com/btcpayserver/BTCPayServer.Vault.git "$VAULT_DIR"
+else
+  cd "$VAULT_DIR" && git checkout master && git pull
+fi
+
+cd "$VAULT_DIR"
+cp -r README.md docs/* "$DOCS_DIR/Vault"
+sed -ie 's$(docs/$(./$g' "$DOCS_DIR/Vault/README.md"
+for file in "$DOCS_DIR"/Vault/*.md; do
+  update_external "$file" https://github.com/btcpayserver/BTCPayServer.Vault "$DOCS_DIR"/Vault/
+done
 
 # Configurator
 

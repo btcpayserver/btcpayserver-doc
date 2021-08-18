@@ -240,9 +240,9 @@ module.exports = {
           ["/Invoices", "Invoices"],
           {
             title: "Pull Payments",
-                path: "/PullPayments",
-                children: [
-                  ["/Refund", "Refunds"]
+            path: "/PullPayments",
+            children: [
+              ["/Refund", "Refunds"]
             ]
           },
           ["/PaymentRequests", "Payment Requests"],
@@ -253,6 +253,13 @@ module.exports = {
             path: "/Payjoin",
             children: [
               ["https://github.com/bitcoin/bips/blob/master/bip-0078.mediawiki", "Payjoin specification", { type: 'external' }]
+            ]
+          },
+          {
+            title: "Vault",
+            path: "/Vault",
+            children: [
+              ["/Vault/HowToVerify", "How To Verify"]
             ]
           }
         ]
