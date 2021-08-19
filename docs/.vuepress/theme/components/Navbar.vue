@@ -129,6 +129,8 @@ $navbar-horizontal-padding = 1.5rem
     font-weight 600
     color $textColor
     position relative
+  .btcpay-theme-switch
+    padding 0 0.5rem
   .links
     padding-left 1.5rem
     box-sizing border-box
