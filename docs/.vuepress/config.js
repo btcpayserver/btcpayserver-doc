@@ -20,6 +20,7 @@ module.exports = {
   title,
   description: "BTCPay Server Official Documentation",
   head: [
+    ['meta', { name: "viewport", content: "width=device-width, initial-scale=1.0"}],
     ["link", { rel: "stylesheet", href: "/styles/btcpayserver-variables.css" }]
   ],
   chainWebpack (config) {
