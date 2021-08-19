@@ -237,13 +237,19 @@ module.exports = {
         collapsable: false,
         children: [
           ["/Apps", "Apps"],
-          ["/Wallet", "Wallet"],
+          {
+            title: "Wallet",
+            path: "/Wallet",
+            children: [
+              ["/HardwareWalletIntegration", "Hardware Wallet Integration"]
+            ]
+          },
           ["/Invoices", "Invoices"],
           {
             title: "Pull Payments",
-                path: "/PullPayments",
-                children: [
-                  ["/Refund", "Refunds"]
+            path: "/PullPayments",
+            children: [
+              ["/Refund", "Refunds"]
             ]
           },
           ["/PaymentRequests", "Payment Requests"],
@@ -333,6 +339,13 @@ module.exports = {
           ["/Theme", "Customizing Themes"],
           [`${baseUrl}/API/Greenfield/v1`, "Greenfield API v1", { type: 'external' }],
           ["/GreenFieldExample", "Greenfield example with cURL"],
+          {
+            title: "Vault",
+            path: "/Vault",
+            children: [
+              ["/Vault/HowToVerify", "How To Verify"]
+            ]
+          },
           ["/BTCPayServer/Security", "Security Disclosures"],
         ]
       }
