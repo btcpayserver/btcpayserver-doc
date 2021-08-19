@@ -236,7 +236,13 @@ module.exports = {
         collapsable: false,
         children: [
           ["/Apps", "Apps"],
-          ["/Wallet", "Wallet"],
+          {
+            title: "Wallet",
+            path: "/Wallet",
+            children: [
+              ["/HardwareWalletIntegration", "Hardware Wallet Integration"]
+            ]
+          },
           ["/Invoices", "Invoices"],
           {
             title: "Pull Payments",
@@ -253,14 +259,6 @@ module.exports = {
             path: "/Payjoin",
             children: [
               ["https://github.com/bitcoin/bips/blob/master/bip-0078.mediawiki", "Payjoin specification", { type: 'external' }]
-            ]
-          },
-          {
-            title: "Hardware Wallet Integration",
-            path: "/HardwareWalletIntegration",
-            children: [
-              ["/Vault/", "Vault"],
-              ["/Vault/HowToVerify", "How To Verify"]
             ]
           }
         ]
@@ -340,6 +338,13 @@ module.exports = {
           ["/Theme", "Customizing Themes"],
           [`${baseUrl}/API/Greenfield/v1`, "Greenfield API v1", { type: 'external' }],
           ["/GreenFieldExample", "Greenfield example with cURL"],
+          {
+            title: "Vault",
+            path: "/Vault",
+            children: [
+              ["/Vault/HowToVerify", "How To Verify"]
+            ]
+          },
           ["/BTCPayServer/Security", "Security Disclosures"],
         ]
       }
