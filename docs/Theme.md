@@ -17,7 +17,7 @@ There are two other approaches to customizing the theme of your BTCPay Server.
 
 ## 1. Custom themes
 
-This is the way we are building our own themes, like the [Classic](https://github.com/btcpayserver/btcpayserver/blob/master/BTCPayServer/wwwroot/main/themes/classic.css) or [Casa](https://github.com/btcpayserver/btcpayserver/blob/master/BTCPayServer/wwwroot/main/themes/casa.css) theme.
+This is the way we are building our own themes, like the [Classic](https://design.btcpayserver.org/styles/btcpayserver-theme-classic.css) or [Casa](https://design.btcpayserver.org/styles/btcpayserver-theme-casa.css) theme.
 
 With this approach you provide a **CSS file containing the variable definitions** ([CSS custom properties](https://developer.mozilla.org/en-US/docs/Web/CSS/--*)) to adjust colors, fonts, etc.
 
@@ -49,7 +49,7 @@ The custom property definitions in the `:root` selector are divided into several
 - The third section contains definitions for specific parts of the page, sections or components.
   Here you should try to reuse definitions from above as much as possible to provide a consistent look and feel.
 
-The variables defined in a theme file get used in the [`site.css`](https://github.com/btcpayserver/btcpayserver/blob/master/BTCPayServer/wwwroot/main/site.css) and [`creative.css`](https://github.com/btcpayserver/btcpayserver/blob/master/BTCPayServer/wwwroot/main/bootstrap/creative.css) files.
+The variables defined in a theme file get used in the [`site.css`](https://github.com/btcpayserver/btcpayserver/blob/master/BTCPayServer/wwwroot/main/site.css) file.
 
 ##### Overriding Bootstrap selectors
 
@@ -413,7 +413,7 @@ span {
 
 ---
 
-### [Bitcoin Fortune Cookie](https://bitcoinfortunecookie.com/)
+### Bitcoin Fortune Cookie
 
 ![Bitcoin Fortune Cookie checkout](./img/Theme-BitcoinFortuneCookie.png)\
 _**Made by:** [@artdesignbySF](https://twitter.com/artdesignbySF) / <artdesignbySF@protonmail.com>_
