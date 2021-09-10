@@ -19,7 +19,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        node-version: [14]
+        node-version: [16]
 
     steps:
       # Checkout doc repo and its dependencies
