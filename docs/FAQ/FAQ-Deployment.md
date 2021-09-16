@@ -1,6 +1,6 @@
 # BTCPay Deployment Frequently Asked Questions
 
-This document covers the most common questions, errors, and issues you may encounter prior and during the installation of the software. For a detailed list of deployment methods and instructions for each, please see [Deployment page](../Deployment.md).
+This document covers the most common questions, errors, and issues you may encounter prior and during the installation of the software. For a detailed list of deployment methods and instructions for each, please see [Deployment page](./Deployment/README.md).
 
 ## General Deployment FAQ
 
@@ -50,7 +50,7 @@ Here are common questions about installation, regardless of the deployment metho
 ### How much does it cost to run BTCPay Server?
 
 BTCPay is a 100% free and open-source software. We do not charge you anything.
-However, to run it, you should host it. You can run it as a self-hosted solution on your own local server, or use a cloud hosting provider, which is what a majority of users do. Advanced users can run BTCPay on [their own hardware](../HardwareDeployment.md). Less technical users can use [Hardware As A Service options](../HardwareAsAService.md). If you do not wish to host your own server, you can use a free [Third-Party Host](../ThirdPartyHosting.md). Visit our [Deployment Page](../Deployment.md) for more information on the various ways in which you can run BTCPay.
+However, to run it, you should host it. You can run it as a self-hosted solution on your own local server, or use a cloud hosting provider, which is what a majority of users do. Advanced users can run BTCPay on [their own hardware](/Deployment/Hardware.md). Less technical users can use [Hardware As A Service options](/Deployment/HardwareAsAService.md). If you do not wish to host your own server, you can use a free [Third-Party Host](/Deployment/ThirdPartyHosting.md). Visit our [Deployment Page](/Deployment/README.md) for more information on the various ways in which you can run BTCPay.
 
 ### What are the minimal requirements for BTCPay?
 
@@ -62,17 +62,17 @@ If you would like to run Bitcoin and Lightning Network nodes, the minimal requir
 
 ### What is the easiest method to deploy a self-hosted BTCPay Server?
 
-For beginners, we strongly recommend the [web-deployment](../LunaNodeWebDeployment.md) if you want a self-hosted solution or a [third-party host](../ThirdPartyHosting.md).
+For beginners, we strongly recommend the [web-deployment](/Deployment/LunaNode.md) if you want a self-hosted solution or a [third-party host](/Deployment/ThirdPartyHosting.md).
 
 If you're going to add more than one crypto coin, you need to expand the storage according to that coin(s) blockchain size.
 
 ### How to choose a proper deployment method?
 
-Please see the [Deployment page](../Deployment.md) for comparison of different installation methods and choose the one that suits your needs and skill level the most.
+Please see the [Deployment page](/Deployment/README.md) for comparison of different installation methods and choose the one that suits your needs and skill level the most.
 
 ### Can I run BTCPay on my own hardware?
 
-Yes, you can. Check our the [Hardware Deployment page](../HardwareDeployment.md) for detailed instructions.
+Yes, you can. Check our the [Hardware Deployment page](/Deployment/Hardware.md) for detailed instructions.
 
 ### Can I deploy BTCPay on my existing VPS?
 
@@ -80,7 +80,7 @@ Yes. BTCPay is not limited to the documented deployment methods. You can use whi
 
 ### Are there free hosts where I can test?
 
-On a self-hosted BTCPay, an unlimited amount of users and stores can be attached. Some community users have open registration on their servers for others to use their BTCPay Server mainly for testing and learning. Most of them are community-driven and free. See the [third-party hosts documentation](../ThirdPartyHosting.md) for more information.
+On a self-hosted BTCPay, an unlimited amount of users and stores can be attached. Some community users have open registration on their servers for others to use their BTCPay Server mainly for testing and learning. Most of them are community-driven and free. See the [third-party hosts documentation](/Deployment/ThirdPartyHosting.md) for more information.
 
 ### After initial deployment, I can't register and I don't have a login yet?
 
@@ -207,7 +207,7 @@ ONLY USE ON TRUSTED LAN OR WITH FIREWALL RULES WHITELISTING SPECIFIC HOSTS
 
 ### How can I renew my SSL certificate?
 
-If your SSL certificate has expired for your BTCPay Server, you can manually renew it. For Docker deployments the easiest way to do this is to [restart the container](../Troubleshooting.md#1-3-restarting-a-service) named `letsencrypt-nginx-proxy-companion` on your server. 
+If your SSL certificate has expired for your BTCPay Server, you can manually renew it. For Docker deployments the easiest way to do this is to [restart the container](../Troubleshooting.md#1-3-restarting-a-service) named `letsencrypt-nginx-proxy-companion` on your server.
 
 ### Can I use an existing Nginx server as a reverse proxy with SSL termination?
 
@@ -328,7 +328,7 @@ Similar to the requirements for hosting a website, a web server is required for 
 2. Go to your DNS provider and create an A record. Paste the external IP.
 3. Go to Server Settings > Maintenance > Change Domain. Paste yourdomain.com without http or https prefix.
 
-Additional documentation can be found on [domain change page](../ChangeDomain.md).
+Additional documentation can be found on [domain change page](/Deployment/ChangeDomain.md).
 
 ## Manual Deployment
 
@@ -513,7 +513,7 @@ Note: We use mount bind instead of symbolic link because docker would complain w
 
 #### Cause 1: Trying to access my BTCPay by IP address
 
-Your nginx config is set to route the HTTP request to a particular container based on the domain name of the request. For example, the official [deployment on pi 4](../RPi4.md) was to setup the souce domain name to http://raspberrypi.local/ yet getting automatic local domain raspberrypi.local does not always work. You are probably in this situation and trying to type the IP address of your BTCPay into the web-browser.
+Your nginx config is set to route the HTTP request to a particular container based on the domain name of the request. For example, the official [deployment on pi 4](/Deployment/RPi4.md) was to setup the souce domain name to http://raspberrypi.local/ yet getting automatic local domain raspberrypi.local does not always work. You are probably in this situation and trying to type the IP address of your BTCPay into the web-browser.
 
 Since nginx gets the IP address in the request instead of raspberrypi.local it does not know where to route that request and returns:
 ```
@@ -612,4 +612,4 @@ You need to open port 80 and 443. Once you did that, restart docker `btcpay-rest
 
 #### Cause 5: Other
 
-There could be many causes for 5XX HTTP errors. Please create an [Issue](https://github.com/btcpayserver/btcpayserver-docker/issues) and when cause becomes known add it here in the [Deployment FAQ](FAQ-Deployment.md) doc.
+There could be many causes for 5XX HTTP errors. Please create an [Issue](https://github.com/btcpayserver/btcpayserver-docker/issues) and when cause becomes known add it here in the [Deployment FAQ](/FAQ/FAQ-Deployment.md) doc.

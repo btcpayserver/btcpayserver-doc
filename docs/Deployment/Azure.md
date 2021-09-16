@@ -12,11 +12,11 @@ You can log into [Azure](https://azure.microsoft.com/en-us/account/) with your M
 
 Final installation steps:
 
-Fill in the remaining options: ![Azure Resource Config](./img/AzureResourceConfig.png "Azure Resource Config")
+Fill in the remaining options: ![Azure Resource Config](../img/AzureResourceConfig.png "Azure Resource Config")
 * Click 'Purchase' to confirm
 * (Wait for Azure deployment)
 * Type `ip` into the search bar and select the first option, `BTCPayServerPublicIP`
-* Copy the hostname for your Azure deployment, under `DNS name`: ![Azure BTCPayServerPublicIP](./img/AzureBTCPayServerPublicIP.png "Azure BTCPayServer Public IP")
+* Copy the hostname for your Azure deployment, under `DNS name`: ![Azure BTCPayServerPublicIP](../img/AzureBTCPayServerPublicIP.png "Azure BTCPayServer Public IP")
 * Visit it (all major browsers supported)
 * Click 'Register' and create an account - This will be your **admin** account!
 * At your domain registrar, point your domain at this hostname (read more: [DNS configuration](./ChangeDomain.md#setting-up-your-dns-record))

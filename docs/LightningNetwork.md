@@ -33,8 +33,8 @@ As of [v1.0.3.138](https://blog.btcpayserver.org/btcpay-lnd-migration/), LND is 
 First, read [here](./FAQ/FAQ-LightningNetwork.md#can-i-use-a-pruned-node-with-ln-in-btcpay) about using pruned Bitcoin nodes with lightning network implementations before deploying.
 
 On the installation, you'll have the option to choose the implementation.
-For [web-interface installations](./LunaNodeWebDeployment.md), you can simply select the implementation from the drop-down menu.
-For other [docker](https://github.com/btcpayserver/btcpayserver-docker) based [deployment methods](./Deployment.md) you need to:
+For [web-interface installations](/Deployment/LunaNode.md), you can simply select the implementation from the drop-down menu.
+For other [docker](https://github.com/btcpayserver/btcpayserver-docker) based [deployment methods](/Deployment/README.md) you need to:
 
 ```bash
 sudo su -

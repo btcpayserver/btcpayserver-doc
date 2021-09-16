@@ -125,14 +125,9 @@ h5, h6 {
     margin: 0 0 0 var(--btcpay-space-s);
   }
 
-  .navbar .nav-links {
-    margin: 0 10px;
-  }
-
   .nav-links .nav-item {
     margin-left: var(--btcpay-space-xs);
     display: inline-block;
-    padding: .5rem 0 .5rem 1rem;
   }
 
   .nav-links .repo-link {
@@ -140,11 +135,11 @@ h5, h6 {
   }
 
   .nav-links a {
+    font-size: 14px;
+    font-weight: bold;
     color: var(--btcpay-header-link);
-
-    @media (min-width: 900px) {
-      padding: var(--btcpay-space-xs) var(--btcpay-space-s);
-    }
+    border: 0;
+    padding: var(--btcpay-space-xs) var(--btcpay-space-s);
   }
 
   .nav-links a svg {
@@ -154,11 +149,10 @@ h5, h6 {
   .nav-links a:hover,
   .nav-links a:focus  {
     color: var(--btcpay-header-link-accent);
-    border-bottom-color: var(--btcpay-header-link-accent);
   }
 
   .nav-links a.router-link-active {
-    color: var(--btcpay-header-link-accent);
+    color: var(--btcpay-header-link-active);
   }
 
   a.nav-link[rel*="website"],

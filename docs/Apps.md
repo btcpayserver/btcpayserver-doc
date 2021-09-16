@@ -38,7 +38,7 @@ To get your first **Point of Sale app** running, follow theses few simple steps:
 6. Click `Save Settings`.
 7. Click `View App` to view your PoS (Your customers can access the PoS through that link).
 
-You can change the appearance of your **Point of Sale app** by following the [theme customization guide](./Theme.md).
+You can change the appearance of your **Point of Sale app** by following the [theme customization guide](./Development/Theme.md).
 
 ## Crowdfunding App
 

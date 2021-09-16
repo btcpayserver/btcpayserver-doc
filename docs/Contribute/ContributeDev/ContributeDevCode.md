@@ -1,4 +1,4 @@
-# Setup Developer Environment 
+# Setup Developer Environment
 
 Table of contents:
 - [Developer Resources](#developer-resources)
@@ -23,15 +23,15 @@ Table of contents:
 - [Working with the Database](#working-with-the-database)
 - [Questions](#questions)
 
-This guide will help you set up your developer environment to prepare you for later contributions to the BTCPay Server repositories. A variety of beginner tools are used in the guide below to help you get started with development. Once you understand the general setup process, feel free to use any tools that you like. 
+This guide will help you set up your developer environment to prepare you for later contributions to the BTCPay Server repositories. A variety of beginner tools are used in the guide below to help you get started with development. Once you understand the general setup process, feel free to use any tools that you like.
 
-If you are looking for how to make a simple code change such as fixing a typo or copy change, check out the simplified [WriteSoftware](../ContributeWrite/WriteSoftware.md) tutorial instead. If you are an advanced developer with a local environment already set up for development, you can skip ahead to the [LocalDevelopment](../../LocalDev.md) documentation.
+If you are looking for how to make a simple code change such as fixing a typo or copy change, check out the simplified [WriteSoftware](../ContributeWrite/WriteSoftware.md) tutorial instead. If you are an advanced developer with a local environment already set up for development, you can skip ahead to the [LocalDevelopment](/Development/LocalDevelopment.md) documentation.
 
 ## Developer Resources
 
 - [Github Guides](https://guides.github.com/)
-- [BTCPay Commands and Concepts](../../LocalDev.md)
-- [Environment Setup Videos (Linux, Mac, Windows)](../../LocalDev.md#videos)
+- [BTCPay Commands and Concepts](/Development/LocalDevelopment.md)
+- [Environment Setup Videos (Linux, Mac, Windows)](/Development/LocalDevelopment.md#videos)
 
 ## Windows Setup Software
 
@@ -52,12 +52,12 @@ Note: _This guide assumes installations in default locations. Take note if you h
 
 - Open a web browser and login to your www.Github.com account.
 - Navigate to the [BTCPay Server Repository](https://github.com/btcpayserver/btcpayserver) and press the `Fork` button to create your own copy of the BTCPay Server repository on Github.
-- Next open Github Desktop and login so that Github Desktop knows about your www.Github.com account and connects to it. 
+- Next open Github Desktop and login so that Github Desktop knows about your www.Github.com account and connects to it.
 
 ### Clone BTCPay Server Repository
 
-- In GitHub Desktop, use the `Add` button and see the option clone repository. 
-- If you are using your www.Github.com credentials in GitHub Desktop, you will see your BTCPay Server repository that you just forked on www.Github.com. Select it and take note of the local path shown below. (by default it will be something like `C:\Users\SatoshisComputer\Documents\GitHub\btcpayserver` for clarity, lets call it our: _clone local path_) then press clone. 
+- In GitHub Desktop, use the `Add` button and see the option clone repository.
+- If you are using your www.Github.com credentials in GitHub Desktop, you will see your BTCPay Server repository that you just forked on www.Github.com. Select it and take note of the local path shown below. (by default it will be something like `C:\Users\SatoshisComputer\Documents\GitHub\btcpayserver` for clarity, lets call it our: _clone local path_) then press clone.
 - Now you will see the BTCPay Server repository has been cloned in your GitHub Desktop and you will be on the _master branch_.
 
 ### Create a Development Feature Branch
@@ -82,13 +82,13 @@ Note: _This guide assumes installations in default locations. Take note if you h
 - For the next step make sure that you have Docker-Compose installed (included with Docker Desktop). Open a PowerShell terminal and navigate to your _clone local path_ and into the BTCPayServer.Tests directory with the command: `$ cd Documents/Github/btcpayserver/BTCPayServer.Tests`
 - The BTCPay Server.Tests project contains the docker files needed to run our docker commands that will start all the project dependencies and create a local Regtest network.
 - In Powershell, start the docker services with the command: `docker-compose up dev`(you must be in the BTCPay Server.Tests to run this command).
-- In your PowerShell terminal you will first see the necessary docker images being pulled, then containers being built. If the build is successful the containers will all show as done. 
+- In your PowerShell terminal you will first see the necessary docker images being pulled, then containers being built. If the build is successful the containers will all show as done.
 
 ![BTCPayServer.Tests powershell terminal](../../img/Contribute/docker-compose-up-dev.png)
 
 ### Build Local BTCPay Server in Browser Mode
 
-If you don't want to do any coding and you simply want to create a local BTCPay Server for testing features in the interface, you can start a local BTCPay from the command line. 
+If you don't want to do any coding and you simply want to create a local BTCPay Server for testing features in the interface, you can start a local BTCPay from the command line.
 
 After building your [regtest network](#bitcoin-regtest-network-setup), navigate to your `btcpayserver\BTCPayServer` directory and run the following command:
 
@@ -100,8 +100,8 @@ Open a new browser and visit: http://127.0.0.1:14142
 
 ### Visual Studio Setup
 
-- Open a file explorer to the BTCPay Server repository folder. Without opening any of the folders shown, look for the `btcpayserver.sln` item and right click it to `Open with > Visual Studio`. You may need to choose Open with > Choose another app ... and look for Visual Studio if you have never opened this kind of file before. 
-- To get your Visual Studio set up choose `View > Solution Explorer` from the top menu. In this solution explorer you will see all the BTCPay Server files and folders. 
+- Open a file explorer to the BTCPay Server repository folder. Without opening any of the folders shown, look for the `btcpayserver.sln` item and right click it to `Open with > Visual Studio`. You may need to choose Open with > Choose another app ... and look for Visual Studio if you have never opened this kind of file before.
+- To get your Visual Studio set up choose `View > Solution Explorer` from the top menu. In this solution explorer you will see all the BTCPay Server files and folders.
 - The top project is BTCPay Server, make sure it's in bold. If it isn't, right click it and choose Set as StartUp Project.
 - Your Visual Studio is now set up and ready.
 
@@ -112,10 +112,10 @@ Open a new browser and visit: http://127.0.0.1:14142
 - Back in Visual Studio, click: `Build > Build Solution`
 - In the output window, a successful build will look something like this: `========== Build: 6 succeeded, 0 failed, 0 up-to-date, 0 skipped ==========`
 - Next press `Debug > Start Debugging`
-- First a Visual Studio debug console will open which shows information about the status of your local BTCPay Server. 
+- First a Visual Studio debug console will open which shows information about the status of your local BTCPay Server.
 - Next a local BTCPay Server will be created in a web browser, showing on the home page that it's in `REGTEST` mode.
-- You now will have three windows to view: BTCPay Server browser session, our Visual Studio debug console and our BTCPay Server.Tests powershell terminal. 
-- Register a new user in your BTCPay Server and see the registration event is shown in your Visual Studio debug console. 
+- You now will have three windows to view: BTCPay Server browser session, our Visual Studio debug console and our BTCPay Server.Tests powershell terminal.
+- Register a new user in your BTCPay Server and see the registration event is shown in your Visual Studio debug console.
 
 ![VS Debug Console](../../img/Contribute/vs-debug-console.png)
 
@@ -146,7 +146,7 @@ $ git commit -m <SomeCommitMessage>
 Message prompt: ...your branch is ahead of origin master by "X" commits... use git push to publish...
 
 $ git add .
-$ git push origin master 
+$ git push origin master
 ```
 
 ### Commit Code To Make Pull Request
@@ -154,7 +154,7 @@ $ git push origin master
 - After you have made some code changes on a feature branch (Example: A feature branch called `Fix/BugBranch`) and you want to make a Pull Request to the BTCPay Server Repository. Open a GitBash terminal and navigate to your _clone local path_ with the command: `$ cd Documents/Github/btcpayserver` and make sure you are on the **correct branch** that you want to commit and use git status to check the files changed are the ones you want to commit.
 
 ```bash
-$ git status 
+$ git status
 $ git add .
 $ git commit
 
@@ -167,7 +167,7 @@ Close Editor with: Enter
 
 $ git push origin Fix/BugBranch
 ```
-See your new branch has been created on you www.Github.com BTCPay Server Fork, review changes and create Pull Request.  
+See your new branch has been created on you www.Github.com BTCPay Server Fork, review changes and create Pull Request.
 
 ### Create a Branch of a Pull Request
 
@@ -193,7 +193,7 @@ Note: You can't delete a branch if you have it checked out, so checkout another 
 
 ## Working with Docker Containers
 
-If you want to use Docker Commands when developing locally, you can run the following commands in the `BTCPayServer.Tests` directory. 
+If you want to use Docker Commands when developing locally, you can run the following commands in the `BTCPayServer.Tests` directory.
 
 - Show running containers `docker ps`
 - Show logs for a container `docker ps logs <container>`
@@ -203,13 +203,13 @@ If you want to use Docker Commands when developing locally, you can run the foll
 
 ## Greenfield API Development
 
-The BTCPay Greenfield API is [currently being developed](../../FAQ/FAQ-General.md#how-can-i-use-the-btcpay-server-api). You can find a [usage example here](../../GreenFieldExample.md). The official Greenfield [API reference documentation](https://docs.btcpayserver.org/API/Greenfield/v1/) is available for developers who want to develop with the BTCPay REST API. 
+The BTCPay Greenfield API is [currently being developed](../../FAQ/FAQ-General.md#how-can-i-use-the-btcpay-server-api). You can find a [usage example here](../../Development/GreenFieldExample.md). The official Greenfield [API reference documentation](https://docs.btcpayserver.org/API/Greenfield/v1/) is available for developers who want to develop with the BTCPay REST API.
 
 Developers who would like to contribute to the Greenfield API should follow the [developer guidelines](https://github.com/btcpayserver/btcpayserver/blob/master/docs/greenfield-development.md) used by the BTCPay project for additions or modifications. If you feel these guidelines are not clear, consider discussing your ideas in the community chat (development channel) or [open a github issue](https://github.com/btcpayserver/btcpayserver/issues/new/choose) to discuss endpoint implementation ideas.
 
 ## Working with the Database
 
-BTCPay uses a PostgreSQL database by default. During development you can easily connect to it. This is helpful if you want to view how data is saved, modify records or use it to find issues during development. You can use the free tool [PgAdmin4](https://www.pgadmin.org/download/) to do this. 
+BTCPay uses a PostgreSQL database by default. During development you can easily connect to it. This is helpful if you want to view how data is saved, modify records or use it to find issues during development. You can use the free tool [PgAdmin4](https://www.pgadmin.org/download/) to do this.
 
 Start your BTCPay in your local environment and view your debug console to find your database connection details:
 
@@ -219,8 +219,8 @@ Next, open your PgAdmin and select: `Servers > Create > Server...` to connect to
 
 ![PgAdmin Connection](../../img/Contribute/DB-Connect.png)
 
-Save to connect to your development btcpayserver database. In the btcpayserver database look for: 
-`Schemas > public > Tables` to see the tables which contain the BTCPay Server data. 
+Save to connect to your development btcpayserver database. In the btcpayserver database look for:
+`Schemas > public > Tables` to see the tables which contain the BTCPay Server data.
 
 As an example, you can see all the users registered to your development BTCPay by viewing the rows of the `AspNetUsers` table. Try changing the username of a registered user in the database, then `Save Changes` and `Refresh (F5)`. Now log into your BTCPay using the new username and original password.
 
@@ -228,4 +228,4 @@ As an example, you can see all the users registered to your development BTCPay b
 
 ## Questions
 
-If you have questions about the BTCPay Server local development setup, you can join the [community chat](https://chat.btcpayserver.org/). If you have questions about any of the other tools or commands, etc. it's likely you can find answers to your questions by doing a search on the internet or on [StackOverflow](https://stackoverflow.com/). 
+If you have questions about the BTCPay Server local development setup, you can join the [community chat](https://chat.btcpayserver.org/). If you have questions about any of the other tools or commands, etc. it's likely you can find answers to your questions by doing a search on the internet or on [StackOverflow](https://stackoverflow.com/).

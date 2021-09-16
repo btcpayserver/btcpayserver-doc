@@ -3,7 +3,7 @@
 :::danger
 #### Not recommended for production use
 
-Manual installation is NOT recommended for production use unless you are very confident with your Operating System and Bitcoin security expertise. If you are unsure use the docker deployment or one of the other [deployment options](./Deployment.md).
+Manual installation is NOT recommended for production use unless you are very confident with your Operating System and Bitcoin security expertise. If you are unsure use the docker deployment or one of the other [deployment options](./README.md).
 
 #### You must have technical literacy and be able to resolve any issues on your own. The community will not provide extensive support for this deployment.
 :::
@@ -99,10 +99,10 @@ cd ~/btcpayserver
 ./run.sh --port 8080 --bind 0.0.0.0
 ```
 
-
 Now you can browse your server on port 8080.
 
 ## Testnet Specific Deployments
+
 Follow the instructions for installing Bitcoin, .NET Core, NBXplorer and BTCPayServer above.
 
 Then when running them use:
@@ -110,7 +110,7 @@ Then when running them use:
 ### Run bitcoind in testnet mode
 
 ```bash
-bitcoind -testnet 
+bitcoind -testnet
 ```
 
 ### Run NBXplorer in testnet mode

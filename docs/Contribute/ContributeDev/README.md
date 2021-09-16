@@ -25,11 +25,11 @@ We are actively looking for developers who can take on and resolve GitHub issues
 
 ### Setup Developer Environment
 
-If you are interested in getting started as a developer or tester of the software behind BTCPay Server, check out the [Setup Developer Environment](../ContributeDev/ContributeDevCode.md) guide that will walk you step by step through every software used in development with BTCPay such as Git, GitBash, Github, Docker, Visual Studio, Postgres, etc. If you have never coded before and you are looking to learn something new, start here. 
+If you are interested in getting started as a developer or tester of the software behind BTCPay Server, check out the [Setup Developer Environment](../ContributeDev/ContributeDevCode.md) guide that will walk you step by step through every software used in development with BTCPay such as Git, GitBash, Github, Docker, Visual Studio, Postgres, etc. If you have never coded before and you are looking to learn something new, start here.
 
 ### Local BTCPay Development
 
-If you already have a developer environment setup you can start with the BTCPay specific [Local Development](../../LocalDev.md) documentation.
+If you already have a developer environment setup you can start with the BTCPay specific [Local Development](/Development/LocalDevelopment.md) documentation.
 
 ### Local BTCPay Testing
 
@@ -37,8 +37,8 @@ Once you have your development environment tools setup and your local BTCPay Ser
 
 ## Requirements
 
-Software requirements (ie. IDE) can also be found in [local development](../../LocalDev.md#which-ide).
+Software requirements (ie. IDE) can also be found in [local development](/Development/LocalDevelopment.md#which-ide).
 
 ## Videos
 
-BTCPay Server development videos can be found [here](../../LocalDev.md#videos) or on the [BTCPayServer YouTube](https://www.youtube.com/channel/UCpG9WL6TJuoNfFVkaDMp9ug) channel.
+BTCPay Server development videos can be found [here](/Development/LocalDevelopment.md#videos) or on the [BTCPayServer YouTube](https://www.youtube.com/channel/UCpG9WL6TJuoNfFVkaDMp9ug) channel.

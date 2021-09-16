@@ -11,4 +11,4 @@
 /docs/.vuepress/public/API/Greenfield/**/*.json
 
 # Constructed docs
-/docs/LocalDevelopment.md
+/docs/Development/LocalDevelopment.md

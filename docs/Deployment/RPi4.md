@@ -50,13 +50,13 @@ The 500GB SSD allows you to keep a full copy of the Bitcoin blockchain, until it
 - Connect the SSD to one of the blue colored USB 3 ports
 - Prepare the USB Power Adapter but don’t plug it in yet
 
-![RPI4 Components](./img/RPI4Components.jpeg "Raspberry Pi 4 Components")
+![RPI4 Components](../img//RPI4Components.jpeg "Raspberry Pi 4 Components")
 
 ## Install Linux on the Raspberry Pi
 
 Start by downloading [Raspberry Pi OS for Linux](https://www.raspberrypi.org/software/operating-systems/) to your existing computer. The “Lite” distribution is fine for BTCPay setup, but if you want to use your Raspberry Pi for other things, you might want the full image.
 
-![RPI4 Linux Installation](./img/RPI4Linux.png "Raspberry Pi 4 Linux Installation")
+![RPI4 Linux Installation](../img//RPI4Linux.png "Raspberry Pi 4 Linux Installation")
 
 ### Flash your SD card with the Raspberry Pi OS for Linux
 
@@ -71,7 +71,7 @@ You can find a more in-depth instruction guide to flashing to your SD card at th
 
 If you used balenaEtcher to flash, the SD card will already have been ejected. Simply take the SD card out and put it back in. The SD card should now be labelled as `boot`. Next, enable SSH at bootup so you can remotely login by creating an empty file in the SD card root folder called `ssh`. Eject the SD card through your OS before taking it out of the SD card reader.
 
-![RPI4 Console](./img/RPI4Terminal4.png "Raspberry Pi 4 Console")
+![RPI4 Console](../img//RPI4Terminal4.png "Raspberry Pi 4 Console")
 
 ## Booting up the Raspberry Pi
 
@@ -95,7 +95,7 @@ Next, let’s change the password for the “pi” user:
 passwd pi
 ```
 
-![RPI4 Console](./img/RPI4Terminal4.png "Raspberry Pi 4 Console")
+![RPI4 Console](../img//RPI4Terminal4.png "Raspberry Pi 4 Console")
 
 After that, switch to the `root` user, which we will use for the remaining part of the tutorial:
 
@@ -114,7 +114,7 @@ update-rc.d dphys-swapfile remove
 systemctl disable dphys-swapfile
 ```
 
-![RPI4 Console](./img/RPI4Terminal5.png "Raspberry Pi 4 Console")
+![RPI4 Console](../img//RPI4Terminal5.png "Raspberry Pi 4 Console")
 
 Partition your SSD:
 
@@ -258,4 +258,4 @@ Run the BTCPay installation:
 
 It should be up and running within a few minutes. Try opening http://raspberrypi.local in your web browser. If everything is correct, you will see BTCPay Server front page.
 
-Now, you just need to wait a day or so for the Bitcoin blockchain to [sync and full verify](./FAQ/FAQ-Synchronization.md). The bottom of the BTCPay Server web GUI will show a pop-up dialog box to monitor the progress.
+Now, you just need to wait a day or so for the Bitcoin blockchain to [sync and full verify](../FAQ/FAQ-Synchronization.md). The bottom of the BTCPay Server web GUI will show a pop-up dialog box to monitor the progress.

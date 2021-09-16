@@ -58,7 +58,7 @@ If only partial payment was made, the Amount Due will show the balance due.
 The request's description content can be edited using the payment request's text editor.
 If you want to use additional color themes or custom css styling, both options are available.
 
-Non-technical users can use a [bootstrap theme](./Theme.md#2-bootstrap-themes).
+Non-technical users can use a [bootstrap theme](./Development/Theme.md#2-bootstrap-themes).
 Further customization can be done by providing additional CSS code, like shown below …
 
 ```css

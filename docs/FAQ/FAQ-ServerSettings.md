@@ -22,7 +22,7 @@ This document covers all the questions and issues related to Server Settings. Th
 
 * [How to customize my BTCPay theme style?](./FAQ-ServerSettings.md#how-to-customize-my-btcpay-theme-style)
 * [How to modify the BTCPay checkout page?](./FAQ-ServerSettings.md#how-to-modify-the-checkout-page)
-* [How to customize the POS app theme?](../Theme.md#2-bootstrap-themes)
+* [How to customize the POS app theme?](../Development/Theme.md#2-bootstrap-themes)
 * [How to add Google Analytics code to BTCPay?](./FAQ-ServerSettings.md#how-to-add-google-analytics-code-to-btcpay)
 
 ## Policies
@@ -233,7 +233,7 @@ BTCPAY_HOST_SSHKEYFILE=/root/.ssh/id_rsa_btcpay
 ### How to customize my BTCPay theme style?
 
 There are two ways to customize the theme of your BTCPay.
-The easy way is to choose or provide custom theme preferences in your BTCPay as explained in the [Theme documentation](../Theme.md).
+The easy way is to choose or provide custom theme preferences in your BTCPay as explained in the [Theme documentation](../Development/Theme.md).
 
 For advanced theme changes, you'll most likely need to fork  BTCPay repository and apply desired design changes. Build and publish the docker image to Docker Hub. Set the `BTCPAY_IMAGE` environment variable to your docker image tag(`export BTCPAY_IMAGE="your custom btcpay docker image"`) and run the setup (`. ./btcpay-setup.sh -i`) as usual from [BTCPay Docker](https://github.com/btcpayserver/btcpayserver-docker). Modify generated docker compose to use your custom docker image.
 
@@ -243,7 +243,7 @@ A forked BTCPay Server will need to create a new image manually and follow these
 
 ### How to modify the checkout page?
 
-You can easily change the appearance of your BTCPay's checkout page by following the [instructions here](../Theme.md#checkout-page-theme)
+You can easily change the appearance of your BTCPay's checkout page by following the [instructions here](../Development/Theme.md#checkout-page-theme)
 
 ### How to add Google Analytics code to BTCPay?
 

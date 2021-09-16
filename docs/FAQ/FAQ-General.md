@@ -59,9 +59,9 @@ BTCPay is licensed under the [MIT License](https://github.com/btcpayserver/btcpa
 
 First take a look at the various deployment options and consider which one best suits your specific needs.
 
-- [See all deployments](../Deployment.md)
+- [See all deployments](/Deployment/README.md)
 
-If you still have questions, visit the [Deployment FAQ](./FAQ-Deployment.md)
+If you still have questions, visit the [Deployment FAQ](/FAQ/FAQ-Deployment.md)
 
 ## Where to find BTCPay video tutorials?
 
@@ -96,7 +96,7 @@ Private keys are not required for using BTCPay with an existing wallet. The fact
 
 It is possible to generate new wallets using BTCPay Server which are hot wallets stored on the server. If you have a lightning node, BTCPay technically has access to the keys (macaroons) of your Lightning funds as well. If these are features that you would like to use, be sure to understand the [security implications and the risks](../CreateWallet.md#security-implications) associated with these experimental features.
 
-If you're using a Third-Party BTCPay host, you should be familiar with the [security concerns](../ThirdPartyHosting.md#security-concerns) associated with private keys.
+If you're using a Third-Party BTCPay host, you should be familiar with the [security concerns](../Deployment/ThirdPartyHosting.md#security-concerns) associated with private keys.
 
 ## Does BTCPay Server support crypto to fiat conversion?
 
