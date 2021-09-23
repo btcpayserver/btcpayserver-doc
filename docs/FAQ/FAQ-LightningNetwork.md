@@ -51,7 +51,7 @@ It can be enabled in Server Settings > Policies > Allow non-admins to use the in
 
 :::warning As a third-party host
 All your registrants' funds will go to your own Lightning Wallet.
-You will have to manually check and redispatch the funds to their respectfull owners. This could potentially become a burden.
+You will have to manually check and redispatch the funds to their respective owners. This could potentially become a burden.
 :::
 
 :::danger As an individual using a third-party host
