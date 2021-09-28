@@ -47,3 +47,10 @@ Contact: hubik.tomas@gmail.com
 > BTCPayServer local or cloud installation (Azure/other VPS).  Can also help with WooCommerce Plugin configuration and BTCPayServer Store/App creation.
 
 Contact: support@lightninginabox.co, [Web](https://lightninginabox.co)
+
+
+### Wouter Samaey / Storefront.be
+
+> I can help you integrate BTCPayServer with Magento 1, 2 or OpenMage and most other PHP-based eCommerce backends + API development and automation + BTCPay Server setup & Linux server management.
+
+Contact: wouter.samaey@storefront.be - [Website](https://www.storefront.be) - [Twitter](https://twitter.com/woutersamaey)
