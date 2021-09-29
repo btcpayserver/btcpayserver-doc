@@ -96,6 +96,14 @@ const sidebarDeployment = [
 const sidebarDevelopment = [
   ['/Development/', 'Architecture'],
   {
+    title: 'Greenfield API',
+    collapsable: false,
+    children: [
+      [`${baseUrl}/API/Greenfield/v1`, 'Greenfield API v1', { type: 'external' }],
+      ['/Development/GreenFieldExample', 'Greenfield example with cURL']
+    ]
+  },
+  {
     title: 'Development',
     collapsable: false,
     children: [
@@ -112,42 +120,30 @@ const sidebarDevelopment = [
       ['/Vault/HowToVerify', 'How To Verify']
     ]
   },
-  {
-    title: 'Greenfield API',
-    collapsable: false,
-    children: [
-      [`${baseUrl}/API/Greenfield/v1`, 'Greenfield API v1', { type: 'external' }],
-      ['/Development/GreenFieldExample', 'Greenfield example with cURL']
-    ]
-  },
-  {
-    title: 'Contribute to BTCPay Server',
-    collapsable: false,
-    path: '/Contribute',
-    children: [
-      {
-        title: 'Develop',
-        path: '/Contribute/ContributeDev/',
-        children: [
-          ['/Contribute/ContributeDev/ContributeDevCode', 'Code'],
-          ['/Contribute/ContributeDev/ContributeDevTest', 'Test']
-        ]
-      },
-      {
-        title: 'Write',
-        path: '/Contribute/ContributeWrite/',
-        children: [
-          ['/Contribute/ContributeWrite/WriteSoftware', 'Software Stack'],
-          ['/Contribute/ContributeWrite/WriteDocs', 'Documentation'],
-          ['/Contribute/ContributeWrite/WriteBlog', 'Blog']
-        ]
-      },
-      ['/Contribute/ContributeDesign', 'Design'],
-      ['/Contribute/ContributeTranslate', 'Translate'],
-      ['/Contribute/ContributeMisc', 'Miscellaneous'],
-    ]
-  },
   ['/BTCPayServer/Security', 'Security Disclosures']
+]
+
+const sidebarContribute = [
+  {
+    title: 'Develop',
+    path: '/Contribute/ContributeDev/',
+    children: [
+      ['/Contribute/ContributeDev/ContributeDevCode', 'Code'],
+      ['/Contribute/ContributeDev/ContributeDevTest', 'Test']
+    ]
+  },
+  {
+    title: 'Write',
+    path: '/Contribute/ContributeWrite/',
+    children: [
+      ['/Contribute/ContributeWrite/WriteSoftware', 'Software Stack'],
+      ['/Contribute/ContributeWrite/WriteDocs', 'Documentation'],
+      ['/Contribute/ContributeWrite/WriteBlog', 'Blog']
+    ]
+  },
+  ['/Contribute/ContributeDesign', 'Design'],
+  ['/Contribute/ContributeTranslate', 'Translate'],
+  ['/Contribute/ContributeMisc', 'Miscellaneous'],
 ]
 
 const sidebarUserGuide = [
@@ -344,6 +340,10 @@ module.exports = {
       {
         text: 'Developers',
         link: '/Development/'
+      },
+      {
+        text: 'Contribute',
+        link: '/Contribute/'
       }
     ],
     social: [
