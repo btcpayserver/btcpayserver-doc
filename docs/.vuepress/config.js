@@ -370,7 +370,7 @@ module.exports = {
     ],
     sidebar: {
       '/Development': sidebarDevelopment,
-      '/Contribute': sidebarDevelopment,
+      '/Contribute': sidebarContribute,
       '/Vault': sidebarDevelopment,
       '/BTCPayServer': sidebarDevelopment,
       '/Configurator': sidebarDeployment,
