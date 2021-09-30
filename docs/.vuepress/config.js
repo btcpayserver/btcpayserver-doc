@@ -16,6 +16,116 @@ const extractDescription = text => {
   return paragraph ? paragraph.toString().replace(/[\*\_\(\)\[\]]/g, '') : null
 }
 
+const sidebarUserGuide = [
+  {
+    title: 'Basics',
+    collapsable: false,
+    children: [
+      ['/Guide', 'Introduction'],
+      ['/UseCase', 'Use Case'],
+      ['/Walkthrough', 'Walkthrough'],
+      ['/BTCPayVsOthers', 'BTCPay Server vs. Others'],
+      ['/TryItOut', 'Try it out']
+    ]
+  },
+  {
+    title: 'Getting Started',
+    collapsable: false,
+    children: [
+      '/RegisterAccount',
+      '/CreateStore',
+      {
+        title: '(3) Wallet Setup',
+        path: '/WalletSetup',
+        collapsable: false,
+        initialOpenGroupIndex: -1,
+        children: [
+          {
+            title: 'Connect Wallet',
+            path: '/ConnectWallet'
+          },
+          {
+            title: 'Create Wallet',
+            path: '/CreateWallet'
+          }
+        ]
+      },
+      ['/WhatsNext', '(4) What\'s Next?']
+    ]
+  },
+  {
+    title: 'Features',
+    collapsable: false,
+    children: [
+      ['/Apps', 'Apps'],
+      {
+        title: 'Wallet',
+        path: '/Wallet',
+        children: [
+          ['/HardwareWalletIntegration', 'Hardware Wallet Integration']
+        ]
+      },
+      ['/Invoices', 'Invoices'],
+      {
+        title: 'Pull Payments',
+        path: '/PullPayments',
+        children: [
+          ['/Refund', 'Refunds']
+        ]
+      },
+      ['/PaymentRequests', 'Payment Requests'],
+      ['/LightningNetwork', 'Lightning Network'],
+      ['/Accounting', 'Accounting'],
+      {
+        title: 'Payjoin',
+        path: '/Payjoin',
+        children: [
+          ['https://github.com/bitcoin/bips/blob/master/bip-0078.mediawiki', 'Payjoin specification', { type: 'external' }]
+        ]
+      }
+    ]
+  },
+  {
+    title: 'Integrations',
+    collapsable: false,
+    children: [
+      ['/WooCommerce', 'WooCommerce'],
+      ['/Shopify', 'Shopify'],
+      ['/Drupal', 'Drupal'],
+      ['/Magento', 'Magento'],
+      ['/PrestaShop', 'PrestaShop'],
+      ['https://github.com/lampsolutions/LampSBtcPayShopware', 'Shopware', { type: 'external' }],
+      ['/CustomIntegration', 'Custom Integration']
+    ]
+  },
+  {
+    title: 'Support and Community',
+    collapsable: false,
+    initialOpenGroupIndex: -1,
+    children: [
+      {
+        title: 'FAQ and common issues',
+        path: '/FAQ',
+        children: [
+          ['/FAQ/FAQ-General', 'General FAQ'],
+          ['/FAQ/FAQ-Deployment', 'Deployment FAQ'],
+          ['/FAQ/FAQ-Synchronization', 'Synchronization FAQ'],
+          ['/FAQ/FAQ-Integrations', 'Integrations FAQ'],
+          ['/FAQ/FAQ-ServerSettings', 'Server Settings FAQ'],
+          ['/FAQ/FAQ-Stores', 'Stores FAQ'],
+          ['/FAQ/FAQ-Wallet', 'Wallet FAQ'],
+          ['/FAQ/FAQ-Apps', 'Apps FAQ'],
+          ['/FAQ/FAQ-LightningNetwork', 'Lightning Network FAQ'],
+          ['/FAQ/FAQ-Altcoin', 'Altcoins FAQ']
+        ]
+      },
+      ['/Troubleshooting', 'Troubleshooting an issue'],
+      ['/Support', 'Support'],
+      ['/Community', 'Community']
+    ]
+  }
+]
+
 const sidebarDeployment = [
   ['/Deployment/', 'Choosing a Deployment Method'],
   ['/Deployment/ThirdPartyHosting', 'Third-party Hosting'],
@@ -127,6 +237,7 @@ const sidebarContribute = [
   {
     title: 'Develop',
     path: '/Contribute/ContributeDev/',
+    collapsable: false,
     children: [
       ['/Contribute/ContributeDev/ContributeDevCode', 'Code'],
       ['/Contribute/ContributeDev/ContributeDevTest', 'Test']
@@ -135,6 +246,7 @@ const sidebarContribute = [
   {
     title: 'Write',
     path: '/Contribute/ContributeWrite/',
+    collapsable: false,
     children: [
       ['/Contribute/ContributeWrite/WriteSoftware', 'Software Stack'],
       ['/Contribute/ContributeWrite/WriteDocs', 'Documentation'],
@@ -144,116 +256,6 @@ const sidebarContribute = [
   ['/Contribute/ContributeDesign', 'Design'],
   ['/Contribute/ContributeTranslate', 'Translate'],
   ['/Contribute/ContributeMisc', 'Miscellaneous'],
-]
-
-const sidebarUserGuide = [
-  {
-    title: 'Basics',
-    collapsable: false,
-    children: [
-      ['/Guide', 'Introduction'],
-      ['/UseCase', 'Use Case'],
-      ['/Walkthrough', 'Walkthrough'],
-      ['/BTCPayVsOthers', 'BTCPay Server vs. Others'],
-      ['/TryItOut', 'Try it out']
-    ]
-  },
-  {
-    title: 'Getting Started',
-    collapsable: false,
-    children: [
-      '/RegisterAccount',
-      '/CreateStore',
-      {
-        title: '(3) Wallet Setup',
-        path: '/WalletSetup',
-        collapsable: false,
-        initialOpenGroupIndex: -1,
-        children: [
-          {
-            title: 'Connect Wallet',
-            path: '/ConnectWallet'
-          },
-          {
-            title: 'Create Wallet',
-            path: '/CreateWallet'
-          }
-        ]
-      },
-      ['/WhatsNext', '(4) What\'s Next?']
-    ]
-  },
-  {
-    title: 'Features',
-    collapsable: false,
-    children: [
-      ['/Apps', 'Apps'],
-      {
-        title: 'Wallet',
-        path: '/Wallet',
-        children: [
-          ['/HardwareWalletIntegration', 'Hardware Wallet Integration']
-        ]
-      },
-      ['/Invoices', 'Invoices'],
-      {
-        title: 'Pull Payments',
-        path: '/PullPayments',
-        children: [
-          ['/Refund', 'Refunds']
-        ]
-      },
-      ['/PaymentRequests', 'Payment Requests'],
-      ['/LightningNetwork', 'Lightning Network'],
-      ['/Accounting', 'Accounting'],
-      {
-        title: 'Payjoin',
-        path: '/Payjoin',
-        children: [
-          ['https://github.com/bitcoin/bips/blob/master/bip-0078.mediawiki', 'Payjoin specification', { type: 'external' }]
-        ]
-      }
-    ]
-  },
-  {
-    title: 'Integrations',
-    collapsable: false,
-    children: [
-      ['/WooCommerce', 'WooCommerce'],
-      ['/Shopify', 'Shopify'],
-      ['/Drupal', 'Drupal'],
-      ['/Magento', 'Magento'],
-      ['/PrestaShop', 'PrestaShop'],
-      ['https://github.com/lampsolutions/LampSBtcPayShopware', 'Shopware', { type: 'external' }],
-      ['/CustomIntegration', 'Custom Integration']
-    ]
-  },
-  {
-    title: 'Support and Community',
-    collapsable: false,
-    initialOpenGroupIndex: -1,
-    children: [
-      {
-        title: 'FAQ and common issues',
-        path: '/FAQ',
-        children: [
-          ['/FAQ/FAQ-General', 'General FAQ'],
-          ['/FAQ/FAQ-Deployment', 'Deployment FAQ'],
-          ['/FAQ/FAQ-Synchronization', 'Synchronization FAQ'],
-          ['/FAQ/FAQ-Integrations', 'Integrations FAQ'],
-          ['/FAQ/FAQ-ServerSettings', 'Server Settings FAQ'],
-          ['/FAQ/FAQ-Stores', 'Stores FAQ'],
-          ['/FAQ/FAQ-Wallet', 'Wallet FAQ'],
-          ['/FAQ/FAQ-Apps', 'Apps FAQ'],
-          ['/FAQ/FAQ-LightningNetwork', 'Lightning Network FAQ'],
-          ['/FAQ/FAQ-Altcoin', 'Altcoins FAQ']
-        ]
-      },
-      ['/Troubleshooting', 'Troubleshooting an issue'],
-      ['/Support', 'Support'],
-      ['/Community', 'Community']
-    ]
-  }
 ]
 
 module.exports = {
@@ -379,8 +381,6 @@ module.exports = {
       '/ElectrumX': sidebarDeployment,
       '/ElectrumPersonalServer': sidebarDeployment,
       '/Transmuter': sidebarDeployment,
-      '/FAQ/FAQ-Deployment': sidebarDeployment,
-      '/FAQ/FAQ-Synchronization': sidebarDeployment,
       '/': sidebarUserGuide
     }
   }
