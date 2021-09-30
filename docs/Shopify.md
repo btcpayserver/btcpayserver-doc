@@ -7,7 +7,7 @@ The following document guides you through **setting up BTCPay Server with [Shopi
 ## Prerequisites:
 
 - Shopify account
-- [BTCPay Server](Deployment.md) self-hosted or run by a [third-party host](ThirdPartyHosting.md) v1.0.5.6 or later.
+- [BTCPay Server](Deployment.md) self-hosted or run by a [third-party host](/Deployment/ThirdPartyHosting.md) v1.0.5.6 or later.
 - [Created BTCPay Server store](CreateStore.md) with [wallet set up](WalletSetup.md)
 
 ## Setting up BTCPay Server with Shopify
@@ -50,5 +50,3 @@ The following document guides you through **setting up BTCPay Server with [Shopi
 :::tip
 Custom Payment method name **must** contain at least one of the following words: `bitcoin`, `btcpayserver`, `btcpay server` or `btc` to work.
 :::
-
-

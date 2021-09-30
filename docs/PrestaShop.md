@@ -12,7 +12,7 @@ Please ensure that you meet the following requirements before installing this pl
 + You are using PHP 7.3 or higher
 + Your PrestaShop is version 1.7.7.0 or higher.
 + The curl, gd, intl, json, and mbstring PHP extensions are available
-+ You have a BTCPay Server, either [self-hosted](./Deployment.md) or [hosted by a third-party](./ThirdPartyHosting.md)
++ You have a BTCPay Server, either [self-hosted](/Deployment/README.md) or [hosted by a third-party](/Deployment/ThirdPartyHosting.md)
 + [You've a registered account on the instance](./RegisterAccount.md)
 + [You've a BTCPay store on the instance](./CreateStore.md)
 + [You've a wallet connected to your store](./WalletSetup.md)

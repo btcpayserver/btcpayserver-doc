@@ -188,7 +188,7 @@ Here's a good example of how to ask a question.
 
 :::warning Please note:
 The community will not provide extensive support for custom deployments.
-I.e. variations of [Manual Deployments](ManualDeployment.md) are expected to be used only for development purposes and by users with technical literacy with the ability to **resolve deployment and maintenance issues on their own**. This includes [Hardware-As-A-Service](HardwareAsAService.md) products (Nodl, RaspiBlitz, Umbrel, etc ...)
+I.e. variations of [Manual Deployments](/Deployment/ManualDeployment.md) are expected to be used only for development purposes and by users with technical literacy with the ability to **resolve deployment and maintenance issues on their own**. This includes [Hardware-As-A-Service](/Deployment/HardwareAsAService.md) products (Nodl, RaspiBlitz, Umbrel, etc ...)
 :::
 
 ### 4.1 Asking the community (general problems)

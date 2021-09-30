@@ -34,11 +34,11 @@ Please follow our detailed guide on how to use our [PoS App on a mobile device](
 
 ## How to customize the appearance of Point of Sale App in BTCPay
 
-It is very easy to customize the look of the Point of Sale app. [Follow this guide](../Theme.md) to learn how to change the theme.
+It is very easy to customize the look of the Point of Sale app. [Follow this guide](../Development/Theme.md) to learn how to change the theme.
 
 ## What is a Payment Button?
 
-The Payment Button is a simple and customizable HTML button you can create and embed into your website. To create a payment button, [follow this guide](../WhatsNext.md#creating-the-point-of-sale-app). 
+The Payment Button is a simple and customizable HTML button you can create and embed into your website. To create a payment button, [follow this guide](../WhatsNext.md#creating-the-point-of-sale-app).
 
 ## How to create a Pay Button with a custom amount?
 
@@ -58,7 +58,7 @@ However, you can use a work-around:
 ## How to map a domain name to an app?
 
 BTCPay Server Apps can have a domain name that's different from the servers domain. Let's assume you have BTCPay Server at mybtcpayserver.com and want to display your PoS app on mybtcpaypos.com instead mybtcpayserver.com/apps/pos/abc123
-First, [configure DNS settings](../ChangeDomain.md#setting-up-your-dns-record) of mypointofsale.com and make sure it's pointing to the external ip of your BTCPay Server.
+First, [configure DNS settings](/Deployment/ChangeDomain.md#setting-up-your-dns-record) of mypointofsale.com and make sure it's pointing to the external ip of your BTCPay Server.
 
 Next, add additional domain or subdomain name(s) by adding a new environment variable through ssh:
 
@@ -85,7 +85,7 @@ Enter domain name, select a previously created app from the drop down menu and c
 
 ![App domain mapping](../img/domainmapping2.png)
 
-If any of the additionally added hosts do not have a properly configured DNS, Let's Encrypt will not be able to renew the certificate for any of the domains, including the main domain. If you're using additional hosts and facing https issues with the main domain, try removing a domain from the `BTCPAY_ADDITIONAL_HOSTS` and re-run the setup. The https issue also occurs if [Dynamic DNS](../DynamicDNS.md) has not been renewed and is configured as an additional host.
+If any of the additionally added hosts do not have a properly configured DNS, Let's Encrypt will not be able to renew the certificate for any of the domains, including the main domain. If you're using additional hosts and facing https issues with the main domain, try removing a domain from the `BTCPAY_ADDITIONAL_HOSTS` and re-run the setup. The https issue also occurs if [Dynamic DNS](/Deployment/DynamicDNS.md) has not been renewed and is configured as an additional host.
 
 If for any reason, you want an app to be on the same domain as your BTCPay Server homepage, you can select to display it on the root. In that case, no DNS configuration is needed, since your domain is already pointing properly. Using an app on the root domain of BTCPay Server means you'll have to access the login and other pages manually. The easiest way is to append a page route such as `/apps` or `/stores` to your root domain. (Ex: `mybtcpayserver.com/apps`). This will make navigation to your root displayed app easier, but navigation to other pages (such as Login) more challenging for users.
 
@@ -95,7 +95,7 @@ Point of Sale apps allow redirecting customers to any URL after an invoice is pa
 
 ![Set Point of Sale Redirects](../img/point-of-sale/AppRedirect.png)
 
-In PoS settings these are the following options for redirects on paid invoices: 
+In PoS settings these are the following options for redirects on paid invoices:
 
 - **No** - *Without* Redirect URL
    - Invoice displays a prompt for the user to return to the PoS App (Default setting).
@@ -108,8 +108,8 @@ In PoS settings these are the following options for redirects on paid invoices:
 - **Use Store Settings**
    - Enable/disable automatic redirect to the PoS App on the [store level](../FAQ/FAQ-Stores.md#how-to-redirect-store-invoices-after-payment).
 
-Notes: 
-1. Provide the Redirect URL in the App Settings (above the redirect option). 
+Notes:
+1. Provide the Redirect URL in the App Settings (above the redirect option).
 2. Expired or partially paid [invoices](../Invoices.md#invoice-statuses) will not redirect, even if the setting is enabled. This feature is for paid invoices only.
 3. Alternatively, redirect URLs can be specified via the API (i.e. Embedded PoS).
 
@@ -309,6 +309,3 @@ CSS file:
 
 One final thing, make sure to check (enable) **Count all invoices created on the store as part of the crowdfunding goal**
 Save the changes and preview the app.
-
-
-

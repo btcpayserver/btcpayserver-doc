@@ -17,7 +17,7 @@ You can see examples of videos that are already on the Official BTCPay Server [Y
 
 ## Hosting Providers
 
-The BTCPay Server community is looking for more VPS hosting providers to implement [1-Click BTCPay Server deployment](../LunaNodeWebDeployment.md) and make the deployment of software more accessible, decentralized and widely-available.
+The BTCPay Server community is looking for more VPS hosting providers to implement [1-Click BTCPay Server deployment](/Deployment/LunaNode.md) and make the deployment of software more accessible, decentralized and widely-available.
 
 ## Contribute to the Directory
 
@@ -32,7 +32,7 @@ Please note that only websites that use BTCPay Server are accepted in the Direct
 
 ## Project Discussions
 
-Check out the [BTCPay Discussions Page](https://github.com/btcpayserver/btcpayserver/discussions) and provide feedback on new feature ideas and other project topics. Features that may be good ideas for the project but aren't ready for development yet, can be found here. 
+Check out the [BTCPay Discussions Page](https://github.com/btcpayserver/btcpayserver/discussions) and provide feedback on new feature ideas and other project topics. Features that may be good ideas for the project but aren't ready for development yet, can be found here.
 
 ## Community
 

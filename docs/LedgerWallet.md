@@ -5,7 +5,7 @@ This document shows **how to connect Ledger Nano S Wallet to BTCPay Server**.
 :::warning
 Direct Ledger Nano S integration is **no longer supported**. For Bitcoin wallets, you can use your Ledger hardware wallet regularly via the [new hardware wallet integration](./HardwareWalletIntegration.md).
 
-For [altcoin](./Altcoins.md) wallets, you can spend funds from your external wallet, sign a transaction within the [internal wallet](./Wallet.md) with [HD Private Key or mnemonic seed](./Wallet.md#signing-with-hd-private-key-or-mnemonic-seed) or a [hot wallet](./Wallet.md#signing-with-a-hot-wallet).
+For [altcoin](/Development/Altcoins.md) wallets, you can spend funds from your external wallet, sign a transaction within the [internal wallet](./Wallet.md) with [HD Private Key or mnemonic seed](./Wallet.md#signing-with-hd-private-key-or-mnemonic-seed) or a [hot wallet](./Wallet.md#signing-with-a-hot-wallet).
 
 To set up a new altcoin wallet, add the extended public key manually or [create a new wallet](./CreateWallet.md).
 :::

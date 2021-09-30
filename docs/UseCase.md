@@ -18,7 +18,7 @@ By **choosing BTCPay Server to process payments**, merchants are:
 
 ### Online Store
 
-Merchants running an **e-commerce business** can easily [deploy BTCPay Server](./Deployment.md) and connect it to their store via integration plugins in just a few clicks.
+Merchants running an **e-commerce business** can easily [deploy BTCPay Server](/Deployment/README.md) and connect it to their store via integration plugins in just a few clicks.
 
 BTCPay Server checkout is no different to any other payment gateway. The customer gets an invoice. They pay it by scanning a QR code or by copy-pasting the amount and the address. When their payment is confirmed, the merchant is notified via the e-commerce software, and can ship the item.
 
@@ -38,19 +38,19 @@ Take a look at [our demo POS app](https://mainnet.demo.btcpayserver.org/apps/3ut
 
 ## Freelancers & Bill Pay
 
-**Freelancers** can *request* for payment by sharing a [Payment Request](./PaymentRequests.md). 
-Content and appearance of the payment request is customizable. 
-With or without expiry, customers can pay the request at any time. 
-BTCPay Server automatically updates the exchange rate when the customer pays the payment request when it's convenient for them. 
-Merchants or freelancers can use payment requests for bill pay services. 
+**Freelancers** can *request* for payment by sharing a [Payment Request](./PaymentRequests.md).
+Content and appearance of the payment request is customizable.
+With or without expiry, customers can pay the request at any time.
+BTCPay Server automatically updates the exchange rate when the customer pays the payment request when it's convenient for them.
+Merchants or freelancers can use payment requests for bill pay services.
 Payment requests can even be used to quickly request money from friends.
 
 Merchants can *provide* payment by sharing a [Pull Payment](./PullPayments.md). This is a long lived payment offer that the freelancer can pull funds from at their convenience. The merchant can specify the total amount and approve partial or a full request for payment.
 
 ## Lightning Network payments
 
-BTCPay Server offers a very easy way to get started with receiving or sending payments on the **Lightning Network**. 
-You can use and experiment with this innovative second-layer solution build on top of Bitcoin by [following this guide](./LightningNetwork.md). 
+BTCPay Server offers a very easy way to get started with receiving or sending payments on the **Lightning Network**.
+You can use and experiment with this innovative second-layer solution build on top of Bitcoin by [following this guide](./LightningNetwork.md).
 Both merchants and customers can use BTCPay to receive or make payments off-chain with instant confirmations and reduced network fees.
 
 ## Charities and Content Creators (Donations)
@@ -73,11 +73,11 @@ You can read more about address reuse on the [Bitcoin Wiki](https://en.bitcoin.i
 
 ## Local Payment Processor
 
-Admin running a BTCPay Server instance, can enable registration for other users and become a [third-party payment processor](./ThirdPartyHosting.md) for family members, friends or their local community.
+Admin running a BTCPay Server instance, can enable registration for other users and become a [third-party payment processor](/Deployment/ThirdPartyHosting.md) for family members, friends or their local community.
 
 This means that admin allows other people to register and use their instance, while the payments remain non-custodial.
 
-Take a look at the list of [third-party hosts](./ThirdPartyHosting.md).
+Take a look at the list of [third-party hosts](/Deployment/ThirdPartyHosting.md).
 
 ## Cryptocurrency Exchanges
 

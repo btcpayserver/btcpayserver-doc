@@ -10,7 +10,7 @@ Less-technical users will find the 1-click or plug-and-play systems of these ser
 
 :::warning Please note:
 Hardware-as-a-Service products consist of multiple softwares tied together.
-The BTCPay Server community has no knowledge of how BTCPay Server integrates into these services, and cannot provide any support for these types of [Manual Deployments](ManualDeployment.md). Please report bugs and issues directly to the entity that provided you with BTCPay Server inside their product.
+The BTCPay Server community has no knowledge of how BTCPay Server integrates into these services, and cannot provide any support for these types of [Manual Deployments](./ManualDeployment.md). Please report bugs and issues directly to the entity that provided you with BTCPay Server inside their product.
 :::
 
 Here you can find a non-exhaustive list of companies that provide such a service:

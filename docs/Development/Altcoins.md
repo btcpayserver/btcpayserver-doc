@@ -2,7 +2,7 @@
 
 Bitcoin is the only focus of the project and its core developers. However, opt-in integrations are available for several altcoins.
 
-For more information and the full list of integrated altcoins, check the [Altcoin FAQ page](./FAQ/FAQ-Altcoin.md).
+For more information and the full list of integrated altcoins, check the [Altcoin FAQ page](../FAQ/FAQ-Altcoin.md).
 
 ## How can I add an altcoin to BTCPayServer?
 

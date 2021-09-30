@@ -18,7 +18,7 @@ After deployment, your BTCPay Server needs to sync the entire blockchain and val
 
 It may seem tedious, but it's a critical step of running your own full node and not having to trust or rely on anyone. Your node will not only download ~300GB of data (less if you're using a pruned node) but also validate all the rules of the consensus. You can find more information about the importance of blockchain synchronization in [this video](https://www.youtube.com/watch?v=OrYDehC-8TU).
 
-If you are only interested in learning about BTCPay Server i.e. simply [trying it out](../TryItOut.md) without deploying your own instance, you can avoid sync by using a [Third-Party host](../ThirdPartyHosting.md).
+If you are only interested in learning about BTCPay Server i.e. simply [trying it out](../TryItOut.md) without deploying your own instance, you can avoid sync by using a [Third-Party host](../Deployment/ThirdPartyHosting.md).
 
 ## Can I skip the synchronization?
 
@@ -44,7 +44,7 @@ If your FastSync returns `You need to delete your Bitcoin Core wallet` after you
 
 When you do not see a pop-up message in the bottom right corner, which shows the sync progress, that means that your server is fully synced and you can [begin using it](../RegisterAccount.md).
 
-If you want to check that your BTCPay Server Bitcoin node is synchronized with the most recent block in the Bitcoin blockchain, [check your node height](#how-can-i-check-the-block-height-of-my-bitcoin-node) matches the current block height using any blockchain explorer. 
+If you want to check that your BTCPay Server Bitcoin node is synchronized with the most recent block in the Bitcoin blockchain, [check your node height](#how-can-i-check-the-block-height-of-my-bitcoin-node) matches the current block height using any blockchain explorer.
 
 ## How can I check the block height of my bitcoin node?
 
@@ -52,7 +52,7 @@ To verify the sync status of your Bitcoin node, you can use bitcoin-cli commands
 
 ## BTCPay Server takes forever to synchronize
 
-Synchronizing a Full Bitcoin node should take between 1 and 5 days. It should sync quickly at first and more slowly at the end. 
+Synchronizing a Full Bitcoin node should take between 1 and 5 days. It should sync quickly at first and more slowly at the end.
 
 If the node appears to not be syncing, verify:
 
@@ -172,13 +172,13 @@ tmpfs           2.0G     0  2.0G   0% /sys/fs/cgroup
 /dev/sdb1       7.8G   18M  7.4G   1% /mnt
 ```
 
-[Choose the docker fragment](https://github.com/btcpayserver/btcpayserver-docker/blob/master/README.md#generated-docker-compose) for the amount of storage you aim to keep. Then [prune your node](https://github.com/btcpayserver/btcpayserver-docker/blob/master/README.md#how-i-can-prune-my-nodes).
+[Choose the docker fragment](https://docs.btcpayserver.org/Docker/#generated-docker-compose) for the amount of storage you aim to keep. Then [prune your node](https://docs.btcpayserver.org/Docker/#how-i-can-prune-my-nodes).
 
 ### Cause 3: You accidentally disabled pruning
 
 If you have recently tried to modify your environment variables using the `export BTCPAYGEN_ADDITIONAL_FRAGMENTS="xyz"` command to add an additional fragment, but forgot to include your current ones, you may have disabled pruning.
 
-If you don't have enough memory to store the entire Bitcoin blockchain and you don't have an `opt-save-storage` listed when you [print the complete list of options](https://github.com/btcpayserver/btcpayserver-doc/blob/b0873a216f871b0f7dc4958c8fa63c17c35b603d/docs/FAQ/FAQ-Deployment.md#how-can-i-modify-or-deactivate-environment-variables) that you are running, it is very likely you have disabled pruning. 
+If you don't have enough memory to store the entire Bitcoin blockchain and you don't have an `opt-save-storage` listed when you [print the complete list of options](https://github.com/btcpayserver/btcpayserver-doc/blob/b0873a216f871b0f7dc4958c8fa63c17c35b603d/docs/FAQ/FAQ-Deployment.md#how-can-i-modify-or-deactivate-environment-variables) that you are running, it is very likely you have disabled pruning.
 
 You can verify by checking your Bitcoind logs:
 
@@ -192,8 +192,8 @@ If you see:
 
 ```bash
 Block files have previously been pruned.
-You need to rebuild the database using -reindex to go back to unpruned mode.  
-This will redownload the entire blockchain. 
+You need to rebuild the database using -reindex to go back to unpruned mode.
+This will redownload the entire blockchain.
 Please restart with -reindex or -reindex-chainstate to recover.
 ```
 
@@ -243,7 +243,7 @@ Yes you can!  However, before you do that, you'll want to stop bitcoind from upd
 If you want to run BTCPay Server inside a docker-compose, and that you have the data directory (`.bitcoin`) of a fully synched node on your docker host, then you can reuse it easily for BTCPay Server.
 
 To do that, follow the following steps :
-* Do the normal setup according to [this instruction](https://github.com/btcpayserver/btcpayserver-docker/blob/master/README.md). Note the `opt-save-storage` environment variable, which is used to enable various pruning levels. If you do not want to prune your exiting data directory, then omit the following line in your BTCPay docker deployment: `export BTCPAYGEN_ADDITIONAL_FRAGMENTS="opt-save-storage-s"`.
+* Do the normal setup according to [this instruction](https://docs.btcpayserver.org/Docker/). Note the `opt-save-storage` environment variable, which is used to enable various pruning levels. If you do not want to prune your exiting data directory, then omit the following line in your BTCPay docker deployment: `export BTCPAYGEN_ADDITIONAL_FRAGMENTS="opt-save-storage-s"`.
 * Once `btcpay-setup.sh` is over, turn down the docker compose with `btcpay-down.sh`.
 * Login as root with `sudo su -`.
 * Open the docker's volume for bitcoind : `cd /var/lib/docker/volumes/generated_bitcoin_datadir/`, and check its content with `ls -la`. You should see only one directory named `_data`.
@@ -267,11 +267,11 @@ export BTCPAYGEN_ADDITIONAL_FRAGMENTS="opt-save-storage"
 . ./btcpay-setup.sh -i
 ```
 
-Other pruning options are [documented here](https://github.com/btcpayserver/btcpayserver-docker/blob/master/README.md#generated-docker-compose). See [this example](./FAQ-Deployment.md#how-can-i-modify-or-deactivate-environment-variables) for use with other additional fragments.
+Other pruning options are [documented here](https://docs.btcpayserver.org/Docker/#generated-docker-compose). See [this example](./FAQ-Deployment.md#how-can-i-modify-or-deactivate-environment-variables) for use with other additional fragments.
 
 ## How to disable Bitcoin node pruning?
 
-To disable pruning of your Bitcoin node in BTCPay, first ensure you have enough memory to store the entire blockchain and BTCPayServer on your system. Then disable the `opt-save-storage` environment variable. See [this example](https://github.com/btcpayserver/btcpayserver-doc/blob/master/docs/FAQ/FAQ-Deployment.md#how-can-i-modify-or-deactivate-environment-variables) to view your fragment list and select only one for removal. The following example will remove **all** additional fragments: 
+To disable pruning of your Bitcoin node in BTCPay, first ensure you have enough memory to store the entire blockchain and BTCPayServer on your system. Then disable the `opt-save-storage` environment variable. See [this example](https://github.com/btcpayserver/btcpayserver-doc/blob/master/docs/FAQ/FAQ-Deployment.md#how-can-i-modify-or-deactivate-environment-variables) to view your fragment list and select only one for removal. The following example will remove **all** additional fragments:
 
 ```bash
 export BTCPAYGEN_ADDITIONAL_FRAGMENTS=""

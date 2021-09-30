@@ -3,7 +3,7 @@ const implicitFigures = require('markdown-it-implicit-figures')
 const slugify = require('./slugify')
 const preprocessMarkdown = resolve(__dirname, 'preprocessMarkdown')
 
-const title = 'BTCPay Server Docs'
+const title = 'BTCPay Server'
 const baseUrl = 'https://docs.btcpayserver.org'
 const pageSuffix = '/'
 const info = {
@@ -16,9 +16,255 @@ const extractDescription = text => {
   return paragraph ? paragraph.toString().replace(/[\*\_\(\)\[\]]/g, '') : null
 }
 
+const sidebarUserGuide = [
+  {
+    title: 'Basics',
+    collapsable: false,
+    children: [
+      ['/Guide', 'Introduction'],
+      ['/UseCase', 'Use Case'],
+      ['/Walkthrough', 'Walkthrough'],
+      ['/BTCPayVsOthers', 'BTCPay Server vs. Others'],
+      ['/TryItOut', 'Try it out']
+    ]
+  },
+  {
+    title: 'Getting Started',
+    collapsable: false,
+    children: [
+      '/RegisterAccount',
+      '/CreateStore',
+      {
+        title: '(3) Wallet Setup',
+        path: '/WalletSetup',
+        collapsable: false,
+        initialOpenGroupIndex: -1,
+        children: [
+          {
+            title: 'Connect Wallet',
+            path: '/ConnectWallet'
+          },
+          {
+            title: 'Create Wallet',
+            path: '/CreateWallet'
+          }
+        ]
+      },
+      ['/WhatsNext', '(4) What\'s Next?']
+    ]
+  },
+  {
+    title: 'Features',
+    collapsable: false,
+    children: [
+      ['/Apps', 'Apps'],
+      {
+        title: 'Wallet',
+        path: '/Wallet',
+        children: [
+          ['/HardwareWalletIntegration', 'Hardware Wallet Integration']
+        ]
+      },
+      ['/Invoices', 'Invoices'],
+      {
+        title: 'Pull Payments',
+        path: '/PullPayments',
+        children: [
+          ['/Refund', 'Refunds']
+        ]
+      },
+      ['/PaymentRequests', 'Payment Requests'],
+      ['/LightningNetwork', 'Lightning Network'],
+      ['/Accounting', 'Accounting'],
+      {
+        title: 'Payjoin',
+        path: '/Payjoin',
+        children: [
+          ['https://github.com/bitcoin/bips/blob/master/bip-0078.mediawiki', 'Payjoin specification', { type: 'external' }]
+        ]
+      }
+    ]
+  },
+  {
+    title: 'Integrations',
+    collapsable: false,
+    children: [
+      ['/WooCommerce', 'WooCommerce'],
+      ['/Shopify', 'Shopify'],
+      ['/Drupal', 'Drupal'],
+      ['/Magento', 'Magento'],
+      ['/PrestaShop', 'PrestaShop'],
+      ['https://github.com/lampsolutions/LampSBtcPayShopware', 'Shopware', { type: 'external' }],
+      ['/CustomIntegration', 'Custom Integration']
+    ]
+  },
+  {
+    title: 'Support and Community',
+    collapsable: false,
+    initialOpenGroupIndex: -1,
+    children: [
+      ['/Troubleshooting', 'Troubleshooting an issue'],
+      ['/Support', 'Support'],
+      ['/Community', 'Community']
+    ]
+  }
+]
+
+const sidebarDeployment = [
+  ['/Deployment/', 'Choosing a Deployment Method'],
+  ['/Deployment/ThirdPartyHosting', 'Third-party Hosting'],
+  {
+    title: 'Docker',
+    path: '/Docker/',
+    collapsable: false,
+    children: [
+      {
+        title: 'Web Deployment',
+        path: '/Deployment/LunaNode'
+      },
+      {
+        title: 'Azure',
+        path: '/Deployment/Azure',
+        children: [
+          ['/Deployment/AzurePennyPinching', 'Reducing Cost on Azure'],
+          ['/Deployment/ChangeDomain', 'Changing domain']
+        ]
+      },
+      {
+        title: 'Google Cloud Deployment',
+        path: '/Deployment/GoogleCloud'
+      },
+      {
+        title: 'Hardware Deployment',
+        path: '/Deployment/Hardware',
+        children: [
+          ['/Deployment/DynamicDNS', 'Dynamic DNS'],
+          ['/Deployment/ReverseSSHtunnel', 'Reverse SSH Tunnel'],
+          ['/Deployment/ReverseProxyToTor', 'Reverse Proxy to Tor'],
+          {
+            title: 'Hardware As A Service',
+            path: '/Deployment/HardwareAsAService'
+          }
+        ]
+      },
+      {
+        title: 'Raspberry Pi Deployment',
+        path: '/Deployment/RaspberryPi',
+        children: [
+          '/Deployment/RPi3',
+          '/Deployment/RPi4'
+        ]
+      },
+      {
+        title: 'Docker Plugins',
+        children: [
+          {
+            title: 'Transmuter',
+            path: '/Transmuter/',
+            children: [
+              ['/Transmuter/DCA', 'Dollar Cost Average Preset'],
+              ['/Transmuter/EmailReceiptsPreset', 'Email Receipts Preset']
+            ]
+          },
+          ['/ElectrumX', 'Electrum X'],
+          ['/ElectrumPersonalServer', 'Electrum Personal Server'],
+          '/Docker/pihole'
+        ]
+      }
+    ]
+  },
+  {
+    title: 'Manual Deployment',
+    collapsable: false,
+    children: [
+      '/Deployment/ManualDeployment',
+      '/Deployment/ManualDeploymentExtended'
+    ]
+  },
+  {
+    title: 'Configurator',
+    path: '/Configurator/'
+  }
+]
+
+const sidebarDevelopment = [
+  ['/Development/', 'Architecture'],
+  {
+    title: 'Greenfield API',
+    collapsable: false,
+    children: [
+      [`${baseUrl}/API/Greenfield/v1`, 'Greenfield API v1', { type: 'external' }],
+      ['/Development/GreenFieldExample', 'Greenfield example with cURL']
+    ]
+  },
+  {
+    title: 'Development',
+    collapsable: false,
+    children: [
+      ['/Development/LocalDevelopment', 'Developing Locally'],
+      ['/Development/Altcoins', 'How to add an Altcoin'],
+      ['/Development/Theme', 'Customizing Themes'],
+    ]
+  },
+  {
+    title: 'Vault',
+    collapsable: false,
+    children: [
+      ['/Vault/', 'BTCPay Server Vault'],
+      ['/Vault/HowToVerify', 'How To Verify']
+    ]
+  },
+  ['/BTCPayServer/Security', 'Security Disclosures']
+]
+
+const sidebarContribute = [
+  {
+    title: 'Develop',
+    path: '/Contribute/ContributeDev/',
+    collapsable: false,
+    children: [
+      ['/Contribute/ContributeDev/ContributeDevCode', 'Code'],
+      ['/Contribute/ContributeDev/ContributeDevTest', 'Test']
+    ]
+  },
+  {
+    title: 'Write',
+    path: '/Contribute/ContributeWrite/',
+    collapsable: false,
+    children: [
+      ['/Contribute/ContributeWrite/WriteSoftware', 'Software Stack'],
+      ['/Contribute/ContributeWrite/WriteDocs', 'Documentation'],
+      ['/Contribute/ContributeWrite/WriteBlog', 'Blog']
+    ]
+  },
+  ['/Contribute/ContributeDesign', 'Design'],
+  ['/Contribute/ContributeTranslate', 'Translate'],
+  ['/Contribute/ContributeMisc', 'Miscellaneous'],
+]
+
+const sidebarFAQ = [
+  {
+    title: 'FAQ and common issues',
+    path: '/FAQ',
+    collapsable: false,
+    children: [
+      ['/FAQ/FAQ-General', 'General FAQ'],
+      ['/FAQ/FAQ-Deployment', 'Deployment FAQ'],
+      ['/FAQ/FAQ-Synchronization', 'Synchronization FAQ'],
+      ['/FAQ/FAQ-Integrations', 'Integrations FAQ'],
+      ['/FAQ/FAQ-ServerSettings', 'Server Settings FAQ'],
+      ['/FAQ/FAQ-Stores', 'Stores FAQ'],
+      ['/FAQ/FAQ-Wallet', 'Wallet FAQ'],
+      ['/FAQ/FAQ-Apps', 'Apps FAQ'],
+      ['/FAQ/FAQ-LightningNetwork', 'Lightning Network FAQ'],
+      ['/FAQ/FAQ-Altcoin', 'Altcoins FAQ']
+    ]
+  }
+]
+
 module.exports = {
   title,
-  description: "BTCPay Server Official Documentation",
+  description: 'BTCPay Server Official Documentation',
   head: [
     ['meta', { name: 'viewport', content: 'width=device-width,initial-scale=1.0'}],
     ['link', { rel: 'stylesheet', href: '/styles/btcpayserver-variables.css' }]
@@ -68,10 +314,10 @@ module.exports = {
   },
   themeConfig: {
     domain: baseUrl,
-    logo: "/img/btcpay-logo.svg",
+    logo: '/img/btcpay-logo.svg',
     displayAllHeaders: false,
-    repo: "btcpayserver/btcpayserver-doc",
-    docsDir: "docs",
+    repo: 'btcpayserver/btcpayserver-doc',
+    docsDir: 'docs',
     editLinks: true,
     notSatisfiedLinks: true, // our own addition, see theme/components/PageEdit.vue
     sidebarDepth: 0,
@@ -90,265 +336,61 @@ module.exports = {
     },
     nav: [
       {
-        text: "Website",
-        link: "https://btcpayserver.org/",
-        rel: "noopener noreferrer website"
+        text: 'User Guide',
+        link: '/Guide'
       },
       {
-        text: "Chat",
-        link: "https://chat.btcpayserver.org/",
-        rel: "noopener noreferrer chat"
+        text: 'Deployment',
+        link: '/Deployment/'
       },
       {
-        text: "GitHub",
-        link: "https://github.com/btcpayserver/",
-        rel: "noopener noreferrer github"
+        text: 'Developers',
+        link: '/Development/'
       },
       {
-        text: "Twitter",
-        link: "https://twitter.com/BtcpayServer",
-        rel: "noopener noreferrer twitter"
+        text: 'Contribute',
+        link: '/Contribute/'
+      },
+      {
+        text: 'FAQ',
+        link: '/FAQ/'
       }
     ],
-    sidebar: [
-      ["/", "Introduction"],
+    social: [
       {
-        title: "Basics",
-        collapsable: false,
-        children: [
-          ["/UseCase", "Use Case"],
-          ["/Walkthrough", "Walkthrough"],
-          ["/BTCPayVsOthers", "BTCPay Server vs. Others"],
-          ["/TryItOut", "Try it out"]
-        ]
+        text: 'Website',
+        link: 'https://btcpayserver.org/',
+        rel: 'noopener noreferrer website'
       },
       {
-        title: "Deployment",
-        collapsable: false,
-        children: [
-          ["/Deployment", "Choosing a Deployment Method"],
-          ["/ThirdPartyHosting", "Third-party Hosting"],
-          {
-            title: "Docker",
-            path: "/Docker/",
-            collapsable: false,
-            children: [
-              {
-                title: "Web Deployment",
-                path: "/LunaNodeWebDeployment"
-              },
-              {
-                title: "Azure Deployment",
-                path: "/AzureDeployment",
-                children: [
-                  ["/AzurePennyPinching", "Reducing Cost on Azure"],
-                  ["/ChangeDomain", "Changing domain"]
-                ]
-              },
-              {
-                title: "Google Cloud Deployment",
-                path: "/GoogleCloudDeployment"
-              },
-              {
-                title: "Hardware Deployment",
-                path: "/HardwareDeployment",
-                children: [
-                  {
-                    title: "Advanced Deployment",
-                    collapsable: false,
-                    children: [
-                      ["/DynamicDNS", "Dynamic DNS"],
-                      ["/ReverseSSHtunnel", "Reverse SSH Tunnel"],
-                      ["/ReverseProxyToTor", "Reverse Proxy to Tor"]
-                    ]
-                  },
-                  {
-                    title: "Hardware As A Service",
-                    path: "/HardwareAsAService"
-                  }
-                ]
-              },
-              {
-                title: "Raspberry Pi Deployment",
-                path: "/RaspberryPiDeployment",
-                children: [
-                  "/RPi3",
-                  "/RPi4"
-                ]
-              },
-              {
-                title: "Docker Plugins",
-                children: [
-                  {
-                    title: "Transmuter",
-                    path: "/Transmuter/",
-                    children: [
-                      ["/Transmuter/DCA", "Dollar Cost Average Preset"],
-                      ["/Transmuter/EmailReceiptsPreset", "Email Receipts Preset"]
-                    ]
-                  },
-                  ["/ElectrumX", "Electrum X"],
-                  ["/ElectrumPersonalServer", "Electrum Personal Server"],
-                  "/Docker/pihole"
-                ]
-              }
-            ]
-          },
-          {
-            title: "Manual Deployment",
-            path: "/ManualDeployment",
-            children: [
-              "/ManualDeploymentExtended"
-            ]
-          },
-          {
-            title: "Configurator",
-            path: "/Configurator/"
-          }
-        ]
+        text: 'Chat',
+        link: 'https://chat.btcpayserver.org/',
+        rel: 'noopener noreferrer chat'
       },
       {
-        title: "Getting Started",
-        collapsable: false,
-        children: [
-          "/RegisterAccount",
-          "/CreateStore",
-          {
-            title: "(3) Wallet Setup",
-            path: "/WalletSetup",
-            collapsable: false,
-            initialOpenGroupIndex: -1,
-            children: [
-              {
-                title: "Connect Wallet",
-                path: "/ConnectWallet"
-              },
-              {
-                title: "Create Wallet",
-                path: "/CreateWallet"
-              }
-            ]
-          },
-          ["/WhatsNext", "(4) What's Next?"]
-        ]
+        text: 'GitHub',
+        link: 'https://github.com/btcpayserver/',
+        rel: 'noopener noreferrer github'
       },
       {
-        title: "Features",
-        collapsable: false,
-        children: [
-          ["/Apps", "Apps"],
-          {
-            title: "Wallet",
-            path: "/Wallet",
-            children: [
-              ["/HardwareWalletIntegration", "Hardware Wallet Integration"]
-            ]
-          },
-          ["/Invoices", "Invoices"],
-          {
-            title: "Pull Payments",
-            path: "/PullPayments",
-            children: [
-              ["/Refund", "Refunds"]
-            ]
-          },
-          ["/PaymentRequests", "Payment Requests"],
-          ["/LightningNetwork", "Lightning Network"],
-          ["/Accounting", "Accounting"],
-          {
-            title: "Payjoin",
-            path: "/Payjoin",
-            children: [
-              ["https://github.com/bitcoin/bips/blob/master/bip-0078.mediawiki", "Payjoin specification", { type: 'external' }]
-            ]
-          }
-        ]
-      },
-      {
-        title: "Integrations",
-        collapsable: false,
-        children: [
-          ["/WooCommerce", "WooCommerce"],
-          ["/Shopify", "Shopify"],
-          ["/Drupal", "Drupal"],
-          ["/Magento", "Magento"],
-          ["/PrestaShop", "PrestaShop"],
-          ["https://github.com/lampsolutions/LampSBtcPayShopware", "Shopware", { type: 'external' }],
-          ["/CustomIntegration", "Custom Integration"]
-        ]
-      },
-      {
-        title: "Support and Community",
-        collapsable: false,
-        initialOpenGroupIndex: -1,
-        children: [
-          {
-            title: "FAQ and common issues",
-            path: "/FAQ",
-            children: [
-              ["/FAQ/FAQ-General", "General FAQ"],
-              ["/FAQ/FAQ-Deployment", "Deployment FAQ"],
-              ["/FAQ/FAQ-Synchronization", "Synchronization FAQ"],
-              ["/FAQ/FAQ-Integrations", "Integrations FAQ"],
-              ["/FAQ/FAQ-ServerSettings", "Server Settings FAQ"],
-              ["/FAQ/FAQ-Stores", "Stores FAQ"],
-              ["/FAQ/FAQ-Wallet", "Wallet FAQ"],
-              ["/FAQ/FAQ-Apps", "Apps FAQ"],
-              ["/FAQ/FAQ-LightningNetwork", "Lightning Network FAQ"],
-              ["/FAQ/FAQ-Altcoin", "Altcoins FAQ"]
-            ]
-          },
-          ["/Troubleshooting", "Troubleshooting an issue"],
-          ["/Support", "Support"],
-          {
-            title: "Contribute to BTCPay Server",
-            path: "/Contribute",
-            children: [
-              {
-                title: "Develop",
-                path: "/Contribute/ContributeDev/",
-                 children: [
-                   ["/Contribute/ContributeDev/ContributeDevCode", "Code"],
-                   ["/Contribute/ContributeDev/ContributeDevTest", "Test"]
-                 ]
-              },
-              {
-                title: "Write",
-                path: "/Contribute/ContributeWrite/",
-                 children: [
-                   ["/Contribute/ContributeWrite/WriteSoftware", "Software Stack"],
-                   ["/Contribute/ContributeWrite/WriteDocs", "Documentation"],
-                   ["/Contribute/ContributeWrite/WriteBlog", "Blog"]
-                 ]
-              },
-              ["/Contribute/ContributeDesign", "Design"],
-              ["/Contribute/ContributeTranslate", "Translate"],
-              ["/Contribute/ContributeMisc", "Miscellaneous"],
-            ]
-          },
-          ["/Community", "Community"]
-        ]
-      },
-      {
-        title: "Development",
-        collapsable: false,
-        children: [
-          ["/Architecture", "Architecture"],
-          ["/LocalDevelopment", "Developing Locally"],
-          ["/Altcoins", "How to add an Altcoin"],
-          ["/Theme", "Customizing Themes"],
-          [`${baseUrl}/API/Greenfield/v1`, "Greenfield API v1", { type: 'external' }],
-          ["/GreenFieldExample", "Greenfield example with cURL"],
-          {
-            title: "Vault",
-            path: "/Vault",
-            children: [
-              ["/Vault/HowToVerify", "How To Verify"]
-            ]
-          },
-          ["/BTCPayServer/Security", "Security Disclosures"],
-        ]
+        text: 'Twitter',
+        link: 'https://twitter.com/BtcpayServer',
+        rel: 'noopener noreferrer twitter'
       }
-    ]
+    ],
+    sidebar: {
+      '/Development': sidebarDevelopment,
+      '/Contribute': sidebarContribute,
+      '/Vault': sidebarDevelopment,
+      '/BTCPayServer': sidebarDevelopment,
+      '/Configurator': sidebarDeployment,
+      '/Deployment': sidebarDeployment,
+      '/Docker': sidebarDeployment,
+      '/ElectrumX': sidebarDeployment,
+      '/ElectrumPersonalServer': sidebarDeployment,
+      '/Transmuter': sidebarDeployment,
+      '/FAQ': sidebarFAQ,
+      '/': sidebarUserGuide
+    }
   }
 }

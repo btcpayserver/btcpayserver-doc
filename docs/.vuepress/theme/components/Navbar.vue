@@ -20,6 +20,8 @@
       >{{ $siteTitle }}</span>
     </RouterLink>
 
+    <NavLinks class="can-hide" />
+
     <div
       class="links"
       :style="linksWrapMaxWidth ? {
@@ -31,7 +33,8 @@
         :options="algolia"
       />
       <SearchBox v-else-if="$site.themeConfig.search !== false && $page.frontmatter.search !== false" />
-      <NavLinks class="can-hide" />
+
+      <NavLinks class="can-hide social" :links="$site.themeConfig.social" />
 
       <button type="button" class="btcpay-theme-switch" @click="toggleColorMode($event)">
         <svg viewBox="0 0 10 10" xmlns="http://www.w3.org/2000/svg">
@@ -47,7 +50,7 @@ import AlgoliaSearchBox from '@AlgoliaSearchBox'
 import SearchBox from '@SearchBox'
 import SidebarButton from '@theme/components/SidebarButton.vue'
 import NavLinks from '@theme/components/NavLinks.vue'
-import { COLOR_MODES, THEME_ATTR, setColorMode } from '../../themeSwitch'
+import { toggleColorMode } from '../../themeSwitch'
 
 export default {
   name: 'Navbar',
@@ -91,12 +94,7 @@ export default {
   },
 
   methods: {
-    toggleColorMode (e) {
-      e.preventDefault()
-      const current = document.documentElement.getAttribute(THEME_ATTR) || COLOR_MODES[0]
-      const mode = current === COLOR_MODES[0] ? COLOR_MODES[1] : COLOR_MODES[0]
-      setColorMode(mode)
-    }
+    toggleColorMode
   }
 }
 
@@ -117,29 +115,28 @@ $navbar-horizontal-padding = 1.5rem
   line-height $navbarHeight - 1.4rem
   display flex
   align-items center
+  justify-content space-between
   a, span, img
     display inline-block
+  .home-link
+    display flex
+    align-items center
   .logo
     height $navbarHeight - 1.4rem
     min-width $navbarHeight - 1.4rem
-    margin-right 0.8rem
-    vertical-align top
+    margin-right 0.75rem
   .site-name
-    font-size 1.3rem
+    font-size 1.25rem
     font-weight 600
-    color $textColor
-    position relative
   .btcpay-theme-switch
     padding 0 0.5rem
   .links
-    padding-left 1.5rem
     box-sizing border-box
     background-color white
     white-space nowrap
     font-size 0.9rem
     display flex
     align-items center
-    margin-left auto
     .search-box
       flex: 0 0 auto
       vertical-align top
@@ -149,11 +146,9 @@ $navbar-horizontal-padding = 1.5rem
     padding-left 4rem
     .can-hide
       display none
-    .links
-      padding-left 1.5rem
-    .site-name
-      width calc(100vw - 9.4rem)
-      overflow hidden
-      white-space nowrap
-      text-overflow ellipsis
+
+@media (max-width: 1100px)
+  .navbar
+    .links .nav-links
+      display none
 </style>

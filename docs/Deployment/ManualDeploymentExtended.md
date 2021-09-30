@@ -5,9 +5,11 @@ This document lists steps for **manually deploying BTCPay Server** and additiona
 The instructions also build all the application components from source which can be an advantage for certain audit and/or security scenarios.
 
 :::danger
+
 #### Not recommended for production use
 
-Manual installation is NOT recommended for production use unless you are very confident with your Operating System and Bitcoin security expertise. If you are unsure use the docker deployment or one of the other [deployment options](./Deployment.md).
+Manual installation is NOT recommended for production use unless you are very confident with your Operating System and Bitcoin security expertise. If you are unsure use the docker deployment or one of the other [deployment options](./README.md).
+
 #### You must have technical literacy and be able to resolve any issues on your own. The community will not provide extensive support for this deployment.
 :::
 
@@ -21,8 +23,8 @@ An example hostname of `mainnet.demo.btcpayserver.org` has been used, it needs t
 
 If you do use these instructions to install a BTCPay Server connected to the Bitcoin mainnet then at a minimum you should understand how the wallet mechanisms work. It's highly recommended to read the two articles below and ask questions if anything is not clear.
 
-- [BTCPay Wallet FAQ](./FAQ/FAQ-Wallet.md)
-- [Lightning Network and BTCPay (first section)](./LightningNetwork.md)
+- [BTCPay Wallet FAQ](/FAQ/FAQ-Wallet.md)
+- [Lightning Network and BTCPay (first section)](/LightningNetwork.md)
 
 As an additional aid below is a list of iptables rules and instructions which should include all the ports that need to be open. **NO WARRANTY**. Use at your own risk, **including risk of locking yourself out**.
 
@@ -436,7 +438,7 @@ Use the `autoconf` scripts to generate the make files and then build.
 ~/src/bitcoin$ export BDB_PREFIX='/home/admin/src/bitcoin/db4'
 ~/src/bitcoin$ ./configure BDB_LIBS="-L${BDB_PREFIX}/lib -ldb_cxx-4.8" BDB_CFLAGS="-I${BDB_PREFIX}/include"
 ~/src/bitcoin$ make
-~/src/bitcoin$ sudo make install 
+~/src/bitcoin$ sudo make install
 ~/src/bitcoin$ bitcoind -version
 Bitcoin Core version v0.20.0
 ```
@@ -1281,7 +1283,7 @@ If it doesn't start correctly stop the service and run the application directly 
 Server is up and running, please open the UI at http://localhost:3000
 ```
 
-From the `BTCPay Server` web page the `RTL` interface should be accessible from `Server Settings->Services` under the "Crypto services exposed by your server" heading. 
+From the `BTCPay Server` web page the `RTL` interface should be accessible from `Server Settings->Services` under the "Crypto services exposed by your server" heading.
 
 ##### 🚨 Update
 

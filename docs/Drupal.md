@@ -4,7 +4,7 @@ The project can be found [here](https://drupal.org/project/commerce_btcpay) on d
 
 ## Requirements
 
-* BTCPay Server ([self hosted or 3rd party](./Deployment.md) or [quick start with a testserver](./TryItOut.md))
+* BTCPay Server ([self hosted or 3rd party](/Deployment/README.md) or [quick start with a testserver](./TryItOut.md))
 * Drupal Commerce 2.x installed ([installation guide](https://docs.drupalcommerce.org/commerce2/developer-guide/install-update/installation))
 * Drupal: [configured private file system](https://www.drupal.org/docs/8/core/modules/file/overview#content-accessing-private-files)
 

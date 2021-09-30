@@ -35,7 +35,7 @@ No. BTCPay developers don't add alternative coins on request. Adding a new coin 
 
 ## How to add an altcoin in BTCPay?
 
-To add a new coin to BTCPay, please [follow the instructions here](../Altcoins.md#how-can-i-add-an-altcoin-to-btcpayserver).
+To add a new coin to BTCPay, please [follow the instructions here](../Development/Altcoins.md#how-can-i-add-an-altcoin-to-btcpayserver).
 
 ## How to add an altcoin to an existing BTCPay deployment?
 
