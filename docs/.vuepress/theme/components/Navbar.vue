@@ -34,7 +34,7 @@
       />
       <SearchBox v-else-if="$site.themeConfig.search !== false && $page.frontmatter.search !== false" />
 
-      <NavLinks class="can-hide" :links="$site.themeConfig.social" />
+      <NavLinks class="can-hide social" :links="$site.themeConfig.social" />
 
       <button type="button" class="btcpay-theme-switch" @click="toggleColorMode($event)">
         <svg viewBox="0 0 10 10" xmlns="http://www.w3.org/2000/svg">
@@ -149,6 +149,6 @@ $navbar-horizontal-padding = 1.5rem
 
 @media (max-width: 1100px)
   .navbar
-    .site-name
+    .links .nav-links
       display none
 </style>

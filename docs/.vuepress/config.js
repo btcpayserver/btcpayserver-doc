@@ -103,22 +103,6 @@ const sidebarUserGuide = [
     collapsable: false,
     initialOpenGroupIndex: -1,
     children: [
-      {
-        title: 'FAQ and common issues',
-        path: '/FAQ',
-        children: [
-          ['/FAQ/FAQ-General', 'General FAQ'],
-          ['/FAQ/FAQ-Deployment', 'Deployment FAQ'],
-          ['/FAQ/FAQ-Synchronization', 'Synchronization FAQ'],
-          ['/FAQ/FAQ-Integrations', 'Integrations FAQ'],
-          ['/FAQ/FAQ-ServerSettings', 'Server Settings FAQ'],
-          ['/FAQ/FAQ-Stores', 'Stores FAQ'],
-          ['/FAQ/FAQ-Wallet', 'Wallet FAQ'],
-          ['/FAQ/FAQ-Apps', 'Apps FAQ'],
-          ['/FAQ/FAQ-LightningNetwork', 'Lightning Network FAQ'],
-          ['/FAQ/FAQ-Altcoin', 'Altcoins FAQ']
-        ]
-      },
       ['/Troubleshooting', 'Troubleshooting an issue'],
       ['/Support', 'Support'],
       ['/Community', 'Community']
@@ -258,6 +242,26 @@ const sidebarContribute = [
   ['/Contribute/ContributeMisc', 'Miscellaneous'],
 ]
 
+const sidebarFAQ = [
+  {
+    title: 'FAQ and common issues',
+    path: '/FAQ',
+    collapsable: false,
+    children: [
+      ['/FAQ/FAQ-General', 'General FAQ'],
+      ['/FAQ/FAQ-Deployment', 'Deployment FAQ'],
+      ['/FAQ/FAQ-Synchronization', 'Synchronization FAQ'],
+      ['/FAQ/FAQ-Integrations', 'Integrations FAQ'],
+      ['/FAQ/FAQ-ServerSettings', 'Server Settings FAQ'],
+      ['/FAQ/FAQ-Stores', 'Stores FAQ'],
+      ['/FAQ/FAQ-Wallet', 'Wallet FAQ'],
+      ['/FAQ/FAQ-Apps', 'Apps FAQ'],
+      ['/FAQ/FAQ-LightningNetwork', 'Lightning Network FAQ'],
+      ['/FAQ/FAQ-Altcoin', 'Altcoins FAQ']
+    ]
+  }
+]
+
 module.exports = {
   title,
   description: 'BTCPay Server Official Documentation',
@@ -346,6 +350,10 @@ module.exports = {
       {
         text: 'Contribute',
         link: '/Contribute/'
+      },
+      {
+        text: 'FAQ',
+        link: '/FAQ/'
       }
     ],
     social: [
@@ -381,6 +389,7 @@ module.exports = {
       '/ElectrumX': sidebarDeployment,
       '/ElectrumPersonalServer': sidebarDeployment,
       '/Transmuter': sidebarDeployment,
+      '/FAQ': sidebarFAQ,
       '/': sidebarUserGuide
     }
   }
