@@ -118,20 +118,19 @@ $navbar-horizontal-padding = 1.5rem
   justify-content space-between
   a, span, img
     display inline-block
+  .home-link
+    display flex
+    align-items center
   .logo
     height $navbarHeight - 1.4rem
     min-width $navbarHeight - 1.4rem
-    margin-right 0.8rem
-    vertical-align top
+    margin-right 0.75rem
   .site-name
-    font-size 1.3rem
+    font-size 1.25rem
     font-weight 600
-    color $textColor
-    position relative
   .btcpay-theme-switch
     padding 0 0.5rem
   .links
-    padding-left 1.5rem
     box-sizing border-box
     background-color white
     white-space nowrap
@@ -147,11 +146,9 @@ $navbar-horizontal-padding = 1.5rem
     padding-left 4rem
     .can-hide
       display none
-    .links
-      padding-left 1.5rem
+
+@media (max-width: 1100px)
+  .navbar
     .site-name
-      width calc(100vw - 9.4rem)
-      overflow hidden
-      white-space nowrap
-      text-overflow ellipsis
+      display none
 </style>
