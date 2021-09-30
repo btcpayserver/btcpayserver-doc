@@ -172,7 +172,7 @@ tmpfs           2.0G     0  2.0G   0% /sys/fs/cgroup
 /dev/sdb1       7.8G   18M  7.4G   1% /mnt
 ```
 
-[Choose the docker fragment](https://github.com/btcpayserver/btcpayserver-docker/blob/master/README.md#generated-docker-compose) for the amount of storage you aim to keep. Then [prune your node](https://github.com/btcpayserver/btcpayserver-docker/blob/master/README.md#how-i-can-prune-my-nodes).
+[Choose the docker fragment](https://docs.btcpayserver.org/Docker/#generated-docker-compose) for the amount of storage you aim to keep. Then [prune your node](https://docs.btcpayserver.org/Docker/#how-i-can-prune-my-nodes).
 
 ### Cause 3: You accidentally disabled pruning
 
@@ -243,7 +243,7 @@ Yes you can!  However, before you do that, you'll want to stop bitcoind from upd
 If you want to run BTCPay Server inside a docker-compose, and that you have the data directory (`.bitcoin`) of a fully synched node on your docker host, then you can reuse it easily for BTCPay Server.
 
 To do that, follow the following steps :
-* Do the normal setup according to [this instruction](https://github.com/btcpayserver/btcpayserver-docker/blob/master/README.md). Note the `opt-save-storage` environment variable, which is used to enable various pruning levels. If you do not want to prune your exiting data directory, then omit the following line in your BTCPay docker deployment: `export BTCPAYGEN_ADDITIONAL_FRAGMENTS="opt-save-storage-s"`.
+* Do the normal setup according to [this instruction](https://docs.btcpayserver.org/Docker/). Note the `opt-save-storage` environment variable, which is used to enable various pruning levels. If you do not want to prune your exiting data directory, then omit the following line in your BTCPay docker deployment: `export BTCPAYGEN_ADDITIONAL_FRAGMENTS="opt-save-storage-s"`.
 * Once `btcpay-setup.sh` is over, turn down the docker compose with `btcpay-down.sh`.
 * Login as root with `sudo su -`.
 * Open the docker's volume for bitcoind : `cd /var/lib/docker/volumes/generated_bitcoin_datadir/`, and check its content with `ls -la`. You should see only one directory named `_data`.
@@ -267,7 +267,7 @@ export BTCPAYGEN_ADDITIONAL_FRAGMENTS="opt-save-storage"
 . ./btcpay-setup.sh -i
 ```
 
-Other pruning options are [documented here](https://github.com/btcpayserver/btcpayserver-docker/blob/master/README.md#generated-docker-compose). See [this example](./FAQ-Deployment.md#how-can-i-modify-or-deactivate-environment-variables) for use with other additional fragments.
+Other pruning options are [documented here](https://docs.btcpayserver.org/Docker/#generated-docker-compose). See [this example](./FAQ-Deployment.md#how-can-i-modify-or-deactivate-environment-variables) for use with other additional fragments.
 
 ## How to disable Bitcoin node pruning?
 
