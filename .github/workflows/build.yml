@@ -43,7 +43,7 @@ jobs:
         run: npm run build
       # Deploy, limited to the master branch
       - name: Redirects
-        if: success() && github.ref == 'refs/heads/master'
+        if: success()
         run: npm run redirects
       - name: Deploy
         if: success() && github.ref == 'refs/heads/master'
