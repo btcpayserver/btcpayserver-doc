@@ -1,33 +1,13 @@
 ---
-description: FAQs in the generic category
 tags:
 - refund
 - merchant refund
 ---
-# General BTCPay FAQ
+# General FAQ
 
-This page contains general questions and answers about BTCPay. What it is, how it works, how to install it.
+This page contains general questions and answers about BTCPay Server. What it is, how it works, how to install it.
 
-# [General FAQ](./General.md)
-
-* [What is BTCPay Server?](./General.md#what-is-btcpay-server)
-* [Why should I choose BTCPay over other processors?](./General.md#why-should-i-choose-btcpay-over-other-processors)
-* [Why is everyone so excited about BTCPay?](./General.md#why-is-everyone-so-excited-about-btcpay)
-* [Who can use BTCPay?](./General.md#who-can-use-btcpay)
-* [How to install BTCPay?](./General.md#how-to-install-btcpay-server)
-* [Where to find BTCPay video tutorials?](./General.md#where-to-find-btcpay-video-tutorials)
-* [Do I need to have an online store to use BTCPay Server?](./General.md#do-i-need-to-have-an-online-store-to-use-btcpay-server)
-* [Why can't I just give my public address to a buyer?](./General.md#why-cant-i-just-give-my-bitcoin-address-to-a-buyer)
-* [How does BTCPay create a new address for each invoice?](./General.md#how-does-btcpay-create-a-new-address-for-each-invoice)
-* [Does BTCPay need my private key?](./General.md#does-btcpay-need-myprivate-key)
-* [Does BTCPay Server support crypto to fiat conversion?](./General.md#does-btcpay-server-support-crypto-to-fiat-conversion)
-* [What if I have a problem paying a BTCPay Server invoice?](./General.md#what-if-i-have-a-problem-paying-an-invoice)
-* [What if I have a problem with a paid invoice?](./General.md#what-if-i-have-a-problem-with-a-paid-invoice)
-* [Where can I get help and support?](./General.md#where-can-i-get-help-and-support)
-* [How can I contribute to BTCPay?](./General.md#how-can-i-contribute-to-btcpay)
-* [How can I use the BTCPay Server API?](./General.md#how-can-i-use-the-btcpay-server-api)
-* [How can I backup my BTCPay Server?](./General.md#how-can-i-backup-my-btcpay-server)
-* [How can I charge for using my BTCPay Server instance?](./General.md#how-can-i-charge-for-using-my-btcpay-server-instance)
+[[toc]]
 
 ## What is BTCPay Server?
 

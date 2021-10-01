@@ -1,48 +1,16 @@
-# Server Settings Frequently Asked Questions
+# Server Settings FAQ
 
-This document covers all the questions and issues related to Server Settings. These settings are only available to the server admin. Take a look at the [walkthrough page](../Walkthrough.md) to learn more.
+This document covers all the questions and issues related to Server Settings.
+These settings are only available to the server admin. Take a look at the [walkthrough page](../Walkthrough.md) to learn more.
 
-## Maintenance
-
-* [How to update BTCPay Server?](./ServerSettings.md#how-to-update-btcpay-server)
-* [How to restart BTCPay Server?](./ServerSettings.md#how-to-restart-btcpay-server)
-* [How to SSH into my BTCPay running on VPS?](./ServerSettings.md#how-to-ssh-into-my-btcpay-running-on-vps)
-* [How can I check my BTCPay Server version?](./ServerSettings.md#how-can-i-see-my-btcpay-version)
-* [How can I check my BTCPay Server version via terminal?](./ServerSettings.md#how-can-i-check-my-btcpay-server-version-via-terminal)
-* [What is BTCPay SSH key file?](./ServerSettings.md#what-is-btcpay-ssh-key-file)
-* [Forgot BTCPay Admin password](./ServerSettings.md#forgot-btcpay-admin-password)
-* [How to add a new user by invite?](./ServerSettings.md#how-to-add-a-new-user-by-invite)
-* [How to disable U2F and 2FA for a user?](./ServerSettings.md#how-to-disable-u2f-and-2fa-for-a-user)
-* [How to configure SMTP settings in BTCPay?](./ServerSettings.md#how-to-configure-smtp-settings-in-btcpay)
-* [Error: Maintenance feature requires access to SSH properly configured in BTCPayServer configuration](./ServerSettings.md#error-maintenance-feature-requires-access-to-SSH-properly-configured-in-btcpayserver-configuration)
-* [Error: Your local changes to the following files would be overwritten by merge](./ServerSettings.md#error-your-local-changes-to-the-following-files-would-be-overwritten-by-merge)
-* [Error: the BTCPAY_SSHKEYFILE variable is not set/ Unable to update](./ServerSettings.md#error-btcpay-sshkeyfile-is-not-set-when-running-the-docker-install-or-unable-to-update-through-server-settings-maintenance)
-
-## Theme / Customization
-
-* [How to customize my BTCPay theme style?](./ServerSettings.md#how-to-customize-my-btcpay-theme-style)
-* [How to modify the BTCPay checkout page?](./ServerSettings.md#how-to-modify-the-checkout-page)
-* [How to customize the POS app theme?](../Development/Theme.md#2-bootstrap-themes)
-* [How to add Google Analytics code to BTCPay?](./ServerSettings.md#how-to-add-google-analytics-code-to-btcpay)
-
-## Policies
-
-* [How to allow registration on my BTCPay Server?](./ServerSettings.md#how-to-allow-registration-on-my-btcpay-server)
-* [How to hide my BTCPay Server from Search Engines?](./ServerSettings.md#how-to-hide-my-btcpay-server-from-search-engines)
-
-## Services
-
-* [How to remotely connect to my BTCPay full node?](./ServerSettings.md#how-to-remotely-connect-to-my-btcpay-full-node)
-
-## Files
-
-* [How to upload files to BTCPay?](./ServerSettings.md#how-to-upload-files-to-btcpay)
+[[toc]]
 
 ## Maintenance
 
 ### How to update BTCPay Server?
 
 There are 2 ways to update your BTCPay Server:
+
 1. Updating in the user interface: Server Settings > Maintenance > Update.
 
 ![Updating BTCPay Server](../img/HowToUpdateBTCPayServer.png)
@@ -58,6 +26,7 @@ btcpay-update.sh
 ### How to restart BTCPay Server?
 
 There are 2 ways to restart your BTCPay Server:
+
 1. Restarting in the user interface: Server Settings > Maintenance > Restart.
 
 ![Restarting BTCPay Server](../img/HowToRestartBTCPayServer.png)

@@ -1,40 +1,8 @@
+# Lightning Network FAQ
+
 This document clarifies some of the most common questions and issues users face with the Lightning Network in BTCPay. Before you start using the off-chain protocol, familiarize yourself with the risks. Additionally, read [Getting Started with Lightning Network in BTCPay](../LightningNetwork.md)
 
-## [Lightning Network General FAQ](./LightningNetwork.md#lightning-network-general-faq)
-
-* [How many users can use Lightning Network in BTCPay?](./LightningNetwork.md#how-many-users-can-use-lightning-network-in-btcpay)
-* [How to find node info and open a direct channel with a store using BTCPay?](./LightningNetwork.md#how-to-find-node-info-and-open-a-direct-channel-with-a-store-using-btcpay)
-* [As a merchant, do I need to open direct channels?](./LightningNetwork.md#as-a-merchant-do-i-need-to-open-direct-channels)
-* [How can I get inbound capacity to my node?](./LightningNetwork.md#how-can-i-get-inbound-capacity-to-my-node)
-* [Previously installed BTCPay without Lightning, can I enable it?](./LightningNetwork.md#i-previously-installed-btcpayserver-without-lightning-can-i-enable-it)
-* [Can I use a pruned node with LN in BTCPay?](./LightningNetwork.md#can-i-use-a-pruned-node-with-ln-in-btcpay)
-* [Can I use my existing LN node with BTCPay?](./LightningNetwork.md#can-i-use-my-existing-ln-node-with-btcpay)
-* [How to change from c-lightning to LND or vice-versa?](./LightningNetwork.md#how-to-change-from-c-lightning-to-lnd-or-vice-versa)
-* [Switched Lightning Network implementation, getting "no payment available" error](./LightningNetwork.md#i-switched-lightning-network-implementation-but-getting-no-payment-available-error)
-* [WARNING: The LIGHTNING_ALIAS variable is not set. Defaulting to a blank string" when starting container](./LightningNetwork.md#i-get-warning-the-lightning-alias-variable-is-not-set-defaulting-to-a-blank-string-when-starting-container)
-* [How to display my Lightning Node information so that others can connect to me?](./LightningNetwork.md#how-to-display-my-lightning-node-information-so-that-others-can-connect-to-me)
-* [Where can I find recovery seed backup for my Lightning Network wallet in BTCPay Server?](./LightningNetwork.md#where-can-i-find-recovery-seed-backup-for-my-lightning-network-wallet-in-btcpay-server)
-* [How to disable on-chain payments and use LN payments only?](./LightningNetwork.md#how-to-disable-on-chain-payments-and-use-ln-payments-only)
-* [How to see my Lightning Network version?](./LightningNetwork.md#how-to-see-my-lightning-network-version)
-* [Where can I get Lightning Network Support?](./LightningNetwork.md#lightning-network-questions-and-support)
-
-## [Lightning Network (LND) FAQ](./LightningNetwork.md#lightning-network-lnd-faq-2)
-
-* [How to restart my LND?](./LightningNetwork.md#how-to-restart-my-lnd)
-* [How to see LND logs?](./LightningNetwork.md#how-to-see-lnd-logs)
-* [What’s the default LND Directory in BTCPay?](./LightningNetwork.md#what-s-the-default-directory-of-lnd-in-btcpay)
-* [Which macaroon needs to be provided for external nodes?](./LightningNetwork.md#which-macaroon-needs-to-be-provided-for-external-nodes)
-* [LND connection issue - cannot get macaroon: root key with id 0 doesn’t exist](./LightningNetwork.md#lnd-connection-issues-after-an-update)
-* [How to change LND Node alias](./LightningNetwork.md#how-to-change-my-lnd-node-alias)
-* [How to edit lnd.conf](./LightningNetwork.md#how-to-edit-lndconf)
-* [How to install ThunderHub](./LightningNetwork.md#how-to-install-thunderhub)
-
-## [Lightning Network (c-lightning) FAQ](./LightningNetwork.md#lightning-network-c-lightning-faq)
-
-* [How to restart my c-lightning?](./LightningNetwork.md#how-to-restart-my-c-lightning)
-* [How to announce an IPv6 address?](./LightningNetwork.md#how-to-announce-an-ipv6-address)
-* [How to find an on-chain address in Spark?](./LightningNetwork.md#how-to-find-an-on-chain-address-in-spark)
-* [How to withdraw funds from my on-chain Spark wallet?](./LightningNetwork.md#how-to-withdraw-funds-from-my-on-chain-spark-wallet)
+[[toc]]
 
 ## Lightning Network General FAQ
 

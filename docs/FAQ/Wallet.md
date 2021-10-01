@@ -1,18 +1,8 @@
-# BTCPay Server Wallet FAQ
+# Wallet FAQ
 
 This document contains frequently asked questions related to BTCPay Server's [internal wallet](../Wallet.md).
 
-* [What is BTCPay Server wallet?](./Wallet.md#what-is-btcpay-server-wallet)
-* [How to set up my wallet with BTCPay Server?](./Wallet.md#how-to-set-up-my-wallet-with-btcpay-server)
-* [Can I use a hardware wallet with BTCPay Server?](./Wallet.md#can-i-use-a-hardware-wallet-with-btcpay-server)
-* [Do I have to use BTCPay Server wallet?](./Wallet.md#do-i-have-to-use-btcpay-server-wallet)
-* [Why is sending a transaction in BTCPay Server using Trezor failing?](./Wallet.md#why-is-sending-a-transaction-using-trezor-failing)
-* [Missing payments in wallet?](./Wallet.md#missing-payments-in-my-software-or-hardware-wallet)
-* [What is a derivation scheme?](./Wallet.md#what-is-a-derivation-scheme)
-* [What is a Replace-By-Fee (RBF) transaction?](./Wallet.md#what-is-a-replace-by-fee-rbf-transaction)
-* [How to add custom labels and comments to transactions?](./Wallet.md#how-to-add-custom-labels-and-comments-to-transactions)
-* [I don't see Lightning network payments in BTCPay wallet?](./Wallet.md#i-dont-see-lightning-network-payments-in-btcpay-wallet)
-* [Is there a mobile app for BTCPay Server wallet?](./Wallet.md#is-there-a-mobile-app-for-btcpay-server-wallet)
+[[toc]]
 
 ## What is BTCPay Server wallet?
 

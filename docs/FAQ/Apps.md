@@ -1,17 +1,8 @@
-# BTCPay Apps Frequently Asked Questions
+# Apps FAQ
 
-This document covers frequently asked questions about the Apps in BTCPay.
+This document covers frequently asked questions about the BTCPay Server Apps.
 
-* [What are the Apps in BTCPay?](./Apps.md#what-are-the-apps-in-btcpay)
-* [Is there a limit on the number of Apps I can create?](./Apps.md#is-there-a-limit-on-the-number-of-apps-i-can-create)
-* [Is there a Point of Sale feature in BTCPay?](./Apps.md#is-there-a-point-of-sale-feature-in-btcpay)
-* [How can I use BTCPay in a physical store?](./Apps.md#how-can-i-use-btcpay-in-a-physical-store)
-* [How to customize the appearance of Point of Sale App in BTCPay?](./Apps.md#how-to-customize-the-appearance-of-point-of-sale-app-in-btcpay)
-* [What is a Payment Button?](./Apps.md#what-is-a-payment-button)
-* [How to create a Pay Button with a custom amount?](./Apps.md#how-to-create-a-pay-button-with-a-custom-amount)
-* [How to map a domain name to an app?](./Apps.md#how-to-map-a-domain-name-to-an-app)
-* [How to redirect to another site after payment?](./Apps.md#how-to-redirect-to-another-site-after-payment)
-* [How to integrate WooCommerce Store in BTCPay Crowdfund app?](./Apps.md#how-to-integrate-woocommerce-store-into-a-btcpay-crowdfund-app)
+[[toc]]
 
 ## What are the Apps in BTCPay?
 

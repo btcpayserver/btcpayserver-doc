@@ -248,16 +248,16 @@ const sidebarFAQ = [
     path: '/FAQ/',
     collapsable: false,
     children: [
-      ['General', 'General FAQ'],
-      ['Deployment', 'Deployment FAQ'],
-      ['Synchronization', 'Synchronization FAQ'],
-      ['Integrations', 'Integrations FAQ'],
-      ['ServerSettings', 'Server Settings FAQ'],
-      ['Stores', 'Stores FAQ'],
-      ['Wallet', 'Wallet FAQ'],
-      ['Apps', 'Apps FAQ'],
-      ['LightningNetwork', 'Lightning Network FAQ'],
-      ['Altcoin', 'Altcoins FAQ']
+      'General',
+      'Deployment',
+      'Synchronization',
+      'Integrations',
+      'ServerSettings',
+      'Stores',
+      'Wallet',
+      'Apps',
+      'LightningNetwork',
+      'Altcoin'
     ]
   }
 ]

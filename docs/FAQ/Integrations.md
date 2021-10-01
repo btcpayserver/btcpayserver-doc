@@ -1,22 +1,12 @@
-# BTCPay Integrations Frequently Asked Questions
+# Integrations FAQ
+
 This page covers questions about BTCPay integrations.
 
-## [Integrations General](./Integrations.md#integrations-general-faq)
+[[toc]]
 
-* [What e-commerce integrations are available?](./Integrations.md#what-e-commerce-integrations-are-available)
-* [Does BTCPay have a Shopify plugin?](./Integrations.md#does-btcpay-have-a-shopify-plugin)
-* [Can I use BTCPay without an integration?](./Integrations.md#can-i-use-btcpay-without-an-integration)
+## General Integrations FAQ
 
-## [WooCommerce FAQ](./Integrations.md#woocommerce-faq-1)
-
-* [How to configure order status in WooCommerce?](./Integrations.md#how-to-configure-order-status-in-woocommerce)
-* [How to customize e-mail confirmations in WooCommerce?](./Integrations.md#how-to-customize-e-mail-confirmations-in-woocommerce)
-* [Error: If you use an alternative order numbering system, please see class-wc-gateway-btcpay.php to apply a search filter](./Integrations.md#error-if-you-use-an-alternative-order-numbering-system-please-see-class-wc-gateway-btcpayphp-to-apply-a-search-filter)
-* [How to configure Additional Token Support](./Integrations.md#how-to-configure-additional-token-support)
-
-## Integrations General FAQ
-
-## What e-commerce integrations are available?
+### What e-commerce integrations are available?
 
 * [WooCommerce](../WooCommerce.md)
 * [Drupal](../Drupal.md)

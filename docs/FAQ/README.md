@@ -1,4 +1,4 @@
-# BTCPay Frequently Asked Questions and Common Issues
+# Frequently Asked Questions and Common Issues
 
 This document contains a Table of contents to all FAQ and common issues.
 

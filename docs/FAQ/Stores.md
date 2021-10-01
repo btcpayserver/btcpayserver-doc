@@ -1,25 +1,10 @@
-# BTCPay Stores Frequently Asked Questions.
+# Stores FAQ
 
-This page shows common issues and frequently asked questions about Stores in BTCPay.
+This page shows common issues and frequently asked questions about BTCPay Server stores.
 
-* [How to create a store in BTCPay?](./Stores.md#how-to-create-a-store-in-btcpay)
-* [How many stores can I create?](./Stores.md#how-many-stores-can-i-create)
-* [Why are invoices without payment showing as complete?](./Stores.md#why-are-invoices-without-payment-showing-as-complete)
-* [Add network fee to invoice (vary with mining fees)?](./Stores.md#add-network-fee-to-invoice-vary-with-mining-fees)
-* [Allow anyone to create invoice?](./Stores.md#allow-anyone-to-create-invoice)
-* [Invoice expires if the full amount has not been paid after ... minutes?](./Stores.md#invoice-expires-if-the-full-amount-has-not-been-paid-after-minutes)
-* [Payment invalid if transactions fails to confirm ... minutes after invoice expiration?](./Stores.md#payment-invalid-if-transactions-fails-to-confirm-minutes-after-invoice-expiration)
-* [Consider the invoice confirmed when the payment transaction?](./Stores.md#consider-the-invoice-confirmed-when-the-payment-transaction)
-* [Consider the invoice paid even if the paid amount is ... % less than expected?](./Stores.md#consider-the-invoice-paid-even-if-the-paid-amount-is-less-than-expected)
-* [How to disable email on invoices?](./Stores.md#how-to-disable-email-on-invoices)
-* [How to denominate invoices in sats?](./Stores.md#how-to-denominate-invoices-in-sats)
-* [How to collect additional buyer information?](./Stores.md#how-to-collect-additional-buyer-information)
-* [How to redirect store invoices after payment?](./Stores.md#how-to-redirect-store-invoices-after-payment)
-* [Can I delete invoices from BTCPay?](./Stores.md#can-i-delete-invoices-from-btcpay)
-* [How to change the exchange rate provider for invoices?](./Stores.md#how-to-change-the-exchange-rate-provider-for-invoices)
-* [Getting GetRatesAsync was called on coinaverage error](./Stores.md#getting-getratesasync-was-called-on-coinaverage-error)
+[[toc]]
 
-## How to create a store in BTCPay?
+## How to create a store in BTCPay Server?
 
 To create your first store, go to > Stores from the header menu and click "create a new store."
 
