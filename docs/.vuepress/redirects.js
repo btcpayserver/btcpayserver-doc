@@ -98,5 +98,10 @@ module.exports = [
   { path: '/Contribute/ContributeWrite/WriteBlog', redirect: '/Contribute/WriteBlog/' },
   { path: '/Contribute/ContributeDesign', redirect: '/Contribute/Design/' },
   { path: '/Contribute/ContributeTranslate', redirect: '/Contribute/Translate/' },
-  { path: '/Contribute/ContributeMisc', redirect: '/Contribute/Misc/' }
+  { path: '/Contribute/ContributeMisc', redirect: '/Contribute/Misc/' },
+  { path: '/Theme/', redirect: '/Development/Theme/' },
+  { path: '/GreenFieldExample/', redirect: '/Development/GreenFieldExample/' },
+  { path: '/ThirdPartyHosting/', redirect: '/Deployment/ThirdPartyHosting/' },
+  { path: '/ChangeDomain/', redirect: '/Deployment/ChangeDomain/' },
+  { path: '/DynamicDNS/', redirect: '/Deployment/DynamicDNS/' }
 ]
