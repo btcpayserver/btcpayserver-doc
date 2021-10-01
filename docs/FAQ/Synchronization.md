@@ -170,7 +170,7 @@ tmpfs           2.0G     0  2.0G   0% /sys/fs/cgroup
 
 If you have recently tried to modify your environment variables using the `export BTCPAYGEN_ADDITIONAL_FRAGMENTS="xyz"` command to add an additional fragment, but forgot to include your current ones, you may have disabled pruning.
 
-If you don't have enough memory to store the entire Bitcoin blockchain and you don't have an `opt-save-storage` listed when you [print the complete list of options](https://github.com/btcpayserver/btcpayserver-doc/blob/b0873a216f871b0f7dc4958c8fa63c17c35b603d/docs/FAQ/Deployment.md#how-can-i-modify-or-deactivate-environment-variables) that you are running, it is very likely you have disabled pruning.
+If you don't have enough memory to store the entire Bitcoin blockchain and you don't have an `opt-save-storage` listed when you [print the complete list of options](https://docs.btcpayserver.org/FAQ/Deployment/#how-can-i-modify-or-deactivate-environment-variables) that you are running, it is very likely you have disabled pruning.
 
 You can verify by checking your Bitcoind logs:
 
@@ -263,7 +263,7 @@ Other pruning options are [documented here](https://docs.btcpayserver.org/Docker
 
 ## How to disable Bitcoin node pruning?
 
-To disable pruning of your Bitcoin node in BTCPay, first ensure you have enough memory to store the entire blockchain and BTCPayServer on your system. Then disable the `opt-save-storage` environment variable. See [this example](https://github.com/btcpayserver/btcpayserver-doc/blob/master/docs/FAQ/Deployment.md#how-can-i-modify-or-deactivate-environment-variables) to view your fragment list and select only one for removal. The following example will remove **all** additional fragments:
+To disable pruning of your Bitcoin node in BTCPay, first ensure you have enough memory to store the entire blockchain and BTCPayServer on your system. Then disable the `opt-save-storage` environment variable. See [this example](./Deployment.md#how-can-i-modify-or-deactivate-environment-variables) to view your fragment list and select only one for removal. The following example will remove **all** additional fragments:
 
 ```bash
 export BTCPAYGEN_ADDITIONAL_FRAGMENTS=""

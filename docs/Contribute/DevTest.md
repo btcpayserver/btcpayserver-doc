@@ -4,7 +4,7 @@ Testing the software is a great way to contribute to the project. There are many
 
 Since the software is open source, anyone can test and audit the code. Some merchants or other technical users may want verify new or existing features by testing the software themselves. Developers working on the code can also benefit from understanding how to manually test certain actions in BTCPay.
 
-This guide will show you how to manually test some common BTCPay features and assumes you already have your [Local Development Environment](ContributeDevCode.md) set up. Once you understand the basic testing actions, most other features can be manually tested in a similar way.
+This guide will show you how to manually test some common BTCPay features and assumes you already have your [Local Development Environment](./DevCode.md) set up. Once you understand the basic testing actions, most other features can be manually tested in a similar way.
 
 [[toc]]
 
@@ -12,10 +12,10 @@ This guide will show you how to manually test some common BTCPay features and as
 
 First, be sure you have completed the following:
 
-- Option 1: Test the latest code - [Pull master](ContributeDevCode.md#sync-forked-btcpayserver-repository)
-- Option 2: Test a new feature - [Pull request](ContributeDevCode.md#create-a-branch-of-a-pull-request)
-- Created a local [Regtest Network](ContributeDevCode.md#bitcoin-regtest-network-setup)
-- Built your solution and started [Browser mode](ContributeDevCode.md#build-local-btcpayserver-in-browser-mode) or [Debug mode](ContributeDevCode.md#build-local-btcpayserver-in-debug-mode)
+- Option 1: Test the latest code - [Pull master](./DevCode.md#sync-forked-btcpayserver-repository)
+- Option 2: Test a new feature - [Pull request](./DevCode.md#create-a-branch-of-a-pull-request)
+- Created a local [Regtest Network](./DevCode.md#bitcoin-regtest-network-setup)
+- Built your solution and started [Browser mode](./DevCode.md#build-local-btcpayserver-in-browser-mode) or [Debug mode](./DevCode.md#build-local-btcpayserver-in-debug-mode)
 
 ## Using Docker Images for Mainnet Testing
 
@@ -23,11 +23,11 @@ Some features are not suitable for testing using a localhost development environ
 
 Step 1:
 
-[Fork, clone and create a branch](./ContributeDevCode.md#git-setup) of the [BTCPay Server repository](https://github.com/btcpayserver/btcpayserver) and name your branch: `btcpay-branch`. Make a modification, such as changing [this line](https://github.com/btcpayserver/btcpayserver/blob/master/BTCPayServer/Views/Home/Home.cshtml#L9) on your new branch.
+[Fork, clone and create a branch](./DevCode.md#git-setup) of the [BTCPay Server repository](https://github.com/btcpayserver/btcpayserver) and name your branch: `btcpay-branch`. Make a modification, such as changing [this line](https://github.com/btcpayserver/btcpayserver/blob/master/BTCPayServer/Views/Home/Home.cshtml#L9) on your new branch.
 
 Step 2:
 
-[Fork, clone and create a branch](./ContributeDevCode.md#git-setup) of the [BTCPay Server Docker repository](https://github.com/btcpayserver/btcpayserver-docker) and name your branch: `docker-branch`.
+[Fork, clone and create a branch](./DevCode.md#git-setup) of the [BTCPay Server Docker repository](https://github.com/btcpayserver/btcpayserver-docker) and name your branch: `docker-branch`.
 
 Step 3:
 
