@@ -111,13 +111,20 @@ const sidebarUserGuide = [
 ]
 
 const sidebarDeployment = [
-  ['/Deployment/', 'Choosing a Deployment Method'],
-  ['/Deployment/ThirdPartyHosting', 'Third-party Hosting'],
   {
-    title: 'Docker',
-    path: '/Docker/',
+    title: 'Deployment',
     collapsable: false,
     children: [
+      '/Deployment/',
+      '/Deployment/ThirdPartyHosting',
+      '/Configurator/'
+    ]
+  },
+  {
+    title: 'Docker',
+    collapsable: false,
+    children: [
+      ['/Docker/', 'Introduction'],
       {
         title: 'Web Deployment',
         path: '/Deployment/LunaNode'
@@ -180,10 +187,6 @@ const sidebarDeployment = [
       '/Deployment/ManualDeployment',
       '/Deployment/ManualDeploymentExtended'
     ]
-  },
-  {
-    title: 'Configurator',
-    path: '/Configurator/'
   }
 ]
 
