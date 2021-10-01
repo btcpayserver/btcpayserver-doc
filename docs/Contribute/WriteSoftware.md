@@ -1,10 +1,8 @@
-# Contribute to the Software Stack
+# Contribute to the software stack
 
 ::: tip
 If you have trouble finding a string or contributing to the software stack, ask the [community](../Community.md)
-:::
 
-::: tip
 If your textual change is significant [open an issue on GitHub](https://github.com/btcpayserver/btcpayserver/issues/new/choose) and explain what you'd like to change and why.
 :::
 

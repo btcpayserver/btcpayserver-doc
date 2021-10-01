@@ -1,27 +1,6 @@
 # Setup Developer Environment
 
-Table of contents:
-- [Developer Resources](#developer-resources)
-- [Windows Setup Software](#windows-setup-software)
-- [Git Setup](#git-setup)
-  - [Fork BTCPay Server Repository](#fork-btcpay-server-repository)
-  - [Clone BTCPay Server Repository](#clone-btcpay-server-repository)
-  - [Create a Development Feature Branch](#create-a-development-feature-branch)
-- [Local BTCPay Setup](#local-btcpay-setup)
-  - [Visual Studio Setup](#visual-studio-setup)
-  - [Bitcoin Regtest Network Setup](#bitcoin-regtest-network-setup)
-  - [Build Local BTCPay Server in Debug Mode](#build-local-btcpay-server-in-debug-mode)
-  - [Build Local BTCPay Server in Browser Mode](#build-local-btcpay-server-in-browser-mode)
-  - [Visual Studio Code Changes In Your Local BTCPay Server](#visual-studio-code-changes-in-your-local-btcpay-server)
-- [Git Maintenance](#git-maintenance)
-  - [Sync Forked BTCPay Server Repository](#sync-forked-btcpay-server-repository)
-  - [Commit Code To Make Pull Request](#commit-code-to-make-pull-request)
-  - [Create a Branch of a Pull Request](#create-a-branch-of-a-pull-request)
-  - [Delete Local Branch](#delete-local-branch)
-- [Working with Docker Containers](#working-with-docker-containers)
-- [Greenfield API Development](#greenfield-api-development)
-- [Working with the Database](#working-with-the-database)
-- [Questions](#questions)
+[[toc]]
 
 This guide will help you set up your developer environment to prepare you for later contributions to the BTCPay Server repositories. A variety of beginner tools are used in the guide below to help you get started with development. Once you understand the general setup process, feel free to use any tools that you like.
 

@@ -1,12 +1,6 @@
 # Documenting BTCPay Server
 
-- [Why documentation matters](#why-documentation-matters)
-- [BTCPay Documentation](#btcpay-documentation)
-- [BTCPay Blog](#btcpay-blog)
-- [Requirements](#requirements)
-- [Recommended Software](#recommended-software)
-   - [Text Editor](#text-editor)
-   - [Version Control](#version-control)
+[[toc]]
 
 # Why documentation matters
 

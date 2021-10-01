@@ -5,6 +5,7 @@ For the time being, the blog is hosted on Wordpress and the contributing process
 Simply hit us in the [chat](https://chat.btcpayserver.org) and we'll discuss the writing proposed.
 
 Subjects that are suitable for the blog include:
+
 * BTCPay Server updates
 * Tutorials
 * Testimonies of how BTCPay Server helped you

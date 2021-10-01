@@ -228,27 +228,35 @@ const sidebarDevelopment = [
 
 const sidebarContribute = [
   {
-    title: 'Develop',
-    path: '/Contribute/Dev/',
+    title: 'Contribute',
+    path: '/Contribute/',
     collapsable: false,
     children: [
-      ['/Contribute/DevCode', 'Code'],
-      ['/Contribute/DevTest', 'Test']
+      {
+        title: 'Code',
+        path: '/Contribute/Dev',
+        collapsable: false,
+        children: [
+          '/Contribute/DevCode',
+          '/Contribute/DevTest'
+        ]
+      },
+      {
+        title: 'Write',
+        path: '/Contribute/Write',
+        collapsable: false,
+        children: [
+          ['/Contribute/WriteSoftware', 'Software Stack'],
+          ['/Contribute/WriteDocs', 'Documentation'],
+          ['/Contribute/WriteBlog', 'Blog']
+        ]
+      },
+      ['/Contribute/Design', 'Design'],
+      ['/Contribute/Translate', 'Translate'],
+      ['/Contribute/Misc', 'Miscellaneous']
     ]
   },
-  {
-    title: 'Write',
-    path: '/Contribute/Write/',
-    collapsable: false,
-    children: [
-      ['/Contribute/WriteSoftware', 'Software Stack'],
-      ['/Contribute/WriteDocs', 'Documentation'],
-      ['/Contribute/WriteBlog', 'Blog']
-    ]
-  },
-  ['/Contribute/Design', 'Design'],
-  ['/Contribute/Translate', 'Translate'],
-  ['/Contribute/Misc', 'Miscellaneous'],
+
 ]
 
 const sidebarFAQ = [

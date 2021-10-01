@@ -1,4 +1,4 @@
-# Contribute to Documentation
+# Contribute to the documentation
 
 Helping us keeping the present [Documentation](https://github.com/btcpayserver/btcpayserver-doc) up-to-date is an important contribution because BTCPay Server evolves at each release.
 
@@ -14,7 +14,7 @@ Simply click the `details` button as shown in the screenshot below. Then locate 
 ![NetlifyDeploymentPreview](../img/Contribute/Netlify_preview.png)
 
 :::tip
-It's a good idea to use relative URL's instead of absolute URL's when editing links that redirect to pages that are part of the documentation already.
+It's a good idea to use relative URLs instead of absolute URLs when editing links that redirect to pages that are part of the documentation already.
 This helps the contributors setting up documentation locally.
 [More info](https://v1.vuepress.vuejs.org/guide/markdown.html#internal-links/).
 :::

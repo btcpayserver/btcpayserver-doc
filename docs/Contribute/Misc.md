@@ -1,12 +1,6 @@
 # Contributing to BTCPay Server in other ways
 
-- [Contributing to BTCPay Server in other ways](#contributing-to-btcpay-server-in-other-ways)
-  - [Create Videos & Graphics](#create-videos--graphics)
-  - [Hosting Providers](#hosting-providers)
-  - [Contribute to the Directory](#contribute-to-the-directory)
-  - [Project Discussions](#project-discussions)
-  - [Community](#community)
-  - [Spreading the word](#spreading-the-word)
+[[toc]]
 
 ## Create Videos & Graphics
 
