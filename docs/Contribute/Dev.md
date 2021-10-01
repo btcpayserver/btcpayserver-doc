@@ -25,7 +25,7 @@ We are actively looking for developers who can take on and resolve GitHub issues
 
 ### Setup Developer Environment
 
-If you are interested in getting started as a developer or tester of the software behind BTCPay Server, check out the [Setup Developer Environment](../DevCode.md) guide that will walk you step by step through every software used in development with BTCPay such as Git, GitBash, Github, Docker, Visual Studio, Postgres, etc. If you have never coded before and you are looking to learn something new, start here.
+If you are interested in getting started as a developer or tester of the software behind BTCPay Server, check out the [Setup Developer Environment](./DevCode.md) guide that will walk you step by step through every software used in development with BTCPay such as Git, GitBash, Github, Docker, Visual Studio, Postgres, etc. If you have never coded before and you are looking to learn something new, start here.
 
 ### Local BTCPay Development
 
@@ -33,7 +33,7 @@ If you already have a developer environment setup you can start with the BTCPay 
 
 ### Local BTCPay Testing
 
-Once you have your development environment tools setup and your local BTCPay Server running, view the [Local Testing](../DevTest.md) guide. This shows you how to use BTCPay in regtest mode for use in development and for users who want to test new features before they are released.
+Once you have your development environment tools setup and your local BTCPay Server running, view the [Local Testing](./DevTest.md) guide. This shows you how to use BTCPay in regtest mode for use in development and for users who want to test new features before they are released.
 
 ## Requirements
 

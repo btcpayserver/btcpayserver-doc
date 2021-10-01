@@ -18,13 +18,13 @@ If you have writing skills or if you have a fair knowledge of the English langua
 
 ## BTCPay Documentation
 
-Documentation work needing to be completed can be found in the [open issues page](https://github.com/btcpayserver/btcpayserver-doc/issues) on Github. For information on how to start a documentation task, see the [documentation guide](WriteDocs.md). 
+Documentation work needing to be completed can be found in the [open issues page](https://github.com/btcpayserver/btcpayserver-doc/issues) on Github. For information on how to start a documentation task, see the [documentation guide](WriteDocs.md).
 
-For documentation guidance or discussion of a new documentation idea, join the [#documentation channel on Mattermost](https://chat.btcpayserver.org/btcpayserver/channels/documentation). 
+For documentation guidance or discussion of a new documentation idea, join the [#documentation channel on Mattermost](https://chat.btcpayserver.org/btcpayserver/channels/documentation).
 
 ## BTCPay Blog
 
-Another great way to contribute is by writing content for the [BTCPay blog](WriteBlog.md). To get started on a blog topic, join the [#content creation channel on Mattermost](https://chat.btcpayserver.org/btcpayserver/channels/content-creation). 
+Another great way to contribute is by writing content for the [BTCPay blog](WriteBlog.md). To get started on a blog topic, join the [#content creation channel on Mattermost](https://chat.btcpayserver.org/btcpayserver/channels/content-creation).
 
 ## Requirements
 
@@ -32,7 +32,7 @@ In order to contribute to BTCPay Server as a writer there are some requirements.
 
 Since most of the documentation done in BTCPay Server is submitted and reviewed through Github, you must have a [Github account](https://github.com/). It's also on Github that you can contribute by reviewing the documentation work done by others (pull requests).
 
-**Important note**: Contributions explained in this documentation are meant to be done in **English** only. If you wish to contribute in other languages, see [Translations](../ContributeTranslate.md).
+**Important note**: Contributions explained in this documentation are meant to be done in **English** only. If you wish to contribute in other languages, see [Translations](./Translate.md).
 
 ## Recommended software
 
@@ -49,4 +49,4 @@ These are only recommended: If you already use other similar software that you'r
 
 ### Version Control
 
-To be able to manage your contributions (such as forking repositories, creating and working on branches, making pull requests and issues, etc.) it's recommended you have [Github Desktop](https://desktop.github.com/). You can see the step by step guide to making a pull request using Github Desktop [here](WriteSoftware.md).
+To be able to manage your contributions (such as forking repositories, creating and working on branches, making pull requests and issues, etc.) it's recommended you have [Github Desktop](https://desktop.github.com/). You can see the step by step guide to making a pull request using Github Desktop [here](./WriteSoftware.md).
