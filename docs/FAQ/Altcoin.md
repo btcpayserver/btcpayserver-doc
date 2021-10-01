@@ -2,11 +2,11 @@
 
 This page answers some of the common questions about alternative cryptocurrencies - altcoins.
 
-* [Which coins does BTCPay Server support?](./FAQ-Altcoin.md#which-coins-does-btcpay-server-support)
-* [Can an XYZ coin be added in BTCPay?](./FAQ-Altcoin.md#can-an-xyz-coin-be-added-in-btcpay)
-* [How to add an altcoin in BTCPay?](./FAQ-Altcoin.md#how-to-add-an-altcoin-in-btcpay)
-* [How to add an altcoin to an existing BTCPay deployment?](./FAQ-Altcoin.md#how-to-add-an-altcoin-to-an-existing-btcpay-deployment)
-* [How to remove a coin from BTCPay?](./FAQ-Altcoin.md#how-to-remove-a-coin-from-btcpay)
+* [Which coins does BTCPay Server support?](./Altcoin.md#which-coins-does-btcpay-server-support)
+* [Can an XYZ coin be added in BTCPay?](./Altcoin.md#can-an-xyz-coin-be-added-in-btcpay)
+* [How to add an altcoin in BTCPay?](./Altcoin.md#how-to-add-an-altcoin-in-btcpay)
+* [How to add an altcoin to an existing BTCPay deployment?](./Altcoin.md#how-to-add-an-altcoin-to-an-existing-btcpay-deployment)
+* [How to remove a coin from BTCPay?](./Altcoin.md#how-to-remove-a-coin-from-btcpay)
 
 ## Which coins does BTCPay Server support?
 

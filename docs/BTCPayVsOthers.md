@@ -26,7 +26,7 @@ Every payment processor has features, here are some BTCPay Server features:
 
 * **Free & Peer to Peer** - Direct, peer-to-peer payments. No merchant processing fees. No transaction fees (other than the [network fee](https://en.bitcoin.it/wiki/Miner_fees)).
 * **Self-hosted** - Your node, your coins. No middleman. No KYC/AML. Non-custodial (complete control over the private key). [Hardware wallet integration](./HardwareWalletIntegration.md) support.
-* **Bitcoin & Altcoins** - Accept Bitcoin natively. Opt-in [altcoin](./FAQ/FAQ-Altcoin.md) integrations.
+* **Bitcoin & Altcoins** - Accept Bitcoin natively. Opt-in [altcoin](./FAQ/Altcoin.md) integrations.
 * **Cutting-edge** - Native Segwit support. Rapid Bitcoin microtransactions using the Lightning Network (LND, c-lightning, Eclair and Ptarmigan).
 * **CMS Integrations** - Wordpress & WooCommerce, Shopify, Drupal, Magneto, Prestashop and custom integrations.
 * **Apps** - Point-Of-Sale interface for physical stores. Crowdfunding interface for donation goals and fundraisers.
@@ -34,7 +34,7 @@ Every payment processor has features, here are some BTCPay Server features:
 * **Unlimited Stores** - Merchants can process payments for their own stores, or for others.
 * **Translations** - Customers can pay in 20+ different languages.
 * **Payment Requests** - Create & send a long-lived invoice requesting payment for goods or services.
-* **Privacy & Security focused** - Payjoin support. Tor support. 
+* **Privacy & Security focused** - Payjoin support. Tor support.
 * **BitPay compatible** - Fully compatible with BitPay API. Easy migration to BTCPay Server.
 
 ----
@@ -67,7 +67,7 @@ BTCPay Server will never ask a merchant for any personal identification.
 
 Typically, when converting to or from fiat on behalf of a merchant, payment processors are required to collect personal information for Know Your Customer (KYC) and Anti-money laundering (AML) banking requirements. This may include personal information such as passport ID, phone number, address, bank account, etc.
 
-Fortunately, the Bitcoin Network does not use or collect these types of personal information, and therefore neither does BTCPay Server. 
+Fortunately, the Bitcoin Network does not use or collect these types of personal information, and therefore neither does BTCPay Server.
 How **BTCPay Server ensures privacy**:
 
 * No middleman involved.

@@ -21,9 +21,9 @@ For more information about invoice export and accounting, [see this page](./Acco
 
 ### Invoice Details
 
-The invoice details page contains all information related to an invoice. 
+The invoice details page contains all information related to an invoice.
 
-Invoice information is created automatically based on invoice status, exchange rate, etc. Product information is created automatically if the invoice was created with product information such as in the Point of Sale app. Read about collecting Buyer information [here](./FAQ/FAQ-Stores.md#how-to-collect-additional-buyer-information).
+Invoice information is created automatically based on invoice status, exchange rate, etc. Product information is created automatically if the invoice was created with product information such as in the Point of Sale app. Read about collecting Buyer information [here](./FAQ/Stores.md#how-to-collect-additional-buyer-information).
 
 ## Invoice Statuses
 
@@ -50,7 +50,7 @@ It's up to users to define best course of action for their use-case and business
 
 * *Invoices paid via the [Lightning Network](./LightningNetwork.md) immediately go to a completed state, as their confirmation is instant.
 * **Paid Partial invoice usually happens when a buyer pays the invoice from the exchange wallet  which takes a fee for their service and deducts it from a total. In some cases, it happens when buyer enters an  incorrect amount in their wallet.
-* ***Invalid - If you're receiving a lot of invalid invoices in your store, you may want to [adjust invalid invoice time in store settings](./FAQ/FAQ-Stores.md#payment-invalid-if-transactions-fails-to-confirm-minutes-after-invoice-expiration).
+* ***Invalid - If you're receiving a lot of invalid invoices in your store, you may want to [adjust invalid invoice time in store settings](./FAQ/Stores.md#payment-invalid-if-transactions-fails-to-confirm-minutes-after-invoice-expiration).
 
 ## Archived Invoices
 

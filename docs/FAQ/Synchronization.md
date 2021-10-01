@@ -2,15 +2,15 @@
 
 This document covers the most common questions and issues that may occur during BTCPay sync.
 
-* [Why does BTCPay sync?](#why-does-btcpay-sync)
-* [Can I skip/speed up the sync?](#can-i-skip-the-synchronization)
-* [How do I know that the sync is finished?](#how-do-i-know-that-btcpay-synced-completely)
-* [How can I check the block height of my bitcoin node?](#how-can-i-check-the-block-height-of-my-bitcoin-node)
-* [BTCPay takes forever to synchronize](#btcpay-server-takes-forever-to-synchronize)
-* [BTCPay Server keeps showing that my node is always starting](#btcpay-server-keeps-showing-that-my-node-is-always-starting)
-* [I already have a synced full node, can I use it with BTCPay?](#im-running-a-full-node-and-have-a-synched-blockchain-can-btcpay-use-it-so-that-it-doesnt-have-to-do-a-full-sync)
-* [How to enable Bitcoin node pruning?](#how-to-enable-bitcoin-node-pruning)
-* [How to disable Bitcoin node pruning?](#how-to-disable-bitcoin-node-pruning)
+* [Why does BTCPay sync?](./Synchronization.md#why-does-btcpay-sync)
+* [Can I skip/speed up the sync?](./Synchronization.md#can-i-skip-the-synchronization)
+* [How do I know that the sync is finished?](./Synchronization.md#how-do-i-know-that-btcpay-synced-completely)
+* [How can I check the block height of my bitcoin node?](./Synchronization.md#how-can-i-check-the-block-height-of-my-bitcoin-node)
+* [BTCPay takes forever to synchronize](./Synchronization.md#btcpay-server-takes-forever-to-synchronize)
+* [BTCPay Server keeps showing that my node is always starting](./Synchronization.md#btcpay-server-keeps-showing-that-my-node-is-always-starting)
+* [I already have a synced full node, can I use it with BTCPay?](./Synchronization.md#im-running-a-full-node-and-have-a-synched-blockchain-can-btcpay-use-it-so-that-it-doesnt-have-to-do-a-full-sync)
+* [How to enable Bitcoin node pruning?](./Synchronization.md#how-to-enable-bitcoin-node-pruning)
+* [How to disable Bitcoin node pruning?](./Synchronization.md#how-to-disable-bitcoin-node-pruning)
 
 ## Why does BTCPay sync?
 
@@ -24,7 +24,7 @@ If you are only interested in learning about BTCPay Server i.e. simply [trying i
 
 You can't skip synchronization if you are deploying a BTCPay Server, but you can drastically decrease the time it takes. If you're comfortable with using the command line, you can use FastSync to synchronize your node faster. Be sure to [read this FastSync document](https://github.com/btcpayserver/btcpayserver-docker/tree/master/contrib/FastSync) to understand the potential trust issues involved with this feature.
 
-To use FastSync, make sure your deployment has a [pruning option enabled](#how-to-enable-bitcoin-node-pruning) by using an `opt-save-storage` environment variable, otherwise bitcoind will not be able to sync. First step is to [ssh into](./FAQ-ServerSettings.md#how-to-ssh-into-my-btcpay-running-on-vps) your BTCPayServer instance and run the following commands:
+To use FastSync, make sure your deployment has a [pruning option enabled](#how-to-enable-bitcoin-node-pruning) by using an `opt-save-storage` environment variable, otherwise bitcoind will not be able to sync. First step is to [ssh into](./ServerSettings.md#how-to-ssh-into-my-btcpay-running-on-vps) your BTCPayServer instance and run the following commands:
 
 ```bash
 sudo su -
@@ -178,7 +178,7 @@ tmpfs           2.0G     0  2.0G   0% /sys/fs/cgroup
 
 If you have recently tried to modify your environment variables using the `export BTCPAYGEN_ADDITIONAL_FRAGMENTS="xyz"` command to add an additional fragment, but forgot to include your current ones, you may have disabled pruning.
 
-If you don't have enough memory to store the entire Bitcoin blockchain and you don't have an `opt-save-storage` listed when you [print the complete list of options](https://github.com/btcpayserver/btcpayserver-doc/blob/b0873a216f871b0f7dc4958c8fa63c17c35b603d/docs/FAQ/FAQ-Deployment.md#how-can-i-modify-or-deactivate-environment-variables) that you are running, it is very likely you have disabled pruning.
+If you don't have enough memory to store the entire Bitcoin blockchain and you don't have an `opt-save-storage` listed when you [print the complete list of options](https://github.com/btcpayserver/btcpayserver-doc/blob/b0873a216f871b0f7dc4958c8fa63c17c35b603d/docs/FAQ/Deployment.md#how-can-i-modify-or-deactivate-environment-variables) that you are running, it is very likely you have disabled pruning.
 
 You can verify by checking your Bitcoind logs:
 
@@ -267,11 +267,11 @@ export BTCPAYGEN_ADDITIONAL_FRAGMENTS="opt-save-storage"
 . ./btcpay-setup.sh -i
 ```
 
-Other pruning options are [documented here](https://docs.btcpayserver.org/Docker/#generated-docker-compose). See [this example](./FAQ-Deployment.md#how-can-i-modify-or-deactivate-environment-variables) for use with other additional fragments.
+Other pruning options are [documented here](https://docs.btcpayserver.org/Docker/#generated-docker-compose). See [this example](./Deployment.md#how-can-i-modify-or-deactivate-environment-variables) for use with other additional fragments.
 
 ## How to disable Bitcoin node pruning?
 
-To disable pruning of your Bitcoin node in BTCPay, first ensure you have enough memory to store the entire blockchain and BTCPayServer on your system. Then disable the `opt-save-storage` environment variable. See [this example](https://github.com/btcpayserver/btcpayserver-doc/blob/master/docs/FAQ/FAQ-Deployment.md#how-can-i-modify-or-deactivate-environment-variables) to view your fragment list and select only one for removal. The following example will remove **all** additional fragments:
+To disable pruning of your Bitcoin node in BTCPay, first ensure you have enough memory to store the entire blockchain and BTCPayServer on your system. Then disable the `opt-save-storage` environment variable. See [this example](https://github.com/btcpayserver/btcpayserver-doc/blob/master/docs/FAQ/Deployment.md#how-can-i-modify-or-deactivate-environment-variables) to view your fragment list and select only one for removal. The following example will remove **all** additional fragments:
 
 ```bash
 export BTCPAYGEN_ADDITIONAL_FRAGMENTS=""

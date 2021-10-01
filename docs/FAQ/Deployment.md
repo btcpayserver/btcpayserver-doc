@@ -6,24 +6,24 @@ This document covers the most common questions, errors, and issues you may encou
 
 Here are common questions about installation, regardless of the deployment method.
 
-- [How much does it cost to run BTCPay Server?](#how-much-does-it-cost-to-run-btcpay-server)
-- [What are the minimal requirements for BTCPay?](#what-are-the-minimal-requirements-for-btcpay)
-- [What is the easiest method to deploy a self-hosted BTCPay Server?](#what-is-the-easiest-method-to-deploy-a-self-hosted-btcpay-server)
-- [How to choose a proper deployment method?](#how-to-choose-a-proper-deployment-method)
-- [Can I run BTCPay on my own hardware?](#can-i-run-btcpay-on-my-own-hardware)
-- [Can I deploy BTCPay on my existing VPS?](#can-i-deploy-btcpay-on-my-existing-vps)
-- [Are there free hosts where I can test?](#are-there-free-hosts-where-i-can-test)
-- [After initial deployment, I can't register and I don't have a login yet?](#after-initial-deployment-i-cant-register-and-i-dont-have-a-login-yet)
-- [How do I activate Tor on my BTCPay Server?](#how-do-i-activate-tor-on-my-btcpay-server)
-- [How do I disable Tor on my BTCPay Server?](#how-do-i-disable-tor-on-my-btcpay-server)
-- [Why activate Tor? Does it mean that nobody knows who I am?](#why-activate-tor-does-it-mean-that-nobody-knows-who-i-am)
-- [How to access the .onion address without clearnet?](#how-to-access-the-onion-address-without-clearnet)
-- [How can I modify or deactivate environment variables?](#how-can-i-modify-or-deactivate-environment-variables)
-- [How can I run BTCPay on testnet?](#how-can-i-run-btcpay-on-testnet)
-- [Can I start BTCPay only when I'm expecting a payment?](#can-i-start-btcpay-only-when-im-expecting-a-payment)
-- [Can I connect to my BTCPay Bitcoin P2P on port 8333?](#can-i-connect-to-my-btcpay-bitcoin-p2p-on-port-8333)
-- [How can I renew my SSL certificate?](#how-can-i-renew-my-ssl-certificate)
-- [Can I use an existing Nginx server as a reverse proxy with SSL termination?](#can-i-use-an-existing-nginx-server-as-a-reverse-proxy-with-ssl-termination)
+- [How much does it cost to run BTCPay Server?](./Deployment.md#how-much-does-it-cost-to-run-btcpay-server)
+- [What are the minimal requirements for BTCPay?](./Deployment.md#what-are-the-minimal-requirements-for-btcpay)
+- [What is the easiest method to deploy a self-hosted BTCPay Server?](./Deployment.md#what-is-the-easiest-method-to-deploy-a-self-hosted-btcpay-server)
+- [How to choose a proper deployment method?](./Deployment.md#how-to-choose-a-proper-deployment-method)
+- [Can I run BTCPay on my own hardware?](./Deployment.md#can-i-run-btcpay-on-my-own-hardware)
+- [Can I deploy BTCPay on my existing VPS?](./Deployment.md#can-i-deploy-btcpay-on-my-existing-vps)
+- [Are there free hosts where I can test?](./Deployment.md#are-there-free-hosts-where-i-can-test)
+- [After initial deployment, I can't register and I don't have a login yet?](./Deployment.md#after-initial-deployment-i-cant-register-and-i-dont-have-a-login-yet)
+- [How do I activate Tor on my BTCPay Server?](./Deployment.md#how-do-i-activate-tor-on-my-btcpay-server)
+- [How do I disable Tor on my BTCPay Server?](./Deployment.md#how-do-i-disable-tor-on-my-btcpay-server)
+- [Why activate Tor? Does it mean that nobody knows who I am?](./Deployment.md#why-activate-tor-does-it-mean-that-nobody-knows-who-i-am)
+- [How to access the .onion address without clearnet?](./Deployment.md#how-to-access-the-onion-address-without-clearnet)
+- [How can I modify or deactivate environment variables?](./Deployment.md#how-can-i-modify-or-deactivate-environment-variables)
+- [How can I run BTCPay on testnet?](./Deployment.md#how-can-i-run-btcpay-on-testnet)
+- [Can I start BTCPay only when I'm expecting a payment?](./Deployment.md#can-i-start-btcpay-only-when-im-expecting-a-payment)
+- [Can I connect to my BTCPay Bitcoin P2P on port 8333?](./Deployment.md#can-i-connect-to-my-btcpay-bitcoin-p2p-on-port-8333)
+- [How can I renew my SSL certificate?](./Deployment.md#how-can-i-renew-my-ssl-certificate)
+- [Can I use an existing Nginx server as a reverse proxy with SSL termination?](./Deployment.md#can-i-use-an-existing-nginx-server-as-a-reverse-proxy-with-ssl-termination)
 
 
 ## Web Deployment FAQ
@@ -404,7 +404,7 @@ If you are running on linux, due to [a limitation of docker](https://github.com/
 * Run `BTCPAYGEN_ADDITIONAL_FRAGMENTS="$BTCPAYGEN_ADDITIONAL_FRAGMENTS"`
 * Run `. ./btcpay-setup.sh -i`
 
-If you are looking for how to deploy alongside existing Lightning node [see this](./FAQ-LightningNetwork.md#can-i-use-my-existing-ln-node-with-btcpay).
+If you are looking for how to deploy alongside existing Lightning node [see this](./LightningNetwork.md#can-i-use-my-existing-ln-node-with-btcpay).
 
 ### With the docker deployment, how to use a different volume for the data?
 
@@ -612,4 +612,4 @@ You need to open port 80 and 443. Once you did that, restart docker `btcpay-rest
 
 #### Cause 5: Other
 
-There could be many causes for 5XX HTTP errors. Please create an [Issue](https://github.com/btcpayserver/btcpayserver-docker/issues) and when cause becomes known add it here in the [Deployment FAQ](/FAQ/FAQ-Deployment.md) doc.
+There could be many causes for 5XX HTTP errors. Please create an [Issue](https://github.com/btcpayserver/btcpayserver-docker/issues) and when cause becomes known add it here in the [Deployment FAQ](/FAQ/Deployment.md) doc.

@@ -55,7 +55,7 @@ You can change the appearance of your **Point of Sale app** by following the [th
 
 [![BTCPay Server Crowdfunding](https://img.youtube.com/vi/tFbfyneDj88/mqdefault.jpg)](https://www.youtube.com/watch?v=tFbfyneDj88 "BTCPay Server Crowdfunding")
 
-If you would like to provide digital or physical products to the backers of your **crowdfunding campaign**, you can [integrate WooCommerce store into it](./FAQ/FAQ-Apps.md#how-to-integrate-woocommerce-store-into-a-btcpay-crowdfund-app). You can also set limits on contribution perks using the inventory feature.
+If you would like to provide digital or physical products to the backers of your **crowdfunding campaign**, you can [integrate WooCommerce store into it](./FAQ/Apps.md#how-to-integrate-woocommerce-store-into-a-btcpay-crowdfund-app). You can also set limits on contribution perks using the inventory feature.
 
 ## Payment Button
 

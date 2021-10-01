@@ -83,7 +83,7 @@ Push your local `docker-branch` changes to your BTCPayServer Docker repository o
 
 Step 9:
 
-[Update your server](../../FAQ/FAQ-ServerSettings.md#how-to-update-btcpay-server).
+[Update your server](../../FAQ/ServerSettings.md#how-to-update-btcpay-server).
 
 Now you can test your feature as if it was already released!
 

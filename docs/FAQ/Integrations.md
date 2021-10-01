@@ -1,18 +1,18 @@
 # BTCPay Integrations Frequently Asked Questions
 This page covers questions about BTCPay integrations.
 
-## [Integrations General](FAQ-Integrations.md#integrations-general-faq)
+## [Integrations General](./Integrations.md#integrations-general-faq)
 
-* [What e-commerce integrations are available?](FAQ-Integrations.md#what-e-commerce-integrations-are-available)
-* [Does BTCPay have a Shopify plugin?](FAQ-Integrations.md#does-btcpay-have-a-shopify-plugin)
-* [Can I use BTCPay without an integration?](FAQ-Integrations.md#can-i-use-btcpay-without-an-integration)
+* [What e-commerce integrations are available?](./Integrations.md#what-e-commerce-integrations-are-available)
+* [Does BTCPay have a Shopify plugin?](./Integrations.md#does-btcpay-have-a-shopify-plugin)
+* [Can I use BTCPay without an integration?](./Integrations.md#can-i-use-btcpay-without-an-integration)
 
-## [WooCommerce FAQ](FAQ-Integrations.md#woocommerce-faq-1)
+## [WooCommerce FAQ](./Integrations.md#woocommerce-faq-1)
 
-* [How to configure order status in WooCommerce?](FAQ-Integrations.md#how-to-configure-order-status-in-woocommerce)
-* [How to customize e-mail confirmations in WooCommerce?](FAQ-Integrations.md#how-to-customize-e-mail-confirmations-in-woocommerce)
-* [Error: If you use an alternative order numbering system, please see class-wc-gateway-btcpay.php to apply a search filter](FAQ-Integrations.md#error-if-you-use-an-alternative-order-numbering-system-please-see-class-wc-gateway-btcpayphp-to-apply-a-search-filter)
-* [How to configure Additional Token Support](FAQ-Integrations.md#how-to-configure-additional-token-support)
+* [How to configure order status in WooCommerce?](./Integrations.md#how-to-configure-order-status-in-woocommerce)
+* [How to customize e-mail confirmations in WooCommerce?](./Integrations.md#how-to-customize-e-mail-confirmations-in-woocommerce)
+* [Error: If you use an alternative order numbering system, please see class-wc-gateway-btcpay.php to apply a search filter](./Integrations.md#error-if-you-use-an-alternative-order-numbering-system-please-see-class-wc-gateway-btcpayphp-to-apply-a-search-filter)
+* [How to configure Additional Token Support](./Integrations.md#how-to-configure-additional-token-support)
 
 ## Integrations General FAQ
 
@@ -124,23 +124,23 @@ Make sure to have the latest woocommerce plugin installed.
 ###### Setting: Additional token configuration
 In the BTCPay payment method settings you have a new setting **“Additional token configuration”** where you can input the token configuration in a specific CSV format of 4 columns.
 
-1. **token symbol**:   
+1. **token symbol**:
    Important: this needs to match the symbol on BTCPay Server, e.g. BTC,
 
-2. **display name**:   
+2. **display name**:
    The visible text for the payment method on checkout
 
-3. **type**:   
+3. **type**:
    this can be “**payment**” or “**promotion**” [see explanation above](#token-types)
 
-4. **token icon (optional)**:    
+4. **token icon (optional)**:
    url to token symbol shown during checkout (can be empty but be sure to include the quotes). You can upload the icon in media manager and copy the url or you can use a link to external site or CDN.
 
-:::danger   
-**Important:** All the columns text needs to be enclosed by double quotes `"` and separated by semicolon `; each asset has to be put in a new line.   
+:::danger
+**Important:** All the columns text needs to be enclosed by double quotes `"` and separated by semicolon `; each asset has to be put in a new line.
 :::
 
-**Example additional token config**   
+**Example additional token config**
 ```
 "BTC_OFFCHAIN";"Lightning BTC";"payment";""
 "USDt";"USDt (Liquid Theter)";"payment";"https://example.com/wp-content/uploads/2021/01/usdt.png"
@@ -160,7 +160,7 @@ The default payment method of BTCPay Server (Bitcoin) will **not** enforce any c
 Free plugin used: [Country Based Restrictions for WooCommerce](https://wordpress.org/plugins/woo-product-country-base-restrictions/)
 After installing and activating the plugin go to a product in “Product data” block there is a new tab “Country restrictions”. You can configure the restrictions you want there.
 
-Example configuration:   
+Example configuration:
 ![Product restricted to US only](../img/woocommerce/woocommerce_at_product-country-restriction.png)
 
 ##### Use-case 2: (Promotion) products should have free shipping
@@ -168,9 +168,9 @@ This adds the ability to offer free shipping when a customer pays with a selecte
 This is doable with woocommerce out of the box (no plugins needed):
 
 1. In shipping settings add a new shipping class e.g. “free-shipping”
-2. On your shipping zones / shipping method config you need to make sure you set the rate to be 0 for that shipping class but also that “cost” is empty or 0. And your “no shipping class cost” is set to the normal rate (using flat-rate as example):   
+2. On your shipping zones / shipping method config you need to make sure you set the rate to be 0 for that shipping class but also that “cost” is empty or 0. And your “no shipping class cost” is set to the normal rate (using flat-rate as example):
    ![Flat rate, free shipping example configuration](../img/woocommerce/woocommerce_at_free-shipping-flat-rate-config.png)
-3. In product settings "Product data" block you have a tab "Shipping", there you set the above created "Free-shipping" class and it will taken care during checkout.   
+3. In product settings "Product data" block you have a tab "Shipping", there you set the above created "Free-shipping" class and it will taken care during checkout.
    ![Free shipping class set on product settings](../img/woocommerce/woocommerce_at_free-shipping-product-setting.png)
 
 ##### Use-case 3: limit product payment methods
@@ -178,7 +178,7 @@ E.g. allow only a certain Currency, Asset, Altcoin or Token to be used as paymen
 
 Free plugin used: [Conditional Payments for WooCommerce](https://wordpress.org/plugins/conditional-payments-for-woocommerce/)
 
-This plugin provides a condition rules builder where you can enable/disable available payment methods for products. See example config in the screenshot:   
+This plugin provides a condition rules builder where you can enable/disable available payment methods for products. See example config in the screenshot:
 ![Conditional payment rules overview](../img/woocommerce/woocommerce_at_limit-payment-methods-rules.png)
 
 ##### Use-case 4: discount per payment method
@@ -238,5 +238,5 @@ Adds the ability to limit the number of a Currency, Asset, Altcoin or Token that
 
 Useful for coupon-style promotions that are limited to one discount per checkout.
 
-This is also solved already by WooCommerce. You can activate this on a per product level in Product settings: Tab “**Inventory**”:    
+This is also solved already by WooCommerce. You can activate this on a per product level in Product settings: Tab “**Inventory**”:
 set the checkbox [x] “*Enable this to only allow one of this item to be bought in a single order*”

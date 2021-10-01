@@ -126,6 +126,6 @@ wallet.gap_limit
 
 There's no good answer to how much you should set the gap limit to. Most merchants set 100-200. If you're a big merchants with high transaction volume, you can try with even higher gap limit.
 
-For more details about the [Gap Limit, check the FAQ](./FAQ/FAQ-Wallet.md#missing-payments-in-my-software-or-hardware-wallet).
+For more details about the [Gap Limit, check the FAQ](./FAQ/Wallet.md#missing-payments-in-my-software-or-hardware-wallet).
 
 **Electrum and BTCPay Server are now connected**. Any payments received to your BTCPay will be visible in Electrum, where you can further spend them.

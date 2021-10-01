@@ -8,26 +8,26 @@ tags:
 
 This page contains general questions and answers about BTCPay. What it is, how it works, how to install it.
 
-# [General FAQ](FAQ-General.md)
+# [General FAQ](./General.md)
 
-* [What is BTCPay Server?](FAQ-General.md#what-is-btcpay-server)
-* [Why should I choose BTCPay over other processors?](FAQ-General.md#why-should-i-choose-btcpay-over-other-processors)
-* [Why is everyone so excited about BTCPay?](FAQ-General.md#why-is-everyone-so-excited-about-btcpay)
-* [Who can use BTCPay?](FAQ-General.md#who-can-use-btcpay)
-* [How to install BTCPay?](FAQ-General.md#how-to-install-btcpay-server)
-* [Where to find BTCPay video tutorials?](FAQ-General.md#where-to-find-btcpay-video-tutorials)
-* [Do I need to have an online store to use BTCPay Server?](FAQ-General.md#do-i-need-to-have-an-online-store-to-use-btcpay-server)
-* [Why can't I just give my public address to a buyer?](FAQ-General.md#why-cant-i-just-give-my-bitcoin-address-to-a-buyer)
-* [How does BTCPay create a new address for each invoice?](FAQ-General.md#how-does-btcpay-create-a-new-address-for-each-invoice)
-* [Does BTCPay need my private key?](FAQ-General.md#does-btcpay-need-myprivate-key)
-* [Does BTCPay Server support crypto to fiat conversion?](FAQ-General.md#does-btcpay-server-support-crypto-to-fiat-conversion)
-* [What if I have a problem paying a BTCPay Server invoice?](FAQ-General.md#what-if-i-have-a-problem-paying-an-invoice)
-* [What if I have a problem with a paid invoice?](FAQ-General.md#what-if-i-have-a-problem-with-a-paid-invoice)
-* [Where can I get help and support?](FAQ-General.md#where-can-i-get-help-and-support)
-* [How can I contribute to BTCPay?](FAQ-General.md#how-can-i-contribute-to-btcpay)
-* [How can I use the BTCPay Server API?](FAQ-General.md#how-can-i-use-the-btcpay-server-api)
-* [How can I backup my BTCPay Server?](FAQ-General.md#how-can-i-backup-my-btcpay-server)
-* [How can I charge for using my BTCPay Server instance?](FAQ-General.md#how-can-i-charge-for-using-my-btcpay-server-instance)
+* [What is BTCPay Server?](./General.md#what-is-btcpay-server)
+* [Why should I choose BTCPay over other processors?](./General.md#why-should-i-choose-btcpay-over-other-processors)
+* [Why is everyone so excited about BTCPay?](./General.md#why-is-everyone-so-excited-about-btcpay)
+* [Who can use BTCPay?](./General.md#who-can-use-btcpay)
+* [How to install BTCPay?](./General.md#how-to-install-btcpay-server)
+* [Where to find BTCPay video tutorials?](./General.md#where-to-find-btcpay-video-tutorials)
+* [Do I need to have an online store to use BTCPay Server?](./General.md#do-i-need-to-have-an-online-store-to-use-btcpay-server)
+* [Why can't I just give my public address to a buyer?](./General.md#why-cant-i-just-give-my-bitcoin-address-to-a-buyer)
+* [How does BTCPay create a new address for each invoice?](./General.md#how-does-btcpay-create-a-new-address-for-each-invoice)
+* [Does BTCPay need my private key?](./General.md#does-btcpay-need-myprivate-key)
+* [Does BTCPay Server support crypto to fiat conversion?](./General.md#does-btcpay-server-support-crypto-to-fiat-conversion)
+* [What if I have a problem paying a BTCPay Server invoice?](./General.md#what-if-i-have-a-problem-paying-an-invoice)
+* [What if I have a problem with a paid invoice?](./General.md#what-if-i-have-a-problem-with-a-paid-invoice)
+* [Where can I get help and support?](./General.md#where-can-i-get-help-and-support)
+* [How can I contribute to BTCPay?](./General.md#how-can-i-contribute-to-btcpay)
+* [How can I use the BTCPay Server API?](./General.md#how-can-i-use-the-btcpay-server-api)
+* [How can I backup my BTCPay Server?](./General.md#how-can-i-backup-my-btcpay-server)
+* [How can I charge for using my BTCPay Server instance?](./General.md#how-can-i-charge-for-using-my-btcpay-server-instance)
 
 ## What is BTCPay Server?
 
@@ -61,7 +61,7 @@ First take a look at the various deployment options and consider which one best 
 
 - [See all deployments](/Deployment/README.md)
 
-If you still have questions, visit the [Deployment FAQ](/FAQ/FAQ-Deployment.md)
+If you still have questions, visit the [Deployment FAQ](/FAQ/Deployment.md)
 
 ## Where to find BTCPay video tutorials?
 
@@ -119,7 +119,7 @@ The solution for this (by the merchant) is to modify your extended public key (x
 - Older funds and transactions which were previously displayed in your store's wallet will not appear anymore.
    - As a result, you may want to consider creating a second store with the modified xpub, to retain the previous transaction history of your transactions.
 
-Learn more about xpub formats and how to modify them [here](./FAQ-Wallet.md#what-is-a-derivation-scheme). If you do not understand the options listed above, ask for clarification in the [community on Mattermost](https://chat.btcpayserver.org/).
+Learn more about xpub formats and how to modify them [here](./Wallet.md#what-is-a-derivation-scheme). If you do not understand the options listed above, ask for clarification in the [community on Mattermost](https://chat.btcpayserver.org/).
 
 2. The invoice receives payment, but it is not paid in full.
 

@@ -2,17 +2,17 @@
 
 This document contains frequently asked questions related to BTCPay Server's [internal wallet](../Wallet.md).
 
-* [What is BTCPay Server wallet?](#what-is-btcpay-server-wallet)
-* [How to set up my wallet with BTCPay Server?](#how-to-set-up-my-wallet-with-btcpay-server)
-* [Can I use a hardware wallet with BTCPay Server?](#can-i-use-a-hardware-wallet-with-btcpay-server)
-* [Do I have to use BTCPay Server wallet?](#do-i-have-to-use-btcpay-server-wallet)
-* [Why is sending a transaction in BTCPay Server using Trezor failing?](#why-is-sending-a-transaction-using-trezor-failing)
-* [Missing payments in wallet?](#missing-payments-in-my-software-or-hardware-wallet)
-* [What is a derivation scheme?](#what-is-a-derivation-scheme)
-* [What is a Replace-By-Fee (RBF) transaction?](#what-is-a-replace-by-fee-rbf-transaction)
-* [How to add custom labels and comments to transactions?](#how-to-add-custom-labels-and-comments-to-transactions)
-* [I don't see Lightning network payments in BTCPay wallet?](#i-dont-see-lightning-network-payments-in-btcpay-wallet)
-* [Is there a mobile app for BTCPay Server wallet?](#is-there-a-mobile-app-for-btcpay-server-wallet)
+* [What is BTCPay Server wallet?](./Wallet.md#what-is-btcpay-server-wallet)
+* [How to set up my wallet with BTCPay Server?](./Wallet.md#how-to-set-up-my-wallet-with-btcpay-server)
+* [Can I use a hardware wallet with BTCPay Server?](./Wallet.md#can-i-use-a-hardware-wallet-with-btcpay-server)
+* [Do I have to use BTCPay Server wallet?](./Wallet.md#do-i-have-to-use-btcpay-server-wallet)
+* [Why is sending a transaction in BTCPay Server using Trezor failing?](./Wallet.md#why-is-sending-a-transaction-using-trezor-failing)
+* [Missing payments in wallet?](./Wallet.md#missing-payments-in-my-software-or-hardware-wallet)
+* [What is a derivation scheme?](./Wallet.md#what-is-a-derivation-scheme)
+* [What is a Replace-By-Fee (RBF) transaction?](./Wallet.md#what-is-a-replace-by-fee-rbf-transaction)
+* [How to add custom labels and comments to transactions?](./Wallet.md#how-to-add-custom-labels-and-comments-to-transactions)
+* [I don't see Lightning network payments in BTCPay wallet?](./Wallet.md#i-dont-see-lightning-network-payments-in-btcpay-wallet)
+* [Is there a mobile app for BTCPay Server wallet?](./Wallet.md#is-there-a-mobile-app-for-btcpay-server-wallet)
 
 ## What is BTCPay Server wallet?
 
@@ -101,9 +101,9 @@ On top of the xPub extended public key formats shown above, BTCPay Server suppor
 
 ## What is a Replace-By-Fee (RBF) transaction?
 
-A Replace-By-Fee (RBF) transaction is a feature of the Bitcoin protocol. Learn more about what it is, why it happens and the different types of RBF [here](https://bitcoin.stackexchange.com/a/54457/85016). 
+A Replace-By-Fee (RBF) transaction is a feature of the Bitcoin protocol. Learn more about what it is, why it happens and the different types of RBF [here](https://bitcoin.stackexchange.com/a/54457/85016).
 
-RBF capability is by default randomly enabled/disabled between transactions when using the BTCPay Server internal wallet, for enhanced privacy. In order to ensure it is enabled, or to disable it, see the advanced options of the BTCPay Server [internal wallet](../Wallet.md#rbf-replace-by-fee). 
+RBF capability is by default randomly enabled/disabled between transactions when using the BTCPay Server internal wallet, for enhanced privacy. In order to ensure it is enabled, or to disable it, see the advanced options of the BTCPay Server [internal wallet](../Wallet.md#rbf-replace-by-fee).
 
 ## How to add custom labels and comments to transactions?
 
@@ -119,9 +119,9 @@ In the future they may become unified but for the time being, to manage your Lig
 
 ## Is there a mobile app for BTCPay Server wallet?
 
-BTCPay Server is a web app (not a mobile app) and may be viewed using any device that can display a web browser. There are mobile apps which allow you to connect to your BTCPay Server Lightning node (Zeus, Zap, Spark, etc). 
+BTCPay Server is a web app (not a mobile app) and may be viewed using any device that can display a web browser. There are mobile apps which allow you to connect to your BTCPay Server Lightning node (Zeus, Zap, Spark, etc).
 
-You can also use mobile apps to connect to your Bitcoin full node using either P2P or RPC. If you are on iOS you can easily connect to your Bitcoin full node using Fully Noded. 
+You can also use mobile apps to connect to your Bitcoin full node using either P2P or RPC. If you are on iOS you can easily connect to your Bitcoin full node using Fully Noded.
 
 To connect your BTCPay node to Fully Noded:
 

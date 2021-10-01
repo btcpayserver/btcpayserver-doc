@@ -245,19 +245,19 @@ const sidebarContribute = [
 const sidebarFAQ = [
   {
     title: 'FAQ and common issues',
-    path: '/FAQ',
+    path: '/FAQ/',
     collapsable: false,
     children: [
-      ['/FAQ/FAQ-General', 'General FAQ'],
-      ['/FAQ/FAQ-Deployment', 'Deployment FAQ'],
-      ['/FAQ/FAQ-Synchronization', 'Synchronization FAQ'],
-      ['/FAQ/FAQ-Integrations', 'Integrations FAQ'],
-      ['/FAQ/FAQ-ServerSettings', 'Server Settings FAQ'],
-      ['/FAQ/FAQ-Stores', 'Stores FAQ'],
-      ['/FAQ/FAQ-Wallet', 'Wallet FAQ'],
-      ['/FAQ/FAQ-Apps', 'Apps FAQ'],
-      ['/FAQ/FAQ-LightningNetwork', 'Lightning Network FAQ'],
-      ['/FAQ/FAQ-Altcoin', 'Altcoins FAQ']
+      ['General', 'General FAQ'],
+      ['Deployment', 'Deployment FAQ'],
+      ['Synchronization', 'Synchronization FAQ'],
+      ['Integrations', 'Integrations FAQ'],
+      ['ServerSettings', 'Server Settings FAQ'],
+      ['Stores', 'Stores FAQ'],
+      ['Wallet', 'Wallet FAQ'],
+      ['Apps', 'Apps FAQ'],
+      ['LightningNetwork', 'Lightning Network FAQ'],
+      ['Altcoin', 'Altcoins FAQ']
     ]
   }
 ]
@@ -389,7 +389,7 @@ module.exports = {
       '/ElectrumX': sidebarDeployment,
       '/ElectrumPersonalServer': sidebarDeployment,
       '/Transmuter': sidebarDeployment,
-      '/FAQ': sidebarFAQ,
+      '/FAQ/': sidebarFAQ,
       '/': sidebarUserGuide
     }
   }

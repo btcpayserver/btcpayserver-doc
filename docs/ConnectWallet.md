@@ -20,7 +20,7 @@ If you own a hardware wallet, follow the instructions on how to [use a an existi
 
 ### Import Wallet file
 
-Using an existing software wallet assumes that you already have an external wallet created and backed up. In theory, any mobile/desktop wallet that provides an extended public key should work, however, most wallets have technical limitations [(gap-limit)](./FAQ/FAQ-Wallet.md#missing-payments-in-my-software-or-hardware-wallet) that may cause serious user-experience problems for you later on.
+Using an existing software wallet assumes that you already have an external wallet created and backed up. In theory, any mobile/desktop wallet that provides an extended public key should work, however, most wallets have technical limitations [(gap-limit)](./FAQ/Wallet.md#missing-payments-in-my-software-or-hardware-wallet) that may cause serious user-experience problems for you later on.
 
 For that reason, we recommend that you only use software wallets listed below.
 
@@ -33,18 +33,18 @@ To spend and manage the funds received to your external software wallet, you can
 
 ### Enter extended public key
 
-This option can be useful if you want to modify [legacy wallet addresses](./FAQ/FAQ-General.md#what-if-i-have-a-problem-paying-an-invoice) or if your wallet type is not compatible with the Hardware Wallet Integration (Vault). 
+This option can be useful if you want to modify [legacy wallet addresses](./FAQ/General.md#what-if-i-have-a-problem-paying-an-invoice) or if your wallet type is not compatible with the Hardware Wallet Integration (Vault).
 
-This method requires you to configure your wallet connection manually and should only be used if you have a good understanding of wallet extended public keys, account key paths and master fingerprints. 
+This method requires you to configure your wallet connection manually and should only be used if you have a good understanding of wallet extended public keys, account key paths and master fingerprints.
 
 ### Scan wallet QR code
 
-Some wallets allow you to create a wallet and export the extended public key (xPub) using a QR Code. You can easily connect your BTCPay Server to these types of wallets with the scan QR code option. The common [(gap-limit)](./FAQ/FAQ-Wallet.md#missing-payments-in-my-software-or-hardware-wallet) issue is likely to occur using any xPub, unless the wallet provider has a way to adjust it.
+Some wallets allow you to create a wallet and export the extended public key (xPub) using a QR Code. You can easily connect your BTCPay Server to these types of wallets with the scan QR code option. The common [(gap-limit)](./FAQ/Wallet.md#missing-payments-in-my-software-or-hardware-wallet) issue is likely to occur using any xPub, unless the wallet provider has a way to adjust it.
 
 To spend and manage the funds in your [internal BTCPay Wallet](./Wallet.md) you will need to provide the private key (used to generate the xpub QR Code) during transaction signing or simply receive funds through your BTCPay and manage the funds in the external wallet.
 
 ### Enter wallet seed
 
-This option is useful if you have **no other way** of spending funds in a certain wallet. Such as an altcoin wallet that was previously compatible with the hardware wallet integration but no longer is. In general you should never type wallet seed words on any internet connected device. 
+This option is useful if you have **no other way** of spending funds in a certain wallet. Such as an altcoin wallet that was previously compatible with the hardware wallet integration but no longer is. In general you should never type wallet seed words on any internet connected device.
 
-This method requires you to configure your wallet connection manually and should only be used if you have a good understanding of wallet formats, extended public keys, account key paths and master fingerprints. 
+This method requires you to configure your wallet connection manually and should only be used if you have a good understanding of wallet formats, extended public keys, account key paths and master fingerprints.

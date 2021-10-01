@@ -20,7 +20,7 @@ This means:
 While the keys from your **Lightning Network** don't have a backup and someone can steal them theoretically, your on-chain Bitcoin funds are safe and are never uploaded on the server.
 
 As the technology matures and develops, things like a proper backup will be easier to implement in BTCPay.
-As of [v1.0.3.138](https://blog.btcpayserver.org/btcpay-lnd-migration/), LND is the only lightning network implementation that allows for [lightning seed backups with BTCPay Server](./FAQ/FAQ-LightningNetwork.md#where-can-i-find-recovery-seed-backup-for-my-lightning-network-wallet-in-btcpay-server).
+As of [v1.0.3.138](https://blog.btcpayserver.org/btcpay-lnd-migration/), LND is the only lightning network implementation that allows for [lightning seed backups with BTCPay Server](./FAQ/LightningNetwork.md#where-can-i-find-recovery-seed-backup-for-my-lightning-network-wallet-in-btcpay-server).
 
 **BTCPay currently offers three implementations of the Lightning Network**:
 
@@ -30,7 +30,7 @@ As of [v1.0.3.138](https://blog.btcpayserver.org/btcpay-lnd-migration/), LND is 
 
 ## Choosing the Lightning Network implementation
 
-First, read [here](./FAQ/FAQ-LightningNetwork.md#can-i-use-a-pruned-node-with-ln-in-btcpay) about using pruned Bitcoin nodes with lightning network implementations before deploying.
+First, read [here](./FAQ/LightningNetwork.md#can-i-use-a-pruned-node-with-ln-in-btcpay) about using pruned Bitcoin nodes with lightning network implementations before deploying.
 
 On the installation, you'll have the option to choose the implementation.
 For [web-interface installations](/Deployment/LunaNode.md), you can simply select the implementation from the drop-down menu.
@@ -72,9 +72,9 @@ Regardless of the implementation (c-lightning or LND) you've decided to use, the
 
 ![BTCPay Server Lightning Network Setup 3](./img/lightning-node-setup/LightningNetworkNodeSetup3.png "Test the Lightning Network connection")
 
-To ensure that your Lightning node is connected and accessible for use in your store's invoices, try to test your Lightning connection by clicking the "Public Node Info" link. Verify that a successful connection is displayed. If your internal node connection fails, make sure you have a Lightning implementation [enabled](./FAQ/FAQ-LightningNetwork.md#i-previously-installed-btcpayserver-without-lightning-can-i-enable-it) on your server.
+To ensure that your Lightning node is connected and accessible for use in your store's invoices, try to test your Lightning connection by clicking the "Public Node Info" link. Verify that a successful connection is displayed. If your internal node connection fails, make sure you have a Lightning implementation [enabled](./FAQ/LightningNetwork.md#i-previously-installed-btcpayserver-without-lightning-can-i-enable-it) on your server.
 
-If you are unable to connect to your Lightning node, try [restarting your server](./FAQ/FAQ-ServerSettings.md#how-to-restart-btcpay-server) or reviewing our [troubleshooting guide](./Troubleshooting.md). You will not be able to accept lightning payments in your store until your test connection shows as successful.
+If you are unable to connect to your Lightning node, try [restarting your server](./FAQ/ServerSettings.md#how-to-restart-btcpay-server) or reviewing our [troubleshooting guide](./Troubleshooting.md). You will not be able to accept lightning payments in your store until your test connection shows as successful.
 
 ## Connecting an external Lightning Node in BTCPay
 

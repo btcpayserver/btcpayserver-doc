@@ -57,4 +57,4 @@ Do not give anyone else access to your server's SSH keys or server account crede
 
 Similar to the hot wallet, the watch-only wallet can get your store connected to a wallet instantly. In contrast, this option does not store the private keys on the server. As a result the wallet becomes "watch-only" for any received funds.
 
-In order to spend the funds you would need to manually provide your seed words each time. Alternatively you can spend funds in another external wallet where you have imported your BTCPay Server produced seed words. Be sure to consider the [gap limit issue](./FAQ/FAQ-Wallet.md#missing-payments-in-my-software-or-hardware-wallet) if you're using an external wallet with your watch-only wallet.
+In order to spend the funds you would need to manually provide your seed words each time. Alternatively you can spend funds in another external wallet where you have imported your BTCPay Server produced seed words. Be sure to consider the [gap limit issue](./FAQ/Wallet.md#missing-payments-in-my-software-or-hardware-wallet) if you're using an external wallet with your watch-only wallet.
