@@ -191,33 +191,39 @@ const sidebarDeployment = [
 ]
 
 const sidebarDevelopment = [
-  ['/Development/', 'Architecture'],
   {
     title: 'Greenfield API',
     collapsable: false,
     children: [
       [`${baseUrl}/API/Greenfield/v1`, 'Greenfield API v1', { type: 'external' }],
-      ['/Development/GreenFieldExample', 'Greenfield example with cURL']
+      '/Development/GreenFieldExample'
     ]
   },
   {
     title: 'Development',
     collapsable: false,
     children: [
-      ['/Development/LocalDevelopment', 'Developing Locally'],
-      ['/Development/Altcoins', 'How to add an Altcoin'],
-      ['/Development/Theme', 'Customizing Themes'],
+      '/Development/',
+      '/Development/LocalDevelopment',
+      '/Development/Altcoins',
+      '/Development/Theme'
     ]
   },
   {
-    title: 'Vault',
+    title: 'More',
     collapsable: false,
+    initialOpenGroupIndex: -1,
     children: [
-      ['/Vault/', 'BTCPay Server Vault'],
-      ['/Vault/HowToVerify', 'How To Verify']
+      {
+        title: 'BTCPay Server Vault',
+        path: '/Vault/',
+        children: [
+          '/Vault/HowToVerify'
+        ]
+      },
+      ['/BTCPayServer/Security', 'Security Disclosures']
     ]
-  },
-  ['/BTCPayServer/Security', 'Security Disclosures']
+  }
 ]
 
 const sidebarContribute = [

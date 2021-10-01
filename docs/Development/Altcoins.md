@@ -1,4 +1,4 @@
-# Altcoins
+# How to add an Altcoin
 
 Bitcoin is the only focus of the project and its core developers. However, opt-in integrations are available for several altcoins.
 

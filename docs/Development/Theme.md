@@ -1,4 +1,4 @@
-# Theming
+# Customizing themes
 
 BTCPay Server is built on Bootstrap and offers the flexibility to adjust its look to your needs.
 Learn more about the [standard design specifications used in BTCPay](https://design.btcpayserver.org/).
