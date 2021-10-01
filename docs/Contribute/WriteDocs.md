@@ -11,12 +11,10 @@ If your Pull Request adds information in the [Documentation](https://github.com/
 
 Simply click the `details` button as shown in the screenshot below. Then locate the file or section that you edited and verify that everything appears as you intended.
 
-![NetlifyDeploymentPreview](../../img/Contribute/Netlify_preview.png)
+![NetlifyDeploymentPreview](../img/Contribute/Netlify_preview.png)
 
-:::tip 
+:::tip
 It's a good idea to use relative URL's instead of absolute URL's when editing links that redirect to pages that are part of the documentation already.
 This helps the contributors setting up documentation locally.
 [More info](https://v1.vuepress.vuejs.org/guide/markdown.html#internal-links/).
 :::
-
-

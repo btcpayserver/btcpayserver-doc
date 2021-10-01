@@ -36,6 +36,7 @@ If you are looking for how to make a simple code change such as fixing a typo or
 ## Windows Setup Software
 
  Software to install to follow this guide:
+
  1. [Visual Studio Community Edition](https://visualstudio.microsoft.com/downloads/)
  1. [.NET Core SDK 3.1+](https://dotnet.microsoft.com/download)
  1. [Docker Desktop](https://www.docker.com/products/docker-desktop)
@@ -84,7 +85,7 @@ Note: _This guide assumes installations in default locations. Take note if you h
 - In Powershell, start the docker services with the command: `docker-compose up dev`(you must be in the BTCPay Server.Tests to run this command).
 - In your PowerShell terminal you will first see the necessary docker images being pulled, then containers being built. If the build is successful the containers will all show as done.
 
-![BTCPayServer.Tests powershell terminal](../../img/Contribute/docker-compose-up-dev.png)
+![BTCPayServer.Tests powershell terminal](../img/Contribute/docker-compose-up-dev.png)
 
 ### Build Local BTCPay Server in Browser Mode
 
@@ -92,11 +93,11 @@ If you don't want to do any coding and you simply want to create a local BTCPay 
 
 After building your [regtest network](#bitcoin-regtest-network-setup), navigate to your `btcpayserver\BTCPayServer` directory and run the following command:
 
-```
+```bash
 dotnet run --launch-profile Bitcoin
 ```
 
-Open a new browser and visit: http://127.0.0.1:14142
+Open a new browser and visit: [http://127.0.0.1:14142](http://127.0.0.1:14142)
 
 ### Visual Studio Setup
 
@@ -105,7 +106,7 @@ Open a new browser and visit: http://127.0.0.1:14142
 - The top project is BTCPay Server, make sure it's in bold. If it isn't, right click it and choose Set as StartUp Project.
 - Your Visual Studio is now set up and ready.
 
-![VS Solution Explorer](../../img/Contribute/vs-solution-explorer.png)
+![VS Solution Explorer](../img/Contribute/vs-solution-explorer.png)
 
 ### Build Local BTCPay Server in Debug Mode
 
@@ -117,9 +118,9 @@ Open a new browser and visit: http://127.0.0.1:14142
 - You now will have three windows to view: BTCPay Server browser session, our Visual Studio debug console and our BTCPay Server.Tests powershell terminal.
 - Register a new user in your BTCPay Server and see the registration event is shown in your Visual Studio debug console.
 
-![VS Debug Console](../../img/Contribute/vs-debug-console.png)
+![VS Debug Console](../img/Contribute/vs-debug-console.png)
 
-![Local Regtest BTCPay](../../img/Contribute/regtest-btcpay.png)
+![Local Regtest BTCPay](../img/Contribute/regtest-btcpay.png)
 
 ### Visual Studio Code Changes In Your Local BTCPay Server
 
@@ -167,6 +168,7 @@ Close Editor with: Enter
 
 $ git push origin Fix/BugBranch
 ```
+
 See your new branch has been created on you www.Github.com BTCPay Server Fork, review changes and create Pull Request.
 
 ### Create a Branch of a Pull Request
@@ -189,6 +191,7 @@ If you delete a branch on your forked BTCPay repository on Github.com, your loca
 $ git checkout master
 $ git branch -D <branch name>
 ```
+
 Note: You can't delete a branch if you have it checked out, so checkout another branch like `master` first, as shown in the example above.
 
 ## Working with Docker Containers
@@ -213,18 +216,18 @@ BTCPay uses a PostgreSQL database by default. During development you can easily 
 
 Start your BTCPay in your local environment and view your debug console to find your database connection details:
 
-![PostgreSQL Configuration](../../img/Contribute/DB-Config.png)
+![PostgreSQL Configuration](../img/Contribute/DB-Config.png)
 
 Next, open your PgAdmin and select: `Servers > Create > Server...` to connect to your server. Provide a name for your server and provide your host connection details from your Visual Studio debug console:
 
-![PgAdmin Connection](../../img/Contribute/DB-Connect.png)
+![PgAdmin Connection](../img/Contribute/DB-Connect.png)
 
 Save to connect to your development btcpayserver database. In the btcpayserver database look for:
 `Schemas > public > Tables` to see the tables which contain the BTCPay Server data.
 
 As an example, you can see all the users registered to your development BTCPay by viewing the rows of the `AspNetUsers` table. Try changing the username of a registered user in the database, then `Save Changes` and `Refresh (F5)`. Now log into your BTCPay using the new username and original password.
 
-![PgAdmin Edit](../../img/Contribute/DB-Edit.png)
+![PgAdmin Edit](../img/Contribute/DB-Edit.png)
 
 ## Questions
 

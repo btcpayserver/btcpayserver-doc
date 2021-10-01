@@ -88,5 +88,15 @@ module.exports = [
   // Old paths in new docs
   { path: '/DockerDeployment/', redirect: '/Docker/' },
   { path: '/HotWallet/', redirect: '/CreateWallet/' },
-  { path: '/HardwareWalletIntegration/', redirect: '/ConnectWallet/' }
+  { path: '/HardwareWalletIntegration/', redirect: '/ConnectWallet/' },
+  { path: '/Contribute/ContributeDev/', redirect: '/Contribute/Dev/' },
+  { path: '/Contribute/ContributeDevCode/', redirect: '/Contribute/DevCode/' },
+  { path: '/Contribute/ContributeDevTest/', redirect: '/Contribute/DevTest/' },
+  { path: '/Contribute/ContributeWrite/', redirect: '/Contribute/Write/' },
+  { path: '/Contribute/ContributeWrite/WriteSoftware', redirect: '/Contribute/WriteSoftware/' },
+  { path: '/Contribute/ContributeWrite/WriteDocs', redirect: '/Contribute/WriteDocs/' },
+  { path: '/Contribute/ContributeWrite/WriteBlog', redirect: '/Contribute/WriteBlog/' },
+  { path: '/Contribute/ContributeDesign', redirect: '/Contribute/Design/' },
+  { path: '/Contribute/ContributeTranslate', redirect: '/Contribute/Translate/' },
+  { path: '/Contribute/ContributeMisc', redirect: '/Contribute/Misc/' }
 ]
