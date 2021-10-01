@@ -168,7 +168,10 @@ const sidebarDeployment = [
           },
           ['/ElectrumX', 'Electrum X'],
           ['/ElectrumPersonalServer', 'Electrum Personal Server'],
-          '/Docker/pihole'
+          '/Docker/joinmarket',
+          '/Docker/pihole',
+          '/Docker/fireflyiii',
+          '/Docker/ndlc'
         ]
       }
     ]
