@@ -25,7 +25,7 @@ While using Electrum Wallet with "Select Server Automatically" on is the easiest
 ### Prerequisites (mandatory):
 
 1. Docker only: Only the [Docker version of BTCPay Server](https://docs.btcpayserver.org/Docker/) is supported.
-2. Unpruned BTCPay node: Make sure your BTCPay implementation is NOT [pruned](./FAQ/FAQ-Synchronization.md#can-i-skip-the-synchronization) (i.e. you have synched and stored from genesis block. Check that you do NOT use the opt-save-storage [Environment Variable](https://docs.btcpayserver.org/Docker/#generated-docker-compose))
+2. Unpruned BTCPay node: Make sure your BTCPay implementation is NOT [pruned](./FAQ/Synchronization.md#can-i-skip-the-synchronization) (i.e. you have synched and stored from genesis block. Check that you do NOT use the opt-save-storage [Environment Variable](https://docs.btcpayserver.org/Docker/#generated-docker-compose))
 3. Drive space: At least 400GB of drive space on the device where your docker volumes are stored is required (as at the writing of this documentation on 9th Nov 2019, the total hard drive space used is 333GB - with full node and ElectrumX enabled - and of course this will grow further over time).
 4. Additional Fragments: You are familiar with how to use BTCPay's [Additional Fragment](https://docs.btcpayserver.org/Docker/#environment-variables) feature as part of your environment variable setup.
 5. Server architecture: The (official) [ElectrumX docker](https://github.com/lukechilds/docker-electrumx) used here is only tested on a BTCPay Server running on x86_64 architecture. So far it is tested extensively on Ubuntu 18.04 and Debian Buster. Unless it is overhauled and tested well on Raspberry Pi (and other architectures) it likely will not work.

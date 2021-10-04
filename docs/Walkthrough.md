@@ -21,7 +21,7 @@ After you created the account on the BTCPay Server instance hosted by yourself o
 
 ## Server settings
 
-**Server settings** is something only a server admin can access. If you're using someone else's server, you won't see Server Settings. Inside the settings, you can perform tasks such as controlling users, rates, updating the server, etc. For more information, check [Server Settings FAQ](./FAQ/FAQ-ServerSettings.md)
+**Server settings** is something only a server admin can access. If you're using someone else's server, you won't see Server Settings. Inside the settings, you can perform tasks such as controlling users, rates, updating the server, etc. For more information, check [Server Settings FAQ](./FAQ/ServerSettings.md)
 
 - Users - Add, remove or manage users of your BTCPay Server.
 - Email server - If you want users to verify e-mail address when registering set up the SMTP settings.
@@ -34,11 +34,11 @@ After you created the account on the BTCPay Server instance hosted by yourself o
 
 ## Stores
 
-Inside BTCPay you can **create and manage an unlimited number of stores**. Each store has its own wallet, can create apps (Point of Sale or Payment Buttons and Crowdfunds) or be paired with external e-commerce software through one of the integrations available. Admin does not have control over the private keys of the other user's stores. For more information, check [Stores FAQ](./FAQ/FAQ-Stores.md)
+Inside BTCPay you can **create and manage an unlimited number of stores**. Each store has its own wallet, can create apps (Point of Sale or Payment Buttons and Crowdfunds) or be paired with external e-commerce software through one of the integrations available. Admin does not have control over the private keys of the other user's stores. For more information, check [Stores FAQ](./FAQ/Stores.md)
 
 - General settings - Configure individual store settings, set up derivation scheme for your wallet and adjust the number of confirmations or invoice expiration time, etc. Server admins can enable Lightning Network payments.
-- Rates - Set the source for cryptocurrency to fiat [exchange rates for your store](./FAQ/FAQ-Stores.md#how-to-change-the-exchange-rate-provider-for-invoices).
-- Checkout experience - [Customize the appearance](./FAQ/FAQ-ServerSettings.md#how-to-modify-the-checkout-page) of the checkout page, choose default coin, etc.
+- Rates - Set the source for cryptocurrency to fiat [exchange rates for your store](./FAQ/Stores.md#how-to-change-the-exchange-rate-provider-for-invoices).
+- Checkout experience - [Customize the appearance](./FAQ/ServerSettings.md#how-to-modify-the-checkout-page) of the checkout page, choose default coin, etc.
 - Access Tokens - Tokens for [pairing the store to an integration](./WhatsNext.md#connecting-your-btcpay-store-to-your-e-commerce-platform)
 - Users - Enable other users with a registered BTCPay account to access your store as either guest or owner.
 - Pay Button - [Create a payment button](./WhatsNext.md#creating-the-pay-button) you can easily embed into your website.
@@ -47,11 +47,11 @@ Inside BTCPay you can **create and manage an unlimited number of stores**. Each 
 
 Each store has access to different apps. **Applications built on top of BTCPay** extend the [use case](./UseCase.md) of the software and cater to different type of users. Here you can create a new app and connect it to the store and customize it. A good example is the Point of Sale app which you can use to receive payments in physical stores or even donations.
 
-For more information, check [Apps](./Apps.md) or [Apps FAQ](./FAQ/FAQ-Apps.md)
+For more information, check [Apps](./Apps.md) or [Apps FAQ](./FAQ/Apps.md)
 
 ## Wallets
 
-Each store gets an internal wallet upon adding a derivation scheme. **Internal BTCPay wallet** shows all of your payments and should be used as a reference if some payments are not shown in your software or hardware wallet due to some wallets [not supporting larger gap limit](./FAQ/FAQ-Wallet.md#missing-payments-in-my-software-or-hardware-wallet). In Wallets, you can see the total balance of your store. The funds from the wallet can only be spent, if the user signs a transaction with a compatible hardware wallet.
+Each store gets an internal wallet upon adding a derivation scheme. **Internal BTCPay wallet** shows all of your payments and should be used as a reference if some payments are not shown in your software or hardware wallet due to some wallets [not supporting larger gap limit](./FAQ/Wallet.md#missing-payments-in-my-software-or-hardware-wallet). In Wallets, you can see the total balance of your store. The funds from the wallet can only be spent, if the user signs a transaction with a compatible hardware wallet.
 
 Three elements of the internal BTCPay Wallet are:
 * Transaction - Shows your entire transaction history.
@@ -63,7 +63,7 @@ Three elements of the internal BTCPay Wallet are:
 * PSBT - Used to sign multi-signature transactions through the PSBT standard.
 * Settings - Used to view and adjust additional settings for your wallet.
 
-For more information, check [Wallet](./Wallet.md) or [Wallet FAQ](./FAQ/FAQ-Wallet.md)
+For more information, check [Wallet](./Wallet.md) or [Wallet FAQ](./FAQ/Wallet.md)
 
 ## Invoices
 

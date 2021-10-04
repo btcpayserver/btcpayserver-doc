@@ -98,14 +98,14 @@ The BTCPay Server [Directory](https://directory.btcpayserver.org/filter/hosts) l
 
 ## How can one become a third-party host?
 To become a third-party host, you need to self-host a BTCPay Server and enable registration for other users.
-Go to Server Settings > Policies > Disable registration, unmark the checkbox. You may also want to configure the [SMTP settings](../FAQ/FAQ-ServerSettings.md#how-to-configure-smtp-settings-in-btcpay) to allow them to reset their password if they forget it.
+Go to Server Settings > Policies > Disable registration, unmark the checkbox. You may also want to configure the [SMTP settings](../FAQ/ServerSettings.md#how-to-configure-smtp-settings-in-btcpay) to allow them to reset their password if they forget it.
 
-Alternatively you may keep public registration disabled on your homepage and only invite specific users to create a new account by [invitation link](../FAQ/FAQ-ServerSettings.md#how-to-add-a-new-user-by-invite).
+Alternatively you may keep public registration disabled on your homepage and only invite specific users to create a new account by [invitation link](../FAQ/ServerSettings.md#how-to-add-a-new-user-by-invite).
 
 ## Are there any limitations in features when using a third-party host?
 Yes. Here are some restrictions.
 * No [Lightning Network](../LightningNetwork.md) by default. Can be enabled by the third-party host but at the cost of a security risk for registrants using that third-party. [More information](#can-i-enable-the-use-of-my-lightning-network-node-to-others)
-* No [wallet re-scan](../FAQ/FAQ-Wallet.md#what-is-wallet-re-scan-in-btcpay)
+* No [wallet re-scan](../FAQ/Wallet.md#what-is-wallet-re-scan-in-btcpay)
 * No [Server Settings](../Walkthrough.md#server-settings) access
 
 The limitations happen for technical reasons, mostly because these features require a user to run a full node to use them.
@@ -113,7 +113,7 @@ The limitations happen for technical reasons, mostly because these features requ
 ## Can I enable the use of my Lightning Network node to others?
 
 Yes, you can enable users that have registered on your BTCPay Server instance to use your Lightning Network node.
-[See how](../FAQ/FAQ-LightningNetwork.md#how-many-users-can-use-lightning-network-in-btcpay)
+[See how](../FAQ/LightningNetwork.md#how-many-users-can-use-lightning-network-in-btcpay)
 
 ## What does the trusted third-party host know about their users?
 Third party hosts (non-malicious) can see the following:

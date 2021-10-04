@@ -1,25 +1,10 @@
-# BTCPay Stores Frequently Asked Questions.
+# Stores FAQ
 
-This page shows common issues and frequently asked questions about Stores in BTCPay.
+This page shows common issues and frequently asked questions about BTCPay Server stores.
 
-* [How to create a store in BTCPay?](./FAQ-Stores.md#how-to-create-a-store-in-btcpay)
-* [How many stores can I create?](./FAQ-Stores.md#how-many-stores-can-i-create)
-* [Why are invoices without payment showing as complete?](./FAQ-Stores.md#why-are-invoices-without-payment-showing-as-complete)
-* [Add network fee to invoice (vary with mining fees)?](./FAQ-Stores.md#add-network-fee-to-invoice-vary-with-mining-fees)
-* [Allow anyone to create invoice?](./FAQ-Stores.md#allow-anyone-to-create-invoice)
-* [Invoice expires if the full amount has not been paid after ... minutes?](./FAQ-Stores.md#invoice-expires-if-the-full-amount-has-not-been-paid-after-minutes)
-* [Payment invalid if transactions fails to confirm ... minutes after invoice expiration?](./FAQ-Stores.md#payment-invalid-if-transactions-fails-to-confirm-minutes-after-invoice-expiration)
-* [Consider the invoice confirmed when the payment transaction?](./FAQ-Stores.md#consider-the-invoice-confirmed-when-the-payment-transaction)
-* [Consider the invoice paid even if the paid amount is ... % less than expected?](./FAQ-Stores.md#consider-the-invoice-paid-even-if-the-paid-amount-is-less-than-expected)
-* [How to disable email on invoices?](./FAQ-Stores.md#how-to-disable-email-on-invoices)
-* [How to denominate invoices in sats?](./FAQ-Stores.md#how-to-denominate-invoices-in-sats)
-* [How to collect additional buyer information?](./FAQ-Stores.md#how-to-collect-additional-buyer-information)
-* [How to redirect store invoices after payment?](./FAQ-Stores.md#how-to-redirect-store-invoices-after-payment)
-* [Can I delete invoices from BTCPay?](./FAQ-Stores.md#can-i-delete-invoices-from-btcpay)
-* [How to change the exchange rate provider for invoices?](./FAQ-Stores.md#how-to-change-the-exchange-rate-provider-for-invoices)
-* [Getting GetRatesAsync was called on coinaverage error](./FAQ-Stores.md#getting-getratesasync-was-called-on-coinaverage-error)
+[[toc]]
 
-## How to create a store in BTCPay?
+## How to create a store in BTCPay Server?
 
 To create your first store, go to > Stores from the header menu and click "create a new store."
 
@@ -93,7 +78,7 @@ When this feature is not enabled, the customer will be prompted in the invoice t
 
 ![Redirect Paid Store Invoices](../img/invoice/PaidInvoice.png)
 
-To redirect to a specific URL in the Point of Sale app, use the [PoS Redirect](../FAQ/FAQ-Apps.md#how-to-redirect-to-another-site-after-payment) instead.
+To redirect to a specific URL in the Point of Sale app, use the [PoS Redirect](../FAQ/Apps.md#how-to-redirect-to-another-site-after-payment) instead.
 
 ## Can I delete invoices from BTCPay?
 
@@ -119,4 +104,4 @@ Coinaverage discontinued their free tier API. As a result the following error ma
 GetRatesAsync was called on coinaverage when the rate is outdated. It should never happen, let BTCPayServer developers know about this.
 ```
 
-The issue can be fixed by [selecting a different rate source provider](./FAQ-Stores.md#how-to-change-the-exchange-rate-provider-for-invoices) in Stores > Settings > Rates, or by [updating your BTCPay Server](./FAQ-ServerSettings.md#how-to-update-btcpay-server) if you're running version 1.0.3.146 or older. The update will automatically replace Coinaverage with CoinGecko.
+The issue can be fixed by [selecting a different rate source provider](./Stores.md#how-to-change-the-exchange-rate-provider-for-invoices) in Stores > Settings > Rates, or by [updating your BTCPay Server](./ServerSettings.md#how-to-update-btcpay-server) if you're running version 1.0.3.146 or older. The update will automatically replace Coinaverage with CoinGecko.

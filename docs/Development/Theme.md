@@ -1,4 +1,4 @@
-# Theming
+# Customizing themes
 
 BTCPay Server is built on Bootstrap and offers the flexibility to adjust its look to your needs.
 Learn more about the [standard design specifications used in BTCPay](https://design.btcpayserver.org/).
@@ -113,7 +113,7 @@ BTCPay Server checkout page can be customized to fit your branding.
 
 Go to your Store Settings > Checkout Experience, and link to a custom CSS stylesheet.
 
-Server admins can upload their .css file to [File Storage](/FAQ/FAQ-ServerSettings.md#how-to-upload-files-to-btcpay) to create a CSS stylesheet link.
+Server admins can upload their .css file to [File Storage](/FAQ/ServerSettings.md#how-to-upload-files-to-btcpay) to create a CSS stylesheet link.
 
 Below are examples of businesses that use custom-made checkout themes.
 

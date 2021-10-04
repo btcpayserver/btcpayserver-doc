@@ -27,18 +27,18 @@ An overview of the incoming (green), outgoing (red) and unconfirmed (grayed out)
 
 #### Transaction Labels
 
-The table below lists the various **transaction labels used by BTCPay**.  
+The table below lists the various **transaction labels used by BTCPay**.
 
 | Transaction Type  | Description                                                  |
 | ----------------- | ------------------------------------------------------------ |
 | app               | Payment was received through an app created invoice          |
 | invoice           | Payment was received through an invoice                      |
-| payjoin           | Not paid, invoice timer still has not expired                | 
+| payjoin           | Not paid, invoice timer still has not expired                |
 | payjoin-exposed   | UTXO was exposed through an invoice payjoin proposal         |
 | payment-request   | Payment was received through a payment request               |
 | payout            | Payment was sent through a payout or refund                  |
 
-You can also create your own [custom transaction labels and comments](./FAQ/FAQ-Wallet.md#how-to-add-custom-labels-and-comments-to-transactions).
+You can also create your own [custom transaction labels and comments](./FAQ/Wallet.md#how-to-add-custom-labels-and-comments-to-transactions).
 
 ### Send
 
@@ -109,7 +109,7 @@ Warning: Despite the fact, in this example, that you entered `1.0` in the amount
 
 ##### RBF (Replace-By-Fee)
 
-Replace-By-Fee (RBF) is a Bitcoin protocol feature that allows you to replace a previously broadcast transaction (while unconfirmed). This allows randomizing your wallet's transaction fingerprint, or simply for replacing it with a higher fee rate to move the transaction higher in the queue of confirmation (mining) priority. This will effectively replace the original transaction as the higher fee rate will be prioritized and once confirmed, invalidating the original one (double spend). 
+Replace-By-Fee (RBF) is a Bitcoin protocol feature that allows you to replace a previously broadcast transaction (while unconfirmed). This allows randomizing your wallet's transaction fingerprint, or simply for replacing it with a higher fee rate to move the transaction higher in the queue of confirmation (mining) priority. This will effectively replace the original transaction as the higher fee rate will be prioritized and once confirmed, invalidating the original one (double spend).
 
 Press the `Advanced Settings` button to view the RBF options:
 
@@ -165,7 +165,7 @@ The Rescan relies on Bitcoin Core 0.17.0's `scantxoutset` to **scan the current 
 
 Wallet re-scan solves two critical problems for BTCPay users:
 
-1. [Gap limit](./FAQ/FAQ-Wallet.md#missing-payments-in-my-software-or-hardware-wallet)
+1. [Gap limit](./FAQ/Wallet.md#missing-payments-in-my-software-or-hardware-wallet)
 2. Importing a previously used wallet
 
 **Gap limit**: Most wallets typically have the address gap limit set to 20. This means that if a merchant receives 21 or more consecutive unpaid invoices, those wallets show the incorrect balance and some transactions may not be visible.

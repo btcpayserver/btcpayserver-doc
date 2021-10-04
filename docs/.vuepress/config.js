@@ -111,13 +111,20 @@ const sidebarUserGuide = [
 ]
 
 const sidebarDeployment = [
-  ['/Deployment/', 'Choosing a Deployment Method'],
-  ['/Deployment/ThirdPartyHosting', 'Third-party Hosting'],
   {
-    title: 'Docker',
-    path: '/Docker/',
+    title: 'Deployment',
     collapsable: false,
     children: [
+      '/Deployment/',
+      '/Deployment/ThirdPartyHosting',
+      '/Configurator/'
+    ]
+  },
+  {
+    title: 'Docker',
+    collapsable: false,
+    children: [
+      ['/Docker/', 'Introduction'],
       {
         title: 'Web Deployment',
         path: '/Deployment/LunaNode'
@@ -183,84 +190,94 @@ const sidebarDeployment = [
       '/Deployment/ManualDeployment',
       '/Deployment/ManualDeploymentExtended'
     ]
-  },
-  {
-    title: 'Configurator',
-    path: '/Configurator/'
   }
 ]
 
 const sidebarDevelopment = [
-  ['/Development/', 'Architecture'],
   {
     title: 'Greenfield API',
     collapsable: false,
     children: [
       [`${baseUrl}/API/Greenfield/v1`, 'Greenfield API v1', { type: 'external' }],
-      ['/Development/GreenFieldExample', 'Greenfield example with cURL']
+      '/Development/GreenFieldExample'
     ]
   },
   {
     title: 'Development',
     collapsable: false,
     children: [
-      ['/Development/LocalDevelopment', 'Developing Locally'],
-      ['/Development/Altcoins', 'How to add an Altcoin'],
-      ['/Development/Theme', 'Customizing Themes'],
+      '/Development/',
+      '/Development/LocalDevelopment',
+      '/Development/Altcoins',
+      '/Development/Theme'
     ]
   },
   {
-    title: 'Vault',
+    title: 'More',
     collapsable: false,
+    initialOpenGroupIndex: -1,
     children: [
-      ['/Vault/', 'BTCPay Server Vault'],
-      ['/Vault/HowToVerify', 'How To Verify']
+      {
+        title: 'BTCPay Server Vault',
+        path: '/Vault/',
+        children: [
+          '/Vault/HowToVerify'
+        ]
+      },
+      ['/BTCPayServer/Security', 'Security Disclosures']
     ]
-  },
-  ['/BTCPayServer/Security', 'Security Disclosures']
+  }
 ]
 
 const sidebarContribute = [
   {
-    title: 'Develop',
-    path: '/Contribute/Dev/',
+    title: 'Contribute',
+    path: '/Contribute/',
     collapsable: false,
     children: [
-      ['/Contribute/DevCode', 'Code'],
-      ['/Contribute/DevTest', 'Test']
+      {
+        title: 'Code',
+        path: '/Contribute/Dev',
+        collapsable: false,
+        children: [
+          '/Contribute/DevCode',
+          '/Contribute/DevTest'
+        ]
+      },
+      {
+        title: 'Write',
+        path: '/Contribute/Write',
+        collapsable: false,
+        children: [
+          ['/Contribute/WriteSoftware', 'Software Stack'],
+          ['/Contribute/WriteDocs', 'Documentation'],
+          ['/Contribute/WriteBlog', 'Blog']
+        ]
+      },
+      ['/Contribute/Design', 'Design'],
+      ['/Contribute/Translate', 'Translate'],
+      ['/Contribute/Misc', 'Miscellaneous']
     ]
   },
-  {
-    title: 'Write',
-    path: '/Contribute/Write/',
-    collapsable: false,
-    children: [
-      ['/Contribute/WriteSoftware', 'Software Stack'],
-      ['/Contribute/WriteDocs', 'Documentation'],
-      ['/Contribute/WriteBlog', 'Blog']
-    ]
-  },
-  ['/Contribute/Design', 'Design'],
-  ['/Contribute/Translate', 'Translate'],
-  ['/Contribute/Misc', 'Miscellaneous'],
+
 ]
 
 const sidebarFAQ = [
   {
     title: 'FAQ and common issues',
-    path: '/FAQ',
+    path: '/FAQ/',
     collapsable: false,
     children: [
-      ['/FAQ/FAQ-General', 'General FAQ'],
-      ['/FAQ/FAQ-Deployment', 'Deployment FAQ'],
-      ['/FAQ/FAQ-Synchronization', 'Synchronization FAQ'],
-      ['/FAQ/FAQ-Integrations', 'Integrations FAQ'],
-      ['/FAQ/FAQ-ServerSettings', 'Server Settings FAQ'],
-      ['/FAQ/FAQ-Stores', 'Stores FAQ'],
-      ['/FAQ/FAQ-Wallet', 'Wallet FAQ'],
-      ['/FAQ/FAQ-Apps', 'Apps FAQ'],
-      ['/FAQ/FAQ-LightningNetwork', 'Lightning Network FAQ'],
-      ['/FAQ/FAQ-Altcoin', 'Altcoins FAQ']
+      'General',
+      'Deployment',
+      'Synchronization',
+      'Integrations',
+      'ServerSettings',
+      'Stores',
+      'Wallet',
+      'Apps',
+      'LightningNetwork',
+      'Altcoin'
     ]
   }
 ]
@@ -392,7 +409,7 @@ module.exports = {
       '/ElectrumX': sidebarDeployment,
       '/ElectrumPersonalServer': sidebarDeployment,
       '/Transmuter': sidebarDeployment,
-      '/FAQ': sidebarFAQ,
+      '/FAQ/': sidebarFAQ,
       '/': sidebarUserGuide
     }
   }

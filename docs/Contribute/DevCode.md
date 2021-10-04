@@ -1,31 +1,10 @@
 # Setup Developer Environment
 
-Table of contents:
-- [Developer Resources](#developer-resources)
-- [Windows Setup Software](#windows-setup-software)
-- [Git Setup](#git-setup)
-  - [Fork BTCPay Server Repository](#fork-btcpay-server-repository)
-  - [Clone BTCPay Server Repository](#clone-btcpay-server-repository)
-  - [Create a Development Feature Branch](#create-a-development-feature-branch)
-- [Local BTCPay Setup](#local-btcpay-setup)
-  - [Visual Studio Setup](#visual-studio-setup)
-  - [Bitcoin Regtest Network Setup](#bitcoin-regtest-network-setup)
-  - [Build Local BTCPay Server in Debug Mode](#build-local-btcpay-server-in-debug-mode)
-  - [Build Local BTCPay Server in Browser Mode](#build-local-btcpay-server-in-browser-mode)
-  - [Visual Studio Code Changes In Your Local BTCPay Server](#visual-studio-code-changes-in-your-local-btcpay-server)
-- [Git Maintenance](#git-maintenance)
-  - [Sync Forked BTCPay Server Repository](#sync-forked-btcpay-server-repository)
-  - [Commit Code To Make Pull Request](#commit-code-to-make-pull-request)
-  - [Create a Branch of a Pull Request](#create-a-branch-of-a-pull-request)
-  - [Delete Local Branch](#delete-local-branch)
-- [Working with Docker Containers](#working-with-docker-containers)
-- [Greenfield API Development](#greenfield-api-development)
-- [Working with the Database](#working-with-the-database)
-- [Questions](#questions)
+[[toc]]
 
 This guide will help you set up your developer environment to prepare you for later contributions to the BTCPay Server repositories. A variety of beginner tools are used in the guide below to help you get started with development. Once you understand the general setup process, feel free to use any tools that you like.
 
-If you are looking for how to make a simple code change such as fixing a typo or copy change, check out the simplified [WriteSoftware](./WriteSoftware.md) tutorial instead. If you are an advanced developer with a local environment already set up for development, you can skip ahead to the [LocalDevelopment](/Development/LocalDevelopment.md) documentation.
+If you are looking for how to make a simple code change such as fixing a typo or copy change, check out the simplified [Write Software](./WriteSoftware.md) tutorial instead. If you are an advanced developer with a local environment already set up for development, you can skip ahead to the [LocalDevelopment](/Development/LocalDevelopment.md) documentation.
 
 ## Developer Resources
 
@@ -206,7 +185,7 @@ If you want to use Docker Commands when developing locally, you can run the foll
 
 ## Greenfield API Development
 
-The BTCPay Greenfield API is [currently being developed](../../FAQ/FAQ-General.md#how-can-i-use-the-btcpay-server-api). You can find a [usage example here](../../Development/GreenFieldExample.md). The official Greenfield [API reference documentation](https://docs.btcpayserver.org/API/Greenfield/v1/) is available for developers who want to develop with the BTCPay REST API.
+The BTCPay Greenfield API is [currently being developed](../../FAQ/General.md#how-can-i-use-the-btcpay-server-api). You can find a [usage example here](../../Development/GreenFieldExample.md). The official Greenfield [API reference documentation](https://docs.btcpayserver.org/API/Greenfield/v1/) is available for developers who want to develop with the BTCPay REST API.
 
 Developers who would like to contribute to the Greenfield API should follow the [developer guidelines](https://github.com/btcpayserver/btcpayserver/blob/master/docs/greenfield-development.md) used by the BTCPay project for additions or modifications. If you feel these guidelines are not clear, consider discussing your ideas in the community chat (development channel) or [open a github issue](https://github.com/btcpayserver/btcpayserver/issues/new/choose) to discuss endpoint implementation ideas.
 

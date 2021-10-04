@@ -1,49 +1,8 @@
-# BTCPay Deployment Frequently Asked Questions
+# Deployment FAQ
 
 This document covers the most common questions, errors, and issues you may encounter prior and during the installation of the software. For a detailed list of deployment methods and instructions for each, please see [Deployment page](../Deployment/README.md).
 
-## General Deployment FAQ
-
-Here are common questions about installation, regardless of the deployment method.
-
-- [How much does it cost to run BTCPay Server?](#how-much-does-it-cost-to-run-btcpay-server)
-- [What are the minimal requirements for BTCPay?](#what-are-the-minimal-requirements-for-btcpay)
-- [What is the easiest method to deploy a self-hosted BTCPay Server?](#what-is-the-easiest-method-to-deploy-a-self-hosted-btcpay-server)
-- [How to choose a proper deployment method?](#how-to-choose-a-proper-deployment-method)
-- [Can I run BTCPay on my own hardware?](#can-i-run-btcpay-on-my-own-hardware)
-- [Can I deploy BTCPay on my existing VPS?](#can-i-deploy-btcpay-on-my-existing-vps)
-- [Are there free hosts where I can test?](#are-there-free-hosts-where-i-can-test)
-- [After initial deployment, I can't register and I don't have a login yet?](#after-initial-deployment-i-cant-register-and-i-dont-have-a-login-yet)
-- [How do I activate Tor on my BTCPay Server?](#how-do-i-activate-tor-on-my-btcpay-server)
-- [How do I disable Tor on my BTCPay Server?](#how-do-i-disable-tor-on-my-btcpay-server)
-- [Why activate Tor? Does it mean that nobody knows who I am?](#why-activate-tor-does-it-mean-that-nobody-knows-who-i-am)
-- [How to access the .onion address without clearnet?](#how-to-access-the-onion-address-without-clearnet)
-- [How can I modify or deactivate environment variables?](#how-can-i-modify-or-deactivate-environment-variables)
-- [How can I run BTCPay on testnet?](#how-can-i-run-btcpay-on-testnet)
-- [Can I start BTCPay only when I'm expecting a payment?](#can-i-start-btcpay-only-when-im-expecting-a-payment)
-- [Can I connect to my BTCPay Bitcoin P2P on port 8333?](#can-i-connect-to-my-btcpay-bitcoin-p2p-on-port-8333)
-- [How can I renew my SSL certificate?](#how-can-i-renew-my-ssl-certificate)
-- [Can I use an existing Nginx server as a reverse proxy with SSL termination?](#can-i-use-an-existing-nginx-server-as-a-reverse-proxy-with-ssl-termination)
-
-
-## Web Deployment FAQ
-
-### Luna Node Web Deployment FAQ
-
-* [How to change domain name on my LunaNode BTCPay?](#how-to-change-domain-name-on-my-lunanode-btcpay)
-
-## Manual Deployment FAQ
-
-* [How to manually install BTCPay on Ubuntu 18.04?](#how-to-manually-install-btcpay-on-ubuntu-1804)
-* [How do I completely uninstall BTCPay from a linux environment (docker version)](#how-do-i-completely-uninstall-btcpay-from-a-linux-environment-docker-version)
-* [How to deploy BTCPay Server alongside existing Bitcoin full node?](#how-to-deploy-btcpay-server-alongside-existing-bitcoin-node)
-* [With the docker deployment, how to use a different volume for the data?](#with-the-docker-deployment-how-to-use-a-different-volume-for-the-data)
-* [I get 503 Service Temporarily Unavailable nginx](#i-get-503-service-temporarily-unavailable-nginx)
-  * [Cause 1: Trying to access my BTCPay by IP address](#cause-1-trying-to-access-my-btcpay-by-ip-address)
-  * [Cause 2: btcpayserver or letsencrypt-nginx-proxy is not running](#cause-2-btcpayserver-or-letsencrypt-nginx-proxy-is-not-running)
-  * [Cause 3: Error: BTCPay is expecting you to access this website from](#cause-3-btcpay-is-expecting-you-to-access-this-website-from)
-  * [Cause 4: Getting 500 nginx error on a local server https and for http BTCPay is expecting you to access this website from](#cause-4-getting-500-nginx-error-on-a-local-server-https-and-for-http-btcpay-is-expecting-you-to-access-this-website-from)
-  * [Cause 5: Other](#cause-5-other)
+[[toc]]
 
 ## General Deployment
 
@@ -404,7 +363,7 @@ If you are running on linux, due to [a limitation of docker](https://github.com/
 * Run `BTCPAYGEN_ADDITIONAL_FRAGMENTS="$BTCPAYGEN_ADDITIONAL_FRAGMENTS"`
 * Run `. ./btcpay-setup.sh -i`
 
-If you are looking for how to deploy alongside existing Lightning node [see this](./FAQ-LightningNetwork.md#can-i-use-my-existing-ln-node-with-btcpay).
+If you are looking for how to deploy alongside existing Lightning node [see this](./LightningNetwork.md#can-i-use-my-existing-ln-node-with-btcpay).
 
 ### With the docker deployment, how to use a different volume for the data?
 
@@ -612,4 +571,4 @@ You need to open port 80 and 443. Once you did that, restart docker `btcpay-rest
 
 #### Cause 5: Other
 
-There could be many causes for 5XX HTTP errors. Please create an [Issue](https://github.com/btcpayserver/btcpayserver-docker/issues) and when cause becomes known add it here in the [Deployment FAQ](/FAQ/FAQ-Deployment.md) doc.
+There could be many causes for 5XX HTTP errors. Please create an [Issue](https://github.com/btcpayserver/btcpayserver-docker/issues) and when cause becomes known add it here in the [Deployment FAQ](/FAQ/Deployment.md) doc.

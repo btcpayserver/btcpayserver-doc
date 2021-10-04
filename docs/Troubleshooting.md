@@ -13,13 +13,13 @@ If you think it will describe your issue better, take a screenshot.
 
 ### 1.1 Updating the server
 
-Check [your version of BTCPay](./FAQ/FAQ-ServerSettings.md#how-can-i-see-my-btcpay-version).
-If it is much older than the [latest version](https://github.com/btcpayserver/btcpayserver/releases) of BTCPay, [updating your server](./FAQ/FAQ-ServerSettings.md#how-to-update-btcpay-server) may resolve the issue.
+Check [your version of BTCPay](./FAQ/ServerSettings.md#how-can-i-see-my-btcpay-version).
+If it is much older than the [latest version](https://github.com/btcpayserver/btcpayserver/releases) of BTCPay, [updating your server](./FAQ/ServerSettings.md#how-to-update-btcpay-server) may resolve the issue.
 
 ### 1.2 Restarting the server
 
 Restarting your server is an easy way to solve many of the most common BTCPay Server issues.
-You may need to [SSH into your server](./FAQ/FAQ-ServerSettings.md#how-to-ssh-into-my-btcpay-running-on-vps) to restart it.
+You may need to [SSH into your server](./FAQ/ServerSettings.md#how-to-ssh-into-my-btcpay-running-on-vps) to restart it.
 
 ### 1.3 Restarting a service
 
@@ -46,7 +46,7 @@ If you are a server admin, go to **Server Settings > Logs** and open the logs fi
 If you don't know what a particular error in the logs means, make sure to mention it when troubleshooting.
 
 If you would like more detailed logs and you're using a Docker deployment, you can view logs of specific Docker containers using the command line.
-See these [instructions to ssh](./FAQ/FAQ-ServerSettings.md#how-to-ssh-into-my-btcpay-running-on-vps) into an instance of BTCPay running on a VPS.
+See these [instructions to ssh](./FAQ/ServerSettings.md#how-to-ssh-into-my-btcpay-running-on-vps) into an instance of BTCPay running on a VPS.
 
 Below is a general list of the container names used for BTCPay.
 
@@ -177,7 +177,7 @@ There's an amid community ready to help you.
 
 The better you describe the problem, the higher are the chances of getting a timely fix.
 Be concise and provide as much relevant information as possible.
-Be sure to include the [version you're using](./FAQ/FAQ-ServerSettings.md#how-can-i-see-my-btcpay-version) and describe your BTCPay Deployment Setup.
+Be sure to include the [version you're using](./FAQ/ServerSettings.md#how-can-i-see-my-btcpay-version) and describe your BTCPay Deployment Setup.
 Try to explain what you're trying to do and what's the issue.
 If you can provide the logs.
 If you think it's relevant, feel free to include a screenshot.

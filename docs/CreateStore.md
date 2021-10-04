@@ -10,6 +10,6 @@ To **create a store**, make sure you're logged in into your account, and go to >
 
 ## Customizing your BTCPay Store Settings
 
-Store > Settings provides basic control over the individual store settings. Modify the confirmations, invoice expiry and more. For more information, check [Stores FAQ](./FAQ/FAQ-Stores.md).
+Store > Settings provides basic control over the individual store settings. Modify the confirmations, invoice expiry and more. For more information, check [Stores FAQ](./FAQ/Stores.md).
 
 ***Proceed to the next step - [Connecting a Wallet](./WalletSetup.md).***

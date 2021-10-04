@@ -1,17 +1,8 @@
-# BTCPay Apps Frequently Asked Questions
+# Apps FAQ
 
-This document covers frequently asked questions about the Apps in BTCPay.
+This document covers frequently asked questions about the BTCPay Server Apps.
 
-* [What are the Apps in BTCPay?](#what-are-the-apps-in-btcpay)
-* [Is there a limit on the number of Apps I can create?](#is-there-a-limit-on-the-number-of-apps-i-can-create)
-* [Is there a Point of Sale feature in BTCPay?](#is-there-a-point-of-sale-feature-in-btcpay)
-* [How can I use BTCPay in a physical store?](#how-can-i-use-btcpay-in-a-physical-store)
-* [How to customize the appearance of Point of Sale App in BTCPay?](#how-to-customize-the-appearance-of-point-of-sale-app-in-btcpay)
-* [What is a Payment Button?](#what-is-a-payment-button)
-* [How to create a Pay Button with a custom amount?](#how-to-create-a-pay-button-with-a-custom-amount)
-* [How to map a domain name to an app?](#how-to-map-a-domain-name-to-an-app)
-* [How to redirect to another site after payment?](#how-to-redirect-to-another-site-after-payment)
-* [How to integrate WooCommerce Store in BTCPay Crowdfund app?](#how-to-integrate-woocommerce-store-into-a-btcpay-crowdfund-app)
+[[toc]]
 
 ## What are the Apps in BTCPay?
 
@@ -106,7 +97,7 @@ In PoS settings these are the following options for redirects on paid invoices:
 - **Yes** - *With* Redirect URL
    - Paid invoice automatically redirects to the provided App Redirect URL.
 - **Use Store Settings**
-   - Enable/disable automatic redirect to the PoS App on the [store level](../FAQ/FAQ-Stores.md#how-to-redirect-store-invoices-after-payment).
+   - Enable/disable automatic redirect to the PoS App on the [store level](../FAQ/Stores.md#how-to-redirect-store-invoices-after-payment).
 
 Notes:
 1. Provide the Redirect URL in the App Settings (above the redirect option).

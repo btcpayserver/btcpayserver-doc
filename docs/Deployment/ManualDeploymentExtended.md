@@ -23,7 +23,7 @@ An example hostname of `mainnet.demo.btcpayserver.org` has been used, it needs t
 
 If you do use these instructions to install a BTCPay Server connected to the Bitcoin mainnet then at a minimum you should understand how the wallet mechanisms work. It's highly recommended to read the two articles below and ask questions if anything is not clear.
 
-- [BTCPay Wallet FAQ](/FAQ/FAQ-Wallet.md)
+- [BTCPay Wallet FAQ](/FAQ/Wallet.md)
 - [Lightning Network and BTCPay (first section)](/LightningNetwork.md)
 
 As an additional aid below is a list of iptables rules and instructions which should include all the ports that need to be open. **NO WARRANTY**. Use at your own risk, **including risk of locking yourself out**.

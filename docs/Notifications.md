@@ -1,6 +1,6 @@
 # Notifications
 
-Notifications to monitor BTCPay Server events can be configured in several different ways. 
+Notifications to monitor BTCPay Server events can be configured in several different ways.
 
 - [Notification Alerts](#notification-alerts)
 - [Server level SMTP (Email)](#server-emails)
@@ -35,7 +35,7 @@ Use the Quick fill settings dropdown for commonly used email client setup parame
 
 ![BTCPay Email SMTP](./img/smtp/smtp-setup.png "BTCPay Email SMTP")
 
-Each email client may have different requirements for setting up SMTP. For more information see this [SMTP FAQ](./FAQ/FAQ-ServerSettings.md#how-to-configure-smtp-settings-in-btcpay) or refer to your email provider's documentation.
+Each email client may have different requirements for setting up SMTP. For more information see this [SMTP FAQ](./FAQ/ServerSettings.md#how-to-configure-smtp-settings-in-btcpay) or refer to your email provider's documentation.
 
 # User Emails
 
@@ -52,15 +52,15 @@ User emails will only be sent if SMTP is enabled for the server.
 
 ## Forgot Password Email
 
-This email can be sent to users who have lost their password. If SMTP is not enabled on the server, there is [no easy way](./FAQ/FAQ-ServerSettings.md#forgot-btcpay-admin-password) to reset any user passwords including the server admin's password. Be sure to save your password in a safe place or setup email for your server.
+This email can be sent to users who have lost their password. If SMTP is not enabled on the server, there is [no easy way](./FAQ/ServerSettings.md#forgot-btcpay-admin-password) to reset any user passwords including the server admin's password. Be sure to save your password in a safe place or setup email for your server.
 
 ## New User Confirmation Email
 
-This email is used to confirm new user account registration. In order to reduce spam account registration, email confirmation may be required by the server admin (set in server settings policies). New users can click the link in this email to verify their account to complete their registration process. 
+This email is used to confirm new user account registration. In order to reduce spam account registration, email confirmation may be required by the server admin (set in server settings policies). New users can click the link in this email to verify their account to complete their registration process.
 
 ## New User Invitation Email
 
-Send an invitation email to [invite a new user](./FAQ/FAQ-ServerSettings.md#how-to-add-a-new-user-by-invite) to register an account on your server. This can be used to keep server registration closed to the public but still invite new users.
+Send an invitation email to [invite a new user](./FAQ/ServerSettings.md#how-to-add-a-new-user-by-invite) to register an account on your server. This can be used to keep server registration closed to the public but still invite new users.
 
 ## Custom Emails
-Custom emails can be created using the BTCPay Server Transmuter preset [Email Receipts](https://docs.btcpayserver.org/Transmuter/EmailReceiptsPreset/#transmuter-email-receipts-setup). 
+Custom emails can be created using the BTCPay Server Transmuter preset [Email Receipts](https://docs.btcpayserver.org/Transmuter/EmailReceiptsPreset/#transmuter-email-receipts-setup).

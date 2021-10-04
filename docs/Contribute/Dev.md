@@ -1,13 +1,6 @@
 # Coding BTCPay Server
 
-- [Why coding matters](#why-coding-matters)
-- [Where to start](#where-to-start)
-   - [Setup Developer Environment](#setup-developer-environment)
-   - [Local BTCPay Development](#local-btcpay-development)
-   - [Local BTCPay Testing](#local-btcpay-testing)
-- [Requirements](#requirements)
-- [Videos](#videos)
-
+[[toc]]
 
 ## Why coding matters
 
