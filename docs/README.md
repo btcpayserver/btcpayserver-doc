@@ -23,7 +23,7 @@ footer:  Content Released under MIT license.
   <h3>Explore by topic</h3>
   <ul>
     <li>
-      <a href="/BTCPayVsOthers/">BTCPay Server vs.<br>Other Payment Processors</a>
+      <a href="/BTCPayVsOthers/">BTCPay&nbsp;Server vs.<br>Other Payment Processors</a>
     </li>
     <li>
       <a href="/Walkthrough/">Feature Walkthrough</a>
@@ -35,7 +35,7 @@ footer:  Content Released under MIT license.
       <a href="/WalletSetup/">Wallet Setup</a>
     </li>
     <li>
-      <a href="/Apps/">BTCPay Server Apps</a>
+      <a href="/Apps/">BTCPay&nbsp;Server Apps</a>
     </li>
     <li>
       <a href="/LightningNetwork/">Lightning Network</a>
@@ -44,10 +44,10 @@ footer:  Content Released under MIT license.
       <a href="/FAQ/">Frequently Asked Questions<br>and Common Issues</a>
     </li>
     <li>
-      <a href="/Development/">BTCPay Server Architecture</a>
+      <a href="/WooCommerce/">WooCommerce Integration</a>
     </li>
     <li>
-      <a href="/WooCommerce/">WooCommerce Integration</a>
+      <a href="/Contribute/">How to contribute to BTCPay&nbsp;Server</a>
     </li>
   </ul>
 </div>
