@@ -498,40 +498,38 @@ h5, h6 {
   }
 
   .supporters {
-    margin-top: 3em;
+    margin: 3em 0;
     text-align: center;
   }
 
   .supporters p {
     margin-left: auto;
     margin-right: auto;
+    max-width: 32em;
   }
 
-  .supporters table {
-    margin: 0;
+  .supporters .logos {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 2em 0;
   }
 
-  .supporters td {
-    font-size: .9em;
-    border-color: transparent;
-    padding: 1.5em;
-    @media (max-width: 519px) {
-      padding: 1.5em .75em;
-    }
+  .supporters .logos a {
+    color: var(--btcpay-secondary);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1rem 1.5rem;
   }
 
-  .supporters td img {
+  .supporters .logos img {
     max-height: 70px;
     max-width: 70px;
     @media (max-width: 519px) {
       max-height: 50px;
       max-width: 50px;
     }
-  }
-
-  .supporters td a {
-    color: var(--btcpay-secondary);
-    line-height: 1;
   }
 
   .ytEmbed {
