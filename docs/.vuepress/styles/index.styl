@@ -63,7 +63,8 @@ h5, h6 {
   // Max-width, centered layout
   .theme-container,
   .navbar {
-    max-width: 1280px;
+    --container-width: 1280px;
+    max-width: var(--container-width);
     margin: 0 auto;
   }
 
@@ -78,8 +79,14 @@ h5, h6 {
     height: 58px;
   }
 
-  .sidebar {
-    left: auto;
+  @media (min-width: 1280px) {
+    .sidebar {
+      --pad-left: calc((100vw - var(--container-width)) / 2);
+      width: calc(var(--pad-left) + 20rem);
+    }
+    .sidebar > .sidebar-links{
+      padding-left: var(--pad-left) !important;
+    }
   }
 
   // Modifications
