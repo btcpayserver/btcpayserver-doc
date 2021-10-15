@@ -108,7 +108,9 @@ else
 fi
 
 cd "$DOCKER_DIR"
-cp -r README.md docs/* "$DOCS_DIR/Docker"
+cp -r docs/* "$DOCS_DIR/Docker"
+line=$(grep -n '# Introduction' README.md | cut -d ":" -f 1)
+tail -n +$line "README.md" > "$DOCS_DIR/Docker/README.md"
 sed -ie 's$(docs/$(./$g' "$DOCS_DIR/Docker/README.md"
 for file in "$DOCS_DIR"/Docker/*.md; do
   update_external "$file" https://github.com/btcpayserver/btcpayserver-docker "$DOCS_DIR"/Docker/
