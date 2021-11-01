@@ -30,11 +30,11 @@ Contact: mail@d11n.net, @d11n on [Mattermost](https://chat.btcpayserver.org/), [
 
 Contact: support@btcpayjungle.com - @Esky33 on [Mattermost](https://chat.btcpayserver.org/) -  [Twitter](https://twitter.com/Esky33junglist)
  
-### Graeme Conradie
+### Xoxoxo
 
 > I can help you implement BTCPay Server inside your environment and also help with the supporting systems, your site, your hosting architecture, your security. I find what people need is a good solid starting point, and some basic guidance on best practice.
 
-Contact: graeme@fintechsystems.ltd, @Graeme on [FinChat](https://chat.fintechsystems.ltd), @GraemeConradie on [Mattermost](https://chat.btcpayserver.org/), [Twitter](https://twitter.com/GraemeConradie), [Website](https://graemeconradie.com/)
+Contact: xoxoxo@fintechsystems.ltd, @xoxoxo on [FinChat](https://chat.fintechsystems.ltd), @xoxoxo on [Mattermost](https://chat.btcpayserver.org/), [Twitter](https://twitter.com/FintechSys), [Website](https://xo3ox.io/)
  
 ### Hubik Tomas
 
