@@ -43,7 +43,7 @@ As an additional aid below is a list of iptables rules and instructions which sh
 -A INPUT -p tcp -m tcp --dport 80 -j ACCEPT     # BTCPay HTTP
 -A INPUT -p tcp -m tcp --dport 443 -j ACCEPT    # BTCPay HTTPS
 -A INPUT -p tcp -m tcp --dport 8333 -j ACCEPT   # Bitcoind P2P
--A INPUT -p tcp -m tcp --dport 9375 -j ACCEPT   # Lightning P2P
+-A INPUT -p tcp -m tcp --dport 9735 -j ACCEPT   # Lightning P2P
 -A INPUT -m conntrack --ctstate ESTABLISHED,RELATED -j ACCEPT
 COMMIT
 # Completed on Mon May 27 18:48:11 2019
@@ -965,7 +965,7 @@ maxlogfiles=3
 maxlogfilesize=10
 #externalip=1.1.1.1 # change to your public IP address if required.
 alias=i_luv_btcpay
-listen=0.0.0.0:9375
+listen=0.0.0.0:9735
 
 [Bitcoin]
 bitcoin.active=1
