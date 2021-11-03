@@ -1,4 +1,5 @@
 const { resolve } = require('path')
+const include = require('markdown-it-include')
 const implicitFigures = require('markdown-it-implicit-figures')
 const slugify = require('./slugify')
 const preprocessMarkdown = resolve(__dirname, 'preprocessMarkdown')
@@ -328,6 +329,7 @@ module.exports = {
   markdown: {
     extendMarkdown (md) {
       md.use(implicitFigures)
+      md.use(include, { root: resolve(__dirname, 'includes') })
     },
     pageSuffix,
     slugify
