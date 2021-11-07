@@ -6,11 +6,12 @@ The newly released **Raspberry Pi 4** is currently the best low-cost single-boar
 
 # Quickstart
 Already have a Raspberry Pi 4B with the following specs?
+
 	- 4GB memory
 	- 1TB USB 3.0 SSD
 	- 16GB or greater SD card   
 
-Download the latest [64 Bit RaspiOS 64](https://downloads.raspberrypi.org/raspios_lite_arm64/images/raspios_lite_arm64-2021-05-28/2021-05-07-raspios-buster-arm64-lite.zip). Flash the image to your SD card.  If you don't have a keyboard and monitor make sure you enable SSH by creating empty file named "ssh" on the "boot" folder of the SD card. 
+Download the latest [64 Bit RaspiOS 64](https://downloads.raspberrypi.org/raspios_lite_arm64/images). Flash the image to your SD card.  If you don't have a keyboard and monitor make sure you enable SSH by creating empty file named "ssh" on the "boot" folder of the SD card. 
 
 Login to the RPI (the default username is "pi" and the default password is "raspberry") and run the following commands.
 
@@ -88,11 +89,11 @@ The 500GB SSD allows you to keep a full copy of the Bitcoin blockchain, until it
 
 ## Install Linux on the Raspberry Pi
 
-Start by downloading the latest [64 Bit RaspiOS](https://downloads.raspberrypi.org/raspios_lite_arm64/images/raspios_lite_arm64-2021-05-28/2021-05-07-raspios-buster-arm64-lite.zip) to your existing computer. The “Lite” distribution is fine for BTCPay setup.
+Start by downloading the latest [64 Bit RaspiOS](https://downloads.raspberrypi.org/raspios_lite_arm64/images) to your existing computer. The “Lite” distribution is fine for BTCPay setup.
 
 ### Flash your SD card with the Raspberry Pi OS for Linux
 
-- Extract the downloaded `2021-05-07-raspios-buster-arm64-lite` Zip file
+- Extract the downloaded for example `2021-05-07-raspios-buster-arm64-lite` Zip file
 - Download the latest version of [balenaEtcher](https://www.balena.io/etcher/) and install it.
 - Connect an SD card reader with the SD card inside.
 - Open balenaEtcher and select from your hard drive the Raspberry Pi .img from the extracted zip file you wish to write to the SD card.
