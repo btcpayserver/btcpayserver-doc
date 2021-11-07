@@ -125,6 +125,13 @@ dphys-swapfile uninstall
 update-rc.d dphys-swapfile remove
 systemctl disable dphys-swapfile
 
+# Change Hostname
+host_name='btcpay'
+    echo $host_name | sudo tee /etc/hostname
+    sed -i -E 's/^127.0.1.1.*/127.0.1.1\t'"$host_name"'/' /etc/hosts
+    hostnamectl set-hostname $host_name
+    systemctl restart avahi-daemon
+
 # Install BTCPayServer
 cd /root
 git clone https://github.com/btcpayserver/btcpayserver-docker
