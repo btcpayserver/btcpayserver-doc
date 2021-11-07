@@ -180,11 +180,20 @@ This is also to prevent burning out your SD card too quickly:
 echo 'none /var/log tmpfs size=10M,noatime 0 0' >> /etc/fstab
 ```
 
-Mount the SSD partition and create a symlink for docker to use the SSD:
+## Install Docker & Docker Compose
+```
+curl -sSL https://get.docker.com | sh
+apt-get install -y git build-essential python3-pip
+pip3 install docker-compose
+```
 
-```bash
-mkdir /mnt/usb/docker
-ln -s /mnt/usb/docker /var/lib/docker
+## Create mount for Docker volumes
+```
+rm -rf /var/lib/docker/volumes
+mkdir -p /var/lib/dockers/volumes
+mount --bind /mnt/usb /var/lib/docker/volumes
+echo "/mnt/usb /var/lib/docker/volumes none bind,nobootwait 0 2" >> /etc/fstab
+systemctl restart docker
 ```
 
 ## Configuring the firewall
