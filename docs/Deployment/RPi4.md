@@ -97,7 +97,7 @@ Start by downloading the latest [64 Bit RaspiOS](https://downloads.raspberrypi.o
 
 ### Flash your SD card with the Raspberry Pi OS for Linux
 
-- Extract the downloaded for example `2021-05-07-raspios-buster-arm64-lite` Zip file
+- Extract the downloaded Zip file
 - Download the latest version of [balenaEtcher](https://www.balena.io/etcher/) and install it.
 - Connect an SD card reader with the SD card inside.
 - Open balenaEtcher and select from your hard drive the Raspberry Pi .img from the extracted zip file you wish to write to the SD card.
