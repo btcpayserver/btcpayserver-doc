@@ -4,6 +4,24 @@ This document guides you step by step on **how to run BTCPay Server on a Raspber
 
 The newly released **Raspberry Pi 4** is currently the best low-cost single-board computer available. You can **use a Raspberry Pi 4 to run your BTCPay Server** at home for around $150 worth of parts, described below.
 
+# Quickstart
+Already have a Raspberry Pi 4B with at least 4GB memory, a 1 TB USB 3.0 SSD and a 16GB or greater SD card?   
+
+Download the latest [64 Bit RaspiOS 64](https://downloads.raspberrypi.org/raspios_lite_arm64/images/raspios_lite_arm64-2021-05-28/2021-05-07-raspios-buster-arm64-lite.zip). Flash the image to your SD card.  If you don't have a keyboard and monitor make sure you enable SSH.  Just create an empty file named "ssh" on the "boot" folder of the SD card. 
+
+Login to the RPI (the default username is "pi" and the default password is "raspberry") and run the following commands.
+ 
+```bash
+sudo su -
+wget -O btcpayserver-rpi4-install.sh https://raw.githubusercontent.com/btcpayserver/btcpayserver-doc/master/docs/Deployment/btcpayserver-rpi4-install.txt
+chmod +x btcpayserver-rip4-install.sh
+. btcpayserver-rpi4-install.sh
+```
+ 
+```bash
+grab yourself a beverage and relax whilst BTCPayServer installs
+```
+
 ## Required Hardware
 
 ### Raspberry Pi 4
