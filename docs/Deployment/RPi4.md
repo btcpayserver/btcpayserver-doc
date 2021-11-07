@@ -13,6 +13,10 @@ Already have a Raspberry Pi 4B with the following specs?
 Download the latest [64 Bit RaspiOS 64](https://downloads.raspberrypi.org/raspios_lite_arm64/images/raspios_lite_arm64-2021-05-28/2021-05-07-raspios-buster-arm64-lite.zip). Flash the image to your SD card.  If you don't have a keyboard and monitor make sure you enable SSH by creating empty file named "ssh" on the "boot" folder of the SD card. 
 
 Login to the RPI (the default username is "pi" and the default password is "raspberry") and run the following commands.
+Change your password. 
+```bash
+passwd
+```
 
 LND - Full Node (IBD takes approximately 36 hours after initial install).
 ```bash
@@ -82,7 +86,7 @@ The 500GB SSD allows you to keep a full copy of the Bitcoin blockchain, until it
 
 ## Install Linux on the Raspberry Pi
 
-Start by downloading the latest [64 Bit RaspbiOS](https://downloads.raspberrypi.org/raspios_lite_arm64/images/raspios_lite_arm64-2021-05-28/2021-05-07-raspios-buster-arm64-lite.zip) to your existing computer. The “Lite” distribution is fine for BTCPay setup.
+Start by downloading the latest [64 Bit RaspiOS](https://downloads.raspberrypi.org/raspios_lite_arm64/images/raspios_lite_arm64-2021-05-28/2021-05-07-raspios-buster-arm64-lite.zip) to your existing computer. The “Lite” distribution is fine for BTCPay setup.
 
 ### Flash your SD card with the Raspberry Pi OS for Linux
 
