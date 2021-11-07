@@ -11,7 +11,7 @@ Already have a Raspberry Pi 4B with the following specs?
 	- 1TB USB 3.0 SSD
 	- 16GB or greater SD card   
 
-Download the latest [64 Bit RaspiOS 64](https://downloads.raspberrypi.org/raspios_lite_arm64/images).  
+Download the latest [64 Bit RaspiOS](https://downloads.raspberrypi.org/raspios_lite_arm64/images).  
 
 - Select the most recent directory and download the zip file.  
 - Flash the image to your SD card.  
