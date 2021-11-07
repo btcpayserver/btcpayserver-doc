@@ -13,6 +13,7 @@ Already have a Raspberry Pi 4B with the following specs?
 Download the latest [64 Bit RaspiOS 64](https://downloads.raspberrypi.org/raspios_lite_arm64/images/raspios_lite_arm64-2021-05-28/2021-05-07-raspios-buster-arm64-lite.zip). Flash the image to your SD card.  If you don't have a keyboard and monitor make sure you enable SSH by creating empty file named "ssh" on the "boot" folder of the SD card. 
 
 Login to the RPI (the default username is "pi" and the default password is "raspberry") and run the following commands.
+
 Change your password. 
 ```bash
 passwd
