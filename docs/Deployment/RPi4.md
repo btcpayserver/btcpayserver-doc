@@ -37,6 +37,7 @@ chmod +x btcpayserver-clightning-rpi4-install.sh
 
 After initial setup is complete open a browser on another computer and go to btcpay.local 
 
+# Detailed Step by Step Instructions. 
 ## Required Hardware
 
 ### Raspberry Pi 4
