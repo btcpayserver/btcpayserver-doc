@@ -1,11 +1,10 @@
-
 #!/bin/bash
 # Set BTCPayServer Environment Variables
 export BTCPAY_HOST="btcpay.local"
 export REVERSEPROXY_DEFAULT_HOST="$BTCPAY_HOST"
 export NBITCOIN_NETWORK="mainnet"
 export BTCPAYGEN_CRYPTO1="btc"
-export BTCPAYGEN_LIGHTNING="lnd"
+export BTCPAYGEN_LIGHTNING="clightning"
 export BTCPAYGEN_REVERSEPROXY="nginx"
 export BTCPAYGEN_ADDITIONAL_FRAGMENTS=""
 export BTCPAY_ENABLE_SSH=true
@@ -137,6 +136,6 @@ apt update && apt upgrade -y
 apt autoremove -y
 
 # Display Onion Address
-echo "On another compouter open your browser to btcpay.local"
+echo "On another computer open your browser to btcpay.local"
 echo "or open the Tor Browser and copy and past the following .onion address."
-tail /var/lib/docker/volumes/generated_tor_servicesdir/_data/hostname
+tail /var/lib/docker/volumes/generated_tor_servicesdir/_data/BTCPayServer/hostname
