@@ -93,7 +93,7 @@ The 500GB SSD allows you to keep a full copy of the Bitcoin blockchain, until it
 
 ## Install Linux on the Raspberry Pi
 
-Start by downloading the latest [64 Bit RaspiOS](https://downloads.raspberrypi.org/raspios_lite_arm64/images).  Select the most recent directory and download the zip file to your existing computer. The “Lite” distribution is fine for BTCPay setup.
+Start by downloading the latest [64 Bit RaspiOS](https://downloads.raspberrypi.org/raspios_lite_arm64/images):  Select the most recent directory and download the zip file to your existing computer. The “Lite” distribution is fine for BTCPay setup.
 
 ### Flash your SD card with the Raspberry Pi OS for Linux
 
