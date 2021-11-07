@@ -249,6 +249,15 @@ Verify your configuration:
 ufw status
 ```
 
+## Change your Hostname
+```
+host_name='btcpay'
+    echo $host_name | sudo tee /etc/hostname
+    sed -i -E 's/^127.0.1.1.*/127.0.1.1\t'"$host_name"'/' /etc/hosts
+    hostnamectl set-hostname $host_name
+    systemctl restart avahi-daemon
+```
+
 ## Setup BTCPay Server
 
 Download BTCPay Server from GitHub:
@@ -263,7 +272,7 @@ cd btcpayserver-docker
 Configure BTCPay by setting some [environment variables](https://github.com/btcpayserver/btcpayserver-docker#environment-variables):
 
 ```bash
-export BTCPAY_HOST="raspberrypi.local"
+export BTCPAY_HOST="btcpay.local"
 export REVERSEPROXY_DEFAULT_HOST="$BTCPAY_HOST"
 export NBITCOIN_NETWORK="mainnet"
 export BTCPAYGEN_CRYPTO1="btc"
@@ -276,7 +285,7 @@ export BTCPAY_ENABLE_SSH=true
 If you want to use multiple hostnames, add them via the optional `BTCPAY_ADDITIONAL_HOSTS` variable:
 
 ```bash
-export BTCPAY_ADDITIONAL_HOSTS="btcpay.YourDomain.com,btcpay.local"
+export BTCPAY_ADDITIONAL_HOSTS="btcpay.YourDomain.com"
 ```
 
 In case you want to restrict access to your local network only, please note that you need to use a `.local` domain.
@@ -287,6 +296,6 @@ Run the BTCPay installation:
 . ./btcpay-setup.sh -i
 ```
 
-It should be up and running within a few minutes. Try opening http://raspberrypi.local in your web browser. If everything is correct, you will see BTCPay Server front page.
+It should be up and running within a few minutes. Try opening http://btcpay.local in your web browser. If everything is correct, you will see BTCPay Server front page.
 
 Now, you just need to wait a day or so for the Bitcoin blockchain to [sync and full verify](../FAQ/Synchronization.md). The bottom of the BTCPay Server web GUI will show a pop-up dialog box to monitor the progress.
