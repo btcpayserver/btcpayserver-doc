@@ -135,3 +135,8 @@ cd btcpayserver-docker
 # Update RaspiOS
 apt update && apt upgrade -y 
 apt autoremove -y
+
+# Display Onion Address
+echo "On another compouter open your browser to btcpay.local"
+echo "or open the Tor Browser and copy and past the following .onion address."
+tail /var/lib/docker/volumes/generated_tor_servicesdir/_data/hostname
