@@ -32,7 +32,7 @@ chmod +x btcpayserver-lnd-rpi4-install.sh
 . btcpayserver-lnd-rpi4-install.sh
 ```
 
-For C-Lightning Full Node - IBD taxes approximately 36 hours after initial install.
+For C-Lightning Full Node - IBD takes approximately 36 hours after initial install.
 ```bash
 sudo su -
 wget -O btcpayserver-clightning-rpi4-install.sh https://raw.githubusercontent.com/btcpayserver/btcpayserver-doc/master/docs/Deployment/btcpayserver-clightning-rpi4-install.txt
