@@ -196,7 +196,7 @@ pip3 install docker-compose
 ## Create mount for Docker volumes
 ```
 rm -rf /var/lib/docker/volumes
-mkdir -p /var/lib/dockers/volumes
+mkdir -p /var/lib/docker/volumes
 mount --bind /mnt/usb /var/lib/docker/volumes
 echo "/mnt/usb /var/lib/docker/volumes none bind,nobootwait 0 2" >> /etc/fstab
 systemctl restart docker
