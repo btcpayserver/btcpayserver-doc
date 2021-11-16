@@ -15,6 +15,7 @@ Bitcoin is the only focus of the project and its core developers. However, opt i
 - Dogecoin (DOGE)
 - Feathercoin (FTC)
 - Groestlcoin (GRS)
+- Htmlcoin (HTML) (also known as Althash)
 - Liquid Bitcoin (LBTC) (comes with Liquid Tether support USDt) [(notes on deployment & usage)](https://github.com/btcpayserver/btcpayserver/issues/1282)
 - Litecoin (LTC)
 - Monacoin (MONA)
