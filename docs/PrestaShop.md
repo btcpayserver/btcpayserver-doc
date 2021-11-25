@@ -27,7 +27,7 @@ Please ensure that you meet the following requirements before installing this pl
 3. Upload the `.zip`-file you just downloaded
 4. Click on `configure` to setup the module
 
-![BTCPay Server PrestaShop plugin installation](img/prestashop/module-install.jpg)
+![BTCPay Server PrestaShop plugin installation](./img/prestashop/module-install.jpg)
 
 ## Connecting the store
 
@@ -41,13 +41,13 @@ No matter if you're using a self-hosted or third-party solution from step 2, the
 5. Press `Connect` to save your settings and be redirected to your BTCPay Server instance to create an API key.
 6. When creating the API key, make sure to give the permissions to a specific store (multiple stores are not supported).
 
-![BTCPay Server PrestaShop API key setup](img/prestashop/api-key-setup.jpg)
+![BTCPay Server PrestaShop API key setup](./img/prestashop/api-key-setup.jpg)
 
 7. Press the `Authorize app`-button after which you will be redirected back to your Prestashop store.
 8. Prestashop will try and create a connection to your BTCPay Server instance.
 9. A message will be shown if the connection was successful (but it is smart to make a test purchase).
 
-![BTCPay Server PrestaShop setup finished](img/prestashop/success.jpg)
+![BTCPay Server PrestaShop setup finished](./img/prestashop/success.jpg)
 
 ## 3. Contribute
 
