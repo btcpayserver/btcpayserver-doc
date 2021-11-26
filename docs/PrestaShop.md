@@ -5,7 +5,9 @@ If you do not have a store yet, follow [this step by step article](https://blog.
 
 To integrate BTCPay Server into an existing PrestaShop store, follow the steps below.
 
-**PSA:** This document only applies to the latest _v5_ version of the module. If you want the _v4_ module documentation, [click here](https://github.com/btcpayserver/btcpayserver-doc/blob/cba96292ceea9483711ab53c479a98357383f857/docs/PrestaShop.md).
+:::tip
+This document only applies to the latest _v5_ version of the module. If you want the _v4_ module documentation, [click here](https://github.com/btcpayserver/btcpayserver-doc/blob/cba96292ceea9483711ab53c479a98357383f857/docs/PrestaShop.md).
+:::
 
 ## Server Requirements
 
