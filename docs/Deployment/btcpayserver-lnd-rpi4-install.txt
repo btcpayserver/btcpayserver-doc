@@ -9,10 +9,13 @@ export BTCPAYGEN_REVERSEPROXY="nginx"
 export BTCPAYGEN_ADDITIONAL_FRAGMENTS=""
 export BTCPAY_ENABLE_SSH=true
 
-# Install Docker & Docker Compose
-curl -sSL https://get.docker.com | sh
-apt-get install -y git build-essential python3-pip
-pip3 install docker-compose
+# Install Docker
+apt install apt-transport-https ca-certificates curl gnupg lsb-release -y
+curl -fsSL https://download.docker.com/linux/debian/gpg | gpg --dearmor -o /usr/share/keyrings/docker-archive-keyring.gpg
+echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/docker-archive-keyring.gpg] https://download.docker.com/linux/debian \
+  $(lsb_release -cs) stable" | tee /etc/apt/sources.list.d/docker.list > /dev/null
+apt update
+apt -y install docker-ce docker-ce-cli containerd.io
 
 # Configure External Storage
 DEVICE_NAME=""
