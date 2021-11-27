@@ -27,7 +27,7 @@ passwd
 For LND Full Node - IBD takes approximately 36 hours after initial install.
 ```bash
 sudo su -
-wget -O btcpayserver-install-lnd.sh https://raw.githubusercontent.com/btcpayserver/btcpayserver-doc/master/docs/Deployment/btcpayserver-lnd-rpi4-install.txt
+wget -O btcpayserver-install-lnd.sh https://raw.githubusercontent.com/btcpayserver/btcpayserver-doc/master/docs/Deployment/btcpayserver-lnd-rpi4-install.md
 chmod +x btcpayserver-install-lnd.sh
 . btcpayserver-install-lnd.sh
 ```
@@ -35,7 +35,7 @@ chmod +x btcpayserver-install-lnd.sh
 For C-Lightning Full Node - IBD takes approximately 36 hours after initial install.
 ```bash
 sudo su -
-wget -O btcpayserver-install-clightning.sh https://raw.githubusercontent.com/btcpayserver/btcpayserver-doc/master/docs/Deployment/btcpayserver-clightning-rpi4-install.txt
+wget -O btcpayserver-install-clightning.sh https://raw.githubusercontent.com/btcpayserver/btcpayserver-doc/master/docs/Deployment/btcpayserver-clightning-rpi4-install.md
 chmod +x btcpayserver-install-clightning.sh
 . btcpayserver-install-clightning.sh
 ```
