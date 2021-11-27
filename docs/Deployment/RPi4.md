@@ -27,7 +27,7 @@ passwd
 For LND Full Node - IBD takes approximately 36 hours after initial install.
 ```bash
 sudo su -
-wget -O btcpay-install-lnd.sh https://raw.githubusercontent.com/btcpayserver/btcpayserver-doc/master/docs/Deployment/btcpayserver-lnd-rpi4-install.txt
+wget -O btcpayserver-install-lnd.sh https://raw.githubusercontent.com/btcpayserver/btcpayserver-doc/master/docs/Deployment/btcpayserver-lnd-rpi4-install.txt
 chmod +x btcpayserver-install-lnd.sh
 . btcpayserver-install-lnd.sh
 ```
