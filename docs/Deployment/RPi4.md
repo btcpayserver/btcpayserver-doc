@@ -2,7 +2,7 @@
 
 This document guides you step by step on **how to run BTCPay Server on a Raspberry Pi 4**. See here the [Raspberry Pi 3 instructions](./RPi3.md)
 
-The newly released **Raspberry Pi 4** is currently the best low-cost single-board computer available. You can **use a Raspberry Pi 4 to run your BTCPay Server** at home for around $150 worth of parts, described below.
+The **Raspberry Pi 4** is currently the best low-cost single-board computer available. You can **use a Raspberry Pi 4 to run your BTCPay Server** at home for around $150 worth of parts, described below.
 
 # Quickstart
 Already have a Raspberry Pi 4B with the following specs?
@@ -17,7 +17,7 @@ Download the latest [64 Bit RaspiOS](https://downloads.raspberrypi.org/raspios_l
 - Flash the image to your SD card.  
 - If you don't have a keyboard and monitor make sure you enable SSH by creating empty file named "ssh" on the "boot" folder of the SD card. 
 
-Login to the RPI (the default username is "pi" and the default password is "raspberry") and run the following commands.
+Login to the RPI (the default username is "pi" and the default password is "raspberry") and run the following commands.  If you don't have a keyboard and LCD screen use [Putty](https://www.putty.org/) to connect via SSH. 
 
 Change your password. 
 ```bash
@@ -27,17 +27,17 @@ passwd
 For LND Full Node - IBD takes approximately 36 hours after initial install.
 ```bash
 sudo su -
-wget -O btcpayserver-lnd-rpi4-install.sh https://raw.githubusercontent.com/btcpayserver/btcpayserver-doc/master/docs/Deployment/btcpayserver-lnd-rpi4-install.txt
-chmod +x btcpayserver-lnd-rpi4-install.sh
-. btcpayserver-lnd-rpi4-install.sh
+wget -O btcpay-install-lnd.sh https://raw.githubusercontent.com/btcpayserver/btcpayserver-doc/master/docs/Deployment/btcpayserver-lnd-rpi4-install.txt
+chmod +x btcpayserver-install-lnd.sh
+. btcpayserver-install-lnd.sh
 ```
 
 For C-Lightning Full Node - IBD takes approximately 36 hours after initial install.
 ```bash
 sudo su -
-wget -O btcpayserver-clightning-rpi4-install.sh https://raw.githubusercontent.com/btcpayserver/btcpayserver-doc/master/docs/Deployment/btcpayserver-clightning-rpi4-install.txt
-chmod +x btcpayserver-clightning-rpi4-install.sh
-. btcpayserver-clightning-rpi4-install.sh
+wget -O btcpayserver-install-clightning.sh https://raw.githubusercontent.com/btcpayserver/btcpayserver-doc/master/docs/Deployment/btcpayserver-clightning-rpi4-install.txt
+chmod +x btcpayserver-install-clightning.sh
+. btcpayserver-install-clightning.sh
 ```
 
 After initial setup is complete open a browser on another computer and go to btcpay.local 
@@ -186,19 +186,22 @@ This is also to prevent burning out your SD card too quickly:
 echo 'none /var/log tmpfs size=10M,noatime 0 0' >> /etc/fstab
 ```
 
-## Install Docker & Docker Compose
+## Install Docker
 ```
-curl -sSL https://get.docker.com | sh
-apt-get install -y git build-essential python3-pip
-pip3 install docker-compose
+apt install apt-transport-https ca-certificates curl gnupg lsb-release -y
+curl -fsSL https://download.docker.com/linux/debian/gpg | gpg --dearmor -o /usr/share/keyrings/docker-archive-keyring.gpg
+echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/docker-archive-keyring.gpg] https://download.docker.com/linux/debian \
+  $(lsb_release -cs) stable" | tee /etc/apt/sources.list.d/docker.list > /dev/null
+apt update
+apt -y install docker-ce docker-ce-cli containerd.io
 ```
 
 ## Create mount for Docker volumes
 ```
-rm -rf /var/lib/docker/volumes
-mkdir -p /var/lib/docker/volumes
-mount --bind /mnt/usb /var/lib/docker/volumes
-echo "/mnt/usb /var/lib/docker/volumes none bind,nobootwait 0 2" >> /etc/fstab
+rm -rf /var/lib/docker
+mkdir -p /var/lib/docker
+mount --bind /mnt/usb /var/lib/docker
+echo "/mnt/usb /var/lib/docker none bind,nobootwait 0 2" >> /etc/fstab
 systemctl restart docker
 ```
 
@@ -267,10 +270,10 @@ ufw status
 ## Change your Hostname
 ```
 host_name='btcpay'
-    echo $host_name | sudo tee /etc/hostname
-    sed -i -E 's/^127.0.1.1.*/127.0.1.1\t'"$host_name"'/' /etc/hosts
-    hostnamectl set-hostname $host_name
-    systemctl restart avahi-daemon
+echo $host_name | sudo tee /etc/hostname
+sed -i -E 's/^127.0.1.1.*/127.0.1.1\t'"$host_name"'/' /etc/hosts
+hostnamectl set-hostname $host_name
+systemctl restart avahi-daemon
 ```
 
 ## Setup BTCPay Server
@@ -291,7 +294,7 @@ export BTCPAY_HOST="btcpay.local"
 export REVERSEPROXY_DEFAULT_HOST="$BTCPAY_HOST"
 export NBITCOIN_NETWORK="mainnet"
 export BTCPAYGEN_CRYPTO1="btc"
-export BTCPAYGEN_LIGHTNING="lnd"
+export BTCPAYGEN_LIGHTNING="clightning"
 export BTCPAYGEN_REVERSEPROXY="nginx"
 export BTCPAYGEN_ADDITIONAL_FRAGMENTS="opt-more-memory"
 export BTCPAY_ENABLE_SSH=true
