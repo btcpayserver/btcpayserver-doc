@@ -1,4 +1,5 @@
 # Deploying BTCPay - LunaNode Web-Wizard
+José Junior de Oliveira 
 
 This article explains the **deployment of BTCPay Server through LunaNode Web-Wizard**. [LunaNode](https://www.lunanode.com/) is Canadian based hosting provider that accept Bitcoin payments and requires no personal identification except for a phone number verification.
 
