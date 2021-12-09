@@ -143,7 +143,7 @@ SMTP Password: (your Gmail password)
 ```
 For gmail it's important to allow access from less secure apps. To enable go to: Manage Your Google Account > Security > Allow Less Secure Apps (On). Also note Google may automatically turn off this setting if it’s not being used. If your smtp has stopped working, check this setting is not off.
 
-If by any chance you have 2-step verification added to your gmail account, [visit this article](https://support.google.com/mail/answer/185833?hl=en).
+If by any chance you have 2-step verification added to your gmail account, [visit this article](https://support.google.com/mail/answer/185833).
 
 Use the test email feature in BTCPay to verify your emails are being sent properly. If you are seeking a more reliable smtp service for your business needs, consider using a dedicated mail service like Mailgun.
 

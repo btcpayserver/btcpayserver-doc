@@ -26,16 +26,16 @@ Contact: mail@d11n.net, @d11n on [Mattermost](https://chat.btcpayserver.org/), [
 
 ### Esky33
 
-> BTCPayServer local or cloud installation (Lunanode/other VPS). I can help with the initial setup/deployment,  
+> BTCPayServer local or cloud installation (Lunanode/other VPS). I can help with the initial setup/deployment,
 
 Contact: support@btcpayjungle.com - @Esky33 on [Mattermost](https://chat.btcpayserver.org/) -  [Twitter](https://twitter.com/Esky33junglist)
- 
+
 ### Xoxoxo
 
 > I can help you implement BTCPay Server inside your environment and also help with the supporting systems, your site, your hosting architecture, your security. I find what people need is a good solid starting point, and some basic guidance on best practice.
 
-Contact: xoxoxo@fintechsystems.ltd, @xoxoxo on [FinChat](https://chat.fintechsystems.ltd), @xoxoxo on [Mattermost](https://chat.btcpayserver.org/), [Twitter](https://twitter.com/FintechSys), [Website](https://xo3ox.io/)
- 
+Contact: xoxoxo@fintechsystems.ltd, @xoxoxo on [Mattermost](https://chat.btcpayserver.org/), [Twitter](https://twitter.com/FintechSys)
+
 ### Hubik Tomas
 
 > I can help with initial setup/deployment (currently with Azure, but I am planning to play with non-Azure as well) and integration with PrestaShop. I was also playing with design customization of the payment window, scripting of exchange rates etc.
@@ -47,7 +47,6 @@ Contact: hubik.tomas@gmail.com
 > BTCPayServer local or cloud installation (Azure/other VPS).  Can also help with WooCommerce Plugin configuration and BTCPayServer Store/App creation.
 
 Contact: support@lightninginabox.co, [Web](https://lightninginabox.co)
-
 
 ### Wouter Samaey / Storefront.be
 
