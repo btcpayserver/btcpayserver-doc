@@ -56,6 +56,5 @@ See the [What's Next](./WhatsNext.md) page for other options on how to continue 
 
 To see BTCPay Server in action, visit our demo apps and stores or check out some of the stores using BTCPay Server in production.
 
-* [BTCPay Demo Store](https://store.btcpayserver.org/)
 * [Point of Sale Demo](https://mainnet.demo.btcpayserver.org/apps/87kj5yKay8mB4UUZcJhZH5TqDKMD3CznjwLjiu1oYZXe/pos)
 * [In-production stores](https://directory.btcpayserver.org)

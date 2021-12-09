@@ -22,8 +22,6 @@ Merchants running an **e-commerce business** can easily [deploy BTCPay Server](/
 
 BTCPay Server checkout is no different to any other payment gateway. The customer gets an invoice. They pay it by scanning a QR code or by copy-pasting the amount and the address. When their payment is confirmed, the merchant is notified via the e-commerce software, and can ship the item.
 
-Take a look at [our demo online store](https://store.btcpayserver.org/).
-
 ### Physical Store
 
 For brick and mortar stores, BTCPay Server has a [web-based Point of Sale](./Apps.md#point-of-sale-app). Similarly to the online store, the customer is presented with an invoice that he can pay on the spot. The **POS app** can be run on any web-connected device.
