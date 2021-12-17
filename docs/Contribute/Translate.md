@@ -71,12 +71,6 @@ You have to click it for the each project you wish to follow.
 
 ----
 
-## View Checkout Page For Context
-
-Need context for a string?
-
-Visit the BTCPay Server demo store [checkout page](https://store.btcpayserver.org/).
-
 ## Get help, ask questions
 
 If you have any questions about translating, join the [#Translations channel](https://chat.btcpayserver.org/btcpayserver/channels/translations) on Mattermost.
