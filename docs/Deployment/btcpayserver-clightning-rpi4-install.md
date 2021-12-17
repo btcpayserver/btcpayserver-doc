@@ -142,6 +142,7 @@ cd /root
 git clone https://github.com/btcpayserver/btcpayserver-docker
 cd btcpayserver-docker
 . btcpay-setup.sh -i
+wait 10
 
 # Display Onion Address
 echo "On another computer open your browser to btcpay.local"
