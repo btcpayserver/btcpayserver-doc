@@ -10,6 +10,7 @@ CONFIGURATOR_DIR="$BASE_DIR/deps/configurator"
 DOCKER_DIR="$BASE_DIR/deps/docker"
 VAULT_DIR="$BASE_DIR/deps/vault"
 TRANSMUTER_DIR="$BASE_DIR/deps/transmuter"
+ZAPIER_DIR="$BASE_DIR/deps/zapier"
 
 update_external() {
   file="$1"
@@ -134,4 +135,25 @@ cp -r README.md docs/* "$DOCS_DIR/Transmuter"
 sed -ie 's$(docs/$(./$g' "$DOCS_DIR/Transmuter/README.md"
 for file in "$DOCS_DIR"/Transmuter/*.md; do
   update_external "$file" https://github.com/btcpayserver/btcTransmuter "$DOCS_DIR"/Transmuter/
+done
+
+
+# Zapier
+echo "Setup dependency: Zapier"
+
+rm -rf "$ZAPIER_DIR"
+rm -rf "$DOCS_DIR/Zapier"
+mkdir -p "$DOCS_DIR/Zapier"
+
+if [ ! -d "$ZAPIER_DIR" ]; then
+  git clone --depth 1 https://github.com/btcpayserver/zapier.git "$ZAPIER_DIR"
+else
+  cd "$ZAPIER_DIR"
+fi
+
+cd "$ZAPIER_DIR"
+cp -r README.md doc/* "$DOCS_DIR/Zapier"
+sed -ie 's$(./doc/$(./$g' "$DOCS_DIR/Zapier/README.md"
+for file in "$DOCS_DIR"/Zapier/*.md; do
+  update_external "$file" https://github.com/btcpayserver/zapier "$DOCS_DIR"/Zapier/
 done
