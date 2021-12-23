@@ -5,6 +5,7 @@ const EXTERNAL_DOCS = {
   'Configurator': 'https://github.com/btcpayserver/btcpayserver-configurator',
   'Docker': 'https://github.com/btcpayserver/btcpayserver-docker',
   'Transmuter': 'https://github.com/btcpayserver/btcTransmuter',
+  'Zapier': 'https://github.com/btcpayserver/zapier',
 }
 
 const replaceExternalRepoLinks = (source, externalRepoUrl, resourcePath) => {
