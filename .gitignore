@@ -8,6 +8,7 @@
 /docs/Docker
 /docs/Transmuter
 /docs/Vault
+/docs/Zapier
 /docs/.vuepress/public/API/Greenfield/**/*.json
 
 # Constructed docs
