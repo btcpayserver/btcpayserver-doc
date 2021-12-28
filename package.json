@@ -31,8 +31,8 @@
     "redirects": "node create-redirects.js"
   },
   "devDependencies": {
-    "@vuepress/plugin-back-to-top": "1.8.3",
-    "@vuepress/plugin-medium-zoom": "1.8.3",
+    "@vuepress/plugin-back-to-top": "1.9.5",
+    "@vuepress/plugin-medium-zoom": "1.9.5",
     "broken-link-checker": "0.7.8",
     "esm": "3.2.25",
     "jest": "27.4.5",
@@ -40,7 +40,7 @@
     "markdown-it-include": "^2.0.0",
     "serve": "13.0.2",
     "start-server-and-test": "1.14.0",
-    "vuepress": "1.8.3",
+    "vuepress": "1.9.5",
     "vuepress-plugin-clean-urls": "1.1.2",
     "vuepress-plugin-code-copy": "1.0.6",
     "vuepress-plugin-seo": "0.1.4",
