@@ -138,10 +138,10 @@ The BTCPay Server Project is proudly supported by these entities through the [BT
         </a>
       </td>
       <td align="center" valign="middle">
-        <a href="https://twitter.com/sqcrypto" target="_blank">
-          <img  src="https://raw.githubusercontent.com/btcpayserver/btcpayserver/master/BTCPayServer/wwwroot/img/squarecrypto.svg?sanitize=true" alt="Square Crypto" height=100>
+        <a href="https://spiral.xyz" target="_blank">
+          <img  src="https://raw.githubusercontent.com/btcpayserver/btcpayserver/master/BTCPayServer/wwwroot/img/spiral.svg?sanitize=true" alt="Spiral" height=100>
           <br/>
-          <span>Square Crypto</span>
+          <span>Spiral</span>
         </a>
       </td>
       <td align="center" valign="middle">
