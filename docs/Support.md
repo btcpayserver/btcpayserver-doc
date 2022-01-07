@@ -30,11 +30,11 @@ Contact: mail@d11n.net, @d11n on [Mattermost](https://chat.btcpayserver.org/), [
 
 Contact: support@btcpayjungle.com - @Esky33 on [Mattermost](https://chat.btcpayserver.org/) -  [Twitter](https://twitter.com/Esky33junglist)
 
-### Xoxoxo
+### Graeme Conradie
 
-> I can help you implement BTCPay Server inside your environment and also help with the supporting systems, your site, your hosting architecture, your security. I find what people need is a good solid starting point, and some basic guidance on best practice.
+> I help with building your payments infrastructure, modifying and adapting the payment server to reflect your brand and integrate aspects of your services directly into your server. I also help organisations add their own currencies, or implement alternative currencies. I do security and infrastructure audits and provide DevOps related services.
 
-Contact: xoxoxo@fintechsystems.ltd, @xoxoxo on [Mattermost](https://chat.btcpayserver.org/), [Twitter](https://twitter.com/FintechSys)
+Contact: graeme@librty.tools, @xoxoxo on [Mattermost](https://chat.btcpayserver.org/), [Personal Website](https://graemeconradie.com), [Librty Tools](https://librty.tools), [Librty Chat](https://chat.librty.tools), [Hire me](https://graemeconradie.com/hire-me), follow my [Projects](https://graemeconradie.com/projects), or [Send me a message](https://graemeconradie.com/contact).
 
 ### Hubik Tomas
 
