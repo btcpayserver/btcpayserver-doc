@@ -95,7 +95,7 @@ Paste the `Master Public Key` into derivation scheme field as it is, without add
 
 Return to the **Electrum Wallet**. Go to `Receive tab` which shows your wallet receiving address.
 
-**Compare the address you see in Electrum Wallet to Addresses shown in BTCPay Server**. If there's a match, `continue`. If there is no match, copy the address from Electrum and paste it into `Hint Address Form`. If you still can't get the matching, double-check that you're actually pasting `Master Public Key`.
+**Compare the address you see in Electrum Wallet to Addresses shown in BTCPay Server**. If there's a match, `continue`. If there is no match, double-check that you're actually pasting `Master Public Key`.
 
 ![ElectrumWallet](./img/ElectrumWallet11.png "Compare Electrum Wallet and BTCPay Server addresses")
 
