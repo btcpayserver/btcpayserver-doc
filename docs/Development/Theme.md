@@ -2000,7 +2000,7 @@ CSS file:
 
 ---
 
-### [Wears My Liberty](https://wearsmyliberty.com)
+### [Wears My Liberty](http://wearsmyliberty.com)
 
 ![WearMyLiberty](../img/Theme-WearMyLiberty.png)
 

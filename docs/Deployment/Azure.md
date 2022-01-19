@@ -6,7 +6,7 @@ This setup is similar to the [Docker Deployment](https://docs.btcpayserver.org/D
 
 Start by clicking the following button:
 
-[![Deploy to Azure](https://azuredeploy.net/deploybutton.svg "Deploy to Azure")](https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2Fbtcpayserver%2Fbtcpayserver-azure%2Fmaster%2Fazuredeploy.json)
+[![Deploy to Azure](../img/deploy-to-azure.svg "Deploy to Azure")](https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2Fbtcpayserver%2Fbtcpayserver-azure%2Fmaster%2Fazuredeploy.json)
 
 You can log into [Azure](https://azure.microsoft.com/en-us/account/) with your Microsoft account.
 

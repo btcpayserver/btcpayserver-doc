@@ -23,7 +23,7 @@ Some features are not suitable for testing using a localhost development environ
 
 Step 1:
 
-[Fork, clone and create a branch](./DevCode.md#git-setup) of the [BTCPay Server repository](https://github.com/btcpayserver/btcpayserver) and name your branch: `btcpay-branch`. Make a modification, such as changing [this line](https://github.com/btcpayserver/btcpayserver/blob/master/BTCPayServer/Views/Home/Home.cshtml#L9) on your new branch.
+[Fork, clone and create a branch](./DevCode.md#git-setup) of the [BTCPay Server repository](https://github.com/btcpayserver/btcpayserver) and name your branch: `btcpay-branch`. Make a modification, such as changing [this line](https://github.com/btcpayserver/btcpayserver/blob/master/BTCPayServer/Views/UIHome/Home.cshtml#L31) on your new branch.
 
 Step 2:
 

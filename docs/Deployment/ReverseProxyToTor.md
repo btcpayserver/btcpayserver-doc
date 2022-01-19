@@ -274,7 +274,7 @@ docker run --rm -ti \
         cloudgenius/socator
 ```
 
-Now [http://localhost:5000](http://localhost:5000) should show you the tor hidden service you specified in the above command.
+Now `http://localhost:5000` should show you the tor hidden service you specified in the above command.
 
 ## Use that Docker container in a Kubernetes Cluster using these manifests
 
