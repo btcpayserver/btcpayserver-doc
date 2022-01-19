@@ -216,20 +216,22 @@ systemctl restart nginx
 
 Now, visiting `mydomain.com` should show your BTCPay Server instance.
 
-
-
 ## Do all this in a Docker container
 
 Ready made [Docker image](https://hub.docker.com/r/cloudgenius/socator) ([Code](https://github.com/beacloudgenius/socator))
 
 ### SocaTor = SOCAT + TOR
+
 Based on [Docker-Socator](https://github.com/Arno0x/Docker-Socator)
 
-It uses socat to listen on a given TCP port (5000 in this example) and to redirect incoming traffic to a Tor hidden service specified through environment variables. It acts as a relay between the standard web and a hidden service on the Tor network. You can optionally restrict the IP addresses that are allowed to connect to this service by specifying an `ALLOWED_RANGE` environment variable and using CIDR notation.
+It uses socat to listen on a given TCP port (5000 in this example) and to redirect incoming traffic to a Tor hidden service specified through environment variables.
+It acts as a relay between the standard web and a hidden service on the Tor network.
+You can optionally restrict the IP addresses that are allowed to connect to this service by specifying an `ALLOWED_RANGE` environment variable and using CIDR notation.
 
-Please note: 
+Please note:
 
-This container does not have any nginx component because Kubernetes provides for it. 
+This container does not have any nginx component because Kubernetes provides for it.
+
 ### Usage
 
 Break free from cloud services providers limitations, secure and protect your bitcoin full node, connect that with a BTC Pay server, all behind TOR.
@@ -237,19 +239,19 @@ Selectively expose the BTCPay Server payment gateway and API to clearnet using s
 
 --------------
 
-##### build
+#### Build
 
 ```sh
 docker build -t cloudgenius/socator .
 ```
 
-##### push
+#### Push
 
 ```sh
 docker push cloudgenius/socator
 ```
 
-##### Start the image in background (*daemon mode*) with IP address restriction:
+#### Start the image in background (*daemon mode*) with IP address restriction
 
 ```sh
 docker run -d \
@@ -261,7 +263,7 @@ docker run -d \
         cloudgenius/socator
 ```
 
-##### Start the image in foreground:
+#### Start the image in foreground
 
 ```sh
 docker run --rm -ti \
@@ -272,11 +274,11 @@ docker run --rm -ti \
         cloudgenius/socator
 ```
 
-Now http://localhost:5000 should show you the tor hidden service you specified in the above command.
+Now [http://localhost:5000](http://localhost:5000) should show you the tor hidden service you specified in the above command.
 
 ## Use that Docker container in a Kubernetes Cluster using these manifests
 
-These manifest assumes a typical Kubernetes cluster that exposes internal services (like socator running internallly at port 5000) to the clearnet/public internet via Nginx Ingress https://github.com/kubernetes/ingress-nginx and provide automated Let's Encrypt TLS/SSL certificates via https://github.com/jetstack/cert-manager. 
+These manifest assumes a typical Kubernetes cluster that exposes internal services (like socator running internallly at port 5000) to the clearnet/public internet via [Nginx Ingress](https://github.com/kubernetes/ingress-nginx) and provide automated Let's Encrypt TLS/SSL certificates via [cert-manager](https://github.com/jetstack/cert-manager).
 
 Deployment manifest
 
