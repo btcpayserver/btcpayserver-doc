@@ -171,7 +171,6 @@ server {
   server_name mydomain.com;
 
   # SSL settings
-  ssl on;
   ssl_stapling on;
   ssl_stapling_verify on;
 
@@ -216,6 +215,7 @@ systemctl restart nginx
 ```
 
 Now, visiting `mydomain.com` should show your BTCPay Server instance.
+
 
 
 ## Do all this in a Docker container
