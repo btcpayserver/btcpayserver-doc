@@ -11,4 +11,4 @@ If you're using **Magento**, an open-source e-commerce platform written in PHP, 
 
 We recommend using the **Magento 2 module** developed by [Storefront.be](https://www.storefront.be), since it is the most feature-complete and robust. Storefront is also committed to maintaining the module as newer Magento versions are released.
 
-The Magento 2 module is available for free at https://github.com/storefront-bvba/magento2-btcpay-module
+The Magento 2 module is available for free at https://github.com/btcpayserver/magento2-plugin
