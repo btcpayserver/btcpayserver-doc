@@ -17,10 +17,10 @@ Please ensure that you meet the following requirements before installing this pl
 - Your PrestaShop is version 1.7.7.0 or higher.
 - Your BTCPay Server is version 1.3.0 or higher
 - The PDO, curl, gd, intl, json, and mbstring PHP extensions are available
-+ You have a BTCPay Server, either [self-hosted](/Deployment/README.md) or [hosted by a third-party](/Deployment/ThirdPartyHosting.md)
-+ [You've a registered account on the instance](./RegisterAccount.md)
-+ [You've a BTCPay store on the instance](./CreateStore.md)
-+ [You've a wallet connected to your store](./WalletSetup.md)
+- You have a BTCPay Server, either [self-hosted](/Deployment/README.md) or [hosted by a third-party](/Deployment/ThirdPartyHosting.md)
+- [You've a registered account on the instance](./RegisterAccount.md)
+- [You've a BTCPay store on the instance](./CreateStore.md)
+- [You've a wallet connected to your store](./WalletSetup.md)
 
 ## Install BTCPay Plugin
 
