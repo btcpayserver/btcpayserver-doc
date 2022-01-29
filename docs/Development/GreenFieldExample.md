@@ -30,7 +30,7 @@ While we can use basic authentication to access the greenfield API, it is recomm
 
 For example: If we want to [create a new store](https://docs.btcpayserver.org/API/Greenfield/v1/#tag/Stores/paths/~1api~1v1~1stores/post) we need the `btcpay.store.canmodifystoresettings` permission for the API key.
 
-You can do it through BTCPay Server UI (by browsing `/Manage/APIKeys` of your instance), but let's do it via command line using [this endpoint](https://docs.btcpayserver.org/API/Greenfield/v1/#tag/API-Keys/paths/~1api~1v1~1api-keys/post).
+You can do it through BTCPay Server UI (by browsing `/account/apikeys` of your instance), but let's do it via command line using [this endpoint](https://docs.btcpayserver.org/API/Greenfield/v1/#tag/API-Keys/paths/~1api~1v1~1api-keys/post).
 
 ```bash
 permission="btcpay.store.canmodifystoresettings"
