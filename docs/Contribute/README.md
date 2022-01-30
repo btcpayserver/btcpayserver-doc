@@ -18,3 +18,4 @@ Depending on your skills and interest, you can help in a number of ways:
 * [Miscellaneous](./Misc.md)
 
 Every contribution is important and if you have any questions, feel free to consult our growing [community](../Community.md).
+Miscellaneous](./Misc.md)
