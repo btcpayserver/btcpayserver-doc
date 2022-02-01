@@ -2269,16 +2269,6 @@ span {
 }
 
   ````
-/*  ===========================CREDITS=========================== */
-/*  Custom BTCpay Server CSS template made by @gamirkola.   */
-/*  Contact via: galam@bitcoinpeople.it           */
-/*  =========================END CREDITS========================= */
-
-/*  =========================DISCLAIMER========================== */
-/*  Might not be the most efficient or correct way of implementing  */
-/*  CSS. I am not responsable for breaking your website if things */
-/*  go wrong. PEACE / LOVE / BITCOIN                */
-/*  =======================END DISCLAIMER======================== */
 
 <details>
   
