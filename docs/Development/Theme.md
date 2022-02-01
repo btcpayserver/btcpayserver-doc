@@ -2032,7 +2032,7 @@ CSS file:
 
 ### [Bitcoin People](https://bitcoinpeople.it)
 
-![Bitcoin People checkout](https://user-images.githubusercontent.com/65503274/151194890-74b0bd4d-b11f-4ecf-866d-832d1635ba0b.png)
+![Bitcoin People checkout](../img/Theme-BitcoinPeople.png)
 
 <details>
 
