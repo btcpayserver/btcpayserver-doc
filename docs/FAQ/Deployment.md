@@ -166,7 +166,7 @@ ONLY USE ON TRUSTED LAN OR WITH FIREWALL RULES WHITELISTING SPECIFIC HOSTS
 
 ### How can I renew my SSL certificate?
 
-If your SSL certificate has expired for your BTCPay Server, you can manually renew it. For Docker deployments the easiest way to do this is to [restart the container](../Troubleshooting.md#1-3-restarting-a-service) named `letsencrypt-nginx-proxy-companion` on your server.
+If your SSL certificate has expired for your BTCPay Server, you can manually renew it. For Docker deployments the easiest way to do this is to [restart the container](../Troubleshooting.md#13-restarting-a-service) named `letsencrypt-nginx-proxy-companion` on your server.
 
 ### Can I use an existing Nginx server as a reverse proxy with SSL termination?
 

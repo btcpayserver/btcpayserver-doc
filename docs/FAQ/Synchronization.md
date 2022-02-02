@@ -219,7 +219,7 @@ btcpay-up.sh
 
 ### Cause 5: Your last wallet synchronisation goes beyond pruned data
 
-This can happen if you use FastSync or import an already synched blockchain. It means that the bitcoin core wallet needs to be removed because it was created before the utxoset, likely because BTCPay Server started without the utxoset at the first boot. To verify this case, [check the bitcoind log](../Troubleshooting.md#2-1-btcpay-logs) for this:
+This can happen if you use FastSync or import an already synched blockchain. It means that the bitcoin core wallet needs to be removed because it was created before the utxoset, likely because BTCPay Server started without the utxoset at the first boot. To verify this case, [check the bitcoind log](../Troubleshooting.md#21-btcpay-logs) for this:
 
 ```bash
 Error: Prune: last wallet synchronisation goes beyond pruned data. You need to -reindex (download the whole blockchain again in case of pruned node)
