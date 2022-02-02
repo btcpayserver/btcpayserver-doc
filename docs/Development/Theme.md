@@ -2035,9 +2035,10 @@ CSS file:
 ![Bitcoin People checkout](../img/Theme-BitcoinPeople.png)
 
 <details>
+  <summary>Click to view CSS</summary>
 
-  CSS file
-```css  
+CSS file:
+```css
 /*  ===========================CREDITS=========================== */
 /*  Custom BTCpay Server CSS template made by @gamirkola.   */
 /*  Contact via: galam@bitcoinpeople.it           */
@@ -2267,9 +2268,5 @@ span {
 .success-message {
   color: black; /* ===TEXT COLOR=== */
 }
-
-  ````
-
-<details>
-  
----
+````
+</details>
