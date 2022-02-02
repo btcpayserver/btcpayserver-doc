@@ -17,7 +17,7 @@ If you are looking for how to make a simple code change such as fixing a typo or
  Software to install to follow this guide:
 
  1. [Visual Studio Community Edition](https://visualstudio.microsoft.com/downloads/)
- 1. [.NET Core SDK 3.1+](https://dotnet.microsoft.com/download)
+ 1. [.NET Core SDK 6.0+](https://dotnet.microsoft.com/en-us/download/dotnet/6.0)
  1. [Docker Desktop](https://www.docker.com/products/docker-desktop)
  1. PowerShell (included in Windows OS)
  1. [GitBash](https://gitforwindows.org/)

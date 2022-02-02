@@ -707,19 +707,24 @@ To connect another `bitcoind` instance to your new node:
 
 ##### 🚚 Install
 
-##### 1. Install .Net Core
+##### 1. Install .NET 6.0 SDK
 
-Check [follow the install instuctions](https://docs.microsoft.com/en-us/dotnet/core/install/linux-ubuntu#2004-) (.Net Core 3.1.6 at the time of writing)
+[Follow the install instuctions](https://docs.microsoft.com/en-us/dotnet/core/install/linux-ubuntu#2004-):
 
 ```bash
-~$ wget https://packages.microsoft.com/config/ubuntu/20.04/packages-microsoft-prod.deb -O packages-microsoft-prod.deb
-~$ sudo dpkg -i packages-microsoft-prod.deb
-~$ sudo apt update
-~$ sudo apt install apt-transport-https
-~$ sudo apt update
-~$ sudo apt install dotnet-sdk-3.1
-~$ dotnet --version
-3.1.302
+# Add Microsoft package repository
+wget https://packages.microsoft.com/config/ubuntu/20.04/packages-microsoft-prod.deb -O packages-microsoft-prod.deb
+sudo dpkg -i packages-microsoft-prod.deb
+rm packages-microsoft-prod.deb
+
+# Install the SDK
+sudo apt-get update
+sudo apt-get install -y apt-transport-https
+sudo apt-get update
+sudo apt-get install -y dotnet-sdk-6.0
+
+## Check
+dotnet --version
 ```
 
 ##### 2. Build NBXplorer
