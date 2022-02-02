@@ -28,7 +28,7 @@
         },
         "security": [
           {
-            "API Key": [
+            "API_Key": [
               "unrestricted"
             ],
             "Basic": []
@@ -57,7 +57,7 @@
         },
         "security": [
           {
-            "API Key": []
+            "API_Key": []
           }
         ]
       },
@@ -81,7 +81,7 @@
         },
         "security": [
           {
-            "API Key": []
+            "API_Key": []
           }
         ]
       }
@@ -133,7 +133,7 @@
         },
         "security": [
           {
-            "API Key": [
+            "API_Key": [
               "unrestricted"
             ],
             "Basic": []
@@ -351,7 +351,7 @@
         },
         "security": [
           {
-            "API Key": [
+            "API_Key": [
               "btcpay.store.canviewinvoices"
             ],
             "Basic": []
@@ -413,7 +413,7 @@
         },
         "security": [
           {
-            "API Key": [
+            "API_Key": [
               "btcpay.store.cancreateinvoice"
             ],
             "Basic": []
@@ -469,7 +469,7 @@
         },
         "security": [
           {
-            "API Key": [
+            "API_Key": [
               "btcpay.store.canviewinvoices"
             ],
             "Basic": []
@@ -526,7 +526,7 @@
         },
         "security": [
           {
-            "API Key": [
+            "API_Key": [
               "btcpay.store.canmodifyinvoices"
             ],
             "Basic": []
@@ -600,7 +600,7 @@
         },
         "security": [
           {
-            "API Key": [
+            "API_Key": [
               "btcpay.store.canmodifyinvoices"
             ],
             "Basic": []
@@ -670,65 +670,8 @@
         },
         "security": [
           {
-            "API Key": [
+            "API_Key": [
               "btcpay.store.canviewinvoices"
-            ],
-            "Basic": []
-          }
-        ]
-      },
-      "delete": {
-        "tags": [
-          "Invoices"
-        ],
-        "summary": "Archive invoice",
-        "description": "Archives the specified invoice.",
-        "operationId": "Invoices_ArchiveInvoice",
-        "parameters": [
-          {
-            "name": "storeId",
-            "in": "path",
-            "required": true,
-            "description": "The store the invoice belongs to",
-            "schema": {
-              "type": "string"
-            }
-          },
-          {
-            "name": "invoiceId",
-            "in": "path",
-            "required": true,
-            "description": "The invoice to remove",
-            "schema": {
-              "type": "string"
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "The invoice has been archived"
-          },
-          "400": {
-            "description": "A list of errors that occurred when archiving the invoice",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ValidationProblemDetails"
-                }
-              }
-            }
-          },
-          "403": {
-            "description": "If you are authenticated but forbidden to archive the specified invoice"
-          },
-          "404": {
-            "description": "The key is not found for this invoice"
-          }
-        },
-        "security": [
-          {
-            "API Key": [
-              "btcpay.store.canmodifyinvoices"
             ],
             "Basic": []
           }
@@ -800,7 +743,7 @@
         },
         "security": [
           {
-            "API Key": [
+            "API_Key": [
               "btcpay.store.canmodifyinvoices"
             ],
             "Basic": []
@@ -863,7 +806,7 @@
         },
         "security": [
           {
-            "API Key": [
+            "API_Key": [
               "btcpay.store.canmodifyinvoices"
             ],
             "Basic": []
@@ -928,7 +871,7 @@
         },
         "security": [
           {
-            "API Key": [
+            "API_Key": [
               "btcpay.store.canviewinvoices"
             ],
             "Basic": []
@@ -976,7 +919,7 @@
         },
         "security": [
           {
-            "API Key": [
+            "API_Key": [
               "btcpay.server.canuseinternallightningnode"
             ],
             "Basic": []
@@ -1047,7 +990,7 @@
         },
         "security": [
           {
-            "API Key": [
+            "API_Key": [
               "btcpay.server.canuseinternallightningnode"
             ],
             "Basic": []
@@ -1095,7 +1038,7 @@
         },
         "security": [
           {
-            "API Key": [
+            "API_Key": [
               "btcpay.server.canuseinternallightningnode"
             ],
             "Basic": []
@@ -1161,7 +1104,7 @@
         },
         "security": [
           {
-            "API Key": [
+            "API_Key": [
               "btcpay.server.canuseinternallightningnode"
             ],
             "Basic": []
@@ -1210,7 +1153,7 @@
         },
         "security": [
           {
-            "API Key": [
+            "API_Key": [
               "btcpay.server.canuseinternallightningnode"
             ],
             "Basic": []
@@ -1267,7 +1210,7 @@
         },
         "security": [
           {
-            "API Key": [
+            "API_Key": [
               "btcpay.server.canuseinternallightningnode"
             ],
             "Basic": []
@@ -1338,7 +1281,7 @@
         },
         "security": [
           {
-            "API Key": [
+            "API_Key": [
               "btcpay.server.canuseinternallightningnode"
             ],
             "Basic": []
@@ -1406,7 +1349,7 @@
         },
         "security": [
           {
-            "API Key": [
+            "API_Key": [
               "btcpay.server.cancreatelightninginvoiceinternalnode"
             ],
             "Basic": []
@@ -1463,7 +1406,7 @@
         },
         "security": [
           {
-            "API Key": [
+            "API_Key": [
               "btcpay.store.cancreatelightninginvoice"
             ],
             "Basic": []
@@ -1543,7 +1486,7 @@
         },
         "security": [
           {
-            "API Key": [
+            "API_Key": [
               "btcpay.store.cancreatelightninginvoice"
             ],
             "Basic": []
@@ -1600,7 +1543,7 @@
         },
         "security": [
           {
-            "API Key": [
+            "API_Key": [
               "btcpay.store.cancreatelightninginvoice"
             ],
             "Basic": []
@@ -1678,7 +1621,7 @@
         },
         "security": [
           {
-            "API Key": [
+            "API_Key": [
               "btcpay.store.cancreatelightninginvoice"
             ],
             "Basic": []
@@ -1736,7 +1679,7 @@
         },
         "security": [
           {
-            "API Key": [
+            "API_Key": [
               "btcpay.store.cancreatelightninginvoice"
             ],
             "Basic": []
@@ -1802,7 +1745,7 @@
         },
         "security": [
           {
-            "API Key": [
+            "API_Key": [
               "btcpay.store.cancreatelightninginvoice"
             ],
             "Basic": []
@@ -1882,7 +1825,7 @@
         },
         "security": [
           {
-            "API Key": [
+            "API_Key": [
               "btcpay.store.cancreatelightninginvoice"
             ],
             "Basic": []
@@ -1959,7 +1902,7 @@
         },
         "security": [
           {
-            "API Key": [
+            "API_Key": [
               "btcpay.server.cancreatelightninginvoiceinternalnode"
             ],
             "Basic": []
@@ -2140,7 +2083,7 @@
         },
         "security": [
           {
-            "API Key": [
+            "API_Key": [
               "btcpay.user.canmanagenotificationsforuser",
               "btcpay.user.canviewnotificationsforuser"
             ],
@@ -2188,7 +2131,7 @@
         },
         "security": [
           {
-            "API Key": [
+            "API_Key": [
               "btcpay.user.canmanagenotificationsforuser",
               "btcpay.user.canviewnotificationsforuser"
             ],
@@ -2234,7 +2177,7 @@
         },
         "security": [
           {
-            "API Key": [
+            "API_Key": [
               "btcpay.user.canmanagenotificationsforuser"
             ],
             "Basic": []
@@ -2282,7 +2225,7 @@
         },
         "security": [
           {
-            "API Key": [
+            "API_Key": [
               "btcpay.user.canmanagenotificationsforuser"
             ],
             "Basic": []
@@ -2323,7 +2266,7 @@
         },
         "security": [
           {
-            "API Key": [
+            "API_Key": [
               "btcpay.store.canviewpaymentrequests"
             ],
             "Basic": []
@@ -2385,7 +2328,7 @@
         },
         "security": [
           {
-            "API Key": [
+            "API_Key": [
               "btcpay.store.canmodifypaymentrequests"
             ],
             "Basic": []
@@ -2441,7 +2384,7 @@
         },
         "security": [
           {
-            "API Key": [
+            "API_Key": [
               "btcpay.store.canviewpaymentrequests"
             ],
             "Basic": []
@@ -2498,7 +2441,7 @@
         },
         "security": [
           {
-            "API Key": [
+            "API_Key": [
               "btcpay.store.canmodifypaymentrequests"
             ],
             "Basic": []
@@ -2569,7 +2512,7 @@
         },
         "security": [
           {
-            "API Key": [
+            "API_Key": [
               "btcpay.store.canmodifypaymentrequests"
             ],
             "Basic": []
@@ -2622,7 +2565,7 @@
         ],
         "security": [
           {
-            "API Key": [
+            "API_Key": [
               "btcpay.store.canmanagepullpayments"
             ],
             "Basic": []
@@ -2723,7 +2666,7 @@
         ],
         "security": [
           {
-            "API Key": [
+            "API_Key": [
               "btcpay.store.canmanagepullpayments"
             ],
             "Basic": []
@@ -2806,7 +2749,7 @@
         ],
         "security": [
           {
-            "API Key": [
+            "API_Key": [
               "btcpay.store.canmanagepullpayments"
             ],
             "Basic": []
@@ -3052,7 +2995,7 @@
         ],
         "security": [
           {
-            "API Key": [
+            "API_Key": [
               "btcpay.store.canmanagepullpayments"
             ],
             "Basic": []
@@ -3076,7 +3019,7 @@
         ],
         "security": [
           {
-            "API Key": [
+            "API_Key": [
               "btcpay.store.canmanagepullpayments"
             ],
             "Basic": []
@@ -3142,7 +3085,7 @@
         ],
         "security": [
           {
-            "API Key": [
+            "API_Key": [
               "btcpay.store.canmanagepullpayments"
             ],
             "Basic": []
@@ -3172,7 +3115,7 @@
         },
         "security": [
           {
-            "API Key": [],
+            "API_Key": [],
             "Basic": []
           }
         ]
@@ -3223,7 +3166,7 @@
         },
         "security": [
           {
-            "API Key": [
+            "API_Key": [
               "btcpay.store.canviewstoresettings"
             ],
             "Basic": []
@@ -3273,7 +3216,7 @@
         },
         "security": [
           {
-            "API Key": [
+            "API_Key": [
               "btcpay.store.canmodifystoresettings"
             ],
             "Basic": []
@@ -3330,7 +3273,7 @@
         },
         "security": [
           {
-            "API Key": [
+            "API_Key": [
               "btcpay.store.canmodifystoresettings"
             ],
             "Basic": []
@@ -3407,7 +3350,7 @@
         },
         "security": [
           {
-            "API Key": [
+            "API_Key": [
               "btcpay.store.canmodifystoresettings"
             ],
             "Basic": []
@@ -3464,7 +3407,7 @@
         },
         "security": [
           {
-            "API Key": [
+            "API_Key": [
               "btcpay.store.canmodifystoresettings"
             ],
             "Basic": []
@@ -3514,7 +3457,7 @@
         },
         "security": [
           {
-            "API Key": [
+            "API_Key": [
               "btcpay.store.canmodifystoresettings"
             ],
             "Basic": []
@@ -3571,7 +3514,7 @@
         },
         "security": [
           {
-            "API Key": [
+            "API_Key": [
               "btcpay.store.canmodifystoresettings"
             ],
             "Basic": []
@@ -3648,7 +3591,7 @@
         },
         "security": [
           {
-            "API Key": [
+            "API_Key": [
               "btcpay.store.canmodifystoresettings"
             ],
             "Basic": []
@@ -3705,7 +3648,7 @@
         },
         "security": [
           {
-            "API Key": [
+            "API_Key": [
               "btcpay.store.canmodifystoresettings"
             ],
             "Basic": []
@@ -3755,7 +3698,7 @@
         },
         "security": [
           {
-            "API Key": [
+            "API_Key": [
               "btcpay.store.canviewstoresettings"
             ],
             "Basic": []
@@ -3812,7 +3755,7 @@
         },
         "security": [
           {
-            "API Key": [
+            "API_Key": [
               "btcpay.store.canviewstoresettings"
             ],
             "Basic": []
@@ -3889,7 +3832,7 @@
         },
         "security": [
           {
-            "API Key": [
+            "API_Key": [
               "btcpay.store.canmodifystoresettings"
             ],
             "Basic": []
@@ -3946,7 +3889,7 @@
         },
         "security": [
           {
-            "API Key": [
+            "API_Key": [
               "btcpay.store.canmodifystoresettings"
             ],
             "Basic": []
@@ -4021,7 +3964,7 @@
         },
         "security": [
           {
-            "API Key": [
+            "API_Key": [
               "btcpay.store.canviewstoresettings"
             ],
             "Basic": []
@@ -4113,7 +4056,7 @@
         },
         "security": [
           {
-            "API Key": [
+            "API_Key": [
               "btcpay.store.canviewstoresettings"
             ],
             "Basic": []
@@ -4170,7 +4113,7 @@
         },
         "security": [
           {
-            "API Key": [
+            "API_Key": [
               "btcpay.store.canmodifystoresettings"
             ],
             "Basic": []
@@ -4237,7 +4180,7 @@
         },
         "security": [
           {
-            "API Key": [
+            "API_Key": [
               "btcpay.store.canviewstoresettings"
             ],
             "Basic": []
@@ -4304,7 +4247,7 @@
         },
         "security": [
           {
-            "API Key": [
+            "API_Key": [
               "btcpay.store.canmodifystoresettings"
             ],
             "Basic": []
@@ -4352,7 +4295,7 @@
         },
         "security": [
           {
-            "API Key": [
+            "API_Key": [
               "btcpay.store.canmodifystoresettings"
             ],
             "Basic": []
@@ -4445,7 +4388,7 @@
         },
         "security": [
           {
-            "API Key": [
+            "API_Key": [
               "btcpay.store.canmodifystoresettings"
             ],
             "Basic": []
@@ -4518,7 +4461,7 @@
         },
         "security": [
           {
-            "API Key": [
+            "API_Key": [
               "btcpay.store.canmodifystoresettings"
             ],
             "Basic": []
@@ -4584,7 +4527,7 @@
         },
         "security": [
           {
-            "API Key": [
+            "API_Key": [
               "btcpay.store.canmodifystoresettings"
             ],
             "Basic": []
@@ -4644,7 +4587,7 @@
         },
         "security": [
           {
-            "API Key": [
+            "API_Key": [
               "btcpay.store.canmodifystoresettings"
             ],
             "Basic": []
@@ -4674,7 +4617,7 @@
         },
         "security": [
           {
-            "API Key": [
+            "API_Key": [
               "btcpay.store.canviewstoresettings"
             ],
             "Basic": []
@@ -4726,7 +4669,7 @@
         },
         "security": [
           {
-            "API Key": [
+            "API_Key": [
               "btcpay.store.canmodifystoresettings"
             ],
             "Basic": []
@@ -4773,7 +4716,7 @@
         },
         "security": [
           {
-            "API Key": [
+            "API_Key": [
               "btcpay.store.canviewstoresettings"
             ],
             "Basic": []
@@ -4840,7 +4783,7 @@
         },
         "security": [
           {
-            "API Key": [
+            "API_Key": [
               "btcpay.store.canmodifystoresettings"
             ],
             "Basic": []
@@ -4887,7 +4830,7 @@
         },
         "security": [
           {
-            "API Key": [
+            "API_Key": [
               "btcpay.store.canmodifystoresettings"
             ],
             "Basic": []
@@ -4917,7 +4860,7 @@
         },
         "security": [
           {
-            "API Key": [
+            "API_Key": [
               "btcpay.user.canviewprofile"
             ],
             "Basic": []
@@ -4938,7 +4881,7 @@
         },
         "security": [
           {
-            "API Key": [
+            "API_Key": [
               "btcpay.user.candeleteuser"
             ],
             "Basic": []
@@ -5016,7 +4959,7 @@
         },
         "security": [
           {
-            "API Key": [
+            "API_Key": [
               "btcpay.server.cancreateuser"
             ],
             "Basic": []
@@ -5092,7 +5035,7 @@
         },
         "security": [
           {
-            "API Key": [
+            "API_Key": [
               "btcpay.store.webhooks.canmodifywebhooks"
             ],
             "Basic": []
@@ -5141,7 +5084,7 @@
         },
         "security": [
           {
-            "API Key": [
+            "API_Key": [
               "btcpay.store.webhooks.canmodifywebhooks"
             ],
             "Basic": []
@@ -5194,7 +5137,7 @@
         },
         "security": [
           {
-            "API Key": [
+            "API_Key": [
               "btcpay.store.webhooks.canmodifywebhooks"
             ],
             "Basic": []
@@ -5242,7 +5185,7 @@
         },
         "security": [
           {
-            "API Key": [
+            "API_Key": [
               "btcpay.store.webhooks.canmodifywebhooks"
             ],
             "Basic": []
@@ -5255,17 +5198,6 @@
         ],
         "summary": "Delete a webhook",
         "description": "Delete a webhook",
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/WebhookDataBase"
-              }
-            }
-          },
-          "required": true,
-          "x-position": 1
-        },
         "responses": {
           "200": {
             "description": "The webhook has been deleted"
@@ -5276,7 +5208,7 @@
         },
         "security": [
           {
-            "API Key": [
+            "API_Key": [
               "btcpay.store.webhooks.canmodifywebhooks"
             ],
             "Basic": []
@@ -5336,7 +5268,7 @@
         },
         "security": [
           {
-            "API Key": [
+            "API_Key": [
               "btcpay.store.webhooks.canmodifywebhooks"
             ],
             "Basic": []
@@ -5397,7 +5329,7 @@
         },
         "security": [
           {
-            "API Key": [
+            "API_Key": [
               "btcpay.store.webhooks.canmodifywebhooks"
             ],
             "Basic": []
@@ -5459,7 +5391,7 @@
         },
         "security": [
           {
-            "API Key": [
+            "API_Key": [
               "btcpay.store.webhooks.canmodifywebhooks"
             ],
             "Basic": []
@@ -5520,7 +5452,7 @@
         },
         "security": [
           {
-            "API Key": [
+            "API_Key": [
               "btcpay.store.webhooks.canmodifywebhooks"
             ],
             "Basic": []
@@ -7835,7 +7767,7 @@
               },
               "payment": {
                 "description": "Details about the payment",
-                "$ref": "#/components/schemas/InvoicePaymentMethodDataModel"
+                "$ref": "#/components/schemas/Payment"
               }
             }
           }
@@ -7869,18 +7801,15 @@
       }
     },
     "securitySchemes": {
-      "API Key": {
+      "API_Key": {
         "type": "apiKey",
         "description": "BTCPay Server supports authenticating and authorizing users through an API Key that is generated by them. Send the API Key as a header value to Authorization with the format: `token {token}`. For a smoother experience, you can generate a url that redirects users to an API key creation screen.\n\n The following permissions are available to the context of the user creating the API Key:\n\n* `unrestricted`: Unrestricted access\n* `btcpay.user.candeleteuser`: Delete user\n* `btcpay.user.canviewprofile`: View your profile\n* `btcpay.user.canmodifyprofile`: Manage your profile\n* `btcpay.user.canmanagenotificationsforuser`: Manage your notifications\n* `btcpay.user.canviewnotificationsforuser`: View your notifications\n\nThe following permissions are available if the user is an administrator:\n\n* `btcpay.server.cancreateuser`: Create new users\n* `btcpay.server.canmodifyserversettings`: Manage your server\n* `btcpay.server.canuseinternallightningnode`: Use the internal lightning node\n* `btcpay.server.cancreatelightninginvoiceinternalnode`: Create invoices with internal lightning node\n\nThe following permissions applies to all stores of the user, you can limit to a specific store with the following format: `btcpay.store.cancreateinvoice:6HSHAEU4iYWtjxtyRs9KyPjM9GAQp8kw2T9VWbGG1FnZ`:\n\n* `btcpay.store.canmodifystoresettings`: Modify your stores\n* `btcpay.store.webhooks.canmodifywebhooks`: Modify stores webhooks\n* `btcpay.store.canviewstoresettings`: View your stores\n* `btcpay.store.cancreateinvoice`: Create an invoice\n* `btcpay.store.canviewinvoices`: View invoices\n* `btcpay.store.canmodifyinvoices`: Modify invoices\n* `btcpay.store.canmodifypaymentrequests`: Modify your payment requests\n* `btcpay.store.canviewpaymentrequests`: View your payment requests\n* `btcpay.store.canuselightningnode`: Use the lightning nodes associated with your stores\n* `btcpay.store.cancreatelightninginvoice`: Create invoices the lightning nodes associated with your stores\n\nNote that API Keys only limits permission of a user and can never expand it. If an API Key has the permission `btcpay.server.canmodifyserversettings` but that the user account creating this API Key is not administrator, the API Key will not be able to modify the server settings.\nSome permissions may include other permissions, see [this operation](#operation/permissionsMetadata).\n",
         "name": "Authorization",
-        "in": "header",
-        "scheme": "token"
+        "in": "header"
       },
       "Basic": {
         "type": "http",
         "description": "BTCPay Server supports authenticating and authorizing users through the Basic HTTP authentication scheme. Send the user and password encoded in base64 with the format `Basic {base64(username:password)}`. Using this authentication method implicitly provides you with the `unrestricted` permission",
-        "name": "Authorization",
-        "in": "header",
         "scheme": "Basic"
       }
     }
@@ -7903,7 +7832,7 @@
   "servers": [],
   "security": [
     {
-      "API Key": [],
+      "API_Key": [],
       "Basic": []
     }
   ],
