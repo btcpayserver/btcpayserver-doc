@@ -14,8 +14,8 @@ For an in production setup, skip to [Mainnet](./TryItOut.md#mainnet)
 First let's create a new store:
 
 1. Go to the [Testnet website](https://testnet.demo.btcpayserver.org/)
-2. On the right side click on **Create an account** to [create an account](https://testnet.demo.btcpayserver.org/Account/Register) or **Sign In** if you already have an account.
-3. After having signed in, go to **Stores** and [create a new store](https://testnet.demo.btcpayserver.org/stores)
+2. On the right side click on **Create an account** to [create an account](https://testnet.demo.btcpayserver.org/register) or **Sign In** if you already have an account.
+3. After having signed in, create a new store.
 
 Let's use Electrum to create a testnet wallet for your store:
 

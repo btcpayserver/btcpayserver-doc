@@ -51,7 +51,7 @@ In layman's terms, BTCPay Server is a self-hosted and automated invoicing system
 BTCPay Server is free, open-source, self-hostable software.
 BTCPay Server is not a company. To use BTCPay Server, [deploy](/Deployment/README.md) your own instance, or use a [third-party host](/Deployment/ThirdPartyHosting.md).
 
- To explore what BTCPay Server has to offer, head over to the [official demo](https://mainnet.demo.btcpayserver.org/Account/Login).
+ To explore what BTCPay Server has to offer, head over to the [official demo](https://mainnet.demo.btcpayserver.org/login).
 
 While using BTCPay Server, there is no payment processing intermediary. Accept payments directly and stay in full control of received funds. There are no processing or subscription fees. BTCPay Server is free to use and completely open-source, so developers or security auditors can always inspect the quality of the code.
 

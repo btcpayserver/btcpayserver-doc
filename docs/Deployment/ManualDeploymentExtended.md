@@ -1196,7 +1196,7 @@ Copy the sample config file from `sample-RTL-Config.json` and adjust accordingly
   "SSO": {
     "rtlSSO": 1,
     "rtlCookiePath": "/var/lib/rtl/.cookie",  # Needs to match the value in BTCPay systemd settings.
-    "logoutRedirectLink": "https://mainnet.demo.btcpayserver.org/Account/login"
+    "logoutRedirectLink": "https://mainnet.demo.btcpayserver.org/login"
   },
   "nodes": [
     {
