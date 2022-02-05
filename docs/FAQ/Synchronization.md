@@ -90,7 +90,7 @@ If you are synching and don't have enough memory, your server may use swap memor
 
 ```bash
 sudo su -
-df -h
+free -h
 ```
 
 If you see swap memory usage:
