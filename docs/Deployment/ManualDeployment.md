@@ -48,15 +48,24 @@ sudo tar -xzvf bitcoin.tar.gz -C /usr/local/bin --strip-components=2 "bitcoin-$B
 rm bitcoin.tar.gz
 ```
 
-### 2) Install .NET Core SDK 3.1
-On my ubuntu 18.04 (See [these instructions](https://docs.microsoft.com/en-us/dotnet/core/install/linux-package-manager-ubuntu-1804) or [here](https://dotnet.microsoft.com/download) for different OS).
+### 2) Install .NET 6.0 SDK
+
+On my Ubuntu 20.04 (See [these instructions](https://docs.microsoft.com/en-us/dotnet/core/install/linux-ubuntu#2004-) or [here](https://dotnet.microsoft.com/en-us/download/dotnet/6.0) for different OS).
 
 ```bash
-wget -q https://packages.microsoft.com/config/ubuntu/18.04/packages-microsoft-prod.deb
+# Add Microsoft package repository
+wget https://packages.microsoft.com/config/ubuntu/20.04/packages-microsoft-prod.deb -O packages-microsoft-prod.deb
 sudo dpkg -i packages-microsoft-prod.deb
-sudo apt-get install apt-transport-https
+rm packages-microsoft-prod.deb
+
+# Install the SDK
 sudo apt-get update
-sudo apt-get install -y dotnet-sdk-3.1
+sudo apt-get install -y apt-transport-https
+sudo apt-get update
+sudo apt-get install -y dotnet-sdk-6.0
+
+## Check
+dotnet --version
 ```
 
 ### 3) Install NBXplorer

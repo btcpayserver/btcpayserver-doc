@@ -4,7 +4,7 @@
 
 For the **development environment** you need to install these tools:
 
-* [.NET Core 3.1 SDK](https://dotnet.microsoft.com/download)
+* [.NET 6.0 SDK](https://dotnet.microsoft.com/en-us/download/dotnet/6.0)
 * Docker: [Windows](https://docs.docker.com/docker-for-windows/install/) | [Mac OS](https://docs.docker.com/docker-for-mac/install/) | [Linux](https://docs.docker.com/install/linux/docker-ce/ubuntu/)
 
 ## Dependencies
