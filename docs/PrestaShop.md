@@ -38,7 +38,8 @@ No matter if you're using a self-hosted or third-party solution from step 2, the
 
 1. In the `BTCPay Server URL`-field, enter the full URL of your host (including the https) – for example https://testnet.demo.btcpayserver.org
 2. Select the default transaction speed (this will change how much BTCPay recommends as transaction fee).
-3. Select the relevant order mode for your store (order is created before or after payment).
+3. _Optional: Select the relevant order mode for your store (order is created before or after payment)._
+   * Only relevant if you use a version **before** v5.1.0 as this logic has been removed.
 4. Select if you want to send customer metadata to your BTCPay server instance for bookkeeping.
 5. Press `Connect` to save your settings and be redirected to your BTCPay Server instance to create an API key.
 6. When creating the API key, make sure to give the permissions to a specific store (multiple stores are not supported).
