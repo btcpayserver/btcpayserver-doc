@@ -19,77 +19,84 @@ You can check out the following video, or head over to [the WooCommerce plugin r
 
 To integrate BTCPay Server into an existing WooCommerce store, follow the steps below.
 
+:::tip
+This guide refers to the BTCPay for WooCommerce V2 plugin. You can find instructions for the now unmaintained legacy plugin (using BitPay API) [here](https://github.com/btcpayserver/btcpayserver-doc/blob/cba96292ceea9483711ab53c479a98357383f857/docs/WooCommerce.md).
+:::
+
+## Requirements
+
+Please ensure that you meet the following requirements before installing this plugin.
+
+- PHP version 7.4 or newer
+- The curl, gd, intl, json, and mbstring PHP extensions are available
+- A WooCommerce website ([Installation instructions](https://woocommerce.com/document/installing-uninstalling-woocommerce/) or [directly on BTCPay Server](#deploying-woocommerce-from-btcpay-server))
+- You have a BTCPay Server version 1.3.0 or later, either [self-hosted](/Deployment/README.md) or [hosted by a third-party](/Deployment/ThirdPartyHosting.md)
+- [You've a registered account on the instance](./RegisterAccount.md)
+- [You've a BTCPay store on the instance](./CreateStore.md)
+- [You've a wallet connected to your store](./WalletSetup.md)
+
+
 ## 1. Install BTCPay Plugin
 
-There are two ways to **download BTCPay plugin**:
+There are three ways to **download BTCPay for WooCommerce V2 plugin**:
 
-- [WordPress Repository](https://wordpress.org/plugins/btcpay-for-woocommerce/)
-- [GitHub Repository](https://github.com/btcpayserver/woocommerce-plugin/releases)
+- From within WordPress via the Admin Dashboard (recommended, see below)
+- [WordPress Repository](https://wordpress.org/plugins/btcpay-greenfield-for-woocommerce/)
+- [GitHub Repository](https://github.com/btcpayserver/woocommerce-greenfield-plugin/releases)
 
-### Install plugin from WordPress
+### 1.1 Install plugin from WordPress Admin Dashboard (recommended)
 
 1. WordPress > Plugins > Add New.
-2. In Search, type "BTCPay for WooCommerce"
+2. In Search, type "BTCPay V2".
 3. Install and activate.
 
-![BTCPay WordPress Repo plugin installation](./img/BTCPay-WooCommerce-WP-Repo-Install.png)
+![BTCPay WordPress V2: Plugin installation](./img/woocommerce/btcpay-wc-2--01-plugin-search.png)
 
-### Download and install plugin from GitHub
+### 1.2 Download and install plugin from GitHub
 
-[Download the latest BTCPay plugin](https://github.com/btcpayserver/woocommerce-plugin/releases), upload it in .zip format into your WordPress and activate it.
+[Download the latest BTCPay plugin](https://github.com/btcpayserver/woocommerce-greenfield-plugin/releases), upload it in .zip format to your WordPress site and activate it.
 
 [![BTCPay Server Woo Plugin](https://img.youtube.com/vi/6QcTWHRKZag/mqdefault.jpg)](https://www.youtube.com/watch?v=6QcTWHRKZag "BTCPay Server - Woo Plugin")
 
-## 2. Deploy BTCPay Server
 
-To launch your BTCPay server, you can self-host it, or use a third party host.
+## 2. Connecting WooCommerce and BTCPay Server
 
-### 2.1 Self-hosted BTCPay
+BTCPay for WooCommerce V2 plugin is a **bridge between your BTCPay Server (payment processor) and your e-commerce store**.
+No matter if you're using a self-hosted or third-party solution, the connection process is identical.
 
-There are various ways to [launch a self-hosted BTCPay](/Deployment/README.md).
-If you do not have technical knowledge, use the [web-wizard method](https://launchbtcpay.lunanode.com) and follow the video below.
+You can either click on the notifications link saying "**please configure the plugin here**" (see screenshot below), or:
 
-[![BTCPay Server Lundanode](https://img.youtube.com/vi/NjslXYvp8bk/mqdefault.jpg)](https://www.youtube.com/watch?v=NjslXYvp8bk "BTCPay Server - LunaNode")
+- Go to your store dashboard.
+- WooCommerce > Settings.
+- Click [BTCPay Settings] tab.
 
-For the self-hosted solutions, you'll have to wait for your node to sync fully before proceeding to step 3.
+![BTCPay WordPress V2: Link to BTCPay Settings](./img/woocommerce/btcpay-wc-2--02-activated-configure.png)
 
-### 2.2 Third-party host
 
-For those who want to test BTCPay out, or are okay with the limitations of a **third-party hosting** (dependency and privacy, as well as lack of some features) can use a one of many [third-party hosts](/Deployment/ThirdPartyHosting.md).
 
-The video below shows you how to connect your store to such a host.
+### 2.1 Connect using the API key wizard (recommended)
 
-[![BTCPay Server Third Party Host](https://img.youtube.com/vi/IT2K8It3S3o/mqdefault.jpg)](https://www.youtube.com/watch?v=IT2K8It3S3o "BTCPay Server - Third Party Host")
+1. In the field "**BTCPay Server URL**", enter the full URL of your host (including the https) – https://btcpay.mydomain.com
+2. Click on the link below the "**BTCPay Api Key**" field that says "**click here to generate API keys*" (you will be redirected to BTCPay Server "Authorization request" page.
+![BTCPay WordPress V2: Link to BTCPay Settings](./img/woocommerce/btcpay-wc-2--03-settings--api-key-redirect.png)
 
-## 3. Pairing the store
+3. If you are not logged in to your BTCPay Server instance, do so now. (optional)
+![BTCPay WordPress V2: Login to BTCPay Server](./img/woocommerce/btcpay-wc-2--04-api-auth-login.png)
+4. For each listed permission click on "select specific stores..." (If you only have one store it will get autoselected).
+![BTCPay WordPress V2: Select store](./img/woocommerce/btcpay-wc-2--05-api-auth-select-store.png)
+5. Click [Authorize app]
+![BTCPay WordPress V2: Click on authorize app](./img/woocommerce/btcpay-wc-2--06-api-auth-authorize-button.png)
+7. You will get redirected to your WooCommerce store and the API key and Store ID will be prefilled.
+![BTCPay WordPress V2: Redirected back to plugin settings](./img/woocommerce/btcpay-wc-2--07-api-auth-after-redirect-prefilled.png)
+8. Before doing any further configuration click on **[Save]** as it will setup the webhook for you.
+![BTCPay WordPress V2: Webhook created](./img/woocommerce/btcpay-wc-2--08-api-auth-save-webhook-created.png)
 
-BTCPay WooCommerce plugin is a **bridge between your server (payment processor) and your e-commerce store**.
-No matter if you're using a self-hosted or third-party solution from step 2, the pairing process is identical.
+### 2.2 Connect by manually creating the API key and permissions
 
-Go to your store dashboard.
-WooCommerce > Settings > Payments.
-Click BTCPay.
+TODO
 
-1. In the field, enter the full URL of your host (including the https) – https://btcpay.mydomain.com
-2. Click on the generated link which will redirect you back to your BTCPay Server.
-3. Click on request pairing
-4. Approve the pairing
-5. Copy the pairing code
-6. Go back to your store and paste the pairing code
-7. Click “Pair”
-8. When you see the image, it means you successfully paired your server and your store.
 
-The process of pairing a store with BTCPay is explained in a video below, starting at 1:59
-
-[![Store Pairing](https://img.youtube.com/vi/IT2K8It3S3o/mqdefault.jpg)](https://youtube.com/watch?v=IT2K8It3S3o?t=119 "BTCPay Server - Pairing your Store")
-
-## 4. Connecting your wallet
-
-No matter if you're using self-hosted or server hosted by a third-party, the process of configuring your wallet is the same.
-
-[![BTCPay Server Wallet](https://img.youtube.com/vi/xX6LyQej0NQ/mqdefault.jpg)](https://www.youtube.com/watch?v=xX6LyQej0NQ "BTCPay Server - Wallet")
-
-## 5. Testing the checkout
+## 3. Testing the checkout
 
 Making a small test-purchase from your store will give you a piece of mind.
 Always make sure that everything is set up correctly before going live.
@@ -97,28 +104,100 @@ The final video guides you through the steps of setting a gap limit in your Elec
 
 [![BTCPay Server Checkout](https://img.youtube.com/vi/Fi3pYpzGmmo/mqdefault.jpg)](https://www.youtube.com/watch?v=Fi3pYpzGmmo "BTCPay Server - Wallet")
 
-## 6. Customizing BTCPay WooCommerce Plugin
+## 4. Customizing BTCPay WooCommerce V2
 
-### BTCPay Order Statuses
+### 4.1 Global Settings
+
+Can be found at *WooCommerce -> Settings -> Tab [BTCPay Settings]*
+
+**BTCPay Server URL**  
+
+URL to your BTCPay Server instance, including protocol e.g. `https://btcpay.yourdomain.com`.
+
+**BTCPay API Key**   
+
+Your API Key. (Was auto-generated in the steps before).
+
+**Store ID**   
+
+The store ID of your BTCPay Server store. Can be found on the store settings page.
+
+**Default Customer Message**   
+
+Here you can customize the customer message shown after selecting BTCPay payment gateway on checkout. This can be overwritten on the payment gateway settings for each gateway if you use the "Separate payment gateways" option.
+
+**Invoice pass to "Settled" state after**   
+
+Set after how many confirmations a payment is considered fully paid and settled. Defaults to what is configured on BTCPay store settings.
+
+**BTCPay Order Statuses**   
 
 Depending on your business model and store settings, you may want to configure your order statuses.
 You can set BTCPay to trigger certain order status in WooCommerce automatically.
 
-- New Order - order placed, not paid yet.
-- Paid - order paid, not confirmed on the blockchain.
-- Confirmed - order paid, confirmed on the blockchain, does not have a sufficient number of confirmations set in BTCPay tore settings.
-- Complete - order paid, confirmed on the blockchain with a sufficient number of confirmations.
-- Invalid - order paid, did not get a sufficient number of confirmations in a pre-defined time-frame set in BTCPay store settings.
-- Expired - invoice expired, order not paid
-- Paid after expiration - invoice expired, paid
-- Expired with partial payment - invoice expired and paid partially
+- *New* - order placed, not paid yet.
+- *Paid* - order paid, not enough confirmations on the blockchain, yet.
+- *Settled* - order paid, confirmed on the blockchain.
+- *Settled (paid over)* - order paid, confirmed on the blockchain but paid over.
+- *Invalid* - order paid, did not get a sufficient number of confirmations in a pre-defined time-frame set in BTCPay store settings, or manually marked invalid.
+- *Expired* - invoice expired, order not paid.
+- *Expired with partial payment* - invoice expired and paid partially
 
 Take time to think about how you wish to automate these statuses.
-If you do not wish certain BTCPay status to trigger WooCommerce order status, you can leave it blank.
+If you do not wish certain BTCPay status to trigger WooCommerce order status, you can leave it as default "- no mapping / defaults -".
 
-For example, if a merchant wants to send an email notifying the customer that the payment has been received, but the order will be processed upon confirmation, the merchant would have to set "order status paid" to "on hold."
-Then, the merchant would have to customize and trigger email for 'on hold' status of the order in WooCommerce.
+Note: you should keep the "Settled" order status to "- no mapping / defaults-" if you sell digital and physical products. For digital products WooCommerce will automatically skip the "Processing" status and go directly to "Completed" for those orders only containing digital products.
+
+Another example, if a merchant wants to send an email notifying the customer that the payment has been received, but the order will be processed upon confirmation, the merchant would have to set order status for "Paid" to "On hold". Then, the merchant would have to customize and trigger email for "On hold" status of the order in WooCommerce.
+
 It takes some time to find a perfect formula, so users should test things out before going live.
+
+**Separate Payment Gateways**   
+
+If this option is enabled the plugin will generate one separate payment gateway per supported payment method on BTCPay Server. E.g. if you have BTC, LightningNetwork and maybe Liquid Assets enabled on your BTCPay Server store, then you will have a separate gateway available for each. This allows many new use cases like discount per gateway or country based restrictions. More details [here](./FAQ/Integrations/#how-to-configure-additional-token-support). 
+
+**Send customer data to BTCPayServer**   
+
+By default *no* customer data beside email is sent to BTCPay Server. If you want to send customer address data to BTCPay Server you can enable it here.
+
+**Debug Log**   
+
+This option is helpful in case you have a problem and need more information on what is going on. The logs can be then found under WooCommerce -> Status -> Log. Make sure you disable this again after debugging as it will fill up your filesystem with logs.
+
+
+### 4.2 Payment Gateway specific
+
+Depending on wheter you have above mentioned "Separate Payment Gateways" enabled you will have one or more Payment Gateways available to configure in the payment gateway settings via *WooCommerce -> Settings -> Tab [Payments]*
+
+On all payment gateways you can set the following options:
+
+**Title**   
+The shown payment gateway text on the checkout page. Defaults to "BTCPay (Bitcoin, Lightning Network, ...)".
+
+**Customer Message**   
+
+Here you can customize message shown after selecting BTCPay payment gateway.
+
+**Gateway Icon**
+
+Upload or select a custom icon to be shown next to the payment gateway during checkout. Defaults to BTCPay logo.
+
+#### 4.2.1 BTCPay (default)
+
+Additional options only available for the default payment gateway:
+
+**Enforce payment tokens**
+
+With "Separate Payment Gateways" feature enabled in BTCPay Settings you can use this option to enforce only payment tokens. This means that the created invoice will *only* include tokens of type "payment" and *not any*  of type "promotion". See difference of token types [here](./FAQ/Integrations/#how-to-configure-additional-token-support#token-types)
+
+#### 4.2.2 Separate Payment Gateways
+
+Additional options only available for the separate payment gateways (if that feature is enabled):
+
+**Token Type**
+
+By default type "payment" is selected. But if you have Liquid Assets with your own issued asset/token (e.g. used as voucher) you can select "promotion" here. Those are processed differently than normal payment tokens. Details can be found [here](./FAQ/Integrations/#how-to-configure-additional-token-support#promotional-tokens-100-discount)
+
 
 # Deploying WooCommerce from BTCPay Server
 
