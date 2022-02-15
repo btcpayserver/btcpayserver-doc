@@ -11,17 +11,15 @@ tags:
 This document explains how to **integrate BTCPay Server into your WooCommerce store**.
 If you do not have a store yet, follow [this step by step article](https://bitcoinshirt.co/how-to-create-store-accept-bitcoin/) to create one from scratch.
 
-You can check out the following video, or head over to [the WooCommerce plugin repository](https://github.com/btcpayserver/woocommerce-plugin).
-
-[![BTCPay - WooCommerce](https://img.youtube.com/vi/tTH3nLoyTcw/mqdefault.jpg)](https://www.youtube.com/watch?v=tTH3nLoyTcw "BTCPay - WooCommerce")
+:::tip
+This guide refers to the BTCPay for WooCommerce V2 plugin. You can find instructions for the now unmaintained legacy plugin (based on BitPay API) [here](https://github.com/btcpayserver/btcpayserver-doc/blob/cba96292ceea9483711ab53c479a98357383f857/docs/WooCommerce.md).
+:::
 
 ![BTCPay - WooCommerce Infographic](./img/infographics/BTCPayInfographic.png "BTCPay - WooCommerce Infographic")
 
-To integrate BTCPay Server into an existing WooCommerce store, follow the steps below.
+To integrate BTCPay Server into an existing WooCommerce store, follow the steps below and/or watch this video:
 
-:::tip
-This guide refers to the BTCPay for WooCommerce V2 plugin. You can find instructions for the now unmaintained legacy plugin (using BitPay API) [here](https://github.com/btcpayserver/btcpayserver-doc/blob/cba96292ceea9483711ab53c479a98357383f857/docs/WooCommerce.md).
-:::
+[![BTCPay - WooCommerce](https://img.youtube.com/vi/tTH3nLoyTcw/mqdefault.jpg)](https://www.youtube.com/watch?v=tTH3nLoyTcw "BTCPay - WooCommerce")
 
 ## Requirements
 
@@ -91,10 +89,28 @@ You can either click on the notifications link saying "**please configure the pl
 8. Before doing any further configuration click on **[Save]** as it will setup the webhook for you.
 ![BTCPay WordPress V2: Webhook created](./img/woocommerce/btcpay-wc-2--08-api-auth-save-webhook-created.png)
 
+Continue with "3. Testing the checkout" below.
+
 ### 2.2 Connect by manually creating the API key and permissions
 
-TODO
+If you can't use the wizard mentioned in the previous section you can also generate the API key manually.
 
+1. Click on *[Account]* -> *Manage Account* on the bottom left   
+![BTCPay WordPress V2: Manage Account](./img/woocommerce/btcpay-wc-2--09-man-api--manage-account.png)
+2. Go to the tab *"API Keys"*    
+3. Click *[Generate Key]* to select permissions.   
+![BTCPay WordPress V2: API Keys overview](./img/woocommerce/btcpay-wc-2--10-man-api--keys-overview.png)
+4. Click on the *"Select specific stores"* link for the following permissions: `View invoices`, `Create invoice`, `Modify invoices`, `Modify stores webhooks`, `View your stores`   
+![BTCPay WordPress V2: API Keys Permissions](./img/woocommerce/btcpay-wc-2--11-man-api--permissions.png) 
+5. Click on *[Generate API Key]*   
+![BTCPay WordPress V2: API Keys Save](./img/woocommerce/btcpay-wc-2--12-man-api--permissions-save.png) 
+6. Copy the generated API Key to your WordPress *BTCPay Settings* form   
+![BTCPay WordPress V2: Copy API Key](./img/woocommerce/btcpay-wc-2--13-man-api--copy-key.png) 
+7. Copy the store ID to your WordPress *BTCPay Settings* form   
+![BTCPay WordPress V2: Copy Store ID](./img/woocommerce/btcpay-wc-2--14-man-api--copy-store-id.png) 
+8. On the BTCPay Settings form make sure *BTPCay Server URL*, *BTCPay Server API Key* and *Store ID* are set and click *[Save]*   
+9. Make sure you see the notification "*BTCPay Server: Successfully registered a new webhook on BTCPay Server*"   
+![BTCPay WordPress V2: Save BTCPay Settings form](./img/woocommerce/btcpay-wc-2--15-man-api--btcpay-settings-save.png) 
 
 ## 3. Testing the checkout
 
