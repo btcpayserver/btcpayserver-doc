@@ -43,6 +43,10 @@ Yes, you can. While various e-commerce CMS use integrations,  you can use BTCPay
 
 ## WooCommerce FAQ
 
+### How to upgrade to the new BTCPay for WooCommerce V2 plugin?
+There is no direct upgrade to the [old BitPay based legacy plugin](https://wordpress.org/plugins/btcpay-for-woocommerce/) to the new [V2 version](https://wordpress.org/plugins/btcpay-greenfield-for-woocommerce/) but you install a completely separate plugin (see installation instructions [here](../WooCommerce.md). While both should work side by side it is strongly recommended that you uninstall the legacy plugin after you followed the installation instructions and made sure it works. Otherwise depending on your setup it could lead to unintended behaviour and confusion. 
+
+
 ### How to configure order status in WooCommerce?
 
 Order status depends on a merchant's business model. To better understand BTCPay order (invoice) status [read this document](../WooCommerce.md#btcpay-order-statuses).
@@ -53,6 +57,10 @@ There's no best way to configure them without trial and error and seeing what wo
 If you wish to send an e-mail after a certain status to the customer, you need to edit WooCommerce order e-mail templates. This is recommended only if you know what you're doing. [Check out this guide](https://www.cloudways.com/blog/how-to-customize-woocommerce-order-emails/).
 
 ### Error: If you use an alternative order numbering system, please see class-wc-gateway-btcpay.php to apply a search filter
+
+:::warning Warning
+This guide is for the now discontinued [legacy plugin](https://wordpress.org/plugins/btcpay-for-woocommerce/) and does not apply for the most recent [V2 of the plugin](https://wordpress.org/plugins/btcpay-greenfield-for-woocommerce/).
+:::
 
 If by any chance you use a different order numbering than standard in WooCommerce, the following error may appear in your BTCPay WooCommerce plugin logs:
 
@@ -78,8 +86,12 @@ add_filter('woocommerce_order_id_from_number', 'get_order_id_from_custom_order_s
 
 ### How to configure Additional Token Support
 
+:::warning Warning
+This guide is for the now discontinued [legacy plugin](https://wordpress.org/plugins/btcpay-for-woocommerce/) and does not apply for the most recent [V2 of the plugin](https://wordpress.org/plugins/btcpay-greenfield-for-woocommerce/). On the V2 plugin this is now called "**Separate Payment Gateways**". All the below use cases still apply only difference is that you do **not** need to follow the steps in [Setup your additional tokens](#setup-your-additional-tokens), instead you [now have an option](../WooCommerce.md#41-global-settings) that activates this feature and fetches all supported tokens automatically from your BTCPay Server instance.
+:::
+
 ::: tip Note
-The Wordpress and Woocommerce plugins used in this integration are neither endorsed nor have they been thoroughly verified or vetted by the BTCPay Server team. Use them at your own risks.
+The external WordPress and WooCommerce plugins used in this integration are neither endorsed nor have they been thoroughly verified or vetted by the BTCPay Server team. Use them at your own risks.
 :::
 
 With using the additional token configuration you will be able to have separate payment methods for each configured Currency, Asset, Altcoin or Token. This means you can have separate payment methods for BTC, Lightning Network, LTC, ETH (and ERC20 tokens), Liquid assets, ... you name it. This allows you to issue and use Liquid Assets as coupons or vouchers, see more details below.
