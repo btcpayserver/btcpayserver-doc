@@ -98,9 +98,9 @@ However, if a processor makes any of the following claims, they are most likely 
 * If the payment processor has terms and conditions stating they can hold or freeze your account.
 * Fees for using the payment processor are automatically taken out from the customer's payment to the merchant.
 
-**Payment processors** are able act as middlemen by using **custodial wallets**. A payment processor can use an internal custodial wallet for altering customer payments before routing them to merchants. This is how they can collect fees, hold payments for verification and processing, etc. This type of wallet is an intermediary between the merchant wallet and the customer wallet. It's the middleman wallet.
+**Payment processors** are able to act as middlemen by using **custodial wallets**. A payment processor can use an internal custodial wallet for altering customer payments before routing them to merchants. This is how they can collect fees, hold payments for verification and processing, etc. This type of wallet is an intermediary between the merchant wallet and the customer wallet. It's the middleman wallet.
 
-The payment processor may also provide a custodial wallet for the merchant to use. As mentioned above, this is advised against because your private keys may be compromised. If they claim to not save your private keys after giving them to you, it's likely you will not know the truth until it's too late. Centralized services may seem like an easier solution for the merchant. Unfortunately the trade-off is sacrifices in privacy, security and self-sovereignty which is normally obtained using the Bitcoin Network.
+The payment processor may also provide a custodial wallet for the merchant to use. As mentioned above, this is advised against because your private keys may be compromised. If they claim to not save your private keys after giving them to you, it's likely you will not know the truth until it's too late. Centralized services may seem like an easier solution for the merchant. Unfortunately the trade-off is a sacrifice in privacy, security and self-sovereignty which are normally obtained using the Bitcoin Network.
 
 ----
 
@@ -112,7 +112,7 @@ As the BTCPay Server community continues to grow, more deployment methods, use c
 
 ## Fiat
 
-Currently, BTCPay Server is a processor **without fiat conversion** capabilities out of the box. As a merchant, this may be a difficult if business costs require fiat. Not providing fiat conversion out of the box allows BTCPay Server merchants to avoid KYC and AML identification verification. This also allows BTCPay Server to be free and available for anyone to use.
+Currently, BTCPay Server is a processor **without fiat conversion** capabilities out of the box. As a merchant, this may be difficult if business costs require fiat. Not providing fiat conversion out of the box allows BTCPay Server merchants to avoid KYC and AML identification verification. This also allows BTCPay Server to be free and available for anyone to use.
 
 However, a fiat conversion plugin is available for BTCPay Server. Since merchants are always the owners of their private keys, they can always freely convert their coins manually, but for now there's no instant-fiat conversion. More info on the [Transmuter](https://github.com/btcpayserver/btcTransmuter).
 
