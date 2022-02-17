@@ -84,7 +84,7 @@ add_filter('woocommerce_order_id_from_number', 'get_order_id_from_custom_order_s
 ```
 </details>
 
-### How to configure Additional Token Support
+### How to configure Additional Token Support / Separate Payment Gateways
 
 :::warning Warning
 This guide is for the now discontinued [legacy plugin](https://wordpress.org/plugins/btcpay-for-woocommerce/) and does not apply for the most recent [V2 of the plugin](https://wordpress.org/plugins/btcpay-greenfield-for-woocommerce/). On the V2 plugin this is now called "**Separate Payment Gateways**". All the below use cases still apply only difference is that you do **not** need to follow the steps in [Setup your additional tokens](#setup-your-additional-tokens), instead you [now have an option](../WooCommerce.md#41-global-settings) that activates this feature and fetches all supported tokens automatically from your BTCPay Server instance.
