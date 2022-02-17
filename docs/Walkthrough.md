@@ -1,12 +1,12 @@
 # BTCPay Server Walkthrough
 
-In this article, we will walk you through the **BTCPay user interface** and show you how to navigate through different options.
+In this article, we will walk you through the **BTCPay user interface** and show you how to navigate the different options.
 
 Watch video below for an interactive overview of the features.
 
 [![BTCPay Server Walkthrough](https://img.youtube.com/vi/ZIfJyq9RimM/mqdefault.jpg)](https://www.youtube.com/watch?v=ZIfJyq9RimM "BTCPay Server - WalkThrough")
 
-After you created the account on the BTCPay Server instance hosted by yourself or a third-party, you'll see a variety of options in the navigation menu on top.
+After you've created an account on the BTCPay Server instance hosted by yourself or a third-party, you'll see a variety of options in the top navigation menu.
 
 ![BTCPay Server Navigation](./img/BTCPay-Navigation.jpg "BTCPay Server Navigation")
 
@@ -24,7 +24,7 @@ After you created the account on the BTCPay Server instance hosted by yourself o
 **Server settings** is something only a server admin can access. If you're using someone else's server, you won't see Server Settings. Inside the settings, you can perform tasks such as controlling users, rates, updating the server, etc. For more information, check [Server Settings FAQ](./FAQ/ServerSettings.md)
 
 - Users - Add, remove or manage users of your BTCPay Server.
-- Email server - If you want users to verify e-mail address when registering set up the SMTP settings.
+- Email server - If you want users to verify their e-mail address when registering set up the SMTP settings.
 - Policies - Enable or disable user registration, e-mail verification, search engine indexing, display apps on website root.
 - Services - gRPC, REST and RTL used for connecting your LN node, SSH keys and uploaded file storage setup.
 - Theme - Customize the front-end appearance of your BTCPay Server.
