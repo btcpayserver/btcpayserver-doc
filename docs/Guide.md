@@ -6,7 +6,7 @@ BTCPay Server is an open-source, self-hosted payment processor for Bitcoin and o
 
 If you have trouble using BTCPay Server, consider joining the [communities listed on the official website](https://btcpayserver.org/#communityCTA) to get help from BTCPay community members.
 
-Only file [Github issue](https://github.com/btcpayserver/btcpayserver/issues) for technical issues you can't resolve through other channels or feature requests you've validated with other members of community.
+Only file a [Github issue](https://github.com/btcpayserver/btcpayserver/issues) for technical issues you can't resolve through other channels or feature requests you've validated with other members of the community.
 
 Please check out our [official website](https://btcpayserver.org/), our [complete documentation](https://github.com/btcpayserver/btcpayserver-doc) and [FAQ](./FAQ/README.md#btcpay-frequently-asked-questions-and-common-issues) for more details.
 
@@ -61,7 +61,7 @@ While using BTCPay Server, there is no payment processing intermediary. Accept p
 
 Payments via BTCPay Server are direct, peer to peer. The merchant receives the coins directly to their wallet, with no intermediary. Securing funds comes down to the merchant securing their own private keys, which is standard for most cryptocurrency wallets.
 
-There is an [internal wallet](./Wallet.md) inside BTCPay Server that merchants can use to view and spend funds received by their customers. The funds from that wallet can only be spent, if a transaction is signed with the merchant's compatible hardware wallet or a private key. This allows merchants to have complete control of funds received.
+BTCPay Server has an [internal wallet](./Wallet.md) that merchants can use to view and spend funds they have received from their customers. The funds from that wallet can only be spent, if a transaction is signed with the merchant's compatible hardware wallet or a private key. This allows merchants to have complete control of funds received.
 
 ### How it keeps data private
 
@@ -70,7 +70,7 @@ The data is shared only between two parties - the buyer and a seller. Other paym
 ### How it resists censorship
 
 * Self-hosted
-* Can be run everywhere, from low-powered device like Raspberry Pi at home to enterprise-grade servers
+* Can be run everywhere, from a low-powered device like Raspberry Pi at home to enterprise-grade servers
 * No third-party
 * Can easily be re-deployed
 
@@ -80,13 +80,13 @@ If an invoice is paid while your BTCPay Server is down, the software will automa
 
 ### Beyond payment processing
 
-BTCPay Server is often misconceived as being the payment processor used by the merchants only. In reality, the [use-cases](./UseCase.md) are limitless.
+BTCPay Server is often misconceived as a payment processor used by merchants only. In reality, the [use-cases](./UseCase.md) are limitless.
 
-BTCPay is a tech-stack that glues lots of complex components into an easy-to-use and coherent interface. The software can be used by self-sovereign individuals as a way to run a full node at home with a full-node reliant wallet.
+BTCPay is a tech-stack that glues a lot of complex components into an easy-to-use and coherent interface. The software can be used by self-sovereign individuals as a way to run a full node at home with a full-node reliant wallet.
 
-Developers can build the entire businesses and projects on top of the stack.
+Developers can build entire businesses and projects on top of the stack.
 
-Enterprises can use it as scalable and secure back-end of their infrastructure without ever having to put a trust in a third-party. BTCPay Server is a [toolbox](https://www.facebook.com/kriptomedia/videos/vl.418099655731067/2898112140218815) with lots of tools you can use, it's up to you how you want to use it.
+Enterprises can use it as a scalable and secure back-end of their infrastructure without ever having to put trust in a third-party. BTCPay Server is a [toolbox](https://www.facebook.com/kriptomedia/videos/vl.418099655731067/2898112140218815) with many useful tools, it's up to you how to use it.
 
 ### Community articles
 
@@ -103,7 +103,7 @@ For list of articles, podcasts and video presentations about BTCPay, please see 
 
 Pull requests are welcome and appreciated.
 
-If you're beginner, take a look at the step by step guide on how to contribute to BTCPay Server documentation below.
+If you're a beginner, take a look at the step by step guide on how to contribute to BTCPay Server documentation below.
 
 [![Contributing to Documentation](https://img.youtube.com/vi/bSDROcdSSWw/mqdefault.jpg)](https://www.youtube.com/watch?v=bSDROcdSSWw "How BTCPay Server Works")
 
