@@ -86,7 +86,7 @@ BTCPay is a tech-stack that glues a lot of complex components into an easy-to-us
 
 Developers can build entire businesses and projects on top of the stack.
 
-Enterprises can use it as a scalable and secure back-end of their infrastructure without ever having to put trust in a third-party. BTCPay Server is a [toolbox](https://www.facebook.com/kriptomedia/videos/vl.418099655731067/2898112140218815) with many usefull tools, it's up to you how to use it.
+Enterprises can use it as a scalable and secure back-end of their infrastructure without ever having to put trust in a third-party. BTCPay Server is a [toolbox](https://www.facebook.com/kriptomedia/videos/vl.418099655731067/2898112140218815) with many useful tools, it's up to you how to use it.
 
 ### Community articles
 
