@@ -35,7 +35,7 @@
     "@vuepress/plugin-medium-zoom": "1.9.7",
     "broken-link-checker": "0.7.8",
     "esm": "3.2.25",
-    "jest": "27.4.7",
+    "jest": "27.5.1",
     "markdown-it-implicit-figures": "0.10.0",
     "markdown-it-include": "^2.0.0",
     "serve": "13.0.2",
