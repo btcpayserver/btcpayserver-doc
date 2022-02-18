@@ -180,7 +180,9 @@ const sidebarDeployment = [
           '/Docker/joinmarket',
           '/Docker/pihole',
           '/Docker/fireflyiii',
-          '/Docker/ndlc'
+          '/Docker/ndlc',
+          '/Docker/lightning-terminal',
+          '/Docker/tallycoin-connect'
         ]
       }
     ]
