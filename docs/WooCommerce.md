@@ -11,7 +11,7 @@ tags:
 This document explains how to **integrate BTCPay Server into your WooCommerce store**.
 If you do not have a store yet, follow [this step by step article](https://bitcoinshirt.co/how-to-create-store-accept-bitcoin/) to create one from scratch.
 
-:::tip
+:::tip Note
 This guide refers to the BTCPay for WooCommerce V2 plugin. You can find instructions for the now unmaintained legacy plugin (based on BitPay API) [here](https://github.com/btcpayserver/btcpayserver-doc/blob/cba96292ceea9483711ab53c479a98357383f857/docs/WooCommerce.md).
 :::
 
@@ -213,6 +213,65 @@ Additional options only available for the separate payment gateways (if that fea
 **Token Type**
 
 By default type "payment" is selected. But if you have Liquid Assets with your own issued asset/token (e.g. used as voucher) you can select "promotion" here. Those are processed differently than normal payment tokens. Details can be found [here](./FAQ/Integrations/#how-to-configure-additional-token-support#promotional-tokens-100-discount)
+
+# Troubleshooting
+
+## The order states do not update although the invoice has been paid
+Please check the details of your invoice if there were any errors on sending the webhook request. Some hosting providers, firewall setups or WordPress security plugins block POST requests to your WordPress site which lead to a http status of "403 forbidden". 
+
+You can check and verify yourself if there is something blocking requests to your site in one of these two ways:
+
+**Check using a command line (Linux or MacOS):**   
+(replace EXAMPLE.COM with your WordPress site URL)
+
+```
+curl -vX POST -H "Content-Type: application/json" \
+    -d '{"data": "test"}' https://EXAMPLE.COM/?wc-api=btcpaygf_default
+```
+
+```
+.... snip ....
+* upload completely sent off: 16 out of 16 bytes
+< HTTP/1.1 403 Forbidden
+< access-control-allow-origin: *
+< Content-Type: application/json; charset=UTF-8
+< X-Cloud-Trace-Context: 4f07d5b2e5c2f05949d04421a8e2dd6a
+< Date: Thu, 17 Feb 2022 10:06:50 GMT
+< Server: Google Frontend
+< Content-Length: 26
+```
+
+If you see that line "HTTP/1.1 403 Forbidden" or "HTTP/2 403" then something is blocking data sent to your WordPress site. You should ask your hosting provider or make sure no firewall or plugin is blocking the requests.
+
+**Check using an online service (if you do not have a command line available:**   
+
+- Go to [https://reqbin.com/post-online](https://reqbin.com/post-online) 
+- Enter your domain: `https://EXAMPLE.COM/?wc-api=btcpaygf_default`
+  (replace EXAMPLE.COM with your WordPress site URL)
+- Make sure "POST" is selected
+- Click [Send]
+
+![BTCPay WordPress V2: Debug 403 error with reqbin.com](./img/woocommerce/btcpay-wc-2--reqbin-403-test.png)
+
+
+If you see "Status 403 (Forbidden)" then POST requests to your site are blocked for some reason. You should ask your hosting provider or make sure no firewall or plugin is blocking the requests.
+
+## I get an error during checkout but not sure what the problem is.
+
+In your BTCPay Settings in your admin dashboard: *WooCommerce -> Settings: Tab [BTCPay Settings]* you can enable debug mode by setting the checkbox on that option.
+
+You can now find more detailed Logs when you click the [View Logs] button or you go to *WooCommerce -> Status: Tab [Logs]* and select the most recent btcpay logs. 
+
+:::warning Warning
+Please make sure that you disable the debugging mode again after you finished investigating, otherwise your site performance may be impacted and also write lots of logging data in your filesystem for no reason.
+::: 
+
+Additionally you can also look into your webservers error logs if you find any error that is related to BTCPay plugin.
+
+## I have troubles with using the plugin or some other related questions
+
+Feel free to join our support channel over at [https://chat.btcpayserver.org/](https://chat.btcpayserver.org/) if you need help or have any further questions.
+
 
 
 # Deploying WooCommerce from BTCPay Server
