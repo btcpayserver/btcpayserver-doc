@@ -85,7 +85,7 @@ Being an open-sourced project, BTCPay Server doesn't have the power to impose an
 
 ## Hosting Providers
 
-Hosting providers can (and some already did) create easy 1-click BTCPay deployment solutions for their customers. With the growing interest in BTCPay Server, hosting companies can tap into this source of new customers and make money by hosting easily-deployable BTCPay instances for merchants.
+Hosting providers can (and some already have) create easy 1-click BTCPay deployment solutions for their customers. With the growing interest in BTCPay Server, hosting companies can tap into this source of new customers and make money by hosting easily-deployable BTCPay instances for merchants.
 
 ## Developers
 

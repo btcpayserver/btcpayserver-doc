@@ -1,6 +1,6 @@
 # Try it out
 
-This section goes through the process of **creating an account and store on our public BTCPay server**. (For evaluation purpose)
+This section goes through the process of **creating an account and store on our public BTCPay server**. (For evaluation purposes)
 
 You can also follow along in this video:
 
@@ -34,8 +34,8 @@ Let's configure the store so it uses your Electrum wallet:
 5. After that your test wallet should appear on the [Wallets page](https://testnet.demo.btcpayserver.org/wallets) of your BTCPay account
 
 Then you can create an invoice, either through
-* the "Invoice" menu on the website or
-* the process documented on the [Custom integration](./CustomIntegration.md)
+* The "Invoice" menu on the website or
+* The process documented in the [Custom integration](./CustomIntegration.md)
 
 ### Mainnet
 
@@ -48,7 +48,7 @@ Click on the following links for detailed instructions on how to [Register an ac
 
 Then you can create an invoice, either through
 * The "Invoice" menu on the website or
-* The process documented on the [Custom integration](./CustomIntegration.md)
+* The process documented in the [Custom integration](./CustomIntegration.md)
 
 See the [What's Next](./WhatsNext.md) page for other options on how to continue exploring BTCPay.
 
