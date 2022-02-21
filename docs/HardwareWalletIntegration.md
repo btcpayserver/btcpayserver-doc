@@ -56,7 +56,7 @@ If you are experiencing issues sending transactions from a Trezor wallet, you ma
 
 ## Supported Hardware Wallets
 
-The list of supported hardware wallets is available [on this link](https://github.com/bitcoin-core/HWI#device-support).
+The list of supported hardware wallets is available at [this link](https://github.com/bitcoin-core/HWI#device-support).
 
 :::warning
 The hardware wallet integration in BTCPay Server only supports Bitcoin. [Altcoin](/Development/Altcoins.md) wallets enabled on your server won't work.
