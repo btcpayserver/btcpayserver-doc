@@ -1,7 +1,7 @@
 # Invoices
 
 The invoices page lists the **invoices from all stores and [apps](./Apps.md) and [payment requests](./PaymentRequests.md) in BTCPay Server**.
-It cumulatively sorts invoices by date and allows plenty of customization options for a better invoice management.
+It cumulatively sorts invoices by date and allows plenty of customization options for better invoice management.
 
 ## Managing Invoices
 
