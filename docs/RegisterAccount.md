@@ -6,7 +6,7 @@ To register a demo account, visit the [official demo](https://mainnet.demo.btcpa
 
 To deploy an instance of your own, see [choosing a deployment method](/Deployment/README.md).
 
-A non-exhaustive list of third-party hosts can be found on the BTCPay Server [directory](https://directory.btcpayserver.org/filter/hosts).
+A non-exhaustive list of third-party hosts can be found in the BTCPay Server [directory](https://directory.btcpayserver.org/filter/hosts).
 
 ## Account Registration
 
@@ -24,6 +24,6 @@ To allow other users to access your server, you need to enable registration in S
 
 ### Two-factor authentication
 
-For further enhancing security and protecting your account, it's recommended to enable two-factor authentication (both 2FA and U2F are supported). To enable 2FA or U2F, click on the user setting icon in the header menu.
+For further enhancing security and protecting your account, it's recommended to enable two-factor authentication (both 2FA and U2F are supported). To enable 2FA or U2F, click on the user settings icon in the header menu.
 
 ***Proceed to the next step - [Creating a store](./CreateStore.md).***
