@@ -103,11 +103,11 @@ The user interface only allows a subset of what is possible.
 ![BTCPay Server Pull Payment](./img/pull-payments/5.png "BTCPay Server Pull Payment")
 
 ### Approve and pay a payout
-1. The sender get notified when the receiver is pulling money
+1. The sender gets notified when the receiver is pulling money
 ![6](./img/pull-payments/6.png)
 2. Clicking on the notification brings the sender to a page listing all outstanding payouts
 ![7](./img/pull-payments/7.png)
-3. Check the payout to approve and pay and confirm
+3. Check the payout to approve, pay and confirm
 ![8](./img/pull-payments/8.png)
 4. You are then brought to the normal wallet user interface of BTCPay Server
 
