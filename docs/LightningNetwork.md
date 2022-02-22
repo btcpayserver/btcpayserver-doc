@@ -6,7 +6,7 @@ This guide will show you how to **set up your Lightning Network node in BTCPay**
 
 ::: danger
 **Before you proceed, please understand that the Lightning Network is still in the experimental stage.
-Do not put the money you can't afford to lose. There is a high risk of you losing the money.**
+Using the Lightning Network can put your money at risk. Do not use more than you can afford to lose.**
 :::
 
 Take time to familiarize yourself with the risks associated with using the Lightning Network.
@@ -33,6 +33,7 @@ As of [v1.0.3.138](https://blog.btcpayserver.org/btcpay-lnd-migration/), LND is 
 First, read [here](./FAQ/LightningNetwork.md#can-i-use-a-pruned-node-with-ln-in-btcpay) about using pruned Bitcoin nodes with lightning network implementations before deploying.
 
 On the installation, you'll have the option to choose the implementation.
+
 For [web-interface installations](/Deployment/LunaNode.md), you can simply select the implementation from the drop-down menu.
 For other [docker](https://github.com/btcpayserver/btcpayserver-docker) based [deployment methods](/Deployment/README.md) you need to:
 
