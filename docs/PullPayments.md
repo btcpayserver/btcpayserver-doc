@@ -12,7 +12,7 @@ This is the concept of `Pull payment`. This allows several new applications such
 
 * A subscription service (where the subscriber allows the service to pull money every x amount of time)
 * Refunds (where the merchant allows the customer to pull the refund money to his wallet when it seems fit)
-* Time-based billing for freelancers (where the person hiring allows the freelance to pull money to his wallet as time get reported)
+* Time-based billing for freelancers (where the person hiring allows the freelancer to pull money to his wallet as time gets reported)
 * Patronage (where the patron allows the recipient to pull money every month to continue supporting their work)
 * Automatic selling (where a customer of an exchange would allow an exchange to pull money from their wallet to automatically sell every month)
 * Balance withdraw system (where a high-volume service allows users to request withdrawals from their balance, the service can then easily batch all the payouts to many users, at fixed intervals)
@@ -37,7 +37,7 @@ The receiver will choose for their payout:
 * Where to send the money
 
 Once a payout is created, it will count toward the `pull payment's limit` for the current `period`.
-The sender will then approve the payout by setting the `rate` in which the payout will be sent, and proceed to payment.
+The sender will then approve the payout by setting the `rate` in which the payout will be sent, and proceed with payment.
 
 For the sender, we provide an easy to use way to batch the payment of several payouts from the [BTCPay Internal Wallet](./Wallet.md).
 
@@ -99,7 +99,7 @@ The user interface only allows a subset of what is possible.
 4. Go to the pull payment page by clicking on `View`
 5. Share this page with the payment receiver
 ![BTCPay Server Pull Payment](./img/pull-payments/4.png "BTCPay Server Pull Payment")
-5. As the receiver, fill out how much `USD` you claim, and to which address should the money be sent.
+5. As the receiver, fill out how much `USD` you claim, and to which address the money should be sent.
 ![BTCPay Server Pull Payment](./img/pull-payments/5.png "BTCPay Server Pull Payment")
 
 ### Approve and pay a payout
