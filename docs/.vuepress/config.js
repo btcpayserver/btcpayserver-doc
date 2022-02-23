@@ -165,6 +165,10 @@ const sidebarDeployment = [
         ]
       },
       {
+        title: 'Hack0',
+        path: '/Deployment/Hack0'
+      },
+      {
         title: 'Docker Plugins',
         children: [
           {
