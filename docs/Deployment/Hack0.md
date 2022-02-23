@@ -10,7 +10,7 @@ Hack0 aims at two different kind of users: `Distributors` and `End users`.
 * `End users` are people ultimately running the Hack0 for their own purposes.
 * `Distributors` are people who buy the different part of the hardware, assemble it together, install Hack0, and distribute a plug-and-play box for `End users`.
 
-If you buy the different piece of hardware for your hack0, assemble, install hack0, then use it yourself, you are both a `distributor` and a `end users` as far as this documentation is concerned.
+If you buy the different piece of hardware for your Hack0, assemble, install hack0, then use it yourself, you are both a `distributor` and a `end users` as far as this documentation is concerned.
 
 You can watch an introduction here:
 
