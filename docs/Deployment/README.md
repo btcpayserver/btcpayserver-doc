@@ -21,7 +21,7 @@ Manual deployments and Hardware builds are not recommended for production enviro
 |**Hardware & Cloud As A Service:**<br>- [Lightning in a Box](https://lightninginabox.co/)<br>- [Nodl.it](https://www.nodl.it/)<br>- [Nodl.cloud](https://nodl.cloud/)<br>- [Voltage.cloud](https://voltage.cloud/)   |Easy to Moderate   |Production| Yes| Varies on provider
 |**Virtual Private Server:** <br>OpenVZ not supported<br>- [LunaNode](https://medium.com/@BtcpayServer/hosting-btcpayserver-on-lunanode-bf9ef5fff75b)<br>- [Microsoft Azure](./Azure.md)<br>- [Digital Ocean](https://medium.com/@molthoff/running-btcpay-on-digital-ocean-for-10-month-how-to-add-other-coins-7a497339fb2f)<br>- [Amazon AWS EC2](https://wiki.ion.radar.tech/tutorials/nodes/btcpay-+-aws-ec2)<br>- [Google Cloud](./GoogleCloud.md)<br>- Other VPS <br> ([minimal requirements](../FAQ/Deployment.md#what-are-the-minimal-requirements-for-btcpay))           |Moderate to Hard             |Production| Yes| $10-70<br>depending on provider
 |**Manual Deployment:**<br>- [Install From Command Line](http://blog.sipsorcery.com/?p=1052)<br>- [Build Without Docker Image](./ManualDeployment.md)       |Very hard       |Development| Yes| Components + Electricity
-|**Hardware build:**<br>- [ARM32v7](https://hub.docker.com/r/btcpayserver/btcpayserver/tags/)<br>- [Raspberry Pi](./RaspberryPi.md)<br>- [BTCPayBox](./Hardware.md)      |Very hard         |Development| Yes|  Components + Electricity
+|**Hardware build:**<br>- [ARM32v7](https://hub.docker.com/r/btcpayserver/btcpayserver/tags/)<br>- [Raspberry Pi](./RaspberryPi.md)<br>- [BTCPayBox](./Hardware.md)     <br>- [Hack0](./Hack0.md) |Very hard         |Development| Yes|  Components + Electricity
 
 *Notes:*<br>
 *- VPS providers that use OpenVZ are not supported.*<br>
