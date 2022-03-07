@@ -16,7 +16,7 @@
   "config": {
     "dist": "docs/.vuepress/dist",
     "port": "8080",
-    "linkcheck": "blc -ro --filter-level 2 --requests 1 --exclude edit/master --exclude issues/new --exclude 127.0.0.1 --exclude azuredeploy.net --exclude directory.btcpayserver.org --exclude foundation.btcpayserver.org --exclude install.btcpayserver.org --exclude bitma.tk --exclude coincards.com --exclude cyberciti.biz --exclude drupal.org --exclude dyn.com --exclude example.com --exclude facebook.com --exclude figma.com --exclude ipchicken.com --exclude kraken.com --exclude linkedin.com --exclude linuxize.com --exclude linuxconfig.org --exclude nuget.org --exclude pnxbet.com --exclude pi-hole.net --exclude reddit.com --exclude support.bitpay.com --exclude support.google.com --exclude t.me --exclude transifex.com --exclude twitter.com --exclude wiki.ion.radar.tech"
+    "linkcheck": "blc -ro --filter-level 2 --requests 1 --exclude edit/master --exclude issues/new --exclude 127.0.0.1 --exclude azuredeploy.net --exclude directory.btcpayserver.org --exclude foundation.btcpayserver.org --exclude install.btcpayserver.org --exclude bitma.tk --exclude coincards.com --exclude cyberciti.biz --exclude drupal.org --exclude dyn.com --exclude example.com --exclude facebook.com --exclude figma.com --exclude ipchicken.com --exclude linkedin.com --exclude linuxize.com --exclude linuxconfig.org --exclude nuget.org --exclude pnxbet.com --exclude pi-hole.net --exclude reddit.com --exclude support.bitpay.com --exclude support.google.com --exclude t.me --exclude transifex.com --exclude twitter.com --exclude wiki.ion.radar.tech"
   },
   "scripts": {
     "prestart": "rm -rf $npm_package_config_dist",
