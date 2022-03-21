@@ -1,16 +1,12 @@
 # BTCPayServer Documentation
 
-## Introduction
+## What is BTCPay Server?
 
-BTCPay Server is an open-source, self-hosted payment processor for Bitcoin and other cryptocurrencies.
+BTCPay Server is free, open-source & self-hosted Bitcoin payment gateway that allows you to accept bitcoin payments without fees.
 
-If you have trouble using BTCPay Server, consider joining the [communities listed on the official website](https://btcpayserver.org/#communityCTA) to get help from BTCPay community members.
+## How BTCPay Server works?
 
-Only file a [Github issue](https://github.com/btcpayserver/btcpayserver/issues) for technical issues you can't resolve through other channels or feature requests you've validated with other members of the community.
-
-Please check out our [official website](https://btcpayserver.org/), our [complete documentation](https://github.com/btcpayserver/btcpayserver-doc) and [FAQ](./FAQ/README.md#btcpay-frequently-asked-questions-and-common-issues) for more details.
-
-![BTCPay Server](./img/BTCPayServerScreenshot.png "BTCPay Server")
+[![How BTCPay Works](https://img.youtube.com/vi/nr0UNbz3AoQ/mqdefault.jpg)](https://www.youtube.com/watch?v=nr0UNbz3AoQ "How BTCPay Server Works")
 
 ## Features
 
@@ -37,10 +33,6 @@ Please check out our [official website](https://btcpayserver.org/), our [complet
 * [Payjoin Support](./Payjoin.md)
 
 [![How BTCPay Server Features Overview](https://img.youtube.com/vi/R-yaXk4NvEs/mqdefault.jpg)](https://www.youtube.com/watch?v=R-yaXk4NvEs)
-
-## How it works
-
-[![How BTCPay Works](https://img.youtube.com/vi/nr0UNbz3AoQ/mqdefault.jpg)](https://www.youtube.com/watch?v=nr0UNbz3AoQ "How BTCPay Server Works")
 
 ### In a nutshell
 
@@ -88,18 +80,17 @@ Developers can build entire businesses and projects on top of the stack.
 
 Enterprises can use it as a scalable and secure back-end of their infrastructure without ever having to put trust in a third-party. BTCPay Server is a [toolbox](https://www.facebook.com/kriptomedia/videos/vl.418099655731067/2898112140218815) with many useful tools, it's up to you how to use it.
 
-### Community articles
+## Support
 
-* [The Ultimate List of BTCPay Server Hosts and Merchants](https://bitcoinshirt.co/btcpay-stores/)
-* [BTCPay Server official YouTube channel](https://www.youtube.com/channel/UCpG9WL6TJuoNfFVkaDMp9ug)
-* [BTCPay Server Manual Install](http://blog.sipsorcery.com/?p=1052)
-* [How to Setup BTC and Lightning Payment Gateway with BTCPayServer on Linux (Manual Install)](https://freedomnode.com/blog/114/how-to-setup-btc-and-lightning-payment-gateway-with-btcpayserver-on-linux-manual-install)
-* [BTCPay Server Setup Using Digital Ocean](https://medium.com/@molthoff/running-btcpay-on-digital-ocean-for-10-month-how-to-add-other-coins-7a497339fb2f)
-* [BTCPay Server Setup Using AWS EC2](https://wiki.ion.radar.tech/tutorials/nodes/btcpay-+-aws-ec2)
+If you have trouble using BTCPay Server, consider joining the [communities listed on the official website](https://btcpayserver.org/#communityCTA) to get help from BTCPay community members.
 
-For list of articles, podcasts and video presentations about BTCPay, please see our [media repository](https://github.com/btcpayserver/btcpayserver-media/tree/master/Publications).
+Only file a [Github issue](https://github.com/btcpayserver/btcpayserver/issues) for technical issues you can't resolve through other channels or feature requests you've validated with other members of the community.
 
-### Contributing
+Please check out our [official website](https://btcpayserver.org/), our [complete documentation](https://github.com/btcpayserver/btcpayserver-doc) and [FAQ](./FAQ/README.md#btcpay-frequently-asked-questions-and-common-issues) for more details.
+
+![BTCPay Server](./img/BTCPayServerScreenshot.png "BTCPay Server")
+
+### Get involved
 
 Pull requests are welcome and appreciated.
 
