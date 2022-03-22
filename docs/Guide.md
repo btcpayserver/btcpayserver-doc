@@ -8,9 +8,13 @@ BTCPay Server is a free, open-source & self-hosted bitcoin payment gateway that 
 
 ## How BTCPay Server works?
 
+BTCPay Server is a self-hosted and automated invoicing system. At checkout, a customer is presented with an invoice that they pay from their wallet. BTCPay Server follows the status of the invoice through the blockchain and informs you when the payment has been settled so that you can fulfill the order.
+
 [![How BTCPay Works](https://img.youtube.com/vi/nr0UNbz3AoQ/mqdefault.jpg)](https://www.youtube.com/watch?v=nr0UNbz3AoQ "How BTCPay Server Works")
 
 [![BTCPay Server Simply Explained](https://img.youtube.com/vi/dbX6qWZlxOw/mqdefault.jpg)](https://www.youtube.com/watch?v=dbX6qWZlxOw "BTCPay Server Simply Explained")
+
+BTCPay Server is free to use and completely open-source, so developers or security auditors can always inspect the quality of the code.
 
 ## Getting started
 
