@@ -16,10 +16,6 @@ BTCPay Server is a self-hosted and automated invoicing system. At checkout, a cu
 
 BTCPay Server is free to use and completely open-source, so developers or security auditors can always inspect the quality of the code.
 
-## Getting started
-
-To start using BTCPay Server, [deploy](/Deployment/README.md) your own instance, or use a [third-party host](/Deployment/ThirdPartyHosting.md).
-
 ## Features
 
 * Direct, peer-to-peer Bitcoin payments
@@ -43,6 +39,10 @@ To start using BTCPay Server, [deploy](/Deployment/README.md) your own instance,
 * Payment Requests
 * Internal, full-node reliant wallet with [hardware wallet integration](./HardwareWalletIntegration.md)
 * [Payjoin Support](./Payjoin.md)
+
+## Getting started
+
+To start using BTCPay Server, [decide how would you like to deploy it](/Deployment/). If you decide for self-hosted option, start by reviewing our deployment documentation here. If your choice is a third-party hosting, read our [third-party host docs](/Deployment/ThirdPartyHosting.md).
 
 [![How BTCPay Server Features Overview](https://img.youtube.com/vi/R-yaXk4NvEs/mqdefault.jpg)](https://www.youtube.com/watch?v=R-yaXk4NvEs)
 
