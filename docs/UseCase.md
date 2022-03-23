@@ -60,7 +60,7 @@ Take a look at [our demo POS app](https://mainnet.demo.btcpayserver.org/apps/3ut
 
 Merchants can *provide* payment by sharing a [Pull Payment](./PullPayments.md). This is a long lived payment offer that the freelancer can pull funds from at their convenience. The merchant can specify the total amount and approve partial or a full request for payment.
 
-## Charities and Content Creators (Donations)
+## Charities, non-profits and content creations (Donations)
 
 Charities, non-profits, content creators, and other organizations that want to accept bitcoin donations in a more private way than the traditional static bitcoin address method can utilize the [Pay Button](./WhatsNext.md#creating-the-pay-button), [POS app](./WhatsNext.md#creating-the-point-of-sale-app) or [Crowdfunding app](./Apps.md#crowdfunding-app) for a better user experience.
 
@@ -91,7 +91,6 @@ This means that admin allows other people to register and use their instance, wh
 Take a look at the list of [third-party hosts](/Deployment/ThirdPartyHosting.md).
 
 [![BTCPay Server for local communities](https://img.youtube.com/vi/9n81qnzlPf8/mqdefault.jpg)](https://www.youtube.com/watch?v=9n81qnzlPf8 "BTCPay Server for local communities")
-
 
 ## Cryptocurrency Exchanges
 
