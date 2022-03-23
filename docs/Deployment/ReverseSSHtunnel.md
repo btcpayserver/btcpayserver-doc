@@ -148,4 +148,4 @@ netstat -tulpn
 ## Resources
 
 * Raspiblitz FAQ: [How to setup port-forwarding with a SSH tunnel?](https://github.com/rootzoll/raspiblitz/blob/master/FAQ.md#how-to-setup-port-forwarding-with-a-ssh-tunnel)
-* RaspiBolt Docs: [Login with SSH keys](https://raspibolt.org/security.html#login-with-ssh-keys)
+* RaspiBolt Docs: [Login with SSH keys](https://raspibolt.org/guide/raspberry-pi/security.html#login-with-ssh-keys)
