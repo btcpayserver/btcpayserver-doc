@@ -40,7 +40,7 @@ By choosing BTCPay Server to process payments, merchants are:
 
 ### Online Stores
 
-Merchants selling goods or services over the internet, usually pick an online e-commerce plugin we offer for multiple popular e-commerce platforms [WooCommerce]((/WooCommerce.md), [Shopify](/Shopify.md), [PrestaShop](/Prestashop.md), [Magento](/Magento.md) [Drupal](Drupal.md), [Shopaware](https://github.com/lampsolutions/LampSBtcPayShopware) or other. Install a plugin for the CMS of your choice, and connect it to a self-hosted BTCPay or the one hosted by a third-party.
+Merchants selling goods or services over the internet, usually pick an online e-commerce plugin we offer for multiple popular e-commerce platforms [WooCommerce](WooCommerce.md), [Shopify](/Shopify.md), [PrestaShop](/Prestashop.md), [Magento](/Magento.md) [Drupal](Drupal.md), [Shopaware](https://github.com/lampsolutions/LampSBtcPayShopware) or other. Install a plugin for the CMS of your choice, and connect it to a self-hosted BTCPay or the one hosted by a third-party.
 
 BTCPay Server's checkout is no different to any other payment gateway. The customer gets an invoice. They pay it by scanning a QR code or by copy-pasting the amount and the bitcoin address. When their payment is confirmed, you're notified via the e-commerce software, and can ship the item.
 

@@ -90,12 +90,12 @@ const sidebarUserGuide = [
     title: 'Integrations',
     collapsable: false,
     children: [
-      ['/Zapier/', 'Zapier'],
       ['/WooCommerce', 'WooCommerce'],
       ['/Shopify', 'Shopify'],
-      ['/Drupal', 'Drupal'],
       ['/Magento', 'Magento'],
       ['/PrestaShop', 'PrestaShop'],
+      ['/Drupal', 'Drupal'],
+      ['/Zapier/', 'Zapier'],
       ['https://github.com/lampsolutions/LampSBtcPayShopware', 'Shopware', { type: 'external' }],
       ['/CustomIntegration', 'Custom Integration']
     ]
