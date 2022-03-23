@@ -19,13 +19,13 @@ const extractDescription = text => {
 
 const sidebarUserGuide = [
   {
-    title: 'Basics',
+    title: 'Learn',
     collapsable: false,
     children: [
       ['/Guide', 'Introduction'],
       ['/UseCase', 'Use Case'],
-      ['/Walkthrough', 'Walkthrough'],
       ['/BTCPayVsOthers', 'BTCPay Server vs. Others'],
+      ['/Walkthrough', 'Walkthrough'],
       ['/TryItOut', 'Try it out']
     ]
   },
