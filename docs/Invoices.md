@@ -33,23 +33,22 @@ It's up to users to define best course of action for their use-case and business
 
 | Invoice Status         | Description                                                  | Action        |
 | ---------------------- | ------------------------------------------------------------ | ------------- |
-| New                    | Not paid, invoice timer still has not expired                | None          |
-| New (paidPartial)      | Not paid in full, invoice timer still has not expired        | None          |
-| Expired                | Not paid, invoice timer expired                              | None          |
-| Paid                   | Paid, but has not received sufficient amount of confirmations specified in the Store Settings | Wait for confirmations (The invoice should become - complete) |
-| Confirmed*             | Paid, confirmed, by reaching the number of confirmations in store settings but has not received the default number (6) of confirmations in BTCPay. | Wait for remaining confirmations, or proceed if store settings confirmations is acceptable  |
-| Complete               | Paid, completed, received sufficient amount of confirmations in store | Fulfil the order |
-| Complete (marked)      | Status was manually changed to complete from an invalid or expired status | Store admin has marked the payment as complete |
-| Expired (paidPartial)**| Paid, not in full amount, and expired                    | Contact buyer to arrange a refund or ask for them to pay their due. Optionally mark invoice as complete or invalid |
-| Expired (paidLate)     | Paid, in full amount, after expired                      | Contact buyer to arrange a refund or process order if late confirmations are acceptable.  | Optionally mark as complete or mark as invalid |
-| Paid (paidOver)        | Paid more than the invoice amount, but has not received sufficient amount of confirmations specified in the Store Settings | Wait for confirmations. The invoice should become - Complete (Paid Over) |
-| Complete (paidOver)    | Paid more than the invoice amount, completed, received sufficient amount of confirmations | Contact buyer to arrange a refund for the extra amount, or optionally wait for buyer to contact you |
-| Invalid***             | Paid, but failed to receive sufficient amount of confirmations within the time specified in store settings | Check the transaction on a blockchain explorer, if it received sufficient confirmations, mark as complete |
-| Invalid (marked)       | Status was manually changed to invalid from a complete or expired status | Store admin has marked the payment as invalid |
-| Invalid (paidOver)     | Paid more than the invoice amount, but failed to receive sufficient amount of confirmations within the time specified in store settings | Check the transaction on a blockchain explorer, if it received sufficient confirmations, mark as complete |
+| **New**                     | Not paid, invoice timer still has not expired                | None          |
+| **New (paidPartial)**       | Paid, not in full, invoice timer still has not expired        | None          |
+| **Expired**                 | Not paid, invoice timer expired                              | None          |
+| **Expired (paidPartial)** **| Paid, not in full amount, and expired                    | Contact buyer to arrange a refund or ask for them to pay their due. Optionally mark invoice as settled or invalid |
+| **Expired (paidLate)**      | Paid, in full amount, after the invoice timer has expired                     | Contact buyer to arrange a refund or process order if late confirmations are acceptable.  | Optionally mark as settled or mark as invalid |
+| **Settled (paidOver)**      | Paid more than the invoice amount, settled, received sufficient amount of confirmations | Contact buyer to arrange a refund for the extra amount, or optionally wait for buyer to contact you |
+| **Processing**              | Paid in full, but has not received sufficient amount of confirmations specified in the store settings | Wait for confirmations (The invoice should become - settled) |
+| **Processing (paidOver)**   | Paid more than the invoice amount, not received sufficient amount of confirmations | Wait to be settled then contact buyer to arrange a refund for the extra amount, or optionally wait for buyer to contact you |
+| **Settled**                 | Paid, in full, received sufficient amount of confirmations in store | Fulfil the order |
+| **Settled (marked)**        | Status was manually changed to settled from an processing or invalid status | Store admin has marked the payment as settled |
+| **Invalid***                | Paid, but failed to receive sufficient amount of confirmations within the time specified in store settings | Check the transaction on a blockchain explorer, if it received sufficient confirmations, mark as settled |
+| **Invalid (marked)**        | Status was manually changed to invalid from a settled or expired status | Store admin has marked the payment as invalid |
+| **Invalid (paidOver)**      | Paid more than the invoice amount, but failed to receive sufficient amount of confirmations within the time specified in store settings | Check the transaction on a blockchain explorer, if it received sufficient confirmations, mark as settled |
 
-* *Invoices paid via the [Lightning Network](./LightningNetwork.md) immediately go to a completed state, as their confirmation is instant.
-* **Paid Partial invoice usually happens when a buyer pays the invoice from the exchange wallet  which takes a fee for their service and deducts it from a total. In some cases, it happens when buyer enters an  incorrect amount in their wallet.
+* *Invoices paid via the [Lightning Network](./LightningNetwork.md) immediately go to a settled state, as their settlement is instant.
+* **Paid Partial invoice usually happens when a buyer pays the invoice from the exchange wallet  which takes a fee for their service and deducts it from a total. In some cases, it happens when buyer enters an incorrect amount in their wallet.
 * ***Invalid - If you're receiving a lot of invalid invoices in your store, you may want to [adjust invalid invoice time in store settings](./FAQ/Stores.md#payment-invalid-if-transactions-fails-to-confirm-minutes-after-invoice-expiration).
 
 ## Archived Invoices
