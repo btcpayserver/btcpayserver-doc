@@ -19,13 +19,13 @@ const extractDescription = text => {
 
 const sidebarUserGuide = [
   {
-    title: 'Basics',
+    title: 'Learn',
     collapsable: false,
     children: [
       ['/Guide', 'Introduction'],
       ['/UseCase', 'Use Case'],
-      ['/Walkthrough', 'Walkthrough'],
       ['/BTCPayVsOthers', 'BTCPay Server vs. Others'],
+      ['/Walkthrough', 'Walkthrough'],
       ['/TryItOut', 'Try it out']
     ]
   },
@@ -90,12 +90,12 @@ const sidebarUserGuide = [
     title: 'Integrations',
     collapsable: false,
     children: [
-      ['/Zapier/', 'Zapier'],
       ['/WooCommerce', 'WooCommerce'],
       ['/Shopify', 'Shopify'],
-      ['/Drupal', 'Drupal'],
       ['/Magento', 'Magento'],
       ['/PrestaShop', 'PrestaShop'],
+      ['/Drupal', 'Drupal'],
+      ['/Zapier/', 'Zapier'],
       ['https://github.com/lampsolutions/LampSBtcPayShopware', 'Shopware', { type: 'external' }],
       ['/CustomIntegration', 'Custom Integration']
     ]
