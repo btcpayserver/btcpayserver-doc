@@ -1,18 +1,36 @@
-# Invoices
+---
+description: Learn what are invoices and how to manage them in BTCPay Server.
+tags:
+- Invoices
+- Payment request
+- Bitcoin invoices
+- Invoice status
+- Managing bitcoin invoices
+- Bitcoin invoicing
+---
+# What is an invoice in BTCPay Server?
 
-The invoices page lists the **invoices from all stores and [apps](./Apps.md) and [payment requests](./PaymentRequests.md) in BTCPay Server**.
-It cumulatively sorts invoices by date and allows plenty of customization options for better invoice management.
+An **invoice** is a document issued by the seller to a buyer to collect a payment.
+
+In BTCPay Server, an invoice represents a document that must be paid within a **defined time interval** at a fixed exchange rate. Invoices have expiration because they lock the exchange rate within a specified time-frame to protect the receiver from price fluctuations.
+
+The core of BTCPay Server is the ability to act as a bitcoin invoice management system. An invoice is an essential tool for keeping track of a payment.
+
+Unless you use a built in [Wallet](/Wallet.md) to receive payments manually, all payments within a store will be shown on the `Invoices` page. This page cumulatively sorts payments by date and is a central piece for invoice management and payment troubleshooting.
 
 ## Managing Invoices
 
-![Invoices Interface](./img/Invoices.png "BTCPay Server invoices")
+![Invoices](./img/invoice/Invoices.png "BTCPay Server invoices")
+
+## Invoices in the back-office vs invoice for customer
+
 
 ### Invoice Filtering
 
 Invoices can be filtered via the quick filters located next to the search button or via the advanced filters which can be toggled by clicking the (Help) link on the top of the page.
 Users can **filter invoices** by store, order id, item id, status or a date.
 
-![Invoice Filtering](./img/InvoiceFiltering.gif "Filter BTCPay Server invoices")
+![Invoice Filtering](./img/invoice/InvoiceFiltering.gif "Filter BTCPay Server invoices")
 
 ### Invoice Export
 
@@ -33,11 +51,11 @@ It's up to users to define best course of action for their use-case and business
 
 | Invoice Status         | Description                                                  | Action        |
 | ---------------------- | ------------------------------------------------------------ | ------------- |
-| **New**                     | Not paid, invoice timer still has not expired                | None          |
-| **New (paidPartial)**       | Paid, not in full, invoice timer still has not expired        | None          |
-| **Expired**                 | Not paid, invoice timer expired                              | None          |
-| **Expired (paidPartial)** **| Paid, not in full amount, and expired                    | Contact buyer to arrange a refund or ask for them to pay their due. Optionally mark invoice as settled or invalid |
-| **Expired (paidLate)**      | Paid, in full amount, after the invoice timer has expired                     | Contact buyer to arrange a refund or process order if late confirmations are acceptable.  | Optionally mark as settled or mark as invalid |
+| **New**                     | Not paid, invoice timer still has not expired           | None          |
+| **New (paidPartial)**       | Paid, not in full, invoice timer still has not expired  | None          |
+| **Expired**                 | Not paid, invoice timer expired                         | None          |
+| **Expired (paidPartial)** **| Paid, not in full amount, and expired                   | Contact buyer to arrange a refund or ask for them to pay their due. Optionally mark invoice as settled or invalid |
+| **Expired (paidLate)**      | Paid, in full amount, after the invoice timer has expired | Contact buyer to arrange a refund or process order if late confirmations are acceptable.  | Optionally mark as settled or mark as invalid |
 | **Settled (paidOver)**      | Paid more than the invoice amount, settled, received sufficient amount of confirmations | Contact buyer to arrange a refund for the extra amount, or optionally wait for buyer to contact you |
 | **Processing**              | Paid in full, but has not received sufficient amount of confirmations specified in the store settings | Wait for confirmations (The invoice should become - settled) |
 | **Processing (paidOver)**   | Paid more than the invoice amount, not received sufficient amount of confirmations | Wait to be settled then contact buyer to arrange a refund for the extra amount, or optionally wait for buyer to contact you |
