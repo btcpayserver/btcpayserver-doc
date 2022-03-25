@@ -14,30 +14,11 @@ An **invoice** is a document issued by the seller to a buyer to collect payment.
 
 In BTCPay Server, an invoice represents a document that must be paid within a **defined time interval** at a fixed exchange rate. Invoices have expiration because they lock the exchange rate within a specified time frame to protect the receiver from price fluctuations.
 
+![Invoices](./img/invoice/Invoices.png "BTCPay Server invoices")
+
 The core of BTCPay Server is the ability to act as a bitcoin invoice management system. An invoice is an essential tool for keeping track and managing a received payment.
 
 Unless you use a built in [Wallet](/Wallet.md) to receive payments manually, all payments within a store will be shown on the `Invoices` page. This page cumulatively sorts payments by date and is a central piece for invoice management and payment troubleshooting.
-
-## Managing invoices
-
-![Invoices](./img/invoice/Invoices.png "BTCPay Server invoices")
-
-### Invoice filtering
-
-Invoices can be filtered via the quick filters located next to the search button or the advanced filters, which can be toggled by clicking the (Help) link on the top. Users can **filter invoices** by store, order id, item id, status, or date.
-
-![Invoice Filtering](./img/invoice/InvoiceFiltering.gif "Filter BTCPay Server invoices")
-
-### Invoice export
-
-**BTCPay Server Invoices can be exported in CSV or JSON format**.
-For more information about invoice export and accounting, [see this page](./Accounting.md).
-
-### Invoice details
-
-The invoice details page contains all information related to an invoice.
-
-Invoice information is created automatically based on invoice status, exchange rate, etc. Product information is created automatically if the invoice was created with product information such as in the Point of Sale app. Read about collecting Buyer information [here](./FAQ/Stores.md#how-to-collect-additional-buyer-information).
 
 ## Invoice statuses
 
@@ -64,6 +45,22 @@ It's up to users to define best course of action for their use-case and business
 * * Invoices paid via the [Lightning Network](./LightningNetwork.md) immediately go to a settled state, as their settlement is instant.
 * ** Paid Partial invoice usually happens when a buyer pays the invoice from the exchange wallet  which takes a fee for their service and deducts it from a total. In some cases, it happens when buyer enters an incorrect amount in their wallet.
 * *** Invalid - If you're receiving a lot of invalid invoices in your store, you may want to [adjust invalid invoice time in store settings](./FAQ/Stores.md#payment-invalid-if-transactions-fails-to-confirm-minutes-after-invoice-expiration).
+
+### Invoice details
+
+The invoice details page contains all information related to an invoice.
+
+Invoice information is created automatically based on invoice status, exchange rate, etc. Product information is created automatically if the invoice was created with product information such as in the Point of Sale app. Read about collecting Buyer information [here](./FAQ/Stores.md#how-to-collect-additional-buyer-information).
+
+### Invoice filtering
+
+Invoices can be filtered via the quick filters located next to the search button or the advanced filters, which can be toggled by clicking the (Help) link on the top. Users can **filter invoices** by store, order id, item id, status, or date.
+
+![Invoice Filtering](./img/invoice/InvoiceFiltering.gif "Filter BTCPay Server invoices")
+
+### Invoice export
+
+BTCPay Server Invoices can be exported in CSV or JSON format. For more information about invoice export and accounting, [see this page](./Accounting.md).
 
 ## Refunding an invoice
 
