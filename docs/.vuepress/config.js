@@ -58,7 +58,6 @@ const sidebarUserGuide = [
     title: 'Features',
     collapsable: false,
     children: [
-      ['/Apps', 'Apps'],
       {
         title: 'Wallet',
         path: '/Wallet',
@@ -67,6 +66,8 @@ const sidebarUserGuide = [
         ]
       },
       ['/Invoices', 'Invoices'],
+      ['/Apps', 'Apps'],
+
       {
         title: 'Pull Payments',
         path: '/PullPayments',
