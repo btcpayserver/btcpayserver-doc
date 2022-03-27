@@ -51,7 +51,7 @@ Note: _This guide assumes installations in default locations. Take note if you h
 - Make a copy of your master branch to do some development on it, with the command: `$ git branch OurNewDevelopmentBranch`
 - Let's view all the branches we have now, with the command: `$ git branch` you can see we have master and OurNewDevelopmentBranch
 - In Git, we now have a copy of our forked BTCPay Server repository (our clone). When we want to switch between branches (copies of our clone), we need to tell Git which branch our development code changes should be assigned to. We do this by checking out our branch, with the command: `$ git checkout OurNewDevelopmentBranch`
-- Now you are now on OurNewDevelopmentBranch in GitBash.
+- Now you are on OurNewDevelopmentBranch in GitBash.
 - Open your GitHub Desktop and you can see you are no longer on master and you are now on `OurNewDevelopmentBranch`
 - In the top menu in Github Desktop click: `Repository > Show In Explorer` to see the location of the files.
 
