@@ -45,7 +45,7 @@ apikey="$(curl -s \
 
 ## Create a new store
 
-Now, with we can use the api key to [create a new store](https://docs.btcpayserver.org/API/Greenfield/v1/#tag/Stores/paths/~1api~1v1~1stores/post).
+Now, we can use the api key to [create a new store](https://docs.btcpayserver.org/API/Greenfield/v1/#tag/Stores/paths/~1api~1v1~1stores/post).
 
 ```bash
 store_name="My awesome store"
