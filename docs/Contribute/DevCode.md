@@ -51,7 +51,7 @@ Note: _This guide assumes installations in default locations. Take note if you h
 - Make a copy of your master branch to do some development on it, with the command: `$ git branch OurNewDevelopmentBranch`
 - Let's view all the branches we have now, with the command: `$ git branch` you can see we have master and OurNewDevelopmentBranch
 - In Git, we now have a copy of our forked BTCPay Server repository (our clone). When we want to switch between branches (copies of our clone), we need to tell Git which branch our development code changes should be assigned to. We do this by checking out our branch, with the command: `$ git checkout OurNewDevelopmentBranch`
-- Now you are now on OurNewDevelopmentBranch in GitBash.
+- Now you are on OurNewDevelopmentBranch in GitBash.
 - Open your GitHub Desktop and you can see you are no longer on master and you are now on `OurNewDevelopmentBranch`
 - In the top menu in Github Desktop click: `Repository > Show In Explorer` to see the location of the files.
 
@@ -99,11 +99,11 @@ Open a new browser and visit: [http://127.0.0.1:14142](http://127.0.0.1:14142)
 
 ![VS Debug Console](../img/Contribute/vs-debug-console.png)
 
-![Local Regtest BTCPay](../img/Contribute/regtest-btcpay.png)
+![Local Regtest BTCPay](../img/Contribute/dashboard-change.jpg)
 
 ### Visual Studio Code Changes In Your Local BTCPay Server
 
-- Make changes to code in Visual Studio (Ex: modify the `Welcome to your BTCPay` text in the `~\BTCPayServer\Views\Account\Login.cshtml` file)
+- Make changes to code in Visual Studio (Ex: modify the `This store is ready to accept transactions, good job!` text in the `~\BTCPayServer\Views\UIStores\Dashboard.cshtml` file)
 - Refresh the page to see your text changes on the home page.
 - Some code changes require re-start of Debugging for changes to take effect.
 - Add breakpoints in Visual Studio and see those breakpoints get hit when you try to use a feature in your local BTCPay Server instance.
