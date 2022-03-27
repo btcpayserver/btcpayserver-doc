@@ -4,7 +4,7 @@ The **[GreenField API](https://docs.btcpayserver.org/API/Greenfield/v1/)** (also
 
 Note that you can partially generate clients in the language of your choice by using the [Swagger file](https://docs.btcpayserver.org/API/Greenfield/v1/swagger.json).
 
-In this page, we will show you how to use it via command line on linux using `curl` and `jq`.
+In this guide, we will show you how to use it via command line on linux using `curl` and `jq`.
 
 ## Create a new user
 
@@ -58,9 +58,10 @@ store_id="$(curl -s \
      "$BTCPAY_INSTANCE/api/v1/stores"  | jq -r .id)"
 ```
 
-## Create a new API get limiting permission only to read only on the new store
+## Create a new API key with limiting permissions on the new store, for example read only 
 
-We can make a new specific permission for our new store:
+You can set specific permissions per user, for your new store:
+
 ```bash
 old_apikey="$apikey"
 permission="btcpay.store.canviewstoresettings:$store_id"
@@ -73,7 +74,8 @@ apikey="$(curl -s \
      "$BTCPAY_INSTANCE/api/v1/api-keys" | jq -r .apiKey)"
 ```
 
-We can [revoke our old apikey](https://docs.btcpayserver.org/API/Greenfield/v1/#tag/API-Keys/paths/~1api~1v1~1api-keys~1current/delete).
+After creating the new API key, this is to [revoke our old apikey](https://docs.btcpayserver.org/API/Greenfield/v1/#tag/API-Keys/paths/~1api~1v1~1api-keys~1current/delete).
+Don't forget this step!
 
 ```bash
 curl -s \
@@ -85,7 +87,7 @@ curl -s \
 
 ## Read store information
 
-We can then use the new apikey to [read store](https://docs.btcpayserver.org/API/Greenfield/v1/#operation/Stores_GetStore) information:
+We can use the new apikey to [read store](https://docs.btcpayserver.org/API/Greenfield/v1/#operation/Stores_GetStore) information:
 
 ```bash
 curl -s \
