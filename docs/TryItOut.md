@@ -36,7 +36,8 @@ Click on the following links for detailed instructions on how to ;
 See [What's Next](./WhatsNext.md) for more ways on exploring BTCPay server.
 
 <!-- 
-### I feel like this should not live here, but rather should be on some Dev pages or somewhere else then here atleast. ###
+### I feel like this should not live here, but rather should be on some Dev pages or somewhere else then here atleast.
+I did add this to the Testnet page, which moved to Deployments.  ###
 
 Then you can create an invoice, either through
 * The "Invoice" menu on the website or
