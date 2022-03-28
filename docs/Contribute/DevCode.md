@@ -99,7 +99,6 @@ Open a new browser and visit: [http://127.0.0.1:14142](http://127.0.0.1:14142)
 
 ![VS Debug Console](../img/Contribute/vs-debug-console.png)
 
-![Local Regtest BTCPay](../img/Contribute/dashboard-change.jpg)
 
 ### Visual Studio Code Changes In Your Local BTCPay Server
 
@@ -107,6 +106,8 @@ Open a new browser and visit: [http://127.0.0.1:14142](http://127.0.0.1:14142)
 - Refresh the page to see your text changes on the home page.
 - Some code changes require re-start of Debugging for changes to take effect.
 - Add breakpoints in Visual Studio and see those breakpoints get hit when you try to use a feature in your local BTCPay Server instance.
+
+![Local Regtest BTCPay](../img/Contribute/dashboard-change.jpg)
 
 ## Git Maintenance
 
