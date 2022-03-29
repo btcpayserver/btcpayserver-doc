@@ -4,11 +4,44 @@
 - [Watch-only wallet](#watch-only-wallet)
 
 ### Hot Wallet
-![Create Wallet](./img/hotwallet/HotWallet.png)
 
-If you do not have an existing wallet, you can generate a new one within your BTCPay Server. Whether you have an existing wallet or not, the quickest way to get a wallet connected to your store is to create a new wallet. You can always replace it with an alternative wallet after receiving a few small payments to your server, if you just want to get your store ready quickly.
+If you do not have an existing wallet, you can generate a new one within your BTCPay Server. Whether you have an existing wallet or not, the quickest way to get a wallet connected to your store is to create a new wallet. You can always replace it with an alternative wallet after receiving a few small payments to your server, if you just want to get your store ready quickly.  [Advanced Settings](#⚙️-advanced-settings)
 
 This type of wallet is also necessary to use features such as [Payjoin](./Payjoin.md) and [Liquid](https://github.com/btcpayserver/btcpayserver/issues/1282).
+
+After creating a store, you'll be able to attach a wallet by first navigating to the sidebar or slide out menu and clicking/tapping the **Bitcoin** button under the **Wallets** header. Alternatively, you can find the option to **Set up a wallet** on the Dashboard.
+
+![Main Menu](./img/hotwallet/MainMenu.png)
+
+For a hot wallet you'll focus on the **I don't have a wallet** section and clicking/tapping the **Create a new wallet** button.
+
+![New Wallet](./img/hotwallet/CreateNewWallet.png)
+
+On the proceeding page there will be two options, and in this case we'll select the **Hot wallet** button.
+
+![Create Wallet](./img/hotwallet/HotWallet.png)
+
+For most folks, the default options including **Address Type** (Segwit), should work well for most applications and it's recommended to not change it unless you're sure of what you're doing. The **Payjoin** feature is optional, and you can learn more about it at the link [above](#hot-wallet).
+
+Find out more about advanced settings [here](#⚙️-advanced-settings).
+
+![Wallet Settings](./img/hotwallet/WalletSettings.png)
+
+#### Recovery Seed
+
+The last step to creating a hot wallet is making sure you document your recovery seed.  After you've done so, tick the checkbox that says *I have written down my recovery phrase and stored it in a secure location* and click the **Done** button.
+
+#### ⚙️ Advanced Settings
+
+- Optional [BIP39](https://github.com/bitcoin/bips/blob/master/bip-0039.mediawiki#from-mnemonic-to-seed) passphrase
+    
+    - You can add a passphrase for your hot wallet's mnemonic for an additional layer of security.
+
+- Import keys to RPC
+
+    - This is for more advanced applicaitons of BTCPay Server.  Importing your keys to RPC will allow for users to leverage [bitcoind Wallet RPCs](https://developer.bitcoin.org/reference/rpc/index.html#wallet-rpcs) on the imported wallet.
+
+![Advanced Settings](./img/hotwallet/AdvancedSettings.png)
 
 #### Requirements to create wallets
 
@@ -45,13 +78,12 @@ Storing private keys on a public server comes with risks. This is similar to the
 
 As mentioned above, the create wallet functionality includes risk of funds being stolen in the case of the server or account being compromised. To mitigate this risk, we advise you to:
 
-* Enable two factor or U2F authentication
-* Occasionally move funds to your cold storage either manually or by configuring [BTC Transmuter](https://github.com/btcpayserver/btcTransmuter/blob/master/README.md) with automatic payment forwarding.
+- Enable two factor or U2F authentication
+- Occasionally move funds to your cold storage either manually or by configuring [BTC Transmuter](https://github.com/btcpayserver/btcTransmuter/blob/master/README.md) with automatic payment forwarding.
 
 :::danger
 Do not give anyone else access to your server's SSH keys or server account credentials when using a hot wallet. Anyone with access to your account can spend the funds from your hot wallet. If you need to allow account access to employees, developers, etc. use an [existing wallet](ConnectWallet.md#connect-an-existing-wallet) instead.
 :::
-
 
 ### Watch-only wallet
 
