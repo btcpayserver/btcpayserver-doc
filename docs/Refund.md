@@ -72,7 +72,7 @@ And after that its time to sign the transaction(Or multiple transactions if you 
 
 After the signing comes broadcasting.
 
-![BTCPay Server Payouts tab](./img/refunds/payouts-status4-Broadcast.jpg "BTCPay Server refund feature")
+![BTCPay Server Payouts tab](./img/refunds/payouts-status4-broadcast.jpg "BTCPay Server refund feature")
 
 ![BTCPay Server Payouts tab](./img/refunds/payout-status-succesfull.jpg "BTCPay Server refund feature")
 
@@ -88,7 +88,7 @@ For the Claimant his status now has gone to complete as well.
 If claimant now still has funds left to claim, he can re do the process and you as merchant again will follow the above steps too.
 His future status will show on top of the former claims on the same page.
 
-![BTCPay Server Payouts tab](./img/refunds/payouts-status5-Completed.jpg "BTCPay Server refund feature")
+![BTCPay Server Payouts tab](./img/refunds/payouts-status5-completed.jpg "BTCPay Server refund feature")
 
 Costumer's view
 
