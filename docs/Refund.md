@@ -92,7 +92,7 @@ His future status will show on top of the former claims on the same page.
 
 Costumer's view
 
-![BTCPay Server Payouts tab](./img/Refunds/Claiment-Completed.jpg "BTCPay Server refund feature")
+![BTCPay Server Payouts tab](./img/Refunds/claiment-completed.jpg "BTCPay Server refund feature")
 
 ## Questions
 
