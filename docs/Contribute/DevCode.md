@@ -99,6 +99,7 @@ Open a new browser and visit: [http://127.0.0.1:14142](http://127.0.0.1:14142)
 
 ![VS Debug Console](../img/Contribute/vs-debug-console.png)
 
+![Local Regtest BTCPay](../img/Contribute/dashboard-change.jpg)
 
 ### Visual Studio Code Changes In Your Local BTCPay Server
 
