@@ -33,6 +33,6 @@ Let's create an invoice, either through ;
 
 1. Use the "Invoice" menu in your BTCPay dashboard.
 
-![BTCPay server invoice menu](../img/create-invoice.jpg "BTCPay Server invoice menu")
+![BTCPay server invoice menu](../img/create-invoice.jpg)
 
 2. Or use the following page about [Custom integration](./CustomIntegration.md)
