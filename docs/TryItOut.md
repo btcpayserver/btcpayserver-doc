@@ -26,7 +26,7 @@ Not only do we provide you with a environment of our own.
 We really want you to look at the community and use their work instead.
 Down below you will find a list of third-party hosts with a variety of implementations, go check them out!
 
-* [here](/Deployment/ThirdPartyHosting.md#where-is-the-list-of-btcpay-third-party-hosts).
+* Find a list of Third-party hosts [here](/Deployment/ThirdPartyHosting.md#where-is-the-list-of-btcpay-third-party-hosts).
 * Or maybe you just want to [deploy your own](/Deployment/README.md).
 
 Click on the following links for detailed instructions on how to:
