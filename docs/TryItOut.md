@@ -38,8 +38,8 @@ See [What's Next](./WhatsNext.md) for more ways on exploring BTCPay server.
 
 ### BTCPay Server live demo.
 
-Down below you will found options to see BTCPay server in action.
-Trough our own POS on our demo or trough the eyes of actually merchants in the wild!
+Down below you will find options to see BTCPay server in action.
+Trough our own POS on our demo or trough the eyes of actual merchants in the wild!
 
 * [Point of Sale Demo](https://mainnet.demo.btcpayserver.org/apps/87kj5yKay8mB4UUZcJhZH5TqDKMD3CznjwLjiu1oYZXe/pos)
 * [In-production stores](https://directory.btcpayserver.org)
