@@ -1,60 +1,50 @@
-# Try it out
+# Try out BTCPay server
 
-This section goes through the process of **creating an account and store on our public BTCPay server**. (For evaluation purposes)
+We welcome you to Try out BTCPayserver as a Demo before you host it!
+On this page we give you a quick introduction to the software, but also to partners and friends who provide environments and solutions.
 
-You can also follow along in this video:
+## Try out BTCPayserver's own Demo environment
 
+In this video we will show you a quick intro to using our own Demo environment.
+Our Demo deployment is on Mainnet.
+We do advise, although Mainnet is a live environment, to NOT use this as your real store!
+
+Follow along in this video:
 [![BTCPay - Introduction](https://img.youtube.com/vi/xh3Eac66qc4/mqdefault.jpg)](https://www.youtube.com/watch?v=xh3Eac66qc4 "BTCPay - Introduction")
 
-## Create your first invoice
+## Other environments then Mainnet ?
 
-For an in production setup, skip to [Mainnet](./TryItOut.md#mainnet)
+We got you covered with the Following instances:
+* [Mainnet](https://mainnet.demo.btcpayserver.org/login)
+* [Testnet website](https://testnet.demo.btcpayserver.org/)
 
-### Testnet
-First let's create a new store:
+For more on Testnet go to [Testnet Demo](/Deployment/TestnetDemo.md)
 
-1. Go to the [Testnet website](https://testnet.demo.btcpayserver.org/)
-2. On the right side click on **Create an account** to [create an account](https://testnet.demo.btcpayserver.org/register) or **Sign In** if you already have an account.
-3. After having signed in, create a new store.
+### Mainnet options by third-party hosts
 
-Let's use Electrum to create a testnet wallet for your store:
+Not only do we provide you with a environment of our own.
+We really want you to look at the community and use their work instead.
+Down below you will find a list of third-party hosts with a variety of implementations, go check them out!
 
-1. Download [Electrum](https://electrum.org)
-2. Run Electrum with parameter `--testnet` (i.e. on Mac OS using `open -a Electrum.app --args --testnet`)
-3. Click through the wizard and create a test wallet, using the default settings Electrum proposes
-4. After the wallet is set up, go to "Wallet" > "Information" in the Electrum menu.
-5. Copy the "Master Public Key" string (starting by `*pub...`)
+* [here](/Deployment/ThirdPartyHosting.md#where-is-the-list-of-btcpay-third-party-hosts).
+* Or maybe you just want to [deploy your own](/Deployment/README.md).
 
-Let's configure the store so it uses your Electrum wallet:
+Click on the following links for detailed instructions on how to:
+* [Register an account](./RegisterAccount.md)
+* [Create your first store](./CreateStore.md)
+* [Connect your own wallet](./WalletSetup.md)
 
-1. Go to the Settings page of your store in BTCPay
-2. On the "General Settings" page you will find the "Wallet" section - click the "Setup" button for configuring an on-chain wallet.
-3. Paste the "Master Public Key" copied from Electrum into the "Derivation Scheme" text field and click "Continue"
-4. Confirm the addresses by clicking on "Receive" in Electrum: The "Receiving address" should match the first address shown in BTCPay
-5. After that your test wallet should appear on the [Wallets page](https://testnet.demo.btcpayserver.org/wallets) of your BTCPay account
+See [What's Next](./WhatsNext.md) for more ways on exploring BTCPay server.
 
-Then you can create an invoice, either through
-* The "Invoice" menu on the website or
-* The process documented in the [Custom integration](./CustomIntegration.md)
+### BTCPay Server live demo.
 
-### Mainnet
-
-First choose where to setup your store.
-Either:
-* Host your store on someone else's BTCPay Server. You can find a list of third-party hosts [here](/Deployment/ThirdPartyHosting.md#where-is-the-list-of-btcpay-third-party-hosts).
-* Or [deploy your own](/Deployment/README.md).
-
-Click on the following links for detailed instructions on how to [Register an account](./RegisterAccount.md), [Create your first store](./CreateStore.md) and [Connect your own wallet](./WalletSetup.md)
-
-Then you can create an invoice, either through
-* The "Invoice" menu on the website or
-* The process documented in the [Custom integration](./CustomIntegration.md)
-
-See the [What's Next](./WhatsNext.md) page for other options on how to continue exploring BTCPay.
-
-## BTCPay Server Demo
-
-To see BTCPay Server in action, visit our demo apps and stores or check out some of the stores using BTCPay Server in production.
+Down below you will found options to see BTCPay server in action.
+Trough our own POS on our demo or trough the eyes of actually merchants in the wild!
 
 * [Point of Sale Demo](https://mainnet.demo.btcpayserver.org/apps/87kj5yKay8mB4UUZcJhZH5TqDKMD3CznjwLjiu1oYZXe/pos)
 * [In-production stores](https://directory.btcpayserver.org)
+
+## Questions
+
+If you have questions about the BTCPay Server, you can join the [community chat](https://chat.btcpayserver.org/).
+If you have questions about any of the other tools or commands, etc. it's likely you can find answers to your questions by doing a search on the internet or on [StackOverflow](https://stackoverflow.com/).
