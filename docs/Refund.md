@@ -18,83 +18,83 @@ Future versions of BTCPay Server will enable instant payouts as an option, witho
 
 1. After an invoice has been confirmed, go in the Invoices page and click `Details` on the invoice.
 
-![BTCPay Server refund feature](./img/Refunds/invoices-details.JPG "BTCPay Server refund feature")
+![BTCPay Server refund feature](./img/Refunds/invoices-details.jpg "BTCPay Server refund feature")
 
 2. Click `Issue a refund`
 
-![BTCPay Server refund feature](./img/Refunds/issue-refund.JPG "BTCPay Server refund feature")
+![BTCPay Server refund feature](./img/Refunds/issue-refund.jpg "BTCPay Server refund feature")
 
 3. Select the way how you want to issue the refund
 
-![BTCPay Server refund feature](./img/Refunds/issue-refund-payment-option.JPG "BTCPay Server refund feature")
+![BTCPay Server refund feature](./img/Refunds/issue-refund-payment-option.jpg "BTCPay Server refund feature")
 
 4. Select the amount you want to refund
 
-![BTCPay Server refund feature](./img/Refunds/issue-refund-amount.JPG "BTCPay Server refund feature")
+![BTCPay Server refund feature](./img/Refunds/issue-refund-amount.jpg "BTCPay Server refund feature")
 
 5. Share the Link of this page to your costumer
 
-![BTCPay Server refund feature](./img/Refunds/claimingside.JPG "BTCPay Server refund feature")
+![BTCPay Server refund feature](./img/Refunds/claimingside.jpg "BTCPay Server refund feature")
 
 ## How to process the refund
 
-After you deliverd the refund link to costumer, there is a little more to this flow. 
-The costumer might decide to not claim all at once, and you as a merchant might have many refunds open. 
+After you deliverd the refund link to costumer, there is a little more to this flow.
+The costumer might decide to not claim all at once, and you as a merchant might have many refunds open.
 After the customer has done their part, you goto the Payouts tab in your BTCPay server or check the notifications top left.
 Notice from here we will call it a payout instead of a refund as we turn to you the merchant.
 
-![BTCPay Server Payouts tab](./img/Refunds/claim-notification.JPG "BTCPay Server refund feature")
+![BTCPay Server Payouts tab](./img/Refunds/claim-notification.jpg "BTCPay Server refund feature")
 
-Both tabs BTC (On-Chain) and BTC (Off-Chain) work in the similar ways. 
-First off its Awaiting Approval, this tab makes most sense for store clercks to just Approve refunds troughout the day. 
-The actions tab varies with the permissions the user has, you can Approve, Approve and Send or Cancel a payout. 
-    * Approve will simply change the state of the payment to awaiting payment and shows the claiment that his claim is now in progress. 
-        This does not directly do the actual Payout but rather sets it up for one with permissions to do so or cancel if its not valid. 
+Both tabs BTC (On-Chain) and BTC (Off-Chain) work in the similar ways.
+First off its Awaiting Approval, this tab makes most sense for store clercks to just Approve refunds troughout the day.
+The actions tab varies with the permissions the user has, you can Approve, Approve and Send or Cancel a payout.
+    * Approve will simply change the state of the payment to awaiting payment and shows the claiment that his claim is now in progress.
+        This does not directly do the actual Payout but rather sets it up for one with permissions to do so or cancel if its not valid.
         The Payout will now be found in Awaiting Payment, here it would be possible to Batch multiple Payouts.
-    * Approve and Send is only available for those with permissions to. 
-        This will directly prompt you for signing the payouts that you selected. It also will show to claiment that claim is in Progress. 
-        After the transaction has been signed, claiment now may also see the transaction tied to his claim by clicking the Progress button in his claim view. 
-    * Cancel payout. 
+    * Approve and Send is only available for those with permissions to.
+        This will directly prompt you for signing the payouts that you selected. It also will show to claiment that claim is in Progress.
+        After the transaction has been signed, claiment now may also see the transaction tied to his claim by clicking the Progress button in his claim view.
+    * Cancel payout.
         This will cancel the Payout directly.
-        However, the refund is still active and Claiment may request another refund. He will see a Cancel claim status in his view. 
+        However, the refund is still active and Claiment may request another refund. He will see a Cancel claim status in his view.
 
-![BTCPay Server Payouts tab](./img/Refunds/payouts-status3-options-appr.JPG "BTCPay Server refund feature")
+![BTCPay Server Payouts tab](./img/Refunds/payouts-status3-options-appr.jpg "BTCPay Server refund feature")
 
 After the Payout has been approved and is ready to be signed (This again might be done trough batching by the appropriate permissions).
 Be sure to check the address if it is indeed a valid bitcoin address (For the security of the costumer and his funds).
-    Check the amount requested by the costumer, set a fee rate and if those fees are deducted from the amount. 
-    Check the Advanced settings for ; No [UTXO Change](./Wallet.md) 
-                                    ; Always include non-witness UTXO if [available](https://medium.com/@jmacato/wasabi-wallets-advisory-for-trezor-users-7d942c727f92) 
-                                    ; Allow Fee increase [RBF](./Wallet.md) 
+    Check the amount requested by the costumer, set a fee rate and if those fees are deducted from the amount.
+    Check the Advanced settings for ; No [UTXO Change](./Wallet.md)
+                                    ; Always include non-witness UTXO if [available](https://medium.com/@jmacato/wasabi-wallets-advisory-for-trezor-users-7d942c727f92)
+                                    ; Allow Fee increase [RBF](./Wallet.md)
 And after that its time to sign the transaction(Or multiple transactions if you decided to batch)
 
-![BTCPay Server Payouts tab](./img/Refunds/payouts-status4-options-sign3-adv.JPG "BTCPay Server refund feature")
+![BTCPay Server Payouts tab](./img/Refunds/payouts-status4-options-sign3-adv.jpg "BTCPay Server refund feature")
 
-After the signing comes broadcasting. 
+After the signing comes broadcasting.
 
-![BTCPay Server Payouts tab](./img/Refunds/payouts-status4-Broadcast.JPG "BTCPay Server refund feature")
+![BTCPay Server Payouts tab](./img/Refunds/payouts-status4-Broadcast.jpg "BTCPay Server refund feature")
 
-![BTCPay Server Payouts tab](./img/Refunds/payout-status-succesfull.JPG "BTCPay Server refund feature")
+![BTCPay Server Payouts tab](./img/Refunds/payout-status-succesfull.jpg "BTCPay Server refund feature")
 
-When the broadcast happened, the payout moved from the Aiwaiting Approval/Payment status to In Progress. 
-In this tab you will find all the Payouts seperatly along with their links to the transaction. 
-Claiment now is also able to see the Actual Transaction tied to his claim. 
+When the broadcast happened, the payout moved from the Aiwaiting Approval/Payment status to In Progress.
+In this tab you will find all the Payouts seperatly along with their links to the transaction.
+Claiment now is also able to see the Actual Transaction tied to his claim.
 
-![BTCPay Server Payouts tab](./img/Refunds/payout-status-progress.JPG "BTCPay Server refund feature")
+![BTCPay Server Payouts tab](./img/Refunds/payout-status-progress.jpg "BTCPay Server refund feature")
 
-Whenever the transaction gets accepted and is no longer in progress it moves to the Completed tab. 
-Here again you will find the link to the transaction for historical purposes. 
-For the Claiment his status now has gone to complete as well. 
-If claiment now still has funds left to claim, he can re do the process and you as merchant again will follow the above steps too. 
-His future status will show ontop of the former claims on the same page. 
+Whenever the transaction gets accepted and is no longer in progress it moves to the Completed tab.
+Here again you will find the link to the transaction for historical purposes.
+For the Claiment his status now has gone to complete as well.
+If claiment now still has funds left to claim, he can re do the process and you as merchant again will follow the above steps too.
+His future status will show ontop of the former claims on the same page.
 
-![BTCPay Server Payouts tab](./img/Refunds/payouts-status5-Completed.JPG "BTCPay Server refund feature")
+![BTCPay Server Payouts tab](./img/Refunds/payouts-status5-Completed.jpg "BTCPay Server refund feature")
 
-Costumer's view 
+Costumer's view
 
-![BTCPay Server Payouts tab](./img/Refunds/Claiment-Completed.JPG "BTCPay Server refund feature")
+![BTCPay Server Payouts tab](./img/Refunds/Claiment-Completed.jpg "BTCPay Server refund feature")
 
 ## Questions
 
-If you have questions about the BTCPay Server Refunds function, you can join the [community chat](https://chat.btcpayserver.org/). 
+If you have questions about the BTCPay Server Refunds function, you can join the [community chat](https://chat.btcpayserver.org/).
 If you have questions about any of the other tools or commands, etc. it's likely you can find answers to your questions by doing a search on the internet or on [StackOverflow](https://stackoverflow.com/).
