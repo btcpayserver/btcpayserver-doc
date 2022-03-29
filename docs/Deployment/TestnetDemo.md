@@ -1,6 +1,6 @@
 # Testnet Demo
 
-On this page you will find our Testnet environment and instructions how to set your self up with testnet. 
+On this page you will find our Testnet environment and instructions how to set your self up with testnet.
 If you have something running on Testnet this is our platform to use.
 
 1. Go to the [Testnet website](https://testnet.demo.btcpayserver.org/)
@@ -17,9 +17,9 @@ Let's use Electrum to create a testnet wallet for your store ;
 4. After the wallet is set up, go to "Wallet" > "Information" in the Electrum menu.
 5. Copy the "Master Public Key" string (starting by `*pub...`)
 
-### Configure Store 
+### Configure Store
 
-Configure your store to use the Electrum server we just setup ; 
+Configure your store to use the Electrum server we just setup ;
 
 1. Go to the Settings page of your store in BTCPay
 2. On the "General Settings" page you will find the "Wallet" section - click the "Setup" button for configuring an on-chain wallet.
