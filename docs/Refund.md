@@ -32,7 +32,7 @@ Future versions of BTCPay Server will enable instant payouts as an option, witho
 
 ![BTCPay Server refund feature](./img/refunds/issue-refund-amount.jpg "BTCPay Server refund feature")
 
-5. Share the Link of this page to your costumer
+5. Share the link of this page with your customer
 
 ![BTCPay Server refund feature](./img/refunds/claimingside.jpg "BTCPay Server refund feature")
 
