@@ -40,7 +40,7 @@ Future versions of BTCPay Server will enable instant payouts as an option, witho
 
 After you delivered the refund link to customer, there is a little more to this flow.
 The customer might decide to not claim all at once, and you as a merchant might have many refunds open.
-After the customer has done their part, you go to the Payouts tab in your BTCPay server or check the notifications top left.
+After the customer has claimed a refund, go to the `Payouts` tab in your BTCPay server or check the notifications top left.
 Notice from here we will call it a payout instead of a refund as we turn to you the merchant.
 
 ![BTCPay Server Payouts tab](./img/refunds/claim-notification.jpg "BTCPay Server refund feature")
