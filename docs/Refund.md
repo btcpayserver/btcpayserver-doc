@@ -20,7 +20,7 @@ Future versions of BTCPay Server will enable instant payouts as an option, witho
 
 ![BTCPay Server refund feature](./img/refunds/invoices-details.jpg "BTCPay Server refund feature")
 
-2. Click 'Issue a refund'
+2. Click `Issue a refund`
 
 ![BTCPay Server refund feature](./img/refunds/issue-refund.jpg "BTCPay Server refund feature")
 
