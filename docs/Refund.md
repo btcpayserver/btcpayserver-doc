@@ -16,7 +16,7 @@ Future versions of BTCPay Server will enable instant payouts as an option, witho
 
 ## Create a refund
 
-1. After an invoice has been confirmed, go in the Invoices page and click 'Details' on the invoice.
+1. After an invoice has been confirmed, go in the Invoices page and click `Details` on the invoice.
 
 ![BTCPay Server refund feature](./img/refunds/invoices-details.jpg "BTCPay Server refund feature")
 
