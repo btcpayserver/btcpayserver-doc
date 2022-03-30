@@ -47,7 +47,6 @@ Notice from here we will call it a payout instead of a refund as we turn to you 
 
 Both tabs BTC (On-Chain) and BTC (Off-Chain) work in the similar ways.
 First off its Awaiting Approval, this tab makes most sense for store clerks to just Approve refunds throughout the day.
-The actions tab varies with the permissions the user has, you can Approve, Approve and Send or Cancel a payout.
 * Approve will simply change the state of the payment to awaiting payment and shows the claimant that his claim is now in progress.
 This does not directly do the actual Payout but rather sets it up for one with permissions to do so or cancel if its not valid.
 The Payout will now be found in Awaiting Payment, here it would be possible to Batch multiple Payouts.
