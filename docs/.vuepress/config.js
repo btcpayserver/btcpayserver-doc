@@ -233,7 +233,8 @@ const sidebarDevelopment = [
           '/Vault/HowToVerify'
         ]
       },
-      ['/BTCPayServer/Security', 'Security Disclosures']
+      ['/BTCPayServer/Security', 'Security Disclosures'],
+      ['/Development/TestnetDemo', 'Testnet deployment']
     ]
   }
 ]
