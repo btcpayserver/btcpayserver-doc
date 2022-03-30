@@ -46,7 +46,7 @@ Notice from here we will call it a payout instead of a refund as we turn to you 
 ![BTCPay Server Payouts tab](./img/refunds/claim-notification.jpg "BTCPay Server refund feature")
 
 Both tabs BTC (On-Chain) and BTC (Off-Chain) work in the similar ways.
-First off its Awaiting Approval, this tab makes most sense for store clerks to just Approve refunds throughout the day.
+A refund that has been claimed by the customers goes in the `Awaiting Approval` state, awaiting for your approval.
 * Approve will simply change the state of the payment to awaiting payment and shows the claimant that his claim is now in progress.
 This does not directly do the actual Payout but rather sets it up for one with permissions to do so or cancel if its not valid.
 The Payout will now be found in Awaiting Payment, here it would be possible to Batch multiple Payouts.
