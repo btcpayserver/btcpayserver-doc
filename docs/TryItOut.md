@@ -7,16 +7,22 @@ On this page you will see various ways to test out the software on mainnet and t
 ## Our mainnet demo server
 
 We host our server on [mainnet.demo.btcpayserver.org](https://mainnet.demo.btcpayserver.org/login).
+
 Feel free to register to it, create a store and a wallet and play around.
+
 This instance should only be used for testing things out. We do not guarantee uptime.
 
 ## Our Testnet demo server
 
-If you're familiar with testnet and want to test BTCPay through it, check [testnet.demo.btcpayserver.org](https://testnet.demo.btcpayserver.org/) For more information see [testnet documentation]((/Development/TestnetDemo.md).
+If you're familiar with testnet and want to test BTCPay through it, check [testnet.demo.btcpayserver.org](https://testnet.demo.btcpayserver.org/).
+
+For more information see [testnet documentation](/Development/TestnetDemo.md).
 
 ## Third-party hosts
 
-[Third-party hosts](./Deployment/ThirdPartyHosting.md) provide hosted solutions, in most cases free of charge, in case you don't want to self-host a server. While most of them can be used in-production, you can also use them to try things out. They're similar to our demo server, but provide better uptime and reliability.
+[Third-party hosts](./Deployment/ThirdPartyHosting.md) provide hosted solutions, in most cases free of charge, in case you don't want to self-host a server.
+
+While most of them can be used in-production, you can also use them to try things out. They're similar to our demo server, but provide better uptime and reliability.
 
 For full lists of third-party hosts to pick from, [see our hosts directory](https://directory.btcpayserver.org/filter/hosts).
 
@@ -39,4 +45,6 @@ Below, you will find options to see the BTCPay server in action. Trough our own 
 
 ## Questions
 
-If you have questions about BTCPay Server, check our documentation, [Frequently asked questions page][./FAQ.md]. Join the [community chat](https://chat.btcpayserver.org/) on Mattermost by downloading [Mattermost app](https://mattermost.com/download/), or on [Telegram](https://t.me/btcpayserver) in case you need further help or help or want to hang around with like-minded people.
+If you have questions about BTCPay Server, check our documentation, [Frequently asked questions page](./FAQ.md]).
+
+Join the [community chat](https://chat.btcpayserver.org/) on Mattermost by downloading [Mattermost app](https://mattermost.com/download/), or on [Telegram](https://t.me/btcpayserver) in case you need further help or help or want to hang around with like-minded people.
