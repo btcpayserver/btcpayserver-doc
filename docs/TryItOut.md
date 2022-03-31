@@ -45,6 +45,6 @@ Below, you will find options to see the BTCPay server in action. Trough our own 
 
 ## Questions
 
-If you have questions about BTCPay Server, check our documentation, [Frequently asked questions page](./FAQ.md]).
+If you have questions about BTCPay Server, check our documentation, [Frequently asked questions page](./FAQ.md).
 
 Join the [community chat](https://chat.btcpayserver.org/) on Mattermost by downloading [Mattermost app](https://mattermost.com/download/), or on [Telegram](https://t.me/btcpayserver) in case you need further help or help or want to hang around with like-minded people.
