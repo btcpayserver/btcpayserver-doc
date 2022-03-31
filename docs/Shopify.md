@@ -30,42 +30,41 @@ The following document guides you through **setting up BTCPay Server with [Shopi
 Custom Payment method name **must** contain at least one of the following words: `bitcoin`, `btcpayserver`, `btcpay server` or `btc` to work.
 :::
 
-![](./img/Shopify/ShopifyBTCPay1.png")
+Below are step by step visuals describing the process outlined above.
 
-![](./img/Shopify/ShopifyBTCPay2.png")
 
-![](./img/Shopify/ShopifyBTCPay3.png")
+![](./img/shopify/btcpayshopify1.png)
 
-![](./img/Shopify/ShopifyBTCPay4.png")
+![](./img/shopify/btcpayshopify2.png)
 
-![](./img/Shopify/ShopifyBTCPay5.png")
+![](./img/shopify/btcpayshopify3.png)
 
-![](./img/Shopify/ShopifyBTCPay6.png")
+![](./img/shopify/btcpayshopify4.png)
 
-![](./img/Shopify/ShopifyBTCPay7.png")
+![](./img/shopify/btcpayshopify5.png)
 
-![](./img/Shopify/ShopifyBTCPay8.png")
+![](./img/shopify/btcpayshopify6.png)
 
-![](./img/Shopify/ShopifyBTCPay9.png")
+![](./img/shopify/btcpayshopify7.png)
 
-![](./img/Shopify/ShopifyBTCPay10.png")
+![](./img/shopify/btcpayshopify8.png)
 
-![](./img/Shopify/ShopifyBTCPay11.png")
+![](./img/shopify/btcpayshopify9.png)
 
-![](./img/Shopify/ShopifyBTCPay12.png")
+![](./img/shopify/btcpayshopify10.png)
 
-![](./img/Shopify/ShopifyBTCPay13.png")
+![](./img/shopify/btcpayshopify11.png)
 
-![](./img/Shopify/ShopifyBTCPay14.png")
+![](./img/shopify/btcpayshopify12.png)
 
-![](./img/Shopify/ShopifyBTCPay15.png")
+![](./img/shopify/btcpayshopify13.png)
 
-![](./img/Shopify/ShopifyBTCPay16.png")
+![](./img/shopify/btcpayshopify14.png)
 
-![](./img/Shopify/ShopifyBTCPay17.png")
+![](./img/shopify/btcpayshopify15.png)
 
-![](./img/Shopify/ShopifyBTCPay18.png")
+![](./img/shopify/btcpayshopify16.png)
 
-![](./img/Shopify/ShopifyBTCPay19.png")
+![](./img/shopify/btcpayshopify17.png)
 
-![](./img/Shopify/ShopifyBTCPay20.png")
+![](./img/shopify/btcpayshopify18.png)
