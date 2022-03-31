@@ -6,9 +6,9 @@ If you are looking for information about requesting a refund from a merchant, pl
 
 **Refunds** are one of the applications built on top of the [Pull Payments](./PullPayments.md) feature.
 
-On this page we will talk you trough the flow of creating Refunds. 
-Theres a short few steps to create the Refund for the customer. 
-After the refund has been issued, we will continue to the [Payouts](./Payouts.md) page to talk about the processing of the refund. 
+On this page, we will talk you through the flow of creating Refunds. 
+There are a short few steps to create the Refund for the customer. 
+After the refund has been issued, we will continue to the [Payouts](./Payouts.md) page to talk about the refund processing. 
 
 ## Create a refund
 
@@ -35,14 +35,14 @@ After the refund has been issued, we will continue to the [Payouts](./Payouts.md
 
 ## Processing refund 
 
-In the next few steps, you follow along on how to process a refund. 
+In the next few steps, you follow along on processing a refund. 
 Costumer has claimed the refund, and this is how to process it.
 
 1. Goto the Payouts tab in your menu. 
 
 ![BTCPay Server Payouts tab](./img/refunds/payouts-status3-options-appr.jpg "BTCPay Server refund feature")
 
-2. Select the Payouts you want to process, goto actions and select `Approve and send`
+2. Select the Payouts you want to process, go to actions and select `Approve and send`
 
 ![BTCPay Server Payouts tab](./img/refunds/payouts-status3-options-appr.jpg "BTCPay Server refund feature")
 
@@ -66,4 +66,4 @@ Costumers view after the Refund has been paid.
 ## Questions
 
 If you have questions about the BTCPay Server refunds function, you can join the [community chat](https://chat.btcpayserver.org/).
-If you have questions about any of the other tools or commands, etc. it's likely you can find answers to your questions by doing a search on the internet or on [StackOverflow](https://stackoverflow.com/).
+If you have questions about any of the other tools or commands, etc., it's likely you can find answers to your questions by doing a search on the internet or on [StackOverflow](https://stackoverflow.com/).
