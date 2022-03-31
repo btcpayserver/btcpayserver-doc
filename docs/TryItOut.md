@@ -1,50 +1,42 @@
 # Try out BTCPay server
 
-We welcome you to Try out BTCPayserver as a Demo before you host it!
-On this page we give you a quick introduction to the software, but also to partners and friends who provide environments and solutions.
+Before you start using BTCPay Server in production, you can try it and see if it fits your needs.
 
-## Try out BTCPayserver's own Demo environment
+On this page you will see various ways to test out the software on mainnet and testnet.
 
-In this video we will show you a quick intro to using our own Demo environment.
-Our Demo deployment is on Mainnet.
-We do advise, although Mainnet is a live environment, to NOT use this as your real store!
+## Our mainnet demo server
 
-Follow along in this video:
-[![BTCPay - Introduction](https://img.youtube.com/vi/xh3Eac66qc4/mqdefault.jpg)](https://www.youtube.com/watch?v=xh3Eac66qc4 "BTCPay - Introduction")
+We host our server on [mainnet.demo.btcpayserver.org](https://mainnet.demo.btcpayserver.org/login).
+Feel free to register to it, create a store and a wallet and play around.
+This instance should only be used for testing things out. We do not guarantee uptime.
 
-## Other environments then Mainnet ?
+## Our Testnet demo server
 
-We got you covered with the Following instances:
-* [Mainnet](https://mainnet.demo.btcpayserver.org/login)
-* [Testnet website](https://testnet.demo.btcpayserver.org/)
+If you're familiar with testnet and want to test BTCPay through it, check [testnet.demo.btcpayserver.org](https://testnet.demo.btcpayserver.org/) For more information see [testnet documentation]((/Development/TestnetDemo.md).
 
-For more on Testnet go to [Testnet Demo](/Deployment/TestnetDemo.md)
+## Third-party hosts
 
-### Mainnet options by third-party hosts
+[Third-party hosts]((./ThirdPartyHosting.md)) provide hosted solutions, in most cases free of charge, in case you don't want to self-host a server. While most of them can be used in-production, you can also use them to try things out. They're similar to our demo server, but provide better uptime and reliability.
 
-Not only do we provide you with a environment of our own.
-We really want you to look at the community and use their work instead.
-Down below you will find a list of third-party hosts with a variety of implementations, go check them out!
+For full lists of third-party hosts to pick from, [see our hosts directory](https://directory.btcpayserver.org/filter/hosts).
 
-* Find a list of Third-party hosts [here](/Deployment/ThirdPartyHosting.md#where-is-the-list-of-btcpay-third-party-hosts).
-* Or maybe you just want to [deploy your own](/Deployment/README.md).
+## Start testing
+
+Once you pick up a server to use, the steps are the same, regardless of which option you've opted for.
 
 Click on the following links for detailed instructions on how to:
 * [Register an account](./RegisterAccount.md)
-* [Create your first store](./CreateStore.md)
-* [Connect your own wallet](./WalletSetup.md)
+* [Create a store](./CreateStore.md)
+* [Create a wallet](./WalletSetup.md)
+* [Start exploring](./WhatsNext.md)
 
-See [What's Next](./WhatsNext.md) for more ways on exploring BTCPay server.
+### BTCPay Server in action
 
-### BTCPay Server live demo.
-
-Down below you will find options to see BTCPay server in action.
-Trough our own POS on our demo or trough the eyes of actual merchants in the wild!
+Below, you will find options to see the BTCPay server in action. Trough our own POS on our demo or through the eyes of actual merchants in the wild!
 
 * [Point of Sale Demo](https://mainnet.demo.btcpayserver.org/apps/87kj5yKay8mB4UUZcJhZH5TqDKMD3CznjwLjiu1oYZXe/pos)
 * [In-production stores](https://directory.btcpayserver.org)
 
 ## Questions
 
-If you have questions about the BTCPay Server, you can join the [community chat](https://chat.btcpayserver.org/).
-If you have questions about any of the other tools or commands, etc. it's likely you can find answers to your questions by doing a search on the internet or on [StackOverflow](https://stackoverflow.com/).
+If you have questions about BTCPay Server, check our documentation, [Frequently asked questions page][./FAQ.md]. Join the [community chat](https://chat.btcpayserver.org/) on Mattermost by downloading [Mattermost app](https://mattermost.com/download/), or on [Telegram](https://t.me/btcpayserver) in case you need further help or help or want to hang around with like-minded people.
