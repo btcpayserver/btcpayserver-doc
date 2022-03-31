@@ -32,7 +32,36 @@ After the refund has been issued, we will continue to the [Payouts](./Payouts.md
 
 ![BTCPay Server refund feature](./img/refunds/claimingside.jpg "BTCPay Server refund feature")
 
-After the last step is done, you move to [Payouts](./Payouts.md).
+
+## Processing refund 
+
+In the next few steps, you follow along on how to process as refund. 
+Costumer has claimed the full or a portion of the Refund.
+
+1. Goto the Payouts tab in your menu. 
+
+![BTCPay Server Payouts tab](./img/refunds/payouts-status3-options-appr.jpg "BTCPay Server refund feature")
+
+2. Select the Payouts you want to process, goto actions and select `Approve and send`
+
+![BTCPay Server Payouts tab](./img/refunds/payouts-status3-options-appr.jpg "BTCPay Server refund feature")
+
+3. Sign and broadcast the transactions.
+
+![BTCPay Server Payouts tab](./img/refunds/payouts-status4-options-sign3-adv.jpg "BTCPay Server refund feature")
+
+4. Payout has now been Signed and is in progress, this is reflected to the claimant in their view. 
+
+![BTCPay Server Payouts tab](./img/refunds/payout-status-succesfull.jpg "BTCPay Server refund feature")
+
+5. After the Transaction has been confirmed, the status of the Payout will be completed. 
+
+![BTCPay Server Payouts tab](./img/refunds/payouts-status5-completed1.jpg "BTCPay Server refund feature")
+
+Costumers view after the Refund has been paid.
+
+![BTCPay Server Payouts tab](./img/refunds/claiment-completed1.jpg "BTCPay Server refund feature")
+
 
 ## Questions
 
