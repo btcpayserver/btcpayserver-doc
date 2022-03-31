@@ -23,10 +23,10 @@ const sidebarUserGuide = [
     collapsable: false,
     children: [
       ['/Guide', 'Introduction'],
+      ['/TryItOut', 'Try it out']
       ['/UseCase', 'Use Case'],
       ['/BTCPayVsOthers', 'BTCPay Server vs. Others'],
       ['/Walkthrough', 'Walkthrough'],
-      ['/TryItOut', 'Try it out']
     ]
   },
   {
