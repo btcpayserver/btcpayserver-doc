@@ -35,8 +35,8 @@ After the refund has been issued, we will continue to the [Payouts](./Payouts.md
 
 ## Processing refund 
 
-In the next few steps, you follow along on how to process as refund. 
-Costumer has claimed the full or a portion of the Refund.
+In the next few steps, you follow along on how to process a refund. 
+Costumer has claimed the refund, and this is how to process it.
 
 1. Goto the Payouts tab in your menu. 
 
