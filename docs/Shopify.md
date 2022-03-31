@@ -1,52 +1,70 @@
-# BTCPay Server and Shopify Integration
+# How to accept Bitcoin in Shopify
 
 The following document guides you through **setting up BTCPay Server with [Shopify](https://www.shopify.com/)**.
-
-[![BTCPay Server and Shopify](https://img.youtube.com/vi/0Z8vraKab64/mqdefault.jpg)](https://www.youtube.com/watch?v=0Z8vraKab64 "BTCPay Server Shopify Integration")
 
 ## Prerequisites:
 
 - Shopify account
-- [BTCPay Server](Deployment.md) self-hosted or run by a [third-party host](/Deployment/ThirdPartyHosting.md) v1.0.5.6 or later.
+- BTCPay Server] - [self-hosted](Deployment.md) or run by a [third-party host](/Deployment/ThirdPartyHosting.md) v1.4.8 or later.
 - [Created BTCPay Server store](CreateStore.md) with [wallet set up](WalletSetup.md)
 
 ## Setting up BTCPay Server with Shopify
 
-1. In your Shopify, go to Apps > Manage Private apps (at the bottom of the page) and `Create a private app`. If private apps are disabled, enable private apps development.
-2. Fill in required  details (name and email) and click on the `Show inactive Admin API permissions`
-3. Give `Read and write` permission tp `Orders` and `Save`
-
-![Shopify Setup 1](./img/Shopify/Shopify1.png "BTCPay Server Shopify setup")
-
-![Shopify Setup 2](./img/Shopify/Shopify2.png "BTCPay Server Shopify setup")
-
-![Shopify Setup 3](./img/Shopify/Shopify3.png "BTCPay Server Shopify setup")
-
-![Shopify Setup 4](./img/Shopify/Shopify4.png "BTCPay Server Shopify setup")
-
-
-4. Copy the `Example URL` from the Admin API section.
-5. In your BTCPay Server go to Store > Settings > `Integrations`
-6. Paste the `Example URL` from Shopify and click `Connect to Shopify`
-
-![Shopify Setup 5](./img/Shopify/Shopify5.png "BTCPay Server Shopify setup")
-
-![Shopify Setup 5a](./img/Shopify/Shopify5a.png "BTCPay Server Shopify setup")
-
-7. On the BTCPay Server Integration page, copy the script shown in the yellow box. Go back to Shopify Settings > Checkout > Order processing > `Additional Scripts` and paste the script (including the opening and closing tag `</script>` ).
-
-![Shopify Setup 6](./img/Shopify/Shopify6.png "BTCPay Server Shopify setup")
-
-![Shopify Setup 7](./img/Shopify/Shopify7.png "BTCPay Server Shopify setup")
-
-![Shopify Setup 8](./img/Shopify/Shopify8.png "BTCPay Server Shopify setup")
-
-7. Finally, in Shopify Settings > Payment Providers > Manual Payment Methods add a `Custom payment methods` named  `Bitcoin with BTCPay Server` and `Activate` it.
-
-![Shopify Setup 9](./img/Shopify/Shopify9.png "BTCPay Server Shopify setup")
-
-![Shopify Setup 10](./img/Shopify/Shopify10.png "BTCPay Server Shopify setup")
+1. In Shopify, go to Apps > and at the bottom of the page click on the  `Develop apps for your store`.
+2. If prompted, click on `Allow custom app development`
+3. `Create an app` and name it
+4. On the app page, in `Overview` tab, click on the `Configure Admin API scopes`
+5. In the filter admin access scopes type in `Orders`
+6. In `Orders` enable `read_orders` and `write_orders` and then click `Save`
+7. Click on the `Install App` in the top right corner and when pop-up window appears click `Install`
+8. Reveal `Admin API access token` and `copy` it.
+9. In your BTCPay Server, go to `Store > Settings > Integrations > Shopify`. and click `Setup` button.
+10. In second field, `API Secret Key` the paste the `Admin API access token`
+11. In the first field, `API key` paste the `API key` from Shopify.
+12. In Shopify's `Store Settings > Checkout > Order status page > Additional Scripts` paste the script provided by BTCPay Server on Shopify Integration page (including the opening and closing tag `</script>`.
+13. In Shopify's `Store Settings > Payments > Manual payment methods` add `manual payment method` then click `create custom payment method`
+14. In `Custom payment method name` fill in `Bitcoin with BTCPay Server`, optionally you can fill in other fields, but it's not required. Note that the name should exactly `Bitcoin with BTCPay Server`
+15. Hit `Activate` and you've set up Shopify and BTCPay Server successfully.
 
 :::tip
 Custom Payment method name **must** contain at least one of the following words: `bitcoin`, `btcpayserver`, `btcpay server` or `btc` to work.
 :::
+
+Below are step by step visuals describing the process outlined above.
+
+
+![](./img/shopify/btcpayshopify1.png)
+
+![](./img/shopify/btcpayshopify2.png)
+
+![](./img/shopify/btcpayshopify3.png)
+
+![](./img/shopify/btcpayshopify4.png)
+
+![](./img/shopify/btcpayshopify5.png)
+
+![](./img/shopify/btcpayshopify6.png)
+
+![](./img/shopify/btcpayshopify7.png)
+
+![](./img/shopify/btcpayshopify8.png)
+
+![](./img/shopify/btcpayshopify9.png)
+
+![](./img/shopify/btcpayshopify10.png)
+
+![](./img/shopify/btcpayshopify11.png)
+
+![](./img/shopify/btcpayshopify12.png)
+
+![](./img/shopify/btcpayshopify13.png)
+
+![](./img/shopify/btcpayshopify14.png)
+
+![](./img/shopify/btcpayshopify15.png)
+
+![](./img/shopify/btcpayshopify16.png)
+
+![](./img/shopify/btcpayshopify17.png)
+
+![](./img/shopify/btcpayshopify18.png)
