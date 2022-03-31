@@ -16,7 +16,7 @@ If you're familiar with testnet and want to test BTCPay through it, check [testn
 
 ## Third-party hosts
 
-[Third-party hosts]((./ThirdPartyHosting.md)) provide hosted solutions, in most cases free of charge, in case you don't want to self-host a server. While most of them can be used in-production, you can also use them to try things out. They're similar to our demo server, but provide better uptime and reliability.
+[Third-party hosts](./Deployment/ThirdPartyHosting.md) provide hosted solutions, in most cases free of charge, in case you don't want to self-host a server. While most of them can be used in-production, you can also use them to try things out. They're similar to our demo server, but provide better uptime and reliability.
 
 For full lists of third-party hosts to pick from, [see our hosts directory](https://directory.btcpayserver.org/filter/hosts).
 
