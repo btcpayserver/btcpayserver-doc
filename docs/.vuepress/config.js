@@ -24,9 +24,9 @@ const sidebarUserGuide = [
     children: [
       ['/Guide', 'Introduction'],
       ['/TryItOut', 'Try it out']
+      ['/Walkthrough', 'Walkthrough'],
       ['/UseCase', 'Use Case'],
       ['/BTCPayVsOthers', 'BTCPay Server vs. Others'],
-      ['/Walkthrough', 'Walkthrough'],
     ]
   },
   {
