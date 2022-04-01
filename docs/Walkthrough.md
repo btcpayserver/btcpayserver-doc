@@ -6,7 +6,7 @@ Watch the video below for an interactive overview of the features.
 
 [![BTCPay Server Walkthrough](https://img.youtube.com/vi/ZIfJyq9RimM/mqdefault.jpg)](https://www.youtube.com/watch?v=ZIfJyq9RimM "BTCPay Server - WalkThrough")
 
-After you've created an account on the BTCPay Server instance hosted by yourself or a third party, you'll be greeted by your store's new home or, as we like to call it, your Dashboard.
+After you've created an account on the BTCPay Server instance hosted by yourself or a third party, you'll be greeted by your store's new home or, as we call it, your `dashboard`.
 
 ![BTCPay Server Navigation](./img/walktrough/welcome-store.jpg "BTCPay Server Navigation")
 
