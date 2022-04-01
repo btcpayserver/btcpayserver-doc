@@ -35,7 +35,7 @@ There are a short few steps to create the refund for the customer.
 
 Once a customer clicks on the link you've provided adds their refund bitcoin address and claims the invoice, the next step is to process a refund.
 
-1. Goto the Payouts tab in your menu. 
+1. Go to the `Payouts` tab in your sidebar. 
 
 ![BTCPay Server Payouts tab](./img/refunds/payouts-status3-options-appr.jpg "BTCPay Server refund feature")
 
