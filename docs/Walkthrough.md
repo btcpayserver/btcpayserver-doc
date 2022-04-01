@@ -14,24 +14,24 @@ All the settings in the left menu are meant for the Current Store you selected a
 
 ![BTCPay Server Navigation](./img/walktrough/selected-store.jpg "BTCPay Server Navigation")
 
-* Notifications
+* [Notifications](Walkthrough.md#notifications)
 * Dashboard 
-* Settings **store settings** 
-* Wallets
+* [Settings](Walkthrough.md#store) **store settings** 
+* [Wallets](Walkthrough.md#wallets)
     * Bitcoin
     * Lightning
-* Payments
+* [Payments](Walkthrough.md#payments)
     * Invoices
     * Requests
     * Pull Payments
     * Payouts
     * Pay Button
-* Apps 
+* [Apps](Walkthrough.md#apps) 
   + New App
-* Plugins 
+* [Plugins](Walkthrough.md#plugins) 
   + Manage Plugins
-* Server Settings
-* Account
+* [Server Settings](Walkthrough.md#server-settings)
+* [Account](Walkthrough.md#account)
 
 ## Store
 
