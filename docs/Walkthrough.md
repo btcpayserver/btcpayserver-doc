@@ -74,16 +74,13 @@ Three elements of the internal BTCPay Wallet are:
 
 ### Lightning 
 
-Below the BTCPay internal wallet is Lightning. 
-Each store can connect with a Lightning node, either the internal lightning node or an external Lightning node. 
-Whenever you've set up the Lightning node, the Lightning wallet option enables in your BTCPayserver. 
+Additionaly, we recommend adding a lightning wallet. There are two options, connect an [internal](./LightningNetwork/#connecting-your-internal-lightning-node-in-btcpay) or connect an external [Lightning node](./LightningNetwork.md). 
+Once completed, the Lightning wallet function becomes active.
 
 Elements of this are : 
-* Display Lightning payments as standard in Satoshis.
-* Add hints for private channels to Lightning invoices. 
-* Include invoice fallback to on-chain BIP21.
-* Set description template for invoices. 
-* Enable LNURL 
+* Internal node settings 
+* Public node info 
+* Change your connection 
 
 For more information, check [Wallet](./Wallet.md) or [Wallet FAQ](./FAQ/Wallet.md)
 
@@ -105,14 +102,8 @@ For more information, check [Payment Requests](PaymentRequests.md)
 
 The feature of Pull payments is one we see fit for options like 
 A subscription service, Refunds, Time Based billing for freelancers, Patronage, or a Balance withdrawal service. 
-Up until version 1.4, there is no scheduling for this yet.
-For a detailed description of the concept, please visit the [Pull Payments](PullPayments.md)
-Or you can watch the detailed instruction down below in the video.
 
-[![What is a pull payment](https://img.youtube.com/vi/-e8lPd9NtPs/mqdefault.jpg)](https://www.youtube.com/watch?v=-e8lPd9NtPs "What is a pull payment")
-
-One of the features that we've built is [Refunds](Refund.md). 
-The [Greenfield API](./Development/GreenFieldExample.md) can be used to create Pull payments.  
+For a detailed description of the concept, please visit the [Pull Payments](PullPayments.md)  
 
 ### Payouts
 
