@@ -171,7 +171,7 @@ or one of the pre build plugins like :
 ## Account
 
 Manage your BTCPay Server account. 
-Change everything that is to do with your personal BTCPayserver account. 
+Change anything related to your user-account.
 Setup Two-Factor Authentication and manage API keys.
 
 ## Join The BTCPay Community
