@@ -74,7 +74,7 @@ Three elements of the internal BTCPay Wallet are:
 
 ### Lightning 
 
-Next to the BTCPay internal wallet is Lightning. 
+Below the BTCPay internal wallet is Lightning. 
 Each store can connect with a Lightning node, either the internal lightning node or an external Lightning node. 
 Whenever you've set up the Lightning node, the Lightning wallet option enables in your BTCPayserver. 
 
