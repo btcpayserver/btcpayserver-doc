@@ -54,7 +54,7 @@ Learn more about all BTCPay notifications [here](./Notifications.md).
  
 ## Dashboard
 
-Right now dashboard only shows the primary tasks of setting up BTCPayserver, more to come in future releases.
+Right now, the dashboard only shows the primary tasks of setting up BTCPay Server, more to come in future releases.
 
 ## Wallets
 
