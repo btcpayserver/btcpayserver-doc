@@ -190,7 +190,7 @@
   --btcpay-footer-link: var(--btcpay-neutral-400);
   --btcpay-footer-link-accent: var(--btcpay-neutral-100);
   --btcpay-code-text: var(--btcpay-body-text);
-  --btcpay-code-bg: transparent;
+  --btcpay-code-bg: var(--btcpay-neutral-200);
   --btcpay-pre-text: var(--btcpay-white);
   --btcpay-pre-bg: var(--btcpay-neutral-900);
   --btcpay-primary: var(--btcpay-brand-primary);
@@ -398,6 +398,7 @@
   --btcpay-footer-text: var(--btcpay-neutral-600);
   --btcpay-footer-link: var(--btcpay-neutral-600);
   --btcpay-footer-link-accent: var(--btcpay-neutral-300);
+  --btcpay-code-bg: var(--btcpay-bg-dark);
   --btcpay-pre-bg: var(--btcpay-bg-dark);
   --btcpay-light: var(--btcpay-neutral-800);
   --btcpay-light-accent: var(--btcpay-black);
