@@ -170,7 +170,7 @@ or one of the pre build plugins like :
 
 ## Account
 
-Manage your BTCPayserver Account. 
+Manage your BTCPay Server account. 
 Change everything that is to do with your personal BTCPayserver account. 
 Setup Two-Factor Authentication and manage API keys.
 
