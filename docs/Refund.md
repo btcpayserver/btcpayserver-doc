@@ -6,28 +6,56 @@ If you are looking for information about requesting a refund from a merchant, pl
 
 **Refunds** are one of the applications built on top of the [Pull Payments](./PullPayments.md) feature.
 
-Up until now, merchants had to manually issue refunds.
-The process required a lot of back and forth between a sender and a receiver. The merchant had to ask for a refund address, calculate the preferred rate, manually add that to the wallet and broadcast the transaction.
-
-A merchant just needs to go to the invoice, click **Issue refund** , select the appropriate rate and share a link with a customer.
-
-The customer will then input their address and claim a refund. Once a customer claims a refund, the merchant will get a notification and can authorize it in a click.
-Future versions of BTCPay Server will enable instant payouts as an option, without the need for merchant approval.
+On this page, we will walk you through the process of issuing a refund. 
+There are a short few steps to create the refund for the customer. 
 
 ## Create a refund
 
-1. After an invoice has been confirmed, go in the Invoices page and click `Details` on the invoice.
+1. To refund an invoice,  go in the `Invoices` page and click `Details` on the invoice.
 
-![BTCPay Server refund feature](./img/pull-payments/9.png "BTCPay Server refund feature")
+![BTCPay Server refund feature](./img/refunds/invoices-details.jpg "BTCPay Server refund feature")
 
 2. Click `Issue a refund`
 
-![BTCPay Server refund feature](./img/pull-payments/10.png "BTCPay Server refund feature")
+![BTCPay Server refund feature](./img/refunds/issue-refund.jpg "BTCPay Server refund feature")
 
-3. Select the way you want to issue the refund
+3. Select refund's payment method
 
-![BTCPay Server refund feature](./img/pull-payments/11.png "BTCPay Server refund feature")
+![BTCPay Server refund feature](./img/refunds/issue-refund-payment-option.jpg "BTCPay Server refund feature")
 
-4. Share the pull payment link with the customer
+4. Select the `amount` you want to refund
 
-![BTCPay Server refund feature](./img/pull-payments/12.png "BTCPay Server refund feature")
+![BTCPay Server refund feature](./img/refunds/issue-refund-amount.jpg "BTCPay Server refund feature")
+
+5. Share the link of this page with your customer
+
+![BTCPay Server refund feature](./img/refunds/claimingside.jpg "BTCPay Server refund feature")
+
+## Processing refund 
+
+Once a customer clicks on the link you've provided adds their refund bitcoin address and claims the invoice, the next step is to process a refund.
+
+1. Go to the `Payouts` tab in your sidebar. 
+
+![BTCPay Server Payouts tab](./img/refunds/payouts-status3-options-appr.jpg "BTCPay Server refund feature")
+
+2. Select the Payouts you want to process, go to actions and select `Approve and send`
+
+![BTCPay Server Payouts tab](./img/refunds/payouts-status3-options-appr.jpg "BTCPay Server refund feature")
+
+3. Sign and broadcast the transactions.
+
+![BTCPay Server Payouts tab](./img/refunds/payouts-status4-options-sign3-adv.jpg "BTCPay Server refund feature")
+
+4. The payout has now been signed and is in progress, awaiting confirmation on the blockchain. This is reflected to the claimant in their view. 
+
+![BTCPay Server Payouts tab](./img/refunds/payout-status-succesfull.jpg "BTCPay Server refund feature")
+
+5. After the transaction has been confirmed on the blockchain, the status of the payout will be `completed`. 
+
+![BTCPay Server Payouts tab](./img/refunds/payouts-status5-completed1.jpg "BTCPay Server refund feature")
+
+Customer's view after the refund has been successfully processed.
+
+![BTCPay Server Payouts tab](./img/refunds/claiment-completed1.jpg "BTCPay Server refund feature")
+
