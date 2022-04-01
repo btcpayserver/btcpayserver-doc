@@ -49,7 +49,7 @@ Inside BTCPay, you can **create and manage an unlimited number of stores**. Each
 Notifications inform the user that **an event has occurred on the BTCPay Server instance**.
 Such event could be a received or failed payment, an overpaid or underpaid invoice, a new BTCPay version and more.
 
-By clicking on the icon, you can access the Notifications page, where you can view past Notifications and optionally delete them.
+By clicking on the icon, you can access the `Notifications` page, where you can view past notifications and optionally delete them.
 Learn more about all BTCPay notifications [here](./Notifications.md).
  
 ## Dashboard
