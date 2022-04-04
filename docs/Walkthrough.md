@@ -1,6 +1,6 @@
 # BTCPay Server Walkthrough
 
-This article will walk you through the **BTCPay user interface** and show you how to navigate the different options.
+This page walks you through the **BTCPay user interface** and shows how to navigate through the different options.
 
 Watch the video below for an interactive overview of the features.
 
@@ -37,7 +37,7 @@ All the settings in the left menu are meant for the Current Store you selected a
 
 Inside BTCPay, you can **create and manage an unlimited number of stores**. Each store has its own wallet, can create apps (Point of Sale or Payment Buttons and Crowdfunds) or be paired with external e-commerce software through one of the integrations available. Admin does not have control over the private keys of the other user's stores. For more information, check [Stores FAQ](./FAQ/Stores.md)
 
-- Store settings - Configure individual store settings, set up a wallet and customize the payment experience for your customers. Server admins can enable Lightning Network payments.
+- Store settings - Configure global payment settings and customize the payment experience for your customers. 
 - Rates - Set the source for cryptocurrency to fiat [exchange rates for your store](./FAQ/Stores.md#how-to-change-the-exchange-rate-provider-for-invoices).
 - Checkout experience - [Customize the appearance](./FAQ/ServerSettings.md#how-to-modify-the-checkout-page) of the checkout page, choose default coin, etc.
 - Access Tokens - Tokens for [pairing the store to an integration](./WhatsNext.md#connecting-your-btcpay-store-to-your-e-commerce-platform)
@@ -60,7 +60,7 @@ Right now, the dashboard only shows the primary tasks of setting up BTCPay Serve
 
 ### Bitcoin 
 
-Each store gets an internal wallet upon adding a derivation scheme. **Internal BTCPay wallet** shows all of your payments and should be used as a reference if some payments are not shown in your software or hardware wallet due to some wallets [not supporting larger gap limit](./FAQ/Wallet.md#missing-payments-in-my-software-or-hardware-wallet). In Wallets, you can see the total balance of your store. The funds from the wallet can only be spent, if the user signs a transaction with a compatible hardware wallet.
+Depending how many different payment methods you've setup, inside the wallets tab you'll see a wallet for each of the payment methods. Bitcoin on-chain wallet allows you to manage received funds. BTCPay's wallet is feature-rich and has privacy features built-in. Furthermore it has a full hardware wallet integration, so you can manage your funds with compatible hardware wallet directly from your BTCPay. Check [wallet page](Wallet.md) for more information.
 
 Three elements of the internal BTCPay Wallet are:
 * Transaction - This shows your entire transaction history.
@@ -77,10 +77,6 @@ Three elements of the internal BTCPay Wallet are:
 Additionaly, we recommend adding a lightning wallet. There are two options, connect an [internal](./LightningNetwork/#connecting-your-internal-lightning-node-in-btcpay) or connect an external [Lightning node](./LightningNetwork.md). 
 Once completed, the Lightning wallet function becomes active.
 
-Elements of this are : 
-* Internal node settings 
-* Public node info 
-* Change your connection 
 
 For more information, check [Wallet](./Wallet.md) or [Wallet FAQ](./FAQ/Wallet.md)
 
@@ -100,14 +96,14 @@ For more information, check [Payment Requests](PaymentRequests.md)
 
 ### Pull Payments
 
-The feature of Pull payments is one we see fit for options like 
-A subscription service, Refunds, Time Based billing for freelancers, Patronage, or a Balance withdrawal service. 
+The feature of [pull payments](PullPayments.md) is one we see fit for options like 
+A subscription service, refunds, time-based billing for freelancers, patronage, or a a withdrawal service. 
 
 For a detailed description of the concept, please visit the [Pull Payments](PullPayments.md)  
 
 ### Payouts
 
-The Payouts view gives an overview of the current Pull payments and their status. 
+The `payouts` view gives an overview of the current pull payments and their status. 
 If, for example, a refund has been issued and the claimant has accepted, this will show in Payouts. 
 Here you will find the options to Approve and directly send the requested amount of the refund. 
 When there are multiple instances of Pull payments, these can be selected and batched for sending out at once. 
@@ -118,7 +114,7 @@ In a future version, we expect this to have scheduling options.
 
 ### Pay Button 
 
-You can easily embed the button into HTML. 
+You can easily embed a donation or a payment button into an HTML of your website. 
 When the customer or a visitor clicks on the button, BTCPay displays a checkout page and an invoice for them.
 
 For more information, check [Create a payment button](./Apps.md#payment-button)
