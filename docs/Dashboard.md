@@ -4,7 +4,7 @@ This page will tell you about the Dashboard panel in your **BTCPay user interfac
 In BTCPay server 1.5, we've added new panels to the Dashboard page. 
 Not only will it now take you through the initial setup of your store's wallet, but once you are set up, you get basic analytics of your store!
 
-![BTCPay Server Navigation](./img/dashboard/dashboardvid.mp4 "BTCPay Server Navigation")
+
 
 ## What do the tiles tell?
 
