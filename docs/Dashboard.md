@@ -38,6 +38,6 @@ There are five main sections to the Dashboard.
 ![BTCPay Server Navigation](./img/dashboard/fund-full-view.jpg "BTCPay Server Navigation")
 
 
-:::Warning
+:::warning
 This page is subject to change as the software progresses. Features will be updated by release.
 :::
