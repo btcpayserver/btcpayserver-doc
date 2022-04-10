@@ -15,7 +15,7 @@ All the settings in the left menu are meant for the Current Store you selected a
 ![BTCPay Server Navigation](./img/walktrough/selected-store.jpg "BTCPay Server Navigation")
 
 * [Notifications](Walkthrough.md#notifications)
-* Dashboard 
+* [Dashboard](Dashboard.md) 
 * [Settings](Walkthrough.md#store) **store settings** 
 * [Wallets](Walkthrough.md#wallets)
     * Bitcoin
@@ -54,7 +54,16 @@ Learn more about all BTCPay notifications [here](./Notifications.md).
  
 ## Dashboard
 
-Right now, the dashboard only shows the primary tasks of setting up BTCPay Server, more to come in future releases.
+In dashboard you will see the stores wallet balance, a overview of invoices and quickly see your crowdfunds top perks. 
+There's 5 main tiles in the Dashboard.
+
+* A quick view on Wallet Balance
+* TX activity and payouts
+* Recent Transactions
+* Recent Invoices 
+* Current running Crowdfunds
+
+Continue to read more about [Dashboard](Dashboard.md)
 
 ## Wallets
 
@@ -62,7 +71,7 @@ Right now, the dashboard only shows the primary tasks of setting up BTCPay Serve
 
 Depending how many different payment methods you've setup, inside the wallets tab you'll see a wallet for each of the payment methods. Bitcoin on-chain wallet allows you to manage received funds. BTCPay's wallet is feature-rich and has privacy features built-in. Furthermore it has a full hardware wallet integration, so you can manage your funds with compatible hardware wallet directly from your BTCPay. Check [wallet page](Wallet.md) for more information.
 
-Three elements of the internal BTCPay Wallet are:
+Elements of the internal BTCPay Wallet are:
 * Transaction - This shows your entire transaction history.
 * Send - Used for sending funds out of your wallet (has to be signed and confirmed on a compatible hardware wallet).
 * Receive - Used to generate a new address manually.
