@@ -75,6 +75,7 @@ const sidebarUserGuide = [
           ['/Refund', 'Refunds']
         ]
       },
+      ['/Payouts', 'Payouts'],
       ['/PaymentRequests', 'Payment Requests'],
       ['/LightningNetwork', 'Lightning Network'],
       ['/Accounting', 'Accounting'],
