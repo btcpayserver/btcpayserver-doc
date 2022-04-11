@@ -88,7 +88,7 @@ As mentioned above, the create wallet functionality includes risk of funds being
 Do not give anyone else access to your server's SSH keys or server account credentials when using a hot wallet. Anyone with access to your account can spend the funds from your hot wallet. If you need to allow account access to employees, developers, etc. use an [existing wallet](ConnectWallet.md#connect-an-existing-wallet) instead.
 :::
 
-### 👀 Watch-only wallet
+###  Watch-only wallet
 
 Similar to the hot wallet, the watch-only wallet can get your store connected to a wallet instantly. In contrast, this option does not store the private keys on the server. As a result the wallet becomes "watch-only" for any received funds.
 
