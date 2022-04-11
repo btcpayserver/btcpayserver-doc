@@ -17,7 +17,7 @@ For a hot wallet you'll focus on the **I don't have a wallet** section and click
 
 ![New Wallet](./img/hotwallet/CreateNewWallet.png)
 
-On the proceeding page there will be two options, and in this case we'll select the **Hot wallet** button.
+There will be two options on the proceeding page, and in this case, we'll select the **Hot wallet** button.
 
 ![Create Wallet](./img/hotwallet/HotWallet.png)
 
