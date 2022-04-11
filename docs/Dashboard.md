@@ -1,5 +1,9 @@
 # Dashboard 
 
+:::tip
+Balance graph and recent transaction are only available for on-chain wallets, where we don't have any data that's special for Lightning.
+:::
+
 This page will tell you about the Dashboard panel in your **BTCPay user interface**.
 As of BTCPay server v1.5, we've added new panels to the Dashboard page. 
 Not only will it now take you through the initial setup of your store's wallet, but once you are set up, you get basic analytics of your store!
@@ -35,7 +39,7 @@ There are five main sections to the Dashboard.
 * Current active [Crowdfund](Apps.md#Crowdfunding-App)
     This tile shows the current active Crowdfunds, including their top-ranked items. 
     When more than one active Crowdfund is happening, the panels will show below the initial one. 
-    There's easy access to  Crowdfund management or to see all the perks you've set from these panels. 
+    There's easy access to Crowdfund management or to see all the perks you've set from these panels. 
 
 ![BTCPay Server Navigation](./img/dashboard/fund-full-view.jpg "BTCPay Server Navigation")
 
