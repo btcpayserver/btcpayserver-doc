@@ -59,7 +59,7 @@ When a new wallet is generated, BTCPay Server will show you a twelve word recove
 
 #### Spending funds with BTCPay Hot Wallet
 
-Once you’ve received funds to your wallet and you decide to spend them, you can sign the transaction automatically, all inside BTCPay Server.
+Once you've received funds to your wallet and decide to spend them, you can automatically sign the transaction inside BTCPay Server.
 
 1. In BTCPay Server, go to > Wallets > Bitcoin > Send
 2. Fill in the Destination address and the Amount
