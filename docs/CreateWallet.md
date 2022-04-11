@@ -63,7 +63,7 @@ Once you’ve received funds to your wallet and you decide to spend them, you ca
 
 1. In BTCPay Server, go to > Wallets > Bitcoin > Send
 2. Fill in the Destination address and the Amount
-3. Adjust the transaction settings including fee rate, confirmation time preference, and if you'd like trasaction fees to be subtracted from the amount you're sending
+3. Adjust the transaction settings, including fee rate, confirmation time preference, and if you'd like transaction fees to be subtracted from the amount you're sending
 4. Sign the transaction
 5. Review the transaction
 6. Broadcast the transaction
