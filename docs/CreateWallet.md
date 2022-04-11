@@ -3,7 +3,7 @@
 - [Hot Wallet](#hot-wallet)
 - [Watch-only wallet](#watch-only-wallet)
 
-### 🔥 Hot Wallet
+###  Hot Wallet
 
 If you do not have an existing wallet, you can generate a new one within your BTCPay Server. Whether you have an existing wallet or not, the quickest way to get a wallet connected to your store is to create a new wallet. You can always replace it with an alternative wallet after receiving a few small payments to your server, if you just want to get your store ready quickly.
 
