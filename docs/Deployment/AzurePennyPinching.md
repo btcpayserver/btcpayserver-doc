@@ -138,7 +138,7 @@ When Azure is happy:
 
 ![Happy Microsoft Azure](../img/HappyAzure.png "Happy Microsoft Azure")
 
-🎉 Congratulation! You just cut down the cost by 50% per month! :)
+Congratulation! You just cut down the cost by 50% per month! :)
 
 ### FAQ: B1MS does not appear in the list <a name="b1ms"></a>
 
