@@ -32,7 +32,7 @@ There are five main sections to the Dashboard.
 
 ![BTCPay Server Navigation](./img/dashboard/recent-invoice-view.jpg "BTCPay Server Navigation")
 
-* Current active [Crowdfund](Apps.md/#Crowdfunding-App)
+* Current active [Crowdfund](Apps.md#Crowdfunding-App)
     This tile shows the current active Crowdfunds, including their top-ranked items. 
     When more than one active Crowdfund is happening, the panels will show below the initial one. 
     There's easy access to  Crowdfund management or to see all the perks you've set from these panels. 
