@@ -9,7 +9,7 @@ If you do not have an existing wallet, you can generate a new one within your BT
 
 This type of wallet is also necessary to use features such as [Payjoin](./Payjoin.md) and [Liquid](https://github.com/btcpayserver/btcpayserver/issues/1282).
 
-After creating a store, you'll be able to attach a wallet by first navigating to the sidebar or slide out menu and clicking/tapping the **Bitcoin** button under the **Wallets** header. Alternatively, you can find the option to **Set up a wallet** on the Dashboard.
+After creating a store, you'll be able to attach a wallet by first navigating to the sidebar or slide-out menu and clicking/tapping the **Bitcoin** button under the **Wallets** header. Alternatively, you can find the option to **Set up a wallet** on the Dashboard.
 
 ![Main Menu](./img/hotwallet/MainMenu.png)
 
