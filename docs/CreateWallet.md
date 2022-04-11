@@ -27,7 +27,7 @@ Find out more about advanced settings [here](#advanced-settings).
 
 ![Wallet Settings](./img/hotwallet/WalletSettings.png)
 
-#### 🌱 Recovery Seed
+####  Recovery Seed
 
 The last step to creating a hot wallet is making sure you document your recovery seed.  After you've done so, tick the checkbox that says *I have written down my recovery phrase and stored it in a secure location* and click the **Done** button.
 
