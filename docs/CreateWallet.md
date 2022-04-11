@@ -21,7 +21,7 @@ On the proceeding page there will be two options, and in this case we'll select 
 
 ![Create Wallet](./img/hotwallet/HotWallet.png)
 
-For most folks, the default options including **Address Type** (Segwit), should work well for most applications and it's recommended to not change it unless you're sure of what you're doing. The **Payjoin** feature is optional, and you can learn more about it at the link [above](#hot-wallet).
+For most people, the default options, including **Address Type** (Segwit), should work well for most applications, and it's recommended not to change it unless you're sure of what you're doing. The **Payjoin** feature is optional, and you can learn more about it at the link [above](#hot-wallet).
 
 Find out more about advanced settings [here](#advanced-settings).
 
