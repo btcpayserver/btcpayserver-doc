@@ -39,7 +39,7 @@ The last step to creating a hot wallet is making sure you document your recovery
 
 - Import keys to RPC
 
-    - This is for more advanced applicaitons of BTCPay Server.  Importing your keys to RPC will allow for users to leverage [bitcoind Wallet RPCs](https://developer.bitcoin.org/reference/rpc/index.html#wallet-rpcs) on the imported wallet.
+    - This is for more advanced applications of BTCPay Server.  Importing your keys to RPC will allow users to leverage [bitcoind Wallet RPCs](https://developer.bitcoin.org/reference/rpc/index.html#wallet-rpcs) on the imported wallet.
 
 ![Advanced Settings](./img/hotwallet/AdvancedSettings.png)
 
