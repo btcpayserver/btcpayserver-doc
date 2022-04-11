@@ -13,7 +13,7 @@ After creating a store, you'll be able to attach a wallet by first navigating to
 
 ![Main Menu](./img/hotwallet/MainMenu.png)
 
-For a hot wallet you'll focus on the **I don't have a wallet** section and clicking/tapping the **Create a new wallet** button.
+You'll focus on the **I don't have a wallet** section for a hot wallet and click the **Create a new wallet** button.
 
 ![New Wallet](./img/hotwallet/CreateNewWallet.png)
 
