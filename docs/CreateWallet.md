@@ -90,7 +90,7 @@ Do not give anyone else access to your server's SSH keys or server account crede
 
 ###  Watch-only wallet
 
-Similar to the hot wallet, the watch-only wallet can get your store connected to a wallet instantly. In contrast, this option does not store the private keys on the server. As a result the wallet becomes "watch-only" for any received funds.
+Like the hot wallet, the watch-only wallet can instantly get your store connected to a wallet. In contrast, this option does not store the private keys on the server. As a result, the wallet becomes "watch-only" for any received funds.
 
 There are several routes you can take to spend funds with this type of wallet including importing the seed words into a hardware wallet to sign your transactions using the [BTCPay Server Vault application](https://docs.btcpayserver.org/Vault/), [PSBT](https://docs.btcpayserver.org/Wallet/#psbt), or the least recommended manually providing your seed words every time.
 
