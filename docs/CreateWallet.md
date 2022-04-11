@@ -31,7 +31,7 @@ Find out more about advanced settings [here](#advanced-settings).
 
 The last step to creating a hot wallet is making sure you document your recovery seed.  After you've done so, tick the checkbox that says *I have written down my recovery phrase and stored it in a secure location* and click the **Done** button.
 
-#### ⚙️ Advanced Settings
+####  Advanced Settings
 
 - Optional [BIP39](https://github.com/bitcoin/bips/blob/master/bip-0039.mediawiki#from-mnemonic-to-seed) passphrase
     
