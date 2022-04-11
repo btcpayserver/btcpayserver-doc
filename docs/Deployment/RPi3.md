@@ -66,7 +66,7 @@ So: `ssh pi@raspberrypi.local`.
 
 If `raspberrypi.local` doesn't work, you will have to either look up the Pi's IP address on your router, or run `ifconfig` on the Pi directly for the `eth0` `inet` address.
 
-**Step 8 - ⚠️ IMPORTANT!** - Change your password:
+**Step 8 - IMPORTANT!** - Change your password:
 
 ```bash
 passwd
@@ -92,7 +92,7 @@ So, open a new terminal window and type the following command:
 sudo apt update && sudo apt install -y fail2ban git
 ```
 
-**⚠️ Note for beginners:** Run all commands in these instructions **one line at a time**!
+**Note for beginners:** Run all commands in these instructions **one line at a time**!
 
 **Step 12** - Install `ufw` (Uncomplicated Firewall) and allow only specific ports. UFW is a user-friendly frontend for managing iptables firewall rules and its main goal is to make managing iptables easier, or as the name says: uncomplicated.
 
@@ -136,7 +136,7 @@ sudo ufw enable
 
 **Step 13** - Reformat flash drive, to be configured as swap space.
 
-**⚠️ Warning:** Using any SD card for swap space **kills it quickly!**. Instead, use a flash drive, as the instructions discuss.
+**Warning:** Using any SD card for swap space **kills it quickly!**. Instead, use a flash drive, as the instructions discuss.
 
 The command `sudo fdisk -l` shows a list of the connected storage devices. Assuming you only have one flash drive connected, it will be
 called `/dev/sda`. Double-check that `/dev/sda` exists, and that its storage capacity matches your flash memory.
@@ -302,7 +302,7 @@ By using FastSync, you are exposing yourself to attacks if a [malicious UTXO Set
 
 If you have another trusted node somewhere else, you can check the validity of the UTXO Set gathered by FastSync by following [these instructions](https://github.com/btcpayserver/btcpayserver-docker/blob/master/contrib/FastSync/README.md#dont-trust-verify).
 
-## That's it! Enjoy your BTCPi! 🎉
+## That's it! Enjoy your BTCPi! 
 
 If you don't have the time or patience to build your own BTCPi, there are a few merchants who can build one for you:
 

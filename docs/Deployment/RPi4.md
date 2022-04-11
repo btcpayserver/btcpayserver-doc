@@ -85,7 +85,7 @@ The 500GB SSD allows you to keep a full copy of the Bitcoin blockchain, until it
 
 ## Assembling the Raspberry Pi 4 components
 
-- Important: Attach a heatsink to the CPU! 🔥🔥🔥
+- Important: Attach a heatsink to the CPU! 
 - Connect the SSD to one of the blue colored USB 3 ports
 - Prepare the USB Power Adapter but don’t plug it in yet
 
