@@ -29,7 +29,7 @@ Find out more about advanced settings [here](#advanced-settings).
 
 ####  Recovery Seed
 
-The last step to creating a hot wallet is making sure you document your recovery seed.  After you've done so, tick the checkbox that says *I have written down my recovery phrase and stored it in a secure location* and click the **Done** button.
+The last step to creating a hot wallet is making sure you document your recovery seed. After you've done so, tick the checkbox that says *I have written down my recovery phrase and stored it in a secure location* and click the **Done** button.
 
 ####  Advanced Settings
 
