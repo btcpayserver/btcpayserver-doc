@@ -735,8 +735,43 @@ dotnet --version
 ~/src$ cd NBXplorer
 ~/src/NBXplorer$ ./build.sh
 ```
+##### 3. Create Postgresql Database.
 
-##### 3. Create a systemd service
+While NBXplorer support storing data in a local database via `--dbtrie`, this is deprecated. Here how to create the appropriate database and user for NBXlporer in **Postgresql**.
+
+```bash
+~$ sudo -u postgres psql
+```
+Then execute
+```SQL
+CREATE DATABASE nbxplorer TEMPLATE 'template0' LC_CTYPE 'C' LC_COLLATE 'C' ENCODING 'UTF8';
+CREATE USER nbxplorer WITH ENCRYPTED PASSWORD 'urpassword';
+GRANT ALL PRIVILEGES ON DATABASE nbxplorer TO nbxplorer;
+```
+Exit
+```
+postgres=#\q
+```
+
+##### 4. Create a configuration file
+
+```bash
+$ vi nbxplorer.config
+```
+
+```
+### Database ###
+postgres=User ID=nbxplorer;Password=urpassword;Application Name=nbxplorer;MaxPoolSize=20;Host=localhost;Port=5432;Database=nbxplorer;
+```
+
+```bash
+~$ sudo mkdir /etc/nbxplorer
+~$ sudo cp nbxplorer.config /etc/nbxplorer
+~$ sudo chmod 644 /etc/nbxplorer/nbxplorer.config
+```
+Note: If you previously used a `dbtrie` backend for NBXplorer, but want to switch to postgres, [read this documentation](https://github.com/dgarage/NBXplorer/blob/master/docs/Postgres-Migration.md).
+
+##### 5. Create a systemd service
 
 An example **systemd service** file is shown below. Adjust the paths, User and Group accordingly.
 
@@ -752,7 +787,7 @@ After=bitcoind.service
 
 [Service]
 WorkingDirectory=/home/admin/src/NBXplorer
-ExecStart=/home/admin/src/NBXplorer/run.sh
+ExecStart=/home/admin/src/NBXplorer/run.sh --conf=/etc/nbxplorer/nbxplorer.config
 User=admin
 Group=admin
 Type=simple
@@ -817,9 +852,15 @@ By default BTCPay Server will store data in a single SQLite file. A more robust 
 
 ```bash
 ~$ sudo -u postgres psql
-postgres=# create database btcpay;
-postgres=# create user btcpay with encrypted password 'urpassword';
-postgres=# grant all privileges on database btcpay to btcpay;
+```
+Then execute
+```SQL
+CREATE DATABASE btcpay TEMPLATE 'template0' LC_CTYPE 'C' LC_COLLATE 'C' ENCODING 'UTF8';
+CREATE USER btcpay WITH ENCRYPTED PASSWORD 'urpassword';
+GRANT ALL PRIVILEGES ON DATABASE btcpay TO btcpay;
+```
+Exit
+```
 postgres=#\q
 ```
 
@@ -831,7 +872,7 @@ $ vi btcpay.config
 
 ```
 ### Database ###
-postgres=User ID=btcpay;Password=urpassword;Host=localhost;Port=5432;Database=btcpay;
+postgres=User ID=btcpay;Password=urpassword;Application Name=btcpayserver;Host=localhost;Port=5432;Database=btcpay;
 ```
 
 ```bash
