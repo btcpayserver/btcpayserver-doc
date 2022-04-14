@@ -103,7 +103,7 @@ cd ~/NBXplorer
 Note that using the `--dbtrie` backend for NBXplorer, while easier, is deprecated.
 You should better use a postgresql backend as documented on [Extended Manual Deployment](./ManualDeploymentExtended.md).
 
-### 7) Run BTCPayServer
+### 7) Run BTCPay Server
 
 ```bash
 cd ~/btcpayserver
