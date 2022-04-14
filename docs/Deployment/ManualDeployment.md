@@ -98,10 +98,12 @@ bitcoind
 
 ```bash
 cd ~/NBXplorer
-./run.sh
+./run.sh --dbtrie
 ```
+Note that using the `--dbtrie` backend for NBXplorer, while easier, is deprecated.
+You should better use a postgresql backend as documented on [Extended Manual Deployment](./ManualDeploymentExtended.md).
 
-### 7) Run BTCPayServer
+### 7) Run BTCPay Server
 
 ```bash
 cd ~/btcpayserver
@@ -109,6 +111,9 @@ cd ~/btcpayserver
 ```
 
 Now you can browse your server on port 8080.
+
+Note that by default, BTCPay Server will use SQLite as backend, while being easier, this is deprecated.
+You should better use a postgresql backend as documented on [Extended Manual Deployment](./ManualDeploymentExtended.md).
 
 ## Testnet Specific Deployments
 
