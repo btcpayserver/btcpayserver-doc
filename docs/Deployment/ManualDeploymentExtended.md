@@ -873,6 +873,7 @@ $ vi btcpay.config
 ```
 ### Database ###
 postgres=User ID=btcpay;Password=urpassword;Application Name=btcpayserver;Host=localhost;Port=5432;Database=btcpay;
+explorer.postgres=User ID=nbxplorer;Password=urpassword;Application Name=nbxplorer;MaxPoolSize=20;Host=localhost;Port=5432;Database=nbxplorer;
 ```
 
 ```bash
