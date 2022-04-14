@@ -112,7 +112,7 @@ cd ~/btcpayserver
 
 Now you can browse your server on port 8080.
 
-Note that by default, btcpayserver will use SQLite as backend, while being easier, this is deprecated.
+Note that by default, BTCPay Server will use SQLite as backend, while being easier, this is deprecated.
 You should better use a postgresql backend as documented on [Extended Manual Deployment](./ManualDeploymentExtended.md).
 
 ## Testnet Specific Deployments
