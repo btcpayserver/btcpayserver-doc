@@ -105,3 +105,32 @@ GetRatesAsync was called on coinaverage when the rate is outdated. It should nev
 ```
 
 The issue can be fixed by [selecting a different rate source provider](./Stores.md#how-to-change-the-exchange-rate-provider-for-invoices) in Stores > Settings > Rates, or by [updating your BTCPay Server](./ServerSettings.md#how-to-update-btcpay-server) if you're running version 1.0.3.146 or older. The update will automatically replace Coinaverage with CoinGecko.
+
+## What is a Payment Request? 
+
+You might have done specific work and want to invoice the customer in BTC. 
+Before the Payment request option, it would've been something like this; 
+
+    Customer: Can I pay the 100$ in bitcoin? 
+    You: Sure you can! Here is my BTC address, and the amount in BTC is 0.0025481 (100$ at the time I wrote the msg). 
+    Costumer; Ohh, I totally missed your msg, my wallet says 0.0028 now, and I got to get extra as I put this in yesterday. Can I pay tomorrow? 
+    You: Oke, but we have to go through this again tomorrow.
+
+Instead, what you could do with BTCPay server, is use the [Payment Request](../PaymentRequests.md) function.
+You only have to create the Payment request and send the counterparty the link generated with the payment request. 
+He will see the requested amount is $ and can immediately click Pay invoice.
+When the invoice has been paid, the invoice is easy to print for bookkeeping purposes. 
+
+[![BTCPay Server Payment Requests](https://img.youtube.com/vi/j6CvwDPvfzQ/mqdefault.jpg)](https://www.youtube.com/watch?v=j6CvwDPvfzQ "BTCPay Server Payment Requests")
+
+For more examples or detailed information, continue to read on [Payment Request](../PaymentRequests.md)
+
+## What is the Difference between Payment Request and Invoice? 
+
+An invoice is a document issued by the seller to a buyer to collect payment.
+
+In BTCPay Server, an invoice represents a document that must be paid within a defined time interval at a fixed exchange rate. Invoices have expiration because they lock the exchange rate within a specified time frame to protect the receiver from price fluctuations.
+
+The opposite is true for a Payment Request. 
+You can Specify a time span for the payment to be payed, the `Payment request` will take into consideration the price fluctuations and does not lock in a exchange rate.
+It also allows you to set the invoice to be paid in parts. 
