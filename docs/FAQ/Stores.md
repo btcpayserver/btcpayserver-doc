@@ -121,7 +121,7 @@ When the payment is made customers can print out the payment request for bookkee
 
 [![BTCPay Server Payment Requests](https://img.youtube.com/vi/j6CvwDPvfzQ/mqdefault.jpg)](https://www.youtube.com/watch?v=j6CvwDPvfzQ "BTCPay Server Payment Requests")
 
-For more examples or detailed information, continue to read on [Payment Request](../PaymentRequests.md)
+You can learn more about this functionality on a dedicated [payment request page](../PaymentRequests.md)
 
 ## What is the Difference between Payment Request and Invoice? 
 
