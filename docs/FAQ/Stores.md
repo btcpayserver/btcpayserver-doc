@@ -106,7 +106,7 @@ GetRatesAsync was called on coinaverage when the rate is outdated. It should nev
 
 The issue can be fixed by [selecting a different rate source provider](./Stores.md#how-to-change-the-exchange-rate-provider-for-invoices) in Stores > Settings > Rates, or by [updating your BTCPay Server](./ServerSettings.md#how-to-update-btcpay-server) if you're running version 1.0.3.146 or older. The update will automatically replace Coinaverage with CoinGecko.
 
-## What is a Payment Request? 
+## What is a payment request? 
 
 You might have done specific work and want to invoice the customer in BTC. 
 Before the Payment request option, it would've been something like this; 
