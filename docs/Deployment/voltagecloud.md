@@ -6,7 +6,7 @@ They've built an easy-to-use onboard flow to the BTCPay server and provide an ea
 It's modular. Pick your Bitcoin node, decide if you want to use Lightning, and then put a BTCPay server on top. 
 They also offer a solution for inbound liquidity once you have Lightning running. 
 
-In the video below, [BTCsessions](https://twitter.com/BTCsessions) goes through all the steps for setting up **BTCPay server on Voltage Cloud**.
+In the video below, [BTC Sessions](https://twitter.com/BTCsessions) goes through all the steps for setting up **BTCPay server on Voltage Cloud**.
 
 [![BTCPay Server - Voltage Web-Deployment](https://img.youtube.com/vi/KqsM-n-e4aY/mqdefault.jpg "BTCPay Server - Voltage Web-Deployment")](https://www.youtube.com/watch?v=KqsM-n-e4aY "BTCPay Server - LunaNode Web-Deployment")
 
