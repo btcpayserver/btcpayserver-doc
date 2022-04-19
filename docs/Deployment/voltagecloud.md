@@ -18,8 +18,8 @@ Goto the [Voltage cloud](https://account.voltage.cloud/register) website to crea
 ![Voltage Cloud signup](../img/voltage/voltagereg.jpg "Voltage Cloud Account")
 
 One of the initial steps to do after signing up is go to` Billing` and add `Node credit` to your account. 
-Filling up your account can be done by paying in Bitcoin, Lightning, or credit card. 
-Now you can return to the main dashboard of Voltage. 
+Filling up your account can be done by paying in Bitcoin, Lightning, or by credit card. 
+Return to the main dashboard of Voltage. 
 
 ## 2. What node suits you? 
 
