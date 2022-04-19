@@ -127,7 +127,7 @@ You can learn more about this functionality on a dedicated [payment request page
 
 An invoice is a document issued by the seller to a buyer to collect payment.
 
-In BTCPay Server, an invoice represents a document that must be paid within a defined time interval at a fixed exchange rate. Invoices have expiration because they lock the exchange rate within a specified time frame to protect the receiver from price fluctuations.
+In BTCPay Server, an invoice represents a document that must be paid within a defined time interval at a fixed exchange rate. **Invoices have expiration** because they lock the exchange rate within a specified time frame to protect the receiver from price fluctuations.
 
 The opposite is true for a Payment Request. 
 You can Specify a time span for the payment to be payed, the `Payment request` will take into consideration the price fluctuations and does not lock in a exchange rate.
