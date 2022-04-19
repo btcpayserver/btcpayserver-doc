@@ -28,7 +28,7 @@ BTCPay automatically labels invoices as Payment Requests in your store's invoice
 
 Click Payment Requests > Create new payment request
 
-![Create Payment Request](./img/payment-requests/CreatePaymentRequest.png)
+![Create Payment Request](./img/payment-requests/paymentrequestnew.jpg)
 
 Provide the Request Name, Amount, Display Denomination, Associated Store, Expiration Time & Description (Optional)
 
@@ -44,6 +44,7 @@ Click Save & View to review your payment request.
 ![View New Payment Request](./img/payment-requests/NewPaymentRequest.png)
 
 BTCPay creates a URL for the payment request. Share this URL to view your payment request.
+Need multiple of the same request ? You can use the `Clone` option in the main menu to duplicate payment requests. 
 
 ## Paid Request for Payment
 
