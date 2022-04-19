@@ -113,7 +113,7 @@ A payment request allows you to invoice your clients and get paid in bitcoin, ju
     Customer: Can I pay the 100$ in bitcoin? 
     You: Sure you can! Here is my BTC address, and the amount in BTC is 0.0025481 (100$ at the time of sending the message). 
     Customer; Ohh, I totally missed your message, my wallet says 0.0028 now, and I need to buy more bitcoin. Can I pay you tomorrow? 
-    You: Oke, but we have to go through this again tomorrow.
+    You: Okay, but we have to go through this process again tomorrow.
 
 Instead, what you could do with BTCPay server, is use the [Payment Request](../PaymentRequests.md) function.
 You only have to create the Payment request and send the counterparty the link generated with the payment request. 
