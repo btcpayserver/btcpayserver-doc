@@ -115,7 +115,7 @@ A payment request allows you to invoice your clients and get paid in bitcoin, ju
     Customer; Ohh, I totally missed your message, my wallet says 0.0028 now, and I need to buy more bitcoin. Can I pay you tomorrow? 
     You: Okay, but we have to go through this process again tomorrow.
 
-Instead, what you could do with BTCPay server, is use the [Payment Request](../PaymentRequests.md) function.
+BTCPay Server built-in  [Payment Request](../PaymentRequests.md) functionality allows you to get paid by sharing a simple link with your customers/clients.
 You only have to create the Payment request and send the counterparty the link generated with the payment request. 
 He will see the requested amount is $ and can immediately click Pay invoice.
 When the invoice has been paid, the invoice is easy to print for bookkeeping purposes. 
