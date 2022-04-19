@@ -1,0 +1,32 @@
+# Introduction to Web Deployments.
+
+We will take you through possible `Web Deployments` on this page.
+We will keep updating the list as more providers offer BTCPay server as a service. 
+
+Below you will find a short introduction to each service and a detailed guide. 
+
+## Known web deployments. 
+
+### LunaNode web-wizard.
+
+[LunaNode](https://www.lunanode.com/) is a Canadian-based hosting provider that accepts Bitcoin payments and requires no personal identification except for a phone number verification.
+
+Their web wizard is one of the easiest ways to **deploy BTCPay Servers from a very user-friendly interface**.
+LunaNode will provide you with a generic domain for your server to get you started.
+
+For more details on `LunaNode` click [here](./LunaNode.md)
+
+### Voltage Cloud 
+
+[Voltage](https://www.voltage.cloud) is an infrastructure provider for Bitcoin. 
+By focusing on Bitcoin exclusively, they can offer quality services to their clients.
+Automatically connect your Voltage Lightning node. 
+
+For more details on `Voltage Cloud` click [here](./voltagecloud.md)
+
+## Missing deployments?
+
+As we are a FOSS project, we might miss certain deployments. 
+Found a deployment that is missing, and do you want it added or notified us? 
+Join the [community chat](https://chat.btcpayserver.org/) on Mattermost by downloading [Mattermost app](https://mattermost.com/download/), or on [Telegram](https://t.me/btcpayserver) and tell us about it. 
+You can also create an issue in the BTCPay server Documents on [Github](https://github.com/btcpayserver/btcpayserver-doc/issues).
