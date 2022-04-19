@@ -111,7 +111,7 @@ The issue can be fixed by [selecting a different rate source provider](./Stores.
 A payment request allows you to invoice your clients and get paid in bitcoin, just by sending a simple payment link. If you were to invoice a client by simply using any bitcoin wallet, the process usually looks like this:
 
     Customer: Can I pay the 100$ in bitcoin? 
-    You: Sure you can! Here is my BTC address, and the amount in BTC is 0.0025481 (100$ at the time I wrote the msg). 
+    You: Sure you can! Here is my BTC address, and the amount in BTC is 0.0025481 (100$ at the time of sending the message). 
     Costumer; Ohh, I totally missed your msg, my wallet says 0.0028 now, and I got to get extra as I put this in yesterday. Can I pay tomorrow? 
     You: Oke, but we have to go through this again tomorrow.
 
