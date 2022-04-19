@@ -123,7 +123,7 @@ When the payment is made customers can print out the payment request for bookkee
 
 You can learn more about this functionality on a dedicated [payment request page](../PaymentRequests.md)
 
-## What is the Difference between Payment Request and Invoice? 
+## What is the difference between a payment request and invoice? 
 
 An invoice is a document issued by the seller to a buyer to collect payment.
 
