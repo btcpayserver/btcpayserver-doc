@@ -44,7 +44,7 @@ Click Save & View to review your payment request.
 ![View New Payment Request](./img/payment-requests/NewPaymentRequest.png)
 
 BTCPay creates a URL for the payment request. Share this URL to view your payment request.
-Need mulitple of the same request ? Simply use the Clone option in the main menu for Payment Requests. 
+Need multiple of the same request ? You can use the `Clone` option in the main menu to duplicate payment requests. 
 
 ## Paid Request for Payment
 
