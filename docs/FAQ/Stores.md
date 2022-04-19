@@ -108,8 +108,7 @@ The issue can be fixed by [selecting a different rate source provider](./Stores.
 
 ## What is a payment request? 
 
-You might have done specific work and want to invoice the customer in BTC. 
-Before the Payment request option, it would've been something like this; 
+A payment request allows you to invoice your clients and get paid in bitcoin, just by sending a simple payment link. If you were to invoice a client by simply using any bitcoin wallet, the process usually looks like this:
 
     Customer: Can I pay the 100$ in bitcoin? 
     You: Sure you can! Here is my BTC address, and the amount in BTC is 0.0025481 (100$ at the time I wrote the msg). 
