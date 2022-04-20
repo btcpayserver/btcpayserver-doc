@@ -23,3 +23,6 @@ Our calendar (an .iCal file) includes upcoming calls. Qualified issues are autom
 * In Thunderbird (desktop), New Calendar > On my network > iCalendar (ICS) and paste the calendar link in the location field.
 * Calendar tools regularly reload subscribed calendars for updates. How often this happens varies by tool.
 
+How to add the Raw link to agenda on IOS. 
+
+![How to add agenda on ios](../img/Contribute/agendaios.gif)
