@@ -157,8 +157,6 @@ The BTCPay Server Project is proudly supported by these entities through the [BT
           <br/>
           <span>ACINQ</span>
         </a>
-      </tr>
-      <tr>
       </td>
       <td align="center" valign="middle">
         <a href="https://lunanode.com" target="_blank">
@@ -167,6 +165,8 @@ The BTCPay Server Project is proudly supported by these entities through the [BT
           <span>LunaNode</span>
         </a>
       </td>
+      </tr>
+      <tr>
       <td align="center" valign="middle">
         <a href="https://walletofsatoshi.com/" target="_blank">
           <img  src="https://raw.githubusercontent.com/btcpayserver/btcpayserver/master/BTCPayServer/wwwroot/img/walletofsatoshi.svg?sanitize=true" alt="Wallet of Satoshi" height=100>
@@ -186,6 +186,13 @@ The BTCPay Server Project is proudly supported by these entities through the [BT
           <img  src="https://raw.githubusercontent.com/btcpayserver/btcpayserver/master/BTCPayServer/wwwroot/img/coincards.svg?sanitize=true" alt="Coincards" height=100>
           <br/>
           <span>Coincards</span>
+        </a>
+      </td>
+      <td align="center" valign="middle">
+        <a href="https://ivpn.net/" target="_blank">
+          <img  src="https://raw.githubusercontent.com/btcpayserver/btcpayserver/master/BTCPayServer/wwwroot/img/ivpn.svg?sanitize=true" alt="IVPN" height=100>
+          <br/>
+          <span>IVPN</span>
         </a>
       </td>
     </tr>
