@@ -58,6 +58,7 @@ const sidebarUserGuide = [
     title: 'Features',
     collapsable: false,
     children: [
+      ['/Dashboard', 'Dashboard'],
       {
         title: 'Wallet',
         path: '/Wallet',
