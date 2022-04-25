@@ -5,8 +5,6 @@ Balance graph and recent transaction are currently only available for an on-chai
 :::
 
 BTCPay Server version 1.5.0 introduced a new dashboard concept that features several tiles that will help with the initial setup, better understand the store's data and manage refunds and payouts with ease.
-Not only will it now take you through the initial setup of your store's wallet, but once you are set up, you get basic analytics of your store!
-
 ![BTCPay Server Navigation](./img/dashboard/dashboardgif.gif "BTCPay Server Navigation")
 
 ## What do the tiles tell?
