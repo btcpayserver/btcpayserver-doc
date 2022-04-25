@@ -57,8 +57,8 @@ Learn more about all BTCPay notifications [here](./Notifications.md).
 In dashboard you will see the stores wallet balance, a overview of invoices and quickly see your crowdfunds top perks. 
 There's 5 main tiles in the Dashboard.
 
-* A quick view on Wallet Balance
-* TX activity and payouts
+* A quick view on the wallet balance
+* Transaction and payout activity
 * Recent Transactions
 * Recent Invoices 
 * Current running Crowdfunds
