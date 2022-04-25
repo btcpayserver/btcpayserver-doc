@@ -29,7 +29,7 @@ There are five main sections to the Dashboard.
 
 * Recent Invoices
     The last five invoices are shown with their corresponding status and value.
-    It also allows you to go directly to all [invoices](/Invoices.md). 
+    It also allows you to directly access and manage a particular [invoice](/Invoices.md). 
 
 ![BTCPay Server Navigation](./img/dashboard/recent-invoice-view.jpg "BTCPay Server Navigation")
 
