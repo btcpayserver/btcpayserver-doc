@@ -1,7 +1,7 @@
 # Dashboard 
 
 :::tip
-Balance graph and recent transaction are only available for on-chain wallets, where we don't have any data that's special for Lightning.
+Balance graph and recent transaction are currently only available for an on-chain payment method. Information about Lightning network balances and transactions is on to-do.
 :::
 
 This page will tell you about the Dashboard panel in your **BTCPay user interface**.
