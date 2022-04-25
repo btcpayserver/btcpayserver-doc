@@ -17,7 +17,7 @@ There are five main sections to the Dashboard.
 
 ![BTCPay Server Navigation](./img/dashboard/wallet-view.jpg "BTCPay Server Navigation")
 
-* TX Activity 
+* Transaction activity 
     Quickly manage Pending Payouts, view recent TXs, and overview outstanding [refunds](Refund.md)
 
 ![BTCPay Server Navigation](./img/dashboard/tx-activity-view.jpg "BTCPay Server Navigation")
