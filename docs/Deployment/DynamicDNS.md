@@ -29,8 +29,10 @@ First, create an account on a Dynamic DNS provider, the most popular providers a
 
 * [noip](https://www.noip.com/) (free)
 * [duckdns](https://www.duckdns.org/) (free)
+* [zoneedit](https://www.zoneedit.com/) (free)
 * [dyndns](https://dyn.com/) (not free)
 * [google](https://domains.google.com/) (not free)
+* [easydns](https://www.easydns.com/) (not free)
 
 Once you've created an account, you can create a free domain name through their website.
 
