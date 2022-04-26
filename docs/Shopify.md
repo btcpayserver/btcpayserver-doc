@@ -8,6 +8,8 @@ The following document guides you through **setting up BTCPay Server with [Shopi
 - BTCPay Server] - [self-hosted](Deployment.md) or run by a [third-party host](/Deployment/ThirdPartyHosting.md) v1.4.8 or later.
 - [Created BTCPay Server store](CreateStore.md) with [wallet set up](WalletSetup.md)
 
+[![BTCPay Server - Shopify Video](https://img.youtube.com/vi/jJjAyvgWVfk/mqdefault.jpg "BTCPay Server - Shopify")](https://www.youtube.com/watch?v=jJjAyvgWVfk "BTCPay Server - Shopify Video")
+
 ## Setting up BTCPay Server with Shopify
 
 1. In Shopify, go to Apps > and at the bottom of the page click on the  `Develop apps for your store`.
