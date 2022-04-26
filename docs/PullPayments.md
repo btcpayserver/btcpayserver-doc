@@ -91,11 +91,11 @@ The user interface only allows a subset of what is possible.
 ### Create a pull payment
 
 1. Go to your wallet page / pull payments
-![BTCPay Server Pull Payment](./img/pull-payments/1.png "BTCPay Server Pull Payment")
+![BTCPay Server Pull Payment](./img/pull-payments/1.jpg "BTCPay Server Pull Payment")
 2. Click on `Create a new pull payment`
-![BTCPay Server Pull Payment](./img/pull-payments/2.png "BTCPay Server Pull Payment")
+![BTCPay Server Pull Payment](./img/pull-payments/2.jpg "BTCPay Server Pull Payment")
 3. Fill out the pull payment information, click `Create`
-![BTCPay Server Pull Payment](./img/pull-payments/3.png "BTCPay Server Pull Payment")
+![BTCPay Server Pull Payment](./img/pull-payments/3.jpg "BTCPay Server Pull Payment")
 4. Go to the pull payment page by clicking on `View`
 5. Share this page with the payment receiver
 ![BTCPay Server Pull Payment](./img/pull-payments/4.png "BTCPay Server Pull Payment")
@@ -104,11 +104,11 @@ The user interface only allows a subset of what is possible.
 
 ### Approve and pay a payout
 1. The sender gets notified when the receiver is pulling money
-![6](./img/pull-payments/6.png)
+![6](./img/pull-payments/6.jpg)
 2. Clicking on the notification brings the sender to a page listing all outstanding payouts
-![7](./img/pull-payments/7.png)
+![7](./img/pull-payments/7.jpg)
 3. Check the payout to approve, pay and confirm
-![8](./img/pull-payments/8.png)
+![8](./img/pull-payments/8.jpg)
 4. You are then brought to the normal wallet user interface of BTCPay Server
 
 :::warning
