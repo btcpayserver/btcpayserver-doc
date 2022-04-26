@@ -69,7 +69,7 @@ Regardless of the implementation (c-lightning or LND) you've decided to use, the
 
 ![BTCPay Server Lightning Network Setup 1](./img/lightning-node-setup/LightningNetworkNodeSetup1.jpg "BTCPay Server Lightning Network Setup 1")
 
-![BTCPay Server Lightning Network Setup 2](./img/lightning-node-setup/LightningNetworkNodeSetup2.jpg "Use the internal node")
+![BTCPay Server Lightning Network Setup 2](./img/lightning-node-setup/LightningNetworkNodeSetup2.png "Use the internal node")
 
 To ensure that your Lightning node is connected and accessible for use in your store's invoices, try to test your Lightning connection by clicking the "Public Node Info" link. Verify that a successful connection is displayed. If your internal node connection fails, make sure you have a Lightning implementation [enabled](./FAQ/LightningNetwork.md#i-previously-installed-btcpayserver-without-lightning-can-i-enable-it) on your server.
 
