@@ -53,9 +53,9 @@ Below are step by step visuals describing the process outlined above.
 
 ![](./img/shopify/btcpayshopify10.png)
 
-![](./img/Shopify/shopify11.jpg)
+![](./img/Shopify/btcpayshopify11.jpg)
 
-![](./img/Shopify/shopify12.jpg)
+![](./img/Shopify/btcpayshopify12.jpg)
 
 ![](./img/shopify/btcpayshopify13.png)
 
