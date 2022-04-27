@@ -2,9 +2,8 @@
 
 BTCPay Server has a built in, **full-node reliant wallet** that allows for easy funds management.
 
-Each [store](./CreateStore.md)'s configured cryptocurrency has a separate wallet displayed on the wallets page. A wallet can be accessed by clicking **Wallets** from the top menu. To access a particular wallet, click **Manage**.
+Each [store](./CreateStore.md)'s configured cryptocurrency has a separate wallet displayed under Wallets in the menu bar.
 
-![Wallets Page BTCPay](./img/wallet/Wallets.png)
 
 ## Wallet features
 
@@ -23,7 +22,7 @@ The wallet contains the following features:
 
 An overview of the incoming (green), outgoing (red) and unconfirmed (grayed out) **transactions** displayed together with timestamps and balances, sorted by date. You can click on the transaction ID to view the transaction details on the block explorer.
 
-![Individual Wallet](./img/wallet/WalletTransactions.png "BTCPay Server Wallet Transactions")
+![Individual Wallet](./img/wallet/WalletTransactions.jpg "BTCPay Server Wallet Transactions")
 
 #### Transaction Labels
 
@@ -44,7 +43,7 @@ You can also create your own [custom transaction labels and comments](./FAQ/Wall
 
 The Send function allows **spending of the funds from the BTCPay wallet**.
 
-![Send from the Wallet](./img/wallet/WalletSend.png)
+![Send from the Wallet](./img/wallet/WalletSend.jpg)
 
 #### Signing a transaction (spending)
 
@@ -113,7 +112,7 @@ Replace-By-Fee (RBF) is a Bitcoin protocol feature that allows you to replace a 
 
 Press the `Advanced Settings` button to view the RBF options:
 
-![RBF Options](./img/wallet/WalletRBF.png)
+![RBF Options](./img/wallet/WalletRBF.jpg)
 
 - Option 1 (Enabled by Default): Allow the transaction to be replaced automatically for randomization of transaction fingerprint (increased privacy)
 - Option 2: Yes, Allow the transaction to be replaced explicitly (not replaced by default)
@@ -125,7 +124,7 @@ Coin selection is an advanced **privacy-enhancing feature** that allows you to *
 
 To make the selection easier, coin-selection works natively with the wallet labels feature. This allows you to label any incoming funds for smoother UTXO management and spending.
 
-![Coin Selection](./img/wallet/CoinSelection.png "Coin Selection")
+![Coin Selection](./img/wallet/CoinSelection.jpg "Coin Selection")
 
 ##### Other features
 
@@ -133,7 +132,7 @@ To make the selection easier, coin-selection works natively with the wallet labe
 
 Scan option in wallet (camera icon in send screen) lets you **use your device’s camera to scan a QR code containing an address or BIP21 payment link**. It auto-populates the sending information so that you don’t have to manually copy-paste an address and amount.
 
-![QR Scan](./img/wallet/ScanWallet.png)
+![QR Scan](./img/wallet/ScanWallet.jpg)
 
 ###### Paste BIP21 address
 
@@ -143,7 +142,7 @@ This option **decodes a BIP21 payment link**. It's useful when you're trying to 
 
 The Receive tab **generates an unused address which can be used to receive payments**. The same can be achieved by generating an invoice (Invoices > Create new invoice).
 
-![Wallet Receive](./img/wallet/WalletReceive.png "Receive in BTCPay")
+![Wallet Receive](./img/wallet/WalletReceive.jpg "Receive in BTCPay")
 
 ### Pull Payments
 
@@ -161,7 +160,7 @@ For more information, see [Payouts](./PullPayments.md#approve-and-pay-a-payout).
 
 The Rescan relies on Bitcoin Core 0.17.0's `scantxoutset` to **scan the current state of the blockchain** (called UTXO Set) for coins belonging to the configured derivation scheme.
 
-![Wallet Rescan](./img/wallet/WalletRescan.png "Rescan Wallet in BTCPay")
+![Wallet Rescan](./img/wallet/WalletRescan.jpg "Rescan Wallet in BTCPay")
 
 Wallet re-scan solves two critical problems for BTCPay users:
 
@@ -172,7 +171,7 @@ Wallet re-scan solves two critical problems for BTCPay users:
 
 **Wallet import**: When users add a derivation scheme of a wallet that had transactions in the past (previously used wallet), BTCPay won't be able to show the balance and transactions from the past.
 
-![Wallet rescan progress](./img/wallet/WalletRescanProgress.png "Rescan Wallet in BTCPay")
+![Wallet rescan progress](./img/wallet/WalletRescanProgress.jpg "Rescan Wallet in BTCPay")
 
 Re-scan is a feature that solves both of these problems. Once the scan is complete, BTCPay Server will show the correct balance, along with the past transactions of the wallet.
 
