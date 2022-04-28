@@ -1161,6 +1161,63 @@
         ]
       }
     },
+    "/api/v1/server/lightning/{cryptoCode}/payments/{paymentHash}": {
+      "get": {
+        "tags": [
+          "Lightning (Internal Node)"
+        ],
+        "summary": "Get payment",
+        "parameters": [
+          {
+            "name": "cryptoCode",
+            "in": "path",
+            "required": true,
+            "description": "The cryptoCode of the lightning-node to query",
+            "schema": {
+              "type": "string"
+            },
+            "example": "BTC"
+          },
+          {
+            "name": "paymentHash",
+            "in": "path",
+            "required": true,
+            "description": "The payment hash of the lightning payment.",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "description": "View information about the requested lightning payment",
+        "operationId": "InternalLightningNodeApi_GetPayment",
+        "responses": {
+          "200": {
+            "description": "Lightning payment data",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/LightningPaymentData"
+                }
+              }
+            }
+          },
+          "503": {
+            "description": "Unable to access the lightning node"
+          },
+          "404": {
+            "description": "The lightning node configuration or the specified invoice was not found "
+          }
+        },
+        "security": [
+          {
+            "API_Key": [
+              "btcpay.server.canuseinternallightningnode"
+            ],
+            "Basic": []
+          }
+        ]
+      }
+    },
     "/api/v1/server/lightning/{cryptoCode}/invoices/{id}": {
       "get": {
         "tags": [
@@ -1688,6 +1745,72 @@
           {
             "API_Key": [
               "btcpay.store.cancreatelightninginvoice"
+            ],
+            "Basic": []
+          }
+        ]
+      }
+    },
+    "/api/v1/stores/{storeId}/lightning/{cryptoCode}/payments/{paymentHash}": {
+      "get": {
+        "tags": [
+          "Lightning (Store)"
+        ],
+        "summary": "Get payment",
+        "parameters": [
+          {
+            "name": "cryptoCode",
+            "in": "path",
+            "required": true,
+            "description": "The cryptoCode of the lightning-node to query",
+            "schema": {
+              "type": "string"
+            },
+            "example": "BTC"
+          },
+          {
+            "name": "storeId",
+            "in": "path",
+            "required": true,
+            "description": "The store id with the lightning-node configuration to query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "paymentHash",
+            "in": "path",
+            "required": true,
+            "description": "The payment hash of the lightning payment.",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "description": "View information about the requested lightning payment",
+        "operationId": "StoreLightningNodeApi_GetPayment",
+        "responses": {
+          "200": {
+            "description": "Lightning payment data",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/LightningPaymentData"
+                }
+              }
+            }
+          },
+          "503": {
+            "description": "Unable to access the lightning node"
+          },
+          "404": {
+            "description": "The lightning node configuration or the specified invoice was not found "
+          }
+        },
+        "security": [
+          {
+            "API_Key": [
+              "btcpay.store.canuselightningnode"
             ],
             "Basic": []
           }
@@ -2534,6 +2657,572 @@
         ]
       }
     },
+    "/api/v1/stores/{storeId}/payout-processors": {
+      "get": {
+        "tags": [
+          "Stores (Payout Processors)"
+        ],
+        "summary": "Get store configured payout processors",
+        "parameters": [
+          {
+            "name": "storeId",
+            "in": "path",
+            "required": true,
+            "description": "The store to fetch",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "description": "Get store configured payout processors",
+        "operationId": "StorePayoutProcessors_GetStorePayoutProcessors",
+        "responses": {
+          "200": {
+            "description": "configured payout processors",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/PayoutProcessorData"
+                  }
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "If you are authenticated but forbidden to view the specified store"
+          },
+          "404": {
+            "description": "The key is not found for this store"
+          }
+        },
+        "security": [
+          {
+            "API_Key": [
+              "btcpay.store.canviewstoresettings"
+            ],
+            "Basic": []
+          }
+        ]
+      }
+    },
+    "/api/v1/stores/{storeId}/payout-processors/{processor}/{paymentMethod}": {
+      "delete": {
+        "tags": [
+          "Stores (Payout Processors)"
+        ],
+        "summary": "Remove store configured payout processor",
+        "parameters": [
+          {
+            "name": "storeId",
+            "in": "path",
+            "required": true,
+            "description": "The store",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "processor",
+            "in": "path",
+            "required": true,
+            "description": "The processor",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "paymentMethod",
+            "in": "path",
+            "required": true,
+            "description": "The payment method",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "description": "Remove store configured payout processor",
+        "operationId": "StorePayoutProcessors_RemoveStorePayoutProcessor",
+        "responses": {
+          "200": {
+            "description": "removed"
+          },
+          "403": {
+            "description": "If you are authenticated but forbidden to view the specified store"
+          },
+          "404": {
+            "description": "The key is not found for this store"
+          }
+        },
+        "security": [
+          {
+            "API_Key": [
+              "btcpay.store.canmodifystoresettings"
+            ],
+            "Basic": []
+          }
+        ]
+      }
+    },
+    "/api/v1/payout-processors": {
+      "get": {
+        "tags": [
+          "Payout Processors"
+        ],
+        "summary": "Get payout processors",
+        "parameters": [
+          {
+            "name": "storeId",
+            "in": "path",
+            "required": true,
+            "description": "The store to fetch",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "description": "Get payout processors available in this instance",
+        "operationId": "PayoutProcessors_GetPayoutProcessors",
+        "responses": {
+          "200": {
+            "description": "available payout processors",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/PayoutProcessorData"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "API_Key": [],
+            "Basic": []
+          }
+        ]
+      }
+    },
+    "/api/v1/stores/{storeId}/payout-processors/OnChainAutomatedTransferSenderFactory/{paymentMethod}": {
+      "get": {
+        "tags": [
+          "Stores (Payout Processors)"
+        ],
+        "summary": "Get configured store onchain automated payout processors",
+        "parameters": [
+          {
+            "name": "storeId",
+            "in": "path",
+            "required": true,
+            "description": "The store to fetch",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "paymentMethod",
+            "in": "path",
+            "required": true,
+            "description": "A specific payment method to fetch",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "description": "Get configured store onchain automated payout processors",
+        "operationId": "GreenfieldStoreAutomatedOnChainPayoutProcessorsController_GetStoreOnChainAutomatedPayoutProcessors",
+        "responses": {
+          "200": {
+            "description": "configured processors",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/OnChainAutomatedTransferSettings"
+                  }
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "If you are authenticated but forbidden to view the specified store"
+          },
+          "404": {
+            "description": "The key is not found for this store"
+          }
+        },
+        "security": [
+          {
+            "API_Key": [
+              "btcpay.store.canviewstoresettings"
+            ],
+            "Basic": []
+          }
+        ]
+      },
+      "put": {
+        "tags": [
+          "Stores (Payout Processors)"
+        ],
+        "summary": "Update configured store onchain automated payout processors",
+        "parameters": [
+          {
+            "name": "storeId",
+            "in": "path",
+            "required": true,
+            "description": "The store to fetch",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "paymentMethod",
+            "in": "path",
+            "required": true,
+            "description": "A specific payment method to fetch",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "description": "Update configured store onchain automated payout processors",
+        "operationId": "GreenfieldStoreAutomatedOnChainPayoutProcessorsController_UpdateStoreOnChainAutomatedPayoutProcessor",
+        "requestBody": {
+          "x-name": "request",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UpdateOnChainAutomatedTransferSettings"
+              }
+            }
+          },
+          "required": true,
+          "x-position": 1
+        },
+        "responses": {
+          "200": {
+            "description": "configured processor",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OnChainAutomatedTransferSettings"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "If you are authenticated but forbidden to view the specified store"
+          },
+          "404": {
+            "description": "The key is not found for this store"
+          }
+        },
+        "security": [
+          {
+            "API_Key": [
+              "btcpay.store.canviewstoresettings"
+            ],
+            "Basic": []
+          }
+        ]
+      }
+    },
+    "/api/v1/stores/{storeId}/payout-processors/LightningAutomatedTransferSenderFactory/{paymentMethod}": {
+      "get": {
+        "tags": [
+          "Stores (Payout Processors)"
+        ],
+        "summary": "Get configured store Lightning automated payout processors",
+        "parameters": [
+          {
+            "name": "storeId",
+            "in": "path",
+            "required": true,
+            "description": "The store to fetch",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "paymentMethod",
+            "in": "path",
+            "required": true,
+            "description": "A specific payment method to fetch",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "description": "Get configured store Lightning automated payout processors",
+        "operationId": "GreenfieldStoreAutomatedLightningPayoutProcessorsController_GetStoreLightningAutomatedPayoutProcessors",
+        "responses": {
+          "200": {
+            "description": "configured processors",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/LightningAutomatedTransferSettings"
+                  }
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "If you are authenticated but forbidden to view the specified store"
+          },
+          "404": {
+            "description": "The key is not found for this store"
+          }
+        },
+        "security": [
+          {
+            "API_Key": [
+              "btcpay.store.canviewstoresettings"
+            ],
+            "Basic": []
+          }
+        ]
+      },
+      "put": {
+        "tags": [
+          "Stores (Payout Processors)"
+        ],
+        "summary": "Update configured store Lightning automated payout processors",
+        "parameters": [
+          {
+            "name": "storeId",
+            "in": "path",
+            "required": true,
+            "description": "The store to fetch",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "paymentMethod",
+            "in": "path",
+            "required": true,
+            "description": "A specific payment method to fetch",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "description": "Update configured store Lightning automated payout processors",
+        "operationId": "GreenfieldStoreAutomatedLightningPayoutProcessorsController_UpdateStoreLightningAutomatedPayoutProcessor",
+        "requestBody": {
+          "x-name": "request",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UpdateLightningAutomatedTransferSettings"
+              }
+            }
+          },
+          "required": true,
+          "x-position": 1
+        },
+        "responses": {
+          "200": {
+            "description": "configured processor",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/LightningAutomatedTransferSettings"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "If you are authenticated but forbidden to view the specified store"
+          },
+          "404": {
+            "description": "The key is not found for this store"
+          }
+        },
+        "security": [
+          {
+            "API_Key": [
+              "btcpay.store.canviewstoresettings"
+            ],
+            "Basic": []
+          }
+        ]
+      }
+    },
+    "/api/v1/stores/{storeId}/payout-processors/OnChainAutomatedTransferSenderFactory": {
+      "get": {
+        "tags": [
+          "Stores (Payout Processors)"
+        ],
+        "summary": "Get configured store onchain automated payout processors",
+        "parameters": [
+          {
+            "name": "storeId",
+            "in": "path",
+            "required": true,
+            "description": "The store to fetch",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "description": "Get configured store onchain automated payout processors",
+        "operationId": "GreenfieldStoreAutomatedOnChainPayoutProcessorsController_GetStoreOnChainAutomatedPayoutProcessors",
+        "responses": {
+          "200": {
+            "description": "configured processors",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/OnChainAutomatedTransferSettings"
+                  }
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "If you are authenticated but forbidden to view the specified store"
+          },
+          "404": {
+            "description": "The key is not found for this store"
+          }
+        },
+        "security": [
+          {
+            "API_Key": [
+              "btcpay.store.canviewstoresettings"
+            ],
+            "Basic": []
+          }
+        ]
+      },
+      "put": {
+        "tags": [
+          "Stores (Payout Processors)"
+        ],
+        "summary": "Update configured store onchain automated payout processors",
+        "parameters": [
+          {
+            "name": "storeId",
+            "in": "path",
+            "required": true,
+            "description": "The store to fetch",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "paymentMethod",
+            "in": "path",
+            "required": true,
+            "description": "A specific payment method to fetch",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "description": "Update configured store onchain automated payout processors",
+        "operationId": "GreenfieldStoreAutomatedOnChainPayoutProcessorsController_UpdateStoreOnChainAutomatedPayoutProcessor",
+        "requestBody": {
+          "x-name": "request",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UpdateOnChainAutomatedTransferSettings"
+              }
+            }
+          },
+          "required": true,
+          "x-position": 1
+        },
+        "responses": {
+          "200": {
+            "description": "configured processor",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OnChainAutomatedTransferSettings"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "If you are authenticated but forbidden to view the specified store"
+          },
+          "404": {
+            "description": "The key is not found for this store"
+          }
+        },
+        "security": [
+          {
+            "API_Key": [
+              "btcpay.store.canviewstoresettings"
+            ],
+            "Basic": []
+          }
+        ]
+      }
+    },
+    "/api/v1/stores/{storeId}/payout-processors/LightningAutomatedTransferSenderFactory": {
+      "get": {
+        "tags": [
+          "Stores (Payout Processors)"
+        ],
+        "summary": "Get configured store Lightning automated payout processors",
+        "parameters": [
+          {
+            "name": "storeId",
+            "in": "path",
+            "required": true,
+            "description": "The store to fetch",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "description": "Get configured store Lightning automated payout processors",
+        "operationId": "GreenfieldStoreAutomatedLightningPayoutProcessorsController_GetStoreLightningAutomatedPayoutProcessors",
+        "responses": {
+          "200": {
+            "description": "configured processors",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/LightningAutomatedTransferSettings"
+                  }
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "If you are authenticated but forbidden to view the specified store"
+          },
+          "404": {
+            "description": "The key is not found for this store"
+          }
+        },
+        "security": [
+          {
+            "API_Key": [
+              "btcpay.store.canviewstoresettings"
+            ],
+            "Basic": []
+          }
+        ]
+      }
+    },
     "/api/v1/stores/{storeId}/pull-payments": {
       "parameters": [
         {
@@ -2928,6 +3617,118 @@
         "security": []
       }
     },
+    "/api/v1/stores/{storeId}/payouts": {
+      "parameters": [
+        {
+          "name": "storeId",
+          "in": "path",
+          "required": true,
+          "description": "The ID of the store",
+          "schema": {
+            "type": "string"
+          }
+        }
+      ],
+      "post": {
+        "summary": "Create Payout ",
+        "description": "Create a new payout",
+        "operationId": "Payouts_CreatePayoutThroughStore",
+        "requestBody": {
+          "x-name": "request",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreatePayoutThroughStoreRequest"
+              }
+            }
+          },
+          "required": true,
+          "x-position": 1
+        },
+        "responses": {
+          "200": {
+            "description": "A new payout has been created",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PayoutData"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "store not found"
+          },
+          "422": {
+            "description": "Unable to validate the request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ValidationProblemDetails"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Wellknown error codes are: `duplicate-destination`, `expired`, `not-started`, `archived`, `overdraft`, `amount-too-low`, `payment-method-not-supported`",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          }
+        },
+        "tags": [
+          "Stores (Payouts)"
+        ],
+        "security": [
+          {
+            "API_Key": [
+              "btcpay.store.canmanagepullpayments"
+            ],
+            "Basic": []
+          }
+        ]
+      },
+      "get": {
+        "summary": "Get Store Payouts",
+        "operationId": "PullPayments_GetStorePayouts",
+        "description": "Get payouts",
+        "parameters": [
+          {
+            "name": "includeCancelled",
+            "in": "query",
+            "required": false,
+            "description": "Whether this should list cancelled payouts",
+            "schema": {
+              "type": "boolean",
+              "default": false
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "The payouts of the store",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PayoutDataList"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Pull payment not found"
+          }
+        },
+        "tags": [
+          "Stores (Payouts)"
+        ],
+        "security": []
+      }
+    },
     "/api/v1/stores/{storeId}/payouts/{payoutId}": {
       "parameters": [
         {
@@ -3010,7 +3811,7 @@
           }
         },
         "tags": [
-          "Pull payments (Management)"
+          "Stores (Payouts)"
         ],
         "security": [
           {
@@ -3034,7 +3835,7 @@
           }
         },
         "tags": [
-          "Pull payments (Management)"
+          "Stores (Payouts)"
         ],
         "security": [
           {
@@ -3100,7 +3901,7 @@
           }
         },
         "tags": [
-          "Pull payments (Management)"
+          "Stores (Payouts)"
         ],
         "security": [
           {
@@ -3313,12 +4114,12 @@
         ],
         "responses": {
           "200": {
-            "description": "list of payment methods",
+            "description": "List of payment methods",
             "content": {
               "application/json": {
                 "schema": {
-                  "type": "object",
-                  "additionalProperties": {
+                  "type": "array",
+                  "items": {
                     "$ref": "#/components/schemas/GenericPaymentMethodData"
                   }
                 }
@@ -3580,7 +4381,7 @@
     "/api/v1/stores/{storeId}/payment-methods/LNURL": {
       "get": {
         "tags": [
-          "Store Payment Methods (LNURL)"
+          "Store Payment Methods (LNURL Pay)"
         ],
         "summary": "Get store LNURL payment methods",
         "parameters": [
@@ -4477,7 +5278,7 @@
         ]
       }
     },
-    "/api/v1/stores/{storeId}/payment-methods/OnChain/{cryptoCode}/wallet": {
+    "/api/v1/stores/{storeId}/payment-methods/onchain/{cryptoCode}/wallet": {
       "get": {
         "tags": [
           "Store Wallet (On Chain)"
@@ -4534,7 +5335,7 @@
         ]
       }
     },
-    "/api/v1/stores/{storeId}/payment-methods/OnChain/{cryptoCode}/wallet/feeRate": {
+    "/api/v1/stores/{storeId}/payment-methods/onchain/{cryptoCode}/wallet/feerate": {
       "get": {
         "tags": [
           "Store Wallet (On Chain)"
@@ -4601,7 +5402,7 @@
         ]
       }
     },
-    "/api/v1/stores/{storeId}/payment-methods/OnChain/{cryptoCode}/wallet/address": {
+    "/api/v1/stores/{storeId}/payment-methods/onchain/{cryptoCode}/wallet/address": {
       "get": {
         "tags": [
           "Store Wallet (On Chain)"
@@ -4716,7 +5517,7 @@
         ]
       }
     },
-    "/api/v1/stores/{storeId}/payment-methods/OnChain/{cryptoCode}/wallet/transactions": {
+    "/api/v1/stores/{storeId}/payment-methods/onchain/{cryptoCode}/wallet/transactions": {
       "get": {
         "tags": [
           "Store Wallet (On Chain)"
@@ -4753,6 +5554,16 @@
                 "$ref": "#/components/schemas/TransactionStatus"
               }
             }
+          },
+          {
+            "name": "labelFilter",
+            "in": "query",
+            "required": false,
+            "description": "Transaction label to filter by",
+            "schema": {
+              "type": "string"
+            },
+            "example": "invoice"
           },
           {
             "name": "skip",
@@ -4882,7 +5693,7 @@
         ]
       }
     },
-    "/api/v1/stores/{storeId}/payment-methods/OnChain/{cryptoCode}/wallet/transactions/{transactionId}": {
+    "/api/v1/stores/{storeId}/payment-methods/onchain/{cryptoCode}/wallet/transactions/{transactionId}": {
       "get": {
         "tags": [
           "Store Wallet (On Chain)"
@@ -4946,9 +5757,83 @@
             "Basic": []
           }
         ]
+      },
+      "patch": {
+        "tags": [
+          "Store Wallet (On Chain)"
+        ],
+        "summary": "Patch store on-chain wallet transaction info",
+        "parameters": [
+          {
+            "name": "storeId",
+            "in": "path",
+            "required": true,
+            "description": "The store to fetch",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "cryptoCode",
+            "in": "path",
+            "required": true,
+            "description": "The crypto code of the wallet to fetch",
+            "schema": {
+              "type": "string"
+            },
+            "example": "BTC"
+          },
+          {
+            "name": "transactionId",
+            "in": "path",
+            "required": true,
+            "description": "The transaction id to fetch",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/PatchOnChainTransactionRequest"
+              }
+            }
+          }
+        },
+        "description": "Patch store on-chain wallet transaction info",
+        "operationId": "StoreOnChainWallets_PatchOnChainWalletTransaction",
+        "responses": {
+          "200": {
+            "description": "transaction",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OnChainWalletTransactionData"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "If you are authenticated but forbidden to view the specified store"
+          },
+          "404": {
+            "description": "The key is not found for this store/wallet"
+          }
+        },
+        "security": [
+          {
+            "API_Key": [
+              "btcpay.store.canmodifystoresettings"
+            ],
+            "Basic": []
+          }
+        ]
       }
     },
-    "/api/v1/stores/{storeId}/payment-methods/OnChain/{cryptoCode}/wallet/utxos": {
+    "/api/v1/stores/{storeId}/payment-methods/onchain/{cryptoCode}/wallet/utxos": {
       "get": {
         "tags": [
           "Store Wallet (On Chain)"
@@ -5483,6 +6368,58 @@
           {
             "API_Key": [
               "btcpay.user.candeleteuser"
+            ],
+            "Basic": []
+          }
+        ]
+      }
+    },
+    "/api/v1/users/{idOrEmail}/lock": {
+      "delete": {
+        "tags": [
+          "Users"
+        ],
+        "summary": "Toggle user",
+        "description": "Lock or unlock a user.\n\nMust be an admin to perform this operation.\n\nAttempting to lock the only admin user will not succeed.",
+        "parameters": [
+          {
+            "name": "userId",
+            "in": "path",
+            "required": true,
+            "description": "The ID of the user to be un/locked",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "x-name": "request",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/LockUserRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "User has been successfully toggled"
+          },
+          "401": {
+            "description": "Missing authorization for deleting the user"
+          },
+          "403": {
+            "description": "Authorized but forbidden to disable  the user. Can happen if you attempt to disable the only admin user."
+          },
+          "404": {
+            "description": "User with provided ID was not found"
+          }
+        },
+        "security": [
+          {
+            "API_Key": [
+              "btcpay.user.canmodifyserversettings"
             ],
             "Basic": []
           }
@@ -6737,6 +7674,36 @@
         "type": "object",
         "additionalProperties": false,
         "properties": {
+          "id": {
+            "type": "string",
+            "description": "The payment's ID"
+          },
+          "status": {
+            "$ref": "#/components/schemas/LightningPaymentStatus"
+          },
+          "BOLT11": {
+            "type": "string",
+            "description": "The BOLT11 representation of the payment",
+            "nullable": false
+          },
+          "paymentHash": {
+            "type": "string",
+            "description": "The payment hash",
+            "nullable": false
+          },
+          "preimage": {
+            "type": "string",
+            "description": "The payment preimage (available when status is complete)"
+          },
+          "createdAt": {
+            "description": "The unix timestamp when the payment got created",
+            "nullable": true,
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/UnixTimestamp"
+              }
+            ]
+          },
           "totalAmount": {
             "type": "string",
             "description": "The total amount (including fees) in millisatoshi"
@@ -6802,6 +7769,22 @@
           "Unpaid",
           "Paid",
           "Expired"
+        ]
+      },
+      "LightningPaymentStatus": {
+        "type": "string",
+        "description": "",
+        "x-enumNames": [
+          "Unknown",
+          "Pending",
+          "Complete",
+          "Failed"
+        ],
+        "enum": [
+          "Unknown",
+          "Pending",
+          "Complete",
+          "Failed"
         ]
       },
       "LightningNodeInformationData": {
@@ -6911,40 +7894,44 @@
         }
       },
       "PaymentRequestData": {
-        "type": "object",
-        "additionalProperties": {
-          "$ref": "#/components/schemas/PaymentRequestBaseData"
-        },
-        "properties": {
-          "id": {
-            "type": "string",
-            "description": "The id of the payment request",
-            "nullable": false
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/PaymentRequestBaseData"
           },
-          "storeId": {
-            "type": "string",
-            "description": "The store identifier that the payment request belongs to"
-          },
-          "status": {
-            "type": "string",
-            "enum": [
-              "Pending",
-              "Completed",
-              "Expired"
-            ],
-            "description": "The status of the payment request",
-            "nullable": false
-          },
-          "createdTime": {
-            "description": "The creation date of the payment request",
-            "allOf": [
-              {
-                "$ref": "#/components/schemas/UnixTimestamp"
+          {
+            "type": "object",
+            "properties": {
+              "id": {
+                "type": "string",
+                "description": "The id of the payment request",
+                "nullable": false
+              },
+              "storeId": {
+                "type": "string",
+                "description": "The store identifier that the payment request belongs to"
+              },
+              "status": {
+                "type": "string",
+                "enum": [
+                  "Pending",
+                  "Completed",
+                  "Expired"
+                ],
+                "description": "The status of the payment request",
+                "nullable": false
+              },
+              "createdTime": {
+                "description": "The creation date of the payment request",
+                "allOf": [
+                  {
+                    "$ref": "#/components/schemas/UnixTimestamp"
+                  }
+                ],
+                "nullable": false
               }
-            ],
-            "nullable": false
+            }
           }
-        }
+        ]
       },
       "PaymentRequestBaseData": {
         "type": "object",
@@ -7010,6 +7997,92 @@
           }
         }
       },
+      "PayoutProcessorData": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "name": {
+            "description": "unique identifier of the payout processor",
+            "type": "string"
+          },
+          "friendlyName": {
+            "description": "Human name of the payout processor",
+            "type": "string"
+          },
+          "paymentMethods": {
+            "nullable": true,
+            "description": "Supported, payment methods by this processor",
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        }
+      },
+      "UpdateLightningAutomatedTransferSettings": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "intervalSeconds": {
+            "description": "How often should the processor run",
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/TimeSpanSeconds"
+              }
+            ]
+          }
+        }
+      },
+      "LightningAutomatedTransferSettings": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "paymentMethod": {
+            "description": "payment method of the payout processor",
+            "type": "string"
+          },
+          "intervalSeconds": {
+            "description": "How often should the processor run",
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/TimeSpanSeconds"
+              }
+            ]
+          }
+        }
+      },
+      "UpdateOnChainAutomatedTransferSettings": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "intervalSeconds": {
+            "description": "How often should the processor run",
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/TimeSpanSeconds"
+              }
+            ]
+          }
+        }
+      },
+      "OnChainAutomatedTransferSettings": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "paymentMethod": {
+            "description": "payment method of the payout processor",
+            "type": "string"
+          },
+          "intervalSeconds": {
+            "description": "How often should the processor run",
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/TimeSpanSeconds"
+              }
+            ]
+          }
+        }
+      },
       "PullPaymentDataList": {
         "type": "array",
         "items": {
@@ -7042,6 +8115,26 @@
             "description": "The payment method of the payout"
           }
         }
+      },
+      "CreatePayoutThroughStoreRequest": {
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/CreatePayoutRequest"
+          },
+          {
+            "type": "object",
+            "properties": {
+              "pullPaymentId": {
+                "type": "string",
+                "description": "The pull payment to create this for. Optional."
+              },
+              "approved": {
+                "type": "boolean",
+                "description": "Whether to approve this payout automatically upon creation"
+              }
+            }
+          }
+        ]
       },
       "PayoutData": {
         "type": "object",
@@ -7342,36 +8435,44 @@
         }
       },
       "LightningNetworkPaymentMethodData": {
-        "type": "object",
-        "additionalProperties": {
-          "$ref": "#/components/schemas/LightningNetworkPaymentMethodBaseData"
-        },
-        "properties": {
-          "enabled": {
-            "type": "boolean",
-            "description": "Whether the payment method is enabled"
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/LightningNetworkPaymentMethodBaseData"
           },
-          "cryptoCode": {
-            "type": "string",
-            "description": "Crypto code of the payment method"
-          },
-          "paymentMethod": {
-            "type": "string",
-            "description": "The payment method"
+          {
+            "type": "object",
+            "properties": {
+              "enabled": {
+                "type": "boolean",
+                "description": "Whether the payment method is enabled"
+              },
+              "cryptoCode": {
+                "type": "string",
+                "description": "Crypto code of the payment method"
+              },
+              "paymentMethod": {
+                "type": "string",
+                "description": "The payment method"
+              }
+            }
           }
-        }
+        ]
       },
       "UpdateLightningNetworkPaymentMethodRequest": {
-        "type": "object",
-        "additionalProperties": {
-          "$ref": "#/components/schemas/LightningNetworkPaymentMethodBaseData"
-        },
-        "properties": {
-          "enabled": {
-            "type": "boolean",
-            "description": "Whether the payment method is enabled"
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/LightningNetworkPaymentMethodBaseData"
+          },
+          {
+            "type": "object",
+            "properties": {
+              "enabled": {
+                "type": "boolean",
+                "description": "Whether the payment method is enabled"
+              }
+            }
           }
-        }
+        ]
       },
       "LNURLPayPaymentMethodDataList": {
         "type": "array",
@@ -7398,20 +8499,24 @@
         }
       },
       "LNURLPayPaymentMethodData": {
-        "type": "object",
-        "additionalProperties": {
-          "$ref": "#/components/schemas/LNURLPayPaymentMethodBaseData"
-        },
-        "properties": {
-          "enabled": {
-            "type": "boolean",
-            "description": "Whether the payment method is enabled. Note that this can only enabled when a Lightning Network payment method is available and enabled"
+        "allOf": [
+          {
+            "type": "object",
+            "properties": {
+              "enabled": {
+                "type": "boolean",
+                "description": "Whether the payment method is enabled. Note that this can only enabled when a Lightning Network payment method is available and enabled"
+              },
+              "cryptoCode": {
+                "type": "string",
+                "description": "Crypto code of the payment method"
+              }
+            }
           },
-          "cryptoCode": {
-            "type": "string",
-            "description": "Crypto code of the payment method"
+          {
+            "$ref": "#/components/schemas/LNURLPayPaymentMethodBaseData"
           }
-        }
+        ]
       },
       "OnChainPaymentMethodDataList": {
         "type": "array",
@@ -7457,44 +8562,56 @@
         }
       },
       "UpdateOnChainPaymentMethodRequest": {
-        "type": "object",
-        "additionalProperties": {
-          "$ref": "#/components/schemas/OnChainPaymentMethodBaseData"
-        },
-        "properties": {
-          "enabled": {
-            "type": "boolean",
-            "description": "Whether the payment method is enabled"
+        "allOf": [
+          {
+            "type": "object",
+            "properties": {
+              "enabled": {
+                "type": "boolean",
+                "description": "Whether the payment method is enabled"
+              }
+            }
+          },
+          {
+            "$ref": "#/components/schemas/OnChainPaymentMethodBaseData"
           }
-        }
+        ]
       },
       "OnChainPaymentMethodData": {
-        "type": "object",
-        "additionalProperties": {
-          "$ref": "#/components/schemas/OnChainPaymentMethodDataPreview"
-        },
-        "properties": {
-          "enabled": {
-            "type": "boolean",
-            "description": "Whether the payment method is enabled"
+        "allOf": [
+          {
+            "type": "object",
+            "properties": {
+              "enabled": {
+                "type": "boolean",
+                "description": "Whether the payment method is enabled"
+              },
+              "paymentMethod": {
+                "type": "string",
+                "description": "The payment method"
+              }
+            }
           },
-          "paymentMethod": {
-            "type": "string",
-            "description": "The payment method"
+          {
+            "$ref": "#/components/schemas/OnChainPaymentMethodDataPreview"
           }
-        }
+        ]
       },
       "OnChainPaymentMethodDataPreview": {
-        "type": "object",
-        "additionalProperties": {
-          "$ref": "#/components/schemas/OnChainPaymentMethodBaseData"
-        },
-        "properties": {
-          "cryptoCode": {
-            "type": "string",
-            "description": "Crypto code of the payment method"
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/OnChainPaymentMethodBaseData"
+          },
+          {
+            "type": "object",
+            "properties": {
+              "cryptoCode": {
+                "type": "string",
+                "description": "Crypto code of the payment method"
+              }
+            }
           }
-        }
+        ]
       },
       "OnChainPaymentMethodPreviewResultData": {
         "type": "object",
@@ -7661,7 +8778,7 @@
         "type": "object",
         "additionalProperties": false,
         "properties": {
-          "feeRate": {
+          "feerate": {
             "type": "number",
             "format": "decimal",
             "description": "The fee rate (sats per byte) based on the wallet's configured recommended block confirmation target"
@@ -7763,8 +8880,8 @@
           },
           "labels": {
             "description": "Labels linked to this transaction",
-            "type": "object",
-            "additionalProperties": {
+            "type": "array",
+            "items": {
               "$ref": "#/components/schemas/LabelData"
             }
           }
@@ -7815,8 +8932,8 @@
           },
           "labels": {
             "description": "Labels linked to this transaction",
-            "type": "object",
-            "additionalProperties": {
+            "type": "array",
+            "items": {
               "$ref": "#/components/schemas/LabelData"
             }
           }
@@ -7854,7 +8971,7 @@
               "$ref": "#/components/schemas/CreateOnChainTransactionRequestDestination"
             }
           },
-          "feeRate": {
+          "feerate": {
             "type": "number",
             "format": "decimal or long (sats/byte)",
             "description": "Transaction fee."
@@ -7885,6 +9002,25 @@
           "selectedInputs": {
             "nullable": true,
             "description": "Restrict the creation of the transactions from the outpoints provided ONLY (coin selection)",
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        }
+      },
+      "PatchOnChainTransactionRequest": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "comment": {
+            "nullable": true,
+            "type": "string",
+            "description": "Transaction comment"
+          },
+          "labels": {
+            "nullable": true,
+            "description": "Transaction labels",
             "type": "array",
             "items": {
               "type": "string"
@@ -8105,6 +9241,16 @@
               "type": "string"
             },
             "description": "The roles of the user"
+          }
+        }
+      },
+      "LockUserRequest": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "locked": {
+            "type": "boolean",
+            "description": "Whether to lock or unlock the user"
           }
         }
       },
