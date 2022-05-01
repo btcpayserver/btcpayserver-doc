@@ -4,7 +4,7 @@ BTCPay Server offers several tools that make **cryptocurrency bookkeeping** easi
 
 ## Invoice Export
 
-![Invoice exporting in BTCPay Server](./img/BTCPayInvoiceExport.png "Invoice exporting in BTCPay Server")
+![Invoice exporting in BTCPay Server](./img/invoice/invoice-export.jpg "Invoice exporting in BTCPay Server")
 
 To export the **invoices**, go to Invoices > Export invoices, select the export format (CSV/JSON) and download the file. You can then customize the fields to fit your **business needs** and import the data into your **accounting software**, or create pivot tables from the exported data.
 
