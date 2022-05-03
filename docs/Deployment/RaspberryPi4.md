@@ -1,58 +1,37 @@
-# Raspberry Pi 4 Deployment
+# Raspberry Pi Deployment
 
 This document guides you step by step on **how to run BTCPay Server on a Raspberry Pi 4**.
 
-The **Raspberry Pi 4** is currently the best low-cost single-board computer available. You can **use a Raspberry Pi 4 to run your BTCPay Server** at home for around $150 worth of parts, described below.
+The **Raspberry Pi 4** is currently the best low-cost single-board computer available.
+You can **use a Raspberry Pi 4 to run your BTCPay Server** at home for around $150 worth of parts, described below.
 
-# Quickstart
-Already have a Raspberry Pi 4B with the following specs?
+Already have a Raspberry Pi 4 with the following specs?
 
-	- 4GB memory
-	- 1TB USB 3.0 SSD
-	- 16GB or greater SD card
+- 4GB memory
+- 1TB USB 3.0 SSD
+- 16GB or greater SD card
 
-Download the latest [64 Bit RaspiOS](https://downloads.raspberrypi.org/raspios_lite_arm64/images).
+If so, you can go straight to the [quickstart instructions](#quickstart).
+Otherwise, here's what you need …
 
-- Select the most recent directory and download the zip file.
-- Flash the image to your SD card.
-- If you don't have a keyboard and monitor make sure you enable SSH by creating empty file named "ssh" on the "boot" folder of the SD card.
-
-Login to the RPI (the default username is "pi" and the default password is "raspberry") and run the following commands.  If you don't have a keyboard and LCD screen use [Putty](https://www.putty.org/) to connect via SSH.
-
-Change your password.
-```bash
-passwd
-```
-
-For LND Full Node - IBD takes approximately 36 hours after initial install.
-```bash
-sudo su -
-wget -O btcpayserver-install-lnd.sh https://raw.githubusercontent.com/btcpayserver/btcpayserver-doc/master/docs/Deployment/btcpayserver-lnd-rpi4-install.md
-chmod +x btcpayserver-install-lnd.sh
-. btcpayserver-install-lnd.sh
-```
-
-For C-Lightning Full Node - IBD takes approximately 36 hours after initial install.
-```bash
-sudo su -
-wget -O btcpayserver-install-clightning.sh https://raw.githubusercontent.com/btcpayserver/btcpayserver-doc/master/docs/Deployment/btcpayserver-clightning-rpi4-install.md
-chmod +x btcpayserver-install-clightning.sh
-. btcpayserver-install-clightning.sh
-```
-
-After initial setup is complete open a browser on another computer and go to btcpay.local
-
-# Detailed Step by Step Instructions.
 ## Required Hardware
 
 ### Raspberry Pi 4
 
-- [Raspberry Pi 4 with **4GB RAM**](https://www.canakit.com/raspberry-pi-4-4gb.html) ($55)
-- [Sandisk 16GB SD Card](https://www.amazon.com/dp/B073K14CVB/) ($5)
+- [Raspberry Pi 4 with **4GB RAM**](https://www.canakit.com/raspberry-pi-4-4gb.html) (~$65)
+- [Sandisk 16GB SD Card](https://www.amazon.com/dp/B073K14CVB/) (~$10)
 
 Don’t settle for only 1GB or 2GB of RAM. The **4GB RAM** version is harder to find than the other versions, but you absolutely want that **4GB of RAM** for a few extra bucks, and it’s totally worth spending a few extra minutes searching on the Internet to find a vendor that has the 4GB RAM version in stock. You’ll also need an **SD card reader** if you don’t already have one.
 
-### Power Adapters and USB-C Cable
+### Data Storage options
+
+- [Samsung SSD T7 1TB](https://www.amazon.com/dp/B0874XN4D8/) (~$100)
+- [SanDisk Ultra 3D 1TB](https://www.amazon.com/dp/B071KGRXRG/) (~$100)
+
+A 1TB SSD allows you to keep a full copy of the Bitcoin blockchain.
+You can also use BTCPay Server without a full copy of the Bitcoin blockchain by using the [pruning option](/Docker/#how-i-can-prune-my-nodes).
+
+### Power Adapter options
 
 - [Official Raspberry Pi 4 USB-C Power Adapter 5.1V/3A for US](https://shop.pimoroni.com/products/raspberry-pi-official-usb-c-power-supply-us?variant=29391144648787) ($10)
 - [Official Raspberry Pi 4 USB-C Power Adapter 5.1V/3A for EU](https://shop.pimoroni.com/products/raspberry-pi-official-usb-c-power-supply-eu?variant=29391130624083) ($10)
@@ -60,87 +39,109 @@ Don’t settle for only 1GB or 2GB of RAM. The **4GB RAM** version is harder to 
 
 Don’t waste your time with random Chinese power adapters from Amazon, or expect that the existing ones you have at home are going to work fine. The Raspberry Pi 4 has issues with unofficial adapters, and for only $10 it’s better to just **get an official adapter** instead of learning this the hard way.
 
-### Cooling options: Passive vs Active vs Passive+Active
+### Case and Cooling options
 
-- [Pimoroni Fan Shim](https://shop.pimoroni.com/products/fan-shim) ($10)
+- [Flirc Heatsink Case](https://www.amazon.com/dp/B07WG4DW52/) (~$15)
+- [Passive cooling aluminum case](https://www.amazon.com/dp/B07VQRYTPR/) (~$15)
 
-Strictly speaking, you don’t actually **need** a cooling solution, but you certainly **want** a cooling solution, because once the Raspberry PI core temperature reaches 70C, it will throttle the CPU down to avoid burning itself up.
+Of course, using a case is totally optional, but we recommend one to protect your Raspberry Pi over the long-term.
+Strictly speaking, you don’t actually need a cooling solution, but you certainly **want** at least passive cooling.
+Once the Raspberry PI core temperature reaches 70°C, it will throttle down the CPU.
 
-### Case options: Naked vs. Protection
+## Quickstart
 
-- [Flirc Heatsink Case](https://flirc.tv/more/raspberry-pi-4-case) ($12)
-- [Pimoroni Pibow Coupé 4](https://shop.pimoroni.com/products/pibow-coupe-4?variant=29210100105299) ($9)
+Download and open the latest [Raspberry Pi Imager](https://www.raspberrypi.com/software/).
 
-Of course, using a case is totally optional, but we recommend one to protect your Raspberry Pi over the long-term and prevent random dust from shorting out the pins.
+![Raspberry Pi Imager](../img/raspberry-pi/rpi-imager.png)
 
-### Data storage options: SSD vs USB memory vs SD card
+Choose the following options:
 
-- [Samsung 500GB SSD](https://www.amazon.com/dp/B073GZBT36/) ($75)
+- Operating System: Raspberry Pi OS Lite (64-bit)
+  - Find it via "Raspberry Pi OS (Other)"
+- Storage: Select your SD card
 
-The 500GB SSD allows you to keep a full copy of the Bitcoin blockchain, until it grows past 500GB sometime in 2022. At that time, you’ll either have to enable pruning on your Bitcoin node, or upgrade to a 1TB SSD, which will presumably be cheaper then, probably even less than $75. You can also use BTCPay without a full copy of the Bitcoin blockchain.
+Open the Advanced Settings via the button in the bottom right corner.
 
-### Display options: Display or Headless
+![Raspberry Pi Imager Advanced Settings](../img/raspberry-pi/rpi-imager-advanced-settings.png)
 
-- Display ($100)
+Advanced Settings:
 
-## Assembling the Raspberry Pi 4 components
+- Set the hostname to what you like, this guide assumes `btcpay.local`.
+- Enabled SSH
+- Set username and password, this guide assumes `btcpay` as username.
 
-- Important: Attach a heatsink to the CPU!
-- Connect the SSD to one of the blue colored USB 3 ports
-- Prepare the USB Power Adapter but don’t plug it in yet
+Other settings are optional, you do not need to configure wireless LAN.
 
-![RPI4 Components](../img//RPI4Components.jpeg "Raspberry Pi 4 Components")
+Close the Advanced Settings and click the "Write" button.
 
-## Install Linux on the Raspberry Pi
+### Setting up the Raspberry Pi
 
-Start by downloading the latest [64 Bit RaspiOS](https://downloads.raspberrypi.org/raspios_lite_arm64/images):  Select the most recent directory and download the zip file to your existing computer. The “Lite” distribution is fine for BTCPay setup.
+Once the image is written to the SD card, you can eject it and insert it into the Raspberry Pi.
+Connect the SSD and network cable to the Raspberry Pi.
+At last, connect the power cable ­— this starts the boot process.
+It should boot up and get an IP address using DHCP.
 
-### Flash your SD card with the Raspberry Pi OS for Linux
-
-- Extract the downloaded Zip file
-- Download the latest version of [balenaEtcher](https://www.balena.io/etcher/) and install it.
-- Connect an SD card reader with the SD card inside.
-- Open balenaEtcher and select from your hard drive the Raspberry Pi .img from the extracted zip file you wish to write to the SD card.
-- Select the SD card you wish to write your image to.
-- Review your selections and click 'Flash!' to begin writing data to the SD card.
-
-You can find a more in-depth instruction guide to flashing to your SD card at the [official Raspberry Pi  website](https://www.raspberrypi.org/documentation/installation/installing-images).
-
-If you used balenaEtcher to flash, the SD card will already have been ejected. Simply take the SD card out and put it back in. The SD card should now be labelled as `boot`. Next, enable SSH at bootup so you can remotely login by creating an empty file in the SD card root folder called `ssh`. Eject the SD card through your OS before taking it out of the SD card reader.
-
-![RPI4 Console](../img//RPI4Terminal4.png "Raspberry Pi 4 Console")
-
-## Booting up the Raspberry Pi
-
-After inserting the SD card into the Raspberry Pi, go ahead and connect the power and ethernet, and optionally the display and keyboard if you have those. It should boot up and get an IP address using DHCP. You can try searching for it with `ping raspberrypi.local` on your desktop PC, but if that doesn’t work you will need to login to your router to find its IP address.
-
-The IP address that my Raspberry Pi got was 192.168.1.5 so I SSH’d to that:
+Login to the Raspberry Pi using the credentials you configured in the Raspberry Pi Imager:
 
 ```bash
-ssh 192.168.1.5 -l pi
+ssh btcpay@btcpay.local
 ```
 
-The default password for the “pi” user is “raspberry”. After SSH’ing in, the first thing I want to do is check the device’s CPU temperature to make sure the cooling system are working correctly. Press Ctrl-c to stop monitoring:
+Confirm the `Are you sure you want to continue connecting?` question with `yes`
+
+If your Raspberry Pi cannot be found by the `btcpay.local` address, you will need to login to your router to find its IP address.
+The IP address that my Raspberry Pi got was `192.168.1.5`.
 
 ```bash
-sudo watch -n1 vcgencmd measure_temp
+ssh btcpay@192.168.1.5
 ```
 
-Next, let’s change the password for the “pi” user:
-
-```bash
-passwd pi
-```
-
-![RPI4 Console](../img//RPI4Terminal4.png "Raspberry Pi 4 Console")
-
-After that, switch to the `root` user, which we will use for the remaining part of the tutorial:
+Switch to the `root` user:
 
 ```bash
 sudo su -
 ```
 
-## Configuring the storage
+Afterwards, you can choose between LND and Core Lightning for your Lightning node …
+
+### LND
+
+```bash
+wget -O btcpayserver-install-lnd.sh https://raw.githubusercontent.com/btcpayserver/btcpayserver-doc/master/docs/Deployment/btcpayserver-lnd-rpi4-install.md
+chmod +x btcpayserver-install-lnd.sh
+. btcpayserver-install-lnd.sh
+```
+
+### Core Lightning
+
+```bash
+wget -O btcpayserver-install-clightning.sh https://raw.githubusercontent.com/btcpayserver/btcpayserver-doc/master/docs/Deployment/btcpayserver-clightning-rpi4-install.md
+chmod +x btcpayserver-install-clightning.sh
+. btcpayserver-install-clightning.sh
+```
+
+After initial setup is complete open a browser on another computer and go to `btcpay.local`.
+
+:::tip
+Your installation is done and your node should have started synching.
+For a Bitcoin full node the initial block download takes approximately 40 hours after install.
+:::
+
+If you are curious, here are the details of what the installation scripts above do …
+
+## Detailed Step by Step Instructions
+
+These are the steps that follow after the general setup process outlined in the [quickstart instructions](#quickstart).
+
+:::tip NOTE
+The following steps require you to be the root user.
+
+```bash
+sudo su -
+```
+:::
+
+### Configuring the storage
 
 We recommend to disable swap to prevent burning out your SD card:
 
@@ -150,8 +151,6 @@ dphys-swapfile uninstall
 update-rc.d dphys-swapfile remove
 systemctl disable dphys-swapfile
 ```
-
-![RPI4 Console](../img//RPI4Terminal5.png "Raspberry Pi 4 Console")
 
 Partition your SSD:
 
@@ -186,8 +185,9 @@ This is also to prevent burning out your SD card too quickly:
 echo 'none /var/log tmpfs size=10M,noatime 0 0' >> /etc/fstab
 ```
 
-## Install Docker
-```
+### Install Docker
+
+```bash
 apt install apt-transport-https ca-certificates curl gnupg lsb-release -y
 curl -fsSL https://download.docker.com/linux/debian/gpg | gpg --dearmor -o /usr/share/keyrings/docker-archive-keyring.gpg
 echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/docker-archive-keyring.gpg] https://download.docker.com/linux/debian \
@@ -196,8 +196,9 @@ apt update
 apt -y install docker-ce docker-ce-cli containerd.io
 ```
 
-## Create mount for Docker volumes
-```
+### Create mount for Docker volumes
+
+```bash
 rm -rf /var/lib/docker
 mkdir -p /var/lib/docker
 mount --bind /mnt/usb /var/lib/docker
@@ -205,7 +206,7 @@ echo "/mnt/usb /var/lib/docker none bind,nobootwait 0 2" >> /etc/fstab
 systemctl restart docker
 ```
 
-## Configuring the firewall
+### Configuring the firewall
 
 Upgrade your OS packages to latest:
 
@@ -253,30 +254,15 @@ ufw allow 80/tcp
 ufw allow 443/tcp
 ufw allow 8333/tcp
 ufw allow 9735/tcp
-```
 
-Enable your firewall:
-
-```bash
+# Enable the firewall
 ufw enable
-```
 
-Verify your configuration:
-
-```bash
+# Verify the configuration
 ufw status
 ```
 
-## Change your Hostname
-```
-host_name='btcpay'
-echo $host_name | sudo tee /etc/hostname
-sed -i -E 's/^127.0.1.1.*/127.0.1.1\t'"$host_name"'/' /etc/hosts
-hostnamectl set-hostname $host_name
-systemctl restart avahi-daemon
-```
-
-## Setup BTCPay Server
+### Setup BTCPay Server
 
 Download BTCPay Server from GitHub:
 
@@ -318,7 +304,7 @@ It should be up and running within a few minutes. Try opening http://btcpay.loca
 
 Now, you just need to wait a day or so for the Bitcoin blockchain to [sync and full verify](../FAQ/Synchronization.md). The bottom of the BTCPay Server web GUI will show a pop-up dialog box to monitor the progress.
 
-## Fast Sync (optional)
+### Fast Sync (optional)
 
 BTCPayServer's complete FastSync documentation is [available here](https://github.com/btcpayserver/btcpayserver-docker/tree/master/contrib/FastSync).
 
