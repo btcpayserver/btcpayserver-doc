@@ -113,5 +113,8 @@ module.exports = [
   { path: '/GreenFieldExample/', redirect: '/Development/GreenFieldExample/' },
   { path: '/ThirdPartyHosting/', redirect: '/Deployment/ThirdPartyHosting/' },
   { path: '/ChangeDomain/', redirect: '/Deployment/ChangeDomain/' },
-  { path: '/DynamicDNS/', redirect: '/Deployment/DynamicDNS/' }
+  { path: '/DynamicDNS/', redirect: '/Deployment/DynamicDNS/' },
+  { path: '/Deployment/RaspberryPi/', redirect: '/Deployment/RaspberryPi4/' },
+  { path: '/Deployment/RPi3/', redirect: '/Deployment/RaspberryPi4/' },
+  { path: '/Deployment/RPi4/', redirect: '/Deployment/RaspberryPi4/' },
 ]
