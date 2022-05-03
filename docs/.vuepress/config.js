@@ -190,6 +190,10 @@ const sidebarDeployment = [
           '/Docker/lightning-terminal',
           '/Docker/tallycoin-connect'
         ]
+      },
+      {
+        title: 'FastSync',
+        path: '/Docker/fastsync'
       }
     ]
   },

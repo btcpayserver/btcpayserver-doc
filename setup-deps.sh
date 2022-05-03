@@ -117,6 +117,12 @@ for file in "$DOCS_DIR"/Docker/*.md; do
   update_external "$file" https://github.com/btcpayserver/btcpayserver-docker "$DOCS_DIR"/Docker/
 done
 
+cp contrib/FastSync/README.md "$DOCS_DIR/Docker/fastsync.md"
+sed -ie 's$(utxo-sets)$(https://github.com/btcpayserver/btcpayserver-docker/blob/master/contrib/FastSync/utxo-sets)$g' "$DOCS_DIR/Docker/fastsync.md"
+sed -ie 's$(load-utxo-set.sh)$(https://github.com/btcpayserver/btcpayserver-docker/blob/master/contrib/FastSync/load-utxo-set.sh)$g' "$DOCS_DIR/Docker/fastsync.md"
+sed -ie 's$(save-utxo-set.sh)$(https://github.com/btcpayserver/btcpayserver-docker/blob/master/contrib/FastSync/save-utxo-set.sh)$g' "$DOCS_DIR/Docker/fastsync.md"
+sed -ie 's$(sigs/NicolasDorier.utxo-sets.asc)$(https://github.com/btcpayserver/btcpayserver-docker/blob/master/contrib/FastSync/sigs/NicolasDorier.utxo-sets.asc)$g' "$DOCS_DIR/Docker/fastsync.md"
+
 # Transmuter
 
 echo "Setup dependency: Transmuter"
