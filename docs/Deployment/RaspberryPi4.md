@@ -1,6 +1,6 @@
 # Raspberry Pi 4 Deployment
 
-This document guides you step by step on **how to run BTCPay Server on a Raspberry Pi 4**. See here the [Raspberry Pi 3 instructions](./RPi3.md)
+This document guides you step by step on **how to run BTCPay Server on a Raspberry Pi 4**.
 
 The **Raspberry Pi 4** is currently the best low-cost single-board computer available. You can **use a Raspberry Pi 4 to run your BTCPay Server** at home for around $150 worth of parts, described below.
 
@@ -9,17 +9,17 @@ Already have a Raspberry Pi 4B with the following specs?
 
 	- 4GB memory
 	- 1TB USB 3.0 SSD
-	- 16GB or greater SD card   
+	- 16GB or greater SD card
 
-Download the latest [64 Bit RaspiOS](https://downloads.raspberrypi.org/raspios_lite_arm64/images).  
+Download the latest [64 Bit RaspiOS](https://downloads.raspberrypi.org/raspios_lite_arm64/images).
 
-- Select the most recent directory and download the zip file.  
-- Flash the image to your SD card.  
-- If you don't have a keyboard and monitor make sure you enable SSH by creating empty file named "ssh" on the "boot" folder of the SD card. 
+- Select the most recent directory and download the zip file.
+- Flash the image to your SD card.
+- If you don't have a keyboard and monitor make sure you enable SSH by creating empty file named "ssh" on the "boot" folder of the SD card.
 
-Login to the RPI (the default username is "pi" and the default password is "raspberry") and run the following commands.  If you don't have a keyboard and LCD screen use [Putty](https://www.putty.org/) to connect via SSH. 
+Login to the RPI (the default username is "pi" and the default password is "raspberry") and run the following commands.  If you don't have a keyboard and LCD screen use [Putty](https://www.putty.org/) to connect via SSH.
 
-Change your password. 
+Change your password.
 ```bash
 passwd
 ```
@@ -40,9 +40,9 @@ chmod +x btcpayserver-install-clightning.sh
 . btcpayserver-install-clightning.sh
 ```
 
-After initial setup is complete open a browser on another computer and go to btcpay.local 
+After initial setup is complete open a browser on another computer and go to btcpay.local
 
-# Detailed Step by Step Instructions. 
+# Detailed Step by Step Instructions.
 ## Required Hardware
 
 ### Raspberry Pi 4
@@ -85,7 +85,7 @@ The 500GB SSD allows you to keep a full copy of the Bitcoin blockchain, until it
 
 ## Assembling the Raspberry Pi 4 components
 
-- Important: Attach a heatsink to the CPU! 
+- Important: Attach a heatsink to the CPU!
 - Connect the SSD to one of the blue colored USB 3 ports
 - Prepare the USB Power Adapter but don’t plug it in yet
 
@@ -317,3 +317,29 @@ Run the BTCPay installation:
 It should be up and running within a few minutes. Try opening http://btcpay.local in your web browser. If everything is correct, you will see BTCPay Server front page.
 
 Now, you just need to wait a day or so for the Bitcoin blockchain to [sync and full verify](../FAQ/Synchronization.md). The bottom of the BTCPay Server web GUI will show a pop-up dialog box to monitor the progress.
+
+## Fast Sync (optional)
+
+BTCPayServer's complete FastSync documentation is [available here](https://github.com/btcpayserver/btcpayserver-docker/tree/master/contrib/FastSync).
+
+Please read very carefully to understand what FastSync is and why it is important to verify the UTXO set yourself.
+
+```bash
+cd /root/btcpayserver/btcpayserver-docker
+
+./btcpay-down.sh
+cd contrib
+cd FastSync
+./load-utxo-set.sh
+```
+
+FastSync currently takes about 30 minutes on a high-speed internet connection. After FastSync finishes, run the following command to restart BTCPay Server:
+
+```bash
+cd ../..
+./btcpay-up.sh
+```
+
+By using FastSync, you are exposing yourself to attacks if a [malicious UTXO set snapshot](https://github.com/btcpayserver/btcpayserver-docker/blob/master/contrib/FastSync/README.md#what-are-the-downsides-of-fast-sync) is sent to you.
+
+If you have another trusted node somewhere else, you can check the validity of the UTXO set gathered by FastSync by following [these instructions](https://github.com/btcpayserver/btcpayserver-docker/blob/master/contrib/FastSync/README.md#dont-trust-verify).
