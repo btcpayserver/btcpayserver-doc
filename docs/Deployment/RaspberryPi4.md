@@ -102,25 +102,35 @@ Switch to the `root` user:
 sudo su -
 ```
 
-Afterwards, you can choose between LND and Core Lightning for your Lightning node …
+Afterwards, you can choose between [LND](https://github.com/lightningnetwork/lnd) and [Core Lightning](https://github.com/ElementsProject/lightning) for your Lightning node.
 
-### LND
-
-```bash
-wget -O btcpayserver-install-lnd.sh https://raw.githubusercontent.com/btcpayserver/btcpayserver-doc/master/docs/Deployment/btcpayserver-lnd-rpi4-install.md
-chmod +x btcpayserver-install-lnd.sh
-. btcpayserver-install-lnd.sh
-```
-
-### Core Lightning
+**Required:** Choose one of the following …
 
 ```bash
-wget -O btcpayserver-install-clightning.sh https://raw.githubusercontent.com/btcpayserver/btcpayserver-doc/master/docs/Deployment/btcpayserver-clightning-rpi4-install.md
-chmod +x btcpayserver-install-clightning.sh
-. btcpayserver-install-clightning.sh
+# Core Lightning
+export BTCPAYGEN_LIGHTNING="clightning"
+
+# LND
+export BTCPAYGEN_LIGHTNING="lnd"
 ```
 
-After initial setup is complete open a browser on another computer and go to `btcpay.local`.
+**Optional:** You can also configure [additional settings](/Docker/#environment-variables) …
+
+```bash
+# optional, this is just an example for runing a pruned node on a public domain
+export BTCPAYGEN_ADDITIONAL_FRAGMENTS="opt-save-storage"
+export BTCPAY_ADDITIONAL_HOSTS="btcpay.YourDomain.com"
+```
+
+Download and run the install script:
+
+```bash
+wget -O btcpayserver-install.sh https://raw.githubusercontent.com/btcpayserver/btcpayserver-doc/master/docs/Deployment/btcpayserver-rpi4-install.md
+chmod +x btcpayserver-install.sh
+. btcpayserver-install.sh
+```
+
+After the initial setup is complete open a browser on another computer and go to `btcpay.local`.
 
 :::tip
 Your installation is done and your node should have started synching.
@@ -140,6 +150,12 @@ The following steps require you to be the root user.
 sudo su -
 ```
 :::
+
+### Upgrade the OS packages to latest
+
+```bash
+apt update && apt upgrade -y && apt autoremove
+```
 
 ### Configuring the storage
 
@@ -208,31 +224,12 @@ systemctl restart docker
 
 ### Configuring the firewall
 
-Upgrade your OS packages to latest:
-
-```bash
-apt update && apt upgrade -y && apt autoremove
-```
-
 Install a firewall and allow SSH, HTTP, HTTPS, Bitcoin, and Lightning:
 
 ```bash
 apt install -y ufw
 ufw default deny incoming
 ufw default allow outgoing
-```
-
-UFW needs default iptables changes and a reboot for the firewall to work:
-
-```bash
-update-alternatives --set iptables /usr/sbin/iptables-legacy
-reboot
-```
-
-Switch back to root after rebooting:
-
-```bash
-sudo su -
 ```
 
 This command allows SSH connections from internal networks only:
