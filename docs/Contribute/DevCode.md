@@ -129,6 +129,20 @@ $ git add .
 $ git push origin master
 ```
 
+If you see an error `fatal: 'upstream' does not appear to be a git repository` when running `$ git fetch upstream`, you must first configure a remote that points to the upstream repository in Git. That is needed only once. Just run the following command while you are in your _clone local path_ .
+```bash
+$ git remote add upstream https://github.com/btcpayserver/btcpayserver.git
+
+# check if the upstream repo is added succesfully
+$ git remote -v
+
+# you should see something like this:
+origin	YOUR_FORKED_GITHUB_REPO (fetch)
+origin	YOUR_FORKED_GITHUB_REPO (push)
+upstream	https://github.com/btcpayserver/btcpayserver.git (fetch)
+upstream	https://github.com/btcpayserver/btcpayserver.git (push)
+```
+
 ### Commit Code To Make Pull Request
 
 - After you have made some code changes on a feature branch (Example: A feature branch called `Fix/BugBranch`) and you want to make a Pull Request to the BTCPay Server Repository. Open a GitBash terminal and navigate to your _clone local path_ with the command: `$ cd Documents/Github/btcpayserver` and make sure you are on the **correct branch** that you want to commit and use git status to check the files changed are the ones you want to commit.
