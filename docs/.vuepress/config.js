@@ -160,11 +160,7 @@ const sidebarDeployment = [
       },
       {
         title: 'Raspberry Pi Deployment',
-        path: '/Deployment/RaspberryPi',
-        children: [
-          '/Deployment/RPi3',
-          '/Deployment/RPi4'
-        ]
+        path: '/Deployment/RaspberryPi4'
       },
       {
         title: 'Hack0',
