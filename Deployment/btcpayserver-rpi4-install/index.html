@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>BTCPay Server</title>
+    <meta name="generator" content="VuePress 1.9.7">
+    <link rel="stylesheet" href="/styles/btcpayserver-variables.css">
+    <meta name="description" content="BTCPay Server Official Documentation">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    
+    <link rel="preload" href="/assets/css/0.styles.399b38f2.css" as="style"><link rel="preload" href="/assets/js/app.eb6f14da.js" as="script"><link rel="preload" href="/assets/js/4.ada21f67.js" as="script"><link rel="preload" href="/assets/js/13.304f0f71.js" as="script"><link rel="preload" href="/assets/js/1.5ed85e3f.js" as="script"><link rel="preload" href="/assets/js/82.c0575b5a.js" as="script"><link rel="prefetch" href="/assets/js/10.1836466d.js"><link rel="prefetch" href="/assets/js/100.92add34e.js"><link rel="prefetch" href="/assets/js/101.bb7d3753.js"><link rel="prefetch" href="/assets/js/102.3a99f6e9.js"><link rel="prefetch" href="/assets/js/103.d3581e06.js"><link rel="prefetch" href="/assets/js/104.fbc20917.js"><link rel="prefetch" href="/assets/js/105.438cc90b.js"><link rel="prefetch" href="/assets/js/106.f90439ea.js"><link rel="prefetch" href="/assets/js/107.e248efaa.js"><link rel="prefetch" href="/assets/js/108.c4802f88.js"><link rel="prefetch" href="/assets/js/109.f79d52d9.js"><link rel="prefetch" href="/assets/js/11.f4c8ebdf.js"><link rel="prefetch" href="/assets/js/110.169cea0b.js"><link rel="prefetch" href="/assets/js/111.5bd16f51.js"><link rel="prefetch" href="/assets/js/112.18acd6a3.js"><link rel="prefetch" href="/assets/js/113.895dda3e.js"><link rel="prefetch" href="/assets/js/12.c3a98560.js"><link rel="prefetch" href="/assets/js/14.ce6d74ca.js"><link rel="prefetch" href="/assets/js/15.3e2be69a.js"><link rel="prefetch" href="/assets/js/16.fccab939.js"><link rel="prefetch" href="/assets/js/17.1eec40c9.js"><link rel="prefetch" href="/assets/js/18.c21feab4.js"><link rel="prefetch" href="/assets/js/19.98809cf4.js"><link rel="prefetch" href="/assets/js/20.3776d8d4.js"><link rel="prefetch" href="/assets/js/21.7cefe6a7.js"><link rel="prefetch" href="/assets/js/22.ec95fc15.js"><link rel="prefetch" href="/assets/js/23.01a06be6.js"><link rel="prefetch" href="/assets/js/24.01ac14d5.js"><link rel="prefetch" href="/assets/js/25.abd12458.js"><link rel="prefetch" href="/assets/js/26.5eed9f9e.js"><link rel="prefetch" href="/assets/js/27.40f715dd.js"><link rel="prefetch" href="/assets/js/28.2d3a8951.js"><link rel="prefetch" href="/assets/js/29.476677f1.js"><link rel="prefetch" href="/assets/js/30.25bb7e9b.js"><link rel="prefetch" href="/assets/js/31.1c1f409c.js"><link rel="prefetch" href="/assets/js/32.5a400a1e.js"><link rel="prefetch" href="/assets/js/33.fa3f875d.js"><link rel="prefetch" href="/assets/js/34.b17bdf4b.js"><link rel="prefetch" href="/assets/js/35.a9073a3e.js"><link rel="prefetch" href="/assets/js/36.11187f90.js"><link rel="prefetch" href="/assets/js/37.419ed3aa.js"><link rel="prefetch" href="/assets/js/38.728b6775.js"><link rel="prefetch" href="/assets/js/39.9e2042be.js"><link rel="prefetch" href="/assets/js/40.5c1ff8f3.js"><link rel="prefetch" href="/assets/js/41.a23438b8.js"><link rel="prefetch" href="/assets/js/42.43461f9e.js"><link rel="prefetch" href="/assets/js/43.37273826.js"><link rel="prefetch" href="/assets/js/44.776fd2e5.js"><link rel="prefetch" href="/assets/js/45.e5b21b25.js"><link rel="prefetch" href="/assets/js/46.edc5c487.js"><link rel="prefetch" href="/assets/js/47.7bec6685.js"><link rel="prefetch" href="/assets/js/48.1fcfc0cb.js"><link rel="prefetch" href="/assets/js/49.4d8e6c38.js"><link rel="prefetch" href="/assets/js/5.46d73c0a.js"><link rel="prefetch" href="/assets/js/50.1bbee156.js"><link rel="prefetch" href="/assets/js/51.4dd5e78a.js"><link rel="prefetch" href="/assets/js/52.0410bb4e.js"><link rel="prefetch" href="/assets/js/53.ba62fad2.js"><link rel="prefetch" href="/assets/js/54.30735724.js"><link rel="prefetch" href="/assets/js/55.4a8815e5.js"><link rel="prefetch" href="/assets/js/56.b7f126a9.js"><link rel="prefetch" href="/assets/js/57.d1518345.js"><link rel="prefetch" href="/assets/js/58.da56bdff.js"><link rel="prefetch" href="/assets/js/59.96bde9ef.js"><link rel="prefetch" href="/assets/js/6.2a4baef1.js"><link rel="prefetch" href="/assets/js/60.d9b89e1a.js"><link rel="prefetch" href="/assets/js/61.107f6594.js"><link rel="prefetch" href="/assets/js/62.9d6aa6c3.js"><link rel="prefetch" href="/assets/js/63.ed0d5e17.js"><link rel="prefetch" href="/assets/js/64.a16a06ea.js"><link rel="prefetch" href="/assets/js/65.fdea7ae8.js"><link rel="prefetch" href="/assets/js/66.45e2ae2c.js"><link rel="prefetch" href="/assets/js/67.227bd802.js"><link rel="prefetch" href="/assets/js/68.57e66e3f.js"><link rel="prefetch" href="/assets/js/69.b3418965.js"><link rel="prefetch" href="/assets/js/7.509adf14.js"><link rel="prefetch" href="/assets/js/70.28d9fcb0.js"><link rel="prefetch" href="/assets/js/71.16a6b22b.js"><link rel="prefetch" href="/assets/js/72.e9f4779b.js"><link rel="prefetch" href="/assets/js/73.6a143012.js"><link rel="prefetch" href="/assets/js/74.8a548540.js"><link rel="prefetch" href="/assets/js/75.a7fe9f87.js"><link rel="prefetch" href="/assets/js/76.e2e9d994.js"><link rel="prefetch" href="/assets/js/77.f86423d2.js"><link rel="prefetch" href="/assets/js/78.95cc9ae3.js"><link rel="prefetch" href="/assets/js/79.7bdee772.js"><link rel="prefetch" href="/assets/js/8.27d3d5f5.js"><link rel="prefetch" href="/assets/js/80.1815b5f1.js"><link rel="prefetch" href="/assets/js/81.7ac0267a.js"><link rel="prefetch" href="/assets/js/83.bb23bac5.js"><link rel="prefetch" href="/assets/js/84.a5180e5c.js"><link rel="prefetch" href="/assets/js/85.a85dd356.js"><link rel="prefetch" href="/assets/js/86.e843f652.js"><link rel="prefetch" href="/assets/js/87.68abec9f.js"><link rel="prefetch" href="/assets/js/88.ddcbf687.js"><link rel="prefetch" href="/assets/js/89.2399cdfd.js"><link rel="prefetch" href="/assets/js/9.58136190.js"><link rel="prefetch" href="/assets/js/90.ba6a57af.js"><link rel="prefetch" href="/assets/js/91.79877b42.js"><link rel="prefetch" href="/assets/js/92.59e4f742.js"><link rel="prefetch" href="/assets/js/93.bbf202d9.js"><link rel="prefetch" href="/assets/js/94.dde9a905.js"><link rel="prefetch" href="/assets/js/95.926c223c.js"><link rel="prefetch" href="/assets/js/96.ef3481e8.js"><link rel="prefetch" href="/assets/js/97.476e25cc.js"><link rel="prefetch" href="/assets/js/98.f603adc6.js"><link rel="prefetch" href="/assets/js/99.a31ca559.js"><link rel="prefetch" href="/assets/js/vendors~docsearch.f22c07cf.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.399b38f2.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><img src="/img/btcpay-logo.svg" alt="BTCPay Server" class="logo"> <span class="site-name can-hide">BTCPay Server</span></a> <nav class="nav-links can-hide"><div class="nav-item"><a href="/Guide.html" class="nav-link">
+  User Guide
+</a></div><div class="nav-item"><a href="/Deployment/" class="nav-link router-link-active">
+  Deployment
+</a></div><div class="nav-item"><a href="/Development/" class="nav-link">
+  Developers
+</a></div><div class="nav-item"><a href="/Contribute/" class="nav-link">
+  Contribute
+</a></div><div class="nav-item"><a href="/FAQ/" class="nav-link">
+  FAQ
+</a></div> <a href="https://github.com/btcpayserver/btcpayserver-doc" target="_blank" rel="noopener noreferrer" class="repo-link">
+    GitHub
+    <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></nav> <div class="links"><form id="search-form" role="search" class="algolia-search-wrapper search-box"><input id="algolia-search-input" class="search-query"></form> <nav class="nav-links can-hide social"><div class="nav-item"><a href="https://btcpayserver.org/" target="_blank" rel="noopener noreferrer website" class="nav-link external">
+  Website
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></div><div class="nav-item"><a href="https://chat.btcpayserver.org/" target="_blank" rel="noopener noreferrer chat" class="nav-link external">
+  Chat
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></div><div class="nav-item"><a href="https://github.com/btcpayserver/" target="_blank" rel="noopener noreferrer github" class="nav-link external">
+  GitHub
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></div><div class="nav-item"><a href="https://twitter.com/BtcpayServer" target="_blank" rel="noopener noreferrer twitter" class="nav-link external">
+  Twitter
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></div> <a href="https://github.com/btcpayserver/btcpayserver-doc" target="_blank" rel="noopener noreferrer" class="repo-link">
+    GitHub
+    <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></nav> <button type="button" class="btcpay-theme-switch"><svg viewBox="0 0 10 10" xmlns="http://www.w3.org/2000/svg"><path transform="translate(1 1)" d="M2.72 0A3.988 3.988 0 000 3.78c0 2.21 1.79 4 4 4 1.76 0 3.25-1.14 3.78-2.72-.4.13-.83.22-1.28.22-2.21 0-4-1.79-4-4 0-.45.08-.88.22-1.28z" class="btcpay-theme-switch-dark"></path><path transform="translate(1 1)" d="M4 0c-.28 0-.5.22-.5.5s.22.5.5.5.5-.22.5-.5S4.28 0 4 0zM1.5 1c-.28 0-.5.22-.5.5s.22.5.5.5.5-.22.5-.5-.22-.5-.5-.5zm5 0c-.28 0-.5.22-.5.5s.22.5.5.5.5-.22.5-.5-.22-.5-.5-.5zM4 2c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zM.5 3.5c-.28 0-.5.22-.5.5s.22.5.5.5.5-.22.5-.5-.22-.5-.5-.5zm7 0c-.28 0-.5.22-.5.5s.22.5.5.5.5-.22.5-.5-.22-.5-.5-.5zM1.5 6c-.28 0-.5.22-.5.5s.22.5.5.5.5-.22.5-.5-.22-.5-.5-.5zm5 0c-.28 0-.5.22-.5.5s.22.5.5.5.5-.22.5-.5-.22-.5-.5-.5zM4 7c-.28 0-.5.22-.5.5s.22.5.5.5.5-.22.5-.5S4.28 7 4 7z" class="btcpay-theme-switch-light"></path></svg></button></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links social"><div class="nav-item"><a href="https://btcpayserver.org/" target="_blank" rel="noopener noreferrer website" class="nav-link external">
+  Website
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></div><div class="nav-item"><a href="https://chat.btcpayserver.org/" target="_blank" rel="noopener noreferrer chat" class="nav-link external">
+  Chat
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></div><div class="nav-item"><a href="https://github.com/btcpayserver/" target="_blank" rel="noopener noreferrer github" class="nav-link external">
+  GitHub
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></div><div class="nav-item"><a href="https://twitter.com/BtcpayServer" target="_blank" rel="noopener noreferrer twitter" class="nav-link external">
+  Twitter
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></div> <a href="https://github.com/btcpayserver/btcpayserver-doc" target="_blank" rel="noopener noreferrer" class="repo-link">
+    GitHub
+    <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></nav> <nav class="nav-links"><div class="nav-item"><a href="/Guide.html" class="nav-link">
+  User Guide
+</a></div><div class="nav-item"><a href="/Deployment/" class="nav-link router-link-active">
+  Deployment
+</a></div><div class="nav-item"><a href="/Development/" class="nav-link">
+  Developers
+</a></div><div class="nav-item"><a href="/Contribute/" class="nav-link">
+  Contribute
+</a></div><div class="nav-item"><a href="/FAQ/" class="nav-link">
+  FAQ
+</a></div> <a href="https://github.com/btcpayserver/btcpayserver-doc" target="_blank" rel="noopener noreferrer" class="repo-link">
+    GitHub
+    <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></nav>  <ul class="sidebar-links"><li><section class="sidebar-group depth-0"><p class="sidebar-heading open"><span>Deployment</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/Deployment/" aria-current="page" class="sidebar-link">Choosing a Deployment Method</a></li><li><a href="/Deployment/ThirdPartyHosting/" class="sidebar-link">Third-party hosting</a></li><li><a href="/Configurator/" class="sidebar-link">Deploy BTCPay with Configurator</a></li></ul></section></li><li><section class="sidebar-group depth-0"><p class="sidebar-heading"><span>Docker</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/Docker/" class="sidebar-link">Introduction</a></li><li><a href="/Deployment/LunaNode/" class="sidebar-link">Web Deployment</a></li><li><section class="sidebar-group collapsable is-sub-group depth-1"><a href="/Deployment/Azure" class="sidebar-heading clickable"><span>Azure</span> <span class="arrow right"></span></a> <!----></section></li><li><a href="/Deployment/GoogleCloud/" class="sidebar-link">Google Cloud Deployment</a></li><li><section class="sidebar-group collapsable is-sub-group depth-1"><a href="/Deployment/Hardware" class="sidebar-heading clickable"><span>Hardware Deployment</span> <span class="arrow right"></span></a> <!----></section></li><li><a href="/Deployment/RaspberryPi4/" class="sidebar-link">Raspberry Pi Deployment</a></li><li><a href="/Deployment/Hack0/" class="sidebar-link">Hack0</a></li><li><section class="sidebar-group collapsable is-sub-group depth-1"><p class="sidebar-heading"><span>Docker Plugins</span> <span class="arrow right"></span></p> <!----></section></li><li><a href="/Docker/fastsync/" class="sidebar-link">FastSync</a></li></ul></section></li><li><section class="sidebar-group depth-0"><p class="sidebar-heading"><span>Manual Deployment</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/Deployment/ManualDeployment/" class="sidebar-link">Minimal manual setup</a></li><li><a href="/Deployment/ManualDeploymentExtended/" class="sidebar-link">Extended Manual Setup</a></li></ul></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><p>#!/bin/bash</p> <h1 id="set-btcpayserver-environment-variables"><a href="#set-btcpayserver-environment-variables" class="header-anchor">#</a> Set BTCPayServer Environment Variables</h1> <p>export BTCPAY_HOST=&quot;$(hostname).local&quot;
+export REVERSEPROXY_DEFAULT_HOST=&quot;$BTCPAY_HOST&quot;
+export NBITCOIN_NETWORK=&quot;mainnet&quot;
+export BTCPAYGEN_CRYPTO1=&quot;btc&quot;
+export BTCPAYGEN_REVERSEPROXY=&quot;nginx&quot;
+export BTCPAY_ENABLE_SSH=true</p> <h1 id="upgrade-os-packages-to-latest"><a href="#upgrade-os-packages-to-latest" class="header-anchor">#</a> Upgrade OS packages to latest</h1> <p>apt update &amp;&amp; apt upgrade -y &amp;&amp; apt autoremove</p> <h1 id="install-docker"><a href="#install-docker" class="header-anchor">#</a> Install Docker</h1> <p>apt install apt-transport-https ca-certificates curl gnupg lsb-release -y
+curl -fsSL https://download.docker.com/linux/debian/gpg | gpg --dearmor -o /usr/share/keyrings/docker-archive-keyring.gpg
+echo &quot;deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/docker-archive-keyring.gpg] https://download.docker.com/linux/debian <br>
+$(lsb_release -cs) stable&quot; | tee /etc/apt/sources.list.d/docker.list &gt; /dev/null
+apt update
+apt -y install docker-ce docker-ce-cli containerd.io</p> <h1 id="configure-external-storage"><a href="#configure-external-storage" class="header-anchor">#</a> Configure External Storage</h1> <p>DEVICE_NAME=&quot;&quot;
+PARTITION_NAME=&quot;&quot;
+MOUNT_DIR=&quot;/mnt/external&quot;
+DOCKER=&quot;/var/lib/docker&quot;</p> <p>isSD=$(fdisk -l | grep -c &quot;/dev/mmcblk0:&quot;)
+isNVMe=$(fdisk -l | grep -c &quot;/dev/nvme0n1:&quot;)
+isUSB=$(fdisk -l | grep -c &quot;/dev/sda:&quot;)</p> <h1 id="if-booting-from-sd-with-external-storage"><a href="#if-booting-from-sd-with-external-storage" class="header-anchor">#</a> If booting from SD with external storage</h1> <p>if [ ${isSD} -eq 1 ] &amp;&amp; [ ${isUSB} -eq 1 ]; then
+DEVICE_NAME=&quot;sda&quot;
+PARTITION_NAME=&quot;sda1&quot;
+umount /dev/sda1
+elif [ ${isSD} -eq 1 ] &amp;&amp; [ ${isNVMe} -eq 1 ]; then
+DEVICE_NAME=&quot;nvme0n1&quot;
+PARTITION_NAME=&quot;nvme0n1p1&quot;
+umount /dev/nvme0n1p1
+fi</p> <p>if [ -n &quot;${DEVICE_NAME}&quot; ]; then
+mkdir -p ${MOUNT_DIR}
+sfdisk --delete /dev/${DEVICE_NAME}
+sync
+sleep 4
+sudo wipefs -a /dev/${DEVICE_NAME}
+sync
+sleep 4
+partitions=$(lsblk | grep -c &quot;─${DEVICE_NAME}&quot;)
+if [ ${partitions} -gt 0 ]; then
+dd if=/dev/zero of=/dev/${DEVICE_NAME} bs=512 count=1
+sync
+fi
+partitions=$(lsblk | grep -c &quot;─${DEVICE_NAME}&quot;)
+if [ ${partitions} -gt 0 ]; then
+exit 1
+fi</p> <p>(
+echo o # Create a new empty DOS partition table
+echo n # Add a new partition
+echo p # Primary partition
+echo 1 # Partition number
+echo   # First sector (Accept default: 1)
+echo   # Last sector (Accept default: varies)
+echo w # Write changes
+) | fdisk /dev/${DEVICE_NAME}
+sync</p> <h1 id="loop-until-the-partition-gets-available"><a href="#loop-until-the-partition-gets-available" class="header-anchor">#</a> loop until the partition gets available</h1> <p>loopdone=0
+loopcount=0
+while [ ${loopdone} -eq 0 ]
+do
+sleep 2
+sync
+loopdone=$(lsblk -o NAME | grep -c ${PARTITION_NAME})
+loopcount=$(($loopcount +1))
+if [ ${loopcount} -gt 10 ]; then
+exit 1
+fi
+done</p> <p>mkfs.ext4 -F -L external /dev/${PARTITION_NAME}
+loopdone=0
+loopcount=0
+while [ ${loopdone} -eq 0 ]
+do
+sleep 2
+sync
+loopdone=$(lsblk -o NAME,LABEL | grep -c external)
+loopcount=$(($loopcount +1))
+if [ ${loopcount} -gt 10 ]; then
+exit 1
+fi
+done</p> <p>UUID=&quot;$(sudo blkid -s UUID -o value /dev/${PARTITION_NAME})&quot;
+echo &quot;UUID=$UUID ${MOUNT_DIR} ext4 defaults,noatime,nofail 0 0&quot; | tee -a /etc/fstab
+mount /dev/${PARTITION_NAME} ${MOUNT_DIR}
+sleep 5
+rm -rf &quot;$DOCKER&quot;
+mkdir -p &quot;$DOCKER&quot;
+mount --bind &quot;$MOUNT_DIR&quot; &quot;$DOCKER&quot;
+echo &quot;$MOUNT_DIR $DOCKER none bind,nobootwait 0 2&quot; &gt;&gt; /etc/fstab
+systemctl restart docker
+fi</p> <h1 id="configure-firewall"><a href="#configure-firewall" class="header-anchor">#</a> Configure Firewall</h1> <p>apt install -y ufw fail2ban
+ufw default deny incoming
+ufw default allow outgoing
+ufw allow from 10.0.0.0/8 to any port 22 proto tcp
+ufw allow from 172.16.0.0/12 to any port 22 proto tcp
+ufw allow from 192.168.0.0/16 to any port 22 proto tcp
+ufw allow from 169.254.0.0/16 to any port 22 proto tcp
+ufw allow from fc00::/7 to any port 22 proto tcp
+ufw allow from fe80::/10 to any port 22 proto tcp
+ufw allow from ff00::/8 to any port 22 proto tcp
+ufw allow 80/tcp
+ufw allow 443/tcp
+ufw allow 8333/tcp
+ufw allow 9735/tcp
+yes | ufw enable</p> <h1 id="disable-swapfile"><a href="#disable-swapfile" class="header-anchor">#</a> Disable Swapfile</h1> <p>dphys-swapfile swapoff
+dphys-swapfile uninstall
+update-rc.d dphys-swapfile remove
+systemctl disable dphys-swapfile</p> <h1 id="install-btcpayserver"><a href="#install-btcpayserver" class="header-anchor">#</a> Install BTCPayServer</h1> <p>cd /root
+git clone https://github.com/btcpayserver/btcpayserver-docker
+cd btcpayserver-docker
+. btcpay-setup.sh -i
+sleep 10</p> <h1 id="display-onion-address"><a href="#display-onion-address" class="header-anchor">#</a> Display Onion Address</h1> <p>echo &quot;&quot;
+echo &quot;On another computer open your browser to ${BTCPAY_HOST}&quot;
+echo &quot;or open the Tor Browser and copy and past the following .onion address.&quot;
+echo &quot;&quot;
+tail /var/lib/docker/volumes/generated_tor_servicesdir/_data/BTCPayServer/hostname</p></div> <footer class="page-edit"><div class="edit-link"><a href="https://github.com/btcpayserver/btcpayserver-doc/edit/master/docs/Deployment/btcpayserver-rpi4-install.md" target="_blank" rel="noopener noreferrer">Edit this page</a> <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></div> <div class="edit-link"><a href="https://github.com/btcpayserver/btcpayserver-doc/issues/new?title=Improve%20undefined&amp;body=I%20could%20not%20find%20the%20information%20I%20was%20looking%20for%20on%20the%20%22undefined%22%20page%20(%60%2FDeployment%2Fbtcpayserver-rpi4-install%2F%60).%0A%0A%5BPLEASE%20DESCRIBE%20HOW%20THE%20PAGE%20CAN%20BE%20IMPROVED%5D&amp;labels=question" target="_blank" rel="noopener noreferrer">Didn't find an answer?</a> <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></div> <!----></footer> <!----> </main></div><div class="global-ui"></div></div>
+    <script src="/assets/js/app.eb6f14da.js" defer></script><script src="/assets/js/4.ada21f67.js" defer></script><script src="/assets/js/13.304f0f71.js" defer></script><script src="/assets/js/1.5ed85e3f.js" defer></script><script src="/assets/js/82.c0575b5a.js" defer></script>
+  </body>
+</html>
