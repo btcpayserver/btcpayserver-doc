@@ -301,28 +301,27 @@ It should be up and running within a few minutes. Try opening http://btcpay.loca
 
 Now, you just need to wait a day or so for the Bitcoin blockchain to [sync and full verify](../FAQ/Synchronization.md). The bottom of the BTCPay Server web GUI will show a pop-up dialog box to monitor the progress.
 
-### Fast Sync (optional)
+### FastSync (optional)
 
-BTCPayServer's complete FastSync documentation is [available here](https://github.com/btcpayserver/btcpayserver-docker/tree/master/contrib/FastSync).
+Please read very carefully to understand what [FastSync](/Docker/fastsync.md) is and why it is important to verify the UTXO set yourself.
 
-Please read very carefully to understand what FastSync is and why it is important to verify the UTXO set yourself.
+By using FastSync, you are exposing yourself to attacks if a [malicious UTXO set snapshot](https://github.com/btcpayserver/btcpayserver-docker/blob/master/contrib/FastSync/README.md#what-are-the-downsides-of-fast-sync) is sent to you.
+If you have another trusted node somewhere else, you can check the validity of the UTXO set gathered by FastSync by following [these instructions](https://github.com/btcpayserver/btcpayserver-docker/blob/master/contrib/FastSync/README.md#dont-trust-verify).
 
 ```bash
+# Stop BTCPay Server
 cd /root/btcpayserver/btcpayserver-docker
-
 ./btcpay-down.sh
-cd contrib
-cd FastSync
+
+# Import FastSync UTXO set
+cd contrib/FastSync
 ./load-utxo-set.sh
 ```
 
-FastSync currently takes about 30 minutes on a high-speed internet connection. After FastSync finishes, run the following command to restart BTCPay Server:
+FastSync currently takes about 30 minutes on a high-speed internet connection.
+After FastSync finishes, run the following command to restart BTCPay Server:
 
 ```bash
 cd ../..
 ./btcpay-up.sh
 ```
-
-By using FastSync, you are exposing yourself to attacks if a [malicious UTXO set snapshot](https://github.com/btcpayserver/btcpayserver-docker/blob/master/contrib/FastSync/README.md#what-are-the-downsides-of-fast-sync) is sent to you.
-
-If you have another trusted node somewhere else, you can check the validity of the UTXO set gathered by FastSync by following [these instructions](https://github.com/btcpayserver/btcpayserver-docker/blob/master/contrib/FastSync/README.md#dont-trust-verify).
