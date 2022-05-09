@@ -8,7 +8,7 @@ Follow the steps below to add the BTCPay Server `Open Community Calls` calendar 
 ## Upcoming calls
 
 | Topic        | Direct link                                                                                        |
-|--------------|---|
+|--------------|-----------:|
 | Development  | [Link](https://github.com/btcpayserver/organization/issues?q=is%3Aissue+is%3Aopen+%27Dev%27)       |
 | Design       | [Link](https://github.com/btcpayserver/organization/issues?q=is%3Aissue+is%3Aopen+%27Design%27+)   |
 | Documentation| [Link](https://github.com/btcpayserver/organization/issues?q=is%3Aissue+is%3Aopen+%27Marketing%27) |
