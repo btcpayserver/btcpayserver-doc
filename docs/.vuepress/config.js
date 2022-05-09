@@ -267,7 +267,7 @@ const sidebarContribute = [
       ['/Contribute/Design', 'Design'],
       ['/Contribute/Translate', 'Translate'],
       ['/Contribute/Misc', 'Miscellaneous'],
-      ['/Contribute/Agenda', 'Calls Calender']
+      ['/Contribute/Agenda', 'Open office hours']
     ]
   },
 

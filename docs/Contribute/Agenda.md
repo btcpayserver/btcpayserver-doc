@@ -1,18 +1,11 @@
-# Calls Calendar
+# Open office hours
 
-All calls, design, development, and documentation (marketing, SEO) are open to everyone to join and participate or listen. 
-If you want to see the upcoming scheduled calls, follow the guide below. 
+We welcome everyone for our Open office hours. 
+Here we talk through the work ahead, upcoming and previous releases, bug fixes, Design decissions and the nitty gritty on Documents and Marketing. 
+Interest in joinen? DO IT! You don't have to participate, you're welcome to just listen and enjoy the banter. 
+Follow the steps below to add the BTCPay Server `Open office hours` calendar to your own. 
 
-Calls are scheduled via Github issues. 
-You can find all upcoming calls with their designated tags [Here](https://github.com/btcpayserver/organization/issues)
-
-There are two requirements for an issue to be included:
-
-* The issue needs to include a UTCTime meta property following this format: UTCTime: 2020-10-14 9:00 UTC -7
-* A maintainer needs to add the `Call` label to the issue (this prevents spam)
-* The calendar auto-updates whenever a new issue is created or an existing issue is edited
-
-## BTCPay Server Calls Calendar
+## BTCPay Server open office hours calendar
 
 Our calendar (an .iCal file) includes upcoming calls. Qualified issues are automatically added to the calendar, which you can then subscribe to via your favorite calendar tool.
 
@@ -26,3 +19,14 @@ Our calendar (an .iCal file) includes upcoming calls. Qualified issues are autom
 How to add the Raw link to agenda on IOS. 
 
 ![How to add agenda on ios](../img/Contribute/agendaios.gif)
+
+## Submitting a call to the calendar.
+
+Calls are scheduled via Github issues. 
+You can find all upcoming calls with their designated tags [Here](https://github.com/btcpayserver/organization/issues)
+
+There are two requirements for an issue to be included:
+
+* The issue needs to include a UTCTime meta property following this format: UTCTime: 2020-10-14 9:00 UTC -7
+* A maintainer needs to add the `Call` label to the issue (this prevents spam)
+* The calendar auto-updates whenever a new issue is created or an existing issue is edited
