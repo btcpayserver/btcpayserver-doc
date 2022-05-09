@@ -1,6 +1,6 @@
 # Calls Calendar
 
-All calls, design, development, and Documentation (marketing, SEO) are open to everyone to join. 
+All calls, design, development, and documentation (marketing, SEO) are open to everyone to join and participate or listen. 
 If you want to see the upcoming scheduled Calls, follow the guide below. 
 
 Calls are scheduled via Github issues. 
