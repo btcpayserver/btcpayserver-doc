@@ -12,7 +12,7 @@ There are two requirements for an issue to be included:
 * A maintainer needs to add the `Call` label to the issue (this prevents spam)
 * The calendar auto-updates whenever a new issue is created or an existing issue is edited
 
-## BTCPay Server Organization Calender.
+## BTCPay Server Calls Calendar
 
 Our calendar (an .iCal file) includes upcoming calls. Qualified issues are automatically added to the calendar, which you can then subscribe to via your favorite calendar tool.
 
