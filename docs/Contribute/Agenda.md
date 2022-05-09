@@ -1,4 +1,4 @@
-# Calls Calender.
+# Calls Calendar
 
 All calls, design, development, and Documentation (marketing, SEO) are open to everyone to join. 
 If you want to see the upcoming scheduled Calls, follow the guide below. 
