@@ -266,6 +266,22 @@ sudo su -
 
 Most of the wallets (RTL, Zap, Spark, etc) that are able to your lightning node remotely will display the version on the front-end as well.
 
+### How to redirect a Lightning Address?
+
+Use case: Your run a BTCPay server at `pay.example.com`, but want to use `me@example.com` as your Lightning Address, because it looks nicer than `me@pay.example.com`.
+
+All you need to do is set up a `301` redirect from `example.com/.well-known/lnurlp/me` to `pay.example.com/.well-known/lnurlp/me`.
+You can do so in your webserver configuration, here is an example for nginx:
+
+```nginx
+server {
+  server_name example.com;
+
+  # Redirect Lightning Address requests to BTCPay Server
+  rewrite ^/\.well-known/lnurlp/(.*)$ https://pay.example.com/.well-known/lnurlp/$1 permanent;
+}
+```
+
 ## Lightning Network (LND) FAQ
 
 Here are some of the common questions about the [LND implementation](https://github.com/lightningnetwork/lnd/issues) of the Lightning Network.
