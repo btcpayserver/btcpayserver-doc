@@ -1,19 +1,19 @@
-# Open office hours
+# Open Community Calls
 
 We welcome everyone for our Open office hours. 
 Here we talk through the work ahead, upcoming and previous releases, bug fixes, Design decissions and the nitty gritty on Documents and Marketing. 
 Interest in joinen? DO IT! You don't have to participate, you're welcome to just listen and enjoy the banter. 
-Follow the steps below to add the BTCPay Server `Open office hours` calendar to your own. 
+Follow the steps below to add the BTCPay Server `Open Community Calls` calendar to your own. 
 
 ## Upcoming calls
 
 | Topic        | Direct link                                                                                        |
-|--------------|----------------------------------------------------------------------------------------------------|
+|--------------|---|
 | Development  | [Link](https://github.com/btcpayserver/organization/issues?q=is%3Aissue+is%3Aopen+%27Dev%27)       |
 | Design       | [Link](https://github.com/btcpayserver/organization/issues?q=is%3Aissue+is%3Aopen+%27Design%27+)   |
 | Documentation| [Link](https://github.com/btcpayserver/organization/issues?q=is%3Aissue+is%3Aopen+%27Marketing%27) |
 
-## BTCPay Server open office hours calendar
+## BTCPay Server Open Community Calls calendar
 
 Our calendar (an .iCal file) includes upcoming calls. Qualified issues are automatically added to the calendar, which you can then subscribe to via your favorite calendar tool.
 
