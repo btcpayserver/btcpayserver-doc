@@ -1,7 +1,7 @@
 # Calls Calendar
 
 All calls, design, development, and documentation (marketing, SEO) are open to everyone to join and participate or listen. 
-If you want to see the upcoming scheduled Calls, follow the guide below. 
+If you want to see the upcoming scheduled calls, follow the guide below. 
 
 Calls are scheduled via Github issues. 
 You can find all upcoming calls with their designated tags [Here](https://github.com/btcpayserver/organization/issues)
