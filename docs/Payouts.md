@@ -8,7 +8,7 @@ This feature allows you to process pull payment (refunds, salary payouts, or wit
 We will go through two examples, one will be a Refund, and the other will be a salary payout. 
 
 ### Example
-Let's start with the Refund example. 
+Let's start with the refund example. 
 The Customer has bought an item in your store but sadly has to return the item. He wants a refund. 
 Within BTCPay, the merchant creates a [Refund](./Refund.md) and provides the Customer with the appropriate link to claim his funds. 
 Whenever the Customer has given his address and claimed the funds, the merchant now has an entry in Payouts. 
