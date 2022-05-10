@@ -74,8 +74,7 @@ And lock this in by typing the password set for the LND node.
 
 ## 5. Finnish initial deployment. 
 
-With all the steps taken above and following along with the video above,
-You are now at the point where voltage shows you the BTCPay server Information. 
+With all the steps taken above and following along with the video above, you are now at the point where Voltage shows you the BTCPay server information. 
 
 * URL for BTCPay server access
 * Username for the BTCPay server store. 
