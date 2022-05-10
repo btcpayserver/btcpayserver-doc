@@ -84,7 +84,7 @@ With all the steps taken above and following along with the video above, you are
 * Expiration date
 * Purchase status 
 
-A button for easy access to your BTCPay server dashboard and the button to Delete the instance also became available to you. 
+A button for easy access to your BTCPay Server dashboard and the button to delete the instance also became available to you. 
 Now click the button to go to the BTCPay server dashboard, and you are ready to start operating as a merchant on Bitcoin! 
 
 ## 6. Welcome to your BTCPay server dashboard. 
