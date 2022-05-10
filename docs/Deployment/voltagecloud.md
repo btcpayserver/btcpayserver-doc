@@ -2,7 +2,7 @@
 
 We will explain how to deploy the BTCPay Server on `Voltage Cloud`. 
 Voltage cloud is building Bitcoin and Lightning infrastructure. Its mission is to provide easy and scalable solutions to a Bitcoin standard. 
-They've built an easy-to-use onboard flow to the BTCPay server and provide an easy solution for Lightning Network usage. 
+They've built an easy-to-use onboard flow to the BTCPay Server and provide an easy solution for Lightning Network usage. 
 It's modular. Pick your Bitcoin node, decide if you want to use Lightning, and then put a BTCPay server on top. 
 They also offer a solution for inbound liquidity once you have Lightning running. 
 
