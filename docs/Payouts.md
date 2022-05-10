@@ -10,7 +10,7 @@ We will go through two examples, one will be a Refund, and the other will be a s
 ### Example
 Let's start with the refund example. 
 The customer has bought an item in your store but sadly has to return the item. They want a refund. 
-Within BTCPay, the merchant creates a [Refund](./Refund.md) and provides the Customer with the appropriate link to claim his funds. 
+Within BTCPay, you can create a [Refund](./Refund.md) and provide the customer with the link to claim their funds. 
 Whenever the Customer has given his address and claimed the funds, the merchant now has an entry in Payouts. 
 
 The first status it has is `Awaiting Approval`. 
