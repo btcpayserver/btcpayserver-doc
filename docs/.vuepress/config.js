@@ -48,6 +48,10 @@ const sidebarUserGuide = [
           {
             title: 'Create Wallet',
             path: '/CreateWallet'
+          },
+          {
+            title: 'Lightning Network'
+            path: '/LightningNetwork'
           }
         ]
       },
@@ -65,7 +69,6 @@ const sidebarUserGuide = [
           ['/HardwareWalletIntegration', 'Hardware Wallet Integration']
         ]
       },
-      ['/LightningNetwork', 'Lightning Network'],
       ['/Invoices', 'Invoices'],
       ['/PaymentRequests', 'Payment Requests'],
 
