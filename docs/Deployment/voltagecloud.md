@@ -49,7 +49,7 @@ There is also an option to restore a previous node from seed and a Static Channe
 This password is something to backup securely. As Voltage can **NOT** recover this for you
 :::
 
-## 3. Node dashboard.
+## 3. Node dashboard
 
 After completing the above steps, you are now in your Voltage node's dashboard. 
 It shows you the node's status, the version LND it runs, the API endpoint, and some other tiles with information on your new node.
