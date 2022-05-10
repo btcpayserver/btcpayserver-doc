@@ -6,7 +6,6 @@ In this tab, you will be able to process the Pull payment requests and think abo
 ## How does it work? 
 
 We will go through two examples, one will be a Refund, and the other will be a salary payout. 
-As of writing this guide (v1.4.7), there is no automation for the last example. 
 
 ### Example
 Let's start with the Refund example. 
