@@ -91,7 +91,7 @@ Now click the button to go to your BTCPay server dashboard, and you are ready to
 
 You are now inside your new BTCPay Server. 
 It shows in the dashboard that you've created a store and that Lightning Network has been set up. 
-The Bitcoin Wallet is still missing. You can follow along in [this wallet setup guide](../WalletSetup.md)
+The bitcoin wallet is still missing. You can follow along in [this wallet setup guide](../WalletSetup.md)
 
 :::tip
 If there are questions about your node, the deployment or updates, please reach out to the support of [Voltage Cloud](https://voltage.cloud)
