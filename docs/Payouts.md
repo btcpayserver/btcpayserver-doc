@@ -11,7 +11,7 @@ We will go through two examples, one will be a Refund, and the other will be a s
 Let's start with the refund example. 
 The customer has bought an item in your store but sadly has to return the item. They want a refund. 
 Within BTCPay, you can create a [Refund](./Refund.md) and provide the customer with the link to claim their funds. 
-Whenever the Customer has given his address and claimed the funds, the merchant now has an entry in Payouts. 
+Whenever the customer has given their address and claimed the funds, it will be shown in the `Payouts`. 
 
 The first status it has is `Awaiting Approval`. 
 Store clerks can check if multiple ones are waiting, and after making the selection, you use the `Actions` button. 
