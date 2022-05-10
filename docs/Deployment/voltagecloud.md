@@ -12,7 +12,7 @@ In the video below, [BTC Sessions](https://twitter.com/BTCsessions) goes through
 
 ## 1. Sign up and top up your account.
 
-First off, it's signing up and adding credit to the account. 
+First off, sign up and add credit to your account. 
 Goto the [Voltage cloud](https://account.voltage.cloud/register) website to create an account. 
 
 ![Voltage Cloud signup](../img/voltage/voltagereg.jpg "Voltage Cloud Account")
