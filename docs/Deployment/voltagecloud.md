@@ -62,7 +62,7 @@ Click on `Nodes` as we want a BTCPay server node and create a new node.
 
 ## 4. BTCPay server node
 
-Now we are looking at creating a BTCPay server node. 
+Now we are looking at creating a BTCPay Server node. 
 It tells us the approximate cost hourly and monthly again as it did with the LND node. 
 
 Click on the `Create` button and lets set the store initials.
