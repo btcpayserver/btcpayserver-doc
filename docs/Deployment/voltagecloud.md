@@ -85,7 +85,7 @@ With all the steps taken above and following along with the video above, you are
 * Purchase status 
 
 A button for easy access to your BTCPay Server dashboard and the button to delete the instance also became available to you. 
-Now click the button to go to the BTCPay server dashboard, and you are ready to start operating as a merchant on Bitcoin! 
+Now click the button to go to your BTCPay server dashboard, and you are ready to start using BTCPay! 
 
 ## 6. Welcome to your BTCPay server dashboard. 
 
