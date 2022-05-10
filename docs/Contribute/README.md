@@ -16,5 +16,7 @@ Depending on your skills and interest, you can help in a number of ways:
 * [Designing](./Design.md)
 * [Translating](./Translate.md)
 * [Miscellaneous](./Misc.md)
+* [Open Community Calls](./Agenda.md)
 
+Come and join us at our [Open Community Calls](./Agenda.md)every week!
 Every contribution is important and if you have any questions, feel free to consult our growing [community](../Community.md).
