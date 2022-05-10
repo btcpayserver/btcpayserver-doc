@@ -89,7 +89,7 @@ Now click the button to go to your BTCPay server dashboard, and you are ready to
 
 ## 6. Welcome to your BTCPay Server dashboard
 
-You are now inside your new BTCPay server. 
+You are now inside your new BTCPay Server. 
 It shows in the dashboard that you've created a store and that Lightning Network has been set up. 
 The Bitcoin Wallet is still missing. You can follow along in [this wallet setup guide](../WalletSetup.md)
 
