@@ -78,7 +78,7 @@ With all the steps taken above and following along with the video above, you are
 
 * URL for BTCPay Server access
 * Username for the BTCPay Server's store. 
-* default password
+* Default password
 * Attached Node Name 
 * Creation date of the node
 * Expiration date
