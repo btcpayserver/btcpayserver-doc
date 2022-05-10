@@ -33,6 +33,13 @@ Automatically connect your Voltage Lightning node.
 
 For more details on `Voltage Cloud` click [here](./voltagecloud.md)
 
+### DreamLab Network Solutions
+
+[DreamLab Network Solutions](https://dreamlabnetwork.solutions) has datacenters around the globe. 
+Now out of their North American location, they have started hosting BTCPay Server as a service. 
+With 24/7 support and a future of multiple locations of hosting check `Dreamlab Networks` BTCPay Server setup guide [here](./DreamlabNetwork.md)
+
+
 ## Missing deployments?
 
 As we are a FOSS project, we might miss certain deployments. 
