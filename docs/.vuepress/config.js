@@ -131,7 +131,11 @@ const sidebarDeployment = [
       ['/Docker/', 'Introduction'],
       {
         title: 'Web Deployment',
-        path: '/Deployment/LunaNode'
+        path: '/Deployment/webdeployment',
+        children: [
+          ['/Deployment/LunaNode', 'Luna Node'],
+          ['/Deployment/voltagecloud', 'Voltage Cloud']
+        ]
       },
       {
         title: 'Azure',
