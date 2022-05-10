@@ -68,7 +68,6 @@ const sidebarUserGuide = [
       ['/LightningNetwork', 'Lightning Network'],
       ['/Invoices', 'Invoices'],
       ['/PaymentRequests', 'Payment Requests'],
-      ['/Apps', 'Apps'],
 
       {
         title: 'Pull Payments',
