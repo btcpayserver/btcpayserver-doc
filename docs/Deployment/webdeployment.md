@@ -1,9 +1,18 @@
 # Introduction to Web Deployments.
 
-We will take you through possible `Web Deployments` on this page.
-We will keep updating the list as more providers offer BTCPay server as a service. 
+We will take you through possible `Web Deployments` on this page and update the list as more providers offer BTCPay Server as a service. 
+But what is a `Web deployment`? 
+In short, a third-party hosted environment. 
 
-Below you will find a short introduction to each service and a detailed guide. 
+What do they do? They offer you the user, storage space, and compute power. 
+And in particular, for this page, they offer hosted Bitcoin nodes. 
+
+Now you don't have to buy, host and maintain your own hardware. The service provider takes care of this. 
+This comes with the risk factor of trusting someone to host your bitcoin node and BTCPay Server on top of that. 
+Every hoster comes with its own pros and cons. One might be cheaper, and the other maybe has better support levels. 
+However, we will guide you through the ones we've listed and offer BTCPay Server solutions.
+
+Below you will find a short introduction to each service and a detailed guide on each of them. 
 
 ## Known web deployments. 
 

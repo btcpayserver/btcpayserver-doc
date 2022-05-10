@@ -1,6 +1,6 @@
 # Voltage Cloud BTCPay Server web deployment
 
-We will explain how to deploy the BTCPay Server on `Voltage Cloud`. 
+This page will explain how to deploy the BTCPay Server on `Voltage Cloud`. 
 Voltage cloud is building Bitcoin and Lightning infrastructure. Its mission is to provide easy and scalable solutions to a Bitcoin standard. 
 They've built an easy-to-use onboard flow to the BTCPay Server and provide an easy solution for Lightning Network usage. 
 It's modular. Pick your Bitcoin node, decide if you want to use Lightning, and then put a BTCPay server on top. 
@@ -19,7 +19,7 @@ Go to the [Voltage cloud](https://account.voltage.cloud/register) website to cre
 
 Upon registering, to top up the account go to` Billing` and add `Node credit` to your account. 
 Filling up your account can be done by paying in Bitcoin, Lightning, or by credit card. 
-Return to the main dashboard of Voltage. 
+After you've paid, return to the main dashboard of Voltage-Cloud. 
 
 ## 2. What node suits you? 
 
@@ -32,11 +32,12 @@ First, you have to create the Lightning Node, click on LND button.
 After that, it makes your choice between three options of nodes.
 
 * Lite node 
-* Standard Node
+* Standard Node 
 * Pro node 
 
 Each comes with its own pro's and con's. The pro node requires you to contact Voltage's marketing team to customize your node plan. 
 It will also show you the cost of the node per hour rate and an approximate for a full month. 
+But as far as this guide and BTCPay Server's needs reach, the `Lite node` should be sufficient.
 
 ![Voltage Cloud Password](../img/voltage/deployln.jpg "Voltage Cloud Password")
 
