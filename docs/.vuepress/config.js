@@ -65,7 +65,9 @@ const sidebarUserGuide = [
           ['/HardwareWalletIntegration', 'Hardware Wallet Integration']
         ]
       },
+      ['/LightningNetwork', 'Lightning Network'],
       ['/Invoices', 'Invoices'],
+      ['/PaymentRequests', 'Payment Requests'],
       ['/Apps', 'Apps'],
 
       {
@@ -76,8 +78,7 @@ const sidebarUserGuide = [
         ]
       },
       ['/Payouts', 'Payouts'],
-      ['/PaymentRequests', 'Payment Requests'],
-      ['/LightningNetwork', 'Lightning Network'],
+      ['/Apps', 'Apps'],
       ['/Accounting', 'Accounting'],
       {
         title: 'Payjoin',
