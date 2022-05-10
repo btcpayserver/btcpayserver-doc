@@ -76,7 +76,7 @@ And lock this in by typing the password set for the LND node.
 
 With all the steps taken above and following along with the video above, you are now at the point where Voltage shows you the BTCPay server information. 
 
-* URL for BTCPay server access
+* URL for BTCPay Server access
 * Username for the BTCPay server store. 
 * default password
 * Attached Node Name 
