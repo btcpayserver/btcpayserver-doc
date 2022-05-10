@@ -1,6 +1,6 @@
 # Open Community Calls
 
-We welcome everyone for our Open office hours. 
+BTCPay Server operates as an open-organization. All of our meetings where we discuss the development, design, documentation or other topics are opened for anyone to join in and participate. To get involved, you can subscribe to our open-calendar and stay in the loop on what we're working on, learn, ask questions or just join us in building open-source bitcoin payment rails.
 Here we talk through the work ahead, upcoming and previous releases, bug fixes, Design decissions and the nitty gritty on Documents and Marketing. 
 Interest in joinen? DO IT! You don't have to participate, you're welcome to just listen and enjoy the banter. 
 Follow the steps below to add the BTCPay Server `Open Community Calls` calendar to your own. 
