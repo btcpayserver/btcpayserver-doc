@@ -87,7 +87,7 @@ With all the steps taken above and following along with the video above, you are
 A button for easy access to your BTCPay Server dashboard and the button to delete the instance also became available to you. 
 Now click the button to go to your BTCPay server dashboard, and you are ready to start using BTCPay! 
 
-## 6. Welcome to your BTCPay server dashboard. 
+## 6. Welcome to your BTCPay Server dashboard
 
 You are now inside your new BTCPay server. 
 It shows in the dashboard that you've created a store and that Lightning Network has been set up. 
