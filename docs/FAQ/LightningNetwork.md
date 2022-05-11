@@ -301,7 +301,7 @@ after a successful rescan, you should disable this fragment again, or it will re
 every restart!
 WARNING: The rescan can only pick up the transactions within your archived blocks (beware of PRUNED nodes!)
 :::
-
+To customize LND settings which are not available as environment variables, you can [create a custom fragment](../Docker/README.md#how-can-i-customize-the-generated-docker-compose-file) in `docker-compose-generator/docker-fragments/opt-lnd-wallet-rescan.custom.yml` like this:
 
 ``` 
 version: "3"
