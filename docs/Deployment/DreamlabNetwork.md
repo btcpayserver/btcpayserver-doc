@@ -10,7 +10,7 @@ On the DreamLab website, in the top menu, go to `Services` and click on `BTCPay 
 
 ![DreamLab Network signup](../img/Dreamlab/btcpaydreamlab8.jpg "DreamLab Network signup")
 
-Now you are on the right page to pick a plan suited to your BTCPay Server needs. 
+Next, pick a plan suited to your BTCPay Server needs. 
 They offer three different plans.  
 
 * Basic plan 
