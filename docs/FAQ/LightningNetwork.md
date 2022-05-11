@@ -296,10 +296,10 @@ docker restart btcpayserver_lnd_bitcoin
 ### How to rescan the LND on-chain wallet?
 
 :::warning
-only enable this fragment temporarly to reset the onchain wallet transactions of lnd and to trigger a rescan
-after a successfull rescan, you should disable this fragment again, or it will rescan the onchain wallet at
+only enable this fragment temporarily to reset the on-chain wallet transactions of lnd and to trigger a rescan
+after a successful rescan, you should disable this fragment again, or it will rescan the on-chain wallet at
 every restart!
-WARNING: The rescan can only pickup the transactions that are within your archived blocks (beware of PRUNED nodes!)
+WARNING: The rescan can only pick up the transactions within your archived blocks (beware of PRUNED nodes!)
 :::
 
 version: "3"
