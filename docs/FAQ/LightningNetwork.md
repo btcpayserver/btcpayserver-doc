@@ -303,7 +303,8 @@ WARNING: The rescan can only pick up the transactions within your archived block
 :::
 
 
-```version: "3"
+``` 
+version: "3"
 services:
   lnd_bitcoin:
     environment:
