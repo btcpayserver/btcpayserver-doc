@@ -293,6 +293,32 @@ sudo su -
 docker restart btcpayserver_lnd_bitcoin
 ```
 
+### How to rescan the LND on-chain wallet?
+
+:::warning
+only enable this fragment temporarly to reset the onchain wallet transactions of lnd and to trigger a rescan
+after a successfull rescan, you should disable this fragment again, or it will rescan the onchain wallet at
+every restart!
+WARNING: The rescan can only pickup the transactions that are within your archived blocks (beware of PRUNED nodes!)
+:::
+
+version: "3"
+
+```services:
+  lnd_bitcoin:
+    environment:
+      LND_EXTRA_ARGS: |
+        reset-wallet-transactions=1
+  lnd_litecoin:
+    environment:
+      LND_EXTRA_ARGS: |
+        reset-wallet-transactions=1
+  lnd_bitcoingold:
+    environment:
+      LND_EXTRA_ARGS: |
+        reset-wallet-transactions=1
+```
+
 ### How to see LND logs?
 
 To check the logs of your LND node in BTCPay Server (Docker installations) use the following command:
