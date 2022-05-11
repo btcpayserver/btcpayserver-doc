@@ -319,7 +319,7 @@ services:
       LND_EXTRA_ARGS: |
         reset-wallet-transactions=1
 ```
-
+For more information on this LND feature, see [their documentation](https://github.com/lightningnetwork/lnd/blob/master/docs/recovery.md#forced-in-place-rescan).
 ### How to see LND logs?
 
 To check the logs of your LND node in BTCPay Server (Docker installations) use the following command:
