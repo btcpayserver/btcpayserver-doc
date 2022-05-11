@@ -70,7 +70,7 @@ Here you have the option to set an operating system.
 This, as of writing, is locked to ubuntu 20.04 x86. 
 And for the ISO Disk option, there's none to take. 
 
-Click Continue to go to the payment page. 
+Click `Continue` to go to the payment page. 
 
 ![DreamLab Network OS](../img/Dreamlab/btcpaydreamlab15.jpg "DreamLab Network OS")
 
