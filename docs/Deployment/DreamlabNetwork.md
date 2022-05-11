@@ -90,6 +90,11 @@ Here again, you will see your active deployment of the BTCPay Server on DreamLab
 
 ![DreamLab Network services2](../img/Dreamlab/btcpaydreamlab19.jpg "DreamLab Network services")
 
+When you click on your server in the `Your Active Products` tile, you will be redirected to the managing page for your VPS. 
+Here you will find analytics on your VPS, the current subscribtion, and options to manage your VPS.
+
+![DreamLab Network manage vps](../img/Dreamlab/btcpaydreamlab23.jpg "DreamLab Network manage vps")
+
 ## 4. Start your first store. 
 
 After all the above steps are completed, the server shows in services. 
@@ -102,7 +107,6 @@ To follow more on setting up your store, follow along in this [Guide](../Registe
 ## 5. Welcome to your BTCPay Server dashboard
 
 You are now inside your new BTCPay Server. 
-It shows in the dashboard that you've created a store and that Lightning Network has been set up. 
 The bitcoin wallet is still missing. You can follow along in [this wallet setup guide](../WalletSetup.md)
 
 :::tip
