@@ -38,7 +38,7 @@ You can set these by
 * Semi-Annually 
 * Annually 
 
-Now we really go into the configuration of your server. 
+Next, configure your server.
 
 ### Hostname 
 
