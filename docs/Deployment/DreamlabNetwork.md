@@ -30,7 +30,7 @@ All the technical specs are listed.
 
 ![DreamLab Network techspecs](../img/Dreamlab/btcpaydreamlab11.jpg "DreamLab Network specs")
 
-Choose the Billing cycle that fits you. 
+Choose the billing cycle that fits you. 
 You can set these by 
 
 * Monthly 
