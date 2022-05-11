@@ -18,7 +18,7 @@ They offer three different plans.
 * Shared 
 
 They've enlisted what the difference between every plan is, so we won't list those out. 
-That said, we do believe that going with the `Basic plan` should be sufficient for a starting store. 
+That said, we do believe that going with the `Basic plan` should be sufficient for starting a store. 
 A Shared host is not something recommended for business purposes. This plan doesn't give you your own VPS. However, you could start a server and get acquainted with the software hosted for you! 
 
 ![DreamLab Network Plan](../img/Dreamlab/btcpaydreamlab9.jpg "DreamLab Network plan")
