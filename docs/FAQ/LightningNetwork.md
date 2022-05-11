@@ -293,6 +293,33 @@ sudo su -
 docker restart btcpayserver_lnd_bitcoin
 ```
 
+### How to rescan the LND on-chain wallet?
+
+:::warning
+only enable this fragment temporarily to reset the on-chain wallet transactions of lnd and to trigger a rescan
+after a successful rescan, you should disable this fragment again, or it will rescan the on-chain wallet at
+every restart!
+WARNING: The rescan can only pick up the transactions within your archived blocks (beware of PRUNED nodes!)
+:::
+To customize LND settings which are not available as environment variables, you can [create a custom fragment](../Docker/README.md#how-can-i-customize-the-generated-docker-compose-file) in `docker-compose-generator/docker-fragments/opt-lnd-wallet-rescan.custom.yml` like this:
+
+``` 
+version: "3"
+services:
+  lnd_bitcoin:
+    environment:
+      LND_EXTRA_ARGS: |
+        reset-wallet-transactions=1
+  lnd_litecoin:
+    environment:
+      LND_EXTRA_ARGS: |
+        reset-wallet-transactions=1
+  lnd_bitcoingold:
+    environment:
+      LND_EXTRA_ARGS: |
+        reset-wallet-transactions=1
+```
+For more information on this LND feature, see [their documentation](https://github.com/lightningnetwork/lnd/blob/master/docs/recovery.md#forced-in-place-rescan).
 ### How to see LND logs?
 
 To check the logs of your LND node in BTCPay Server (Docker installations) use the following command:
