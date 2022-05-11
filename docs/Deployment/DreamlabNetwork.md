@@ -13,9 +13,9 @@ On the DreamLab website, in the top menu, go to `Services` and click on `BTCPay 
 Next, pick a plan suited to your BTCPay Server needs. 
 They offer three different plans.  
 
-* Basic plan 
-* Advanced plan 
-* Shared Hosted 
+* Basic 
+* Advanced 
+* Shared 
 
 They've enlisted what the difference between every plan is, so we won't list those out. 
 That said, we do believe that going with the `Basic plan` should be sufficient for a starting store. 
