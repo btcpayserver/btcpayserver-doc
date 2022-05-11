@@ -31,13 +31,6 @@ All the technical specs are listed.
 ![DreamLab Network techspecs](../img/Dreamlab/btcpaydreamlab11.jpg "DreamLab Network specs")
 
 Choose the billing cycle that fits you. 
-You can set these by 
-
-* Monthly 
-* quarterly 
-* Semi-Annually 
-* Annually 
-
 Next, configure your server.
 
 ### Hostname 
