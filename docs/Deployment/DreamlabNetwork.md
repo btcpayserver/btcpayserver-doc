@@ -49,7 +49,7 @@ Don't forget that if you set your domain, you need to create an A record that po
 
 ### Configurable Options
 
-Next up, Configurable options. Here is where we set the BTCPay Server configuration. You get to set how and what you want your node to run.
+Next up, `configurable options`. Here is where you set the BTCPay Server configuration. You get to set how and what you want your node to run.
 
 * BTCPay Server Mainnet Pruned 6 or 3 months Bitcoin only.
 * BTCPay Server Mainnet Pruned 6 or 3 months Bitcoin & Lightning (clightning)
