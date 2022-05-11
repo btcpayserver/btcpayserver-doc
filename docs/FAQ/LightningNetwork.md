@@ -302,9 +302,9 @@ every restart!
 WARNING: The rescan can only pick up the transactions within your archived blocks (beware of PRUNED nodes!)
 :::
 
-version: "3"
 
-```services:
+```version: "3"
+services:
   lnd_bitcoin:
     environment:
       LND_EXTRA_ARGS: |
