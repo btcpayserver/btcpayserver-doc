@@ -1,14 +1,14 @@
-# DreamLab Network BTCPay Server web deployment.
+# Dream Lab Network BTCPay Server web deployment.
 
-In this guide, we will walk you through the initial setup of your DreamLab Network BTCPay Server web deployment. 
+In this guide, we will walk you through the initial setup of your Dream Lab Network BTCPay Server web deployment. 
 DreamLab offers a variety of services. From domains, dedicated game servers, VPS servers, and now BTCPay Server as a service. 
 They've built multiple plans and configurations for BTCPay Server, hosted in North America, with expansion to other locations on their premise. 
 
 ## 1. Pick the server that fits your needs.
 
-On the DreamLab website, in the top menu, go to `Services` and click on `BTCPay Servers`.
+On the Dream Lab website, in the top menu, go to `Services` and click on `BTCPay Servers`.
 
-![DreamLab Network signup](../img/Dreamlab/btcpaydreamlab8.jpg "DreamLab Network signup")
+![DreamLab Network signup](../img/Dreamlab/btcpaydreamlab8.jpg "Dream Lab Network signup")
 
 Next, pick a plan suited to your BTCPay Server needs. 
 They offer three different plans.  
@@ -21,14 +21,14 @@ They've enlisted what the difference between every plan is, so we won't list tho
 That said, we do believe that going with the `Basic plan` should be sufficient for starting a store. 
 A Shared host is not something recommended for business purposes. This plan doesn't give you your own VPS. However, you could start a server and get acquainted with the software hosted for you! 
 
-![DreamLab Network Plan](../img/Dreamlab/btcpaydreamlab9.jpg "DreamLab Network plan")
+![DreamLab Network Plan](../img/Dreamlab/btcpaydreamlab9.jpg "Dream Lab Network plan")
 
 ## 2. Configure your BTCPay Server
 
 First, off they show you the basic setup of your node. 
 All the technical specs are listed. 
 
-![DreamLab Network techspecs](../img/Dreamlab/btcpaydreamlab11.jpg "DreamLab Network specs")
+![DreamLab Network techspecs](../img/Dreamlab/btcpaydreamlab11.jpg "Dream Lab Network specs")
 
 Choose the billing cycle that fits you. 
 Next, configure your server.
@@ -38,7 +38,7 @@ Next, configure your server.
 This is where you set the domain name. You can leave this as-is and use the generated address or provide it with a domain of your own. 
 Don't forget that if you set your domain, you need to create an A record that points to your VPS IP address. 
 
-![DreamLab Network domain](../img/Dreamlab/btcpaydreamlab12.jpg "DreamLab Network domain")
+![DreamLab Network domain](../img/Dreamlab/btcpaydreamlab12.jpg "Dream Lab Network domain")
 
 ### Configurable Options
 
@@ -54,7 +54,7 @@ Next up, `configurable options`. Here is where you set the BTCPay Server configu
 
 And the CPU is set to AMD. There are no other options as of writing. 
 
-![DreamLab Network setup](../img/Dreamlab/configureserver.png "DreamLab Network setup")
+![DreamLab Network setup](../img/Dreamlab/configureserver.png "Dream Lab Network setup")
 
 
 ### Addition Information 
@@ -65,7 +65,7 @@ And for the ISO Disk option, there's none to take.
 
 Click `Continue` to go to the payment page. 
 
-![DreamLab Network OS](../img/Dreamlab/btcpaydreamlab15.jpg "DreamLab Network OS")
+![DreamLab Network OS](../img/Dreamlab/btcpaydreamlab15.jpg "Dream Lab Network OS")
 
 ### Review & Checkout
 
@@ -76,24 +76,24 @@ On the checkout page, you get to set your account information.
 After filling up all of the requested information, note you only have to fill out the requested fields. 
 Click the Bitcoin or another option if preferred to pay by fiat. 
 
-![DreamLab Network Checkout](../img/Dreamlab/btcpaydreamlab2.jpg "DreamLab Network checkout")
+![DreamLab Network Checkout](../img/Dreamlab/btcpaydreamlab2.jpg "Dream Lab Network checkout")
 
-## 3. Client Area DreamLab Network
+## 3. Client Area Dream Lab Network
 
-You are now logged in to Dreamlab their `Client Area`.
+You are now logged in to Dream Lab their `Client Area`.
 And as you may notice, you have one service up. This is your new BTCPay Server.
 
-![DreamLab Network Services](../img/Dreamlab/btcpaydreamlab4.jpg "DreamLab Network services")
+![DreamLab Network Services](../img/Dreamlab/btcpaydreamlab4.jpg "Dream Lab Network services")
 
 If you scroll or look below, a tile states `Your Active Products`.
-Here again, you will see your active deployment of the BTCPay Server on DreamLab Networks. 
+Here again, you will see your active deployment of the BTCPay Server on Dream Lab Networks. 
 
-![DreamLab Network services2](../img/Dreamlab/btcpaydreamlab19.jpg "DreamLab Network services")
+![DreamLab Network services2](../img/Dreamlab/btcpaydreamlab19.jpg "Dream Lab Network services")
 
 When you click on your server in the `Your Active Products` tile, you will be redirected to the managing page for your VPS. 
-Here you will find analytics on your VPS, the current subscribtion, and options to manage your VPS.
+Here you will find analytics on your VPS, the current subscription, and options to manage your VPS.
 
-![DreamLab Network manage vps](../img/Dreamlab/btcpaydreamlab23.jpg "DreamLab Network manage vps")
+![DreamLab Network manage vps](../img/Dreamlab/btcpaydreamlab23.jpg "Dream Lab Network manage vps")
 
 ## 4. Start your first store. 
 
@@ -110,7 +110,7 @@ You are now inside your new BTCPay Server.
 The bitcoin wallet is still missing. You can follow along in [this wallet setup guide](../WalletSetup.md)
 
 :::tip
-If there are questions about your node, the deployment, or updates, please reach out to the support of [DreamLab Network solutions](https://dreamlabnetwork.solutions)
+If there are questions about your node, the deployment, or updates, please reach out to the support of [Dream Lab Network solutions](https://dreamlabnetwork.solutions)
 :::
 
 
