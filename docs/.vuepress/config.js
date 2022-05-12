@@ -135,7 +135,7 @@ const sidebarDeployment = [
         children: [
           ['/Deployment/LunaNode', 'Luna Node'],
           ['/Deployment/voltagecloud', 'Voltage Cloud'],
-          ['/Deployment/DreamlabNetwork', 'DreamLab Network']
+          ['/Deployment/DreamlabNetwork', 'Dream Lab Network']
         ]
       },
       {
