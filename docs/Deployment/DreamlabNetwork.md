@@ -1,7 +1,7 @@
 # Dream Lab Network BTCPay Server web deployment.
 
 In this guide, we will walk you through the initial setup of your Dream Lab Network BTCPay Server web deployment. 
-DreamLab offers a variety of services. From domains, dedicated game servers, VPS servers, and now BTCPay Server as a service. 
+Dream Lab offers a variety of services. From domains, dedicated game servers, VPS servers, and now BTCPay Server as a service. 
 They've built multiple plans and configurations for BTCPay Server, hosted in North America, with expansion to other locations on their premise. 
 
 ## 1. Pick the server that fits your needs.
