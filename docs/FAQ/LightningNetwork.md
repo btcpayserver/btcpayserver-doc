@@ -54,7 +54,7 @@ When asking for inbound capacity, consider any routing policy fees the service m
 
 ### I previously installed BTCPayServer without lightning, can I enable it?
 
-BTCPay Server will allow you to setup your Lightning at any moment, after creating your first store. 
+BTCPay Server will allow you to set up your Lightning at any moment after creating your first store. 
 We currently support three implementations of the Lightning Network. 
 
 * [LND](https://github.com/lightningnetwork/lnd)
@@ -63,8 +63,8 @@ We currently support three implementations of the Lightning Network.
 
 ![Connecting Lightning to store](../img/FAQ/btcpaylightningfaq1.jpg)
 
-Want to learn more on how to setup your store with lightning ? 
-Follow along in this [Guide](../LightningNetwork.md) and you will get your store connected to Lightning Network!
+Want to learn more on how to set up your store with Lightning ? 
+Follow along in this [Guide](../LightningNetwork.md), and you will get your store connected to Lightning Network!
 
 ### Can I use a pruned node with LN in BTCPay?
 
