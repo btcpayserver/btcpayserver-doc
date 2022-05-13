@@ -4,6 +4,9 @@ In this guide, we will walk you through the initial setup of your Dream Lab Netw
 Dream Lab offers a variety of services. From domains, dedicated game servers, VPS servers, and now BTCPay Server as a service. 
 They've built multiple plans and configurations for BTCPay Server, hosted in North America, with expansion to other locations on their premise. 
 
+
+[![BTCPay Server - DreamLab Web-Deployment](https://img.youtube.com/vi/hGwRFpx4A0/mqdefault.jpg "BTCPay Server - DreamLab Web-Deployment")](https://www.youtube.com/watch?v=_hGwRFpx4A0 "BTCPay Server - DreamLab Web-Deployment")
+
 ## 1. Pick the server that fits your needs.
 
 On the Dream Lab website, in the top menu, go to `Services` and click on `BTCPay Servers`.
