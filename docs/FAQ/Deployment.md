@@ -271,7 +271,7 @@ BTCPAYGEN_EXCLUDE_FRAGMENTS="$BTCPAYGEN_EXCLUDE_FRAGMENTS;nginx-https"
 
 Notice: If your BTCPay Server install has more than one domain (for example `WOOCOMMERCE_HOST` or `BTCPAY_ADDITIONAL_HOSTS`) you will need to modify your config for each domain name. The example above only covers 1 domain name called `btcpay.domain.com`.
 
-## How to change your BTCPay Server domainname ? 
+## How to change your BTCPay Server domain name ? 
 
 ### Setting up DNS Records
 
