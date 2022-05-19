@@ -49,7 +49,7 @@ However, you can use a work-around:
 ## How to map a domain name to an app?
 
 BTCPay Server Apps can have a domain name that's different from the servers domain. Let's assume you have BTCPay Server at mybtcpayserver.com and want to display your PoS app on mybtcpaypos.com instead mybtcpayserver.com/apps/pos/abc123
-First, [configure DNS settings](/Deployment/ChangeDomain.md#setting-up-your-dns-record) of mypointofsale.com and make sure it's pointing to the external ip of your BTCPay Server.
+First, [configure DNS settings](../FAQ/Deployment.md#setting-up-dns-records)) of mypointofsale.com and make sure it's pointing to the external ip of your BTCPay Server.
 
 Next, add additional domain or subdomain name(s) by adding a new environment variable through ssh:
 

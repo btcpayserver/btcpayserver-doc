@@ -332,7 +332,7 @@ Similar to the requirements for hosting a website, a web server is required for 
 2. Go to your DNS provider and create an A record. Paste the external IP.
 3. Go to Server Settings > Maintenance > Change Domain. Paste yourdomain.com without http or https prefix.
 
-Additional documentation can be found on [domain change page](/Deployment/ChangeDomain.md).
+Additional documentation can be found on [Change Domain](../FAQ/Deployment.md#how-to-change-your-btcpay-server-domain-name)).
 
 ## Manual Deployment
 
