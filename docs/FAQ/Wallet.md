@@ -22,6 +22,17 @@ The internal wallet has a [built in hardware wallet integration](../HardwareWall
 
 This means that you're using a hardware wallet without leaking information to third-party apps or servers unlike the default software for the devices, since the wallet relies on the full node in your BTCPay.
 
+## Is there address re-use for separate stores using same xpub?
+
+In short, no there is not. 
+Create 2 separate stores on BTCpay Server under the same instance with the same xpub.
+If you do so, BTCPay Server will do address rotation correctly and never re-use between the stores.
+
+:::warning
+This has to be done on the same instance.
+As was documented in [Github issue #960](https://github.com/btcpayserver/btcpayserver-doc/issues/960)
+:::
+
 ## Do I have to use BTCPay Server wallet?
 
 By default BTCPay Server only requires an extended public key. To receive payments to your BTCPay store, you provide an extended public key (xPub) which you can generate in an external (existing) wallet. You do not have to use the built in wallet at all, you can manage funds in your [existing wallet](../WalletSetup.md#use-an-existing-wallet) instead.
