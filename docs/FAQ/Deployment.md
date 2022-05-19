@@ -288,8 +288,8 @@ This is an example of how this would look at [gandi.net](https://gandi.net/)
 
 ### Change domain name in BTCPay Server settings
 
-In BTCPay server you go to the `Server Settings` menu, and then into the tab `Maintenance`.
-Here you will find a field to replace your old by the new set domain, it might take a few seconds te work. 
+In BTCPay Server you go to the `Server Settings` menu, and then into the tab `Maintenance`.
+Here you will find a field to replace your old by the new set domain, it might take a few seconds to update. 
 
 ![Maintenance domain name](../img/changedomain.png "BTCPay Server Change Domain name")
 
@@ -307,7 +307,7 @@ Example :
 ssh btcpayserver@myawesomedemobtcpay.westeurope.cloudapp.azure.com
 ```
 
-Enter your `password` set for azure, and change the domain name.
+Enter your password and change the domain name.
 
 ```bash
 sudo su -
