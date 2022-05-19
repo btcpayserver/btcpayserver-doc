@@ -279,7 +279,7 @@ You bought a domain and now want to connect that to your BTCPay Server.
 The hosting party usually has a page to manage your domain. 
 Here you will find the `DNS records` page and add a `CNAME` record. 
 
-In this record you will make sure, it points to the provided Domain by your VPS hoster.
+In this record you will make sure, it points to the provided domain by your VPS hoster.
 You could also do this by IP address, but then instead of a `CNAME record` it would be an `A Record`.
 
 This is an example of how this would look at [gandi.net](https://gandi.net/)
