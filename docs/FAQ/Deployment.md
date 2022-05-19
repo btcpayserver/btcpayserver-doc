@@ -271,6 +271,51 @@ BTCPAYGEN_EXCLUDE_FRAGMENTS="$BTCPAYGEN_EXCLUDE_FRAGMENTS;nginx-https"
 
 Notice: If your BTCPay Server install has more than one domain (for example `WOOCOMMERCE_HOST` or `BTCPAY_ADDITIONAL_HOSTS`) you will need to modify your config for each domain name. The example above only covers 1 domain name called `btcpay.domain.com`.
 
+## How to change your BTCPay Server domainname ? 
+
+### Setting up DNS Records
+
+You bought a domain and now want to connect that to your BTCPay Server. 
+The hosting party's usually have a page to manage your domain. 
+Here you have to find the `DNS records` page and add a `CNAME` record. 
+
+In this record you will make sure, it points to the provided Domain by your VPS hoster.
+You could also do this by IP address, but then instead of a `CNAME record` it would be an `A Record`.
+
+This is an example of how this would look at [gandi.net](https://gandi.net/)
+
+![Gandi3](../img/Gandi3.png "Gandi add DNS record")
+
+### Change domain name in BTCPay Server settings
+
+In BTCPay server you go to the `Server Settings` menu, and then into the tab `Maintenance`.
+Here you will find a field to replace your old by the new set domain, it might take a few seconds te work. 
+
+![Maintenance domain name](../img/changedomain.png "BTCPay Server Change Domain name")
+
+Now enter the new set domain in the address bar and see if it works! 
+
+![Maintenance2](../img/Maintenance2.png "BTCPay Server Change Domain name")
+
+### Change domain on command line
+
+Connect to your server through SSH.
+ 
+Example :
+
+```bash
+ssh btcpayserver@myawesomedemobtcpay.westeurope.cloudapp.azure.com
+```
+
+Enter your `password` set for azure, and change the domain name.
+
+```bash
+sudo su -
+changedomain.sh tothemoon.btcpayserver.com
+```
+
+Success!
+
 ## Web-deployment
 
 Here you can find common questions and solutions to BTCPay web-deployments.
