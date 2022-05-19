@@ -276,8 +276,8 @@ Notice: If your BTCPay Server install has more than one domain (for example `WOO
 ### Setting up DNS Records
 
 You bought a domain and now want to connect that to your BTCPay Server. 
-The hosting party's usually have a page to manage your domain. 
-Here you have to find the `DNS records` page and add a `CNAME` record. 
+The hosting party's usually has a page to manage your domain. 
+Here you will find the `DNS records` page and add a `CNAME` record. 
 
 In this record you will make sure, it points to the provided Domain by your VPS hoster.
 You could also do this by IP address, but then instead of a `CNAME record` it would be an `A Record`.
