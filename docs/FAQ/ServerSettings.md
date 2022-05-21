@@ -66,7 +66,7 @@ Or see this [LunaNode example](https://github.com/JeffVandrewJr/patron/blob/mast
 
 ### How to see, as an admin, what's running on my server?
 
-You need to SSH into your BTCPay server, and run a single line to see the list of APPS in the system:
+You need to SSH into your BTCPay Server, and run a single line to see the list of `apps` in the system:
 
 ```
 docker exec -ti $(docker ps -a -q -f "name=postgres_1") psql -U postgres -d btcpayservermainnet -c 'select "Name" from "Apps";'
