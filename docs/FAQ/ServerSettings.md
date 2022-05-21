@@ -86,7 +86,7 @@ docker exec -ti $(docker ps -a -q -f "name=postgres_1") psql -U postgres -d btcp
 
 ### How can I see my BTCPay Server version?
 
-You can see your BTCPay version in the **bottom right of the page footer** when you're logged in as a server admin.
+You can see your BTCPay Server version in the **bottom right of the page footer** when you're logged in as a server admin.
 
 Deployments using v1.0.5.7 and later will automatically receive notifications to alert when a new BTCPay Server version has been released.
 
