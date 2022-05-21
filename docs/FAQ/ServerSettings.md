@@ -84,7 +84,7 @@ You can also run this to see the users list:
 docker exec -ti $(docker ps -a -q -f "name=postgres_1") psql -U postgres -d btcpayservermainnet -c 'select "Id", "Email" from "AspNetUsers";'
 ```
 
-### How can I see my BTCPay version?
+### How can I see my BTCPay Server version?
 
 You can see your BTCPay version in the **bottom right of the page footer** when you're logged in as a server admin.
 
