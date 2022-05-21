@@ -64,7 +64,7 @@ yes
 
 Or see this [LunaNode example](https://github.com/JeffVandrewJr/patron/blob/master/SSH.md) with PuTTY.
 
-### How to see, as an admin, what's running on my server?
+### How to see, as an admin, what's running on my BTCPay Server?
 
 You need to SSH into your BTCPay Server, and run a single line to see the list of `apps` in the system:
 
