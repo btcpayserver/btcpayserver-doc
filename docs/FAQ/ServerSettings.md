@@ -72,7 +72,7 @@ You need to SSH into your BTCPay Server, and run a single line to see the list o
 docker exec -ti $(docker ps -a -q -f "name=postgres_1") psql -U postgres -d btcpayservermainnet -c 'select "Name" from "Apps";'
 ```
 
-This to see the list of Stores and it's WebSites:
+This to see the list of `stores` and their websites:
 
 ```
 docker exec -ti $(docker ps -a -q -f "name=postgres_1") psql -U postgres -d btcpayservermainnet -c 'select "StoreName","StoreWebsite" from "Stores";'
