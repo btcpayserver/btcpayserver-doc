@@ -248,5 +248,5 @@ For the latest updates, always feel free to ask on the known community channels.
 Allways make sure your backup strategy is tested and fits your business needs. There is no one solution fits all. 
 :::
 
-## What isn't included and should be considerd before taking this approach. 
+## What isn't included and should be considerd before taking this backup approach. 
 
