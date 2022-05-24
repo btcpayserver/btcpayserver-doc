@@ -193,8 +193,8 @@ cd "$BTCPAY_BASE_DIRECTORY"
 export BTCPAY_BACKUP_PASSPHRASE="tOpSeCrEt"
 ./btcpay-restore.sh /var/backups/backup.tar.gz.gpg
 ```
-This will start the restore process, it start by looking for the `backup.tar.gz` file.
-If it can't find the file in the right path, the script will give out an error.  
+This will start the restore process by unpacking the backup file.
+If it can't find the file in the provided path, the script will give out an error.  
 
 ```
 if [ -z "$backup_path" ]; then
