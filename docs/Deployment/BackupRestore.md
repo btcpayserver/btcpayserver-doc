@@ -10,8 +10,8 @@ Always make sure your backup solution works and fits your needs!
 
 ## How does BTCPay Server backup work? 
 
-The original strategy of backups in BTCPay Server still exists and can be found [Here](https://docs.btcpayserver.org/Docker/#how-can-i-back-up-my-btcpay-server).
-While we did create a new process, the old scripts still do work and have only slightly been touched. see [Github #641](https://github.com/btcpayserver/btcpayserver-docker/pull/641) for more details. 
+The original strategy of backups in BTCPay Server still exists and can be found [here](https://docs.btcpayserver.org/Docker/#how-can-i-back-up-my-btcpay-server).
+While we did create a new process, the old scripts still do work and have only slightly been touched. See [pull request #641](https://github.com/btcpayserver/btcpayserver-docker/pull/641) for more details. 
 
 :::tip 
 Please be aware of these important issues:
