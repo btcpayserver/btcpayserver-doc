@@ -187,7 +187,11 @@ First off, open a terminal and type the following as root. Remember that if you 
 
 ```
 cd "$BTCPAY_BASE_DIRECTORY"
-./btcpay-restore.sh BTCPAY_BACKUP_PASSPHRASE 
+./btcpay-restore.sh /var/backups/backup.tar.gz
+
+# if you used the passphrase for encryption, you also need to provide it for decryption
+export BTCPAY_BACKUP_PASSPHRASE="tOpSeCrEt"
+./btcpay-restore.sh /var/backups/backup.tar.gz.gpg
 ```
 This will start the restore process, it start by looking for the `backup.tar.gz` file.
 If it can't find the file in the right path, the script will give out an error.  
