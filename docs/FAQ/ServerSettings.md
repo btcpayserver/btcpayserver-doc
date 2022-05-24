@@ -64,9 +64,29 @@ yes
 
 Or see this [LunaNode example](https://github.com/JeffVandrewJr/patron/blob/master/SSH.md) with PuTTY.
 
-### How can I see my BTCPay version?
+### How to see, as an admin, what's running on my BTCPay Server?
 
-You can see your BTCPay version in the **bottom right of the page footer** when you're logged in as a server admin.
+You need to SSH into your BTCPay Server, and run a single line to see the list of `apps` in the system:
+
+```
+docker exec -ti $(docker ps -a -q -f "name=postgres_1") psql -U postgres -d btcpayservermainnet -c 'select "Name" from "Apps";'
+```
+
+This to see the list of `stores` and their websites:
+
+```
+docker exec -ti $(docker ps -a -q -f "name=postgres_1") psql -U postgres -d btcpayservermainnet -c 'select "StoreName","StoreWebsite" from "Stores";'
+```
+
+You can also run this to see the users list:
+
+```
+docker exec -ti $(docker ps -a -q -f "name=postgres_1") psql -U postgres -d btcpayservermainnet -c 'select "Id", "Email" from "AspNetUsers";'
+```
+
+### How can I see my BTCPay Server version?
+
+You can see your BTCPay Server version in the **bottom right of the page footer** when you're logged in as a server admin.
 
 Deployments using v1.0.5.7 and later will automatically receive notifications to alert when a new BTCPay Server version has been released.
 
