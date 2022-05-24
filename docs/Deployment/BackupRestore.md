@@ -68,7 +68,7 @@ echo "✅ Database dump done."
 echo "✅ Archive done."
 ```
 
-When the backup has been completed and run successful it will state :
+When the backup has been completed successfully it will state:
 
 ```
 printf "✅ Backup done => $backup_path\n\n"
