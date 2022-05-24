@@ -181,9 +181,9 @@ Creating letsencrypt-nginx-proxy-companion     ... done
 ## How does the BTCpay-restore.sh work? 
 
 It's very similar to the `btcpay-backup.sh` process but in reverse. 
-The `btcpay-restore.sh` script will search for the `backup.tar.gz` file. 
+The `btcpay-restore.sh` script needs to be run with the path to your `backup.tar.gz` file. 
 
-First off, open a terminal and type the following as root. Remember that if you set `BTCPAY_BACKUP_PASSPHRASE` on the backup, you have to set it on the restore too ; 
+First off, open a terminal and type the following as root. Remember that if you set `BTCPAY_BACKUP_PASSPHRASE` on the backup, you have to set it on the restore too. 
 
 ```
 cd "$BTCPAY_BASE_DIRECTORY"
