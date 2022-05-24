@@ -53,7 +53,7 @@ if [ ! -d "$backup_dir" ]; then
 fi
 ```
 With this preparation taken, the backup process is now starting. 
-The script has checks to ensure it either works or fails with a comprehensive error msg at every step of the way.
+The script has checks to ensure it either works or fails with a comprehensive error message at every step of the way.
 
 ```
 echo "🚨 Database container could not be started or found."
