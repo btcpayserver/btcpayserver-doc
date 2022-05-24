@@ -114,7 +114,7 @@ If you can't use the wizard mentioned in the previous section you can also gener
 
 ## 3. Testing the checkout
 
-Making a small test-purchase from your store will give you a piece of mind.
+Making a small test-purchase from your store will give you peace of mind.
 Always make sure that everything is set up correctly before going live.
 The final video guides you through the steps of setting a gap limit in your Electrum wallet and testing the checkout process.
 
