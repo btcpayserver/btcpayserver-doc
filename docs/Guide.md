@@ -2,7 +2,7 @@
 
 ## What is BTCPay Server?
 
-BTCPay Server is a free, open-source & self-hosted bitcoin payment gateway that allows self-sovereign individuals and businesses to accept bitcoin payments online or in-person without any fees.
+BTCPay Server is a free, open-source & self-hosted bitcoin payment gateway that allows self-sovereign individuals and businesses to accept bitcoin payments online or in person without any fees.
 
 ![BTCPay Server](./img/BTCPayServerScreenshot.png "BTCPay Server")
 
@@ -42,15 +42,15 @@ BTCPay Server is free to use and completely open-source, so developers or securi
 
 ## Getting started
 
-To start using BTCPay Server, [decide how would you like to deploy it](/Deployment/). If you decide for self-hosted option, start by reviewing our extensive deployment documentation. We recommend [Docker deployment](/Docker/). If your choice is a third-party hosting, read our [third-party host docs](/Deployment/ThirdPartyHosting.md).
+To start using BTCPay Server, [decide how you would like to deploy it](/Deployment/). If you decide on a self-hosted option, start by reviewing our extensive deployment documentation. We recommend [Docker deployment](/Docker/). If your choice is a third-party hosting, read our [third-party host docs](/Deployment/ThirdPartyHosting.md).
 
 [![How BTCPay Server Features Overview](https://img.youtube.com/vi/R-yaXk4NvEs/mqdefault.jpg)](https://www.youtube.com/watch?v=R-yaXk4NvEs)
 
 ## Get involved
 
-Contributing to an open-source project is great way to learn, network and build your portfolio. BTCPay Server is maintained by volunteers around the internet. If you would like to contribute to the project development, check our [contributing guidelines](/Contribute.md)
+Contributing to an open-source project is a great way to learn, network, and build your portfolio. Volunteers around the internet maintain BTCPay Server. If you would like to contribute to the project development, check our [contributing guidelines](/Contribute.md)
 
-If you're interested in helping out with documentation, take a look at the video below.
+If you're interested in helping out with documentation, look at the video below.
 
 [![Contributing to Documentation](https://img.youtube.com/vi/bSDROcdSSWw/mqdefault.jpg)](https://www.youtube.com/watch?v=bSDROcdSSWw "How BTCPay Server Works")
 
