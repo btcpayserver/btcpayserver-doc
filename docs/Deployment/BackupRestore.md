@@ -15,7 +15,7 @@ While we did create a new process, the old scripts still do work and have only s
 
 :::tip 
 Please be aware of these important issues:
-The old channel state is toxic, and you can lose all your funds if you or someone else closes a channel based on the backup with the old state - and the state changes often! If you publish an old state (say from yesterday's backup) on-chain, you will lose all your funds in a channel because the counterparty will publish a revocation key!
+The old channel state is toxic, and you can lose all your funds if you or someone else closes a channel based on the backup with the old state - and the state changes often! If you publish an old state (say from yesterday's backup) on-chain, you will most-likely lose all your funds in the channel because the counterparty might publish a [revocation transaction](https://www.d11n.net/lightning-network-payment-channel-lifecycle.html#what-happens-in-case-of-a-false-close%3F)!
 :::
 
 The backup process gets started from the `btcpay-backup.sh` script. 
