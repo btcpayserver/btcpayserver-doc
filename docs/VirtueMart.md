@@ -150,17 +150,8 @@ You can adjust the mapping of BTCPay Server invoice status to VirtueMart order s
 
 VirtueMart order statuses are explained [here](https://docs.virtuemart.net/manual/configuration-menu/order-statuses.html)
 
-Short summary of BTCPay server invoice statuses:
+BTCPay server invoice statuses are explained [here](https://docs.btcpayserver.org/Invoices/#invoice-statuses)
 
-**new**: Invoice was created.
-
-**processing**: The invoice was paid but the payment does not have enough confirmations to be considered "settled" yet. You may want to wait before delivering any goods or give your customer access to digital products. See [here](https://docs.btcpayserver.org/FAQ/Stores/#consider-the-invoice-confirmed-when-the-payment-transaction)
-
-**settled**: The payment is considered complete. E.g. 6 on-chain confirmations or instant settlement via Lightning Network payment. You can safely ship the goods to the customer.
-
-**expired**: The invoice expired, no payment was made in the configured expiry time (default 15 minutes), see [here](https://docs.btcpayserver.org/FAQ/Stores/#consider-the-invoice-confirmed-when-the-payment-transaction)
-
-**invalid**: The invoice has become invalid. Either it was manually marked invalid or there was only partial payment of the invoice. Please check the invoice details and manually process the order status.
 
 ### Section: Restrictions
 
