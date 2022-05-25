@@ -1,5 +1,5 @@
 ---
-description: How to integrate BTCPay Server into your VirtueMart store.
+description: How to integrate BTCPay Server into your Joomla VirtueMart store.
 tags:
 - VirtueMart
 - Joomla
@@ -117,7 +117,7 @@ Everything is ready to go now. Do a small test purchase and make sure the order 
 
 ## Customizing VirtueMart BTCPay payment method settings
 
-Your VM BTCPay payment method settings can be found in menu: VirtueMart -> Payment Methods. Click on the payment method of type "btcpayvm" you created.
+Your VirtueMart BTCPay payment method settings can be found in menu: VirtueMart -> Payment Methods. Click on the payment method of type "btcpayvm" you created.
 
 ### Section: BTCPay Server connection settings
 
