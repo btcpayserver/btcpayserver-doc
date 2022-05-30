@@ -41,7 +41,7 @@ The backup process needs to be started as root, which it will check for and let 
 After the user has been determined suitable, the script will set itself up to take the next steps:
 
 * checks for docker dir
-* Makes a dump of the postgres DB. 
+* Makes a dump of the postgres DB
 * Sets BTCPay directory
 * Sets backup directory
 * Determines the DB dump path
