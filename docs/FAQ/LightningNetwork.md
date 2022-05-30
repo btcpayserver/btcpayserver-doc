@@ -64,7 +64,7 @@ We currently support three implementations of the Lightning Network.
 ![Connecting Lightning to store](../img/FAQ/btcpaylightningfaq1.jpg)
 
 Want to learn more on how to set up your store with Lightning ? 
-Follow along in this [Guide](../LightningNetwork.md), and you will get your store connected to Lightning Network!
+Follow along the [Lightning Network](../LightningNetwork.md) guide, and you will get your store connected to Lightning Network!
 
 ### Can I use a pruned node with LN in BTCPay?
 
