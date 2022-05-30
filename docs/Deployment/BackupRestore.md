@@ -30,22 +30,18 @@ Below we will talk you through the steps taken.
 The backup process needs to be started as root, which it will check for and let you know if you have to switch users.
 After the user has been determined suitable, the script will set itself up to take the next steps:
 
-```
-# preparation
-docker_dir=$(docker volume inspect generated_btcpay_datadir --format="{{.Mountpoint}}" | sed -e "s%/volumes/.*%%g")
-dbdump_name=postgres.sql.gz
-btcpay_dir="$BTCPAY_BASE_DIRECTORY/btcpayserver-docker"
-backup_dir="$docker_dir/volumes/backup_datadir/_data"
-dbdump_path="$docker_dir/$dbdump_name"
-backup_path="$backup_dir/backup.tar.gz"
+* checks for docker dir.
+* Makes a dump of the postgres DB. 
+* Sets BTCPay directory. 
+* Sets backup directory. 
+* Determines the DB dump path. 
+* Determines the backup path. 
 
-# ensure backup dir exists
-if [ ! -d "$backup_dir" ]; then
-  mkdir -p $backup_dir
-fi
-```
+If the backup directory doesn't exist yet, the script will ensure to make one. 
 With these preparations taken, the backup process is now starting. 
+
 The script has checks to ensure it either works or fails with a comprehensive error message at every step of the way.
+This gets determined by a `-e` tag at the start of the script. 
 
 ```
 echo "🚨 Database container could not be started or found."
@@ -76,7 +72,7 @@ cd "$BTCPAY_BASE_DIRECTORY"
 ./btcpay-backup.sh BTCPAY_BACKUP_PASSPHRASE 
 ```
 
-This `BTCPAY_BACKUP_PASSPHRASE` if set is neccesary to be called in the restore process aswell, [Click here to read more](../Deployment/BackupRestore.md#Restore-with-`BTCPAY_BACKUP_PASSPHRASE`-flag-set)
+This `BTCPAY_BACKUP_PASSPHRASE` if set, is neccesary to be in the restore process aswell, [Click here to read more](../Deployment/BackupRestore.md#Restore-with-`BTCPAY_BACKUP_PASSPHRASE`-flag-set)
 
 ### backup output
 
@@ -179,45 +175,44 @@ Creating letsencrypt-nginx-proxy-companion     ... done
 It's very similar to the `btcpay-backup.sh` process but in reverse. 
 The `btcpay-restore.sh` script needs to be run with the path to your `backup.tar.gz` file. 
 
-First off, open a terminal and type the following as root. Remember that if you set `BTCPAY_BACKUP_PASSPHRASE` on the backup, you have to set it on the restore too. 
+First off, open a terminal and type the following as root.  
+Remember that if you set `BTCPAY_BACKUP_PASSPHRASE` on the backup, you also need to provide it for decryption :
 
 ```
 cd "$BTCPAY_BASE_DIRECTORY"
-./btcpay-restore.sh /var/backups/backup.tar.gz
-
-# if you used the passphrase for encryption, you also need to provide it for decryption
 export BTCPAY_BACKUP_PASSPHRASE="tOpSeCrEt"
 ./btcpay-restore.sh /var/backups/backup.tar.gz.gpg
 ```
+
 This will start the restore process by unpacking the backup file.
 If it can't find the file in the provided path, the script will give out an error.  
 
 ```
-if [ -z "$backup_path" ]; then
-  printf "\nℹ️  Usage: btcpay-restore.sh /path/to/backup.tar.gz\n\n"
-  exit 1
-fi
-
-if [ ! -f "$backup_path" ]; then
-  printf "\n🚨 $backup_path does not exist.\n\n"
-  exit 1
-fi
+"\n🚨 $backup_path does not exist.\n\n"
 ```
-### Restore with `BTCPAY_BACKUP_PASSPHRASE` flag set
 
-Just as the `btcpay-backup.sh` does, the restore will stop at ANY error it may encounter. 
-This gets determined by a `-e` tag at the start of the script. 
+Just as the `btcpay-backup.sh` script, the restore will stop at ANY error it may encounter. 
 If the backup file was created while the `BTCPAY_BACKUP_PASSPHRASE` was set but not used on restoring, the following error would occur :
 
 ```
 🚨  Decryption failed. Please check the error message above.
 ```
 
-When the restore has been completed, it will tell in the terminal, like the backup process. 
+When the restore has been completed, you get the message : 
 
 ```
-printf "✅ Restore done\n\n"
+✅ Restore done
 ```
+
+Everything should be up and running again when the restore is complete, and you've successfully restored your BTCpay Server.
+Congratulations!
+
+:::tip
+We won't nail every aspect right away with this approach. This page will be subject to change. 
+Always make sure your backup strategy is tested and fits your business needs. No one solution fits all.
+For the latest updates, always feel free to ask on the BTCPay Server community channels. 
+:::
+
 
 ### Restore output
 
@@ -289,15 +284,6 @@ DETAIL:  There is 1 other session using the database.
 ✅ Restore done
 ```
 
-Everything should be up and running again when the restore is complete, and you've successfully restored your BTCpay Server.
-Congratulations!
-
-:::tip
-We won't nail every aspect right away with this approach. This page will be subject to change. 
-Always make sure your backup strategy is tested and fits your business needs. No one solution fits all.
-For the latest updates, always feel free to ask on the BTCPay Server community channels. 
-:::
-
 ## What isn't included and should be considered before taking this backup approach. 
 
 ### Lightning channel backup. 
@@ -321,4 +307,8 @@ PATH=/bin:/usr/sbin:/usr/bin:/usr/local/bin
 15 4 * * * /root/btcpayserver-docker/btcpay-backup.sh >/dev/null 2>&1
 ```
 
-## 
+# Questions ? 
+
+If you have questions about BTCPay Server, check our documentation, [Frequently asked questions page](./FAQ.md).
+
+Join the [community chat](https://chat.btcpayserver.org/) on Mattermost by downloading [Mattermost app](https://mattermost.com/download/), or on [Telegram](https://t.me/btcpayserver) in case you need further help or help or want to hang around with like-minded people.
