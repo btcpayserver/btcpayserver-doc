@@ -54,105 +54,17 @@ When asking for inbound capacity, consider any routing policy fees the service m
 
 ### I previously installed BTCPayServer without lightning, can I enable it?
 
-If you did not deploy your server with a lightning implementation provided, you will need to add it to your server manually. You can do this by sshing into your server, adding the lightning option and re-running the setup script. This is also the process for changing from one lightning provider to another. The instructions can be found [here](#how-to-change-from-c-lightning-to-lnd-or-vice-versa).
+BTCPay Server will allow you to set up your Lightning at any moment after creating your first store. 
+We currently support three implementations of the Lightning Network. 
 
-Once your server has restarted, you can then click on `Test Connection` in your you store settings to verify that you have successfully configured your lightning node.
+* [LND](https://github.com/lightningnetwork/lnd)
+* [c-lightning](https://github.com/ElementsProject/lightning)
+* [eclair](https://github.com/ACINQ/eclair)
 
-Depending on how you deployed BTCPayServer you might have different step to do:
+![Connecting Lightning to store](../img/FAQ/btcpaylightningfaq1.jpg)
 
-#### Case 1: You manually installed
-
-If you installed BTCPayServer manually without docker or Azure, then you only need to start run [CLightning](https://hub.docker.com/r/nicolasdorier/clightning/) with the correct network parameter.
-
-Assuming you are running as root, CLightning will allow call to its API via a unix socket on `/root/.lightning/lightning-rpc`
-
-Once this is done, make sure you start BTCPayServer with
-
-```bash
--btclightning=/root/.lightning/lightning-rpc
-```
-
-If you are using CLightning for Litecoin, use the parameter `-ltclightning` instead.
-
-Then, make sure the port lightning network ports `9735` (BTC) and `9736` (LTC) are open on your firewalls.
-
-#### Case 2: You manually installed and you are using docker (without Azure)
-
-In this case, you only have to change the docker-compose you are using.
-If before you were using `docker-compose -f "$(pwd)/Production/docker-compose.btc-ltc.yml" up -d` (as documented [here](https://github.com/btcpayserver/btcpayserver-docker#for-docker-noobs)), then you need to change to `docker-compose -f "$(pwd)/Production/docker-compose.btc-ltc-clightning.yml" up -d`.
-
-Then, make sure the port lightning network ports `9735` (BTC) and `9736` (LTC) are open on your firewalls.
-
-#### Case 3: You are using Azure
-
-Log as root:
-
-```bash
-sudo su -
-```
-
-Run
-
-```bash
-cd $DOWNLOAD_ROOT
-wget -O - https://raw.githubusercontent.com/btcpayserver/btcpayserver-azure/master/btcpay-update.sh > btcpay-update.sh
-btcpay-update.sh
-```
-
-Modify the file `/etc/profile.d/btcpay-env.sh`:
-
-You should have something like:
-
-```bash
-export BTCPAY_DOCKER_COMPOSE="/var/lib/waagent/custom-script/download/0/btcpayserver-docker/Production/docker-compose.btc-ltc.yml"
-```
-
-Modify by adding `-clightning` at the end:
-
-```bash
-export BTCPAY_DOCKER_COMPOSE="/var/lib/waagent/custom-script/download/0/btcpayserver-docker/Production/docker-compose.btc-ltc-clightning.yml"
-```
-
-Update your environment variables in current session by running:
-
-```bash
-. /etc/profile.d/btcpay-env.sh
-```
-
-Then restart your server:
-
-```bash
-btcpay-restart.sh
-```
-
-Then, connect to your [Microsoft Azure Portal](https://portal.azure.com/),
-Go to the resource group of your install, and add a new security rule in the Network Security Group inside it. (See [this example](https://docs.microsoft.com/en-us/azure/virtual-network/virtual-networks-create-nsg-arm-pportal#create-rules-in-an-existing-nsg))
-
-If your resource group do not have a Network Security Group, you can skip this step. The Network Security Group has been introduced in new Azure installs.
-
-Add a Security Inbound Rules:
-
-Rule 1:
-
-* Name: LightningBTC
-* Priority: 150
-* Source: Internet
-* Destination: Any
-* Port: 9735
-* Protocol: TCP
-
-Rule 2:
-
-* Name: LightningLTC
-* Priority: 151
-* Source: Internet
-* Destination: Any
-* Port: 9736
-* Protocol: TCP
-
-Here is how it should look like:
-
-![SecurityRules](../img/azuresecurityrule.png)
+Want to learn more on how to set up your store with Lightning ? 
+Follow along the [Lightning Network](../LightningNetwork.md) guide, and you will get your store connected to Lightning Network!
 
 ### Can I use a pruned node with LN in BTCPay?
 
