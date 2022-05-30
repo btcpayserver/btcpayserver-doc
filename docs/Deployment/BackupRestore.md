@@ -8,6 +8,16 @@ This process comes with its warnings, and they should be considered.
 Always make sure your backup solution works and fits your needs! 
 :::
 
+
+-[How does BTCPay Server backup work](#How-does-BTCPay-Server-backup-work?)
+    -[Extra option to btcpay-backup.sh](#-Extra-options-for-`btcpay-backup.sh`)
+    -[btcpay-backup.sh example](#backup-output)
+-[How does the BTCpay-restore.sh work?](#how-does-the-btcpay-restoresh-work)
+    -[btcpay-restore.sh Example](#restore-output)
+-[What isn't included and should be considered before taking this backup approach](#what-isnt-included-and-should-be-considered-before-taking-this-backup-approach)
+    -[Lightning CHanne](#lightning-channel-backup)
+    -[Automation by crontab, does it work?](#automation-by-crontab-does-it-work)
+
 ## How does BTCPay Server backup work? 
 
 The original strategy of backups in BTCPay Server still exists and can be found [here](https://docs.btcpayserver.org/Docker/#how-can-i-back-up-my-btcpay-server).
