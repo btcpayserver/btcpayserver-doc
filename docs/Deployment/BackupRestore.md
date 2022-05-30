@@ -9,14 +9,14 @@ Always make sure your backup solution works and fits your needs!
 :::
 
 
--[How does BTCPay Server backup work](#How-does-BTCPay-Server-backup-work?)
-    -[Extra option to btcpay-backup.sh](#-Extra-options-for-`btcpay-backup.sh`)
-    -[btcpay-backup.sh example](#backup-output)
--[How does the BTCpay-restore.sh work?](#how-does-the-btcpay-restoresh-work)
-    -[btcpay-restore.sh Example](#restore-output)
--[What isn't included and should be considered before taking this backup approach](#what-isnt-included-and-should-be-considered-before-taking-this-backup-approach)
-    -[Lightning CHanne](#lightning-channel-backup)
-    -[Automation by crontab, does it work?](#automation-by-crontab-does-it-work)
+- [How does BTCPay Server backup work](#How-does-BTCPay-Server-backup-work?)
+    - [Extra option to btcpay-backup.sh](#-Extra-options-for-`btcpay-backup.sh`)
+    - [btcpay-backup.sh example](#backup-output)
+- [How does the BTCpay-restore.sh work?](#how-does-the-btcpay-restoresh-work)
+    - [btcpay-restore.sh Example](#restore-output)
+- [What isn't included and should be considered before taking this backup approach](#what-isnt-included-and-should-be-considered-before-taking-this-backup-approach)
+    - [Lightning CHanne](#lightning-channel-backup)
+    - [Automation by crontab, does it work?](#automation-by-crontab-does-it-work)
 
 ## How does BTCPay Server backup work? 
 
