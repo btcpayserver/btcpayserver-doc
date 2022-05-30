@@ -15,7 +15,7 @@ While we did create a new process, the old scripts still do work and have only s
 
 :::tip 
 Please be aware of these important issues:
-The old channel state is toxic, and you can lose all your funds if you or someone else closes a channel based on the backup with the old state - and the state changes often! If you publish an old state (say from yesterday's backup) on-chain, you will most-likely lose all your funds in the channel because the counterparty might publish a [revocation transaction](https://www.d11n.net/lightning-network-payment-channel-lifecycle.html#what-happens-in-case-of-a-false-close%3F)!
+The old channel state is toxic, and you can lose all your funds if you or someone else closes a channel based on the backup with the old state - and the state changes often! If you publish an old state (say from yesterday's backup) on-chain, you will most likely lose all your funds in the channel because the counterparty might publish a [revocation transaction](https://www.d11n.net/lightning-network-payment-channel-lifecycle.html#what-happens-in-case-of-a-false-close%3F)!
 :::
 
 The backup process gets started from the `btcpay-backup.sh` script. 
@@ -51,22 +51,22 @@ The script has checks to ensure it either works or fails with a comprehensive er
 echo "🚨 Database container could not be started or found."
 ```
 
-If everything is running fine, you'll get to see multiple completed marks in your console. 
-
-Example :
-
-``` 
-echo "✅ Database dump done."
-echo "✅ Archive done."
-```
-
-When the backup has been completed successfully it will state:
+If everything is running smoothly, you'll get to see multiple completed marks in your console. 
+Whenever the backup has been completed successfully, it will state:
 
 ```
 printf "✅ Backup done => $backup_path\n\n"
 ```
 
-### Extra options for `btcpay-backup.sh`
+Your BTCPay Server has now finished the backup process. It's now up to you to store these backups in a safe manner. 
+After you've made a backup the first time, it's always wise to at least test your backup in a restore scenario. 
+In the next topic, we will go over the extra options you can set with your backup.
+
+## Extra options for `btcpay-backup.sh`
+
+When you run the `btcpay-backup.sh` script, you're able to set certain flags.
+
+### Set a Passphrase for BTCPay Server backup. 
 
 One of the extra tags that you can set when running the `btcpay-backup.sh` is for a passphrase.
 This would be run as follows :
@@ -75,6 +75,8 @@ This would be run as follows :
 cd "$BTCPAY_BASE_DIRECTORY"
 ./btcpay-backup.sh BTCPAY_BACKUP_PASSPHRASE 
 ```
+
+This `BTCPAY_BACKUP_PASSPHRASE` if set is neccesary to be called in the restore process aswell, [Click here to read more](../Deployment/BackupRestore.md#Restore-with-`BTCPAY_BACKUP_PASSPHRASE`-flag-set)
 
 ### backup output
 
@@ -201,23 +203,14 @@ if [ ! -f "$backup_path" ]; then
   exit 1
 fi
 ```
+### Restore with `BTCPAY_BACKUP_PASSPHRASE` flag set
 
 Just as the `btcpay-backup.sh` does, the restore will stop at ANY error it may encounter. 
 This gets determined by a `-e` tag at the start of the script. 
-If the backup file was created while the `BTCPAY_BACKUP_PASSPHRASE` was set, but not used on restoring, the following error will occur :
+If the backup file was created while the `BTCPAY_BACKUP_PASSPHRASE` was set but not used on restoring, the following error would occur :
 
 ```
-if [[ "$backup_path" == *.gpg ]]; then
-  echo "🔐 Decrypting backup file …"
-  {
-    gpg -o "${backup_path%.*}" --batch --yes --passphrase "$BTCPAY_BACKUP_PASSPHRASE" -d $backup_path
-    backup_path="${backup_path%.*}"
-    printf "✅ Decryption done.\n\n"
-  } || {
-    echo "🚨  Decryption failed. Please check the error message above."
-    exit 1
-  }
-fi
+🚨  Decryption failed. Please check the error message above.
 ```
 
 When the restore has been completed, it will tell in the terminal, like the backup process. 
@@ -314,13 +307,13 @@ It has a high chance of failure in a disaster recovery scenario, where you may d
 For instance, the Lightning static channel backup should be watched by a script and copied over to a remote server to ensure you always have the latest state available. The scripts will be sufficient in a migration case, where the shutdown of the old and the start of the new server happen directly. 
 :::
 
-## Can these scripts be run from crontab? 
+## Automation by crontab, does it work?  
 
 In short, yes. 
 This is an example of a crontab script. 
 As long as you've set the right `PATH`, the script sources the `.env` file itself. 
 
-Example of a crontab :
+Crontab example :
 
 ```
 SHELL=/bin/bash
@@ -328,3 +321,4 @@ PATH=/bin:/usr/sbin:/usr/bin:/usr/local/bin
 15 4 * * * /root/btcpayserver-docker/btcpay-backup.sh >/dev/null 2>&1
 ```
 
+## 
