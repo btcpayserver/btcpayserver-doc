@@ -15,7 +15,7 @@ Always make sure your backup solution works and fits your needs!
 - [How does the BTCpay-restore.sh work?](#how-does-the-btcpay-restoresh-work)
     - [btcpay-restore.sh Example](#restore-output)
 - [What isn't included and should be considered before taking this backup approach](#what-isnt-included-and-should-be-considered-before-taking-this-backup-approach)
-    - [Lightning CHanne](#lightning-channel-backup)
+    - [Lightning Channel backups](#lightning-channel-backup)
     - [Automation by crontab, does it work?](#automation-by-crontab-does-it-work)
 
 ## How does BTCPay Server backup work? 
