@@ -203,7 +203,7 @@ const sidebarDeployment = [
     children: [
       '/Deployment/ManualDeployment',
       '/Deployment/ManualDeploymentExtended',
-      '/BackupRestore/Backup and Restore'
+      '/Deployment/BackupRestore'
     ]
   }
 ]
