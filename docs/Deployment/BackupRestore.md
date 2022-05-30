@@ -40,18 +40,18 @@ Below we will talk you through the steps taken.
 The backup process needs to be started as root, which it will check for and let you know if you have to switch users.
 After the user has been determined suitable, the script will set itself up to take the next steps:
 
-* checks for docker dir.
+* checks for docker dir
 * Makes a dump of the postgres DB. 
-* Sets BTCPay directory. 
-* Sets backup directory. 
-* Determines the DB dump path. 
-* Determines the backup path. 
+* Sets BTCPay directory
+* Sets backup directory
+* Determines the DB dump path
+* Determines the backup path
 
 If the backup directory doesn't exist yet, the script will ensure to make one. 
 With these preparations taken, the backup process is now starting. 
 
 The script has checks to ensure it either works or fails with a comprehensive error message at every step of the way.
-This gets determined by a `-e` tag at the start of the script. 
+This gets determined by a `-e` flag at the start of the script. 
 
 ```
 echo "🚨 Database container could not be started or found."
@@ -195,7 +195,7 @@ export BTCPAY_BACKUP_PASSPHRASE="tOpSeCrEt"
 ```
 
 This will start the restore process by unpacking the backup file.
-If it can't find the file in the provided path, the script will give out an error.  
+If it can't find the file in the provided path, the script will exit with an error.  
 
 ```
 "\n🚨 $backup_path does not exist.\n\n"
