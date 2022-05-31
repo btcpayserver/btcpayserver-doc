@@ -60,10 +60,6 @@ Your BTCPay Server has now finished the backup process. It's now up to you to st
 After you've made a backup the first time, it's always wise to at least test your backup in a restore scenario.
 In the next topic, we will go over the extra options you can set with your backup.
 
-## Extra options for `btcpay-backup.sh`
-
-When you run the `btcpay-backup.sh` script, you're able to set certain flags.
-
 ### Set a backup passphrase
 
 You can set the `BTCPAY_BACKUP_PASSPHRASE` environment variable for encrypting the backup.
