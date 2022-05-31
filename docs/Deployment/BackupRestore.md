@@ -141,9 +141,3 @@ PATH=/bin:/usr/sbin:/usr/bin:/usr/local/bin
 ```
 
 As long as you've set the right `PATH`, the script sources the `.env` file itself.
-
-# Questions ?
-
-If you have questions about BTCPay Server, check our documentation, [Frequently asked questions page](./FAQ.md).
-
-Join the [community chat](https://chat.btcpayserver.org/) on Mattermost by downloading [Mattermost app](https://mattermost.com/download/), or on [Telegram](https://t.me/btcpayserver) in case you need further help or help or want to hang around with like-minded people.
