@@ -27,24 +27,23 @@ Please ensure that you meet the following requirements before installing this pl
 There are three ways to **download BTCPay for VirtueMart plugin**:
 
 - Via the Admin Dashboard (recommended, see below)
-- [Joomla Extension Directory (JED)](https://extensions.joomla.org/extension/btcpay-virtuemart/)
+- [Joomla Extension Directory (JED)](https://extensions.joomla.org/extension/vm-payment-btcpay-for-virtuemart/)
 - [GitHub Repository](https://github.com/btcpayserver/joomla-virtuemart/releases)
 
 ### 1.1 Install plugin from Joomla Admin Dashboard (recommended)
 
-todo: will work after plugin available in JED
-
 1. Menu: Extensions > Manage > Install
-2. In Search, type "BTCPay"
+2. On "Install from Web" tab search for "btcpay"
 3. Click on BTCPay for VirtueMart and [Install] button
 4. Continue with step 1.3 
 
-![BTCPay Virtuemart: Plugin installation]()
+
+![BTCPay Virtuemart: Plugin installation web](./img/virtuemart/btcpay-vm--01-install-web.png)
 
 
 ### 1.2 Download and install plugin from JED or GitHub
 
-1. Download the latest BTCPay plugin from [Github](https://github.com/btcpayserver/joomla-virtuemart/releases) or [JED](https://extensions.joomla.org/extension/btcpay-virtuemart/)
+1. Download the latest BTCPay plugin from [Github](https://github.com/btcpayserver/joomla-virtuemart/releases) or [JED](https://extensions.joomla.org/extension/vm-payment-btcpay-for-virtuemart/)
 2. Menu: Extensions -> Manage -> Install 
 3. On tab "Upload Package File" upload the btcpayvm.zip 
 
