@@ -7,13 +7,13 @@ You will learn about what to keep in mind when doing a backup and how to restore
 
 ## Remarks and Considerations
 
-The original strategy of backups in BTCPay Server still exists and can be found [here](https://docs.btcpayserver.org/Docker/#how-can-i-back-up-my-btcpay-server).
+The original backups strategy in BTCPay Server still exists and can be found [here](https://docs.btcpayserver.org/Docker/#how-can-i-back-up-my-btcpay-server).
 While this documentation covers the [new process](https://github.com/btcpayserver/btcpayserver-docker/pull/641), the old `backup.sh` script still works.
 
 :::warning
 BTCPay Server is and will never be responsible for your backup.
 Please make sure the backup includes the files and data you want to store.
-Also test the restore process before starting to rely on it.
+Also, test the restore process before starting to rely on it.
 :::
 
 ### Lightning channel backup
@@ -31,7 +31,7 @@ The old server should not be started after the restoration and start of the new 
 :::tip
 The Lightning static channel backup should be watched by a script and copied over to a remote server to ensure you always have the latest state available.
 We will provide such a script with a future update.
-For now keep the above in mind, when restoring from the backup!
+For now, keep the above in mind when restoring from the backup!
 :::
 
 
@@ -53,11 +53,11 @@ cd $BTCPAY_BASE_DIRECTORY
 The backup process needs to be run as `root`.
 It will check for and let you know if you have to switch users.
 
-The script will set itself up to take the next steps:
+The script will set itself up to take the following steps:
 
 * Makes a dump of the database
 * Sets BTCPay directory
-* Sets backup directory
+* Sets the backup directory
 * Determines the DB dump path
 * Determines the backup path
 
@@ -71,18 +71,18 @@ If there are errors, you will be notified like this:
 🚨 Database container could not be started or found.
 ```
 
-If everything works smoothly, you will get to see multiple completed marks in your console.
-Whenever the backup has been completed successfully, it will state:
+If everything works smoothly, you will see multiple completed marks in your console.
+Whenever the backup has completed successfully, it will state:
 
 ```
 ✅ Backup done => /var/lib/docker/volumes/backup_datadir/_data/backup.tar.gz
 ```
 
 Your BTCPay Server has now finished the backup process.
-It is up to you to store these backups in a safe manner, for instance by copying it to a remote server.
+You must store these backups safely, for instance, by copying them to a remote server.
 
-After you havve made a backup the first time, it is always wise to at least test your backup in a restore scenario.
-In the next topic, we will go over the extra options you can set with your backup.
+After making a backup the first time, it is always wise to at least test your backup in a restore scenario.
+We will go over the extra options you can set with your backup in the next topic.
 
 ### Set a backup passphrase
 
@@ -151,7 +151,7 @@ If the backup file was created while the `BTCPAY_BACKUP_PASSPHRASE` was set but 
 🚨  Decryption failed. Please check the error message above.
 ```
 
-When the restore has been completed, you get the message:
+When the restore has completed, you get the message:
 
 ```
 ✅ Restore done
@@ -162,6 +162,6 @@ You've successfully restored your BTCPay Server. Congratulations!
 
 :::tip
 Always make sure your backup strategy is tested and fits your needs.
-No one solution fits all, we tried our best to cover the basic cases.
+No one solution fits all, and we tried to cover the basic cases.
 For the latest updates, always feel free to ask on the BTCPay Server community channels.
 :::
