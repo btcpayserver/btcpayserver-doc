@@ -375,7 +375,7 @@ module.exports = {
     nav: [
       {
         text: 'User Guide',
-        link: '/Guide'
+        link: '/Guide/'
       },
       {
         text: 'Deployment',
