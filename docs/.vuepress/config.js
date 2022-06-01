@@ -142,8 +142,7 @@ const sidebarDeployment = [
         title: 'Azure',
         path: '/Deployment/Azure',
         children: [
-          ['/Deployment/AzurePennyPinching', 'Reducing Cost on Azure'],
-          ['/Deployment/ChangeDomain', 'Changing domain']
+          ['/Deployment/AzurePennyPinching', 'Reducing Cost on Azure']
         ]
       },
       {
