@@ -8,7 +8,7 @@ If you are looking for how to make a simple code change such as fixing a typo or
 
 ## Developer Resources
 
-- [Github Guides](https://guides.github.com/)
+- [Github Docs](https://docs.github.com/)
 - [BTCPay Commands and Concepts](/Development/LocalDevelopment.md)
 - [Environment Setup Videos (Linux, Mac, Windows)](/Development/LocalDevelopment.md#videos)
 
