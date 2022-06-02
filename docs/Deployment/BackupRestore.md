@@ -16,6 +16,13 @@ Please make sure the backup includes the files and data you want to store.
 Also, test the restore process before starting to rely on it.
 :::
 
+### Wallet file backup
+
+For now the backup excludes the Bitcoin (and Litecoin) data directories.
+Depending on how you use BTCPay Server, these might include your wallet files.
+
+Please ensure that you back up those files separately!
+
 ### Lightning channel backup
 
 Please be aware of this important issue:
