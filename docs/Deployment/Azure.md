@@ -19,7 +19,7 @@ Fill in the remaining options: ![Azure Resource Config](../img/AzureResourceConf
 * Copy the hostname for your Azure deployment, under `DNS name`: ![Azure BTCPayServerPublicIP](../img/AzureBTCPayServerPublicIP.png "Azure BTCPayServer Public IP")
 * Visit it (all major browsers supported)
 * Click 'Register' and create an account - This will be your **admin** account!
-* At your domain registrar, point your domain at this hostname (read more: [Change Domain](../FAQ/Deployment.md#how-to-change-your-btcpay-server-domain-name))
+* At your domain registrar, point your domain at this hostname (read more: [How to change your BTCPay Server domain name](../FAQ/Deployment.md#how-to-change-your-btcpay-server-domain-name))
 * Then, visit `https://EXAMPLE.eastus.cloudapp.azure.com/server/maintenance`
 * Enter your domain name and click 'Confirm'
 * (Wait 1-5 minutes)
