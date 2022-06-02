@@ -16,13 +16,6 @@ Please make sure the backup includes the files and data you want to store.
 Also, test the restore process before starting to rely on it.
 :::
 
-### Wallet file backup
-
-For now the backup excludes the Bitcoin (and Litecoin) data directories.
-Depending on how you use BTCPay Server, these might include your wallet files.
-
-Please ensure that you back up those files separately!
-
 ### Lightning channel backup
 
 Please be aware of this important issue:
@@ -40,7 +33,6 @@ The Lightning static channel backup should be watched by a script and copied ove
 We will provide such a script with a future update.
 For now, keep the above in mind when restoring from the backup!
 :::
-
 
 ## How does the backup work?
 
@@ -60,13 +52,16 @@ cd $BTCPAY_BASE_DIRECTORY
 The backup process needs to be run as `root`.
 It will check for and let you know if you have to switch users.
 
-The script will set itself up to take the following steps:
+The script will do the following steps:
 
-* Makes a dump of the database
-* Sets BTCPay directory
-* Sets the backup directory
-* Determines the DB dump path
-* Determines the backup path
+* Ensure the database container is running
+* Make a dump of the database
+* Stop BTCPay Server
+* Archive the Docker volumes and database dump
+  * Excluding the blockchains `blocks` and `chainstate` directories
+  * Optional: [Encrypt the archive](#set-a-backup-passphrase)
+* Restart BTCPay Server
+* Cleanup: Remove temporary files like the database dump
 
 If the backup directory doesn't exist yet, the script will create it.
 With these preparations taken, the backup process is now starting.
@@ -120,7 +115,6 @@ PATH=/bin:/usr/sbin:/usr/bin:/usr/local/bin
 You need to set the right `SHELL` and `PATH`, so that the script can run with the correct context.
 You might also want to set the `BTCPAY_BACKUP_PASSPHRASE` environment variable.
 
-
 ## How to restore?
 
 It's very similar to the `btcpay-backup.sh` process but in reverse.
@@ -144,8 +138,17 @@ export BTCPAY_BACKUP_PASSPHRASE
 ./btcpay-restore.sh /var/backups/backup.tar.gz.gpg
 ```
 
-This will start the restore process by unpacking the backup file.
-If it can't find the file in the provided path, the script will exit with an error.
+The script will do the following steps:
+
+* Extract (and decrypt) the backup archive
+* Stop BTCPay Server
+* Restore the Docker volumes
+* Start the database container
+* Import the database dump
+* Restart BTCPay Server
+* Cleanup: Remove the temporary restore directory
+
+If the backup file cannot be found in the provided path, the script will exit with an error.
 
 ```
 🚨 /var/backups/backup.tar.gz.gpg does not exist.
