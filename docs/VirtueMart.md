@@ -45,7 +45,7 @@ There are three ways to **download BTCPay for VirtueMart plugin**:
 
 1. Download the latest BTCPay plugin from [Github](https://github.com/btcpayserver/joomla-virtuemart/releases) or [JED](https://extensions.joomla.org/extension/vm-payment-btcpay-for-virtuemart/)
 2. Menu: Extensions -> Manage -> Install 
-3. On tab "Upload Package File" upload the btcpayvm.zip 
+3. On tab "Upload Package File" upload the `btcpayvm.zip` 
 
 ![BTCPay Virtuemart: Plugin installation upload](./img/virtuemart/btcpay-vm--02-install-upload.png)
 
@@ -54,7 +54,7 @@ There are three ways to **download BTCPay for VirtueMart plugin**:
 2. Search for "btcpay"
 3. On "Status" column click the red circle to enable the plugin
 
-![BTCPay Virtuemart: Plugin installation upload](./img/virtuemart/btcpay-vm--03-enable-plugin.png)
+![BTCPay Virtuemart: Enable plugin](./img/virtuemart/btcpay-vm--03-enable-plugin.png)
 
 
 ## 2. Connecting VirtueMart and BTCPay Server
@@ -66,13 +66,13 @@ No matter if you're using a self-hosted or third-party solution, the connection 
 
 1. Menu: VirtueMart -> Payment Methods
 2. Click button **[New]**
-![BTCPay Virtuemart: Plugin installation upload](./img/virtuemart/btcpay-vm--04-add-new-payment-method.png)
-3. Configure the payment method according to your needs. Make sure on "Payment Method" dropdown you have "BTCPay for VirtueMart" selected and the payment method is published ![BTCPay Virtuemart: Plugin installation upload](./img/virtuemart/btcpay-vm--05-payment-method-details.png)
+![BTCPay Virtuemart: Add new payment method](./img/virtuemart/btcpay-vm--04-add-new-payment-method.png)
+3. Configure the payment method according to your needs. Make sure on "Payment Method" dropdown you have "BTCPay for VirtueMart" selected and the payment method is published ![BTCPay Virtuemart: Payment method details](./img/virtuemart/btcpay-vm--05-payment-method-details.png)
 4. Hit the **[Save]** button (the plugin table will get created)
 
 Now you can switch to the "Configuration" tab where we can connect to our BTCPay Server instance. First we need to create an API key. 
 
-![BTCPay Virtuemart: Plugin installation upload](./img/virtuemart/btcpay-vm--06-payment-method-configuration-tab.png)
+![BTCPay Virtuemart: Payment method configuration tab](./img/virtuemart/btcpay-vm--06-payment-method-configuration-tab.png)
 
 ### 2.2 Create an API key and configure permissions
 
