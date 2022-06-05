@@ -229,6 +229,25 @@ curl -vX POST -H "Content-Type: application/json" \
     -d '{"data": "test"}' https://EXAMPLE.COM/?wc-api=btcpaygf_default
 ```
 
+On the response, if you see that line "HTTP/1.1 500" or "HTTP/2 500" and the message "Webhook request validation failed" that means that your site is not blocking the request with a "403 forbidden".
+
+```
+.... snip ....
+* We are completely uploaded and fine
+< HTTP/2 500 
+< server: nginx
+< date: Sun, 05 Jun 2022 16:55:08 GMT
+< content-type: application/json; charset=UTF-8
+< x-powered-by: PHP/8.1.6
+< expires: Wed, 11 Jan 1984 05:00:00 GMT
+< cache-control: no-cache, must-revalidate, max-age=0
+< 
+* Connection #0 to host example.com left intact
+{"code":"wp_die","message":"Webhook request validation failed.","data":{"status":500},"additional_errors":[]}
+```
+
+On the other side, if you see that line "HTTP/1.1 403 Forbidden" or "HTTP/2 403" then something is blocking data sent to your WordPress site. You should ask your hosting provider or make sure no firewall or plugin is blocking the requests.
+
 ```
 .... snip ....
 * upload completely sent off: 16 out of 16 bytes
@@ -240,8 +259,6 @@ curl -vX POST -H "Content-Type: application/json" \
 < Server: Google Frontend
 < Content-Length: 26
 ```
-
-If you see that line "HTTP/1.1 403 Forbidden" or "HTTP/2 403" then something is blocking data sent to your WordPress site. You should ask your hosting provider or make sure no firewall or plugin is blocking the requests.
 
 **Check using an online service (if you do not have a command line available:**   
 
