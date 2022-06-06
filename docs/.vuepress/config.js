@@ -48,6 +48,10 @@ const sidebarUserGuide = [
           {
             title: 'Create Wallet',
             path: '/CreateWallet'
+          },
+          {
+            title: 'Lightning Network',
+            path: '/LightningNetwork'
           }
         ]
       },
@@ -66,8 +70,9 @@ const sidebarUserGuide = [
           ['/HardwareWalletIntegration', 'Hardware Wallet Integration']
         ]
       },
+
       ['/Invoices', 'Invoices'],
-      ['/Apps', 'Apps'],
+      ['/PaymentRequests', 'Payment Requests'],
 
       {
         title: 'Pull Payments',
@@ -76,8 +81,8 @@ const sidebarUserGuide = [
           ['/Refund', 'Refunds']
         ]
       },
-      ['/PaymentRequests', 'Payment Requests'],
-      ['/LightningNetwork', 'Lightning Network'],
+      ['/Payouts', 'Payouts'],
+      ['/Apps', 'Apps'],
       ['/Accounting', 'Accounting'],
       {
         title: 'Payjoin',
