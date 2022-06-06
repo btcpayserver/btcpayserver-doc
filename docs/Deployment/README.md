@@ -17,6 +17,8 @@ Manual deployments and Hardware builds are not recommended for production enviro
 |Deployment method     |   Difficulty   |    Production/Dev |      All features <br>available     |             Approx. cost<br> per month      |
 |:-------------------------------------- |:--------------:|:----------------------:|:---------------:|:-------------:|
 |**Lunanode**<br>[1-click install](./LunaNode.md)     |Easy          |Production| Yes| $10
+|**Voltage-Cloud**<br>[1-click install](./voltagecloud.md)     |Easy          |Production| Yes| $10-$30
+|**Dream Lab Network**<br>[1-click install](./DreamlabNetwork.md)     |Easy          |Production| Yes| $10
 |**Third-Party Hosts**<br>[What is this ?](./ThirdPartyHosting.md)        |Easy     |Production| **Host:** Yes<br>**Hostee:** No| **Free** or **Paid** hosting,<br>depending on provider.
 |**Hardware & Cloud As A Service:**<br>- [Lightning in a Box](https://lightninginabox.co/)<br>- [Nodl.it](https://www.nodl.it/)<br>- [Nodl.cloud](https://nodl.cloud/)<br>- [Voltage.cloud](https://voltage.cloud/)   |Easy to Moderate   |Production| Yes| Varies on provider
 |**Virtual Private Server:** <br>OpenVZ not supported<br>- [LunaNode](https://medium.com/@BtcpayServer/hosting-btcpayserver-on-lunanode-bf9ef5fff75b)<br>- [Microsoft Azure](./Azure.md)<br>- [Digital Ocean](https://medium.com/@molthoff/running-btcpay-on-digital-ocean-for-10-month-how-to-add-other-coins-7a497339fb2f)<br>- [Amazon AWS EC2](https://wiki.ion.radar.tech/tutorials/nodes/btcpay-+-aws-ec2)<br>- [Google Cloud](./GoogleCloud.md)<br>- Other VPS <br> ([minimal requirements](../FAQ/Deployment.md#what-are-the-minimal-requirements-for-btcpay))           |Moderate to Hard             |Production| Yes| $10-70<br>depending on provider
