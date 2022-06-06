@@ -194,6 +194,10 @@ const sidebarDeployment = [
       {
         title: 'FastSync',
         path: '/Docker/fastsync'
+      },
+      {
+        title: 'Backup & Restore',
+        path: '/Docker/backup-restore'
       }
     ]
   },
@@ -202,8 +206,7 @@ const sidebarDeployment = [
     collapsable: false,
     children: [
       '/Deployment/ManualDeployment',
-      '/Deployment/ManualDeploymentExtended',
-      '/Deployment/BackupRestore'
+      '/Deployment/ManualDeploymentExtended'
     ]
   }
 ]
