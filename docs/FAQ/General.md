@@ -140,7 +140,7 @@ A BTCPay Server functionality that is not found in the Greenfield API documentat
 
 ## How can I backup my BTCPay Server?
 
-It's possible to [create backups of your BTCPay Server](https://docs.btcpayserver.org/Docker/#how-can-i-back-up-my-btcpay-server) instance and it's data. Please keep in mind that the backup scripts have not been thoroughly tested for all types of BTCPay Server setups and custom deployments. Be sure to use your backup to verify it properly recreates your setup, before relying on it.
+It's possible to [create backups of your BTCPay Server](https://docs.btcpayserver.org/Docker/backup-restore/) instance and it's data. Please keep in mind that the backup scripts have not been thoroughly tested for all types of BTCPay Server setups and custom deployments. Be sure to use your backup to verify it properly recreates your setup, before relying on it.
 
 ## How can I charge for using my BTCPay Server instance?
 
