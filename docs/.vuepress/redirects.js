@@ -112,6 +112,7 @@ module.exports = [
   { path: "/integrations/drupal", redirect: "/Drupal/" },
   { path: "/integrations/magento", redirect: "/Magento/" },
   { path: "/integrations/prestashop", redirect: "/PrestaShop/" },
+  { path: "/integrations/virtuemart", redirect: "/VirtueMart/" },
   { path: "/integrations/customintegration", redirect: "/CustomIntegration/" },
   // Development
   { path: "/development", redirect: "/Development/Architecture/" },
