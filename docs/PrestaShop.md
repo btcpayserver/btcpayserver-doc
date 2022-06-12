@@ -48,7 +48,7 @@ No matter if you're using a self-hosted or third-party solution from step 2, the
 
 ![BTCPay Server PrestaShop API key setup](./img/prestashop/api-key-setup.jpg)
 
-7. Press the `Authorize app`-button after which you will be redirected back to your Prestashop store. If you get an [**`Invalid Token`**-popup](./img/prestashop//invalid-token-popup.jpg), please make sure that PrestaShop and BTCPay Server both use HTTPS and have proper hostnames (see [Server Requirements](#server-requirements)).
+7. Press the `Authorize app`-button after which you will be redirected back to your Prestashop store. If you get an [`Invalid Token`-popup](./img/prestashop/invalid-token-popup.jpg), please make sure that PrestaShop and BTCPay Server both use HTTPS and have proper hostnames (see [Server Requirements](#server-requirements)).
 8. Prestashop will try and create a connection to your BTCPay Server instance.
 9. A message will be shown if the connection was successful (but it is smart to make a test purchase).
 
