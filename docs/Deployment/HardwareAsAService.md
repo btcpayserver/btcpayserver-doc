@@ -20,7 +20,7 @@ Here you can find a non-exhaustive list of companies that provide such a service
 - [LightningInABox](https://lightninginabox.co/)
 - [MyNode](https://mynodebtc.com/)
 - [RaspiBlitz](https://shop.fulmo.org/raspiblitz/)
-- [Umbrel](https://getumbrel.com/)
+- [Umbrel](https://umbrel.com/) - **Selling products via BTCPay on Umbrel violates Umbrel's license, so you may want to choose something else**
 - [Embassy](https://start9.com/)
 
 Do you provide Hardware As A Service and are not listed here?
