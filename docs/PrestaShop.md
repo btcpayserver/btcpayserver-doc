@@ -15,9 +15,11 @@ Please ensure that you meet the following requirements before installing this pl
 
 - You are using PHP 7.3.0 or higher
 - Your PrestaShop is version 1.7.7.0 or higher.
+  - Your store must have HTTPS enabled and be publicly accessible.
 - Your BTCPay Server is version 1.3.0 or higher
 - The PDO, curl, gd, intl, json, and mbstring PHP extensions are available
 - You have a BTCPay Server, either [self-hosted](/Deployment/README.md) or [hosted by a third-party](/Deployment/ThirdPartyHosting.md)
+  - The BTCPay Server instance must have HTTPS enabled and be publicly accessible.
 - [You've a registered account on the instance](./RegisterAccount.md)
 - [You've a BTCPay store on the instance](./CreateStore.md)
 - [You've a wallet connected to your store](./WalletSetup.md)
@@ -46,7 +48,7 @@ No matter if you're using a self-hosted or third-party solution from step 2, the
 
 ![BTCPay Server PrestaShop API key setup](./img/prestashop/api-key-setup.jpg)
 
-7. Press the `Authorize app`-button after which you will be redirected back to your Prestashop store.
+7. Press the `Authorize app`-button after which you will be redirected back to your Prestashop store. If you get an [**`Invalid Token`**-popup](./images/prestashop/invalid-token-popup.jpg), please make sure that PrestaShop and BTCPay Server both use HTTPS and have proper hostnames (see [Server Requirements](#server-requirements)).
 8. Prestashop will try and create a connection to your BTCPay Server instance.
 9. A message will be shown if the connection was successful (but it is smart to make a test purchase).
 
