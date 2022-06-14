@@ -79,7 +79,7 @@ You can either click on the notifications link saying "**please configure the pl
 ![BTCPay WordPress V2: Link to BTCPay Settings](./img/woocommerce/btcpay-wc-2--03-settings--api-key-redirect.png)
 
 3. If you are not logged in to your BTCPay Server instance, do so now. (optional)
-![BTCPay WordPress V2: Login to BTCPay Server](./img/woocommerce/btcpay-wc-2--04-api-auth-login.png)
+![BTCPay WordPress V2: Login to BTCPay Server](./img/woocommerce/btcpayWooLmode1.jpg)
 4. For each listed permission click on "select specific stores..." (If you only have one store it will get autoselected).
 ![BTCPay WordPress V2: Select store](./img/woocommerce/btcpay-wc-2--05-api-auth-select-store.png)
 5. Click [Authorize app]
@@ -96,18 +96,18 @@ Continue with "3. Testing the checkout" below.
 If you can't use the wizard mentioned in the previous section you can also generate the API key manually.
 
 1. Click on *[Account]* -> *Manage Account* on the bottom left   
-![BTCPay WordPress V2: Manage Account](./img/woocommerce/btcpay-wc-2--09-man-api--manage-account.png)
+![BTCPay WordPress V2: Manage Account](./img/woocommerce/btcpayWooLmode2.jpg)
 2. Go to the tab *"API Keys"*    
 3. Click *[Generate Key]* to select permissions.   
-![BTCPay WordPress V2: API Keys overview](./img/woocommerce/btcpay-wc-2--10-man-api--keys-overview.png)
+![BTCPay WordPress V2: API Keys overview](./img/woocommerce/btcpayWooLmode3.jpg)
 4. Click on the *"Select specific stores"* link for the following permissions: `View invoices`, `Create invoice`, `Modify invoices`, `Modify stores webhooks`, `View your stores`   
-![BTCPay WordPress V2: API Keys Permissions](./img/woocommerce/btcpay-wc-2--11-man-api--permissions.png) 
+![BTCPay WordPress V2: API Keys Permissions](./img/woocommerce/btcpayWooLmode4.jpg) 
 5. Click on *[Generate API Key]*   
-![BTCPay WordPress V2: API Keys Save](./img/woocommerce/btcpay-wc-2--12-man-api--permissions-save.png) 
+![BTCPay WordPress V2: API Keys Save](./img/woocommerce/btcpayWooLmode5.jpg) 
 6. Copy the generated API Key to your WordPress *BTCPay Settings* form   
-![BTCPay WordPress V2: Copy API Key](./img/woocommerce/btcpay-wc-2--13-man-api--copy-key.png) 
+![BTCPay WordPress V2: Copy API Key](./img/woocommerce/btcpayWooLmode6.jpg) 
 7. Copy the store ID to your WordPress *BTCPay Settings* form   
-![BTCPay WordPress V2: Copy Store ID](./img/woocommerce/btcpay-wc-2--14-man-api--copy-store-id.png) 
+![BTCPay WordPress V2: Copy Store ID](./img/woocommerce/btcpayWooLmode7.jpg) 
 8. On the BTCPay Settings form make sure *BTPCay Server URL*, *BTCPay Server API Key* and *Store ID* are set and click *[Save]*   
 9. Make sure you see the notification "*BTCPay Server: Successfully registered a new webhook on BTCPay Server*"   
 ![BTCPay WordPress V2: Save BTCPay Settings form](./img/woocommerce/btcpay-wc-2--15-man-api--btcpay-settings-save.png) 
