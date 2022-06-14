@@ -22,6 +22,7 @@ General, non-technical questions about BTCPay. What it is, how it works, what ar
 * [Where can I get help and support?](./General.md#where-can-i-get-help-and-support)
 * [How can I contribute to BTCPay?](./General.md#how-can-i-contribute-to-btcpay)
 * [How can I use the BTCPay Server API?](./General.md#how-can-i-use-the-btcpay-server-api)
+* [How to create a webhook ?](./General.md#How-to-create-a-webhook-?)
 * [How can I backup my BTCPay Server?](./General.md#how-can-i-backup-my-btcpay-server)
 * [How can I charge for using my BTCPay Server instance?](./General.md#how-can-i-charge-for-using-my-btcpay-server-instance)
 
