@@ -19,7 +19,7 @@ Here you can find a non-exhaustive list of companies that provide such a service
 - [Hack0](https://www.dglab.com/en/works/hack0/)
 - [LightningInABox](https://lightninginabox.co/)
 - [MyNode](https://mynodebtc.com/)
-- [RaspiBlitz](https://shop.fulmo.org/raspiblitz/)
+- [RaspiBlitz](https://raspiblitz.org/)
 - [Umbrel](https://umbrel.com/)
 - [Embassy](https://start9.com/)
 - [Citadel](https://runcitadel.space/)
