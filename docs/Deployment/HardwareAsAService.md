@@ -20,8 +20,9 @@ Here you can find a non-exhaustive list of companies that provide such a service
 - [LightningInABox](https://lightninginabox.co/)
 - [MyNode](https://mynodebtc.com/)
 - [RaspiBlitz](https://shop.fulmo.org/raspiblitz/)
-- [Umbrel](https://umbrel.com/) - **Selling products via BTCPay on Umbrel violates Umbrel's license, so you may want to choose something else**
+- [Umbrel](https://umbrel.com/)
 - [Embassy](https://start9.com/)
+- [Citadel](https://runcitadel.space/)
 
 Do you provide Hardware As A Service and are not listed here?
 Open an issue to [get added to this list](https://github.com/btcpayserver/btcpayserver-doc/issues)
