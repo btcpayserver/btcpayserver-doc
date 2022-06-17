@@ -831,6 +831,13 @@ Updating could break things. Be careful on a live system.
 ~$ sudo systemctl start nbxplorer
 ```
 
+#####  Migration
+
+With BTCPay Server v1.5 we [improved NBXplorer by switching to Postgres](https://blog.btcpayserver.org/nbxplorer-postgres/).
+If you are still using the DBTrie based version, please consider [migrating NBXplorer](https://github.com/dgarage/NBXplorer/blob/master/docs/Postgres-Migration.md).
+
+Afterwards you need to set `BTCPAY_EXPLORERPOSTGRES` to the same connection string as NBXplorer.
+
 ## BTCPay Server
 
 Like NBXplorer the BTCPay Server application is also .NET Core. The install steps assume .NET Core was previosuly installed.
