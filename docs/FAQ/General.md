@@ -138,6 +138,27 @@ In 2020, BTCPay Server started releasing a new Greenfield API. This new API will
 
 A BTCPay Server functionality that is not found in the Greenfield API documentation means it isn't fully implemented yet in the new API and users should use the original API instead. The discussion on the development of the new Greenfield API can be found [here](https://github.com/btcpayserver/btcpayserver/issues/1320).
 
+## How to create a webhook ? 
+
+Within BTCPay Server, it's reasonably easy to make a new `Webhook`
+While in the BTCPay Server Dashboard, go to `Store settings` and then click on the `Webhooks` tab. 
+
+![Create new Webhook](../img/FAQ/btcpayWebhookFAQ1.jpg)
+
+You're now in the view for creating a `Webhook`. 
+Make sure you know your `Payload` URL and paste this into your BTCPay Server. 
+While you pasted the `payload` URL, underneath it shows the `webhook` secret. 
+
+Copy the `webhook` secret and provide it on the endpoint. 
+When everything has been set, you can toggle in BTCPay Server to `Automatical redelivery`.
+We will try to redeliver any failed delivery after 10 seconds, 1 minute, and up to 6 times after 10 minutes.
+You can toggle between every event or specify the events for your needs. 
+
+Be sure to enable the webhook and hit the `Add webhook` to save it.
+
+![Create new Webhook](../img/FAQ/btcpayWebhookFAQ2.jpg)
+
+
 ## How can I backup my BTCPay Server?
 
 It's possible to [create backups of your BTCPay Server](https://docs.btcpayserver.org/Docker/backup-restore/) instance and it's data. Please keep in mind that the backup scripts have not been thoroughly tested for all types of BTCPay Server setups and custom deployments. Be sure to use your backup to verify it properly recreates your setup, before relying on it.
