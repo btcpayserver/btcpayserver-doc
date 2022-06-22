@@ -25,7 +25,8 @@ The fields are the following:
 | CryptoCode | Currency code of the method of payment (e.g. `BTC`) |
 | Paid | Amount paid in the currency defined in CryptoCode |
 | NetworkFee | [Network fee](./FAQ/Stores.md#add-network-fee-to-invoice-vary-with-mining-fees) paid by the user in this payment |
-| ConvertionRate | The conversion rate at the time of invoice creation between `CryptoCode` and `InvoiceCurrency` |
+| ConversionRate | The conversion rate at the time of invoice creation between `CryptoCode` and `InvoiceCurrency` |
+| PaidCurrency | Amount paid, denominated in `InvoiceCurrency` |
 | InvoiceCurrency | The currency code of the invoice (e.g. `USD`) |
 | InvoiceDue | The amount still due to fully pay the invoice after this payment (minus `NetworkFee`, denominated in `InvoiceCurrency`) |
 | InvoicePrice | The total price of the invoice (minus Network Fee, denominated in `InvoiceCurrency`) |
@@ -34,6 +35,7 @@ The fields are the following:
 | InvoiceFullStatus | The full status of the invoice (e.g. `expired (paidPartial)`) |
 | InvoiceStatus | The simplified status of the invoice (e.g. `expired`) |
 | InvoiceException | The status of the invoice (e.g. `paidPartial`) |
+| BuyerEmail | The payer's email. |
 
 ## QuickBooks Online Connector for BTCPay Server
 
