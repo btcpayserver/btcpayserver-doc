@@ -971,15 +971,13 @@ Full [instructions](https://github.com/lightningnetwork/lnd/blob/master/docs/INS
 
 ```bash
 ~$ sudo apt install make
-~$ wget https://dl.google.com/go/go1.13.linux-amd64.tar.gz
-~$ sha256sum go1.13.linux-amd64.tar.gz
-68a2297eb099d1a76097905a2ce334e3155004ec08cdea85f24527be3c48e856  go1.13.linux-amd64.tar.gz
-~$ sudo tar -C /usr/local -xzf go1.13.linux-amd64.tar.gz
+~$ wget [https://dl.google.com/go/go1.13.linux-amd64.tar.gz](https://go.dev/dl/go1.18.3.linux-amd64.tar.gz) #Note: By default, the go command downloads and authenticates modules using the Go module mirror and Go checksum database run by Google.
+~$ sudo tar -C /usr/local -xzf go1.18.3.linux-amd64.tar.gz
 ~$ export PATH=$PATH:/usr/local/go/bin
 ~$ export GOPATH=~/gocode
 ~$ export PATH=$PATH:$GOPATH/bin
 ~$ go version
-go version go1.13 linux/amd64
+go version go1.18.3 linux/amd64
  ```
 
 ##### 2. Build and install lnd
@@ -992,7 +990,7 @@ go version go1.13 linux/amd64
 ~$ make install # installs to a directory in $GOPATH/bin
 ~$ sudo cp $GOPATH/bin/lnd $GOPATH/bin/lncli /usr/bin
 ~$ lnd --version
-lnd version 0.10.99-beta commit=clock/v1.0.0-229-ge64e71d86dc1ac716c30a80f85a22e8fb544697f
+lnd version 0.15.0-beta commit=v0.15.0-beta-4-g9988d392e
 ```
 
 ##### 3. Create a symbolic link to the Bitcoin configuration file.
@@ -1000,7 +998,7 @@ lnd version 0.10.99-beta commit=clock/v1.0.0-229-ge64e71d86dc1ac716c30a80f85a22e
 lnd looks for bitcoin.conf in a specific location to get necessary RPC and zeromq details.
 
 ```bash
-~$ ln -s ~/.bitcoin/bitcoin.conf /etc/bitcoin/bitcoin.conf
+~$ ln -s /etc/bitcoin/bitcoin.conf ~/.bitcoin/bitcoin.conf
 ```
 
 ##### 4. Create a configuration file.
@@ -1092,7 +1090,7 @@ With Bitcoin the protocol has evolved and deterministic key derivation means the
 The install steps above use `/var/lib/lnd` as the data directory rather than the default `/home/user/.lnd`. In order to save typing when using the `lncli` client it's useful to add a symbolic directory link.
 
 ```bash
-ln -s /var/lib/lnd .lnd
+ln -s /var/lib/lnd ~/.lnd
 ```
 
 ##### 2. Create Lightning wallet
