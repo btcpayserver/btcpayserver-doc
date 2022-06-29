@@ -1,7 +1,8 @@
 # Dashboard 
 
 :::tip
-Balance graph and recent transactions are available only for an on-chain payment method. Information about Lightning network balances and transactions is on the to-do. As of BTCPay Server Version 1.6.0, basic Lightning Network information is available.
+Balance graph and recent transactions are available only for an on-chain payment method. 
+Information about Lightning network balances and transactions is on the to-do. As of BTCPay Server Version 1.6.0, basic Lightning Network balances are available.
 :::
 
 BTCPay Server version 1.5.0 introduced a new dashboard concept that features several tiles that will help with the initial setup, better understand the store's data and manage refunds and payouts with ease.
@@ -13,7 +14,7 @@ BTCPay Server version 1.5.0 introduced a new dashboard concept that features sev
 In the main dashboard view, you'll find a couple of tiles that we think could help you quickly overview your store's performance.
 
 ### Wallet Balance 
-This is the current store [Wallet](Wallet.md) balance.  The view shows a balance graph by week, month, or a year. 
+The current store's [wallet](Wallet.md) balance, showing a graph by week, month, or year. 
 
 ![BTCPay Server Navigation](./img/dashboard/wallet-view.jpg "BTCPay Server Navigation")
 
@@ -23,8 +24,11 @@ Quickly manage pending payouts, view recent transactions, and overview outstandi
 ![BTCPay Server Navigation](./img/dashboard/tx-activity-view.jpg "BTCPay Server Navigation")
 
 ### Lightning Balance
-This will show your available balance in `Lightning Channels` and your `On-Chain` Bitcoin balance. 
-The `Node Info` will show you a quick overview of your nodes Name, if it's online and the address to connect to for peers. 
+
+This will show the available balances for your Lightning node. 
+Please note that the on-chain balance refers to the wallet of your store's Lightning node, not the store's general on-chain wallet.
+
+The `Node Info` will show you a quick overview of your node, it's online status and the address to connect to for peers. 
 For more information on `Lightning Network` check our [Lightning Network page](./LightningNetwork.md).
 
 ![BTCPay Server Dashboard LN](./img/dashboard/btcpayLNDashboard3.jpg)
