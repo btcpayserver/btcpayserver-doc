@@ -1,13 +1,13 @@
 # Dashboard 
 
+BTCPay Server version 1.5.0 introduced a new dashboard concept that features several tiles that will help with the initial setup, better understand the store's data and manage refunds and payouts with ease.
+
+![BTCPay Server Navigation](./img/dashboard/dashboardgif.gif "BTCPay Server Navigation")
+
 :::tip
 Balance graph and recent transactions are available only for an on-chain payment method. 
 Information about Lightning network balances and transactions is on the to-do. As of BTCPay Server Version 1.6.0, basic Lightning Network balances are available.
 :::
-
-BTCPay Server version 1.5.0 introduced a new dashboard concept that features several tiles that will help with the initial setup, better understand the store's data and manage refunds and payouts with ease.
-
-![BTCPay Server Navigation](./img/dashboard/dashboardgif.gif "BTCPay Server Navigation")
 
 ##  Dashboard tiles
 
