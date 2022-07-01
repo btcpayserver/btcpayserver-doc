@@ -121,7 +121,7 @@ This setup uses Cloudflare to create a tunnel to the remote machine running BTCP
 
 ### Step 1 Cloudflare setup 
 First, we are going to create the tunnel on Cloudflare.
-You need to create an account on Cloudflare and add their DNS to [your domain](https://www.namecheap.com/support/knowledgebase/article.aspx/9607/2210/how-to-set-up-dns-records-for-your-domain-in-cloudflare-account/), in this example would be YourDomain.com.
+You need to create an account on Cloudflare and add their DNS to [your domain](https://www.namecheap.com/support/knowledgebase/article.aspx/9607/2210/how-to-set-up-dns-records-for-your-domain-in-cloudflare-account/), in this example would be YourDomain.com. More [documentation](https://developers.cloudflare.com/cloudflare-one/faq/cloudflare-tunnels-faq/#how-can-tunnel-be-used-with-partial-dns-cname-setup) on " How tunnel can be used with Partial DNS (CNAME Setup) "
 
 ### Step 2 Setting up Argo Tunnel
 
