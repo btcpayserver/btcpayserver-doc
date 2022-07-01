@@ -125,28 +125,30 @@ You need to create an account on Cloudflare and add their DNS to [your domain](h
 
 ### Step 2 Setting up Argo Tunnel
 
-After you've added the DNS and is propagated, you can start the setup of the Argo tunnel. Go to [Zero Trust](https://dash.teams.cloudflare.com/c1cd2ab2129af8897457d6f97c082725/onboarding) option on the left menu, go to "access", then click "tunnels".
+After you've added the DNS and is propagated, you can start the setup of the Argo tunnel. 
+Go to [Zero Trust](https://dash.teams.cloudflare.com/c1cd2ab2129af8897457d6f97c082725/onboarding) option on the left menu, go to "access", then click "tunnels".
 
-![IMG](../img/cloudflarexpose/btcpayexposecloudflare1.jpg)
+![BTCPay Server Cloudflare expose](../img/cloudflarexpose/btcpayexposecloudflare1.jpg)
 
-Once in tunnels, you can create a new one and click the "create tunnel" button. To see docs click [here](https://developers.cloudflare.com/cloudflare-one/connections/connect-apps/install-and-setup)
+Once in tunnels, you can create a new one and click the "create tunnel" button. 
+To see docs click [here](https://developers.cloudflare.com/cloudflare-one/connections/connect-apps/install-and-setup)
 
-![IMG](../img/cloudflarexpose/btcpayexposecloudflare2.jpg)
+![BTCPay Server Cloudflare expose](../img/cloudflarexpose/btcpayexposecloudflare2.jpg)
 
 Give it a name and on the next screen, "install the connector," click docker.
 
-![IMG](../img/cloudflarexpose/btcpayexposecloudflare3.jpg)
+![BTCPay Server Cloudflare expose](../img/cloudflarexpose/btcpayexposecloudflare3.jpg)
 
 Copy the string after --token, and click the next button at the bottom. You will need to input this token on an ENV variable on BTCPay setup script.
 
-![IMG](../img/cloudflarexpose/btcpayexposecloudflare4.jpg)
+![BTCPay Server Cloudflare expose](../img/cloudflarexpose/btcpayexposecloudflare4.jpg)
 
 On the last screen, you need to route the tunnel using your subdomain btcpay, select your domain from the list and leave the path empty. 
-Then on the service part, select HTTP and then write localhost. You are going to route the subdomain traffic to http:://localhost
+Then on the service part, select HTTP and then write localhost. You are going to route the subdomain traffic to http://localhost
 
-![IMG](../img/cloudflarexpose/btcpayexposecloudflare5.jpg)
+![BTCPay Server Cloudflare expose](../img/cloudflarexpose/btcpayexposecloudflare5.jpg)
 
-If you are using other port than 80 for HTTP you can route traffic to http:://localhost:YourPort
+If you are using other port than 80 for HTTP you can route traffic to http://localhost:YourPort
 
 This is the setup used in this example:
 
