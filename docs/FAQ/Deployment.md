@@ -617,3 +617,56 @@ You need to open port 80 and 443. Once you did that, restart docker `btcpay-rest
 #### Cause 5: Other
 
 There could be many causes for 5XX HTTP errors. Please create an [Issue](https://github.com/btcpayserver/btcpayserver-docker/issues) and when cause becomes known add it here in the [Deployment FAQ](/FAQ/Deployment.md) doc.
+
+## Expose BTCPay Server to clearnet using Cloudflare Argo Tunnel 
+
+This setup uses Cloudflare to create a tunnel to the remote machine running BTCPay Server and expose it securely to clearnet.
+
+### Step 1 Cloudflare setup 
+First, we are going to create the tunnel on Cloudflare.
+You need to create an account on Cloudflare and add their DNS to [your domain](https://www.namecheap.com/support/knowledgebase/article.aspx/9607/2210/how-to-set-up-dns-records-for-your-domain-in-cloudflare-account/). 
+More [documentation](https://developers.cloudflare.com/cloudflare-one/faq/cloudflare-tunnels-faq/#how-can-tunnel-be-used-with-partial-dns-cname-setup) on " How tunnel can be used with Partial DNS (CNAME Setup) "
+
+### Step 2 Setting up Argo Tunnel
+
+After you've added the DNS and is propagated, start the setup of the Argo tunnel. 
+Go to [Zero Trust](https://dash.teams.cloudflare.com/) in the left menu, go to "access", click "tunnels".
+
+![BTCPay Server Cloudflare expose](../img/cloudflarexpose/btcpayexposecloudflare1.jpg)
+
+In tunnels, create a new one and click the "create tunnel" button. 
+To see docs click [here](https://developers.cloudflare.com/cloudflare-one/connections/connect-apps/install-and-setup)
+
+![BTCPay Server Cloudflare expose](../img/cloudflarexpose/btcpayexposecloudflare2.jpg)
+
+Give it a name and on the next screen, "install the connector," click docker.
+
+![BTCPay Server Cloudflare expose](../img/cloudflarexpose/btcpayexposecloudflare3.jpg)
+
+Copy the string after --token, and click the next button at the bottom. You will need to input this token on an ENV variable on BTCPay setup script.
+
+![BTCPay Server Cloudflare expose](../img/cloudflarexpose/btcpayexposecloudflare4.jpg)
+
+On the last screen, you need to route the tunnel using your subdomain btcpay, select your domain from the list and leave the path empty. 
+Then on the service part, select HTTP and then write localhost. You are going to route the subdomain traffic to http://localhost
+
+![BTCPay Server Cloudflare expose](../img/cloudflarexpose/btcpayexposecloudflare5.jpg)
+
+If you are using other port than 80 for HTTP you can route traffic to http://localhost:YourPort
+
+This is the setup used in this example:
+
+```bash
+BTCPAY_HOST="<YOUR_DOMAIN_HERE>"
+[[ "$REVERSEPROXY_DEFAULT_HOST" ]] && REVERSEPROXY_DEFAULT_HOST="$BTCPAY_HOST"
+CLOUDFLARE_TUNNEL_TOKEN="<YOUR_TOKEN_HERE>"
+BTCPAYGEN_ADDITIONAL_FRAGMENTS="$BTCPAYGEN_ADDITIONAL_FRAGMENTS;opt-add-cloudflared"
+BTCPAYGEN_EXCLUDE_FRAGMENTS="$BTCPAYGEN_EXCLUDE_FRAGMENTS;nginx-https"
+. btcpay-setup.sh -i
+```
+
+See that Nginx reverse proxy is disabled as Cloudflare is acting as the reverse proxy and adds Cloudflare to BTCPAYGEN_ADDITIONAL_FRAGMENTS. Also, add the tunnel token to CLOUDFLARE_TUNNEL_TOKEN.
+
+:::tip
+This solution was created in [Pull Request #667](https://github.com/btcpayserver/btcpayserver-docker/pull/667) for further technical details. 
+:::
