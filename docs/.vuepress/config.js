@@ -194,7 +194,8 @@ const sidebarDeployment = [
           '/Docker/fireflyiii',
           '/Docker/ndlc',
           '/Docker/lightning-terminal',
-          '/Docker/tallycoin-connect'
+          '/Docker/tallycoin-connect',
+          '/Docker/cloudflare-tunnel'
         ]
       },
       {
