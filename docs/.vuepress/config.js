@@ -158,6 +158,7 @@ const sidebarDeployment = [
       {
         title: 'Hardware Deployment',
         path: '/Deployment/Hardware',
+        collapsable: false,
         children: [
           {
             title: 'Raspberry Pi Deployment',
