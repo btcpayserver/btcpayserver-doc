@@ -122,107 +122,111 @@ const sidebarUserGuide = [
 
 const sidebarDeployment = [
   {
-    title: 'Deployment',
+    title: "Deployment",
     collapsable: false,
     children: [
-      '/Deployment/',
-      '/Deployment/ThirdPartyHosting',
-      '/Configurator/'
-    ]
+      "/Deployment/",
+      "/Deployment/ThirdPartyHosting",
+      "/Configurator/",
+    ],
   },
   {
-    title: 'Docker',
+    title: "Docker",
     collapsable: false,
     children: [
-      ['/Docker/', 'Introduction'],
+      ["/Docker/", "Introduction"],
       {
-        title: 'Web Deployment',
-        path: '/Deployment/webdeployment',
+        title: "Web/Cloud Deployment",
+        path: "/Deployment/webdeployment",
+        collapsable: false,
         children: [
-          ['/Deployment/LunaNode', 'Luna Node'],
-          ['/Deployment/voltagecloud', 'Voltage Cloud'],
-          ['/Deployment/DreamlabNetwork', 'Dream Lab Network']
-        ]
+          ["/Deployment/LunaNode", "Luna Node"],
+          ["/Deployment/voltagecloud", "Voltage Cloud"],
+          ["/Deployment/DreamlabNetwork", "Dream Lab Network"],
+          {
+            title: "Azure",
+            path: "/Deployment/Azure",
+            children: [
+              ["/Deployment/AzurePennyPinching", "Reducing Cost on Azure"],
+            ],
+          },
+          {
+            title: "Google Cloud",
+            path: "/Deployment/GoogleCloud",
+          },
+        ],
       },
       {
-        title: 'Azure',
-        path: '/Deployment/Azure',
-        children: [
-          ['/Deployment/AzurePennyPinching', 'Reducing Cost on Azure']
-        ]
-      },
-      {
-        title: 'Google Cloud Deployment',
-        path: '/Deployment/GoogleCloud'
-      },
-      {
-        title: 'Hardware Deployment',
-        path: '/Deployment/Hardware',
+        title: "Hardware Deployment",
+        path: "/Deployment/Hardware",
         collapsable: false,
         children: [
           {
-            title: 'Raspberry Pi Deployment',
-            path: '/Deployment/RaspberryPi4'
+            title: "Raspberry Pi Deployment",
+            path: "/Deployment/RaspberryPi4",
           },
           {
-            title: 'Hack0 Deployment',
-            path: '/Deployment/Hack0'
+            title: "Hack0 Deployment",
+            path: "/Deployment/Hack0",
           },
           {
-            title: 'LightningInABox Deployment',
-            path: '/Deployment/LightningInABox'
+            title: "LightningInABox Deployment",
+            path: "/Deployment/LightningInABox",
           },
-          ['/Deployment/DynamicDNS', 'Dynamic DNS'],
-          ['/Docker/cloudflare-tunnel', 'Exposing on clearnet with Cloudflare'],
-          ['/Deployment/ReverseSSHtunnel', 'Exposing on clearnet with a reverse SSH Tunnel'],
-          ['/Deployment/ReverseProxyToTor', 'Exposing on Tor'],
+          ["/Deployment/DynamicDNS", "Dynamic DNS"],
+          ["/Docker/cloudflare-tunnel", "Exposing on clearnet with Cloudflare"],
+          [
+            "/Deployment/ReverseSSHtunnel",
+            "Exposing on clearnet with a reverse SSH Tunnel",
+          ],
+          ["/Deployment/ReverseProxyToTor", "Exposing on Tor"],
           {
-            title: 'Hardware As A Service',
-            path: '/Deployment/HardwareAsAService'
-          }
-        ]
+            title: "Hardware As A Service",
+            path: "/Deployment/HardwareAsAService",
+          },
+        ],
       },
       {
-        title: 'Docker Plugins',
+        title: "Docker Plugins",
         children: [
           {
-            title: 'Transmuter',
-            path: '/Transmuter/',
+            title: "Transmuter",
+            path: "/Transmuter/",
             children: [
-              ['/Transmuter/DCA', 'Dollar Cost Average Preset'],
-              ['/Transmuter/EmailReceiptsPreset', 'Email Receipts Preset']
-            ]
+              ["/Transmuter/DCA", "Dollar Cost Average Preset"],
+              ["/Transmuter/EmailReceiptsPreset", "Email Receipts Preset"],
+            ],
           },
-          ['/ElectrumX', 'Electrum X'],
-          ['/ElectrumPersonalServer', 'Electrum Personal Server'],
-          '/Docker/joinmarket',
-          '/Docker/pihole',
-          '/Docker/fireflyiii',
-          '/Docker/ndlc',
-          '/Docker/lightning-terminal',
-          '/Docker/tallycoin-connect',
-          '/Docker/cloudflare-tunnel'
-        ]
+          ["/ElectrumX", "Electrum X"],
+          ["/ElectrumPersonalServer", "Electrum Personal Server"],
+          "/Docker/joinmarket",
+          "/Docker/pihole",
+          "/Docker/fireflyiii",
+          "/Docker/ndlc",
+          "/Docker/lightning-terminal",
+          "/Docker/tallycoin-connect",
+          "/Docker/cloudflare-tunnel",
+        ],
       },
       {
-        title: 'FastSync',
-        path: '/Docker/fastsync'
+        title: "FastSync",
+        path: "/Docker/fastsync",
       },
       {
-        title: 'Backup & Restore',
-        path: '/Docker/backup-restore'
-      }
-    ]
+        title: "Backup & Restore",
+        path: "/Docker/backup-restore",
+      },
+    ],
   },
   {
-    title: 'Manual Deployment',
+    title: "Manual Deployment",
     collapsable: false,
     children: [
-      '/Deployment/ManualDeployment',
-      '/Deployment/ManualDeploymentExtended'
-    ]
-  }
-]
+      "/Deployment/ManualDeployment",
+      "/Deployment/ManualDeploymentExtended",
+    ],
+  },
+];
 
 const sidebarDevelopment = [
   {
