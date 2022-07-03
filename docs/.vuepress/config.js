@@ -158,23 +158,29 @@ const sidebarDeployment = [
       {
         title: 'Hardware Deployment',
         path: '/Deployment/Hardware',
+        collapsable: false,
         children: [
+          {
+            title: 'Raspberry Pi Deployment',
+            path: '/Deployment/RaspberryPi4'
+          },
+          {
+            title: 'Hack0 Deployment',
+            path: '/Deployment/Hack0'
+          },
+          {
+            title: 'LightningInABox Deployment',
+            path: '/Deployment/LightningInABox'
+          },
           ['/Deployment/DynamicDNS', 'Dynamic DNS'],
-          ['/Deployment/ReverseSSHtunnel', 'Reverse SSH Tunnel'],
-          ['/Deployment/ReverseProxyToTor', 'Reverse Proxy to Tor'],
+          ['/Docker/cloudflare-tunnel', 'Exposing on clearnet with Cloudflare'],
+          ['/Deployment/ReverseSSHtunnel', 'Exposing on clearnet with a reverse SSH Tunnel'],
+          ['/Deployment/ReverseProxyToTor', 'Exposing on Tor'],
           {
             title: 'Hardware As A Service',
             path: '/Deployment/HardwareAsAService'
           }
         ]
-      },
-      {
-        title: 'Raspberry Pi Deployment',
-        path: '/Deployment/RaspberryPi4'
-      },
-      {
-        title: 'Hack0',
-        path: '/Deployment/Hack0'
       },
       {
         title: 'Docker Plugins',
@@ -194,7 +200,8 @@ const sidebarDeployment = [
           '/Docker/fireflyiii',
           '/Docker/ndlc',
           '/Docker/lightning-terminal',
-          '/Docker/tallycoin-connect'
+          '/Docker/tallycoin-connect',
+          '/Docker/cloudflare-tunnel'
         ]
       },
       {
