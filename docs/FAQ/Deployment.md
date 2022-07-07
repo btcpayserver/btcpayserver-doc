@@ -517,16 +517,15 @@ Note: We use mount bind instead of symbolic link because docker would complain w
 
 #### Cause 1: Trying to access my BTCPay by IP address
 
-Your nginx config is set to route the HTTP request to a particular container based on the domain name of the request. For example, the official [deployment on pi 4](/Deployment/RPi4.md) was to setup the souce domain name to http://raspberrypi.local/ yet getting automatic local domain raspberrypi.local does not always work. You are probably in this situation and trying to type the IP address of your BTCPay into the web-browser.
+When nginx receives a HTTP request, it needs to decide which service is the real destination. If you set `BTCPAY_HOST` to `http://raspberrypi.local/`, then you can only access BTCPay Server via this URL. Trying to access BTCPay with another domain name or with the IP address (for example `http://192.168.0.2`) will result in an HTTP 503 error.
 
-Since nginx gets the IP address in the request instead of raspberrypi.local it does not know where to route that request and returns:
 ```
 503 Service Temporarily Unavailable
 -----------------------------------
 nginx
 ```
 
-You can fix this by forcing nginx to route the HTTP request to BTCPay even if the request domain name is not recognized.
+You can fix this by asking nginx to route such HTTP request to BTCPay Server instead.
 Simply, re-run the setup script like this:
 
 ```bash
@@ -535,7 +534,7 @@ sudo su -
 REVERSEPROXY_DEFAULT_HOST="$BTCPAY_HOST" && . btcpay-setup.sh -i
 ```
 
-Now putting local IP in the web-browser works.
+Now browsing to `http://192.168.0.2` should work properly.
 
 #### Cause 2: btcpayserver or letsencrypt-nginx-proxy is not running
 
