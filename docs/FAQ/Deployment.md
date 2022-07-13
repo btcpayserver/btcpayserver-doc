@@ -404,8 +404,8 @@ If you are running on linux, due to [a limitation of docker](https://github.com/
         - "host.docker.internal:$DOCKER_HOST_IP"
 ```
 
-* Run `BTCPAYGEN_EXCLUDE_FRAGMENTS="bitcoin"`
-* Run `BTCPAYGEN_ADDITIONAL_FRAGMENTS="$BTCPAYGEN_ADDITIONAL_FRAGMENTS"`
+* Run `export BTCPAYGEN_EXCLUDE_FRAGMENTS="bitcoin"`
+* Run `export BTCPAYGEN_ADDITIONAL_FRAGMENTS="$BTCPAYGEN_ADDITIONAL_FRAGMENTS;bitcoin.custom"`
 * Run `. ./btcpay-setup.sh -i`
 
 If you are looking for how to deploy alongside existing Lightning node [see this](./LightningNetwork.md#can-i-use-my-existing-ln-node-with-btcpay).
