@@ -132,34 +132,48 @@ The BTCPay Server Project is proudly supported by these entities through the [BT
     <tr>
       <td align="center" valign="middle">
         <a href="https://spiral.xyz" target="_blank">
-          <img  src="https://raw.githubusercontent.com/btcpayserver/btcpayserver/master/BTCPayServer/wwwroot/img/spiral.svg?sanitize=true" alt="Spiral" height=100>
+          <img src="https://raw.githubusercontent.com/btcpayserver/btcpayserver/master/BTCPayServer/wwwroot/img/spiral.svg?sanitize=true" alt="Spiral" height=100>
           <br/>
           <span>Spiral</span>
         </a>
       </td>
       <td align="center" valign="top">
         <a href="https://www.bailliegifford.com/" target="_blank">
-          <img  src="https://raw.githubusercontent.com/btcpayserver/btcpayserver/master/BTCPayServer/wwwroot/img/bailliegifford.svg?sanitize=true" alt="Baillie Gifford" loading="lazy" height=100>
+          <img src="https://raw.githubusercontent.com/btcpayserver/btcpayserver/master/BTCPayServer/wwwroot/img/bailliegifford.svg?sanitize=true" alt="Baillie Gifford" loading="lazy" height=100>
           <br/>
           <span>Baillie Gifford</span>
         </a>
       </td>
+      <td align="center" valign="top">
+        <a href="https://strike.me" target="_blank">
+          <img src="https://raw.githubusercontent.com/btcpayserver/btcpayserver/master/BTCPayServer/wwwroot/img/strike.svg?sanitize=true" alt="Strike" loading="lazy" height=100>
+          <br/>
+          <span>Strike</span>
+        </a>
+      </td>
+      <td align="center" valign="top">
+        <a href="https://hrf.org" target="_blank">
+          <img src="https://raw.githubusercontent.com/btcpayserver/btcpayserver/master/BTCPayServer/wwwroot/img/hrf.svg?sanitize=true" alt="Human Rights Foundation" loading="lazy" width=100>
+          <br/>
+          <span>HRF</span>
+        </a>
+      </td>
       <td align="center" valign="middle">
         <a href="https://www.pnxbet.com" target="_blank">
-          <img  src="https://raw.githubusercontent.com/btcpayserver/btcpayserver/master/BTCPayServer/wwwroot/img/pnxbet.png?sanitize=true" alt="PNXBET" height=100>
+          <img src="https://raw.githubusercontent.com/btcpayserver/btcpayserver/master/BTCPayServer/wwwroot/img/pnxbet.png?sanitize=true" alt="PNXBET" height=100>
           <br/>
           <span>PNXBET</span>
         </a>
       </td>
+      </tr>
+      <tr>
       <td align="center" valign="middle">
         <a href="https://lunanode.com" target="_blank">
-          <img  src="https://raw.githubusercontent.com/btcpayserver/btcpayserver/master/BTCPayServer/wwwroot/img/lunanode.svg?sanitize=true" alt="LunaNode" height=100>
+          <img src="https://raw.githubusercontent.com/btcpayserver/btcpayserver/master/BTCPayServer/wwwroot/img/lunanode.svg?sanitize=true" alt="LunaNode" height=100>
           <br/>
           <span>LunaNode</span>
         </a>
       </td>
-      </tr>
-      <tr>
       <td align="center" valign="middle">
         <a href="https://walletofsatoshi.com/" target="_blank">
           <img  src="https://raw.githubusercontent.com/btcpayserver/btcpayserver/master/BTCPayServer/wwwroot/img/walletofsatoshi.svg?sanitize=true" alt="Wallet of Satoshi" height=100>
@@ -169,21 +183,21 @@ The BTCPay Server Project is proudly supported by these entities through the [BT
       </td>
       <td align="center" valign="middle">
         <a href="https://nomics.com/" target="_blank">
-          <img  src="https://raw.githubusercontent.com/btcpayserver/btcpayserver/master/BTCPayServer/wwwroot/img/nomics.svg?sanitize=true" alt="Nomics" height=100>
+          <img src="https://raw.githubusercontent.com/btcpayserver/btcpayserver/master/BTCPayServer/wwwroot/img/nomics.svg?sanitize=true" alt="Nomics" height=100>
           <br/>
           <span>Nomics</span>
         </a>
       </td>
       <td align="center" valign="middle">
         <a href="https://coincards.com/" target="_blank">
-          <img  src="https://raw.githubusercontent.com/btcpayserver/btcpayserver/master/BTCPayServer/wwwroot/img/coincards.svg?sanitize=true" alt="Coincards" height=100>
+          <img src="https://raw.githubusercontent.com/btcpayserver/btcpayserver/master/BTCPayServer/wwwroot/img/coincards.svg?sanitize=true" alt="Coincards" height=100>
           <br/>
           <span>Coincards</span>
         </a>
       </td>
       <td align="center" valign="middle">
         <a href="https://ivpn.net/" target="_blank">
-          <img  src="https://raw.githubusercontent.com/btcpayserver/btcpayserver/master/BTCPayServer/wwwroot/img/ivpn.svg?sanitize=true" alt="IVPN" height=100>
+          <img src="https://raw.githubusercontent.com/btcpayserver/btcpayserver/master/BTCPayServer/wwwroot/img/ivpn.svg?sanitize=true" alt="IVPN" height=100>
           <br/>
           <span>IVPN</span>
         </a>
