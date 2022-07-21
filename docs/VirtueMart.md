@@ -9,6 +9,9 @@ tags:
 # Joomla VirtueMart integration
 
 This document explains how to **integrate BTCPay Server into your Joomla VirtueMart store**.
+Watch the video below to go along the document |
+
+[![BTCPay Server - Joomla VirtueMart](https://img.youtube.com/vi/k7XfybLAky0/mqdefault.jpg "BTCPay Server - Joomla VirtueMart")](https://youtu.be/k7XfybLAky0 "BTCPay Server - Joomla VirtueMart")
 
 ## Requirements
 
