@@ -381,7 +381,8 @@ module.exports = {
     sidebarDepth: 0,
     algolia: {
       indexName: 'btcpayserver',
-      apiKey: '6a3a4c4380385cb5c9f9070247fdfca6',
+      appId: 'EJBX059GO6',
+      apiKey: '534cbeda78baf7eeb4767d555f2585d4',
       // See https://www.algolia.com/doc/api-reference/api-parameters/
       algoliaOptions: {
         // hitsPerPage: 10,
