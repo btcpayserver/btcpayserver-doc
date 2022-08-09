@@ -110,6 +110,7 @@ fi
 
 cd "$DOCKER_DIR"
 cp -r docs/* "$DOCS_DIR/Docker"
+cp -r docs/img/* "$DOCS_DIR/img"
 line=$(grep -n '# Introduction' README.md | cut -d ":" -f 1)
 tail -n +$line "README.md" > "$DOCS_DIR/Docker/README.md"
 sed -ie 's$(docs/$(./$g' "$DOCS_DIR/Docker/README.md"
