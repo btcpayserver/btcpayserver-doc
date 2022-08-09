@@ -37,7 +37,7 @@
     "esm": "3.2.25",
     "jest": "28.1.3",
     "markdown-it-implicit-figures": "0.10.0",
-    "markdown-it-include": "^2.0.0",
+    "markdown-it-include": "2.0.0",
     "serve": "14.0.1",
     "start-server-and-test": "1.14.0",
     "vuepress": "1.9.7",
