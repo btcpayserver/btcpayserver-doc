@@ -234,6 +234,7 @@ const sidebarDevelopment = [
     collapsable: false,
     children: [
       [`${baseUrl}/API/Greenfield/v1`, 'Greenfield API v1', { type: 'external' }],
+      '/BTCPayServer/greenfield-authorization',
       '/Development/GreenFieldExample'
     ]
   },
@@ -243,6 +244,7 @@ const sidebarDevelopment = [
     children: [
       '/Development/',
       '/Development/LocalDevelopment',
+      ['/BTCPayServer/greenfield-development', 'Greenfield API Development'],
       '/Development/Altcoins',
       '/Development/Theme'
     ]
