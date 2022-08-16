@@ -11,6 +11,7 @@ DOCKER_DIR="$BASE_DIR/deps/docker"
 VAULT_DIR="$BASE_DIR/deps/vault"
 TRANSMUTER_DIR="$BASE_DIR/deps/transmuter"
 ZAPIER_DIR="$BASE_DIR/deps/zapier"
+LNBANK_DIR="$BASE_DIR/deps/lnbank"
 
 update_external() {
   file="$1"
@@ -147,6 +148,7 @@ done
 
 
 # Zapier
+
 echo "Setup dependency: Zapier"
 
 rm -rf "$ZAPIER_DIR"
@@ -164,4 +166,24 @@ cp -r README.md doc/* "$DOCS_DIR/Zapier"
 sed -ie 's$(./doc/$(./$g' "$DOCS_DIR/Zapier/README.md"
 for file in "$DOCS_DIR"/Zapier/*.md; do
   update_external "$file" https://github.com/btcpayserver/zapier "$DOCS_DIR"/Zapier/
+done
+
+
+# LNbank
+
+echo "Setup dependency: LNbank"
+
+rm -rf "$LNBANK_DIR"
+rm -rf "$DOCS_DIR/LNbank"
+mkdir -p "$DOCS_DIR/LNbank"
+
+if [ ! -d "$LNBANK_DIR" ]; then
+  git clone --depth 1 https://github.com/dennisreimann/btcpayserver.git "$LNBANK_DIR"
+  git checkout -b plugins
+fi
+
+cd "$LNBANK_DIR/BTCPayServer.Plugins.LNbank"
+cp -r README.md "$DOCS_DIR/LNbank"
+for file in "$DOCS_DIR"/LNbank/*.md; do
+  update_external "$file" https://github.com/dennisreimann/btcpayserver "$DOCS_DIR"/LNbank/
 done
