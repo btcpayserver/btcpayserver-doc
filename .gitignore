@@ -12,5 +12,11 @@
 /docs/Zapier
 /docs/.vuepress/public/API/Greenfield/**/*.json
 
+# Files copied from external repos
+/docs/img/fastsync
+/docs/img/btcpayexposecloudflare*
+/docs/img/cloudflare*
+/docs/img/Cloudflare*
+
 # Constructed docs
 /docs/Development/LocalDevelopment.md
