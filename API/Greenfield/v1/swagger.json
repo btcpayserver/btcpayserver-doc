@@ -2,6 +2,7 @@
   "paths": {
     "/api/v1/api-keys/{apikey}": {
       "delete": {
+        "operationId": "ApiKeys_DeleteApiKey",
         "tags": [
           "API Keys"
         ],
@@ -38,6 +39,7 @@
     },
     "/api/v1/api-keys/current": {
       "get": {
+        "operationId": "ApiKeys_GetCurrentApiKey",
         "tags": [
           "API Keys"
         ],
@@ -62,6 +64,7 @@
         ]
       },
       "delete": {
+        "operationId": "ApiKeys_DeleteCurrentApiKey",
         "tags": [
           "API Keys"
         ],
@@ -88,6 +91,7 @@
     },
     "/api/v1/api-keys": {
       "post": {
+        "operationId": "ApiKeys_CreateApiKey",
         "tags": [
           "API Keys"
         ],
@@ -320,6 +324,17 @@
         "operationId": "Apps_GetPointOfSaleApp",
         "summary": "Get basic app data",
         "description": "Returns basic app data shared between all types of apps",
+        "parameters": [
+          {
+            "name": "appId",
+            "in": "path",
+            "required": true,
+            "description": "The app ID",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
         "responses": {
           "200": {
             "description": "Basic app data",
@@ -351,6 +366,17 @@
         "operationId": "Apps_DeletePointOfSaleApp",
         "summary": "Delete app",
         "description": "Deletes apps with specified ID",
+        "parameters": [
+          {
+            "name": "appId",
+            "in": "path",
+            "required": true,
+            "description": "The app ID",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
         "responses": {
           "200": {
             "description": "App was deleted"
@@ -371,6 +397,7 @@
     },
     "/api-keys/authorize": {
       "get": {
+        "operationId": "ApiKeys_Authorize",
         "tags": [
           "Authorization"
         ],
@@ -493,6 +520,7 @@
     },
     "/api/v1/stores/{storeId}/custodian-accounts": {
       "get": {
+        "operationId": "Custodians_GetStoreCustodianAccounts",
         "tags": [
           "Custodians"
         ],
@@ -538,6 +566,7 @@
         }
       },
       "post": {
+        "operationId": "Custodians_AddStoreCustodianAccount",
         "tags": [
           "Custodians"
         ],
@@ -582,6 +611,7 @@
     },
     "/api/v1/stores/{storeId}/custodian-accounts/{accountId}": {
       "get": {
+        "operationId": "Custodians_GetStoreCustodianAccount",
         "tags": [
           "Custodians"
         ],
@@ -633,6 +663,7 @@
         }
       },
       "put": {
+        "operationId": "Custodians_UpdateStoreCustodianAccount",
         "tags": [
           "Custodians"
         ],
@@ -675,6 +706,7 @@
         ]
       },
       "delete": {
+        "operationId": "Custodians_DeleteStoreCustodianAccount",
         "tags": [
           "Custodians"
         ],
@@ -692,6 +724,7 @@
     },
     "/api/v1/stores/{storeId}/custodian-accounts/{accountId}/trades/quote": {
       "get": {
+        "operationId": "Custodians_GetStoreCustodianAccountTradeQuote",
         "tags": [
           "Custodians"
         ],
@@ -765,6 +798,7 @@
     },
     "/api/v1/stores/{storeId}/custodian-accounts/{accountId}/trades/market": {
       "post": {
+        "operationId": "Custodians_StoreCustodianAccountTradeMarket",
         "tags": [
           "Custodians"
         ],
@@ -830,6 +864,7 @@
     },
     "/api/v1/stores/{storeId}/custodian-accounts/{accountId}/addresses/{paymentMethod}": {
       "get": {
+        "operationId": "Custodians_GetStoreCustodianAccountDepositAddress",
         "tags": [
           "Custodians"
         ],
@@ -904,6 +939,7 @@
     },
     "/api/v1/stores/{storeId}/custodian-accounts/{accountId}/withdrawals": {
       "post": {
+        "operationId": "Custodians_WithdrawFromStoreCustodianAccount",
         "tags": [
           "Custodians"
         ],
@@ -990,6 +1026,7 @@
     },
     "/api/v1/stores/{storeId}/custodian-accounts/{accountId}/withdrawals/{withdrawalId}": {
       "post": {
+        "operationId": "Custodians_GetStoreCustodianAccountWithdrawalInfo",
         "tags": [
           "Custodians"
         ],
@@ -1125,7 +1162,9 @@
             "in": "query",
             "required": false,
             "description": "Array of statuses of invoices to be fetched",
-            "$ref": "#/components/schemas/InvoiceStatus"
+            "schema": {
+              "$ref": "#/components/schemas/InvoiceStatus"
+            }
           },
           {
             "name": "textSearch",
@@ -1141,14 +1180,18 @@
             "in": "query",
             "required": false,
             "description": "Start date of the period to retrieve invoices",
-            "$ref": "#/components/schemas/UnixTimestamp"
+            "schema": {
+              "$ref": "#/components/schemas/UnixTimestamp"
+            }
           },
           {
             "name": "endDate",
             "in": "query",
             "required": false,
             "description": "End date of the period to retrieve invoices",
-            "$ref": "#/components/schemas/UnixTimestamp"
+            "schema": {
+              "$ref": "#/components/schemas/UnixTimestamp"
+            }
           },
           {
             "name": "skip",
@@ -3092,6 +3135,7 @@
         "tags": [
           "Miscelleneous"
         ],
+        "operationId": "Invoice_Checkout",
         "summary": "Invoice checkout",
         "description": "View the checkout page of an invoice",
         "responses": {
@@ -3712,17 +3756,6 @@
           "Payout Processors"
         ],
         "summary": "Get payout processors",
-        "parameters": [
-          {
-            "name": "storeId",
-            "in": "path",
-            "required": true,
-            "description": "The store to fetch",
-            "schema": {
-              "type": "string"
-            }
-          }
-        ],
         "description": "Get payout processors available in this instance",
         "operationId": "PayoutProcessors_GetPayoutProcessors",
         "responses": {
@@ -3775,7 +3808,7 @@
           }
         ],
         "description": "Get configured store onchain automated payout processors",
-        "operationId": "GreenfieldStoreAutomatedOnChainPayoutProcessorsController_GetStoreOnChainAutomatedPayoutProcessors",
+        "operationId": "GreenfieldStoreAutomatedOnChainPayoutProcessorsController_GetStoreOnChainAutomatedPayoutProcessorsForPaymentMethod",
         "responses": {
           "200": {
             "description": "configured processors",
@@ -3832,7 +3865,7 @@
           }
         ],
         "description": "Update configured store onchain automated payout processors",
-        "operationId": "GreenfieldStoreAutomatedOnChainPayoutProcessorsController_UpdateStoreOnChainAutomatedPayoutProcessor",
+        "operationId": "GreenfieldStoreAutomatedOnChainPayoutProcessorsController_UpdateStoreOnChainAutomatedPayoutProcessorForPaymentMethod",
         "requestBody": {
           "x-name": "request",
           "content": {
@@ -3900,7 +3933,7 @@
           }
         ],
         "description": "Get configured store Lightning automated payout processors",
-        "operationId": "GreenfieldStoreAutomatedLightningPayoutProcessorsController_GetStoreLightningAutomatedPayoutProcessors",
+        "operationId": "GreenfieldStoreAutomatedLightningPayoutProcessorsController_GetStoreLightningAutomatedPayoutProcessorsForPaymentMethod",
         "responses": {
           "200": {
             "description": "configured processors",
@@ -4016,7 +4049,7 @@
           }
         ],
         "description": "Get configured store onchain automated payout processors",
-        "operationId": "GreenfieldStoreAutomatedOnChainPayoutProcessorsController_GetStoreOnChainAutomatedPayoutProcessors",
+        "operationId": "GreenfieldStoreAutomatedOnChainPayoutProcessorsController_GetStoreOnChainAutomatedTransferSenderFactory",
         "responses": {
           "200": {
             "description": "configured processors",
@@ -4061,19 +4094,10 @@
             "schema": {
               "type": "string"
             }
-          },
-          {
-            "name": "paymentMethod",
-            "in": "path",
-            "required": true,
-            "description": "A specific payment method to fetch",
-            "schema": {
-              "type": "string"
-            }
           }
         ],
         "description": "Update configured store onchain automated payout processors",
-        "operationId": "GreenfieldStoreAutomatedOnChainPayoutProcessorsController_UpdateStoreOnChainAutomatedPayoutProcessor",
+        "operationId": "GreenfieldStoreAutomatedOnChainPayoutProcessorsController_UpdateStoreOnChainAutomatedTransferSenderFactory",
         "requestBody": {
           "x-name": "request",
           "content": {
@@ -4132,7 +4156,7 @@
           }
         ],
         "description": "Get configured store Lightning automated payout processors",
-        "operationId": "GreenfieldStoreAutomatedLightningPayoutProcessorsController_GetStoreLightningAutomatedPayoutProcessors",
+        "operationId": "GreenfieldStoreAutomatedLightningPayoutProcessorsController_GetStoreLightningAutomatedTransferSenderFactory",
         "responses": {
           "200": {
             "description": "configured processors",
@@ -4940,6 +4964,17 @@
           "Stores (Email)"
         ],
         "summary": "Update store email settings",
+        "parameters": [
+          {
+            "name": "storeId",
+            "in": "path",
+            "required": true,
+            "description": "The store to update",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
         "description": "Update a store's email settings",
         "operationId": "Stores_UpdateStoreEmailSettings",
         "requestBody": {
@@ -4991,11 +5026,23 @@
     },
     "/api/v1/stores/{storeId}/email/send": {
       "post": {
+        "operationId": "Stores_SendStoreEmail",
         "tags": [
           "Stores (Email)"
         ],
         "summary": "Send an email for a store",
         "description": "Send an email using the store's SMTP server",
+        "parameters": [
+          {
+            "name": "storeId",
+            "in": "path",
+            "required": true,
+            "description": "The store to send the email from",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
         "requestBody": {
           "x-name": "request",
           "content": {
@@ -5024,7 +5071,7 @@
         },
         "security": [
           {
-            "API Key": [
+            "API_Key": [
               "btcpay.store.canmodifystoresettings"
             ],
             "Basic": []
@@ -5269,6 +5316,7 @@
         ]
       },
       "delete": {
+        "operationId": "StoreLightningNetworkPaymentMethods_DeleteLightningNetworkPaymentMethod",
         "tags": [
           "Store Payment Methods (Lightning Network)"
         ],
@@ -5510,6 +5558,7 @@
         ]
       },
       "delete": {
+        "operationId": "StoreLNURLPayPaymentMethods_DeleteLNURLPayPaymentMethod",
         "tags": [
           "Store Payment Methods (LNURL Pay)"
         ],
@@ -5751,6 +5800,7 @@
         ]
       },
       "delete": {
+        "operationId": "StoreOnChainPaymentMethods_DeleteOnChainPaymentMethod",
         "tags": [
           "Store Payment Methods (On Chain)"
         ],
@@ -6880,6 +6930,7 @@
         ]
       },
       "post": {
+        "operationId": "Stores_CreateStore",
         "tags": [
           "Stores"
         ],
@@ -7046,6 +7097,7 @@
         ]
       },
       "delete": {
+        "operationId": "Stores_DeleteStore",
         "tags": [
           "Stores"
         ],
@@ -7111,6 +7163,9 @@
                 }
               }
             }
+          },
+          "404": {
+            "description": "The user could not be found"
           }
         },
         "security": [
@@ -7132,6 +7187,9 @@
         "responses": {
           "200": {
             "description": "User and associated data deleted successfully"
+          },
+          "404": {
+            "description": "The user could not be found"
           }
         },
         "security": [
@@ -7146,6 +7204,7 @@
     },
     "/api/v1/users": {
       "get": {
+        "operationId": "Users_GetUsers",
         "tags": [
           "Users"
         ],
@@ -7173,6 +7232,7 @@
         ]
       },
       "post": {
+        "operationId": "Users_CreateUser",
         "tags": [
           "Users"
         ],
@@ -7251,6 +7311,7 @@
     },
     "/api/v1/users/{idOrEmail}": {
       "get": {
+        "operationId": "Users_GetUser",
         "tags": [
           "Users"
         ],
@@ -7291,6 +7352,7 @@
         ]
       },
       "delete": {
+        "operationId": "Users_DeleteUser",
         "tags": [
           "Users"
         ],
@@ -7298,7 +7360,7 @@
         "description": "Delete a user.\n\nMust be an admin to perform this operation.\n\nAttempting to delete the only admin user will not succeed.\n\nAll data associated with the user will be deleted as well if the operation succeeds.",
         "parameters": [
           {
-            "name": "userId",
+            "name": "idOrEmail",
             "in": "path",
             "required": true,
             "description": "The ID of the user to be deleted",
@@ -7333,6 +7395,7 @@
     },
     "/api/v1/users/{idOrEmail}/lock": {
       "delete": {
+        "operationId": "Users_ToggleUserLock",
         "tags": [
           "Users"
         ],
@@ -7340,7 +7403,7 @@
         "description": "Lock or unlock a user.\n\nMust be an admin to perform this operation.\n\nAttempting to lock the only admin user will not succeed.",
         "parameters": [
           {
-            "name": "userId",
+            "name": "idOrEmail",
             "in": "path",
             "required": true,
             "description": "The ID of the user to be un/locked",
@@ -7401,7 +7464,7 @@
         ],
         "summary": "Get webhooks of a store",
         "description": "View webhooks of a store",
-        "operationId": "Webhokks_GetWebhooks",
+        "operationId": "Webhooks_GetWebhooks",
         "responses": {
           "200": {
             "description": "List of webhooks",
@@ -7412,6 +7475,9 @@
                 }
               }
             }
+          },
+          "404": {
+            "description": "The key is not found for this list of webhooks"
           }
         },
         "security": [
@@ -7424,6 +7490,7 @@
         ]
       },
       "post": {
+        "operationId": "Webhooks_CreateWebhook",
         "tags": [
           "Webhooks"
         ],
@@ -7500,7 +7567,7 @@
         ],
         "summary": "Get a webhook of a store",
         "description": "View webhook of a store",
-        "operationId": "Webhokks_GetWebhook",
+        "operationId": "Webhooks_GetWebhook",
         "responses": {
           "200": {
             "description": "A webhook",
@@ -7526,6 +7593,7 @@
         ]
       },
       "put": {
+        "operationId": "Webhooks_UpdateWebhook",
         "tags": [
           "Webhooks"
         ],
@@ -7574,6 +7642,7 @@
         ]
       },
       "delete": {
+        "operationId": "Webhooks_DeleteWebhook",
         "tags": [
           "Webhooks"
         ],
@@ -7619,6 +7688,7 @@
         }
       ],
       "get": {
+        "operationId": "Webhooks_GetWebhookDeliveries",
         "tags": [
           "Webhooks"
         ],
@@ -7645,6 +7715,9 @@
                 }
               }
             }
+          },
+          "404": {
+            "description": "The key is not found for this list of deliveries"
           }
         },
         "security": [
@@ -7688,6 +7761,7 @@
         }
       ],
       "get": {
+        "operationId": "Webhooks_GetWebhookDelivery",
         "tags": [
           "Webhooks"
         ],
@@ -7749,6 +7823,7 @@
         }
       ],
       "get": {
+        "operationId": "Webhooks_GetWebhookDeliveryRequests",
         "tags": [
           "Webhooks"
         ],
@@ -7811,6 +7886,7 @@
         }
       ],
       "post": {
+        "operationId": "Webhooks_RedeliverWebhookDelivery",
         "tags": [
           "Webhooks"
         ],
@@ -8357,14 +8433,6 @@
           "minimumTradeQty": 0.0001
         }
       },
-      "LedgerEntryType": {
-        "type": "string",
-        "enum": [
-          "Trade",
-          "Fee",
-          "Withdrawal"
-        ]
-      },
       "ApplicationHealthData": {
         "type": "object",
         "additionalProperties": false,
@@ -8389,17 +8457,6 @@
             "nullable": false,
             "description": "Mark an invoice as completed or invalid.",
             "$ref": "#/components/schemas/InvoiceStatusMark"
-          }
-        }
-      },
-      "AddCustomerEmailRequest": {
-        "type": "object",
-        "additionalProperties": false,
-        "properties": {
-          "email": {
-            "type": "string",
-            "nullable": false,
-            "description": "Sets the customer email, if it was not set before."
           }
         }
       },
@@ -8837,22 +8894,6 @@
           }
         }
       },
-      "SpeedPolicy": {
-        "type": "string",
-        "description": "",
-        "x-enumNames": [
-          "HighSpeed",
-          "MediumSpeed",
-          "LowSpeed",
-          "LowMediumSpeed"
-        ],
-        "enum": [
-          "HighSpeed",
-          "MediumSpeed",
-          "LowSpeed",
-          "LowMediumSpeed"
-        ]
-      },
       "InvoicePaymentMethodDataModel": {
         "type": "object",
         "additionalProperties": false,
@@ -9046,9 +9087,25 @@
       },
       "UnixTimestamp": {
         "type": "number",
-        "format": "Unix timestamp in seconds",
+        "format": "int32",
         "example": 1592312018,
         "description": "A unix timestamp in seconds"
+      },
+      "SpeedPolicy": {
+        "type": "string",
+        "description": "`\"HighSpeed\"`: 0 confirmations (1 confirmation if RBF enabled in transaction)   \n`\"MediumSpeed\"`: 1 confirmation   \n`\"LowMediumSpeed\"`: 2 confirmations   \n`\"LowSpeed\"`: 6 confirmations\n",
+        "x-enumNames": [
+          "HighSpeed",
+          "MediumSpeed",
+          "LowSpeed",
+          "LowMediumSpeed"
+        ],
+        "enum": [
+          "HighSpeed",
+          "MediumSpeed",
+          "LowSpeed",
+          "LowMediumSpeed"
+        ]
       },
       "TimeSpan": {
         "type": "number",
@@ -11160,18 +11217,26 @@
       "name": "Webhooks"
     }
   ],
-  "x_experimental": true,
   "openapi": "3.0.0",
   "info": {
     "title": "BTCPay Greenfield API",
+    "version": "v1",
     "description": "A full API to use your BTCPay Server",
     "contact": {
       "name": "BTCPay Server",
       "url": "https://btcpayserver.org"
     },
-    "version": "v1"
+    "license": {
+      "name": "MIT",
+      "url": "https://github.com/btcpayserver/btcpayserver/blob/master/LICENSE"
+    }
   },
-  "servers": [],
+  "servers": [
+    {
+      "url": "https://btcpay.example.com/api/v1",
+      "description": "BTCPay Server Greenfield API"
+    }
+  ],
   "security": [
     {
       "API_Key": [],
@@ -11181,6 +11246,7 @@
   "x-webhooks": {
     "InvoiceCreated": {
       "post": {
+        "operationId": "Webhook_InvoiceCreated",
         "summary": "InvoiceCreated",
         "description": "A new invoice has been created",
         "parameters": [
@@ -11206,11 +11272,13 @@
               }
             }
           }
-        }
+        },
+        "responses": {}
       }
     },
     "InvoiceExpired": {
       "post": {
+        "operationId": "Webhook_InvoiceExpired",
         "summary": "InvoiceExpired",
         "description": "An invoice expired",
         "parameters": [
@@ -11236,11 +11304,13 @@
               }
             }
           }
-        }
+        },
+        "responses": {}
       }
     },
     "InvoiceReceivedPayment": {
       "post": {
+        "operationId": "Webhook_InvoiceReceivedPayment",
         "summary": "InvoiceReceivedPayment",
         "description": "An invoice received a payment",
         "parameters": [
@@ -11266,11 +11336,13 @@
               }
             }
           }
-        }
+        },
+        "responses": {}
       }
     },
     "InvoicePaymentSettled": {
       "post": {
+        "operationId": "Webhook_InvoicePaymentSettled",
         "summary": "InvoicePaymentSettled",
         "description": "An payment relating to an invoice has settled",
         "parameters": [
@@ -11296,11 +11368,13 @@
               }
             }
           }
-        }
+        },
+        "responses": {}
       }
     },
     "InvoiceProcessing": {
       "post": {
+        "operationId": "Webhook_InvoiceProcessing",
         "summary": "InvoiceProcessing",
         "description": "Triggers when an invoice is fully paid, but doesn't have the required amount of confirmations on the blockchain yet according to your store's settings.",
         "parameters": [
@@ -11326,11 +11400,13 @@
               }
             }
           }
-        }
+        },
+        "responses": {}
       }
     },
     "InvoiceInvalid": {
       "post": {
+        "operationId": "Webhook_InvoiceInvalid",
         "summary": "InvoiceInvalid",
         "description": "An invoice became invalid",
         "parameters": [
@@ -11356,11 +11432,13 @@
               }
             }
           }
-        }
+        },
+        "responses": {}
       }
     },
     "InvoiceSettled": {
       "post": {
+        "operationId": "Webhook_InvoiceSettled",
         "summary": "InvoiceSettled",
         "description": "Triggers when an invoice is considered settled and the merchant can proceed with the order's delivery. The invoice now has enough confirmations on the blockchain (if paid on-chain) according to your store's configuration.",
         "parameters": [
@@ -11386,7 +11464,8 @@
               }
             }
           }
-        }
+        },
+        "responses": {}
       }
     }
   }
