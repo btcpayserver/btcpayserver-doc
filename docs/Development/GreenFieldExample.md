@@ -43,6 +43,8 @@ apikey="$(curl -s \
      "$BTCPAY_INSTANCE/api/v1/api-keys" | jq -r .apiKey)"
 ```
 
+You can then provide the API key via the `Authorization: token $apikey` header, as shown in the examples below. 
+
 ## Create a new store
 
 Now, we can use the api key to [create a new store](https://docs.btcpayserver.org/API/Greenfield/v1/#tag/Stores/paths/~1api~1v1~1stores/post).
