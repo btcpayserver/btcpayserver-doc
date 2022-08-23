@@ -191,7 +191,7 @@ In the wallet settings tab you can adjust certain settings. If you've configured
 If you manually added the extended public key from an external wallet, you'd need to adjust `AccountKeyPath` that you can find in your external wallet, for example `m/84'/0'/0'` to be able to spend from the BTCPay Wallet.
 
 In `wallet settings` you will also find the `speed policy` for the specific store. 
-There's 2 main settings under `Payment`, [Payment invalid if transaction fails to confirm in ... after invoice creation](./FAQ/Stores.md#payment-invalid-if-transactions-fails-to-confirm--minutes-after-invoice-expiration) and [Consider the invoice confirmed when the payment transaction...](./FAQ/Stores/#consider-the-invoice-confirmed-when-the-payment-transaction). The latter let's you set the amount of confirmations required to be recognized as confirmed. 
+There are 2 main settings under `Payment`, [Payment invalid if transaction fails to confirm in ... after invoice creation](./FAQ/Stores.md#payment-invalid-if-transactions-fails-to-confirm--minutes-after-invoice-expiration) and [Consider the invoice confirmed when the payment transaction...](./FAQ/Stores/#consider-the-invoice-confirmed-when-the-payment-transaction). The latter lets you set the number of confirmations required to be recognized as settled. 
 
 ![Wallet settings](./img/wallet/btcpayserverwalletsettings1.jpg)
 
