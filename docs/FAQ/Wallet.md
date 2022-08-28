@@ -66,13 +66,14 @@ It's not easy to solve the gap limit problem. You have two options:
 
 If your [external/existing wallet](../WalletSetup.md#use-an-existing-wallet) allows gap-limit configuration, the easy fix is to increase it. However, majority of wallets do not allow this.
 
-The only wallets that allow gap-limit configuration, that we're aware of are [Electrum](../ElectrumWallet.md) and [Wasabi](../WasabiWallet.md)
+The only wallets that allow gap-limit configuration, that we're aware of are [Electrum](../ElectrumWallet.md), [Sparrow](../SparrowWallet.md) and [Wasabi](../WasabiWallet.md)
 
 Unfortunately, with any other wallet you're likely to encounter a problem.
 
 If you'd like to use an [external wallet](../WalletSetup.md#use-an-existing-wallet) to manage the funds, we recommend that you recover your existing wallet into one of following wallets and increase the gap limit:
 
 - [Increasing the gap limit in Electrum](../ElectrumWallet.md#configuring-the-gap-limit-in-electrum)
+- [Increasing the app limit in Sparrow](../SparrowWallet.md#configuring-the-gap-limit-in-sparrow)
 - [Increasing the gap limit in Wasabi](../WasabiWallet.md#configuring-the-gap-limit-in-wasabi)
 
 After you've increased the gap limit, the balance in your external wallet and BTCPay wallet should match. If they don't, you may have set up your derivation scheme incorrectly.
