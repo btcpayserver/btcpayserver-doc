@@ -10,6 +10,7 @@
 /docs/Transmuter
 /docs/Vault
 /docs/Zapier
+/docs/LNbank
 /docs/.vuepress/public/API/Greenfield/**/*.json
 
 # Files copied from external repos

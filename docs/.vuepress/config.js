@@ -109,6 +109,13 @@ const sidebarUserGuide = [
     ]
   },
   {
+    title: 'Plugins',
+    collapsable: false,
+    children: [
+      ['/LNbank/', 'LNbank']
+    ]
+  },
+  {
     title: 'Support and Community',
     collapsable: false,
     initialOpenGroupIndex: -1,
