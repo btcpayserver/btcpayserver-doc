@@ -1,4 +1,5 @@
-#!/bin/bash
+# Deployment variables & commands for rpi4 install.
+This page is subjected to change and is not recommended for guide purposes; please refer to [Raspberry 4 deployment here](./RaspberryPi4.md)
 
 # Set BTCPayServer Environment Variables
 export BTCPAY_HOST="$(hostname).local"
