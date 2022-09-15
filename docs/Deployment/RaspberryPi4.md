@@ -125,7 +125,7 @@ export BTCPAY_ADDITIONAL_HOSTS="btcpay.YourDomain.com"
 Download and run the install script:
 
 ```bash
-wget -O btcpayserver-install.sh https://raw.githubusercontent.com/btcpayserver/btcpayserver-doc/master/docs/Deployment/btcpayserver-rpi4-install.md
+wget -O btcpayserver-install.sh https://raw.githubusercontent.com/btcpayserver/btcpayserver-doc/master/scripts/btcpayserver-rpi4-install.sh
 chmod +x btcpayserver-install.sh
 . btcpayserver-install.sh
 ```
