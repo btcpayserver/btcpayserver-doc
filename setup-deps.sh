@@ -74,7 +74,7 @@ fi
 cd "$NBXPLORER_DIR"
 
 cp -r README.md docs/* "$DOCS_DIR/NBXplorer"
-sed -ie 's$(docs/$(./$g' "$DOCS_DIR/NBXplorer/README.md"
+sed -ie 's$(./docs/$(./$g' "$DOCS_DIR/NBXplorer/README.md"
 for file in "$DOCS_DIR"/NBXplorer/*.md; do
   update_external "$file" https://github.com/dgarage/NBXplorer "$DOCS_DIR"/NBXplorer/
 done
