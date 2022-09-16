@@ -25,8 +25,8 @@ Here is the advised parts for running a Hack0:
 * EMMC 16GB ([Link](https://pine64.com/product/16gb-emmc-module/)) `15.95$`
 * Fan For ROCKPro64 20mm Mid Profile Heatsink ([Link](https://pine64.com/product/fan-for-rockpro64-20mm-mid-profile-heatsink/)) `2.99$`
 * ROCKPro64 20mm Mid Profile Heatsink ([Link](https://pine64.com/product/rockpro64-20mm-mid-profile-heatsink/)) `3.29$`
-* SSD 500GB PCIe NVMe ([Link](https://www.crucial.com/usa/en/ct500p1ssd8)) `66.99$`
-* M.2 to PCIe adapter ([Link](https://www.silverstonetek.com/product.php?pid=814&area=en)) `25$`
+* SSD 500GB PCIe NVMe ([Link](https://www.crucial.com/ssd/p2/CT500P2SSD8)) `66.99$`
+* M.2 to PCIe adapter ([Link](https://www.silverstonetek.com/en/product/info/expansion-cards/ECM25/)) `25$`
 
 Total: `179.2$`
 
@@ -38,7 +38,7 @@ Once you have your hardware, you need to flash the Hack0 image.
 
 The Hack0 is based on the armbian distribution. You can build the image yourself by following instruction [on our github page](https://github.com/dgarage/hack0-armbian/tree/btcpay/userpatches). You can also find [pre-built image](https://github.com/dgarage/hack0-armbian/tree/btcpay/userpatches#pre-built-images) ready to download to save time on this page.
 
-Once you have the image, you can flash it on the EMMC module thanks to the USB adapter for EMMC Module. 
+Once you have the image, you can flash it on the EMMC module thanks to the USB adapter for EMMC Module.
 During the first start, hack0 is in `setup mode`, the setup mode will:
 
 > :warning: When you first boot a pre-built images, the hack0 will be in  `setup mode`, which will wipe all data in the SSD drive.

@@ -2,10 +2,14 @@ const isDev = process.env.NODE_ENV === 'development'
 
 // external docs: local dir as key, repo base as value
 const EXTERNAL_DOCS = {
+  'BTCPayServer': 'https://github.com/btcpayserver/btcpayserver',
+  'NBXplorer': 'https://github.com/dgarage/NBXplorer',
   'Configurator': 'https://github.com/btcpayserver/btcpayserver-configurator',
   'Docker': 'https://github.com/btcpayserver/btcpayserver-docker',
+  'Vault': 'https://github.com/btcpayserver/BTCPayServer.Vault',
   'Transmuter': 'https://github.com/btcpayserver/btcTransmuter',
   'Zapier': 'https://github.com/btcpayserver/zapier',
+  'LNbank': 'https://github.com/dennisreimann/btcpayserver',
 }
 
 const replaceExternalRepoLinks = (source, externalRepoUrl, resourcePath) => {

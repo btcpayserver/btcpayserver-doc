@@ -257,6 +257,16 @@ const sidebarDevelopment = [
     ]
   },
   {
+    title: 'NBXplorer',
+    collapsable: false,
+    children: [
+      ['/NBXplorer/', 'Overview'],
+      '/NBXplorer/API',
+      ['/NBXplorer/Postgres-Schema', 'Postgres Schema'],
+      ['/NBXplorer/Postgres-Migration', 'Postgres Migration']
+    ]
+  },
+  {
     title: 'More',
     collapsable: false,
     initialOpenGroupIndex: -1,
@@ -451,6 +461,7 @@ module.exports = {
       '/Contribute': sidebarContribute,
       '/Vault': sidebarDevelopment,
       '/BTCPayServer': sidebarDevelopment,
+      '/NBXplorer': sidebarDevelopment,
       '/Configurator': sidebarDeployment,
       '/Deployment': sidebarDeployment,
       '/Docker': sidebarDeployment,
