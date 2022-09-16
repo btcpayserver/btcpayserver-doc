@@ -48,11 +48,11 @@ The invoice timer is set to 15 minutes by default. The timer is a protection mec
 
 ## Payment invalid if transactions fails to confirm ... minutes after invoice expiration
 
-If the customer pays the invoice, but it fails to get the defined number of confirmations within the set period, it is marked as "invalid." The merchant can then decide whether to accept the invoice afterward manually or decline it and require additional payment from the customer. This is an additional protection mechanism against the volatility.
+If the customer pays an invoice, but it fails to get the defined number of confirmations within the set period, it is marked as "invalid". The merchant can then decide whether to accept the invoice afterward manually or decline it and require further actions such as a refund flow or asking for additional payments. This is a protection mechanism against rate volatility gaming attacks. This option can be found in [wallet settings](../Wallet.md#settings).
 
 ## Consider the invoice confirmed when the payment transaction
 
-The invoice is considered "paid," as soon as it's visible on the blockchain. When the invoice reaches the defined number of confirmations, it is considered "confirmed." Here you set the minimum amount of confirmations after which the invoice gets the "confirmed" status. The "completed" status is given when the invoice has at least 6 confirmations. Note this only applies to on-chain payments. Invoices paid via the Lightning Network immediately go to a completed state, as their confirmation is instant. In practice, as a merchant, you ship your product as soon as you see the invoice marked as completed or confirmed.
+The invoice is considered "processing", as soon as it is visible on the blockchain (and mempool). When the invoice reaches the defined number of confirmations, it is considered "settled". Here you set the minimum amount of confirmations after which the invoice gets the "confirmed" status. Note this only applies to on-chain payments. Invoices paid via the Lightning Network immediately go to a settled state, as their confirmation is instant. In practice, as a merchant, you ship your product as soon as you see the invoice marked as settled. Find more on [wallet settings here](../Wallet.md#settings).
 
 ## Consider the invoice paid even if the paid amount is ... % less than expected
 
