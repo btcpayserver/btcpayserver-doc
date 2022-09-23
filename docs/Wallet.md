@@ -82,10 +82,10 @@ BTCPay Server has built-in hardware wallet support allowing you to **use your ha
 
 ##### Signing with a hot wallet
 
-If you [created a new wallet](./CreateWallet.md) when setting up your store and enabled it as a [hot wallet](./CreateWallet.md#hot-wallet), you can sign a transaction with a **private key stored on your server**.
+If you [created a new wallet](./CreateWallet.md) when setting up your store and enabled it as a [hot wallet](./CreateWallet.md#hot-wallet), since version 1.2.0, we've added an option that when a [hot wallet](./CreateWallet.md#hot-wallet) is created, it'll automatically use the seed stored on a server to sign.
 
 :::danger
-Using the hot wallet feature comes with its own security implications, please be sure to read and understand them over at the [Hot Wallet documentation](./CreateWallet.md#hot-wallet)
+Using the hot wallet feature comes with security implications; please be sure to read and understand them over at the [Hot Wallet documentation](./CreateWallet.md#security-implications)
 :::
 
 #### Advanced Settings
@@ -178,10 +178,6 @@ Re-scan is a feature that solves both of these problems. Once the scan is comple
 Wallet re-scan requires access to the full node which means that this function is only available for server owners.
 
 Users who use a third-party host should use a newly generated xpub key and also use an external wallet like Electrum which allows them to increase the gap limit.
-
-### PSBT
-
-In the **Partially Signed Bitcoin Transactions** (PSBT) tab, you can upload and decode any PSBT. For example, a signed PSBT from your external wallet can be broadcast via BTCPay Wallet. See [more information on PSBT](./ColdCardWallet.md#spending-from-btcpay-server-wallet-with-coldcard-psbt).
 
 ### Settings
 
