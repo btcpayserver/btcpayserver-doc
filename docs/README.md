@@ -23,28 +23,28 @@ footer:  Content Released under MIT license.
   <h3>Explore by topic</h3>
   <ul>
     <li>
-      <a href="/BTCPayVsOthers/">BTCPay&nbsp;Server vs.<br>Other Payment Processors</a>
+      <a href="/Guide/">What is BTCPay&nbsp;Server</a>
     </li>
     <li>
-      <a href="/Walkthrough/">Feature Walkthrough</a>
+      <a href="/UseCase/">Why BTCPay&nbsp;Server</a>
     </li>
     <li>
-      <a href="/Deployment/RPi4/">Deploy on a Raspberry Pi</a>
+      <a href="/TryItOut/">How to deploy BTCPay&nbsp;Server</a>
     </li>
     <li>
       <a href="/WalletSetup/">Wallet Setup</a>
     </li>
     <li>
-      <a href="/Apps/">BTCPay&nbsp;Server Apps</a>
-    </li>
-    <li>
       <a href="/LightningNetwork/">Lightning Network</a>
     </li>
     <li>
-      <a href="/FAQ/">Frequently Asked Questions<br>and Common Issues</a>
+      <a href="/Apps/#point-of-sale-app/">How to setup POS </a>
     </li>
     <li>
-      <a href="/WooCommerce/">WooCommerce Integration</a>
+      <a href="/Development/GreenFieldExample/">Greenfield API</a>
+    </li>
+    <li>
+      <a href="/FAQ/">Frequently Asked Questions<br>and Common Issues</a>
     </li>
     <li>
       <a href="/Contribute/">How to contribute to BTCPay&nbsp;Server</a>
