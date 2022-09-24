@@ -35,38 +35,38 @@ Custom Payment method name **must** contain at least one of the following words:
 Below are step by step visuals describing the process outlined above.
 
 
-![](./img/shopify/btcpayshopify1.png)
+![BTCPay Server shopify step 1](./img/shopify/btcpayshopify1.png)
 
-![](./img/shopify/btcpayshopify2.png)
+![BTCPay Server shopify step 2](./img/shopify/btcpayshopify2.png)
 
-![](./img/shopify/btcpayshopify3.png)
+![BTCPay Server shopify step 3](./img/shopify/btcpayshopify3.png)
 
-![](./img/shopify/btcpayshopify4.png)
+![BTCPay Server shopify step 4](./img/shopify/btcpayshopify4.png)
 
-![](./img/shopify/btcpayshopify5.png)
+![BTCPay Server shopify step 5](./img/shopify/btcpayshopify5.png)
 
-![](./img/shopify/btcpayshopify6.png)
+![BTCPay Server shopify step 6](./img/shopify/btcpayshopify6.png)
 
-![](./img/shopify/btcpayshopify7.png)
+![BTCPay Server shopify step 7](./img/shopify/btcpayshopify7.png)
 
-![](./img/shopify/btcpayshopify8.png)
+![BTCPay Server shopify step 8](./img/shopify/btcpayshopify8.png)
 
-![](./img/shopify/btcpayshopify9.png)
+![BTCPay Server shopify step 9](./img/shopify/btcpayshopify9.png)
 
-![](./img/shopify/btcpayshopify10.png)
+![BTCPay Server shopify step 10](./img/shopify/btcpayshopify10.png)
 
-![](./img/Shopify/btcpayshopify11.jpg)
+![BTCPay Server shopify step 11](./img/Shopify/btcpayshopify11.jpg)
 
-![](./img/Shopify/btcpayshopify12.jpg)
+![BTCPay Server shopify step 12](./img/Shopify/btcpayshopify12.jpg)
 
-![](./img/shopify/btcpayshopify13.png)
+![BTCPay Server shopify step 13](./img/shopify/btcpayshopify13.png)
 
-![](./img/shopify/btcpayshopify14.png)
+![BTCPay Server shopify step 14](./img/shopify/btcpayshopify14.png)
 
-![](./img/shopify/btcpayshopify15.png)
+![BTCPay Server shopify step 15](./img/shopify/btcpayshopify15.png)
 
-![](./img/shopify/btcpayshopify16.png)
+![BTCPay Server shopify step 16](./img/shopify/btcpayshopify16.png)
 
-![](./img/shopify/btcpayshopify17.png)
+![BTCPay Server shopify step 17](./img/shopify/btcpayshopify17.png)
 
-![](./img/shopify/btcpayshopify18.png)
+![BTCPay Server shopify step 18](./img/shopify/btcpayshopify18.png)
