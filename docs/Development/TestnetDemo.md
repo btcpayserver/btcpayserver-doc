@@ -1,4 +1,4 @@
-### Testnet
+# Testnet demo
 First let's create a new store:
 
 1. Go to the [Testnet website](https://testnet.demo.btcpayserver.org/)

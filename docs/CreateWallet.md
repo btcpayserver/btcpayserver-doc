@@ -1,4 +1,4 @@
-## Create a new wallet
+# Create a new wallet
 
 - [Hot Wallet](#hot-wallet)
 - [Watch-only wallet](#watch-only-wallet)
