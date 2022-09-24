@@ -43,7 +43,7 @@ The completed tab is purely for historical purposes. It holds the processed Payo
 
 ![BTCPay Server Payouts tab](./img/refunds/batch-payouts.jpg "BTCPay Server refund feature")
 
-# Using Greenfield API
+## Using Greenfield API
 
 As described in the [Pull Payments](./PullPayments.md#greenfield-api) Greenfield API allows for broader use of `Pull Payments`.
 The payout request will always go to the Payouts tab in your BTCPay server whenever the concept is used. 

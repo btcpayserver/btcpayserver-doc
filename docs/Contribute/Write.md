@@ -2,7 +2,7 @@
 
 [[toc]]
 
-# Why documentation matters
+## Why documentation matters
 
 Documentation is essential to give users of all skill levels concise and clear information about the software and how to use it. BTCPay server has many different use cases and as a result many different kinds of users seeking information from the documentation. Writers contributing to BTCPay Server are as important as any other contributor.
 

@@ -9,13 +9,13 @@ BTCPay Server provides 2 APIS in order to integrate with it:
 
 While Bitpay only allows one account for one merchant, BTCPay allows a user to manage multiple stores.
 
-# Official Client Libraries
+## Official Client Libraries
 
 BTCPay maintains official client libraries for [C#](https://github.com/MetacoSA/NBitpayClient), [Python](https://github.com/btcpayserver/btcpay-python) and [NodeJS](https://github.com/btcpayserver/node-btcpay).
 
 In addition, there are forked repositories of Bitpay's [PHP](https://github.com/btcpayserver/btcpayserver-php-client) and [Ruby](https://github.com/bitpay/ruby-client) clients.
 
-# Accessing the API Manually
+## Accessing the API Manually
 
 If not using one of the libraries above, the REST API can be accessed manually.
 
