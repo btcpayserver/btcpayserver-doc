@@ -293,7 +293,7 @@ Feel free to join our support channel over at [https://chat.btcpayserver.org/](h
 
 
 
-# Deploying WooCommerce from BTCPay Server
+## Deploying WooCommerce from BTCPay Server
 
 If you already have BTCPay Server, you can very easily start WooCommerce from your existing environment.
 
