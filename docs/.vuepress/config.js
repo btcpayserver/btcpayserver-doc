@@ -112,7 +112,8 @@ const sidebarUserGuide = [
     title: 'Plugins',
     collapsable: false,
     children: [
-      ['/LNbank/', 'LNbank']
+      ['/LNbank/', 'LNbank'],
+      ['/PodServer/', 'PodServer']
     ]
   },
   {
