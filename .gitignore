@@ -12,6 +12,7 @@
 /docs/Vault
 /docs/Zapier
 /docs/LNbank
+/docs/PodServer
 /docs/.vuepress/public/API/Greenfield/**/*.json
 
 # Files copied from external repos
