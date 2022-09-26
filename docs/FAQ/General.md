@@ -164,7 +164,7 @@ Webhooks are not meant to be compatible with bitpay API.
 There's two seperate IPNs in BTCPay Server.
 
 * Webhooks 
-* notifications
+* notifications (In BitPay terms: "Instant Payment Notifications")
 
 Where Webhooks are the GreenField Events and Notifications are Bitpay events.
 Use `Notification URL` when creating an invoice through Bitpay.
