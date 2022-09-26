@@ -173,6 +173,8 @@ To read more on this question ; [Source](https://github.com/btcpayserver/btcpays
 
 To read more on [GreenField API ](https://docs.btcpayserver.org/API/Greenfield/v1/)
 
+For guidance howto process a webhook in PHP, please check out the following [example script](https://github.com/btcpayserver/btcpayserver-greenfield-php/blob/master/examples/webhook.php).
+
 ## How can I backup my BTCPay Server?
 
 It's possible to [create backups of your BTCPay Server](https://docs.btcpayserver.org/Docker/backup-restore/) instance and it's data. Please keep in mind that the backup scripts have not been thoroughly tested for all types of BTCPay Server setups and custom deployments. Be sure to use your backup to verify it properly recreates your setup, before relying on it.
