@@ -111,8 +111,15 @@ const sidebarUserGuide = [
   {
     title: 'Plugins',
     collapsable: false,
+    initialOpenGroupIndex: -1,
     children: [
-      ['/LNbank/', 'LNbank'],
+      {
+        title: 'LNbank',
+        path: '/LNbank/',
+        children: [
+          ['/LNbank/LNDhub', 'LNDhub Compatibility']
+        ]
+      },
       ['/PodServer/', 'PodServer']
     ]
   },

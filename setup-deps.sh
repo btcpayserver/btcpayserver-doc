@@ -205,7 +205,8 @@ if [ ! -d "$D11N_DIR" ]; then
 fi
 
 cd "$D11N_DIR/BTCPayServer.Plugins.LNbank"
-cp -r README.md "$DOCS_DIR/LNbank"
+cp -r README.md docs/* "$DOCS_DIR/LNbank"
+sed -ie 's$(./docs/$(./$g' "$DOCS_DIR/LNbank/README.md"
 for file in "$DOCS_DIR"/LNbank/*.md; do
   update_external "$file" https://github.com/dennisreimann/btcpayserver "$DOCS_DIR"/LNbank/
 done
