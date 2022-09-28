@@ -158,6 +158,22 @@ Be sure to enable the webhook and hit the `Add webhook` to save it.
 
 ![Create new Webhook](../img/FAQ/btcpayWebhookFAQ2.jpg)
 
+## Webhook format is not bitpay compatible?
+
+Webhooks are not meant to be compatible with bitpay API. 
+There's two seperate IPNs (in BitPay terms: "Instant Payment Notifications") in BTCPay Server.
+
+* Webhooks 
+* notifications
+
+Where `Webhooks` are the Greenfield Events and `Notifications` are Bitpay events.
+Use `Notification URL` when creating an invoice through Bitpay.
+
+To read more on this question ; [Source](https://github.com/btcpayserver/btcpayserver/discussions/2282)
+
+To read more on [Greenfield API ](https://docs.btcpayserver.org/API/Greenfield/v1/)
+
+For guidance on how to process a `Webhook` in PHP, check out the following [example script](https://github.com/btcpayserver/btcpayserver-greenfield-php/blob/master/examples/webhook.php)
 
 ## How can I backup my BTCPay Server?
 
