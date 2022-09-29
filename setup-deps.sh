@@ -54,10 +54,6 @@ done
 # Checkout latest release tag, so that we do not publish docs for unreleased APIs yet.
 git checkout $(git tag --sort=-refname | awk 'match($0, /^v[0-9]+\./)' | head -n 1)
 
-if command -v jq >/dev/null 2>&1; then
-  jq -rs 'reduce .[] as $item ({}; . * $item)' BTCPayServer/wwwroot/swagger/v1/*.json > "$PUBLIC_DIR/API/Greenfield/v1/swagger.json"
-fi
-
 # NBXplorer
 
 echo "Setup dependency: NBXplorer"
@@ -211,8 +207,18 @@ for file in "$DOCS_DIR"/LNbank/*.md; do
   update_external "$file" https://github.com/dennisreimann/btcpayserver "$DOCS_DIR"/LNbank/
 done
 
+cp -r Resources/swagger/* "$BTCPAYSERVER_DIR/BTCPayServer/wwwroot/swagger/"
+
 cd "$D11N_DIR/BTCPayServer.Plugins.PodServer"
 cp -r README.md "$DOCS_DIR/PodServer"
 for file in "$DOCS_DIR"/PodServer/*.md; do
   update_external "$file" https://github.com/dennisreimann/btcpayserver "$DOCS_DIR"/PodServer/
 done
+
+# Swagger
+
+cd "$BTCPAYSERVER_DIR"
+
+if command -v jq >/dev/null 2>&1; then
+  jq -rs 'reduce .[] as $item ({}; . * $item)' BTCPayServer/wwwroot/swagger/v1/*.json > "$PUBLIC_DIR/API/Greenfield/v1/swagger.json"
+fi
