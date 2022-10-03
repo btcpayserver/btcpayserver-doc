@@ -12,7 +12,7 @@ This document explains how to **integrate BTCPay Server into your OpenCart store
 
 ## Requirements
 
-Please ensure that you meet the following requirements before installing this plugin.
+Please ensure that you meet the following requirements before installing this extension.
 
 - PHP version 7.4 or newer
 - The curl, gd, intl, json, and mbstring PHP extensions are available
@@ -22,29 +22,29 @@ Please ensure that you meet the following requirements before installing this pl
 - [You've a BTCPay store on the instance](./CreateStore.md)
 - [You've a wallet connected to your store](./WalletSetup.md)
 
-## 1. Install BTCPay Plugin
+## 1. Install BTCPay extension
 
-There are three ways to **download BTCPay for OpenCart plugin**:
+There are three ways to **download the BTCPay for OpenCart extension**:
 
 - Via the Admin Dashboard (recommended, see below)
 - [OpenCart Marketplace](https://www.opencart.com/index.php?route=marketplace/extension)
 - [GitHub Repository](https://github.com/btcpayserver/opencart)
 
-### 1.1 Install plugin from OpenCart Admin Dashboard
+### 1.1 Install the extension from OpenCart admin dashboard
 
-Note: work in progress, plugin undergoing review atm.
+Note: work in progress, extension undergoing review atm.
 
 
-### 1.2 Download and install plugin from Marketplace or GitHub
+### 1.2 Download and install the extension from Marketplace or GitHub
 
-1. Download the latest BTCPay plugin from [Github](https://github.com/btcpayserver/opencart/releases) or [Marketplace (WIP)](https://www.opencart.com/index.php?route=marketplace/extension/info&extension_id=XXXXXX)
+1. Download the latest BTCPay extension from [Github](https://github.com/btcpayserver/opencart/releases) or [Marketplace (WIP)](https://www.opencart.com/index.php?route=marketplace/extension/info&extension_id=XXXXXX)
 2. Menu: Extensions -> Install 
 3. Click button [Upload] and upload the downloaded `btcpay.ocmod.zip`
 4. After upload finished you should see a notice "Success: You have modified extensions!"
 
 ![BTCPay OpenCart: Extension installation upload](./img/opencart/oc3--01--upload-zip.png)
 
-### 1.3 Enable the plugin
+### 1.3 Install the extension 
 1. Menu: Extensions -> Extensions
 2. On "Choose extension type" dropdown select "Payment"
 3. On "Action" column click the green install button
@@ -57,7 +57,7 @@ Note: work in progress, plugin undergoing review atm.
 
 Please make sure to have a BTCPay Server instance setup as described in the [requirements](#requirements) above.
 
-BTCPay for OpenCart plugin is a **bridge between your BTCPay Server (payment processor) and your e-commerce store**.
+BTCPay for OpenCart extension is a **bridge between your BTCPay Server (payment processor) and your e-commerce store**.
 No matter if you're using a self-hosted or third-party solution, the connection process is identical. 
 
 ### 2.1 Configure BTCPay Server extension in OpenCart
@@ -162,7 +162,7 @@ Result:
 < Content-Length: 26
 ```
 
-If you see that line "HTTP/1.1 403 Forbidden" or "HTTP/2 403" then something is blocking data sent to your OpenCart site. You should ask your hosting provider or make sure no firewall or plugin is blocking the requests.
+If you see that line "HTTP/1.1 403 Forbidden" or "HTTP/2 403" then something is blocking data sent to your OpenCart site. You should ask your hosting provider or make sure no firewall or security extension is blocking the requests.
 
 **2.2 Check using an online service (if you do not have a command line available:**   
 
@@ -175,10 +175,10 @@ If you see that line "HTTP/1.1 403 Forbidden" or "HTTP/2 403" then something is 
 ![BTCPay OpenCart: Webhook payload URL forbidden](./img/virtuemart/btcpay-vm--19-troubleshoot-403-callback.png)
 
 
-If you see "**Status 403 (Forbidden)**" then POST requests to your site are blocked for some reason. You should ask your hosting provider or make sure no firewall or plugin is blocking the requests. If you see any other status code (200, 500, ...) a firewall problem seems to not apply, you probably need to further investigate.
+If you see "**Status 403 (Forbidden)**" then POST requests to your site are blocked for some reason. You should ask your hosting provider or make sure no firewall or security textension is blocking the requests. If you see any other status code (200, 500, ...) a firewall problem seems to not apply, you probably need to further investigate.
 
 
-## I have troubles with using the plugin or some other related questions
+## I have troubles with using the extension or some other related questions
 
 Feel free to join our support channel over at [https://chat.btcpayserver.org/](https://chat.btcpayserver.org/) or [https://t.me/btcpayserver](https://t.me/btcpayserver) if you need help or have any further questions. 
 
