@@ -27,7 +27,7 @@ Please ensure that you meet the following requirements before installing this ex
 There are three ways to **download the BTCPay for OpenCart extension**:
 
 - Via the Admin Dashboard (recommended, see below)
-- [OpenCart Marketplace](https://www.opencart.com/index.php?route=marketplace/extension)
+- [OpenCart Marketplace](https://www.opencart.com/index.php?route=marketplace/extension/info&extension_id=44269)
 - [GitHub Repository](https://github.com/btcpayserver/opencart)
 
 ### 1.1 Install the extension from OpenCart admin dashboard
@@ -37,7 +37,7 @@ Note: work in progress, extension undergoing review atm.
 
 ### 1.2 Download and install the extension from Marketplace or GitHub
 
-1. Download the latest BTCPay extension from [Github](https://github.com/btcpayserver/opencart/releases) or [Marketplace (WIP)](https://www.opencart.com/index.php?route=marketplace/extension/info&extension_id=XXXXXX)
+1. Download the latest BTCPay extension from [Github](https://github.com/btcpayserver/opencart/releases) or [Marketplace](https://www.opencart.com/index.php?route=marketplace/extension/info&extension_id=44269)
 2. Menu: Extensions -> Install 
 3. Click button [Upload] and upload the downloaded `btcpay.ocmod.zip`
 4. After upload finished you should see a notice "Success: You have modified extensions!"
