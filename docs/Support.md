@@ -32,7 +32,7 @@ Contact: support@btcpayjungle.com - @Esky33 on [Mattermost](https://chat.btcpays
 
 ### Xoxoxo
 
-> I assist Exchanges, Payment Processors and Traditional Financial Institutions implement Alternative Currency Payment Solutions, with a strong focus on the BTCPay Server Ecosystem. I also provide security and infrastructure audits and provide DevOps related services.
+> I assist Exchanges, Payment Processors and Traditional Financial Institutions implement Alternative Currency Payment Solutions, with a strong focus on the BTCPay Server Ecosystem. I provide security and infrastructure audits and specialise in DevOps related services.
 
 Contact: xoxoxo@librty.org, @xoxoxo on [Mattermost](https://chat.btcpayserver.org/), [Librty](https://librty.org), [Librty Collab](https://collab.librty.org), [Contact me](https://librty.org/contact/), follow [Librty Tools](https://librty.org/), and [Uncovr](https://uncovr.org).
 
