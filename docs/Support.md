@@ -32,9 +32,9 @@ Contact: support@btcpayjungle.com - @Esky33 on [Mattermost](https://chat.btcpays
 
 ### Xoxoxo
 
-> I help with building your payments infrastructure, modifying and adapting the payment server to reflect your brand and integrate aspects of your services directly into your server. I also help organisations add their own currencies, or implement alternative currencies. I do security and infrastructure audits and provide DevOps related services.
+> I assist Exchanges, Payment Processors and Traditional Financial Institutions implement Alternative Currency Payment Solutions, with a strong focus on the BTCPay Server Ecosystem. I provide security and infrastructure audits and specialise in DevOps related services.
 
-Contact: xoxoxo@librty.tools, @xoxoxo on [Mattermost](https://chat.btcpayserver.org/), [Librty Tools](https://librty.tools), [Librty Chat](https://chat.librty.tools), [Contact me](https://librty.tools/contact/), follow [Librty Tools](https://librty.tools/), and [Uncovr](https://uncovr.org).
+Contact: xoxoxo@librty.org, @xoxoxo on [Mattermost](https://chat.btcpayserver.org/), [Librty](https://librty.org), [Librty Collab](https://collab.librty.org), [Contact me](https://librty.org/contact/), follow [Librty Tools](https://librty.org/), and [Uncovr](https://uncovr.org).
 
 ### Hubik Tomas
 
