@@ -7,7 +7,7 @@ tags:
 ---
 # OpenCart integration
 
-This document explains how to **integrate BTCPay Server into your OpenCart store**.
+This document explains how **to integrate BTCPay Server into your OpenCart store**.
 
 
 ## Requirements
@@ -19,8 +19,8 @@ Please ensure that you meet the following requirements before installing this ex
 - A OpenCart 3 store ([Download and installation instructions](https://www.opencart.com/index.php?route=cms/download))
 - **IMPORTANT:** You have a BTCPay Server version 1.3.0 or later, either [self-hosted](/Deployment/README.md) or [hosted by a third-party](/Deployment/ThirdPartyHosting.md)
 - [You've a registered account on the instance](./RegisterAccount.md)
-- [You've a BTCPay store on the instance](./CreateStore.md)
-- [You've a wallet connected to your store](./WalletSetup.md)
+- [You've got a BTCPay store on the instance](./CreateStore.md)
+- [You've got a wallet connected to your store](./WalletSetup.md)
 
 ## 1. Install BTCPay extension
 
@@ -39,15 +39,15 @@ Note: work in progress, extension undergoing review atm.
 
 1. Download the latest BTCPay extension from [Github](https://github.com/btcpayserver/opencart/releases) or [Marketplace](https://www.opencart.com/index.php?route=marketplace/extension/info&extension_id=44269)
 2. Menu: Extensions -> Install 
-3. Click button [Upload] and upload the downloaded `btcpay.ocmod.zip`
-4. After upload finished you should see a notice "Success: You have modified extensions!"
+3. Click the button [Upload] and upload the downloaded `btcpay.ocmod.zip`
+After uploading, you should see a notice "Success: You have modified extensions!	"
 
 ![BTCPay OpenCart: Extension installation upload](./img/opencart/oc3--01--upload-zip.png)
 
 ### 1.3 Install the extension 
 1. Menu: Extensions -> Extensions
-2. On "Choose extension type" dropdown select "Payment"
-3. On "Action" column click the green install button
+2. On the "Choose extension type" dropdown, select "Payment".
+3. On the "Action" column, click the green install button.
 4. You will see a notification " Success: You have modified payments!"
 
 ![BTCPay OpenCart: Install extension](./img/opencart/oc3--02--install-btcpay.png)
@@ -66,10 +66,10 @@ No matter if you're using a self-hosted or third-party solution, the connection 
 2. Click the blue edit button
 ![BTCPay OpenCart: Add new payment method](./img/opencart/oc3--03--configure-btcpay.png)
 3. Configure BTCPay extension. ![BTCPay OpenCart: Payment method details](./img/opencart/oc3--04--configure-btcpay-page.png)
-4. On field "Payment Method Enabled" set it to `Enabled`
-5. On field "BTCPay Server URL" set it to the URL where your BTCPay Server instance is reachable on the internet e.g. `https://mainnet.demo.btcpayserver.org/`. You can find information on how to deploy your own BTCPay Server instance in the [requirements section above](#requirements)
+4. On the field "Payment Method Enabled" set it to `Enabled`
+5. On field "BTCPay Server URL" set it to the URL where your BTCPay Server instance is reachable on the internet e.g. `https://mainnet.demo.btcpayserver.org/`. You can find information on how to deploy your BTCPay Server instance in the [requirements section above](#requirements)
 
-Before you can continue you need to create the API key for your user and store as described in the next section. Keep this browser tab open as we will come back shortly.
+Before you can continue, you need to create the API key for your user and store, as described in the next section. Keep this browser tab open, as we will come back shortly.
 
 ### 2.2 Create an API key and configure permissions
 
@@ -89,32 +89,32 @@ It should look like this:
 7. Click on *[Generate API Key]* at the bottom
 8. Copy the generated API Key to your *OpenCart BTCPay settings* form field "BTCPay API Key"
 ![BTCPay OpenCart: Copy API Key](./img/opencart/oc3--08--btcps-generate-api-key-result.png) 
-8. Back on BTCPay Server instance go to your store settings and copy the store ID to your *OpenCart BTCPay Settings* form   
+8. Back on BTCPay Server instance, go to your store settings and copy the store ID to your *OpenCart BTCPay Settings* form   
 ![BTCPay OpenCart: Copy Store ID](./img/opencart/oc3--09--btcps-store-id.png) 
 9. Back on *OpenCart BTCPay settings* form make sure **BTPCay Server URL**, **API Key** and **Store ID** are set and click **[Save]** button (on the top right)    
 ![BTCPay OpenCart: Save OpenCart Settings form](./img/opencart/oc3--10--save-settings.png) 
 
-You should get back to the Extensions overview page and see the notification "BTCPay Server Payment details have been successfully updated.". If not make sure your URL, API Key and Store ID are correct.
+You should get back to the Extensions overview page and see the notification "BTCPay Server Payment details have been successfully updated.". If not, ensure your URL, API Key and Store ID are correct.
 ![BTCPay OpenCart: Save OpenCart Settings form](./img/opencart/oc3--11--save-settings-success.png) 
 
-On successfully saving the BTCPay extension automatically created a webhook so that OpenCart can get notified when payments settle of fail. To double check it was successful. You can do that by editing the BTCPay extension settings again, if you see the "Webhook Data" field filled out like this:
+On successfully saving, the BTCPay extension automatically creates a webhook so OpenCart can get notified when payments settle or fail. To double check it was successful. You can do that by editing the BTCPay extension settings again if you see the "Webhook Data" field filled out like this:
 ![BTCPay OpenCart: Save OpenCart Settings form](./img/opencart/oc3--12--webhook-success.png) 
 
-As you can see on the BTCPay extension settings you can further customize the order statuses depending on the [invoice statuses](https://docs.btcpayserver.org/Invoices/#invoice-statuses) and other common settings. The defaults should be a good starting point but feel free to adjust to your use case. 
+As you can see on the BTCPay extension settings, you can customize the order statuses depending on the [invoice statuses](https://docs.btcpayserver.org/Invoices/#invoice-statuses) and other common settings. The defaults should be a good starting point but feel free to adjust them to your use case. 
 
 ## 3. Test the checkout
 
-Everything is ready to go now. Do a small test purchase and make sure the order status gets updated according to the BTCPay invoice status. On BTCPay Server invoice details you can see if the webhook events were fired successfully.
+Everything is ready to go now. Make a small test purchase and make sure the order status gets updated according to the BTCPay invoice status. On the BTCPay Server invoice details, you can see if the webhook events were successful.
 
 ## Troubleshooting
 
 ### Enable debug mode
 
-If you have an error during checkout you can enable the debugging mode on the BTCPay extension settings. Menu: Go to "Extensions -> extensions" select "Payments" on the "Choose Extension Type" dropdown and edit BTCPay Server extension.
+If you have an error during checkout, you can enable the debugging mode on the BTCPay extension settings. Menu: Go to "Extensions -> extensions" select "Payments" on the "Choose Extension Type" dropdown and edit BTCPay Server extension.
 
 ![BTCPay OpenCart: Enable debug mode](./img/opencart/oc3--20--debug-mode-enable.png) 
 
-You can now find the debug output in the error log in menu "System -> Maintenence -> Error Logs".
+You can now find the debug output in the `error log` in the menu "System -> Maintenence -> Error Logs".
 
 ![BTCPay OpenCart: Enable debug mode](./img/opencart/oc3--21--error-logs.png) 
 
@@ -125,18 +125,18 @@ You can now find the debug output in the error log in menu "System -> Maintenenc
 **Example Error**:   
 > 2022-05-24 21:10:50 ERROR Error during POST to https://btcpay.example.com/api/v1/stores/4kD5bvAF5j8DokHqAzxb6MFDV4ikabcdefghijklm/invoices. Got response (401): {&quot;code&quot;:&quot;unauthenticated&quot;,&quot;message&quot;:&quot;Authentication is required for accessing this endpoint&quot;}
 
-- This means there is some authentication error. Likely your api key does not have permission create invoices for that store. Make sure you gave the api key the right permissions and you give it to the right store and also entered that in OpenCart payment configuration form.
+- This means there is some authentication error. Likely your API key does not have permission to create invoices for that store. Make sure you give the API key the correct permissions, give it to the right store, and enter that in the OpenCart payment configuration form.
 
-- Another reason could be that you use a legacy api key. The legacy api keys are located in store settings -> Access Tokens. But you need to create an account api key which is located in Account -> Manage Account -> tab "API Keys". See section [2.2 Create an API key and configure permissions](#22-create-an-api-key-and-configure-permissions).
+- Another reason could be that you use a legacy API key. The legacy API keys are located in store settings -> Access Tokens. But you need to create an account API key located in Account -> Manage Account -> tab "API Keys". See section [2.2 Create an API key and configure permissions](#22-create-an-api-key-and-configure-permissions).
 
 
-## The order states do not update although the invoice has been paid
+## The order states do not update, although the invoice has been paid.
 Please check the details of your invoice if there were any errors on sending the webhook request. Some hosting providers, firewall setups or security extensions may block POST requests to your site which lead to a http status of "403 forbidden". 
 
 You can check and verify yourself if there is something blocking requests to your site in one of these two ways:
 
 **1. Copy webhook callback URL**   
-go to your *OpenCart BTCPay extension settings* and copy the "URL" of the "Webhook Data" field. e.g. `https://YOURSTOREDOMAIN.TLD/index.php?route=extension/payment/btcpay/callback`
+Go to your *OpenCart BTCPay extension settings* and copy the "URL" of the "Webhook Data" field. e.g., `https://YOURSTOREDOMAIN.TLD/index.php?route=extension/payment/btcpay/callback`
 
 ![BTCPay OpenCart: Save OpenCart Settings form](./img/opencart/oc3--12--webhook-success.png) 
 
@@ -162,7 +162,7 @@ Result:
 < Content-Length: 26
 ```
 
-If you see that line "HTTP/1.1 403 Forbidden" or "HTTP/2 403" then something is blocking data sent to your OpenCart site. You should ask your hosting provider or make sure no firewall or security extension is blocking the requests.
+If you see that line "HTTP/1.1 403 Forbidden" or "HTTP/2 403" something is blocking data sent to your OpenCart site. It would be best to ask your hosting provider or make sure no firewall or security extension is blocking the requests.
 
 **2.2 Check using an online service (if you do not have a command line available:**   
 
@@ -175,10 +175,10 @@ If you see that line "HTTP/1.1 403 Forbidden" or "HTTP/2 403" then something is 
 ![BTCPay OpenCart: Webhook payload URL forbidden](./img/virtuemart/btcpay-vm--19-troubleshoot-403-callback.png)
 
 
-If you see "**Status 403 (Forbidden)**" then POST requests to your site are blocked for some reason. You should ask your hosting provider or make sure no firewall or security textension is blocking the requests. If you see any other status code (200, 500, ...) a firewall problem seems to not apply, you probably need to further investigate.
+If you see "**Status 403 (Forbidden)**" then POST requests to your site are blocked for some reason. You should ask your hosting provider or ensure no firewall or security extension is blocking the requests. If you see any other status code (200, 500, ...) a firewall problem seems not to apply. You probably need to investigate further.
 
 
-## I have troubles with using the extension or some other related questions
+## I have trouble with using the extension or some other related questions.
 
 Feel free to join our support channel over at [https://chat.btcpayserver.org/](https://chat.btcpayserver.org/) or [https://t.me/btcpayserver](https://t.me/btcpayserver) if you need help or have any further questions. 
 
