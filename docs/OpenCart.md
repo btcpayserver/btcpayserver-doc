@@ -118,7 +118,7 @@ You can now find the debug output in the `error log` in the menu "System -> Main
 
 ![BTCPay OpenCart: Enable debug mode](./img/opencart/oc3--21--error-logs.png) 
 
-*Please make sure to disable it after debugging finished or otherwise it will fill up your error logs.*
+*Please make sure to disable it after debugging is finished; otherwise, it will fill up your error logs.**
 
 
 
@@ -131,7 +131,7 @@ You can now find the debug output in the `error log` in the menu "System -> Main
 
 
 ## The order states do not update, although the invoice has been paid.
-Please check the details of your invoice if there were any errors on sending the webhook request. Some hosting providers, firewall setups or security extensions may block POST requests to your site which lead to a http status of "403 forbidden". 
+Please check your invoice details to see if there were any errors on sending the webhook request. Some hosting providers, firewall setups, or security extensions may block POST requests to your site, which leads to an HTTP status of "403 forbidden". 
 
 You can check and verify yourself if there is something blocking requests to your site in one of these two ways:
 
