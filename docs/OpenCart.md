@@ -7,20 +7,24 @@ tags:
 ---
 # OpenCart integration
 
-This document explains how **to integrate BTCPay Server into your OpenCart store**.
+This document explains how **to integrate BTCPay Server into your OpenCart store**. Supported are OpenCart 3 and 4.
 
 
 ## Requirements
 
 Please ensure that you meet the following requirements before installing this extension.
 
-- PHP version 7.4 or newer
+- PHP version >= 7.4 for OpenCart 3; PHP >= 8.1 for OpenCart 4
 - The curl, gd, intl, json, and mbstring PHP extensions are available
-- A OpenCart 3 store ([Download and installation instructions](https://www.opencart.com/index.php?route=cms/download))
+- A OpenCart 3/4 store ([Download and installation instructions](https://www.opencart.com/index.php?route=cms/download))
 - **IMPORTANT:** You have a BTCPay Server version 1.3.0 or later, either [self-hosted](/Deployment/README.md) or [hosted by a third-party](/Deployment/ThirdPartyHosting.md)
 - [You've a registered account on the instance](./RegisterAccount.md)
 - [You've got a BTCPay store on the instance](./CreateStore.md)
 - [You've got a wallet connected to your store](./WalletSetup.md)
+
+:::tip
+The instructions are based on OpenCart 3, but the UI and steps are almost identical to OpenCart 4. Therefore we have no separate instructions.
+:::
 
 ## 1. Install BTCPay extension
 
