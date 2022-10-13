@@ -113,6 +113,7 @@ module.exports = [
   { path: "/integrations/magento", redirect: "/Magento/" },
   { path: "/integrations/prestashop", redirect: "/PrestaShop/" },
   { path: "/integrations/virtuemart", redirect: "/VirtueMart/" },
+  { path: "/integrations/opencart", redirect: "/OpenCart/" },
   { path: "/integrations/customintegration", redirect: "/CustomIntegration/" },
   // Development
   { path: "/development", redirect: "/Development/Architecture/" },

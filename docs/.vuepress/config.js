@@ -101,6 +101,7 @@ const sidebarUserGuide = [
       ['/Shopify', 'Shopify'],
       ['/Magento', 'Magento'],
       ['/PrestaShop', 'PrestaShop'],
+      ['/OpenCart', 'OpenCart'],
       ['/Drupal', 'Drupal'],
       ['/Zapier/', 'Zapier'],
       ['https://github.com/lampsolutions/LampSBtcPayShopware', 'Shopware', { type: 'external' }],
