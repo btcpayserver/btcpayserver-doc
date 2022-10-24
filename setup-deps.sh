@@ -52,7 +52,7 @@ for file in "$DOCS_DIR"/BTCPayServer/*.md; do
 done
 
 # Checkout latest release tag, so that we do not publish docs for unreleased APIs yet.
-git checkout $(git tag --sort=-refname | awk 'match($0, /^v[0-9]+\./)' | head -n 1)
+git checkout $(git tag --sort -version:refname | awk 'match($0, /^v[0-9]+\./)' | head -n 1)
 
 # NBXplorer
 
