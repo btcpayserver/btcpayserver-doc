@@ -220,5 +220,23 @@ done
 cd "$BTCPAYSERVER_DIR"
 
 if command -v jq >/dev/null 2>&1; then
-  jq -rs 'reduce .[] as $item ({}; . * $item)' BTCPayServer/wwwroot/swagger/v1/*.json > "$PUBLIC_DIR/API/Greenfield/v1/swagger.json"
+  swagger_file="$PUBLIC_DIR/API/Greenfield/v1/swagger.json"
+  jq -rs 'def deepmerge(a;b):
+  reduce b[] as $item (a;
+    reduce ($item | keys_unsorted[]) as $key (.;
+      $item[$key] as $val | ($val | type) as $type | .[$key] = if ($type == "object") then
+        deepmerge({}; [if .[$key] == null then {} else .[$key] end, $val])
+      elif ($type == "array") then
+        (.[$key] + $val | unique)
+      else
+        $val
+      end)
+    );
+  deepmerge({}; .)' BTCPayServer/wwwroot/swagger/v1/*.json > $swagger_file
+
+  # report but don't stop on error
+  set +e
+  npx swagger-cli validate $swagger_file
+  npx @redocly/cli lint $swagger_file
+  set -e
 fi
