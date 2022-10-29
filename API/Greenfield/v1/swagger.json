@@ -375,16 +375,6 @@
             "x-position": 1
           },
           {
-            "name": "applicationName",
-            "description": "The name of your application",
-            "in": "query",
-            "schema": {
-              "type": "string",
-              "nullable": true
-            },
-            "x-position": 2
-          },
-          {
             "name": "strict",
             "description": "If permissions are specified, and strict is set to false, it will allow the user to reject some of permissions the application is requesting.",
             "in": "query",
@@ -394,6 +384,16 @@
               "nullable": true
             },
             "x-position": 3
+          },
+          {
+            "name": "applicationIdentifier",
+            "description": "If specified, BTCPay Server will check if there is an existing API key associated with the user that also has this application identifier, redirect host AND the permissions required match(takes selectiveStores and strict into account). `applicationIdentifier` is ignored if redirect is not specified.",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "nullable": true
+            },
+            "x-position": 6
           },
           {
             "name": "selectiveStores",
@@ -407,6 +407,16 @@
             "x-position": 4
           },
           {
+            "name": "applicationName",
+            "description": "The name of your application",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "nullable": true
+            },
+            "x-position": 2
+          },
+          {
             "name": "redirect",
             "description": "The url to redirect to after the user consents, with the query parameters appended to it: permissions, user-id, api-key. If not specified, user is redirected to their API Key list.",
             "in": "query",
@@ -416,16 +426,6 @@
               "nullable": true
             },
             "x-position": 5
-          },
-          {
-            "name": "applicationIdentifier",
-            "description": "If specified, BTCPay Server will check if there is an existing API key associated with the user that also has this application identifier, redirect host AND the permissions required match(takes selectiveStores and strict into account). `applicationIdentifier` is ignored if redirect is not specified.",
-            "in": "query",
-            "schema": {
-              "type": "string",
-              "nullable": true
-            },
-            "x-position": 6
           }
         ],
         "responses": {
@@ -482,15 +482,6 @@
         "summary": "List store custodian accounts",
         "parameters": [
           {
-            "name": "storeId",
-            "in": "path",
-            "required": true,
-            "description": "The Store ID",
-            "schema": {
-              "type": "string"
-            }
-          },
-          {
             "name": "assetBalances",
             "in": "query",
             "required": false,
@@ -498,6 +489,15 @@
             "schema": {
               "type": "boolean",
               "default": false
+            }
+          },
+          {
+            "name": "storeId",
+            "in": "path",
+            "required": true,
+            "description": "The Store ID",
+            "schema": {
+              "type": "string"
             }
           }
         ],
@@ -584,12 +584,13 @@
         "summary": "Get store custodian account",
         "parameters": [
           {
-            "name": "storeId",
-            "in": "path",
-            "required": true,
-            "description": "The Store ID",
+            "name": "assetBalances",
+            "in": "query",
+            "required": false,
+            "description": "Enable if you want the result to include the 'assetBalances' field. This will make the call slower or could cause the call to fail if the asset balances cannot be loaded (i.e. due to a bad API key).",
             "schema": {
-              "type": "string"
+              "type": "boolean",
+              "default": false
             }
           },
           {
@@ -602,13 +603,12 @@
             }
           },
           {
-            "name": "assetBalances",
-            "in": "query",
-            "required": false,
-            "description": "Enable if you want the result to include the 'assetBalances' field. This will make the call slower or could cause the call to fail if the asset balances cannot be loaded (i.e. due to a bad API key).",
+            "name": "storeId",
+            "in": "path",
+            "required": true,
+            "description": "The Store ID",
             "schema": {
-              "type": "boolean",
-              "default": false
+              "type": "string"
             }
           }
         ],
@@ -637,19 +637,19 @@
         "description": "Update custodial account",
         "parameters": [
           {
-            "name": "storeId",
+            "name": "accountId",
             "in": "path",
             "required": true,
-            "description": "The Store ID",
+            "description": "The Custodian Account ID",
             "schema": {
               "type": "string"
             }
           },
           {
-            "name": "accountId",
+            "name": "storeId",
             "in": "path",
             "required": true,
-            "description": "The Custodian Account ID",
+            "description": "The Store ID",
             "schema": {
               "type": "string"
             }
@@ -700,19 +700,19 @@
         "description": "Deletes a custodial account",
         "parameters": [
           {
-            "name": "storeId",
+            "name": "accountId",
             "in": "path",
             "required": true,
-            "description": "The Store ID",
+            "description": "The Custodian Account ID",
             "schema": {
               "type": "string"
             }
           },
           {
-            "name": "accountId",
+            "name": "storeId",
             "in": "path",
             "required": true,
-            "description": "The Custodian Account ID",
+            "description": "The Store ID",
             "schema": {
               "type": "string"
             }
@@ -738,19 +738,19 @@
         "description": "Get the current bid and ask price for converting one asset into another.",
         "parameters": [
           {
-            "name": "storeId",
+            "name": "accountId",
             "in": "path",
             "required": true,
-            "description": "The Store ID",
+            "description": "The Custodian Account ID.",
             "schema": {
               "type": "string"
             }
           },
           {
-            "name": "accountId",
+            "name": "storeId",
             "in": "path",
             "required": true,
-            "description": "The Custodian Account ID.",
+            "description": "The Store ID",
             "schema": {
               "type": "string"
             }
@@ -812,19 +812,19 @@
         "description": "Trade one asset for another using a market order (=instant purchase with instant result or failure). A suitable asset pair will automatically be selected. If no asset pair is available, the call will fail.",
         "parameters": [
           {
-            "name": "storeId",
+            "name": "accountId",
             "in": "path",
             "required": true,
-            "description": "The Store ID",
+            "description": "The Custodian Account ID.",
             "schema": {
               "type": "string"
             }
           },
           {
-            "name": "accountId",
+            "name": "storeId",
             "in": "path",
             "required": true,
-            "description": "The Custodian Account ID.",
+            "description": "The Store ID",
             "schema": {
               "type": "string"
             }
@@ -878,19 +878,19 @@
         "description": "Get a new deposit address for the custodian using the specified payment method (network + crypto code).",
         "parameters": [
           {
-            "name": "storeId",
+            "name": "accountId",
             "in": "path",
             "required": true,
-            "description": "The Store ID",
+            "description": "The Custodian Account ID.",
             "schema": {
               "type": "string"
             }
           },
           {
-            "name": "accountId",
+            "name": "storeId",
             "in": "path",
             "required": true,
-            "description": "The Custodian Account ID.",
+            "description": "The Store ID",
             "schema": {
               "type": "string"
             }
@@ -953,19 +953,19 @@
         "description": "Withdraw an asset to your store wallet.",
         "parameters": [
           {
-            "name": "storeId",
+            "name": "accountId",
             "in": "path",
             "required": true,
-            "description": "The Store ID",
+            "description": "The Custodian Account ID.",
             "schema": {
               "type": "string"
             }
           },
           {
-            "name": "accountId",
+            "name": "storeId",
             "in": "path",
             "required": true,
-            "description": "The Custodian Account ID.",
+            "description": "The Store ID",
             "schema": {
               "type": "string"
             }
@@ -1040,19 +1040,19 @@
         "description": "Get the details about a past withdrawal.",
         "parameters": [
           {
-            "name": "storeId",
+            "name": "accountId",
             "in": "path",
             "required": true,
-            "description": "The Store ID",
+            "description": "The Custodian Account ID.",
             "schema": {
               "type": "string"
             }
           },
           {
-            "name": "accountId",
+            "name": "storeId",
             "in": "path",
             "required": true,
-            "description": "The Custodian Account ID.",
+            "description": "The Store ID",
             "schema": {
               "type": "string"
             }
@@ -1142,15 +1142,6 @@
         "summary": "Get invoices",
         "parameters": [
           {
-            "name": "storeId",
-            "in": "path",
-            "required": true,
-            "description": "The store to query",
-            "schema": {
-              "type": "string"
-            }
-          },
-          {
             "name": "orderId",
             "in": "query",
             "required": false,
@@ -1164,15 +1155,6 @@
             "example": "1000&orderId=1001&orderId=1002"
           },
           {
-            "name": "status",
-            "in": "query",
-            "required": false,
-            "description": "Array of statuses of invoices to be fetched",
-            "schema": {
-              "$ref": "#/components/schemas/InvoiceStatus"
-            }
-          },
-          {
             "name": "textSearch",
             "in": "query",
             "required": false,
@@ -1182,12 +1164,12 @@
             }
           },
           {
-            "name": "startDate",
+            "name": "status",
             "in": "query",
             "required": false,
-            "description": "Start date of the period to retrieve invoices",
+            "description": "Array of statuses of invoices to be fetched",
             "schema": {
-              "$ref": "#/components/schemas/UnixTimestamp"
+              "$ref": "#/components/schemas/InvoiceStatus"
             }
           },
           {
@@ -1197,6 +1179,16 @@
             "description": "End date of the period to retrieve invoices",
             "schema": {
               "$ref": "#/components/schemas/UnixTimestamp"
+            }
+          },
+          {
+            "name": "take",
+            "in": "query",
+            "required": false,
+            "description": "Number of records returned in response",
+            "schema": {
+              "nullable": true,
+              "type": "number"
             }
           },
           {
@@ -1210,13 +1202,21 @@
             }
           },
           {
-            "name": "take",
+            "name": "startDate",
             "in": "query",
             "required": false,
-            "description": "Number of records returned in response",
+            "description": "Start date of the period to retrieve invoices",
             "schema": {
-              "nullable": true,
-              "type": "number"
+              "$ref": "#/components/schemas/UnixTimestamp"
+            }
+          },
+          {
+            "name": "storeId",
+            "in": "path",
+            "required": true,
+            "description": "The store to query",
+            "schema": {
+              "type": "string"
             }
           }
         ],
@@ -1314,19 +1314,19 @@
         "summary": "Get invoice",
         "parameters": [
           {
-            "name": "storeId",
+            "name": "invoiceId",
             "in": "path",
             "required": true,
-            "description": "The store to fetch",
+            "description": "The invoice to fetch",
             "schema": {
               "type": "string"
             }
           },
           {
-            "name": "invoiceId",
+            "name": "storeId",
             "in": "path",
             "required": true,
-            "description": "The invoice to fetch",
+            "description": "The store to fetch",
             "schema": {
               "type": "string"
             }
@@ -1370,19 +1370,19 @@
         "operationId": "Invoices_ArchiveInvoice",
         "parameters": [
           {
-            "name": "storeId",
+            "name": "invoiceId",
             "in": "path",
             "required": true,
-            "description": "The store the invoice belongs to",
+            "description": "The invoice to remove",
             "schema": {
               "type": "string"
             }
           },
           {
-            "name": "invoiceId",
+            "name": "storeId",
             "in": "path",
             "required": true,
-            "description": "The invoice to remove",
+            "description": "The store the invoice belongs to",
             "schema": {
               "type": "string"
             }
@@ -1427,19 +1427,19 @@
         "operationId": "Invoices_UpdateInvoice",
         "parameters": [
           {
-            "name": "storeId",
+            "name": "invoiceId",
             "in": "path",
             "required": true,
-            "description": "The store the invoice belongs to",
+            "description": "The invoice to update",
             "schema": {
               "type": "string"
             }
           },
           {
-            "name": "invoiceId",
+            "name": "storeId",
             "in": "path",
             "required": true,
-            "description": "The invoice to update",
+            "description": "The store the invoice belongs to",
             "schema": {
               "type": "string"
             }
@@ -1501,12 +1501,13 @@
         "summary": "Get invoice payment methods",
         "parameters": [
           {
-            "name": "storeId",
-            "in": "path",
-            "required": true,
-            "description": "The store to fetch",
+            "name": "onlyAccountedPayments",
+            "in": "query",
+            "required": false,
+            "description": "If default or true, only returns payments which are accounted (in Bitcoin, this mean not returning RBF'd or double spent payments)",
             "schema": {
-              "type": "string"
+              "type": "boolean",
+              "default": true
             }
           },
           {
@@ -1519,13 +1520,12 @@
             }
           },
           {
-            "name": "onlyAccountedPayments",
-            "in": "query",
-            "required": false,
-            "description": "If default or true, only returns payments which are accounted (in Bitcoin, this mean not returning RBF'd or double spent payments)",
+            "name": "storeId",
+            "in": "path",
+            "required": true,
+            "description": "The store to fetch",
             "schema": {
-              "type": "boolean",
-              "default": true
+              "type": "string"
             }
           }
         ],
@@ -1571,19 +1571,19 @@
         "summary": "Mark invoice status",
         "parameters": [
           {
-            "name": "storeId",
+            "name": "invoiceId",
             "in": "path",
             "required": true,
-            "description": "The store to query",
+            "description": "The invoice to update",
             "schema": {
               "type": "string"
             }
           },
           {
-            "name": "invoiceId",
+            "name": "storeId",
             "in": "path",
             "required": true,
-            "description": "The invoice to update",
+            "description": "The store to query",
             "schema": {
               "type": "string"
             }
@@ -1644,19 +1644,19 @@
         "summary": "Unarchive invoice",
         "parameters": [
           {
-            "name": "storeId",
+            "name": "invoiceId",
             "in": "path",
             "required": true,
-            "description": "The store to query",
+            "description": "The invoice to update",
             "schema": {
               "type": "string"
             }
           },
           {
-            "name": "invoiceId",
+            "name": "storeId",
             "in": "path",
             "required": true,
-            "description": "The invoice to update",
+            "description": "The store to query",
             "schema": {
               "type": "string"
             }
@@ -1707,15 +1707,6 @@
         "summary": "Activate Payment Method",
         "parameters": [
           {
-            "name": "storeId",
-            "in": "path",
-            "required": true,
-            "description": "The store to query",
-            "schema": {
-              "type": "string"
-            }
-          },
-          {
             "name": "invoiceId",
             "in": "path",
             "required": true,
@@ -1729,6 +1720,15 @@
             "in": "path",
             "required": true,
             "description": "The payment method to activate",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "storeId",
+            "in": "path",
+            "required": true,
+            "description": "The store to query",
             "schema": {
               "type": "string"
             }
@@ -2759,19 +2759,19 @@
             "example": "BTC"
           },
           {
-            "name": "storeId",
+            "name": "paymentHash",
             "in": "path",
             "required": true,
-            "description": "The store id with the lightning-node configuration to query",
+            "description": "The payment hash of the lightning payment.",
             "schema": {
               "type": "string"
             }
           },
           {
-            "name": "paymentHash",
+            "name": "storeId",
             "in": "path",
             "required": true,
-            "description": "The payment hash of the lightning payment.",
+            "description": "The store id with the lightning-node configuration to query",
             "schema": {
               "type": "string"
             }
@@ -2825,19 +2825,19 @@
             "example": "BTC"
           },
           {
-            "name": "storeId",
+            "name": "id",
             "in": "path",
             "required": true,
-            "description": "The store id with the lightning-node configuration to query",
+            "description": "The id of the lightning invoice.",
             "schema": {
               "type": "string"
             }
           },
           {
-            "name": "id",
+            "name": "storeId",
             "in": "path",
             "required": true,
-            "description": "The id of the lightning invoice.",
+            "description": "The store id with the lightning-node configuration to query",
             "schema": {
               "type": "string"
             }
@@ -3404,13 +3404,13 @@
         "summary": "Get notifications",
         "parameters": [
           {
-            "name": "seen",
+            "name": "take",
             "in": "query",
             "required": false,
-            "description": "filter by seen notifications",
+            "description": "Number of records returned in response",
             "schema": {
-              "type": "string",
-              "nullable": true
+              "nullable": true,
+              "type": "number"
             }
           },
           {
@@ -3424,13 +3424,13 @@
             }
           },
           {
-            "name": "take",
+            "name": "seen",
             "in": "query",
             "required": false,
-            "description": "Number of records returned in response",
+            "description": "filter by seen notifications",
             "schema": {
-              "nullable": true,
-              "type": "number"
+              "type": "string",
+              "nullable": true
             }
           }
         ],
@@ -3711,19 +3711,19 @@
         "summary": "Get payment request",
         "parameters": [
           {
-            "name": "storeId",
+            "name": "paymentRequestId",
             "in": "path",
             "required": true,
-            "description": "The store to fetch",
+            "description": "The payment request to fetch",
             "schema": {
               "type": "string"
             }
           },
           {
-            "name": "paymentRequestId",
+            "name": "storeId",
             "in": "path",
             "required": true,
-            "description": "The payment request to fetch",
+            "description": "The store to fetch",
             "schema": {
               "type": "string"
             }
@@ -3767,19 +3767,19 @@
         "operationId": "PaymentRequests_ArchivePaymentRequest",
         "parameters": [
           {
-            "name": "storeId",
+            "name": "paymentRequestId",
             "in": "path",
             "required": true,
-            "description": "The store the payment request belongs to",
+            "description": "The payment request to remove",
             "schema": {
               "type": "string"
             }
           },
           {
-            "name": "paymentRequestId",
+            "name": "storeId",
             "in": "path",
             "required": true,
-            "description": "The payment request to remove",
+            "description": "The store the payment request belongs to",
             "schema": {
               "type": "string"
             }
@@ -3822,19 +3822,19 @@
         "summary": "Update payment request",
         "parameters": [
           {
-            "name": "storeId",
+            "name": "paymentRequestId",
             "in": "path",
             "required": true,
-            "description": "The store to query",
+            "description": "The payment request to update",
             "schema": {
               "type": "string"
             }
           },
           {
-            "name": "paymentRequestId",
+            "name": "storeId",
             "in": "path",
             "required": true,
-            "description": "The payment request to update",
+            "description": "The store to query",
             "schema": {
               "type": "string"
             }
@@ -3945,10 +3945,10 @@
         "summary": "Remove store configured payout processor",
         "parameters": [
           {
-            "name": "storeId",
+            "name": "paymentMethod",
             "in": "path",
             "required": true,
-            "description": "The store",
+            "description": "The payment method",
             "schema": {
               "type": "string"
             }
@@ -3963,10 +3963,10 @@
             }
           },
           {
-            "name": "paymentMethod",
+            "name": "storeId",
             "in": "path",
             "required": true,
-            "description": "The payment method",
+            "description": "The store",
             "schema": {
               "type": "string"
             }
@@ -4034,19 +4034,19 @@
         "summary": "Get configured store onchain automated payout processors",
         "parameters": [
           {
-            "name": "storeId",
+            "name": "paymentMethod",
             "in": "path",
             "required": true,
-            "description": "The store to fetch",
+            "description": "A specific payment method to fetch",
             "schema": {
               "type": "string"
             }
           },
           {
-            "name": "paymentMethod",
+            "name": "storeId",
             "in": "path",
             "required": true,
-            "description": "A specific payment method to fetch",
+            "description": "The store to fetch",
             "schema": {
               "type": "string"
             }
@@ -4091,19 +4091,19 @@
         "summary": "Update configured store onchain automated payout processors",
         "parameters": [
           {
-            "name": "storeId",
+            "name": "paymentMethod",
             "in": "path",
             "required": true,
-            "description": "The store to fetch",
+            "description": "A specific payment method to fetch",
             "schema": {
               "type": "string"
             }
           },
           {
-            "name": "paymentMethod",
+            "name": "storeId",
             "in": "path",
             "required": true,
-            "description": "A specific payment method to fetch",
+            "description": "The store to fetch",
             "schema": {
               "type": "string"
             }
@@ -4159,19 +4159,19 @@
         "summary": "Get configured store Lightning automated payout processors",
         "parameters": [
           {
-            "name": "storeId",
+            "name": "paymentMethod",
             "in": "path",
             "required": true,
-            "description": "The store to fetch",
+            "description": "A specific payment method to fetch",
             "schema": {
               "type": "string"
             }
           },
           {
-            "name": "paymentMethod",
+            "name": "storeId",
             "in": "path",
             "required": true,
-            "description": "A specific payment method to fetch",
+            "description": "The store to fetch",
             "schema": {
               "type": "string"
             }
@@ -4216,19 +4216,19 @@
         "summary": "Update configured store Lightning automated payout processors",
         "parameters": [
           {
-            "name": "storeId",
+            "name": "paymentMethod",
             "in": "path",
             "required": true,
-            "description": "The store to fetch",
+            "description": "A specific payment method to fetch",
             "schema": {
               "type": "string"
             }
           },
           {
-            "name": "paymentMethod",
+            "name": "storeId",
             "in": "path",
             "required": true,
-            "description": "A specific payment method to fetch",
+            "description": "The store to fetch",
             "schema": {
               "type": "string"
             }
@@ -4639,19 +4639,19 @@
     "/api/v1/stores/{storeId}/pull-payments/{pullPaymentId}": {
       "parameters": [
         {
-          "name": "storeId",
+          "name": "pullPaymentId",
           "in": "path",
           "required": true,
-          "description": "The ID of the store",
+          "description": "The ID of the pull payment",
           "schema": {
             "type": "string"
           }
         },
         {
-          "name": "pullPaymentId",
+          "name": "storeId",
           "in": "path",
           "required": true,
-          "description": "The ID of the pull payment",
+          "description": "The ID of the store",
           "schema": {
             "type": "string"
           }
@@ -4949,19 +4949,19 @@
     "/api/v1/stores/{storeId}/payouts/{payoutId}": {
       "parameters": [
         {
-          "name": "storeId",
+          "name": "payoutId",
           "in": "path",
           "required": true,
-          "description": "The ID of the store",
+          "description": "The ID of the payout",
           "schema": {
             "type": "string"
           }
         },
         {
-          "name": "payoutId",
+          "name": "storeId",
           "in": "path",
           "required": true,
-          "description": "The ID of the payout",
+          "description": "The ID of the store",
           "schema": {
             "type": "string"
           }
@@ -5067,19 +5067,19 @@
     "/api/v1/stores/{storeId}/payouts/{payoutId}/mark-paid": {
       "parameters": [
         {
-          "name": "storeId",
+          "name": "payoutId",
           "in": "path",
           "required": true,
-          "description": "The ID of the store",
+          "description": "The ID of the payout",
           "schema": {
             "type": "string"
           }
         },
         {
-          "name": "payoutId",
+          "name": "storeId",
           "in": "path",
           "required": true,
-          "description": "The ID of the payout",
+          "description": "The ID of the store",
           "schema": {
             "type": "string"
           }
@@ -5334,21 +5334,21 @@
         "operationId": "StorePaymentMethods_GetStorePaymentMethods",
         "parameters": [
           {
-            "name": "storeId",
-            "in": "path",
-            "required": true,
-            "description": "The store to fetch",
-            "schema": {
-              "type": "string"
-            }
-          },
-          {
             "name": "enabled",
             "in": "query",
             "required": false,
             "description": "Fetch payment methods that are enabled/disabled only",
             "schema": {
               "type": "boolean"
+            }
+          },
+          {
+            "name": "storeId",
+            "in": "path",
+            "required": true,
+            "description": "The store to fetch",
+            "schema": {
+              "type": "string"
             }
           }
         ],
@@ -5385,21 +5385,21 @@
         "summary": "Get store Lightning Network payment methods",
         "parameters": [
           {
-            "name": "storeId",
-            "in": "path",
-            "required": true,
-            "description": "The store to fetch",
-            "schema": {
-              "type": "string"
-            }
-          },
-          {
             "name": "enabled",
             "in": "query",
             "required": false,
             "description": "Fetch payment methods that are enabled/disabled only",
             "schema": {
               "type": "boolean"
+            }
+          },
+          {
+            "name": "storeId",
+            "in": "path",
+            "required": true,
+            "description": "The store to fetch",
+            "schema": {
+              "type": "string"
             }
           }
         ],
@@ -5435,15 +5435,6 @@
         "summary": "Get store Lightning Network payment method",
         "parameters": [
           {
-            "name": "storeId",
-            "in": "path",
-            "required": true,
-            "description": "The store to fetch",
-            "schema": {
-              "type": "string"
-            }
-          },
-          {
             "name": "cryptoCode",
             "in": "path",
             "required": true,
@@ -5452,6 +5443,15 @@
               "type": "string"
             },
             "example": "BTC"
+          },
+          {
+            "name": "storeId",
+            "in": "path",
+            "required": true,
+            "description": "The store to fetch",
+            "schema": {
+              "type": "string"
+            }
           }
         ],
         "description": "View information about the specified payment method",
@@ -5490,15 +5490,6 @@
         "summary": "Update store Lightning Network payment method",
         "parameters": [
           {
-            "name": "storeId",
-            "in": "path",
-            "required": true,
-            "description": "The store to fetch",
-            "schema": {
-              "type": "string"
-            }
-          },
-          {
             "name": "cryptoCode",
             "in": "path",
             "required": true,
@@ -5507,6 +5498,15 @@
               "type": "string"
             },
             "example": "BTC"
+          },
+          {
+            "name": "storeId",
+            "in": "path",
+            "required": true,
+            "description": "The store to fetch",
+            "schema": {
+              "type": "string"
+            }
           }
         ],
         "description": "Update the specified store's payment method",
@@ -5568,15 +5568,6 @@
         "summary": "Remove store Lightning Network payment method",
         "parameters": [
           {
-            "name": "storeId",
-            "in": "path",
-            "required": true,
-            "description": "The store to fetch",
-            "schema": {
-              "type": "string"
-            }
-          },
-          {
             "name": "cryptoCode",
             "in": "path",
             "required": true,
@@ -5585,6 +5576,15 @@
               "type": "string"
             },
             "example": "BTC"
+          },
+          {
+            "name": "storeId",
+            "in": "path",
+            "required": true,
+            "description": "The store to fetch",
+            "schema": {
+              "type": "string"
+            }
           }
         ],
         "description": "Removes the specified store payment method.",
@@ -5627,21 +5627,21 @@
         "summary": "Get store LNURL payment methods",
         "parameters": [
           {
-            "name": "storeId",
-            "in": "path",
-            "required": true,
-            "description": "The store to fetch",
-            "schema": {
-              "type": "string"
-            }
-          },
-          {
             "name": "enabled",
             "in": "query",
             "required": false,
             "description": "Fetch payment methods that are enabled/disabled only",
             "schema": {
               "type": "boolean"
+            }
+          },
+          {
+            "name": "storeId",
+            "in": "path",
+            "required": true,
+            "description": "The store to fetch",
+            "schema": {
+              "type": "string"
             }
           }
         ],
@@ -5677,15 +5677,6 @@
         "summary": "Get store LNURL Pay payment method",
         "parameters": [
           {
-            "name": "storeId",
-            "in": "path",
-            "required": true,
-            "description": "The store to fetch",
-            "schema": {
-              "type": "string"
-            }
-          },
-          {
             "name": "cryptoCode",
             "in": "path",
             "required": true,
@@ -5694,6 +5685,15 @@
               "type": "string"
             },
             "example": "BTC"
+          },
+          {
+            "name": "storeId",
+            "in": "path",
+            "required": true,
+            "description": "The store to fetch",
+            "schema": {
+              "type": "string"
+            }
           }
         ],
         "description": "View information about the specified payment method",
@@ -5732,15 +5732,6 @@
         "summary": "Update store LNURL Pay payment method",
         "parameters": [
           {
-            "name": "storeId",
-            "in": "path",
-            "required": true,
-            "description": "The store to fetch",
-            "schema": {
-              "type": "string"
-            }
-          },
-          {
             "name": "cryptoCode",
             "in": "path",
             "required": true,
@@ -5749,6 +5740,15 @@
               "type": "string"
             },
             "example": "BTC"
+          },
+          {
+            "name": "storeId",
+            "in": "path",
+            "required": true,
+            "description": "The store to fetch",
+            "schema": {
+              "type": "string"
+            }
           }
         ],
         "description": "Update the specified store's payment method",
@@ -5810,15 +5810,6 @@
         "summary": "Remove store LNURL Pay payment method",
         "parameters": [
           {
-            "name": "storeId",
-            "in": "path",
-            "required": true,
-            "description": "The store to fetch",
-            "schema": {
-              "type": "string"
-            }
-          },
-          {
             "name": "cryptoCode",
             "in": "path",
             "required": true,
@@ -5827,6 +5818,15 @@
               "type": "string"
             },
             "example": "BTC"
+          },
+          {
+            "name": "storeId",
+            "in": "path",
+            "required": true,
+            "description": "The store to fetch",
+            "schema": {
+              "type": "string"
+            }
           }
         ],
         "description": "Removes the specified store payment method.",
@@ -5871,21 +5871,21 @@
         "operationId": "StoreOnChainPaymentMethods_GetOnChainPaymentMethods",
         "parameters": [
           {
-            "name": "storeId",
-            "in": "path",
-            "required": true,
-            "description": "The store to fetch",
-            "schema": {
-              "type": "string"
-            }
-          },
-          {
             "name": "enabled",
             "in": "query",
             "required": false,
             "description": "Fetch payment methods that are enabled/disabled only",
             "schema": {
               "type": "boolean"
+            }
+          },
+          {
+            "name": "storeId",
+            "in": "path",
+            "required": true,
+            "description": "The store to fetch",
+            "schema": {
+              "type": "string"
             }
           }
         ],
@@ -5919,15 +5919,6 @@
         "summary": "Get store on-chain payment method",
         "parameters": [
           {
-            "name": "storeId",
-            "in": "path",
-            "required": true,
-            "description": "The store to fetch",
-            "schema": {
-              "type": "string"
-            }
-          },
-          {
             "name": "cryptoCode",
             "in": "path",
             "required": true,
@@ -5936,6 +5927,15 @@
               "type": "string"
             },
             "example": "BTC"
+          },
+          {
+            "name": "storeId",
+            "in": "path",
+            "required": true,
+            "description": "The store to fetch",
+            "schema": {
+              "type": "string"
+            }
           }
         ],
         "description": "View information about the specified payment method",
@@ -5974,15 +5974,6 @@
         "summary": "Update store on-chain payment method",
         "parameters": [
           {
-            "name": "storeId",
-            "in": "path",
-            "required": true,
-            "description": "The store to fetch",
-            "schema": {
-              "type": "string"
-            }
-          },
-          {
             "name": "cryptoCode",
             "in": "path",
             "required": true,
@@ -5991,6 +5982,15 @@
               "type": "string"
             },
             "example": "BTC"
+          },
+          {
+            "name": "storeId",
+            "in": "path",
+            "required": true,
+            "description": "The store to fetch",
+            "schema": {
+              "type": "string"
+            }
           }
         ],
         "description": "Update the specified store's payment method",
@@ -6052,15 +6052,6 @@
         "summary": "Remove store on-chain payment method",
         "parameters": [
           {
-            "name": "storeId",
-            "in": "path",
-            "required": true,
-            "description": "The store to fetch",
-            "schema": {
-              "type": "string"
-            }
-          },
-          {
             "name": "cryptoCode",
             "in": "path",
             "required": true,
@@ -6069,6 +6060,15 @@
               "type": "string"
             },
             "example": "BTC"
+          },
+          {
+            "name": "storeId",
+            "in": "path",
+            "required": true,
+            "description": "The store to fetch",
+            "schema": {
+              "type": "string"
+            }
           }
         ],
         "description": "Removes the specified store payment method.",
@@ -6111,15 +6111,6 @@
         "summary": "Generate store on-chain wallet",
         "parameters": [
           {
-            "name": "storeId",
-            "in": "path",
-            "required": true,
-            "description": "The store to fetch",
-            "schema": {
-              "type": "string"
-            }
-          },
-          {
             "name": "cryptoCode",
             "in": "path",
             "required": true,
@@ -6128,6 +6119,15 @@
               "type": "string"
             },
             "example": "BTC"
+          },
+          {
+            "name": "storeId",
+            "in": "path",
+            "required": true,
+            "description": "The store to fetch",
+            "schema": {
+              "type": "string"
+            }
           }
         ],
         "description": "Generate a wallet and update the specified store's payment method to it",
@@ -6190,15 +6190,6 @@
         "summary": "Preview store on-chain payment method addresses",
         "parameters": [
           {
-            "name": "storeId",
-            "in": "path",
-            "required": true,
-            "description": "The store to fetch",
-            "schema": {
-              "type": "string"
-            }
-          },
-          {
             "name": "cryptoCode",
             "in": "path",
             "required": true,
@@ -6224,6 +6215,15 @@
             "description": "Number of addresses to preview",
             "schema": {
               "type": "number"
+            }
+          },
+          {
+            "name": "storeId",
+            "in": "path",
+            "required": true,
+            "description": "The store to fetch",
+            "schema": {
+              "type": "string"
             }
           }
         ],
@@ -6263,15 +6263,6 @@
         "summary": "Preview proposed store on-chain payment method addresses",
         "parameters": [
           {
-            "name": "storeId",
-            "in": "path",
-            "required": true,
-            "description": "The store to fetch",
-            "schema": {
-              "type": "string"
-            }
-          },
-          {
             "name": "cryptoCode",
             "in": "path",
             "required": true,
@@ -6297,6 +6288,15 @@
             "description": "Number of addresses to preview",
             "schema": {
               "type": "number"
+            }
+          },
+          {
+            "name": "storeId",
+            "in": "path",
+            "required": true,
+            "description": "The store to fetch",
+            "schema": {
+              "type": "string"
             }
           }
         ],
@@ -6529,15 +6529,6 @@
         "summary": "Get store on-chain wallet overview",
         "parameters": [
           {
-            "name": "storeId",
-            "in": "path",
-            "required": true,
-            "description": "The store to fetch",
-            "schema": {
-              "type": "string"
-            }
-          },
-          {
             "name": "cryptoCode",
             "in": "path",
             "required": true,
@@ -6546,6 +6537,15 @@
               "type": "string"
             },
             "example": "BTC"
+          },
+          {
+            "name": "storeId",
+            "in": "path",
+            "required": true,
+            "description": "The store to fetch",
+            "schema": {
+              "type": "string"
+            }
           }
         ],
         "description": "View information about the specified wallet",
@@ -6586,15 +6586,6 @@
         "summary": "Get store on-chain wallet fee rate",
         "parameters": [
           {
-            "name": "storeId",
-            "in": "path",
-            "required": true,
-            "description": "The store to fetch",
-            "schema": {
-              "type": "string"
-            }
-          },
-          {
             "name": "cryptoCode",
             "in": "path",
             "required": true,
@@ -6612,6 +6603,15 @@
             "schema": {
               "type": "number",
               "minimum": 1
+            }
+          },
+          {
+            "name": "storeId",
+            "in": "path",
+            "required": true,
+            "description": "The store to fetch",
+            "schema": {
+              "type": "string"
             }
           }
         ],
@@ -6653,15 +6653,6 @@
         "summary": "Get store on-chain wallet address",
         "parameters": [
           {
-            "name": "storeId",
-            "in": "path",
-            "required": true,
-            "description": "The store to fetch",
-            "schema": {
-              "type": "string"
-            }
-          },
-          {
             "name": "cryptoCode",
             "in": "path",
             "required": true,
@@ -6670,6 +6661,15 @@
               "type": "string"
             },
             "example": "BTC"
+          },
+          {
+            "name": "storeId",
+            "in": "path",
+            "required": true,
+            "description": "The store to fetch",
+            "schema": {
+              "type": "string"
+            }
           },
           {
             "name": "forceGenerate",
@@ -6718,15 +6718,6 @@
         "summary": "UnReserve last store on-chain wallet address",
         "parameters": [
           {
-            "name": "storeId",
-            "in": "path",
-            "required": true,
-            "description": "The store to fetch",
-            "schema": {
-              "type": "string"
-            }
-          },
-          {
             "name": "cryptoCode",
             "in": "path",
             "required": true,
@@ -6735,6 +6726,15 @@
               "type": "string"
             },
             "example": "BTC"
+          },
+          {
+            "name": "storeId",
+            "in": "path",
+            "required": true,
+            "description": "The store to fetch",
+            "schema": {
+              "type": "string"
+            }
           }
         ],
         "description": "UnReserve address",
@@ -6768,15 +6768,6 @@
         "summary": "Get store on-chain wallet transactions",
         "parameters": [
           {
-            "name": "storeId",
-            "in": "path",
-            "required": true,
-            "description": "The store to fetch",
-            "schema": {
-              "type": "string"
-            }
-          },
-          {
             "name": "cryptoCode",
             "in": "path",
             "required": true,
@@ -6785,6 +6776,34 @@
               "type": "string"
             },
             "example": "BTC"
+          },
+          {
+            "name": "labelFilter",
+            "in": "query",
+            "required": false,
+            "description": "Transaction label to filter by",
+            "schema": {
+              "type": "string"
+            },
+            "example": "invoice"
+          },
+          {
+            "name": "limit",
+            "in": "query",
+            "required": false,
+            "description": "Maximum number of transactions to return",
+            "schema": {
+              "type": "integer"
+            }
+          },
+          {
+            "name": "skip",
+            "in": "query",
+            "required": false,
+            "description": "Number of transactions to skip from the start",
+            "schema": {
+              "type": "integer"
+            }
           },
           {
             "name": "statusFilter",
@@ -6799,31 +6818,12 @@
             }
           },
           {
-            "name": "labelFilter",
-            "in": "query",
-            "required": false,
-            "description": "Transaction label to filter by",
+            "name": "storeId",
+            "in": "path",
+            "required": true,
+            "description": "The store to fetch",
             "schema": {
               "type": "string"
-            },
-            "example": "invoice"
-          },
-          {
-            "name": "skip",
-            "in": "query",
-            "required": false,
-            "description": "Number of transactions to skip from the start",
-            "schema": {
-              "type": "integer"
-            }
-          },
-          {
-            "name": "limit",
-            "in": "query",
-            "required": false,
-            "description": "Maximum number of transactions to return",
-            "schema": {
-              "type": "integer"
             }
           }
         ],
@@ -6869,15 +6869,6 @@
         "summary": "Create store on-chain wallet transaction",
         "parameters": [
           {
-            "name": "storeId",
-            "in": "path",
-            "required": true,
-            "description": "The store to fetch",
-            "schema": {
-              "type": "string"
-            }
-          },
-          {
             "name": "cryptoCode",
             "in": "path",
             "required": true,
@@ -6886,6 +6877,15 @@
               "type": "string"
             },
             "example": "BTC"
+          },
+          {
+            "name": "storeId",
+            "in": "path",
+            "required": true,
+            "description": "The store to fetch",
+            "schema": {
+              "type": "string"
+            }
           }
         ],
         "requestBody": {
@@ -6908,11 +6908,11 @@
                 "schema": {
                   "oneOf": [
                     {
-                      "description": "The unbroadcasted transaction in hex format",
-                      "type": "string"
+                      "$ref": "#/components/schemas/OnChainWalletTransactionData"
                     },
                     {
-                      "$ref": "#/components/schemas/OnChainWalletTransactionData"
+                      "description": "The unbroadcasted transaction in hex format",
+                      "type": "string"
                     }
                   ]
                 }
@@ -6944,15 +6944,6 @@
         "summary": "Get store on-chain wallet transaction",
         "parameters": [
           {
-            "name": "storeId",
-            "in": "path",
-            "required": true,
-            "description": "The store to fetch",
-            "schema": {
-              "type": "string"
-            }
-          },
-          {
             "name": "cryptoCode",
             "in": "path",
             "required": true,
@@ -6961,6 +6952,15 @@
               "type": "string"
             },
             "example": "BTC"
+          },
+          {
+            "name": "storeId",
+            "in": "path",
+            "required": true,
+            "description": "The store to fetch",
+            "schema": {
+              "type": "string"
+            }
           },
           {
             "name": "transactionId",
@@ -7008,15 +7008,6 @@
         "summary": "Patch store on-chain wallet transaction info",
         "parameters": [
           {
-            "name": "storeId",
-            "in": "path",
-            "required": true,
-            "description": "The store to fetch",
-            "schema": {
-              "type": "string"
-            }
-          },
-          {
             "name": "cryptoCode",
             "in": "path",
             "required": true,
@@ -7025,6 +7016,15 @@
               "type": "string"
             },
             "example": "BTC"
+          },
+          {
+            "name": "storeId",
+            "in": "path",
+            "required": true,
+            "description": "The store to fetch",
+            "schema": {
+              "type": "string"
+            }
           },
           {
             "name": "transactionId",
@@ -7093,15 +7093,6 @@
         "summary": "Get store on-chain wallet UTXOS",
         "parameters": [
           {
-            "name": "storeId",
-            "in": "path",
-            "required": true,
-            "description": "The store to fetch",
-            "schema": {
-              "type": "string"
-            }
-          },
-          {
             "name": "cryptoCode",
             "in": "path",
             "required": true,
@@ -7110,6 +7101,15 @@
               "type": "string"
             },
             "example": "BTC"
+          },
+          {
+            "name": "storeId",
+            "in": "path",
+            "required": true,
+            "description": "The store to fetch",
+            "schema": {
+              "type": "string"
+            }
           }
         ],
         "description": "Get store on-chain wallet utxos",
@@ -7978,6 +7978,15 @@
     "/api/v1/stores/{storeId}/webhooks/{webhookId}/deliveries/{deliveryId}": {
       "parameters": [
         {
+          "name": "deliveryId",
+          "in": "path",
+          "required": true,
+          "description": "The id of the delivery",
+          "schema": {
+            "type": "string"
+          }
+        },
+        {
           "name": "storeId",
           "in": "path",
           "required": true,
@@ -7991,15 +8000,6 @@
           "in": "path",
           "required": true,
           "description": "The webhook id",
-          "schema": {
-            "type": "string"
-          }
-        },
-        {
-          "name": "deliveryId",
-          "in": "path",
-          "required": true,
-          "description": "The id of the delivery",
           "schema": {
             "type": "string"
           }
@@ -8040,6 +8040,15 @@
     "/api/v1/stores/{storeId}/webhooks/{webhookId}/deliveries/{deliveryId}/request": {
       "parameters": [
         {
+          "name": "deliveryId",
+          "in": "path",
+          "required": true,
+          "description": "The id of the delivery",
+          "schema": {
+            "type": "string"
+          }
+        },
+        {
           "name": "storeId",
           "in": "path",
           "required": true,
@@ -8053,15 +8062,6 @@
           "in": "path",
           "required": true,
           "description": "The webhook id",
-          "schema": {
-            "type": "string"
-          }
-        },
-        {
-          "name": "deliveryId",
-          "in": "path",
-          "required": true,
-          "description": "The id of the delivery",
           "schema": {
             "type": "string"
           }
@@ -8103,6 +8103,15 @@
     "/api/v1/stores/{storeId}/webhooks/{webhookId}/deliveries/{deliveryId}/redeliver": {
       "parameters": [
         {
+          "name": "deliveryId",
+          "in": "path",
+          "required": true,
+          "description": "The id of the delivery",
+          "schema": {
+            "type": "string"
+          }
+        },
+        {
           "name": "storeId",
           "in": "path",
           "required": true,
@@ -8116,15 +8125,6 @@
           "in": "path",
           "required": true,
           "description": "The webhook id",
-          "schema": {
-            "type": "string"
-          }
-        },
-        {
-          "name": "deliveryId",
-          "in": "path",
-          "required": true,
-          "description": "The id of the delivery",
           "schema": {
             "type": "string"
           }
@@ -8191,10 +8191,10 @@
       },
       "PointOfSaleAppData": {
         "allOf": [
+          {},
           {
             "$ref": "#/components/schemas/BasicAppData"
-          },
-          {}
+          }
         ]
       },
       "BasicAppData": {
@@ -8255,16 +8255,16 @@
             "description": "Template for items available in the app",
             "nullable": true,
             "x-enumNames": [
-              "Static",
               "Cart",
               "Light",
-              "Print"
+              "Print",
+              "Static"
             ],
             "enum": [
-              "Static",
               "Cart",
               "Light",
-              "Print"
+              "Print",
+              "Static"
             ]
           },
           "currency": {
@@ -8553,12 +8553,12 @@
           "qty": {
             "oneOf": [
               {
-                "type": "number",
-                "description": "The qty of fromAsset to convert into toAsset."
-              },
-              {
                 "type": "string",
                 "description": "The percent of fromAsset to convert into toAsset. The value must end with \"%\" to be considered a percentage."
+              },
+              {
+                "type": "number",
+                "description": "The qty of fromAsset to convert into toAsset."
               }
             ],
             "nullable": false
@@ -8610,23 +8610,23 @@
           "ledgerEntries": [
             {
               "asset": "BTC",
-              "qty": 1.23456,
-              "type": "Trade"
-            },
-            {
-              "asset": "USD",
-              "qty": -61728,
-              "type": "Trade"
+              "qty": -0.00123456,
+              "type": "Fee"
             },
             {
               "asset": "BTC",
-              "qty": -0.00123456,
-              "type": "Fee"
+              "qty": 1.23456,
+              "type": "Trade"
             },
             {
               "asset": "KFEE",
               "qty": -123.456,
               "type": "Fee"
+            },
+            {
+              "asset": "USD",
+              "qty": -61728,
+              "type": "Trade"
             }
           ],
           "tradeId": "XXXX-XXXX-XXXX-XXXX",
@@ -8835,17 +8835,17 @@
         "type": "string",
         "description": "",
         "x-enumNames": [
-          "New",
-          "Processing",
           "Expired",
           "Invalid",
+          "New",
+          "Processing",
           "Settled"
         ],
         "enum": [
-          "New",
-          "Processing",
           "Expired",
           "Invalid",
+          "New",
+          "Processing",
           "Settled"
         ]
       },
@@ -8853,20 +8853,20 @@
         "type": "string",
         "description": "An additional status that describes why an invoice is in its current status.",
         "x-enumNames": [
+          "Invalid",
+          "Marked",
           "None",
           "PaidLate",
-          "PaidPartial",
-          "Marked",
-          "Invalid",
-          "PaidOver"
+          "PaidOver",
+          "PaidPartial"
         ],
         "enum": [
+          "Invalid",
+          "Marked",
           "None",
           "PaidLate",
-          "PaidPartial",
-          "Marked",
-          "Invalid",
-          "PaidOver"
+          "PaidOver",
+          "PaidPartial"
         ]
       },
       "InvoiceDataBase": {
@@ -8984,82 +8984,6 @@
         "anyOf": [
           {
             "properties": {
-              "orderId": {
-                "type": "string",
-                "nullable": true,
-                "description": "You can use this property to store the ID of an external system. We allow you to search in the invoice list based on this ID."
-              },
-              "orderUrl": {
-                "type": "string",
-                "nullable": true,
-                "description": "You can use this property to store the URL to the order of an external system. This makes navigating to the order easier."
-              }
-            }
-          },
-          {
-            "properties": {
-              "posData": {
-                "oneOf": [
-                  {
-                    "$ref": "#/components/schemas/InvoiceMetadataPosString"
-                  },
-                  {
-                    "$ref": "#/components/schemas/InvoiceMetadataPosObject"
-                  }
-                ]
-              }
-            }
-          },
-          {
-            "properties": {
-              "buyerName": {
-                "type": "string",
-                "nullable": true
-              }
-            }
-          },
-          {
-            "properties": {
-              "buyerEmail": {
-                "type": "string",
-                "nullable": true
-              }
-            }
-          },
-          {
-            "properties": {
-              "buyerCountry": {
-                "type": "string",
-                "nullable": true
-              }
-            }
-          },
-          {
-            "properties": {
-              "buyerZip": {
-                "type": "string",
-                "nullable": true
-              }
-            }
-          },
-          {
-            "properties": {
-              "buyerState": {
-                "type": "string",
-                "nullable": true
-              }
-            }
-          },
-          {
-            "properties": {
-              "buyerCity": {
-                "type": "string",
-                "nullable": true
-              }
-            }
-          },
-          {
-            "properties": {
               "buyerAddress1": {
                 "type": "string",
                 "nullable": true
@@ -9076,6 +9000,38 @@
           },
           {
             "properties": {
+              "buyerCity": {
+                "type": "string",
+                "nullable": true
+              }
+            }
+          },
+          {
+            "properties": {
+              "buyerCountry": {
+                "type": "string",
+                "nullable": true
+              }
+            }
+          },
+          {
+            "properties": {
+              "buyerEmail": {
+                "type": "string",
+                "nullable": true
+              }
+            }
+          },
+          {
+            "properties": {
+              "buyerName": {
+                "type": "string",
+                "nullable": true
+              }
+            }
+          },
+          {
+            "properties": {
               "buyerPhone": {
                 "type": "string",
                 "nullable": true
@@ -9084,7 +9040,15 @@
           },
           {
             "properties": {
-              "itemDesc": {
+              "buyerState": {
+                "type": "string",
+                "nullable": true
+              }
+            }
+          },
+          {
+            "properties": {
+              "buyerZip": {
                 "type": "string",
                 "nullable": true
               }
@@ -9100,9 +9064,45 @@
           },
           {
             "properties": {
+              "itemDesc": {
+                "type": "string",
+                "nullable": true
+              }
+            }
+          },
+          {
+            "properties": {
+              "orderId": {
+                "type": "string",
+                "nullable": true,
+                "description": "You can use this property to store the ID of an external system. We allow you to search in the invoice list based on this ID."
+              },
+              "orderUrl": {
+                "type": "string",
+                "nullable": true,
+                "description": "You can use this property to store the URL to the order of an external system. This makes navigating to the order easier."
+              }
+            }
+          },
+          {
+            "properties": {
               "physical": {
                 "type": "string",
                 "nullable": true
+              }
+            }
+          },
+          {
+            "properties": {
+              "posData": {
+                "oneOf": [
+                  {
+                    "$ref": "#/components/schemas/InvoiceMetadataPosString"
+                  },
+                  {
+                    "$ref": "#/components/schemas/InvoiceMetadataPosObject"
+                  }
+                ]
               }
             }
           },
@@ -9455,15 +9455,15 @@
         "description": "`\"HighSpeed\"`: 0 confirmations (1 confirmation if RBF enabled in transaction)   \n`\"MediumSpeed\"`: 1 confirmation   \n`\"LowMediumSpeed\"`: 2 confirmations   \n`\"LowSpeed\"`: 6 confirmations\n",
         "x-enumNames": [
           "HighSpeed",
-          "MediumSpeed",
+          "LowMediumSpeed",
           "LowSpeed",
-          "LowMediumSpeed"
+          "MediumSpeed"
         ],
         "enum": [
           "HighSpeed",
-          "MediumSpeed",
+          "LowMediumSpeed",
           "LowSpeed",
-          "LowMediumSpeed"
+          "MediumSpeed"
         ]
       },
       "TimeSpan": {
@@ -9659,30 +9659,30 @@
         "type": "string",
         "description": "",
         "x-enumNames": [
-          "Unpaid",
+          "Expired",
           "Paid",
-          "Expired"
+          "Unpaid"
         ],
         "enum": [
-          "Unpaid",
+          "Expired",
           "Paid",
-          "Expired"
+          "Unpaid"
         ]
       },
       "LightningPaymentStatus": {
         "type": "string",
         "description": "",
         "x-enumNames": [
-          "Unknown",
-          "Pending",
           "Complete",
-          "Failed"
+          "Failed",
+          "Pending",
+          "Unknown"
         ],
         "enum": [
-          "Unknown",
-          "Pending",
           "Complete",
-          "Failed"
+          "Failed",
+          "Pending",
+          "Unknown"
         ]
       },
       "LightningNodeInformationData": {
@@ -10246,16 +10246,16 @@
             "x-enumNames": [
               "AwaitingApproval",
               "AwaitingPayment",
-              "InProgress",
+              "Cancelled",
               "Completed",
-              "Cancelled"
+              "InProgress"
             ],
             "enum": [
               "AwaitingApproval",
               "AwaitingPayment",
-              "InProgress",
+              "Cancelled",
               "Completed",
-              "Cancelled"
+              "InProgress"
             ]
           }
         }
@@ -10462,10 +10462,10 @@
             "description": "Associated dynamic data based on payment method type.",
             "oneOf": [
               {
-                "$ref": "#/components/schemas/OnChainPaymentMethodBaseData"
+                "$ref": "#/components/schemas/LightningNetworkPaymentMethodBaseData"
               },
               {
-                "$ref": "#/components/schemas/LightningNetworkPaymentMethodBaseData"
+                "$ref": "#/components/schemas/OnChainPaymentMethodBaseData"
               },
               {
                 "description": "Any other unofficial payment method data",
@@ -10564,6 +10564,9 @@
       "LNURLPayPaymentMethodData": {
         "allOf": [
           {
+            "$ref": "#/components/schemas/LNURLPayPaymentMethodBaseData"
+          },
+          {
             "type": "object",
             "properties": {
               "enabled": {
@@ -10575,9 +10578,6 @@
                 "description": "Crypto code of the payment method"
               }
             }
-          },
-          {
-            "$ref": "#/components/schemas/LNURLPayPaymentMethodBaseData"
           }
         ]
       },
@@ -10627,6 +10627,9 @@
       "UpdateOnChainPaymentMethodRequest": {
         "allOf": [
           {
+            "$ref": "#/components/schemas/OnChainPaymentMethodBaseData"
+          },
+          {
             "type": "object",
             "properties": {
               "enabled": {
@@ -10634,14 +10637,14 @@
                 "description": "Whether the payment method is enabled"
               }
             }
-          },
-          {
-            "$ref": "#/components/schemas/OnChainPaymentMethodBaseData"
           }
         ]
       },
       "OnChainPaymentMethodData": {
         "allOf": [
+          {
+            "$ref": "#/components/schemas/OnChainPaymentMethodDataPreview"
+          },
           {
             "type": "object",
             "properties": {
@@ -10654,9 +10657,6 @@
                 "description": "The payment method"
               }
             }
-          },
-          {
-            "$ref": "#/components/schemas/OnChainPaymentMethodDataPreview"
           }
         ]
       },
@@ -10735,24 +10735,24 @@
             "description": "If `existingMnemonic` is not set, a mnemonic is generated using the specified wordList.",
             "default": "English",
             "x-enumNames": [
-              "English",
-              "Japanese",
-              "Spanish",
               "ChineseSimplified",
               "ChineseTraditional",
+              "Czech",
+              "English",
               "French",
+              "Japanese",
               "PortugueseBrazil",
-              "Czech"
+              "Spanish"
             ],
             "enum": [
-              "English",
-              "Japanese",
-              "Spanish",
               "ChineseSimplified",
               "ChineseTraditional",
+              "Czech",
+              "English",
               "French",
+              "Japanese",
               "PortugueseBrazil",
-              "Czech"
+              "Spanish"
             ]
           },
           "wordCount": {
@@ -10872,12 +10872,12 @@
         "type": "string",
         "description": "",
         "x-enumNames": [
-          "Unconfirmed",
-          "Confirmed"
+          "Confirmed",
+          "Unconfirmed"
         ],
         "enum": [
-          "Unconfirmed",
-          "Confirmed"
+          "Confirmed",
+          "Unconfirmed"
         ]
       },
       "LabelData": {
@@ -11265,13 +11265,13 @@
         "type": "string",
         "description": "Check whether network fee should be added to the invoice if on-chain payment is used. ([More information](https://docs.btcpayserver.org/FAQ/Stores/#add-network-fee-to-invoice-vary-with-mining-fees))",
         "x-enumNames": [
-          "MultiplePaymentsOnly",
           "Always",
+          "MultiplePaymentsOnly",
           "Never"
         ],
         "enum": [
-          "MultiplePaymentsOnly",
           "Always",
+          "MultiplePaymentsOnly",
           "Never"
         ]
       },
@@ -11663,6 +11663,87 @@
     }
   },
   "tags": [
+    {
+      "name": "API Keys"
+    },
+    {
+      "name": "Apps"
+    },
+    {
+      "name": "Authorization"
+    },
+    {
+      "name": "Custodians"
+    },
+    {
+      "name": "Health"
+    },
+    {
+      "name": "Invoices"
+    },
+    {
+      "name": "LNbank"
+    },
+    {
+      "name": "Lightning (Internal Node)"
+    },
+    {
+      "name": "Lightning (Store)"
+    },
+    {
+      "name": "Miscelleneous"
+    },
+    {
+      "name": "Notifications (Current User)"
+    },
+    {
+      "name": "Payment Requests"
+    },
+    {
+      "name": "Payout Processors"
+    },
+    {
+      "name": "Pull payments (Management)"
+    },
+    {
+      "name": "Pull payments (Public)"
+    },
+    {
+      "name": "Pull payments payout (Public)"
+    },
+    {
+      "name": "ServerInfo"
+    },
+    {
+      "name": "Store Payment Methods"
+    },
+    {
+      "name": "Store Payment Methods (LNURL Pay)"
+    },
+    {
+      "name": "Store Payment Methods (Lightning Network)"
+    },
+    {
+      "name": "Store Payment Methods (On Chain)"
+    },
+    {
+      "name": "Store Wallet (On Chain)"
+    },
+    {
+      "name": "Stores"
+    },
+    {
+      "name": "Stores (Email)"
+    },
+    {
+      "name": "Stores (Payout Processors)"
+    },
+    {
+      "name": "Stores (Users)"
+    },
+    {
+      "name": "Users"
+    },
     {
       "name": "Webhooks"
     }
