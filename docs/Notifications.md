@@ -64,3 +64,36 @@ Send an invitation email to [invite a new user](./FAQ/ServerSettings.md#how-to-a
 
 ## Custom Emails
 Custom emails can be created using the BTCPay Server Transmuter preset [Email Receipts](https://docs.btcpayserver.org/Transmuter/EmailReceiptsPreset/#transmuter-email-receipts-setup).
+
+## Email rules 
+
+Email rules allow BTCPay Server to send customized emails from your store based on events. 
+Click the `Configure` button and `create` a new Email rule. 
+
+Set your Email trigger out of the following : 
+
+* Invoice created
+* Invoice Received Payment
+* Invoice Processing 
+* Invoice Expired 
+* Invoice Settled 
+* Invoice Invalid
+* Invoice Payment Settled
+
+Set a recipient Email address where you'd want to be updated by Email on store events, or tick the option for `Send email to the buyer if an email was provided to the invoice`.
+Fill out a subject for the event Email, and you can stylize the body of the Email at last.
+
+Possible placeholder's we currently offer are as follows :
+
+```           
+            {Invoice.StoreId}
+            {Invoice.Price}
+            {Invoice.Currency}
+            {Invoice.Status}
+            {Invoice.AdditionalStatus}
+            {Invoice.AdditionalStatus}
+            {Invoice.OrderId}
+```
+Find the source [here for possible updates](https://github.com/btcpayserver/btcpayserver/blob/master/BTCPayServer/HostedServices/StoreEmailRuleProcessorSender.cs)
+
+![Create new Email rule](./img/FAQ/btcpayemailrule1.jpg) 
