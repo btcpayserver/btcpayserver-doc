@@ -52,19 +52,9 @@ From the multiple choice menu, select `SegWit` and `Next`
 
 Copy and paste your seed words to complete your wallet creation in Electrum. Your wallet must be unencrypted to import it into your BTCPay Server. Once you have completed the setup of your wallet in BTCPay you can always add password encryption later in Electrum.
 
-![ElectrumWallet](./img/electrum/electrum-create-1.gif)
+Follow along in the video below on how to import into BTCPay Server.
 
-Export and save a backup copy of your wallet.
-
-![ElectrumWallet](./img/electrum/electrum-create-2-export.gif)
-
-Import your wallet into your BTCPay store.
-
-![ElectrumWallet](./img/electrum/electrum-create-3-import.gif)
-
-Compare your addresses in your BTCPay store.
-
-![ElectrumWallet](./img/electrum/electrum-create-4-compare-addresses.gif)
+![BTCPay Server - How to import wallet file](https://img.youtube.com/vi/kf3BHaQWSAc/mqdefault.jpg "BTCPay Server - How to import wallet file")](https://youtu.be/kf3BHaQWSAc "BTCPay Server - How to import wallet file")
 
 ### Alternative Setup
 
@@ -85,9 +75,17 @@ Select and **copy** the `Master Public Key`. This is the **public** key from whi
 
 ![ElectrumWallet](./img/ElectrumWallet10.png "Copy Electrum master public key")
 
-Return to your BTCPay Server. Click on the `Stores` in the header menu and select Settings. Find Wallet and click on the `Setup` button.
+Return to your BTCPay Server. Click on the `Bitcoin` in the left menu or `Set up a wallet` on your new dashboard.
 
-![ElectrumWallet](./img/createwallet/SetupWallet.png "Set up your wallet")
+![ElectrumWallet](./img/electrum/btcpayWalletImport1.jpg "Set up your wallet")
+
+Click `Connect an existing wallet`
+
+![ElectrumWallet](./img/electrum/btcpayWalletImport2.jpg)
+
+Now click on the `Enter extended public key` option to import your key. 
+
+![ElectrumWallet](./img/electrum/btcpayWalletImport3.jpg)
 
 Paste the `Master Public Key` into derivation scheme field as it is, without adding anything else. Make sure that `Enabled` checkbox is ticked and click `Continue`.
 
