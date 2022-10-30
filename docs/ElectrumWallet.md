@@ -54,7 +54,7 @@ Copy and paste your seed words to complete your wallet creation in Electrum. You
 
 Follow along in the video below on how to import into BTCPay Server.
 
-![BTCPay Server - How to import wallet file](https://img.youtube.com/vi/kf3BHaQWSAc/mqdefault.jpg "BTCPay Server - How to import wallet file")](https://youtu.be/kf3BHaQWSAc "BTCPay Server - How to import wallet file")
+[![BTCPay Server - How to import wallet file](https://img.youtube.com/vi/kf3BHaQWSAc/mqdefault.jpg "BTCPay Server - How to import wallet file")](https://www.youtube.com/watch?v=kf3BHaQWSAc "BTCPay Server - How to import wallet file")
 
 ### Alternative Setup
 
