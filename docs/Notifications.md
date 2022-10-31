@@ -81,7 +81,7 @@ Set your Email trigger out of the following :
 * Invoice Payment Settled
 
 Set a recipient email address where you'd want to be updated by email on store events, or tick the option for `Send email to the buyer if an email was provided to the invoice`.
-Fill out a subject for the event Email, and you can stylize the body of the Email at last.
+Fill out a subject for the event email, and you can stylize the body of the email at last.
 
 Possible placeholder's we currently offer are as follows :
 
