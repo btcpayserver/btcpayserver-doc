@@ -80,7 +80,7 @@ Set your Email trigger out of the following :
 * Invoice Invalid
 * Invoice Payment Settled
 
-Set a recipient Email address where you'd want to be updated by Email on store events, or tick the option for `Send email to the buyer if an email was provided to the invoice`.
+Set a recipient email address where you'd want to be updated by email on store events, or tick the option for `Send email to the buyer if an email was provided to the invoice`.
 Fill out a subject for the event Email, and you can stylize the body of the Email at last.
 
 Possible placeholder's we currently offer are as follows :
