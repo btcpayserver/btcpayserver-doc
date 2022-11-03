@@ -92,7 +92,6 @@ Possible placeholder's we currently offer are as follows :
             {Invoice.Price}
             {Invoice.Currency}
             {Invoice.Status}
-            {Invoice.AdditionalStatus}
             {Invoice.OrderId}
 ```
 Find the source [here for possible updates](https://github.com/btcpayserver/btcpayserver/blob/master/BTCPayServer/HostedServices/StoreEmailRuleProcessorSender.cs)
