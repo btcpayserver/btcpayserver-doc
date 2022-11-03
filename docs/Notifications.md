@@ -86,11 +86,11 @@ Fill out a subject for the event email, and you can stylize the body of the emai
 Possible placeholder's we currently offer are as follows :
 
 ```           
+            {Invoice.Id}
             {Invoice.StoreId}
             {Invoice.Price}
             {Invoice.Currency}
             {Invoice.Status}
-            {Invoice.AdditionalStatus}
             {Invoice.AdditionalStatus}
             {Invoice.OrderId}
 ```
