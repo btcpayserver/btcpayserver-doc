@@ -50,8 +50,9 @@ Make sure to have a backup of the recovery words and the password.
 **IMPORTANT NOTE:** Write down your recovery words in the order you see them on the screen. Write them down a piece of paper and store it somewhere secure. Take your time and triple check each word. Do not store your seed in a digital format (photograph, text document). Whoever has the access to your seed and your password can access your funds. Make sure you have a proper back up of both the Recovery Words and the Password.
 
 Select a Coinjoin Strategy.
-For more info on this topic checkout the Wasabi docs.
-In case you really don't want to coinjoin your funds, you can disable coinjoin later on.
+Wasabi automatically coinjoins all your funds. 
+In case you really don't want to coinjoin your funds, you can disable coinjoin later on by disabling `Automatically start coinjoin` in the Coinjoin Settings.
+For more info about coinjoins and the related settings, please refer to the [Wasabi Documentation](https://docs.wasabiwallet.io/).
 
 ![Wasabi Coinjoin Strategy](./img/Wasabi/WasabiCoinjoinStrategy.png "Wasabi Coinjoin Strategy")
 
