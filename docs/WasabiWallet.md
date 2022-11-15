@@ -20,7 +20,7 @@ After installation, open the Wasabi Wallet by clicking on the icon on your deskt
 
 ## Step by Step
 
-At first launch of Wasabi, the `Add wallet` dialog will be opened automatically.
+At the first launch of Wasabi, the `Add wallet` dialog will be opened automatically.
 Select `Create new wallet` to generate a new wallet.
 
 ![Wasabi Add Wallet](./img/Wasabi/WasabiAddWallet.png "Wasabi Add Wallet")
@@ -47,11 +47,11 @@ Make sure to have a backup of the recovery words and the password.
 
 ![Wasabi Add Wallet Add Password](./img/Wasabi/WasabiAddWalletAddPassword.png "Wasabi Add Wallet Add Password")
 
-**IMPORTANT NOTE:** Write down your recovery words in the order you see them on the screen. Write them down a piece of paper and store it somewhere secure. Take your time and triple check each word. Do not store your seed in a digital format (photograph, text document). Whoever has the access to your seed and your password can access your funds. Make sure you have a proper back up of both the Recovery Words and the Password.
+**IMPORTANT NOTE:** Write down your recovery words in the order you see them on the screen. Write them down a piece of paper and store them somewhere secure. Take your time and triple-check each word. Do not store your seed in a digital format (photograph, text document). Whoever has access to your seed and your password can access your funds. Make sure you have a proper backup of the Recovery Words and the Password.
 
 Select a Coinjoin Strategy.
 Wasabi automatically coinjoins all your funds. 
-In case you really don't want to coinjoin your funds, you can disable coinjoin later on by disabling `Automatically start coinjoin` in the Coinjoin Settings.
+If you don't want to coinjoin your funds, you can disable coinjoin later by disabling `Automatically start coinjoin` in the Coinjoin Settings.	 
 For more info about coinjoins and the related settings, please refer to the [Wasabi Documentation](https://docs.wasabiwallet.io/).
 
 ![Wasabi Coinjoin Strategy](./img/Wasabi/WasabiCoinjoinStrategy.png "Wasabi Coinjoin Strategy")
@@ -106,7 +106,7 @@ Select and **copy** the `Extended Account Public Key`. This is the **public** ke
 
 ### Connecting Wasabi to BTCPay Server Full Node (If you're self-hosting BTCPay)
 
-After the wallets are connected, it is highly-recommended to **connect Wasabi Wallet to your full node in BTCPay**. The process is easy, but can only be done if you self-host BTCPay and are logged in as `Admin`. Tor has to be enabled in BTCPay (it is enabled by default). This process enhances privacy even further.
+After the wallets are connected, it is highly recommended to **connect Wasabi Wallet to your full node in BTCPay**. The process is easy but can only be done if you self-host BTCPay and are logged in as `Admin`. Tor has to be enabled in BTCPay (it is enabled by default). This process enhances privacy even further.
 
 In BTCPay, go Server Settings > Services > **Full node P2P > See Information**.
 On the BTCP-P2P page, click on the `Show Confidential QR Code`. Bellow the QR Code, there's a link `See QR Code information by clicking here`, so click on the link to reveal your string. Copy the string but remove `bitcoin-p2p://` part.
@@ -117,7 +117,7 @@ Restart Wasabi to apply the changes.
 
 ### Configuring the Gap Limit in Wasabi
 
-At the SearchBar on top, click on `Wallet Folder`. Shortly the `json` file will be shown in a sub-folder. Open that file with a text editor like notepad.
+At the search bar on top, click on `Wallet Folder`. Shortly the `json` file will be shown in a sub-folder. Open that file with a text editor like notepad.
 Find the line `"MinGapLimit": 21,` and change it to `"MinGapLimit": 100,` and save the file.
 
 There's no good answer to how much you should set the gap limit to. Most merchants set 100-200. If you're a big merchant with high transaction volume, you can try with even a higher gap limit.
