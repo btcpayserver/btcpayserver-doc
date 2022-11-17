@@ -61,7 +61,7 @@ If you would like to provide digital or physical products to the backers of your
 
 Easily-embeddable HTML and highly-customizable **payment buttons** allow users to receive tips and donations. Online stores can also integrate payment buttons. When a site visitor clicks on the button, BTCPay displays the **invoice**.
 
-1. In your left menu bar, find Payments and click Pay Button.
+1. In your left menu bar, under the "PLUGINS" section, select "Manage Plugins" and select "Pay Button".
 2. Allow anyone to create invoices.
 3. Customize your button.
 4. Copy the generated form and embed it on your website.
