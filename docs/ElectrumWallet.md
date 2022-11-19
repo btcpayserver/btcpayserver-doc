@@ -1,6 +1,6 @@
 # Connecting Electrum Wallet to BTCPay Server
 
-This documents explains **how to connect a desktop [Electrum Wallet](https://electrum.org/) to a BTCPay Server**.
+This document explains **how to connect a desktop [Electrum Wallet](https://electrum.org/) to a BTCPay Server**.
 
 **Word of caution** Electrum wallet relies on Electrum servers that are controlled by third-parties. Information, like public addresses, balances and the transacted amount can *potentially* be leaked.
 
