@@ -27,7 +27,7 @@ module.exports = [
     path: "/deployment/googleclouddeployment",
     redirect: "/Deployment/GoogleCloud/",
   },
-  { 
+  {
     path: "/deployment/manualdeployment",
     redirect: "/Deployment/ManualDeployment/" },
   {
@@ -116,6 +116,7 @@ module.exports = [
   { path: "/integrations/prestashop", redirect: "/PrestaShop/" },
   { path: "/integrations/virtuemart", redirect: "/VirtueMart/" },
   { path: "/integrations/opencart", redirect: "/OpenCart/" },
+  { path: "/integrations/shopware", redirect: "/Shopware/" },
   { path: "/integrations/customintegration", redirect: "/CustomIntegration/" },
   // Development
   { path: "/development", redirect: "/Development/Architecture/" },
