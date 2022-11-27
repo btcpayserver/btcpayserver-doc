@@ -11,7 +11,7 @@ Downside:
 
 * Running `btcpay-update.sh` or rebooting will take longer
 * You might see `502 Bad Gateway` and your node taking lots of time to start
-* Your server might becomes very slow
+* Your server might become very slow
 
 Upside:
 
@@ -26,7 +26,7 @@ If you find that your server is too slow:
 After some testing, it seems that following this guide for a setup on mainnet involving BTC+LTC+CLightning is a bit too much and makes the server very laggy.
 
 Note that the server becomes less laggy as time passes after restart, so it might still be ok for your case.
-If it is not acceptable you should switch from `B1MS` (20 USD/Month) type to a `B2S` (40 USD/Month) type.
+If it is not acceptable, you should switch from `B1MS` (20 USD/Month) type to a `B2S` (40 USD/Month) type.
 :::
 
 ## How much am I spending now?
@@ -61,7 +61,7 @@ Also my VM type is `Standard_D1_v2`. As you can see on [Azure Price Website](htt
 
 ![Show Azure Price](../img/ShowPrice.png "Show Azure Price")
 
-This cost me `0.0573444 EUR/H` or `42.66 EUR/Month`.
+This costs me `0.0573444 EUR/H` or `42.66 EUR/Month`.
 
 Now we know that downgrading this VM will bring us the largest cost benefit.
 Let's see how far we can go.
@@ -138,7 +138,7 @@ When Azure is happy:
 
 ![Happy Microsoft Azure](../img/HappyAzure.png "Happy Microsoft Azure")
 
-Congratulation! You just cut down the cost by 50% per month! :)
+Congratulations! You just cut down the cost by 50% per month! :)
 
 ### FAQ: B1MS does not appear in the list <a name="b1ms"></a>
 
