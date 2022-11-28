@@ -217,7 +217,7 @@ systemctl restart nginx
 Now, visiting `btcpayserver.mydomain.com` should show your BTCPay Server instance.
 
 :::tip
-If you see an Nginx error of "503 Service Temporarily Unavailable" or similar but your BTCPay Server is reachable otherwise then you need to make BTCPay Server aware of your new domain. You can do this by using environment variables (docker based setup), log into your BTCPay Server via SSH:
+If you see an nginx error of "503 Service Temporarily Unavailable" or similar but your BTCPay Server is reachable otherwise, you need to make BTCPay Server aware of your new domain. You can do so by using environment variables (Docker based setup), log into your BTCPay Server via SSH:
 
 ```
 sudo su -
