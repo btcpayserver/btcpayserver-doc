@@ -126,7 +126,7 @@ Create a config file for the domain, e.g. `/etc/nginx/sites-available/btcpayserv
 ```nginx
 server {
   listen 80;
-  server_name mydomain.com;
+  server_name btcpayserver.mydomain.com;
 
   # Let's Encrypt verification requests
   location ^~ /.well-known/acme-challenge/ {
@@ -158,7 +158,7 @@ systemctl restart nginx
 Run the following command with adapted email and domain parameters:
 
 ```bash
-certbot certonly --agree-tos --email admin@mydomain.com --webroot -w /var/lib/letsencrypt/ -d mydomain.com
+certbot certonly --agree-tos --email admin@mydomain.com --webroot -w /var/lib/letsencrypt/ -d btcpayserver.mydomain.com
 ```
 
 #### nginx configuration: https
@@ -168,7 +168,7 @@ Now that we have a valid SSL certificate, add the https server part at the end o
 ```nginx
 server {
   listen 443 ssl http2;
-  server_name mydomain.com;
+  server_name btcpayserver.mydomain.com;
 
   # SSL settings
   ssl_stapling on;
@@ -179,8 +179,8 @@ server {
   ssl_session_tickets off;
 
   # Update this with the path of your certificate files
-  ssl_certificate /etc/letsencrypt/live/mydomain.com/fullchain.pem;
-  ssl_certificate_key /etc/letsencrypt/live/mydomain.com/privkey.pem;
+  ssl_certificate /etc/letsencrypt/live/btcpayserver.mydomain.com/fullchain.pem;
+  ssl_certificate_key /etc/letsencrypt/live/btcpayserver.mydomain.com/privkey.pem;
 
   ssl_dhparam /etc/ssl/certs/dhparam.pem;
   ssl_protocols TLSv1.2 TLSv1.3;
@@ -214,7 +214,18 @@ Restart nginx once more:
 systemctl restart nginx
 ```
 
-Now, visiting `mydomain.com` should show your BTCPay Server instance.
+Now, visiting `btcpayserver.mydomain.com` should show your BTCPay Server instance.
+
+:::tip
+If you see an nginx error of "503 Service Temporarily Unavailable" or similar but your BTCPay Server is reachable otherwise, you need to make BTCPay Server aware of your new domain. You can do so by using environment variables (Docker based setup), log into your BTCPay Server via SSH:
+
+```
+sudo su -
+cd BTCPayServer/btcpayserver-docker/
+export BTCPAY_ADDITIONAL_HOSTS="btcpayserver.mydomain.com"
+. ./btcpay-setup.sh -i
+```
+:::
 
 ## Do all this in a Docker container
 

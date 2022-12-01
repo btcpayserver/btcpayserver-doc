@@ -104,7 +104,7 @@ const sidebarUserGuide = [
       ['/OpenCart', 'OpenCart'],
       ['/Drupal', 'Drupal'],
       ['/Zapier/', 'Zapier'],
-      ['https://github.com/lampsolutions/LampSBtcPayShopware', 'Shopware', { type: 'external' }],
+      ['/Shopware', 'Shopware'],
       ['/VirtueMart', 'VirtueMart'],
       ['/CustomIntegration', 'Custom Integration']
     ]
