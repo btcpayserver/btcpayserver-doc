@@ -27,23 +27,25 @@ module.exports = [
     path: "/deployment/googleclouddeployment",
     redirect: "/Deployment/GoogleCloud/",
   },
-  { path: "/deployment/manualdeployment", redirect: "/ManualDeployment/" },
+  {
+    path: "/deployment/manualdeployment",
+    redirect: "/Deployment/ManualDeployment/" },
   {
     path: "/deployment/manualdeployment/manualdeploymentextended",
-    redirect: "/ManualDeploymentExtended/",
+    redirect: "/Deployment/ManualDeploymentExtended/",
   },
   { path: "/deployment/hardwaredeployment", redirect: "/Deployment/Hardware/" },
   {
     path: "/deployment/raspberrypideployment",
-    redirect: "/Deployment/RaspberryPi/",
+    redirect: "/Deployment/RaspberryPi4/",
   },
   {
     path: "/deployment/raspberrypideployment/rpi3",
-    redirect: "/Deployment/RPi3/",
+    redirect: "/Deployment/RaspberryPi4/",
   },
   {
     path: "/deployment/raspberrypideployment/rpi4",
-    redirect: "/Deployment/RPi4/",
+    redirect: "/Deployment/RaspberryPi4/",
   },
   {
     path: "/deployment/thirdpartyhosting",
@@ -114,6 +116,7 @@ module.exports = [
   { path: "/integrations/prestashop", redirect: "/PrestaShop/" },
   { path: "/integrations/virtuemart", redirect: "/VirtueMart/" },
   { path: "/integrations/opencart", redirect: "/OpenCart/" },
+  { path: "/integrations/shopware", redirect: "/Shopware/" },
   { path: "/integrations/customintegration", redirect: "/CustomIntegration/" },
   // Development
   { path: "/development", redirect: "/Development/Architecture/" },

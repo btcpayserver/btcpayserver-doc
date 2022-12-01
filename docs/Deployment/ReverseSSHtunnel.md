@@ -67,7 +67,7 @@ Make sure these entries are active (meaning there is no `#` at the beggining of 
 Alternatively, you can just paste these on the end of the file:
 
 ```
-RSAAuthentication yes
+RSAAuthentication yes     # not needed on latest OpenSSH versions
 PubkeyAuthentication yes
 GatewayPorts yes
 AllowTcpForwarding yes
@@ -86,7 +86,7 @@ Restart the sshd service:
 sudo systemctl restart sshd
 ```
 
-### Back to the host
+### Back to the host (your BTCPay Server instance)
 
 #### Install and set up autossh
 
