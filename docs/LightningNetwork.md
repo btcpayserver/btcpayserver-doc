@@ -1,13 +1,13 @@
-# Lightning Network and BTCPay
+# Lightning Network (LN) and BTCPay
 
 ## Overview
 After deploying BTCPay Server, you may want to experiment with an innovative second-layer payment system built on top of Bitcoin protocol - the [Lightning Network](https://en.bitcoin.it/wiki/Lightning_Network).
 
-This guide will show you how to set up your Lightning Network node in BTCPay and guide you through the basics.
+This guide will show you how to set up your Lightning Network (LN) node in BTCPay and guide you through the basics.
 
 BTCPay currently offers three implementations of the Lightning Network:
 * [LND](https://github.com/lightningnetwork/lnd)
-* [c-lightning](https://github.com/ElementsProject/lightning)
+* [Core Lightning (CLN)](https://github.com/ElementsProject/lightning)
 * [eclair](https://github.com/ACINQ/eclair)
 
 ::: danger
@@ -45,7 +45,7 @@ export BTCPAYGEN_LIGHTNING="implementationgoeshere"
 . ./btcpay-setup.sh -i
 ```
 
-- For **c-lightning** use `export BTCPAYGEN_LIGHTNING="clightning"`
+- For **Core Lightning (CLN)** use `export BTCPAYGEN_LIGHTNING="clightning"`
 - For **LND** use `export BTCPAYGEN_LIGHTNING="lnd"`
 - For **eclair** use `export BTCPAYGEN_LIGHTNING="eclair"` AND `export BTCPAYGEN_ADDITIONAL_FRAGMENTS="opt-txindex"`
 
@@ -68,8 +68,6 @@ If the internal connection fails, confirm:
 1. The Bitcoin on-chain node is fully synchronized
 2. The Internal lightning node is "Enabled" under "Lightning" > "Settings" > "BTC Lightning Settings"
 
-<!-- To ensure that your Lightning node is connected and accessible for use in your store's invoices, try to test your Lightning connection by clicking the "Public Node Info" link. Verify that a successful connection is displayed. If your internal node connection fails, make sure you have a Lightning implementation [enabled](./FAQ/LightningNetwork.md#i-previously-installed-btcpayserver-without-lightning-can-i-enable-it) on your server. -->
-
 If you are unable to connect to your Lightning node, try [restarting your server](./FAQ/ServerSettings.md#how-to-restart-btcpay-server) or reviewing our [troubleshooting guide](./Troubleshooting.md). You will not be able to accept lightning payments in your store until your Lightning node appears "Online".
 
 ## Connecting an external Lightning Node in BTCPay
@@ -80,8 +78,6 @@ BTCPay Server offers the option to connect to an external Lightning node. To con
 3. Add the configuration details matching the lightning implementation used > "Test connection"
 
 
-<!-- ![BTCPay Server Lightning Network Setup Custom](./img/lightning-node-setup/LightningNetworkNodeSetupCustom.jpg "BTCPay Server Lightning Network Setup Custom") -->
-
 # Getting started with your LN implementation
 ## BTCPay and LND
 
@@ -90,13 +86,6 @@ BTCPay Server offers the option to connect to an external Lightning node. To con
 The easiest way to use LND implementation with BTCPay is to use the **[Ride The Lightning](https://github.com/ShahanaFarooqui/RTL)** (RTL) service. A device agnostic web user interface for the Lightning Network, RTL allows you to operate your node without leaving BTCPay, from your browser. 
 
 To initiate RTL in BTCPay, Go to Server Settings > Services > RTL > See information.
-
-<!-- ![Ride The Lightning in BTCPay Server](./img/RideTheLightning.png "Ride The Lightning in BTCPay Server") -->
-
-
-<!-- ![Ride The Lightning Service in BTCPay Server](./img/server-settings/services/RideTheLightningServices.jpg "Ride The Lightning Service in BTCPay Server") -->
-
-<!-- Note: Read the [RTL Getting Started Guide](https://medium.com/@suheb.khan/how-to-ride-the-lightning-447af999dcd2) for more details. -->
 
 ### Control your LND using Zap
 For remote use of your LND node on iOS or PC, you can use [Zap wallet integration](https://github.com/LN-Zap/zap-tutorials/blob/master/docs/desktop/btcpay-server.mdx).
@@ -124,28 +113,21 @@ cd btcpayserver-docker
 
 Run ./bitcoin-lncli.sh --help` to see a full list of commands or check the full [API documentation](https://api.lightning.community/).
 
-## BTCPay and c-lightning
-### Control your c-lightning using Spark
+## BTCPay and Core Lightning (CLN)
+### Control your CLN using Spark
 
-The most straightforward way to start using the **c-lightning implementation in BTCPay** is to use [Spark Wallet](https://github.com/shesek/spark-wallet) integration. Just like Zap for LND, Spark is a graphical interface of your internal c-lightning node.
+The most straightforward way to start using the **CLN implementation in BTCPay** is to use [Spark Wallet](https://github.com/shesek/spark-wallet) integration. Just like Zap for LND, Spark is a graphical interface of your internal CLN node.
 
-[![BTCPay Server - c-lightning and Spark](https://img.youtube.com/vi/uV1R6IQpmg8/mqdefault.jpg "BTCPay Server - c-lightning and Spark")](https://www.youtube.com/watch?v=uV1R6IQpmg8 "BTCPay Server - c-lightning and Spark")
+[![BTCPay Server - CLN and Spark](https://img.youtube.com/vi/uV1R6IQpmg8/mqdefault.jpg "BTCPay Server - CLN and Spark")](https://www.youtube.com/watch?v=uV1R6IQpmg8 "BTCPay Server - CLN and Spark")
 
 You can use Spark as an internal or external wallet. Internal wallet allows users to use Spark via the web-browser inside their BTCPay Server. You can also connect externally to a Spark mobile or desktop app just by scanning a QR code.
 
 
 Go to Server Settings > Services > Spark Server > See information.
 
-<!-- ![Accessing Spark wallet](./img/SparkConnect.jpg "Accessing Spark wallet")
+### Control your CLN via the command-line: lightning-cli
 
-![Accessing Spark wallet](./img/SparkConnect2.jpg.png "Accessing Spark wallet") -->
-
-<!-- ![Spark wallet configuration](./img/SparkConnect_UpdatedScreenshot.jpg "Accessing Spark wallet") -->
-
-
-### Control your c-lightning via the command-line: lightning-cli
-
-Similar to `lncli`, c-lightning can be accessed via the command-line using the shell script `bitcoin-lightning-cli.sh`.
+Similar to `lncli`, CLN can be accessed via the command-line using the shell script `bitcoin-lightning-cli.sh`.
 
 
 If you're on Docker make sure you're in docker directory.
@@ -163,7 +145,7 @@ Run `./bitcoin-lightning-cli.sh help` to see a full list of commands or check th
 Before you start transacting using your new lightning node, consider backing up the **on-chain** wallet. Steps:
 1. **for LND**: storing a copy of the LND seed.
 Go to "Server Settings" > "Services" > "LND Seed Backup" and select "See information"
-2. **for c-lightning**: storing a copy of the [hsm_secret](https://lightning.readthedocs.io/BACKUP.html#hsm-secret)
+2. **for CLN**: storing a copy of the [hsm_secret](https://lightning.readthedocs.io/BACKUP.html#hsm-secret)
 
 Acknowledge the limitations of **off-chain** payment channel backups and associated risks.
 \
@@ -184,7 +166,7 @@ The on-chain funding process can be performed in two ways:
 sudo su -
 cd btcpayserver-docker
 ./bitcoin-lncli.sh newaddress p2wkh #for LND
-./bitcoin-lightning-cli.sh newaddr  #for c-lightning
+./bitcoin-lightning-cli.sh newaddr  #for CLN
 {
    "address" / "bech32": "bc1..........." #use this as the destination for the allocated funds
 }
@@ -195,14 +177,14 @@ Check out [Payment channels](./LightningNetwork%20-%20Payment%20channels.md) for
 
 ## Lapps (Lightning Network Apps)
 
-[Lapps](https://blockstream.com/2018/03/29/blockstreams-week-of-lapps-ends/) are applications built on top of the [Lightning Charge](https://blockstream.com/2018/01/16/lightning-charge/), a complimentary package that allows users and developers to easier use and develop on top of c-lightning. If you decided to use c-lightning, you can easily connect your BTCPay to any of the Lapps.
+[Lapps](https://blockstream.com/2018/03/29/blockstreams-week-of-lapps-ends/) are applications built on top of the [Lightning Charge](https://blockstream.com/2018/01/16/lightning-charge/), a complimentary package that allows users and developers to easier use and develop on top of CLN. If you decided to use CLN, you can easily connect your BTCPay to any of the Lapps.
 
-BTCPay exposes all the necessary information required to **connect your internal BTCPay c-lightning node to a Lightning Network App**.  Go to Server Settings > Services > Lightning charge server > See information > Credentials.
+BTCPay exposes all the necessary information required to **connect your internal BTCPay CLN node to a Lightning Network App**.  Go to Server Settings > Services > Lightning charge server > See information > Credentials.
 
 Below are videos that showcase how to connect some of the lapps to your BTCPay.
 
-[![BTCPay Server - c-lightning and lapps intro](https://img.youtube.com/vi/6EHNq1anD1k/mqdefault.jpg)](https://www.youtube.com/watch?v=6EHNq1anD1k "BTCPay Server - c-lightning and lapps intro")
+[![BTCPay Server - CLN and lapps intro](https://img.youtube.com/vi/6EHNq1anD1k/mqdefault.jpg)](https://www.youtube.com/watch?v=6EHNq1anD1k "BTCPay Server - CLN and lapps intro")
 
-[!["BTCPay Server - c-lightning and lapps publisher](https://img.youtube.com/vi/ZbM3jcxau0o/mqdefault.jpg)](https://www.youtube.com/watch?v=ZbM3jcxau0o "BTCPay Server - c-lightning and lapps publisher")
+[!["BTCPay Server - CLN and lapps publisher](https://img.youtube.com/vi/ZbM3jcxau0o/mqdefault.jpg)](https://www.youtube.com/watch?v=ZbM3jcxau0o "BTCPay Server - CLN and lapps publisher")
 
-[![BTCPay Server - c-lightning and lapps woo lightning](https://img.youtube.com/vi/EYrsU3LGpbI/mqdefault.jpg)](https://www.youtube.com/watch?v=EYrsU3LGpbI "BTCPay Server - c-lightning and lapps woo lightning")
+[![BTCPay Server - CLN and lapps woo lightning](https://img.youtube.com/vi/EYrsU3LGpbI/mqdefault.jpg)](https://www.youtube.com/watch?v=EYrsU3LGpbI "BTCPay Server - CLN and lapps woo lightning")
