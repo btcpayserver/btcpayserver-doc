@@ -217,7 +217,7 @@ By default type "payment" is selected. But if you have Liquid Assets with your o
 # Troubleshooting
 
 ## Error: Call to undefined function BTCPayServer\Http\curl_init()
-Please make sure your PHP version supports the cURL (as written in the requirements above). You can install it on Debian/Ubuntu by running the command `sudo apt install php-curl`.  
+Please make sure your PHP version supports the cURL extension (as written in the requirements above). You can install it on Debian/Ubuntu by running the command `sudo apt install php-curl`.  
 
 ## The order states do not update although the invoice has been paid
 Please check first if the webhook is created under the BTCPay Server store settings. If there is no webhook created you can visit on your WooCommerce store BTCPay Settings tab under WooCommerce settings and hit the save button. This will create the webhook.
