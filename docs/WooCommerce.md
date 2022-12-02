@@ -26,7 +26,7 @@ To integrate BTCPay Server into an existing WooCommerce store, follow the steps 
 Please ensure that you meet the following requirements before installing this plugin.
 
 - PHP version 7.4 or newer
-- The curl, gd, intl, json, and mbstring PHP extensions are available
+- The cURL, gd, intl, json, and mbstring PHP extensions are available
 - A WooCommerce website ([Installation instructions](https://woocommerce.com/document/installing-uninstalling-woocommerce/) or [directly on BTCPay Server](#deploying-woocommerce-from-btcpay-server))
 - You have a BTCPay Server version 1.3.0 or later, either [self-hosted](/Deployment/README.md) or [hosted by a third-party](/Deployment/ThirdPartyHosting.md)
 - [You've a registered account on the instance](./RegisterAccount.md)
@@ -215,6 +215,9 @@ Additional options only available for the separate payment gateways (if that fea
 By default type "payment" is selected. But if you have Liquid Assets with your own issued asset/token (e.g. used as voucher) you can select "promotion" here. Those are processed differently than normal payment tokens. Details can be found [here](./FAQ/Integrations/#how-to-configure-additional-token-support#promotional-tokens-100-discount)
 
 # Troubleshooting
+
+## Error: Call to undefined function BTCPayServer\Http\curl_init()
+Please make sure your PHP version supports the cURL (as written in the requirements above). You can install it on Debian/Ubuntu by running the command `sudo apt install php-curl`.  
 
 ## The order states do not update although the invoice has been paid
 Please check first if the webhook is created under the BTCPay Server store settings. If there is no webhook created you can visit on your WooCommerce store BTCPay Settings tab under WooCommerce settings and hit the save button. This will create the webhook.
