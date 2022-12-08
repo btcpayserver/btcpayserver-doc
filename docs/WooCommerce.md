@@ -222,7 +222,7 @@ Please make sure your PHP version supports the cURL extension (as written in the
 ## The order states do not update although the invoice has been paid
 Please check first if the webhook is created under the BTCPay Server store settings. If there is no webhook created you can visit on your WooCommerce store BTCPay Settings tab under WooCommerce settings and hit the save button. This will create the webhook.
 
-You may also check the details of your invoice if there were any errors on sending the webhook request. Some hosting providers, firewall setups or WordPress security plugins (like WordFence) block POST requests to your WordPress site which lead to a http status of "403 Forbidden" or "503 Service Unavailable". 
+You may also check the details of your invoice if there were any errors on sending the webhook request. Some hosting providers, firewall setups or WordPress security plugins (like Wordfence) block POST requests to your WordPress site which lead to a http status of "403 Forbidden" or "503 Service Unavailable". 
 
 You can check and verify yourself if there is something blocking requests to your site in one of these two ways:
 
