@@ -111,7 +111,7 @@ cd btcpayserver-docker
 
 Run ./bitcoin-lncli.sh --help` to see a full list of commands or check the full [API documentation](https://api.lightning.community/).
 
-## BTCPay and Core Lightning (CLN)
+## Getting started with BTCPay Server and Core Lightning (CLN)
 ### Control your CLN using Spark
 
 The most straightforward way to start using the **CLN implementation in BTCPay** is to use [Spark Wallet](https://github.com/shesek/spark-wallet) integration. Just like Zap for LND, Spark is a graphical interface of your internal CLN node.
