@@ -5,8 +5,8 @@ Given that the Lightning Network is a relatively new technology under active dev
 Overview: 
 
 1. The lightning node is deployed, enabled and its on-chain wallet is funded
-2. A peer is identified and the first payment channel is created
-3. Inbound capacity is acquired and the node is able to **send** and **receive**
+2. A peer is identified and the first payment channel is opened
+3. Inbound and outbound liquidity is acquired. The node is now able to **send** and **receive**
 4. Liquidity management, an ongoing process to maintain the capacity to **send** and **receive**
 
 Key considerations:
