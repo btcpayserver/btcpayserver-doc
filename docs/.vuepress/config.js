@@ -251,7 +251,8 @@ const sidebarDevelopment = [
     children: [
       [`${baseUrl}/API/Greenfield/v1`, 'Greenfield API v1', { type: 'external' }],
       '/BTCPayServer/greenfield-authorization',
-      '/Development/GreenFieldExample'
+      '/Development/GreenFieldExample',
+      '/Development/GreenFieldExample-NodeJS'
     ]
   },
   {
