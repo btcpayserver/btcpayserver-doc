@@ -9,7 +9,7 @@ Make sure that the token you're using has the permissions to execute the request
 
 ## Create a new user
 
-Creating a new user can be done by using [this endpoint](https://docs.btcpayserver.org/API/Greenfield/v1/#tag/Users/paths/~1api~1v1~1users/post).
+Creating a new user can be done by using [this endpoint](https://docs.btcpayserver.org/API/Greenfield/v1/#operation/Users_CreateUser).
 
 ```js
 const btcpayserverurl = "https://mainnet.demo.btcpayserver.org"
@@ -38,9 +38,9 @@ fetch(btcpayserverurl + apiendpoint, {
 
 While we can use basic authentication to access the greenfield API, it is recommended to use API Keys to limit the scope of the credentials.
 
-For example: If we want to [create a new store](https://docs.btcpayserver.org/API/Greenfield/v1/#tag/Stores/paths/~1api~1v1~1stores/post) we need the `btcpay.store.canmodifystoresettings` permission for the API key.
+For example: If we want to [create a new store](https://docs.btcpayserver.org/API/Greenfield/v1/#operation/Stores_CreateStore) we need the `btcpay.store.canmodifystoresettings` permission for the API key.
 
-You can do it through BTCPay Server UI (by browsing `/account/apikeys` of your instance), but let's do it via command line using [this endpoint](https://docs.btcpayserver.org/API/Greenfield/v1/#tag/API-Keys/paths/~1api~1v1~1api-keys/post).
+You can do it through BTCPay Server UI (by browsing `/account/apikeys` of your instance), but let's do it via command line using [this endpoint](https://docs.btcpayserver.org/API/Greenfield/v1/#operation/ApiKeys_CreateApiKey).
 
 ```js
 const btcpayserverUrl = "https://mainnet.demo.btcpayserver.org"
@@ -67,7 +67,7 @@ fetch(btcpayserverUrl + apiEndpoint, {
 
 ## Create a new store
 
-Now, we can use the api key to [create a new store](https://docs.btcpayserver.org/API/Greenfield/v1/#tag/Stores/paths/~1api~1v1~1stores/post).
+Now, we can use the api key to [create a new store](https://docs.btcpayserver.org/API/Greenfield/v1/#operation/Stores_CreateStore).
 
 ```js
 const btcpayserverUrl = "https://mainnet.demo.btcpayserver.org"
