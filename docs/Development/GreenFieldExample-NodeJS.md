@@ -11,30 +11,27 @@ Make sure that the token you're using has the permissions to execute the request
 
 Creating a new user can be done by using [this endpoint](https://docs.btcpayserver.org/API/Greenfield/v1/#tag/Users/paths/~1api~1v1~1users/post).
 
+```js
+const btcpayserverurl = "https://mainnet.demo.btcpayserver.org"
+const apiendpoint = "/api/v1/users"
+const token = "APIKEYTOKEN"
+const headers = {
+  "Content-Type": "application/json",
+  "Authorization": "token " + token
+}
+const user = {
+  "email": "MyTestUser@gmail.com",
+  "password": "NOTVERYSECURE",
+  "isAdministrator": false
+}
 
-```JavaScript
-    const btcpayserverurl = "https://mainnet.demo.btcpayserver.org"
-    const apiendpoint = "/api/v1/users"
-    const token = "APIKEYTOKEN"
-    const headers = {
-        "Content-Type": "application/json",
-        "Authorization": "token " + token
-    }
-    const user = {
-        "email": "MyTestUser@gmail.com",
-        "password": "NOTVERYSECURE",
-        "isAdministrator": false
-    }
-
-    fetch(btcpayserverurl + apiendpoint, {
-        method: "POST",
-        headers: headers,
-        body: JSON.stringify(user),
-    })
-        .then((response) => response.json())
-        .then((data) => {
-            console.log(data);
-        });
+fetch(btcpayserverurl + apiendpoint, {
+  method: "POST",
+  headers: headers,
+  body: JSON.stringify(user)
+})
+  .then((response) => response.json())
+  .then((data) => { console.log(data) })
 ```
 
 ## Create a new API key
@@ -45,109 +42,108 @@ For example: If we want to [create a new store](https://docs.btcpayserver.org/AP
 
 You can do it through BTCPay Server UI (by browsing `/account/apikeys` of your instance), but let's do it via command line using [this endpoint](https://docs.btcpayserver.org/API/Greenfield/v1/#tag/API-Keys/paths/~1api~1v1~1api-keys/post).
 
-```JavaScript
-    const btcpayserverUrl = "https://mainnet.demo.btcpayserver.org"
-    const apiEndpoint = "/api/v1/api-keys"
-    const permission = "btcpay.store.canmodifystoresettings"
-    const token = "APIKEYTOKEN"
-    const headers = {
-        "Content-Type": "application/json",
-        "Authorization": "token " + token
-    }
-    const apikey = {
-        "label": "LABELNAME",
-        "permissions": [permission]
-    }
+```js
+const btcpayserverUrl = "https://mainnet.demo.btcpayserver.org"
+const apiEndpoint = "/api/v1/api-keys"
+const permission = "btcpay.store.canmodifystoresettings"
+const token = "APIKEYTOKEN"
+const headers = {
+  "Content-Type": "application/json",
+  "Authorization": "token " + token
+}
+const apikey = {
+  "label": "LABELNAME",
+  "permissions": [permission]
+}
 
-    fetch(btcpayserverUrl + apiEndpoint, {
-        method: "POST",
-        headers: headers,
-        body: JSON.stringify(apikey),
-    })
-        .then((response) => response.json())
-        .then((data) => {
-            console.log(data);
-        });
+fetch(btcpayserverUrl + apiEndpoint, {
+  method: "POST",
+  headers: headers,
+  body: JSON.stringify(apikey)
+})
+  .then((response) => response.json())
+  .then((data) => { console.log(data) })
 ```
 
 ## Create a new store
 
 Now, we can use the api key to [create a new store](https://docs.btcpayserver.org/API/Greenfield/v1/#tag/Stores/paths/~1api~1v1~1stores/post).
 
-```JavaScript
-    const btcpayserverUrl = "https://mainnet.demo.btcpayserver.org"
-    const apiEndpoint = "/api/v1/stores"
-    const token = "APIKEYTOKEN"
-    const headers = {
-        "Content-Type": "application/json",
-        "Authorization": "token " + token
-    }
-    const store = {
-        "Name": "STORENAME"
-    }
+```js
+const btcpayserverUrl = "https://mainnet.demo.btcpayserver.org"
+const apiEndpoint = "/api/v1/stores"
+const token = "APIKEYTOKEN"
+const headers = {
+  "Content-Type": "application/json",
+  "Authorization": "token " + token
+}
+const store = {
+  "Name": "STORENAME"
+}
 
-    fetch(btcpayserverurl + apiendpoint, {
-        method: "POST",
-        headers: headers,
-        body: JSON.stringify(store),
-    })
-        .then((response) => response.json())
-        .then((data) => {
-            console.log(data);
-        });
+fetch(btcpayserverurl + apiendpoint, {
+  method: "POST",
+  headers: headers,
+  body: JSON.stringify(store),
+})
+  .then((response) => response.json())
+  .then((data) => { console.log(data) })
 ```
 
-##  Webhook implementation with Node.JS + Express
+## Webhook implementation with Node.JS + Express
 
-You can use your Node.JS Express webapplication to receive webhook requests from your BTCPay Server
+You can use your Node.JS Express web application to receive webhook requests from your BTCPay Server.
 
-First you need a route so that your Node.JS application can receive POST requests. Based on how you set up the express server this should look somthing like underneath
+First you need a route so that your Node.JS application can receive POST requests.
+Based on how you set up the express server this should look somthing like underneath.
 
-```Javascript
-     app.post('/btcpayserverwebhook', (req, res) => {
-     //do stuff here
-     })
+```js
+app.post('/btcpayserverwebhook', (req, res) => {
+  //do stuff here
+})
 ```
-What's important is that the webhook (as statet in the documentation) delivers an HTTP-Header ```BTCPAY-SIG```
-You should in above function compare the ```BTCPAY-SIG``` with the actual data from the request body (as bytes). In your app.js (or similar) add following where you include requirements:
 
-```Javascript
-     const bodyParser = require('body-parser')
+What's important is that the webhook (as statet in the documentation) delivers an HTTP-Header `BTCPAY-SIG`.
+You should in above function compare the `BTCPAY-SIG` with the actual data from the request body (as bytes).
+In your app.js (or similar) add following where you include requirements:
+
+```js
+const bodyParser = require('body-parser')
 ```
+
 and add following
-```Javascript
-     app.use(bodyParser.json({
-     verify: (req, res, buf) => {
-          req.rawBody = buf
-     }
-     }))
+
+```js
+app.use(bodyParser.json({
+  verify: (req, res, buf) => {
+    req.rawBody = buf
+  }
+}))
 ```
 
-This makes sure that in req.rawBody the correct content is parsed so that you can compare the hashed req.rawBody with the ```BTCPAY-SIG``` header value
+This makes sure that in req.rawBody the correct content is parsed so that you can compare the hashed req.rawBody with the `BTCPAY-SIG` header value.
 
-Edit your router function like this: (Obviously change ```webhookSecret```)
+Edit your router function like this: (Obviously change `webhookSecret`)
 
-```Javascript
-     app.post('/btcpayserverwebhook', (req, res) => {
-          const sigHashAlg = "sha256"
-          const sigHeaderName = "BTCPAY-SIG"
-          const webhookSecret = "VERYVERYSECRET"
-          if (!req.rawBody) {
-               return next('Request body empty')
-          }
-          const sig = Buffer.from(req.get(sigHeaderName) || '', 'utf8')
-          const hmac = crypto.createHmac(sigHashAlg, webhookSecret)
-          const digest = Buffer.from(sigHashAlg + '=' + hmac.update(req.rawBody).digest('hex'), 'utf8')
-          const checksum = Buffer.from(sig, 'utf8')
-          if (checksum.length !== digest.length || !crypto.timingSafeEqual(digest, checksum)) {
-               console.log(`Request body digest (${digest}) did not match ${sigHeaderName} (${checksum})`)
-               return next(`Request body digest (${digest}) did not match ${sigHeaderName} (${checksum})`)
-          }
-          else {
-               ///Do More Stuff here
-               res.status(200).send('Request body was signed')
-          }
-     })
+```js
+app.post('/btcpayserverwebhook', (req, res) => {
+  const sigHashAlg = "sha256"
+  const sigHeaderName = "BTCPAY-SIG"
+  const webhookSecret = "VERYVERYSECRET"
+  if (!req.rawBody) {
+    return next('Request body empty')
+  }
+  const sig = Buffer.from(req.get(sigHeaderName) || '', 'utf8')
+  const hmac = crypto.createHmac(sigHashAlg, webhookSecret)
+  const digest = Buffer.from(sigHashAlg + '=' + hmac.update(req.rawBody).digest('hex'), 'utf8')
+  const checksum = Buffer.from(sig, 'utf8')
+  if (checksum.length !== digest.length || !crypto.timingSafeEqual(digest, checksum)) {
+    console.log(`Request body digest (${digest}) did not match ${sigHeaderName} (${checksum})`)
+    return next(`Request body digest (${digest}) did not match ${sigHeaderName} (${checksum})`)
+  }
+  else {
+    // Do More Stuff here
+    res.status(200).send('Request body was signed')
+  }
+})
 ```
-
-
