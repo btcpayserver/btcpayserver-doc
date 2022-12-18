@@ -12,7 +12,8 @@ DOCKER_DIR="$BASE_DIR/deps/docker"
 VAULT_DIR="$BASE_DIR/deps/vault"
 TRANSMUTER_DIR="$BASE_DIR/deps/transmuter"
 ZAPIER_DIR="$BASE_DIR/deps/zapier"
-D11N_DIR="$BASE_DIR/deps/d11n"
+LNBANK_DIR="$BASE_DIR/deps/lnbank"
+PODSERVER_DIR="$BASE_DIR/deps/podserver"
 
 update_external() {
   file="$1"
@@ -186,33 +187,43 @@ for file in "$DOCS_DIR"/Zapier/*.md; do
   update_external "$file" https://github.com/btcpayserver/zapier "$DOCS_DIR"/Zapier/
 done
 
-
 # LNbank
 
-echo "Setup dependency: LNbank and PodServer"
+echo "Setup dependency: LNbank"
 
-rm -rf "$D11N_DIR"
-rm -rf "$DOCS_DIR/LNbank" "$DOCS_DIR/PodServer"
-mkdir -p "$DOCS_DIR/LNbank" "$DOCS_DIR/PodServer"
+rm -rf "$LNBANK_DIR"
+rm -rf "$DOCS_DIR/LNbank"
+mkdir -p "$DOCS_DIR/LNbank"
 
-if [ ! -d "$D11N_DIR" ]; then
-  git clone --depth 1 https://github.com/dennisreimann/btcpayserver.git "$D11N_DIR"
-  git checkout -b plugins
+if [ ! -d "$LNBANK_DIR" ]; then
+  git clone --depth 1 https://github.com/dennisreimann/btcpayserver-plugin-lnbank.git "$LNBANK_DIR"
 fi
 
-cd "$D11N_DIR/BTCPayServer.Plugins.LNbank"
+cd "$LNBANK_DIR"
 cp -r README.md docs/* "$DOCS_DIR/LNbank"
 sed -ie 's$(./docs/$(./$g' "$DOCS_DIR/LNbank/README.md"
 for file in "$DOCS_DIR"/LNbank/*.md; do
-  update_external "$file" https://github.com/dennisreimann/btcpayserver "$DOCS_DIR"/LNbank/
+  update_external "$file" https://github.com/dennisreimann/btcpayserver-plugin-lnbank "$DOCS_DIR"/LNbank/
 done
 
 cp -r Resources/swagger/* "$BTCPAYSERVER_DIR/BTCPayServer/wwwroot/swagger/"
 
-cd "$D11N_DIR/BTCPayServer.Plugins.PodServer"
+# PodServer
+
+echo "Setup dependency: PodServer"
+
+rm -rf "$PODSERVER_DIR"
+rm -rf "$DOCS_DIR/PodServer"
+mkdir -p "$DOCS_DIR/PodServer"
+
+if [ ! -d "$PODSERVER_DIR" ]; then
+  git clone --depth 1 https://github.com/dennisreimann/btcpayserver-plugin-podserver.git "$PODSERVER_DIR"
+fi
+
+cd "$PODSERVER_DIR"
 cp -r README.md "$DOCS_DIR/PodServer"
 for file in "$DOCS_DIR"/PodServer/*.md; do
-  update_external "$file" https://github.com/dennisreimann/btcpayserver "$DOCS_DIR"/PodServer/
+  update_external "$file" https://github.com/dennisreimann/btcpayserver-plugin-podserver "$DOCS_DIR"/PodServer/
 done
 
 # Swagger
