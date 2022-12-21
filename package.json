@@ -15,8 +15,7 @@
   ],
   "config": {
     "dist": "docs/.vuepress/dist",
-    "port": "8080",
-    "linkcheck": "blc -ro --filter-level 2 --requests 1 --exclude edit/master --exclude /issues --exclude 127.0.0.1 --exclude azuredeploy.net --exclude cloudflare.com --exclude directory.btcpayserver.org --exclude foundation.btcpayserver.org --exclude install.btcpayserver.org --exclude bitma.tk --exclude coincards.com --exclude cyberciti.biz --exclude docs.github.com --exclude drupal.org --exclude dyn.com --exclude example.com --exclude facebook.com --exclude figma.com --exclude ipchicken.com --exclude librty --exclude linkedin.com --exclude linuxize.com --exclude linuxconfig.org --exclude namecheap.com --exclude nuget.org --exclude pnxbet.com --exclude pi-hole.net --exclude reddit.com --exclude reqbin.com --exclude shopware.com --exclude silverstonetek.com --exclude sipsorcery.com --exclude support.bitpay.com --exclude support.google.com --exclude t.me --exclude transifex.com --exclude twitter.com --exclude wiki.ion.radar.tech"
+    "port": "8080"
   },
   "scripts": {
     "prestart": "rm -rf $npm_package_config_dist",
@@ -24,23 +23,16 @@
     "build": "NODE_ENV=production vuepress build docs",
     "netlify": "./setup-deps.sh && npm run build",
     "test": "jest",
-    "linkcheck": "start-server-and-test linkcheck:serve $npm_package_config_port linkcheck:local",
-    "linkcheck:serve": "serve -p $npm_package_config_port $npm_package_config_dist",
-    "linkcheck:local": "$npm_package_config_linkcheck http://localhost:$npm_package_config_port",
-    "linkcheck:prod": "$npm_package_config_linkcheck https://docs.btcpayserver.org",
     "redirects": "node create-redirects.js"
   },
   "devDependencies": {
     "@redocly/cli": "1.0.0-beta.111",
     "@vuepress/plugin-back-to-top": "1.9.7",
     "@vuepress/plugin-medium-zoom": "1.9.7",
-    "broken-link-checker": "0.7.8",
     "esm": "3.2.25",
     "jest": "28.1.3",
     "markdown-it-implicit-figures": "0.10.0",
     "markdown-it-include": "2.0.0",
-    "serve": "14.0.1",
-    "start-server-and-test": "1.14.0",
     "swagger-cli": "4.0.4",
     "vuepress": "1.9.7",
     "vuepress-plugin-clean-urls": "1.1.2",
