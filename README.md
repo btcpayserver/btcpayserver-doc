@@ -127,83 +127,14 @@ The dev server needs to be running alongside for this to work.
 
 The BTCPay Server Project is proudly supported by these entities through the [BTCPay Server Foundation](https://foundation.btcpayserver.org/).
 
-<table>
-  <tbody>
-    <tr>
-      <td align="center" valign="middle">
-        <a href="https://spiral.xyz" target="_blank">
-          <img src="https://raw.githubusercontent.com/btcpayserver/btcpayserver/master/BTCPayServer/wwwroot/img/spiral.svg?sanitize=true" alt="Spiral" height=100>
-          <br/>
-          <span>Spiral</span>
-        </a>
-      </td>
-      <td align="center" valign="top">
-        <a href="https://www.bailliegifford.com/" target="_blank">
-          <img src="https://raw.githubusercontent.com/btcpayserver/btcpayserver/master/BTCPayServer/wwwroot/img/bailliegifford.svg?sanitize=true" alt="Baillie Gifford" loading="lazy" height=100>
-          <br/>
-          <span>Baillie Gifford</span>
-        </a>
-      </td>
-      <td align="center" valign="top">
-        <a href="https://strike.me" target="_blank">
-          <img src="https://raw.githubusercontent.com/btcpayserver/btcpayserver/master/BTCPayServer/wwwroot/img/strike.svg?sanitize=true" alt="Strike" loading="lazy" height=100>
-          <br/>
-          <span>Strike</span>
-        </a>
-      </td>
-      <td align="center" valign="top">
-        <a href="https://hrf.org" target="_blank">
-          <img src="https://raw.githubusercontent.com/btcpayserver/btcpayserver/master/BTCPayServer/wwwroot/img/hrf.svg?sanitize=true" alt="Human Rights Foundation" loading="lazy" width=100>
-          <br/>
-          <span>HRF</span>
-        </a>
-      </td>
-      <td align="center" valign="middle">
-        <a href="https://www.pnxbet.com" target="_blank">
-          <img src="https://raw.githubusercontent.com/btcpayserver/btcpayserver/master/BTCPayServer/wwwroot/img/pnxbet.png?sanitize=true" alt="PNXBET" height=100>
-          <br/>
-          <span>PNXBET</span>
-        </a>
-      </td>
-      </tr>
-      <tr>
-      <td align="center" valign="middle">
-        <a href="https://lunanode.com" target="_blank">
-          <img src="https://raw.githubusercontent.com/btcpayserver/btcpayserver/master/BTCPayServer/wwwroot/img/lunanode.svg?sanitize=true" alt="LunaNode" height=100>
-          <br/>
-          <span>LunaNode</span>
-        </a>
-      </td>
-      <td align="center" valign="middle">
-        <a href="https://walletofsatoshi.com/" target="_blank">
-          <img  src="https://raw.githubusercontent.com/btcpayserver/btcpayserver/master/BTCPayServer/wwwroot/img/walletofsatoshi.svg?sanitize=true" alt="Wallet of Satoshi" height=100>
-          <br/>
-          <span>Wallet of Satoshi</span>
-        </a>
-      </td>
-      <td align="center" valign="middle">
-        <a href="https://nomics.com/" target="_blank">
-          <img src="https://raw.githubusercontent.com/btcpayserver/btcpayserver/master/BTCPayServer/wwwroot/img/nomics.svg?sanitize=true" alt="Nomics" height=100>
-          <br/>
-          <span>Nomics</span>
-        </a>
-      </td>
-      <td align="center" valign="middle">
-        <a href="https://coincards.com/" target="_blank">
-          <img src="https://raw.githubusercontent.com/btcpayserver/btcpayserver/master/BTCPayServer/wwwroot/img/coincards.svg?sanitize=true" alt="Coincards" height=100>
-          <br/>
-          <span>Coincards</span>
-        </a>
-      </td>
-      <td align="center" valign="middle">
-        <a href="https://ivpn.net/" target="_blank">
-          <img src="https://raw.githubusercontent.com/btcpayserver/btcpayserver/master/BTCPayServer/wwwroot/img/ivpn.svg?sanitize=true" alt="IVPN" height=100>
-          <br/>
-          <span>IVPN</span>
-        </a>
-      </td>
-    </tr>
-  </tbody>
-</table>
+[![Spiral](https://raw.githubusercontent.com/btcpayserver/btcpayserver/master/BTCPayServer/wwwroot/img/readme/supporter_spiral.svg)](https://spiral.xyz)
+[![Baillie Gifford](https://raw.githubusercontent.com/btcpayserver/btcpayserver/master/BTCPayServer/wwwroot/img/readme/supporter_bailliegifford.svg)](https://www.bailliegifford.com)
+[![Strike](https://raw.githubusercontent.com/btcpayserver/btcpayserver/master/BTCPayServer/wwwroot/img/readme/supporter_strike.svg)](https://strike.me)
+[![Human Rights Foundation](https://raw.githubusercontent.com/btcpayserver/btcpayserver/master/BTCPayServer/wwwroot/img/readme/supporter_hrf.svg)](https://hrf.org)
+[![PNXBET](https://raw.githubusercontent.com/btcpayserver/btcpayserver/master/BTCPayServer/wwwroot/img/readme/supporter_pnxbet.svg)](https://www.pnxbet.com)
+[![LunaNode](https://raw.githubusercontent.com/btcpayserver/btcpayserver/master/BTCPayServer/wwwroot/img/readme/supporter_lunanode.svg)](https://lunanode.com)
+[![Wallet of Satoshi](https://raw.githubusercontent.com/btcpayserver/btcpayserver/master/BTCPayServer/wwwroot/img/readme/supporter_walletofsatoshi.svg)](https://walletofsatoshi.com/)
+[![Coincards](https://raw.githubusercontent.com/btcpayserver/btcpayserver/master/BTCPayServer/wwwroot/img/readme/supporter_coincards.svg)](https://coincards.com/)
+[![IVPN](https://raw.githubusercontent.com/btcpayserver/btcpayserver/master/BTCPayServer/wwwroot/img/readme/supporter_ivpn.svg)](https://ivpn.net/)
 
 If you'd like to support the project, please visit the [donation page](https://btcpayserver.org/donate/).
