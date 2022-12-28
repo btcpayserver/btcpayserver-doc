@@ -40,4 +40,4 @@ Once there are some funds in received to your **BTCPay Wallet connected to Coldc
 
 The video below shows **how to connect your BTCPay store to your Coldcard**.
 
-[![BTCPay Server and Coldcard](https://img.youtube.com/vi/oK0h-76Giaw/mqdefault.jpg)](https://www.youtube.com/watch?v=oK0h-76Giaw "PSBT Coldcard and BTCPay Server")
+[![BTCPay Server and Coldcard](https://img.youtube.com/vi/XyqvYaXMfNU/mqdefault.jpg)](https://youtu.be/XyqvYaXMfNU "PSBT Coldcard and BTCPay Server")
