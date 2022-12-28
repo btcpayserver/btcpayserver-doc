@@ -1,6 +1,6 @@
 # Payouts
 
-The payout functionality is tied into the [Pull Payments](./PullPayments.md). This feature allows y ou to create payouts within your BTCPay.
+The payout functionality is tied into the [Pull Payments](./PullPayments.md). This feature allows you to create payouts within your BTCPay.
 This feature allows you to process pull payment (refunds, salary payouts, or withdrawals). 
 
 ## How does it work? 

@@ -1,6 +1,6 @@
 # Connecting Wasabi Wallet to BTCPay Server
 
-This documents shows how to **connect [Wasabi Wallet](https://wasabiwallet.io/) to BTCPay Server**.
+This document shows how to **connect [Wasabi Wallet](https://wasabiwallet.io/) to BTCPay Server**.
 
 1. Create a Store in BTCPay Server
 2. [Download Wasabi Wallet](https://wasabiwallet.io/#download)
@@ -12,43 +12,66 @@ After installation, open the Wasabi Wallet by clicking on the icon on your deskt
 
 ## Quick Setup
 
-1. Generate Wasabi Wallet
-2. In Wasabi, Advanced Settings > Wallet info - copy the **Extended Public Key**.
+1. Create a new wallet in Wasabi
+2. In Wasabi, copy the **Extended Account Public Key** at `Wallet Info`.
 3. In BTCPay Server, Store > Settings > Wallet > Setup > Connect an existing wallet > Enter extended public key
-4. In Receive tab in Wasabi, generate a new address.
+4. In Wasabi, generate a new address at `Receive`.
 5. Confirm that the addresses in Wasabi and BTCPay Server match.
 
 ## Step by Step
 
-![Connect Wasabi Wallet to BTCPay Server](./img/Wasabi/WasabiWalletSetupBTCPay1.png "Connect Wasabi Wallet to BTCPay Server")
+At the first launch of Wasabi, the `Add wallet` dialog will be opened automatically.
+Select `Create new wallet` to generate a new wallet.
 
-Firstly, give your wallet a name, for example, `BTCPay Server Wallet` and enter a secure password. Make sure to write down the password. Agree to Terms of Service, and click `Generate` in the right corner.
+![Wasabi Add Wallet](./img/Wasabi/WasabiAddWallet.png "Wasabi Add Wallet")
 
-![Connect Wasabi Wallet to BTCPay Server](./img/Wasabi/WasabiWalletSetupBTCPay2.png "Connect Wasabi Wallet to BTCPay Server")
+Give your wallet a name, for example `BTCPay Server Wallet`.
 
-**IMPORTANT NOTE:** Write down your recovery words in the order you see them on the screen. Write them down a piece of paper and store it somewhere secure. Take your time and triple check each word. Do not store your seed in a digital format (photograph, text document). Whoever has the access to your seed and your password can access your funds. Confirm that the seed has been properly backed up.
+![Wasabi Add Wallet Name](./img/Wasabi/WasabiAddWalletWalletName.png "Wasabi Add Wallet Name")
 
-![Connect Wasabi Wallet to BTCPay Server](./img/Wasabi/WasabiWalletSetupBTCPay3.png "Connect Wasabi Wallet to BTCPay Server")
+Write down the Recovery Words in the correct order.
 
-Before proceeding, it is required to test the password, to be sure that the wallet can be accessed without any problems.
+![Wasabi Add Wallet Recovery Words](./img/Wasabi/WasabiAddWalletRecoveryWords.png "Wasabi Add Wallet Recovery Words")
 
-To test the password, enter it in the password field, and click `Test Password`.
+Confirm 3 of the 12 recovery words.
+This is a quick test to make sure that you have written them down.
 
-![Connect Wasabi Wallet to BTCPay Server](./img/Wasabi/WasabiWalletSetupBTCPay4.png "Connect Wasabi Wallet to BTCPay Server")
+![Wasabi Add Wallet Confirm Recovery Words](./img/Wasabi/WasabiAddWalletConfirmRecoveryWords.png "Wasabi Add Wallet Confirm Recovery Words")
 
-The green message on the left bottom side of the screen will appear if the password is correct.  If by any chance your password is incorrect, delete the wallet and start from scratch.
+Add a password.
+The password is used as a passphrase and it cannot be changed later on.
 
-![Connect Wasabi Wallet to BTCPay Server](./img/Wasabi/WasabiWalletSetupBTCPay5.png "Connect Wasabi Wallet to BTCPay Server")
+:::danger Both The Recovery words AND the password are needed to recover this wallet
+Make sure to have a backup of the recovery words and the password. 
+:::
 
-Upon testing the password, click on the `Load Wallet` to access your newly created wallet.
+![Wasabi Add Wallet Add Password](./img/Wasabi/WasabiAddWalletAddPassword.png "Wasabi Add Wallet Add Password")
 
-![Connect Wasabi Wallet to BTCPay Server](./img/Wasabi/WasabiWalletSetupBTCPay6.png "Connect Wasabi Wallet to BTCPay Server")
+**IMPORTANT NOTE:** Write down your recovery words in the order you see them on the screen. Write them down a piece of paper and store them somewhere secure. Take your time and triple-check each word. Do not store your seed in a digital format (photograph, text document). Whoever has access to your seed and your password can access your funds. Make sure you have a proper backup of the Recovery Words and the Password.
 
-When the wallet loads (it may take few moments), on the right hand wallet explorer, toggle the `Advanced` options and then click `Wallet Info`.
+Select a Coinjoin Strategy.
+Wasabi automatically coinjoins all your funds. 
+If you don't want to coinjoin your funds, you can disable coinjoin later by disabling `Automatically start coinjoin` in the Coinjoin Settings.	 
+For more info about coinjoins and the related settings, please refer to the [Wasabi Documentation](https://docs.wasabiwallet.io/).
+
+![Wasabi Coinjoin Strategy](./img/Wasabi/WasabiCoinjoinStrategy.png "Wasabi Coinjoin Strategy")
+
+The wallet has been successfully created!
+
+![Wasabi Add Wallet Success](./img/Wasabi/WasabiAddWalletSuccess.png "Wasabi Add Wallet Success")
+
+Open the new wallet by entering the password.
+
+![Wasabi Open Wallet](./img/Wasabi/WasabiOpenWallet.png "Wasabi Open Wallet")
+
+The wallet will load (it might take some time).
+After the loading is done and the wallet is opened, click on the 3 dots at the top right corner to go to `Wallet Info` .
+
+![Wasabi Find Wallet Info](./img/Wasabi/WasabiFindWalletInfo.png "Wasabi Find Wallet Info")
 
 Select and **copy** the `Extended Account Public Key`. This is the **public** key from which BTCPay will derive addresses. This cannot be used to derive private keys and spend the bitcoin.
 
-![Connect Wasabi Wallet to BTCPay Server](./img/Wasabi/WasabiWalletSetupBTCPay8.png "Connect Wasabi Wallet to BTCPay Server")
+![Wasabi Extended Account Public Key](./img/Wasabi/WasabiExtendedAccountPublicKey.png "Wasabi Extended Account Public Key")
 
 ## Setup store wallet
 
@@ -68,9 +91,9 @@ Select and **copy** the `Extended Account Public Key`. This is the **public** ke
 
 ![Connect Wasabi Wallet to BTCPay Server](./img/createwallet/xpub-form.jpg "Connect Wasabi Wallet to BTCPay Server")
 
-5. Return to the Wasabi  Wallet. Go to `Receive tab` and `generate a new address`.
+5. Return to the Wasabi Wallet. Click the `Receive` button and generate a new address.
 
-![Connect Wasabi Wallet to BTCPay Server](./img/Wasabi/WasabiWalletSetupBTCPay12.png "Connect Wasabi Wallet to BTCPay Server")
+![Wasabi Receive](./img/Wasabi/WasabiReceive.png "Wasabi Receive")
 
 6. Compare the address you see in Wasabi Wallet to addresses shown in BTCPay Server. Find a match, `continue`.
 
@@ -83,21 +106,21 @@ Select and **copy** the `Extended Account Public Key`. This is the **public** ke
 
 ### Connecting Wasabi to BTCPay Server Full Node (If you're self-hosting BTCPay)
 
-After wallets are connected, it is highly-recommended to **connect Wasabi Wallet to your full node in BTCPay**. The process is easy, but can only be done if you self-host BTCPay and are logged in as `Admin`. Tor has to be enabled in BTCPay (it is enabled by default). This process enhances privacy even further.
+After the wallets are connected, it is highly recommended to **connect Wasabi Wallet to your full node in BTCPay**. The process is easy but can only be done if you self-host BTCPay and are logged in as `Admin`. Tor has to be enabled in BTCPay (it is enabled by default). This process enhances privacy even further.
 
 In BTCPay, go Server Settings > Services > **Full node P2P > See Information**.
 On the BTCP-P2P page, click on the `Show Confidential QR Code`. Bellow the QR Code, there's a link `See QR Code information by clicking here`, so click on the link to reveal your string. Copy the string but remove `bitcoin-p2p://` part.
 
-In `Alternative Block Source / Bitcoin P2P Endpoint`, paste the endpoint.
+In Wasabi, go to the Bitcoin tab at `Settings` and paste the endpoint in `Bitcoin P2P Endpoint`.
 
-Restart Wasabi.
+Restart Wasabi to apply the changes.
 
 ### Configuring the Gap Limit in Wasabi
 
-In the top menu, select click on the `File > Open > Wallets Folder`. Shortly the `json` file will be shown in a sub-folder. Open that file with a text editor like notepad.
-Locate `"MinGapLimit": 21,` change it to `"MinGapLimit": 100,` and save the file.
+At the search bar on top, click on `Wallet Folder`. Shortly the `json` file will be shown in a sub-folder. Open that file with a text editor like notepad.
+Find the line `"MinGapLimit": 21,` and change it to `"MinGapLimit": 100,` and save the file.
 
-There's no good answer to how much you should set the gap limit to. Most merchants set 100-200. If you're a big merchant with high transaction volume, you can try with even higher gap limit.
+There's no good answer to how much you should set the gap limit to. Most merchants set 100-200. If you're a big merchant with high transaction volume, you can try with even a higher gap limit.
 
 For more details about the [Gap Limit, check the FAQ](./FAQ/Wallet.md#missing-payments-in-my-software-or-hardware-wallet).
 

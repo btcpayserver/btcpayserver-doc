@@ -104,7 +104,7 @@ const sidebarUserGuide = [
       ['/OpenCart', 'OpenCart'],
       ['/Drupal', 'Drupal'],
       ['/Zapier/', 'Zapier'],
-      ['https://github.com/lampsolutions/LampSBtcPayShopware', 'Shopware', { type: 'external' }],
+      ['/Shopware', 'Shopware'],
       ['/VirtueMart', 'VirtueMart'],
       ['/CustomIntegration', 'Custom Integration']
     ]
@@ -251,7 +251,8 @@ const sidebarDevelopment = [
     children: [
       [`${baseUrl}/API/Greenfield/v1`, 'Greenfield API v1', { type: 'external' }],
       '/BTCPayServer/greenfield-authorization',
-      '/Development/GreenFieldExample'
+      '/Development/GreenFieldExample',
+      '/Development/GreenFieldExample-NodeJS'
     ]
   },
   {
