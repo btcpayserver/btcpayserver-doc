@@ -54,6 +54,12 @@ If the customer pays an invoice, but it fails to get the defined number of confi
 
 The invoice is considered "processing", as soon as it is visible on the blockchain (and mempool). When the invoice reaches the defined number of confirmations, it is considered "settled". Here you set the minimum amount of confirmations after which the invoice gets the "confirmed" status. Note this only applies to on-chain payments. Invoices paid via the Lightning Network immediately go to a settled state, as their confirmation is instant. In practice, as a merchant, you ship your product as soon as you see the invoice marked as settled. Find more on [wallet settings here](../Wallet.md#settings).
 
+## Consider the invoice confirmed with RBF flag on 0-conf setup
+
+Usually, your store would "process" the invoice as soon it's visible on the blockchain(in mempool). However, a transaction might be flagged for RBF, now what? 
+BTCPay Server has checks for RBF flags in place. Whenever a transaction is flagged as such, BTCPay Server will automatically wait for 1 conf. 
+Find more on [wallet settings here](../Wallet.md#settings).
+
 ## Consider the invoice paid even if the paid amount is ... % less than expected
 
 In a situation where a customer uses an exchange wallet to pay directly for an invoice, the exchange takes a small amount of fee. This means that such invoice is not considered fully completed. The invoice gets status "paid partially." If a merchant wants to accept underpaid invoices, you can set the percentage rate here.
