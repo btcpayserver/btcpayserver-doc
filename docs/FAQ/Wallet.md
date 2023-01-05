@@ -106,6 +106,21 @@ A Replace-By-Fee (RBF) transaction is a feature of the Bitcoin protocol. Learn m
 
 RBF capability is by default randomly enabled/disabled between transactions when using the BTCPay Server internal wallet, for enhanced privacy. In order to ensure it is enabled, or to disable it, see the advanced options of the BTCPay Server [internal wallet](../Wallet.md#rbf-replace-by-fee).
 
+## Does BTCPay Server use mempoolfullrbf=1 ?
+
+In very short, yes. 
+We've decided to add this as default to your BTCPay Server setup. However, we've also made it a fragment you can disable yourself. 
+Without mempoolfullrbf=1 if a customer is double-spending a payment with a transaction not signaling RBF, the merchant would only know after confirmation.
+
+However, some users don't want to activate this polic. Some people consider that while it aligns with the merchant's incentive to activate it, it is considered against the interests of the network, as it makes accepting a payment with 0 confirmations harder once the policy is widely deployed.
+
+To opt out use the following : 
+
+```bash
+BTCPAYGEN_EXCLUDE_FRAGMENTS="$BTCPAYGEN_EXCLUDE_FRAGMENTS;opt-mempoolfullrbf"
+. btcpay-setup.sh -i
+```
+
 ## How to add custom labels and comments to transactions?
 
 In addition to the [automatic labels](../Wallet.md#transaction-labels), you can easily create your own custom transaction labels. Labels can be used for filtering transactions in the wallet view. You can also add individual comments to transactions to leave a note or description about the payment.
