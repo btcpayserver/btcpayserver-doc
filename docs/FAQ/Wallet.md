@@ -112,7 +112,7 @@ In very short, yes.
 We've decided to add this as default to your BTCPay Server setup. However, we've also made it a fragment you can disable yourself. 
 Without mempoolfullrbf=1 if a customer is double-spending a payment with a transaction not signaling RBF, the merchant would only know after confirmation.
 
-However, some users don't want to activate this polic. Some people consider that while it aligns with the merchant's incentive to activate it, it is considered against the interests of the network, as it makes accepting a payment with 0 confirmations harder once the policy is widely deployed.
+However, some users don't want to activate this policy. Some people consider that while it aligns with the merchant's incentive to activate it, it is considered against the interests of the network, as it makes accepting a payment with 0 confirmations harder once the policy is widely deployed.
 
 To opt out use the following : 
 
