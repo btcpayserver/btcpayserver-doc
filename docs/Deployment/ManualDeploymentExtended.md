@@ -83,13 +83,13 @@ These instructions configure everything to run under an **unprivileged user** ca
 
 ### Application Components
 
-- Bitcoin Daemon<sup>1,2</sup>
+- Bitcoin Core<sup>1,2</sup>
 - NBXplorer<sup>1,2</sup>
 - BTCPay Server<sup>1,2</sup>
-- Lightning Network Daemon (lnd)<sup>2</sup>
+- Lightning Network Daemon (LND)<sup>2</sup>
 - Ride The Lightning (RTL)<sup>2</sup>
 
-<sup>1</sup> The bare minimum install of a BTCPay server only requires these items. Using a bare minimum configuration reduces the functionality: no lightning payments, no auto-renewal of TLS certificates, less reliable data store, less capable of handling NAT and more.
+<sup>1</sup> The bare minimum install of a BTCPay Server only requires these items. Using a bare minimum configuration reduces the functionality: no Lightning payments, no auto-renewal of TLS certificates, less reliable data store, less capable of handling NAT and more.
 
 <sup>2</sup> Built from source code.
 
@@ -124,8 +124,8 @@ postgres=# \q
 
 **Tor** can be used by the following components to provide enhanced privacy and/or help with NAT traversal:
 
-- Bitcoin-core Daemon
-- Lightning Network Daemon (lnd).
+- Bitcoin Core Daemon
+- Lightning Network Daemon (LND).
 
 Additional information running Bitcoin Core with Tor support can be found [here](https://github.com/bitcoin/bitcoin/blob/master/doc/tor.md).
 
@@ -391,11 +391,11 @@ If there is a problem then the `nginx` error log can also be checked.
 ~$ tail /var/log/nginx/error.log
 ```
 
-## Bitcoin Daemon
+## Bitcoin Core
 
 The gateway to the Bitcoin network for BTCPay Server components.
 
-#####  Install
+##### Install
 
 The full instructions to **build Bitcoin Core from source** are [here](https://github.com/bitcoin/bitcoin/blob/master/doc/build-unix.md).
 
@@ -961,7 +961,7 @@ Updating could break things. Be careful on a live system.
 ~$ sudo systemctl start btcpay
 ```
 
-## Lightning Network Daemon (lnd)
+## Lightning Network Daemon (LND)
 
 #####  Install
 
@@ -982,7 +982,7 @@ Full [instructions](https://github.com/lightningnetwork/lnd/blob/master/docs/INS
 go version go1.13 linux/amd64
  ```
 
-##### 2. Build and install lnd
+##### 2. Build and install LND
 
 ```bash
 ~$ cd ~; mkdir -p src; cd src
@@ -995,7 +995,7 @@ go version go1.13 linux/amd64
 lnd version 0.10.99-beta commit=clock/v1.0.0-229-ge64e71d86dc1ac716c30a80f85a22e8fb544697f
 ```
 
-##### 3. Create a symbolic link to the Bitcoin configuration file.
+##### 3. Create a symbolic link to the Bitcoin configuration file
 
 lnd looks for bitcoin.conf in a specific location to get necessary RPC and zeromq details.
 
@@ -1003,7 +1003,7 @@ lnd looks for bitcoin.conf in a specific location to get necessary RPC and zerom
 ~$ ln -s ~/.bitcoin/bitcoin.conf /etc/bitcoin/bitcoin.conf
 ```
 
-##### 4. Create a configuration file.
+##### 4. Create a configuration file
 
 ```bash
 ~$ vi lnd.conf
@@ -1079,11 +1079,9 @@ WantedBy=multi-user.target
 
 #####  Configuration
 
+:::danger
 **Running a Bitcoin Lightning daemon requires a hot wallet on your BTCPay Server.**
-
-Repeating for emphasis.
-
-**Running a Bitcoin Lightning daemon requires a hot wallet on your BTCPay Server.**
+:::
 
 With Bitcoin the protocol has evolved and deterministic key derivation means the keys for your wallet can be kept in a different location to the BTCPay Server. Lightning daemons do not have this facility. Any Bitcoins committed or received in your lightning channels are controlled by private keys that are on your BTCPay Server.
 
@@ -1165,6 +1163,12 @@ The **Lightning Node Connection String** to use with `BTCPay Server` is:
 
 ```bash
 type=lnd-rest;server=https://127.0.0.1:8080/;macaroonfilepath=/home/admin/.lnd/data/chain/bitcoin/mainnet/admin.macaroon;allowinsecure=true
+```
+
+The `BTCPAY_BTCLIGHTNING` environment variable should also be set with the Lightning node connection string, so that it is used as the internal Lightning node:
+
+```bash
+export BTCPAY_BTCLIGHTNING="type=lnd-rest;server=https://127.0.0.1:8080/;macaroonfilepath=/home/admin/.lnd/data/chain/bitcoin/mainnet/admin.macaroon;allowinsecure=true"
 ```
 
 #####  Check Tor and LND
