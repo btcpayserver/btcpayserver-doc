@@ -3,21 +3,21 @@
 ## Overview
 After deploying BTCPay Server, you may want to experiment with an innovative second-layer payment system built on top of Bitcoin protocol - the [Lightning Network](https://en.bitcoin.it/wiki/Lightning_Network).
 
-This guide will show you how to set up your Lightning Network (LN) node in BTCPay and guide you through the basics.
+This guide will show you how to set up your Lightning Network (LN) node in BTCPay Server and guide you through the basics.
 
-BTCPay currently offers three implementations of the Lightning Network:
+BTCPay Server currently offers three implementations of the Lightning Network:
 * [LND](https://github.com/lightningnetwork/lnd)
 * [Core Lightning (CLN)](https://github.com/ElementsProject/lightning) (formerly c-lightning)
 * [eclair](https://github.com/ACINQ/eclair)
 
 ::: danger
-**Before you proceed, please understand that the Lightning Network is still in the experimental stage.
-Using the Lightning Network can put your money at risk. Do not use more than you can afford to lose.**
+Before you proceed, please understand that the Lightning Network is still in the experimental stage.
+Using the Lightning Network can put your money at risk. Do not use more than you can afford to lose.
 :::
 
 Take time to familiarize yourself with the risks associated with using the Lightning Network. 
 
-If you choose to run the internal Lightning Node in BTCPay, consider:
+If you choose to run the internal Lightning Node in BTCPay Server, consider:
 1. Any lightning network node operates at 2 levels: **on-chain** and **off-chain**.
 2. The LN implementation of choice will create an on-chain hot wallet that will be used to fund the off-chain payment channels. 
 3. Make sure you back up the **on-chain** hot wallet seed (see below instructions for the individual implementations).
@@ -26,7 +26,7 @@ If you choose to run the internal Lightning Node in BTCPay, consider:
 6. **Off-chain** recovery mechanisms are under active research and development. Erasing your BTCPay Server or unsafe/unsecure operation of the computing environment (e.g Filesystem corruption, compromised keys) can lead to permanent **loss of funds**.
 
 
-As the technology matures and develops, mechanisms for proper backup will be easier to implement in BTCPay.
+As the technology matures and develops, mechanisms for proper backup will be easier to implement in BTCPay Server.
 As of [v1.0.3.138](https://blog.btcpayserver.org/btcpay-lnd-migration/), LND is the only lightning network implementation that allows for [lightning seed backups with BTCPay Server](./FAQ/LightningNetwork.md#where-can-i-find-recovery-seed-backup-for-my-lightning-network-wallet-in-btcpay-server).
 
 ## Choosing the Lightning Network implementation
@@ -83,7 +83,7 @@ BTCPay Server offers the option to connect to an external Lightning node. To con
 
 The easiest way to use LND implementation with BTCPay is to use the **[Ride The Lightning](https://github.com/ShahanaFarooqui/RTL)** (RTL) service. A web user interface for the Lightning Network, RTL allows you to operate your node without leaving BTCPay, from your browser. 
 \
-To initiate RTL in BTCPay, Go to Server Settings > Services > RTL > See information.
+To initiate RTL in BTCPay Server, Go to Server Settings > Services > RTL > See information.
 
 ### Control your LND using Zap
 For remote use of your LND node on iOS or PC, you can use [Zap wallet integration](https://github.com/LN-Zap/zap-tutorials/blob/master/docs/desktop/btcpay-server.mdx).
@@ -114,7 +114,7 @@ Run ./bitcoin-lncli.sh --help` to see a full list of commands or check the full 
 ## Getting started with BTCPay Server and Core Lightning (CLN)
 ### Control your CLN using Spark
 
-The most straightforward way to start using the **CLN implementation in BTCPay** is to use [Spark Wallet](https://github.com/shesek/spark-wallet) integration. Just like Zap for LND, Spark is a graphical interface of your internal CLN node.
+The most straightforward way to start using the **CLN implementation in BTCPay Server** is to use [Spark Wallet](https://github.com/shesek/spark-wallet) integration. Just like Zap for LND, Spark is a graphical interface of your internal CLN node.
 \
 [![BTCPay Server - CLN and Spark](https://img.youtube.com/vi/uV1R6IQpmg8/mqdefault.jpg "BTCPay Server - CLN and Spark")](https://www.youtube.com/watch?v=uV1R6IQpmg8 "BTCPay Server - CLN and Spark")
 \
@@ -175,7 +175,7 @@ Check out [Payment channels](./LightningNetwork_PaymentChannels.md) for recommen
 
 [Lapps](https://blockstream.com/2018/03/29/blockstreams-week-of-lapps-ends/) are applications built on top of the [Lightning Charge](https://blockstream.com/2018/01/16/lightning-charge/), a complimentary package that allows users and developers to easier use and develop on top of CLN. If you decided to use CLN, you can easily connect your BTCPay to any of the Lapps.
 
-BTCPay exposes all the necessary information required to **connect your internal BTCPay CLN node to a Lightning Network App**.  Go to Server Settings > Services > Lightning charge server > See information > Credentials.
+BTCPay Server exposes all the necessary information required to **connect your internal BTCPay CLN node to a Lightning Network App**.  Go to Server Settings > Services > Lightning charge server > See information > Credentials.
 
 Below are videos that showcase how to connect some of the lapps to your BTCPay.
 
