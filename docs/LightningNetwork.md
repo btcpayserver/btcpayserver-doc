@@ -81,7 +81,7 @@ BTCPay Server offers the option to connect to an external Lightning node. To con
 ## Getting started with BTCPay Server and LND
 ### Control your LND using RTL
 
-The easiest way to use LND implementation with BTCPay is to use the **[Ride The Lightning](https://github.com/ShahanaFarooqui/RTL)** (RTL) service. A web user interface for the Lightning Network, RTL allows you to operate your node without leaving BTCPay, from your browser. 
+The easiest way to use LND implementation with BTCPay Server is to use the **[Ride The Lightning](https://github.com/ShahanaFarooqui/RTL)** (RTL) service. A web user interface for the Lightning Network, RTL allows you to operate your node without leaving BTCPay Server, from your browser. 
 \
 To initiate RTL in BTCPay Server, Go to Server Settings > Services > RTL > See information.
 
