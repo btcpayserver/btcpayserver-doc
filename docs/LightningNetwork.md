@@ -8,7 +8,7 @@ This guide will show you how to set up your Lightning Network (LN) node in BTCPa
 BTCPay Server currently offers three implementations of the Lightning Network:
 * [LND](https://github.com/lightningnetwork/lnd)
 * [Core Lightning (CLN)](https://github.com/ElementsProject/lightning) (formerly c-lightning)
-* [eclair](https://github.com/ACINQ/eclair)
+* [Eclair](https://github.com/ACINQ/eclair)
 
 ::: danger
 Before you proceed, please understand that the Lightning Network is still in the experimental stage.
