@@ -206,7 +206,7 @@ for file in "$DOCS_DIR"/LNbank/*.md; do
   update_external "$file" https://github.com/dennisreimann/btcpayserver-plugin-lnbank "$DOCS_DIR"/LNbank/
 done
 
-cp -r Resources/swagger/* "$BTCPAYSERVER_DIR/BTCPayServer/wwwroot/swagger/"
+cp -r BTCPayServer.Plugins.LNbank/Resources/swagger/* "$BTCPAYSERVER_DIR/BTCPayServer/wwwroot/swagger/"
 
 # PodServer
 
