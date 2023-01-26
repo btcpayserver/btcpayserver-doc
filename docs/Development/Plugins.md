@@ -8,48 +8,73 @@ As a prerequisite for developing a plugin, you should be familiar with the [loca
 
 ## Setup of a new plugin
 
+Create a folder for the BTCPay Server projects. It will contain at least:
+
+- Your plugin repository
+- Your fork of the BTCPay Server repository
+
 You can get started by cloning the [plugin template](https://github.com/btcpayserver/btcpayserver-plugin-template) or taking a look at [existing plugins](#resources).
 This tutorial uses the plugin template as an example — substitute the references with your own plugin or simply follow along with the template.
 
-For building and [publishing the plugin](#publishing-the-plugin) you will need BTCPay Server as the context:
-Clone the [main repository](https://github.com/btcpayserver/btcpayserver) to your personal GitHub account.
-Afterwards you can set up your own plugin inside the [`Plugins` subdirectory](https://github.com/btcpayserver/btcpayserver/tree/master/Plugins/).
-
-### Optional: Consider using submodules
-
-Even though it is possible to have your plugin simply as part of your BTCPay Server fork, you might want to set it up as a [Git submodule](https://git-scm.com/book/en/v2/Git-Tools-Submodules).
-This has the following benefits:
-
-- Changes in the main app and your plugin are easier to separate
-- Update the main app by simply rebasing your plugins branch with the main master
-- Track issues and releases on GitHub per plugin repo if you have more than one plugin
-
-You can add the submodule using this command:
+The plugin repository should have BTCPay Server as a submodule.
+This way you are able to reference BTCPay Server as a dependency, so that you can use the existing core classes and modules.
+Start by first building BTCPay Server and then your plugin to check that the references are working:
 
 ```bash
-git submodule add https://github.com/btcpayserver/btcpayserver-plugin-template Plugins/BTCPayServer.Plugins.Template
+# Build the BTCPay Server project inside the plugin repository
+dotnet build btcpayserver
+
+# Build your plugin, which references the BTCPay Server project
+dotnet build BTCPay.Plugins.Template
+```
+
+To develop your plugin you will need the BTCPay Server solution as the context:
+Fork the [main repository](https://github.com/btcpayserver/btcpayserver) to your personal GitHub account and clone it onto your computer.
+
+The folder structure should now look like this:
+
+```bash
+|_ btcpayserver # your fork
+|_ btcpayserver-plugin-template
+  |_ btcpayserver # the submodule
+  |_ BTCPayServer.Plugins.Template
 ```
 
 ### Plugin reference
 
-Next up, you need to reference your plugin inside the main app, so that it gets included when running BTCPay Server.
-You need to [include it in the solution](https://learn.microsoft.com/en-us/dotnet/core/tools/dotnet-sln#add) and [add the project reference](https://learn.microsoft.com/en-us/dotnet/core/tools/dotnet-add-reference):
+In the forked repository you can [include your plugin in the solution](https://learn.microsoft.com/en-us/dotnet/core/tools/dotnet-sln#add) inside the [`Plugins` subdirectory](https://github.com/btcpayserver/btcpayserver/tree/master/Plugins/):
 
 ```bash
-# Add your plugin to the solution
-dotnet sln add Plugins/BTCPayServer.Plugins.Template -s Plugins
-
-# Add your plugin to the main project
-dotnet add BTCPayServer reference Plugins/BTCPayServer.Plugins.Template
+# Add your plugin to the solution (inside the forked BTCPay Server repository)
+dotnet sln add ../btcpayserver-plugin-template/BTCPay.Plugins.Template -s Plugins
 ```
 
-Your plugin may also reference certain packages from the main app ­— e.g. the plugin template requires the `BTCPayServer.Abstractions` project as a dependency:
+This references the plugin project in the folder, that sits right next to your BTCPay Server fork.
+
+:::tip The BTCPay Server dependency
+Your plugin is part of the BTCPay Server solution then, but keep the following in mind:
+The BTCPay Server version your plugin has as a dependecy is the submodule in the plugin repository — not the one in the forked repository.
+You will need to update the submodule to access the latest version of BTCPay Server.
+:::
+
+To have the main project include the plugin whenever you run the app in development mode, you need to add the file `BTCPayServer/appsettings.dev.json`. It is ignored in the repository and references the local and built version of your plugin for debugging:
 
 ```bash
-dotnet add Plugins/BTCPayServer.Plugins.Template reference ./BTCPayServer.Abstractions
+{
+  "DEBUG_PLUGINS": "/absolute/path/btcpayserver-plugin-template/BTCPay.Plugins.Template/bin/Debug/net6.0/BTCPayServer.Plugins.Template.dll"
+}
 ```
 
-Once that is set up, you should be able to build and run the app.
+You need to reference the built DLL file with the absolute path of the build version of your plugin on your local file system.
+If you want to reference multiple plugins, seperate them using a semicolon.
+
+Once that is set up, you should be able to build and run the app — see the startup message for potential problems.
+Your plugin should be included and also be ready for debugging.
+
+:::tip Building the whole solution
+You might want to setup a pre-build step in the solution, so that your plugins gets rebuild whenever you run the app.
+Do so by editing the run/debug configuration and choose the build the whole solution, instead of just the BTCPay Server project.
+:::
 
 ## Coding a plugin
 
@@ -62,7 +87,7 @@ In order to reference assets (CSS, JavaScript and images), the plugin project ne
 
 ```xml
 <ItemGroup>
-  <FrameworkReference Include="Microsoft.AspNetCore.App" />
+  <ProjectReference Include="..\btcpayserver\BTCPayServer\BTCPayServer.csproj" />
   <EmbeddedResource Include="Resources\**" />
 </ItemGroup>
 ```
@@ -81,9 +106,9 @@ The main BTCPay Server database tables are part of the public schema.
 Plugins have their own database context and schema, named after the plugin:
 
 ```csharp
-public class PluginDbContextFactory : BaseDbContextFactory<PluginDbContext>
+public class MyPluginDbContextFactory : BaseDbContextFactory<MyPluginDbContext>
 {
-    public PluginDbContextFactory(IOptions<DatabaseOptions> options) :
+    public MyPluginDbContextFactory(IOptions<DatabaseOptions> options) :
         base(options, "BTCPayServer.Plugins.Template") {}
 }
 ```
@@ -121,10 +146,6 @@ The following snippet shows how you can add a link to your plugin to the main na
 ```csharp
 public class Plugin : BaseBTCPayServerPlugin
 {
-    public override string Identifier { get; } = "BTCPayServer.Plugins.Template";
-    public override string Name { get; } = "Plugin Template";
-    public override string Description { get; } = "This is the plugin description";
-
     public override void Execute(IServiceCollection services)
     {
         services.AddSingleton<IUIExtension>(new UIExtension("TemplatePluginHeaderNav", "header-nav"));
@@ -284,13 +305,9 @@ You can sign up, build and submit new versions of your plugin using this web UI.
 ![Plugin Builder: Create a new plugin](../img/plugins/plugin-builder-create-plugin.png)
 
 Once you have a new version ready, you can create a new build.
-To do so, you will need to reference the Git repository of your BTCPay Server fork, as well as the branch and path of your plugin.
+To do so, you will need to reference the Git repository of your plugin, as well as the branch and path of your plugin.
 
 ![Plugin Builder: Create a new build](../img/plugins/plugin-builder-create-build.png)
-
-::: tip
-The plugin builder supports Git submodules, but for the builder the plugin needs the context of the whole app (BTCPay Server and your plugin code) — hence you should reference your BTCPay Server fork and not the individual plugin repository.
-:::
 
 The result will be a packaged version of your plugin in "prerelease" state.
 Once you mark it as release, it will become available on the BTCPay Server "Manage Plugins" page for everyone to install.
@@ -299,6 +316,6 @@ Once you mark it as release, it will become available on the BTCPay Server "Mana
 
 For more information check out these repositories with existing plugins:
 
-- [kukks' plugins](https://github.com/Kukks/btcpayserver/tree/plugins/collection/Plugins)
+- [kukks' plugins](https://github.com/Kukks/BTCPayServerPlugins)
 - [LNbank](https://github.com/dennisreimann/btcpayserver-plugin-lnbank)
 - [PodServer](https://github.com/dennisreimann/btcpayserver-plugin-podserver)
