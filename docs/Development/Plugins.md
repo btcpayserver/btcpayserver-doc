@@ -40,6 +40,19 @@ The folder structure should now look like this:
   |_ BTCPayServer.Plugins.Template
 ```
 
+Before starting, rename `BTCPayServer.Plugins.Template` to the name of your plugin.
+Also rename the `BTCPayServer.Plugins.Template/BTCPayServer.Plugins.Template.csproj` file.
+
+In the csproj file, customize the plugin information, for example:
+
+```xml
+  <PropertyGroup>
+    <Product>Cool Plugin</Product>
+    <Description>My plugin is doing nothing, but it's cool.</Description>
+    <Version>1.0.0</Version>
+  </PropertyGroup>
+```
+
 ### Plugin reference
 
 In the forked repository you can [include your plugin in the solution](https://learn.microsoft.com/en-us/dotnet/core/tools/dotnet-sln#add) inside the [`Plugins` subdirectory](https://github.com/btcpayserver/btcpayserver/tree/master/Plugins/):
@@ -99,6 +112,8 @@ Then you can reference the assets in your views like this:
 <script src="/Resources/js/my.js" asp-append-version="true"></script>
 <link href="/Resources/css/my.css" asp-append-version="true" rel="stylesheet" />
 ```
+
+A good example of this is the [Bitcoin Whitepaper plugin](https://github.com/Kukks/BTCPayServerPlugins/tree/master/Plugins/BTCPayServer.Plugins.BitcoinWhitepaper) which exposes the bitcoin whitepaper PDF on your BTCPay Server using embedded resources.
 
 ### Database
 
@@ -309,8 +324,12 @@ To do so, you will need to reference the Git repository of your plugin, as well 
 
 ![Plugin Builder: Create a new build](../img/plugins/plugin-builder-create-build.png)
 
-The result will be a packaged version of your plugin in "prerelease" state.
-Once you mark it as release, it will become available on the BTCPay Server "Manage Plugins" page for everyone to install.
+The result will be a packaged version of your plugin in `prerelease` state.
+A version in prerelease can be modified just by rebuilding your plugin in the plugin builder.
+
+You can browse the prereleased plugin list on any BTCPay Server by going to `Server Settings > Policies`, check `Show plugins in pre-release` and `Save`.
+
+Once you click the `Release` button on the build page, the package won't be in prerelease anymore and it is visible to everyone. Once the package is released, you won't be able to publish a new build with the same version number. So you will need to bump the `<Version>` of your plugin in the csproj before publishing any new adjustment to your plugin.
 
 ## Resources
 
