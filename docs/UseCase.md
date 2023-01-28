@@ -8,13 +8,13 @@ tags:
 ---
 # Who can use BTCPay Server?
 
-The versatility and flexibility of the BTCPay Server attract different types of users. **Anyone** can use BTCPay Server.
+The versatility and flexibility of BTCPay Server attract different types of users. **Anyone** can use BTCPay Server.
 
 We're ensuring an open future for businesses and individuals regardless of geographic, political or financial barriers.
 
-Below are the most common use-cases for BTCPay Server:
+Below are the most common use cases for BTCPay Server:
 
-* **Merchants** who sell products and services online or in-permission
+* **Merchants** who sell products and services online or in person
 * Self-sovereign **individuals** wanting to protect their wealth and manage their funds and full bitcoin node
 * **Charities and non-profits** looking to accept donations or crowdfund their dream project
 * **Developers** building on top of bitcoin and bleeding-edge payment infrastructure
@@ -28,21 +28,21 @@ The software usage is by no means limited to the groups of users mentioned in th
 
 ## Merchants
 
-Merchants accepting bitcoin payments online or in-person are the primary user group of a BTCPay Server.
+Merchants accepting bitcoin payments online or in person are the primary user group of a BTCPay Server.
 
 By choosing BTCPay Server to process payments, merchants are:
 
-* Saving money (BTCPay is free, no fees or no subscriptions)
+* Saving money (BTCPay is free with no fees or subscriptions)
 * Cutting out the middle-man (If self-hosted payments go directly to their wallet)
-* Enhancing privacy for their customers (no address re-use, no information leaks to the third party serves if they're self-hosting BTCPay Server)
+* Enhancing privacy for their customers (no address re-use, no information leaks to the third party servers if they're self-hosting BTCPay Server)
 * Saving time (easy integration with popular e-commerce platforms)
 * Protecting themselves from interference in their business (self-sovereignty)
 
 ### Online stores
 
-Merchants selling goods or services over the internet, usually pick an online e-commerce plugin we offer for multiple popular e-commerce platforms [WooCommerce](WooCommerce.md), [Shopify](/Shopify.md), [PrestaShop](/PrestaShop.md), [Magento](/Magento.md) [Drupal](Drupal.md), [Shopaware](https://github.com/lampsolutions/LampSBtcPayShopware) or other. Install a plugin for the CMS of your choice, and connect it to a self-hosted BTCPay or the one hosted by a third-party.
+Merchants selling goods or services over the internet, usually pick an online e-commerce plugin we offer for multiple popular e-commerce platforms [WooCommerce](WooCommerce.md), [Shopify](/Shopify.md), [PrestaShop](/PrestaShop.md), [Magento](/Magento.md) [Drupal](Drupal.md), [Shopaware](https://github.com/lampsolutions/LampSBtcPayShopware) or other. Install a plugin for the CMS of your choice, and connect it to a self-hosted BTCPay or one hosted by a third party.
 
-BTCPay Server's checkout is no different to any other payment gateway. The customer gets an invoice. They pay it by scanning a QR code or by copy-pasting the amount and the bitcoin address. When their payment is confirmed, you're notified via the e-commerce software, and can ship the item.
+BTCPay Server's checkout is no different from any other payment gateway. The customer gets an invoice. They pay it by scanning a QR code or by copy-pasting the amount and the bitcoin address. When their payment is confirmed, you're notified via the e-commerce software and can ship the item.
 
 ### Physical stores
 
@@ -52,13 +52,13 @@ Take a look at [our demo POS app](https://mainnet.demo.btcpayserver.org/apps/3ut
 
 ## Self-sovereign individuals
 
-**Privacy-minded individuals** can use BTCPay Server internal wallet for their everyday bitcoin transactions without providing a private key. For self-hosted servers, the [internal wallet](./Wallet.md) relies on a full node, significantly enhancing privacy. [Hardware wallet integration](./HardwareWalletIntegration.md) allows the usage of a hardware wallet with a [full node](https://en.bitcoin.it/wiki/Full_node) and avoids leaks to a third-party server.
+**Privacy-minded individuals** can use BTCPay Server's internal wallet for their everyday bitcoin transactions without providing a private key. For self-hosted servers, the [internal wallet](./Wallet.md) relies on a full node, significantly enhancing privacy. [Hardware wallet integration](./HardwareWalletIntegration.md) allows the usage of a hardware wallet with a [full node](https://en.bitcoin.it/wiki/Full_node) and avoids leaks to a third-party server.
 
 ## Freelancers & bill pay
 
-**Freelancers** can *request* for payment by sharing a [Payment Request](./PaymentRequests.md). The content and appearance of the payment request is customizable. With or without expiry, customers can pay the request at any time. BTCPay Server automatically updates the exchange rate when the customer pays the payment request when it's convenient for them. Merchants or freelancers can use payment requests for bill pay services. Payment requests can even be used to quickly request money from friends quickly.
+**Freelancers** can *request* for payment by sharing a [Payment Request](./PaymentRequests.md). The content and appearance of the payment request are customizable. With or without expiry, customers can pay the request at any time. BTCPay Server automatically updates the exchange rate when the customer pays the payment request when it's convenient for them. Merchants or freelancers can use payment requests for bill pay services. Payment requests can even be used to quickly request money from friends.
 
-Merchants can *provide* payment by sharing a [Pull Payment](./PullPayments.md). This is a long-lived payment offer that the freelancer can pull funds from at their convenience. The merchant can specify the total amount and approve partial or a full request for payment.
+Merchants can *provide* payment by sharing a [Pull Payment](./PullPayments.md). This is a long-lived payment offer that the freelancer can pull funds from at their convenience. The merchant can specify the total amount and approve a partial or full request for payment.
 
 ## Charities & non-profits
 
@@ -70,9 +70,9 @@ Benefits of using BTCPay for accepting donations:
 * Cutting out the middle-man (Payments go directly to their wallet)
 * Enhancing privacy for them and their donors (no address re-use, no IP leaks to third parties)
 
-I's essential to mention that BTCPay Server prevents address reuse, as many people have been reusing addresses for donations in the past. Here is why you SHOULD NOT reuse a Bitcoin address:
+It's essential to mention that BTCPay Server prevents address reuse, as many people have been reusing addresses for donations in the past. Here is why you SHOULD NOT reuse a Bitcoin address:
 
-* Privacy: reusing the same address for donations not only makes it incredibly easy to link it to your identity, it also compromises the privacy of your donors and every person that interacts with you
+* Privacy: reusing the same address for donations not only makes it incredibly easy to link it to your identity, but it also compromises the privacy of your donors and every person that interacts with you
 * Security: by compromising your privacy, address reuse increases your attack surface, as people that want to steal from you or harm you would have A LOT of information about you and your donors
 * High fees: fees for a Bitcoin transaction are calculated according to the "size" of a transaction (which has nothing to do with the amount being sent). By reusing addresses, you are building huge transactions involving many inputs, that will cost you a lot in fees when you want to move them
 
@@ -84,7 +84,7 @@ By deploying an instance, developers get a full tech stack to develop on top of 
 
 ## Local communities
 
-People self-hosting a BTCPay Server instance, can enable registration for other users and become a [third-party host](/Deployment/ThirdPartyHosting.md) for family, friends or their local community allowing them to accept Bitcoin by piggy-backing on the host's instance. This allows motivated community members to onboard local communities and fuel hyperbitcoinization locally.
+People self-hosting a BTCPay Server instance, can enable registration for other users and become a [third-party host](/Deployment/ThirdPartyHosting.md) for family, friends or their local community allowing them to accept Bitcoin by piggybacking on the host's instance. This allows motivated community members to onboard local communities and fuel hyperbitcoinization locally.
 
 [![BTCPay Server for local communities](https://img.youtube.com/vi/9n81qnzlPf8/mqdefault.jpg)](https://www.youtube.com/watch?v=9n81qnzlPf8 "BTCPay Server for local communities")
 
