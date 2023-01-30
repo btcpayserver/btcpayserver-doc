@@ -829,7 +829,7 @@ Updating could break things. Be careful on a live system.
 # Stop the service
 ~$ sudo systemctl stop nbxplorer
 # Checkout and build latest tag
-~$ cd ~; pushd ~/src/NBXplorer; it checkout $(git tag --sort -version:refname | awk 'match($0, /^v[0-9]+\./)' | head -n 1); ./build.sh; popd;
+~$ cd ~; pushd ~/src/NBXplorer; git checkout $(git tag --sort -version:refname | awk 'match($0, /^v[0-9]+\./)' | head -n 1); ./build.sh; popd;
 # Restart the service
 ~$ sudo systemctl start nbxplorer
 ```
