@@ -338,3 +338,4 @@ For more information check out these repositories with existing plugins:
 - [kukks' plugins](https://github.com/Kukks/BTCPayServerPlugins)
 - [LNbank](https://github.com/dennisreimann/btcpayserver-plugin-lnbank)
 - [PodServer](https://github.com/dennisreimann/btcpayserver-plugin-podserver)
+- [Trocador.app](https://github.com/saltrafael/trocador-plugin)
