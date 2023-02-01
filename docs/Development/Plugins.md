@@ -108,9 +108,9 @@ In order to reference assets (CSS, JavaScript and images), the plugin project ne
 Then you can reference the assets in your views like this:
 
 ```html
-<img src="/Resources/img/my.png" asp-append-version="true" />
-<script src="/Resources/js/my.js" asp-append-version="true"></script>
-<link href="/Resources/css/my.css" asp-append-version="true" rel="stylesheet" />
+<img src="~/Resources/img/my.png" asp-append-version="true" />
+<script src="~/Resources/js/my.js" asp-append-version="true"></script>
+<link href="~/Resources/css/my.css" asp-append-version="true" rel="stylesheet" />
 ```
 
 A good example of this is the [Bitcoin Whitepaper plugin](https://github.com/Kukks/BTCPayServerPlugins/tree/master/Plugins/BTCPayServer.Plugins.BitcoinWhitepaper) which exposes the bitcoin whitepaper PDF on your BTCPay Server using embedded resources.
