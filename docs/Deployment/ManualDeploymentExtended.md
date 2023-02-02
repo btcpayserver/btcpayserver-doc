@@ -829,7 +829,7 @@ Updating could break things. Be careful on a live system.
 # Stop the service
 ~$ sudo systemctl stop nbxplorer
 # Checkout and build latest tag
-~$ cd ~; pushd ~/src/NBXplorer; git checkout $(git tag --sort -version:refname | awk 'match($0, /^v[0-9]+\./)' | head -n 1); ./build.sh; popd;
+~$ cd ~; pushd ~/src/NBXplorer; git fetch --tags && git checkout $(git tag --sort -version:refname | awk 'match($0, /^v[0-9]+\./)' | head -n 1) && ./build.sh; popd;
 # Restart the service
 ~$ sudo systemctl start nbxplorer
 ```
@@ -855,6 +855,7 @@ Like NBXplorer the BTCPay Server application is also .NET Core. The install step
 ~/src$ git clone https://github.com/btcpayserver/btcpayserver.git
 ~/src$ cd btcpayserver
 # Checkout latest tag
+~$ git fetch --tags
 ~$ git checkout $(git tag --sort -version:refname | awk 'match($0, /^v[0-9]+\./)' | head -n 1)
 # Build the app
 ~/src/btcpayserver$ ./build.sh
@@ -970,7 +971,7 @@ Updating could break things. Be careful on a live system.
 # Stop the service
 ~$ sudo systemctl stop btcpay
 # Checkout and build latest tag
-~$ cd ~; pushd ~/src/btcpayserver; git checkout $(git tag --sort -version:refname | awk 'match($0, /^v[0-9]+\./)' | head -n 1); ./build.sh; popd;
+~$ cd ~; pushd ~/src/btcpayserver; git fetch --tags && git checkout $(git tag --sort -version:refname | awk 'match($0, /^v[0-9]+\./)' | head -n 1) && ./build.sh; popd;
 # Restart the service
 ~$ sudo systemctl start btcpay
 ```
