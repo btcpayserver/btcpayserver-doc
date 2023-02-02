@@ -855,7 +855,6 @@ Like NBXplorer the BTCPay Server application is also .NET Core. The install step
 ~/src$ git clone https://github.com/btcpayserver/btcpayserver.git
 ~/src$ cd btcpayserver
 # Checkout latest tag
-~$ git fetch --tags
 ~$ git checkout $(git tag --sort -version:refname | awk 'match($0, /^v[0-9]+\./)' | head -n 1)
 # Build the app
 ~/src/btcpayserver$ ./build.sh
