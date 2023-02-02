@@ -821,13 +821,16 @@ If it doesn't start correctly stop the service and run the application directly 
 ~$ cd ~; pushd ./src/NBXplorer; ./run.sh; popd
 ```
 
-#####  Update
+##### Update
 
 Updating could break things. Be careful on a live system.
 
 ```bash
+# Stop the service
 ~$ sudo systemctl stop nbxplorer
-~$ cd ~; pushd ~/src/NBXplorer; git pull; ./build.sh; popd;
+# Checkout and build latest tag
+~$ cd ~; pushd ~/src/NBXplorer; git fetch --tags && git checkout $(git tag --sort -version:refname | awk 'match($0, /^v[0-9]+\./)' | head -n 1) && ./build.sh; popd;
+# Restart the service
 ~$ sudo systemctl start nbxplorer
 ```
 
@@ -848,8 +851,12 @@ Like NBXplorer the BTCPay Server application is also .NET Core. The install step
 
 ```bash
 ~$ cd ~; mkdir -p src; cd src
+# Clone the repository
 ~/src$ git clone https://github.com/btcpayserver/btcpayserver.git
 ~/src$ cd btcpayserver
+# Checkout latest tag
+~$ git checkout $(git tag --sort -version:refname | awk 'match($0, /^v[0-9]+\./)' | head -n 1)
+# Build the app
 ~/src/btcpayserver$ ./build.sh
 ```
 
@@ -860,14 +867,18 @@ By default BTCPay Server will store data in a single SQLite file. A more robust 
 ```bash
 ~$ sudo -u postgres psql
 ```
+
 Then execute
-```SQL
+
+```sql
 CREATE DATABASE btcpay TEMPLATE 'template0' LC_CTYPE 'C' LC_COLLATE 'C' ENCODING 'UTF8';
 CREATE USER btcpay WITH ENCRYPTED PASSWORD 'urpassword';
 GRANT ALL PRIVILEGES ON DATABASE btcpay TO btcpay;
 ```
+
 Exit
-```
+
+```bash
 postgres=#\q
 ```
 
@@ -956,8 +967,11 @@ Attempting to open your BTCPay Server domain in a browser now should show the "W
 Updating could break things. Be careful on a live system.
 
 ```bash
+# Stop the service
 ~$ sudo systemctl stop btcpay
-~$ cd ~; pushd ~/src/btcpayserver; git pull; ./build.sh; popd;
+# Checkout and build latest tag
+~$ cd ~; pushd ~/src/btcpayserver; git fetch --tags && git checkout $(git tag --sort -version:refname | awk 'match($0, /^v[0-9]+\./)' | head -n 1) && ./build.sh; popd;
+# Restart the service
 ~$ sudo systemctl start btcpay
 ```
 
