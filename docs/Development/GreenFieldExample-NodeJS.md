@@ -1,11 +1,12 @@
-# GreenField API example with Node.JS
+# Greenfield API example with Node.JS (JavaScript)
 
-The **[GreenField API](https://docs.btcpayserver.org/API/Greenfield/v1/)** (also available on your instance on `/docs`) allows you to operate BTCPay Server via an easy to use REST API.
+The **[Greenfield API](https://docs.btcpayserver.org/API/Greenfield/v1/)** (also available on your instance on `/docs`) allows you to operate BTCPay Server via an easy-to-use REST API.
 
 Note that you can partially generate clients in the language of your choice by using the [Swagger file](https://docs.btcpayserver.org/API/Greenfield/v1/swagger.json).
 
-In this guide, we will give dome examples how to use the GreenField API with Node.JS.
-Make sure that the token you're using has the permissions to execute the request.
+In this guide, we will give some examples how to use the Greenfield API with Node.JS.
+
+You can generate your API key in the BTCPay Server UI under "Account" -> "Manage Account" -> "API Keys" (path `/account/apikeys`). Make sure that the API key you are using has the permissions to execute the needed requests.
 
 ## Create a new user
 
@@ -40,7 +41,7 @@ While we can use basic authentication to access the greenfield API, it is recomm
 
 For example: If we want to [create a new store](https://docs.btcpayserver.org/API/Greenfield/v1/#operation/Stores_CreateStore) we need the `btcpay.store.canmodifystoresettings` permission for the API key.
 
-You can do it through BTCPay Server UI (by browsing `/account/apikeys` of your instance), but let's do it via command line using [this endpoint](https://docs.btcpayserver.org/API/Greenfield/v1/#operation/ApiKeys_CreateApiKey).
+As mentioned above, you can do through BTCPay Server UI of your instance, but let's do it through the API using [this endpoint](https://docs.btcpayserver.org/API/Greenfield/v1/#operation/ApiKeys_CreateApiKey).
 
 ```js
 const btcpayserverUrl = "https://mainnet.demo.btcpayserver.org"

@@ -254,7 +254,7 @@ const sidebarDevelopment = [
       '/BTCPayServer/greenfield-authorization',
       '/Development/GreenFieldExample',
       '/Development/GreenFieldExample-NodeJS',
-      '/Development/GreenFieldExample-PHP'
+      '/Development/GreenfieldExample-PHP'
     ]
   },
   {

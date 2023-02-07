@@ -1,6 +1,6 @@
-# GreenField API example with cURL
+# Greenfield API example with cURL
 
-The **[GreenField API](https://docs.btcpayserver.org/API/Greenfield/v1/)** (also available on your instance on `/docs`) allows you to operate BTCPay Server via an easy to use REST API.
+The **[Greenfield API](https://docs.btcpayserver.org/API/Greenfield/v1/)** (also available on your instance on `/docs`) allows you to operate BTCPay Server via an easy-to-use REST API.
 
 Note that you can partially generate clients in the language of your choice by using the [Swagger file](https://docs.btcpayserver.org/API/Greenfield/v1/swagger.json).
 
@@ -43,7 +43,7 @@ apikey="$(curl -s \
      "$BTCPAY_INSTANCE/api/v1/api-keys" | jq -r .apiKey)"
 ```
 
-You can then provide the API key via the `Authorization: token $apikey` header, as shown in the examples below. 
+You can then provide the API key via the `Authorization: token $apikey` header, as shown in the examples below.
 
 ## Create a new store
 
@@ -60,7 +60,7 @@ store_id="$(curl -s \
      "$BTCPAY_INSTANCE/api/v1/stores"  | jq -r .id)"
 ```
 
-## Create a new API key with limiting permissions on the new store, for example read only 
+## Create a new API key with limiting permissions on the new store, for example read only
 
 You can set specific permissions per user, for your new store:
 
