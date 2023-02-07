@@ -705,7 +705,7 @@ To connect another `bitcoind` instance to your new node:
 
 **NBXplorer** is a dotnet core application that monitors the Bitcoin blockchain for transactions of interest to your BTCPay Server.
 
-#####  Install
+##### Install
 
 ##### 1. Install .NET 6.0 SDK
 
@@ -733,22 +733,28 @@ dotnet --version
 ~$ cd ~; mkdir -p src; cd src
 ~/src$ git clone https://github.com/dgarage/NBXplorer
 ~/src$ cd NBXplorer
+~/src/NBXplorer$ git checkout $(git tag --sort -version:refname | awk 'match($0, /^v[0-9]+\./)' | head -n 1)
 ~/src/NBXplorer$ ./build.sh
 ```
-##### 3. Create Postgresql Database.
+
+##### 3. Create Postgresql Database
 
 While NBXplorer support storing data in a local database via `--dbtrie`, this is deprecated. Here how to create the appropriate database and user for NBXlporer in **Postgresql**.
 
 ```bash
 ~$ sudo -u postgres psql
 ```
+
 Then execute
+
 ```SQL
 CREATE DATABASE nbxplorer TEMPLATE 'template0' LC_CTYPE 'C' LC_COLLATE 'C' ENCODING 'UTF8';
 CREATE USER nbxplorer WITH ENCRYPTED PASSWORD 'urpassword';
 GRANT ALL PRIVILEGES ON DATABASE nbxplorer TO nbxplorer;
 ```
+
 Exit
+
 ```
 postgres=#\q
 ```
@@ -769,6 +775,7 @@ postgres=User ID=nbxplorer;Password=urpassword;Application Name=nbxplorer;MaxPoo
 ~$ sudo cp nbxplorer.config /etc/nbxplorer
 ~$ sudo chmod 644 /etc/nbxplorer/nbxplorer.config
 ```
+
 Note: If you previously used a `dbtrie` backend for NBXplorer, but want to switch to postgres, [read this documentation](https://github.com/dgarage/NBXplorer/blob/master/docs/Postgres-Migration.md).
 
 ##### 5. Create a systemd service
@@ -845,7 +852,7 @@ Afterwards you need to set `BTCPAY_EXPLORERPOSTGRES` to the same connection stri
 
 Like NBXplorer the BTCPay Server application is also .NET Core. The install steps assume .NET Core was previosuly installed.
 
-#####  Install
+##### Install
 
 ##### 1. Build BTCPay Server
 
@@ -860,7 +867,7 @@ Like NBXplorer the BTCPay Server application is also .NET Core. The install step
 ~/src/btcpayserver$ ./build.sh
 ```
 
-##### 2. Create Postgresql Database.
+##### 2. Create Postgresql Database
 
 By default BTCPay Server will store data in a single SQLite file. A more robust option is to use **Postgresql** which requires the appropriate database and user to exist.
 
@@ -900,7 +907,7 @@ explorer.postgres=User ID=nbxplorer;Password=urpassword;Application Name=nbxplor
 ~$ sudo chmod 644 /etc/btcpay/btcpay.config
 ```
 
-##### 4. Create a systemd service.
+##### 4. Create a systemd service
 
 An example **systemd service** file is shown below. Adjust the paths, User and Group accordingly.
 
@@ -933,7 +940,7 @@ WantedBy=multi-user.target
 ~$ sudo systemctl enable --now btcpay
 ```
 
-#####  Check
+##### Check
 
 ```bash
 ~$ sudo journalctl -xe --unit btcpay --follow
@@ -962,7 +969,7 @@ btcpay=# \q
 
 Attempting to open your BTCPay Server domain in a browser now should show the "Welcome to your BTCPay Server" page. If you are not using a Lightning Node this is the end of the install.
 
-#####  Update
+##### Update
 
 Updating could break things. Be careful on a live system.
 
