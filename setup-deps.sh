@@ -14,6 +14,7 @@ TRANSMUTER_DIR="$BASE_DIR/deps/transmuter"
 ZAPIER_DIR="$BASE_DIR/deps/zapier"
 LNBANK_DIR="$BASE_DIR/deps/lnbank"
 PODSERVER_DIR="$BASE_DIR/deps/podserver"
+TROCADOR_DIR="$BASE_DIR/deps/trocador"
 
 update_external() {
   file="$1"
@@ -251,3 +252,22 @@ if command -v jq >/dev/null 2>&1; then
   npx @redocly/cli lint $swagger_file
   set -e
 fi
+
+# Trocador
+
+echo "Setup dependency: Trocador"
+
+rm -rf "$TROCADOR_DIR"
+rm -rf "$DOCS_DIR/Trocador"
+mkdir -p "$DOCS_DIR/Trocador"
+
+if [ ! -d "$TROCADOR_DIR" ]; then
+  git clone --depth 1 https://github.com/saltrafael/trocador-plugin.git "$TROCADOR_DIR"
+fi
+
+cd "$TROCADOR_DIR"
+cp -r README.md "$DOCS_DIR/Trocador"
+for file in "$DOCS_DIR"/Trocador/*.md; do
+  update_external "$file" https://github.com/saltrafael/trocador-plugin "$DOCS_DIR"/Trocador/
+done
+

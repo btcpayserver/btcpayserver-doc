@@ -122,7 +122,8 @@ const sidebarUserGuide = [
           ['/LNbank/Troubleshooting', 'Troubleshooting']
         ]
       },
-      ['/PodServer/', 'PodServer']
+      ['/PodServer/', 'PodServer'],
+      ['/Trocador/', 'Trocador']
     ]
   },
   {
