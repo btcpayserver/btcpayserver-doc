@@ -967,7 +967,8 @@ btcpay=# select * from "Invoices";
 btcpay=# \q
 ```
 
-Attempting to open your BTCPay Server domain in a browser now should show the "Welcome to your BTCPay Server" page. If you are not using a Lightning Node this is the end of the install.
+Attempting to open your BTCPay Server domain in a browser now should show the "Welcome to your BTCPay Server" page.
+If you are not using a Lightning Node this is the end of the install.
 
 ##### Update
 
@@ -1186,10 +1187,28 @@ The **Lightning Node Connection String** to use with `BTCPay Server` is:
 type=lnd-rest;server=https://127.0.0.1:8080/;macaroonfilepath=/home/admin/.lnd/data/chain/bitcoin/mainnet/admin.macaroon;allowinsecure=true
 ```
 
-The `BTCPAY_BTCLIGHTNING` environment variable should also be set with the Lightning node connection string, so that it is used as the internal Lightning node:
+##### Add LND as internal node
+
+To add LND as internal node you have to edit the [btcpay.config file](#3-create-a-configuration-file):
 
 ```bash
-export BTCPAY_BTCLIGHTNING="type=lnd-rest;server=https://127.0.0.1:8080/;macaroonfilepath=/home/admin/.lnd/data/chain/bitcoin/mainnet/admin.macaroon;allowinsecure=true"
+cd /etc/btcpay
+vi btcpay.config
+```
+
+Right below the database part, add the `BTC.lightning` setting:
+
+```
+### Lightning ###
+BTC.lightning=type=lnd-rest;server=https://127.0.0.1:8080/;macaroonfilepath=/home/admin/.lnd/data/chain/bitcoin/mainnet/admin.macaroon;allowinsecure=true
+```
+
+See the "Use custom node" view on the Lightning node connection setting screen in BTCPay Server for details on the connection string.
+
+You need to restart BTCPay Server for the settings update to take effect:
+
+```bash
+~$ sudo systemctl restart btcpay
 ```
 
 #####  Check Tor and LND
