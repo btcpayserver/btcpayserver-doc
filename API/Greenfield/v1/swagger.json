@@ -37,6 +37,52 @@
         ]
       }
     },
+    "/api/v1/users/{userId}/api-keys/{apikey}": {
+      "delete": {
+        "operationId": "ApiKeys_DeleteUserApiKey",
+        "tags": [
+          "API Keys"
+        ],
+        "summary": "Revoke an API Key of target user",
+        "description": "Revoke the API key of a target user so that it cannot be used anymore",
+        "parameters": [
+          {
+            "name": "apikey",
+            "in": "path",
+            "required": true,
+            "description": "The API Key to revoke",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "userId",
+            "in": "path",
+            "required": true,
+            "description": "The target user",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "The key has been deleted"
+          },
+          "404": {
+            "description": "The key is not found for this user"
+          }
+        },
+        "security": [
+          {
+            "API_Key": [
+              "unrestricted"
+            ],
+            "Basic": []
+          }
+        ]
+      }
+    },
     "/api/v1/api-keys/current": {
       "get": {
         "operationId": "ApiKeys_GetCurrentApiKey",
@@ -69,7 +115,10 @@
         },
         "security": [
           {
-            "API_Key": []
+            "API_Key": [
+              "btcpay.server.canmanageusers"
+            ],
+            "Basic": []
           }
         ]
       },
@@ -179,6 +228,93 @@
           {
             "API_Key": [
               "unrestricted"
+            ],
+            "Basic": []
+          }
+        ]
+      }
+    },
+    "/api/v1/users/{userId}/api-keys": {
+      "post": {
+        "operationId": "ApiKeys_CreateUserApiKey",
+        "tags": [
+          "API Keys"
+        ],
+        "summary": "Create a new API Key for a user",
+        "description": "Create a new API Key for a user",
+        "parameters": [
+          {
+            "name": "userId",
+            "in": "path",
+            "required": true,
+            "description": "The target user",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Information about the new api key",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiKeyData"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Missing authorization",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Unexpected error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          }
+        },
+        "requestBody": {
+          "x-name": "request",
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "additionalProperties": false,
+                "properties": {
+                  "label": {
+                    "type": "string",
+                    "description": "The label of the new API Key",
+                    "nullable": true
+                  },
+                  "permissions": {
+                    "type": "array",
+                    "description": "The permissions granted to this API Key (See API Key Authentication)",
+                    "nullable": true,
+                    "items": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "API_Key": [
+              "btcpay.server.canmanageusers"
             ],
             "Basic": []
           }
@@ -10435,11 +10571,15 @@
           },
           "permissions": {
             "type": "array",
-            "description": "The permissions associated to this API Key",
+            "description": "The permissions associated to this API Key (can be scoped to a specific store)",
             "nullable": false,
             "items": {
               "type": "string"
-            }
+            },
+            "example": [
+              "btcpay.server.canmanageusers",
+              "btcpay.server.canmanageusers:2KxSpc9V5zDWfUbvgYiZuAfka4wUhGF96F75Ao8y4zHP"
+            ]
           }
         }
       },
@@ -12727,7 +12867,15 @@
         "properties": {
           "id": {
             "type": "string",
+            "description": "The id of the notification"
+          },
+          "identifier": {
+            "type": "string",
             "description": "The identifier of the notification"
+          },
+          "type": {
+            "type": "string",
+            "description": "The type of the notification"
           },
           "body": {
             "type": "string",
@@ -13461,7 +13609,7 @@
           },
           "enableForStandardInvoices": {
             "type": "boolean",
-            "description": "Whether to allow this payment method to also be used for standard invoices and not just topup invoices."
+            "description": "Whether to allow this payment method to also be used for standard invoices and not just top-up invoices."
           },
           "lud12Enabled": {
             "type": "boolean",
@@ -14154,6 +14302,33 @@
           }
         ]
       },
+      "PaymentMethodCriteriaData": {
+        "type": "object",
+        "properties": {
+          "paymentMethod": {
+            "type": "string",
+            "description": "The payment method (e.g., \"BTC\" or \"BTC_LightningLike\")",
+            "nullable": false
+          },
+          "currencyCode": {
+            "type": "string",
+            "description": "The currency",
+            "default": "USD",
+            "example": "USD"
+          },
+          "amount": {
+            "type": "string",
+            "format": "decimal",
+            "minimum": 0,
+            "description": "The amount"
+          },
+          "above": {
+            "type": "boolean",
+            "default": false,
+            "description": "If the criterion is for above or below the amount"
+          }
+        }
+      },
       "StoreBaseData": {
         "type": "object",
         "x-abstract": true,
@@ -14707,7 +14882,7 @@
     "securitySchemes": {
       "API_Key": {
         "type": "apiKey",
-        "description": "BTCPay Server supports authenticating and authorizing users through an API Key that is generated by them. Send the API Key as a header value to Authorization with the format: `token {token}`. For a smoother experience, you can generate a url that redirects users to an API key creation screen.\n\n The following permissions are available to the context of the user creating the API Key:\n\n* `unrestricted`: Unrestricted access\n* `btcpay.user.candeleteuser`: Delete user\n* `btcpay.user.canviewprofile`: View your profile\n* `btcpay.user.canmodifyprofile`: Manage your profile\n* `btcpay.user.canmanagenotificationsforuser`: Manage your notifications\n* `btcpay.user.canviewnotificationsforuser`: View your notifications\n\nThe following permissions are available if the user is an administrator:\n\n* `btcpay.server.canviewusers`: View users\n* `btcpay.server.cancreateuser`: Create new users\n* `btcpay.server.canmodifyserversettings`: Manage your server\n* `btcpay.server.canuseinternallightningnode`: Use the internal lightning node\n* `btcpay.server.canviewlightninginvoiceinternalnode`: View invoices from internal lightning node\n* `btcpay.server.cancreatelightninginvoiceinternalnode`: Create invoices with internal lightning node\n\nThe following permissions applies to all stores of the user, you can limit to a specific store with the following format: `btcpay.store.cancreateinvoice:6HSHAEU4iYWtjxtyRs9KyPjM9GAQp8kw2T9VWbGG1FnZ`:\n\n* `btcpay.store.canmodifystoresettings`: Modify your stores\n* `btcpay.store.canviewcustodianaccounts`: View exchange accounts linked to your stores\n* `btcpay.store.canmanagecustodianaccounts`: Manage exchange accounts linked to your stores\n* `btcpay.store.candeposittocustodianaccount`: Deposit funds to exchange accounts linked to your stores\n* `btcpay.store.canwithdrawfromcustodianaccount`: Withdraw funds from exchange accounts to your store\n* `btcpay.store.cantradecustodianaccount`: Trade funds on your store's exchange accounts\n* `btcpay.store.webhooks.canmodifywebhooks`: Modify stores webhooks\n* `btcpay.store.canviewstoresettings`: View your stores\n* `btcpay.store.cancreateinvoice`: Create an invoice\n* `btcpay.store.canviewinvoices`: View invoices\n* `btcpay.store.canmodifyinvoices`: Modify invoices\n* `btcpay.store.canmodifypaymentrequests`: Modify your payment requests\n* `btcpay.store.canviewpaymentrequests`: View your payment requests\n* `btcpay.store.canmanagepullpayments`: Manage your pull payments\n* `btcpay.store.cancreatepullpayments`: Create pull payments\n* `btcpay.store.cancreatenonapprovedpullpayments`: Create non-approved pull payments\n* `btcpay.store.canuselightningnode`: Use the lightning nodes associated with your stores\n* `btcpay.store.canviewlightninginvoice`: View the lightning invoices associated with your stores\n* `btcpay.store.cancreatelightninginvoice`: Create invoices from the lightning nodes associated with your stores\n\nNote that API Keys only limits permission of a user and can never expand it. If an API Key has the permission `btcpay.server.canmodifyserversettings` but that the user account creating this API Key is not administrator, the API Key will not be able to modify the server settings.\nSome permissions may include other permissions, see [this operation](#operation/permissionsMetadata).\n",
+        "description": "BTCPay Server supports authenticating and authorizing users through an API Key that is generated by them. Send the API Key as a header value to Authorization with the format: `token {token}`. For a smoother experience, you can generate a url that redirects users to an API key creation screen.\n\n The following permissions are available to the context of the user creating the API Key:\n\n* `unrestricted`: Unrestricted access\n* `btcpay.user.candeleteuser`: Delete user\n* `btcpay.user.canviewprofile`: View your profile\n* `btcpay.user.canmodifyprofile`: Manage your profile\n* `btcpay.user.canmanagenotificationsforuser`: Manage your notifications\n* `btcpay.user.canviewnotificationsforuser`: View your notifications\n\nThe following permissions are available if the user is an administrator:\n\n* `btcpay.server.canviewusers`: View users\n* `btcpay.server.cancreateuser`: Create new users\n* `btcpay.server.canmanageusers`: Manage users\n* `btcpay.server.canmodifyserversettings`: Manage your server\n* `btcpay.server.canuseinternallightningnode`: Use the internal lightning node\n* `btcpay.server.canviewlightninginvoiceinternalnode`: View invoices from internal lightning node\n* `btcpay.server.cancreatelightninginvoiceinternalnode`: Create invoices with internal lightning node\n\nThe following permissions applies to all stores of the user, you can limit to a specific store with the following format: `btcpay.store.cancreateinvoice:6HSHAEU4iYWtjxtyRs9KyPjM9GAQp8kw2T9VWbGG1FnZ`:\n\n* `btcpay.store.canmodifystoresettings`: Modify your stores\n* `btcpay.store.canviewcustodianaccounts`: View exchange accounts linked to your stores\n* `btcpay.store.canmanagecustodianaccounts`: Manage exchange accounts linked to your stores\n* `btcpay.store.candeposittocustodianaccount`: Deposit funds to exchange accounts linked to your stores\n* `btcpay.store.canwithdrawfromcustodianaccount`: Withdraw funds from exchange accounts to your store\n* `btcpay.store.cantradecustodianaccount`: Trade funds on your store's exchange accounts\n* `btcpay.store.webhooks.canmodifywebhooks`: Modify stores webhooks\n* `btcpay.store.canviewstoresettings`: View your stores\n* `btcpay.store.cancreateinvoice`: Create an invoice\n* `btcpay.store.canviewinvoices`: View invoices\n* `btcpay.store.canmodifyinvoices`: Modify invoices\n* `btcpay.store.canmodifypaymentrequests`: Modify your payment requests\n* `btcpay.store.canviewpaymentrequests`: View your payment requests\n* `btcpay.store.canmanagepullpayments`: Manage your pull payments\n* `btcpay.store.cancreatepullpayments`: Create pull payments\n* `btcpay.store.cancreatenonapprovedpullpayments`: Create non-approved pull payments\n* `btcpay.store.canuselightningnode`: Use the lightning nodes associated with your stores\n* `btcpay.store.canviewlightninginvoice`: View the lightning invoices associated with your stores\n* `btcpay.store.cancreatelightninginvoice`: Create invoices from the lightning nodes associated with your stores\n\nNote that API Keys only limits permission of a user and can never expand it. If an API Key has the permission `btcpay.server.canmodifyserversettings` but that the user account creating this API Key is not administrator, the API Key will not be able to modify the server settings.\nSome permissions may include other permissions, see [this operation](#operation/permissionsMetadata).\n",
         "name": "Authorization",
         "in": "header"
       },
