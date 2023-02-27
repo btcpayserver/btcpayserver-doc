@@ -186,13 +186,13 @@ Enabling such a feature could be possible, using the [Transmuter](https://docs.b
 
 ## Stuck synching: "NBXplorer is synchronizing"
 
-In some cases, you may encounter NBXplorer getting stuck. The first thing to try in such a situation is to update it. If you are using the docker deployment, simply run `./btcpay-update.sh` or go to `Server settings / Maintenance / Update`.
+In some cases, you may encounter NBXplorer getting stuck. The first thing to try in such a situation is to update it. If you are using the Docker deployment, simply run `./btcpay-update.sh` or go to `Server settings / Maintenance / Update`.
 
 If, despite restarting, the problem persists and NBXplorer remains stuck, you may notice that the synch dialog appears as shown below, and the height does not change such as in this screenshot:
 
 ![NBXplorer-stuck](./../img/NBXplorer-stuck.png "NBXplorer is synchronizing")
 
-This issue generally occurs when your server has been offline for an extended period, and your Bitcoin full node is pruned, which is the default setting in BTCPay Server docker deployments.
+This issue generally occurs when your server has been offline for an extended period, and your Bitcoin full node is pruned, which is the default setting in BTCPay Server Docker deployments.
 
 When the server restarts, the Bitcoin full node syncs before allowing NBXplorer to sync. However, after the full node has synced, it may have pruned the blocks that NBXplorer requires for syncing.
 
