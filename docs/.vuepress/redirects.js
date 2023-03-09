@@ -178,7 +178,6 @@ module.exports = [
   // Old paths in new docs
   { path: "/DockerDeployment/", redirect: "/Docker/" },
   { path: "/HotWallet/", redirect: "/CreateWallet/" },
-  { path: "/HardwareWalletIntegration/", redirect: "/ConnectWallet/" },
   { path: "/Contribute/ContributeDev/", redirect: "/Contribute/Dev/" },
   { path: "/Contribute/ContributeDevCode/", redirect: "/Contribute/DevCode/" },
   { path: "/Contribute/ContributeDevTest/", redirect: "/Contribute/DevTest/" },
