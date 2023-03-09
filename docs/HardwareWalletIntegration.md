@@ -6,7 +6,7 @@ The hardware wallet integration within BTCPay Server allows you to import your h
 
 ## Getting Started
 
-[![](https://img.youtube.com/vi/hh_cm8MKl2g/mqdefault.jpg)](https://www.youtube.com/watch?v=hh_cm8MKl2g)
+[![](https://img.youtube.com/vi/s4qbGxef43A/mqdefault.jpg)](https://www.youtube.com/watch?v=s4qbGxef43A)
 
 1. [Download the BTCPay Vault app](https://github.com/btcpayserver/BTCPayServer.Vault/releases)
 2. Install the Vault on your PC (Windows, MacOS or Linux)
