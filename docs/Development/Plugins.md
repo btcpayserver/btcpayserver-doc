@@ -64,8 +64,11 @@ In the csproj file, customize the plugin information, for example:
 In the forked repository you can [include your plugin in the solution](https://learn.microsoft.com/en-us/dotnet/core/tools/dotnet-sln#add) inside the [`Plugins` subdirectory](https://github.com/btcpayserver/btcpayserver/tree/master/Plugins/):
 
 ```bash
-# Add your plugin to the solution (inside the forked BTCPay Server repository)
-dotnet sln add ../btcpayserver-plugin-template/BTCPay.Plugins.Template -s Plugins
+# Enter the submodule (forked BTCPay Server repository)
+cd btcpayserver
+
+# Add your plugin to the solution
+dotnet sln add ../BTCPayServer.Plugins.Template -s Plugins
 ```
 
 This references the plugin project in the folder, that sits right next to your BTCPay Server fork.
