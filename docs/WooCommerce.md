@@ -9,7 +9,7 @@ tags:
 # WooCommerce integration
 
 This document explains how to **integrate BTCPay Server into your WooCommerce store**.
-If you do not have a store yet, follow [this step by step article](https://bitcoinshirt.co/how-to-create-store-accept-bitcoin/) to create one from scratch.
+If you do not have a store yet, follow [this step by step article](https://web.archive.org/web/20221003083329/https://bitcoinshirt.co/how-to-create-store-accept-bitcoin/5/) to create one from scratch.
 
 :::tip Note
 This guide refers to the BTCPay for WooCommerce V2 plugin. You can find instructions for the now unmaintained legacy plugin (based on BitPay API) [here](https://github.com/btcpayserver/btcpayserver-doc/blob/cba96292ceea9483711ab53c479a98357383f857/docs/WooCommerce.md).
