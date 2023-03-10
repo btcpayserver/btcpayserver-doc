@@ -68,7 +68,7 @@ In the forked repository you can [include your plugin in the solution](https://l
 cd btcpayserver
 
 # Add your plugin to the solution
-dotnet sln add ../btcpayserver-plugin-template/BTCPay.Plugins.Template -s Plugins
+dotnet sln add ../BTCPayServer.Plugins.Template -s Plugins
 ```
 
 This references the plugin project in the folder, that sits right next to your BTCPay Server fork.
