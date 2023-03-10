@@ -21,6 +21,12 @@ This way you are able to reference BTCPay Server as a dependency, so that you ca
 Start by first building BTCPay Server and then your plugin to check that the references are working:
 
 ```bash
+# Clone the plugin template to a new directory called btcpayserver-my-plugin + make sure we get the contents of the submodule too
+git clone git@github.com:btcpayserver/btcpayserver-plugin-template.git --recurse-submodules btcpayserver-my-plugin
+
+# Enter the dir
+cd btcpayserver-my-plugin
+
 # Build the BTCPay Server project inside the plugin repository
 dotnet build btcpayserver
 
