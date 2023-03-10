@@ -25,7 +25,7 @@ Start by first building BTCPay Server and then your plugin to check that the ref
 dotnet build btcpayserver
 
 # Build your plugin, which references the BTCPay Server project
-dotnet build BTCPay.Plugins.Template
+dotnet build BTCPayServer.Plugins.Template
 ```
 
 To develop your plugin you will need the BTCPay Server solution as the context:
