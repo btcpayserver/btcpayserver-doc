@@ -298,11 +298,11 @@ Feel free to join our support channel over at [https://chat.btcpayserver.org/](h
 
 ### Create a new API key
 
-If you have been using the WooCommerce V2 plugin prior to version 2.0.0 your API key won't have the required permissions to issue refunds via pull-payments. If you want to use that feature you can create a new API key (editing an API key is not supported at the moment). You can use the the above described [2.1 Connect using API key wizard](#21-connect-using-the-api-key-wizard--recommended-) or the [manual API key generation](#22-connect-by-manually-creating-the-api-key-and-permissions). The configured webhook will continue to work and no change is needed in that regard.
+If you have been using the WooCommerce V2 plugin prior to version 2.0.0, your API key won't have the required permissions to issue refunds via pull-payments. If you want to use that feature, you can create a new API key (editing an API key is not currently supported). You can use the above described [2.1 Connect using API key wizard](#21-connect-using-the-api-key-wizard--recommended-) or the [manual API key generation](#22-connect-by-manually-creating-the-api-key-and-permissions). The configured webhook will continue to work, and no change is needed.
 
 ### I messed around with the webhook, how to fix
 
-If you accidentally changed the WooCommerce webhook and it is not working anymore you can easily force a re-creation of it when you delete the API key on BTCPay Server and then go to the BTCPay Server Settings (on your WordPress site) and hit save again. You should see a message that the webhook was successfully created.
+Suppose you accidentally changed the WooCommerce webhook, and it is not working anymore. In that case, you can quickly force a re-creation of it when you delete the API key on BTCPay Server and then go to the BTCPay Server Settings (on your WordPress site) and hit save again. You should see a message that the webhook was successfully created.
 
 ## Deploying WooCommerce from BTCPay Server
 
