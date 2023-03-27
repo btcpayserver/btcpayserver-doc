@@ -15,6 +15,7 @@ ZAPIER_DIR="$BASE_DIR/deps/zapier"
 LNBANK_DIR="$BASE_DIR/deps/lnbank"
 PODSERVER_DIR="$BASE_DIR/deps/podserver"
 TROCADOR_DIR="$BASE_DIR/deps/trocador"
+LNDHUBAPI_DIR="$BASE_DIR/deps/lndhub-api"
 
 update_external() {
   file="$1"
@@ -227,6 +228,24 @@ for file in "$DOCS_DIR"/PodServer/*.md; do
   update_external "$file" https://github.com/dennisreimann/btcpayserver-plugin-podserver "$DOCS_DIR"/PodServer/
 done
 
+# LNDhub API
+
+echo "Setup dependency: LNDhub API"
+
+rm -rf "$LNDHUBAPI_DIR"
+rm -rf "$DOCS_DIR/LNDhubAPI"
+mkdir -p "$DOCS_DIR/LNDhubAPI"
+
+if [ ! -d "$LNDHUBAPI_DIR" ]; then
+  git clone --depth 1 https://github.com/dennisreimann/btcpayserver-plugin-lndhub-api.git "$LNDHUBAPI_DIR"
+fi
+
+cd "$LNDHUBAPI_DIR"
+cp -r README.md "$DOCS_DIR/LNDhubAPI"
+for file in "$DOCS_DIR"/LNDhubAPI/*.md; do
+  update_external "$file" https://github.com/dennisreimann/btcpayserver-plugin-lndhub-api "$DOCS_DIR"/LNDhubAPI/
+done
+
 # Swagger
 
 cd "$BTCPAYSERVER_DIR"
@@ -270,4 +289,3 @@ cp -r README.md "$DOCS_DIR/Trocador"
 for file in "$DOCS_DIR"/Trocador/*.md; do
   update_external "$file" https://github.com/saltrafael/trocador-plugin "$DOCS_DIR"/Trocador/
 done
-
