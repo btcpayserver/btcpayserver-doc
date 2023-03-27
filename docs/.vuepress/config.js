@@ -82,6 +82,7 @@ const sidebarUserGuide = [
         ]
       },
       ['/Payouts', 'Payouts'],
+      ['/Forms', 'Forms'],
       ['/Apps', 'Apps'],
       ['/Accounting', 'Accounting'],
       {
