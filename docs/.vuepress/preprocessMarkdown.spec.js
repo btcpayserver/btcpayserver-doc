@@ -22,21 +22,27 @@ Short link:
   })
 
   it('replaces external links to docs with internal VuePress links', () => {
-    const md = externalFrontmatter + `
+    const md =
+      externalFrontmatter +
+      `
 While [our instructions](https://docs.btcpayserver.org/deployment/lunanodewebdeployment) cover how to install BTCPayServer in one click on Azure or Lunanode, BTCPay Server is not limited to those options.`
 
     expect(pp(md)).toMatchSnapshot()
   })
 
   it('replaces links to docs with internal VuePress links', () => {
-    const md = externalFrontmatter + `
+    const md =
+      externalFrontmatter +
+      `
 ([See the documentation](docs/pihole.md))`
 
     expect(pp(md)).toMatchSnapshot()
   })
 
   it('replaces repo internal links with external links', () => {
-    const md = externalFrontmatter + `
+    const md =
+      externalFrontmatter +
+      `
 When you run \`btcpay-setup.sh\`, your environment variables are used by [build.sh](build.sh) (or [build.ps1](build.ps1)) to generate a docker-compose adapted for your needs.
 For the full list of options, see: [Environment variables](#environment-variables)
 
@@ -51,7 +57,9 @@ Available \`BTCPAYGEN_ADDITIONAL_FRAGMENTS\` currently are:
   })
 
   it('replaces external repo links with internal links', () => {
-    const md = externalFrontmatter + `
+    const md =
+      externalFrontmatter +
+      `
 [opt-unsafe-expose](https://github.com/btcpayserver/btcpayserver-docker/blob/master/README.md#generated-docker-compose)`
 
     expect(pp(md)).toMatchSnapshot()

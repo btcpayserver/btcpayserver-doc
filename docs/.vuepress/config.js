@@ -26,7 +26,7 @@ const sidebarUserGuide = [
       ['/TryItOut', 'Try it out'],
       ['/Walkthrough', 'Walkthrough'],
       ['/UseCase', 'Use Case'],
-      ['/BTCPayVsOthers', 'BTCPay Server vs. Others'],
+      ['/BTCPayVsOthers', 'BTCPay Server vs. Others']
     ]
   },
   {
@@ -55,7 +55,7 @@ const sidebarUserGuide = [
           }
         ]
       },
-      ['/WhatsNext', '(4) What\'s Next?']
+      ['/WhatsNext', "(4) What's Next?"]
     ]
   },
   {
@@ -77,9 +77,7 @@ const sidebarUserGuide = [
       {
         title: 'Pull Payments',
         path: '/PullPayments',
-        children: [
-          ['/Refund', 'Refunds']
-        ]
+        children: [['/Refund', 'Refunds']]
       },
       ['/Payouts', 'Payouts'],
       ['/Apps', 'Apps'],
@@ -88,7 +86,11 @@ const sidebarUserGuide = [
         title: 'Payjoin',
         path: '/Payjoin',
         children: [
-          ['https://github.com/bitcoin/bips/blob/master/bip-0078.mediawiki', 'Payjoin specification', { type: 'external' }]
+          [
+            'https://github.com/bitcoin/bips/blob/master/bip-0078.mediawiki',
+            'Payjoin specification',
+            { type: 'external' }
+          ]
         ]
       }
     ]
@@ -140,118 +142,122 @@ const sidebarUserGuide = [
 
 const sidebarDeployment = [
   {
-    title: "Deployment",
+    title: 'Deployment',
     collapsable: false,
     children: [
-      "/Deployment/",
-      "/Deployment/ThirdPartyHosting",
-      "/Configurator/",
-    ],
+      '/Deployment/',
+      '/Deployment/ThirdPartyHosting',
+      '/Configurator/'
+    ]
   },
   {
-    title: "Docker",
+    title: 'Docker',
     collapsable: false,
     children: [
-      ["/Docker/", "Introduction"],
+      ['/Docker/', 'Introduction'],
       {
-        title: "Web/Cloud Deployment",
-        path: "/Deployment/webdeployment",
+        title: 'Web/Cloud Deployment',
+        path: '/Deployment/webdeployment',
         collapsable: false,
         children: [
-          ["/Deployment/LunaNode", "Luna Node"],
-          ["/Deployment/voltagecloud", "Voltage Cloud"],
-          ["/Deployment/DreamlabNetwork", "Dream Lab Network"],
+          ['/Deployment/LunaNode', 'Luna Node'],
+          ['/Deployment/voltagecloud', 'Voltage Cloud'],
+          ['/Deployment/DreamlabNetwork', 'Dream Lab Network'],
           {
-            title: "Azure",
-            path: "/Deployment/Azure",
+            title: 'Azure',
+            path: '/Deployment/Azure',
             children: [
-              ["/Deployment/AzurePennyPinching", "Reducing Cost on Azure"],
-            ],
+              ['/Deployment/AzurePennyPinching', 'Reducing Cost on Azure']
+            ]
           },
           {
-            title: "Google Cloud",
-            path: "/Deployment/GoogleCloud",
-          },
-        ],
+            title: 'Google Cloud',
+            path: '/Deployment/GoogleCloud'
+          }
+        ]
       },
       {
-        title: "Hardware Deployment",
-        path: "/Deployment/Hardware",
+        title: 'Hardware Deployment',
+        path: '/Deployment/Hardware',
         collapsable: false,
         children: [
           {
-            title: "Raspberry Pi Deployment",
-            path: "/Deployment/RaspberryPi4",
+            title: 'Raspberry Pi Deployment',
+            path: '/Deployment/RaspberryPi4'
           },
           {
-            title: "Hack0 Deployment",
-            path: "/Deployment/Hack0",
+            title: 'Hack0 Deployment',
+            path: '/Deployment/Hack0'
           },
           {
-            title: "LightningInABox Deployment",
-            path: "/Deployment/LightningInABox",
+            title: 'LightningInABox Deployment',
+            path: '/Deployment/LightningInABox'
           },
-          ["/Deployment/DynamicDNS", "Dynamic DNS"],
-          ["/Docker/cloudflare-tunnel", "Exposing on clearnet with Cloudflare"],
+          ['/Deployment/DynamicDNS', 'Dynamic DNS'],
+          ['/Docker/cloudflare-tunnel', 'Exposing on clearnet with Cloudflare'],
           [
-            "/Deployment/ReverseSSHtunnel",
-            "Exposing on clearnet with a reverse SSH Tunnel",
+            '/Deployment/ReverseSSHtunnel',
+            'Exposing on clearnet with a reverse SSH Tunnel'
           ],
-          ["/Deployment/ReverseProxyToTor", "Exposing on Tor"],
+          ['/Deployment/ReverseProxyToTor', 'Exposing on Tor'],
           {
-            title: "Hardware As A Service",
-            path: "/Deployment/HardwareAsAService",
-          },
-        ],
+            title: 'Hardware As A Service',
+            path: '/Deployment/HardwareAsAService'
+          }
+        ]
       },
       {
-        title: "Docker Plugins",
+        title: 'Docker Plugins',
         children: [
           {
-            title: "Transmuter",
-            path: "/Transmuter/",
+            title: 'Transmuter',
+            path: '/Transmuter/',
             children: [
-              ["/Transmuter/DCA", "Dollar Cost Average Preset"],
-              ["/Transmuter/EmailReceiptsPreset", "Email Receipts Preset"],
-            ],
+              ['/Transmuter/DCA', 'Dollar Cost Average Preset'],
+              ['/Transmuter/EmailReceiptsPreset', 'Email Receipts Preset']
+            ]
           },
-          ["/ElectrumX", "Electrum X"],
-          ["/ElectrumPersonalServer", "Electrum Personal Server"],
-          "/Docker/joinmarket",
-          "/Docker/pihole",
-          "/Docker/fireflyiii",
-          "/Docker/ndlc",
-          "/Docker/lightning-terminal",
-          "/Docker/tallycoin-connect",
-          "/Docker/cloudflare-tunnel",
-        ],
+          ['/ElectrumX', 'Electrum X'],
+          ['/ElectrumPersonalServer', 'Electrum Personal Server'],
+          '/Docker/joinmarket',
+          '/Docker/pihole',
+          '/Docker/fireflyiii',
+          '/Docker/ndlc',
+          '/Docker/lightning-terminal',
+          '/Docker/tallycoin-connect',
+          '/Docker/cloudflare-tunnel'
+        ]
       },
       {
-        title: "FastSync",
-        path: "/Docker/fastsync",
+        title: 'FastSync',
+        path: '/Docker/fastsync'
       },
       {
-        title: "Backup & Restore",
-        path: "/Docker/backup-restore",
-      },
-    ],
+        title: 'Backup & Restore',
+        path: '/Docker/backup-restore'
+      }
+    ]
   },
   {
-    title: "Manual Deployment",
+    title: 'Manual Deployment',
     collapsable: false,
     children: [
-      "/Deployment/ManualDeployment",
-      "/Deployment/ManualDeploymentExtended",
-    ],
-  },
-];
+      '/Deployment/ManualDeployment',
+      '/Deployment/ManualDeploymentExtended'
+    ]
+  }
+]
 
 const sidebarDevelopment = [
   {
     title: 'Greenfield API',
     collapsable: false,
     children: [
-      [`${baseUrl}/API/Greenfield/v1`, 'Greenfield API v1', { type: 'external' }],
+      [
+        `${baseUrl}/API/Greenfield/v1`,
+        'Greenfield API v1',
+        { type: 'external' }
+      ],
       '/BTCPayServer/greenfield-authorization',
       '/Development/GreenFieldExample',
       '/Development/GreenFieldExample-NodeJS',
@@ -288,9 +294,7 @@ const sidebarDevelopment = [
       {
         title: 'BTCPay Server Vault',
         path: '/Vault/',
-        children: [
-          '/Vault/HowToVerify'
-        ]
+        children: ['/Vault/HowToVerify']
       },
       ['/BTCPayServer/Security', 'Security Disclosures'],
       ['/Development/TestnetDemo', 'Testnet deployment']
@@ -308,10 +312,7 @@ const sidebarContribute = [
         title: 'Code',
         path: '/Contribute/Dev',
         collapsable: false,
-        children: [
-          '/Contribute/DevCode',
-          '/Contribute/DevTest'
-        ]
+        children: ['/Contribute/DevCode', '/Contribute/DevTest']
       },
       {
         title: 'Write',
@@ -328,8 +329,7 @@ const sidebarContribute = [
       ['/Contribute/Misc', 'Miscellaneous'],
       ['/Contribute/Agenda', 'Open Community Calls']
     ]
-  },
-
+  }
 ]
 
 const sidebarFAQ = [
@@ -356,47 +356,65 @@ module.exports = {
   title,
   description: 'BTCPay Server Official Documentation',
   head: [
-    ['meta', { name: 'viewport', content: 'width=device-width,initial-scale=1.0'}],
+    [
+      'meta',
+      { name: 'viewport', content: 'width=device-width,initial-scale=1.0' }
+    ],
     ['link', { rel: 'stylesheet', href: '/styles/btcpayserver-variables.css' }]
   ],
-  chainWebpack (config) {
+  chainWebpack(config) {
     config.module
       .rule('md')
       .test(/\.md$/)
       .use(preprocessMarkdown)
-        .loader(preprocessMarkdown)
-        .end()
+      .loader(preprocessMarkdown)
+      .end()
   },
   plugins: [
-    ['seo', {
-      siteTitle: (_, $site) => $site.title,
-      title: $page => $page.title,
-      description: $page => $page.frontmatter.description || extractDescription($page._strippedContent),
-      author: (_, $site) => info,
-      tags: $page => ($page.frontmatter.tags || ['BTCPay Server']),
-      twitterCard: _ => 'summary',
-      type: $page => 'article',
-      url: (_, $site, path) => `${baseUrl}${path.replace('.html', pageSuffix)}`,
-      image: ($page, $site) => `${baseUrl}/card.png`
-    }],
-    ['clean-urls', {
-      normalSuffix: pageSuffix,
-      indexSuffix: pageSuffix,
-      notFoundPath: '/404.html',
-    }],
-    ['code-copy', {
-      color: '#8F979E',
-      backgroundTransition: false,
-      staticIcon: true
-    }],
-    ['sitemap', {
-      hostname: baseUrl,
-      exclude: ['/404.html']
-    }],
+    [
+      'seo',
+      {
+        siteTitle: (_, $site) => $site.title,
+        title: $page => $page.title,
+        description: $page =>
+          $page.frontmatter.description ||
+          extractDescription($page._strippedContent),
+        author: (_, $site) => info,
+        tags: $page => $page.frontmatter.tags || ['BTCPay Server'],
+        twitterCard: _ => 'summary',
+        type: $page => 'article',
+        url: (_, $site, path) =>
+          `${baseUrl}${path.replace('.html', pageSuffix)}`,
+        image: ($page, $site) => `${baseUrl}/card.png`
+      }
+    ],
+    [
+      'clean-urls',
+      {
+        normalSuffix: pageSuffix,
+        indexSuffix: pageSuffix,
+        notFoundPath: '/404.html'
+      }
+    ],
+    [
+      'code-copy',
+      {
+        color: '#8F979E',
+        backgroundTransition: false,
+        staticIcon: true
+      }
+    ],
+    [
+      'sitemap',
+      {
+        hostname: baseUrl,
+        exclude: ['/404.html']
+      }
+    ],
     ['@vuepress/medium-zoom']
   ],
   markdown: {
-    extendMarkdown (md) {
+    extendMarkdown(md) {
       md.use(implicitFigures)
       md.use(include, { root: resolve(__dirname, 'includes') })
     },

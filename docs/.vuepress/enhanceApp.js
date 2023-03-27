@@ -30,9 +30,14 @@ const handleClick = e => {
 
 // Theme Switch
 if (typeof process === 'undefined' || process.env.VUE_ENV !== 'server') {
-  const systemColorMode = window.matchMedia('(prefers-color-scheme: dark)').matches ? COLOR_MODES[1] : COLOR_MODES[0]
+  const systemColorMode = window.matchMedia('(prefers-color-scheme: dark)')
+    .matches
+    ? COLOR_MODES[1]
+    : COLOR_MODES[0]
   const userColorMode = window.localStorage.getItem(STORE_ATTR)
-  const initialColorMode = COLOR_MODES.includes(userColorMode) ? userColorMode : systemColorMode
+  const initialColorMode = COLOR_MODES.includes(userColorMode)
+    ? userColorMode
+    : systemColorMode
 
   setColorMode(initialColorMode)
 }
