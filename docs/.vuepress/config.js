@@ -80,6 +80,7 @@ const sidebarUserGuide = [
         children: [['/Refund', 'Refunds']]
       },
       ['/Payouts', 'Payouts'],
+      ['/Forms', 'Forms'],
       ['/Apps', 'Apps'],
       ['/Accounting', 'Accounting'],
       {
