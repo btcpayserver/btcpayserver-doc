@@ -1,11 +1,12 @@
 ---
 description: Who uses BTCPay Server and why? What are the benefits of using BTCPay Server over other payment gateways?
 tags:
-- Use-case
-- Target-audience
-- BTCPay users
-- benefits
+  - Use-case
+  - Target-audience
+  - BTCPay users
+  - benefits
 ---
+
 # Who can use BTCPay Server?
 
 The versatility and flexibility of BTCPay Server attract different types of users. **Anyone** can use BTCPay Server.
@@ -14,15 +15,15 @@ We're ensuring an open future for businesses and individuals regardless of geogr
 
 Below are the most common use cases for BTCPay Server:
 
-* **Merchants** who sell products and services online or in person
-* Self-sovereign **individuals** wanting to protect their wealth and manage their funds and full bitcoin node
-* **Charities and non-profits** looking to accept donations or crowdfund their dream project
-* **Developers** building on top of bitcoin and bleeding-edge payment infrastructure
-* Members of **local communities** willing to onboard people to their BTCPay instance and offer payment processing as a service or for free, creating a circular economy.
-* **Exchanges** offering instant conversions for the users of BTCPay Server
-* **Hosting providers** offering BTCPay as a cloud service or ready-to-use hardware.
+- **Merchants** who sell products and services online or in person
+- Self-sovereign **individuals** wanting to protect their wealth and manage their funds and full bitcoin node
+- **Charities and non-profits** looking to accept donations or crowdfund their dream project
+- **Developers** building on top of bitcoin and bleeding-edge payment infrastructure
+- Members of **local communities** willing to onboard people to their BTCPay instance and offer payment processing as a service or for free, creating a circular economy.
+- **Exchanges** offering instant conversions for the users of BTCPay Server
+- **Hosting providers** offering BTCPay as a cloud service or ready-to-use hardware.
 
-![BTCPay UseCase Infographic](./img/infographics/BTCPayUseCaseInfographic.png "BTCPay Server UseCase Infographic")
+![BTCPay UseCase Infographic](./img/infographics/BTCPayUseCaseInfographic.png 'BTCPay Server UseCase Infographic')
 
 The software usage is by no means limited to the groups of users mentioned in this document.
 
@@ -32,11 +33,11 @@ Merchants accepting bitcoin payments online or in person are the primary user gr
 
 By choosing BTCPay Server to process payments, merchants are:
 
-* Saving money (BTCPay is free with no fees or subscriptions)
-* Cutting out the middle-man (If self-hosted payments go directly to their wallet)
-* Enhancing privacy for their customers (no address re-use, no information leaks to the third party servers if they're self-hosting BTCPay Server)
-* Saving time (easy integration with popular e-commerce platforms)
-* Protecting themselves from interference in their business (self-sovereignty)
+- Saving money (BTCPay is free with no fees or subscriptions)
+- Cutting out the middle-man (If self-hosted payments go directly to their wallet)
+- Enhancing privacy for their customers (no address re-use, no information leaks to the third party servers if they're self-hosting BTCPay Server)
+- Saving time (easy integration with popular e-commerce platforms)
+- Protecting themselves from interference in their business (self-sovereignty)
 
 ### Online stores
 
@@ -56,9 +57,9 @@ Take a look at [our demo POS app](https://mainnet.demo.btcpayserver.org/apps/3ut
 
 ## Freelancers & bill pay
 
-**Freelancers** can *request* for payment by sharing a [Payment Request](./PaymentRequests.md). The content and appearance of the payment request are customizable. With or without expiry, customers can pay the request at any time. BTCPay Server automatically updates the exchange rate when the customer pays the payment request when it's convenient for them. Merchants or freelancers can use payment requests for bill pay services. Payment requests can even be used to quickly request money from friends.
+**Freelancers** can _request_ for payment by sharing a [Payment Request](./PaymentRequests.md). The content and appearance of the payment request are customizable. With or without expiry, customers can pay the request at any time. BTCPay Server automatically updates the exchange rate when the customer pays the payment request when it's convenient for them. Merchants or freelancers can use payment requests for bill pay services. Payment requests can even be used to quickly request money from friends.
 
-Merchants can *provide* payment by sharing a [Pull Payment](./PullPayments.md). This is a long-lived payment offer that the freelancer can pull funds from at their convenience. The merchant can specify the total amount and approve a partial or full request for payment.
+Merchants can _provide_ payment by sharing a [Pull Payment](./PullPayments.md). This is a long-lived payment offer that the freelancer can pull funds from at their convenience. The merchant can specify the total amount and approve a partial or full request for payment.
 
 ## Charities & non-profits
 
@@ -66,15 +67,15 @@ Charities, non-profits, content creators, and other organizations that want to a
 
 Benefits of using BTCPay for accepting donations:
 
-* Saving money (no fees, no subscriptions)
-* Cutting out the middle-man (Payments go directly to their wallet)
-* Enhancing privacy for them and their donors (no address re-use, no IP leaks to third parties)
+- Saving money (no fees, no subscriptions)
+- Cutting out the middle-man (Payments go directly to their wallet)
+- Enhancing privacy for them and their donors (no address re-use, no IP leaks to third parties)
 
 It's essential to mention that BTCPay Server prevents address reuse, as many people have been reusing addresses for donations in the past. Here is why you SHOULD NOT reuse a Bitcoin address:
 
-* Privacy: reusing the same address for donations not only makes it incredibly easy to link it to your identity, but it also compromises the privacy of your donors and every person that interacts with you
-* Security: by compromising your privacy, address reuse increases your attack surface, as people that want to steal from you or harm you would have A LOT of information about you and your donors
-* High fees: fees for a Bitcoin transaction are calculated according to the "size" of a transaction (which has nothing to do with the amount being sent). By reusing addresses, you are building huge transactions involving many inputs, that will cost you a lot in fees when you want to move them
+- Privacy: reusing the same address for donations not only makes it incredibly easy to link it to your identity, but it also compromises the privacy of your donors and every person that interacts with you
+- Security: by compromising your privacy, address reuse increases your attack surface, as people that want to steal from you or harm you would have A LOT of information about you and your donors
+- High fees: fees for a Bitcoin transaction are calculated according to the "size" of a transaction (which has nothing to do with the amount being sent). By reusing addresses, you are building huge transactions involving many inputs, that will cost you a lot in fees when you want to move them
 
 You can read more about address reuse on the [Bitcoin Wiki](https://en.bitcoin.it/wiki/Address_reuse).
 
@@ -86,7 +87,7 @@ By deploying an instance, developers get a full tech stack to develop on top of 
 
 People self-hosting a BTCPay Server instance, can enable registration for other users and become a [third-party host](/Deployment/ThirdPartyHosting.md) for family, friends or their local community allowing them to accept Bitcoin by piggybacking on the host's instance. This allows motivated community members to onboard local communities and fuel hyperbitcoinization locally.
 
-[![BTCPay Server for local communities](https://img.youtube.com/vi/9n81qnzlPf8/mqdefault.jpg)](https://www.youtube.com/watch?v=9n81qnzlPf8 "BTCPay Server for local communities")
+[![BTCPay Server for local communities](https://img.youtube.com/vi/9n81qnzlPf8/mqdefault.jpg)](https://www.youtube.com/watch?v=9n81qnzlPf8 'BTCPay Server for local communities')
 
 ## Cryptocurrency exchanges
 

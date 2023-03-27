@@ -48,8 +48,8 @@ Synchronizing a Full Bitcoin node should take between 1 and 5 days. It should sy
 
 If the node appears to not be syncing, verify:
 
-* Not enough CPU
-* Using swap memory
+- Not enough CPU
+- Using swap memory
 
 ### Cause 1: Not enough CPU
 
@@ -107,11 +107,11 @@ Then it means you need to scale up your server by adding more memory.
 
 Possible cause:
 
-* You do not have enough RAM
-* You do not have enough storage
-* You accidentally disabled pruning
-* Your bitcoin data directory is corrupted
-* Your last wallet synchronisation goes beyond pruned data
+- You do not have enough RAM
+- You do not have enough storage
+- You accidentally disabled pruning
+- Your bitcoin data directory is corrupted
+- Your last wallet synchronisation goes beyond pruned data
 
 ### Cause 1: You do not have enough RAM
 
@@ -230,19 +230,20 @@ WARNING: Do not delete this wallet if you have any funds on it.
 
 ## I'm running a full node and have a synched blockchain, can BTCPay use it so that it doesn't have to do a full sync?
 
-Yes you can!  However, before you do that, you'll want to stop bitcoind from updating docker's volume for it, as that job will be taken over by BTCPay Server.
+Yes you can! However, before you do that, you'll want to stop bitcoind from updating docker's volume for it, as that job will be taken over by BTCPay Server.
 
 If you want to run BTCPay Server inside a docker-compose, and that you have the data directory (`.bitcoin`) of a fully synched node on your docker host, then you can reuse it easily for BTCPay Server.
 
 To do that, follow the following steps :
-* Do the normal setup according to [this instruction](https://docs.btcpayserver.org/Docker/). Note the `opt-save-storage` environment variable, which is used to enable various pruning levels. If you do not want to prune your exiting data directory, then omit the following line in your BTCPay docker deployment: `export BTCPAYGEN_ADDITIONAL_FRAGMENTS="opt-save-storage-s"`.
-* Once `btcpay-setup.sh` is over, turn down the docker compose with `btcpay-down.sh`.
-* Login as root with `sudo su -`.
-* Open the docker's volume for bitcoind : `cd /var/lib/docker/volumes/generated_bitcoin_datadir/`, and check its content with `ls -la`. You should see only one directory named `_data`.
-* Now remove the `_data`directory : `rm -r _data`. If for any reason you want to keep this directory and its content you can also rename it instead : `mv _data/ _data.old/`
-* Now create a [symbolic link](https://www.cyberciti.biz/faq/creating-soft-link-or-symbolic-link/) between `/var/lib/docker/volumes/generated_bitcoin_datadir/_data` and your data directory (`.bitcoin`) on your host: `ln -s path/to/.bitcoin /var/lib/docker/volumes/generated_bitcoin_datadir/_data`
-* Check that the link has been done with a `ls -la`
-* Start your docker-compose again with `btcpay-up.sh`
+
+- Do the normal setup according to [this instruction](https://docs.btcpayserver.org/Docker/). Note the `opt-save-storage` environment variable, which is used to enable various pruning levels. If you do not want to prune your exiting data directory, then omit the following line in your BTCPay docker deployment: `export BTCPAYGEN_ADDITIONAL_FRAGMENTS="opt-save-storage-s"`.
+- Once `btcpay-setup.sh` is over, turn down the docker compose with `btcpay-down.sh`.
+- Login as root with `sudo su -`.
+- Open the docker's volume for bitcoind : `cd /var/lib/docker/volumes/generated_bitcoin_datadir/`, and check its content with `ls -la`. You should see only one directory named `_data`.
+- Now remove the `_data`directory : `rm -r _data`. If for any reason you want to keep this directory and its content you can also rename it instead : `mv _data/ _data.old/`
+- Now create a [symbolic link](https://www.cyberciti.biz/faq/creating-soft-link-or-symbolic-link/) between `/var/lib/docker/volumes/generated_bitcoin_datadir/_data` and your data directory (`.bitcoin`) on your host: `ln -s path/to/.bitcoin /var/lib/docker/volumes/generated_bitcoin_datadir/_data`
+- Check that the link has been done with a `ls -la`
+- Start your docker-compose again with `btcpay-up.sh`
 
 Your BTCPay Server should now be fully synched.
 

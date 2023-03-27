@@ -4,7 +4,6 @@ BTCPay Server has a built in, **full-node reliant wallet** that allows for easy 
 
 Each [store](./CreateStore.md)'s configured cryptocurrency has a separate wallet displayed under Wallets in the menu bar.
 
-
 ## Wallet features
 
 The wallet contains the following features:
@@ -22,20 +21,20 @@ The wallet contains the following features:
 
 An overview of the incoming (green), outgoing (red) and unconfirmed (grayed out) **transactions** displayed together with timestamps and balances, sorted by date. You can click on the transaction ID to view the transaction details on the block explorer.
 
-![Individual Wallet](./img/wallet/WalletTransactions.jpg "BTCPay Server Wallet Transactions")
+![Individual Wallet](./img/wallet/WalletTransactions.jpg 'BTCPay Server Wallet Transactions')
 
 #### Transaction Labels
 
 The table below lists the various **transaction labels used by BTCPay**.
 
-| Transaction Type  | Description                                                  |
-| ----------------- | ------------------------------------------------------------ |
-| app               | Payment was received through an app created invoice          |
-| invoice           | Payment was received through an invoice                      |
-| payjoin           | Not paid, invoice timer still has not expired                |
-| payjoin-exposed   | UTXO was exposed through an invoice payjoin proposal         |
-| payment-request   | Payment was received through a payment request               |
-| payout            | Payment was sent through a payout or refund                  |
+| Transaction Type | Description                                          |
+| ---------------- | ---------------------------------------------------- |
+| app              | Payment was received through an app created invoice  |
+| invoice          | Payment was received through an invoice              |
+| payjoin          | Not paid, invoice timer still has not expired        |
+| payjoin-exposed  | UTXO was exposed through an invoice payjoin proposal |
+| payment-request  | Payment was received through a payment request       |
+| payout           | Payment was sent through a payout or refund          |
 
 You can also create your own [custom transaction labels and comments](./FAQ/Wallet.md#how-to-add-custom-labels-and-comments-to-transactions).
 
@@ -124,7 +123,7 @@ Coin selection is an advanced **privacy-enhancing feature** that allows you to *
 
 To make the selection easier, coin-selection works natively with the wallet labels feature. This allows you to label any incoming funds for smoother UTXO management and spending.
 
-![Coin Selection](./img/wallet/CoinSelection.jpg "Coin Selection")
+![Coin Selection](./img/wallet/CoinSelection.jpg 'Coin Selection')
 
 ##### Other features
 
@@ -142,7 +141,7 @@ This option **decodes a BIP21 payment link**. It's useful when you're trying to 
 
 The Receive tab **generates an unused address which can be used to receive payments**. The same can be achieved by generating an invoice (Invoices > Create new invoice).
 
-![Wallet Receive](./img/wallet/WalletReceive.jpg "Receive in BTCPay")
+![Wallet Receive](./img/wallet/WalletReceive.jpg 'Receive in BTCPay')
 
 ### Pull Payments
 
@@ -160,7 +159,7 @@ For more information, see [Payouts](./PullPayments.md#approve-and-pay-a-payout).
 
 The Rescan relies on Bitcoin Core 0.17.0's `scantxoutset` to **scan the current state of the blockchain** (called UTXO Set) for coins belonging to the configured derivation scheme.
 
-![Wallet Rescan](./img/wallet/WalletRescan.jpg "Rescan Wallet in BTCPay")
+![Wallet Rescan](./img/wallet/WalletRescan.jpg 'Rescan Wallet in BTCPay')
 
 Wallet re-scan solves two critical problems for BTCPay users:
 
@@ -171,7 +170,7 @@ Wallet re-scan solves two critical problems for BTCPay users:
 
 **Wallet import**: When users add a derivation scheme of a wallet that had transactions in the past (previously used wallet), BTCPay won't be able to show the balance and transactions from the past.
 
-![Wallet rescan progress](./img/wallet/WalletRescanProgress.jpg "Rescan Wallet in BTCPay")
+![Wallet rescan progress](./img/wallet/WalletRescanProgress.jpg 'Rescan Wallet in BTCPay')
 
 Re-scan is a feature that solves both of these problems. Once the scan is complete, BTCPay Server will show the correct balance, along with the past transactions of the wallet.
 
@@ -186,10 +185,7 @@ In the wallet settings tab you can adjust certain settings. If you've configured
 
 If you manually added the extended public key from an external wallet, you'd need to adjust `AccountKeyPath` that you can find in your external wallet, for example `m/84'/0'/0'` to be able to spend from the BTCPay Wallet.
 
-In `wallet settings` you will also find the `speed policy` for the specific store. 
-There are 2 main settings under `Payment`, [Payment invalid if transaction fails to confirm in ... after invoice creation](./FAQ/Stores.md#payment-invalid-if-transactions-fails-to-confirm--minutes-after-invoice-expiration) and [Consider the invoice confirmed when the payment transaction...](./FAQ/Stores/#consider-the-invoice-confirmed-when-the-payment-transaction). The latter lets you set the number of confirmations required to be recognized as settled. 
+In `wallet settings` you will also find the `speed policy` for the specific store.
+There are 2 main settings under `Payment`, [Payment invalid if transaction fails to confirm in ... after invoice creation](./FAQ/Stores.md#payment-invalid-if-transactions-fails-to-confirm--minutes-after-invoice-expiration) and [Consider the invoice confirmed when the payment transaction...](./FAQ/Stores/#consider-the-invoice-confirmed-when-the-payment-transaction). The latter lets you set the number of confirmations required to be recognized as settled.
 
 ![Wallet settings](./img/wallet/btcpayserverwalletsettings1.jpg)
-
-
-

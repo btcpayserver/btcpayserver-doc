@@ -99,6 +99,7 @@ try {
     echo "Error: " . $e->getMessage();
 }
 ```
+
 You can find a more advanced example with metadata and checkout options [here](https://github.com/btcpayserver/btcpayserver-greenfield-php/blob/master/examples/create_invoice.php)
 
 ## Webhook implementation and validation with PHP

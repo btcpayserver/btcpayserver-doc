@@ -36,12 +36,12 @@ The Payment Button is a simple and customizable HTML button you can create and e
 The BTCPay Server Pay Button which can be found in Store Settings > Pay Button, currently does not support custom amounts.
 However, you can use a work-around:
 
-* [Create Point of sale app](../WhatsNext.md#creating-the-point-of-sale-app)
-* Enable `user can input a custom amount` field
-* Remove all the products from the automatically generated template.
-* Save settings.
-* Click on the `Embed payment button linking to PoS item` at the bottom of the page and copy the expanded code. Paste it into html page of your website.
-* Remove the extra fields you do not need, especially `<input name="price" type="hidden" value="10" />` so that button redirects to the point of sale.
+- [Create Point of sale app](../WhatsNext.md#creating-the-point-of-sale-app)
+- Enable `user can input a custom amount` field
+- Remove all the products from the automatically generated template.
+- Save settings.
+- Click on the `Embed payment button linking to PoS item` at the bottom of the page and copy the expanded code. Paste it into html page of your website.
+- Remove the extra fields you do not need, especially `<input name="price" type="hidden" value="10" />` so that button redirects to the point of sale.
 
 ![Custom Amount Pay Button](../img/BTCPayPayButtonDynamic2.png)
 ![Custom Amount Pay Button](../img/BTCPayPayButtonDynamic.png)
@@ -71,7 +71,6 @@ Finally, in Server Settings > Policies click on the `Map specific domains to spe
 
 ![App domain mapping](../img/domainmapping1.png)
 
-
 Enter domain name, select a previously created app from the drop down menu and click `save` to map the app to specific domain.
 
 ![App domain mapping](../img/domainmapping2.png)
@@ -88,18 +87,19 @@ Point of Sale apps allow redirecting customers to any URL after an invoice is pa
 
 In PoS settings these are the following options for redirects on paid invoices:
 
-- **No** - *Without* Redirect URL
-   - Invoice displays a prompt for the user to return to the PoS App (Default setting).
-- **No** - *With* Redirect URL
-   - Invoice displays a prompt for the user to return to the provided App Redirect URL.
-- **Yes** - *Without* Redirect URL
-   - Paid invoice automatically redirects to the PoS App.
-- **Yes** - *With* Redirect URL
-   - Paid invoice automatically redirects to the provided App Redirect URL.
+- **No** - _Without_ Redirect URL
+  - Invoice displays a prompt for the user to return to the PoS App (Default setting).
+- **No** - _With_ Redirect URL
+  - Invoice displays a prompt for the user to return to the provided App Redirect URL.
+- **Yes** - _Without_ Redirect URL
+  - Paid invoice automatically redirects to the PoS App.
+- **Yes** - _With_ Redirect URL
+  - Paid invoice automatically redirects to the provided App Redirect URL.
 - **Use Store Settings**
-   - Enable/disable automatic redirect to the PoS App on the [store level](../FAQ/Stores.md#how-to-redirect-store-invoices-after-payment).
+  - Enable/disable automatic redirect to the PoS App on the [store level](../FAQ/Stores.md#how-to-redirect-store-invoices-after-payment).
 
 Notes:
+
 1. Provide the Redirect URL in the App Settings (above the redirect option).
 2. Expired or partially paid [invoices](../Invoices.md#invoice-statuses) will not redirect, even if the setting is enabled. This feature is for paid invoices only.
 3. Alternatively, redirect URLs can be specified via the API (i.e. Embedded PoS).
@@ -120,15 +120,15 @@ The following tutorial assumes you have a semi-advanced understanding of BTCPay,
 4. [Storefront Theme](https://wordpress.org/themes/storefront/) (if you're using another theme, you may need to modify the CSS code to fit your theme.
 5. BTCPay Server
 
-**Important Note**  Make sure that both your WooCommerce store and BTCPay Server **are on a same domain**. Some browsers have aggressive way of blocking the cross-domain embedded content. Quite specifically, Safari on iOS will destroy the cookie when the item is added, which will lead to empty cart. There's no other way to fix this besides having BTCPay and Woo on a same domain as subdomains at least.
+**Important Note** Make sure that both your WooCommerce store and BTCPay Server **are on a same domain**. Some browsers have aggressive way of blocking the cross-domain embedded content. Quite specifically, Safari on iOS will destroy the cookie when the item is added, which will lead to empty cart. There's no other way to fix this besides having BTCPay and Woo on a same domain as subdomains at least.
 
 #### Optional WordPress Plugins
 
 The following plugins are recommended, but not required. You don't have to use them if you're an advanced WordPress user.
 
-* [Flexible Checkout Fields](https://wordpress.org/plugins/flexible-checkout-fields/) (to edit checkout and remove redundant checkout fields in Woo)
-* [WooCommerce Direct Checkout](https://wordpress.org/plugins/woocommerce-direct-checkout/) (remove redundant steps in the checkout process and make pledging quicker)
-* [Header and Footer Scripts](https://wordpress.org/plugins/header-and-footer-scripts/) (place `<script>` code here)
+- [Flexible Checkout Fields](https://wordpress.org/plugins/flexible-checkout-fields/) (to edit checkout and remove redundant checkout fields in Woo)
+- [WooCommerce Direct Checkout](https://wordpress.org/plugins/woocommerce-direct-checkout/) (remove redundant steps in the checkout process and make pledging quicker)
+- [Header and Footer Scripts](https://wordpress.org/plugins/header-and-footer-scripts/) (place `<script>` code here)
 
 ### Instructions
 
@@ -151,6 +151,7 @@ Place the following custom CSS code into WordPress. Appearance > Customize > **C
   <summary>Click to view CSS</summary>
 
 CSS file:
+
 ```css
 #header,
 #masthead,
@@ -171,21 +172,21 @@ CSS file:
 }
 
 ul.products li.product .button {
-  margin-bottom: .236em;
+  margin-bottom: 0.236em;
   display: block;
 }
 
-.product:hover{
-  background-color:rgba(0,0,255,0.3);
-  color:rgba(0,0,0,0);
-  padding-bottom:45px;
+.product:hover {
+  background-color: rgba(0, 0, 255, 0.3);
+  color: rgba(0, 0, 0, 0);
+  padding-bottom: 45px;
 }
 
-.product:hover a *{
-  visibility:hidden;
+.product:hover a * {
+  visibility: hidden;
 }
 
-.product:hover a.add_to_cart_button{
+.product:hover a.add_to_cart_button {
   position: absolute;
   top: 0;
   left: 0px;
@@ -193,13 +194,14 @@ ul.products li.product .button {
   height: 100%;
   padding-top: 50%;
   color: white;
-  background-color:rgba(0,0,255,0.3);
+  background-color: rgba(0, 0, 255, 0.3);
 }
 
-.product:hover a.add_to_cart_button:hover{
-  background-color:rgba(0,0,255,0.5);
+.product:hover a.add_to_cart_button:hover {
+  background-color: rgba(0, 0, 255, 0.5);
 }
 ```
+
 </details>
 
 The code above removes and hides all the unnecessary things from your store (headers, footers, breadcrumbs, and sorting). If you're not using the Storefront theme, you may need to modify it slightly. Besides removing, the bottom part of the code adds a bit of different styling which improves the checkout experience and makes it more KickStarter like. Feel free to modify colors. You should also remove the sidebar.
@@ -230,14 +232,14 @@ Install [Header and Footer Scripts](https://wordpress.org/plugins/header-and-foo
 
 ```html
 <script>
-  jQuery( document ).ready(function() {
-    jQuery(".product").each(function(){
-      var product = jQuery(this);
-      var item = product.find(".woocommerce-loop-product__link");
-      var cartLink = product.find(".add_to_cart_button").attr("href");
-      item.attr("href", cartLink);
-    });
-  });
+  jQuery(document).ready(function () {
+    jQuery('.product').each(function () {
+      var product = jQuery(this)
+      var item = product.find('.woocommerce-loop-product__link')
+      var cartLink = product.find('.add_to_cart_button').attr('href')
+      item.attr('href', cartLink)
+    })
+  })
 </script>
 ```
 
@@ -262,40 +264,41 @@ CSS file:
 ```css
 #crowdfund-body-header-tagline-container,
 #crowdfund-body-description-container {
-    max-width: 100% !important;
-    width: 100% !important;
-    flex: 100%;
+  max-width: 100% !important;
+  width: 100% !important;
+  flex: 100%;
 }
 
 #crowdfund-body-contribution-container {
-    display: none;
+  display: none;
 }
 
 #crowdfund-body-header-cta {
-    display: none;
+  display: none;
 }
 
 #crowdfund-body-description-container iframe {
-    width:100%;
-    border:0;
-    min-height:500px;
+  width: 100%;
+  border: 0;
+  min-height: 500px;
 }
 /* // Medium devices (tablets, 768px and up) */
 @media (min-width: 768px) {
-    #crowdfund-body-description-container{
-        padding-right: 30%;
-        min-height:1200px;
-    }
-    #crowdfund-body-description-container iframe {
-        width:30%;
-        position: absolute;
-        right: 0;
-        top:0;
-        height: 100%;
-        border-left: 1px #e5e5e5 solid;
-    }
+  #crowdfund-body-description-container {
+    padding-right: 30%;
+    min-height: 1200px;
+  }
+  #crowdfund-body-description-container iframe {
+    width: 30%;
+    position: absolute;
+    right: 0;
+    top: 0;
+    height: 100%;
+    border-left: 1px #e5e5e5 solid;
+  }
 }
 ```
+
 </details>
 
 One final thing, make sure to check (enable) **Count all invoices created on the store as part of the crowdfunding goal**

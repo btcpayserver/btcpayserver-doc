@@ -9,18 +9,18 @@ During synchronization you need a powerful setup.
 
 Downside:
 
-* Running `btcpay-update.sh` or rebooting will take longer
-* You might see `502 Bad Gateway` and your node taking lots of time to start
-* Your server might become very slow
+- Running `btcpay-update.sh` or rebooting will take longer
+- You might see `502 Bad Gateway` and your node taking lots of time to start
+- Your server might become very slow
 
 Upside:
 
-* 50% savings
+- 50% savings
 
 If you find that your server is too slow:
 
-* Drop support for coins by editing the setting `BTCPAY_DOCKER_COMPOSE` in `/etc/profile.d/btcpay-env.sh`, or
-* Increase the size of your Virtual Machine
+- Drop support for coins by editing the setting `BTCPAY_DOCKER_COMPOSE` in `/etc/profile.d/btcpay-env.sh`, or
+- Increase the size of your Virtual Machine
 
 :::warning
 After some testing, it seems that following this guide for a setup on mainnet involving BTC+LTC+CLightning is a bit too much and makes the server very laggy.
@@ -33,14 +33,14 @@ If it is not acceptable, you should switch from `B1MS` (20 USD/Month) type to a 
 
 Find out how much your installation costs:
 
-* Go on the Azure portal
-* Go to Subscription (If you don't find the `Subscription` menu search `Subscription` in the search bar next to the notifications bell.)
-* Go to Cost Analysis
-* Select your Resource group (mine is called "dwoiqdwqb')
-* Timespan 30 days
-* Click on apply
+- Go on the Azure portal
+- Go to Subscription (If you don't find the `Subscription` menu search `Subscription` in the search bar next to the notifications bell.)
+- Go to Cost Analysis
+- Select your Resource group (mine is called "dwoiqdwqb')
+- Timespan 30 days
+- Click on apply
 
-![Show Cost Microsoft Azure](../img/ShowCost.png "Show Cost Microsoft Azure")
+![Show Cost Microsoft Azure](../img/ShowCost.png 'Show Cost Microsoft Azure')
 
 As you can see, my install costs `47.00 EUR/Month`.
 Most of the cost is spent on the virtual machine.
@@ -49,17 +49,17 @@ Most of the cost is spent on the virtual machine.
 
 First see what Virtual machine you currently have:
 
-* Go on the Azure portal
-* Go to Resource Groups
-* Select your resource group
-* Select BTCPayServerVM
+- Go on the Azure portal
+- Go to Resource Groups
+- Select your resource group
+- Select BTCPayServerVM
 
-![Show Microsoft Azure VM](../img/ShowVM.png "Show Microsoft Azure VM")
+![Show Microsoft Azure VM](../img/ShowVM.png 'Show Microsoft Azure VM')
 
 As you can see the CPU is mainly unused, disk as well. We can probably cut some fat here.
 Also my VM type is `Standard_D1_v2`. As you can see on [Azure Price Website](https://azureprice.net/).
 
-![Show Azure Price](../img/ShowPrice.png "Show Azure Price")
+![Show Azure Price](../img/ShowPrice.png 'Show Azure Price')
 
 This costs me `0.0573444 EUR/H` or `42.66 EUR/Month`.
 
@@ -73,7 +73,7 @@ sudo su -
 docker stats
 ```
 
-![Show Azure Resources](../img/ShowResources.png "Show Azure Resources")
+![Show Azure Resources](../img/ShowResources.png 'Show Azure Resources')
 
 As you can see, I have 3.352 GB of RAM, and around 55%.
 
@@ -116,27 +116,27 @@ Swap:         **2.0G**         0B       2.0G
 
 Now, go back to [azureprice.net](https://azureprice.net/) and find something cheaper than `0.0573444 EUR/H`.
 
-![Azure VM comparison](../img/ShowB1.png "Azure VM comparison")
+![Azure VM comparison](../img/ShowB1.png 'Azure VM comparison')
 
 Wow! `Standard_B1ms` cost only `0.02049219 EUR/H` – let's switch to it!
 
 A quick look at [this article](https://www.singhkays.com/blog/understanding-azure-b-series/) shows us that this type of virtual machine is adapted for low CPU consumption with occasional burst. This is what BTCPay Server is about after the nodes are synched.
 
-* Go on the Azure portal
-* Go to Resource Groups
-* Select your resource group
-* Select BTCPayServerVM
-* Select `Size`
-* Select `B1MS` (if you don't see, take a look at the [FAQ](#b1ms))
-* Click `Select`
+- Go on the Azure portal
+- Go to Resource Groups
+- Select your resource group
+- Select BTCPayServerVM
+- Select `Size`
+- Select `B1MS` (if you don't see, take a look at the [FAQ](#b1ms))
+- Click `Select`
 
-![Show Azure VM Size](../img/ShowSize.png "Show Azure VM Size")
+![Show Azure VM Size](../img/ShowSize.png 'Show Azure VM Size')
 
 Wait between 5 and 15 minutes.
 
 When Azure is happy:
 
-![Happy Microsoft Azure](../img/HappyAzure.png "Happy Microsoft Azure")
+![Happy Microsoft Azure](../img/HappyAzure.png 'Happy Microsoft Azure')
 
 Congratulations! You just cut down the cost by 50% per month! :)
 
@@ -151,11 +151,11 @@ Stopping your Virtual Machine will change the public IP Address of your server. 
 
 You need to go in:
 
-* Your Virtual Machine resource
-* `Overview` menu
-* Click on `Stop`
+- Your Virtual Machine resource
+- `Overview` menu
+- Click on `Stop`
 
-![Stop Azure VM](../img/StopVM.png "Stop Azure VM")
+![Stop Azure VM](../img/StopVM.png 'Stop Azure VM')
 
 Wait until the Virtual Machine has stopped, then change the size.
 

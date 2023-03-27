@@ -3,7 +3,7 @@
 - [Hot Wallet](#hot-wallet)
 - [Watch-only wallet](#watch-only-wallet)
 
-###  Hot Wallet
+### Hot Wallet
 
 If you do not have an existing wallet, you can generate a new one within your BTCPay Server. Whether you have an existing wallet or not, the quickest way to get a wallet connected to your store is to create a new wallet. You can always replace it with an alternative wallet after receiving a few small payments to your server, if you just want to get your store ready quickly.
 
@@ -27,19 +27,19 @@ Find out more about advanced settings [here](#advanced-settings).
 
 ![Wallet Settings](./img/hotwallet/WalletSettings.png)
 
-####  Recovery Seed
+#### Recovery Seed
 
-The last step to creating a hot wallet is making sure you document your recovery seed. After you've done so, tick the checkbox that says *I have written down my recovery phrase and stored it in a secure location* and click the **Done** button.
+The last step to creating a hot wallet is making sure you document your recovery seed. After you've done so, tick the checkbox that says _I have written down my recovery phrase and stored it in a secure location_ and click the **Done** button.
 
-####  Advanced Settings
+#### Advanced Settings
 
 - Optional [BIP39](https://github.com/bitcoin/bips/blob/master/bip-0039.mediawiki#from-mnemonic-to-seed) passphrase
-    
-    - You can add a passphrase for your hot wallet's mnemonic for an additional layer of security.
+
+  - You can add a passphrase for your hot wallet's mnemonic for an additional layer of security.
 
 - Import keys to RPC
 
-    - This is for more advanced applications of BTCPay Server.  Importing your keys to RPC will allow users to leverage [bitcoind Wallet RPCs](https://developer.bitcoin.org/reference/rpc/index.html#wallet-rpcs) on the imported wallet.
+  - This is for more advanced applications of BTCPay Server. Importing your keys to RPC will allow users to leverage [bitcoind Wallet RPCs](https://developer.bitcoin.org/reference/rpc/index.html#wallet-rpcs) on the imported wallet.
 
 ![Advanced Settings](./img/hotwallet/AdvancedSettings.png)
 
@@ -51,7 +51,7 @@ By default, you need to be a server admin to use the create wallet feature. This
 
 Understand that anyone with access to your recovery seed can also access and steal all your funds (current AND future funds!), since a private key is derived from a recovery seed. Securely back up your seed by writing it down and keep it in a safe place. Do not photograph it or store it in a digital format. Do not rely solely on your server for storing your recovery seed, always keep a backup copy.
 
-![BTCPay Server settings](./img/hotwallet/ServerSettings.png "BTCPay Server settings")
+![BTCPay Server settings](./img/hotwallet/ServerSettings.png 'BTCPay Server settings')
 
 :::warning
 When a new wallet is generated, BTCPay Server will show you a twelve word recovery seed. After the initial display, the recovery seed is wiped from the server, unless a the hot wallet option is enabled.
@@ -68,9 +68,8 @@ Once you've received funds to your wallet and decide to spend them, you can auto
 5. Review the transaction
 6. Broadcast the transaction
 
-
-![BTCPay Server Send page](./img/hotwallet/WalletSend.png "BTCPay Server Send page")
-![BTCPay Server Transaction Review and Broadcast page](./img/hotwallet/BroadcastConfirm.png "BTCPay Server Transaction Review and Broadcast page")
+![BTCPay Server Send page](./img/hotwallet/WalletSend.png 'BTCPay Server Send page')
+![BTCPay Server Transaction Review and Broadcast page](./img/hotwallet/BroadcastConfirm.png 'BTCPay Server Transaction Review and Broadcast page')
 
 #### Security Implications
 
@@ -88,12 +87,12 @@ As mentioned above, the create wallet functionality includes the risk of funds b
 Do not give anyone else access to your server's SSH keys or server account credentials when using a hot wallet. Anyone with access to your account can spend the funds from your hot wallet. If you need to allow account access to employees, developers, etc. use an [existing wallet](ConnectWallet.md#connect-an-existing-wallet) instead.
 :::
 
-###  Watch-only wallet
+### Watch-only wallet
 
 Like the hot wallet, the watch-only wallet can instantly get your store connected to a wallet. In contrast, this option does not store the private keys on the server. As a result, the wallet becomes "watch-only" for any received funds.
 
 There are several routes you can take to spend funds with this type of wallet including importing the seed words into a hardware wallet to sign your transactions using the [BTCPay Server Vault application](https://docs.btcpayserver.org/Vault/), [PSBT](https://docs.btcpayserver.org/Wallet/#psbt), or the least recommended manually providing your seed words every time.
 
-![BTCPay Server Transaction Signing Options](./img/hotwallet/SignTransaction.png "BTCPay Server Transaction Signing Options")
+![BTCPay Server Transaction Signing Options](./img/hotwallet/SignTransaction.png 'BTCPay Server Transaction Signing Options')
 
-Alternatively, you can spend funds in another external wallet where you have imported your BTCPay Server-produced seed words.  If you import your seed words into an external wallet, you can also use a PSBT to spend the funds, assuming the wallet supports it.  This option will be available on the wallet's send page.  Be sure to consider the [gap limit issue](./FAQ/Wallet.md#missing-payments-in-my-software-or-hardware-wallet) if you're using an external wallet with your watch-only wallet.
+Alternatively, you can spend funds in another external wallet where you have imported your BTCPay Server-produced seed words. If you import your seed words into an external wallet, you can also use a PSBT to spend the funds, assuming the wallet supports it. This option will be available on the wallet's send page. Be sure to consider the [gap limit issue](./FAQ/Wallet.md#missing-payments-in-my-software-or-hardware-wallet) if you're using an external wallet with your watch-only wallet.

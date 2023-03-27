@@ -54,16 +54,16 @@ When asking for inbound capacity, consider any routing policy fees the service m
 
 ### I previously installed BTCPayServer without lightning, can I enable it?
 
-BTCPay Server will allow you to set up your Lightning at any moment after creating your first store. 
-We currently support three implementations of the Lightning Network. 
+BTCPay Server will allow you to set up your Lightning at any moment after creating your first store.
+We currently support three implementations of the Lightning Network.
 
-* [LND](https://github.com/lightningnetwork/lnd)
-* [c-lightning](https://github.com/ElementsProject/lightning)
-* [eclair](https://github.com/ACINQ/eclair)
+- [LND](https://github.com/lightningnetwork/lnd)
+- [c-lightning](https://github.com/ElementsProject/lightning)
+- [eclair](https://github.com/ACINQ/eclair)
 
 ![Connecting Lightning to store](../img/FAQ/btcpaylightningfaq1.jpg)
 
-Want to learn more on how to set up your store with Lightning ? 
+Want to learn more on how to set up your store with Lightning ?
 Follow along the [Lightning Network](../LightningNetwork.md) guide, and you will get your store connected to Lightning Network!
 
 ### Can I use a pruned node with LN in BTCPay?
@@ -215,7 +215,7 @@ WARNING: The rescan can only pick up the transactions within your archived block
 :::
 To customize LND settings which are not available as environment variables, you can [create a custom fragment](../Docker/README.md#how-can-i-customize-the-generated-docker-compose-file) in `docker-compose-generator/docker-fragments/opt-lnd-wallet-rescan.custom.yml` like this:
 
-``` 
+```
 version: "3"
 services:
   lnd_bitcoin:
@@ -231,7 +231,9 @@ services:
       LND_EXTRA_ARGS: |
         reset-wallet-transactions=1
 ```
+
 For more information on this LND feature, see [their documentation](https://github.com/lightningnetwork/lnd/blob/master/docs/recovery.md#forced-in-place-rescan).
+
 ### How to see LND logs?
 
 To check the logs of your LND node in BTCPay Server (Docker installations) use the following command:
@@ -257,8 +259,8 @@ lncli bakemacaroon address:read address:write info:read invoices:read invoices:w
 
 Authentication tends to fail on LND after an update, symptoms are:
 
-* In store settings, when testing the connection to your node you get `Error while connecting to the API (The HTTP status code of the response was not expected (500).)`
-* In Zap wallet, `Unable to connect to host: cannot retrieve macaroon: cannot get macaroon: root key with id 0 doesn’t exist`
+- In store settings, when testing the connection to your node you get `Error while connecting to the API (The HTTP status code of the response was not expected (500).)`
+- In Zap wallet, `Unable to connect to host: cannot retrieve macaroon: cannot get macaroon: root key with id 0 doesn’t exist`
 
 In such case, you need to delete the macaroon of lnd and restart it.
 
@@ -296,7 +298,7 @@ export LIGHTNING_ALIAS="namehere"
 To customize LND settings which are not available as environment variables, you can [create a custom fragment](../Docker/README.md#how-can-i-customize-the-generated-docker-compose-file) in `docker-compose-generator/docker-fragments/opt-lnd-config.custom.yml` like this:
 
 ```yml
-version: "3"
+version: '3'
 services:
   lnd_bitcoin:
     environment:
@@ -397,7 +399,7 @@ Send to {destination} address {satoshi} (or 'all') amount via Bitcoin transactio
 
 If you want to withdraw 1000 sats to bc1qjl8uwezzlech793lpnyuzy0h2cdkvxvh54v3dn, the exact command would be:
 
-`withdraw bc1qjl8uwezzlech793lpnyuzy0h2cdkvxvh54v3dn 1000` click *execute*.
+`withdraw bc1qjl8uwezzlech793lpnyuzy0h2cdkvxvh54v3dn 1000` click _execute_.
 
 ![Spark Withdraw](../img/SparkWalletWithdrawConsole.png)
 
@@ -411,11 +413,11 @@ If you're facing a technical problem with your Lightning Network implementation,
 
 #### LND Support
 
-* [LND GitHub](https://github.com/lightningnetwork/lnd/issues)
-* [Lightning Community on Slack](https://lightningcommunity.slack.com)
+- [LND GitHub](https://github.com/lightningnetwork/lnd/issues)
+- [Lightning Community on Slack](https://lightningcommunity.slack.com)
 
 #### c-lightning Support
 
-* [c-lightning GitHub](https://github.com/ElementsProject/lightning/issues)
-* [c-lightning Telegram Group](https://t.me/lightningd)
-* [c-lightning docs](https://lightning.readthedocs.io/)
+- [c-lightning GitHub](https://github.com/ElementsProject/lightning/issues)
+- [c-lightning Telegram Group](https://t.me/lightningd)
+- [c-lightning docs](https://lightning.readthedocs.io/)

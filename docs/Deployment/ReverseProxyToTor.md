@@ -2,15 +2,15 @@
 
 ## Advantages
 
-* no port forwarding needed on the LAN of the host
-* encrypted connection
-* hides the IP of the host
+- no port forwarding needed on the LAN of the host
+- encrypted connection
+- hides the IP of the host
 
 ## Requirements
 
-* a Virtual Private Server (VPS) - eg. a minimal package on Lunanode for ~3.5$/month
-* root access on the VPS - you need to set up webserver and install packages
-* a domain or subdomain - this will be setup on the proxy webserver
+- a Virtual Private Server (VPS) - eg. a minimal package on Lunanode for ~3.5$/month
+- root access on the VPS - you need to set up webserver and install packages
+- a domain or subdomain - this will be setup on the proxy webserver
 
 Get the Tor `.onion` address of your BTCPay Server via the `Server settings > Services` page.
 See information in the "HTTP-based TOR hidden services" section.
@@ -225,6 +225,7 @@ cd BTCPayServer/btcpayserver-docker/
 export BTCPAY_ADDITIONAL_HOSTS="btcpayserver.mydomain.com"
 . ./btcpay-setup.sh -i
 ```
+
 :::
 
 ## Do all this in a Docker container
@@ -248,7 +249,7 @@ This container does not have any nginx component because Kubernetes provides for
 Break free from cloud services providers limitations, secure and protect your bitcoin full node, connect that with a BTC Pay server, all behind TOR.
 Selectively expose the BTCPay Server payment gateway and API to clearnet using socat+tor running on the Internet.
 
---------------
+---
 
 #### Build
 
@@ -262,7 +263,7 @@ docker build -t cloudgenius/socator .
 docker push cloudgenius/socator
 ```
 
-#### Start the image in background (*daemon mode*) with IP address restriction
+#### Start the image in background (_daemon mode_) with IP address restriction
 
 ```sh
 docker run -d \
@@ -310,14 +311,14 @@ spec:
         role: socator
     spec:
       containers:
-      - image: cloudgenius/socator # code https://github.com/beacloudgenius/socator
-        imagePullPolicy: IfNotPresent
-        name: socator
-        env:
-          - name: TOR_SITE
-            value: "zqktlwiuavvvqqt4ybvgvi7tyo4hjl5xgfuvpdf6otjiycgwqbym2qad.onion" # BTCPay Server Tor address => docker exec tor cat /var/lib/tor/app-btcpay-server/hostname
-          - name: TOR_SITE_PORT
-            value: "80"
+        - image: cloudgenius/socator # code https://github.com/beacloudgenius/socator
+          imagePullPolicy: IfNotPresent
+          name: socator
+          env:
+            - name: TOR_SITE
+              value: 'zqktlwiuavvvqqt4ybvgvi7tyo4hjl5xgfuvpdf6otjiycgwqbym2qad.onion' # BTCPay Server Tor address => docker exec tor cat /var/lib/tor/app-btcpay-server/hostname
+            - name: TOR_SITE_PORT
+              value: '80'
 ```
 
 Service manifest
@@ -363,13 +364,12 @@ spec:
     - hosts:
         - btcpayserver.mydomain.com
       secretName: socator-tls
-
 ```
 
 ## Resources
 
-* [nginx reverse proxy to .onion site in Tor network](https://itgala.xyz/nginx-reverse-proxy-to-onion-site-in-tor-network/)
-* [Tor-to-IP tunnel service](https://github.com/openoms/bitcoin-tutorials/blob/master/tor2ip_tunnel.md)
-* [How to make a nginx reverse proxy direct to tor hidden service](https://stackoverflow.com/questions/55487324/how-to-make-a-nginx-reverse-proxy-direct-to-tor-hidden-service)
-* [Secure Nginx with Let's Encrypt on Debian 10 Linux](https://linuxize.com/post/secure-nginx-with-let-s-encrypt-on-debian-10/)
-* [Nginx WebSocket proxying](http://nginx.org/en/docs/http/websocket.html)
+- [nginx reverse proxy to .onion site in Tor network](https://itgala.xyz/nginx-reverse-proxy-to-onion-site-in-tor-network/)
+- [Tor-to-IP tunnel service](https://github.com/openoms/bitcoin-tutorials/blob/master/tor2ip_tunnel.md)
+- [How to make a nginx reverse proxy direct to tor hidden service](https://stackoverflow.com/questions/55487324/how-to-make-a-nginx-reverse-proxy-direct-to-tor-hidden-service)
+- [Secure Nginx with Let's Encrypt on Debian 10 Linux](https://linuxize.com/post/secure-nginx-with-let-s-encrypt-on-debian-10/)
+- [Nginx WebSocket proxying](http://nginx.org/en/docs/http/websocket.html)

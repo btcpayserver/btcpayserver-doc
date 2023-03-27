@@ -11,4 +11,3 @@ Find it on the [Shopware store](https://store.shopware.com/en/coinc71249255720f/
 ## Plugin for Shopware 5
 
 Download it on [GitHub](https://github.com/lampsolutions/LampSBtcPayShopware)
-

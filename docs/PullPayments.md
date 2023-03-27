@@ -10,31 +10,33 @@ However, what about reversing the role?
 What if, instead of a sender `pushing` the payment, the sender allows the receiver to `pull` the payment at a time the receiver seems fit?
 This is the concept of `Pull payment`. This allows several new applications such as:
 
-* A subscription service (where the subscriber allows the service to pull money every x amount of time)
-* Refunds (where the merchant allows the customer to pull the refund money to his wallet when it seems fit)
-* Time-based billing for freelancers (where the person hiring allows the freelancer to pull money to his wallet as time gets reported)
-* Patronage (where the patron allows the recipient to pull money every month to continue supporting their work)
-* Automatic selling (where a customer of an exchange would allow an exchange to pull money from their wallet to automatically sell every month)
-* Balance withdraw system (where a high-volume service allows users to request withdrawals from their balance, the service can then easily batch all the payouts to many users, at fixed intervals)
+- A subscription service (where the subscriber allows the service to pull money every x amount of time)
+- Refunds (where the merchant allows the customer to pull the refund money to his wallet when it seems fit)
+- Time-based billing for freelancers (where the person hiring allows the freelancer to pull money to his wallet as time gets reported)
+- Patronage (where the patron allows the recipient to pull money every month to continue supporting their work)
+- Automatic selling (where a customer of an exchange would allow an exchange to pull money from their wallet to automatically sell every month)
+- Balance withdraw system (where a high-volume service allows users to request withdrawals from their balance, the service can then easily batch all the payouts to many users, at fixed intervals)
 
 You can also follow this video:
 
-[![What is a pull payment](https://img.youtube.com/vi/-e8lPd9NtPs/mqdefault.jpg)](https://www.youtube.com/watch?v=-e8lPd9NtPs "What is a pull payment")
+[![What is a pull payment](https://img.youtube.com/vi/-e8lPd9NtPs/mqdefault.jpg)](https://www.youtube.com/watch?v=-e8lPd9NtPs 'What is a pull payment')
 
 ## Concept
 
 When a sender configures a `Pull payment`, they can configure a number of properties:
-* Start date
-* End date (optional)
-* A period (optional)
-* A limit amount
-* A unit (such as USD, BTC, Hours)
-* Available payment methods
+
+- Start date
+- End date (optional)
+- A period (optional)
+- A limit amount
+- A unit (such as USD, BTC, Hours)
+- Available payment methods
 
 After this, the sender can **share the pull payment** using a link with the receiver, allowing the receiver to `create a payout`.
 The receiver will choose for their payout:
-* Which payment method to use
-* Where to send the money
+
+- Which payment method to use
+- Where to send the money
 
 Once a payout is created, it will count toward the `pull payment's limit` for the current `period`.
 The sender will then approve the payout by setting the `rate` in which the payout will be sent, and proceed with payment.
@@ -91,24 +93,25 @@ The user interface only allows a subset of what is possible.
 ### Create a pull payment
 
 1. Go to your wallet page / pull payments
-![BTCPay Server Pull Payment](./img/pull-payments/1.jpg "BTCPay Server Pull Payment")
+   ![BTCPay Server Pull Payment](./img/pull-payments/1.jpg 'BTCPay Server Pull Payment')
 2. Click on `Create a new pull payment`
-![BTCPay Server Pull Payment](./img/pull-payments/2.jpg "BTCPay Server Pull Payment")
+   ![BTCPay Server Pull Payment](./img/pull-payments/2.jpg 'BTCPay Server Pull Payment')
 3. Fill out the pull payment information, click `Create`
-![BTCPay Server Pull Payment](./img/pull-payments/3.jpg "BTCPay Server Pull Payment")
+   ![BTCPay Server Pull Payment](./img/pull-payments/3.jpg 'BTCPay Server Pull Payment')
 4. Go to the pull payment page by clicking on `View`
 5. Share this page with the payment receiver
-![BTCPay Server Pull Payment](./img/pull-payments/4.png "BTCPay Server Pull Payment")
-5. As the receiver, fill out how much `USD` you claim, and to which address the money should be sent.
-![BTCPay Server Pull Payment](./img/pull-payments/5.png "BTCPay Server Pull Payment")
+   ![BTCPay Server Pull Payment](./img/pull-payments/4.png 'BTCPay Server Pull Payment')
+6. As the receiver, fill out how much `USD` you claim, and to which address the money should be sent.
+   ![BTCPay Server Pull Payment](./img/pull-payments/5.png 'BTCPay Server Pull Payment')
 
 ### Approve and pay a payout
+
 1. The sender gets notified when the receiver is pulling money
-![6](./img/pull-payments/6.jpg)
+   ![6](./img/pull-payments/6.jpg)
 2. Clicking on the notification brings the sender to a page listing all outstanding payouts
-![7](./img/pull-payments/7.jpg)
+   ![7](./img/pull-payments/7.jpg)
 3. Check the payout to approve, pay and confirm
-![8](./img/pull-payments/8.jpg)
+   ![8](./img/pull-payments/8.jpg)
 4. You are then brought to the normal wallet user interface of BTCPay Server
 
 :::warning

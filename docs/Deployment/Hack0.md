@@ -7,26 +7,26 @@ This project is maintained by [DG Lab](https://www.dglab.com/en/), if you need h
 
 Hack0 aims at two different kind of users: `Distributors` and `End users`.
 
-* `End users` are people ultimately running the Hack0 for their own purposes.
-* `Distributors` are people who buy the different part of the hardware, assemble it together, install Hack0, and distribute a plug-and-play box for `End users`.
+- `End users` are people ultimately running the Hack0 for their own purposes.
+- `Distributors` are people who buy the different part of the hardware, assemble it together, install Hack0, and distribute a plug-and-play box for `End users`.
 
 If you buy the different piece of hardware for your Hack0, assemble, install hack0, then use it yourself, you are both a `distributor` and a `end users` as far as this documentation is concerned.
 
 You can watch an introduction here:
 
-[![Introduction to Hack0](https://img.youtube.com/vi/m3i2EUTEukM/mqdefault.jpg)](https://www.youtube.com/watch?v=m3i2EUTEukM "Introduction to Hack0")
+[![Introduction to Hack0](https://img.youtube.com/vi/m3i2EUTEukM/mqdefault.jpg)](https://www.youtube.com/watch?v=m3i2EUTEukM 'Introduction to Hack0')
 
 ## Hardware specification (for distributors)
 
 Here is the advised parts for running a Hack0:
 
-* RockPro64 4GB ([Link](https://store.pine64.org/?product=rockpro64-4gb-single-board-computer)) `79.99$`
-* USB adapter for EMMC Module ([Link](https://pine64.com/product/usb-adapter-for-emmc-module/)) `4.99$`
-* EMMC 16GB ([Link](https://pine64.com/product/16gb-emmc-module/)) `15.95$`
-* Fan For ROCKPro64 20mm Mid Profile Heatsink ([Link](https://pine64.com/product/fan-for-rockpro64-20mm-mid-profile-heatsink/)) `2.99$`
-* ROCKPro64 20mm Mid Profile Heatsink ([Link](https://pine64.com/product/rockpro64-20mm-mid-profile-heatsink/)) `3.29$`
-* SSD 500GB PCIe NVMe ([Link](https://www.crucial.com/ssd/p2/CT500P2SSD8)) `66.99$`
-* M.2 to PCIe adapter ([Link](https://www.silverstonetek.com/en/product/info/expansion-cards/ECM25/)) `25$`
+- RockPro64 4GB ([Link](https://store.pine64.org/?product=rockpro64-4gb-single-board-computer)) `79.99$`
+- USB adapter for EMMC Module ([Link](https://pine64.com/product/usb-adapter-for-emmc-module/)) `4.99$`
+- EMMC 16GB ([Link](https://pine64.com/product/16gb-emmc-module/)) `15.95$`
+- Fan For ROCKPro64 20mm Mid Profile Heatsink ([Link](https://pine64.com/product/fan-for-rockpro64-20mm-mid-profile-heatsink/)) `2.99$`
+- ROCKPro64 20mm Mid Profile Heatsink ([Link](https://pine64.com/product/rockpro64-20mm-mid-profile-heatsink/)) `3.29$`
+- SSD 500GB PCIe NVMe ([Link](https://www.crucial.com/ssd/p2/CT500P2SSD8)) `66.99$`
+- M.2 to PCIe adapter ([Link](https://www.silverstonetek.com/en/product/info/expansion-cards/ECM25/)) `25$`
 
 Total: `179.2$`
 
@@ -41,7 +41,7 @@ The Hack0 is based on the armbian distribution. You can build the image yourself
 Once you have the image, you can flash it on the EMMC module thanks to the USB adapter for EMMC Module.
 During the first start, hack0 is in `setup mode`, the setup mode will:
 
-> :warning: When you first boot a pre-built images, the hack0 will be in  `setup mode`, which will wipe all data in the SSD drive.
+> :warning: When you first boot a pre-built images, the hack0 will be in `setup mode`, which will wipe all data in the SSD drive.
 
 During the `setup mode`, observe the two leds positioned next to the ethernet connector. You will see the red led staying on, while the white led is blinking.
 Once the setup mode succeed, the red led turns off and the white led turns on without blinking. At this point, you can safely disconnect the Hack0. It is now ready to be used by `end users`.
@@ -62,4 +62,4 @@ In some case, `hack0.local` might not work, and you need to use a tool such as [
 You need to add your public ssh key to `http://hack0.local/server/services/ssh`. Do not remove the `btcpayserver` key that already exists.
 After this, you should be able to connect via ssh with `ssh root@hack0.local` or Putty.
 
-![SSH Authorized keys](../img/SSH-Authorized-Keys.png "SSH Authorized keys")
+![SSH Authorized keys](../img/SSH-Authorized-Keys.png 'SSH Authorized keys')

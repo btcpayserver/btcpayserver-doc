@@ -2,15 +2,15 @@
 
 ## Advantages
 
-* no port forwarding needed on the LAN of the host
-* encrypted connection
-* hides the IP of the host
+- no port forwarding needed on the LAN of the host
+- encrypted connection
+- hides the IP of the host
 
 ## Requirements
 
-* a Virtual Private Server (VPS) - eg. a minimal package on Lunanode for ~3.5$/month
-* root access on the VPS - only root can forward ports under no. 1000
-* ssh access to the host computer (where the ports will be forwarded from)
+- a Virtual Private Server (VPS) - eg. a minimal package on Lunanode for ~3.5$/month
+- root access on the VPS - only root can forward ports under no. 1000
+- ssh access to the host computer (where the ports will be forwarded from)
 
 ## Setup
 
@@ -147,5 +147,5 @@ netstat -tulpn
 
 ## Resources
 
-* Raspiblitz FAQ: [How to setup port-forwarding with a SSH tunnel?](https://github.com/rootzoll/raspiblitz/blob/master/FAQ.md#how-to-setup-port-forwarding-with-a-ssh-tunnel)
-* RaspiBolt Docs: [Login with SSH keys](https://raspibolt.org/guide/raspberry-pi/security.html#login-with-ssh-keys)
+- Raspiblitz FAQ: [How to setup port-forwarding with a SSH tunnel?](https://github.com/rootzoll/raspiblitz/blob/master/FAQ.md#how-to-setup-port-forwarding-with-a-ssh-tunnel)
+- RaspiBolt Docs: [Login with SSH keys](https://raspibolt.org/guide/raspberry-pi/security.html#login-with-ssh-keys)

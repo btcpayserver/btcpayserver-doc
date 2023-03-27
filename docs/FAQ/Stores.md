@@ -26,9 +26,9 @@ For example, the customer created an invoice for 20$ and paid it partially, payi
 
 BTCPay offers several options to customize this protection feature. You can apply a network fee :
 
-* Only if the customer makes more than one payment for the invoice (In the above example, if the customer created an invoice for 20$ and paid 1$, total invoice due is now 19$ + the network fee. The network fee is applied **after the first payment**)
-* On every payment (including the first payment, in our example, the total  will be 20$ + network fee right away, even on the first payment)
-* Never add network fee (disables the network fee entirely)
+- Only if the customer makes more than one payment for the invoice (In the above example, if the customer created an invoice for 20$ and paid 1$, total invoice due is now 19$ + the network fee. The network fee is applied **after the first payment**)
+- On every payment (including the first payment, in our example, the total will be 20$ + network fee right away, even on the first payment)
+- Never add network fee (disables the network fee entirely)
 
 The network fee in BTCPay is **not the mining fee**. The customers still need to pay for the miner's fee.
 
@@ -56,8 +56,8 @@ The invoice is considered "processing", as soon as it is visible on the blockcha
 
 ## Consider the invoice confirmed with RBF flag on 0-conf setup
 
-Usually, your store would "process" the invoice as soon it's visible on the blockchain(in mempool). However, a transaction might be flagged for RBF, now what? 
-BTCPay Server has checks for RBF flags in place. Whenever a transaction is flagged as such, BTCPay Server will automatically wait for 1 conf. 
+Usually, your store would "process" the invoice as soon it's visible on the blockchain(in mempool). However, a transaction might be flagged for RBF, now what?
+BTCPay Server has checks for RBF flags in place. Whenever a transaction is flagged as such, BTCPay Server will automatically wait for 1 conf.
 Find more on [wallet settings here](../Wallet.md#settings).
 
 ## Consider the invoice paid even if the paid amount is ... % less than expected
@@ -112,24 +112,24 @@ GetRatesAsync was called on coinaverage when the rate is outdated. It should nev
 
 The issue can be fixed by [selecting a different rate source provider](./Stores.md#how-to-change-the-exchange-rate-provider-for-invoices) in Stores > Settings > Rates, or by [updating your BTCPay Server](./ServerSettings.md#how-to-update-btcpay-server) if you're running version 1.0.3.146 or older. The update will automatically replace Coinaverage with CoinGecko.
 
-## What is a payment request? 
+## What is a payment request?
 
 A payment request allows you to invoice your clients and get paid in bitcoin, just by sending a simple payment link. If you were to invoice a client by simply using any bitcoin wallet, the process usually looks like this:
 
-    Customer: Can I pay the 100$ in bitcoin? 
-    You: Sure you can! Here is my BTC address, and the amount in BTC is 0.0025481 (100$ at the time of sending the message). 
-    Customer; Ohh, I totally missed your message, my wallet says 0.0028 now, and I need to buy more bitcoin. Can I pay you tomorrow? 
+    Customer: Can I pay the 100$ in bitcoin?
+    You: Sure you can! Here is my BTC address, and the amount in BTC is 0.0025481 (100$ at the time of sending the message).
+    Customer; Ohh, I totally missed your message, my wallet says 0.0028 now, and I need to buy more bitcoin. Can I pay you tomorrow?
     You: Okay, but we have to go through this process again tomorrow.
 
-BTCPay Server built-in  [Payment Request](../PaymentRequests.md) functionality allows you to get paid by sharing a simple link with your customers/clients.
+BTCPay Server built-in [Payment Request](../PaymentRequests.md) functionality allows you to get paid by sharing a simple link with your customers/clients.
 The customer gets a nicely designed payment request page which allows them to pay you at their convenience, where as the bitcoin conversion rate will always be up to date with the currency of your choice
 When the payment is made customers can print out the payment request for bookkeeping purposes.
 
-[![BTCPay Server Payment Requests](https://img.youtube.com/vi/j6CvwDPvfzQ/mqdefault.jpg)](https://www.youtube.com/watch?v=j6CvwDPvfzQ "BTCPay Server Payment Requests")
+[![BTCPay Server Payment Requests](https://img.youtube.com/vi/j6CvwDPvfzQ/mqdefault.jpg)](https://www.youtube.com/watch?v=j6CvwDPvfzQ 'BTCPay Server Payment Requests')
 
 You can learn more about this functionality on a dedicated [payment request page](../PaymentRequests.md)
 
-## What is the difference between a payment request and invoice? 
+## What is the difference between a payment request and invoice?
 
 An invoice is a document issued by the seller to a buyer to collect payment.
 

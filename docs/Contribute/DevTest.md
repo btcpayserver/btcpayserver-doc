@@ -92,7 +92,7 @@ Use the hot wallet for fastest wallet setup during testing. Import from ... > a 
 
 - Create an invoice for your store
 
- ## Pay Invoice
+## Pay Invoice
 
 Open a new Powershell terminal and navigate to your `BTCPayServer.Tests` directory where our Docker-Compose commands are run for the project. Copy the amount and address for payment from your invoice. Add them into the following command:
 

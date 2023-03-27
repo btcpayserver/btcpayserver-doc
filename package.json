@@ -24,7 +24,7 @@
     "netlify": "./setup-deps.sh && npm run build",
     "test": "jest",
     "redirects": "node create-redirects.js",
-    "prettier": "prettier --write 'docs/**/*.{js,json,md}'"
+    "prettier": "prettier --write '*.{js,json,md}' 'docs/**/*.{js,json,md}'"
   },
   "devDependencies": {
     "@redocly/cli": "1.0.0-beta.124",

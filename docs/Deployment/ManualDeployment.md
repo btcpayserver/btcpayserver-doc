@@ -1,11 +1,13 @@
 # Minimal manual setup
 
 :::danger
+
 #### Not recommended for production use
 
 Manual installation is NOT recommended for production use unless you are very confident with your Operating System and Bitcoin security expertise. If you are unsure use the docker deployment or one of the other [deployment options](./README.md).
 
 #### You must have technical literacy and be able to resolve any issues on your own. The community will not provide extensive support for this deployment.
+
 :::
 
 The process is basically the following:
@@ -16,7 +18,7 @@ The process is basically the following:
 
 Take a look at our video to learn more:
 
-[![BTCPay Server - Setup](https://img.youtube.com/vi/Xo_vApXTZBU/mqdefault.jpg "BTCPay Server - Setup")](https://www.youtube.com/watch?v=Xo_vApXTZBU "BTCPay - Setup")
+[![BTCPay Server - Setup](https://img.youtube.com/vi/Xo_vApXTZBU/mqdefault.jpg 'BTCPay Server - Setup')](https://www.youtube.com/watch?v=Xo_vApXTZBU 'BTCPay - Setup')
 
 ## Warning: Not recommended to use in production
 
@@ -100,6 +102,7 @@ bitcoind
 cd ~/NBXplorer
 ./run.sh --dbtrie
 ```
+
 Note that using the `--dbtrie` backend for NBXplorer, while easier, is deprecated.
 You should better use a postgresql backend as documented on [Extended Manual Deployment](./ManualDeploymentExtended.md).
 
@@ -143,5 +146,5 @@ cd ~/btcpayserver
 
 ## Additional links
 
-* [Extended Manual Deployment](./ManualDeploymentExtended.md)
-* [How to Setup BTC and Lightning Payment Gateway with BTCPayServer on Linux [Manual Install]](https://freedomnode.com/blog/114/how-to-setup-btc-and-lightning-payment-gateway-with-btcpayserver-on-linux-manual-install) from freedomnode.com.
+- [Extended Manual Deployment](./ManualDeploymentExtended.md)
+- [How to Setup BTC and Lightning Payment Gateway with BTCPayServer on Linux [Manual Install]](https://freedomnode.com/blog/114/how-to-setup-btc-and-lightning-payment-gateway-with-btcpayserver-on-linux-manual-install) from freedomnode.com.

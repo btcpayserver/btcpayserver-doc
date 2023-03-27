@@ -10,7 +10,6 @@ In this guide, we will show you how to use it via command line on linux using `c
 
 Creating a new user can be done by using [this endpoint](https://docs.btcpayserver.org/API/Greenfield/v1/#tag/Users/paths/~1api~1v1~1users/post).
 
-
 ```bash
 BTCPAY_INSTANCE="https://mainnet.demo.btcpayserver.org"
 USER="MyTestUser@gmail.com"

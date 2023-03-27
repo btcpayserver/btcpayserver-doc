@@ -14,7 +14,7 @@ The community is currently working on translating the [invoice checkout page](ht
 
 After a translation has been made on Transifex, the submittal process is completely automated and merged periodically into the BTCPay repository. Translations provided outside of Transifex, such as pull requests in Github will not be accepted.
 
-----
+---
 
 ## Step 1: View Existing Translations
 
@@ -36,15 +36,15 @@ Line 2: The name of your language, in your language.
 :::tip
 This is the language name that will appear in user interface language dropdowns.
 :::
-    Example for French
-     'English' translates to 'Français'
+Example for French
+'English' translates to 'Français'
 
-----
-
+---
 
 ## Translation Tips
 
 ### **Variables**
+
 ```
 {{Words}} like this will be replaced by a variable depending on user choices.
 {{btcDue}} Example: 10
@@ -52,6 +52,7 @@ This is the language name that will appear in user interface language dropdowns.
 ```
 
 They should not be translated, but they need to remain in the correct place in your translated string because their placement will vary by language.
+
 ```
 French Example:
 "Return to StoreName" translates to "Retourner sur {{storeName}}"
@@ -61,6 +62,7 @@ Japanese Example:
 ```
 
 ### **Notifications**
+
 To stay up to date with new strings - enable alerts for new strings needing to be translated by enabling the watch language feature in Transifex.
 
 Click on the "eye" icon (in red in the following screenshot).
@@ -69,7 +71,7 @@ Click on the "eye" icon (in red in the following screenshot).
 
 You have to click it for the each project you wish to follow.
 
-----
+---
 
 ## Get help, ask questions
 

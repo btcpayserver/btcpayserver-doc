@@ -24,7 +24,7 @@ This means that you're using a hardware wallet without leaking information to th
 
 ## Is there address re-use for separate stores using same xpub?
 
-In short, no there is not. 
+In short, no there is not.
 Create 2 separate stores on BTCpay Server under the same instance with the same xpub.
 If you do so, BTCPay Server will do address rotation correctly and never re-use between the stores.
 
@@ -87,14 +87,14 @@ No matter [how you set up your wallet](../WalletSetup.md), BTCPay Server uses a 
 
 Using different derivation schemes with your extended public key, you can also choose to create various receiving address types, shown in your store invoices.
 
-|Address Type|	Example |
-|:--|:--:|
-|P2WPKH |	xpub... |
-|P2SH-P2WPKH	| xpub...-[p2sh] |
-|P2PKH	| xpub...-[legacy] |
-|Multi-sig P2WSH	| 2-of-xpub1...-xpub2... |
-|Multi-sig P2SH-P2WSH	| 2-of-xpub1...-xpub2...-[p2sh] |
-|Multi-sig P2SH |	2-of-xpub1...-xpub2...-[legacy] |
+| Address Type         |             Example             |
+| :------------------- | :-----------------------------: |
+| P2WPKH               |             xpub...             |
+| P2SH-P2WPKH          |         xpub...-[p2sh]          |
+| P2PKH                |        xpub...-[legacy]         |
+| Multi-sig P2WSH      |     2-of-xpub1...-xpub2...      |
+| Multi-sig P2SH-P2WSH |  2-of-xpub1...-xpub2...-[p2sh]  |
+| Multi-sig P2SH       | 2-of-xpub1...-xpub2...-[legacy] |
 
 :::tip
 On top of the xPub extended public key formats shown above, BTCPay Server supports yPub and zPub formats. Please note that these will be converted to xPub once the wallet setup is completed. This has no effect on how you receive or send funds.
@@ -108,13 +108,13 @@ RBF capability is by default randomly enabled/disabled between transactions when
 
 ## Does BTCPay Server use mempoolfullrbf=1 ?
 
-In very short, yes. 
-We've decided to add this as default to your BTCPay Server setup. However, we've also made it a fragment you can disable yourself. 
+In very short, yes.
+We've decided to add this as default to your BTCPay Server setup. However, we've also made it a fragment you can disable yourself.
 Without mempoolfullrbf=1 if a customer is double-spending a payment with a transaction not signaling RBF, the merchant would only know after confirmation.
 
 However, some users don't want to activate this policy. Some people consider that while it aligns with the merchant's incentive to activate it, it is considered against the interests of the network, as it makes accepting a payment with 0 confirmations harder once the policy is widely deployed.
 
-To opt out use the following : 
+To opt out use the following :
 
 ```bash
 BTCPAYGEN_EXCLUDE_FRAGMENTS="$BTCPAYGEN_EXCLUDE_FRAGMENTS;opt-mempoolfullrbf"

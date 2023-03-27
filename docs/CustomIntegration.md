@@ -2,8 +2,8 @@
 
 BTCPay Server provides 2 APIS in order to integrate with it:
 
-* [GreenField API](/Development/GreenFieldExample.md) - A RESTful API that aims to allow you to use BTCPay Server headless. This is the recommended API for projects which do not wish to recycle code from a Bitpay integration.
-* Bitpay Invoice API - BTCPay implements the same API as Bitpay for creating and managing invoices.
+- [GreenField API](/Development/GreenFieldExample.md) - A RESTful API that aims to allow you to use BTCPay Server headless. This is the recommended API for projects which do not wish to recycle code from a Bitpay integration.
+- Bitpay Invoice API - BTCPay implements the same API as Bitpay for creating and managing invoices.
 
 **Migrating from BitPay to BTCPay** normally is as easy as changing a URL.
 
@@ -72,7 +72,7 @@ To generate a pop-up modal experience:
 1. Include the btcpay.js script in your html page
 
 ```html
-<script src ="https://your.btcpay.url/modal/btcpay.js"></script>
+<script src="https://your.btcpay.url/modal/btcpay.js"></script>
 ```
 
 2. Call the invoice API to generate an invoice (example code). This is sample backend code as it contains an auth token that should not be exposed in your front-end.
@@ -84,35 +84,35 @@ const axiosClient = axios.create({
   responseType: 'json',
   headers: {
     'Content-Type': 'application/json',
-    'Authorization': BTCPAY_AUTH
+    Authorization: BTCPAY_AUTH
   }
-});
+})
 
 const invoiceCreation = {
-  "price": 12345,
-  "currency": "USD",
-  "orderId": "something",
-  "itemDesc": "item description",
-  "notificationUrl": "https://webhook.after.checkout.com/goeshere",
-  "redirectURL": "https://go.here.after.checkout.com"
-};
+  price: 12345,
+  currency: 'USD',
+  orderId: 'something',
+  itemDesc: 'item description',
+  notificationUrl: 'https://webhook.after.checkout.com/goeshere',
+  redirectURL: 'https://go.here.after.checkout.com'
+}
 
-const response = await axiosClient.post("/invoices", invoiceCreation);
-const invoiceId = response.data.data.id;
+const response = await axiosClient.post('/invoices', invoiceCreation)
+const invoiceId = response.data.data.id
 ```
 
 3. Use the invoiceId to pop up the modal
 
 ```js
-window.btcpay.showInvoice(invoiceId);
+window.btcpay.showInvoice(invoiceId)
 ```
 
 4. You'll often want to do something like refresh the state of your page when the invoice is paid, or note some kind of state before the modal pops up. You can attach event listeners like this:
 
 ```js
-window.btcpay.onModalWillEnter(yourCallbackFunction);
-window.btcpay.onModalWillLeave(yourCallbackFunction);
-window.btcpay.onModalReceiveMessage(yourCallbackFunction); // available from v1.0.5.6
+window.btcpay.onModalWillEnter(yourCallbackFunction)
+window.btcpay.onModalWillLeave(yourCallbackFunction)
+window.btcpay.onModalReceiveMessage(yourCallbackFunction) // available from v1.0.5.6
 ```
 
 `onModalReceiveMessage` will invoke your callback when a new status has been pushed from BTCPay Server to the invoice UI. The data format is `{invoiceId: "x", status: "y" }`

@@ -11,11 +11,11 @@ Notifications to monitor BTCPay Server events can be configured in several diffe
 
 Click the notification icon in the main header to view the current notifications. The notification page shows the status of all current notifications such as invoice events, payouts, version updates, etc. Notifications can be marked as seen from the notifications dropdown or the notifications page.
 
-![BTCPay Notifications](./img/notifications/notification-page.png "BTCPay Notifications")
+![BTCPay Notifications](./img/notifications/notification-page.png 'BTCPay Notifications')
 
 Each user registered on the server can manage the notifications they receive.
 
-![BTCPay Manage Notifications](./img/notifications/notification-manage.png "BTCPay Manage Notifications")
+![BTCPay Manage Notifications](./img/notifications/notification-manage.png 'BTCPay Manage Notifications')
 
 ## Server Emails
 
@@ -33,7 +33,7 @@ Store Settings > General Settings > Services > Email > [Setup](#smtp-email-setup
 
 Use the Quick fill settings dropdown for commonly used email client setup parameters. Send yourself a test email from the same page to verify your setup parameters work properly.
 
-![BTCPay Email SMTP](./img/smtp/smtp-setup.png "BTCPay Email SMTP")
+![BTCPay Email SMTP](./img/smtp/smtp-setup.png 'BTCPay Email SMTP')
 
 Each email client may have different requirements for setting up SMTP. For more information see this [SMTP FAQ](./FAQ/ServerSettings.md#how-to-configure-smtp-settings-in-btcpay) or refer to your email provider's documentation.
 
@@ -63,29 +63,30 @@ This email is used to confirm new user account registration. In order to reduce 
 Send an invitation email to [invite a new user](./FAQ/ServerSettings.md#how-to-add-a-new-user-by-invite) to register an account on your server. This can be used to keep server registration closed to the public but still invite new users.
 
 ## Custom Emails
+
 Custom emails can be created using the BTCPay Server Transmuter preset [Email Receipts](https://docs.btcpayserver.org/Transmuter/EmailReceiptsPreset/#transmuter-email-receipts-setup).
 
-## Email rules 
+## Email rules
 
-Email rules allow BTCPay Server to send customized emails from your store based on events. 
-Click the `Configure` button and `create` a new Email rule. 
+Email rules allow BTCPay Server to send customized emails from your store based on events.
+Click the `Configure` button and `create` a new Email rule.
 
-Set your Email trigger out of the following : 
+Set your Email trigger out of the following :
 
-* Invoice created
-* Invoice Received Payment
-* Invoice Processing 
-* Invoice Expired 
-* Invoice Settled 
-* Invoice Invalid
-* Invoice Payment Settled
+- Invoice created
+- Invoice Received Payment
+- Invoice Processing
+- Invoice Expired
+- Invoice Settled
+- Invoice Invalid
+- Invoice Payment Settled
 
 Set a recipient email address where you'd want to be updated by email on store events, or tick the option for `Send email to the buyer if an email was provided to the invoice`.
 Fill out a subject for the event email, and you can stylize the body of the email at last.
 
 Possible placeholder's we currently offer are as follows :
 
-```           
+```
             {Invoice.Id}
             {Invoice.StoreId}
             {Invoice.StoreId}
@@ -94,6 +95,7 @@ Possible placeholder's we currently offer are as follows :
             {Invoice.Status}
             {Invoice.OrderId}
 ```
+
 Find the source [here for possible updates](https://github.com/btcpayserver/btcpayserver/blob/master/BTCPayServer/HostedServices/StoreEmailRuleProcessorSender.cs)
 
-![Create new Email rule](./img/FAQ/btcpayemailrule1.jpg) 
+![Create new Email rule](./img/FAQ/btcpayemailrule1.jpg)

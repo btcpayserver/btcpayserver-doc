@@ -15,9 +15,9 @@ However, to run it, you should host it. You can run it as a self-hosted solution
 
 If you would like to run Bitcoin and Lightning Network nodes, the minimal requirements are :
 
-* 2GB Ram
-* 80 GB of storage [with enabled pruning](../Docker/README.md#generated-docker-compose)
-* Docker
+- 2GB Ram
+- 80 GB of storage [with enabled pruning](../Docker/README.md#generated-docker-compose)
+- Docker
 
 ### What is the easiest method to deploy a self-hosted BTCPay Server?
 
@@ -66,10 +66,10 @@ Tor for BTCPay server is intended more as an improvement of the setup process, a
 
 Having Tor activated would allow for simpler, plug-and-play usage of BTCPay, as it suppress the need for the following configuration steps:
 
-* Opening multiple ports on the firewall
-* Configuring the NAT for port redirection to your device on your local network
-* Setting up a DNS entry to get a HTTPS certificate
-* Having a fixed IP for Lightning
+- Opening multiple ports on the firewall
+- Configuring the NAT for port redirection to your device on your local network
+- Setting up a DNS entry to get a HTTPS certificate
+- Having a fixed IP for Lightning
 
 While these steps are usually not a problem when BTCPay is hosted on a VPS, it can be difficult to solve for non-technical users on home or office networks.
 
@@ -81,7 +81,7 @@ Tor is a really tricky software to use for developers, as the slightest mistake 
 
 We think that the illusion of security is more dangerous that no security, or at least security we know is imperfect. So be aware that activating Tor doesn't prevent others to connect to your instance website, your bitcoin or lightning node in clear, **it doesn't make you anonymous at all.**
 
-If you want to know more about the philosophy behind all this, you can read our [article on  Medium](https://medium.com/@BtcpayServer/about-tor-and-btcpay-server-2ec1e4bd5e51).
+If you want to know more about the philosophy behind all this, you can read our [article on Medium](https://medium.com/@BtcpayServer/about-tor-and-btcpay-server-2ec1e4bd5e51).
 
 ### How to access the .onion address without clearnet?
 
@@ -118,6 +118,7 @@ exit
 ```
 
 Similarly if you are adding an environment variable, the export command would instead look like this:
+
 ```bash
 # Enable Tor in addition to your existing environment variables (such as pruning)
 export BTCPAYGEN_ADDITIONAL_FRAGMENTS="$BTCPAYGEN_ADDITIONAL_FRAGMENTS;opt-add-tor"
@@ -282,18 +283,18 @@ You could also do this by IP address, but then instead of a `CNAME record` it wo
 
 This is an example of how this would look at [gandi.net](https://gandi.net/)
 
-![Gandi3](../img/Gandi3.png "Gandi add DNS record")
+![Gandi3](../img/Gandi3.png 'Gandi add DNS record')
 
 ### Change domain name in BTCPay Server settings
 
 In BTCPay Server you go to the `Server Settings` menu, and then into the tab `Maintenance`.
 Here you will find a field to replace your old by the new set domain, it might take a few seconds to update.
 
-![Maintenance domain name](../img/changedomain.png "BTCPay Server Change Domain name")
+![Maintenance domain name](../img/changedomain.png 'BTCPay Server Change Domain name')
 
 Now enter the new set domain in the address bar and see if it works!
 
-![Maintenance2](../img/Maintenance2.png "BTCPay Server Change Domain name")
+![Maintenance2](../img/Maintenance2.png 'BTCPay Server Change Domain name')
 
 ### Change domain on command line
 
@@ -344,7 +345,8 @@ Check this [community guide](https://freedomnode.com/blog/114/how-to-setup-btc-a
 2. Change to your Base install directory `cd "$(dirname "$BTCPAY_ENV_FILE")"`
 3. Delete all volumes in /var/lib/docker/volumes/ with `docker-compose -f $BTCPAY_DOCKER_COMPOSE down --v`
 4. Remove other BTCPay system files with this: `rm /etc/systemd/system/btcpayserver.service && rm /etc/profile.d/btcpay-env.sh`
-5. Go into /usr/local/bin and remove all of the symlinks that BTCPay put in there.  At the time of writing these were:
+5. Go into /usr/local/bin and remove all of the symlinks that BTCPay put in there. At the time of writing these were:
+
 ```
 bitcoin-cli.sh -> /root/BTCPayServer/btcpayserver-docker/bitcoin-cli.sh
 bitcoin-lncli.sh -> /root/BTCPayServer/btcpayserver-docker/bitcoin-lncli.sh
@@ -357,6 +359,7 @@ btcpay-up.sh -> /root/BTCPayServer/btcpayserver-docker/btcpay-up.sh
 btcpay-update.sh -> /root/BTCPayServer/btcpayserver-docker/btcpay-update.sh
 changedomain.sh -> /root/BTCPayServer/btcpayserver-docker/changedomain.sh
 ```
+
 6. Remove your BTCPay installation folder with `rm -r "$(dirname "$BTCPAY_ENV_FILE")"`
 7. Just to make sure, run `docker system prune` after a reboot to get rid of any other docker related artifacts.
 
@@ -364,47 +367,47 @@ changedomain.sh -> /root/BTCPayServer/btcpayserver-docker/changedomain.sh
 
 The instructions below are valid for Docker deployments:
 
-* Run setup as described in [btcpayserver-docker](https://github.com/btcpayserver/btcpayserver-docker#full-installation-for-technical-users) up until `. ./btcpay-setup.sh -i`
-* Create `bitcoin.custom.yml` in the `docker-compose-generator/docker-fragments/` folder.
+- Run setup as described in [btcpayserver-docker](https://github.com/btcpayserver/btcpayserver-docker#full-installation-for-technical-users) up until `. ./btcpay-setup.sh -i`
+- Create `bitcoin.custom.yml` in the `docker-compose-generator/docker-fragments/` folder.
 
 ```yml
-version: "3"
+version: '3'
 
 services:
   btcpayserver:
-      environment:
-        BTCPAY_CHAINS: "btc"
-        BTCPAY_BTCEXPLORERURL: http://nbxplorer:32838/
+    environment:
+      BTCPAY_CHAINS: 'btc'
+      BTCPAY_BTCEXPLORERURL: http://nbxplorer:32838/
   nbxplorer:
-      environment:
-        NBXPLORER_CHAINS: "btc"
-        NBXPLORER_BTCRPCURL: http://host.docker.internal:43782/
-        NBXPLORER_BTCRPCUSER: "rpc-username"
-        NBXPLORER_BTCRPCPASSWORD: "rpc-password"
-        NBXPLORER_BTCNODEENDPOINT: host.docker.internal:39388
-      volumes:
-        - "localBitcoinfolder:/root/.bitcoin"
+    environment:
+      NBXPLORER_CHAINS: 'btc'
+      NBXPLORER_BTCRPCURL: http://host.docker.internal:43782/
+      NBXPLORER_BTCRPCUSER: 'rpc-username'
+      NBXPLORER_BTCRPCPASSWORD: 'rpc-password'
+      NBXPLORER_BTCNODEENDPOINT: host.docker.internal:39388
+    volumes:
+      - 'localBitcoinfolder:/root/.bitcoin'
 ```
 
-* Replace: `43782` with your bitcoin node's configured RPC port
-* Replace: `rpc-username` with your bitcoin node's configured RPC username
-* Replace: `rpc-password` with your bitcoin node's configured RPC password
-* Replace: `39388` with your bitcoin node's configured p2p port
-* Replace `localBitcoinfolder` with the path to your bitcoin data folder
+- Replace: `43782` with your bitcoin node's configured RPC port
+- Replace: `rpc-username` with your bitcoin node's configured RPC username
+- Replace: `rpc-password` with your bitcoin node's configured RPC password
+- Replace: `39388` with your bitcoin node's configured p2p port
+- Replace `localBitcoinfolder` with the path to your bitcoin data folder
 
 If you are running on linux, due to [a limitation of docker](https://github.com/docker/for-linux/issues/264), you will also need to do the following:
 
-* Run `ip route | grep docker0 | awk '{print $9}'`
-  * Add the following at the end of the `bitcoin.custom.yml` file, replacing `$DOCKER_HOST_IP` with the result of the previous command.
+- Run `ip route | grep docker0 | awk '{print $9}'`
+  - Add the following at the end of the `bitcoin.custom.yml` file, replacing `$DOCKER_HOST_IP` with the result of the previous command.
 
 ```yml
-      extra_hosts:
-        - "host.docker.internal:$DOCKER_HOST_IP"
+extra_hosts:
+  - 'host.docker.internal:$DOCKER_HOST_IP'
 ```
 
-* Run `export BTCPAYGEN_EXCLUDE_FRAGMENTS="bitcoin"`
-* Run `export BTCPAYGEN_ADDITIONAL_FRAGMENTS="$BTCPAYGEN_ADDITIONAL_FRAGMENTS;bitcoin.custom"`
-* Run `. ./btcpay-setup.sh -i`
+- Run `export BTCPAYGEN_EXCLUDE_FRAGMENTS="bitcoin"`
+- Run `export BTCPAYGEN_ADDITIONAL_FRAGMENTS="$BTCPAYGEN_ADDITIONAL_FRAGMENTS;bitcoin.custom"`
+- Run `. ./btcpay-setup.sh -i`
 
 If you are looking for how to deploy alongside existing Lightning node [see this](./LightningNetwork.md#can-i-use-my-existing-ln-node-with-btcpay).
 
@@ -441,6 +444,7 @@ PARTITION_NAME="/dev/sdd1"
 ```
 
 Now we can partition the disk and format the partition:
+
 ```bash
 echo "Partitioning the external drive $DEVICE_NAME..."
 ### DANGER ZONE ###
@@ -545,8 +549,9 @@ sudo  docker ps | less -S
 Press "q" to quit out of less.
 
 The output should contain:
-* btcpayserver/letsencrypt-nginx-proxy-companion
-* btcpayserver/btcpayserver
+
+- btcpayserver/letsencrypt-nginx-proxy-companion
+- btcpayserver/btcpayserver
 
 And the status should be "Up"
 

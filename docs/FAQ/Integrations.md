@@ -8,11 +8,11 @@ This page covers questions about BTCPay integrations.
 
 ### What e-commerce integrations are available?
 
-* [WooCommerce](../WooCommerce.md)
-* [Drupal](../Drupal.md)
-* [Magento](../Magento.md)
-* [PrestaShop](../PrestaShop.md)
-* [Custom Integration](../CustomIntegration.md)
+- [WooCommerce](../WooCommerce.md)
+- [Drupal](../Drupal.md)
+- [Magento](../Magento.md)
+- [PrestaShop](../PrestaShop.md)
+- [Custom Integration](../CustomIntegration.md)
 
 If you're a developer, you can develop your own integration, by following the [custom integration instructions](../CustomIntegration.md).
 
@@ -39,13 +39,13 @@ Yes, there is a BTCPay and Shopify integration. To get started, check out our [S
 
 ### Can I use BTCPay without an integration?
 
-Yes, you can. While various e-commerce CMS use integrations,  you can use BTCPay even if you're not a merchant. For more information about use-cases, see [this page](../UseCase.md)
+Yes, you can. While various e-commerce CMS use integrations, you can use BTCPay even if you're not a merchant. For more information about use-cases, see [this page](../UseCase.md)
 
 ## WooCommerce FAQ
 
 ### How to upgrade to the new BTCPay for WooCommerce V2 plugin?
-There is no direct upgrade to the [old BitPay based legacy plugin](https://wordpress.org/plugins/btcpay-for-woocommerce/) to the new [V2 version](https://wordpress.org/plugins/btcpay-greenfield-for-woocommerce/) but you install a completely separate plugin (see installation instructions [here](../WooCommerce.md). While both should work side by side it is strongly recommended that you uninstall the legacy plugin after you followed the installation instructions and made sure it works. Otherwise depending on your setup it could lead to unintended behaviour and confusion. 
 
+There is no direct upgrade to the [old BitPay based legacy plugin](https://wordpress.org/plugins/btcpay-for-woocommerce/) to the new [V2 version](https://wordpress.org/plugins/btcpay-greenfield-for-woocommerce/) but you install a completely separate plugin (see installation instructions [here](../WooCommerce.md). While both should work side by side it is strongly recommended that you uninstall the legacy plugin after you followed the installation instructions and made sure it works. Otherwise depending on your setup it could lead to unintended behaviour and confusion.
 
 ### How to configure order status in WooCommerce?
 
@@ -82,6 +82,7 @@ function get_order_id_from_custom_order_style($orderid){
 
 add_filter('woocommerce_order_id_from_number', 'get_order_id_from_custom_order_style', 1);
 ```
+
 </details>
 
 ### How to configure Additional Token Support / Separate Payment Gateways
@@ -97,6 +98,7 @@ The external WordPress and WooCommerce plugins used in this integration are neit
 With using the additional token configuration you will be able to have separate payment methods for each configured Currency, Asset, Altcoin or Token. This means you can have separate payment methods for BTC, Lightning Network, LTC, ETH (and ERC20 tokens), Liquid assets, ... you name it. This allows you to issue and use Liquid Assets as coupons or vouchers, see more details below.
 
 #### Use cases
+
 - give away products for free via promotional tokens
 - allow discounts for certain payment methods (tokens)
 - restrict products to certain payment methods (tokens)
@@ -104,26 +106,34 @@ With using the additional token configuration you will be able to have separate 
 - and many more, see examples below
 
 #### Requirements
+
 - all tokens you configure on the WooCommerce side need to be available in your store on BTCPay Server side
 - to use promotional tokens you need to have [Liquid Assets plugin](https://github.com/btcpayserver/btcpayserver-plugins) installed on BTCPay Server
 
 #### Token types
+
 ##### Payment tokens
+
 Payment tokens are what is supported by BTCPay Server out of the box (BTC, Lightning Network, LTC, XMR, etc.). They are used as normal payment currency converted by the current exchange rate vs the fiat currency of your shop.
 
 ##### Promotional tokens (100% discount)
+
 With the introduction of above mentioned Liquid Assets plugin you now also have the possibility to accept **promotional tokens**. You can think of them like coupons or vouchers that can be used to redeem a product/gift. They are special in the sense that they do not have decimals and you need to always pay 1 token per quantity of a product.
 
 You as a store owner can [issue your own Liquid assets](https://docs.blockstream.com/liquid/developer-guide/developer-guide-index.html#issued-assets) for this purpose or accept [existing ones](https://blockstream.info/liquid/assets).
 
 #### Configuration
+
 Make sure the tokens you will configure on your WooCommerce store are available and properly configured on your BTCPay Server, otherwise you will get errors on invoice creation during the checkout process. This will change in the future when we have a new woocommerce plugin that directly fetches the needed data via the Greenfield API but for now the data needs to be entered in some comma separated value (CSV) style.
 
 ##### Preparation
+
 Make sure to have the latest woocommerce plugin installed.
 
 ##### Setup your additional tokens
+
 ###### Setting: Additional token configuration
+
 In the BTCPay payment method settings you have a new setting **“Additional token configuration”** where you can input the token configuration in a specific CSV format of 4 columns.
 
 1. **token symbol**:
@@ -143,6 +153,7 @@ In the BTCPay payment method settings you have a new setting **“Additional tok
 :::
 
 **Example additional token config**
+
 ```
 "BTC_OFFCHAIN";"Lightning BTC";"payment";""
 "USDt";"USDt (Liquid Theter)";"payment";"https://example.com/wp-content/uploads/2021/01/usdt.png"
@@ -154,11 +165,13 @@ After saving you will see each asset to be available as payment method. You can 
 ![Each additional additional token available as payment token](../img/woocommerce/woocommerce_at_payment-methods.png)
 
 ###### Setting: Additional tokens: Enforce payment tokens
+
 The default payment method of BTCPay Server (Bitcoin) will **not** enforce any configured Currency, Asset, Altcoin or Token. This means when you have the default payment method "Bitcoin" enabled the user can select all the configured Currency, Asset, Altcoin or Tokens (which have an exchange rate) on the BTCPay Server payment page. You may not want this but enforce/limit which payment options will be available. By selecting this checkbox only the Currency, Asset, Altcoin or Tokens of type "payment" listed in the setting [Setting: Additional token configuration](#setting-additional-token-configuration)
 
 #### Common WooCommerce use-cases using the Additional Token Support feature
 
 ##### Use-case 1: limit product to a region/shipping zone
+
 Free plugin used: [Country Based Restrictions for WooCommerce](https://wordpress.org/plugins/woo-product-country-base-restrictions/)
 After installing and activating the plugin go to a product in “Product data” block there is a new tab “Country restrictions”. You can configure the restrictions you want there.
 
@@ -166,6 +179,7 @@ Example configuration:
 ![Product restricted to US only](../img/woocommerce/woocommerce_at_product-country-restriction.png)
 
 ##### Use-case 2: (Promotion) products should have free shipping
+
 This adds the ability to offer free shipping when a customer pays with a selected Currency, Asset, Altcoin or Token.
 This is doable with woocommerce out of the box (no plugins needed):
 
@@ -176,6 +190,7 @@ This is doable with woocommerce out of the box (no plugins needed):
    ![Free shipping class set on product settings](../img/woocommerce/woocommerce_at_free-shipping-product-setting.png)
 
 ##### Use-case 3: limit product payment methods
+
 E.g. allow only a certain Currency, Asset, Altcoin or Token to be used as payment for promotional product(s)
 
 Free plugin used: [Conditional Payments for WooCommerce](https://wordpress.org/plugins/conditional-payments-for-woocommerce/)
@@ -184,6 +199,7 @@ This plugin provides a condition rules builder where you can enable/disable avai
 ![Conditional payment rules overview](../img/woocommerce/woocommerce_at_limit-payment-methods-rules.png)
 
 ##### Use-case 4: discount per payment method
+
 Adds the ability to offer a discount when customer uses a selected Currency, Asset, Altcoin or Token as payment.
 
 Free plugin used: [Discounts Per Payment Method for WooCommerce](https://wordpress.org/plugins/woo-payment-discounts/)
@@ -233,12 +249,14 @@ function btcpay_check_promotion_product($valid, $product_id, $quantity) {
 }
 add_filter('woocommerce_add_to_cart_validation', 'btcpay_check_promotion_product', 10, 3);
 ```
+
 </details>
 
 ##### Use-case 6: Limit the checkout of only 1 piece of a product
+
 Adds the ability to limit the number of a Currency, Asset, Altcoin or Token that can be spent by a customer in a single checkout.
 
 Useful for coupon-style promotions that are limited to one discount per checkout.
 
 This is also solved already by WooCommerce. You can activate this on a per product level in Product settings: Tab “**Inventory**”:
-set the checkbox [x] “*Enable this to only allow one of this item to be bought in a single order*”
+set the checkbox [x] “_Enable this to only allow one of this item to be bought in a single order_”

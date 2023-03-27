@@ -149,6 +149,7 @@ The following steps require you to be the root user.
 ```bash
 sudo su -
 ```
+
 :::
 
 ### Upgrade the OS packages to latest

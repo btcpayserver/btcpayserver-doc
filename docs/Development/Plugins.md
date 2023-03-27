@@ -119,7 +119,11 @@ Then you can reference the assets in your views like this:
 ```html
 <img src="~/Resources/img/my.png" asp-append-version="true" />
 <script src="~/Resources/js/my.js" asp-append-version="true"></script>
-<link href="~/Resources/css/my.css" asp-append-version="true" rel="stylesheet" />
+<link
+  href="~/Resources/css/my.css"
+  asp-append-version="true"
+  rel="stylesheet"
+/>
 ```
 
 A good example of this is the [Bitcoin Whitepaper plugin](https://github.com/Kukks/BTCPayServerPlugins/tree/master/Plugins/BTCPayServer.Plugins.BitcoinWhitepaper) which exposes the bitcoin whitepaper PDF on your BTCPay Server using embedded resources.
@@ -243,7 +247,7 @@ public class UIPluginController : Controller
 To show certain parts of the UI depending on the permissions the user has, you can use the `permissions` view tag helper:
 
 ```html
-<li class="nav-item" permission="@Policies.CanModifyProfile">
+<li class="nav-item" permission="@Policies.CanModifyProfile"></li>
 ```
 
 #### Customing authorization

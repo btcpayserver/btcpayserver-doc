@@ -50,23 +50,22 @@ See these [instructions to ssh](./FAQ/ServerSettings.md#how-to-ssh-into-my-btcpa
 
 Below is a general list of the container names used for BTCPay.
 
-
-| LOGS FOR | CONTAINER NAME  |
-|-------|:-------:|
-| BTCPayServer | generated_btcpayserver_1 |
-| NBXplorer | generated_nbxplorer_1 |
-| Bitcoind | btcpayserver_bitcoind |
-| Postgres | generated_postgres_1 |
-| proxy | letsencrypt-nginx-proxy-companion |
-| Nginx | nginx-gen |
-| Nginx | nginx |
-| c-lightning | btcpayserver_clightning_bitcoin |
-| LND | btcpayserver_lnd_bitcoin |
-| RTL | generated_lnd_bitcoin_rtl_1 |
-| Thunderhub| generated_bitcoin_thub_1 |
-| LibrePatron | librepatron |
-| Tor | tor-gen |
-| Tor | tor |
+| LOGS FOR     |          CONTAINER NAME           |
+| ------------ | :-------------------------------: |
+| BTCPayServer |     generated_btcpayserver_1      |
+| NBXplorer    |       generated_nbxplorer_1       |
+| Bitcoind     |       btcpayserver_bitcoind       |
+| Postgres     |       generated_postgres_1        |
+| proxy        | letsencrypt-nginx-proxy-companion |
+| Nginx        |             nginx-gen             |
+| Nginx        |               nginx               |
+| c-lightning  |  btcpayserver_clightning_bitcoin  |
+| LND          |     btcpayserver_lnd_bitcoin      |
+| RTL          |    generated_lnd_bitcoin_rtl_1    |
+| Thunderhub   |     generated_bitcoin_thub_1      |
+| LibrePatron  |            librepatron            |
+| Tor          |              tor-gen              |
+| Tor          |                tor                |
 
 Run the commands below to print logs by container name.
 Replace the container name to view other container logs.
@@ -210,11 +209,11 @@ If you're facing a technical problem with your Lightning Network implementation,
 
 #### 4.4.1 LND Support
 
-* [LND GitHub](https://github.com/lightningnetwork/lnd/issues)
-* [Lightning Community on Slack](https://lightningcommunity.slack.com)
+- [LND GitHub](https://github.com/lightningnetwork/lnd/issues)
+- [Lightning Community on Slack](https://lightningcommunity.slack.com)
 
 #### 4.4.2 c-lightning Support
 
-* [c-lightning GitHub](https://github.com/ElementsProject/lightning/issues)
-* [c-lightning Telegram Group](https://t.me/lightningd)
-* [c-lightning docs](https://lightning.readthedocs.io/)
+- [c-lightning GitHub](https://github.com/ElementsProject/lightning/issues)
+- [c-lightning Telegram Group](https://t.me/lightningd)
+- [c-lightning docs](https://lightning.readthedocs.io/)

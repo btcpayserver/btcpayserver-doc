@@ -41,18 +41,16 @@ No matter if you're using a self-hosted or third-party solution from step 2, the
 1. In the `BTCPay Server URL`-field, enter the full URL of your host (including the https) – for example https://testnet.demo.btcpayserver.org
 2. Select the default transaction speed (this will change how much BTCPay recommends as transaction fee).
 3. _Optional: Select the relevant order mode for your store (order is created before or after payment)._
-   * Only relevant if you use a version **before** v5.1.0 as this logic has been removed.
+   - Only relevant if you use a version **before** v5.1.0 as this logic has been removed.
 4. Select if you want to send customer metadata to your BTCPay server instance for bookkeeping.
 5. Press `Connect` to save your settings and be redirected to your BTCPay Server instance to create an API key.
 6. When creating the API key, make sure to give the permissions to a specific store (multiple stores are not supported).
 
 ![BTCPay Server PrestaShop API key setup](./img/prestashop/api-key-setup.jpg)
 
-7. Press the `Authorize app`-button after which you will be redirected back to your Prestashop store. If you get an "Invalid Token"-popup, please make sure that PrestaShop and BTCPay Server both use HTTPS and have proper hostnames (see [Server Requirements](#server-requirements)). 
+7. Press the `Authorize app`-button after which you will be redirected back to your Prestashop store. If you get an "Invalid Token"-popup, please make sure that PrestaShop and BTCPay Server both use HTTPS and have proper hostnames (see [Server Requirements](#server-requirements)).
 
-![Invalid Token](./img/prestashop/invalid-token-popup.jpg)
-8. Prestashop will try and create a connection to your BTCPay Server instance.
-9. A message will be shown if the connection was successful (but it is smart to make a test purchase).
+![Invalid Token](./img/prestashop/invalid-token-popup.jpg) 8. Prestashop will try and create a connection to your BTCPay Server instance. 9. A message will be shown if the connection was successful (but it is smart to make a test purchase).
 
 ![BTCPay Server PrestaShop setup finished](./img/prestashop/success.jpg)
 
@@ -67,6 +65,6 @@ or join [our community chat](https://chat.btcpayserver.org) to get early feedbac
 
 PrestaShop support can be found through its official channels.
 
-* [Homepage](https://www.prestashop.com)
-* [Documentation](https://doc.prestashop.com)
-* [Support Forums](https://www.prestashop.com/forums)
+- [Homepage](https://www.prestashop.com)
+- [Documentation](https://doc.prestashop.com)
+- [Support Forums](https://www.prestashop.com/forums)

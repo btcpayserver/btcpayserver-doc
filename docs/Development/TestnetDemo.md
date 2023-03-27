@@ -1,4 +1,5 @@
 # Testnet demo
+
 First let's create a new store:
 
 1. Go to the [Testnet website](https://testnet.demo.btcpayserver.org/)
@@ -22,8 +23,9 @@ Let's configure the store so it uses your Electrum wallet:
 5. After that your test wallet should appear on the [Wallets page](https://testnet.demo.btcpayserver.org/wallets) of your BTCPay account
 
 Then you can create an invoice, either through
-* The "Invoice" menu on the website or
-* The process documented in the [Custom integration](../CustomIntegration.md)
+
+- The "Invoice" menu on the website or
+- The process documented in the [Custom integration](../CustomIntegration.md)
 
 ## Questions
 

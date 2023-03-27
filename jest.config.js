@@ -3,8 +3,5 @@
 module.exports = {
   // The test environment that will be used for testing
   testEnvironment: 'node',
-  testPathIgnorePatterns: [
-    '/deps/',
-    '/node_modules/'
-  ]
+  testPathIgnorePatterns: ['/deps/', '/node_modules/']
 }

@@ -6,56 +6,55 @@ If you are looking for information about requesting a refund from a merchant, pl
 
 **Refunds** are one of the applications built on top of the [Pull Payments](./PullPayments.md) feature.
 
-On this page, we will walk you through the process of issuing a refund. 
-There are a short few steps to create the refund for the customer. 
+On this page, we will walk you through the process of issuing a refund.
+There are a short few steps to create the refund for the customer.
 
 ## Create a refund
 
-1. To refund an invoice,  go in the `Invoices` page and click `Details` on the invoice.
+1. To refund an invoice, go in the `Invoices` page and click `Details` on the invoice.
 
-![BTCPay Server refund feature](./img/refunds/invoices-details.jpg "BTCPay Server refund feature")
+![BTCPay Server refund feature](./img/refunds/invoices-details.jpg 'BTCPay Server refund feature')
 
 2. Click `Issue a refund`
 
-![BTCPay Server refund feature](./img/refunds/issue-refund.jpg "BTCPay Server refund feature")
+![BTCPay Server refund feature](./img/refunds/issue-refund.jpg 'BTCPay Server refund feature')
 
 3. Select refund's payment method
 
-![BTCPay Server refund feature](./img/refunds/issue-refund-payment-option.jpg "BTCPay Server refund feature")
+![BTCPay Server refund feature](./img/refunds/issue-refund-payment-option.jpg 'BTCPay Server refund feature')
 
 4. Select the `amount` you want to refund
 
-![BTCPay Server refund feature](./img/refunds/issue-refund-amount.jpg "BTCPay Server refund feature")
+![BTCPay Server refund feature](./img/refunds/issue-refund-amount.jpg 'BTCPay Server refund feature')
 
 5. Share the link of this page with your customer
 
-![BTCPay Server refund feature](./img/refunds/claimingside.jpg "BTCPay Server refund feature")
+![BTCPay Server refund feature](./img/refunds/claimingside.jpg 'BTCPay Server refund feature')
 
-## Processing refund 
+## Processing refund
 
 Once a customer clicks on the link you've provided adds their refund bitcoin address and claims the invoice, the next step is to process a refund.
 
-1. Go to the `Payouts` tab in your sidebar. 
+1. Go to the `Payouts` tab in your sidebar.
 
-![BTCPay Server Payouts tab](./img/refunds/payouts-status3-options-appr.jpg "BTCPay Server refund feature")
+![BTCPay Server Payouts tab](./img/refunds/payouts-status3-options-appr.jpg 'BTCPay Server refund feature')
 
 2. Select the Payouts you want to process, go to actions and select `Approve and send`
 
-![BTCPay Server Payouts tab](./img/refunds/payouts-status3-options-appr.jpg "BTCPay Server refund feature")
+![BTCPay Server Payouts tab](./img/refunds/payouts-status3-options-appr.jpg 'BTCPay Server refund feature')
 
 3. Sign and broadcast the transactions.
 
-![BTCPay Server Payouts tab](./img/refunds/payouts-status4-options-sign3-adv.jpg "BTCPay Server refund feature")
+![BTCPay Server Payouts tab](./img/refunds/payouts-status4-options-sign3-adv.jpg 'BTCPay Server refund feature')
 
-4. The payout has now been signed and is in progress, awaiting confirmation on the blockchain. This is reflected to the claimant in their view. 
+4. The payout has now been signed and is in progress, awaiting confirmation on the blockchain. This is reflected to the claimant in their view.
 
-![BTCPay Server Payouts tab](./img/refunds/payout-status-succesfull.jpg "BTCPay Server refund feature")
+![BTCPay Server Payouts tab](./img/refunds/payout-status-succesfull.jpg 'BTCPay Server refund feature')
 
-5. After the transaction has been confirmed on the blockchain, the status of the payout will be `completed`. 
+5. After the transaction has been confirmed on the blockchain, the status of the payout will be `completed`.
 
-![BTCPay Server Payouts tab](./img/refunds/payouts-status5-completed1.jpg "BTCPay Server refund feature")
+![BTCPay Server Payouts tab](./img/refunds/payouts-status5-completed1.jpg 'BTCPay Server refund feature')
 
 Customer's view after the refund has been successfully processed.
 
-![BTCPay Server Payouts tab](./img/refunds/claiment-completed1.jpg "BTCPay Server refund feature")
-
+![BTCPay Server Payouts tab](./img/refunds/claiment-completed1.jpg 'BTCPay Server refund feature')

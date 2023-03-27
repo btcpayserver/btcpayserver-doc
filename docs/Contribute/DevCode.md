@@ -14,15 +14,15 @@ If you are looking for how to make a simple code change such as fixing a typo or
 
 ## Windows Setup Software
 
- Software to install to follow this guide:
+Software to install to follow this guide:
 
- 1. [Visual Studio Community Edition](https://visualstudio.microsoft.com/downloads/)
- 1. [.NET Core SDK 6.0+](https://dotnet.microsoft.com/en-us/download/dotnet/6.0)
- 1. [Docker Desktop](https://www.docker.com/products/docker-desktop)
- 1. PowerShell (included in Windows OS)
- 1. [GitBash](https://gitforwindows.org/)
- 1. [GitHub Desktop](https://desktop.github.com/)
- 1. [www.Github.com account](https://github.com/) (sign up)
+1.  [Visual Studio Community Edition](https://visualstudio.microsoft.com/downloads/)
+1.  [.NET Core SDK 6.0+](https://dotnet.microsoft.com/en-us/download/dotnet/6.0)
+1.  [Docker Desktop](https://www.docker.com/products/docker-desktop)
+1.  PowerShell (included in Windows OS)
+1.  [GitBash](https://gitforwindows.org/)
+1.  [GitHub Desktop](https://desktop.github.com/)
+1.  [www.Github.com account](https://github.com/) (sign up)
 
 Note: _This guide assumes installations in default locations. Take note if you have a different file directory structure._
 
@@ -130,6 +130,7 @@ $ git push origin master
 ```
 
 If you see an error `fatal: 'upstream' does not appear to be a git repository` when running `$ git fetch upstream`, you must first configure a remote that points to the upstream repository in Git. That is needed only once. Just run the following command while you are in your _clone local path_ .
+
 ```bash
 $ git remote add upstream https://github.com/btcpayserver/btcpayserver.git
 

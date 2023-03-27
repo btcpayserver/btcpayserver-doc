@@ -51,9 +51,11 @@ ssh domainuser@70.32.86.175 (IP)
 domainuser@example.com's password:
 yourPassword
 ```
+
 Press Enter
 
 If this is your first time connecting to the server from this computer, you will see the following output.
+
 ```
 The authenticity of host 'example.com (70.32.86.175)' can't be established.
 RSA key fingerprint is 3c:6d:5c:99:5d:b5:c6:25:5a:d3:78:8e:d2:f5:7a:01.
@@ -124,6 +126,7 @@ Next, add the newly registered user `newadmin@example.com` as an admin:
 # Set new user as admin
 ./btcpay-admin.sh set-user-admin newadmin@example.com
 ```
+
 Now you can access with `newadmin@example.com` as admin.
 
 When you apply the changes, you'll notice that the newly created user isn't a member of any stores. In that case, [follow this guide](https://gist.github.com/justinmoon/8128e66fc11d90ae5732f2491570bfc5) to add the new user to all or certain stores.
@@ -153,6 +156,7 @@ cd $BTCPAY_BASE_DIRECTORY/btcpayserver-docker/
 SMTP can be configured in settings for each store. It can also be configured for the entire server if you have admin privileges.
 
 Each e-mail provider has different configuration, so we can't provide you with exact setup, but here's the configuration for gmail:
+
 ```
 SMTP Host: smtp.gmail.com
 SMTP Port: 587
@@ -161,6 +165,7 @@ TLS Protocol: ON
 SMTP Username: (your Gmail username)
 SMTP Password: (your Gmail password)
 ```
+
 For gmail it's important to allow access from less secure apps. To enable go to: Manage Your Google Account > Security > Allow Less Secure Apps (On). Also note Google may automatically turn off this setting if it’s not being used. If your smtp has stopped working, check this setting is not off.
 
 If by any chance you have 2-step verification added to your gmail account, [visit this article](https://support.google.com/mail/answer/185833).
@@ -200,8 +205,8 @@ WARNING: The BTCPAY_SSHTRUSTEDFINGERPRINTS variable is not set. Defaulting to a 
 
 `BTCPay Server` requires SSH access, to allow you to perform the following tasks from the front-end:
 
-* Updating the server
-* Changing the domain name of the server
+- Updating the server
+- Changing the domain name of the server
 
 You can run the following command line to give access to BTCPay to your server via SSH.
 
@@ -224,7 +229,7 @@ BTCPAY_HOST_SSHKEYFILE=/root/.ssh/id_rsa_btcpay
 There are two ways to customize the theme of your BTCPay.
 The easy way is to choose or provide custom theme preferences in your BTCPay as explained in the [Theme documentation](../Development/Theme.md).
 
-For advanced theme changes, you'll most likely need to fork  BTCPay repository and apply desired design changes. Build and publish the docker image to Docker Hub. Set the `BTCPAY_IMAGE` environment variable to your docker image tag(`export BTCPAY_IMAGE="your custom btcpay docker image"`) and run the setup (`. ./btcpay-setup.sh -i`) as usual from [BTCPay Docker](https://github.com/btcpayserver/btcpayserver-docker). Modify generated docker compose to use your custom docker image.
+For advanced theme changes, you'll most likely need to fork BTCPay repository and apply desired design changes. Build and publish the docker image to Docker Hub. Set the `BTCPAY_IMAGE` environment variable to your docker image tag(`export BTCPAY_IMAGE="your custom btcpay docker image"`) and run the setup (`. ./btcpay-setup.sh -i`) as usual from [BTCPay Docker](https://github.com/btcpayserver/btcpayserver-docker). Modify generated docker compose to use your custom docker image.
 
 :::warning
 A forked BTCPay Server will need to create a new image manually and follow these steps for EACH BTCPay update so it is advised to stick with the default setup and theme options.

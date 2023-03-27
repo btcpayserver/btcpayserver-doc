@@ -1,8 +1,8 @@
 # Opening and operating payment channels
 
-Given that the Lightning Network is a relatively new technology under active development, getting your freshly deployed node ready to send and receive payments, still, requires a couple of steps. 
+Given that the Lightning Network is a relatively new technology under active development, getting your freshly deployed node ready to send and receive payments, still, requires a couple of steps.
 
-Overview: 
+Overview:
 
 1. The lightning node is deployed, enabled and its on-chain wallet is funded
 2. A peer is identified and the first payment channel is opened
@@ -17,7 +17,7 @@ Key considerations:
 - **Liquidity management**: maintaining the ability to send and receive is a continous process where a balance between inbound vs outbound capacity has to be maintained across payment channels. This capacity distribution must be adjusted depending upon the use case of the node operator.
 - **Lightning Service Providers**: LSPs offer paid third-party services that improve the ease of operating a lightning network node. Such services can be used to acquire inbound capacity or to automate the rebalancing process.
 
-Below a set of good resources for a deeper dive into topics such as: 
+Below a set of good resources for a deeper dive into topics such as:
 
 - [Good peers on the LN](https://docs.lightning.engineering/the-lightning-network/the-gossip-network/identify-good-peers)
 - [Lightning node types](https://bitcoin.design/guide/how-it-works/nodes/#lightning-nodes)

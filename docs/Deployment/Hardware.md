@@ -10,9 +10,9 @@ If you are still not sure whether you need hardware deployment, please [see our 
 
 While all hardware deployments are similar to one another, we document step by step the process on three different hardware settings.
 
-* [Raspberry Pi 4](./RaspberryPi4.md)
-* [Hack0](./Hack0.md) (based on Armbian and RockPro64)
-* [LightningInABox](./LightningInABox.md) (based on Ubuntu and Gigabyte Brix GB-BXBT-1900)
+- [Raspberry Pi 4](./RaspberryPi4.md)
+- [Hack0](./Hack0.md) (based on Armbian and RockPro64)
+- [LightningInABox](./LightningInABox.md) (based on Ubuntu and Gigabyte Brix GB-BXBT-1900)
 
 You can easily adapt those documentation on the custom hardware you prefer, we support arm32, arm64 and amd64.
 

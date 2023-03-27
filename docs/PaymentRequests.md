@@ -13,7 +13,7 @@ BTCPay automatically labels invoices as Payment Requests in your store's invoice
 
 ## Payment Requests Video
 
-[![BTCPay Server Payment Requests](https://img.youtube.com/vi/j6CvwDPvfzQ/mqdefault.jpg)](https://www.youtube.com/watch?v=j6CvwDPvfzQ "BTCPay Server Payment Requests")
+[![BTCPay Server Payment Requests](https://img.youtube.com/vi/j6CvwDPvfzQ/mqdefault.jpg)](https://www.youtube.com/watch?v=j6CvwDPvfzQ 'BTCPay Server Payment Requests')
 
 ## Customize Your Payment Requests
 
@@ -32,7 +32,7 @@ Click Payment Requests > Create new payment request
 
 Provide the Request Name, Amount, Display Denomination, Associated Store, Expiration Time & Description (Optional)
 
-Select the option *Allow payee to create invoices in their own denomination* if you want to allow partial payments to be made.
+Select the option _Allow payee to create invoices in their own denomination_ if you want to allow partial payments to be made.
 
 :::warning
 Payment requests are store-dependent, which means that each payment request is associated with a store during creation.
@@ -44,7 +44,7 @@ Click Save & View to review your payment request.
 ![View New Payment Request](./img/payment-requests/NewPaymentRequest.png)
 
 BTCPay creates a URL for the payment request. Share this URL to view your payment request.
-Need multiple of the same request ? You can use the `Clone` option in the main menu to duplicate payment requests. 
+Need multiple of the same request ? You can use the `Clone` option in the main menu to duplicate payment requests.
 
 ## Paid Request for Payment
 
@@ -64,16 +64,17 @@ Further customization can be done by providing additional CSS code, like shown b
 
 ```css
 :root {
-  --btcpay-font-family-base: "Source Sans Pro", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-  --btcpay-primary: #7D4698;
-  --btcpay-primary-accent: #59316B;
-  --btcpay-body-text: #333A41;
-  --btcpay-body-bg: #FFF;
-  --btcpay-bg-tile: #F8F9FA;
+  --btcpay-font-family-base: 'Source Sans Pro', -apple-system, BlinkMacSystemFont,
+    'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  --btcpay-primary: #7d4698;
+  --btcpay-primary-accent: #59316b;
+  --btcpay-body-text: #333a41;
+  --btcpay-body-bg: #fff;
+  --btcpay-bg-tile: #f8f9fa;
 }
 #mainNav {
   color: white;
-  background: linear-gradient(#59316B, #331840);
+  background: linear-gradient(#59316b, #331840);
 }
 #mainNav .btn-link {
   color: white;

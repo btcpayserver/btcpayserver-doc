@@ -13,26 +13,28 @@ You can generate your API key in the BTCPay Server UI under "Account" -> "Manage
 Creating a new user can be done by using [this endpoint](https://docs.btcpayserver.org/API/Greenfield/v1/#operation/Users_CreateUser).
 
 ```js
-const btcpayserverurl = "https://mainnet.demo.btcpayserver.org"
-const apiendpoint = "/api/v1/users"
-const token = "APIKEYTOKEN"
+const btcpayserverurl = 'https://mainnet.demo.btcpayserver.org'
+const apiendpoint = '/api/v1/users'
+const token = 'APIKEYTOKEN'
 const headers = {
-  "Content-Type": "application/json",
-  "Authorization": "token " + token
+  'Content-Type': 'application/json',
+  Authorization: 'token ' + token
 }
 const user = {
-  "email": "MyTestUser@gmail.com",
-  "password": "NOTVERYSECURE",
-  "isAdministrator": false
+  email: 'MyTestUser@gmail.com',
+  password: 'NOTVERYSECURE',
+  isAdministrator: false
 }
 
 fetch(btcpayserverurl + apiendpoint, {
-  method: "POST",
+  method: 'POST',
   headers: headers,
   body: JSON.stringify(user)
 })
-  .then((response) => response.json())
-  .then((data) => { console.log(data) })
+  .then(response => response.json())
+  .then(data => {
+    console.log(data)
+  })
 ```
 
 ## Create a new API key
@@ -44,26 +46,28 @@ For example: If we want to [create a new store](https://docs.btcpayserver.org/AP
 As mentioned above, you can do through BTCPay Server UI of your instance, but let's do it through the API using [this endpoint](https://docs.btcpayserver.org/API/Greenfield/v1/#operation/ApiKeys_CreateApiKey).
 
 ```js
-const btcpayserverUrl = "https://mainnet.demo.btcpayserver.org"
-const apiEndpoint = "/api/v1/api-keys"
-const permission = "btcpay.store.canmodifystoresettings"
-const token = "APIKEYTOKEN"
+const btcpayserverUrl = 'https://mainnet.demo.btcpayserver.org'
+const apiEndpoint = '/api/v1/api-keys'
+const permission = 'btcpay.store.canmodifystoresettings'
+const token = 'APIKEYTOKEN'
 const headers = {
-  "Content-Type": "application/json",
-  "Authorization": "token " + token
+  'Content-Type': 'application/json',
+  Authorization: 'token ' + token
 }
 const apikey = {
-  "label": "LABELNAME",
-  "permissions": [permission]
+  label: 'LABELNAME',
+  permissions: [permission]
 }
 
 fetch(btcpayserverUrl + apiEndpoint, {
-  method: "POST",
+  method: 'POST',
   headers: headers,
   body: JSON.stringify(apikey)
 })
-  .then((response) => response.json())
-  .then((data) => { console.log(data) })
+  .then(response => response.json())
+  .then(data => {
+    console.log(data)
+  })
 ```
 
 ## Create a new store
@@ -71,24 +75,26 @@ fetch(btcpayserverUrl + apiEndpoint, {
 Now, we can use the api key to [create a new store](https://docs.btcpayserver.org/API/Greenfield/v1/#operation/Stores_CreateStore).
 
 ```js
-const btcpayserverUrl = "https://mainnet.demo.btcpayserver.org"
-const apiEndpoint = "/api/v1/stores"
-const token = "APIKEYTOKEN"
+const btcpayserverUrl = 'https://mainnet.demo.btcpayserver.org'
+const apiEndpoint = '/api/v1/stores'
+const token = 'APIKEYTOKEN'
 const headers = {
-  "Content-Type": "application/json",
-  "Authorization": "token " + token
+  'Content-Type': 'application/json',
+  Authorization: 'token ' + token
 }
 const store = {
-  "Name": "STORENAME"
+  Name: 'STORENAME'
 }
 
 fetch(btcpayserverurl + apiendpoint, {
-  method: "POST",
+  method: 'POST',
   headers: headers,
-  body: JSON.stringify(store),
+  body: JSON.stringify(store)
 })
-  .then((response) => response.json())
-  .then((data) => { console.log(data) })
+  .then(response => response.json())
+  .then(data => {
+    console.log(data)
+  })
 ```
 
 ## Webhook implementation with Node.JS + Express
@@ -115,11 +121,13 @@ const bodyParser = require('body-parser')
 and add following
 
 ```js
-app.use(bodyParser.json({
-  verify: (req, res, buf) => {
-    req.rawBody = buf
-  }
-}))
+app.use(
+  bodyParser.json({
+    verify: (req, res, buf) => {
+      req.rawBody = buf
+    }
+  })
+)
 ```
 
 This makes sure that in req.rawBody the correct content is parsed so that you can compare the hashed req.rawBody with the `BTCPAY-SIG` header value.
@@ -128,21 +136,30 @@ Edit your router function like this: (Obviously change `webhookSecret`)
 
 ```js
 app.post('/btcpayserverwebhook', (req, res) => {
-  const sigHashAlg = "sha256"
-  const sigHeaderName = "BTCPAY-SIG"
-  const webhookSecret = "VERYVERYSECRET"
+  const sigHashAlg = 'sha256'
+  const sigHeaderName = 'BTCPAY-SIG'
+  const webhookSecret = 'VERYVERYSECRET'
   if (!req.rawBody) {
     return next('Request body empty')
   }
   const sig = Buffer.from(req.get(sigHeaderName) || '', 'utf8')
   const hmac = crypto.createHmac(sigHashAlg, webhookSecret)
-  const digest = Buffer.from(sigHashAlg + '=' + hmac.update(req.rawBody).digest('hex'), 'utf8')
+  const digest = Buffer.from(
+    sigHashAlg + '=' + hmac.update(req.rawBody).digest('hex'),
+    'utf8'
+  )
   const checksum = Buffer.from(sig, 'utf8')
-  if (checksum.length !== digest.length || !crypto.timingSafeEqual(digest, checksum)) {
-    console.log(`Request body digest (${digest}) did not match ${sigHeaderName} (${checksum})`)
-    return next(`Request body digest (${digest}) did not match ${sigHeaderName} (${checksum})`)
-  }
-  else {
+  if (
+    checksum.length !== digest.length ||
+    !crypto.timingSafeEqual(digest, checksum)
+  ) {
+    console.log(
+      `Request body digest (${digest}) did not match ${sigHeaderName} (${checksum})`
+    )
+    return next(
+      `Request body digest (${digest}) did not match ${sigHeaderName} (${checksum})`
+    )
+  } else {
     // Do More Stuff here
     res.status(200).send('Request body was signed')
   }

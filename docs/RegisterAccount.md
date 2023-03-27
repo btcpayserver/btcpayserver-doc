@@ -14,7 +14,7 @@ The first step in setting up your BTCPay Server is creating a user account. The 
 
 To register, visit your BTCPay Server URL and fill in the account registration form on the right. Input your password, password confirmation, e-mail and click "Register". You will automatically be logged in. If you're using a [third-party host](/Deployment/ThirdPartyHosting.md), you may be asked to verify your e-mail address to confirm the registration.
 
-![BTCPay Server registration](./img/btcpay-registration-page.jpg "BTCPay Server registration")
+![BTCPay Server registration](./img/btcpay-registration-page.jpg 'BTCPay Server registration')
 
 ### Configuring e-mail
 
@@ -26,4 +26,4 @@ To allow other users to access your server, you need to enable registration in S
 
 For further enhancing security and protecting your account, it's recommended to enable two-factor authentication (both 2FA and U2F are supported). To enable 2FA or U2F, click on the user settings icon in the header menu.
 
-***Proceed to the next step - [Creating a store](./CreateStore.md).***
+**_Proceed to the next step - [Creating a store](./CreateStore.md)._**

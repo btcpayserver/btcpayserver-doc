@@ -31,17 +31,18 @@ For full lists of third-party hosts to pick from, [see our hosts directory](http
 Once you pick up a server to use, the steps are the same, regardless of which option you've opted for.
 
 Click on the following links for detailed instructions on how to:
-* [Register an account](./RegisterAccount.md)
-* [Create a store](./CreateStore.md)
-* [Create a wallet](./WalletSetup.md)
-* [Start exploring](./WhatsNext.md)
+
+- [Register an account](./RegisterAccount.md)
+- [Create a store](./CreateStore.md)
+- [Create a wallet](./WalletSetup.md)
+- [Start exploring](./WhatsNext.md)
 
 ### BTCPay Server in action
 
 Below, you will find options to see the BTCPay server in action. Through our own POS on our demo or through the eyes of actual merchants in the wild!
 
-* [Point of Sale Demo](https://mainnet.demo.btcpayserver.org/apps/87kj5yKay8mB4UUZcJhZH5TqDKMD3CznjwLjiu1oYZXe/pos)
-* [In-production stores](https://directory.btcpayserver.org)
+- [Point of Sale Demo](https://mainnet.demo.btcpayserver.org/apps/87kj5yKay8mB4UUZcJhZH5TqDKMD3CznjwLjiu1oYZXe/pos)
+- [In-production stores](https://directory.btcpayserver.org)
 
 ## Questions
 

@@ -4,8 +4,8 @@
 
 For the **development environment** you need to install these tools:
 
-* [.NET 6.0 SDK](https://dotnet.microsoft.com/en-us/download/dotnet/6.0)
-* Docker: [Windows](https://docs.docker.com/docker-for-windows/install/) | [Mac OS](https://docs.docker.com/docker-for-mac/install/) | [Linux](https://docs.docker.com/install/linux/docker-ce/ubuntu/)
+- [.NET 6.0 SDK](https://dotnet.microsoft.com/en-us/download/dotnet/6.0)
+- Docker: [Windows](https://docs.docker.com/docker-for-windows/install/) | [Mac OS](https://docs.docker.com/docker-for-mac/install/) | [Linux](https://docs.docker.com/install/linux/docker-ce/ubuntu/)
 
 ## Dependencies
 
@@ -34,10 +34,10 @@ A build configuration defines how to **build BTCPay Server**. For example, wheth
 
 There are several build configurations:
 
-* `Debug`
-* `Release`
-* `Altcoins-Debug`
-* `Altcoins-Release`
+- `Debug`
+- `Release`
+- `Altcoins-Debug`
+- `Altcoins-Release`
 
 How to use a different one during your local development depends on your IDE.
 By default `Debug` is used, this is a Bitcoin only build excluding any altcoin dependencies. How to use a different one during your local development depends on your IDE.
@@ -58,9 +58,9 @@ The launch profiles are specified in the [launchSettings.json](https://github.co
 
 There are currently three launch profiles:
 
-* `Bitcoin`
-* `Bitcoin-HTTPS`
-* `Altcoins-HTTPS`
+- `Bitcoin`
+- `Bitcoin-HTTPS`
+- `Altcoins-HTTPS`
 
 By default, `Bitcoin` is used. How to use a different one during your local development depends on your IDE.
 
@@ -95,8 +95,8 @@ If you use an IDE, consult your IDE documentation to run tests or switch to diff
 
 By default, your IDE or simple `dotnet run` will use `Bitcoin` launch profile on `Debug` build.
 
-* This means that BTCPay Server will be hosted on a local HTTP port, building without altcoin support,
-* Run BTCPay Server to connect to Bitcoin only dependencies specified in [BTCPayServer.Tests/docker-compose.yml](https://github.com/btcpayserver/btcpayserver/blob/master/BTCPayServer.Tests/docker-compose.yml).
+- This means that BTCPay Server will be hosted on a local HTTP port, building without altcoin support,
+- Run BTCPay Server to connect to Bitcoin only dependencies specified in [BTCPayServer.Tests/docker-compose.yml](https://github.com/btcpayserver/btcpayserver/blob/master/BTCPayServer.Tests/docker-compose.yml).
 
 If you want to **develop with altcoins support** you need to use the `Altcoins-HTTPS` launch profile, on the `Altcoins-Debug` build, and run the [BTCPayServer.Tests/docker-compose.altcoins.yml](https://github.com/btcpayserver/btcpayserver/blob/master/BTCPayServer.Tests/docker-compose.altcoins.yml).
 
@@ -134,10 +134,10 @@ dotnet dev-certs https --trust
 
 For more information check out these videos:
 
-* [How to contribute to BTCPay Server Development (Windows)](https://youtube.com/watch?v=ZePbMPSIvHM) by Nicolas Dorier
-* [Setting up BTCPayServer development environment on Linux (Ubuntu)](https://youtube.com/watch?v=j486T_Rk-yw) by RockStarDev
-* [BTCPay Server Development - Testing pull request, payments (MacOS)](https://youtube.com/watch?v=GWR_CcMsEV0) by Pavlenex
+- [How to contribute to BTCPay Server Development (Windows)](https://youtube.com/watch?v=ZePbMPSIvHM) by Nicolas Dorier
+- [Setting up BTCPayServer development environment on Linux (Ubuntu)](https://youtube.com/watch?v=j486T_Rk-yw) by RockStarDev
+- [BTCPay Server Development - Testing pull request, payments (MacOS)](https://youtube.com/watch?v=GWR_CcMsEV0) by Pavlenex
 
 and these notes:
 
-* [How to get started with development](https://github.com/btcpayserver/btcpayserver/blob/master/BTCPayServer.Tests/README.md) by Nicolas Dorier (covering relevant docker commands, paying regtest invoices)
+- [How to get started with development](https://github.com/btcpayserver/btcpayserver/blob/master/BTCPayServer.Tests/README.md) by Nicolas Dorier (covering relevant docker commands, paying regtest invoices)
