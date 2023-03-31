@@ -167,6 +167,10 @@ Another example, if a merchant wants to send an email notifying the customer tha
 
 It takes some time to find a perfect formula, so users should test things out before going live.
 
+**Modal checkout**
+
+Enable this option if you want the BTCPay Server invoice to be shown directly on the checkout page (and do not redirect customers to your BTCPay Server instance).
+
 **Separate Payment Gateways**
 
 If this option is enabled the plugin will generate one separate payment gateway per supported payment method on BTCPay Server. E.g. if you have BTC, LightningNetwork and maybe Liquid Assets enabled on your BTCPay Server store, then you will have a separate gateway available for each. This allows many new use cases like discount per gateway or country based restrictions. More details [here](./FAQ/Integrations/#how-to-configure-additional-token-support).
