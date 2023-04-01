@@ -12,6 +12,7 @@
 /docs/Vault
 /docs/Zapier
 /docs/LNbank
+/docs/LNDhubAPI
 /docs/PodServer
 /docs/Trocador
 /docs/.vuepress/public/API/Greenfield/**/*.json

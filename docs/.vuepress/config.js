@@ -125,6 +125,7 @@ const sidebarUserGuide = [
           ['/LNbank/Troubleshooting', 'Troubleshooting']
         ]
       },
+      ['/LNDhubAPI/', 'LNDhub API'],
       ['/PodServer/', 'PodServer'],
       ['/Trocador/', 'Trocador']
     ]
