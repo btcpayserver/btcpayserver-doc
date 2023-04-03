@@ -188,7 +188,7 @@ server {
 	server_name btcpay.domain.com;
 
 	# Needed for Let's Encrypt verification
-	location ~ /.well-known {
+	location ~ /.well-known/acme-challenge {
 		allow all;
 	}
 
@@ -228,7 +228,7 @@ server {
 	}
 
 	# Needed for Let's Encrypt verification
-	location ~ /.well-known {
+	location ~ /.well-known/acme-challenge {
 		allow all;
 	}
 }
