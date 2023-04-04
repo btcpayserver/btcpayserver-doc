@@ -10,6 +10,10 @@ The following document guides you through **setting up BTCPay Server with [Shopi
 
 [![BTCPay Server - Shopify Video](https://img.youtube.com/vi/jJjAyvgWVfk/mqdefault.jpg 'BTCPay Server - Shopify')](https://www.youtube.com/watch?v=jJjAyvgWVfk 'BTCPay Server - Shopify Video')
 
+:::warning
+Shopify might give false flags on deprecated API calls. The most likely answer we could find, due to a change by Shopify to specific fields of the `Order` resource and is assumed to get used in BTCPay Server. Find more details [here](https://github.com/btcpayserver/btcpayserver/issues/4510)
+:::
+
 ## Setting up BTCPay Server with Shopify
 
 1. In Shopify, go to Apps > and at the bottom of the page click on the `Develop apps for your store`.
