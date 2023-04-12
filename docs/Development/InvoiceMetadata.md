@@ -13,7 +13,6 @@ This page provides an overview of these properties and explains how they are uti
 | `.paymentRequestId` | In the invoice details view, a link is provided for navigating to the payment request page associated with the invoice. |
 | `.posData` |  A custom JSON object that represents information displayed in the invoice details view. |
 | `.receiptData` |  A custom JSON object that represents information displayed on the receipt page of an invoice. |
-| `.payRequest` |  JSON object representing the LNURL request created for this invoice. (See [LUD-06](https://github.com/lnurl/luds/blob/luds/06.md)) |
 | `.buyerName` | Visible in the invoice details view and in the BitPay API-compatible endpoints. |
 | `.buyerEmail` | Visible in the invoice details view and in the BitPay API-compatible endpoints. |
 | `.buyerAddress1` | Visible in the invoice details view and in the BitPay API-compatible endpoints. |
@@ -110,26 +109,3 @@ Point of sale invoice (Keypad view):
 }
 ```
 
-An invoice with LNUrl `payRequest`:
-
-```json
-{
-    "orderId": "pos-app_346KRC5BjXXXo8cRFKwTBmdR6ZJ4",
-    "posData": {
-        "total": "12.00",
-        "subTotal": "12.00"
-    },
-    "itemDesc": "Tea shop",
-    "orderUrl": "https://localhost:14142/apps/346KRC5BjXXXo8cRFKwTBmdR6ZJ4/pos",
-    "physical": false,
-    "payRequest": {
-        "tag": "payRequest",
-        "callback": "https://localhost:14142/BTC/UILNURL/pay/i/56n1kTXnA8g7Sx7Ucwo7x1",
-        "metadata": "[[\"text/plain\",\"Paid to test (Order ID: pos-app_346KRC5BjXXXo8cRFKwTBmdR6ZJ4)\"]]",
-        "maxSendable": 39867000,
-        "minSendable": 39867000,
-        "commentAllowed": 0
-    },
-    "receiptData": {}
-}
-```
