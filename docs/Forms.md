@@ -115,7 +115,7 @@ In a field definition, only the following fields can be set:
 | `.fields.helpText`      | Additional text to provide an explanation for the field.                                                                                                                                                                                                                                                                                                                                                                                                           |
 | `.fields.fields`        | You can organize your fields in a hierarchy, allowing child fields to be nested within the invoice's metadata. This structure can help you better organize and manage the collected information, making it easier to access and interpret. For example, if you have a form that collects customer information, you can group the fields under a parent field called customer. Within this parent field, you might have child fields like name, email, and address. |
 
-The values of the fields are stored in the metadata of the invoice.
+The values of the fields are stored in the [metadata of the invoice](/Development/InvoiceMetadata/).
 
 ## Well-known field names
 
