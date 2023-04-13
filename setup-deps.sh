@@ -55,7 +55,7 @@ for file in "$DOCS_DIR"/BTCPayServer/*.md; do
 done
 
 # Checkout latest release tag, so that we do not publish docs for unreleased APIs yet.
-git checkout $(git tag --sort -version:refname | awk 'match($0, /^v[0-9]+\./)' | head -n 1)
+git checkout $(git tag --sort -version:refname | awk 'match($0, /^v[0-9]+\.[0-9]+\.[0-9]+$/)' | head -n 1)
 
 # NBXplorer
 
@@ -223,7 +223,8 @@ if [ ! -d "$PODSERVER_DIR" ]; then
 fi
 
 cd "$PODSERVER_DIR"
-cp -r README.md "$DOCS_DIR/PodServer"
+cp -r README.md docs/* "$DOCS_DIR/PodServer"
+sed -ie 's$(./docs/$(./$g' "$DOCS_DIR/PodServer/README.md"
 for file in "$DOCS_DIR"/PodServer/*.md; do
   update_external "$file" https://github.com/dennisreimann/btcpayserver-plugin-podserver "$DOCS_DIR"/PodServer/
 done
@@ -241,7 +242,8 @@ if [ ! -d "$LNDHUBAPI_DIR" ]; then
 fi
 
 cd "$LNDHUBAPI_DIR"
-cp -r README.md "$DOCS_DIR/LNDhubAPI"
+cp -r README.md docs/* "$DOCS_DIR/LNDhubAPI"
+sed -ie 's$(./docs/$(./$g' "$DOCS_DIR/LNDhubAPI/README.md"
 for file in "$DOCS_DIR"/LNDhubAPI/*.md; do
   update_external "$file" https://github.com/dennisreimann/btcpayserver-plugin-lndhub-api "$DOCS_DIR"/LNDhubAPI/
 done
