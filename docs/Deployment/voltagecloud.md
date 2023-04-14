@@ -8,14 +8,14 @@ They also offer a solution for inbound liquidity once you have Lightning running
 
 In the video below, [BTC Sessions](https://twitter.com/BTCsessions) goes through all the steps for setting up **BTCPay server on Voltage Cloud**.
 
-[![BTCPay Server - Voltage Web-Deployment](https://img.youtube.com/vi/KqsM-n-e4aY/mqdefault.jpg 'BTCPay Server - Voltage Web-Deployment')](https://www.youtube.com/watch?v=KqsM-n-e4aY 'BTCPay Server - LunaNode Web-Deployment')
+[![BTCPay Server - Voltage Web-Deployment](https://img.youtube.com/vi/KqsM-n-e4aY/mqdefault.jpg)](https://www.youtube.com/watch?v=KqsM-n-e4aY)
 
 ## 1. Sign up and top up your account.
 
 First off, sign up and add credit to your account.
 Go to the [Voltage cloud](https://account.voltage.cloud/register) website to create an account.
 
-![Voltage Cloud signup](../img/voltage/voltagereg.jpg 'Voltage Cloud Account')
+![Voltage Cloud signup](../img/voltage/voltagereg.jpg)
 
 Upon registering, to top up the account go to` Billing` and add `Node credit` to your account.
 Filling up your account can be done by paying in Bitcoin, Lightning, or by credit card.
@@ -39,12 +39,12 @@ Each comes with its own pro's and con's. The pro node requires you to contact Vo
 It will also show you the cost of the node per hour rate and an approximate for a full month.
 But as far as this guide and BTCPay Server's needs reach, the `Lite node` should be sufficient.
 
-![Voltage Cloud Password](../img/voltage/deployln.jpg 'Voltage Cloud Password')
+![Voltage Cloud Password](../img/voltage/deployln.jpg)
 
 Now we get into naming your node and securing it with a strong password
 There is also an option to restore a previous node from seed and a Static Channel backup.
 
-![Voltage Cloud Password](../img/voltage/voltagelnname.jpg 'Voltage Cloud Password')
+![Voltage Cloud Password](../img/voltage/voltagelnname.jpg)
 
 :::warning
 This password is something to backup securely. As Voltage can **NOT** recover this for you
@@ -59,7 +59,7 @@ This is when we will start working towards our **BTCPay server node**.
 The top right corner of your dashboard will allow you to switch between `Nodes` and `Flow`.
 Click on `Nodes` as we want a BTCPay server node and create a new node.
 
-![Voltage Cloud Node](../img/voltage/whatnode.jpg 'Voltage Cloud Node')
+![Voltage Cloud Node](../img/voltage/whatnode.jpg)
 
 ## 4. BTCPay server node
 
@@ -71,7 +71,7 @@ You now have to set a `Store name` for the main store of your BTCpay server.
 The choice to connect it to your Voltage node and pick the node you created earlier (the LND node)
 And lock this in by typing the password set for the LND node.
 
-![Voltage Cloud BTCPay server Node](../img/voltage/deploybtcpay.jpg 'Voltage Cloud Cloud BTCPay server Node')
+![Voltage Cloud BTCPay server Node](../img/voltage/deploybtcpay.jpg)
 
 ## 5. Finnish initial deployment.
 

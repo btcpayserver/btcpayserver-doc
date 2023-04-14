@@ -13,7 +13,7 @@ BTCPay automatically labels invoices as Payment Requests in your store's invoice
 
 ## Payment Requests Video
 
-[![BTCPay Server Payment Requests](https://img.youtube.com/vi/j6CvwDPvfzQ/mqdefault.jpg)](https://www.youtube.com/watch?v=j6CvwDPvfzQ 'BTCPay Server Payment Requests')
+[![BTCPay Server Payment Requests](https://img.youtube.com/vi/j6CvwDPvfzQ/mqdefault.jpg)](https://www.youtube.com/watch?v=j6CvwDPvfzQ)
 
 ## Customize Your Payment Requests
 

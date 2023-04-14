@@ -43,7 +43,7 @@ If there are multiple waiting Payouts, you can batch these to be signed and sent
 When accepted by the network, the payout moves to the Completed tab.
 The completed tab is purely for historical purposes. It holds the processed Payouts and the transaction that belongs to it.
 
-![BTCPay Server Payouts tab](./img/refunds/batch-payouts.jpg 'BTCPay Server refund feature')
+![BTCPay Server Payouts tab](./img/refunds/batch-payouts.jpg)
 
 ## Using Greenfield API
 

@@ -191,7 +191,7 @@ In some cases, you may encounter NBXplorer getting stuck. The first thing to try
 
 If, despite restarting, the problem persists and NBXplorer remains stuck, you may notice that the synch dialog appears as shown below, and the height does not change such as in this screenshot:
 
-![NBXplorer-stuck](./../img/NBXplorer-stuck.png 'NBXplorer is synchronizing')
+![NBXplorer-stuck](./../img/NBXplorer-stuck.png)
 
 This issue generally occurs when your server has been offline for an extended period, and your Bitcoin full node is pruned, which is the default setting in BTCPay Server Docker deployments.
 

@@ -8,13 +8,13 @@ For the price of around US$8.80 per month, you can have a **self-hosted BTCpay**
 
 The video below explains all the step and customization of BTCPay.
 
-[![BTCPay Server - LunaNode Web-Deployment](https://img.youtube.com/vi/NjslXYvp8bk/mqdefault.jpg 'BTCPay Server - LunaNode Web-Deployment')](https://www.youtube.com/watch?v=NjslXYvp8bk 'BTCPay Server - LunaNode Web-Deployment')
+[![BTCPay Server - LunaNode Web-Deployment](https://img.youtube.com/vi/NjslXYvp8bk/mqdefault.jpg)](https://www.youtube.com/watch?v=NjslXYvp8bk)
 
 The installation is also covered in [this article](https://medium.com/@BtcpayServer/launch-btcpay-server-via-web-interface-and-deploy-full-bitcoin-node-lnd-in-less-than-a-minute-dc8bc6f06a3)
 
 The third video covers setting **BTCPay up on LunaNode**, but also goes in-depth on setting up wallets, store and apps.
 
-[![BTCPay Server - LunaNode Web-Deployment Video](https://img.youtube.com/vi/00YCc87RwnU/mqdefault.jpg 'BTCPay Server - LunaNode Web-Deployment Video')](https://www.youtube.com/watch?v=00YCc87RwnU 'BTCPay Server - LunaNode Web-Deployment Video')
+[![BTCPay Server - LunaNode Web-Deployment Video](https://img.youtube.com/vi/00YCc87RwnU/mqdefault.jpg)](https://www.youtube.com/watch?v=00YCc87RwnU)
 
 ## 1. Create the account and add credits
 

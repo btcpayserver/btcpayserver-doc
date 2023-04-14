@@ -14,7 +14,7 @@ If you buy the different piece of hardware for your Hack0, assemble, install hac
 
 You can watch an introduction here:
 
-[![Introduction to Hack0](https://img.youtube.com/vi/m3i2EUTEukM/mqdefault.jpg)](https://www.youtube.com/watch?v=m3i2EUTEukM 'Introduction to Hack0')
+[![Introduction to Hack0](https://img.youtube.com/vi/m3i2EUTEukM/mqdefault.jpg)](https://www.youtube.com/watch?v=m3i2EUTEukM)
 
 ## Hardware specification (for distributors)
 
@@ -62,4 +62,4 @@ In some case, `hack0.local` might not work, and you need to use a tool such as [
 You need to add your public ssh key to `http://hack0.local/server/services/ssh`. Do not remove the `btcpayserver` key that already exists.
 After this, you should be able to connect via ssh with `ssh root@hack0.local` or Putty.
 
-![SSH Authorized keys](../img/SSH-Authorized-Keys.png 'SSH Authorized keys')
+![SSH Authorized keys](../img/SSH-Authorized-Keys.png)

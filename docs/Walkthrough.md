@@ -4,15 +4,15 @@ This page walks you through the **BTCPay user interface** and shows how to navig
 
 Watch the video below for an interactive overview of the features.
 
-[![BTCPay Server Walkthrough](https://img.youtube.com/vi/ZIfJyq9RimM/mqdefault.jpg)](https://www.youtube.com/watch?v=ZIfJyq9RimM 'BTCPay Server - WalkThrough')
+[![BTCPay Server Walkthrough](https://img.youtube.com/vi/ZIfJyq9RimM/mqdefault.jpg)](https://www.youtube.com/watch?v=ZIfJyq9RimM)
 
 After you've created an account on the BTCPay Server instance hosted by yourself or a third party, you'll be greeted by your store's new home or, as we call it, your `dashboard`.
 
-![BTCPay Server Navigation](./img/walktrough/welcome-store.jpg 'BTCPay Server Navigation')
+![BTCPay Server Navigation](./img/walktrough/welcome-store.jpg)
 
 All the settings in the left menu are meant for the Current Store you selected at the top.
 
-![BTCPay Server Navigation](./img/walktrough/selected-store.jpg 'BTCPay Server Navigation')
+![BTCPay Server Navigation](./img/walktrough/selected-store.jpg)
 
 - [Notifications](Walkthrough.md#notifications)
 - [Dashboard](Dashboard.md)
@@ -118,7 +118,7 @@ Here you will find the options to Approve and directly send the requested amount
 When there are multiple instances of Pull payments, these can be selected and batched for sending out at once.
 In a future version, we expect this to have scheduling options.
 
-![BTCPay Server Navigation](./img/walktrough/walktrough-payouts1.jpg 'BTCPay Server Navigation')
+![BTCPay Server Navigation](./img/walktrough/walktrough-payouts1.jpg)
 
 ### Pay Button
 
@@ -127,7 +127,7 @@ When the customer or a visitor clicks on the button, BTCPay displays a checkout 
 
 For more information, check [Create a payment button](./Apps.md#payment-button)
 
-![BTCPay Server Navigation](./img/walktrough/preview-paybutton.jpg 'BTCPay Server Navigation')
+![BTCPay Server Navigation](./img/walktrough/preview-paybutton.jpg)
 
 ## Apps
 

@@ -6,7 +6,7 @@ Business deployment methods can vary by setup, maintenance, support, price, etc.
 
 BTCPay is a non-custodial invoicing system which eliminates the involvement of a third-party when managing funds. Payments with BTCPay go directly to your wallet. Your private keys are never uploaded to the server. Meaning **3rd Party BTCPay hosts do not control user funds**, they are simply hosting your instance of the BTCPay software for you.
 
-![Decision diagram](../img//infographics/DecisionDiagInstallBTCPayServer.png 'BTCPay Server Infographic')
+![Decision diagram](../img//infographics/DecisionDiagInstallBTCPayServer.png)
 
 :::warning PLEASE NOTE
 Manual deployments and Hardware builds are not recommended for production environments and require the user to have technical knowledge related to the build.

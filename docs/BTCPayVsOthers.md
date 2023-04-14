@@ -1,6 +1,6 @@
 # BTCPay Server vs. Others
 
-![BTCPay Server vs other payment processors](./img/infographics/BTCPay-How-Is-It-Different.png 'BTCPay Server vs other payment processors')
+![BTCPay Server vs other payment processors](./img/infographics/BTCPay-How-Is-It-Different.png)
 
 Most new merchants will likely only consider the price of the service. Since **BTCPay Server is free**, that may have led you here and if so, welcome.
 

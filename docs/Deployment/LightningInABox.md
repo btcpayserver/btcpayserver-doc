@@ -20,11 +20,11 @@ For the sake of speed, compatibility and ease of installation it is recommended 
 **BTCPayServer can be successfully installed on the following hardware**. The end result is a small, quiet node that is fast enough to sync from block zero. The total cost is approximately $225 (including tax and delivery). These are "off the shelf" components that can be purchased from any online retailer (TigerDirect, NewEgg, Amazon, BestBuy etc). It will take roughly 24 hours to sync the Bitcoin blockchain. You can save little money by cutting the RAM and hard drive size in half.
 
 1. Gigabyte Brix GB-BXBT-1900
-   ![Gigabyte Brix GB-BXBT-1900](https://i1.wp.com/lightninginabox.co/wp-content/uploads/2018/08/20150603180458_m.png?resize=300%2C254&ssl=1 'Gigabyte Brix GB-BXBT-1900')
+   ![Gigabyte Brix GB-BXBT-1900](https://i1.wp.com/lightninginabox.co/wp-content/uploads/2018/08/20150603180458_m.png?resize=300%2C254&ssl=1)
 2. Crucial 8GB DDR3L-1600 SODIMM
-   ![Crucial 8GB DDR3L-1600](https://i0.wp.com/lightninginabox.co/wp-content/uploads/2018/08/204-pinsodimmddr3.png?resize=300%2C133&ssl=1 'Crucial 8GB DDR3L-1600 SODIMM')
+   ![Crucial 8GB DDR3L-1600](https://i0.wp.com/lightninginabox.co/wp-content/uploads/2018/08/204-pinsodimmddr3.png?resize=300%2C133&ssl=1)
 3. WD Blue 1TB Mobile Hard Disk Drive
-   ![WD Blue 1 TB HDD](https://i1.wp.com/lightninginabox.co/wp-content/uploads/2018/08/81qCyd2gDL._SL1500_.jpg?resize=300%2C300&ssl=1 'WD Blue 1TB Mobile Hard Disk Drive')
+   ![WD Blue 1 TB HDD](https://i1.wp.com/lightninginabox.co/wp-content/uploads/2018/08/81qCyd2gDL._SL1500_.jpg?resize=300%2C300&ssl=1)
 
 Other requirements are as follows:
 

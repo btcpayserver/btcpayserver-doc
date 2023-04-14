@@ -64,7 +64,7 @@ Irrespective of the LN implementation deployed, the process of connecting your i
 3. Click "Save" > See "BTC Lightning node updated" message
 4. Go to "Public Node Info" > The node should appear **"Online"**
 
-![LightningNetworkNodeSetupOverview](./img/lightning-node-setup/LightningNetworkNodeSetupOverview.jpg 'BTCPay Server Lightning Network Setup Overview')
+![LightningNetworkNodeSetupOverview](./img/lightning-node-setup/LightningNetworkNodeSetupOverview.jpg)
 
 If the internal connection fails, confirm:
 
@@ -93,7 +93,7 @@ To initiate RTL in BTCPay Server, Go to Server Settings > Services > RTL > See i
 
 For remote use of your LND node on iOS or PC, you can use [Zap wallet integration](https://github.com/LN-Zap/zap-tutorials/blob/master/docs/desktop/btcpay-server.mdx).
 \
-[![LND BTCPay](https://img.youtube.com/vi/CWhTOunTb2Q/mqdefault.jpg 'BTCPay Server - LND and ZAP')](https://www.youtube.com/watch?v=CWhTOunTb2Q 'BTCPay Server - LND and Zap')
+[![LND BTCPay](https://img.youtube.com/vi/CWhTOunTb2Q/mqdefault.jpg)](https://www.youtube.com/watch?v=CWhTOunTb2Q)
 \
 Besides Zap, there are a few more wallets that allow remote control of the LND node, [the Nayuta wallet](https://nayuta.co/) and the [ZeusLN](https://github.com/ZeusLN/zeus). Both of which have not yet extensively been tested by the community.
 
@@ -101,7 +101,7 @@ Besides Zap, there are a few more wallets that allow remote control of the LND n
 
 To remotely control your LND node via web browser, you can use Lightning Joule.
 \
-[![Joule](https://img.youtube.com/vi/a9_uHJhnKR4/mqdefault.jpg 'BTCPay Server - LND and Joule')](https://www.youtube.com/watch?v=a9_uHJhnKR4 'BTCPay Server - LND and Joule')
+[![Joule](https://img.youtube.com/vi/a9_uHJhnKR4/mqdefault.jpg)](https://www.youtube.com/watch?v=a9_uHJhnKR4)
 
 ### Control your LND via the command-line: lncli
 
@@ -124,7 +124,7 @@ Run ./bitcoin-lncli.sh --help` to see a full list of commands or check the full 
 
 The most straightforward way to start using the **CLN implementation in BTCPay Server** is to use [Spark Wallet](https://github.com/shesek/spark-wallet) integration. Just like Zap for LND, Spark is a graphical interface of your internal CLN node.
 \
-[![BTCPay Server - CLN and Spark](https://img.youtube.com/vi/uV1R6IQpmg8/mqdefault.jpg 'BTCPay Server - CLN and Spark')](https://www.youtube.com/watch?v=uV1R6IQpmg8 'BTCPay Server - CLN and Spark')
+[![BTCPay Server - CLN and Spark](https://img.youtube.com/vi/uV1R6IQpmg8/mqdefault.jpg)](https://www.youtube.com/watch?v=uV1R6IQpmg8)
 \
 You can use Spark as an internal or external wallet. Internal wallet allows users to use Spark via the web-browser inside their BTCPay Server. You can also connect externally to a Spark mobile or desktop app just by scanning a QR code.
 \
@@ -194,8 +194,8 @@ BTCPay Server exposes all the necessary information required to **connect your i
 
 Below are videos that showcase how to connect some of the lapps to your BTCPay.
 
-[![BTCPay Server - CLN and lapps intro](https://img.youtube.com/vi/6EHNq1anD1k/mqdefault.jpg)](https://www.youtube.com/watch?v=6EHNq1anD1k 'BTCPay Server - CLN and lapps intro')
+[![BTCPay Server - CLN and lapps intro](https://img.youtube.com/vi/6EHNq1anD1k/mqdefault.jpg)](https://www.youtube.com/watch?v=6EHNq1anD1k)
 
-[!["BTCPay Server - CLN and lapps publisher](https://img.youtube.com/vi/ZbM3jcxau0o/mqdefault.jpg)](https://www.youtube.com/watch?v=ZbM3jcxau0o 'BTCPay Server - CLN and lapps publisher')
+[!["BTCPay Server - CLN and lapps publisher](https://img.youtube.com/vi/ZbM3jcxau0o/mqdefault.jpg)](https://www.youtube.com/watch?v=ZbM3jcxau0o)
 
-[![BTCPay Server - CLN and lapps woo lightning](https://img.youtube.com/vi/EYrsU3LGpbI/mqdefault.jpg)](https://www.youtube.com/watch?v=EYrsU3LGpbI 'BTCPay Server - CLN and lapps woo lightning')
+[![BTCPay Server - CLN and lapps woo lightning](https://img.youtube.com/vi/EYrsU3LGpbI/mqdefault.jpg)](https://www.youtube.com/watch?v=EYrsU3LGpbI)

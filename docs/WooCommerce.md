@@ -18,11 +18,11 @@ This guide refers to the BTCPay for WooCommerce V2 plugin. You can find instruct
 
 [[toc]]
 
-![BTCPay - WooCommerce Infographic](./img/infographics/BTCPayInfographic.png 'BTCPay - WooCommerce Infographic')
+![BTCPay - WooCommerce Infographic](./img/infographics/BTCPayInfographic.png)
 
 To integrate BTCPay Server into an existing WooCommerce store, follow the steps below and/or watch this video:
 
-[![BTCPay - WooCommerce](https://img.youtube.com/vi/ULcocDKZ1Mw/mqdefault.jpg)](https://www.youtube.com/watch?v=ULcocDKZ1Mw 'BTCPay for WooCommerce V2 Installation')
+[![BTCPay - WooCommerce](https://img.youtube.com/vi/ULcocDKZ1Mw/mqdefault.jpg)](https://www.youtube.com/watch?v=ULcocDKZ1Mw)
 
 ## Requirements
 
@@ -56,7 +56,7 @@ There are three ways to **download BTCPay for WooCommerce V2 plugin**:
 
 [Download the latest BTCPay plugin](https://github.com/btcpayserver/woocommerce-greenfield-plugin/releases), upload it in .zip format to your WordPress site and activate it.
 
-[![BTCPay Server Woo Plugin](https://img.youtube.com/vi/6QcTWHRKZag/mqdefault.jpg)](https://www.youtube.com/watch?v=6QcTWHRKZag 'BTCPay Server - Woo Plugin')
+[![BTCPay Server Woo Plugin](https://img.youtube.com/vi/6QcTWHRKZag/mqdefault.jpg)](https://www.youtube.com/watch?v=6QcTWHRKZag)
 
 ## 2. Connecting WooCommerce and BTCPay Server
 
@@ -117,7 +117,7 @@ Making a small test-purchase from your store will give you peace of mind.
 Always make sure that everything is set up correctly before going live.
 The final video guides you through the steps of setting a gap limit in your Electrum wallet and testing the checkout process.
 
-[![BTCPay Server Checkout](https://img.youtube.com/vi/Fi3pYpzGmmo/mqdefault.jpg)](https://www.youtube.com/watch?v=Fi3pYpzGmmo 'BTCPay Server - Wallet')
+[![BTCPay Server Checkout](https://img.youtube.com/vi/Fi3pYpzGmmo/mqdefault.jpg)](https://www.youtube.com/watch?v=Fi3pYpzGmmo)
 
 ## 4. Customizing BTCPay WooCommerce V2
 

@@ -4,7 +4,7 @@ This document explains how to use BTCPay Server's **Payjoin** feature. For a det
 
 You can follow this video to better understand what payjoin is and how to use it.
 
-[![How to use Payjoin with BTCPay Server](https://img.youtube.com/vi/-Wrqv6nSmAM/mqdefault.jpg)](https://www.youtube.com/watch?v=-Wrqv6nSmAM 'How to use Payjoin with BTCPay Server')
+[![How to use Payjoin with BTCPay Server](https://img.youtube.com/vi/-Wrqv6nSmAM/mqdefault.jpg)](https://www.youtube.com/watch?v=-Wrqv6nSmAM)
 
 ## Enabling Payjoin as a merchant
 
@@ -14,11 +14,11 @@ You can follow this video to better understand what payjoin is and how to use it
 
 It's important to note that you will need at least 1 UTXO for payjoin to work.
 
-![Receive PayJoin in BTCPay Server](./img/payjoin/Payjoin_Guide_Receive_1.png 'Receive PayJoin in BTCPay Server')
+![Receive PayJoin in BTCPay Server](./img/payjoin/Payjoin_Guide_Receive_1.png)
 
-![Receive PayJoin in BTCPay Server](./img/payjoin/Payjoin_Guide_Receive_2.png 'Receive PayJoin in BTCPay Server')
+![Receive PayJoin in BTCPay Server](./img/payjoin/Payjoin_Guide_Receive_2.png)
 
-![Receive PayJoin in BTCPay Server](./img/payjoin/Payjoin_Guide_Receive_3.png 'Receive PayJoin in BTCPay Server')
+![Receive PayJoin in BTCPay Server](./img/payjoin/Payjoin_Guide_Receive_3.png)
 
 ## Paying to Payjoin as a user
 
@@ -34,13 +34,13 @@ The [BTCPay Wallet](./Wallet.md) supports Payjoin.
 6. If you are using a hardware wallet, you will be asked to sign the payjoin transaction again (the hot wallet feature signs the transaction for you automatically).
 7. Congratulations, you've just helped improve Bitcoin's fungibility and your financial sovereignty!
 
-![Receive PayJoin in BTCPay Server](./img/payjoin/Payjoin_Guide_Pay_1.png 'Receive PayJoin in BTCPay Server')
+![Receive PayJoin in BTCPay Server](./img/payjoin/Payjoin_Guide_Pay_1.png)
 
-![Receive PayJoin in BTCPay Server](./img/payjoin/Payjoin_Guide_Pay_2.png 'Receive PayJoin in BTCPay Server')
+![Receive PayJoin in BTCPay Server](./img/payjoin/Payjoin_Guide_Pay_2.png)
 
-![Receive PayJoin in BTCPay Server](./img/payjoin/Payjoin_Guide_Pay_3.png 'Receive PayJoin in BTCPay Server')
+![Receive PayJoin in BTCPay Server](./img/payjoin/Payjoin_Guide_Pay_3.png)
 
-![Receive PayJoin in BTCPay Server](./img/payjoin/Payjoin_Guide_Pay_4.png 'Receive PayJoin in BTCPay Server')
+![Receive PayJoin in BTCPay Server](./img/payjoin/Payjoin_Guide_Pay_4.png)
 
 ## Why did a payjoin not happen?
 

@@ -283,18 +283,18 @@ You could also do this by IP address, but then instead of a `CNAME record` it wo
 
 This is an example of how this would look at [gandi.net](https://gandi.net/)
 
-![Gandi3](../img/Gandi3.png 'Gandi add DNS record')
+![Gandi3](../img/Gandi3.png)
 
 ### Change domain name in BTCPay Server settings
 
 In BTCPay Server you go to the `Server Settings` menu, and then into the tab `Maintenance`.
 Here you will find a field to replace your old by the new set domain, it might take a few seconds to update.
 
-![Maintenance domain name](../img/changedomain.png 'BTCPay Server Change Domain name')
+![Maintenance domain name](../img/changedomain.png)
 
 Now enter the new set domain in the address bar and see if it works!
 
-![Maintenance2](../img/Maintenance2.png 'BTCPay Server Change Domain name')
+![Maintenance2](../img/Maintenance2.png)
 
 ### Change domain on command line
 

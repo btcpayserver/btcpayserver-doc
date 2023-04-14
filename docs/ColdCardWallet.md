@@ -18,7 +18,7 @@ This guide assumes, you have a Coldcard wallet set up. To configure the **Coldca
 
 The **Coldcard is now connected to your BTCPay Server**. Payments go directly to Coldcard. The video below shows how to connect your BTCPay store to your Coldcard.
 
-[![BTCPay and Coldcard](https://img.youtube.com/vi/N0eVwdP_7EQ/mqdefault.jpg)](https://www.youtube.com/watch?v=N0eVwdP_7EQ 'Connecting Coldcard to BTCPay Server')
+[![BTCPay and Coldcard](https://img.youtube.com/vi/N0eVwdP_7EQ/mqdefault.jpg)](https://www.youtube.com/watch?v=N0eVwdP_7EQ)
 
 ### Spending from BTCPay Server wallet with Coldcard (PSBT)
 
@@ -40,4 +40,4 @@ Once there are some funds in received to your **BTCPay Wallet connected to Coldc
 
 The video below shows **how to connect your BTCPay store to your Coldcard**.
 
-[![BTCPay Server and Coldcard](https://img.youtube.com/vi/XyqvYaXMfNU/mqdefault.jpg)](https://youtu.be/XyqvYaXMfNU 'PSBT Coldcard and BTCPay Server')
+[![BTCPay Server and Coldcard](https://img.youtube.com/vi/XyqvYaXMfNU/mqdefault.jpg)](https://youtu.be/XyqvYaXMfNU)

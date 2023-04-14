@@ -51,7 +51,7 @@ By default, you need to be a server admin to use the create wallet feature. This
 
 Understand that anyone with access to your recovery seed can also access and steal all your funds (current AND future funds!), since a private key is derived from a recovery seed. Securely back up your seed by writing it down and keep it in a safe place. Do not photograph it or store it in a digital format. Do not rely solely on your server for storing your recovery seed, always keep a backup copy.
 
-![BTCPay Server settings](./img/hotwallet/ServerSettings.png 'BTCPay Server settings')
+![BTCPay Server settings](./img/hotwallet/ServerSettings.png)
 
 :::warning
 When a new wallet is generated, BTCPay Server will show you a twelve word recovery seed. After the initial display, the recovery seed is wiped from the server, unless a the hot wallet option is enabled.
@@ -68,8 +68,8 @@ Once you've received funds to your wallet and decide to spend them, you can auto
 5. Review the transaction
 6. Broadcast the transaction
 
-![BTCPay Server Send page](./img/hotwallet/WalletSend.png 'BTCPay Server Send page')
-![BTCPay Server Transaction Review and Broadcast page](./img/hotwallet/BroadcastConfirm.png 'BTCPay Server Transaction Review and Broadcast page')
+![BTCPay Server Send page](./img/hotwallet/WalletSend.png)
+![BTCPay Server Transaction Review and Broadcast page](./img/hotwallet/BroadcastConfirm.png)
 
 #### Security Implications
 
@@ -93,6 +93,6 @@ Like the hot wallet, the watch-only wallet can instantly get your store connecte
 
 There are several routes you can take to spend funds with this type of wallet including importing the seed words into a hardware wallet to sign your transactions using the [BTCPay Server Vault application](https://docs.btcpayserver.org/Vault/), [PSBT](https://docs.btcpayserver.org/Wallet/#psbt), or the least recommended manually providing your seed words every time.
 
-![BTCPay Server Transaction Signing Options](./img/hotwallet/SignTransaction.png 'BTCPay Server Transaction Signing Options')
+![BTCPay Server Transaction Signing Options](./img/hotwallet/SignTransaction.png)
 
 Alternatively, you can spend funds in another external wallet where you have imported your BTCPay Server-produced seed words. If you import your seed words into an external wallet, you can also use a PSBT to spend the funds, assuming the wallet supports it. This option will be available on the wallet's send page. Be sure to consider the [gap limit issue](./FAQ/Wallet.md#missing-payments-in-my-software-or-hardware-wallet) if you're using an external wallet with your watch-only wallet.

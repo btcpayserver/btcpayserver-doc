@@ -96,7 +96,7 @@ Example of form definition:
 
 Output:
 
-![Form](./img/Forms-1.png 'Form')
+![Form](./img/Forms-1.png)
 
 In a field definition, only the following fields can be set:
 

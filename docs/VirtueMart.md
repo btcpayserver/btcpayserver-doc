@@ -12,7 +12,7 @@ tags:
 This document explains how to **integrate BTCPay Server into your Joomla VirtueMart store**.
 Watch the video below to go along the document |
 
-[![BTCPay Server - Joomla VirtueMart](https://img.youtube.com/vi/k7XfybLAky0/mqdefault.jpg 'BTCPay Server - Joomla VirtueMart')](https://youtu.be/k7XfybLAky0 'BTCPay Server - Joomla VirtueMart')
+[![BTCPay Server - Joomla VirtueMart](https://img.youtube.com/vi/k7XfybLAky0/mqdefault.jpg)](https://youtu.be/k7XfybLAky0)
 
 ## Requirements
 
@@ -84,17 +84,17 @@ On BTCPay Server instance:
 2. Click on _[Manage Account]_
    ![BTCPay Joomla VirtueMart: Manage Account](./img/virtuemart/btcpay-vm--07-account-manage.png)
 3. Go to the tab _"API Keys"_
-4. Click _[Generate Key]_ to select permissions.  
+4. Click _[Generate Key]_ to select permissions.
    ![BTCPay Joomla VirtueMart: API Keys overview](./img/virtuemart/btcpay-vm--08-add-api-key.png)
 5. Add a label. **Important:** click on the _"Select specific stores"_ link for the following permissions: `View invoices`, `Create invoice`, `Modify invoices`, `Modify stores webhooks`, `View your stores` and select the specific store you created for your VirtueMart site. It should look like when everything is set:
    ![BTCPay Joomla VirtueMart: API Keys Permissions](./img/virtuemart/btcpay-vm--09-permissions-and-select-store.png)
-6. Click on _[Generate API Key]_  
+6. Click on _[Generate API Key]_
    ![BTCPay Joomla VirtueMart: API Keys Save](./img/virtuemart/btcpay-vm--10-permissions-set.png)
-7. Copy the generated API Key to your _VirtueMart BTCPay Payment Method Settings_ form  
+7. Copy the generated API Key to your _VirtueMart BTCPay Payment Method Settings_ form
    ![BTCPay Joomla VirtueMart: Copy API Key](./img/virtuemart/btcpay-vm--11-copy-api-key.png)
-8. Go to Settings and copy the store ID to your _VirtueMart BTCPay Payment Method Settings_ form  
+8. Go to Settings and copy the store ID to your _VirtueMart BTCPay Payment Method Settings_ form
    ![BTCPay Joomla VirtueMart: Copy Store ID](./img/virtuemart/btcpay-vm--12-copy-store-id.png)
-9. On the _VirtueMart BTCPay Payment Method Settings_ form make sure **BTPCay Server URL**, **API Key** and **Store ID** are set and click **[Save]**  
+9. On the _VirtueMart BTCPay Payment Method Settings_ form make sure **BTPCay Server URL**, **API Key** and **Store ID** are set and click **[Save]**
    ![BTCPay Joomla VirtueMart: Save VirtueMart Settings form](./img/virtuemart/btcpay-vm--13-save-vm-payment-method-form.png)
 
 ### 2.3 Create a webhook on BTCPay Server
@@ -180,7 +180,7 @@ Please check the details of your invoice if there were any errors on sending the
 
 You can check and verify yourself if there is something blocking requests to your site in one of these two ways:
 
-**1. Copy webhook callback URL**  
+**1. Copy webhook callback URL**
 go to your _VirtueMart BTCPay Payment Method Settings_ and copy the "Webhook callback URL". e.g. `https://EXAMPLE.COM/index.php?option=com_virtuemart&view=pluginresponse&task=pluginnotification&pm=2`
 
 ![BTCPay Joomla VirtueMart: Webhook payload URL](./img/virtuemart/btcpay-vm--18-troubleshoot-copy-callback-url.png)

@@ -32,19 +32,19 @@ The following setup guides you through setting up an entirely new Bech32(SegWit)
 
 Firstly, give your wallet a name, for example, `BTCPay Server Wallet` and click `Next`.
 
-![ElectrumWallet](./img/ElectrumWallet1.png 'Create Electrum Wallet')
+![ElectrumWallet](./img/ElectrumWallet1.png)
 
 Choose `Standard wallet` and proceed by clicking the `Next`button.
 
-![ElectrumWallet](./img/ElectrumWallet2.png 'Choose Standard Wallet in Electrum')
+![ElectrumWallet](./img/ElectrumWallet2.png)
 
 Since we're creating a brand-new wallet,choose `Create a new seed` and `Next`
 
-![ElectrumWallet](./img/ElectrumWallet3.png 'Generate a new seed in Electrum')
+![ElectrumWallet](./img/ElectrumWallet3.png)
 
 From the multiple choice menu, select `SegWit` and `Next`
 
-![ElectrumWallet](./img/ElectrumWallet4.png 'Choose Segwit seed type in Electrum')
+![ElectrumWallet](./img/ElectrumWallet4.png)
 
 **IMPORTANT NOTE:** If you're a merchant, instead of SegWit (Bech32), it's recommended to use SegWit wrapped (P2SH) format. [This guide](https://www.youtube.com/watch?v=-1DBJWwA2Cw) explains how to create P2SH wallet in Electrum that's more suited for merchants, due to compatability with legacy wallets customers use.
 
@@ -54,7 +54,7 @@ Copy and paste your seed words to complete your wallet creation in Electrum. You
 
 Follow along in the video below on how to import into BTCPay Server.
 
-[![BTCPay Server - How to import wallet file](https://img.youtube.com/vi/kf3BHaQWSAc/mqdefault.jpg 'BTCPay Server - How to import wallet file')](https://www.youtube.com/watch?v=kf3BHaQWSAc 'BTCPay Server - How to import wallet file')
+[![BTCPay Server - How to import wallet file](https://img.youtube.com/vi/kf3BHaQWSAc/mqdefault.jpg)](https://www.youtube.com/watch?v=kf3BHaQWSAc)
 
 ### Alternative Setup
 
@@ -69,15 +69,15 @@ Instead of importing a wallet file you can instead transfer the public key to yo
 
 When the wallet loads (it may take few moments), in the top menu, click on the `Wallet` and then`Information` .
 
-![ElectrumWallet](./img/ElectrumWallet9.png 'Electrum Wallet Information')
+![ElectrumWallet](./img/ElectrumWallet9.png)
 
 Select and **copy** the `Master Public Key`. This is the **public** key from which BTCPay will derive addresses.
 
-![ElectrumWallet](./img/ElectrumWallet10.png 'Copy Electrum master public key')
+![ElectrumWallet](./img/ElectrumWallet10.png)
 
 Return to your BTCPay Server. Click on the `Bitcoin` in the left menu or `Set up a wallet` on your new dashboard.
 
-![ElectrumWallet](./img/electrum/btcpayWalletImport1.jpg 'Set up your wallet')
+![ElectrumWallet](./img/electrum/btcpayWalletImport1.jpg)
 
 Click `Connect an existing wallet`
 
@@ -89,19 +89,19 @@ Now click on the `Enter extended public key` option to import your key.
 
 Paste the `Master Public Key` into derivation scheme field as it is, without adding anything else. Make sure that `Enabled` checkbox is ticked and click `Continue`.
 
-![ElectrumWallet](./img/createwallet/SetupWalletXpub.png 'Paste the xpub key and enable the wallet')
+![ElectrumWallet](./img/createwallet/SetupWalletXpub.png)
 
 Return to the **Electrum Wallet**. Go to `Receive tab` which shows your wallet receiving address.
 
 **Compare the address you see in Electrum Wallet to Addresses shown in BTCPay Server**. If there's a match, `continue`. If there is no match, double-check that you're actually pasting `Master Public Key`.
 
-![ElectrumWallet](./img/ElectrumWallet11.png 'Compare Electrum Wallet and BTCPay Server addresses')
+![ElectrumWallet](./img/ElectrumWallet11.png)
 
 ### Configuring the Gap Limit in Electrum
 
 In the top menu, click on the `View` and then`Show Console` .
 
-![ElectrumWallet](./img/ElectrumWallet11a.png 'Show Electrum Wallet console')
+![ElectrumWallet](./img/ElectrumWallet11a.png)
 
 Enter following commands in Electrum console and press `enter`on your keyboard.
 
@@ -115,7 +115,7 @@ If you are running a version older than Electrum 4, also enter the following com
 wallet.storage.write()
 ```
 
-![ElectrumWallet](./img/ElectrumWallet12.png 'Electrum Wallet console')
+![ElectrumWallet](./img/ElectrumWallet12.png)
 
 Restart your Electrum and verify that the newly set gap limit is correct by entering in the console:
 

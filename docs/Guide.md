@@ -4,15 +4,15 @@
 
 BTCPay Server is a free, open-source & self-hosted bitcoin payment gateway that allows self-sovereign individuals and businesses to accept bitcoin payments online or in person without any fees.
 
-![BTCPay Server](./img/BTCPayServerScreenshot.png 'BTCPay Server')
+![BTCPay Server](./img/BTCPayServerScreenshot.png)
 
 ## How BTCPay Server works?
 
 BTCPay Server is a self-hosted and automated invoicing system. At checkout, a customer is presented with an invoice that they pay from their wallet. BTCPay Server follows the status of the invoice through the blockchain and informs you when the payment has been settled so that you can fulfill the order. It also takes care of payment refunding and bitcoin management alongside plenty of other features.
 
-[![How BTCPay Works](https://img.youtube.com/vi/nr0UNbz3AoQ/mqdefault.jpg)](https://www.youtube.com/watch?v=nr0UNbz3AoQ 'How BTCPay Server Works')
+[![How BTCPay Works](https://img.youtube.com/vi/nr0UNbz3AoQ/mqdefault.jpg)](https://www.youtube.com/watch?v=nr0UNbz3AoQ)
 
-[![BTCPay Server Simply Explained](https://img.youtube.com/vi/dbX6qWZlxOw/mqdefault.jpg)](https://www.youtube.com/watch?v=dbX6qWZlxOw 'BTCPay Server Simply Explained')
+[![BTCPay Server Simply Explained](https://img.youtube.com/vi/dbX6qWZlxOw/mqdefault.jpg)](https://www.youtube.com/watch?v=dbX6qWZlxOw)
 
 BTCPay Server is free to use and completely open-source, so developers or security auditors can always inspect the quality of the code.
 
@@ -52,7 +52,7 @@ Contributing to an open-source project is a great way to learn, network, and bui
 
 If you're interested in helping out with documentation, look at the video below.
 
-[![Contributing to Documentation](https://img.youtube.com/vi/bSDROcdSSWw/mqdefault.jpg)](https://www.youtube.com/watch?v=bSDROcdSSWw 'How BTCPay Server Works')
+[![Contributing to Documentation](https://img.youtube.com/vi/bSDROcdSSWw/mqdefault.jpg)](https://www.youtube.com/watch?v=bSDROcdSSWw)
 
 ## Support
 

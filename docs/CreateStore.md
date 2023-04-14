@@ -6,7 +6,7 @@ Inside BTCPay Server, an unlimited number of stores can be created. Each store n
 
 To **create a store**, make sure you're logged in into your account, and go to > **Stores** in the upper navigation menu. Click on the **create a new store** button. Enter the store name into the text field and click `Create`.
 
-![BTCPayRegister2](./img/BTCPayGettingStartedStoreRegistration1.jpg 'Create a new store in BTCPay Server')
+![BTCPayRegister2](./img/BTCPayGettingStartedStoreRegistration1.jpg)
 
 ## Customizing your BTCPay Store Settings
 

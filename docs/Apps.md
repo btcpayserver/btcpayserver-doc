@@ -18,7 +18,7 @@ To create an app, go to Apps > Create a new app. Apps are store-dependent, which
 
 The **web-based PoS app** allows users with brick and mortar stores to readily **accept cryptocurrencies without fees or a third-party**, directly to their wallet. The **PoS** can be displayed easily on tablets or any other devices which support web browsing. Users can easily create a homescreen shortcut for a quick access to the web-app.
 
-![BTCPay Pos](./img/BTCPayPointOfSale1.jpg 'BTCPay Pos')
+![BTCPay Pos](./img/BTCPayPointOfSale1.jpg)
 
 Adding new products is easy. The app has a **shopping cart feature**, **tips**, **product inventory**, **custom payment options** and more.
 
@@ -55,7 +55,7 @@ You can change the appearance of your **Point of Sale app** by following the [th
 7. Click "Save Settings".
 8. Click "View App" to view your Crowdfund (Contributors can access the crowdfund through that link).
 
-[![BTCPay Server Crowdfunding](https://img.youtube.com/vi/tFbfyneDj88/mqdefault.jpg)](https://www.youtube.com/watch?v=tFbfyneDj88 'BTCPay Server Crowdfunding')
+[![BTCPay Server Crowdfunding](https://img.youtube.com/vi/tFbfyneDj88/mqdefault.jpg)](https://www.youtube.com/watch?v=tFbfyneDj88)
 
 If you would like to provide digital or physical products to the backers of your **crowdfunding campaign**, you can [integrate WooCommerce store into it](./FAQ/Apps.md#how-to-integrate-woocommerce-store-into-a-btcpay-crowdfund-app). You can also set limits on contribution perks using the inventory feature.
 
@@ -68,7 +68,7 @@ Easily-embeddable HTML and highly-customizable **payment buttons** allow users t
 3. Customize your button.
 4. Copy the generated form and embed it on your website.
 
-[![BTCPay Server Payment Buttons](https://img.youtube.com/vi/MIWGvl6_WzI/mqdefault.jpg)](https://www.youtube.com/watch?v=MIWGvl6_WzI 'BTCPay Server Payment Button')
+[![BTCPay Server Payment Buttons](https://img.youtube.com/vi/MIWGvl6_WzI/mqdefault.jpg)](https://www.youtube.com/watch?v=MIWGvl6_WzI)
 
 ## Lightning Network Apps (Lapps)
 
@@ -78,8 +78,8 @@ BTCPay exposes all the necessary information required to connect your internal *
 
 Below are videos that showcase how to connect some of the lapps to BTCPay.
 
-[![c-lightningbtcpay1](https://img.youtube.com/vi/6EHNq1anD1k/mqdefault.jpg)](https://www.youtube.com/watch?v=6EHNq1anD1k 'BTCPay Server - c-lightning and lapps intro')
+[![c-lightningbtcpay1](https://img.youtube.com/vi/6EHNq1anD1k/mqdefault.jpg)](https://www.youtube.com/watch?v=6EHNq1anD1k)
 
-[![c-lightningbtcpay2](https://img.youtube.com/vi/ZbM3jcxau0o/mqdefault.jpg)](https://www.youtube.com/watch?v=ZbM3jcxau0o 'BTCPay Server - c-lightning and lapps publisher')
+[![c-lightningbtcpay2](https://img.youtube.com/vi/ZbM3jcxau0o/mqdefault.jpg)](https://www.youtube.com/watch?v=ZbM3jcxau0o)
 
-[![c-lightningbtcpay3](https://img.youtube.com/vi/EYrsU3LGpbI/mqdefault.jpg)](https://www.youtube.com/watch?v=EYrsU3LGpbI 'BTCPay Server - c-lightning and lapps woo lightning')
+[![c-lightningbtcpay3](https://img.youtube.com/vi/EYrsU3LGpbI/mqdefault.jpg)](https://www.youtube.com/watch?v=EYrsU3LGpbI)

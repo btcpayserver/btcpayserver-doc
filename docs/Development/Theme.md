@@ -8,7 +8,7 @@ Learn more about the [standard design specifications used in BTCPay](https://des
 **BTCPay Server currently has several built-in themes** available for server admins.
 Selecting a theme in Server Settings will modify the **appearance** of the entire server (for all users) without having to make any code changes or additional customizations.
 
-![BTCPay Server Theme](../img/ThemeDarkLight.gif 'BTCPay Server Theme')
+![BTCPay Server Theme](../img/ThemeDarkLight.gif)
 
 There are two other approaches to customizing the theme of your BTCPay Server.
 
@@ -25,11 +25,11 @@ You should copy one of our [predefined themes](https://github.com/btcpayserver/b
 To test and play around with the adjustments, you can also use the developer tools of the browser:
 Inspect the `<html>` element and modify the variables in the `:root` section of the styles inspector:
 
-![Theme customizations](../img/ThemeCustomization.gif 'BTCPay Server Theme Customizations')
+![Theme customizations](../img/ThemeCustomization.gif)
 
 Once you are done with your modifications, you can upload and reference it in the "Custom theme CSS file" field.
 
-![Theme settings](../img/ThemeSettings.png 'BTCPay Server Theme Settings')
+![Theme settings](../img/ThemeSettings.png)
 
 ### Developing and extending a custom theme
 
@@ -89,7 +89,7 @@ The Bootstrap theme options are another approach of providing customizations, le
 
 [Bootswatch](https://bootswatch.com/) offers lots of custom theme maintained by the Bootstrap community.
 
-![Bootswatch](../img/Bootswatch.png 'Bootswatch')
+![Bootswatch](../img/Bootswatch.png)
 
 Please note that this approach works best when used with the Classic theme described above.
 
@@ -97,15 +97,15 @@ If you want to change this theme, find a theme on [Bootswatch](https://bootswatc
 
 Copy the link of the theme:
 
-![CopyBootswatch](../img/CopyBootswatch.png 'Copy Bootswatch')
+![CopyBootswatch](../img/CopyBootswatch.png)
 
 Now, go into the settings of your store and paste the link to customize the bootstrap theme:
 
-![ModifyBootstrap](../img/ModifyBootstrap.png 'Modify Bootstrap')
+![ModifyBootstrap](../img/ModifyBootstrap.png)
 
 And enjoy a new theme!
 
-![CustomTheme](../img/CustomTheme.png 'Custom Theme')
+![CustomTheme](../img/CustomTheme.png)
 
 ## Checkout page themes
 
@@ -119,7 +119,7 @@ Below are examples of businesses that use custom-made checkout themes.
 
 ### [Andreas M. Antonopolous](https://aantonop.com/)
 
-![Aantonop checkout](../img/Theme-AantonopShop.png 'Aantonop BTCPay Checkout')\
+![Aantonop checkout](../img/Theme-AantonopShop.png)\
 _**Made by:** [@artdesignbySF](https://twitter.com/artdesignbySF) / <artdesignbySF@protonmail.com>_
 
 <details>

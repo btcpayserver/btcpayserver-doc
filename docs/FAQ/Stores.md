@@ -125,7 +125,7 @@ BTCPay Server built-in [Payment Request](../PaymentRequests.md) functionality al
 The customer gets a nicely designed payment request page which allows them to pay you at their convenience, where as the bitcoin conversion rate will always be up to date with the currency of your choice
 When the payment is made customers can print out the payment request for bookkeeping purposes.
 
-[![BTCPay Server Payment Requests](https://img.youtube.com/vi/j6CvwDPvfzQ/mqdefault.jpg)](https://www.youtube.com/watch?v=j6CvwDPvfzQ 'BTCPay Server Payment Requests')
+[![BTCPay Server Payment Requests](https://img.youtube.com/vi/j6CvwDPvfzQ/mqdefault.jpg)](https://www.youtube.com/watch?v=j6CvwDPvfzQ)
 
 You can learn more about this functionality on a dedicated [payment request page](../PaymentRequests.md)
 

@@ -15,7 +15,7 @@ An **invoice** is a document issued by the seller to a buyer to collect payment.
 
 In BTCPay Server, an invoice represents a document that must be paid within a **defined time interval** at a fixed exchange rate. Invoices have expiration because they lock the exchange rate within a specified time frame to protect the receiver from price fluctuations.
 
-![Invoices](./img/invoice/Invoices.png 'BTCPay Server invoices')
+![Invoices](./img/invoice/Invoices.png)
 
 The core of BTCPay Server is the ability to act as a bitcoin invoice management system. An invoice is an essential tool for keeping track and managing a received payment.
 
@@ -57,7 +57,7 @@ Invoice information is created automatically based on invoice status, exchange r
 
 Invoices can be filtered via the quick filters located next to the search button or the advanced filters, which can be toggled by clicking the (Help) link on the top. Users can **filter invoices** by store, order id, item id, status, or date.
 
-![Invoice Filtering](./img/invoice/InvoiceFiltering.gif 'Filter BTCPay Server invoices')
+![Invoice Filtering](./img/invoice/InvoiceFiltering.gif)
 
 ### Invoice export
 

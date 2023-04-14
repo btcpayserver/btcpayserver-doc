@@ -19,7 +19,7 @@ This is the concept of `Pull payment`. This allows several new applications such
 
 You can also follow this video:
 
-[![What is a pull payment](https://img.youtube.com/vi/-e8lPd9NtPs/mqdefault.jpg)](https://www.youtube.com/watch?v=-e8lPd9NtPs 'What is a pull payment')
+[![What is a pull payment](https://img.youtube.com/vi/-e8lPd9NtPs/mqdefault.jpg)](https://www.youtube.com/watch?v=-e8lPd9NtPs)
 
 ## Concept
 
@@ -93,16 +93,16 @@ The user interface only allows a subset of what is possible.
 ### Create a pull payment
 
 1. Go to your wallet page / pull payments
-   ![BTCPay Server Pull Payment](./img/pull-payments/1.jpg 'BTCPay Server Pull Payment')
+   ![BTCPay Server Pull Payment](./img/pull-payments/1.jpg)
 2. Click on `Create a new pull payment`
-   ![BTCPay Server Pull Payment](./img/pull-payments/2.jpg 'BTCPay Server Pull Payment')
+   ![BTCPay Server Pull Payment](./img/pull-payments/2.jpg)
 3. Fill out the pull payment information, click `Create`
-   ![BTCPay Server Pull Payment](./img/pull-payments/3.jpg 'BTCPay Server Pull Payment')
+   ![BTCPay Server Pull Payment](./img/pull-payments/3.jpg)
 4. Go to the pull payment page by clicking on `View`
 5. Share this page with the payment receiver
-   ![BTCPay Server Pull Payment](./img/pull-payments/4.png 'BTCPay Server Pull Payment')
+   ![BTCPay Server Pull Payment](./img/pull-payments/4.png)
 6. As the receiver, fill out how much `USD` you claim, and to which address the money should be sent.
-   ![BTCPay Server Pull Payment](./img/pull-payments/5.png 'BTCPay Server Pull Payment')
+   ![BTCPay Server Pull Payment](./img/pull-payments/5.png)
 
 ### Approve and pay a payout
 
