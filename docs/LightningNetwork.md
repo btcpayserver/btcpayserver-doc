@@ -182,7 +182,7 @@ cd btcpayserver-docker
 }
 ```
 
-Once your on-chain lightning node is funded you, it's time to connect to other nodes on the network and open payment channels.
+Once your on-chain lightning node is funded, it's time to connect to other nodes on the network and open payment channels.
 \
 Check out [Payment channels](./LightningNetwork_PaymentChannels.md) for recommendations on opening payment channels, liquidity management and more.
 
