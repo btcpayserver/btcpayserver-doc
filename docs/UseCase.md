@@ -23,7 +23,7 @@ Below are the most common use cases for BTCPay Server:
 - **Exchanges** offering instant conversions for the users of BTCPay Server
 - **Hosting providers** offering BTCPay as a cloud service or ready-to-use hardware.
 
-![BTCPay UseCase Infographic](./img/infographics/BTCPayUseCaseInfographic.png)
+![BTCPay UseCase Infographic](./img/infographics/BTCPayUseCasev2-1.png)
 
 The software usage is by no means limited to the groups of users mentioned in this document.
 
