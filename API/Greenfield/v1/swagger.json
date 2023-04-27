@@ -6941,7 +6941,7 @@
           "x-position": 1
         },
         "responses": {
-          "201": {
+          "200": {
             "description": "The email was sent (scheduled) successfully"
           },
           "400": {
@@ -12539,6 +12539,11 @@
             "nullable": true,
             "description": "Default payment type for the invoice (e.g., BTC, BTC-LightningNetwork). Default payment method set for the store is used if this parameter is not specified."
           },
+          "lazyPaymentMethods": {
+            "type": "boolean",
+            "nullable": true,
+            "description": "If true, payment methods are enabled individually upon user interaction in the invoice. Default to store's settings'"
+          },
           "expirationMinutes": {
             "nullable": true,
             "description": "The number of minutes after which an invoice becomes expired. Defaults to the store's settings. (The default store settings is 15)",
@@ -13944,12 +13949,12 @@
         "properties": {
           "lnurlBech32": {
             "type": "string",
-            "description": "Bech32 representation of LNRURL",
+            "description": "Bech32 representation of LNURL",
             "example": "lightning:lnurl1dp68gup69uhnzv3h9cczuvpwxyarzdp3xsez7sj5gvh42j2vfe24ynp0wa5hg6rywfshwtmswqhngvntdd6x6uzvx4jrvu2kvvur23n8v46rwjpexcc45563fn53w7"
           },
           "lnurlUri": {
             "type": "string",
-            "description": "Bech32 representation of LNURL",
+            "description": "URI representation of LNURL",
             "example": "lnurlw://example.com/BTC/UILNURL/withdraw/pp/42kktmpL5d6qVc85Fget7H961ZSQ"
           }
         }
@@ -14081,6 +14086,11 @@
           "fromDisplay": {
             "type": "string",
             "description": "The name of the sender"
+          },
+          "disableCertificateCheck": {
+            "type": "boolean",
+            "default": false,
+            "description": "Disable TLS certificate security checks"
           }
         }
       },
@@ -14155,10 +14165,6 @@
             "type": "string",
             "description": "The lightning connection string. Set to 'Internal Node' to use the internal node. (See [this doc](https://github.com/btcpayserver/BTCPayServer.Lightning/blob/master/README.md#examples) for some example)",
             "example": "type=clightning;server=..."
-          },
-          "disableBOLT11PaymentOption": {
-            "type": "boolean",
-            "description": "Whether to disable generation of bolt11 invoices. Useful when wanting to only use LNURL Pay exclusively."
           }
         }
       },
@@ -14215,10 +14221,6 @@
           "useBech32Scheme": {
             "type": "boolean",
             "description": "Whether to use [LUD-01](https://github.com/fiatjaf/lnurl-rfc/blob/luds/01.md)'s bech32 format or to use [LUD-17](https://github.com/fiatjaf/lnurl-rfc/blob/luds/17.md) url formatting. "
-          },
-          "enableForStandardInvoices": {
-            "type": "boolean",
-            "description": "Whether to allow this payment method to also be used for standard invoices and not just top-up invoices."
           },
           "lud12Enabled": {
             "type": "boolean",
