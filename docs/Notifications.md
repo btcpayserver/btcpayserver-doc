@@ -89,7 +89,6 @@ Possible placeholder's we currently offer are as follows :
 ```
             {Invoice.Id}
             {Invoice.StoreId}
-            {Invoice.StoreId}
             {Invoice.Price}
             {Invoice.Currency}
             {Invoice.Status}
