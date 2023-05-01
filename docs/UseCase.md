@@ -81,7 +81,7 @@ You can read more about address reuse on the [Bitcoin Wiki](https://en.bitcoin.i
 
 ## Developers
 
-By deploying an instance, developers get a full tech stack to develop on top of Bitcoin. They can build things using the [Greenfield API](API/Greenfield/v1/) or build free or premium plugins for BTCPay users. Since BTCPay is an open-source organization, they can also get involved and [contribute](/Contribute.md) and help us improve the software.
+By deploying an instance, developers get a full tech stack to develop on top of Bitcoin. They can build things using the [Greenfield API](https://docs.btcpayserver.org/API/Greenfield/v1/) or build free or premium plugins for BTCPay users. Since BTCPay is an open-source organization, they can also get involved and [contribute](/Contribute.md) and help us improve the software.
 
 ## Local communities
 
