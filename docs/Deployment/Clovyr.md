@@ -5,7 +5,7 @@ Clovyr offers a quick and easy deployment of a variety of services, including BT
 
 ## 1. Visit the Clovyer BTCPay Server launch page
 
-Go to https://clovyr.app/apps/btcpayserver/launch
+Go to [the Clovyer BTCPay Server launch page](https://clovyr.app/apps/btcpayserver/launch)
 
 ![Clovyr Launch](../img/Clovyr/1.png)
 
