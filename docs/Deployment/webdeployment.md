@@ -39,6 +39,12 @@ For more details on `Voltage Cloud` click [here](./voltagecloud.md)
 Now out of their North American location, they have started hosting BTCPay Server as a service.
 With 24/7 support and a future of multiple locations of hosting check `Dreamlab Networks` BTCPay Server setup guide [here](./DreamlabNetwork.md)
 
+### Clovyr
+
+[Clovyr](https://clovyr.app/) is an application deployment service.
+They allow deploying services, including BTCPay Server, either to their own servers, or to a variety of other VPS providers, such as Digital Ocean, AWS, and Linode.
+For more details on `Clovyr` click [here](./Clovyr.md)
+
 ## Missing deployments?
 
 As we are a FOSS project, we might miss certain deployments.
