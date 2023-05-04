@@ -4,7 +4,7 @@ exports[`preprocessMarkdown replaces YouTube links 1`] = `
 "
 Take a look at how BTCPay works in a video below.
 
-<a href="https://www.youtube.com/watch?v=nr0UNbz3AoQ" class="ytEmbed" data-id="nr0UNbz3AoQ" style="background-image:url(https://img.youtube.com/vi/nr0UNbz3AoQ/hqdefault.jpg);">
+<a href="https://www.youtube.com/watch?v=nr0UNbz3AoQ" title="YouTube" class="ytEmbed" data-id="nr0UNbz3AoQ" style="background-image:url(https://img.youtube.com/vi/nr0UNbz3AoQ/hqdefault.jpg);">
   <iframe
     title="YouTube"
     data-src="https://www.youtube-nocookie.com/embed/nr0UNbz3AoQ?&autoplay=1&autohide=1&modestbranding=1&color=white&rel=0"
@@ -18,9 +18,21 @@ Here is a presentation of the global architecture at Advancing Bitcoin conferenc
 
 Short link:
 
-<a href="https://youtu.be/-e8lPd9NtPs" class="ytEmbed" data-id="-e8lPd9NtPs" style="background-image:url(https://img.youtube.com/vi/-e8lPd9NtPs/hqdefault.jpg);">
+<a href="https://youtu.be/-e8lPd9NtPs" title="What is a pull payment" class="ytEmbed" data-id="-e8lPd9NtPs" style="background-image:url(https://img.youtube.com/vi/-e8lPd9NtPs/hqdefault.jpg);">
   <iframe
-    title="YouTube"
+    title="What is a pull payment"
+    data-src="https://www.youtube-nocookie.com/embed/-e8lPd9NtPs?&autoplay=1&autohide=1&modestbranding=1&color=white&rel=0"
+    frameborder="0"
+    allow="autoplay;encrypted-media;picture-in-picture"
+    allowfullscreen
+  ></iframe>
+</a>
+
+Other link with different title:
+
+<a href="https://youtu.be/-e8lPd9NtPs" title="What is a &quot;pull payment&quot;" class="ytEmbed" data-id="-e8lPd9NtPs" style="background-image:url(https://img.youtube.com/vi/-e8lPd9NtPs/hqdefault.jpg);">
+  <iframe
+    title="What is a &quot;pull payment&quot;"
     data-src="https://www.youtube-nocookie.com/embed/-e8lPd9NtPs?&autoplay=1&autohide=1&modestbranding=1&color=white&rel=0"
     frameborder="0"
     allow="autoplay;encrypted-media;picture-in-picture"

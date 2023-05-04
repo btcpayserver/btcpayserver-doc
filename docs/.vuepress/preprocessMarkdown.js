@@ -69,8 +69,10 @@ const replaceExternalRepoLinks = (source, externalRepoUrl, resourcePath) => {
 
 const replaceYouTubeLinks = source =>
   source.replace(
-    /\[(!.*)\]\((.*(youtube\.com\/watch|youtu\.be).*?)(?:\s"(.*?)")?\)/gi,
-    (all, preview, url, text) => {
+    /\[(!.*)\]\((.*(youtube\.com\/watch|youtu\.be).*?)(?:\s(["'])(.*?)\4)?\)/gi,
+    (all, preview, url, _1, _2, text) => {
+      const [, alt] = preview.match(/\[(.*)\]/)
+      const title = (text || alt || 'YouTube').replace(/"/g, '&quot;').replace(/'/g, '&apos;')
       const [, query] = url.match(/\?(.*)/) || url.match(/.*youtu\.be\/(.*)/)
       const params = query.split('&').reduce((res, param) => {
         let [key, val] = param.split('=')
@@ -84,9 +86,9 @@ const replaceYouTubeLinks = source =>
       const path = t ? `${v}?start=${t}` : `${v}?`
 
       return `
-<a href="${url}" class="ytEmbed" data-id="${v}" style="background-image:url(https://img.youtube.com/vi/${v}/hqdefault.jpg);">
+<a href="${url}" title="${title}" class="ytEmbed" data-id="${v}" style="background-image:url(https://img.youtube.com/vi/${v}/hqdefault.jpg);">
   <iframe
-    title="YouTube"
+    title="${title}"
     data-src="https://www.youtube-nocookie.com/embed/${path}&autoplay=1&autohide=1&modestbranding=1&color=white&rel=0"
     frameborder="0"
     allow="autoplay;encrypted-media;picture-in-picture"
