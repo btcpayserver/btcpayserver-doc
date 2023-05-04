@@ -16,7 +16,10 @@ Take a look at how BTCPay works in a video below.
 Here is a presentation of the global architecture at Advancing Bitcoin conference.
 
 Short link:
-[![What is a pull payment](https://img.youtube.com/vi/-e8lPd9NtPs/mqdefault.jpg)](https://youtu.be/-e8lPd9NtPs "What is a pull payment")`
+[![What is a pull payment](https://img.youtube.com/vi/-e8lPd9NtPs/mqdefault.jpg)](https://youtu.be/-e8lPd9NtPs "What is a pull payment")
+
+Other link with different title:
+[![What is a pull payment](https://img.youtube.com/vi/-e8lPd9NtPs/mqdefault.jpg)](https://youtu.be/-e8lPd9NtPs 'What is a "pull payment"')`
 
     expect(pp(md)).toMatchSnapshot()
   })

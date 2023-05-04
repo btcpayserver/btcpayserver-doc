@@ -3,6 +3,7 @@ const include = require('markdown-it-include')
 const implicitFigures = require('markdown-it-implicit-figures')
 const slugify = require('./slugify')
 const preprocessMarkdown = resolve(__dirname, 'preprocessMarkdown')
+const imageAltToTitlePlugin = require('./imageAltToTitlePlugin')
 
 const title = 'BTCPay Server'
 const baseUrl = 'https://docs.btcpayserver.org'
@@ -421,6 +422,7 @@ module.exports = {
     extendMarkdown(md) {
       md.use(implicitFigures)
       md.use(include, { root: resolve(__dirname, 'includes') })
+      md.use(imageAltToTitlePlugin)
     },
     pageSuffix,
     slugify
