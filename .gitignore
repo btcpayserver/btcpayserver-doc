@@ -13,8 +13,11 @@
 /docs/Zapier
 /docs/LNbank
 /docs/LNDhubAPI
+/docs/Nostr
 /docs/PodServer
+/docs/TicketTailor
 /docs/Trocador
+/docs/Wabisabi
 /docs/.vuepress/public/API/Greenfield/**/*.json
 
 # Files copied from external repos

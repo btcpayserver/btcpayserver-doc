@@ -16,6 +16,7 @@ LNBANK_DIR="$BASE_DIR/deps/lnbank"
 PODSERVER_DIR="$BASE_DIR/deps/podserver"
 TROCADOR_DIR="$BASE_DIR/deps/trocador"
 LNDHUBAPI_DIR="$BASE_DIR/deps/lndhub-api"
+KUKKS_DIR="$BASE_DIR/deps/kukks"
 
 update_external() {
   file="$1"
@@ -167,7 +168,6 @@ for file in "$DOCS_DIR"/Transmuter/*.md; do
   update_external "$file" https://github.com/btcpayserver/btcTransmuter "$DOCS_DIR"/Transmuter/
 done
 
-
 # Zapier
 
 echo "Setup dependency: Zapier"
@@ -290,4 +290,44 @@ cd "$TROCADOR_DIR"
 cp -r README.md "$DOCS_DIR/Trocador"
 for file in "$DOCS_DIR"/Trocador/*.md; do
   update_external "$file" https://github.com/saltrafael/trocador-plugin "$DOCS_DIR"/Trocador/
+done
+
+# Kukks' plugins
+
+echo "Setup dependency: Kukks' plugins"
+
+rm -rf "$KUKKS_DIR"
+rm -rf "$DOCS_DIR/TicketTailor" "$DOCS_DIR/Nostr" "$DOCS_DIR/Wabisabi"
+mkdir -p "$DOCS_DIR/TicketTailor" "$DOCS_DIR/Nostr" "$DOCS_DIR/Wabisabi"
+
+if [ ! -d "$KUKKS_DIR" ]; then
+  git clone --depth 1 https://github.com/Kukks/BTCPayServerPlugins.git "$KUKKS_DIR"
+fi
+
+cd "$KUKKS_DIR"
+
+cd "Plugins/BTCPayServer.Plugins.Wabisabi"
+
+cp -r readme.md docs/* "$DOCS_DIR/Wabisabi"
+sed -ie 's$docs/$./$g' "$DOCS_DIR/Wabisabi/readme.md"
+for file in "$DOCS_DIR"/Wabisabi/*.md; do
+  update_external "$file" https://github.com/Kukks/BTCPayServerPlugins/tree/master/Plugins/BTCPayServer.Plugins.Wabisabi "$DOCS_DIR"/Wabisabi/
+done
+
+cd -
+
+cd "Plugins/BTCPayServer.Plugins.TicketTailor"
+
+cp -r README.md "$DOCS_DIR/TicketTailor"
+for file in "$DOCS_DIR"/TicketTailor/*.md; do
+  update_external "$file" https://github.com/Kukks/BTCPayServerPlugins/tree/master/Plugins/BTCPayServer.Plugins.TicketTailor "$DOCS_DIR"/TicketTailor/
+done
+
+cd -
+
+cd "Plugins/BTCPayServer.Plugins.NIP05"
+
+cp -r readme.md "$DOCS_DIR/Nostr"
+for file in "$DOCS_DIR"/Nostr/*.md; do
+  update_external "$file" https://github.com/Kukks/BTCPayServerPlugins/tree/master/Plugins/BTCPayServer.Plugins.NIP05 "$DOCS_DIR"/Nostr/
 done

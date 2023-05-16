@@ -127,8 +127,11 @@ const sidebarUserGuide = [
         ]
       },
       ['/LNDhubAPI/', 'LNDhub API'],
+      ['/Nostr/', 'Nostr'],
       ['/PodServer/', 'PodServer'],
-      ['/Trocador/', 'Trocador']
+      ['/TicketTailor/', 'TicketTailor'],
+      ['/Trocador/', 'Trocador'],
+      ['/Wabisabi/', 'Wabisabi Coinjoin']
     ]
   },
   {
