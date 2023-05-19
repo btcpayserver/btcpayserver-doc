@@ -10,9 +10,12 @@ const EXTERNAL_DOCS = {
   Transmuter: 'https://github.com/btcpayserver/btcTransmuter',
   Zapier: 'https://github.com/btcpayserver/zapier',
   LNbank: 'https://github.com/dennisreimann/btcpayserver-plugin-lnbank',
-  PodServer: 'https://github.com/dennisreimann/btcpayserver-plugin-podserver',
   LNDhubAPI: 'https://github.com/dennisreimann/btcpayserver-plugin-lndhub-api',
-  Trocador: 'https://github.com/saltrafael/trocador-plugin'
+  Nostr: 'https://github.com/Kukks/BTCPayServerPlugins/tree/master/Plugins/BTCPayServer.Plugins.NIP05',
+  PodServer: 'https://github.com/dennisreimann/btcpayserver-plugin-podserver',
+  TicketTailor: 'https://github.com/Kukks/BTCPayServerPlugins/tree/master/Plugins/BTCPayServer.Plugins.TicketTailor',
+  Trocador: 'https://github.com/saltrafael/trocador-plugin',
+  Wabisabi: 'https://github.com/Kukks/BTCPayServerPlugins/tree/master/Plugins/BTCPayServer.Plugins.Wabisabi'
 }
 
 const replaceExternalRepoLinks = (source, externalRepoUrl, resourcePath) => {
