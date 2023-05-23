@@ -16,9 +16,11 @@
 
 ### On the host (your BTCPay Server instance)
 
-Check for an ssh public key:
-
 ```bash
+# switch to root user (if not logged in as root)
+sudo su -
+
+# check for an existing ssh public key
 cat ~/.ssh/*.pub
 ```
 
