@@ -2,13 +2,13 @@
 
 BTCPay Server's Forms Builder enables you to request specific information from your customer. 
 
-These forms are fully customizable to suit your requirements. By dragging and dropping the fields you want!
-In this introduction, we will go through the visual form builder; if you'd like to do more advanced settings, please visit the [Advanced forms](./AdvancedForms.md) section of our documentation. 
+These forms are fully customizable to suit your requirements.
+In this introduction, we will go through the visual form builder; if you'd like to do more advanced settings, please visit the [Advanced Forms](./AdvancedForms.md) section of our documentation. 
 
 ## Setting up your store's first Custom form. 
 
 In this example, we will start with creating a standard form we've pre-made. 
-Click on Store settings and the last tab of your store settings is Forms, click Forms to create your first Custom Form. 
+Click on Store Settings and the last tab of your store settings is Forms. Click Forms to create your first Custom Form. 
 
 ![BTCPay Server formbuilder - settings](./img/formbuilder/btcpayformbuilder1.png)
 
