@@ -81,7 +81,7 @@ const sidebarUserGuide = [
       ['/Payouts', 'Payouts'],
       {
         title: 'Form Builder',
-        path: '/forms',
+        path: '/Forms',
         children: [['/AdvancedForms', 'Advanced Forms']]
       },
       ['/Apps', 'Apps'],
