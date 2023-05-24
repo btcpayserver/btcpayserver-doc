@@ -13,13 +13,13 @@ Click on Store Settings and the last tab of your store settings is Forms. Click 
 ![BTCPay Server formbuilder - settings](./img/formbuilder/btcpayformbuilder1.png)
 
 On the custom forms page, click Create New Form. 
-We've pre-made two examples, shipping address and email request. 
+We've pre-made two examples, `Email` and `Address`. 
 For this example, click the Address form. 
 
 ![BTCPay Server formbuilder - Create new form](./img/formbuilder/btcpayformbuilder2.png)
 
-We can now drag around the fields pre-made fields by BTCPay Server. 
-You can re-order them or create a new field by clicking on the `Add form Element` at the bottom of the form. 
+We can now drag around the fields pre-made by BTCPay Server.  
+You can re-order them or create a new field by clicking on the `Add form element` at the bottom of the form. 
 
 ## Create a custom form.
 
