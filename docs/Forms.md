@@ -23,7 +23,7 @@ You can re-order them or create a new field by clicking on the `Add form Element
 
 ## Create a custom form.
 
-You might have a different use case, a restaurant, and you need to know the table number, how to call the customer when serving them, allergies, and special requests. 
+You might have a different use case. For example if you own a restaurant you need to know the table number, how to call the customer when serving them, allergies, and special requests. 
 
 Let's create a custom form in the following steps. 
 We will start at the same settings tab from the previous example, Store settings -> Forms.
