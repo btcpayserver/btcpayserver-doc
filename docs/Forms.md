@@ -55,15 +55,15 @@ Now that the first field is done, you can click on the `+ Add form element` belo
 
 ![BTCPay Server formbuilder - Create new form](./img/formbuilder/btcpayformbuilder3.png)
 
-The `Form Builder` makes creating custom forms flexible and easy to use. If you still require more personalization, as mentioned at the start of this guide, please read on [Advanced Forms](./AdvancedForms.md) to learn about the JSON created in the `Code` tab in the Form builder. 
+The `Form Builder` makes creating custom forms flexible and easy. If you still require more personalization, as mentioned at the start of this guide, please read on [Advanced Forms](./AdvancedForms.md) to learn about the JSON created in the `Code` tab in the Form builder. 
 
 ## Support
 
-If you have trouble using BTCPay Server, consider joining the [BTCPayServer Mattermost](https://chat.btcpayserver.org) to get help from BTCPay community members.
+If you have trouble using BTCPay Server, consider joining the [BTCPay Server Mattermost](https://chat.btcpayserver.org) to get help from BTCPay community members.
 
 Only file a [Github issue](https://github.com/btcpayserver/btcpayserver/issues) for technical issues you can't resolve through other channels or feature requests you've validated with other community members.
 
-Please check out our [official website](https://btcpayserver.org/),and [FAQ](./FAQ/README.md#btcpay-frequently-asked-questions-and-common-issues) for more details.
+Please check out our [official website](https://btcpayserver.org/) and [FAQ](./FAQ/README.md#btcpay-frequently-asked-questions-and-common-issues) for more details.
 
 !!!include(supporters.html)!!!
 
