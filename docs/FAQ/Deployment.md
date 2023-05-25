@@ -339,29 +339,16 @@ Additional documentation can be found here: [How to change your BTCPay Server do
 
 Check this [community guide](https://freedomnode.com/blog/114/how-to-setup-btc-and-lightning-payment-gateway-with-btcpayserver-on-linux-manual-install).
 
-### How do I completely uninstall BTCPay from a linux environment (docker version)
+### How do I completely uninstall BTCPay from a Linux environment (Docker version)
 
-1. Shutdown BTCPay Server (after you ensure you have required backups etc) with `btcpay-down.sh` and cleanup the install with `btcpay-clean.sh`.
-2. Change to your Base install directory `cd "$(dirname "$BTCPAY_ENV_FILE")"`
-3. Delete all volumes in /var/lib/docker/volumes/ with `docker-compose -f $BTCPAY_DOCKER_COMPOSE down --v`
-4. Remove other BTCPay system files with this: `rm /etc/systemd/system/btcpayserver.service && rm /etc/profile.d/btcpay-env.sh`
-5. Go into /usr/local/bin and remove all of the symlinks that BTCPay put in there. At the time of writing these were:
+Use the [`btcpay-teardown.sh`](https://github.com/btcpayserver/btcpayserver-docker/blob/master/btcpay-teardown.sh) script like this:
 
-```
-bitcoin-cli.sh -> /root/BTCPayServer/btcpayserver-docker/bitcoin-cli.sh
-bitcoin-lncli.sh -> /root/BTCPayServer/btcpayserver-docker/bitcoin-lncli.sh
-btcpay-admin.sh -> /root/BTCPayServer/btcpayserver-docker/btcpay-admin.sh
-btcpay-clean.sh -> /root/BTCPayServer/btcpayserver-docker/btcpay-clean.sh
-btcpay-down.sh -> /root/BTCPayServer/btcpayserver-docker/btcpay-down.sh
-btcpay-restart.sh -> /root/BTCPayServer/btcpayserver-docker/btcpay-restart.sh
-btcpay-setup.sh -> /root/BTCPayServer/btcpayserver-docker/btcpay-setup.sh
-btcpay-up.sh -> /root/BTCPayServer/btcpayserver-docker/btcpay-up.sh
-btcpay-update.sh -> /root/BTCPayServer/btcpayserver-docker/btcpay-update.sh
-changedomain.sh -> /root/BTCPayServer/btcpayserver-docker/changedomain.sh
+```bash
+sudo su -
+. ./btcpay-teardown.sh
 ```
 
-6. Remove your BTCPay installation folder with `rm -r "$(dirname "$BTCPAY_ENV_FILE")"`
-7. Just to make sure, run `docker system prune` after a reboot to get rid of any other docker related artifacts.
+This will completely erase BTCPay Server from your instance and remove the associated Docker containers and volumes.
 
 ### How to deploy BTCPay Server alongside existing Bitcoin node?
 
