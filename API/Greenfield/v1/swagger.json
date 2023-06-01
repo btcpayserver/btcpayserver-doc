@@ -2348,7 +2348,7 @@
                   },
                   "refundVariant": {
                     "type": "string",
-                    "description": "* `RateThen`: Refund the crypto currency price, at the rate the invoice got paid.\r\n* `CurrentRate`: Refund the crypto currency price, at the current rate.\r\n*`Fiat`: Refund the invoice currency, at the rate when the refund will be sent.\r\n*`Custom`: Specify the amount, currency, and rate of the refund. (see `customAmount` and `customCurrency`)",
+                    "description": "* `RateThen`: Refund the crypto currency price, at the rate the invoice got paid.\r\n* `CurrentRate`: Refund the crypto currency price, at the current rate.\r\n*`Fiat`: Refund the invoice currency, at the rate when the refund will be sent.\r\n*`OverpaidAmount`: Refund the crypto currency amount that was overpaid.\r\n*`Custom`: Specify the amount, currency, and rate of the refund. (see `customAmount` and `customCurrency`)",
                     "x-enumNames": [
                       "CurrentRate",
                       "Custom",
@@ -2359,8 +2359,15 @@
                       "CurrentRate",
                       "Custom",
                       "Fiat",
+                      "OverpaidAmount",
                       "RateThen"
                     ]
+                  },
+                  "subtractPercentage": {
+                    "type": "string",
+                    "format": "decimal",
+                    "description": "Optional percentage by which to reduce the refund, e.g. as processing charge or to compensate for the mining fee.",
+                    "example": "2.1"
                   },
                   "customAmount": {
                     "type": "string",
@@ -6798,6 +6805,42 @@
         ]
       }
     },
+    "/api/v1/server/roles": {
+      "get": {
+        "tags": [
+          "ServerInfo"
+        ],
+        "summary": "Get store's roles",
+        "description": "View information about the store's roles at the server's scope",
+        "operationId": "Server_GetStoreRoles",
+        "responses": {
+          "200": {
+            "description": "The user roles available at the server's scope",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/RoleData"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "If you are authenticated but forbidden to get the store's roles"
+          },
+          "404": {
+            "description": "Store not found"
+          }
+        },
+        "security": [
+          {
+            "API_Key": [
+              "btcpay.server.canmodifyserversettings"
+            ],
+            "Basic": []
+          }
+        ]
+      }
+    },
     "/api/v1/stores/{storeId}/email": {
       "get": {
         "tags": [
@@ -10128,6 +10171,53 @@
         ]
       }
     },
+    "/api/v1/stores/{storeId}/roles": {
+      "get": {
+        "tags": [
+          "Stores"
+        ],
+        "summary": "Get store's roles",
+        "parameters": [
+          {
+            "name": "storeId",
+            "in": "path",
+            "required": true,
+            "description": "The store to fetch",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "description": "View information about the specified store's roles",
+        "operationId": "Stores_GetStoreRoles",
+        "responses": {
+          "200": {
+            "description": "The user roles available for this store",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/RoleData"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "If you are authenticated but forbidden to get the store's roles"
+          },
+          "404": {
+            "description": "Store not found"
+          }
+        },
+        "security": [
+          {
+            "API_Key": [
+              "btcpay.store.canmodifystoresettings"
+            ],
+            "Basic": []
+          }
+        ]
+      }
+    },
     "/api/v1/users/me": {
       "get": {
         "tags": [
@@ -10827,6 +10917,9 @@
           },
           "404": {
             "description": "The delivery does not exists."
+          },
+          "409": {
+            "description": "`webhookdelivery-pruned`: This webhook delivery has been pruned, so it can't be redelivered."
           }
         },
         "security": [
@@ -10889,6 +10982,9 @@
           },
           "404": {
             "description": "The delivery does not exists."
+          },
+          "409": {
+            "description": "`webhookdelivery-pruned`: This webhook delivery has been pruned, so it can't be redelivered."
           }
         },
         "security": [
@@ -14890,6 +14986,41 @@
           }
         }
       },
+      "RoleData": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "description": "The role's Id (Same as role if the role is created at server level, if the role is created at the store level the format is `STOREID::ROLE`)",
+            "type": "string",
+            "nullable": false,
+            "example": "Owner"
+          },
+          "role": {
+            "description": "The role's name",
+            "type": "string",
+            "nullable": false,
+            "example": "Owner"
+          },
+          "permissions": {
+            "description": "The permissions attached to this role",
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "example": [
+              "btcpay.store.candeposittocustodianaccount",
+              "btcpay.store.canmodifystoresettings",
+              "btcpay.store.cantradecustodianaccount",
+              "btcpay.store.canwithdrawfromcustodianaccount"
+            ]
+          },
+          "isServerRole": {
+            "description": "Whether this role is at the scope of the store or scope of the server",
+            "type": "boolean",
+            "example": true
+          }
+        }
+      },
       "StoreDataList": {
         "type": "array",
         "items": {
@@ -14954,6 +15085,12 @@
             "nullable": true,
             "description": "The absolute url of the store",
             "format": "url"
+          },
+          "supportUrl": {
+            "type": "string",
+            "nullable": true,
+            "description": "The support URI of the store, can contain the placeholders `{OrderId}` and `{InvoiceId}`. Can be any valid URI, such as a website, email, and nostr.",
+            "format": "uri"
           },
           "defaultCurrency": {
             "type": "string",
