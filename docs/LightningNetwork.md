@@ -152,6 +152,8 @@ Before you start transacting using your new lightning node, consider backing up 
 1. **for LND**: storing a copy of the LND seed.
    Go to "Server Settings" > "Services" > "LND Seed Backup" and select "See information"
 2. **for CLN**: storing a copy of the [hsm_secret](https://lightning.readthedocs.io/BACKUP.html#hsm-secret)
+\
+   The CLN $LIGHTNINGDIR is located in `/var/lib/docker/volumes/generated_clightning_bitcoin_datadir/_data/bitcoin` 
 
 Acknowledge the limitations of **off-chain** payment channel backups and associated risks.
 \
