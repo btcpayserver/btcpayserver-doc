@@ -1,141 +1,69 @@
 # Forms
 
-BTCPay Server's Forms feature enables you to request that your customer complete a form before proceeding with a payment.
+BTCPay Server's Forms Builder enables you to request specific information from your customer. 
 
 These forms are fully customizable to suit your requirements.
+In this introduction, we will go through the visual form builder; if you'd like to do more advanced settings, please visit the [Advanced Forms](./AdvancedForms.md) section of our documentation. 
 
-Example of form definition:
+## Setting up your store's first Custom form. 
 
-```json
-{
-  "fields": [
-    {
-      "name": "buyerEmail",
-      "constant": false,
-      "type": "email",
-      "value": null,
-      "required": true,
-      "label": "Enter your email",
-      "helpText": "This is help text",
-      "fields": []
-    },
-    {
-      "name": "buyerName",
-      "constant": false,
-      "type": "text",
-      "value": null,
-      "required": true,
-      "label": "Name",
-      "helpText": null,
-      "fields": []
-    },
-    {
-      "name": "buyerAddress1",
-      "constant": false,
-      "type": "text",
-      "value": null,
-      "required": true,
-      "label": "Address Line 1",
-      "helpText": null,
-      "validationErrors": [],
-      "fields": []
-    },
-    {
-      "name": "buyerAddress2",
-      "constant": false,
-      "type": "text",
-      "value": null,
-      "required": false,
-      "label": "Address Line 2",
-      "helpText": null,
-      "fields": []
-    },
-    {
-      "name": "buyerCity",
-      "constant": false,
-      "type": "text",
-      "value": null,
-      "required": true,
-      "label": "City",
-      "helpText": null,
-      "fields": []
-    },
-    {
-      "name": "buyerZip",
-      "constant": false,
-      "type": "text",
-      "value": null,
-      "required": false,
-      "label": "Postcode",
-      "helpText": null,
-      "fields": []
-    },
-    {
-      "name": "buyerState",
-      "constant": false,
-      "type": "text",
-      "value": null,
-      "required": false,
-      "label": "State",
-      "helpText": null,
-      "fields": []
-    },
-    {
-      "name": "buyerCountry",
-      "constant": false,
-      "type": "text",
-      "value": null,
-      "required": true,
-      "label": "Country",
-      "helpText": null,
-      "fields": []
-    }
-  ]
-}
-```
+In this example, we will start with creating a standard form we've pre-made. 
+Click on Store Settings and the last tab of your store settings is Forms. Click Forms to create your first Custom Form. 
 
-Output:
+![BTCPay Server formbuilder - settings](./img/formbuilder/btcpayformbuilder1.png)
 
-![Form](./img/Forms-1.png)
+On the custom forms page, click Create New Form. 
+We've pre-made two examples, `Email` and `Address`. 
+For this example, click the Address form. 
 
-In a field definition, only the following fields can be set:
+![BTCPay Server formbuilder - Create new form](./img/formbuilder/btcpayformbuilder2.png)
 
-| Field                   | Description                                                                                                                                                                                                                                                                                                                                                                                                                                                        |
-| ----------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `.fields.constant`      | If `true`, the `.value` must be set in the form definition, and the user will not be able to change the field's value. ( example: the form definition's version)                                                                                                                                                                                                                                                                                                   |
-| `.fields.type`          | The HTML input type `text`, `radio`, `checkbox`, `password`, `hidden`, `button`, `color`, `date`, `datetime-local`, `month`, `week`, `time`, `email`, `number`, `range`, `search`, `url`, `select`, `tel`                                                                                                                                                                                                                                                          |
-| `.fields.options`       | If `.fields.type` is `select`, the list of selectable values                                                                                                                                                                                                                                                                                                                                                                                                       |
-| `.fields.options.text`  | The text displayed for this option                                                                                                                                                                                                                                                                                                                                                                                                                                 |
-| `.fields.options.value` | The value of the field if this option is selected                                                                                                                                                                                                                                                                                                                                                                                                                  |
-| `.fields.type=fieldset` | Create a HTML `fieldset` around the children `.fields.fields` (see below)                                                                                                                                                                                                                                                                                                                                                                                          |
-| `.fields.name`          | The JSON property name of the field as it will appear in the invoice's metadata                                                                                                                                                                                                                                                                                                                                                                                    |
-| `.fields.value`         | The default value of the field                                                                                                                                                                                                                                                                                                                                                                                                                                     |
-| `.fields.required`      | if `true`, the field will be required                                                                                                                                                                                                                                                                                                                                                                                                                              |
-| `.fields.label`         | The label of the field                                                                                                                                                                                                                                                                                                                                                                                                                                             |
-| `.fields.helpText`      | Additional text to provide an explanation for the field.                                                                                                                                                                                                                                                                                                                                                                                                           |
-| `.fields.fields`        | You can organize your fields in a hierarchy, allowing child fields to be nested within the invoice's metadata. This structure can help you better organize and manage the collected information, making it easier to access and interpret. For example, if you have a form that collects customer information, you can group the fields under a parent field called customer. Within this parent field, you might have child fields like name, email, and address. |
+We can now drag around the fields pre-made by BTCPay Server.  
+You can re-order them or create a new field by clicking on the `Add form element` at the bottom of the form. 
 
-The values of the fields are stored in the [metadata of the invoice](/Development/InvoiceMetadata/).
+## Create a custom form.
 
-## Well-known field names
+You might have a different use case. For example if you own a restaurant you need to know the table number, how to call the customer when serving them, allergies, and special requests. 
 
-The field name represents the JSON property name that stores the user-provided value in the invoice's metadata.
+Let's create a custom form in the following steps. 
+We will start at the same settings tab from the previous example, Store settings -> Forms.
 
-Some well-known names can be interpreted and modify the invoice's settings.
+Click `create form` in the top right. 
+We'll start by giving it a name; in the example, we will use `Restaurant`. 
+Unlike before, we will start with the empty field that was generated. 
 
-| Field name         | Description            |
-| ------------------ | ---------------------- |
-| `invoice_amount`   | The invoice's amount   |
-| `invoice_currency` | The invoice's currency |
+![BTCPay Server formbuilder - Create new form](./img/formbuilder/btcpayformbuilder2-1.png)
 
-## Pre-filling form values
+1. We will name the first field, `Table number` 
+2. Define the `Type` of the field; we need it to be Text or Number, click on the drop-down and select `Number`.
 
-You can pre-fill the fields of an invoice automatically by adding query strings to the form's URL, such as `?your_field=value`.
+![BTCPay Server formbuilder - Create new form](./img/formbuilder/btcpayformbuilder2-2.png)
 
-Here are some use cases for this feature:
+3. The label we set for this field as it shows to the customer; in our example, we will name it `Table Number`.
+4. Regarding The name of the field, we replicate the previous field's name, `Table Number`, for consistency. 
+5. We could define a `Default value`; however, we'll keep it empty in the example.
+6. `Helper Text` This is the text provided below the field we are creating to indicate what you request from the customer. 
+7. Last, we can set two parameters; one is always to make it required to be filled out; in this example, we will set this to yes. And if it's a Constant, users can't change this so we won't use the setting for the example. 
 
-- `Assisting user input`: Pre-fill fields with known customer information to make it easier for them to complete the form. For example, if you already know a customer's email address, you can pre-fill the email field to save them time.
-- `Personalization`: Customize the form based on customer preferences or segmentation. For instance, if you have different customer tiers, you can pre-fill the form with relevant data, such as their membership level or specific offers.
-- `Tracking`: Track the source of customer visits by using hidden fields and pre-filled values. For example, you can create different links with pre-filled `utm_media` values for each marketing channel (e.g., Twitter, Facebook, email). This helps you analyze the effectiveness of your marketing efforts.
+![BTCPay Server formbuilder - Create new form](./img/formbuilder/btcpayformbuilder2-3.png)
 
-- `A/B testing`: Pre-fill fields with different values to test different versions of a form, enabling you to optimize the user experience and conversion rates.
+After you've filled in the parameters for the field, it should show on the left of your editor how the field displays and functions when the customer interacts with it. 
+
+![BTCPay Server formbuilder - Create new form](./img/formbuilder/btcpayformbuilder2-4.png)
+
+Now that the first field is done, you can click on the `+ Add form element` below your first field and create the rest of the required form fields. Once you've made all the fields, click `Save` in the top right of your screen, and all should be set! 
+
+![BTCPay Server formbuilder - Create new form](./img/formbuilder/btcpayformbuilder3.png)
+
+The `Form Builder` makes creating custom forms flexible and easy. If you still require more personalization, as mentioned at the start of this guide, please read on [Advanced Forms](./AdvancedForms.md) to learn about the JSON created in the `Code` tab in the Form builder. 
+
+## Support
+
+If you have trouble using BTCPay Server, consider joining the [BTCPay Server Mattermost](https://chat.btcpayserver.org) to get help from BTCPay community members.
+
+Only file a [Github issue](https://github.com/btcpayserver/btcpayserver/issues) for technical issues you can't resolve through other channels or feature requests you've validated with other community members.
+
+Please check out our [official website](https://btcpayserver.org/) and [FAQ](./FAQ/README.md#btcpay-frequently-asked-questions-and-common-issues) for more details.
+
+!!!include(supporters.html)!!!
+

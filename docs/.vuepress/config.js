@@ -71,17 +71,19 @@ const sidebarUserGuide = [
           ['/HardwareWalletIntegration', 'Hardware Wallet Integration']
         ]
       },
-
       ['/Invoices', 'Invoices'],
       ['/PaymentRequests', 'Payment Requests'],
-
       {
         title: 'Pull Payments',
         path: '/PullPayments',
         children: [['/Refund', 'Refunds']]
       },
       ['/Payouts', 'Payouts'],
-      ['/Forms', 'Forms'],
+      {
+        title: 'Form Builder',
+        path: '/Forms',
+        children: [['/AdvancedForms', 'Advanced Forms']]
+      },
       ['/Apps', 'Apps'],
       ['/Accounting', 'Accounting'],
       {
