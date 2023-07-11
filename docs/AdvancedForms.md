@@ -113,7 +113,9 @@ In a field definition, only the following fields can be set:
 | `.fields.required`      | if `true`, the field will be required                                                                                                                                                                                                                                                                                                                                                                                                                              |
 | `.fields.label`         | The label of the field                                                                                                                                                                                                                                                                                                                                                                                                                                             |
 | `.fields.helpText`      | Additional text to provide an explanation for the field.                                                                                                                                                                                                                                                                                                                                                                                                           |
-| `.fields.fields`        | You can organize your fields in a hierarchy, allowing child fields to be nested within the invoice's metadata. This structure can help you better organize and manage the collected information, making it easier to access and interpret. For example, if you have a form that collects customer information, you can group the fields under a parent field called customer. Within this parent field, you might have child fields like name, email, and address. |
+| `.fields.fields`        | If `.fields.type` is `fieldset`, you can organize your fields in a hierarchy, allowing child fields to be nested within the invoice's metadata. This structure can help you better organize and manage the collected information, making it easier to access and interpret. For example, if you have a form that collects customer information, you can group the fields under a parent field called customer. Within this parent field, you might have child fields like name, email, and address. |
+                                                                                                                                                                                                                                                                           |
+| `.fields.valuemap`        | If `.fields.type` is `mirror`, you can specify an object, where the key is the value to match and and the value is the mapped result. `{ "hello": "world"}`, means that if the copied value is `hello`, it will be saved as `world`.
 
 The values of the fields are stored in the [metadata of the invoice](/Development/InvoiceMetadata/).
 
@@ -127,6 +129,11 @@ Some well-known names can be interpreted and modify the invoice's settings.
 | ------------------ | ---------------------- |
 | `invoice_amount`   | The invoice's amount   |
 | `invoice_currency` | The invoice's currency |
+| Starts with `invoice_amount_adjustment` | As long its value is computed to be a number, it will adjust the invoice amount accordingly. |
+
+## Mirror fields
+
+A `Mirror` field is defined by the type `mirror`. Its value is set to the name of another field, and upon form submission, that field's value will be copied to the mirror field. The mirror type also has value mapping capabilities so that the referenced field's value can be transformed as it is copied over to the mirror field. For example, you could have a select field with a list of countries, and then create an `invoice_amount_adjustment` field, where you adjust the price of the invoice based on the country selected.
 
 ## Pre-filling form values
 
