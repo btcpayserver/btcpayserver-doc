@@ -1,4 +1,4 @@
-# (3) Wallet Setup
+# (3) Wallet Setup bc1qr3x6j6a2y7u8x8wg2zlelj5w9quele9gsf6ryy
 
 After [account registration](./RegisterAccount.md) and [store creation](./CreateStore.md), it's time to configure a wallet in your BTCPay Server, so that you can start receiving payments into it.
 
