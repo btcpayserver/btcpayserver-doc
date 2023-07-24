@@ -83,11 +83,11 @@ BTCPay Server offers the option to connect to an external Lightning node. To con
 
 ## Getting started with BTCPay Server and LND
 
-### Control your LND using RTL
+### Control your LND using Ride The Lightning (RTL)
 
-The easiest way to use LND implementation with BTCPay Server is to use the **[Ride The Lightning](https://github.com/ShahanaFarooqui/RTL)** (RTL) service. A web user interface for the Lightning Network, RTL allows you to operate your node without leaving BTCPay Server, from your browser.
+The easiest way to use LND implementation with BTCPay Server is to use the **[Ride The Lightning]https://github.com/Ride-The-Lightning/RTL)** (RTL) service. A web user interface for the Lightning Network, RTL allows you to operate your node without leaving BTCPay Server, from your browser.
 \
-To initiate RTL in BTCPay Server, Go to Server Settings > Services > RTL > See information.
+To initiate RTL in BTCPay Server, Go to Server Settings > Services > Ride The Lightning > See information.
 
 ### Control your LND using Zap
 
@@ -120,15 +120,11 @@ Run ./bitcoin-lncli.sh --help` to see a full list of commands or check the full 
 
 ## Getting started with BTCPay Server and Core Lightning (CLN)
 
-### Control your CLN using Spark
+### Control your CLN using Ride The Lightning (RTL)
 
-The most straightforward way to start using the **CLN implementation in BTCPay Server** is to use [Spark Wallet](https://github.com/shesek/spark-wallet) integration. Just like Zap for LND, Spark is a graphical interface of your internal CLN node.
+The easiest way to use CLN implementation with BTCPay Server is to use the **[Ride The Lightning]https://github.com/Ride-The-Lightning/RTL)** (RTL) service. A web user interface for the Lightning Network, RTL allows you to operate your node without leaving BTCPay Server, from your browser.
 \
-[![BTCPay Server - CLN and Spark](https://img.youtube.com/vi/uV1R6IQpmg8/mqdefault.jpg)](https://www.youtube.com/watch?v=uV1R6IQpmg8)
-\
-You can use Spark as an internal or external wallet. Internal wallet allows users to use Spark via the web-browser inside their BTCPay Server. You can also connect externally to a Spark mobile or desktop app just by scanning a QR code.
-\
-Go to Server Settings > Services > Spark Server > See information.
+To initiate RTL in BTCPay Server, Go to Server Settings > Services > Ride The Lightning > See information.
 
 ### Control your CLN via the command-line: lightning-cli
 
