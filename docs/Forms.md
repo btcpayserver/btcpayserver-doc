@@ -57,6 +57,50 @@ Now that the first field is done, you can click on the `+ Add form element` belo
 
 The `Form Builder` makes creating custom forms flexible and easy. If you still require more personalization, as mentioned at the start of this guide, please read on [Advanced Forms](./AdvancedForms.md) to learn about the JSON created in the `Code` tab in the Form builder. 
 
+## Public Forms
+
+When `Allow form for public use` is enabled, a form can be used as a way to share a URL, where users must fill in the form and an invoice is then generated. 
+
+By default, the invoice currency is set to the store's default currency, and the amount is set to "any".
+
+You can configure the form to have a pre-configured currency and amount by creating fields with specific names.
+
+* Invoice currency: Create a field that has its name as `invoice_currency`. Make sure its value returns a valid currency code.
+* Invoice amount: Create a field that has its name as `invoice_amount`. Make sure its value returns a number.
+
+ You can create these fields with type `hidden` to not show it to the user. Additionally, if you'd like the user to not be able to modify the values, you must set `Constant` to checked.
+
+ This can be used as an alternative to the Pay Button, with the added benefit that you can lock in invoice parameters such as amount and currency.
+
+ ## Adjust invoice amounts based on user input
+
+ In most modern ecommerce scenarios, you need to modify the amount being charged based on user input, such as their preferred shipping method, their country, promotional codes, etc.
+
+ The form comes with such functionality as of version 1.11.0. Any field that has its name starts with `invoice_amount_adjustment` and its value is a valid number will automatically adjust the invoice amount. This functionality currently works for public form usage and for the Point of Sale plugin.
+
+### Charging extra based on shipping method
+
+Create a field of type "select", with the name `invoice_amount_adjustment_shipping_method`, and options that map to what shipping methods you have available. We will use 2 options: `DHL` with a value of `10` and `Fedex` with a value of `20`.  When a user selects either or, the invoice amount will be adjusted by 10 or 20 respectively.
+
+Note: This is a simple example. While the invoice amount will be correctly adjusted, you will not be able to see the selected shipping option inside the created invoice. We must make use of `Mirror` fields to accomplish this.
+
+To save the user selected shipping method choice we must do the following instead:
+* Create a field of type "select", with the name `shipping_method`, and options that map to what shipping methods you have available. We will use 2 options: `DHL` with a value of `dhl` and `Fedex` with a value of `fedex`.
+* Create a field of type "mirror", with the name `invoice_amount_adjustment_shipping_method`. In `Field to mirror`, select the `shipping_method` field. And in `Value Mapper`, create all the options from `shipping_method` and the value to charge. 
+
+### Promo codes
+
+* Create a field of type "text", with the name `promoCode`.
+* Create a field of type "mirror", with the name `invoice_amount_adjustment_promo`. In `Field to mirror`, select the `promoCode` field. And in `Value Mapper`, create all the promotional codes you wish to have available. For example set `Original Value` to `chocolate` and `Mapped Value` to `-5`. 
+
+When the user enters `chocolate` in the promo code field, the invoice amount will be adjusted by -5. 
+
+### Showing user input on the receipt
+
+By default, none of the user input will be shown on the invoice receipt. To do this, we must create a mapping for each field.
+* Create a field of type `fieldset`, with name `receiptData`.
+* For every field you wish to show in the receipt, create a field of type `mirror`, and set the `Field to mirror` to the field you wish to copy over to the receipt.
+
 ## Support
 
 If you have trouble using BTCPay Server, consider joining the [BTCPay Server Mattermost](https://chat.btcpayserver.org) to get help from BTCPay community members.
