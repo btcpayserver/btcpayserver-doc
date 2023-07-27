@@ -176,7 +176,7 @@ sudo su -
 ./bitcoin-lightning-cli.sh getinfo
 ```
 
-Most of the wallets (RTL, Zap, Spark, etc) that are able to your lightning node remotely will display the version on the front-end as well.
+Most of the wallets (RTL, Zap, Zeus, etc.) that are able to your lightning node remotely will display the version on the front-end as well.
 
 ### How to redirect a Lightning Address?
 
@@ -371,39 +371,6 @@ Then set it up:
 export BTCPAYGEN_ADDITIONAL_FRAGMENTS="bitcoin-clightning.custom"
 . ./btcpay-setup.sh -i
 ```
-
-### How to find an on-chain address in Spark?
-
-To fund your on-chain wallet in Spark, you need to get an on-chain address. To find your address, click on the version link at the left corner bottom of the Spark wallet (for example v0.2.2).
-
-That should toggle the settings. Click > Console. To generate a new address in RPC Console field, enter `newaddr` for bech32 address or `newaddr p2sh-segwit` click execute. At the bottom you should see the newly generated address.
-You can also toggle help if you need help with other commands in Spark.
-
-![BTCPay Checkout](../img/Spark-console1.png)
-![BTCPay Checkout](../img/Spark-console2.png)
-
-## How to withdraw funds from my on-chain Spark wallet?
-
-First if your funds are in channel, you need to close channel and wait for them to get back to your on-chain wallet in Spark. (144 blocks in most cases).
-
-Next, you need to toggle the console mode. Click on the version link at the left corner bottom of the Spark wallet [explained above](./LightningNetwork.md#lightning-network-c-lightning-faq)
-
-That should toggle the settings. Click > Console.
-
-In console mode there are help commands. The command needed for withdrawing from an on-chain wallet is called `withdraw`.
-
-```
-withdraw destination satoshi [feerate] [minconf]
-Send to {destination} address {satoshi} (or 'all') amount via Bitcoin transaction
-```
-
-If you want to withdraw 1000 sats to bc1qjl8uwezzlech793lpnyuzy0h2cdkvxvh54v3dn, the exact command would be:
-
-`withdraw bc1qjl8uwezzlech793lpnyuzy0h2cdkvxvh54v3dn 1000` click _execute_.
-
-![Spark Withdraw](../img/SparkWalletWithdrawConsole.png)
-
-Note that the address format needs to be SegWit, bech32 (starting with bc1).
 
 ## Lightning Network Questions and Support
 

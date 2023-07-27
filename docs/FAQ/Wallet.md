@@ -131,11 +131,11 @@ In addition to the [automatic labels](../Wallet.md#transaction-labels), you can 
 
 The [Lightning Network](../LightningNetwork.md) and the BTCPay Server [wallet](../Wallet.md) are different concepts. The internal BTCPay Server wallet only shows on-chain payments.
 
-In the future they may become unified but for the time being, to manage your Lightning Network funds, use Ride the Lightning, ThunderHub, an externally connected Lightning wallet (Zeus, Zap, Spark, etc), or the Command Line Interface (CLI).
+In the future they may become unified but for the time being, to manage your Lightning Network funds, use Ride the Lightning, ThunderHub, an externally connected Lightning wallet (Zeus, Zap, etc.), or the Command Line Interface (CLI).
 
 ## Is there a mobile app for BTCPay Server wallet?
 
-BTCPay Server is a web app (not a mobile app) and may be viewed using any device that can display a web browser. There are mobile apps which allow you to connect to your BTCPay Server Lightning node (Zeus, Zap, Spark, etc).
+BTCPay Server is a web app (not a mobile app) and may be viewed using any device that can display a web browser. There are mobile apps which allow you to connect to your BTCPay Server Lightning node (Zeus, Zap, etc.).
 
 You can also use mobile apps to connect to your Bitcoin full node using either P2P or RPC. If you are on iOS you can easily connect to your Bitcoin full node using Fully Noded.
 

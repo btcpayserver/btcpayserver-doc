@@ -39,7 +39,7 @@ For more information on `Lightning Network` check our [Lightning Network page](.
 
 In this tile, you will find quick buttons to `Lightning Network` services like:
 
-- Core Lightning (Spark)
+- Core Lightning (REST)
 - Ride The Lightning
 - ThunderHub
 - Lightning Terminal

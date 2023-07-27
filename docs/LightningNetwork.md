@@ -83,11 +83,11 @@ BTCPay Server offers the option to connect to an external Lightning node. To con
 
 ## Getting started with BTCPay Server and LND
 
-### Control your LND using RTL
+### Control your LND using Ride The Lightning (RTL)
 
-The easiest way to use LND implementation with BTCPay Server is to use the **[Ride The Lightning](https://github.com/ShahanaFarooqui/RTL)** (RTL) service. A web user interface for the Lightning Network, RTL allows you to operate your node without leaving BTCPay Server, from your browser.
+The easiest way to use LND implementation with BTCPay Server is to use the **[Ride The Lightning]https://github.com/Ride-The-Lightning/RTL)** (RTL) service. A web user interface for the Lightning Network, RTL allows you to operate your node without leaving BTCPay Server, from your browser.
 \
-To initiate RTL in BTCPay Server, Go to Server Settings > Services > RTL > See information.
+To initiate RTL in BTCPay Server, Go to Server Settings > Services > Ride The Lightning > See information.
 
 ### Control your LND using Zap
 
@@ -120,15 +120,11 @@ Run ./bitcoin-lncli.sh --help` to see a full list of commands or check the full 
 
 ## Getting started with BTCPay Server and Core Lightning (CLN)
 
-### Control your CLN using Spark
+### Control your CLN using Ride The Lightning (RTL)
 
-The most straightforward way to start using the **CLN implementation in BTCPay Server** is to use [Spark Wallet](https://github.com/shesek/spark-wallet) integration. Just like Zap for LND, Spark is a graphical interface of your internal CLN node.
+The easiest way to use CLN implementation with BTCPay Server is to use the **[Ride The Lightning]https://github.com/Ride-The-Lightning/RTL)** (RTL) service. A web user interface for the Lightning Network, RTL allows you to operate your node without leaving BTCPay Server, from your browser.
 \
-[![BTCPay Server - CLN and Spark](https://img.youtube.com/vi/uV1R6IQpmg8/mqdefault.jpg)](https://www.youtube.com/watch?v=uV1R6IQpmg8)
-\
-You can use Spark as an internal or external wallet. Internal wallet allows users to use Spark via the web-browser inside their BTCPay Server. You can also connect externally to a Spark mobile or desktop app just by scanning a QR code.
-\
-Go to Server Settings > Services > Spark Server > See information.
+To initiate RTL in BTCPay Server, Go to Server Settings > Services > Ride The Lightning > See information.
 
 ### Control your CLN via the command-line: lightning-cli
 
@@ -153,7 +149,7 @@ Before you start transacting using your new lightning node, consider backing up 
    Go to "Server Settings" > "Services" > "LND Seed Backup" and select "See information"
 2. **for CLN**: storing a copy of the [hsm_secret](https://lightning.readthedocs.io/BACKUP.html#hsm-secret)
 \
-   The CLN $LIGHTNINGDIR is located in `/var/lib/docker/volumes/generated_clightning_bitcoin_datadir/_data/bitcoin` 
+   The CLN $LIGHTNINGDIR is located in `/var/lib/docker/volumes/generated_clightning_bitcoin_datadir/_data/bitcoin`
 
 Acknowledge the limitations of **off-chain** payment channel backups and associated risks.
 \
@@ -187,17 +183,3 @@ cd btcpayserver-docker
 Once your on-chain lightning node is funded, it's time to connect to other nodes on the network and open payment channels.
 \
 Check out [Payment channels](./LightningNetwork_PaymentChannels.md) for recommendations on opening payment channels, liquidity management and more.
-
-## Lapps (Lightning Network Apps)
-
-[Lapps](https://blockstream.com/2018/03/29/blockstreams-week-of-lapps-ends/) are applications built on top of the [Lightning Charge](https://blockstream.com/2018/01/16/lightning-charge/), a complimentary package that allows users and developers to easier use and develop on top of CLN. If you decided to use CLN, you can easily connect your BTCPay to any of the Lapps.
-
-BTCPay Server exposes all the necessary information required to **connect your internal BTCPay CLN node to a Lightning Network App**. Go to Server Settings > Services > Lightning charge server > See information > Credentials.
-
-Below are videos that showcase how to connect some of the lapps to your BTCPay.
-
-[![BTCPay Server - CLN and lapps intro](https://img.youtube.com/vi/6EHNq1anD1k/mqdefault.jpg)](https://www.youtube.com/watch?v=6EHNq1anD1k)
-
-[!["BTCPay Server - CLN and lapps publisher](https://img.youtube.com/vi/ZbM3jcxau0o/mqdefault.jpg)](https://www.youtube.com/watch?v=ZbM3jcxau0o)
-
-[![BTCPay Server - CLN and lapps woo lightning](https://img.youtube.com/vi/EYrsU3LGpbI/mqdefault.jpg)](https://www.youtube.com/watch?v=EYrsU3LGpbI)
