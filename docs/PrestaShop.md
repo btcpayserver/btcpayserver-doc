@@ -6,17 +6,19 @@ If you do not have a store yet, follow [this step by step article](https://blog.
 To integrate BTCPay Server into an existing PrestaShop store, follow the steps below.
 
 :::tip
-This document only applies to the latest _v5_ version of the module. If you want the _v4_ module documentation, [click here](https://github.com/btcpayserver/btcpayserver-doc/blob/cba96292ceea9483711ab53c479a98357383f857/docs/PrestaShop.md).
+This document only applies to the latest _v6_ version of the module. Other versions:
+- [_v4_ module documentation](https://github.com/btcpayserver/btcpayserver-doc/blob/cba96292ceea9483711ab53c479a98357383f857/docs/PrestaShop.md)
+- [_v5_ module documentation](https://github.com/btcpayserver/btcpayserver-doc/blob/b1432054e147836d7286e1bae2f98e62f2752363/docs/PrestaShop.md)
 :::
 
 ## Server Requirements
 
 Please ensure that you meet the following requirements before installing this plugin.
 
-- You are using PHP 7.3.0 or higher
-- Your PrestaShop is version 1.7.7.0 or higher.
+- You are using PHP 8.0 or higher
+- Your PrestaShop is version 8.0 or higher.
   - Your store must have HTTPS enabled and be publicly accessible.
-- Your BTCPay Server is version 1.3.0 or higher
+- Your BTCPay Server is version 1.7.0 or higher
 - The PDO, curl, gd, intl, json, and mbstring PHP extensions are available
 - You have a BTCPay Server, either [self-hosted](/Deployment/README.md) or [hosted by a third-party](/Deployment/ThirdPartyHosting.md)
   - The BTCPay Server instance must have HTTPS enabled and be publicly accessible.
@@ -50,9 +52,26 @@ No matter if you're using a self-hosted or third-party solution from step 2, the
 
 7. Press the `Authorize app`-button after which you will be redirected back to your Prestashop store. If you get an "Invalid Token"-popup, please make sure that PrestaShop and BTCPay Server both use HTTPS and have proper hostnames (see [Server Requirements](#server-requirements)).
 
-![Invalid Token](./img/prestashop/invalid-token-popup.jpg) 8. Prestashop will try and create a connection to your BTCPay Server instance. 9. A message will be shown if the connection was successful (but it is smart to make a test purchase).
+![Invalid Token](./img/prestashop/invalid-token-popup.jpg)
+
+8. Prestashop will try and create a connection to your BTCPay Server instance. 9. A message will be shown if the connection was successful (but it is smart to make a test purchase).
 
 ![BTCPay Server PrestaShop setup finished](./img/prestashop/success.jpg)
+
+:::tip
+Redirecting back from BTCPay Server sometimes fails due to PrestaShop weirdness. If it does, you can still use this plugin by copying the API key from `/account/apikeys` and pasting it in the form.
+:::
+
+### Create the API key yourself
+
+If preferred, you can also make an API key yourself by creating it at `/account/addapikey`. If you are going to make an API key yourself, make sure that it has the following permissions for a _singluar_ store:
+
+- `btcpay.store.canmodifystoresettings`
+- `btcpay.store.webhooks.canmodifywebhooks`
+- `btcpay.store.canviewstoresettings`
+- `btcpay.store.cancreateinvoice`
+- `btcpay.store.canviewinvoices`
+- `btcpay.store.canmodifyinvoices`
 
 ## 3. Contribute
 
