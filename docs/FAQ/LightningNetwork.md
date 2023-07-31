@@ -58,7 +58,7 @@ BTCPay Server will allow you to set up your Lightning at any moment after creati
 We currently support three implementations of the Lightning Network.
 
 - [LND](https://github.com/lightningnetwork/lnd)
-- [c-lightning](https://github.com/ElementsProject/lightning)
+- [Core Lightning (CLN)](https://github.com/ElementsProject/lightning)
 - [eclair](https://github.com/ACINQ/eclair)
 
 ![Connecting Lightning to store](../img/FAQ/btcpaylightningfaq1.jpg)
@@ -68,7 +68,7 @@ Follow along the [Lightning Network](../LightningNetwork.md) guide, and you will
 
 ### Can I use a pruned node with LN in BTCPay?
 
-It is recommended to use c-lightning because the implementation supports pruned nodes.
+It is recommended to use Core Lightning (CLN) because the implementation supports pruned nodes.
 
 ### Can I use my existing LN node with BTCPay?
 
@@ -78,7 +78,7 @@ To do so, go to the lightning node settings page of your store (Store > Settings
 
 The connection strings vary per lightning implementation, the [settings page](../LightningNetwork.md#connecting-an-external-lightning-node-in-btcpay) contains the documentation for the connection settings to give you further guidance.
 
-### How to change from c-lightning to LND or vice-versa?
+### How to change from Core Lightning (CLN) to LND or vice-versa?
 
 :::warning
 Be sure to have closed all channels and removed both on-chain and Lightning funds from the Lightning node before switching from one to the other.
@@ -96,7 +96,7 @@ export BTCPAYGEN_LIGHTNING="lnd"
 . ./btcpay-setup.sh -i
 ```
 
-To switch to c-lightning:
+To switch to Core Lightning (CLN):
 
 ```bash
 sudo su -
@@ -169,7 +169,7 @@ cd btcpayserver-docker
 ./bitcoin-lncli.sh help
 ```
 
-For c-lightning
+For Core Lightning (CLN)
 
 ```bash
 sudo su -
@@ -194,7 +194,7 @@ server {
 }
 ```
 
-## Lightning Network (LND) FAQ
+## Lightning Network LND FAQ
 
 Here are some of the common questions about the [LND implementation](https://github.com/lightningnetwork/lnd/issues) of the Lightning Network.
 
@@ -337,11 +337,11 @@ docker restart btcpayserver_lnd_bitcoin
 docker restart generated_bitcoin_thub_1
 ```
 
-## Lightning Network (c-lightning) FAQ
+## Lightning Network Core Lightning (CLN) FAQ
 
-Here are some of the common questions about the [c-lightning](https://github.com/ElementsProject/lightning/issues) implementation of the Lightning Network.
+Here are some of the common questions about the [Core Lightning (CLN)](https://github.com/ElementsProject/lightning/issues) implementation of the Lightning Network.
 
-### How to restart my c-lightning?
+### How to restart my Core Lightning (CLN)?
 
 ```bash
 sudo su -
@@ -383,8 +383,8 @@ If you're facing a technical problem with your Lightning Network implementation,
 - [LND GitHub](https://github.com/lightningnetwork/lnd/issues)
 - [Lightning Community on Slack](https://lightningcommunity.slack.com)
 
-#### c-lightning Support
+#### Core Lightning (CLN) Support
 
-- [c-lightning GitHub](https://github.com/ElementsProject/lightning/issues)
-- [c-lightning Telegram Group](https://t.me/lightningd)
-- [c-lightning docs](https://lightning.readthedocs.io/)
+- [CLN GitHub](https://github.com/ElementsProject/lightning/issues)
+- [CLN Telegram Group](https://t.me/lightningd)
+- [CLN docs](https://lightning.readthedocs.io/)

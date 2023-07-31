@@ -59,7 +59,7 @@ Below is a general list of the container names used for BTCPay.
 | proxy        | letsencrypt-nginx-proxy-companion |
 | Nginx        |             nginx-gen             |
 | Nginx        |               nginx               |
-| c-lightning  |  btcpayserver_clightning_bitcoin  |
+| Core Lightning (CLN)  |  btcpayserver_clightning_bitcoin  |
 | LND          |     btcpayserver_lnd_bitcoin      |
 | RTL          |    generated_lnd_bitcoin_rtl_1    |
 | Thunderhub   |     generated_bitcoin_thub_1      |
@@ -122,13 +122,13 @@ This should give you a new file, where you can do `cat lnd.log.16`
 
 In case the above does not work, you may need to use install gzip first `sudo apt-get install gzip`
 
-### 2.2.2 - Lightning Network c-lightning - Docker
+### 2.2.2 - Lightning Network Core Lightning (CLN) - Docker
 
 `sudo su -`
 
 `docker ps`
 
-Find the c-lightning container ID.
+Find the Core Lightning (CLN) container ID.
 
 docker logs 'add your container ID here'
 
@@ -136,7 +136,7 @@ alternatively, use this
 
 `docker logs --tail 100 btcpayserver_clightning_bitcoin`
 
-You can also get log information with c-lightning cli command.
+You can also get log information with Core Lightning (CLN) cli command.
 
 `bitcoin-lightning-cli.sh getlog`
 
@@ -212,8 +212,8 @@ If you're facing a technical problem with your Lightning Network implementation,
 - [LND GitHub](https://github.com/lightningnetwork/lnd/issues)
 - [Lightning Community on Slack](https://lightningcommunity.slack.com)
 
-#### 4.4.2 c-lightning Support
+#### 4.4.2 Core Lightning (CLN) Support
 
-- [c-lightning GitHub](https://github.com/ElementsProject/lightning/issues)
-- [c-lightning Telegram Group](https://t.me/lightningd)
-- [c-lightning docs](https://lightning.readthedocs.io/)
+- [CLN GitHub](https://github.com/ElementsProject/lightning/issues)
+- [CLN Telegram Group](https://t.me/lightningd)
+- [CLN docs](https://lightning.readthedocs.io/)

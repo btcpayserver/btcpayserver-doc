@@ -28,7 +28,7 @@ BTCPay Server is free to use and completely open-source, so developers or securi
 - Enhanced security
 - Self-hosted software
 - SegWit support
-- Lightning Network support (LND, c-lightning & Eclair implementations)
+- Lightning Network support (LND, Core Lightning (CLN) & Eclair implementations)
 - Tor support
 - Opt-in [altcoin](./Development/Altcoins.md) integrations
 - Full compatibility with legacy BitPay API (easy migration)
