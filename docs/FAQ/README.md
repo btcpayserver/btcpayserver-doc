@@ -203,7 +203,7 @@ Lightning Network troubleshooting and common problems.
 - [Previously installed BTCPay without Lightning, can I enable it?](./LightningNetwork.md#i-previously-installed-btcpayserver-without-lightning-can-i-enable-it)
 - [Can I use a pruned node with LN in BTCPay?](./LightningNetwork.md#can-i-use-a-pruned-node-with-ln-in-btcpay)
 - [Can I use my existing LN node with BTCPay?](./LightningNetwork.md#can-i-use-my-existing-ln-node-with-btcpay)
-- [How to change from c-lightning to LND or vice-versa?](./LightningNetwork.md#how-to-change-from-c-lightning-to-lnd-or-vice-versa)
+- [How to change from Core Lightning (CLN) to LND or vice-versa?](./LightningNetwork.md#how-to-change-from-core-lightning-cln-to-lnd-or-vice-versa)
 - [Switched Lightning Network implementation, getting "no payment available" error](./LightningNetwork.md#i-switched-lightning-network-implementation-but-getting-no-payment-available-error)
 - [WARNING: The LIGHTNING_ALIAS variable is not set. Defaulting to a blank string" when starting container](./LightningNetwork.md#i-get-warning-the-lightning-alias-variable-is-not-set-defaulting-to-a-blank-string-when-starting-container)
 - [How to display my Lightning Node information so that others can connect to me?](./LightningNetwork.md#how-to-display-my-lightning-node-information-so-that-others-can-connect-to-me)
@@ -212,7 +212,7 @@ Lightning Network troubleshooting and common problems.
 - [Where can I get Lightning Network Support?](./LightningNetwork.md#lightning-network-questions-and-support)
 - [How to see my Lightning Network version?](./LightningNetwork.md#how-to-see-my-lightning-network-version)
 
-### [Lightning Network (LND) FAQ](./LightningNetwork.md#lightning-network-lnd-faq)
+### [Lightning Network LND FAQ](./LightningNetwork.md#lightning-network-lnd-faq)
 
 - [How to restart my LND?](./LightningNetwork.md#how-to-restart-my-lnd)
 - [How to see LND logs?](./LightningNetwork.md#how-to-see-lnd-logs)
@@ -223,9 +223,9 @@ Lightning Network troubleshooting and common problems.
 - [How to edit lnd.conf](./LightningNetwork.md#how-to-edit-lndconf)
 - [How to install ThunderHub](./LightningNetwork.md#how-to-install-thunderhub)
 
-### [Lightning Network (c-lightning) FAQ](./LightningNetwork.md#lightning-network-c-lightning-faq)
+### [Lightning Network Core Lightning (CLN) FAQ](./LightningNetwork.md#lightning-network-core-lightning-cln-faq)
 
-- [How to restart my c-lightning?](./LightningNetwork.md#how-to-restart-my-c-lightning)
+- [How to restart my Core Lightning (CLN)?](./LightningNetwork.md#how-to-restart-my-core-lightning-cln)
 - [How to announce an IPv6 address?](./LightningNetwork.md#how-to-announce-an-ipv6-address)
 
 ## [Altcoins FAQ](./Altcoin.md)

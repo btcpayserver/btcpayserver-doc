@@ -15,7 +15,7 @@ By default, it uses SqlLite, but all production deployments use Postgres.
 
 Additionally, if you need Lightning Network access, NBXplorer supports connections to:
 
-- C-Lightning (via unix sockets)
+- Core Lightning (CLN) (via unix sockets)
 - LND (via the REST interface)
 
 Video below shows **BTCPay Architecture** in-depth.

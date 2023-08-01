@@ -165,6 +165,19 @@ module.exports = [
   { path: '/FAQ/FAQ-Wallet/', redirect: '/FAQ/Wallet/' },
   { path: '/FAQ/FAQ-Apps/', redirect: '/FAQ/Apps/' },
   { path: '/FAQ/FAQ-LightningNetwork/', redirect: '/FAQ/LightningNetwork/' },
+  // Redirects for old c-lightning faq links
+  {
+    path: '/FAQ/LightningNetwork/#how-to-change-from-c-lightning-to-lnd-or-vice-versa',
+    redirect: '/FAQ/LightningNetwork/#how-to-change-from-core-lightning-cln-to-lnd-or-vice-versa'
+  },
+  {
+    path: '/FAQ/LightningNetwork/#lightning-network-c-lightning-faq',
+    redirect: '/FAQ/LightningNetwork/#lightning-network-core-lightning-cln-faq'
+  },
+  {
+    path: '/FAQ/LightningNetwork/#how-to-restart-my-c-lightning',
+    redirect: '/FAQ/LightningNetwork/#how-to-restart-my-core-lightning-cln'
+  },
   { path: '/FAQ/FAQ-Altcoin/', redirect: '/FAQ/Altcoin/' },
   // Support
   { path: '/support-and-community', redirect: '/Troubleshooting/' },
