@@ -1,6 +1,6 @@
 # BTCPay Server Documentation
 
-[![Build Status](https://github.com/btcpayserver/btcpayserver-doc/workflows/Node%20CI/badge.svg)](https://github.com/btcpayserver/btcpayserver-doc/actions?query=workflow%3A%22Node+CI%22)
+[![Build Status](https://github.com/btcpayserver/btcpayserver-doc/workflows/Build/badge.svg)](https://github.com/btcpayserver/btcpayserver-doc/actions/workflows/build.yml)
 
 ## Introduction
 
