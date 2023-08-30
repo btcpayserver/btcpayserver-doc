@@ -83,12 +83,14 @@ You can either click on the notifications link saying "**please configure the pl
    ![BTCPay WordPress V2: Select store](./img/woocommerce/btcpay-wc-2--05-api-auth-select-store.png)
 5. All required permissions are prefilled already, you just need to click [Authorize app]
    ![BTCPay WordPress V2: Click on authorize app](./img/woocommerce/btcpay-wc-2--06-api-auth-authorize-button.png)
-6. You will get redirected to your WooCommerce store and the API key and Store ID will be prefilled.
+6. You will get redirected back to your WooCommerce store and the API key and Store ID will be prefilled. Additionally, the webhook will have been created automatically for you. Check the "Webhook status" field to show "Webhook setup automatically." followed by an ID.
    ![BTCPay WordPress V2: Redirected back to plugin settings](./img/woocommerce/btcpay-wc-2--07-api-auth-after-redirect-prefilled.png)
-7. Before doing any further configuration click on **[Save]** as it will setup the webhook for you.
+7. Before doing any further configuration click on **[Save]** to be sure all is set.
    ![BTCPay WordPress V2: Webhook created](./img/woocommerce/btcpay-wc-2--08-api-auth-save-webhook-created.png)
 
-Continue with "3. Testing the checkout" below.
+Congratulations, you are almost set. To make the Bitcoin payment gateway show up on your checkout. In the sidebar go to "WooCommerce" -> "Settings", click on the "Payments" tab and enable the "BTCPay (default)" payment gateway.
+
+Continue with "3. Testing the checkout" below to make sure all works as expected.
 
 ### 2.2 Connect by manually creating the API key and permissions
 
@@ -103,13 +105,21 @@ If you can't use the wizard mentioned in the previous section you can also gener
    ![BTCPay WordPress V2: API Keys Permissions](./img/woocommerce/btcpayWooLmode4.jpg)
 5. Click on _[Generate API Key]_
    ![BTCPay WordPress V2: API Keys Save](./img/woocommerce/btcpayWooLmode5.jpg)
-6. Copy the generated API Key to your WordPress _BTCPay Settings_ form
+6. Copy the generated API Key to your WordPress _BTCPay Settings_ form (Advanced settings)
    ![BTCPay WordPress V2: Copy API Key](./img/woocommerce/btcpayWooLmode6.jpg)
-7. Copy the store ID to your WordPress _BTCPay Settings_ form
-   ![BTCPay WordPress V2: Copy Store ID](./img/woocommerce/btcpayWooLmode7.jpg)
-8. On the BTCPay Settings form make sure _BTPCay Server URL_, _BTCPay Server API Key_ and _Store ID_ are set and click _[Save]_
-9. Make sure you see the notification "_BTCPay Server: Successfully registered a new webhook on BTCPay Server_"
-   ![BTCPay WordPress V2: Save BTCPay Settings form](./img/woocommerce/btcpay-wc-2--15-man-api--btcpay-settings-save.png)
+7. Copy the store ID to your WordPress _BTCPay Settings_ form (Advanced settings)
+   ![BTCPay WordPress V2: Copy Store ID](./img/woocommerce/btcpay-wc-2--7-man-api--copy-store-id.png)
+8. On the BTCPay Settings form:
+- Enter _BTCPay Server URL_ (URL of your BTCPay Server instance, where you just created the API key)
+- Click the "Advanced settings" checkbox to enter _BTCPay Server API Key_ and _Store ID_ (leave _Webhook secret_ empty)
+- Click on _[Save]_ at the bottom of the page
+  ![BTCPay WordPress V2: Save BTCPay Settings form](./img/woocommerce/btcpay-wc-2--15-man-api--btcpay-settings-fill.png)
+9. Make sure you see the notification "_BTCPay Server: Successfully registered a new webhook on BTCPay Server_" and _Setup status_ and _Webhook status_ are green.
+   ![BTCPay WordPress V2: Save BTCPay Settings form saved](./img/woocommerce/btcpay-wc-2--15-man-api--btcpay-settings-save.png)
+
+Congratulations, you are almost set. To make the Bitcoin payment gateway show up on your checkout. In the sidebar go to "WooCommerce" -> "Settings", click on the "Payments" tab and enable the "BTCPay (default)" payment gateway.
+
+Continue with "3. Testing the checkout" below to make sure all works as expected.
 
 ## 3. Testing the checkout
 
