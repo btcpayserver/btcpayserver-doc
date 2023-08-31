@@ -35,7 +35,6 @@
     "markdown-it-implicit-figures": "0.11.0",
     "markdown-it-include": "2.0.0",
     "prettier": "2.8.8",
-    "swagger-cli": "4.0.4",
     "vuepress": "1.9.9",
     "vuepress-plugin-clean-urls": "1.1.2",
     "vuepress-plugin-code-copy": "1.0.6",
