@@ -9,9 +9,7 @@ The minimal setup involves:
 - [BTCPay Server](https://github.com/btcpayserver/btcpayserver)
 - [NBXplorer](https://github.com/dgarage/NBXplorer) (Lightweight block explorer, responsible for tracking payments)
 - Bitcoin Core
-- (Optional) PostgreSQL
-
-By default, it uses SQLite, but all production deployments use Postgres.
+- PostgreSQL
 
 Additionally, if you need Lightning Network access, NBXplorer supports connections to:
 
