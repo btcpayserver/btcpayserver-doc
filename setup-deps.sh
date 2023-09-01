@@ -269,8 +269,7 @@ if command -v jq >/dev/null 2>&1; then
 
   # report but don't stop on error
   set +e
-  npx swagger-cli validate $swagger_file
-  npx @redocly/cli lint $swagger_file
+  REDOCLY_TELEMETRY=off npx @redocly/cli lint $swagger_file
   set -e
 fi
 
