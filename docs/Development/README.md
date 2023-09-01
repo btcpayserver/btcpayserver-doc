@@ -1,17 +1,15 @@
 # Architecture
 
-BTCPayServer is a project which ties together **several Bitcoin-related components** into a coherent user experience for installing and managing your own payment processor.
+BTCPay Server is a project which ties together **several Bitcoin-related components** into a coherent user experience for installing and managing your own payment processor.
 
 ![Architecture](../img/Architecture.png)
 
 The minimal setup involves:
 
-- [BTCPayServer](https://github.com/btcpayserver/btcpayserver)
+- [BTCPay Server](https://github.com/btcpayserver/btcpayserver)
 - [NBXplorer](https://github.com/dgarage/NBXplorer) (Lightweight block explorer, responsible for tracking payments)
 - Bitcoin Core
-- (Optional) PostgreSQL
-
-By default, it uses SqlLite, but all production deployments use Postgres.
+- PostgreSQL
 
 Additionally, if you need Lightning Network access, NBXplorer supports connections to:
 
@@ -24,7 +22,7 @@ Video below shows **BTCPay Architecture** in-depth.
 
 ---
 
-We provide several ways of deploying BTCPayServer, depending on whether you favor flexibility or ease-of-use.
+We provide several ways of deploying BTCPay Server, depending on whether you favor flexibility or ease-of-use.
 
 From the easiest way to the hardest:
 
@@ -33,6 +31,6 @@ From the easiest way to the hardest:
 - [Docker deployment](https://docs.btcpayserver.org/Docker/) (Using a `docker-compose.yml` file which bundle all the dependencies together, in almost any environment)
 - [Manual deployment](/Deployment/ManualDeployment.md) (Downloading, building and running all the dependencies by yourself)
 
-Some community members also offer [third-party hosting](/Deployment/ThirdPartyHosting.md) (Having someone else manage BTCPayServer for you).
+Some community members also offer [third-party hosting](/Deployment/ThirdPartyHosting.md) (Having someone else manage BTCPay Server for you).
 
 Remember the **huge value** of having **direct control** of your wallet and web service; for this reason we recommend you use [Azure deployment](/Deployment/Azure.md) or [Web-Interface deployment](/Deployment/LunaNode.md) and **do the setup yourself** - it is pretty easy!
