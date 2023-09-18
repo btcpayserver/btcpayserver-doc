@@ -317,6 +317,77 @@ export BTCPAYGEN_ADDITIONAL_FRAGMENTS="$BTCPAYGEN_ADDITIONAL_FRAGMENTS;opt-lnd-c
 
 This way your custom settings gets added to the config and they will persist updates.
 
+### How to connect to a LND watchtower?
+
+To connect a LND watchtower you need to integrate the [`opt-lnd-wtclient`](https://github.com/btcpayserver/btcpayserver-docker/blob/master/docker-compose-generator/docker-fragments/opt-lnd-wtclient.yml) fragment and optionally configure the `LND_WTCLIENT_SWEEP_FEE`:
+
+```bash
+export BTCPAYGEN_ADDITIONAL_FRAGMENTS="$BTCPAYGEN_ADDITIONAL_FRAGMENTS;opt-lnd-wtclient"
+export LND_WTCLIENT_SWEEP_FEE=10 # Fee to be used for sweep transaction, 10 sat/vbyte is the default
+. ./btcpay-setup.sh -i
+```
+
+Afterwards you can use the `wtclient` RPC commands for managing the connections to watchtowers:
+
+```bash
+# Connect to a remote watchtower
+./bitcoin-lncli.sh wtclient add PUBKEY@IP:PORT
+
+# See your watchtower connections
+./bitcoin-lncli.sh wtclient towers
+```
+
+### How to run a LND watchtower?
+
+You can run a watchtower alongside your LND instance by integrating the [`opt-lnd-watchtower`](https://github.com/btcpayserver/btcpayserver-docker/blob/master/docker-compose-generator/docker-fragments/opt-lnd-watchtower.yml) fragment:
+
+```bash
+export BTCPAYGEN_ADDITIONAL_FRAGMENTS="$BTCPAYGEN_ADDITIONAL_FRAGMENTS;opt-lnd-watchtower"
+. ./btcpay-setup.sh -i
+```
+
+This will make the watchtower available on the server.
+
+To allow connections from other watchtower clients (via the [wtclient RPC commands]()), you will need to add the `watchtower.externalip` to a [custom fragment](../Docker/README.md#how-can-i-customize-the-generated-docker-compose-file) in `docker-compose-generator/docker-fragments/opt-lnd-config.custom.yml` like this:
+
+```yml
+version: '3'
+services:
+  lnd_bitcoin:
+    environment:
+      LND_EXTRA_ARGS: |
+        watchtower.externalip=YOUR_SERVER_IP
+```
+
+Afterwards the configuration has to be added to the additional fragments and open the port `9911` in the firewall settings:
+
+```bash
+# Add the custom LND fragment
+export BTCPAYGEN_ADDITIONAL_FRAGMENTS="$BTCPAYGEN_ADDITIONAL_FRAGMENTS;opt-lnd-config.custom"
+. ./btcpay-setup.sh -i
+
+# Open port the watchtower RPC port in the firewall
+ufw allow 9911/tcp
+```
+
+Running the `tower info` command should then list your public watchtower instance in  the `uris` section.
+
+```bash
+# ./bitcoin-lncli.sh tower info
+{
+    "pubkey": "YOUR_TOWER_PUBKEY",
+    "listeners": [
+        "172.23.0.9:9911",
+        "127.0.0.1:9911"
+    ],
+    "uris": [
+        "YOUR_TOWER_PUBKEY@YOUR_SERVER_IP:9911"
+    ]
+}
+```
+
+Learn more about [configuring watchtowers](https://docs.lightning.engineering/lightning-network-tools/lnd/watchtower).
+
 ### How to install ThunderHub?
 
 To install ThunderHub on your instance apply the following:
