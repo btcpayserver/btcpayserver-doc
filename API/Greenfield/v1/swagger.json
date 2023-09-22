@@ -2342,9 +2342,12 @@
                     "description": "Description of the pull payment"
                   },
                   "paymentMethod": {
-                    "type": "string",
-                    "description": "The payment method to use for the refund",
-                    "example": "BTC"
+                    "allOf": [
+                      {
+                        "$ref": "#/components/schemas/PaymentMethodId"
+                      }
+                    ],
+                    "description": "The payment method to use for the refund"
                   },
                   "refundVariant": {
                     "type": "string",
@@ -6147,7 +6150,7 @@
         "security": [
           {
             "API_Key": [
-              "btcpay.store.canmanagepullpayments"
+              "btcpay.store.canarchivepullpayments"
             ],
             "Basic": []
           }
@@ -6359,7 +6362,7 @@
         }
       ],
       "post": {
-        "summary": "Create Payout ",
+        "summary": "Create Payout",
         "description": "Create a new payout",
         "operationId": "Payouts_CreatePayoutThroughStore",
         "requestBody": {
@@ -11387,6 +11390,12 @@
             "type": "string",
             "example": "PointOfSale",
             "description": "Type of the app which was created"
+          },
+          "archived": {
+            "type": "boolean",
+            "description": "If true, the app does not appear in the apps list by default.",
+            "default": false,
+            "nullable": true
           }
         }
       },
@@ -11994,8 +12003,11 @@
         "type": "object",
         "properties": {
           "paymentMethod": {
-            "type": "string",
-            "description": "The payment method (cryptocode + network) of the withdrawal.",
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/PaymentMethodId"
+              }
+            ],
             "nullable": false
           },
           "qty": {
@@ -12631,7 +12643,11 @@
             "description": "A specific set of payment methods to use for this invoice (ie. BTC, BTC-LightningNetwork). By default, select all payment methods enabled in the store."
           },
           "defaultPaymentMethod": {
-            "type": "string",
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/PaymentMethodId"
+              }
+            ],
             "nullable": true,
             "description": "Default payment type for the invoice (e.g., BTC, BTC-LightningNetwork). Default payment method set for the store is used if this parameter is not specified."
           },
@@ -12731,8 +12747,7 @@
         "additionalProperties": false,
         "properties": {
           "paymentMethod": {
-            "type": "string",
-            "description": "Payment method available for the invoice (e.g., \"BTC\" or \"BTC-LightningNetwork\" or \"BTC-LNURLPAY\")"
+            "$ref": "#/components/schemas/PaymentMethodId"
           },
           "cryptoCode": {
             "type": "string",
@@ -12976,6 +12991,10 @@
         ],
         "format": "minutes",
         "description": "A span of times in minutes"
+      },
+      "PaymentMethodId": {
+        "type": "string",
+        "description": "Payment method IDs are a combination of crypto code and payment type. Available payment method IDs for Bitcoin are:  \n- `\"BTC-OnChain\"` (with the equivalent of `\"BTC\"`)   \n-`\"BTC-LightningLike\"`: Any supported LN-based payment method (Lightning or LNURL)   \n- `\"BTC-LightningNetwork\"`: Lightning   \n- `\"BTC-LNURLPAY\"`: LNURL   \n   \nNote: Separator can be either `-` or `_`."
       },
       "ConnectToNodeRequest": {
         "type": "object",
@@ -13788,8 +13807,7 @@
         "additionalProperties": false,
         "properties": {
           "paymentMethod": {
-            "description": "payment method of the payout processor",
-            "type": "string"
+            "$ref": "#/components/schemas/PaymentMethodId"
           },
           "intervalSeconds": {
             "description": "How often should the processor run",
@@ -13847,8 +13865,7 @@
         "additionalProperties": false,
         "properties": {
           "paymentMethod": {
-            "description": "payment method of the payout processor",
-            "type": "string"
+            "$ref": "#/components/schemas/PaymentMethodId"
           },
           "feeTargetBlock": {
             "type": "number",
@@ -13903,9 +13920,7 @@
             "description": "The amount of the payout in the currency of the pull payment (eg. USD)."
           },
           "paymentMethod": {
-            "type": "string",
-            "example": "BTC",
-            "description": "The payment method of the payout"
+            "$ref": "#/components/schemas/PaymentMethodId"
           }
         }
       },
@@ -14015,9 +14030,7 @@
             "description": "The amount of the payout in the currency of the pull payment (eg. USD)."
           },
           "paymentMethod": {
-            "type": "string",
-            "example": "BTC",
-            "description": "The payment method of the payout (e.g., \"BTC\" or \"BTC_LightningLike\""
+            "$ref": "#/components/schemas/PaymentMethodId"
           },
           "cryptoCode": {
             "type": "string",
@@ -15127,8 +15140,11 @@
         "type": "object",
         "properties": {
           "paymentMethod": {
-            "type": "string",
-            "description": "The payment method (e.g., \"BTC\" or \"BTC_LightningLike\")",
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/PaymentMethodId"
+              }
+            ],
             "nullable": false
           },
           "currencyCode": {
@@ -15226,6 +15242,11 @@
             "default": 0,
             "description": "Consider an invoice fully paid, even if the payment is missing 'x' % of the full amount."
           },
+          "archived": {
+            "type": "boolean",
+            "default": false,
+            "description": "If true, the store does not appear in the stores list by default."
+          },
           "anyoneCanCreateInvoice": {
             "type": "boolean",
             "default": false,
@@ -15308,9 +15329,7 @@
             "description": "If true, payment methods are enabled individually upon user interaction in the invoice"
           },
           "defaultPaymentMethod": {
-            "type": "string",
-            "example": "BTC",
-            "description": "The default payment method to load when displaying an invoice. It can be in the format of `BTC_LightningNetwork` to specify Lightning to be the default or `BTC_OnChain`/ `BTC` for on-chain to be the default. "
+            "$ref": "#/components/schemas/PaymentMethodId"
           },
           "paymentMethodCriteria": {
             "type": "array",
@@ -15687,7 +15706,11 @@
                 "nullable": false
               },
               "paymentMethod": {
-                "type": "string",
+                "allOf": [
+                  {
+                    "$ref": "#/components/schemas/PaymentMethodId"
+                  }
+                ],
                 "description": "What payment method was used for this payment",
                 "nullable": false
               },
@@ -15729,7 +15752,7 @@
     "securitySchemes": {
       "API_Key": {
         "type": "apiKey",
-        "description": "BTCPay Server supports authenticating and authorizing users through an API Key that is generated by them. Send the API Key as a header value to Authorization with the format: `token {token}`. For a smoother experience, you can generate a url that redirects users to an API key creation screen.\n\n The following permissions are available to the context of the user creating the API Key:\n\n* `unrestricted`: Unrestricted access\n* `btcpay.user.candeleteuser`: Delete user\n* `btcpay.user.canviewprofile`: View your profile\n* `btcpay.user.canmodifyprofile`: Manage your profile\n* `btcpay.user.canmanagenotificationsforuser`: Manage your notifications\n* `btcpay.user.canviewnotificationsforuser`: View your notifications\n\nThe following permissions are available if the user is an administrator:\n\n* `btcpay.server.canviewusers`: View users\n* `btcpay.server.cancreateuser`: Create new users\n* `btcpay.server.canmanageusers`: Manage users\n* `btcpay.server.canmodifyserversettings`: Manage your server\n* `btcpay.server.canuseinternallightningnode`: Use the internal lightning node\n* `btcpay.server.canviewlightninginvoiceinternalnode`: View invoices from internal lightning node\n* `btcpay.server.cancreatelightninginvoiceinternalnode`: Create invoices with internal lightning node\n\nThe following permissions applies to all stores of the user, you can limit to a specific store with the following format: `btcpay.store.cancreateinvoice:6HSHAEU4iYWtjxtyRs9KyPjM9GAQp8kw2T9VWbGG1FnZ`:\n\n* `btcpay.store.canmodifystoresettings`: Modify your stores\n* `btcpay.store.canviewcustodianaccounts`: View exchange accounts linked to your stores\n* `btcpay.store.canmanagecustodianaccounts`: Manage exchange accounts linked to your stores\n* `btcpay.store.candeposittocustodianaccount`: Deposit funds to exchange accounts linked to your stores\n* `btcpay.store.canwithdrawfromcustodianaccount`: Withdraw funds from exchange accounts to your store\n* `btcpay.store.cantradecustodianaccount`: Trade funds on your store's exchange accounts\n* `btcpay.store.webhooks.canmodifywebhooks`: Modify stores webhooks\n* `btcpay.store.canviewstoresettings`: View your stores\n* `btcpay.store.cancreateinvoice`: Create an invoice\n* `btcpay.store.canviewinvoices`: View invoices\n* `btcpay.store.canmodifyinvoices`: Modify invoices\n* `btcpay.store.canmodifypaymentrequests`: Modify your payment requests\n* `btcpay.store.canviewpaymentrequests`: View your payment requests\n* `btcpay.store.canmanagepullpayments`: Manage your pull payments\n* `btcpay.store.cancreatepullpayments`: Create pull payments\n* `btcpay.store.cancreatenonapprovedpullpayments`: Create non-approved pull payments\n* `btcpay.store.canuselightningnode`: Use the lightning nodes associated with your stores\n* `btcpay.store.canviewlightninginvoice`: View the lightning invoices associated with your stores\n* `btcpay.store.cancreatelightninginvoice`: Create invoices from the lightning nodes associated with your stores\n\nNote that API Keys only limits permission of a user and can never expand it. If an API Key has the permission `btcpay.server.canmodifyserversettings` but that the user account creating this API Key is not administrator, the API Key will not be able to modify the server settings.\nSome permissions may include other permissions, see [this operation](#operation/permissionsMetadata).\n",
+        "description": "BTCPay Server supports authenticating and authorizing users through an API Key that is generated by them. Send the API Key as a header value to Authorization with the format: `token {token}`. For a smoother experience, you can generate a url that redirects users to an API key creation screen.\n\n The following permissions are available to the context of the user creating the API Key:\n\n* `unrestricted`: Unrestricted access\n* `btcpay.user.candeleteuser`: Delete user\n* `btcpay.user.canviewprofile`: View your profile\n* `btcpay.user.canmodifyprofile`: Manage your profile\n* `btcpay.user.canmanagenotificationsforuser`: Manage your notifications\n* `btcpay.user.canviewnotificationsforuser`: View your notifications\n\nThe following permissions are available if the user is an administrator:\n\n* `btcpay.server.canviewusers`: View users\n* `btcpay.server.cancreateuser`: Create new users\n* `btcpay.server.canmanageusers`: Manage users\n* `btcpay.server.canmodifyserversettings`: Manage your server\n* `btcpay.server.canuseinternallightningnode`: Use the internal lightning node\n* `btcpay.server.canviewlightninginvoiceinternalnode`: View invoices from internal lightning node\n* `btcpay.server.cancreatelightninginvoiceinternalnode`: Create invoices with internal lightning node\n\nThe following permissions applies to all stores of the user, you can limit to a specific store with the following format: `btcpay.store.cancreateinvoice:6HSHAEU4iYWtjxtyRs9KyPjM9GAQp8kw2T9VWbGG1FnZ`:\n\n* `btcpay.store.canmodifystoresettings`: Modify your stores\n* `btcpay.store.canviewcustodianaccounts`: View exchange accounts linked to your stores\n* `btcpay.store.canmanagecustodianaccounts`: Manage exchange accounts linked to your stores\n* `btcpay.store.candeposittocustodianaccount`: Deposit funds to exchange accounts linked to your stores\n* `btcpay.store.canwithdrawfromcustodianaccount`: Withdraw funds from exchange accounts to your store\n* `btcpay.store.cantradecustodianaccount`: Trade funds on your store's exchange accounts\n* `btcpay.store.webhooks.canmodifywebhooks`: Modify stores webhooks\n* `btcpay.store.canviewstoresettings`: View your stores\n* `btcpay.store.cancreateinvoice`: Create an invoice\n* `btcpay.store.canviewinvoices`: View invoices\n* `btcpay.store.canmodifyinvoices`: Modify invoices\n* `btcpay.store.canmodifypaymentrequests`: Modify your payment requests\n* `btcpay.store.canviewpaymentrequests`: View your payment requests\n* `btcpay.store.canmanagepullpayments`: Manage your pull payments\n* `btcpay.store.canarchivepullpayments`: Archive your pull payments\n* `btcpay.store.cancreatepullpayments`: Create pull payments\n* `btcpay.store.cancreatenonapprovedpullpayments`: Create non-approved pull payments\n* `btcpay.store.canuselightningnode`: Use the lightning nodes associated with your stores\n* `btcpay.store.canviewlightninginvoice`: View the lightning invoices associated with your stores\n* `btcpay.store.cancreatelightninginvoice`: Create invoices from the lightning nodes associated with your stores\n\nNote that API Keys only limits permission of a user and can never expand it. If an API Key has the permission `btcpay.server.canmodifyserversettings` but that the user account creating this API Key is not administrator, the API Key will not be able to modify the server settings.\nSome permissions may include other permissions, see [this operation](#operation/permissionsMetadata).\n",
         "name": "Authorization",
         "in": "header"
       },
