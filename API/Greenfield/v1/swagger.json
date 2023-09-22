@@ -13467,6 +13467,11 @@
             "type": "string",
             "description": "URI representation of LNURL for pay requests",
             "example": "lnurlp://example.com/api/v1/lnbank/lnurl/26605761-8ad2-4391-821a-40ee9929bf77/pay"
+          },
+          "lightningAddressIdentifier": {
+            "type": "string",
+            "description": "The Lightning Address username part before the '@' sign",
+            "example": "willy"
           }
         }
       },
