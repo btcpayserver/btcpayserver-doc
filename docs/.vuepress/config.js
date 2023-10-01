@@ -85,7 +85,7 @@ const sidebarUserGuide = [
         children: [['/AdvancedForms', 'Advanced Forms']]
       },
       ['/Apps', 'Apps'],
-      ['/Accounting', 'Accounting'],
+      ['/Reporting', 'Reporting'],
       {
         title: 'Payjoin',
         path: '/Payjoin',

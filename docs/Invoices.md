@@ -61,7 +61,7 @@ Invoices can be filtered via the quick filters located next to the search button
 
 ### Invoice export
 
-BTCPay Server Invoices can be exported in CSV or JSON format. For more information about invoice export and accounting, [see this page](./Accounting.md).
+BTCPay Server Invoices can be exported in CSV or JSON format. For more information about invoice export and accounting, [see this page](./Reporting.md).
 
 ## Refunding an invoice
 
