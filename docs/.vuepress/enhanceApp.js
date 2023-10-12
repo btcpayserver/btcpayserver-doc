@@ -50,23 +50,22 @@ export default ({ router }) => {
       // redirects
       redirects.forEach(route => router.addRoute(route))
 
-      // initial page rendering
-      app.$once('hook:mounted', () => {
-        // temporary fix for https://github.com/vuejs/vuepress/issues/2428
-        setTimeout(() => {
-          const { hash } = document.location
-          if (hash.length > 1) {
-            const id = hash.substring(1)
-            const element = document.getElementById(id)
-            if (element) element.scrollIntoView()
-          }
-        }, 500)
-      })
-
       document.addEventListener('click', handleClick)
       document.addEventListener('keyup', e => {
         if (isEnter(e)) handleClick(e)
       })
+    })
+
+    // temporary fix for https://github.com/vuejs/vuepress/issues/2428
+    router.afterEach(to => {
+      const { hash } = to
+      if (hash.length > 1) {
+        setTimeout(() => {
+          const id = hash.substring(1)
+          const element = document.getElementById(id)
+          if (element) element.scrollIntoView()
+        }, 500)
+      }
     })
   }
 }
