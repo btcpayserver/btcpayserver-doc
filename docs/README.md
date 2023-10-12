@@ -21,35 +21,17 @@ footer: Content Released under MIT license.
 
 <div class="topics">
   <h3>Explore by topic</h3>
-  <ul>
-    <li>
-      <a href="/Guide/">What is BTCPay&nbsp;Server</a>
-    </li>
-    <li>
-      <a href="/UseCase/">Why BTCPay&nbsp;Server</a>
-    </li>
-    <li>
-      <a href="/TryItOut/">How to deploy BTCPay&nbsp;Server</a>
-    </li>
-    <li>
-      <a href="/WalletSetup/">Wallet Setup</a>
-    </li>
-    <li>
-      <a href="/LightningNetwork/">Lightning Network</a>
-    </li>
-    <li>
-      <a href="/Apps/#point-of-sale-app/">How to setup POS </a>
-    </li>
-    <li>
-      <a href="/Development/GreenFieldExample/">Greenfield API</a>
-    </li>
-    <li>
-      <a href="/FAQ/">Frequently Asked Questions<br>and Common Issues</a>
-    </li>
-    <li>
-      <a href="/Contribute/">How to contribute to BTCPay&nbsp;Server</a>
-    </li>
-  </ul>
+
+- [What is BTCPay&nbsp;Server](./Guide.md)
+- [Why BTCPay&nbsp;Server](./UseCase.md)
+- [How to deploy BTCPay&nbsp;Server](./TryItOut.md)
+- [Wallet Setup](./WalletSetup.md)
+- [Lightning Network](./LightningNetwork.md)
+- [How to setup POS](./Apps.md#point-of-sale-app)
+- [Greenfield API](./Development/GreenFieldExample.md)
+- [Frequently Asked Questions<br>and Common Issues](./FAQ/README.md)
+- [How to contribute to BTCPay&nbsp;Server](./Contribute/README.md)
+
 </div>
 
 !!!include(supporters.html)!!!
