@@ -55,8 +55,6 @@ BTCPay Server instructional video guides can be found on the official BTCPay Ser
 
 You can use BTCPay even if you don't have an e-commerce store. You can launch your BTCPay Server and be the payment processor for your friends or local market. Another use-case is to accept donations through the POS (Point of Sale) app or payment buttons which can be copy-pasted as HTML snippets into any website.
 
-If you do not have a store, but want to create one, read [How to Create an Online Store & Accept Bitcoin – Step By Step Guide](https://bitcoinshirt.co/how-to-create-store-accept-bitcoin/) which teaches you how to build a store from scratch and install BTCPay.
-
 ## Why can't I just give my Bitcoin address to a buyer?
 
 Re-using an address for receiving payments is a privacy issue. Providing a different address manually to each customer is not an optimal solution. Imagine having to send a unique e-mail to everyone that wants to pay you with cryptocurrency.
