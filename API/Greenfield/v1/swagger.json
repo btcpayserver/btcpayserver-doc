@@ -5290,6 +5290,7 @@
             }
           }
         ],
+        "operationId": "PaymentRequests_Pay",
         "description": "Create a new invoice for the payment request, or reuse an existing one",
         "requestBody": {
           "description": "Invoice creation request",
@@ -8762,7 +8763,7 @@
             }
           },
           {
-            "name": "userId",
+            "name": "idOrEmail",
             "in": "path",
             "required": true,
             "description": "The user's id or email",
@@ -10440,7 +10441,7 @@
             "name": "idOrEmail",
             "in": "path",
             "required": true,
-            "description": "The ID of the user to be deleted",
+            "description": "The ID or email of the user to be deleted",
             "schema": {
               "type": "string"
             }
@@ -11716,11 +11717,17 @@
           },
           "depositablePaymentMethods": {
             "type": "array",
+            "items": {
+              "type": "string"
+            },
             "description": "A list of payment methods (crypto code + network) you can deposit to the custodian.",
             "nullable": false
           },
           "withdrawablePaymentMethods": {
             "type": "array",
+            "items": {
+              "type": "string"
+            },
             "description": "A list of payment methods (crypto code + network) you can withdraw from the custodian.",
             "nullable": false
           },
@@ -12257,7 +12264,11 @@
           "status": {
             "nullable": false,
             "description": "Mark an invoice as completed or invalid.",
-            "$ref": "#/components/schemas/InvoiceStatusMark"
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/InvoiceStatusMark"
+              }
+            ]
           }
         }
       },
@@ -12275,7 +12286,7 @@
       },
       "InvoiceStatus": {
         "type": "string",
-        "description": "",
+        "description": "The status of the invoice",
         "x-enumNames": [
           "Expired",
           "Invalid",
@@ -12318,13 +12329,21 @@
           },
           "checkout": {
             "nullable": true,
-            "$ref": "#/components/schemas/CheckoutOptions",
-            "description": "Additional settings to customize the checkout flow"
+            "description": "Additional settings to customize the checkout flow",
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/CheckoutOptions"
+              }
+            ]
           },
           "receipt": {
             "nullable": true,
-            "$ref": "#/components/schemas/ReceiptOptions",
-            "description": "Additional settings to customize the public receipt"
+            "description": "Additional settings to customize the public receipt",
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/ReceiptOptions"
+              }
+            ]
           }
         }
       },
@@ -12357,8 +12376,7 @@
                 "example": "USD"
               },
               "type": {
-                "$ref": "#/components/schemas/InvoiceType",
-                "description": "The type of invoice"
+                "$ref": "#/components/schemas/InvoiceType"
               },
               "checkoutLink": {
                 "type": "string",
@@ -12389,12 +12407,10 @@
                 ]
               },
               "status": {
-                "$ref": "#/components/schemas/InvoiceStatus",
-                "description": "The status of the invoice"
+                "$ref": "#/components/schemas/InvoiceStatus"
               },
               "additionalStatus": {
-                "$ref": "#/components/schemas/InvoiceAdditionalStatus",
-                "description": "a secondary status of the invoice"
+                "$ref": "#/components/schemas/InvoiceAdditionalStatus"
               },
               "availableStatusesForManualMarking": {
                 "type": "array",
@@ -12631,8 +12647,11 @@
         "properties": {
           "speedPolicy": {
             "nullable": true,
-            "$ref": "#/components/schemas/SpeedPolicy",
-            "description": "This is a risk mitigation parameter for the merchant to configure how they want to fulfill orders depending on the number of block confirmations for the transaction made by the consumer on the selected cryptocurrency"
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/SpeedPolicy"
+              }
+            ]
           },
           "paymentMethods": {
             "type": "array",
@@ -12703,11 +12722,8 @@
             "description": "`\"V1\"`: The original checkout form   \n`\"V2\"`: The new experimental checkout form.   \nIf `null` or unspecified, the store's settings will be used.",
             "nullable": true,
             "default": null,
-            "x-enumNames": [
-              "V1",
-              "V2"
-            ],
             "enum": [
+              null,
               "V1",
               "V2"
             ]
@@ -12862,8 +12878,7 @@
             "description": "The fee paid for the payment"
           },
           "status": {
-            "$ref": "#/components/schemas/PaymentStatus",
-            "description": "The status of the payment"
+            "$ref": "#/components/schemas/PaymentStatus"
           },
           "destination": {
             "type": "string",
@@ -12873,7 +12888,7 @@
       },
       "PaymentStatus": {
         "type": "string",
-        "description": "",
+        "description": "The status of the payment",
         "x-enumNames": [
           "Invalid",
           "Processing",
@@ -12887,7 +12902,7 @@
       },
       "InvoiceType": {
         "type": "string",
-        "description": "",
+        "description": "The type of the invoice",
         "x-enumNames": [
           "Standard",
           "TopUp"
@@ -12941,7 +12956,7 @@
       },
       "SpeedPolicy": {
         "type": "string",
-        "description": "`\"HighSpeed\"`: 0 confirmations (1 confirmation if RBF enabled in transaction)   \n`\"MediumSpeed\"`: 1 confirmation   \n`\"LowMediumSpeed\"`: 2 confirmations   \n`\"LowSpeed\"`: 6 confirmations\n",
+        "description": "This is a risk mitigation parameter for the merchant to configure how they want to fulfill orders depending on the number of block confirmations for the transaction made by the consumer on the selected cryptocurrency.\n`\"HighSpeed\"`: 0 confirmations (1 confirmation if RBF enabled in transaction)   \n`\"MediumSpeed\"`: 1 confirmation   \n`\"LowMediumSpeed\"`: 2 confirmations   \n`\"LowSpeed\"`: 6 confirmations\n",
         "x-enumNames": [
           "HighSpeed",
           "LowMediumSpeed",
@@ -13261,16 +13276,22 @@
         "type": "object",
         "properties": {
           "onchain": {
-            "type": "object",
             "description": "On-chain balance of the Lightning node",
             "nullable": true,
-            "$ref": "#/components/schemas/OnchainBalanceData"
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/OnchainBalanceData"
+              }
+            ]
           },
           "offchain": {
-            "type": "object",
             "description": "Off-chain balance of the Lightning node",
             "nullable": true,
-            "$ref": "#/components/schemas/OffchainBalanceData"
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/OffchainBalanceData"
+              }
+            ]
           }
         }
       },
@@ -14772,7 +14793,6 @@
       },
       "TransactionStatus": {
         "type": "string",
-        "description": "",
         "x-enumNames": [
           "Confirmed",
           "Unconfirmed"
@@ -14839,8 +14859,12 @@
             ]
           },
           "status": {
-            "$ref": "#/components/schemas/TransactionStatus",
-            "description": "The status for this transaction"
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/TransactionStatus"
+              }
+            ],
+            "description": "The status of this transaction"
           },
           "labels": {
             "description": "Labels linked to this transaction",
@@ -15262,8 +15286,12 @@
           },
           "receipt": {
             "nullable": true,
-            "$ref": "#/components/schemas/ReceiptOptions",
-            "description": "Additional settings to customize the public receipt"
+            "description": "Additional settings to customize the public receipt",
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/ReceiptOptions"
+              }
+            ]
           },
           "lightningAmountInSatoshi": {
             "type": "boolean",
@@ -15322,6 +15350,31 @@
             "type": "boolean",
             "default": false,
             "description": "If true, payjoin will be proposed in the checkout page if possible. ([More information](https://docs.btcpayserver.org/Payjoin/))"
+          },
+          "autoDetectLanguage": {
+            "type": "boolean",
+            "default": false,
+            "description": "If true, the language on the checkout page will adapt to the language defined by the user's browser settings"
+          },
+          "showPayInWalletButton": {
+            "type": "boolean",
+            "default": true,
+            "description": "If true, the \"Pay in wallet\" button will be shown on the checkout page (Checkout V2)"
+          },
+          "showStoreHeader": {
+            "type": "boolean",
+            "default": true,
+            "description": "If true, the store header will be shown on the checkout page (Checkout V2)"
+          },
+          "celebratePayment": {
+            "type": "boolean",
+            "default": true,
+            "description": "If true, payments on the checkout page will be celebrated with confetti (Checkout V2)"
+          },
+          "playSoundOnPayment": {
+            "type": "boolean",
+            "default": false,
+            "description": "If true, sounds on the checkout page will be enabled (Checkout V2)"
           },
           "lazyPaymentMethods": {
             "type": "boolean",
@@ -15716,7 +15769,11 @@
               },
               "payment": {
                 "description": "Details about the payment",
-                "$ref": "#/components/schemas/Payment"
+                "allOf": [
+                  {
+                    "$ref": "#/components/schemas/Payment"
+                  }
+                ]
               }
             }
           }
