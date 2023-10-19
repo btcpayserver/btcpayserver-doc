@@ -1,0 +1,14 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "BTCPay Server Greenfield Plugin API",
+    "version": "v1",
+    "description": "Plugin APIs for BTCPay Server"
+  },
+  "servers": [
+    {
+      "url": "/",
+      "description": "BTCPay Server Greenfield Plugin API"
+    }
+  ]
+}

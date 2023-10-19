@@ -58,6 +58,31 @@ done
 # Checkout latest release tag, so that we do not publish docs for unreleased APIs yet.
 git checkout $(git tag --sort -version:refname | awk 'match($0, /^v[0-9]+\.[0-9]+\.[0-9]+$/)' | head -n 1)
 
+# Swagger
+if command -v jq >/dev/null 2>&1; then
+  swagger_file="$PUBLIC_DIR/API/Greenfield/v1/swagger.json"
+  jq -rs 'def deepmerge(a;b):
+  reduce b[] as $item (a;
+    reduce ($item | keys_unsorted[]) as $key (.;
+      $item[$key] as $val | ($val | type) as $type | .[$key] = if ($type == "object") then
+        deepmerge({}; [if .[$key] == null then {} else .[$key] end, $val])
+      elif ($type == "array") then
+        (.[$key] + $val | unique)
+      else
+        $val
+      end)
+    );
+  deepmerge({}; .)' BTCPayServer/wwwroot/swagger/v1/*.json > $swagger_file
+
+  # report but don't stop on error
+  set +e
+  REDOCLY_TELEMETRY=off npx @redocly/cli lint $swagger_file
+  set -e
+fi
+
+# We need the base file to be able to generate the swagger for the plugins
+cp BTCPayServer/wwwroot/swagger/v1/swagger.template.json $BASE_DIR/swagger/plugins/btcpay.json
+
 # NBXplorer
 
 echo "Setup dependency: NBXplorer"
@@ -208,7 +233,7 @@ for file in "$DOCS_DIR"/LNbank/*.md; do
   update_external "$file" https://github.com/dennisreimann/btcpayserver-plugin-lnbank "$DOCS_DIR"/LNbank/
 done
 
-cp -r BTCPayServer.Plugins.LNbank/Resources/swagger/* "$BTCPAYSERVER_DIR/BTCPayServer/wwwroot/swagger/"
+cp -r BTCPayServer.Plugins.LNbank/Resources/swagger/* "$BASE_DIR/swagger/plugins"
 
 # PodServer
 
@@ -248,31 +273,6 @@ for file in "$DOCS_DIR"/LNDhubAPI/*.md; do
   update_external "$file" https://github.com/dennisreimann/btcpayserver-plugin-lndhub-api "$DOCS_DIR"/LNDhubAPI/
 done
 
-# Swagger
-
-cd "$BTCPAYSERVER_DIR"
-
-if command -v jq >/dev/null 2>&1; then
-  swagger_file="$PUBLIC_DIR/API/Greenfield/v1/swagger.json"
-  jq -rs 'def deepmerge(a;b):
-  reduce b[] as $item (a;
-    reduce ($item | keys_unsorted[]) as $key (.;
-      $item[$key] as $val | ($val | type) as $type | .[$key] = if ($type == "object") then
-        deepmerge({}; [if .[$key] == null then {} else .[$key] end, $val])
-      elif ($type == "array") then
-        (.[$key] + $val | unique)
-      else
-        $val
-      end)
-    );
-  deepmerge({}; .)' BTCPayServer/wwwroot/swagger/v1/*.json > $swagger_file
-
-  # report but don't stop on error
-  set +e
-  REDOCLY_TELEMETRY=off npx @redocly/cli lint $swagger_file
-  set -e
-fi
-
 # Trocador
 
 echo "Setup dependency: Trocador"
@@ -303,9 +303,7 @@ if [ ! -d "$KUKKS_DIR" ]; then
   git clone --depth 1 https://github.com/Kukks/BTCPayServerPlugins.git "$KUKKS_DIR"
 fi
 
-cd "$KUKKS_DIR"
-
-cd "Plugins/BTCPayServer.Plugins.Wabisabi"
+cd "$KUKKS_DIR/Plugins/BTCPayServer.Plugins.Wabisabi"
 
 cp -r readme.md docs/* "$DOCS_DIR/Wabisabi"
 sed -ie 's$docs/$./$g' "$DOCS_DIR/Wabisabi/readme.md"
@@ -313,20 +311,41 @@ for file in "$DOCS_DIR"/Wabisabi/*.md; do
   update_external "$file" https://github.com/Kukks/BTCPayServerPlugins/tree/master/Plugins/BTCPayServer.Plugins.Wabisabi "$DOCS_DIR"/Wabisabi/
 done
 
-cd -
-
-cd "Plugins/BTCPayServer.Plugins.TicketTailor"
+cd "$KUKKS_DIR/Plugins/BTCPayServer.Plugins.TicketTailor"
 
 cp -r README.md "$DOCS_DIR/TicketTailor"
 for file in "$DOCS_DIR"/TicketTailor/*.md; do
   update_external "$file" https://github.com/Kukks/BTCPayServerPlugins/tree/master/Plugins/BTCPayServer.Plugins.TicketTailor "$DOCS_DIR"/TicketTailor/
 done
 
-cd -
-
-cd "Plugins/BTCPayServer.Plugins.NIP05"
+cd "$KUKKS_DIR/Plugins/BTCPayServer.Plugins.NIP05"
 
 cp -r readme.md "$DOCS_DIR/Nostr"
 for file in "$DOCS_DIR"/Nostr/*.md; do
   update_external "$file" https://github.com/Kukks/BTCPayServerPlugins/tree/master/Plugins/BTCPayServer.Plugins.NIP05 "$DOCS_DIR"/Nostr/
 done
+
+# Plugin Swagger
+
+cd $BASE_DIR
+
+if command -v jq >/dev/null 2>&1; then
+  swagger_file="$PUBLIC_DIR/API/Greenfield/Plugins/swagger.json"
+  jq -rs 'def deepmerge(a;b):
+  reduce b[] as $item (a;
+    reduce ($item | keys_unsorted[]) as $key (.;
+      $item[$key] as $val | ($val | type) as $type | .[$key] = if ($type == "object") then
+        deepmerge({}; [if .[$key] == null then {} else .[$key] end, $val])
+      elif ($type == "array") then
+        (.[$key] + $val | unique)
+      else
+        $val
+      end)
+    );
+  deepmerge({}; .)' swagger/plugins/btcpay.json swagger/plugins.json swagger/plugins/**/*.json > $swagger_file
+
+  # report but don't stop on error
+  set +e
+  REDOCLY_TELEMETRY=off npx @redocly/cli lint $swagger_file --skip-rule=no-unused-components
+  set -e
+fi
