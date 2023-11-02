@@ -1,0 +1,862 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "BTCPay Server Greenfield Plugin API",
+    "version": "Plugins",
+    "description": "Plugin APIs for BTCPay Server",
+    "contact": {
+      "name": "BTCPay Server",
+      "url": "https://btcpayserver.org"
+    },
+    "license": {
+      "name": "MIT",
+      "url": "https://github.com/btcpayserver/btcpayserver/blob/master/LICENSE"
+    }
+  },
+  "servers": [
+    {
+      "url": "/",
+      "description": "BTCPay Server Greenfield API"
+    },
+    {
+      "url": "/",
+      "description": "BTCPay Server Greenfield Plugin API"
+    }
+  ],
+  "components": {
+    "schemas": {
+      "ValidationProblemDetails": {
+        "type": "array",
+        "description": "An array of validation errors of the request",
+        "items": {
+          "type": "object",
+          "description": "A specific validation error on a json property",
+          "properties": {
+            "path": {
+              "type": "string",
+              "nullable": false,
+              "description": "The json path of the property which failed validation"
+            },
+            "message": {
+              "type": "string",
+              "nullable": false,
+              "description": "User friendly error message about the validation"
+            }
+          }
+        }
+      },
+      "ProblemDetails": {
+        "type": "object",
+        "description": "Description of an error happening during processing of the request",
+        "properties": {
+          "code": {
+            "type": "string",
+            "nullable": false,
+            "description": "An error code describing the error"
+          },
+          "message": {
+            "type": "string",
+            "nullable": false,
+            "description": "User friendly error message about the error"
+          }
+        }
+      },
+      "UnixTimestamp": {
+        "type": "number",
+        "format": "int32",
+        "example": 1592312018,
+        "description": "A unix timestamp in seconds"
+      },
+      "SpeedPolicy": {
+        "type": "string",
+        "description": "This is a risk mitigation parameter for the merchant to configure how they want to fulfill orders depending on the number of block confirmations for the transaction made by the consumer on the selected cryptocurrency.\n`\"HighSpeed\"`: 0 confirmations (1 confirmation if RBF enabled in transaction)   \n`\"MediumSpeed\"`: 1 confirmation   \n`\"LowMediumSpeed\"`: 2 confirmations   \n`\"LowSpeed\"`: 6 confirmations\n",
+        "x-enumNames": [
+          "HighSpeed",
+          "LowMediumSpeed",
+          "LowSpeed",
+          "MediumSpeed"
+        ],
+        "enum": [
+          "HighSpeed",
+          "LowMediumSpeed",
+          "LowSpeed",
+          "MediumSpeed"
+        ]
+      },
+      "CheckoutType": {
+        "type": "string",
+        "description": "`\"V1\"`: The original checkout form   \n`\"V2\"`: The new experimental checkout form",
+        "nullable": true,
+        "default": "V1",
+        "x-enumNames": [
+          "V1",
+          "V2"
+        ],
+        "enum": [
+          "V1",
+          "V2"
+        ]
+      },
+      "TimeSpan": {
+        "type": "number",
+        "format": "int32",
+        "example": 90
+      },
+      "TimeSpanSeconds": {
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/TimeSpan"
+          }
+        ],
+        "format": "seconds",
+        "description": "A span of times in seconds"
+      },
+      "TimeSpanMinutes": {
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/TimeSpan"
+          }
+        ],
+        "format": "minutes",
+        "description": "A span of times in minutes"
+      },
+      "PaymentMethodId": {
+        "type": "string",
+        "description": "Payment method IDs are a combination of crypto code and payment type. Available payment method IDs for Bitcoin are:  \n- `\"BTC-OnChain\"` (with the equivalent of `\"BTC\"`)   \n-`\"BTC-LightningLike\"`: Any supported LN-based payment method (Lightning or LNURL)   \n- `\"BTC-LightningNetwork\"`: Lightning   \n- `\"BTC-LNURLPAY\"`: LNURL   \n   \nNote: Separator can be either `-` or `_`."
+      },
+      "LNbankEditWalletRequest": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string",
+            "description": "The name of the wallet"
+          }
+        }
+      },
+      "LNbankReceiveRequest": {
+        "type": "object",
+        "properties": {
+          "description": {
+            "type": "string",
+            "description": "The description of the transaction",
+            "nullable": true
+          },
+          "attachDescription": {
+            "type": "boolean",
+            "description": "Whether or not the description should be attached to the Lightning invoice",
+            "nullable": true,
+            "default": false
+          },
+          "amount": {
+            "type": "string",
+            "description": "Amount wrapped in a string, represented in a millistatoshi string. (1000 millisatoshi = 1 satoshi)"
+          },
+          "privateRouteHints": {
+            "type": "boolean",
+            "nullable": true,
+            "description": "True if the invoice should include private route hints. If null, it falls back to the wallet's default."
+          },
+          "expiry": {
+            "description": "Expiration time in minutes",
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/TimeSpanMinutes"
+              }
+            ]
+          }
+        }
+      },
+      "LNbankSendRequest": {
+        "type": "object",
+        "properties": {
+          "destination": {
+            "type": "string",
+            "description": "The destination of the transaction: Payment Request, LNURL or Lightning Address"
+          },
+          "description": {
+            "type": "string",
+            "nullable": true,
+            "description": "The internal description of the transaction"
+          },
+          "comment": {
+            "type": "string",
+            "nullable": true,
+            "description": "The LNURL comment if the destination is a LNURL"
+          },
+          "explicitAmount": {
+            "type": "string",
+            "nullable": true,
+            "description": "If the invoice amount is unspecified, explicit amount is required. Value wrapped in a string, represented in a millistatoshi string. (1000 millisatoshi = 1 satoshi)"
+          }
+        }
+      },
+      "LNbankWalletDataList": {
+        "type": "array",
+        "items": {
+          "$ref": "#/components/schemas/LNbankWalletData"
+        }
+      },
+      "LNbankWalletData": {
+        "type": "object",
+        "x-abstract": true,
+        "additionalProperties": false,
+        "properties": {
+          "id": {
+            "type": "string",
+            "description": "The id of the wallet",
+            "nullable": false
+          },
+          "name": {
+            "type": "string",
+            "description": "The name of the wallet"
+          },
+          "createdAt": {
+            "description": "The creation time of the wallet",
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/UnixTimestamp"
+              }
+            ]
+          },
+          "balance": {
+            "type": "string",
+            "description": "Amount wrapped in a string, represented in a millistatoshi string. (1000 millisatoshi = 1 satoshi)"
+          },
+          "accessKey": {
+            "type": "string",
+            "description": "The access key for the wallet"
+          },
+          "lnurlPayBech32": {
+            "type": "string",
+            "description": "Bech32 representation of LNURL for pay requests",
+            "example": "lnurl1dp68gup69uhnzv3h9cczuvpwxyarzdp3xsez7ctsdyhhvvf0d3hxyctwdvhkcmn4wfkz7v3kxccr2dekxyknsctyxgkngveexyknsv33vykngvr9v5unjv3evfnrwde0wpshj5c6cpv"
+          },
+          "lnurlPayUri": {
+            "type": "string",
+            "description": "URI representation of LNURL for pay requests",
+            "example": "lnurlp://example.com/api/v1/lnbank/lnurl/26605761-8ad2-4391-821a-40ee9929bf77/pay"
+          },
+          "lightningAddressIdentifier": {
+            "type": "string",
+            "description": "The Lightning Address username part before the '@' sign",
+            "example": "willy"
+          }
+        }
+      },
+      "LNbankTransactionDataList": {
+        "type": "array",
+        "items": {
+          "$ref": "#/components/schemas/LNbankTransactionData"
+        }
+      },
+      "LNbankTransactionData": {
+        "type": "object",
+        "x-abstract": true,
+        "additionalProperties": false,
+        "properties": {
+          "id": {
+            "type": "string",
+            "description": "The id of the transaction",
+            "nullable": false
+          },
+          "walletId": {
+            "type": "string",
+            "description": "The id of the wallet",
+            "nullable": false
+          },
+          "invoiceId": {
+            "type": "string",
+            "description": "The id of the associated Lightning invoice",
+            "nullable": true
+          },
+          "withdrawConfigId": {
+            "type": "string",
+            "description": "The id of the withdraw configuration used for this transaction",
+            "nullable": true
+          },
+          "description": {
+            "type": "string",
+            "description": "The description of the transaction"
+          },
+          "status": {
+            "type": "string",
+            "description": "The status of the transaction"
+          },
+          "paymentRequest": {
+            "type": "string",
+            "description": "The payment request of the transaction"
+          },
+          "paymentHash": {
+            "type": "string",
+            "description": "The payment hash of the transaction"
+          },
+          "preimage": {
+            "type": "string",
+            "description": "The preimage of the transaction",
+            "nullable": true
+          },
+          "amount": {
+            "type": "string",
+            "description": "Amount wrapped in a string, represented in a millistatoshi string. (1000 millisatoshi = 1 satoshi)"
+          },
+          "amountSettled": {
+            "type": "string",
+            "description": "Settled amount wrapped in a string, represented in a millistatoshi string. (1000 millisatoshi = 1 satoshi)"
+          },
+          "routingFee": {
+            "type": "string",
+            "description": "Routing fee wrapped in a string, represented in a millistatoshi string. (1000 millisatoshi = 1 satoshi)"
+          },
+          "createdAt": {
+            "description": "The creation time of the transaction",
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/UnixTimestamp"
+              }
+            ]
+          },
+          "expiresAt": {
+            "description": "The expiration time of the transaction",
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/UnixTimestamp"
+              }
+            ]
+          },
+          "paidAt": {
+            "description": "The payment time of the transaction",
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/UnixTimestamp"
+              }
+            ]
+          }
+        }
+      }
+    },
+    "securitySchemes": {
+      "API_Key": {
+        "type": "apiKey",
+        "description": "BTCPay Server supports authenticating and authorizing users through an API Key that is generated by them. Send the API Key as a header value to Authorization with the format: `token {token}`. For a smoother experience, you can generate a url that redirects users to an API key creation screen.\n\n The following permissions are available to the context of the user creating the API Key:\n\n* `unrestricted`: Unrestricted access\n* `btcpay.user.candeleteuser`: Delete user\n* `btcpay.user.canviewprofile`: View your profile\n* `btcpay.user.canmodifyprofile`: Manage your profile\n* `btcpay.user.canmanagenotificationsforuser`: Manage your notifications\n* `btcpay.user.canviewnotificationsforuser`: View your notifications\n\nThe following permissions are available if the user is an administrator:\n\n* `btcpay.server.canviewusers`: View users\n* `btcpay.server.cancreateuser`: Create new users\n* `btcpay.server.canmanageusers`: Manage users\n* `btcpay.server.canmodifyserversettings`: Manage your server\n* `btcpay.server.canuseinternallightningnode`: Use the internal lightning node\n* `btcpay.server.canviewlightninginvoiceinternalnode`: View invoices from internal lightning node\n* `btcpay.server.cancreatelightninginvoiceinternalnode`: Create invoices with internal lightning node\n\nThe following permissions applies to all stores of the user, you can limit to a specific store with the following format: `btcpay.store.cancreateinvoice:6HSHAEU4iYWtjxtyRs9KyPjM9GAQp8kw2T9VWbGG1FnZ`:\n\n* `btcpay.store.canmodifystoresettings`: Modify your stores\n* `btcpay.store.canviewcustodianaccounts`: View exchange accounts linked to your stores\n* `btcpay.store.canmanagecustodianaccounts`: Manage exchange accounts linked to your stores\n* `btcpay.store.candeposittocustodianaccount`: Deposit funds to exchange accounts linked to your stores\n* `btcpay.store.canwithdrawfromcustodianaccount`: Withdraw funds from exchange accounts to your store\n* `btcpay.store.cantradecustodianaccount`: Trade funds on your store's exchange accounts\n* `btcpay.store.webhooks.canmodifywebhooks`: Modify stores webhooks\n* `btcpay.store.canviewstoresettings`: View your stores\n* `btcpay.store.cancreateinvoice`: Create an invoice\n* `btcpay.store.canviewinvoices`: View invoices\n* `btcpay.store.canmodifyinvoices`: Modify invoices\n* `btcpay.store.canmodifypaymentrequests`: Modify your payment requests\n* `btcpay.store.canviewpaymentrequests`: View your payment requests\n* `btcpay.store.canmanagepullpayments`: Manage your pull payments\n* `btcpay.store.canarchivepullpayments`: Archive your pull payments\n* `btcpay.store.cancreatepullpayments`: Create pull payments\n* `btcpay.store.cancreatenonapprovedpullpayments`: Create non-approved pull payments\n* `btcpay.store.canuselightningnode`: Use the lightning nodes associated with your stores\n* `btcpay.store.canviewlightninginvoice`: View the lightning invoices associated with your stores\n* `btcpay.store.cancreatelightninginvoice`: Create invoices from the lightning nodes associated with your stores\n\nNote that API Keys only limits permission of a user and can never expand it. If an API Key has the permission `btcpay.server.canmodifyserversettings` but that the user account creating this API Key is not administrator, the API Key will not be able to modify the server settings.\nSome permissions may include other permissions, see [this operation](#operation/permissionsMetadata).\n",
+        "name": "Authorization",
+        "in": "header"
+      },
+      "Basic": {
+        "type": "http",
+        "description": "BTCPay Server supports authenticating and authorizing users through the Basic HTTP authentication scheme. Send the user and password encoded in base64 with the format `Basic {base64(username:password)}`. Using this authentication method implicitly provides you with the `unrestricted` permission",
+        "scheme": "Basic"
+      },
+      "LNbank_Access_Key": {
+        "type": "http",
+        "scheme": "bearer",
+        "description": "LNbank supports authenticating and authorizing users through an Access Key that is generated by them in the LNbank wallet settings. Send the API Key as a header value to Authorization with the format: `Bearer {token}`.\n\n The following permissions are available to the context of the user creating the API Key:\n\n* `btcpay.plugin.lnbank.canviewwallet`: Simple reading access\n* `btcpay.plugin.lnbank.cancreateinvoices`: Invoices can be created, but not paid\n* `btcpay.plugin.lnbank.cansendmoney`: The user can send money from the wallet\n* `btcpay.plugin.lnbank.canmanagewallet`: Manage the wallet and send money\n* `btcpay.plugin.lnbank.canmanagelnbank`: Admin users can manage the LNbank instance\n"
+      }
+    }
+  },
+  "security": [
+    {
+      "API_Key": [],
+      "Basic": []
+    },
+    {
+      "LNbank_Access_Key": []
+    }
+  ],
+  "externalDocs": {
+    "description": "BTCPay Greenfield API (v1)",
+    "url": "https://docs.btcpayserver.org/API/Greenfield/v1/"
+  },
+  "paths": {
+    "/api/v1/lnbank/wallets": {
+      "get": {
+        "tags": [
+          "LNbank"
+        ],
+        "summary": "Get wallets",
+        "description": "View information about the available wallets",
+        "operationId": "LNbankWallets_GetWallets",
+        "responses": {
+          "200": {
+            "description": "List of wallets",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/LNbankWalletDataList"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "API_Key": [
+              "btcpay.user.canmodifyprofile"
+            ]
+          }
+        ]
+      },
+      "post": {
+        "tags": [
+          "LNbank"
+        ],
+        "summary": "Create a new wallet",
+        "description": "Create a new wallet",
+        "operationId": "LNbankWallets_CreateWallet",
+        "requestBody": {
+          "x-name": "request",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/LNbankEditWalletRequest"
+              }
+            }
+          },
+          "required": true,
+          "x-position": 1
+        },
+        "responses": {
+          "200": {
+            "description": "Information about the new wallet",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/LNbankWalletData"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "A list of errors that occurred when creating the wallet",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ValidationProblemDetails"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "If you are authenticated but forbidden to add new wallets"
+          }
+        },
+        "security": [
+          {
+            "API_Key": [
+              "btcpay.user.canmodifyprofile"
+            ]
+          }
+        ]
+      }
+    },
+    "/api/v1/lnbank/wallets/{walletId}": {
+      "get": {
+        "tags": [
+          "LNbank"
+        ],
+        "summary": "Get wallet",
+        "parameters": [
+          {
+            "name": "walletId",
+            "in": "path",
+            "required": true,
+            "description": "The wallet to fetch",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "description": "View information about the specified wallet",
+        "operationId": "LNbankWallets_GetWallet",
+        "responses": {
+          "200": {
+            "description": "Specified wallet",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/LNbankWalletData"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "If you are authenticated but forbidden to view the specified wallet"
+          },
+          "404": {
+            "description": "The key is not found for this wallet"
+          }
+        },
+        "security": [
+          {
+            "LNbank_Access_Key": [
+              "btcpay.plugin.lnbank.canviewwallet"
+            ]
+          }
+        ]
+      },
+      "put": {
+        "tags": [
+          "LNbank"
+        ],
+        "summary": "Update wallet",
+        "parameters": [
+          {
+            "name": "walletId",
+            "in": "path",
+            "required": true,
+            "description": "The wallet to update",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "description": "Update the specified wallet",
+        "requestBody": {
+          "x-name": "request",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/LNbankEditWalletRequest"
+              }
+            }
+          },
+          "required": true,
+          "x-position": 1
+        },
+        "operationId": "LNbankWallets_UpdateWallet",
+        "responses": {
+          "200": {
+            "description": "Updated specified wallet",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/LNbankWalletData"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "A list of errors that occurred when updating the wallet",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ValidationProblemDetails"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "If you are authenticated but forbidden to update the specified wallet"
+          },
+          "404": {
+            "description": "The key is not found for this wallet"
+          }
+        },
+        "security": [
+          {
+            "LNbank_Access_Key": [
+              "btcpay.plugin.lnbank.canmanagewallet"
+            ]
+          }
+        ]
+      },
+      "delete": {
+        "tags": [
+          "LNbank"
+        ],
+        "summary": "Remove wallet",
+        "description": "Removes the specified wallet.",
+        "parameters": [
+          {
+            "name": "walletId",
+            "in": "path",
+            "required": true,
+            "description": "The wallet to remove",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "The wallet has been removed"
+          },
+          "400": {
+            "description": "A list of errors that occurred when removing the wallet",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ValidationProblemDetails"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "If you are authenticated but forbidden to remove the specified wallet"
+          },
+          "404": {
+            "description": "The key is not found for this wallet"
+          }
+        },
+        "security": [
+          {
+            "LNbank_Access_Key": [
+              "btcpay.plugin.lnbank.canmanagewallet"
+            ]
+          }
+        ]
+      }
+    },
+    "/api/v1/lnbank/wallets/{walletId}/receive": {
+      "post": {
+        "tags": [
+          "LNbank"
+        ],
+        "summary": "Receive to wallet",
+        "parameters": [
+          {
+            "name": "walletId",
+            "in": "path",
+            "required": true,
+            "description": "The receiving wallet",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "description": "Create an invoice for the specified wallet",
+        "requestBody": {
+          "x-name": "request",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/LNbankReceiveRequest"
+              }
+            }
+          },
+          "required": true,
+          "x-position": 1
+        },
+        "operationId": "LNbankWallets_Receive",
+        "responses": {
+          "200": {
+            "description": "Invoice created",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/LNbankTransactionData"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "A list of errors that occurred when creating the invoice",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ValidationProblemDetails"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "If you are authenticated but forbidden to create an invoice for the specified wallet"
+          },
+          "404": {
+            "description": "The key is not found for this wallet"
+          }
+        },
+        "security": [
+          {
+            "LNbank_Access_Key": [
+              "btcpay.plugin.lnbank.cancreateinvoices"
+            ]
+          }
+        ]
+      }
+    },
+    "/api/v1/lnbank/wallets/{walletId}/send": {
+      "post": {
+        "tags": [
+          "LNbank"
+        ],
+        "summary": "Send from wallet",
+        "parameters": [
+          {
+            "name": "walletId",
+            "in": "path",
+            "required": true,
+            "description": "The sending wallet",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "description": "Pay destination (Payment Request, LNURL or Lightning Address) from the specified wallet",
+        "requestBody": {
+          "x-name": "request",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/LNbankSendRequest"
+              }
+            }
+          },
+          "required": true,
+          "x-position": 1
+        },
+        "operationId": "LNbankWallets_Send",
+        "responses": {
+          "200": {
+            "description": "Payment settled",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/LNbankTransactionData"
+                }
+              }
+            }
+          },
+          "201": {
+            "description": "Payment sent, but in progress",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/LNbankTransactionData"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "A list of errors that occurred when paying the destination",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ValidationProblemDetails"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "If you are authenticated but forbidden to send money from the specified wallet"
+          },
+          "404": {
+            "description": "The key is not found for this wallet"
+          }
+        },
+        "security": [
+          {
+            "LNbank_Access_Key": [
+              "btcpay.plugin.lnbank.cansendmoney"
+            ]
+          }
+        ]
+      }
+    },
+    "/api/v1/lnbank/wallets/{walletId}/transactions": {
+      "get": {
+        "tags": [
+          "LNbank"
+        ],
+        "summary": "Get transactions",
+        "description": "View information about the wallet transactions",
+        "operationId": "LNbankTransactions_GetTransactions",
+        "parameters": [
+          {
+            "name": "walletId",
+            "in": "path",
+            "required": true,
+            "description": "The wallet to fetch",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "List of transactions",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/LNbankTransactionDataList"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "If you are authenticated but forbidden to view the specified wallet"
+          },
+          "404": {
+            "description": "The key is not found for this wallet or transaction"
+          }
+        },
+        "security": [
+          {
+            "LNbank_Access_Key": [
+              "btcpay.plugin.lnbank.canviewwallet"
+            ]
+          }
+        ]
+      }
+    },
+    "/api/v1/lnbank/wallets/{walletId}/transactions/{transactionId}": {
+      "get": {
+        "tags": [
+          "LNbank"
+        ],
+        "summary": "Get transaction",
+        "parameters": [
+          {
+            "name": "transactionId",
+            "in": "path",
+            "required": true,
+            "description": "The transaction to fetch",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "walletId",
+            "in": "path",
+            "required": true,
+            "description": "The wallet to fetch",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "description": "View information about the specified transaction",
+        "operationId": "LNbankTransactions_GetTransaction",
+        "responses": {
+          "200": {
+            "description": "Specified transaction",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/LNbankTransactionData"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "If you are authenticated but forbidden to view the specified wallet or transaction"
+          },
+          "404": {
+            "description": "The key is not found for this wallet or transaction"
+          }
+        },
+        "security": [
+          {
+            "LNbank_Access_Key": [
+              "btcpay.plugin.lnbank.canviewwallet"
+            ]
+          }
+        ]
+      }
+    }
+  },
+  "tags": [
+    {
+      "name": "LNbank"
+    }
+  ]
+}
