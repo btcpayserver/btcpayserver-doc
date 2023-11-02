@@ -369,12 +369,9 @@
   "paths": {
     "/api/v1/lnbank/wallets": {
       "get": {
-        "tags": [
-          "LNbank"
-        ],
+        "operationId": "LNbankWallets_GetWallets",
         "summary": "Get wallets",
         "description": "View information about the available wallets",
-        "operationId": "LNbankWallets_GetWallets",
         "responses": {
           "200": {
             "description": "List of wallets",
@@ -385,8 +382,14 @@
                 }
               }
             }
+          },
+          "404": {
+            "description": "The list of wallets is not found"
           }
         },
+        "tags": [
+          "LNbank"
+        ],
         "security": [
           {
             "API_Key": [
@@ -396,12 +399,9 @@
         ]
       },
       "post": {
-        "tags": [
-          "LNbank"
-        ],
+        "operationId": "LNbankWallets_CreateWallet",
         "summary": "Create a new wallet",
         "description": "Create a new wallet",
-        "operationId": "LNbankWallets_CreateWallet",
         "requestBody": {
           "x-name": "request",
           "content": {
@@ -439,6 +439,9 @@
             "description": "If you are authenticated but forbidden to add new wallets"
           }
         },
+        "tags": [
+          "LNbank"
+        ],
         "security": [
           {
             "API_Key": [
@@ -450,10 +453,9 @@
     },
     "/api/v1/lnbank/wallets/{walletId}": {
       "get": {
-        "tags": [
-          "LNbank"
-        ],
+        "operationId": "LNbankWallets_GetWallet",
         "summary": "Get wallet",
+        "description": "View information about the specified wallet",
         "parameters": [
           {
             "name": "walletId",
@@ -465,8 +467,6 @@
             }
           }
         ],
-        "description": "View information about the specified wallet",
-        "operationId": "LNbankWallets_GetWallet",
         "responses": {
           "200": {
             "description": "Specified wallet",
@@ -485,6 +485,9 @@
             "description": "The key is not found for this wallet"
           }
         },
+        "tags": [
+          "LNbank"
+        ],
         "security": [
           {
             "LNbank_Access_Key": [
@@ -494,10 +497,9 @@
         ]
       },
       "put": {
-        "tags": [
-          "LNbank"
-        ],
+        "operationId": "LNbankWallets_UpdateWallet",
         "summary": "Update wallet",
+        "description": "Update the specified wallet",
         "parameters": [
           {
             "name": "walletId",
@@ -509,7 +511,6 @@
             }
           }
         ],
-        "description": "Update the specified wallet",
         "requestBody": {
           "x-name": "request",
           "content": {
@@ -522,7 +523,6 @@
           "required": true,
           "x-position": 1
         },
-        "operationId": "LNbankWallets_UpdateWallet",
         "responses": {
           "200": {
             "description": "Updated specified wallet",
@@ -551,6 +551,9 @@
             "description": "The key is not found for this wallet"
           }
         },
+        "tags": [
+          "LNbank"
+        ],
         "security": [
           {
             "LNbank_Access_Key": [
@@ -560,9 +563,7 @@
         ]
       },
       "delete": {
-        "tags": [
-          "LNbank"
-        ],
+        "operationId": "LNbankWallets_RemoveWallet",
         "summary": "Remove wallet",
         "description": "Removes the specified wallet.",
         "parameters": [
@@ -597,6 +598,9 @@
             "description": "The key is not found for this wallet"
           }
         },
+        "tags": [
+          "LNbank"
+        ],
         "security": [
           {
             "LNbank_Access_Key": [
@@ -608,10 +612,9 @@
     },
     "/api/v1/lnbank/wallets/{walletId}/receive": {
       "post": {
-        "tags": [
-          "LNbank"
-        ],
         "summary": "Receive to wallet",
+        "operationId": "LNbankWallets_Receive",
+        "description": "Create an invoice for the specified wallet",
         "parameters": [
           {
             "name": "walletId",
@@ -623,7 +626,6 @@
             }
           }
         ],
-        "description": "Create an invoice for the specified wallet",
         "requestBody": {
           "x-name": "request",
           "content": {
@@ -636,7 +638,6 @@
           "required": true,
           "x-position": 1
         },
-        "operationId": "LNbankWallets_Receive",
         "responses": {
           "200": {
             "description": "Invoice created",
@@ -665,6 +666,9 @@
             "description": "The key is not found for this wallet"
           }
         },
+        "tags": [
+          "LNbank"
+        ],
         "security": [
           {
             "LNbank_Access_Key": [
@@ -676,10 +680,9 @@
     },
     "/api/v1/lnbank/wallets/{walletId}/send": {
       "post": {
-        "tags": [
-          "LNbank"
-        ],
+        "operationId": "LNbankWallets_Send",
         "summary": "Send from wallet",
+        "description": "Pay destination (Payment Request, LNURL or Lightning Address) from the specified wallet",
         "parameters": [
           {
             "name": "walletId",
@@ -691,7 +694,6 @@
             }
           }
         ],
-        "description": "Pay destination (Payment Request, LNURL or Lightning Address) from the specified wallet",
         "requestBody": {
           "x-name": "request",
           "content": {
@@ -704,7 +706,6 @@
           "required": true,
           "x-position": 1
         },
-        "operationId": "LNbankWallets_Send",
         "responses": {
           "200": {
             "description": "Payment settled",
@@ -743,6 +744,9 @@
             "description": "The key is not found for this wallet"
           }
         },
+        "tags": [
+          "LNbank"
+        ],
         "security": [
           {
             "LNbank_Access_Key": [
@@ -754,12 +758,9 @@
     },
     "/api/v1/lnbank/wallets/{walletId}/transactions": {
       "get": {
-        "tags": [
-          "LNbank"
-        ],
+        "operationId": "LNbankTransactions_GetTransactions",
         "summary": "Get transactions",
         "description": "View information about the wallet transactions",
-        "operationId": "LNbankTransactions_GetTransactions",
         "parameters": [
           {
             "name": "walletId",
@@ -789,6 +790,9 @@
             "description": "The key is not found for this wallet or transaction"
           }
         },
+        "tags": [
+          "LNbank"
+        ],
         "security": [
           {
             "LNbank_Access_Key": [
@@ -800,10 +804,9 @@
     },
     "/api/v1/lnbank/wallets/{walletId}/transactions/{transactionId}": {
       "get": {
-        "tags": [
-          "LNbank"
-        ],
+        "operationId": "LNbankTransactions_GetTransaction",
         "summary": "Get transaction",
+        "description": "View information about the specified transaction",
         "parameters": [
           {
             "name": "transactionId",
@@ -824,8 +827,6 @@
             }
           }
         ],
-        "description": "View information about the specified transaction",
-        "operationId": "LNbankTransactions_GetTransaction",
         "responses": {
           "200": {
             "description": "Specified transaction",
@@ -844,6 +845,9 @@
             "description": "The key is not found for this wallet or transaction"
           }
         },
+        "tags": [
+          "LNbank"
+        ],
         "security": [
           {
             "LNbank_Access_Key": [
@@ -856,7 +860,8 @@
   },
   "tags": [
     {
-      "name": "LNbank"
+      "name": "LNbank",
+      "description": "LNbank operations"
     }
   ]
 }
