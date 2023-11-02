@@ -55,34 +55,6 @@ for file in "$DOCS_DIR"/BTCPayServer/*.md; do
   update_external "$file" https://github.com/btcpayserver/btcpayserver "$DOCS_DIR"/BTCPayServer/
 done
 
-# Checkout latest release tag, so that we do not publish docs for unreleased APIs yet.
-git checkout $(git tag --sort -version:refname | awk 'match($0, /^v[0-9]+\.[0-9]+\.[0-9]+$/)' | head -n 1)
-
-# Swagger
-if command -v jq >/dev/null 2>&1; then
-  swagger_file="$PUBLIC_DIR/API/Greenfield/v1/swagger.json"
-  jq -rs 'def deepmerge(a;b):
-  reduce b[] as $item (a;
-    reduce ($item | keys_unsorted[]) as $key (.;
-      $item[$key] as $val | ($val | type) as $type | .[$key] = if ($type == "object") then
-        deepmerge({}; [if .[$key] == null then {} else .[$key] end, $val])
-      elif ($type == "array") then
-        (.[$key] + $val | unique)
-      else
-        $val
-      end)
-    );
-  deepmerge({}; .)' BTCPayServer/wwwroot/swagger/v1/*.json > $swagger_file
-
-  # report but don't stop on error
-  set +e
-  REDOCLY_TELEMETRY=off npx @redocly/cli lint $swagger_file
-  set -e
-fi
-
-# We need the base file to be able to generate the swagger for the plugins
-cp BTCPayServer/wwwroot/swagger/v1/swagger.template.json $BASE_DIR/swagger/plugins/btcpay.json
-
 # NBXplorer
 
 echo "Setup dependency: NBXplorer"
@@ -324,6 +296,39 @@ cp -r readme.md "$DOCS_DIR/Nostr"
 for file in "$DOCS_DIR"/Nostr/*.md; do
   update_external "$file" https://github.com/Kukks/BTCPayServerPlugins/tree/master/Plugins/BTCPayServer.Plugins.NIP05 "$DOCS_DIR"/Nostr/
 done
+
+# Swagger
+
+# BTCPay Swagger: Checkout latest release tag, so that we do not publish docs for unreleased APIs yet
+
+cd "$BTCPAYSERVER_DIR"
+
+git checkout $(git tag --sort -version:refname | awk 'match($0, /^v[0-9]+\.[0-9]+\.[0-9]+$/)' | head -n 1)
+
+# Swagger
+if command -v jq >/dev/null 2>&1; then
+  swagger_file="$PUBLIC_DIR/API/Greenfield/v1/swagger.json"
+  jq -rs 'def deepmerge(a;b):
+  reduce b[] as $item (a;
+    reduce ($item | keys_unsorted[]) as $key (.;
+      $item[$key] as $val | ($val | type) as $type | .[$key] = if ($type == "object") then
+        deepmerge({}; [if .[$key] == null then {} else .[$key] end, $val])
+      elif ($type == "array") then
+        (.[$key] + $val | unique)
+      else
+        $val
+      end)
+    );
+  deepmerge({}; .)' BTCPayServer/wwwroot/swagger/v1/*.json $BASE_DIR/swagger/btcpay.json > $swagger_file
+
+  # report but don't stop on error
+  set +e
+  REDOCLY_TELEMETRY=off npx @redocly/cli lint $swagger_file
+  set -e
+fi
+
+# We need the base file to be able to generate the swagger for the plugins
+cp BTCPayServer/wwwroot/swagger/v1/swagger.template.json $BASE_DIR/swagger/plugins/btcpay.json
 
 # Plugin Swagger
 
