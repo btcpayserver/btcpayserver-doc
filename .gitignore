@@ -25,6 +25,7 @@
 /docs/img/btcpayexposecloudflare*
 /docs/img/cloudflare*
 /docs/img/Cloudflare*
+/swagger/plugins/**
 
 # Constructed docs
 /docs/Development/LocalDevelopment.md
