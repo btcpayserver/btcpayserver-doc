@@ -213,7 +213,7 @@ You can run the following command line to give access to BTCPay to your server v
 ```bash
 sudo su -
 
-# Checkou latest BTCPay Server version
+# Checkout latest BTCPay Server version
 cd $BTCPAY_BASE_DIRECTORY/btcpayserver-docker
 git checkout $(git tag --sort -version:refname | awk 'match($0, /^v[0-9]+\.[0-9]+\.[0-9]+$/)' | head -n 1)
 
