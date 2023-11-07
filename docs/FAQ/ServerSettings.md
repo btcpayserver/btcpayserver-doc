@@ -212,8 +212,11 @@ You can run the following command line to give access to BTCPay to your server v
 
 ```bash
 sudo su -
+
+# Checkout latest BTCPay Server version
 cd $BTCPAY_BASE_DIRECTORY/btcpayserver-docker
-git checkout master
+git checkout $(git tag --sort -version:refname | awk 'match($0, /^v[0-9]+\.[0-9]+\.[0-9]+$/)' | head -n 1)
+
 # Setup SSH access via private key
 ssh-keygen -t rsa -f /root/.ssh/id_rsa_btcpay -q -P "" -m PEM
 echo "# Key used by BTCPay Server" >> /root/.ssh/authorized_keys
