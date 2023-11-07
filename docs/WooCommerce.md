@@ -74,7 +74,7 @@ You can either click on the notifications link saying "**please configure the pl
 ### 2.1 Connect using the API key wizard (recommended)
 
 1. In the field "**BTCPay Server URL**", enter the full URL of your host (including the https) – https://btcpay.mydomain.com
-2. Click on the link below the "**BTCPay Api Key**" field that says "\*_click here to generate API keys_" (you will be redirected to BTCPay Server "Authorization request" page.
+2. Click on the button [Generate API key] (you will be redirected to BTCPay Server "Authorization request" page.
    ![BTCPay WordPress V2: Link to BTCPay Settings](./img/woocommerce/btcpay-wc-2--03-settings--api-key-redirect.png)
 
 3. If you are not logged in to your BTCPay Server instance, do so now. (optional)

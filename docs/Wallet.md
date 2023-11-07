@@ -59,7 +59,7 @@ If you set up an [existing wallet with your BTCPay Server](./WalletSetup.md#use-
 
 ##### Signing with a wallet supporting PSBT
 
-PSBT (**Partially Signed Bitcoin transactions**) is an interchange format for Bitcoin transactions that are not fully signed yet.
+PSBT (**Partially Signed Bitcoin Transactions**) is an interchange format for Bitcoin transactions that are not fully signed yet.
 PSBT is supported in BTCPay Server and can be signed with compatible hardware and software wallets.
 
 The construction of a fully signed Bitcoin transaction goes through the following steps:
@@ -71,7 +71,9 @@ The construction of a fully signed Bitcoin transaction goes through the followin
 - BTCPay Server produces the final Bitcoin transaction
 - You verify the result and broadcast it to the network
 
-Check this tutorial on how to [sign a PSBT transaction with ColdCard Hardware Wallet](./ColdCardWallet.md#spending-from-btcpay-server-wallet-with-coldcard-psbt), completely offline/air-gapped.
+Tutorials:
+- [Sign a PSBT transaction with ColdCard Hardware Wallet](./ColdCardWallet.md#spending-from-btcpay-server-wallet-with-coldcard-psbt) (completely offline/air-gapped)
+- [Create and sign a PSBT transaction with Sparrow wallet](./Sign-PSBT-with-sparrow-wallet.md)
 
 ##### Signing with a hardware wallet
 
