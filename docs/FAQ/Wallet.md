@@ -135,6 +135,11 @@ In the future they may become unified but for the time being, to manage your Lig
 
 ## Is there a mobile app for BTCPay Server wallet?
 
+:::tip
+Update 11/2023:
+There will be a mobile app for BTCPay Server wallet in the future. [It is currently in development](https://twitter.com/BtcpayServer/status/1699114457421447543).
+:::
+
 BTCPay Server is a web app (not a mobile app) and may be viewed using any device that can display a web browser. There are mobile apps which allow you to connect to your BTCPay Server Lightning node (Zeus, Zap, etc.).
 
 You can also use mobile apps to connect to your Bitcoin full node using either P2P or RPC. If you are on iOS you can easily connect to your Bitcoin full node using Fully Noded.
@@ -150,3 +155,7 @@ To connect your BTCPay node to Fully Noded:
 Here are some node statuses and network information you can easily monitor from your Fully Noded:
 
 ![Fully Noded](../img/FullyNoded.png)
+
+## How can I use PSBT (partially signed bitcoin transactions) with BTCPay Server?
+
+You can use BTCPay Server to create and/or broadcast PSBT. Check our guides to [Sign a PSBT transaction with ColdCard hardware wallet](./ColdCardWallet.md#spending-from-btcpay-server-wallet-with-coldcard-psbt) and [create and sign a PSBT transaction with Sparrow wallet](./Sign-PSBT-with-sparrow-wallet.md).
