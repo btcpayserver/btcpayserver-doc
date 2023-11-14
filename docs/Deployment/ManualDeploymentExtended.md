@@ -640,7 +640,7 @@ bitcoin-cli getnetworkinfo
 }
 ```
 
-An alternative approach is to search the Bitcoin Dameon log file:
+An alternative approach is to search the Bitcoin daemon log file:
 
 ```bash
 ~$ cat /var/lib/bitcoind/debug.log | grep onion
@@ -648,7 +648,7 @@ An alternative approach is to search the Bitcoin Dameon log file:
 2019-05-23T18:24:22Z AddLocal(4d4al7v4hj5p7bb6.onion:8333,4)
 ```
 
-If there is a problem and no onion address can be found in the log file then check for "tor" related error messages:
+If there is a problem and no onion address can be found in the log file then check for Tor related error messages:
 
 ```bash
 ~$ cat /var/lib/bitcoind/debug.log | grep tor
@@ -656,7 +656,7 @@ If there is a problem and no onion address can be found in the log file then che
 2020-07-27T08:03:28Z tor: Authentication cookie /run/tor/control.authcookie could not be opened (check permissions)
 ```
 
-The above error message can occur if the user accounts running the `Bitcoin` service does not have read access to the `Tor` authentication cookie file, [more info](https://github.com/bitcoin/bitcoin/blob/master/doc/tor.md#3-automatically-listen-on-tor). To fix this particular error add the required user account to the `debian-tor` group.
+The above error message can occur if the user accounts running the Bitcoin service does not have read access to the Tor authentication cookie file, [more info](https://github.com/bitcoin/bitcoin/blob/master/doc/tor.md#3-automatically-listen-on-tor). To fix this particular error add the required user account to the `debian-tor` group.
 
 ```bash
 sudo usermod -a -G debian-tor admin
