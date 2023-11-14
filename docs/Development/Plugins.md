@@ -250,7 +250,7 @@ To show certain parts of the UI depending on the permissions the user has, you c
 <li class="nav-item" permission="@Policies.CanModifyProfile"></li>
 ```
 
-#### Customing authorization
+#### Customizing Authorization
 
 You can also define your own `AuthenticationSchemes` and `Policies` within the `Execute` method of the plugin base class:
 
