@@ -129,10 +129,44 @@ Some well-known names can be interpreted and modify the invoice's settings.
 | `invoice_amount`   | The invoice's amount   |
 | `invoice_currency` | The invoice's currency |
 | Starts with `invoice_amount_adjustment` | As long its value is computed to be a number, it will adjust the invoice amount accordingly. |
+| Starts with `invoice_amount_multiply_adjustment` | Adjusts the generated invoice amount by multiplying with this value. |
 
 ## Mirror fields
 
-A `Mirror` field is defined by the type `mirror`. Its value is set to the name of another field, and upon form submission, that field's value will be copied to the mirror field. The mirror type also has value mapping capabilities so that the referenced field's value can be transformed as it is copied over to the mirror field. For example, you could have a select field with a list of countries, and then create an `invoice_amount_adjustment` field, where you adjust the price of the invoice based on the country selected.
+A `Mirror` field is defined by the type `mirror`. Its value is set to the name of another field, and upon form submission, that field's value will be copied to the mirror field.
+The mirror type also has value mapping capabilities so that the referenced field's value can be transformed as it is copied over to the mirror field.
+
+For example, you could have a select field with a list of countries, and then create an `invoice_amount_adjustment` field, where you adjust the price of the invoice based on the country selected.
+Or you can generate percentage-based promo codes based on the `invoice_amount_multiply_adjustment` field.
+
+Here's an example of how three promo codes with different discounts can be implemented:
+
+- `huge` = 50% discount
+- `medium` = 10% discount
+- `tiny` = 1% discount
+
+```json
+{
+  "fields": [
+    {
+      "name": "promo",
+      "type": "text",
+      "label": "Promo Code"
+    },
+    {
+      "name": "invoice_amount_multiply_adjustment_promo",
+      "type": "mirror",
+      "value": "promo",
+      "label": "Promo Codes",
+      "valuemap": {
+        "tiny": "0.99",
+        "medium": "0.90",
+        "huge": "0.5"
+      }
+    }
+  ]
+}
+```
 
 ## Pre-filling form values
 
