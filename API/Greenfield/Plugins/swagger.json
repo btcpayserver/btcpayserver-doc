@@ -130,6 +130,10 @@
           "name": {
             "type": "string",
             "description": "The name of the wallet"
+          },
+          "lightningAddressIdentifier": {
+            "type": "string",
+            "description": "The Lightning Address identifier of the wallet (username part before the '@' sign)"
           }
         }
       },
