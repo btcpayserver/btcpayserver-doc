@@ -112,6 +112,7 @@ const sidebarUserGuide = [
       ['/Zapier/', 'Zapier'],
       ['/Shopware', 'Shopware'],
       ['/VirtueMart', 'VirtueMart'],
+      ['/Smartstore/', 'Smartstore'],
       ['/CustomIntegration', 'Custom Integration']
     ]
   },
