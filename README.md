@@ -88,7 +88,7 @@ This document explains how to **integrate BTCPay Server into your WooCommerce st
 
 ### Embedding YouTube videos
 
-To add a YouTube video with a preview, you can so so by linking to it like this:
+To add a YouTube video with a preview, you can do so by linking to it like this:
 
 ```md
 [![IMAGE ALT TEXT HERE](https://img.youtube.com/vi/YOUTUBE_VIDEO_ID_HERE/mqdefault.jpg)](https://www.youtube.com/watch?v=YOUTUBE_VIDEO_ID_HERE)

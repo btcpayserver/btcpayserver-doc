@@ -17,6 +17,7 @@ PODSERVER_DIR="$BASE_DIR/deps/podserver"
 TROCADOR_DIR="$BASE_DIR/deps/trocador"
 LNDHUBAPI_DIR="$BASE_DIR/deps/lndhub-api"
 KUKKS_DIR="$BASE_DIR/deps/kukks"
+SMARTSTORE_DIR="$BASE_DIR/deps/smartstore"
 
 update_external() {
   file="$1"
@@ -261,6 +262,24 @@ cd "$TROCADOR_DIR"
 cp -r README.md "$DOCS_DIR/Trocador"
 for file in "$DOCS_DIR"/Trocador/*.md; do
   update_external "$file" https://github.com/saltrafael/trocador-plugin "$DOCS_DIR"/Trocador/
+done
+
+# Smartstore
+
+echo "Setup dependency: Smartstore"
+
+rm -rf "$SMARTSTORE_DIR"
+rm -rf "$DOCS_DIR/Smartstore"
+mkdir -p "$DOCS_DIR/Smartstore"
+
+if [ ! -d "$SMARTSTORE_DIR" ]; then
+  git clone --depth 1 https://github.com/btcpayserver/Smartstore.BTCPayServer.git "$SMARTSTORE_DIR"
+fi
+
+cd "$SMARTSTORE_DIR"
+cp -r src/Smartstore.Modules/Smartstore.BTCPayServer/README.md "$DOCS_DIR/Smartstore"
+for file in "$DOCS_DIR"/Smartstore/*.md; do
+  update_external "$file" https://github.com/btcpayserver/Smartstore.BTCPayServer.git "$DOCS_DIR"/Smartstore/
 done
 
 # Kukks' plugins

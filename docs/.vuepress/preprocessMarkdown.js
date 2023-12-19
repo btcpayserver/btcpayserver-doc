@@ -15,7 +15,8 @@ const EXTERNAL_DOCS = {
   PodServer: 'https://github.com/dennisreimann/btcpayserver-plugin-podserver',
   TicketTailor: 'https://github.com/Kukks/BTCPayServerPlugins/tree/master/Plugins/BTCPayServer.Plugins.TicketTailor',
   Trocador: 'https://github.com/saltrafael/trocador-plugin',
-  Wabisabi: 'https://github.com/Kukks/BTCPayServerPlugins/tree/master/Plugins/BTCPayServer.Plugins.Wabisabi'
+  Wabisabi: 'https://github.com/Kukks/BTCPayServerPlugins/tree/master/Plugins/BTCPayServer.Plugins.Wabisabi',
+  Smartstore: 'https://github.com/btcpayserver/Smartstore.BTCPayServer.git'
 }
 
 const replaceExternalRepoLinks = (source, externalRepoUrl, resourcePath) => {
