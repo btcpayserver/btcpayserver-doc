@@ -5531,7 +5531,8 @@
         },
         "tags": [
           "Pull payments (Public)"
-        ]
+        ],
+        "security": []
       }
     },
     "/api/v1/stores/{storeId}/pull-payments": {
