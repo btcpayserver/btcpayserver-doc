@@ -12,10 +12,7 @@ DOCKER_DIR="$BASE_DIR/deps/docker"
 VAULT_DIR="$BASE_DIR/deps/vault"
 TRANSMUTER_DIR="$BASE_DIR/deps/transmuter"
 ZAPIER_DIR="$BASE_DIR/deps/zapier"
-LNBANK_DIR="$BASE_DIR/deps/lnbank"
-PODSERVER_DIR="$BASE_DIR/deps/podserver"
 TROCADOR_DIR="$BASE_DIR/deps/trocador"
-LNDHUBAPI_DIR="$BASE_DIR/deps/lndhub-api"
 KUKKS_DIR="$BASE_DIR/deps/kukks"
 SMARTSTORE_DIR="$BASE_DIR/deps/smartstore"
 
@@ -185,65 +182,6 @@ cp -r README.md doc/* "$DOCS_DIR/Zapier"
 sed -ie 's$(./doc/$(./$g' "$DOCS_DIR/Zapier/README.md"
 for file in "$DOCS_DIR"/Zapier/*.md; do
   update_external "$file" https://github.com/btcpayserver/zapier "$DOCS_DIR"/Zapier/
-done
-
-# LNbank
-
-echo "Setup dependency: LNbank"
-
-rm -rf "$LNBANK_DIR"
-rm -rf "$DOCS_DIR/LNbank"
-mkdir -p "$DOCS_DIR/LNbank"
-
-if [ ! -d "$LNBANK_DIR" ]; then
-  git clone --depth 1 https://github.com/dennisreimann/btcpayserver-plugin-lnbank.git "$LNBANK_DIR"
-fi
-
-cd "$LNBANK_DIR"
-cp -r README.md docs/* "$DOCS_DIR/LNbank"
-sed -ie 's$(./docs/$(./$g' "$DOCS_DIR/LNbank/README.md"
-for file in "$DOCS_DIR"/LNbank/*.md; do
-  update_external "$file" https://github.com/dennisreimann/btcpayserver-plugin-lnbank "$DOCS_DIR"/LNbank/
-done
-
-cp -r BTCPayServer.Plugins.LNbank/Resources/swagger/* "$BASE_DIR/swagger/plugins"
-
-# PodServer
-
-echo "Setup dependency: PodServer"
-
-rm -rf "$PODSERVER_DIR"
-rm -rf "$DOCS_DIR/PodServer"
-mkdir -p "$DOCS_DIR/PodServer"
-
-if [ ! -d "$PODSERVER_DIR" ]; then
-  git clone --depth 1 https://github.com/dennisreimann/btcpayserver-plugin-podserver.git "$PODSERVER_DIR"
-fi
-
-cd "$PODSERVER_DIR"
-cp -r README.md docs/* "$DOCS_DIR/PodServer"
-sed -ie 's$(./docs/$(./$g' "$DOCS_DIR/PodServer/README.md"
-for file in "$DOCS_DIR"/PodServer/*.md; do
-  update_external "$file" https://github.com/dennisreimann/btcpayserver-plugin-podserver "$DOCS_DIR"/PodServer/
-done
-
-# LNDhub API
-
-echo "Setup dependency: LNDhub API"
-
-rm -rf "$LNDHUBAPI_DIR"
-rm -rf "$DOCS_DIR/LNDhubAPI"
-mkdir -p "$DOCS_DIR/LNDhubAPI"
-
-if [ ! -d "$LNDHUBAPI_DIR" ]; then
-  git clone --depth 1 https://github.com/dennisreimann/btcpayserver-plugin-lndhub-api.git "$LNDHUBAPI_DIR"
-fi
-
-cd "$LNDHUBAPI_DIR"
-cp -r README.md docs/* "$DOCS_DIR/LNDhubAPI"
-sed -ie 's$(./docs/$(./$g' "$DOCS_DIR/LNDhubAPI/README.md"
-for file in "$DOCS_DIR"/LNDhubAPI/*.md; do
-  update_external "$file" https://github.com/dennisreimann/btcpayserver-plugin-lndhub-api "$DOCS_DIR"/LNDhubAPI/
 done
 
 # Trocador
