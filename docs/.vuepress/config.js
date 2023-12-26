@@ -121,17 +121,7 @@ const sidebarUserGuide = [
     collapsable: false,
     initialOpenGroupIndex: -1,
     children: [
-      {
-        title: 'LNbank',
-        path: '/LNbank/',
-        children: [
-          ['/LNbank/LNDhub', 'LNDhub Compatibility'],
-          ['/LNbank/Troubleshooting', 'Troubleshooting']
-        ]
-      },
-      ['/LNDhubAPI/', 'LNDhub API'],
       ['/Nostr/', 'Nostr'],
-      ['/PodServer/', 'PodServer'],
       ['/TicketTailor/', 'TicketTailor'],
       ['/Trocador/', 'Trocador'],
       ['/Wabisabi/', 'Wabisabi Coinjoin']
