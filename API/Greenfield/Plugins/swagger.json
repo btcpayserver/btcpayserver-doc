@@ -148,5 +148,6 @@
   "externalDocs": {
     "description": "BTCPay Greenfield API (v1)",
     "url": "https://docs.btcpayserver.org/API/Greenfield/v1/"
-  }
+  },
+  "paths": {}
 }
