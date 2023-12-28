@@ -258,11 +258,11 @@ const sidebarDevelopment = [
         'Greenfield API v1',
         { type: 'external' }
       ],
-      [
-        `${baseUrl}/API/Greenfield/Plugins`,
-        'Greenfield API Plugins',
-        { type: 'external' }
-      ],
+      // [
+      //   `${baseUrl}/API/Greenfield/Plugins`,
+      //   'Greenfield API Plugins',
+      //   { type: 'external' }
+      // ],
       '/BTCPayServer/greenfield-authorization',
       '/Development/GreenFieldExample',
       '/Development/GreenFieldExample-NodeJS',
