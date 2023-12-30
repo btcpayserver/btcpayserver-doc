@@ -162,7 +162,6 @@ const sidebarDeployment = [
           ['/Deployment/LunaNode', 'Luna Node'],
           ['/Deployment/voltagecloud', 'Voltage Cloud'],
           ['/Deployment/Clovyr', 'Clovyr'],
-          ['/Deployment/DreamlabNetwork', 'Dream Lab Network'],
           {
             title: 'Azure',
             path: '/Deployment/Azure',
