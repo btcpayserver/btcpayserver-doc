@@ -14,9 +14,9 @@ However, we will guide you through the ones we've listed and offer BTCPay Server
 
 Below you will find a short introduction to each service and a detailed guide on each of them.
 
-## Known web deployments.
+## Known web deployments
 
-### LunaNode web-wizard.
+### LunaNode web-wizard
 
 [LunaNode](https://www.lunanode.com/) is a Canadian-based hosting provider that accepts Bitcoin payments and requires no personal identification except for a phone number verification.
 
@@ -32,12 +32,6 @@ By focusing on Bitcoin exclusively, they can offer quality services to their cli
 Automatically connect your Voltage Lightning node.
 
 For more details on `Voltage Cloud` click [here](./voltagecloud.md)
-
-### DreamLab Network Solutions
-
-[DreamLab Network Solutions](https://dreamlabnetwork.solutions) has datacenters around the globe.
-Now out of their North American location, they have started hosting BTCPay Server as a service.
-With 24/7 support and a future of multiple locations of hosting check `Dreamlab Networks` BTCPay Server setup guide [here](./DreamlabNetwork.md)
 
 ### Clovyr
 
