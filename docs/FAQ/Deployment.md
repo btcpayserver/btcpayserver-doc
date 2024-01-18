@@ -270,7 +270,7 @@ BTCPAYGEN_EXCLUDE_FRAGMENTS="$BTCPAYGEN_EXCLUDE_FRAGMENTS;nginx-https"
 
 Notice: If your BTCPay Server install has more than one domain (for example `WOOCOMMERCE_HOST` or `BTCPAY_ADDITIONAL_HOSTS`) you will need to modify your config for each domain name. The example above only covers 1 domain name called `btcpay.domain.com`.
 
-### How can I deploy LNbits alongside BTCPay Server
+### How can I deploy LNbits alongside BTCPay Server?
 
 Because of limitations of LNbits itself, you need a seperate (sub-) domain to deploy LNbits to. Before executing the following steps, please create an A (and optional AAAA) DNS Record for your desired LNbits subdomain in your DNS server or at your domain registrar.
 
