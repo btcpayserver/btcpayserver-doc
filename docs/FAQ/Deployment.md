@@ -270,6 +270,27 @@ BTCPAYGEN_EXCLUDE_FRAGMENTS="$BTCPAYGEN_EXCLUDE_FRAGMENTS;nginx-https"
 
 Notice: If your BTCPay Server install has more than one domain (for example `WOOCOMMERCE_HOST` or `BTCPAY_ADDITIONAL_HOSTS`) you will need to modify your config for each domain name. The example above only covers 1 domain name called `btcpay.domain.com`.
 
+### How can I deploy LNbits alongside BTCPay Server
+
+Because of limitations of LNbits itself, you need a seperate (sub-) domain to deploy LNbits to. Before executing the following steps, please create an A (and optional AAAA) DNS Record for your desired LNbits subdomain in your DNS server or at your domain registrar.
+
+Replace lnbits.domain.tld with your own chosen domain, also make sure that this domain resolves to your server's IP correctly.
+
+Please also insure that you are running either LND or C-Lightning, as lnbits depends on one of them being present.
+
+- Run `docker exec -ti $(docker ps -a -q -f "name=postgres_1") psql -U postgres`
+	- within the psql console run: `CREATE DATABASE lnbits;`
+	- within the psql console run: `quit;`
+- Run `export LNBITS_HOST="lnbits.domain.tld"`
+- Run `export BTCPAYGEN_ADDITIONAL_FRAGMENTS="$BTCPAYGEN_ADDITIONAL_FRAGMENTS;opt-add-lnbits;"`
+- Run `. btcpay-setup.sh -i`
+
+After you've logged on and created your first wallet, you may want to define that first user as the admin account. For doing so, please open `/root/BTCPayServer/btcpayserver-docker/Generated/lnbits/lnd-env` or `/root/BTCPayServer/btcpayserver-docker/Generated/lnbits/clightning-env` (depending on your installed lightnign implementation), navigate to the line `LNBITS_ADMIN_USERS=""` and include your new usr id (from the browser url of your newly created wallet).
+
+After making any changes to the env file, you'll need to run `btcpay-restart.sh`.
+
+Tip: If you want to use your LNbits wallets within BTCPayServer, you should check out the LNDHub extension (installable from your admin account).
+
 ## How to change your BTCPay Server domain name?
 
 ### Setting up DNS Records
