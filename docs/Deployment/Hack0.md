@@ -22,13 +22,13 @@ Here is the advised parts for running a Hack0:
 
 - RockPro64 4GB ([Link](https://store.pine64.org/?product=rockpro64-4gb-single-board-computer)) `79.99$`
 - USB adapter for EMMC Module ([Link](https://pine64.com/product/usb-adapter-for-emmc-module/)) `4.99$`
-- EMMC 16GB ([Link](https://pine64.com/product/16gb-emmc-module/)) `15.95$`
+- EMMC 32GB ([Link](https://pine64.com/product/32gb-emmc-module/)) `24.95$`
 - Fan For ROCKPro64 20mm Mid Profile Heatsink ([Link](https://pine64.com/product/fan-for-rockpro64-20mm-mid-profile-heatsink/)) `2.99$`
 - ROCKPro64 20mm Mid Profile Heatsink ([Link](https://pine64.com/product/rockpro64-20mm-mid-profile-heatsink/)) `3.29$`
 - SSD 500GB PCIe NVMe ([Link](https://www.crucial.com/ssd/p2/CT500P2SSD8)) `66.99$`
 - M.2 to PCIe adapter ([Link](https://www.silverstonetek.com/en/product/info/expansion-cards/ECM25/)) `25$`
 
-Total: `179.2$`
+Total: `188.2$`
 
 It is possible to replace the EMMC module and adapter by a microSD. But tests has shown that microSD aren't reliable on long term and may cease to work after 2-3 years of use.
 
