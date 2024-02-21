@@ -227,6 +227,7 @@ Lightning Network troubleshooting and common problems.
 
 - [How to restart my Core Lightning (CLN)?](./LightningNetwork.md#how-to-restart-my-core-lightning-cln)
 - [How to announce an IPv6 address?](./LightningNetwork.md#how-to-announce-an-ipv6-address)
+- [How to edit .lightning/config](./LightningNetwork.md#how-to-edit-lightningconfig)
 
 ## [Altcoins FAQ](./Altcoin.md)
 
