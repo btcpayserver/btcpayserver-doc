@@ -295,7 +295,7 @@ export LIGHTNING_ALIAS="namehere"
 
 ### How to edit lnd.conf?
 
-To customize LND settings which are not available as environment variables, you can [create a custom fragment](../Docker/README.md#how-can-i-customize-the-generated-docker-compose-file) in `docker-compose-generator/docker-fragments/opt-lnd-config.custom.yml` like this:
+To customize [LND settings](https://docs.lightning.engineering/lightning-network-tools/lnd/lnd.conf) which are not available as environment variables, you can [create a custom fragment](../Docker/README.md#how-can-i-customize-the-generated-docker-compose-file) in `docker-compose-generator/docker-fragments/opt-lnd-config.custom.yml` like this:
 
 ```yml
 version: '3'
@@ -442,6 +442,31 @@ Then set it up:
 export BTCPAYGEN_ADDITIONAL_FRAGMENTS="bitcoin-clightning.custom"
 . ./btcpay-setup.sh -i
 ```
+
+### How to edit .lightning/config?
+
+To customize the [Core Lightning settings](https://docs.corelightning.org/reference/lightningd-config) which are not available as environment variables, you can [create a custom fragment](../Docker/README.md#how-can-i-customize-the-generated-docker-compose-file) in `docker-compose-generator/docker-fragments/opt-lightningd-config.custom.yml` like this:
+
+```yml
+version: '3'
+services:
+  clightning_bitcoin:
+    environment:
+      LIGHTNINGD_OPT: |
+        alias=MyNodeName
+        rgb=003366
+```
+
+You can add your customizations in the `LIGHTNINGD_OPT` value, like shown by setting the `alias` and `rgb` values.
+
+Afterwards the configuration has to be added to the additional fragments and setup needs to be run:
+
+```bash
+export BTCPAYGEN_ADDITIONAL_FRAGMENTS="$BTCPAYGEN_ADDITIONAL_FRAGMENTS;opt-lightningd-config.custom"
+. ./btcpay-setup.sh -i
+```
+
+This way your custom settings gets added to the config and they will persist updates.
 
 ## Lightning Network Questions and Support
 
