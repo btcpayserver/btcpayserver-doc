@@ -114,6 +114,7 @@ const sidebarUserGuide = [
       ['/VirtueMart', 'VirtueMart'],
       ['/Smartstore/', 'Smartstore'],
       ['/Grandnode/', 'Grandnode'],
+      ['/Nopcommerce/', 'Nopcommerce'],
       ['/CustomIntegration', 'Custom Integration']
     ]
   },

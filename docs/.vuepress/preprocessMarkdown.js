@@ -14,7 +14,8 @@ const EXTERNAL_DOCS = {
   Trocador: 'https://github.com/saltrafael/trocador-plugin',
   Wabisabi: 'https://github.com/Kukks/BTCPayServerPlugins/tree/master/Plugins/BTCPayServer.Plugins.Wabisabi',
   Smartstore: 'https://github.com/btcpayserver/Smartstore.BTCPayServer.git',
-  Grandnode: 'https://github.com/btcpayserver/grandnode.git'
+  Grandnode: 'https://github.com/btcpayserver/grandnode.git',
+  Nopcommerce: 'https://github.com/btcpayserver/nopcommerce.git'
 }
 
 const replaceExternalRepoLinks = (source, externalRepoUrl, resourcePath) => {
