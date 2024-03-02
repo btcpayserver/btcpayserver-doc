@@ -66,7 +66,14 @@ It's not easy to solve the gap limit problem. You have two options:
 
 If your [external/existing wallet](../WalletSetup.md#use-an-existing-wallet) allows gap-limit configuration, the easy fix is to increase it. However, majority of wallets do not allow this.
 
-The only wallets that allow gap-limit configuration, that we're aware of are [Electrum](../ElectrumWallet.md) and [Wasabi](../WasabiWallet.md)
+The only wallets that allow gap-limit configuration that we're aware of are the following:
+- [Electrum](../ElectrumWallet.md)
+- [Wasabi](../WasabiWallet.md)
+- [Sparrow](https://sparrowwallet.com/)
+- [Bitcoin Core](https://github.com/bitcoin/bitcoin)
+- [Specter](https://specter.solutions/index.html)
+- [Nunchuk](https://nunchuk.io/)
+- [Samourai Wallet](https://samouraiwallet.com/) (when used with Dojo Maintenance Tool)
 
 Unfortunately, with any other wallet you're likely to encounter a problem.
 
