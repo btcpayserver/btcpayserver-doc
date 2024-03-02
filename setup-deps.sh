@@ -15,6 +15,8 @@ ZAPIER_DIR="$BASE_DIR/deps/zapier"
 TROCADOR_DIR="$BASE_DIR/deps/trocador"
 KUKKS_DIR="$BASE_DIR/deps/kukks"
 SMARTSTORE_DIR="$BASE_DIR/deps/smartstore"
+GRANDNODE_DIR="$BASE_DIR/deps/grandnode"
+NOPCOMMERCE_DIR="$BASE_DIR/deps/nopcommerce"
 
 update_external() {
   file="$1"
@@ -218,6 +220,42 @@ cd "$SMARTSTORE_DIR"
 cp -r src/Smartstore.Modules/Smartstore.BTCPayServer/README.md "$DOCS_DIR/Smartstore"
 for file in "$DOCS_DIR"/Smartstore/*.md; do
   update_external "$file" https://github.com/btcpayserver/Smartstore.BTCPayServer.git "$DOCS_DIR"/Smartstore/
+done
+
+# Grandnode
+
+echo "Setup dependency: Grandnode"
+
+rm -rf "$GRANDNODE_DIR"
+rm -rf "$DOCS_DIR/Grandnode"
+mkdir -p "$DOCS_DIR/Grandnode"
+
+if [ ! -d "$GRANDNODE_DIR" ]; then
+  git clone --depth 1 https://github.com/btcpayserver/grandnode.git "$GRANDNODE_DIR"
+fi
+
+cd "$GRANDNODE_DIR" 
+cp -r README.md "$DOCS_DIR/Grandnode"
+for file in "$DOCS_DIR"/Grandnode/*.md; do
+  update_external "$file" https://github.com/btcpayserver/grandnode.git "$DOCS_DIR"/Grandnode/
+done
+
+# Nopcommerce
+
+echo "Setup dependency: Nopcommerce"
+
+rm -rf "$NOPCOMMERCE_DIR"
+rm -rf "$DOCS_DIR/Nopcommerce"
+mkdir -p "$DOCS_DIR/Nopcommerce"
+
+if [ ! -d "$NOPCOMMERCE_DIR" ]; then
+  git clone --depth 1 https://github.com/btcpayserver/nopcommerce.git "$NOPCOMMERCE_DIR"
+fi
+
+cd "$NOPCOMMERCE_DIR"
+cp -r README.md "$DOCS_DIR/Nopcommerce"
+for file in "$DOCS_DIR"/Nopcommerce/*.md; do
+  update_external "$file" https://github.com/btcpayserver/nopcommercee.git "$DOCS_DIR"/Nopcommerce/
 done
 
 # Kukks' plugins
