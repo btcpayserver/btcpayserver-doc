@@ -97,6 +97,51 @@ Reboot your LIAB and disconnect the keyboard, mouse and monitor. You should now 
 - `sudo apt install docker-ce`
 - `sudo systemctl status docker`
 
+
+### Configuring the storage
+
+We recommend to disable swap to prevent burning out your SD card:
+
+```bash
+dphys-swapfile swapoff
+dphys-swapfile uninstall
+update-rc.d dphys-swapfile remove
+systemctl disable dphys-swapfile
+```
+
+Partition your SSD:
+
+```bash
+fdisk /dev/sda
+# type 'p' to list existing partitions
+# type 'd' to delete currently selected partitions
+# type 'n' to create a new partition
+# type 'w' to write the new partition table and exit fdisk
+```
+
+Format the new partition on your SSD:
+
+```bash
+mkfs.ext4 /dev/sda1
+```
+
+Configure the SSD partition to auto-mount at bootup:
+
+```bash
+mkfs.ext4 /dev/sda1
+mkdir /mnt/usb
+UUID="$(sudo blkid -s UUID -o value /dev/sda1)"
+echo "UUID=$UUID /mnt/usb ext4 defaults,noatime,nofail 0 0" | sudo tee -a /etc/fstab
+mount -a
+```
+
+While you’re editing `/etc/fstab` add a RAM filesystem for logs (optional).
+This is also to prevent burning out your SD card too quickly:
+
+```bash
+echo 'none /var/log tmpfs size=10M,noatime 0 0' >> /etc/fstab
+```
+
 **Step 11** - Install BTCPayServer.
 From another PC on your network login in to your BTCPB via SSH.
 
