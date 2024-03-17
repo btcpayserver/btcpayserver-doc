@@ -122,15 +122,6 @@ sudo systemctl status docker
 
 ### Configuring the storage
 
-We recommend to disable swap to prevent burning out your SD card:
-
-```bash
-dphys-swapfile swapoff
-dphys-swapfile uninstall
-update-rc.d dphys-swapfile remove
-systemctl disable dphys-swapfile
-```
-
 Partition your SSD:
 
 ```bash
@@ -182,34 +173,25 @@ You will be prompted for your password.
 Run the following commands.
 Make sure you change the `BTCPAY_HOST` parameter to your own domain name.
 
-Login as root
+Switch to root user
 
-- `sudo su -`
+```bash
+sudo su -
+```
 
-Create a folder for BTCPay
+Clone the btcpayserver-docker repository and set environment variables. 
 
-- `mkdir BTCPayServer`
-- `cd BTCPayServer`
-
-Clone the btcpayserver-docker repository
-
-- `git clone https://github.com/btcpayserver/btcpayserver-docker`
-- `cd btcpayserver-docker`
-
-Set your environment variables.
-Run each command separately.
-
-- `export BTCPAY_HOST="btcpay.YourDomain.com"`
-- `export NBITCOIN_NETWORK="mainnet"`
-- `export BTCPAYGEN_CRYPTO1="btc"`
-- `export BTCPAYGEN_CRYPTO2="ltc"`
-- `export BTCPAYGEN_REVERSEPROXY="nginx"`
-- `export BTCPAYGEN_LIGHTNING="clightning"`
-
-The last step is to launch the BTCPayServer setup script.
-
-- `. ./btcpay-setup.sh -i`
-- `exit`
+```bash
+git clone https://github.com/btcpayserver/btcpayserver-docker
+cd btcpayserver-docker
+export BTCPAY_HOST="btcpay.YourDomain.com"
+export NBITCOIN_NETWORK="mainnet"
+export BTCPAYGEN_CRYPTO1="btc"
+export BTCPAYGEN_REVERSEPROXY="nginx"
+export BTCPAYGEN_LIGHTNING="clightning"
+. ./btcpay-setup.sh -i
+exit
+```
 
 ### Try it out
 Go to https://btcpay.yourdomain.com and confirm that your nodes are syncing.
