@@ -36,34 +36,41 @@ Other requirements are as follows:
 
 Assuming you purchased the hardware mentioned above, here are the build instructions.
 
-### Step 1 - Configure your domain name.
+### Configure your domain name.
 It can take several hours for DNS changes to propagate so you should do this step first.
 Login to your domain registrar and point an A record from your domain to the external IP address of your internet connection.
 I suggest that you use a subdomain (ie. btcpay.yourdomain.com).
 To find your external IP address Google "whats my ip".
 
-### Step 2 - Assemble your Lightning in a Box (LIAB). If you already have your own Ubuntu Server you can skip to Step 6.
+### Assemble your Lightning in a Box (LIAB). If you already have your own Ubuntu Server you can skip to Step 6.
 
 - Remove back cover with screwdriver.
 - Insert SSD
 - Install hard drive using included cage.
 
-### Step 3 - Download [Ubuntu 22.04 LTS Server](https://releases.ubuntu.com/jammy/ubuntu-22.04.4-live-server-amd64.iso)
+### Download [Ubuntu 22.04 LTS Server](https://releases.ubuntu.com/jammy/ubuntu-22.04.4-live-server-amd64.iso)
 
-### Step 4- Download and install [Balena Etcher](https://etcher.balena.io/). Etcher is software that is used to flash OS images to SD cards and USB Drives.
+### Download and install [Balena Etcher](https://etcher.balena.io/). 
+Etcher is software that is used to flash OS images to SD cards and USB Drives.
 In this case we will be using Etcher to flash our USB Thumb Drive with the Ubuntu OS.
 
-### Step 5 - Connect your USB keyboard, mouse, monitor and thumb drive. Press the power button to boot your LIAB. Press the "DEL" key to access the bios and change the boot order to use the thumb drive first. The Ubuntu installation process is pretty simple and easy to follow. Here's a tutorial from the Ubuntu website. [Install Ubuntu Server](https://ubuntu.com/tutorials/install-ubuntu-server#1-overview). The BeeLink S12 ships with Windows Pre-Installed so you will have to delete the NVME drive and install Ubuntu on that drive. During the install process make sure you enable SSH. 
+### Connect your USB keyboard, mouse, monitor and thumb drive. Press the power button to boot your LIAB. Press the "DEL" key to access the bios and change the boot order to use the thumb drive first. 
+The Ubuntu installation process is pretty simple and easy to follow. Here's a tutorial from the Ubuntu website. [Install Ubuntu Server](https://ubuntu.com/tutorials/install-ubuntu-server#1-overview). The BeeLink S12 ships with Windows Pre-Installed so you will have to delete the NVME drive and install Ubuntu on that drive. During the install process make sure you enable SSH. 
 
-### Step 6 - Give your LIAB a static IP address on your local network. There are a few different ways to do this and you will find a ton of articles online. Here's a pretty simple one to follow [How to configure a static IP address on Ubuntu 22.04](https://www.linuxtechi.com/static-ip-address-on-ubuntu-server/). To avoid conflicts with other devices on your network you should also set a "reservation" for your LIAB.
+### Give your LIAB a static IP address on your local network. 
+There are a few different ways to do this and you will find a ton of articles online. Here's a pretty simple one to follow [How to configure a static IP address on Ubuntu 22.04](https://www.linuxtechi.com/static-ip-address-on-ubuntu-server/). To avoid conflicts with other devices on your network you should also set a "reservation" for your LIAB.
 
-### Step 7 - Log into your router and forward ports 80, 443 and 9735 to your LIAB's local IP address. Every router is different and you should be able to find instructions for your router by searching for "Port Forward + your router make and model".
+### Log into your router and forward ports 80, 443 and 9735 to your LIAB's local IP address. 
+Every router is different and you should be able to find instructions for your router by searching for "Port Forward + your router make and model".
 
-### Step 8 - Install Fail2ban and GIT. OpenSSH server allows you to connect to your server using SSH clients (ie. [Putty](https://www.putty.org/)) Fail2ban bans IP's that attempt to connect to your server and show malicious signs. GIT allows you to clone and manage repositories on github.com.
+### Install Fail2ban and GIT. OpenSSH server allows you to connect to your server using SSH clients (ie. [Putty](https://www.putty.org/)) 
+Fail2ban bans IP's that attempt to connect to your server and show malicious signs. GIT allows you to clone and manage repositories on github.com.
 Open a new terminal window and type the following commands:
 
-- `sudo apt update`
-- `sudo apt install -y fail2ban git`
+```bash
+sudo apt update
+sudo apt install -y fail2ban git
+```
 
 ### Configuring the firewall
 
@@ -151,7 +158,7 @@ echo "UUID=$UUID /mnt/docker ext4 defaults,noatime,nofail 0 0" | sudo tee -a /et
 mount -a
 ```
 
-**Step 11** - Install BTCPayServer.
+### Install BTCPayServer.
 From another PC on your network login in to your BTCPB via SSH.
 
 If you are using Windows
@@ -195,7 +202,7 @@ The last step is to launch the BTCPayServer setup script.
 - `. ./btcpay-setup.sh -i`
 - `exit`
 
-**Step 12**
+### Try it out
 Go to https://btcpay.yourdomain.com and confirm that your nodes are syncing.
 Enjoy!
 
