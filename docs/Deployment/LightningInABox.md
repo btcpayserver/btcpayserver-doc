@@ -88,14 +88,16 @@ Enable your firewall.
 
 Reboot your LIAB and disconnect the keyboard, mouse and monitor. You should now be able to connect to your LIAB from another computer on your LAN via SSH.
 
-**Step 10**
-- `sudo apt install apt-transport-https ca-certificates curl software-properties-common`
-- `curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /usr/share/keyrings/docker-archive-keyring.gpg`
-- `echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/docker-archive-keyring.gpg] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null`
-- `sudo apt update`
-- `apt-cache policy docker-ce`
-- `sudo apt install docker-ce`
-- `sudo systemctl status docker`
+### Install Docker
+```Bash
+sudo apt install apt-transport-https ca-certificates curl software-properties-common
+curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /usr/share/keyrings/docker-archive-keyring.gpg
+echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/docker-archive-keyring.gpg] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
+sudo apt update
+apt-cache policy docker-ce
+sudo apt install docker-ce
+sudo systemctl status docker
+```
 
 
 ### Configuring the storage
