@@ -56,7 +56,7 @@ The Ubuntu installation process is pretty simple and easy to follow. Here's a tu
 ### Give your LIAB a static IP address on your local network. 
 There are a few different ways to do this and you will find a ton of articles online. Here's a pretty simple one to follow [How to configure a static IP address on Ubuntu 22.04](https://www.linuxtechi.com/static-ip-address-on-ubuntu-server/). To avoid conflicts with other devices on your network you should also set a "reservation" for your LIAB.
 
-### Log into your router and forward ports 80, 443 and 9735 to your LIAB's local IP address. (optional)
+### Log into your router and forward ports 80, 443 and 9735 to your LIAB's local IP address. (optional, if using .local, or Tor only)
 Every router is different and you should be able to find instructions for your router by searching for "Port Forward + your router make and model".
 
 ### Install Fail2ban and GIT. OpenSSH server allows you to connect to your server using SSH clients (ie. [Putty](https://www.putty.org/)) 
