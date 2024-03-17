@@ -19,10 +19,8 @@ For the sake of speed, compatibility and ease of installation it is recommended 
 
 **BTCPayServer can be successfully installed on the following hardware**. The end result is a small, quiet node that is fast enough to sync from block zero. The total cost is approximately $300 (including tax and delivery). These are "off the shelf" components that can be purchased from any online retailer. It will take roughly 24 hours to sync the Bitcoin blockchain. 
 
-1. BeeLink S12 - Mini PC
-   ![BeeLink Mini PC](https://www.amazon.com/dp/B0C89TQ1YF?ref=nb_sb_ss_w_as-reorder-t1_k0_1_4&amp=&crid=SHKYOXZIRAO0&amp=&sprefix=beel)
-3. WD Blue 2TB SSD
-   ![WD Blue 2 TB SSD](https://www.amazon.com/Western-Digital-SA510-Internal-Solid/dp/B0C14TF467/ref=sr_1_3?crid=2WDY52E7ESSEB&dib=eyJ2IjoiMSJ9.MBxkb5ZIvwjKXOzscB0GUvsbhX1rVhilXNFzID6n0xHORsDBPkIxQhIixVuiLY9I16rlFs5COExAAD8761Do-tzuAnZiutbqN-KM9rAL4zCw94kA_ArCJeR_RTDynZbiXf2Phnahw1Gw2dqXVek3p0dpe6_a_fbJrqx4BRaieoYo0zj1mX6YPGaYZAmF2Vf_Quk1TrkARk6s1_wZ0vFUw7EWdjKJ9hmNLxPWMfADML90A1rXk8gSCcRnwV2jdzN7jCfg2_urfJZ3IWOW5X3iwnP7s-vSec88PGmQ3RhS-Rc.sEURveFhiTAHYwZQdwyJX72hpWL5UgD_3tEPet747oE&dib_tag=se&keywords=2tb+ssd+wd+blue&qid=1710685725&s=electronics&sprefix=2tb+ssd+wd+blue%2Celectronics%2C90&sr=1-3)
+1. BeeLink S12 - Mini PC(https://www.amazon.com/dp/B0C89TQ1YF?ref=nb_sb_ss_w_as-reorder-t1_k0_1_4&amp=&crid=SHKYOXZIRAO0&amp=&sprefix=beel)
+3. WD Blue 2TB SSD(https://www.amazon.com/Western-Digital-SA510-Internal-Solid/dp/B0C14TF467/ref=sr_1_3?crid=2WDY52E7ESSEB&dib=eyJ2IjoiMSJ9.MBxkb5ZIvwjKXOzscB0GUvsbhX1rVhilXNFzID6n0xHORsDBPkIxQhIixVuiLY9I16rlFs5COExAAD8761Do-tzuAnZiutbqN-KM9rAL4zCw94kA_ArCJeR_RTDynZbiXf2Phnahw1Gw2dqXVek3p0dpe6_a_fbJrqx4BRaieoYo0zj1mX6YPGaYZAmF2Vf_Quk1TrkARk6s1_wZ0vFUw7EWdjKJ9hmNLxPWMfADML90A1rXk8gSCcRnwV2jdzN7jCfg2_urfJZ3IWOW5X3iwnP7s-vSec88PGmQ3RhS-Rc.sEURveFhiTAHYwZQdwyJX72hpWL5UgD_3tEPet747oE&dib_tag=se&keywords=2tb+ssd+wd+blue&qid=1710685725&s=electronics&sprefix=2tb+ssd+wd+blue%2Celectronics%2C90&sr=1-3)
 
 Other requirements are as follows:
 
