@@ -7,7 +7,7 @@
 In order for your Bitcoin experience to be truly self-sovereign and trustless you should consider **running nodes on your own hardware** and internet connection.
 **BTCPay Server is an excellent way to run both Bitcoin & Lightning nodes**.
 Not only are you validating transactions you also get the ability to accept base layer Bitcoin and second layer Lightning payments.
-To that end here are instructions to install and host your very own BTCPay Server.
+Followng are instructions to install and host your very own BTCPay Server.
 
 The process is basically the following:
 
