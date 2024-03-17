@@ -54,13 +54,16 @@ To find your external IP address Google "whats my ip".
 Etcher is software that is used to flash OS images to SD cards and USB Drives.
 In this case we will be using Etcher to flash our USB Thumb Drive with the Ubuntu OS.
 
-### Connect your USB keyboard, mouse, monitor and thumb drive. Press the power button to boot your LIAB. Press the "DEL" key to access the bios and change the boot order to use the thumb drive first. 
-The Ubuntu installation process is pretty simple and easy to follow. Here's a tutorial from the Ubuntu website. [Install Ubuntu Server](https://ubuntu.com/tutorials/install-ubuntu-server#1-overview). The BeeLink S12 ships with Windows Pre-Installed so you will have to delete the NVME drive and install Ubuntu on that drive. During the install process make sure you enable SSH. 
+### Connect your USB keyboard, mouse, monitor and thumb drive. 
+Press the power button to boot your LIAB. Press the "DEL" key to access the bios and change the boot order to use the thumb drive first. 
+The Ubuntu installation process is pretty simple and easy to follow. Here's a tutorial from the Ubuntu website. [Install Ubuntu Server](https://ubuntu.com/tutorials/install-ubuntu-server#1-overview). The BeeLink S12 ships with Windows Pre-Installed so you will have to delete the NVME partitions and install Ubuntu on that drive. 
+
+During the install process make sure you set the hostname to "btcpay" and enable SSH. 
 
 ### Give your LIAB a static IP address on your local network. 
 There are a few different ways to do this and you will find a ton of articles online. Here's a pretty simple one to follow [How to configure a static IP address on Ubuntu 22.04](https://www.linuxtechi.com/static-ip-address-on-ubuntu-server/). To avoid conflicts with other devices on your network you should also set a "reservation" for your LIAB.
 
-### Log into your router and forward ports 80, 443 and 9735 to your LIAB's local IP address. 
+### Log into your router and forward ports 80, 443 and 9735 to your LIAB's local IP address. (optional)
 Every router is different and you should be able to find instructions for your router by searching for "Port Forward + your router make and model".
 
 ### Install Fail2ban and GIT. OpenSSH server allows you to connect to your server using SSH clients (ie. [Putty](https://www.putty.org/)) 
@@ -158,39 +161,71 @@ echo "/mnt/docker /var/lib/docker none bind,nobootwait 0 2" >> /etc/fstab
 systemctl restart docker
 ```
 
-### Install BTCPayServer.
-From another PC on your network login in to your BTCPB via SSH.
+### Setup BTCPay Server
 
-If you are using Windows
-
-- download [Putty](https://releases.ubuntu.com/18.04/) and create a connection to your BTCPB.
-
-If you are using another Linux machine open a new terminal and type in the following.
-You will be prompted for your password.
-
-- `ssh user@LANIP` (ie. bob@192.168.1.2)
-
-Run the following commands.
-Make sure you change the `BTCPAY_HOST` parameter to your own domain name.
-
-Switch to root user
+Download BTCPay Server from GitHub:
 
 ```bash
-sudo su -
-```
-
-Clone the btcpayserver-docker repository and set environment variables. 
-
-```bash
+cd # ensure we are in root home
+apt install -y fail2ban git
 git clone https://github.com/btcpayserver/btcpayserver-docker
 cd btcpayserver-docker
-export BTCPAY_HOST="btcpay.YourDomain.com"
+```
+
+Configure BTCPay by setting some [environment variables](https://github.com/btcpayserver/btcpayserver-docker#environment-variables):
+
+```bash
+export BTCPAY_HOST="btcpay.local"
+export REVERSEPROXY_DEFAULT_HOST="$BTCPAY_HOST"
 export NBITCOIN_NETWORK="mainnet"
 export BTCPAYGEN_CRYPTO1="btc"
-export BTCPAYGEN_REVERSEPROXY="nginx"
 export BTCPAYGEN_LIGHTNING="clightning"
+export BTCPAYGEN_REVERSEPROXY="nginx"
+export BTCPAYGEN_ADDITIONAL_FRAGMENTS="opt-more-memory"
+export BTCPAY_ENABLE_SSH=true
+```
+
+If you want to use multiple hostnames, add them via the optional `BTCPAY_ADDITIONAL_HOSTS` variable:
+
+```bash
+export BTCPAY_ADDITIONAL_HOSTS="btcpay.YourDomain.com"
+```
+
+In case you want to restrict access to your local network only, please note that you need to use a `.local` domain.
+
+Run the BTCPay installation:
+
+```bash
 . ./btcpay-setup.sh -i
-exit
+```
+
+It should be up and running within a few minutes. Try opening http://btcpay.local in your web browser. If everything is correct, you will see BTCPay Server front page.
+
+Now, you just need to wait a day or so for the Bitcoin blockchain to [sync and full verify](../FAQ/Synchronization.md). The bottom of the BTCPay Server web GUI will show a pop-up dialog box to monitor the progress.
+
+### FastSync (optional)
+
+Please read very carefully to understand what [FastSync](/Docker/fastsync.md) is and why it is important to verify the UTXO set yourself.
+
+By using FastSync, you are exposing yourself to attacks if a [malicious UTXO set snapshot](https://github.com/btcpayserver/btcpayserver-docker/blob/master/contrib/FastSync/README.md#what-are-the-downsides-of-fast-sync) is sent to you.
+If you have another trusted node somewhere else, you can check the validity of the UTXO set gathered by FastSync by following [these instructions](https://github.com/btcpayserver/btcpayserver-docker/blob/master/contrib/FastSync/README.md#dont-trust-verify).
+
+```bash
+# Stop BTCPay Server
+cd /root/btcpayserver/btcpayserver-docker
+./btcpay-down.sh
+
+# Import FastSync UTXO set
+cd contrib/FastSync
+./load-utxo-set.sh
+```
+
+FastSync currently takes about 30 minutes on a high-speed internet connection.
+After FastSync finishes, run the following command to restart BTCPay Server:
+
+```bash
+cd ../..
+./btcpay-up.sh
 ```
 
 ### Try it out
