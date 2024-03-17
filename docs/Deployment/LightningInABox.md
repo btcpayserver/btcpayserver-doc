@@ -1,6 +1,8 @@
 # Hardware Deployment
 
+[Lightning in a Box](https://lightninginabox.co)
 "Your hardware. Your node. Your keys. Your Bitcoin".
+
 
 In order for your Bitcoin experience to be truly self-sovereign and trustless you should consider **running nodes on your own hardware** and internet connection.
 **BTCPay Server is an excellent way to run both Bitcoin & Lightning nodes**.
@@ -205,12 +207,32 @@ After FastSync finishes, run the following command to restart BTCPay Server:
 cd ../..
 ./btcpay-up.sh
 ```
+It should be up and running within a few minutes. Try opening http://btcpay.local in your web browser. If everything is correct, you will see BTCPay Server front page.
 
-### Try it out
-Go to https://btcpay.yourdomain.com and confirm that your nodes are syncing.
-Enjoy!
+Now, you just need to wait a day or so for the Bitcoin blockchain to [sync and full verify](../FAQ/Synchronization.md). The bottom of the BTCPay Server web GUI will show a pop-up dialog box to monitor the progress.
 
-If you don't have the time or patience to build your own BTCPB there are a few merchants who can build one for you.
+### FastSync (optional)
 
-- [Lightning in a Box](https://lightninginabox.co)
-- [Nodl.it](https://nodl.it)
+Please read very carefully to understand what [FastSync](/Docker/fastsync.md) is and why it is important to verify the UTXO set yourself.
+
+By using FastSync, you are exposing yourself to attacks if a [malicious UTXO set snapshot](https://github.com/btcpayserver/btcpayserver-docker/blob/master/contrib/FastSync/README.md#what-are-the-downsides-of-fast-sync) is sent to you.
+If you have another trusted node somewhere else, you can check the validity of the UTXO set gathered by FastSync by following [these instructions](https://github.com/btcpayserver/btcpayserver-docker/blob/master/contrib/FastSync/README.md#dont-trust-verify).
+
+```bash
+# Stop BTCPay Server
+cd /root/btcpayserver/btcpayserver-docker
+./btcpay-down.sh
+
+# Import FastSync UTXO set
+cd contrib/FastSync
+./load-utxo-set.sh
+```
+
+FastSync currently takes about 30 minutes on a high-speed internet connection.
+After FastSync finishes, run the following command to restart BTCPay Server:
+
+```bash
+cd ../..
+./btcpay-up.sh
+```
+
