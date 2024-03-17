@@ -53,11 +53,11 @@ To find your external IP address Google "whats my ip".
 ### Step 4- Download and install [Balena Etcher](https://etcher.balena.io/). Etcher is software that is used to flash OS images to SD cards and USB Drives.
 In this case we will be using Etcher to flash our USB Thumb Drive with the Ubuntu OS.
 
-#Step 5 - Connect your USB keyboard, mouse, monitor and thumb drive. Press the power button to boot your LIAB. Press the "DEL" key to access the bios and change the boot order to use the thumb drive first. The Ubuntu installation process is pretty simple and easy to follow. Here's a tutorial from the Ubuntu website. [Install Ubuntu Server](https://ubuntu.com/tutorials/install-ubuntu-server#1-overview). The BeeLink S12 ships with Windows Pre-Installed so you will have to delete the NVME drive and install Ubuntu on that drive. During the install process make sure you enable SSH. 
+### Step 5 - Connect your USB keyboard, mouse, monitor and thumb drive. Press the power button to boot your LIAB. Press the "DEL" key to access the bios and change the boot order to use the thumb drive first. The Ubuntu installation process is pretty simple and easy to follow. Here's a tutorial from the Ubuntu website. [Install Ubuntu Server](https://ubuntu.com/tutorials/install-ubuntu-server#1-overview). The BeeLink S12 ships with Windows Pre-Installed so you will have to delete the NVME drive and install Ubuntu on that drive. During the install process make sure you enable SSH. 
 
 ### Step 6 - Give your LIAB a static IP address on your local network. There are a few different ways to do this and you will find a ton of articles online. Here's a pretty simple one to follow [How to configure a static IP address on Ubuntu 22.04](https://www.linuxtechi.com/static-ip-address-on-ubuntu-server/). To avoid conflicts with other devices on your network you should also set a "reservation" for your LIAB.
 
-#Step 7 - Log into your router and forward ports 80, 443 and 9735 to your LIAB's local IP address. Every router is different and you should be able to find instructions for your router by searching for "Port Forward + your router make and model".
+### Step 7 - Log into your router and forward ports 80, 443 and 9735 to your LIAB's local IP address. Every router is different and you should be able to find instructions for your router by searching for "Port Forward + your router make and model".
 
 ### Step 8 - Install Fail2ban and GIT. OpenSSH server allows you to connect to your server using SSH clients (ie. [Putty](https://www.putty.org/)) Fail2ban bans IP's that attempt to connect to your server and show malicious signs. GIT allows you to clone and manage repositories on github.com.
 Open a new terminal window and type the following commands:
@@ -145,17 +145,10 @@ Configure the SSD partition to auto-mount at bootup:
 
 ```bash
 mkfs.ext4 /dev/sda1
-mkdir /mnt/usb
+mkdir /mnt/docker
 UUID="$(sudo blkid -s UUID -o value /dev/sda1)"
-echo "UUID=$UUID /mnt/usb ext4 defaults,noatime,nofail 0 0" | sudo tee -a /etc/fstab
+echo "UUID=$UUID /mnt/docker ext4 defaults,noatime,nofail 0 0" | sudo tee -a /etc/fstab
 mount -a
-```
-
-While you’re editing `/etc/fstab` add a RAM filesystem for logs (optional).
-This is also to prevent burning out your SD card too quickly:
-
-```bash
-echo 'none /var/log tmpfs size=10M,noatime 0 0' >> /etc/fstab
 ```
 
 **Step 11** - Install BTCPayServer.
