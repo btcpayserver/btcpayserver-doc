@@ -207,6 +207,3 @@ After FastSync finishes, run the following command to restart BTCPay Server:
 cd ../..
 ./btcpay-up.sh
 ```
-It should be up and running within a few minutes. Try opening http://btcpay.local in your web browser. If everything is correct, you will see BTCPay Server front page.
-
-Now, you just need to wait a day or so for the Bitcoin blockchain to [sync and full verify](../FAQ/Synchronization.md). The bottom of the BTCPay Server web GUI will show a pop-up dialog box to monitor the progress.
