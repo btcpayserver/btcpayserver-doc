@@ -120,7 +120,6 @@ sudo apt install docker-ce
 sudo systemctl status docker
 ```
 
-
 ### Configuring the storage
 
 We recommend to disable swap to prevent burning out your SD card:
@@ -156,6 +155,16 @@ mkdir /mnt/docker
 UUID="$(sudo blkid -s UUID -o value /dev/sda1)"
 echo "UUID=$UUID /mnt/docker ext4 defaults,noatime,nofail 0 0" | sudo tee -a /etc/fstab
 mount -a
+```
+
+### Create mount for Docker volumes
+
+```bash
+rm -rf /var/lib/docker
+mkdir -p /var/lib/docker
+mount --bind /mnt/docker /var/lib/docker
+echo "/mnt/docker /var/lib/docker none bind,nobootwait 0 2" >> /etc/fstab
+systemctl restart docker
 ```
 
 ### Install BTCPayServer.
