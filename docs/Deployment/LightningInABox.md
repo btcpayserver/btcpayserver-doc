@@ -42,7 +42,7 @@ Login to your domain registrar and point an A record from your domain to the ext
 I suggest that you use a subdomain (ie. btcpay.yourdomain.com).
 To find your external IP address Google "whats my ip".
 
-### Assemble your Lightning in a Box (LIAB). If you already have your own Ubuntu Server you can skip to Step 6.
+### Assemble your Lightning in a Box (LIAB). 
 
 - Remove back cover with screwdriver.
 - Insert SSD
