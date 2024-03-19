@@ -25,7 +25,7 @@ Other requirements are as follows:
 1. High speed internet connection.
 2. Static IP
 3. Domain Name
-4. Ability to open ports (80, 443, 9735) on your router (optional, BTCPayServer can be accessed over TOR or by Dynamic DNS). 
+4. Ability to open ports on your router (optional, BTCPayServer can be accessed over TOR or by Dynamic DNS). 
 5. Tiny Screwdriver
 6. USB Thumb Drive
 7. USB Keyboard, Mouse and Monitor (for initial install only). Can be headless when completed.
