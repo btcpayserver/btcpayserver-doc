@@ -61,13 +61,14 @@ There are a few different ways to do this and you will find a ton of articles on
 ### Log into your router and forward ports 80, 443 and 9735 to your LIAB's local IP address. (optional, if using .local, or Tor only)
 Every router is different and you should be able to find instructions for your router by searching for "Port Forward + your router make and model".
 
-### Install Fail2ban and GIT. OpenSSH server allows you to connect to your server using SSH clients (ie. [Putty](https://www.putty.org/)) 
-Fail2ban bans IP's that attempt to connect to your server and show malicious signs. GIT allows you to clone and manage repositories on github.com.
+### Install Fail2ban, GIT and Avahi-Daemon. 
+[Fail2ban](https://github.com/fail2ban/fail2ban/wiki/How-to-install-fail2ban-packages) bans IP's that attempt to connect to your server and show malicious signs. GIT allows you to clone and manage repositories on github.com.
+[Avahi-Daemon](https://avahi.org/)Avahi is a system which facilitates service discovery on a local network via the mDNS/DNS-SD protocol suite. 
 Open a new terminal window and type the following commands:
 
 ```bash
 sudo apt update
-sudo apt install -y fail2ban git
+sudo apt install -y fail2ban git avahi-daemon
 ```
 
 ### Configuring the firewall
