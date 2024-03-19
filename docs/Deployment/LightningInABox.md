@@ -63,7 +63,7 @@ Every router is different and you should be able to find instructions for your r
 
 ### Install Fail2ban, GIT and Avahi-Daemon. 
 - [Fail2ban](https://github.com/fail2ban/fail2ban/wiki/How-to-install-fail2ban-packages) bans IP's that attempt to connect to your server and show malicious signs. GIT allows you to clone and manage repositories on github.com.
-- [Avahi-Daemon](https://avahi.org/)Avahi is a system which facilitates service discovery on a local network via the mDNS/DNS-SD protocol suite. 
+- [Avahi](https://avahi.org/) is a system which facilitates service discovery on a local network via the mDNS/DNS-SD protocol suite. 
 Open a new terminal window and type the following commands:
 
 ```bash
