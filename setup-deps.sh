@@ -169,14 +169,13 @@ done
 
 echo "Setup dependency: Zapier"
 
-rm -rf "$ZAPIER_DIR"
 rm -rf "$DOCS_DIR/Zapier"
 mkdir -p "$DOCS_DIR/Zapier"
 
 if [ ! -d "$ZAPIER_DIR" ]; then
   git clone --depth 1 https://github.com/btcpayserver/zapier.git "$ZAPIER_DIR"
 else
-  cd "$ZAPIER_DIR"
+  cd "$ZAPIER_DIR" && git checkout master && git pull
 fi
 
 cd "$ZAPIER_DIR"
@@ -190,12 +189,13 @@ done
 
 echo "Setup dependency: Trocador"
 
-rm -rf "$TROCADOR_DIR"
 rm -rf "$DOCS_DIR/Trocador"
 mkdir -p "$DOCS_DIR/Trocador"
 
 if [ ! -d "$TROCADOR_DIR" ]; then
   git clone --depth 1 https://github.com/saltrafael/trocador-plugin.git "$TROCADOR_DIR"
+else
+  cd "$TROCADOR_DIR" && git checkout master && git pull
 fi
 
 cd "$TROCADOR_DIR"
@@ -208,12 +208,13 @@ done
 
 echo "Setup dependency: Smartstore"
 
-rm -rf "$SMARTSTORE_DIR"
 rm -rf "$DOCS_DIR/Smartstore"
 mkdir -p "$DOCS_DIR/Smartstore"
 
 if [ ! -d "$SMARTSTORE_DIR" ]; then
   git clone --depth 1 https://github.com/btcpayserver/Smartstore.BTCPayServer.git "$SMARTSTORE_DIR"
+else
+  cd "$SMARTSTORE_DIR" && git checkout main && git pull
 fi
 
 cd "$SMARTSTORE_DIR"
@@ -226,15 +227,16 @@ done
 
 echo "Setup dependency: Grandnode"
 
-rm -rf "$GRANDNODE_DIR"
 rm -rf "$DOCS_DIR/Grandnode"
 mkdir -p "$DOCS_DIR/Grandnode"
 
 if [ ! -d "$GRANDNODE_DIR" ]; then
   git clone --depth 1 https://github.com/btcpayserver/grandnode.git "$GRANDNODE_DIR"
+else
+  cd "$GRANDNODE_DIR" && git checkout main && git pull
 fi
 
-cd "$GRANDNODE_DIR" 
+cd "$GRANDNODE_DIR"
 cp -r README.md "$DOCS_DIR/Grandnode"
 for file in "$DOCS_DIR"/Grandnode/*.md; do
   update_external "$file" https://github.com/btcpayserver/grandnode.git "$DOCS_DIR"/Grandnode/
@@ -244,12 +246,13 @@ done
 
 echo "Setup dependency: Nopcommerce"
 
-rm -rf "$NOPCOMMERCE_DIR"
 rm -rf "$DOCS_DIR/Nopcommerce"
 mkdir -p "$DOCS_DIR/Nopcommerce"
 
 if [ ! -d "$NOPCOMMERCE_DIR" ]; then
   git clone --depth 1 https://github.com/btcpayserver/nopcommerce.git "$NOPCOMMERCE_DIR"
+else
+  cd "$NOPCOMMERCE_DIR" && git checkout main && git pull
 fi
 
 cd "$NOPCOMMERCE_DIR"
@@ -262,12 +265,13 @@ done
 
 echo "Setup dependency: Kukks' plugins"
 
-rm -rf "$KUKKS_DIR"
 rm -rf "$DOCS_DIR/TicketTailor" "$DOCS_DIR/Nostr" "$DOCS_DIR/Wabisabi"
 mkdir -p "$DOCS_DIR/TicketTailor" "$DOCS_DIR/Nostr" "$DOCS_DIR/Wabisabi"
 
 if [ ! -d "$KUKKS_DIR" ]; then
   git clone --depth 1 https://github.com/Kukks/BTCPayServerPlugins.git "$KUKKS_DIR"
+else
+  cd "$KUKKS_DIR" && git checkout master && git pull
 fi
 
 cd "$KUKKS_DIR/Plugins/BTCPayServer.Plugins.Wabisabi"
