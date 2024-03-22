@@ -6,7 +6,7 @@ Please be aware that those two integrations are not maintained by the BTCPay Ser
 
 ## Plugin for Shopware 6
 
-Find it on the [Shopware store](https://store.shopware.com/en/coinc71249255720f/accept-bitcoin-and-lightning-payments-via-btcpay-server.html) or download it on [GitHub](https://github.com/coincharge-io/CoinchargeBTCPayShopware)
+Download it on [GitHub](https://github.com/coincharge-io/CoinchargeBTCPayShopware)
 
 ## Plugin for Shopware 5
 
