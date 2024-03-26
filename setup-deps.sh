@@ -17,6 +17,7 @@ KUKKS_DIR="$BASE_DIR/deps/kukks"
 SMARTSTORE_DIR="$BASE_DIR/deps/smartstore"
 GRANDNODE_DIR="$BASE_DIR/deps/grandnode"
 NOPCOMMERCE_DIR="$BASE_DIR/deps/nopcommerce"
+XENFORO_DIR="$BASE_DIR/deps/xenforo"
 
 update_external() {
   file="$1"
@@ -259,6 +260,25 @@ cd "$NOPCOMMERCE_DIR"
 cp -r README.md "$DOCS_DIR/Nopcommerce"
 for file in "$DOCS_DIR"/Nopcommerce/*.md; do
   update_external "$file" https://github.com/btcpayserver/nopcommercee.git "$DOCS_DIR"/Nopcommerce/
+done
+
+# Xenforo
+
+echo "Setup dependency: Xenforo"
+
+rm -rf "$DOCS_DIR/Xenforo"
+mkdir -p "$DOCS_DIR/Xenforo"
+
+if [ ! -d "$XENFORO_DIR" ]; then
+  git clone --depth 1 https://github.com/btcpayserver/xenforo.git "$XENFORO_DIR"
+else
+  cd "$XENFORO_DIR" && git checkout main && git pull
+fi
+
+cd "$XENFORO_DIR"
+cp -r README.md "$DOCS_DIR/Xenforo"
+for file in "$DOCS_DIR"/Xenforo/*.md; do
+  update_external "$file" https://github.com/btcpayserver/xenforo.git "$DOCS_DIR"/Xenforo/
 done
 
 # Kukks' plugins

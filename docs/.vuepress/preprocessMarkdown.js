@@ -15,7 +15,8 @@ const EXTERNAL_DOCS = {
   Wabisabi: 'https://github.com/Kukks/BTCPayServerPlugins/tree/master/Plugins/BTCPayServer.Plugins.Wabisabi',
   Smartstore: 'https://github.com/btcpayserver/Smartstore.BTCPayServer.git',
   Grandnode: 'https://github.com/btcpayserver/grandnode.git',
-  Nopcommerce: 'https://github.com/btcpayserver/nopcommerce.git'
+  Nopcommerce: 'https://github.com/btcpayserver/nopcommerce.git',
+  Xenforo: 'https://github.com/btcpayserver/xenforo.git'
 }
 
 const replaceExternalRepoLinks = (source, externalRepoUrl, resourcePath) => {
