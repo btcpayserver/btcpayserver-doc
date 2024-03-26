@@ -115,6 +115,7 @@ const sidebarUserGuide = [
       ['/Smartstore/', 'Smartstore'],
       ['/Grandnode/', 'Grandnode'],
       ['/Nopcommerce/', 'Nopcommerce'],
+      ['/Xenforo/', 'Xenforo'],
       ['/CustomIntegration', 'Custom Integration']
     ]
   },
