@@ -50,6 +50,7 @@ Questions and solutions to BTCPay installation.
 - [Can I connect to my BTCPay Bitcoin P2P on port 8333?](./Deployment.md#can-i-connect-to-my-btcpay-bitcoin-p2p-on-port-8333)
 - [How can I renew my SSL certificate?](./Deployment.md#how-can-i-renew-my-ssl-certificate)
 - [Can I use an existing Nginx server as a reverse proxy with SSL termination?](./Deployment.md#can-i-use-an-existing-nginx-server-as-a-reverse-proxy-with-ssl-termination)
+- [How can I deploy LNbits alongside BTCPay Server?](./Deployment.md#how-can-i-deploy-lnbits-alongside-btcpay-server)
 
 ### [Web Deployment FAQ](./Deployment.md#web-deployment-faq)
 
