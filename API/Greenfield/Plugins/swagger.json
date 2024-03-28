@@ -23,6 +23,10 @@
       "description": "BTCPay Server Greenfield Plugin API"
     }
   ],
+  "externalDocs": {
+    "description": "BTCPay Greenfield API (v1)",
+    "url": "https://docs.btcpayserver.org/API/Greenfield/v1/"
+  },
   "components": {
     "schemas": {
       "ValidationProblemDetails": {
@@ -145,9 +149,5 @@
       "Basic": []
     }
   ],
-  "externalDocs": {
-    "description": "BTCPay Greenfield API (v1)",
-    "url": "https://docs.btcpayserver.org/API/Greenfield/v1/"
-  },
   "paths": {}
 }
