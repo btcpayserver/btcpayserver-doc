@@ -5,7 +5,7 @@ Installed for example on Raspberry Pi or Rock64 devices, the BTCPay Server insta
 
 This **Hardware As A Service** can be free or paid, and is mostly open-sourced for peer-review.
 
-They are suitable for technical users to speed up the installation and intitial syncing process.
+They are suitable for technical users to speed up the installation and initial syncing process.
 Less-technical users will find the 1-click or plug-and-play systems of these services incredibly practical.
 
 :::warning Please note:

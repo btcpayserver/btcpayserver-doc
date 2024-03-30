@@ -21,7 +21,7 @@ Final installation steps:
 - A static IP is shown on the Google cloud shell
 - Go to your DNS service and map it with your domain name, say EXAMPLE.MYSITE.com
 - ssh to the vm from Google cloud console's VM instances list
-- on ssh, Go to /btcpayserver-docker directry and run 'changedomain.sh EXAMPLE.MYSITE.com'
+- on ssh, Go to /btcpayserver-docker directory and run 'changedomain.sh EXAMPLE.MYSITE.com'
 - Access to https://EXAMPLE.MYSITE.com by browser
 - Click 'Register' and create an account - This will be your **admin** account!
 - **Done!** Visit `https://EXAMPLE.MYSITE.com/stores` to create your store and begin invoicing.
