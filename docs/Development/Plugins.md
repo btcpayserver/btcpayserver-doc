@@ -88,7 +88,7 @@ To have the main project include the plugin whenever you run the app in developm
 ```
 
 You need to reference the built DLL file with the absolute path of the build version of your plugin on your local file system.
-If you want to reference multiple plugins, seperate them using a semicolon.
+If you want to reference multiple plugins, separate them using a semicolon.
 
 Once that is set up, you should be able to build and run the app — see the startup message for potential problems.
 Your plugin should be included and also be ready for debugging.

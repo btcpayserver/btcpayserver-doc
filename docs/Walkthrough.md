@@ -84,7 +84,7 @@ Elements of the internal BTCPay Wallet are:
 
 ### Lightning
 
-Additionaly, we recommend adding a lightning wallet. There are two options, connect an [internal](./LightningNetwork/#connecting-your-internal-lightning-node-in-btcpay) or connect an external [Lightning node](./LightningNetwork.md).
+Additionally, we recommend adding a lightning wallet. There are two options, connect an [internal](./LightningNetwork/#connecting-your-internal-lightning-node-in-btcpay) or connect an external [Lightning node](./LightningNetwork.md).
 Once completed, the Lightning wallet function becomes active.
 
 For more information, check [Wallet](./Wallet.md) or [Wallet FAQ](./FAQ/Wallet.md)
