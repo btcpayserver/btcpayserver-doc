@@ -278,6 +278,7 @@ Replace lnbits.domain.tld with your own chosen domain, also make sure that this 
 
 Please also make sure that you are running either LND or C-Lightning, as lnbits depends on one of them being present.
 
+- Before running the commands below, make sure you are root, by running: `sudo su -`
 - Run `docker exec -ti $(docker ps -a -q -f "name=postgres_1") psql -U postgres`
 	- within the psql console run: `CREATE DATABASE lnbits;`
 	- within the psql console run: `quit;`
