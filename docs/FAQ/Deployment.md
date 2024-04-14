@@ -276,7 +276,7 @@ Because of limitations of LNbits itself, you need a seperate (sub-) domain to de
 
 Replace lnbits.domain.tld with your own chosen domain, also make sure that this domain resolves to your server's IP correctly.
 
-Please also insure that you are running either LND or C-Lightning, as lnbits depends on one of them being present.
+Please also make sure that you are running either LND or C-Lightning, as lnbits depends on one of them being present.
 
 - Run `docker exec -ti $(docker ps -a -q -f "name=postgres_1") psql -U postgres`
 	- within the psql console run: `CREATE DATABASE lnbits;`
