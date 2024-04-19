@@ -15,7 +15,7 @@ The steps for having a coin added are:
 
 When testing your coin, **DO NOT USE `build.sh`**, since it uses a pre-built docker image.
 
-Instead, install [.NET 6.0 SDK](https://dotnet.microsoft.com/en-us/download/dotnet/6.0) and run:
+Instead, install [.NET 8.0 SDK](https://dotnet.microsoft.com/en-us/download/dotnet/8.0) and run:
 
 ```bash
 BTCPAYGEN_CRYPTO1="EXAMPLE-COIN"
