@@ -71,13 +71,13 @@ curl -s \
 
 This step is optional, you can also manually create a webhook in the BTCPay Server UI in your store `Settings` -> `Webhooks`.
 
-### Process webhooks
+### Validate and process webhooks
 
-This is not really possible with curl in bash but when you run a webserver. You can check the examples for NodeJS and PHP.
+This is not really possible with curl in bash but when you run a webserver. You can check the examples for [NodeJS](./GreenFieldExample-NodeJS.md) and [PHP](./GreenfieldExample-PHP.md).
 
 ### Issue a full refund of an invoice
 
-Using the [invoice refund endpoint](https://docs.btcpayserver.org/API/Greenfield/v1/#operation/Invoices_Refund) you can issue a full (or even partial) refund of an invoice.
+Using the [invoice refund endpoint](https://docs.btcpayserver.org/API/Greenfield/v1/#operation/Invoices_Refund) you can issue a full (or even partial) refund of an invoice. This will return a link where the customer can claim the refund.
 
 ```bash
 BTCPAY_INSTANCE="https://mainnet.demo.btcpayserver.org"
@@ -109,16 +109,16 @@ Creating a new user can be done by using [this endpoint](https://docs.btcpayserv
 
 ```bash
 BTCPAY_INSTANCE="https://mainnet.demo.btcpayserver.org"
-API_KEY="YOUR_ADMIN_API_KEY"
+ADMIN_API_KEY="YOUR_ADMIN_API_KEY"
 
 USER="satoshi.nakamoto@example.com"
-PASSWORD="SuperSecurePassword123"
+PASSWORD="SuperSecurePasswordsShouldBeQuiteLong123"
 
 BODY="$(echo "{}" | jq --arg "a" "$USER" '. + {email:$a}' \
                   | jq --arg "a" "$PASSWORD" '. + {password:$a}')"
 curl -s \
      -H "Content-Type: application/json" \
-     -H "Authorization: token $API_KEY" \
+     -H "Authorization: token $ADMIN_API_KEY" \
      -X POST \
      -d "$BODY" \
      "$BTCPAY_INSTANCE/api/v1/users"
@@ -150,7 +150,7 @@ Now we can create an API key and limit it to the new store with e.g. the `btcpay
 You can find the needed permissions for endpoints on the endpoint docs under "Authorization" or an overview of permissions in the [authorization section](https://docs.btcpayserver.org/API/Greenfield/v1/#section/Authentication/API_Key).
 
 ```bash
-API_KEY="YOUR_ADMIN_API_KEY"
+ADMIN_API_KEY="YOUR_ADMIN_API_KEY"
 USER="satoshi.nakamoto@example.com"
 PERMISSION="btcpay.store.canmodifystoresettings"
 NEW_STORE_ID="NEW_STORE_ID_FROM_PREVIOUS_STEP"
@@ -158,7 +158,7 @@ NEW_STORE_ID="NEW_STORE_ID_FROM_PREVIOUS_STEP"
 BODY="$(echo "{}" | jq --arg "a" "$PERMISSION:$NEW_STORE_ID" '. + {permissions:[$a]}')"
 USER_API_KEY="$(curl -s \
      -H "Content-Type: application/json" \
-     -H "Authorization: token $API_KEY" \
+     -H "Authorization: token $ADMIN_API_KEY" \
      -X POST \
      -d "$BODY" \
      "$BTCPAY_INSTANCE/api/v1/users/$USER/api-keys"  | jq -r .apiKey)"
