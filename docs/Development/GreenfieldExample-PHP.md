@@ -85,7 +85,7 @@ try {
 
 This step is optional, you can also manually create a webhook in the BTCPay Server UI in your store `Settings` -> `Webhooks`.
 
-## Validate and process webhooks
+### Validate and process webhooks
 
 The webhook payloads of BTCPay Server are signed, and therefore you can trust its content - but only after proper request validation. The validation of the provided `BTCPay-Sig` HTTP-header and payload, is done by the library.
 
@@ -140,17 +140,13 @@ $host = 'https://mainnet.demo.btcpayserver.org';
 $apiKey = 'API_KEY';
 $storeId = 'STORE_ID';
 $invoiceId = 'EXISTING_INVOICE_ID';
-$paymentMethod = 'BTC';
-$refundVariant = 'CurrentRate';
 
 try {
     $client = new \BTCPayServer\Client\Invoice($host, $apiKey);
 
     $refund = $client->refundInvoice(
         $storeId,
-        $invoiceId,
-        $refundVariant,
-        $paymentMethod
+        $invoiceId
     );
 
     echo $refund->getViewLink();
@@ -179,19 +175,21 @@ $isAdministrator = false;
 
 try {
     $client = new \BTCPayServer\Client\User($host, $apiKey);
-    var_dump($client->createUser($email, $password, $isAdministrator));
+    var_dump(
+        $client->createUser($email, $password, $isAdministrator)
+    );
 } catch (\Throwable $e) {
     echo "Error: " . $e->getMessage();
 }
 ```
 
-## Create a new API key
+### Create a new API key (for the user)
 
 While we can use basic authentication to access the greenfield API, it is recommended to use API Keys to limit the scope of the credentials.
 
 For example: If we want to [create a new store](https://docs.btcpayserver.org/API/Greenfield/v1/#operation/Stores_CreateStore) we need the `btcpay.store.canmodifystoresettings` permission for the API key. Warning: If you do not pass any permission then the API key will have unrestricted access.
 
-As mentioned above, you can do this through the BTCPay Server UI of your instance, but let's do it through the API using [this endpoint](https://docs.btcpayserver.org/API/Greenfield/v1/#operation/ApiKeys_CreateApiKey).
+As mentioned above, you can do this through the BTCPay Server UI of your instance, but let's do it through the API using [this endpoint](https://docs.btcpayserver.org/API/Greenfield/v1/#operation/ApiKeys_CreateUserApiKey) where we with our admin API key create an API key for our new user.
 
 ```PHP
 require __DIR__ . './vendor/autoload.php';
@@ -210,7 +208,7 @@ try {
 echo $generatedApiKey->getData()['apiKey'];
 ```
 
-## Create a new store
+### Create a new store
 
 Now, we can use the users API key to [create a new store](https://docs.btcpayserver.org/API/Greenfield/v1/#operation/Stores_CreateStore).
 
