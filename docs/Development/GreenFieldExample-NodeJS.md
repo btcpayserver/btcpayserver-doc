@@ -104,9 +104,10 @@ app.post('/your-webhook-endpoint', (req, res) => {
 })
 ```
 
-What's important is that the webhook sends a HTTP-header `BTCPAY-SIG` which is the signed request using the `secret` you got back from the preivous step when registering the webhook. You can use that `secret` and the raw payload (as bytes) you get from the webhook, hash it and compare it to `BTCPAY-SIG`. Therefore you need `body-parser` which is a middleware to parse the raw body of the request.
-```js
+What's important is that the webhook sends a HTTP-header `BTCPAY-SIG` which is the signed request using the `secret` you got back from the previous step when registering the webhook. You can use that `secret` and the raw payload (as bytes) you get from the webhook, hash it and compare it to `BTCPAY-SIG`. Therefore, you need `body-parser` which is a middleware to parse the raw body of the request. For comparing the hashes you also need `crypto` which is a built-in Node.js module.
+```JS
 const bodyParser = require('body-parser')
+const crypto = require('crypto')
 ```
 
 You can parse the raw body of the request like this:
@@ -131,7 +132,7 @@ app.post('/your-webhook-endpoint', (req, res) => {
   const sigHeaderName = 'BTCPAY-SIG'
   const webhookSecret = 'SECRET_FROM_REGISTERING_WEBHOOK' // see previous step
   if (!req.rawBody) {
-    return next('Request body empty')
+    res.status(500).send('Request body empty')
   }
   const sig = Buffer.from(req.get(sigHeaderName) || '', 'utf8')
   const hmac = crypto.createHmac(sigHashAlg, webhookSecret)
@@ -146,17 +147,13 @@ app.post('/your-webhook-endpoint', (req, res) => {
     checksum.length !== digest.length ||
     !crypto.timingSafeEqual(digest, checksum)
   ) {
-    console.log(
-      `Request body digest (${digest}) did not match ${sigHeaderName} (${checksum})`
-    )
-    return next(
-      `Request body digest (${digest}) did not match ${sigHeaderName} (${checksum})`
-    )
+    console.log(`Request body digest (${digest}) did not match ${sigHeaderName} (${checksum})`)
+    res.status(500).send(`Request body digest (${digest}) did not match ${sigHeaderName} (${checksum})`)
   } else {
 
     // Your own processing code goes here. E.g. update your internal order id depending on the invoice payment status.
 
-    res.status(200).send('Request body was signed')
+    res.status(200).send('Success: request body was signed')
   }
 })
 ```
@@ -179,9 +176,10 @@ const headers = {
 }
 
 const payload = {
-  refundVariant: 'BTC',
-  paymentMethod: 'CurrentRate'
+  refundVariant: 'CurrentRate',
+  paymentMethod: 'BTC'
 }
+
 fetch(btcpayServerUrl + apiEndpoint, {
   method: 'POST',
   headers: headers,
@@ -190,6 +188,7 @@ fetch(btcpayServerUrl + apiEndpoint, {
   .then(response => response.json())
   .then(data => {
     console.log(data)
+    res.send(data)
   })
 ```
 
@@ -203,13 +202,13 @@ Creating a new user can be done by using [this endpoint](https://docs.btcpayserv
 
 ```JS
 const btcpayServerUrl = 'https://mainnet.demo.btcpayserver.org'
-const AdminApiKey = 'YOUR_ADMIN_API_KEY'
+const adminApiKey = 'YOUR_ADMIN_API_KEY'
 
 const apiEndpoint = '/api/v1/users'
 
 const headers = {
   'Content-Type': 'application/json',
-  Authorization: 'token ' + apiKey
+  Authorization: 'token ' + adminApiKey
 }
 
 const payload = {
@@ -226,6 +225,7 @@ fetch(btcpayServerUrl + apiEndpoint, {
   .then(response => response.json())
   .then(data => {
     console.log(data)
+    res.send(data)
   })
 ```
 
@@ -238,8 +238,8 @@ For example: If we want to [create a new store](https://docs.btcpayserver.org/AP
 As mentioned above, you can do this through the BTCPay Server UI of your instance, but let's do it through the API using [this endpoint](https://docs.btcpayserver.org/API/Greenfield/v1/#operation/ApiKeys_CreateUserApiKey) where we with our admin API key create an API key for our new user.
 
 ```js
-const btcpayserverUrl = 'https://mainnet.demo.btcpayserver.org'
-const AdminApiKey = 'YOUR_ADMIN_API_KEY'
+const btcpayServerUrl = 'https://mainnet.demo.btcpayserver.org'
+const adminApiKey = 'YOUR_ADMIN_API_KEY'
 const email = 'satoshi.nakamoto@example.com'
 
 const apiEndpoint = `/api/v1/users/${email}/api-keys`
@@ -254,7 +254,7 @@ const payload = {
   permissions: ['btcpay.store.canmodifystoresettings']
 }
 
-fetch(btcpayserverUrl + apiEndpoint, {
+fetch(btcpayServerUrl + apiEndpoint, {
   method: 'POST',
   headers: headers,
   body: JSON.stringify(payload)
@@ -262,6 +262,7 @@ fetch(btcpayserverUrl + apiEndpoint, {
   .then(response => response.json())
   .then(data => {
     console.log(data) // returns apiKey
+    res.send(data)
   })
 ```
 
@@ -291,6 +292,7 @@ fetch(btcpayServerUrl + apiEndpoint, {
   .then(response => response.json())
   .then(data => {
     console.log(data)
+    res.send(data)
   })
 ```
 
@@ -299,7 +301,7 @@ fetch(btcpayServerUrl + apiEndpoint, {
 We can use the new apikey to [read store](https://docs.btcpayserver.org/API/Greenfield/v1/#operation/Stores_GetStore) information:
 
 ```JS
-const btcpayserverUrl = 'https://mainnet.demo.btcpayserver.org'
+const btcpayServerUrl = 'https://mainnet.demo.btcpayserver.org'
 const userApiKey = 'USER_API_KEY' // From previous step
 const storeId = 'STORE_ID' // From previous step
 
@@ -317,5 +319,6 @@ fetch(btcpayServerUrl + apiEndpoint, {
   .then(response => response.json())
   .then(data => {
     console.log(data)
+    res.send(data)
   })
 ```
