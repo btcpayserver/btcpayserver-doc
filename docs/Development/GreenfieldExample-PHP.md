@@ -31,7 +31,7 @@ The following examples will show you how to create a basic eCommerce flow using 
 
 ### Create an invoice
 
-We create an invoice using the [create invoice endpoint](https://docs.btcpayserver.org/API/Greenfield/v1/#operation/Invoices_CreateInvoice). This is a simple example but you can set a lot more data like order id,
+We create an invoice using the [create invoice endpoint](https://docs.btcpayserver.org/API/Greenfield/v1/#operation/Invoices_CreateInvoice). This is a simple example but you can set a lot more data like order id, buyer email or custom metadata. That said, don't store redundant data on the invoice to prevent data leaks in case of a hack. E.g. in most cases it makes no sense to store the customer address on your eCommerce system and also on the BTCPay invoice.
 
 ```PHP
 require __DIR__ . './vendor/autoload.php';

@@ -29,7 +29,7 @@ The following examples will show you how to create a basic eCommerce flow using 
 
 ### Create an invoice
 
-We create an invoice using the [create invoice endpoint](https://docs.btcpayserver.org/API/Greenfield/v1/#operation/Invoices_CreateInvoice). This is a simple example but you can set a lot more data like order id,
+We create an invoice using the [create invoice endpoint](https://docs.btcpayserver.org/API/Greenfield/v1/#operation/Invoices_CreateInvoice). This is a simple example but you can set a lot more data like order id, buyer email or custom metadata. That said, don't store redundant data on the invoice to prevent data leaks in case of a hack. E.g. in most cases it makes no sense to store the customer address on your eCommerce system and also on the BTCPay invoice.
 
 ```JS
 const btcpayServerUrl = 'https://mainnet.demo.btcpayserver.org'
@@ -196,7 +196,7 @@ fetch(btcpayServerUrl + apiEndpoint, {
 
 Here we assume you are an ambassador and host BTCPay Server for your users. You manage your users on your own system and want to create a user and set email and password for their BTCPay Server login. Then using the same credentials to create a store and an API key on behalf of that user.
 
-## Create a new user
+### Create a new user
 
 Creating a new user can be done by using [this endpoint](https://docs.btcpayserver.org/API/Greenfield/v1/#operation/Users_CreateUser).
 
@@ -266,7 +266,7 @@ fetch(btcpayServerUrl + apiEndpoint, {
   })
 ```
 
-## Create a new store
+### Create a new store
 
 Now, we can use the api key to [create a new store](https://docs.btcpayserver.org/API/Greenfield/v1/#operation/Stores_CreateStore).
 
