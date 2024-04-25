@@ -42,7 +42,6 @@ $storeId = 'STORE_ID';
 $amount = 10;
 $currency = 'USD';
 $orderId = 'SN21420';
-$buyerEmail = 'satoshi.nakamoto@example.com';
 
 try {
     $client = new \BTCPayServer\Client\Invoice($host, $apiKey);
@@ -51,8 +50,7 @@ try {
             $storeId,
             $currency,
             \BTCPayServer\Util\PreciseNumber::parseString($amount),
-            $orderId,
-            $buyerEmail
+            $orderId
         )
     );
 } catch (\Throwable $e) {
@@ -174,7 +172,7 @@ $password = 'SuperSecurePasswordsShouldBeQuiteLong123';
 $isAdministrator = false;
 
 try {
-    $client = new \BTCPayServer\Client\User($host, $apiKey);
+    $client = new \BTCPayServer\Client\User($host, $adminApiKey);
     var_dump(
         $client->createUser($email, $password, $isAdministrator)
     );
@@ -199,7 +197,7 @@ $userEmail = 'satoshi.nakamoto@example.com';
 $adminApiKey = 'ADMIN_API_KEY';
 
 try {
-    $client = new \BTCPayServer\Client\Apikey($host, $adminApiKey);
+    $client = new \BTCPayServer\Client\ApiKey($host, $adminApiKey);
     $generatedApiKey = $client->createApiKeyForUser($userEmail, 'api generated', ['btcpay.store.canmodifystoresettings']);
 } catch (\Throwable $e) {
     echo "Error: " . $e->getMessage();
@@ -239,7 +237,7 @@ $storeId = 'STORE_ID'; // From previous step
 
 try {
   $client = new \BTCPayServer\Client\Store($host, $userApiKey);
-  var_dump($client->getStore($storeId);
+  var_dump($client->getStore($storeId));
 } catch (\Throwable $e) {
   echo "Error: " . $e->getMessage();
 }
