@@ -69,13 +69,3 @@ Easily-embeddable HTML and highly-customizable **payment buttons** allow users t
 4. Copy the generated form and embed it on your website.
 
 [![BTCPay Server Payment Buttons](https://img.youtube.com/vi/MIWGvl6_WzI/mqdefault.jpg)](https://www.youtube.com/watch?v=MIWGvl6_WzI)
-
-### Payment Button for React Developers
-
-Easily integrate the BTCPay Pay Button into your React application with the [React BTCPay Server Pay Button](https://github.com/2140data/react-btcpay-paybutton) package.
-
-1. Run `npm install react-btcpay-paybutton` in your project
-2. Import the `ReactBtcPayButton` component
-3. Configure `btcPayDomain` and `storeId` props on the component and the Payment Button should be working.
-
-Full documentation of all configuration and styling options on the [package repo](https://github.com/2140data/react-btcpay-paybutton).
