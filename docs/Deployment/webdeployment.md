@@ -39,6 +39,13 @@ For more details on `Voltage Cloud` click [here](./voltagecloud.md)
 They allow deploying services, including BTCPay Server, either to their own servers, or to a variety of other VPS providers, such as Digital Ocean, AWS, and Linode.
 For more details on `Clovyr` click [here](./Clovyr.md)
 
+## Elestio
+
+[Elestio](https://elest.io/) is a fully managed DevOps platform to deploy your code and open-source software. 
+They allow you to choose the cloud service provider of your choice such as Digital Ocean,  AWS, Linode and many others. Elestio takes care of the migrations, backups, version changes and security to help you deploy your BTCPay Server easily.
+
+For more details on `Elestio` click [here](https://elest.io/open-source/btcpay)
+
 ## Missing deployments?
 
 As we are a FOSS project, we might miss certain deployments.
