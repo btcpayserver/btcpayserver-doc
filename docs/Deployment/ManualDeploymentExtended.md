@@ -706,7 +706,7 @@ To connect another `bitcoind` instance to your new node:
 
 ##### Install
 
-##### 1. Install .NET 6.0 SDK
+##### 1. Install .NET 8.0 SDK
 
 [Follow the install instuctions](https://docs.microsoft.com/en-us/dotnet/core/install/linux-ubuntu#2004-):
 
@@ -720,7 +720,7 @@ rm packages-microsoft-prod.deb
 sudo apt-get update
 sudo apt-get install -y apt-transport-https
 sudo apt-get update
-sudo apt-get install -y dotnet-sdk-6.0
+sudo apt-get install -y dotnet-sdk-8.0
 
 ## Check
 dotnet --version
