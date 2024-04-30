@@ -280,7 +280,8 @@ const sidebarDevelopment = [
       ['/BTCPayServer/greenfield-development', 'Greenfield API Development'],
       '/Development/Plugins',
       '/Development/Altcoins',
-      '/Development/InvoiceMetadata'
+      '/Development/InvoiceMetadata',
+      '/Development/Theme'
     ]
   },
   {
