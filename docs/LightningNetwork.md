@@ -6,7 +6,7 @@ After deploying BTCPay Server, you may want to experiment with an innovative sec
 
 This guide will show you how to set up your Lightning Network (LN) node in BTCPay Server and guide you through the basics.
 
-BTCPay Server currently offers two implementations of the Lightning Network:
+BTCPay Server currently offers these implementations of the Lightning Network:
 
 - [LND](https://github.com/lightningnetwork/lnd)
 - [Core Lightning (CLN)](https://github.com/ElementsProject/lightning) (formerly c-lightning)
