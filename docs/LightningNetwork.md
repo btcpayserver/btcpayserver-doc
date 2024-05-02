@@ -10,6 +10,7 @@ BTCPay Server currently offers two implementations of the Lightning Network:
 
 - [LND](https://github.com/lightningnetwork/lnd)
 - [Core Lightning (CLN)](https://github.com/ElementsProject/lightning) (formerly c-lightning)
+- [Eclair](https://github.com/ACINQ/eclair)
 
 ::: danger
 Before you proceed, please understand that the Lightning Network is still in the experimental stage.
