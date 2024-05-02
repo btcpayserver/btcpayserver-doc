@@ -6,7 +6,7 @@ After deploying BTCPay Server, you may want to experiment with an innovative sec
 
 This guide will show you how to set up your Lightning Network (LN) node in BTCPay Server and guide you through the basics.
 
-BTCPay Server currently offers three implementations of the Lightning Network:
+BTCPay Server currently offers these implementations of the Lightning Network:
 
 - [LND](https://github.com/lightningnetwork/lnd)
 - [Core Lightning (CLN)](https://github.com/ElementsProject/lightning) (formerly c-lightning)
@@ -183,3 +183,7 @@ cd btcpayserver-docker
 Once your on-chain lightning node is funded, it's time to connect to other nodes on the network and open payment channels.
 \
 Check out [Payment channels](./LightningNetwork_PaymentChannels.md) for recommendations on opening payment channels, liquidity management and more.
+
+## Alby Extension
+
+[Alby](https://getalby.com/) is a free, fast, simple, and convenient way to send and receive Bitcoin payments with your normal browser on the Bitcoin Lightning Network with ease. You can now connect your BTCPay wallet directly to your Alby account. Learn more on [how to connect your BTCPay wallet to Alby](https://guides.getalby.com/user-guide/v/alby-account-and-browser-extension/alby-lightning-account/connect-your-alby-lightning-account-to-other-apps/connect-to-btcpay-server).
