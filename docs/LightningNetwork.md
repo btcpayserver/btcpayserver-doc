@@ -185,4 +185,4 @@ Check out [Payment channels](./LightningNetwork_PaymentChannels.md) for recommen
 
 ## Alby Extension
 
-[Alby](https://getalby.com/) is a free, fast, simple, and convenient way to send and receive Bitcoin payments with your normal browser on the Bitcoin Lightning Network with ease. You can now connect your BTCPay wallet directly to your Alby extension. To learn more on how to connect your BTCPay wallet to alby, visit [here](https://guides.getalby.com/user-guide/v/alby-account-and-browser-extension/alby-lightning-account/connect-your-alby-lightning-account-to-other-apps/connect-to-btcpay-server)
+[Alby](https://getalby.com/) is a free, fast, simple, and convenient way to send and receive Bitcoin payments with your normal browser on the Bitcoin Lightning Network with ease. You can now connect your BTCPay wallet directly to your Alby account. To learn more on [how to connect your BTCPay wallet to Alby](https://guides.getalby.com/user-guide/v/alby-account-and-browser-extension/alby-lightning-account/connect-your-alby-lightning-account-to-other-apps/connect-to-btcpay-server).
