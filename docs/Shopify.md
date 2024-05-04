@@ -1,8 +1,31 @@
-# How to accept Bitcoin in Shopify
+# Ultimate Guide: Accept Bitcoin in Shopify with BTCPay Server
 
-The following document guides you through **setting up BTCPay Server with [Shopify](https://www.shopify.com/)**.
+Introducing BTCPay Server for Shopify – the innovative, open-source payment gateway that enables you accept bitcoin payments directly on your website or stores from customers with no fee.
+
+Our integration with Shopify allows you connect your self-hosted BTCPay Server with your [Shopify store](https://www.shopify.com/), enabling you accept Bitcoin payments swiftly and securely.
+
+Boost your payment option today with Bitcoin using our step-by-step BTCPay Server setup guide.
+
+
+## What BTCPay offers:
+
+- **Zero fees**: Enjoy a payment gateway with no fees. Yes, You saw that right. Zero fees!
+- **Direct payment, No middlemen or KYC**: Say goodbye to intermediaries and tedious paperwork, and get your money directly in your wallet
+- **Fully automated system**: BTCPay takes care of payments, invoice management and refunds automatically.
+- **Display Bitcoin QR code at checkout**: Enhance customer experience with an easy and secure payment option.
+- **Self-hosted infrastructure**: Maintain full control over your payment gateway.
+- **Lightning Network integrated**: Instant, fast and low cost payments and payouts
+- **Easy CSV exports**
+- **Versatile plugin system**: Extend functionality according to your needs
+- **Point-of-sale integration** – Accept payments in your physical shops
+- **Multilingual ready**: Serve a global audience right out of the box.
+- **Top-notch privacy and security**: Protect your and your customers’ data.
+- **Community-driven support**: Get responsive assistance from our dedicated community ([Mattermost](http://chat.btcpayserver.org/) or [Telegram](https://t.me/btcpayserver)).
+
 
 ## Prerequisites:
+
+Before diving into the setup process, ensure you have the following:
 
 - Shopify account
 - BTCPay Server] - [self-hosted](Deployment.md) or run by a [third-party host](/Deployment/ThirdPartyHosting.md) v1.4.8 or later.
@@ -16,7 +39,9 @@ Shopify might give false flags on deprecated API calls. The most likely answer w
 
 ## Setting up BTCPay Server with Shopify
 
-1. In Shopify, go to Apps > and at the bottom of the page click on the `Develop apps for your store`.
+1. In Shopify, click on Apps in the leftbar 
+2. On the modal popped up, select "App and sales channel settings"
+1. From the page displayed,  click on `Develop apps for your store` button.
 2. If prompted, click on `Allow custom app development`
 3. `Create an app` and name it
 4. On the app page, in `Overview` tab, click on the `Configure Admin API scopes`
