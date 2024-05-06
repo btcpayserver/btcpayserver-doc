@@ -265,6 +265,7 @@ const sidebarDevelopment = [
       //   'Greenfield API Plugins',
       //   { type: 'external' }
       // ],
+      '/Development/ecommerce-integration-guide',
       '/BTCPayServer/greenfield-authorization',
       '/Development/GreenFieldExample',
       '/Development/GreenFieldExample-NodeJS',
