@@ -28,7 +28,7 @@ To integrate BTCPay Server into an existing WooCommerce store, follow the steps 
 
 Please ensure that you meet the following requirements before installing this plugin.
 
-- PHP version 7.4 or newer
+- PHP version 8.0 or newer
 - The cURL, gd, intl, json, and mbstring PHP extensions are available
 - A WooCommerce website ([Installation instructions](https://woocommerce.com/document/installing-uninstalling-woocommerce/) or [directly on BTCPay Server](#deploying-woocommerce-from-btcpay-server))
 - You have a BTCPay Server version 1.3.0 or later, either [self-hosted](/Deployment/README.md) or [hosted by a third-party](/Deployment/ThirdPartyHosting.md)
