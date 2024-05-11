@@ -35,6 +35,8 @@ Use the Quick fill settings dropdown for commonly used email client setup parame
 
 ![BTCPay Email SMTP](./img/smtp/smtp-setup.png)
 
+![BTCPay Email SMTP](./img/smtp/validate-smtp-setup.png)
+
 Each email client may have different requirements for setting up SMTP. For more information see this [SMTP FAQ](./FAQ/ServerSettings.md#how-to-configure-smtp-settings-in-btcpay) or refer to your email provider's documentation.
 
 # User Emails
