@@ -220,6 +220,10 @@ Each webhook payload with have an `invoiceId` property, this is the id of the in
 
 In most cases you can ignore the `InvoiceCreated` event as you created the invoice during the checkout process and already have stored the invoice id alongside your order. But there are some edge-cases where you will have expired invoices that have been paid partially or overpaid. You can check our WooCommerce plugin PHP code for an example on how to handle those cases [here](https://github.com/btcpayserver/woocommerce-greenfield-plugin/blob/master/src/Gateway/AbstractGateway.php#L504).
 
+:::tip
+On the invoice details page you can manually re-trigger the webhook events for testing purposes, by clicking on the "Redeliver" link on the list of webhooks.
+:::
+
 ### Refunds
 
 Refunds can be issued via the [invoice refund endpoint](https://docs.btcpayserver.org/API/Greenfield/v1/#operation/Invoices_Refund). This will return a link where the customer can claim the refund. You can find examples for [Node.Js](https://docs.btcpayserver.org/Development/GreenFieldExample-NodeJS/#issue-a-full-refund-of-an-invoice) and [PHP](https://docs.btcpayserver.org/Development/GreenfieldExample-PHP/#issue-a-full-refund-of-an-invoice) in our docs.
