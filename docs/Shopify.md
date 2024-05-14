@@ -83,9 +83,9 @@ Below are step by step visuals describing the process outlined above.
 
 ![BTCPay Server shopify step 10](./img/shopify/btcpayshopify10.png)
 
-![BTCPay Server shopify step 11](img/shopify/btcpayshopify11.png)
+![BTCPay Server shopify step 11](./img/shopify/btcpayshopify11.png)
 
-![BTCPay Server shopify step 12](img/shopify/btcpayshopify12.png)
+![BTCPay Server shopify step 12](./img/shopify/btcpayshopify12.png)
 
 ![BTCPay Server shopify step 13](./img/shopify/btcpayshopify13.png)
 
