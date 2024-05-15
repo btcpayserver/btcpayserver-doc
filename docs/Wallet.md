@@ -69,7 +69,7 @@ Warning: Despite the fact, in this example, that you entered `1.0` in the amount
 
 Scan option in wallet (camera icon in send screen) lets you **use your device’s camera to scan a QR code containing an address or BIP21 payment link**. It auto-populates the sending information so that you don’t have to manually copy-paste an address and amount.
 
-![QR Scan](./img/wallet/ScanWallet.png)
+![QR Scan](./img/wallet/ScanWallet.PNG)
 
 ###### Paste BIP21 address
 
