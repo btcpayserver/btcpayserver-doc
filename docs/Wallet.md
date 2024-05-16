@@ -13,7 +13,7 @@ The wallet contains the following features:
 3. Receive
 4. Rescan
 5. Pull payments
-6. Payouts
+6. Payouts 
 7. PSBT
 8. Settings
 
@@ -21,7 +21,7 @@ The wallet contains the following features:
 
 An overview of the incoming (green), outgoing (red) and unconfirmed (grayed out) **transactions** displayed together with timestamps and balances, sorted by date. You can click on the transaction ID to view the transaction details on the block explorer.
 
-![Individual Wallet](./img/wallet/WalletTransactions.jpg)
+![Individual Wallet](./img/wallet/WalletTransactions.png)
 
 #### Transaction Labels
 
@@ -42,7 +42,37 @@ You can also create your own [custom transaction labels and comments](./FAQ/Wall
 
 The Send function allows **spending of the funds from the BTCPay wallet**.
 
-![Send from the Wallet](./img/wallet/WalletSend.jpg)
+![Send from the Wallet](./img/wallet/WalletSend.png)
+
+
+#### Advanced Settings
+
+Certain wallet features are available for advanced users. Toggle the `Advanced Settings` within the `Send` tab to preview them.
+
+##### Don't create UTXO change
+
+This option is available in the `Advanced mode` of the `Send` page.
+
+It is a privacy enhancing feature which is useful when you're sending funds to another wallet of yours or to an exchange. It makes sure that no change UTXO is created by **rounding up** the amount sent.
+
+By default this feature is disabled, so if your wallet has a UTXO of `1.1 BTC` and you input an amount equal to `1.0 BTC`, the resulting transaction will have two outputs `0.1 BTC` of change, and `1.0 BTC` to your destination.
+
+Blockchain analysis will understand that those `0.1 BTC` of change belong to the same entity which controlled `1.1 BTC` before, and can track the future purchase you make under the same pattern.
+
+By enabling this feature, BTCPay Server wallet will round up the amount sent to `1.1 BTC` such that no change output is sent back to you.
+
+Warning: Despite the fact, in this example, that you entered `1.0` in the amount field, the amount that will really be sent to your destination will be `1.1 BTC`.
+
+##### Other features
+
+###### Camera QR scan
+
+Scan option in wallet (camera icon in send screen) lets you **use your device’s camera to scan a QR code containing an address or BIP21 payment link**. It auto-populates the sending information so that you don’t have to manually copy-paste an address and amount.
+
+
+###### Paste BIP21 address
+
+This option **decodes a BIP21 payment link**. It's useful when you're trying to pay a [Payjoin](./Payjoin.md) invoice.
 
 #### Signing a transaction (spending)
 
@@ -89,61 +119,14 @@ If you [created a new wallet](./CreateWallet.md) when setting up your store and 
 Using the hot wallet feature comes with security implications; please be sure to read and understand them over at the [Hot Wallet documentation](./CreateWallet.md#security-implications)
 :::
 
-#### Advanced Settings
-
-Certain wallet features are available for advanced users. Toggle the `Advanced Settings` within the `Send` tab to preview them.
-
-##### Don't create UTXO change
-
-This option is available in the `Advanced mode` of the `Send` page.
-
-It is a privacy enhancing feature which is useful when you're sending funds to another wallet of yours or to an exchange. It makes sure that no change UTXO is created by **rounding up** the amount sent.
-
-By default this feature is disabled, so if your wallet has a UTXO of `1.1 BTC` and you input an amount equal to `1.0 BTC`, the resulting transaction will have two outputs `0.1 BTC` of change, and `1.0 BTC` to your destination.
-
-Blockchain analysis will understand that those `0.1 BTC` of change belong to the same entity which controlled `1.1 BTC` before, and can track the future purchase you make under the same pattern.
-
-By enabling this feature, BTCPay Server wallet will round up the amount sent to `1.1 BTC` such that no change output is sent back to you.
-
-Warning: Despite the fact, in this example, that you entered `1.0` in the amount field, the amount that will really be sent to your destination will be `1.1 BTC`.
-
-##### RBF (Replace-By-Fee)
-
-Replace-By-Fee (RBF) is a Bitcoin protocol feature that allows you to replace a previously broadcast transaction (while unconfirmed). This allows randomizing your wallet's transaction fingerprint, or simply for replacing it with a higher fee rate to move the transaction higher in the queue of confirmation (mining) priority. This will effectively replace the original transaction as the higher fee rate will be prioritized and once confirmed, invalidating the original one (double spend).
-
-Press the `Advanced Settings` button to view the RBF options:
-
-![RBF Options](./img/wallet/WalletRBF.jpg)
-
-- Option 1 (Enabled by Default): Allow the transaction to be replaced automatically for randomization of transaction fingerprint (increased privacy)
-- Option 2: Yes, Allow the transaction to be replaced explicitly (not replaced by default)
-- Option 3: No, Do not allow the transaction to be replaced (ignore replacement)
-
-##### Coin Selection
-
-Coin selection is an advanced **privacy-enhancing feature** that allows you to **specifically select coins** that you would like to spend when crafting a transaction. For example, paying with coins that are fresh from a coinjoin mix.
-
-To make the selection easier, coin-selection works natively with the wallet labels feature. This allows you to label any incoming funds for smoother UTXO management and spending.
-
-![Coin Selection](./img/wallet/CoinSelection.jpg)
-
-##### Other features
-
-###### Camera QR scan
-
-Scan option in wallet (camera icon in send screen) lets you **use your device’s camera to scan a QR code containing an address or BIP21 payment link**. It auto-populates the sending information so that you don’t have to manually copy-paste an address and amount.
-
-![QR Scan](./img/wallet/ScanWallet.jpg)
-
-###### Paste BIP21 address
-
-This option **decodes a BIP21 payment link**. It's useful when you're trying to pay a [Payjoin](./Payjoin.md) invoice.
 
 ### Receive
 
 The Receive tab **generates an unused address which can be used to receive payments**. The same can be achieved by generating an invoice (Invoices > Create new invoice).
 
-![Wallet Receive](./img/wallet/WalletReceive.jpg)
+![Wallet Receive](./img/wallet/WalletReceive.png)
+
+![Wallet Receive Two](./img/wallet/WalletReceiveTwo.png)
 
 ### Pull Payments
 
@@ -157,11 +140,33 @@ This section lets you manage Pull Payments and gives you the ability to **accept
 
 For more information, see [Payouts](./PullPayments.md#approve-and-pay-a-payout).
 
+### Settings
+
+In the top right corner of your `wallet` you will find the `wallet settings`.
+In the wallet settings tab you can adjust certain settings. If you've configured your wallet by [creating a new wallet](./CreateWallet.md) or using an existing wallet via the [hardware wallet integration](./HardwareWalletIntegration.md) these settings will be pre-configured.
+Here, you have the options to perform several actions on your wallet, such Rescanning wallet for missing transactions, prunning old transactions, view wallet phrase, remove wallet among features.
+
+
+
+![Wallet Rescan](./img/wallet/WalletSetting.png)
+
+
+
+If you manually added the extended public key from an external wallet, you'd need to adjust `AccountKeyPath` that you can find in your external wallet, for example `m/84'/0'/0'` to be able to spend from the BTCPay Wallet.
+
+
+In `wallet settings` you will also find the `speed policy` for the specific store.
+There are 2 main settings under `Payment`, [Payment invalid if transaction fails to confirm in ... after invoice creation](./FAQ/Stores.md#payment-invalid-if-transactions-fails-to-confirm--minutes-after-invoice-expiration) and [Consider the invoice confirmed when the payment transaction...](./FAQ/Stores/#consider-the-invoice-confirmed-when-the-payment-transaction). The latter lets you set the number of confirmations required to be recognized as settled.
+
+
+![Wallet settings](./img/wallet/WalletSettingTwo.png)
+
+
 ### Re-scan
 
 The Rescan relies on Bitcoin Core 0.17.0's `scantxoutset` to **scan the current state of the blockchain** (called UTXO Set) for coins belonging to the configured derivation scheme.
 
-![Wallet Rescan](./img/wallet/WalletRescan.jpg)
+![Wallet Rescan](./img/wallet/WalletRescan.png)
 
 Wallet re-scan solves two critical problems for BTCPay users:
 
@@ -172,7 +177,7 @@ Wallet re-scan solves two critical problems for BTCPay users:
 
 **Wallet import**: When users add a derivation scheme of a wallet that had transactions in the past (previously used wallet), BTCPay won't be able to show the balance and transactions from the past.
 
-![Wallet rescan progress](./img/wallet/WalletRescanProgress.jpg)
+![Wallet rescan progress](./img/wallet/WalletRescanProgress.png)
 
 Re-scan is a feature that solves both of these problems. Once the scan is complete, BTCPay Server will show the correct balance, along with the past transactions of the wallet.
 
@@ -180,14 +185,11 @@ Wallet re-scan requires access to the full node which means that this function i
 
 Users who use a third-party host should use a newly generated xpub key and also use an external wallet like Electrum which allows them to increase the gap limit.
 
-### Settings
+### Labels
 
-In the top right corner of your `wallet` you will find the `wallet settings`.
-In the wallet settings tab you can adjust certain settings. If you've configured your wallet by [creating a new wallet](./CreateWallet.md) or using an existing wallet via the [hardware wallet integration](./HardwareWalletIntegration.md) these settings will be pre-configured.
+At the bottom of your wallet settings, you can manage your `custom transaction label`.
 
-If you manually added the extended public key from an external wallet, you'd need to adjust `AccountKeyPath` that you can find in your external wallet, for example `m/84'/0'/0'` to be able to spend from the BTCPay Wallet.
+Clicking on the link would take you to a page where you can view all custom labels associated to all transaction. You can remove any or all custom labels given the required 
+permission.
 
-In `wallet settings` you will also find the `speed policy` for the specific store.
-There are 2 main settings under `Payment`, [Payment invalid if transaction fails to confirm in ... after invoice creation](./FAQ/Stores.md#payment-invalid-if-transactions-fails-to-confirm--minutes-after-invoice-expiration) and [Consider the invoice confirmed when the payment transaction...](./FAQ/Stores/#consider-the-invoice-confirmed-when-the-payment-transaction). The latter lets you set the number of confirmations required to be recognized as settled.
-
-![Wallet settings](./img/wallet/btcpayserverwalletsettings1.jpg)
+![Wallet settings](./img/wallet/ManageLabel.png)
