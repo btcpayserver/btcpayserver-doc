@@ -79,11 +79,6 @@ const sidebarUserGuide = [
         children: [['/Refund', 'Refunds']]
       },
       ['/Payouts', 'Payouts'],
-      {
-        title: 'Form Builder',
-        path: '/Forms',
-        children: [['/AdvancedForms', 'Advanced Forms']]
-      },
       ['/Apps', 'Apps'],
       ['/Reporting', 'Reporting'],
       {
