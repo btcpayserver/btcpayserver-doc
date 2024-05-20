@@ -15,22 +15,26 @@ BTCPay automatically labels invoices as Payment Requests in your store's invoice
 
 [![BTCPay Server Payment Requests](https://img.youtube.com/vi/j6CvwDPvfzQ/mqdefault.jpg)](https://www.youtube.com/watch?v=j6CvwDPvfzQ)
 
-## Customize Your Payment Requests
-
-- **Invoice Amount** - Set Requested Payment Amount
-- **Denomination** - Show Requested Amount in Fiat or Cryptocurrency
-- **Payment Quantity** - Allow only single payments or partial payments
-- **Expiration Time** - Allow payments until a date or without expiry
-- **Description** - Text Editor, Data Tables, Embed Photos & Videos
-- **Appearance** - Color and Style with CSS Themes
 
 ## Create a Payment Request
 
-Click Payment Requests > Create new payment request
+Click Requests > Create Requests
 
-![Create Payment Request](./img/payment-requests/paymentrequestnew.jpg)
+![Create Payment Request](./img/payment-requests/PaymentRequestList.png)
 
-Provide the Request Name, Amount, Display Denomination, Associated Store, Expiration Time & Description (Optional)
+
+![Create Payment Request](./img/payment-requests/CreatePaymentRequest.png)
+
+
+When creating a payment request, you provide the following details:
+
+- **Title**: The payment request title
+- **Amount & Currency**: The requested amount in Fiat or cryptocurrency 
+- **Expiration Time**: The date until which payments are valid (optional)
+- **Email**: If specified, the email address will receive notification regarding any payment done on this request
+- **Request Customer data on checkout**: You can request customer's details such as email address or shipping address. 
+- Memo: If you wish to leave a note for the client, you can write them in the memo section. A text editor that allows you format your message and also include attachment 
+
 
 Select the option _Allow payee to create invoices in their own denomination_ if you want to allow partial payments to be made.
 
@@ -39,12 +43,15 @@ Payment requests are store-dependent, which means that each payment request is a
 Be sure to have a wallet connected to your store which the payment request belongs to.
 :::
 
-Click Save & View to review your payment request.
+Click Create to review your payment request.
 
 ![View New Payment Request](./img/payment-requests/NewPaymentRequest.png)
 
 BTCPay creates a URL for the payment request. Share this URL to view your payment request.
-Need multiple of the same request ? You can use the `Clone` option in the main menu to duplicate payment requests.
+Need multiple of the same request ? You can use the `Clone` option in the main menu to duplicate payment requests as shown.
+
+
+![View Payment Request List](./img/payment-requests/PaymentRequestListOptions.png)
 
 ## Paid Request for Payment
 
@@ -53,32 +60,3 @@ The status will appear as **Settled** if payment has been received in full.
 If only partial payment was made, the Amount Due will show the balance due.
 
 ![View Paid Payment Request](./img/payment-requests/PaidPaymentRequest.png)
-
-## Customize Payment Requests
-
-The request's description content can be edited using the payment request's text editor.
-If you want to use additional color themes or custom css styling, both options are available.
-
-Non-technical users can use a [bootstrap theme](./Development/Theme.md#2-bootstrap-themes).
-Further customization can be done by providing additional CSS code, like shown below …
-
-```css
-:root {
-  --btcpay-font-family-base: 'Source Sans Pro', -apple-system, BlinkMacSystemFont,
-    'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
-  --btcpay-primary: #7d4698;
-  --btcpay-primary-accent: #59316b;
-  --btcpay-body-text: #333a41;
-  --btcpay-body-bg: #fff;
-  --btcpay-bg-tile: #f8f9fa;
-}
-#mainNav {
-  color: white;
-  background: linear-gradient(#59316b, #331840);
-}
-#mainNav .btn-link {
-  color: white;
-}
-```
-
-![Customized Payment Request css](./img/payment-requests/PaymentRequestCustomCSS.png)
