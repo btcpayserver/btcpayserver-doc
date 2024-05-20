@@ -11,7 +11,7 @@ This type of wallet is also necessary to use features such as [Payjoin](./Payjoi
 
 After creating a store, you'll be able to attach a wallet by first navigating to the sidebar or slide-out menu and clicking/tapping the **Bitcoin** button under the **Wallets** header. Alternatively, you can find the option to **Set up a wallet** on the Dashboard.
 
-![Main Menu](./img/hotwallet/MainMenu.png)
+![Main Menu](./img/FirstStoreCreation.png)
 
 You'll focus on the **I don't have a wallet** section for a hot wallet and click the **Create a new wallet** button.
 
@@ -23,13 +23,8 @@ There will be two options on the proceeding page, and in this case, we'll select
 
 For most people, the default options, including **Address Type** (Segwit), should work well for most applications, and it's recommended not to change it unless you're sure of what you're doing. The **Payjoin** feature is optional, and you can learn more about it at the link [above](#hot-wallet).
 
-Find out more about advanced settings [here](#advanced-settings).
-
 ![Wallet Settings](./img/hotwallet/WalletSettings.png)
 
-#### Recovery Seed
-
-The last step to creating a hot wallet is making sure you document your recovery seed. After you've done so, tick the checkbox that says _I have written down my recovery phrase and stored it in a secure location_ and click the **Done** button.
 
 #### Advanced Settings
 
@@ -43,13 +38,18 @@ The last step to creating a hot wallet is making sure you document your recovery
 
 ![Advanced Settings](./img/hotwallet/AdvancedSettings.png)
 
+
+#### Recovery Seed
+
+The final step in creating a hot wallet is to document your recovery seed. It's crucial to understand that anyone with access to your recovery seed can access and steal all your funds, both current and future, because a private key is derived from the recovery seed. Securely back up your seed by writing it down and keep it in a safe place. Do not photograph it or store it in a digital format. Do not rely solely on your server for storing your recovery seed, always keep a backup copy. 
+
+After you've done so, tick the checkbox that says _I have written down my recovery phrase and stored it in a secure location_ and click the **Done** button.
+
 #### Requirements to create wallets
 
-If are using a [third-party host](/Deployment/ThirdPartyHosting.md), this option needs to be explicitly enabled by the server admin. Generating a new wallet in an environment you are not sure is trustworthy, is discouraged.
+If are using a [third-party host](/Deployment/ThirdPartyHosting.md), this option must be explicitly enabled by the server admin. Generating a new wallet in an environment you are not sure is trustworthy, is discouraged.
 
-By default, you need to be a server admin to use the create wallet feature. This is because server admins are able to extract the private key easily. If for some reason (such as allowing individuals that trust you enough with their store), you can enable the hot wallet for non-admins from Server Settings > Policies > "Allow non-admins to create hot wallets for their stores".
-
-Understand that anyone with access to your recovery seed can also access and steal all your funds (current AND future funds!), since a private key is derived from a recovery seed. Securely back up your seed by writing it down and keep it in a safe place. Do not photograph it or store it in a digital format. Do not rely solely on your server for storing your recovery seed, always keep a backup copy.
+By default, only server admins can use the create wallet feature. This is because server admins are able to extract the private key easily. However, if you want other trusted individuals to create and manage their stores, you can enable the hot wallet feature for non-admins. To do this, go to Server Settings > Policies > "Allow non-admins to create hot wallets for their stores".
 
 ![BTCPay Server settings](./img/hotwallet/ServerSettings.png)
 
