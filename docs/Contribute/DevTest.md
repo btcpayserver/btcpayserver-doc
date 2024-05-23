@@ -17,6 +17,57 @@ First, be sure you have completed the following:
 - Created a local [Regtest Network](./DevCode.md#bitcoin-regtest-network-setup)
 - Built your solution and started [Browser mode](./DevCode.md#build-local-btcpayserver-in-browser-mode) or [Debug mode](./DevCode.md#build-local-btcpayserver-in-debug-mode)
 
+## Using local Docker Images for Live Testing
+
+You can use any open pull request or feature branch to test new feature in a live environment using local docker images, in case you don't want to use Docker Hub.
+
+Step 1:
+
+Log into your BTCPay instance:
+```bash
+ssh user@your-btcpay-server.tld
+```
+
+Step 2:
+
+Clone the BTCPay Server branch you want to test. Can be your own or from another contributor. Replace MYREMOTE and FEATUREBRANCH accordingly:
+```bash
+# Clone the repository next to your btcpayserver-docker directory or somewhere else, does not really matter.
+git clone git@github.com:MYREMOTE/btcpayserver.git btcpayserver-images
+cd btcpayserver-images
+# Checkout the branch you want to test
+git checkout FEATUREBRANCH
+```
+
+Step 3:
+
+Find out the currently deployed tag and build the docker image locally with the same tag.
+
+:::tip
+If you use the current deployed tag of BTCPay Server, as described below, you avoid the additional step of changing the tag in the docker-compose file. Because local builds always override remote builds. That said, you can build a custom tag and then change the docker compose file accordingly and run BTCPay setup again.
+:::
+
+First, find the current tag of your BTCPay Server instance:
+```bash
+docker ps | grep generated_btcpayserver | awk '{print $2}'
+# output: btcpayserver/btcpayserver:1.13.1
+```
+
+Secondly, build the docker image overwriting the current tag, in our case `btcpayserver/btcpayserver:1.13.1`:
+```bash
+docker build -t btcpayserver/btcpayserver:1.13.1 .
+```
+
+Step 4:
+
+Switch to your btcpayserver-docker direcory and run btcpay-up.sh:
+```bash
+cd $BTCPAY_BASE_DIRECTORY/btcpayserver-docker
+./btcpay-up.sh
+```
+
+Done, you are now running your custom BTCPay Server image.
+
 ## Using Docker Images for Mainnet Testing
 
 Some features are not suitable for testing using a localhost development environment. Integration type features often require mainnet or testnet payments in order to be sufficiently tested. This will show you how to deploy a custom docker image containing an unreleased feature for testing on a live server.
@@ -47,14 +98,14 @@ Step 5:
 
 Inside the root directory of your `btcpay-branch` there are Dockerfiles prefixed by the following: amd64, arm32v7, arm64v8. We need to build and push a custom image using the Dockerfile for the OS being used.
 
-Replace `<dockerUser>` with your Dockerhub username. Replace the tag `1.0.0.1` with your own custom version tag or use `latest` tag in the following commands:
+Replace `<dockerUser>` with your Dockerhub username. Replace the tag `1.13.1` with your own custom version tag or use `latest` tag in the following commands:
 
 ```docker
 #build image
-docker build -t <dockerUser>/btcpayserver:1.0.0.1 --file ./amd64.Dockerfile .
+docker build -t <dockerUser>/btcpayserver:1.13.1 --file ./amd64.Dockerfile .
 
 #push image
-docker push <dockerUser>/btcpayserver:1.0.0.1
+docker push <dockerUser>/btcpayserver:1.13.1
 ```
 
 Step 6:
@@ -63,7 +114,7 @@ Check that your image appears in your Docker Hub repository and the version tag 
 
 Step 7:
 
-Locate the [btcpayserver.yml docker-fragment](https://github.com/btcpayserver/btcpayserver-docker/tree/master/docker-compose-generator/docker-fragments) in your local `docker-branch` created in step 2. Replace the btcpayserver image's referenced repository to be your Docker image. Replace `<dockerUser>` with your Dockerhub username and tag version (example: 1.0.0.1) with the one you have supplied in your step 5 above.
+Locate the [btcpayserver.yml docker-fragment](https://github.com/btcpayserver/btcpayserver-docker/tree/master/docker-compose-generator/docker-fragments) in your local `docker-branch` created in step 2. Replace the btcpayserver image's referenced repository to be your Docker image. Replace `<dockerUser>` with your Dockerhub username and tag version (example: 1.13.1) with the one you have supplied in your step 5 above.
 
 ```yaml
 image: ${BTCPAY_IMAGE:-<dockerUser>/btcpayserver:1.0.0.1$<BTCPAY_BUILD_CONFIGURATION>?}
