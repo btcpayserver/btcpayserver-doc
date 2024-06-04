@@ -18,7 +18,8 @@ The third video covers setting **BTCPay up on LunaNode**, but also goes in-depth
 
 ## 1. Create the account and add credits
 
-Register to LunaNode and add credits to your account. The process is quite straight-Forward. If by any chance you get stuck, [see this article](https://bitcoinshirt.co/how-to-create-store-accept-bitcoin/8/#Creating-an-account). Wait for the invoice confirmation.
+Register to LunaNode and add credits to your account.
+Note that you need to wait for the invoice confirmation.
 
 ## 2. Create the API Key
 
