@@ -17,7 +17,7 @@ To allow an even smoother UX for attendees without an internet connection or no 
 
 **Once the server is up, install these plugins:**
 - Blink plugin
-- Boldcards plugin
+- Bolt Cards plugin
 
 Then restart BTCPay Server (via UI or `docker restart generated_btcpayserver_1` via SSH)
 
@@ -66,7 +66,7 @@ Setup the Lightning wallet to be connected to the merchants' Blink account, foll
 
 - Go back to PoS settings in your browser and click on the "**QR-code icon**"
 - On your Bitcoinize (or other) device, open the "**Camera**" app
-- Scroll to the right until you find "**more**" category -> select "**QR-Code**" // todo: needs clarification/testing
+- Scroll to the right until you find "**more**" category -> select "**QR-Code**"
 - Now scan the QR-Code shown in your browser (on the PoS settings page)
 - After scanning open the URL in the Chrome browser
 - Check that you see the keypad and the correct merchant name
@@ -78,7 +78,7 @@ Setup the Lightning wallet to be connected to the merchants' Blink account, foll
 - Start the PoS page from the home screen
 - Ensure that the sound on the device is turned up so that there is audio feedback on payment, especially if Bolt Cards are used
 - Enter 0.01 USD (or other currency equivalent) and tap on "**Charge**" button
-- Click on "**Pay by NFC**" button and then give it the requested permission // todo: click on button still needed?
+- Only first time the browser will ask for NFC permission, tap on the button to give it the requested permission
 - Pay the invoice either with a Bolt Card or Lightning wallet
 - Ensure you hear the sound after the payment
 - Tap on "**View receipt**" button, test printing the receipt by selecting the **POSPrinter** from the dropdown, tap on the "**Print**" button
@@ -93,8 +93,6 @@ Optionally you can also create a login for each store/merchant on the PoS device
 - btcpay.store.cancreatenonapprovedpullpayments
 
 After that create a user for each store and assign them to the right store.
-
-// todo: write and add link on how to add roles and assign users to a store, should be link to docs.btcpayserver.org
 
 ## Setup a Bolt Cards provider
 
@@ -124,11 +122,11 @@ To allow no-interaction top-ups of Bolt Cards we need to make sure payouts are p
 
 ### 4. Setup Bolt Cards Factory
 
-#### Setup a Boldcard factory
+#### Setup a Bolt Card factory
 
-- On the left sidebar go to "**Boldcard Factories**"
-- "**App Name**": Enter a name like "Your conference" (it will be displayed when the card is read) // todo: clarify see below the same?
-- Click on the "**Create**" button, and you will see the following settings, e.g. if you want to preload the card with 210 Sats
+- On the left sidebar go to "**Boltcard Factories**"
+- "**App Name**": Enter a name like "Your conference" (it will be displayed when the card is read)
+- Click on the "**Create**" button, and you will see the following settings. For example, if you want to preload the cards with 210 Sats, enter the following:
   - "**Name**": Name of the conference/event that is displayed when a Bolt Card is read
   - "**Amount**": 210
   - "**Currency**": SATS
@@ -138,7 +136,7 @@ To allow no-interaction top-ups of Bolt Cards we need to make sure payouts are p
 
 #### Program Bolt Cards
 
-Still, on that Boldcards Factory settings page, you now click on "**View**" button on the top right, the page that opens will need to be opened on a mobile device with NFC writing support (e.g. a Bitcoinize device).
+Still, on that Boltcards Factory settings page, you now click on "**View**" button on the top right, the page that opens will need to be opened on a mobile device with NFC writing support (e.g. a Bitcoinize device).
 
 - Ensure that you have the [Bolt Card NFC Card Creator](https://play.google.com/store/apps/details?id=com.lightningnfcapp&hl=en&gl=US) installed on the mobile device
 - If there is a Bolt Card NFC Card Creator app already installed - ***make sure it's the latest version***, optionally uninstall and install the newest version from the app store
@@ -148,13 +146,13 @@ Still, on that Boldcards Factory settings page, you now click on "**View**" butt
 
 ### 5. Checking the balance of cards and topping them up
 
-In the same store that serves as the Bolt Card provider you will have a "**Boldcard Balance**" menu item on the left sidebar. The URL will look like this https://btcpay.yourdomain.tld/boltcards/balance
+In the same store that serves as the Bolt Card provider you will have a "**Boltcard Balance**" menu item on the left sidebar. The URL will look like this [https://btcpay.yourdomain.tld/boltcards/balance](https://btcpay.yourdomain.tld/boltcards/balance)
 
 When you open that link on a mobile device with NFC support (such as Bitcoinize), you can use it to allow users to check their balance and also for topping their cards up with Sats, to do that, tap on the "**QR-Code icon**" after reading the balance of the card.
 
 ### 6. Resetting Bolt Cards after the conference/event
 
-Like the balance page, you can find the link on the left sidebar. The URL will look like this https://btcpay.yourdomain.tld/boltcards/balance=?view=Reset
+Like the balance page, you can find the link on the left sidebar. The URL will look like this [https://btcpay.yourdomain.tld/boltcards/balance=?view=Reset](https://btcpay.yourdomain.tld/boltcards/balance=?view=Reset)
 
 You should consider publishing this link during or even before the event and allow attendees to sweep and reset their cards after the event, so they can reuse the Bolt Cards and reprogram them. This is only possible after the reset is done successfully.
 
