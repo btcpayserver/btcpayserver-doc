@@ -124,6 +124,31 @@ const sidebarUserGuide = [
     collapsable: false,
     initialOpenGroupIndex: -1,
     children: [
+      [
+        `https://dev.blink.sv/examples/btcpayserver-plugin`,
+        'Blink',
+        { type: 'external' }
+      ],
+      [
+        `https://github.com/NicolasDorier/boltcards-plugin/blob/master/README.md`,
+        'Boltcard',
+        { type: 'external' }
+      ],
+      [
+        `https://github.com/Kukks/BTCPayServerPlugins/blob/master/Plugins/BTCPayServer.Plugins.Breez/README.md`,
+        'Breez / Greenlight',
+        { type: 'external' }
+      ],
+      [
+        `https://github.com/Kukks/BTCPayServerPlugins/blob/master/Plugins/BTCPayServer.Plugins.Bringin/README.md`,
+        'Bringin',
+        { type: 'external' }
+      ],
+      [
+        `https://github.com/Kukks/BTCPayServerPlugins/blob/master/Plugins/BTCPayServer.Plugins.SideShift/README.md`,
+        'Sideshift',
+        { type: 'external' }
+      ],
       ['/Nostr/', 'Nostr'],
       ['/TicketTailor/', 'TicketTailor'],
       ['/Trocador/', 'Trocador'],
