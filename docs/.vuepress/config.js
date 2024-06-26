@@ -116,6 +116,7 @@ const sidebarUserGuide = [
       ['/Grandnode/', 'Grandnode'],
       ['/Nopcommerce/', 'Nopcommerce'],
       ['/Xenforo/', 'Xenforo'],
+      ['/InvoiceNinja', 'Invoice Ninja'],
       ['/CustomIntegration', 'Custom Integration']
     ]
   },
