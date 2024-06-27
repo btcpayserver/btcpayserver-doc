@@ -1,6 +1,6 @@
 # Setting up BTCPay Server for Conference / Event / Local Community
 
-We will be going through the setup we used at Bitcoin Atlantis, Bitcoin Hong Kong and other conferences for a great user experience for attendees and merchants.
+We will be going through the setup we used at [Bitcoin Atlantis](https://blog.btcpayserver.org/case-study-bitcoin-atlantis/), [Bitcoin Hong Kong](https://bitcoinmagazine.com/business/case-study-enabling-bitcoin-as-a-medium-of-exchange-at-the-bitcoin-asia-conference-in-hong-kong) and other conferences for a great user experience for attendees and merchants.
 
 For Point of Sale (PoS) devices we use the [Bitcoinize](https://bitcoinize.com/) devices with receipt printer (but you can use any other Android-based PoS device).
 
@@ -57,7 +57,7 @@ Setup the Lightning wallet to be connected to the merchants' Blink account, foll
 - "**App Name**": enter the same merchant name as for the store
 - Click "**Create**" button
 - Now on PoS settings, make sure "**App Name**" and "**Display Title**" are filled out
-- "**Choos Point of Sale Style**": select "**Keypad**"
+- "**Choose Point of Sale Style**": select "**Keypad**"
 - "**Currency**", select the same currency as your store
 - Click on "**Save**" button
 - On the top right click on the "**View**" button and make sure the keypad is shown
@@ -99,8 +99,8 @@ After that create a user for each store and assign them to the right store.
 We will create a separate store that is serving as a Bolt Cards provider. To find it easier in the list of stores you can append the store name with a "z", e.g. "z - Bolt Cards Provider".
 
 For this special store we will connect a Blink account with the important differences compared to merchant Blink accounts:
-- the API key has to have also "write" permission, otherwise Bolt Cards won't be able to pull the funds
-- make sure you connect the **Bitcoin wallet** (and *not* StableSats USD)
+- the API key has to have also **write permission**, otherwise Bolt Cards won't be able to pull the funds
+- Make sure you connect the **Bitcoin wallet** (and *not* StableSats USD)
 
 ### 1. Create a store
 - Create a store with the name "**z - Bolt Cards Provider**" (same steps as shown for merchant stores above)
@@ -129,7 +129,7 @@ To allow no-interaction top-ups of Bolt Cards we need to make sure payouts are p
 - Click on the "**Create**" button, and you will see the following settings. For example, if you want to preload the cards with 210 Sats, enter the following:
   - "**Name**": Name of the conference/event that is displayed when a Bolt Card is read
   - "**Amount**": 210
-  - "**Currency**": SATS
+  - "**Currency**": SATS (The currency must to be **SATS**, do not set any other currency)
   - "**Automatically approve claims**": checked (true)
   - "**Payment Methods**": "BTC (Off-Chain)" checked (true)
   -  Click on "**Save**" button
