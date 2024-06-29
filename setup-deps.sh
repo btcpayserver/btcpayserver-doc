@@ -281,12 +281,13 @@ for file in "$DOCS_DIR"/Xenforo/*.md; do
   update_external "$file" https://github.com/btcpayserver/xenforo.git "$DOCS_DIR"/Xenforo/
 done
 
+
 # Kukks' plugins
 
 echo "Setup dependency: Kukks' plugins"
 
-rm -rf "$DOCS_DIR/TicketTailor" "$DOCS_DIR/Nostr" "$DOCS_DIR/Wabisabi"
-mkdir -p "$DOCS_DIR/TicketTailor" "$DOCS_DIR/Nostr" "$DOCS_DIR/Wabisabi"
+rm -rf "$DOCS_DIR/TicketTailor" "$DOCS_DIR/Nostr" "$DOCS_DIR/Wabisabi" "$DOCS_DIR/SideShift" "$DOCS_DIR/Breez" "$DOCS_DIR/Bringin" "$DOCS_DIR/DynamicReports"
+mkdir -p "$DOCS_DIR/TicketTailor" "$DOCS_DIR/Nostr" "$DOCS_DIR/Wabisabi" "$DOCS_DIR/SideShift" "$DOCS_DIR/Breez" "$DOCS_DIR/Bringin" "$DOCS_DIR/DynamicReports"
 
 if [ ! -d "$KUKKS_DIR" ]; then
   git clone --depth 1 https://github.com/Kukks/BTCPayServerPlugins.git "$KUKKS_DIR"
@@ -314,6 +315,36 @@ cd "$KUKKS_DIR/Plugins/BTCPayServer.Plugins.NIP05"
 cp -r readme.md "$DOCS_DIR/Nostr"
 for file in "$DOCS_DIR"/Nostr/*.md; do
   update_external "$file" https://github.com/Kukks/BTCPayServerPlugins/tree/master/Plugins/BTCPayServer.Plugins.NIP05 "$DOCS_DIR"/Nostr/
+done
+
+cd "$KUKKS_DIR/Plugins/BTCPayServer.Plugins.SideShift"
+
+cp -r README.md "$DOCS_DIR/SideShift"
+for file in "$DOCS_DIR"/SideShift/*.md; do
+  sed -i 's/[^[:print:]\t]//g' "$file"
+  update_external "$file" https://github.com/Kukks/BTCPayServerPlugins/tree/master/Plugins/BTCPayServer.Plugins.SideShift "$DOCS_DIR"/SideShift/
+done
+
+cd "$KUKKS_DIR/Plugins/BTCPayServer.Plugins.Breez"
+
+cp -r README.md "$DOCS_DIR/Breez"
+for file in "$DOCS_DIR"/Breez/*.md; do
+  update_external "$file" https://github.com/Kukks/BTCPayServerPlugins/tree/master/Plugins/BTCPayServer.Plugins.Breez "$DOCS_DIR"/Breez/
+done
+
+cd "$KUKKS_DIR/Plugins/BTCPayServer.Plugins.Bringin"
+
+cp -r README.md "$DOCS_DIR/Bringin"
+for file in "$DOCS_DIR"/Bringin/*.md; do
+  update_external "$file" https://github.com/Kukks/BTCPayServerPlugins/tree/master/Plugins/BTCPayServer.Plugins.Bringin "$DOCS_DIR"/Bringin/
+done
+
+cd "$KUKKS_DIR/Plugins/BTCPayServer.Plugins.DynamicReports"
+
+cp -r README.md "$DOCS_DIR/DynamicReports"
+for file in "$DOCS_DIR"/DynamicReports/*.md; do
+  sed -i 's/[^[:print:]\t]//g' "$file"
+  update_external "$file" https://github.com/Kukks/BTCPayServerPlugins/tree/master/Plugins/BTCPayServer.Plugins.DynamicReports "$DOCS_DIR"/DynamicReports/
 done
 
 # Swagger
