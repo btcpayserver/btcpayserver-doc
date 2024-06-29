@@ -129,7 +129,6 @@ const sidebarUserGuide = [
       ['/Trocador/', 'Trocador'],
       ['/SideShift/', 'SideShift'],
       ['/Bringin/', 'Bringin'],
-      ['/Payroll/', 'Payroll'],
       ['/DynamicReports/', 'Dynamic Reports'],
       ['/Breez/', 'Breez / Greenlight'],
       ['/Wabisabi/', 'Wabisabi Coinjoin'],
