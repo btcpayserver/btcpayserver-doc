@@ -18,6 +18,7 @@ SMARTSTORE_DIR="$BASE_DIR/deps/smartstore"
 GRANDNODE_DIR="$BASE_DIR/deps/grandnode"
 NOPCOMMERCE_DIR="$BASE_DIR/deps/nopcommerce"
 XENFORO_DIR="$BASE_DIR/deps/xenforo"
+ROCKSTAR_DIR="$BASE_DIR/deps/rockstar"
 
 update_external() {
   file="$1"
@@ -281,6 +282,30 @@ for file in "$DOCS_DIR"/Xenforo/*.md; do
   update_external "$file" https://github.com/btcpayserver/xenforo.git "$DOCS_DIR"/Xenforo/
 done
 
+
+# Rockstar' Plugins
+
+echo "Setup dependency: Rockstar' plugins"
+
+rm -rf "$DOCS_DIR/Payroll"
+mkdir -p "$DOCS_DIR/Payroll"
+
+if [ ! -d "$ROCKSTAR_DIR" ]; then
+  git clone --depth 1 https://github.com/rockstardev/BTCPayServerPlugins.RockstarDev.git "$ROCKSTAR_DIR"
+else
+  cd "$ROCKSTAR_DIR" && git checkout master && git pull
+fi
+
+cd "$ROCKSTAR_DIR/Plugins/BTCPayServer.RockstarDev.Plugins.Payroll"
+
+cp -r readme.md "$DOCS_DIR/Payroll"
+for file in "$DOCS_DIR"/Payroll/*.md; do
+  sed -i 's/[^[:print:]\t]//g' "$file"
+  update_external "$file" https://github.com/rockstardev/BTCPayServerPlugins.RockstarDev/tree/master/Plugins/BTCPayServer.RockstarDev.Plugins.Payroll "$DOCS_DIR"/Payroll/
+done
+
+
+
 # Kukks' plugins
 
 echo "Setup dependency: Kukks' plugins"
@@ -320,6 +345,7 @@ cd "$KUKKS_DIR/Plugins/BTCPayServer.Plugins.SideShift"
 
 cp -r README.md "$DOCS_DIR/SideShift"
 for file in "$DOCS_DIR"/SideShift/*.md; do
+  sed -i 's/[^[:print:]\t]//g' "$file"
   update_external "$file" https://github.com/Kukks/BTCPayServerPlugins/tree/master/Plugins/BTCPayServer.Plugins.SideShift "$DOCS_DIR"/SideShift/
 done
 
@@ -341,6 +367,7 @@ cd "$KUKKS_DIR/Plugins/BTCPayServer.Plugins.DynamicReports"
 
 cp -r README.md "$DOCS_DIR/DynamicReports"
 for file in "$DOCS_DIR"/DynamicReports/*.md; do
+  sed -i 's/[^[:print:]\t]//g' "$file"
   update_external "$file" https://github.com/Kukks/BTCPayServerPlugins/tree/master/Plugins/BTCPayServer.Plugins.DynamicReports "$DOCS_DIR"/DynamicReports/
 done
 
