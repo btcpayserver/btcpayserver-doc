@@ -298,7 +298,7 @@ fi
 
 cd "$ROCKSTAR_DIR/Plugins/BTCPayServer.RockstarDev.Plugins.Payroll"
 
-cp -r readme.md "$DOCS_DIR/Payroll"
+cp -r README.md "$DOCS_DIR/Payroll"
 for file in "$DOCS_DIR"/Payroll/*.md; do
   sed -i 's/[^[:print:]\t]//g' "$file"
   update_external "$file" https://github.com/rockstardev/BTCPayServerPlugins.RockstarDev/tree/master/Plugins/BTCPayServer.RockstarDev.Plugins.Payroll "$DOCS_DIR"/Payroll/
