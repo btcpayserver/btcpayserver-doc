@@ -8,6 +8,15 @@ The Lightning Network part will be done by [Blink.sv](https://blink.sv) with the
 
 To allow an even smoother UX for attendees without an internet connection or no prior Bitcoin knowledge we show how to set up and issue Bolt Cards and allow users to top-up.
 
+To get an overview of the whole setup and steps you can watch our workshop from BTCPrague 2024.
+[![BTCPrague 2024 Workshop](https://img.youtube.com/vi/Hpd-IytvI4Y/mqdefault.jpg)](https://youtu.be/Hpd-IytvI4Y)
+
+---
+
+**Table of contents**
+
+[[toc]]
+
 ##  Initial setup
 - Setup BTCPay Server v1.13.2 or later on a VPS (with public IP)
 - Setup a subdomain or use one provided by VPS hosting (e.g. Lunanode)
