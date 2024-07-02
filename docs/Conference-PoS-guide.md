@@ -9,7 +9,7 @@ The Lightning Network part will be done by [Blink.sv](https://blink.sv) with the
 To allow an even smoother UX for attendees without an internet connection or no prior Bitcoin knowledge we show how to set up and issue Bolt Cards and allow users to top-up.
 
 To get an overview of the whole setup and steps you can watch our workshop from BTCPrague 2024.
-[![BTCPrague 2024 Workshop](https://img.youtube.com/vi/Hpd-IytvI4Y/mqdefault.jpg)](https://youtu.be/Hpd-IytvI4Y)
+[![BTCPrague 2024 Workshop](https://img.youtube.com/vi/Hpd-IytvI4Y/1.jpg)](https://youtu.be/Hpd-IytvI4Y)
 
 ---
 
