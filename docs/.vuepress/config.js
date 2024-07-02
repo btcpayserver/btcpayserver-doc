@@ -84,7 +84,11 @@ const sidebarUserGuide = [
         path: '/Forms',
         children: [['/AdvancedForms', 'Advanced Forms']]
       },
-      ['/Apps', 'Apps'],
+      {
+        title: 'Apps',
+        path: '/Apps',
+        children: [['/Conference-PoS-guide', 'Conference PoS Guide']]
+      },
       ['/Reporting', 'Reporting'],
       {
         title: 'Payjoin',
