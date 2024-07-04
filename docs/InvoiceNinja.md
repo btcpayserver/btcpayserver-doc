@@ -8,6 +8,9 @@ The integration of [BTCPay Server](https://btcpayserver.org) with Invoice Ninja 
 
 This guide will walk you through the steps to configure and use your BTCPay Server with InvoiceNinja. BTCPay payment capabilities are directly integrated into InvoiceNinja. No plugins are needed.
 
+[![Invoice Ninja](https://img.youtube.com/vi/4oy-DCf6lhw/mqdefault.jpg)](https://www.youtube.com/watch?v=4oy-DCf6lhw)
+
+
 ## Requirements
 
 - InvoiceNinja (hosted or self-hosted)
