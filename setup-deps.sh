@@ -18,6 +18,7 @@ SMARTSTORE_DIR="$BASE_DIR/deps/smartstore"
 GRANDNODE_DIR="$BASE_DIR/deps/grandnode"
 NOPCOMMERCE_DIR="$BASE_DIR/deps/nopcommerce"
 XENFORO_DIR="$BASE_DIR/deps/xenforo"
+ODOO_DIR="$BASE_DIR/deps/odoo"
 
 update_external() {
   file="$1"
@@ -279,6 +280,25 @@ cd "$XENFORO_DIR"
 cp -r README.md "$DOCS_DIR/Xenforo"
 for file in "$DOCS_DIR"/Xenforo/*.md; do
   update_external "$file" https://github.com/btcpayserver/xenforo.git "$DOCS_DIR"/Xenforo/
+done
+
+# Odoo
+
+echo "Setup dependency: Odoo"
+
+rm -rf "$DOCS_DIR/Odoo"
+mkdir -p "$DOCS_DIR/Odoo"
+
+if [ ! -d "$ODOO_DIR" ]; then
+  git clone https://github.com/btcpayserver/odoo.git "$ODOO_DIR"
+else
+  cd "$ODOO_DIR" && git checkout 17.0 && git pull
+fi
+
+cd "$ODOO_DIR"
+cp -r README.md "$DOCS_DIR/Odoo"
+for file in "$DOCS_DIR"/Odoo/*.md; do
+  update_external "$file" https://github.com/btcpayserver/odoo.git "$DOCS_DIR"/Odoo/
 done
 
 # Kukks' plugins

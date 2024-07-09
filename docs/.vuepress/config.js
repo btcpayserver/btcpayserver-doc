@@ -117,6 +117,7 @@ const sidebarUserGuide = [
       ['/Nopcommerce/', 'Nopcommerce'],
       ['/Xenforo/', 'Xenforo'],
       ['/InvoiceNinja', 'Invoice Ninja'],
+      ['/Odoo/', 'Odoo'],
       ['/CustomIntegration', 'Custom Integration']
     ]
   },
