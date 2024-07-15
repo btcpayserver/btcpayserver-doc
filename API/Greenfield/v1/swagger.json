@@ -13813,6 +13813,11 @@
             "type": "string",
             "nullable": true,
             "description": "The maximum amount in sats this ln address allows"
+          },
+          "invoiceMetadata": {
+            "type": "object",
+            "nullable": true,
+            "description": "The invoice metadata as JSON."
           }
         }
       },
