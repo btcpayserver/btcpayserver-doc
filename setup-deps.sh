@@ -318,7 +318,7 @@ else
 fi
 
 cd "$ODOO_DIR"
-cp -r README.md "$DOCS_DIR/Odoo"
+cp -r payment_btcpay/README.md "$DOCS_DIR/Odoo"
 for file in "$DOCS_DIR"/Odoo/*.md; do
   update_external "$file" https://github.com/btcpayserver/odoo.git "$DOCS_DIR"/Odoo/
 done
