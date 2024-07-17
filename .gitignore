@@ -19,6 +19,7 @@
 /docs/TicketTailor
 /docs/Trocador
 /docs/Wabisabi
+/docs/Odoo
 /docs/.vuepress/public/API/Greenfield/**/*.json
 
 # Files copied from external repos
