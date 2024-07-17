@@ -306,7 +306,7 @@ done
 
 # Odoo
 
-echo "Setup dependency: Odoo 17"
+echo "Setup dependency: Odoo 16 and 17"
 
 rm -rf "$DOCS_DIR/Odoo"
 mkdir -p "$DOCS_DIR/Odoo"
