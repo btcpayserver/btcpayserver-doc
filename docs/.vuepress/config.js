@@ -131,7 +131,7 @@ const sidebarUserGuide = [
       ['/Bringin/', 'Bringin'],
       ['/Payroll/', 'Payroll'],
       ['/DynamicReports/', 'Dynamic Reports'],
-      ['/Breez/', 'Breez / Greenlight'],
+      ['/Breez/', 'Breez'],
       ['/Wabisabi/', 'Wabisabi Coinjoin'],
       [
         `https://dev.blink.sv/examples/btcpayserver-plugin`,
