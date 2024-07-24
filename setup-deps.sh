@@ -16,6 +16,8 @@ TROCADOR_DIR="$BASE_DIR/deps/trocador"
 KUKKS_DIR="$BASE_DIR/deps/kukks"
 SMARTSTORE_DIR="$BASE_DIR/deps/smartstore"
 GRANDNODE_DIR="$BASE_DIR/deps/grandnode"
+BOLTCARDPLUGIN_DIR="$BASE_DIR/deps/boltcardplugin"
+ROCKSTAR_DIR="$BASE_DIR/deps/rockstar"
 NOPCOMMERCE_DIR="$BASE_DIR/deps/nopcommerce"
 XENFORO_DIR="$BASE_DIR/deps/xenforo"
 
