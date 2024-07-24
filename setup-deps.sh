@@ -281,6 +281,25 @@ for file in "$DOCS_DIR"/Xenforo/*.md; do
   update_external "$file" https://github.com/btcpayserver/xenforo.git "$DOCS_DIR"/Xenforo/
 done
 
+# Bolt Card
+
+echo "Setup dependency: BoltCard"
+
+rm -rf "$DOCS_DIR/BoltCardPlugin"
+mkdir -p "$DOCS_DIR/BoltCardPlugin"
+
+if [ ! -d "$BOLTCARDPLUGIN_DIR" ]; then
+  git clone --depth 1 https://github.com/NicolasDorier/boltcards-plugin.git "$BOLTCARDPLUGIN_DIR"
+else
+  cd "$BOLTCARDPLUGIN_DIR" && git checkout main && git pull
+fi
+
+cd "$BOLTCARDPLUGIN_DIR"
+cp -r README.md "$DOCS_DIR/BoltCardPlugin"
+for file in "$DOCS_DIR"/BoltCardPlugin/*.md; do
+  update_external "$file" https://github.com/NicolasDorier/boltcards-plugin.git "$DOCS_DIR"/BoltCardPlugin/
+done
+
 
 # Kukks' plugins
 
@@ -346,6 +365,28 @@ for file in "$DOCS_DIR"/DynamicReports/*.md; do
   sed -i 's/[^[:print:]\t]//g' "$file"
   update_external "$file" https://github.com/Kukks/BTCPayServerPlugins/tree/master/Plugins/BTCPayServer.Plugins.DynamicReports "$DOCS_DIR"/DynamicReports/
 done
+
+# Rockstar' plugins
+
+echo "Setup dependency: Rockstar' plugins"
+
+rm -rf "$DOCS_DIR/Payroll"
+mkdir -p "$DOCS_DIR/Payroll"
+
+if [ ! -d "$ROCKSTAR_DIR" ]; then
+  git clone --depth 1 https://github.com/rockstardev/BTCPayServerPlugins.RockstarDev.git "$ROCKSTAR_DIR"
+else
+  cd "$ROCKSTAR_DIR" && git checkout master && git pull
+fi
+
+cd "$ROCKSTAR_DIR/Plugins/BTCPayServer.RockstarDev.Plugins.Payroll"
+
+cp -r README.md "$DOCS_DIR/Payroll"
+for file in "$DOCS_DIR"/Payroll/*.md; do
+  sed -i 's/[^[:print:]\t]//g' "$file"
+  update_external "$file" https://github.com/rockstardev/BTCPayServerPlugins.RockstarDev/tree/master/Plugins/BTCPayServer.RockstarDev.Plugins.Payroll "$DOCS_DIR"/Payroll/
+done
+
 
 # Swagger
 
