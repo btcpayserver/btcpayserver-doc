@@ -132,7 +132,17 @@ const sidebarUserGuide = [
       ['/Nostr/', 'Nostr'],
       ['/TicketTailor/', 'TicketTailor'],
       ['/Trocador/', 'Trocador'],
-      ['/Wabisabi/', 'Wabisabi Coinjoin']
+      ['/SideShift/', 'SideShift'],
+      ['/Bringin/', 'Bringin'],
+      ['/Payroll/', 'Payroll'],
+      ['/DynamicReports/', 'Dynamic Reports'],
+      ['/Breez/', 'Breez'],
+      ['/Wabisabi/', 'Wabisabi Coinjoin'],
+      [
+        `https://dev.blink.sv/examples/btcpayserver-plugin`,
+        'Blink',
+        { type: 'external' } 
+      ],
     ]
   },
   {
