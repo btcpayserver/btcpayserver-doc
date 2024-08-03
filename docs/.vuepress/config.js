@@ -112,7 +112,7 @@ const sidebarUserGuide = [
       ['/Magento', 'Magento'],
       ['/PrestaShop', 'PrestaShop'],
       ['/OpenCart', 'OpenCart'],
-      ['/Drupal', 'Drupal'],
+      ['/Drupal/', 'Drupal'],
       ['/Zapier/', 'Zapier'],
       ['/Shopware', 'Shopware'],
       ['/VirtueMart', 'VirtueMart'],

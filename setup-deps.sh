@@ -15,6 +15,7 @@ ZAPIER_DIR="$BASE_DIR/deps/zapier"
 TROCADOR_DIR="$BASE_DIR/deps/trocador"
 KUKKS_DIR="$BASE_DIR/deps/kukks"
 SMARTSTORE_DIR="$BASE_DIR/deps/smartstore"
+DRUPAL_DIR="$BASE_DIR/deps/drupal"
 GRANDNODE_DIR="$BASE_DIR/deps/grandnode"
 BOLTCARDPLUGIN_DIR="$BASE_DIR/deps/boltcardplugin"
 ROCKSTAR_DIR="$BASE_DIR/deps/rockstar"
@@ -205,6 +206,25 @@ cd "$TROCADOR_DIR"
 cp -r README.md "$DOCS_DIR/Trocador"
 for file in "$DOCS_DIR"/Trocador/*.md; do
   update_external "$file" https://github.com/saltrafael/trocador-plugin "$DOCS_DIR"/Trocador/
+done
+
+# Drupal
+
+echo "Setup dependency: Drupal"
+
+rm -rf "$DOCS_DIR/Drupal"
+mkdir -p "$DOCS_DIR/Drupal"
+
+if [ ! -d "$DRUPAL_DIR" ]; then
+  git clone --depth 1 https://github.com/btcpayserver/commerce_btcpay.git "$DRUPAL_DIR"
+else
+  cd "$DRUPAL_DIR" && git checkout 8.x-1.x && git pull
+fi
+
+cd "$DRUPAL_DIR"
+cp -r README.md "$DOCS_DIR/Drupal"
+for file in "$DOCS_DIR"/Drupal/*.md; do
+  update_external "$file" https://github.com/btcpayserver/commerce_btcpay.git "$DOCS_DIR"/Drupal/
 done
 
 # Smartstore
