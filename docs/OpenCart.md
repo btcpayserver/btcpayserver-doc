@@ -8,24 +8,24 @@ tags:
 
 # BTCPay Server Integration with OpenCart: A Complete Guide
 
-[BTCPay Server](https://btcpayserver.org/) is a free and open-source cryptocurrency payment processor which allows you to receive payments in Bitcoin and altcoins directly, with no fees, transaction cost or a middleman.
+[BTCPay Server](https://btcpayserver.org/) is a free and open-source cryptocurrency payment processor. It allows you receive payments in Bitcoin and altcoins directly into your wallet with no fees, transaction cost or a middleman.
 
- If you run an OpenCart store, integrate your store today with BTCPay Server to help expand your payment options, attract crypto-savvy customers, without any charges.
+ If you run an OpenCart store, integrate your store today with BTCPay Server to help expand your payment options, attract crypto-savvy customers, without paying a dime.
  
-This guide covers the integration process for both OpenCart 3 and OpenCart 4, helping you set up BTCPay Server quickly and efficiently.
+This guide covers the integration process for both OpenCart 3 and OpenCart 4, helping you set up BTCPay Server seamlessly.
 
 
 ## Why Choose BTCPay Server: Unmatched Benefits for Your Payment Processing
 
-BTCPay Server is a non-custodial invoicing system that ensures complete control over your payments by eliminating third-party involvement. With the BTCPay Server OpenCart extension, payments are sent directly to your wallet, enhancing both privacy and security.
+BTCPay Server is a non-custodial invoicing system that ensures complete control over your payments by eliminating third-party involvement. With the BTCPay Server OpenCart extension, payments are sent directly to your wallet, ensuring both privacy and security.
 
-BTCPay Server can be deployed as a self-hosted solution on your own server, or you can opt for a third-party host. The self-hosted option not only allows you to manage an unlimited number of stores and leverage the Lightning Network, but also gives you the flexibility to act as a payment processor for others.
+BTCPay Server can be deployed as a self-hosted solution on your server, or you can opt for a third-party host. The self-hosted option not only allows you to manage an unlimited number of stores and leverage the Lightning Network, it also gives you the flexibility to act as a payment processor for others.
 
-Other benefits of Using BTCPay Server with OpenCart include:
+Other benefits of Using BTCPay Server with OpenCart include: 
 
-1. **Zero Fees:** BTCPay Server offers a truly fee-free payment gateway. That’s right—no transaction fees, no processing fees, ever.
+1. **Zero Fees:** BTCPay Server offers a no fee payment gateway. That’s right—no transaction fees, no processing fees, ever.
 
-2. **Direct Payments, No Middlemen:** Receive your funds directly in your wallet without the need for intermediaries or tedious KYC procedures. Experience the freedom of peer-to-peer transactions.
+2. **Direct Payments, No Middlemen:** Receive your funds directly into your wallet without intermediaries or tedious KYC procedures. Experience the freedom of peer-to-peer transactions.
 
 3. **Fully Automated System:** Let BTCPay handle everything for you—payments, invoice management, and refunds—automatically.
 
@@ -35,22 +35,22 @@ Other benefits of Using BTCPay Server with OpenCart include:
 
 6. **Lightning Network Integration:** Enjoy instant, low-cost payments and payouts with built-in support for the Lightning Network.
 
-7. **Easy CSV Exports:** Simplify your financial management with easy-to-use CSV export options.
+7. **Easy data exports:** Simplify your financial management with easy-to-use CSV export options.
 
 8. **Versatile Plugin System:** Customize and extend BTCPay’s functionality with a flexible plugin system tailored to your needs.
 
 9. **Point-of-Sale Integration:** Seamlessly accept Bitcoin and altcoin payments in your physical stores with our POS integration.
 
-10. **Multilingual Ready:** Serve a global audience right out of the box with multilingual support.
+10. **Multilingual Ready:** Serve your audience with a language they understand.
 
 11. **Altcoin Support:** BTCPay Server also supports a wide range of altcoins, providing flexibility for you and your customers.
 
-12. **Community-Driven Support:** Get help and advice from a dedicated community via Mattermost or Telegram.
+12. **Community-Driven Support:** Get help and advice from a dedicated community ([Mattermost](http://chat.btcpayserver.org/) or [Telegram](https://t.me/btcpayserver)).
 
 
 ## Requirements
 
-Please ensure that you meet the following requirements before installing this extension.
+Ensure that you meet the following requirements before installing this extension.
 
 - PHP version >= 7.4 for OpenCart 3; PHP >= 8.1 for OpenCart 4
 - The curl, gd, intl, json, and mbstring PHP extensions are available
