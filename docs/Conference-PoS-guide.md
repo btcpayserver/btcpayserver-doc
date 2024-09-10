@@ -161,7 +161,7 @@ When you open that link on a mobile device with NFC support (such as Bitcoinize)
 
 ### 6. Resetting Bolt Cards after the conference/event
 
-Like the balance page, you can find the link on the left sidebar. The URL will look like this [https://btcpay.yourdomain.tld/boltcards/balance=?view=Reset](https://btcpay.yourdomain.tld/boltcards/balance=?view=Reset)
+Like the balance page, you can find the link on the left sidebar. The URL will look like this [https://btcpay.yourdomain.tld/boltcards/balance?view=Reset](https://btcpay.yourdomain.tld/boltcards/balance?view=Reset)
 
 You should consider publishing this link during or even before the event and allow attendees to sweep and reset their cards after the event, so they can reuse the Bolt Cards and reprogram them. This is only possible after the reset is done successfully.
 
