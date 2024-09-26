@@ -119,6 +119,7 @@ const sidebarUserGuide = [
       ['/Smartstore/', 'Smartstore'],
       ['/Grandnode/', 'Grandnode'],
       ['/Nopcommerce/', 'Nopcommerce'],
+      ['/Odoo/', 'Odoo'],
       ['/Xenforo/', 'Xenforo'],
       ['/InvoiceNinja', 'Invoice Ninja'],
       ['/CustomIntegration', 'Custom Integration']

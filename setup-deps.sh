@@ -21,6 +21,7 @@ BOLTCARDPLUGIN_DIR="$BASE_DIR/deps/boltcardplugin"
 ROCKSTAR_DIR="$BASE_DIR/deps/rockstar"
 NOPCOMMERCE_DIR="$BASE_DIR/deps/nopcommerce"
 XENFORO_DIR="$BASE_DIR/deps/xenforo"
+ODOO_DIR="$BASE_DIR/deps/odoo"
 
 update_external() {
   file="$1"
@@ -282,6 +283,25 @@ cd "$NOPCOMMERCE_DIR"
 cp -r README.md "$DOCS_DIR/Nopcommerce"
 for file in "$DOCS_DIR"/Nopcommerce/*.md; do
   update_external "$file" https://github.com/btcpayserver/nopcommercee.git "$DOCS_DIR"/Nopcommerce/
+done
+
+# Odoo
+
+echo "Setup dependency: Odoo"
+
+rm -rf "$DOCS_DIR/Odoo"
+mkdir -p "$DOCS_DIR/Odoo"
+
+if [ ! -d "$ODOO_DIR" ]; then
+  git clone --depth 1 https://github.com/btcpayserver/odoo.git "$ODOO_DIR"
+else
+  cd "$ODOO_DIR" && git checkout main && git pull
+fi
+
+cd "$ODOO_DIR"
+cp -r README.md "$DOCS_DIR/Odoo"
+for file in "$DOCS_DIR"/Odoo/*.md; do
+  update_external "$file" https://github.com/btcpayserver/odoo.git "$DOCS_DIR"/Odoo/
 done
 
 # Xenforo
