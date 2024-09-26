@@ -408,7 +408,6 @@ fi
 cd "$TOBSES_DIR/Plugins/BTCPayServer.Plugins.BigCommercePlugin"
 
 cp -r README.md docs/* "$DOCS_DIR/BigCommerce"
-sed -ie 's$docs/$./$g' "$DOCS_DIR/BigCommerce/README.md"
 for file in "$DOCS_DIR"/BigCommerce/*.md; do
   update_external "$file" https://github.com/TChukwuleta/BTCPayServerPlugins/tree/main/Plugins/BTCPayServer.Plugins.BigCommercePlugin "$DOCS_DIR"/BigCommerce/
 done
