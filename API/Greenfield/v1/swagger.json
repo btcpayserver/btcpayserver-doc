@@ -10798,7 +10798,7 @@
                     "price": {
                       "type": 2,
                       "formatted": "$1.00",
-                      "value": 1
+                      "value": 1.0
                     },
                     "title": "Green Tea",
                     "buyButtonText": null,
@@ -10813,7 +10813,7 @@
                     "price": {
                       "type": 2,
                       "formatted": "$1.00",
-                      "value": 1
+                      "value": 1.0
                     },
                     "title": "Black Tea",
                     "buyButtonText": "Test Buy Button Text",
@@ -10951,7 +10951,7 @@
                     "price": {
                       "type": 2,
                       "formatted": "$100.00",
-                      "value": 100
+                      "value": 100.0
                     },
                     "title": "test perk",
                     "buyButtonText": null,
@@ -13702,8 +13702,8 @@
           "verificationProgress": {
             "type": "number",
             "format": "double",
-            "minimum": 0,
-            "maximum": 1,
+            "minimum": 0.0,
+            "maximum": 1.0,
             "description": "The current synchronization progress"
           }
         }
@@ -14754,9 +14754,9 @@
           "paymentTolerance": {
             "type": "number",
             "format": "double",
-            "minimum": 0,
-            "maximum": 100,
-            "default": 0,
+            "minimum": 0.0,
+            "maximum": 100.0,
+            "default": 0.0,
             "description": "Consider an invoice fully paid, even if the payment is missing 'x' % of the full amount."
           },
           "archived": {
