@@ -14,6 +14,7 @@ TRANSMUTER_DIR="$BASE_DIR/deps/transmuter"
 ZAPIER_DIR="$BASE_DIR/deps/zapier"
 TROCADOR_DIR="$BASE_DIR/deps/trocador"
 KUKKS_DIR="$BASE_DIR/deps/kukks"
+TOBSES_DIR="$BASE_DIR/deps/tobses"
 SMARTSTORE_DIR="$BASE_DIR/deps/smartstore"
 DRUPAL_DIR="$BASE_DIR/deps/drupal"
 GRANDNODE_DIR="$BASE_DIR/deps/grandnode"
@@ -391,6 +392,26 @@ for file in "$DOCS_DIR"/Payroll/*.md; do
   update_external "$file" https://github.com/rockstardev/BTCPayServerPlugins.RockstarDev/tree/master/Plugins/BTCPayServer.RockstarDev.Plugins.Payroll "$DOCS_DIR"/Payroll/
 done
 
+# Tobe' plugins
+
+echo "Setup dependency: Tobses' plugins"
+
+rm -rf "$DOCS_DIR/BigCommerce"
+mkdir -p "$DOCS_DIR/BigCommerce"
+
+if [ ! -d "$TOBSES_DIR" ]; then
+  git clone --depth 1 https://github.com/TChukwuleta/BTCPayServerPlugins.git "$TOBSES_DIR"
+else
+  cd "$TOBSES_DIR" && git checkout main && git pull
+fi
+
+cd "$TOBSES_DIR/Plugins/BTCPayServer.Plugins.BigCommercePlugin"
+
+cp -r README.md docs/* "$DOCS_DIR/BigCommerce"
+sed -ie 's$docs/$./$g' "$DOCS_DIR/BigCommerce/README.md"
+for file in "$DOCS_DIR"/BigCommerce/*.md; do
+  update_external "$file" https://github.com/TChukwuleta/BTCPayServerPlugins/tree/main/Plugins/BTCPayServer.Plugins.BigCommercePlugin "$DOCS_DIR"/BigCommerce/
+done
 
 
 
