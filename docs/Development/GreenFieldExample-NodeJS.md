@@ -121,8 +121,27 @@ app.use(
   })
 )
 ```
-
 This makes sure that in req.rawBody the correct content is parsed so that you can compare the hashed req.rawBody with the `BTCPAY-SIG` header value.
+
+However, if you are using TypeScript, you might run into this error:
+
+```
+Property 'rawBody' does not exist on type 'Request'.
+```
+
+The temporary fix is to use the `as` keyword to tell the compiler to consider the `req` object as another type when you accessing the `rawBody`. Here is an example of how to obtain `rawBody` using this workaround, no need for the middleware code above:
+
+```JS
+import { Request, Response } from "express-serve-static-core"
+import { https } from "firebase-functions";
+
+type FirebaseRequest = https.Request
+
+const myFunc = async (req: Request, res: Response) => {
+  const rawBody = (req as FirebaseRequest).rawBody;
+}
+```
+Replace `req.rawBody` with `rawBody` in the next sections if utilizing this method with TypeScript.
 
 In your router it looks like this put all together: (Change `webhookSecret` with the `secret` you got back from the previous step when registering the webhook).
 
@@ -134,14 +153,12 @@ app.post('/your-webhook-endpoint', (req, res) => {
   if (!req.rawBody) {
     res.status(500).send('Request body empty')
   }
-  const sig = Buffer.from(req.get(sigHeaderName) || '', 'utf8')
+  const checksum = Buffer.from(req.get(sigHeaderName) || '', 'utf8')
   const hmac = crypto.createHmac(sigHashAlg, webhookSecret)
   const digest = Buffer.from(
     sigHashAlg + '=' + hmac.update(req.rawBody).digest('hex'),
     'utf8'
   )
-
-  const checksum = Buffer.from(sig, 'utf8')
 
   if (
     checksum.length !== digest.length ||
