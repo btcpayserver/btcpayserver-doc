@@ -16,7 +16,8 @@ const EXTERNAL_DOCS = {
   Smartstore: 'https://github.com/btcpayserver/Smartstore.BTCPayServer.git',
   Grandnode: 'https://github.com/btcpayserver/grandnode.git',
   Nopcommerce: 'https://github.com/btcpayserver/nopcommerce.git',
-  Xenforo: 'https://github.com/btcpayserver/xenforo.git'
+  Xenforo: 'https://github.com/btcpayserver/xenforo.git',
+  Odoo: 'https://github.com/btcpayserver/odoo.git'
 }
 
 const replaceExternalRepoLinks = (source, externalRepoUrl, resourcePath) => {
