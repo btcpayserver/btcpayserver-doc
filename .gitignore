@@ -4,22 +4,28 @@
 /node_modules
 
 # External repos
+/docs/Breez
+/docs/Bringin
 /docs/BTCPayServer
 /docs/Configurator
 /docs/Docker
+/docs/Drupal
+/docs/DynamicReports
 /docs/Grandnode
-/docs/Nopcommerce
-/docs/Xenforo
-/docs/Transmuter
 /docs/NBXplorer
-/docs/Vault
-/docs/Zapier
+/docs/Nopcommerce
 /docs/Nostr
+/docs/Payroll
+/docs/SideShift
 /docs/Smartstore
 /docs/TicketTailor
+/docs/Transmuter
 /docs/Trocador
 /docs/Wabisabi
 /docs/Odoo
+/docs/Vault
+/docs/Xenforo
+/docs/Zapier
 /docs/.vuepress/public/API/Greenfield/**/*.json
 
 # Files copied from external repos
