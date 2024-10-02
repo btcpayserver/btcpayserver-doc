@@ -166,9 +166,15 @@ export default {
   #search-form.search-box .algolia-autocomplete
     display block !important
   #search-form.search-box .algolia-autocomplete .ds-dropdown-menu
-    position static !important
     margin-top 1rem
-    max-width none
+    border 1px solid var(--btcpay-body-border-medium)
+    border-radius .5rem !important
+    max-width 500px !important
+    min-width auto !important
+    top auto !important
+    left auto !important
+    right auto !important
+    bottom auto !important
   #search-form.search-box input
     position relative
     font-size 1.4rem !important
