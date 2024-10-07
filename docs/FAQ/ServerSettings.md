@@ -127,9 +127,9 @@ Next, add the newly registered user `newadmin@example.com` as an admin:
 ./btcpay-admin.sh set-user-admin newadmin@example.com
 ```
 
-Now you can access with `newadmin@example.com` as admin.
+Now you can access using `newadmin@example.com` as admin.
 
-When you apply the changes, you'll notice that the newly created user isn't a member of any stores. In that case, [follow this guide](https://gist.github.com/justinmoon/8128e66fc11d90ae5732f2491570bfc5) to add the new user to all or certain stores.
+After applying the changes, you’ll notice the newly created admin user isn't automatically added to any stores. If your BTCPayServer version is 2.0 or newer, you can manually add the new server admin to the stores. For older versions of BTCPayServer, you can regain access to the old server admin account (and thus stores) by either configuring SMTP to send a password reset email or by using the [**Admin Pass Reset** plugin from R0ckstar Dev](https://github.com/rockstardev/BTCPayServerPlugins.RockstarDev/tree/master/Plugins/BTCPayServer.RockstarDev.Plugins.AdminPassReset).
 
 ### How to add a new user by invite?
 
