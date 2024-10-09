@@ -118,6 +118,7 @@ const sidebarUserGuide = [
       ['/VirtueMart', 'VirtueMart'],
       ['/Smartstore/', 'Smartstore'],
       ['/Grandnode/', 'Grandnode'],
+      ['/BigCommerce/', 'Big Commerce'],
       ['/Nopcommerce/', 'Nopcommerce'],
       ['/Xenforo/', 'Xenforo'],
       ['/InvoiceNinja', 'Invoice Ninja'],
