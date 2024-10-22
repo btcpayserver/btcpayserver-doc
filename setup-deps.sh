@@ -23,6 +23,7 @@ ROCKSTAR_DIR="$BASE_DIR/deps/rockstar"
 NOPCOMMERCE_DIR="$BASE_DIR/deps/nopcommerce"
 XENFORO_DIR="$BASE_DIR/deps/xenforo"
 ODOO_DIR="$BASE_DIR/deps/odoo"
+WIX_DIR="$BASE_DIR/deps/wix"
 
 update_external() {
   file="$1"
@@ -285,6 +286,24 @@ cp -r README.md "$DOCS_DIR/Nopcommerce"
 for file in "$DOCS_DIR"/Nopcommerce/*.md; do
   update_external "$file" https://github.com/btcpayserver/nopcommercee.git "$DOCS_DIR"/Nopcommerce/
 done
+ 
+# Wix
+echo "Setup dependency: Wix"
+
+rm -rf "$DOCS_DIR/img/wix"
+mkdir -p "$DOCS_DIR/img/wix"
+
+if [ ! -d "$WIX_DIR" ]; then
+  git clone --depth 1 https://github.com/btcpayserver/wix.git "$WIX_DIR"
+else
+  cd "$WIX_DIR" && git checkout main && git pull
+fi
+
+cd "$WIX_DIR"
+cp -r README.md "$DOCS_DIR/Wix.md"
+cp -r img/wix/* "$DOCS_DIR/img/wix"
+update_external "$DOCS_DIR/Wix.md" https://github.com/btcpayserver/wix.git "$DOCS_DIR"
+
 
 # Xenforo
 
