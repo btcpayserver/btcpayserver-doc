@@ -286,7 +286,7 @@ cp -r README.md "$DOCS_DIR/Nopcommerce"
 for file in "$DOCS_DIR"/Nopcommerce/*.md; do
   update_external "$file" https://github.com/btcpayserver/nopcommercee.git "$DOCS_DIR"/Nopcommerce/
 done
-
+ 
 # Wix
 echo "Setup dependency: Wix"
 
