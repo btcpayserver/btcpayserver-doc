@@ -1,22 +1,16 @@
----
-description: BTCPay Translation features.
----
-
 # Using BTCPay Translation Feature to Localize Your BTCPay Server instance
 
-
+Since version 2.0 BTCPay Server includes a translation feature that allows administrators to set up a default language for users accessing their instance.
 BTCPay Server now includes a powerful translation feature that allows merchant administrators manage their instance in their preferred language. 
 
 This guide will help you create and manage translations, making the BTCPay platform more user-friendly for you.
 
-With this feature, you can replace the default English text across the entire application with your chosen language. 
-
-Whether you want to customize texts on your checkout page, settings configuration, dashboard, or even error and success messages, BTCPay's translation feature makes it easy to tailor your experience to your linguistic needs.
+With this feature, you can replace the default English text across the entire back-office with your chosen language. 
 
 Note: You must be a server admin to access this feature. If you're not an administrator, please introduce this functionality to your admin.
 
 
-## Step-by-Step Guide to Translating Text in BTCPay Server
+## Translating BTCPay Server
 
 1. Log in to your BTCPay Server instance.
 2. Navigate to Translation on **Server Settings** >> **Translations**.
@@ -60,8 +54,10 @@ We can search other part of the BTCPay application that has "Add Role" text, and
 
 Now that you have successfully translated one, go ahead and translate other texts in the dictionary. All instances of English text will be replaced with your translated text, and now you can enjoy your new localized experience.
 
+All translation strings are in a single text box, easy to copy over. Feel free to leverage this by pasting them into translation AI tools like ChatGPT, giving yourself a good starting point. We strongly recommend that you manually review all strings afterwards, ensuring contextual accuracy, which is sometimes lost when depending on AI.
+
 ## Tips for Effective Translations
 
 - **Consistency is Key:** Ensure that similar terms are translated consistently throughout.
-- **Context Matters:** Keep context in mind when translating phrases to maintain meaning.
-- **Review Regularly:** Regularly update translations as new features are added.
+- **Context matters:** Keep context in mind when translating phrases to maintain meaning.
+- **Review regularly:** Regularly update translations as new features are added.
