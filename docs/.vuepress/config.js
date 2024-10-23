@@ -72,7 +72,7 @@ const sidebarUserGuide = [
         ]
       },
       ['/Invoices', 'Invoices'],
-      ['/Translation', 'Translation'],
+      ['/Translations', 'Translations'],
       ['/PaymentRequests', 'Payment Requests'],
       {
         title: 'Pull Payments',
