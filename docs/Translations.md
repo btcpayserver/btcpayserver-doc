@@ -12,17 +12,17 @@ Here’s how you can create and manage translations to make the BTCPay server ea
 1. Log in to your BTCPay Server instance.
 2. Navigate to Translation on **Server Settings** >> **Translations**.
 
-![Translation 1](./img/translations/01_Translation.png)
+![Translation 1](./img/Translations/01_Translation.png)
 
 3. Click **Create** button to generate a new language dictionary.
 
 4. Enter the dictionary name you want to save the language collection with and then click **Create** button to create the dictionary. 
 
-![Translation 2](./img/translations/02_Translation.png)
+![Translation 2](./img/Translations/02_Translation.png)
 
-![Translation 3](./img/translations/03_Translation_creation.png)
+![Translation 3](./img/Translations/03_Translation_creation.png)
 
-![Translation 4](./img/translations/04_Translation_dictionary.png)
+![Translation 4](./img/Translations/04_Translation_dictionary.png)
 
 
 In the image above, you can see a dictionary of words that can be translated on your BTCPay Server.
@@ -37,15 +37,15 @@ For each English term, enter its equivalent in your chosen language in the corre
 
 For example, lets translate "Add Role" into Yoruba. Since I created a dictionary for Yoruba, I’ll provide the translation in Yoruba.
 
-![Translation 5](./img/translations/05_Translation_Add_Role_To_Yoruba.png)
+![Translation 5](./img/Translations/05_Translation_Add_Role_To_Yoruba.png)
 
 Replace the text and click the **Save** button. A confirmation message will appear indicating that your translations have been successfully saved.  Next, click the **Select** button for the new dictionary to set it as the default for the system.
 
-![Translation 6](./img/translations/06_Translation_Saved_Dictionary.png)
+![Translation 6](./img/Translations/06_Translation_Saved_Dictionary.png)
 
 Now let's test the translation. Go to **Roles** under **Server Settings**, and if we check the button at the top right of the view, we can see that the text has been translated from "Add Roles" to "Fi ipa kun".
 
-![Translation 7](./img/translations/07_Translation_Validation.png)
+![Translation 7](./img/Translations/07_Translation_Validation.png)
 
 You can also search for other places in the BTCPay application where "Add Role" appears, and confirm that it has been successfully translated to your chosen language.
 
