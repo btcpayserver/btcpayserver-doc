@@ -4,6 +4,7 @@
 /node_modules
 
 # External repos
+/docs/BigCommerce
 /docs/Breez
 /docs/Bringin
 /docs/BTCPayServer
@@ -22,6 +23,7 @@
 /docs/Transmuter
 /docs/Trocador
 /docs/Wabisabi
+/docs/Wix*
 /docs/Odoo
 /docs/Vault
 /docs/Xenforo
@@ -33,6 +35,7 @@
 /docs/img/btcpayexposecloudflare*
 /docs/img/cloudflare*
 /docs/img/Cloudflare*
+/docs/img/wix*
 /swagger/plugins/btcpay.json
 
 # Constructed docs
