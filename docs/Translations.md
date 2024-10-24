@@ -27,7 +27,7 @@ Here’s how you can create and manage translations to make the BTCPay server ea
 
 In the image above, you can see a dictionary of words that can be translated on your BTCPay Server.
 
-The dictionary is usually organized as (key: value), where:
+The dictionary is usually organized as pairs of `"key": "value"`, where:
 
 **Key:** The original English text or phrase in your BTCPay instance.
 
