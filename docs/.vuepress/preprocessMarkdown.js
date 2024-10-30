@@ -9,6 +9,7 @@ const EXTERNAL_DOCS = {
   Vault: 'https://github.com/btcpayserver/BTCPayServer.Vault',
   Transmuter: 'https://github.com/btcpayserver/btcTransmuter',
   Zapier: 'https://github.com/btcpayserver/zapier',
+  LNDhubAPI: 'https://github.com/dennisreimann/btcpayserver-plugin-lndhub-api',
   Nostr: 'https://github.com/Kukks/BTCPayServerPlugins/tree/master/Plugins/BTCPayServer.Plugins.NIP05',
   TicketTailor: 'https://github.com/Kukks/BTCPayServerPlugins/tree/master/Plugins/BTCPayServer.Plugins.TicketTailor',
   Trocador: 'https://github.com/saltrafael/trocador-plugin',

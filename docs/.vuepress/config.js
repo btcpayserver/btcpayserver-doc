@@ -133,6 +133,7 @@ const sidebarUserGuide = [
     collapsable: false,
     initialOpenGroupIndex: -1,
     children: [
+      ['/LNDhubAPI/', 'LNDhub API'],
       ['/Nostr/', 'Nostr'],
       ['/TicketTailor/', 'TicketTailor'],
       ['/Trocador/', 'Trocador'],
@@ -145,7 +146,7 @@ const sidebarUserGuide = [
       [
         `https://dev.blink.sv/examples/btcpayserver-plugin`,
         'Blink',
-        { type: 'external' } 
+        { type: 'external' }
       ],
     ]
   },

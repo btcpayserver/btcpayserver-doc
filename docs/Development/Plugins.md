@@ -349,4 +349,6 @@ Once you click the `Release` button on the build page, the package won't be in p
 For more information check out these repositories with existing plugins:
 
 - [kukks' plugins](https://github.com/Kukks/BTCPayServerPlugins)
+- [rockstardev' plugins](https://github.com/rockstardev/BTCPayServerPlugins.RockstarDev)
+- [LNDhub API](https://github.com/dennisreimann/btcpayserver-plugin-lndhub-api)
 - [Trocador.app](https://github.com/saltrafael/trocador-plugin)
