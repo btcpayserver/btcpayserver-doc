@@ -13,6 +13,7 @@ VAULT_DIR="$BASE_DIR/deps/vault"
 TRANSMUTER_DIR="$BASE_DIR/deps/transmuter"
 ZAPIER_DIR="$BASE_DIR/deps/zapier"
 TROCADOR_DIR="$BASE_DIR/deps/trocador"
+LNDHUBAPI_DIR="$BASE_DIR/deps/lndhub-api"
 KUKKS_DIR="$BASE_DIR/deps/kukks"
 TOBSES_DIR="$BASE_DIR/deps/tobses"
 SMARTSTORE_DIR="$BASE_DIR/deps/smartstore"
@@ -192,6 +193,25 @@ for file in "$DOCS_DIR"/Zapier/*.md; do
   update_external "$file" https://github.com/btcpayserver/zapier "$DOCS_DIR"/Zapier/
 done
 
+# LNDhub API
+
+echo "Setup dependency: LNDhub API"
+
+rm -rf "$LNDHUBAPI_DIR"
+rm -rf "$DOCS_DIR/LNDhubAPI"
+mkdir -p "$DOCS_DIR/LNDhubAPI"
+
+if [ ! -d "$LNDHUBAPI_DIR" ]; then
+  git clone --depth 1 https://github.com/dennisreimann/btcpayserver-plugin-lndhub-api.git "$LNDHUBAPI_DIR"
+fi
+
+cd "$LNDHUBAPI_DIR"
+cp -r README.md docs/* "$DOCS_DIR/LNDhubAPI"
+sed -ie 's$(./docs/$(./$g' "$DOCS_DIR/LNDhubAPI/README.md"
+for file in "$DOCS_DIR"/LNDhubAPI/*.md; do
+  update_external "$file" https://github.com/dennisreimann/btcpayserver-plugin-lndhub-api "$DOCS_DIR"/LNDhubAPI/
+done
+
 # Trocador
 
 echo "Setup dependency: Trocador"
@@ -286,7 +306,7 @@ cp -r README.md "$DOCS_DIR/Nopcommerce"
 for file in "$DOCS_DIR"/Nopcommerce/*.md; do
   update_external "$file" https://github.com/btcpayserver/nopcommercee.git "$DOCS_DIR"/Nopcommerce/
 done
- 
+
 # Wix
 echo "Setup dependency: Wix"
 
