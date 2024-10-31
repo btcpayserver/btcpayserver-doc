@@ -135,6 +135,7 @@ const sidebarUserGuide = [
     children: [
       ['/LNDhubAPI/', 'LNDhub API'],
       ['/Nostr/', 'Nostr'],
+      ['/PodServer/', 'PodServer'],
       ['/TicketTailor/', 'TicketTailor'],
       ['/Trocador/', 'Trocador'],
       ['/SideShift/', 'SideShift'],
