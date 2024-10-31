@@ -133,22 +133,22 @@ const sidebarUserGuide = [
     collapsable: false,
     initialOpenGroupIndex: -1,
     children: [
-      ['/LNDhubAPI/', 'LNDhub API'],
-      ['/Nostr/', 'Nostr'],
-      ['/PodServer/', 'PodServer'],
-      ['/TicketTailor/', 'TicketTailor'],
-      ['/Trocador/', 'Trocador'],
-      ['/SideShift/', 'SideShift'],
-      ['/Bringin/', 'Bringin'],
-      ['/Payroll/', 'Payroll'],
-      ['/DynamicReports/', 'Dynamic Reports'],
-      ['/Breez/', 'Breez'],
-      ['/Wabisabi/', 'Wabisabi Coinjoin'],
       [
         `https://dev.blink.sv/examples/btcpayserver-plugin`,
         'Blink',
         { type: 'external' }
       ],
+      ['/Breez/', 'Breez'],
+      ['/Bringin/', 'Bringin'],
+      ['/DynamicReports/', 'Dynamic Reports'],
+      ['/LNDhubAPI/', 'LNDhub API'],
+      ['/Nostr/', 'Nostr'],
+      ['/Payroll/', 'Payroll'],
+      ['/PodServer/', 'PodServer'],
+      ['/SideShift/', 'SideShift'],
+      ['/TicketTailor/', 'TicketTailor'],
+      ['/Trocador/', 'Trocador'],
+      ['/Wabisabi/', 'Wabisabi Coinjoin'],
     ]
   },
   {
