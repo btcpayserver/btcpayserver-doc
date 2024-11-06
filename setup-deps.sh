@@ -12,6 +12,7 @@ DOCKER_DIR="$BASE_DIR/deps/docker"
 VAULT_DIR="$BASE_DIR/deps/vault"
 TRANSMUTER_DIR="$BASE_DIR/deps/transmuter"
 ZAPIER_DIR="$BASE_DIR/deps/zapier"
+PODSERVER_DIR="$BASE_DIR/deps/podserver"
 TROCADOR_DIR="$BASE_DIR/deps/trocador"
 LNDHUBAPI_DIR="$BASE_DIR/deps/lndhub-api"
 KUKKS_DIR="$BASE_DIR/deps/kukks"
@@ -191,6 +192,25 @@ cp -r README.md doc/* "$DOCS_DIR/Zapier"
 sed -ie 's$(./doc/$(./$g' "$DOCS_DIR/Zapier/README.md"
 for file in "$DOCS_DIR"/Zapier/*.md; do
   update_external "$file" https://github.com/btcpayserver/zapier "$DOCS_DIR"/Zapier/
+done
+
+# PodServer
+
+echo "Setup dependency: PodServer"
+
+rm -rf "$PODSERVER_DIR"
+rm -rf "$DOCS_DIR/PodServer"
+mkdir -p "$DOCS_DIR/PodServer"
+
+if [ ! -d "$PODSERVER_DIR" ]; then
+  git clone --depth 1 https://github.com/dennisreimann/btcpayserver-plugin-podserver.git "$PODSERVER_DIR"
+fi
+
+cd "$PODSERVER_DIR"
+cp -r README.md docs/* "$DOCS_DIR/PodServer"
+sed -ie 's$(./docs/$(./$g' "$DOCS_DIR/PodServer/README.md"
+for file in "$DOCS_DIR"/PodServer/*.md; do
+  update_external "$file" https://github.com/dennisreimann/btcpayserver-plugin-podserver "$DOCS_DIR"/PodServer/
 done
 
 # LNDhub API

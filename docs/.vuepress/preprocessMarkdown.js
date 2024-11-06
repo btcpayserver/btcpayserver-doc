@@ -11,6 +11,7 @@ const EXTERNAL_DOCS = {
   Zapier: 'https://github.com/btcpayserver/zapier',
   LNDhubAPI: 'https://github.com/dennisreimann/btcpayserver-plugin-lndhub-api',
   Nostr: 'https://github.com/Kukks/BTCPayServerPlugins/tree/master/Plugins/BTCPayServer.Plugins.NIP05',
+  PodServer: 'https://github.com/dennisreimann/btcpayserver-plugin-podserver',
   TicketTailor: 'https://github.com/Kukks/BTCPayServerPlugins/tree/master/Plugins/BTCPayServer.Plugins.TicketTailor',
   Trocador: 'https://github.com/saltrafael/trocador-plugin',
   Wabisabi: 'https://github.com/Kukks/BTCPayServerPlugins/tree/master/Plugins/BTCPayServer.Plugins.Wabisabi',
