@@ -31,12 +31,18 @@ update_external() {
   file="$1"
   repo="$2"
   base="$3"
+  branch="${4:-master}"
+  subdir="${5:-}"
   path="${file#${base}}"
   [[ $path = "Security.md" ]] && path="SECURITY.md"
   [[ $path = "README.md" || $path = "SECURITY.md" ]] && folder="" || folder="docs/"
   content=$(cat "$file")
   # add frontmatter to omit edit links for external docs
-  echo $'---\neditLink: '"$repo/edit/master/$folder$path"$'\nexternalRepo: '"$repo"$'\n---\n'"$content" > "$file"
+  if [ -n "$subdir" ]; then
+    echo $'---\neditLink: '"$repo/edit/$branch/$subdir$path"$'\nexternalRepo: '"$repo"$'\n---\n'"$content" > "$file"
+  else
+    echo $'---\neditLink: '"$repo/edit/$branch/$folder$path"$'\nexternalRepo: '"$repo"$'\n---\n'"$content" > "$file"
+  fi
 }
 
 # BTCPay Server
@@ -267,7 +273,7 @@ fi
 cd "$DRUPAL_DIR"
 cp -r README.md "$DOCS_DIR/Drupal"
 for file in "$DOCS_DIR"/Drupal/*.md; do
-  update_external "$file" https://github.com/btcpayserver/commerce_btcpay.git "$DOCS_DIR"/Drupal/
+  update_external "$file" https://github.com/btcpayserver/commerce_btcpay "$DOCS_DIR"/Drupal/ "8.x-1.x"
 done
 
 # Smartstore
@@ -286,7 +292,7 @@ fi
 cd "$SMARTSTORE_DIR"
 cp -r src/Smartstore.Modules/Smartstore.BTCPayServer/README.md "$DOCS_DIR/Smartstore"
 for file in "$DOCS_DIR"/Smartstore/*.md; do
-  update_external "$file" https://github.com/btcpayserver/Smartstore.BTCPayServer.git "$DOCS_DIR"/Smartstore/
+  update_external "$file" https://github.com/btcpayserver/Smartstore.BTCPayServer "$DOCS_DIR"/Smartstore/ main
 done
 
 # Grandnode
@@ -305,7 +311,7 @@ fi
 cd "$GRANDNODE_DIR"
 cp -r README.md "$DOCS_DIR/Grandnode"
 for file in "$DOCS_DIR"/Grandnode/*.md; do
-  update_external "$file" https://github.com/btcpayserver/grandnode.git "$DOCS_DIR"/Grandnode/
+  update_external "$file" https://github.com/btcpayserver/grandnode "$DOCS_DIR"/Grandnode/ main
 done
 
 # Nopcommerce
@@ -324,14 +330,18 @@ fi
 cd "$NOPCOMMERCE_DIR"
 cp -r README.md "$DOCS_DIR/Nopcommerce"
 for file in "$DOCS_DIR"/Nopcommerce/*.md; do
-  update_external "$file" https://github.com/btcpayserver/nopcommercee.git "$DOCS_DIR"/Nopcommerce/
+  update_external "$file" https://github.com/btcpayserver/nopcommerce "$DOCS_DIR"/Nopcommerce/ main
 done
 
 # Wix
 echo "Setup dependency: Wix"
 
-rm -rf "$DOCS_DIR/img/wix"
-mkdir -p "$DOCS_DIR/img/wix"
+if [ -f "$DOCS_DIR/Wix.md" ]; then
+  rm "$DOCS_DIR/Wix.md"
+fi
+
+rm -rf "$DOCS_DIR/Wix"
+mkdir -p "$DOCS_DIR/Wix"
 
 if [ ! -d "$WIX_DIR" ]; then
   git clone --depth 1 https://github.com/btcpayserver/wix.git "$WIX_DIR"
@@ -340,10 +350,12 @@ else
 fi
 
 cd "$WIX_DIR"
-cp -r README.md "$DOCS_DIR/Wix.md"
-cp -r img/wix/* "$DOCS_DIR/img/wix"
-update_external "$DOCS_DIR/Wix.md" https://github.com/btcpayserver/wix.git "$DOCS_DIR"
-
+cp -r README.md "$DOCS_DIR/Wix"
+mkdir -p "$DOCS_DIR/Wix/img/wix"
+cp -r img/wix/* "$DOCS_DIR/Wix/img/wix"
+for file in "$DOCS_DIR"/Wix/*.md; do
+  update_external "$file" "https://github.com/btcpayserver/wix" "$DOCS_DIR"/Wix/ main
+done
 
 # Xenforo
 
@@ -361,7 +373,7 @@ fi
 cd "$XENFORO_DIR"
 cp -r README.md "$DOCS_DIR/Xenforo"
 for file in "$DOCS_DIR"/Xenforo/*.md; do
-  update_external "$file" https://github.com/btcpayserver/xenforo.git "$DOCS_DIR"/Xenforo/
+  update_external "$file" https://github.com/btcpayserver/xenforo "$DOCS_DIR"/Xenforo/ main
 done
 
 # Odoo
@@ -380,7 +392,7 @@ fi
 cd "$ODOO_DIR"
 cp -r payment_btcpayserver/README.md "$DOCS_DIR/Odoo"
 for file in "$DOCS_DIR"/Odoo/*.md; do
-  update_external "$file" https://github.com/btcpayserver/odoo.git "$DOCS_DIR"/Odoo/
+  update_external "$file" https://github.com/btcpayserver/odoo "$DOCS_DIR"/Odoo/ "17.0"
 done
 
 
@@ -402,21 +414,21 @@ cd "$KUKKS_DIR/Plugins/BTCPayServer.Plugins.Wabisabi"
 cp -r readme.md docs/* "$DOCS_DIR/Wabisabi"
 sed -ie 's$docs/$./$g' "$DOCS_DIR/Wabisabi/readme.md"
 for file in "$DOCS_DIR"/Wabisabi/*.md; do
-  update_external "$file" https://github.com/Kukks/BTCPayServerPlugins/tree/master/Plugins/BTCPayServer.Plugins.Wabisabi "$DOCS_DIR"/Wabisabi/
+  update_external "$file" "https://github.com/Kukks/BTCPayServerPlugins" "$DOCS_DIR/Wabisabi" "master" "Plugins/BTCPayServer.Plugins.Wabisabi"
 done
 
 cd "$KUKKS_DIR/Plugins/BTCPayServer.Plugins.TicketTailor"
 
 cp -r README.md "$DOCS_DIR/TicketTailor"
 for file in "$DOCS_DIR"/TicketTailor/*.md; do
-  update_external "$file" https://github.com/Kukks/BTCPayServerPlugins/tree/master/Plugins/BTCPayServer.Plugins.TicketTailor "$DOCS_DIR"/TicketTailor/
+  update_external "$file" "https://github.com/Kukks/BTCPayServerPlugins" "$DOCS_DIR/TicketTailor" "master" "Plugins/BTCPayServer.Plugins.TicketTailor"
 done
 
 cd "$KUKKS_DIR/Plugins/BTCPayServer.Plugins.NIP05"
 
 cp -r readme.md "$DOCS_DIR/Nostr"
 for file in "$DOCS_DIR"/Nostr/*.md; do
-  update_external "$file" https://github.com/Kukks/BTCPayServerPlugins/tree/master/Plugins/BTCPayServer.Plugins.NIP05 "$DOCS_DIR"/Nostr/
+  update_external "$file" "https://github.com/Kukks/BTCPayServerPlugins" "$DOCS_DIR/Nostr" "master" "Plugins/BTCPayServer.Plugins.NIP05"
 done
 
 cd "$KUKKS_DIR/Plugins/BTCPayServer.Plugins.SideShift"
@@ -424,21 +436,21 @@ cd "$KUKKS_DIR/Plugins/BTCPayServer.Plugins.SideShift"
 cp -r README.md "$DOCS_DIR/SideShift"
 for file in "$DOCS_DIR"/SideShift/*.md; do
   sed -i 's/[^[:print:]\t]//g' "$file"
-  update_external "$file" https://github.com/Kukks/BTCPayServerPlugins/tree/master/Plugins/BTCPayServer.Plugins.SideShift "$DOCS_DIR"/SideShift/
+  update_external "$file" "https://github.com/Kukks/BTCPayServerPlugins" "$DOCS_DIR/SideShift" "master" "Plugins/BTCPayServer.Plugins.SideShift"
 done
 
 cd "$KUKKS_DIR/Plugins/BTCPayServer.Plugins.Breez"
 
 cp -r README.md "$DOCS_DIR/Breez"
 for file in "$DOCS_DIR"/Breez/*.md; do
-  update_external "$file" https://github.com/Kukks/BTCPayServerPlugins/tree/master/Plugins/BTCPayServer.Plugins.Breez "$DOCS_DIR"/Breez/
+  update_external "$file" "https://github.com/Kukks/BTCPayServerPlugins" "$DOCS_DIR/Breez" "master" "Plugins/BTCPayServer.Plugins.Breez"
 done
 
 cd "$KUKKS_DIR/Plugins/BTCPayServer.Plugins.Bringin"
 
 cp -r README.md "$DOCS_DIR/Bringin"
 for file in "$DOCS_DIR"/Bringin/*.md; do
-  update_external "$file" https://github.com/Kukks/BTCPayServerPlugins/tree/master/Plugins/BTCPayServer.Plugins.Bringin "$DOCS_DIR"/Bringin/
+  update_external "$file" "https://github.com/Kukks/BTCPayServerPlugins" "$DOCS_DIR/Bringin" "master" "Plugins/BTCPayServer.Plugins.Bringin"
 done
 
 cd "$KUKKS_DIR/Plugins/BTCPayServer.Plugins.DynamicReports"
@@ -446,7 +458,7 @@ cd "$KUKKS_DIR/Plugins/BTCPayServer.Plugins.DynamicReports"
 cp -r README.md "$DOCS_DIR/DynamicReports"
 for file in "$DOCS_DIR"/DynamicReports/*.md; do
   sed -i 's/[^[:print:]\t]//g' "$file"
-  update_external "$file" https://github.com/Kukks/BTCPayServerPlugins/tree/master/Plugins/BTCPayServer.Plugins.DynamicReports "$DOCS_DIR"/DynamicReports/
+  update_external "$file" "https://github.com/Kukks/BTCPayServerPlugins" "$DOCS_DIR/DynamicReports" "master" "Plugins/BTCPayServer.Plugins.DynamicReports"
 done
 
 
@@ -468,7 +480,7 @@ cd "$ROCKSTAR_DIR/Plugins/BTCPayServer.RockstarDev.Plugins.Payroll"
 cp -r README.md "$DOCS_DIR/Payroll"
 for file in "$DOCS_DIR"/Payroll/*.md; do
   sed -i 's/[^[:print:]\t]//g' "$file"
-  update_external "$file" https://github.com/rockstardev/BTCPayServerPlugins.RockstarDev/tree/master/Plugins/BTCPayServer.RockstarDev.Plugins.Payroll "$DOCS_DIR"/Payroll/
+  update_external "$file" "https://github.com/rockstardev/BTCPayServerPlugins.RockstarDev" "$DOCS_DIR/Payroll" "master" "Plugins/BTCPayServer.RockstarDev.Plugins.Payroll"
 done
 
 # Tobe' plugins
@@ -488,7 +500,7 @@ cd "$TOBSES_DIR/Plugins/BTCPayServer.Plugins.BigCommercePlugin"
 
 cp -r README.md "$DOCS_DIR/BigCommerce"
 for file in "$DOCS_DIR"/BigCommerce/*.md; do
-  update_external "$file" https://github.com/TChukwuleta/BTCPayServerPlugins/tree/main/Plugins/BTCPayServer.Plugins.BigCommercePlugin "$DOCS_DIR"/BigCommerce/
+  update_external "$file" "https://github.com/TChukwuleta/BTCPayServerPlugins" "$DOCS_DIR/BigCommerce" "main" "Plugins/BTCPayServer.Plugins.BigCommercePlugin"
 done
 
 
