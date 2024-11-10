@@ -30,19 +30,14 @@ WIX_DIR="$BASE_DIR/deps/wix"
 update_external() {
   file="$1"
   repo="$2"
-  base="$3"
-  branch="${4:-master}"
-  subdir="${5:-}"
+  edit="$3"
+  base="$4"
   path="${file#${base}}"
   [[ $path = "Security.md" ]] && path="SECURITY.md"
-  [[ $path = "README.md" || $path = "SECURITY.md" ]] && folder="" || folder="docs/"
+  [[ $path = "README.md" || $path = "readme.md" || $path = "SECURITY.md" ]] && folder="" || folder="docs/"
   content=$(cat "$file")
   # add frontmatter to omit edit links for external docs
-  if [ -n "$subdir" ]; then
-    echo $'---\neditLink: '"$repo/edit/$branch/$subdir$path"$'\nexternalRepo: '"$repo"$'\n---\n'"$content" > "$file"
-  else
-    echo $'---\neditLink: '"$repo/edit/$branch/$folder$path"$'\nexternalRepo: '"$repo"$'\n---\n'"$content" > "$file"
-  fi
+  echo $'---\nexternalRepo: '"$repo"$'\neditLink: '"$edit/$folder$path"$'\n---\n'"$content" > "$file"
 }
 
 # BTCPay Server
@@ -67,7 +62,7 @@ line=$(grep -n '## How to manually test payments' $DOCS_DIR/BTCPayServer/LocalDe
 { echo $'---\neditLink: https://github.com/btcpayserver/btcpayserver-doc/edit/master/docs/Development/LocalDev.md\n---\n'; cat "$DOCS_DIR/Development/LocalDev.md"; echo; tail -n +$line "$DOCS_DIR/BTCPayServer/LocalDevSetup.md"; } > "$DOCS_DIR/Development/LocalDevelopment.md"
 
 for file in "$DOCS_DIR"/BTCPayServer/*.md; do
-  update_external "$file" https://github.com/btcpayserver/btcpayserver "$DOCS_DIR"/BTCPayServer/
+  update_external "$file" https://github.com/btcpayserver/btcpayserver https://github.com/btcpayserver/btcpayserver/edit/master "$DOCS_DIR"/BTCPayServer/
 done
 
 # NBXplorer
@@ -88,7 +83,7 @@ cd "$NBXPLORER_DIR"
 cp -r README.md docs/* "$DOCS_DIR/NBXplorer"
 sed -ie 's$(./docs/$(./$g' "$DOCS_DIR/NBXplorer/README.md"
 for file in "$DOCS_DIR"/NBXplorer/*.md; do
-  update_external "$file" https://github.com/dgarage/NBXplorer "$DOCS_DIR"/NBXplorer/
+  update_external "$file" https://github.com/dgarage/NBXplorer  https://github.com/dgarage/NBXplorer/edit/master "$DOCS_DIR"/NBXplorer/
 done
 
 # Vault
@@ -108,7 +103,7 @@ cd "$VAULT_DIR"
 cp -r README.md docs/* "$DOCS_DIR/Vault"
 sed -ie 's$(docs/$(./$g' "$DOCS_DIR/Vault/README.md"
 for file in "$DOCS_DIR"/Vault/*.md; do
-  update_external "$file" https://github.com/btcpayserver/BTCPayServer.Vault "$DOCS_DIR"/Vault/
+  update_external "$file" https://github.com/btcpayserver/BTCPayServer.Vault https://github.com/btcpayserver/BTCPayServer.Vault/edit/master "$DOCS_DIR"/Vault/
 done
 
 # Configurator
@@ -128,7 +123,7 @@ cd "$CONFIGURATOR_DIR"
 cp -r README.md docs/* "$DOCS_DIR/Configurator"
 sed -ie 's$(./docs/$(./$g' "$DOCS_DIR/Configurator/README.md"
 for file in "$DOCS_DIR"/Configurator/*.md; do
-  update_external "$file" https://github.com/btcpayserver/btcpayserver-configurator "$DOCS_DIR"/Configurator/
+  update_external "$file" https://github.com/btcpayserver/btcpayserver-configurator https://github.com/btcpayserver/btcpayserver-configurator/edit/master "$DOCS_DIR"/Configurator/
 done
 
 # Docker
@@ -151,7 +146,7 @@ line=$(grep -n '# Introduction' README.md | cut -d ":" -f 1)
 tail -n +$line "README.md" > "$DOCS_DIR/Docker/README.md"
 sed -ie 's$(docs/$(./$g' "$DOCS_DIR/Docker/README.md"
 for file in "$DOCS_DIR"/Docker/*.md; do
-  update_external "$file" https://github.com/btcpayserver/btcpayserver-docker "$DOCS_DIR"/Docker/
+  update_external "$file" https://github.com/btcpayserver/btcpayserver-docker https://github.com/btcpayserver/btcpayserver-docker/edit/master "$DOCS_DIR"/Docker/
 done
 
 cp contrib/FastSync/README.md "$DOCS_DIR/Docker/fastsync.md"
@@ -177,7 +172,7 @@ cd "$TRANSMUTER_DIR"
 cp -r README.md docs/* "$DOCS_DIR/Transmuter"
 sed -ie 's$(docs/$(./$g' "$DOCS_DIR/Transmuter/README.md"
 for file in "$DOCS_DIR"/Transmuter/*.md; do
-  update_external "$file" https://github.com/btcpayserver/btcTransmuter "$DOCS_DIR"/Transmuter/
+  update_external "$file" https://github.com/btcpayserver/btcTransmuter https://github.com/btcpayserver/btcTransmuter/edit/master "$DOCS_DIR"/Transmuter/
 done
 
 # Zapier
@@ -197,7 +192,7 @@ cd "$ZAPIER_DIR"
 cp -r README.md doc/* "$DOCS_DIR/Zapier"
 sed -ie 's$(./doc/$(./$g' "$DOCS_DIR/Zapier/README.md"
 for file in "$DOCS_DIR"/Zapier/*.md; do
-  update_external "$file" https://github.com/btcpayserver/zapier "$DOCS_DIR"/Zapier/
+  update_external "$file" https://github.com/btcpayserver/zapier https://github.com/btcpayserver/zapier/edit/master "$DOCS_DIR"/Zapier/
 done
 
 # PodServer
@@ -216,7 +211,7 @@ cd "$PODSERVER_DIR"
 cp -r README.md docs/* "$DOCS_DIR/PodServer"
 sed -ie 's$(./docs/$(./$g' "$DOCS_DIR/PodServer/README.md"
 for file in "$DOCS_DIR"/PodServer/*.md; do
-  update_external "$file" https://github.com/dennisreimann/btcpayserver-plugin-podserver "$DOCS_DIR"/PodServer/
+  update_external "$file" https://github.com/dennisreimann/btcpayserver-plugin-podserver https://github.com/dennisreimann/btcpayserver-plugin-podserver/edit/master "$DOCS_DIR"/PodServer/
 done
 
 # LNDhub API
@@ -235,7 +230,7 @@ cd "$LNDHUBAPI_DIR"
 cp -r README.md docs/* "$DOCS_DIR/LNDhubAPI"
 sed -ie 's$(./docs/$(./$g' "$DOCS_DIR/LNDhubAPI/README.md"
 for file in "$DOCS_DIR"/LNDhubAPI/*.md; do
-  update_external "$file" https://github.com/dennisreimann/btcpayserver-plugin-lndhub-api "$DOCS_DIR"/LNDhubAPI/
+  update_external "$file" https://github.com/dennisreimann/btcpayserver-plugin-lndhub-api https://github.com/dennisreimann/btcpayserver-plugin-lndhub-api/edit/master "$DOCS_DIR"/LNDhubAPI/
 done
 
 # Trocador
@@ -254,7 +249,7 @@ fi
 cd "$TROCADOR_DIR"
 cp -r README.md "$DOCS_DIR/Trocador"
 for file in "$DOCS_DIR"/Trocador/*.md; do
-  update_external "$file" https://github.com/saltrafael/trocador-plugin "$DOCS_DIR"/Trocador/
+  update_external "$file" https://github.com/saltrafael/trocador-plugin https://github.com/saltrafael/trocador-plugin/edit/master "$DOCS_DIR"/Trocador/
 done
 
 # Drupal
@@ -273,7 +268,7 @@ fi
 cd "$DRUPAL_DIR"
 cp -r README.md "$DOCS_DIR/Drupal"
 for file in "$DOCS_DIR"/Drupal/*.md; do
-  update_external "$file" https://github.com/btcpayserver/commerce_btcpay "$DOCS_DIR"/Drupal/ "8.x-1.x"
+  update_external "$file" https://github.com/btcpayserver/commerce_btcpay https://github.com/btcpayserver/commerce_btcpay/edit/8.x-1.x "$DOCS_DIR"/Drupal/
 done
 
 # Smartstore
@@ -292,7 +287,7 @@ fi
 cd "$SMARTSTORE_DIR"
 cp -r src/Smartstore.Modules/Smartstore.BTCPayServer/README.md "$DOCS_DIR/Smartstore"
 for file in "$DOCS_DIR"/Smartstore/*.md; do
-  update_external "$file" https://github.com/btcpayserver/Smartstore.BTCPayServer "$DOCS_DIR"/Smartstore/ main
+  update_external "$file" https://github.com/btcpayserver/Smartstore.BTCPayServer https://github.com/btcpayserver/Smartstore.BTCPayServer/edit/main "$DOCS_DIR"/Smartstore/
 done
 
 # Grandnode
@@ -311,7 +306,7 @@ fi
 cd "$GRANDNODE_DIR"
 cp -r README.md "$DOCS_DIR/Grandnode"
 for file in "$DOCS_DIR"/Grandnode/*.md; do
-  update_external "$file" https://github.com/btcpayserver/grandnode "$DOCS_DIR"/Grandnode/ main
+  update_external "$file" https://github.com/btcpayserver/grandnode https://github.com/btcpayserver/grandnode/edit/main "$DOCS_DIR"/Grandnode/
 done
 
 # Nopcommerce
@@ -330,15 +325,14 @@ fi
 cd "$NOPCOMMERCE_DIR"
 cp -r README.md "$DOCS_DIR/Nopcommerce"
 for file in "$DOCS_DIR"/Nopcommerce/*.md; do
-  update_external "$file" https://github.com/btcpayserver/nopcommerce "$DOCS_DIR"/Nopcommerce/ main
+  update_external "$file" https://github.com/btcpayserver/nopcommerce https://github.com/btcpayserver/nopcommerce/edit/main "$DOCS_DIR"/Nopcommerce/
 done
 
 # Wix
 echo "Setup dependency: Wix"
 
-if [ -f "$DOCS_DIR/Wix.md" ]; then
-  rm "$DOCS_DIR/Wix.md"
-fi
+rm -rf "$DOCS_DIR/Wix"
+mkdir -p "$DOCS_DIR/Wix"
 
 rm -rf "$DOCS_DIR/Wix"
 mkdir -p "$DOCS_DIR/Wix"
@@ -350,11 +344,9 @@ else
 fi
 
 cd "$WIX_DIR"
-cp -r README.md "$DOCS_DIR/Wix"
-mkdir -p "$DOCS_DIR/Wix/img/wix"
-cp -r img/wix/* "$DOCS_DIR/Wix/img/wix"
+cp -r README.md img "$DOCS_DIR/Wix"
 for file in "$DOCS_DIR"/Wix/*.md; do
-  update_external "$file" "https://github.com/btcpayserver/wix" "$DOCS_DIR"/Wix/ main
+  update_external "$file" https://github.com/btcpayserver/wix https://github.com/btcpayserver/wix/edit/main "$DOCS_DIR"/Wix/
 done
 
 # Xenforo
@@ -373,7 +365,7 @@ fi
 cd "$XENFORO_DIR"
 cp -r README.md "$DOCS_DIR/Xenforo"
 for file in "$DOCS_DIR"/Xenforo/*.md; do
-  update_external "$file" https://github.com/btcpayserver/xenforo "$DOCS_DIR"/Xenforo/ main
+  update_external "$file" https://github.com/btcpayserver/xenforo https://github.com/btcpayserver/xenforo/edit/main "$DOCS_DIR"/Xenforo/
 done
 
 # Odoo
@@ -392,9 +384,8 @@ fi
 cd "$ODOO_DIR"
 cp -r payment_btcpayserver/README.md "$DOCS_DIR/Odoo"
 for file in "$DOCS_DIR"/Odoo/*.md; do
-  update_external "$file" https://github.com/btcpayserver/odoo "$DOCS_DIR"/Odoo/ "17.0"
+  update_external "$file" https://github.com/btcpayserver/odoo https://github.com/btcpayserver/odoo/edit/17.0 "$DOCS_DIR"/Odoo/
 done
-
 
 # Kukks' plugins
 
@@ -414,21 +405,21 @@ cd "$KUKKS_DIR/Plugins/BTCPayServer.Plugins.Wabisabi"
 cp -r readme.md docs/* "$DOCS_DIR/Wabisabi"
 sed -ie 's$docs/$./$g' "$DOCS_DIR/Wabisabi/readme.md"
 for file in "$DOCS_DIR"/Wabisabi/*.md; do
-  update_external "$file" "https://github.com/Kukks/BTCPayServerPlugins" "$DOCS_DIR/Wabisabi" "master" "Plugins/BTCPayServer.Plugins.Wabisabi"
+  update_external "$file" https://github.com/Kukks/BTCPayServerPlugins/tree/master/Plugins/BTCPayServer.Plugins.Wabisabi https://github.com/Kukks/BTCPayServerPlugins/edit/master/Plugins/BTCPayServer.Plugins.Wabisabi "$DOCS_DIR"/Wabisabi/
 done
 
 cd "$KUKKS_DIR/Plugins/BTCPayServer.Plugins.TicketTailor"
 
 cp -r README.md "$DOCS_DIR/TicketTailor"
 for file in "$DOCS_DIR"/TicketTailor/*.md; do
-  update_external "$file" "https://github.com/Kukks/BTCPayServerPlugins" "$DOCS_DIR/TicketTailor" "master" "Plugins/BTCPayServer.Plugins.TicketTailor"
+  update_external "$file" https://github.com/Kukks/BTCPayServerPlugins/tree/master/Plugins/BTCPayServer.Plugins.TicketTailor https://github.com/Kukks/BTCPayServerPlugins/edit/master/Plugins/BTCPayServer.Plugins.TicketTailor "$DOCS_DIR"/TicketTailor/
 done
 
 cd "$KUKKS_DIR/Plugins/BTCPayServer.Plugins.NIP05"
 
 cp -r readme.md "$DOCS_DIR/Nostr"
 for file in "$DOCS_DIR"/Nostr/*.md; do
-  update_external "$file" "https://github.com/Kukks/BTCPayServerPlugins" "$DOCS_DIR/Nostr" "master" "Plugins/BTCPayServer.Plugins.NIP05"
+  update_external "$file" https://github.com/Kukks/BTCPayServerPlugins/tree/master/Plugins/BTCPayServer.Plugins.NIP05 https://github.com/Kukks/BTCPayServerPlugins/edit/master/Plugins/BTCPayServer.Plugins.NIP05 "$DOCS_DIR"/Nostr/
 done
 
 cd "$KUKKS_DIR/Plugins/BTCPayServer.Plugins.SideShift"
@@ -436,21 +427,21 @@ cd "$KUKKS_DIR/Plugins/BTCPayServer.Plugins.SideShift"
 cp -r README.md "$DOCS_DIR/SideShift"
 for file in "$DOCS_DIR"/SideShift/*.md; do
   sed -i 's/[^[:print:]\t]//g' "$file"
-  update_external "$file" "https://github.com/Kukks/BTCPayServerPlugins" "$DOCS_DIR/SideShift" "master" "Plugins/BTCPayServer.Plugins.SideShift"
+  update_external "$file" https://github.com/Kukks/BTCPayServerPlugins/tree/master/Plugins/BTCPayServer.Plugins.SideShift https://github.com/Kukks/BTCPayServerPlugins/edit/master/Plugins/BTCPayServer.Plugins.SideShift "$DOCS_DIR"/SideShift/
 done
 
 cd "$KUKKS_DIR/Plugins/BTCPayServer.Plugins.Breez"
 
 cp -r README.md "$DOCS_DIR/Breez"
 for file in "$DOCS_DIR"/Breez/*.md; do
-  update_external "$file" "https://github.com/Kukks/BTCPayServerPlugins" "$DOCS_DIR/Breez" "master" "Plugins/BTCPayServer.Plugins.Breez"
+  update_external "$file" https://github.com/Kukks/BTCPayServerPlugins/tree/master/Plugins/BTCPayServer.Plugins.Breez https://github.com/Kukks/BTCPayServerPlugins/edit/master/Plugins/BTCPayServer.Plugins.Breez "$DOCS_DIR"/Breez/
 done
 
 cd "$KUKKS_DIR/Plugins/BTCPayServer.Plugins.Bringin"
 
 cp -r README.md "$DOCS_DIR/Bringin"
 for file in "$DOCS_DIR"/Bringin/*.md; do
-  update_external "$file" "https://github.com/Kukks/BTCPayServerPlugins" "$DOCS_DIR/Bringin" "master" "Plugins/BTCPayServer.Plugins.Bringin"
+  update_external "$file" https://github.com/Kukks/BTCPayServerPlugins/tree/master/Plugins/BTCPayServer.Plugins.Bringin https://github.com/Kukks/BTCPayServerPlugins/edit/master/Plugins/BTCPayServer.Plugins.Bringin "$DOCS_DIR"/Bringin/
 done
 
 cd "$KUKKS_DIR/Plugins/BTCPayServer.Plugins.DynamicReports"
@@ -458,7 +449,7 @@ cd "$KUKKS_DIR/Plugins/BTCPayServer.Plugins.DynamicReports"
 cp -r README.md "$DOCS_DIR/DynamicReports"
 for file in "$DOCS_DIR"/DynamicReports/*.md; do
   sed -i 's/[^[:print:]\t]//g' "$file"
-  update_external "$file" "https://github.com/Kukks/BTCPayServerPlugins" "$DOCS_DIR/DynamicReports" "master" "Plugins/BTCPayServer.Plugins.DynamicReports"
+  update_external "$file" https://github.com/Kukks/BTCPayServerPlugins/tree/master/Plugins/BTCPayServer.Plugins.DynamicReports https://github.com/Kukks/BTCPayServerPlugins/edit/master/Plugins/BTCPayServer.Plugins.DynamicReports "$DOCS_DIR"/DynamicReports/
 done
 
 
@@ -480,7 +471,7 @@ cd "$ROCKSTAR_DIR/Plugins/BTCPayServer.RockstarDev.Plugins.Payroll"
 cp -r README.md "$DOCS_DIR/Payroll"
 for file in "$DOCS_DIR"/Payroll/*.md; do
   sed -i 's/[^[:print:]\t]//g' "$file"
-  update_external "$file" "https://github.com/rockstardev/BTCPayServerPlugins.RockstarDev" "$DOCS_DIR/Payroll" "master" "Plugins/BTCPayServer.RockstarDev.Plugins.Payroll"
+  update_external "$file" https://github.com/rockstardev/BTCPayServerPlugins.RockstarDev/tree/master/Plugins/BTCPayServer.RockstarDev.Plugins.Payroll https://github.com/rockstardev/BTCPayServerPlugins.RockstarDev/edit/master/Plugins/BTCPayServer.RockstarDev.Plugins.Payroll "$DOCS_DIR"/Payroll/
 done
 
 # Tobe' plugins
@@ -500,10 +491,8 @@ cd "$TOBSES_DIR/Plugins/BTCPayServer.Plugins.BigCommercePlugin"
 
 cp -r README.md "$DOCS_DIR/BigCommerce"
 for file in "$DOCS_DIR"/BigCommerce/*.md; do
-  update_external "$file" "https://github.com/TChukwuleta/BTCPayServerPlugins" "$DOCS_DIR/BigCommerce" "main" "Plugins/BTCPayServer.Plugins.BigCommercePlugin"
+  update_external "$file" https://github.com/TChukwuleta/BTCPayServerPlugins/tree/main/Plugins/BTCPayServer.Plugins.BigCommercePlugin https://github.com/TChukwuleta/BTCPayServerPlugins/edit/main/Plugins/BTCPayServer.Plugins.BigCommercePlugin "$DOCS_DIR"/BigCommerce/
 done
-
-
 
 # Swagger
 
