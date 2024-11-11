@@ -124,7 +124,7 @@ const sidebarUserGuide = [
       ['/Xenforo/', 'Xenforo'],
       ['/InvoiceNinja', 'Invoice Ninja'],
       ['/Odoo/', 'Odoo'],
-      ['/Wix', 'Wix'],
+      ['/Wix/', 'Wix'],
       ['/CustomIntegration', 'Custom Integration']
     ]
   },
