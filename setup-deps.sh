@@ -334,9 +334,6 @@ echo "Setup dependency: Wix"
 rm -rf "$DOCS_DIR/Wix"
 mkdir -p "$DOCS_DIR/Wix"
 
-rm -rf "$DOCS_DIR/Wix"
-mkdir -p "$DOCS_DIR/Wix"
-
 if [ ! -d "$WIX_DIR" ]; then
   git clone --depth 1 https://github.com/btcpayserver/wix.git "$WIX_DIR"
 else
