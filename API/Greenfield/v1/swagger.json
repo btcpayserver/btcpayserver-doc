@@ -666,6 +666,82 @@
         ]
       }
     },
+    "/api/v1/apps/{appId}/image": {
+      "post": {
+        "tags": [
+          "Apps"
+        ],
+        "summary": "Uploads an image for a app item",
+        "description": "Uploads an image for a app item",
+        "requestBody": {
+          "content": {
+            "multipart/form-data": {
+              "schema": {
+                "type": "object",
+                "additionalProperties": false,
+                "properties": {
+                  "file": {
+                    "type": "string",
+                    "description": "The image",
+                    "format": "binary"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "operationId": "Apps_UploadAppItemImage",
+        "responses": {
+          "200": {
+            "description": "Uploads an image for a app item",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/FileData"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "The app could not be found"
+          }
+        },
+        "security": [
+          {
+            "API_Key": [
+              "btcpay.store.canmodifystoresettings"
+            ],
+            "Basic": []
+          }
+        ]
+      }
+    },
+    "/api/v1/apps/{appId}/image/{fileId}": {
+      "delete": {
+        "tags": [
+          "Apps"
+        ],
+        "summary": "Deletes the app item image",
+        "description": "Deletes the app item image",
+        "operationId": "App_DeleteAppItemImage",
+        "responses": {
+          "200": {
+            "description": "App item image deleted successfully"
+          },
+          "404": {
+            "description": "The app could not be found"
+          }
+        },
+        "security": [
+          {
+            "API_Key": [
+              "btcpay.store.canmodifystoresettings"
+            ],
+            "Basic": []
+          }
+        ]
+      }
+    },
     "/api/v1/apps/{appId}/sales": {
       "get": {
         "tags": [
@@ -2034,6 +2110,54 @@
         ]
       }
     },
+    "/api/v1/server/lightning/{cryptoCode}/histogram": {
+      "get": {
+        "tags": [
+          "Lightning (Internal Node)"
+        ],
+        "summary": "Get node balance histogram",
+        "parameters": [
+          {
+            "name": "cryptoCode",
+            "in": "path",
+            "required": true,
+            "description": "The cryptoCode of the lightning-node to query",
+            "schema": {
+              "type": "string"
+            },
+            "example": "BTC"
+          }
+        ],
+        "description": "View balance histogram of the lightning node",
+        "operationId": "InternalLightningNodeApi_GetHistogram",
+        "responses": {
+          "200": {
+            "description": "Lightning node balance histogram for off-chain funds",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HistogramData"
+                }
+              }
+            }
+          },
+          "503": {
+            "description": "Unable to access the lightning node"
+          },
+          "404": {
+            "description": "The lightning node configuration was not found"
+          }
+        },
+        "security": [
+          {
+            "API_Key": [
+              "btcpay.server.canuseinternallightningnode"
+            ],
+            "Basic": []
+          }
+        ]
+      }
+    },
     "/api/v1/server/lightning/{cryptoCode}/connect": {
       "post": {
         "tags": [
@@ -2809,6 +2933,63 @@
               "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/LightningNodeBalanceData"
+                }
+              }
+            }
+          },
+          "503": {
+            "description": "Unable to access the lightning node"
+          },
+          "404": {
+            "description": "The lightning node configuration was not found"
+          }
+        },
+        "security": [
+          {
+            "API_Key": [
+              "btcpay.store.canuselightningnode"
+            ],
+            "Basic": []
+          }
+        ]
+      }
+    },
+    "/api/v1/stores/{storeId}/lightning/{cryptoCode}/histogram": {
+      "get": {
+        "tags": [
+          "Lightning (Store)"
+        ],
+        "summary": "Get node balance histogram",
+        "parameters": [
+          {
+            "name": "cryptoCode",
+            "in": "path",
+            "required": true,
+            "description": "The cryptoCode of the lightning-node to query",
+            "schema": {
+              "type": "string"
+            },
+            "example": "BTC"
+          },
+          {
+            "name": "storeId",
+            "in": "path",
+            "required": true,
+            "description": "The store id with the lightning-node configuration to query",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "description": "View balance histogram of the lightning node",
+        "operationId": "StoreLightningNodeApi_GetHistogram",
+        "responses": {
+          "200": {
+            "description": "Lightning node balance histogram for off-chain funds",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HistogramData"
                 }
               }
             }
@@ -5220,11 +5401,12 @@
                   },
                   "payoutMethods": {
                     "type": "array",
-                    "description": "The list of supported payout methods supported by this pull payment. Available options can be queried from the `StorePaymentMethods_GetStorePaymentMethods` endpoint",
+                    "description": "The list of supported payout methods supported by this pull payment. Available options can be queried from the `StorePaymentMethods_GetStorePaymentMethods` endpoint. If `null`, all available payout methods will be supported.",
                     "items": {
                       "type": "string",
                       "example": "BTC"
-                    }
+                    },
+                    "nullable": true
                   }
                 }
               }
@@ -7186,6 +7368,56 @@
               "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/OnChainWalletOverviewData"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "If you are authenticated but forbidden to view the specified store"
+          },
+          "404": {
+            "description": "The key is not found for this store/wallet"
+          }
+        },
+        "security": [
+          {
+            "API_Key": [
+              "btcpay.store.canmodifystoresettings"
+            ],
+            "Basic": []
+          }
+        ]
+      }
+    },
+    "/api/v1/stores/{storeId}/payment-methods/{paymentMethodId}/wallet/histogram": {
+      "get": {
+        "tags": [
+          "Store Wallet (On Chain)"
+        ],
+        "summary": "Get store on-chain wallet balance histogram",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/PaymentMethodId"
+          },
+          {
+            "name": "storeId",
+            "in": "path",
+            "required": true,
+            "description": "The store to fetch",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "description": "View the balance histogram of the specified wallet",
+        "operationId": "StoreOnChainWallets_ShowOnChainWalletHistogram",
+        "responses": {
+          "200": {
+            "description": "specified wallet",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HistogramData"
                 }
               }
             }
@@ -10009,34 +10241,31 @@
             "type": "object",
             "properties": {
               "items": {
-                "type": "object",
+                "type": "array",
+                "items": {
+                  "$ref": "#/components/schemas/AppItem"
+                },
                 "description": "JSON object of app items",
                 "example": [
                   {
-                    "description": "Lovely, fresh and tender, Meng Ding Gan Lu ('sweet dew') is grown in the lush Meng Ding Mountains of the southwestern province of Sichuan where it has been cultivated for over a thousand years.",
                     "id": "green tea",
-                    "image": "~/img/pos-sample/green-tea.jpg",
-                    "price": {
-                      "type": 2,
-                      "formatted": "$1.00",
-                      "value": 1
-                    },
                     "title": "Green Tea",
+                    "description": "Lovely, fresh and tender, Meng Ding Gan Lu ('sweet dew') is grown in the lush Meng Ding Mountains of the southwestern province of Sichuan where it has been cultivated for over a thousand years.",
+                    "image": "~/img/pos-sample/green-tea.jpg",
+                    "price": "1.0",
+                    "priceType": "Fixed",
                     "buyButtonText": null,
                     "inventory": 5,
                     "paymentMethods": null,
                     "disabled": false
                   },
                   {
-                    "description": "Tian Jian Tian Jian means 'heavenly tippy tea' in Chinese, and it describes the finest grade of dark tea. Our Tian Jian dark tea is from Hunan province which is famous for making some of the best dark teas available.",
                     "id": "black tea",
-                    "image": "~/img/pos-sample/black-tea.jpg",
-                    "price": {
-                      "type": 2,
-                      "formatted": "$1.00",
-                      "value": 1
-                    },
                     "title": "Black Tea",
+                    "description": "Tian Jian Tian Jian means 'heavenly tippy tea' in Chinese, and it describes the finest grade of dark tea. Our Tian Jian dark tea is from Hunan province which is famous for making some of the best dark teas available.",
+                    "image": "~/img/pos-sample/black-tea.jpg",
+                    "price": "2.0",
+                    "priceType": "Fixed",
                     "buyButtonText": "Test Buy Button Text",
                     "inventory": null,
                     "paymentMethods": null,
@@ -10287,6 +10516,66 @@
             }
           }
         ]
+      },
+      "AppItem": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "example": "green-tea",
+            "description": "Unique ID of the item"
+          },
+          "title": {
+            "type": "string",
+            "example": "Green Tea",
+            "description": "The display name of the item"
+          },
+          "description": {
+            "type": "string",
+            "example": "Lovely, fresh and tender.",
+            "description": "A description text for the item"
+          },
+          "image": {
+            "type": "string",
+            "example": "http://teashop.com/img/green-tea.jpg",
+            "description": "An image URL for the item"
+          },
+          "price": {
+            "type": "string",
+            "format": "decimal",
+            "nullable": true,
+            "example": "21.0"
+          },
+          "priceType": {
+            "type": "string",
+            "x-enumNames": [
+              "Fixed",
+              "Minimum",
+              "Topup"
+            ],
+            "enum": [
+              "Fixed",
+              "Minimum",
+              "Topup"
+            ]
+          },
+          "buyButtonText": {
+            "type": "string",
+            "example": "Buy me!",
+            "description": "A custom text for the buy button for the item"
+          },
+          "inventory": {
+            "type": "integer",
+            "nullable": true,
+            "example": 21,
+            "description": "The remaining stock the item"
+          },
+          "disabled": {
+            "type": "boolean",
+            "description": "If true, the item does not appear in the list by default.",
+            "default": false
+          }
+        }
       },
       "AppSalesStats": {
         "type": "object",
@@ -10855,7 +11144,8 @@
             "nullable": true,
             "minimum": 0,
             "maximum": 100,
-            "description": "A percentage determining whether to count the invoice as paid when the invoice is paid within the specified margin of error. Defaults to the store's settings. (The default store settings is 100)"
+            "default": 0,
+            "description": "A percentage determining whether to count the invoice as paid when the invoice is paid within the specified margin of error. Defaults to the store's settings. (The default store settings is 0)"
           },
           "redirectURL": {
             "type": "string",
@@ -11175,6 +11465,49 @@
         "type": "string",
         "description": "Payout method IDs. Available payment method IDs for Bitcoin are:  \n- `\"BTC-CHAIN\"`: Onchain   \n-`\"BTC-LN\"`: Lightning",
         "example": "BTC-LN"
+      },
+      "HistogramData": {
+        "type": "object",
+        "description": "Histogram data for wallet balances over time",
+        "properties": {
+          "type": {
+            "type": "string",
+            "description": "The timespan of the histogram data",
+            "x-enumNames": [
+              "Month",
+              "Week",
+              "Year"
+            ],
+            "enum": [
+              "Month",
+              "Week",
+              "Year"
+            ],
+            "default": "Week"
+          },
+          "balance": {
+            "type": "string",
+            "format": "decimal",
+            "description": "The current wallet balance"
+          },
+          "series": {
+            "type": "array",
+            "description": "An array of historic balances of the wallet",
+            "items": {
+              "type": "string",
+              "format": "decimal",
+              "description": "The balance of the wallet at a specific time"
+            }
+          },
+          "labels": {
+            "type": "array",
+            "description": "An array of timestamps associated with the series data",
+            "items": {
+              "type": "integer",
+              "description": "UNIX timestamp of the balance snapshot"
+            }
+          }
+        }
       },
       "ConnectToNodeRequest": {
         "type": "object",
