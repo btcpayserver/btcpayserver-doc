@@ -17,7 +17,6 @@ Here you can find a non-exhaustive list of companies that provide such a service
 
 - [Nodl](https://www.nodl.it/)
 - [Hack0](https://www.dglab.com/en/works/hack0/)
-- [LightningInABox](https://lightninginabox.co/)
 - [MyNode](https://mynodebtc.com/)
 - [RaspiBlitz](https://raspiblitz.org/)
 - [Umbrel](https://umbrel.com/)
