@@ -103,13 +103,3 @@ When the user enters `chocolate` in the promo code field, the invoice amount wil
 By default, none of the user input will be shown on the invoice receipt. To do this, we must create a mapping for each field.
 * Create a field of type `fieldset`, with name `receiptData`.
 * For every field you wish to show in the receipt, create a field of type `mirror`, and set the `Field to mirror` to the field you wish to copy over to the receipt.
-
-## Support
-
-If you have trouble using BTCPay Server, consider joining the [BTCPay Server Mattermost](https://chat.btcpayserver.org) to get help from BTCPay community members.
-
-Only file a [Github issue](https://github.com/btcpayserver/btcpayserver/issues) for technical issues you can't resolve through other channels or feature requests you've validated with other community members.
-
-Please check out our [official website](https://btcpayserver.org/) and [FAQ](./FAQ/README.md#btcpay-frequently-asked-questions-and-common-issues) for more details.
-
-!!!include(supporters.html)!!!
