@@ -33,11 +33,11 @@ isUSB=$(fdisk -l | grep -c "/dev/sda:")
 if [ ${isSD} -eq 1 ] && [ ${isUSB} -eq 1 ]; then
   DEVICE_NAME="sda"
   PARTITION_NAME="sda1"
-  umount /dev/sda1
+  umount /dev/sda1 || { echo -e "\nUnable to unmount /dev/sda1 - Please make sure the device is not busy and try again" ; exit ; }
 elif [ ${isSD} -eq 1 ] && [ ${isNVMe} -eq 1 ]; then
   DEVICE_NAME="nvme0n1"
   PARTITION_NAME="nvme0n1p1"
-  umount /dev/nvme0n1p1
+  umount /dev/nvme0n1p1  || { echo -e "\nUnable to unmount /dev/nvme0n1p1 - Please make sure the device is not busy and try again" ; exit ; }
 fi
 
 if [ -n "${DEVICE_NAME}" ]; then
