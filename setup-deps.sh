@@ -35,7 +35,7 @@ update_external() {
   path="${file#${base}}"
   [[ $path = "Security.md" ]] && path="SECURITY.md"
   [[ $path = "README.md" || $path = "readme.md" || $path = "SECURITY.md" ]] && folder="" || folder="docs/"
-  content=$(cat "$file")
+  content=$(cat "$file" | tr -cd '\11\12\15\40-\176')
   # add frontmatter to omit edit links for external docs
   echo $'---\nexternalRepo: '"$repo"$'\neditLink: '"$edit/$folder$path"$'\n---\n'"$content" > "$file"
 }
@@ -423,7 +423,6 @@ cd "$KUKKS_DIR/Plugins/BTCPayServer.Plugins.SideShift"
 
 cp -r README.md "$DOCS_DIR/SideShift"
 for file in "$DOCS_DIR"/SideShift/*.md; do
-  sed -i 's/[^[:print:]\t]//g' "$file"
   update_external "$file" https://github.com/Kukks/BTCPayServerPlugins/tree/master/Plugins/BTCPayServer.Plugins.SideShift https://github.com/Kukks/BTCPayServerPlugins/edit/master/Plugins/BTCPayServer.Plugins.SideShift "$DOCS_DIR"/SideShift/
 done
 
@@ -445,7 +444,6 @@ cd "$KUKKS_DIR/Plugins/BTCPayServer.Plugins.DynamicReports"
 
 cp -r README.md "$DOCS_DIR/DynamicReports"
 for file in "$DOCS_DIR"/DynamicReports/*.md; do
-  sed -i 's/[^[:print:]\t]//g' "$file"
   update_external "$file" https://github.com/Kukks/BTCPayServerPlugins/tree/master/Plugins/BTCPayServer.Plugins.DynamicReports https://github.com/Kukks/BTCPayServerPlugins/edit/master/Plugins/BTCPayServer.Plugins.DynamicReports "$DOCS_DIR"/DynamicReports/
 done
 
@@ -467,7 +465,6 @@ cd "$ROCKSTAR_DIR/Plugins/BTCPayServer.RockstarDev.Plugins.Payroll"
 
 cp -r README.md "$DOCS_DIR/Payroll"
 for file in "$DOCS_DIR"/Payroll/*.md; do
-  sed -i 's/[^[:print:]\t]//g' "$file"
   update_external "$file" https://github.com/rockstardev/BTCPayServerPlugins.RockstarDev/tree/master/Plugins/BTCPayServer.RockstarDev.Plugins.Payroll https://github.com/rockstardev/BTCPayServerPlugins.RockstarDev/edit/master/Plugins/BTCPayServer.RockstarDev.Plugins.Payroll "$DOCS_DIR"/Payroll/
 done
 
