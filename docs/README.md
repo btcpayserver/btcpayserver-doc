@@ -27,7 +27,7 @@ footer: Content Released under MIT license.
 - [How to deploy BTCPay&nbsp;Server](./TryItOut.md)
 - [Wallet Setup](./WalletSetup.md)
 - [Lightning Network](./LightningNetwork.md)
-- [How to setup POS](./Apps.md#point-of-sale-app)
+- [How to setup POS](./Conference-PoS-guide.md)
 - [Greenfield API](./Development/GreenFieldExample.md)
 - [Frequently Asked Questions<br>and Common Issues](./FAQ/README.md)
 - [How to contribute to BTCPay&nbsp;Server](./Contribute/README.md)
