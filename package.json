@@ -27,7 +27,7 @@
     "prettier": "prettier --write '*.{js,json,md}' 'docs/**/*.{js,json,md}'"
   },
   "devDependencies": {
-    "@redocly/cli": "1.25.8",
+    "@redocly/cli": "1.25.11",
     "@vuepress/plugin-back-to-top": "1.9.10",
     "@vuepress/plugin-medium-zoom": "1.9.10",
     "esm": "3.2.25",
