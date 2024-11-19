@@ -6,46 +6,34 @@ tags:
   - eCommerce
 ---
 
-# BTCPay Server Integration with OpenCart: A Complete Guide
+# Accept Bitcoin payments in OpenCart
 
-[BTCPay Server](https://btcpayserver.org/) is a free and open-source cryptocurrency payment processor. It allows you receive payments in Bitcoin and altcoins directly into your wallet with no fees, transaction cost or a middleman.
+[BTCPay Server](https://btcpayserver.org/) is a free and open-source Bitcoin payment processor. It allows you receive payments directly into your wallet with no fees, or middleman.
 
- If you run an OpenCart store, integrate your store today with BTCPay Server to help expand your payment options, attract crypto-savvy customers, without paying a dime.
- 
-This guide covers the integration process for both OpenCart 3 and OpenCart 4, helping you set up BTCPay Server seamlessly.
+ If you run an OpenCart store, expand your market reach today without any additional marketing cost by integrating it with BTCPay Server to offer Bitcoin as a payment option.
 
 
-## Why Choose BTCPay Server: Unmatched Benefits for Your Payment Processing
+## Benefits of using BTCPay for OpenCart
 
-BTCPay Server is a non-custodial invoicing system that ensures complete control over your payments by eliminating third-party involvement. With the BTCPay Server OpenCart extension, payments are sent directly to your wallet, ensuring both privacy and security.
+1. **Fully Automated System:** Let BTCPay handle everything for you—payments, invoice management, and refunds—automatically.
 
-BTCPay Server can be deployed as a self-hosted solution on your server, or you can opt for a third-party host. The self-hosted option not only allows you to manage an unlimited number of stores and leverage the Lightning Network, it also gives you the flexibility to act as a payment processor for others.
+2. **Zero Fees:** BTCPay Server is free. That’s right—no transaction fees, no processing fees, ever.
 
-Other benefits of Using BTCPay Server with OpenCart include: 
+3. **Bitcoin QR Code at Checkout:** Enhance your customer’s experience with a simple and secure payment process by displaying a Bitcoin QR code for payment at checkout.
 
-1. **Zero Fees:** BTCPay Server offers a no fee payment gateway. That’s right—no transaction fees, no processing fees, ever.
+4. **Lightning Network Integration:** Enjoy instant, low-cost payments and payouts.
 
-2. **Direct Payments, No Middlemen:** Receive your funds directly into your wallet without intermediaries or tedious KYC procedures. Experience the freedom of peer-to-peer transactions.
+5. **Easy data exports:** Easily manage your financial reports with CSV export options.
 
-3. **Fully Automated System:** Let BTCPay handle everything for you—payments, invoice management, and refunds—automatically.
+6. **Versatile Plugin System:** Extend BTCPay’s functionality with a flexible plugin system tailored to your needs.
 
-4. **Bitcoin QR Code at Checkout:** Enhance your customer’s experience with a simple and secure payment process by displaying a Bitcoin QR code at checkout.
+7. **Point-of-Sale Integration:** Accept Bitcoin in physical stores with POS integration.
 
-5. **Self-Hosted Infrastructure:** Maintain full control over your payment gateway with a self-hosted solution, or opt for a third-party host if you prefer.
+8. **Multilingual Ready:** Serve your global audience in a language they understand
 
-6. **Lightning Network Integration:** Enjoy instant, low-cost payments and payouts with built-in support for the Lightning Network.
+9. **Self-Hosted Infrastructure:** Choose self-hosting for full control or a third-party host for convenience. Both provide the complete BTCPay experience.
 
-7. **Easy data exports:** Simplify your financial management with easy-to-use CSV export options.
-
-8. **Versatile Plugin System:** Customize and extend BTCPay’s functionality with a flexible plugin system tailored to your needs.
-
-9. **Point-of-Sale Integration:** Seamlessly accept Bitcoin and altcoin payments in your physical stores with our POS integration.
-
-10. **Multilingual Ready:** Serve your audience with a language they understand.
-
-11. **Altcoin Support:** BTCPay Server also supports a wide range of altcoins, providing flexibility for you and your customers.
-
-12. **Community-Driven Support:** Get help and advice from a dedicated community ([Mattermost](http://chat.btcpayserver.org/) or [Telegram](https://t.me/btcpayserver)).
+10. **Community-Driven Support:** Get help and advice from a dedicated community ([Mattermost](http://chat.btcpayserver.org/) or [Telegram](https://t.me/btcpayserver)).
 
 
 ## Requirements
