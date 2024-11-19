@@ -116,6 +116,7 @@ const sidebarUserGuide = [
     ['/Nopcommerce/', 'Nopcommerce'],
     ['/Odoo/', 'Odoo'],
     ['/OpenCart', 'OpenCart'],
+    ['/PhocaCart', 'PhocaCart'],
     ['/PrestaShop', 'PrestaShop'],
     ['/Shopify', 'Shopify'],
     ['/Shopware', 'Shopware'],
