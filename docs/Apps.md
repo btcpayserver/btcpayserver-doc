@@ -1,3 +1,5 @@
+https://blog.btcpayserver.org/btcpay-server-1-0-5-6/#simplePOS
+
 ---
 description: Apps allow users an easy way to extend BTCPay Server.
 tags:
