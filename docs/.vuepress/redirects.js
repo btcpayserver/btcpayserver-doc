@@ -115,6 +115,7 @@ module.exports = [
   { path: '/integrations/woocommerce', redirect: '/WooCommerce/' },
   { path: '/integrations/drupal', redirect: '/Drupal/' },
   { path: '/integrations/magento', redirect: '/Magento/' },
+  { path: '/integrations/phocacart', redirect: '/PhocaCart/' },
   { path: '/integrations/prestashop', redirect: '/PrestaShop/' },
   { path: '/integrations/virtuemart', redirect: '/VirtueMart/' },
   { path: '/integrations/opencart', redirect: '/OpenCart/' },
