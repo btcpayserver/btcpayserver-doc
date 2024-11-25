@@ -4,17 +4,13 @@ This article explains the **deployment of BTCPay Server through LunaNode Web-Wiz
 
 Their web-wizard is one of the easiest ways to **deploy BTCPay Servers from a very user-friendly interface**. This method is highly recommended if you don't have a lot of technical knowledge. LunaNode will provide you with a generic domain for your server to get you started. If you want to set up a custom domain you will need to have some comfort with the command line interface.
 
-For the price of around US$8.80 per month, you can have a **self-hosted BTCpay**, which includes a Bitcoin full node and Lightning Network node.
+For the price of around US$15.80 per month, you can have a **self-hosted BTCPay Server**, which includes a Bitcoin full node and Lightning Network node.
 
-The video below explains all the step and customization of BTCPay.
+The video from BTC Sessions below explains all the steps on deploying and setting up BTCPay Server as well how to setup the Lightning Network in different ways.
 
-[![BTCPay Server - LunaNode Web-Deployment](https://img.youtube.com/vi/NjslXYvp8bk/mqdefault.jpg)](https://www.youtube.com/watch?v=NjslXYvp8bk)
+[![How To Accept Bitcoin Payments by deploying BTCpay Server via Web-Deployment](https://img.youtube.com/vi/-GJr4XjRCPo/mqdefault.jpg)](https://www.youtube.com/watch?v=-GJr4XjRCPo)
 
-The installation is also covered in [this article](https://medium.com/@BtcpayServer/launch-btcpay-server-via-web-interface-and-deploy-full-bitcoin-node-lnd-in-less-than-a-minute-dc8bc6f06a3)
-
-The third video covers setting **BTCPay up on LunaNode**, but also goes in-depth on setting up wallets, store and apps.
-
-[![BTCPay Server - LunaNode Web-Deployment Video](https://img.youtube.com/vi/00YCc87RwnU/mqdefault.jpg)](https://www.youtube.com/watch?v=00YCc87RwnU)
+Alternatively, a short summary of just the deployment steps is also covered in [this article](https://medium.com/@BtcpayServer/launch-btcpay-server-via-web-interface-and-deploy-full-bitcoin-node-lnd-in-less-than-a-minute-dc8bc6f06a3)
 
 ## 1. Create the account and add credits
 
