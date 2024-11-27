@@ -9,7 +9,7 @@ export BTCPAYGEN_REVERSEPROXY="nginx"
 export BTCPAY_ENABLE_SSH=true
 
 # Upgrade OS packages to latest
-apt update && apt upgrade -y && apt autoremove
+apt update -y && apt upgrade -y && apt autoremove
 
 # Install Docker
 apt install apt-transport-https ca-certificates curl gnupg lsb-release -y
