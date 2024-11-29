@@ -28,17 +28,18 @@ Depending on the CMS you're using, you can easily connect BTCPay to your online 
 - [Magneto](./Magento.md)
 - [PrestaShop](./PrestaShop.md)
 - [Custom integration](./CustomIntegration.md)
+- [Wix](./Wix.md)
+- [Odoo](./Odoo.md)
+- [Big Commerce](./BigCommerce.md)
+- [Invoice Ninja](./InvoiceNinja.md)
+e.t.c
 
-## Connecting Additional BTCPay Services
+## Extending BTCPay Server: Plugins
 
-Additional free, open-source plugins can be used with your BTCPay.
+BTCPay Server is more than just a payment processor - it's your payment platform, built to flex how you need it. Plugins let you customize your BTCPay Server application, allowing you tailor your instance to suite your specific need.
 
-- [LibrePatron](https://github.com/JeffVandrewJr/patron)
-- [BTC Transmuter](https://github.com/btcpayserver/btcTransmuter/blob/master/README.md)
+Every project is different. Whether you're a freelancer, running a physical store, an online store, managing a creative project, whatever you're building, there's a good chance a plugin exists to solve your specific workflow challenge. Need something custom? Click on the `Manage Plugin` section on your BTCPay instance and find what plugin works for you. 
 
-**LibrePatron is a self-hosted, censorship-free, Patreon alternative**. LibrePatron uses BTCPay Server to receive Bitcoin payments on a recurring basis. Funds go directly to the creator's wallet. View LibrePatron instructions [here](https://blog.btcpayserver.org/librepatron-patreon-alternative/).
-
-**BTC Transmuter is a self-hosted service that allows you to automate your money and other tasks using BTCPay**. Create custom, automated processes using crypto service triggers based on BTCPay. Common use-cases are fiat integration, payment forwarding and email automation. Open lightning channels, detect payments and more, using blockchain data from your own nodes in BTCPay. View BTC Transmuter documentation [here](https://github.com/btcpayserver/btcTransmuter/blob/master/README.md).
 
 ## Join The BTCPay Community
 
