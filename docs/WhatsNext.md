@@ -36,7 +36,7 @@ e.t.c
 
 ## Extending BTCPay Server: Plugins
 
-BTCPay Server is more than just a payment processor - it's your payment platform, built to flex how you need it. Plugins let you customize your BTCPay Server application, allowing you tailor your instance to suite your specific need.
+BTCPay Server is more than just a payment processor - it's your payment platform, built to flex how you need it. Plugins let you customize your BTCPay Server application, allowing you tailor your instance to suit your specific need.
 
 Every project is different. Whether you're a freelancer, running a physical store, an online store, managing a creative project, whatever you're building, there's a good chance a plugin exists to solve your specific workflow challenge. Need something custom? Click on the `Manage Plugin` section on your BTCPay instance and find what plugin works for you. 
 
