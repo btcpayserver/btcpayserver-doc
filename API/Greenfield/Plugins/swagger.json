@@ -28,6 +28,35 @@
     "url": "https://docs.btcpayserver.org/API/Greenfield/v1/"
   },
   "components": {
+    "parameters": {
+      "StoreId": {
+        "name": "storeId",
+        "in": "path",
+        "required": true,
+        "description": "The store ID",
+        "schema": {
+          "$ref": "#/components/schemas/StoreId"
+        }
+      },
+      "InvoiceId": {
+        "name": "invoiceId",
+        "in": "path",
+        "required": true,
+        "description": "The invoice ID",
+        "schema": {
+          "type": "string"
+        }
+      },
+      "UserIdOrEmail": {
+        "name": "idOrEmail",
+        "in": "path",
+        "required": true,
+        "description": "The user's id or email",
+        "schema": {
+          "type": "string"
+        }
+      }
+    },
     "schemas": {
       "ValidationProblemDetails": {
         "type": "array",
@@ -109,6 +138,11 @@
         ],
         "format": "minutes",
         "description": "A span of times in minutes"
+      },
+      "StoreId": {
+        "type": "string",
+        "description": "Store ID of the item",
+        "example": "9CiNzKoANXxmk5ayZngSXrHTiVvvgCrwrpFQd4m2K776"
       },
       "PaymentMethodId": {
         "type": "string",
