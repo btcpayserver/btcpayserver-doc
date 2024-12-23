@@ -444,15 +444,7 @@
           "404": {
             "description": "POS app with specified ID was not found"
           }
-        },
-        "security": [
-          {
-            "API_Key": [
-              "btcpay.store.canmodifystoresettings"
-            ],
-            "Basic": []
-          }
-        ]
+        }
       }
     },
     "/api/v1/apps/crowdfund/{appId}": {
@@ -483,15 +475,7 @@
           "404": {
             "description": "Crowdfund app with specified ID was not found"
           }
-        },
-        "security": [
-          {
-            "API_Key": [
-              "btcpay.store.canmodifystoresettings"
-            ],
-            "Basic": []
-          }
-        ]
+        }
       }
     },
     "/api/v1/stores/{storeId}/apps/crowdfund": {
