@@ -119,6 +119,7 @@ const sidebarUserGuide = [
     ['/PhocaCart', 'PhocaCart'],
     ['/PrestaShop', 'PrestaShop'],
     ['/Shopify', 'Shopify'],
+    ['/ShopifyV2/', 'Shopify V2'],
     ['/Shopware', 'Shopware'],
     ['/Smartstore/', 'Smartstore'],
     ['/VirtueMart', 'VirtueMart'],
