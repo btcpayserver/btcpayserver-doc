@@ -4,6 +4,13 @@ Introducing BTCPay Server for Shopify – open-source payment gateway that enabl
 
 Our integration with Shopify allows you connect your self-hosted BTCPay Server with your [Shopify store](https://www.shopify.com/), enabling you accept Bitcoin payments swiftly and securely.
 
+:::warning
+
+⚠️ Shopify V1 Integration Deprecated
+
+New users can no longer use the Shopify V1 integration with BTCPay Server. Please refer to the [Shopify V2 integration guide](ShopifyV2/README.md) for instructions on setting up BTCPay Server with Shopify. Existing users experiencing issues with the V1 integration are encouraged to report them via ([Mattermost](http://chat.btcpayserver.org/) or [Telegram](https://t.me/btcpayserver)), and plan a migration to V2.
+:::
+
 
 ## What BTCPay offers:
 
