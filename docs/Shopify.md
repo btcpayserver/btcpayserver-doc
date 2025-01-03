@@ -8,7 +8,8 @@ Our integration with Shopify allows you connect your self-hosted BTCPay Server w
 
 ⚠️ Shopify V1 Integration Deprecated
 
-New users can no longer use the Shopify V1 integration with BTCPay Server. Please refer to the [Shopify V2 integration guide](ShopifyV2/README.md) for instructions on setting up BTCPay Server with Shopify. Existing users experiencing issues with the V1 integration are encouraged to report them via ([Mattermost](http://chat.btcpayserver.org/) or [Telegram](https://t.me/btcpayserver)), and plan a migration to V2.
+New users can no longer use the Shopify V1 integration with BTCPay Server. Please refer to the [Shopify V2 integration guide](ShopifyV2/README.md) for instructions on setting up BTCPay Server with Shopify. 
+Existing users experiencing issues with the V1 integration are encouraged to open an issue on our [Github repository](https://github.com/btcpayserver/btcpayserver) or report them via [Mattermost](http://chat.btcpayserver.org/) or [Telegram](https://t.me/btcpayserver), and plan a migration to V2.
 :::
 
 
