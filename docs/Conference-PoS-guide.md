@@ -113,7 +113,7 @@ In a [November 2024 PR](https://github.com/btcpayserver/btcpayserver/pull/6415),
 2. Navigate to `/plugins/dynamicrateslimiter` (**Server Settings -> Dynamic Reports -> Rate Limits**).
 3. Click on **Add Rate Limit** and enter the following value: `zone=publicinvoices rate=9999r/m burst=500 nodelay`
 
-[Rate Limiting configuration setup for zone=publicinvoices](./img/conference-pos-guide/rate-limiting.png)
+![Rate Limiting configuration setup for zone=publicinvoices](./img/conference-pos-guide/rate-limiting.png)
 
 This change allows anyone to create up to 9999 invoices per minute from any IP. For this reason, completing **Step 6** (logging in users on devices) is the recommended approach.
 
