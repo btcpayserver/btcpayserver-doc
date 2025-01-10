@@ -1,6 +1,6 @@
 # Setting up BTCPay Server for Conference / Event / Local Community
 
-We will be going through the setup we used at [Bitcoin Atlantis](https://blog.btcpayserver.org/case-study-bitcoin-atlantis/), [Bitcoin Hong Kong](https://bitcoinmagazine.com/business/case-study-enabling-bitcoin-as-a-medium-of-exchange-at-the-bitcoin-asia-conference-in-hong-kong) and other conferences for a great user experience for attendees and merchants.
+We will be going through the setup we used at [Bitcoin Atlantis](https://blog.btcpayserver.org/case-study-bitcoin-atlantis/), [Bitcoin Hong Kong](https://bitcoinmagazine.com/business/case-study-enabling-bitcoin-as-a-medium-of-exchange-at-the-bitcoin-asia-conference-in-hong-kong), [Bitcoin Nashville](https://x.com/BtcpayServer/status/1856410949797683379) and other conferences for a great user experience for attendees and merchants.
 
 For Point of Sale (PoS) devices we use the [Bitcoinize](https://bitcoinize.com/) devices with receipt printer (but you can use any other Android-based PoS device).
 
@@ -18,7 +18,7 @@ To get an overview of the whole setup and steps you can watch our workshop from 
 [[toc]]
 
 ##  Initial setup
-- Setup BTCPay Server v1.13.2 or later on a VPS (with public IP)
+- Setup BTCPay Server v2.0.5 or later on a VPS (with public IP)
 - Setup a subdomain or use one provided by VPS hosting (e.g. Lunanode)
 - Register the admin account and create a first test store
 - Do [FastSync](https://docs.btcpayserver.org/Docker/fastsync/) (optional)
@@ -92,7 +92,7 @@ Setup the Lightning wallet to be connected to the merchants' Blink account, foll
 - Ensure you hear the sound after the payment
 - Tap on "**View receipt**" button, test printing the receipt by selecting the **POSPrinter** from the dropdown, tap on the "**Print**" button
 
-### 6. Give merchants access to the payment history (optional)
+### 6. Give merchants access to the payment history (optional, but recommended)
 
 Optionally you can also create a login for each store/merchant on the PoS device so they can access the payment history. This is helpful to double-check what was the last payment or if a payment was already made. You can do so by adding a "Merchant" role with the following permissions:
 - btcpay.store.canmodifyinvoices
@@ -102,6 +102,20 @@ Optionally you can also create a login for each store/merchant on the PoS device
 - btcpay.store.cancreatenonapprovedpullpayments
 
 After that create a user for each store and assign them to the right store.
+
+### 7. Increase Rate Limits if You Haven't Logged in Merchants on Devices (Optional)
+
+By default, the `create invoice` endpoint is throttled by IP to 4 requests per minute for public requests. If you are sharing an IP across multiple POS devices, you may encounter issues where more than 4 invoices cannot be created simultaneously during stress testing.
+
+In a [November 2024 PR](https://github.com/btcpayserver/btcpayserver/pull/6415), we ensured that this throttling does not apply to logged-in users. Therefore, if you completed **Step 6**, this issue won’t affect you. However, if you prefer not to log in users on each device, you can increase the rate limit as follows:
+
+1. Go to **Manage Plugins** on your BTCPay Server instance and install the **Dynamic Rate Limit** plugin by Kukks.
+2. Navigate to `/plugins/dynamicrateslimiter` (**Server Settings -> Dynamic Reports -> Rate Limits**).
+3. Click on **Add Rate Limit** and enter the following value: `zone=publicinvoices rate=9999r/m burst=500 nodelay`
+
+![Rate Limiting configuration setup for zone=publicinvoices](./img/conference-pos-guide/rate-limiting.png)
+
+This change allows anyone to create up to 9999 invoices per minute from any IP. For this reason, completing **Step 6** (logging in users on devices) is the recommended approach.
 
 ## Setup a Bolt Cards provider
 
