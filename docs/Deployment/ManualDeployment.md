@@ -59,6 +59,7 @@ On my Ubuntu 20.04 (See [these instructions](https://docs.microsoft.com/en-us/do
 wget https://packages.microsoft.com/config/ubuntu/20.04/packages-microsoft-prod.deb -O packages-microsoft-prod.deb
 sudo dpkg -i packages-microsoft-prod.deb
 rm packages-microsoft-prod.deb
+sudo add-apt-repository ppa:dotnet/backports
 
 # Install the SDK
 sudo apt-get update
