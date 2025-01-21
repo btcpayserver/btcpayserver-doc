@@ -6039,7 +6039,7 @@
     "/api/v1/stores/{storeId}/payment-methods": {
       "get": {
         "tags": [
-          "Store Payment Methods"
+          "Store (Payment Methods)"
         ],
         "summary": "Get store payment methods",
         "description": "View information about the stores' configured payment methods",
@@ -6115,7 +6115,7 @@
     "/api/v1/stores/{storeId}/payment-methods/{paymentMethodId}": {
       "get": {
         "tags": [
-          "Store Payment Methods"
+          "Store (Payment Methods)"
         ],
         "summary": "Get store payment method",
         "description": "View information about the stores' configured payment method",
@@ -6180,7 +6180,7 @@
       },
       "put": {
         "tags": [
-          "Store Payment Methods"
+          "Store (Payment Methods)"
         ],
         "summary": "Update store's payment method",
         "description": "Update information about the stores' configured payment method",
@@ -6245,7 +6245,7 @@
       },
       "delete": {
         "tags": [
-          "Store Payment Methods"
+          "Store (Payment Methods)"
         ],
         "summary": "Delete store's payment method",
         "description": "Delete information about the stores' configured payment method",
@@ -9394,6 +9394,18 @@
                 "example": true,
                 "nullable": true
               },
+              "htmlLang": {
+                "type": "string",
+                "description": "Used for SEO, the [HTML Lang](https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/lang) of the page",
+                "nullable": true,
+                "example": "en"
+              },
+              "htmlMetaTags": {
+                "type": "string",
+                "description": "Used for SEO, the [Meta tags](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/meta) of the page",
+                "nullable": true,
+                "example": "<meta name=\"description\" content=\"Your description\">"
+              },
               "formId": {
                 "type": "string",
                 "description": "Form ID to request customer data",
@@ -9615,6 +9627,18 @@
                   "#0000FF"
                 ],
                 "nullable": true
+              },
+              "htmlLang": {
+                "type": "string",
+                "description": "Used for SEO, the [HTML Lang](https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/lang) of the page",
+                "nullable": true,
+                "example": "en"
+              },
+              "htmlMetaTags": {
+                "type": "string",
+                "description": "Used for SEO, the [Meta tags](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/meta) of the page",
+                "nullable": true,
+                "example": "<meta name=\"description\" content=\"Your description\">"
               },
               "formId": {
                 "type": "string",
@@ -13571,7 +13595,7 @@
       "description": "Store Emails operations"
     },
     {
-      "name": "Store Payment Methods",
+      "name": "Store (Payment Methods)",
       "description": "Store Payment Methods operations"
     },
     {
