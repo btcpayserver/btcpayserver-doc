@@ -367,7 +367,7 @@ done
 
 # Odoo
 
-echo "Setup dependency: Odoo 16 and 17"
+echo "Setup dependency: Odoo 16, 17 and 18"
 
 rm -rf "$DOCS_DIR/Odoo"
 mkdir -p "$DOCS_DIR/Odoo"
@@ -375,13 +375,13 @@ mkdir -p "$DOCS_DIR/Odoo"
 if [ ! -d "$ODOO_DIR" ]; then
   git clone https://github.com/btcpayserver/odoo.git "$ODOO_DIR"
 else
-  cd "$ODOO_DIR" && git checkout 17.0 && git pull
+  cd "$ODOO_DIR" && git checkout 18.0 && git pull
 fi
 
 cd "$ODOO_DIR"
 cp -r payment_btcpayserver/README.md "$DOCS_DIR/Odoo"
 for file in "$DOCS_DIR"/Odoo/*.md; do
-  update_external "$file" https://github.com/btcpayserver/odoo https://github.com/btcpayserver/odoo/edit/17.0 "$DOCS_DIR"/Odoo/
+  update_external "$file" https://github.com/btcpayserver/odoo https://github.com/btcpayserver/odoo/edit/18.0 "$DOCS_DIR"/Odoo/
 done
 
 # Kukks' plugins
