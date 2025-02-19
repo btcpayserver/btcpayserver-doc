@@ -38,7 +38,7 @@ First we will create a new app in the Shopify partner portal. Make sure you are 
 2. Once created displays your "Client ID" and "Client secret", which we need in a minute. Please note them down or come back to this page later.
    ![Shopify-App: client id and secret](./img/shopifyv2/partner-app_client-id-secret.png)
 3. Click on the shopify partner logo on the to return to partners dashboard
-4. At the bottom of the page, click on "Settings"
+4. At the bottom of the page, click on "Settings"   
    ![partners_settings.png](./img/shopifyv2/partners_settings.png)
 5. Scroll down to the bottom section of "CLI Token" and click on "Manage tokens"
    ![partners_settings-cli-token.png](./img/shopifyv2/partners_settings-cli-token.png)
@@ -125,7 +125,7 @@ Now it's time to install your Shopify app to the Shopify store (which will link 
 6. You can click on the link to double-check that the app is properly connected to your BTCPay Server. (The last section has now also a green checkmark)
    ![app-deploy_plugin-all-green.png](./img/shopifyv2/app-deploy_plugin-all-green.png)
 
-7. On your shopify dashboard, click on `Settings`, which is located on the bottom of the left nav panel, select `Checkout` and then `Customize`.
+7. On your shopify dashboard, click on `Settings`, which is located on the bottom of the left nav panel, select `Checkout` and then `Customize`.   
    ![App Setup: Step 7.1](./img/shopifyv2/app-setup_step-4-1.png)
    ![App Setup: Step 7.2](./img/shopifyv2/app-setup_step-4-2.png)
 8. In the editor change the selected page to the "Thank you" page.
