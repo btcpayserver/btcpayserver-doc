@@ -169,13 +169,13 @@ Customer gets redirected to the "Thank you"-page where the payment button is sho
 ![Shopify Thank you page with pay button](./img/shopifyv2/complete_payment.png)
 
 Customer clicks on "Complete payment" and gets redirected to BTCPay payment page:
-![BTCPay Server shopify step 35](./img/shopifyv2/payment_invoice.png)
+![Customer click on complete payment](./img/shopifyv2/btcpay_checkout.png)
 
-Customer pays the invoice:
-![BTCPay Server shopify step 36](./img/shopifyv2/paid_invoice.png)
+Customer pays the invoice and clicks on return to merchant:
+![Customer paid invoice](./img/shopifyv2/invoice_paid.png)
 
-Customer can now close BTCPay Server page and go back to the "Thank-you"-page in Shopify:
-![BTCPay Server shopify step 32](./img/shopifyv2/complete_payment.png)
+Customer gets redirected to Shopify order status page:
+![Order status page after payment](./img/shopifyv2/order_status_page_after_payment.png)
 
 ---
 
@@ -185,5 +185,58 @@ In your BTCPay Server store you can see the paid invoice:
 When you click on it you can see the payment details:
 ![BTCPay Server shopify step 38](./img/shopifyv2/invoice_payment_details.png)
 
+
+## Troubleshooting
+
+### How to update BTCPay Shopify app?
+
+When you see or hear that the [BTCPay Shopify app](https://github.com/btcpayserver/shopify-app) has been updated, you can push the new version to your store by following these steps:
+
+First we need to get a new CLI token (in case you don't have it anymore, or it expired) from the [Shopify partner portal](https://partners.shopify.com).
+
+#### Get a new CLI token
+1. Log into the Shopify Partner Portal
+2. At the bottom of the page, click on "Settings"   
+   ![Partner dashboard Settings](./img/shopifyv2/partners_settings.png)
+3. Scroll down to the bottom section of "CLI Token" and click on "Manage tokens"
+   ![Settings CLI Token](./img/shopifyv2/partners_settings-cli-token.png)
+4. On top right click on "Generate new token"
+   ![Create CLI Token](./img/shopifyv2/partners_create-cli-token.png)
+5. In the modal popup keep the default and click on "Generate token"
+   ![Select CLI Token validity duration](./img/shopifyv2/partners_create-cli-token-duration.png)
+6. Copy the CLI token. This token is only shown once.
+   ![CLI Token was created successfully](./img/shopifyv2/partners_cli-token-created.png)
+
+#### SSH into your BTCPay Server
+
+We now log into our BTCPay Server and run the update script so all the latest docker images (including BTCPay Shopify app) are downloaded.
+
+```bash
+# if you are not root user, switch to root
+sudo su -
+
+# go to the BTCPay Server docker directory
+cd $BTCPAY_BASE_DIRECTORY
+cd btcpayserver-docker
+
+# run the update script
+./btcpay-update.sh
+```
+
+#### Update the BTCPay Shopify app
+
+1. Log into your BTCPay Server
+2. Select your store that is connected with Shopify
+3. On the left sidebar click on `Shopify v2`
+4. Expand the second section "Deploy the app"
+5. Paste the CLI token and click on "Deploy App"
+![plugin_update-app--deploy.png](./img/shopifyv2/plugin_update-app--deploy.png)
+6. You will see some console output and the section will close if all went well
+![plugin_update-app--console.png](./img/shopifyv2/plugin_update-app--console.png)
+![plugin_update-app--finished.png](./img/shopifyv2/plugin_update-app--finished.png)
+
+Congratulations, you have now updated the BTCPay Shopify app.
+
+## Support and community
 
 Feel free to join our support channel over at [Mattermost](https://chat.btcpayserver.org/) or [Telegram](https://t.me/btcpayserver) if you need help or have any further questions.
