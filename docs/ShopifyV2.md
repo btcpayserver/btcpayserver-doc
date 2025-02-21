@@ -134,13 +134,16 @@ Now it's time to install your Shopify app to the Shopify store (which will link 
 1. On your shopify dashboard, click on `Settings`, which is located on the bottom of the left nav panel, select `Checkout` and then `Customize`.   
    ![Store steup: settings](./img/shopifyv2/app-setup_step-4-1.png)
    ![Store setup: settings customize checkout](./img/shopifyv2/app-setup_step-4-2.png)
-2. Click on the `Apps` icon on the left panel
+2. In the editor change the selected page to the "Thank you" page.   
+   ![Store setup: switch to thank you page](./img/shopifyv2/app-setup_step-5-1.png)   
+   ![Store setup: thank you page](./img/shopifyv2/app-setup_step-5-2.png)
+3. Click on the `Apps` icon on the left panel
    ![App Setup: Step 9](./img/shopifyv2/app-setup_step-6.png)
-3. Click on the (+) sign on the listed "BTCPay Checkout" app and then on the "Thank you" page listed.
+4. Click on the (+) sign on the listed "BTCPay Checkout" app and then on the "Thank you" page listed.
    ![App Setup: Step 10](./img/shopifyv2/app-setup_step-7.png)
-4. You will now see the extension got added to your "Thank you" page. Click `save` in the top right corner.
+5. You will now see the extension got added to your "Thank you" page. Click `save` in the top right corner.
    ![App Setup: Step 11](./img/shopifyv2/app-setup_step-8.png)
-5. To double-check all is working, click on the left arrow `<` next to "BTCPay Checkout" and verify it is listed in the "Order details section".
+6. To double-check all is working, click on the left arrow `<` next to "BTCPay Checkout" and verify it is listed in the "Order details section".
    ![App Setup: Step 12.1](./img/shopifyv2/app-setup_step-9-1.png)
    ![App Setup: Step 12.2](./img/shopifyv2/app-setup_step-9-2.png)
 
