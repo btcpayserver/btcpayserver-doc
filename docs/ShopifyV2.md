@@ -24,15 +24,17 @@ Our integration with Shopify allows you to connect your self-hosted BTCPay Serve
 
 Before diving into the setup process, ensure you have the following:
 
-- Shopify account and store setup
-- [A Shopify partner account](https://www.shopify.com/partners)
-- BTCPay Server - [self-hosted](Deployment.md) or run by a [third-party host](/Deployment/ThirdPartyHosting.md) v2.0.0 or later.
+- [Shopify](https://www.shopify.com/) account and store setup
+- An active Shopify subscription plan (at least Basic Shopify plan)
+- [A Shopify partner account](https://www.shopify.com/partners) (it's free to register)
+- BTCPay Server - [self-hosted](Deployment.md) or run by a [third-party host](/Deployment/ThirdPartyHosting.md) * v2.0.6 or later.
 - [Created BTCPay Server store](CreateStore.md) with [wallet set up](WalletSetup.md)
 
+* Please note that if you are on a 3rd-party host, they need to have activated the shopify fragment and enabled the Shopify v2 plugin for you. Otherwise it won't be available in your BTCPay Server.
 
 ## Set up a Shopify app
 
-First we will create a new app in the Shopify partner portal. Make sure you are registered as a [Shopify partner](https://www.shopify.com/partners).
+First we will create a new app in the Shopify partner portal. Make sure you are registered as a [Shopify partner](https://www.shopify.com/partners) (it's free to register).
 
 1. On Shopify Partner [dashboard](https://partners.shopify.com), click on `Apps` > `All Apps` > `Create App` > `Create app manually`. Enter the name you want to call the app (e.g. BTCPay Server) and click `Create`.
 2. Once created displays your "Client ID" and "Client secret", which we need in a minute. Please note them down or come back to this page later.
@@ -53,7 +55,7 @@ First we will create a new app in the Shopify partner portal. Make sure you are 
 ## Deploy the Shopify-BTCPay-app on your BTCPay Server
 
 :::tip
-For the instructions below to work you need to be the admin of your own BTCPay Server instance. If you are on a 3rd-party host then their admin needs to have activated the shopify fragment and enabled the Shopify plugin for you.
+For the instructions below to work you need to be the admin of your own BTCPay Server instance. If you are on a 3rd-party host then their admin needs to have activated the shopify fragment and enabled the Shopify v2 plugin for you, otherwise it won't be available to you.
 :::
 
 ### Deploy the Shopify fragment
@@ -150,13 +152,14 @@ One last step is to set up a custom payment method in Shopify to display the Bit
    ![Create payment method step 1](./img/shopifyv2/pm_step_1.png)
 2. In `Custom payment method name` fill in something like `Pay with Bitcoin (BTCPay Server)` (also see TIP box below), optionally you can fill in other fields, but it's not required.
    However, you would need to inform your customers that payment with Bitcoin comes on the next screen after checkout on the "Thank you" page. Ideally you would inform your customers in the `Additional details` field.
-   The payment option can have a slight delay before it shows on the "Thank you" page, we suggest to communicate that to the customers. Suggested text: `Please note that the Bitcoin payment option will be displayed on the "Thank you" page after a few seconds. If it does not show up after 5-10 seconds please contact our support.`
+   The payment option can have a slight delay before it shows on the "Thank you" page, we suggest to communicate that to the customers. Suggested text: `Please note that the Bitcoin payment button "Complete payment" will be displayed on the "Thank you"-page. Please click on it to complete the payment.`
+   :::tip
+   "Custom Payment method name" **must** contain at least one of the following words (case-insensitive): `bitcoin`, `btcpayserver`, `btcpay server` or `btc` to work.
+   :::
 3. Hit `Activate` and you've set up Shopify and BTCPay Server payment method successfully.
    ![Create payment method step 2 and 3](./img/shopifyv2/pm_step_2_and_3.png)
 
-:::tip
-"Custom Payment method name" **must** contain at least one of the following words (case-insensitive): `bitcoin`, `btcpayserver`, `btcpay server` or `btc` to work.
-:::
+
 
 Congratulations! You have successfully installed the BTCPay-Shopify app and set up the payment method on your Shopify store. You are ready to go. See the demo checkout flow below.
 
