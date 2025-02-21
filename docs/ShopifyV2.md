@@ -56,6 +56,8 @@ First we will create a new app in the Shopify partner portal. Make sure you are 
 For the instructions below to work you need to be the admin of your own BTCPay Server instance. If you are on a 3rd-party host then their admin needs to have activated the shopify fragment and enabled the Shopify plugin for you.
 :::
 
+### Deploy the Shopify fragment
+
 1. Log into your BTCPay Server via SSH
 2. Run the following commands:
 
@@ -125,21 +127,20 @@ Now it's time to install your Shopify app to the Shopify store (which will link 
 6. You can click on the link to double-check that the app is properly connected to your BTCPay Server. (The last section has now also a green checkmark)
    ![app-deploy_plugin-all-green.png](./img/shopifyv2/app-deploy_plugin-all-green.png)
 
-7. On your shopify dashboard, click on `Settings`, which is located on the bottom of the left nav panel, select `Checkout` and then `Customize`.   
-   ![App Setup: Step 7.1](./img/shopifyv2/app-setup_step-4-1.png)
-   ![App Setup: Step 7.2](./img/shopifyv2/app-setup_step-4-2.png)
-8. In the editor change the selected page to the "Thank you" page.
-   ![App Setup: Step 8.1](./img/shopifyv2/app-setup_step-5-1.png)
-   ![App Setup: Step 8.2](./img/shopifyv2/app-setup_step-5-2.png)
-9. Click on the `Apps` icon on the left panel
+## Customize the "Thank you" page
+
+1. On your shopify dashboard, click on `Settings`, which is located on the bottom of the left nav panel, select `Checkout` and then `Customize`.   
+   ![Store steup: settings](./img/shopifyv2/app-setup_step-4-1.png)
+   ![Store setup: settings customize checkout](./img/shopifyv2/app-setup_step-4-2.png)
+2. Click on the `Apps` icon on the left panel
    ![App Setup: Step 9](./img/shopifyv2/app-setup_step-6.png)
-10. Click on the (+) sign on the listed "BTCPay Checkout" app and then on the "Thank you" page listed.
-    ![App Setup: Step 10](./img/shopifyv2/app-setup_step-7.png)
-11. You will now see the extension got added to your "Thank you" page. Click `save` in the top right corner.
-    ![App Setup: Step 11](./img/shopifyv2/app-setup_step-8.png)
-12. To double-check all is working, click on the left arrow `<` next to "BTCPay Checkout" and verify it is listed in the "Order details section".
-    ![App Setup: Step 12.1](./img/shopifyv2/app-setup_step-9-1.png)
-    ![App Setup: Step 12.2](./img/shopifyv2/app-setup_step-9-2.png)
+3. Click on the (+) sign on the listed "BTCPay Checkout" app and then on the "Thank you" page listed.
+   ![App Setup: Step 10](./img/shopifyv2/app-setup_step-7.png)
+4. You will now see the extension got added to your "Thank you" page. Click `save` in the top right corner.
+   ![App Setup: Step 11](./img/shopifyv2/app-setup_step-8.png)
+5. To double-check all is working, click on the left arrow `<` next to "BTCPay Checkout" and verify it is listed in the "Order details section".
+   ![App Setup: Step 12.1](./img/shopifyv2/app-setup_step-9-1.png)
+   ![App Setup: Step 12.2](./img/shopifyv2/app-setup_step-9-2.png)
 
 ## Set up a custom payment method in Shopify
 
@@ -147,7 +148,7 @@ One last step is to set up a custom payment method in Shopify to display the Bit
 
 1. Go back to your dashboard, click on `Settings` >> `Payments` in the left sidebar, scroll down to "Manual payment methods", click on `(+) Manual payment method` and select `Create custom payment method` on the dropdown.
    ![Create payment method step 1](./img/shopifyv2/pm_step_1.png)
-2. In `Custom payment method name` fill in `Bitcoin with BTCPay Server` (also see TIP box below), optionally you can fill in other fields, but it's not required.
+2. In `Custom payment method name` fill in something like `Pay with Bitcoin (BTCPay Server)` (also see TIP box below), optionally you can fill in other fields, but it's not required.
    However, you would need to inform your customers that payment with Bitcoin comes on the next screen after checkout on the "Thank you" page. Ideally you would inform your customers in the `Additional details` field.
    The payment option can have a slight delay before it shows on the "Thank you" page, we suggest to communicate that to the customers. Suggested text: `Please note that the Bitcoin payment option will be displayed on the "Thank you" page after a few seconds. If it does not show up after 5-10 seconds please contact our support.`
 3. Hit `Activate` and you've set up Shopify and BTCPay Server payment method successfully.
