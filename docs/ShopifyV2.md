@@ -153,13 +153,8 @@ One last step is to set up a custom payment method in Shopify to display the Bit
 2. In `Custom payment method name` fill in something like `Pay with Bitcoin (BTCPay Server)` (also see TIP box below), optionally you can fill in other fields, but it's not required.
    However, you would need to inform your customers that payment with Bitcoin comes on the next screen after checkout on the "Thank you" page. Ideally you would inform your customers in the `Additional details` field.
    The payment option can have a slight delay before it shows on the "Thank you" page, we suggest to communicate that to the customers. Suggested text: `Please note that the Bitcoin payment button "Complete payment" will be displayed on the "Thank you"-page. Please click on it to complete the payment.`
-   :::tip
-   "Custom Payment method name" **must** contain at least one of the following words (case-insensitive): `bitcoin`, `btcpayserver`, `btcpay server` or `btc` to work.
-   :::
 3. Hit `Activate` and you've set up Shopify and BTCPay Server payment method successfully.
    ![Create payment method step 2 and 3](./img/shopifyv2/pm_step_2_and_3.png)
-
-
 
 Congratulations! You have successfully installed the BTCPay-Shopify app and set up the payment method on your Shopify store. You are ready to go. See the demo checkout flow below.
 
