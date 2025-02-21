@@ -475,9 +475,6 @@ echo "Setup dependency: Tobses' plugins"
 rm -rf "$DOCS_DIR/BigCommerce"
 mkdir -p "$DOCS_DIR/BigCommerce"
 
-rm -rf "$DOCS_DIR/ShopifyV2"
-mkdir -p "$DOCS_DIR/ShopifyV2"
-
 if [ ! -d "$TOBSES_DIR" ]; then
   git clone --depth 1 https://github.com/TChukwuleta/BTCPayServerPlugins.git "$TOBSES_DIR"
 else
@@ -489,13 +486,6 @@ cd "$TOBSES_DIR/Plugins/BTCPayServer.Plugins.BigCommercePlugin"
 cp -r README.md "$DOCS_DIR/BigCommerce"
 for file in "$DOCS_DIR"/BigCommerce/*.md; do
   update_external "$file" https://github.com/TChukwuleta/BTCPayServerPlugins/tree/main/Plugins/BTCPayServer.Plugins.BigCommercePlugin https://github.com/TChukwuleta/BTCPayServerPlugins/edit/main/Plugins/BTCPayServer.Plugins.BigCommercePlugin "$DOCS_DIR"/BigCommerce/
-done
-
-cd "$TOBSES_DIR/Plugins/BTCPayServer.Plugins.ShopifyPlugin"
-
-cp -r README.md img "$DOCS_DIR/ShopifyV2"
-for file in "$DOCS_DIR"/ShopifyV2/*.md; do
-  update_external "$file" https://github.com/TChukwuleta/BTCPayServerPlugins/tree/main/Plugins/BTCPayServer.Plugins.ShopifyPlugin https://github.com/TChukwuleta/BTCPayServerPlugins/edit/main/Plugins/BTCPayServer.Plugins.ShopifyPlugin "$DOCS_DIR"/ShopifyV2/
 done
 
 # Swagger
