@@ -247,6 +247,13 @@ cd btcpayserver-docker
 
 Congratulations, you have now updated the BTCPay Shopify app.
 
+### I can't create a new app in the Shopify partner portal
+Check if you profile on the top right says "null null". This means you did not enter your first and last name in the profile. You need to fill out those fields and it should work.
+1. Click on your profile on the top right
+2. Select "Your profile"
+3. Enter "First name" and "Last name"
+4. Return to shopify partners and it should work now
+
 ## Support and community
 
 Feel free to join our support channel over at [Mattermost](https://chat.btcpayserver.org/) or [Telegram](https://t.me/btcpayserver) if you need help or have any further questions.
