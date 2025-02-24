@@ -19,6 +19,9 @@ Our integration with Shopify allows you to connect your self-hosted BTCPay Serve
 - **Multilingual ready**: Serve a global audience right out of the box.
 - **Community-driven support**: Get responsive assistance from our dedicated community ([Mattermost](http://chat.btcpayserver.org/) or [Telegram](https://t.me/btcpayserver)).
 
+:::warning
+This is more simplified of the previous Shopify V2 documentation (available from 30th December 2024 until 23rd February 2025) that required you to deploy the shopify app on a separate VPS. Now the app is deployed directly on your BTCPay Server and the BTCPay Shopify plugin has been changed. Everybody should switch to this setup as it is the only one we will maintain in the future.
+:::
 
 ## Prerequisites:
 
@@ -71,6 +74,9 @@ sudo su -
 cd $BTCPAY_BASE_DIRECTORY
 cd btcpayserver-docker
 
+# make sure you have latest btcpayserver-docker commits
+git pull
+
 # add the shopify fragment to your BTCPay Server
 export BTCPAYGEN_ADDITIONAL_FRAGMENTS="$BTCPAYGEN_ADDITIONAL_FRAGMENTS;opt-add-shopify"
 
@@ -93,6 +99,8 @@ We can now proceed with installing the BTCPay Server Shopify plugin.
 2. After that, scroll to the top and click on the "Restart now" link to restart BTCPay.
 ![plugin_install-restart.png](./img/shopifyv2/plugin_install-restart.png)
 
+BTCPay Server will restart which can take a few minutes. 
+
 ### Configure BTCPay Server Shopify plugin
 1. Make sure your store is selected at the top, then on the left sidebar click on `Shopify v2`
 2. In the first of 3 sections you will need to enter the `Client ID`, `Client Secret` from [Shopify app setup](#set-up-a-shopify-app) above. Click on "Save"
@@ -110,7 +118,7 @@ We can now proceed with installing the BTCPay Server Shopify plugin.
 
 Now it's time to install your Shopify app to the Shopify store (which will link your store to your BTCPay Server).
 
-1. On your partner account app overview, select the app you just created, click on `Choose distribution` and select `Custom distribution`. Confirm the selection.
+1. On your [partner account](https://partners.shopify.com/) app overview, select the app you just created, click on `Choose distribution` and select `Custom distribution`. Confirm the selection.
     :::tip
     Please note that selecting custom distribution means that you can only use the app one Shopify store. This is irreversible. You can deploy multiple apps though if you have more than one store.
     :::
@@ -120,13 +128,13 @@ Now it's time to install your Shopify app to the Shopify store (which will link 
 2. On the next screen enter the Shopify store URL that you want to link the application to. This is typically the internal store url you see on configuring the store, e.g. your-store.myshopify.com.
     Make sure to uncheck "Allow multi-store install for one Plus organization"
     ![App install: enter your store url](./img/shopifyv2/app-deploy_distribution-generate-link.png)
-3. Click on `Generate link` and you will see a link generated.
+3. Click on `Generate link` and you will see a link generated. Copy that link and put it into your browser to start the installation.
    ![App install: link generated](./img/shopifyv2/app-deploy_distribution-generated-link-copy.png)
-4. You will see your app listed and you can now install it by clicking on `Install`.
+4. You will see your app listed and you can now install it by clicking on `Install`. (If you are not logged in you need to log in first)
    ![app-deploy_distribution-install-to-store-confirm.png](./img/shopifyv2/app-deploy_distribution-install-to-store-confirm.png)
 5. Once installed, you will see the app page with the message "Shopify plugin successfully configured"
    ![app-deploy_install-successful.png](./img/shopifyv2/app-deploy_install-successful.png)
-6. You can click on the link to double-check that the app is properly connected to your BTCPay Server. (The last section has now also a green checkmark)
+6. (Optional) You can click on the link at the bottom line "You can navigate to your plugin's settings page by clicking here." to double-check that the app is properly connected to your BTCPay Server. (The last section has now also a green checkmark)
    ![app-deploy_plugin-all-green.png](./img/shopifyv2/app-deploy_plugin-all-green.png)
 
 ## Customize the "Thank you" page
@@ -141,7 +149,7 @@ Now it's time to install your Shopify app to the Shopify store (which will link 
    ![App Setup: Step 9](./img/shopifyv2/app-setup_step-6.png)
 4. Click on the (+) sign on the listed "BTCPay Checkout" app and then on the "Thank you" page listed.
    ![App Setup: Step 10](./img/shopifyv2/app-setup_step-7.png)
-5. You will now see the extension got added to your "Thank you" page. Click `save` in the top right corner.
+5. You will now see the extension got added to your "Thank you" page. **Important**: Click "Save" in the top right corner.
    ![App Setup: Step 11](./img/shopifyv2/app-setup_step-8.png)
 6. To double-check all is working, click on the left arrow `<` next to "BTCPay Checkout" and verify it is listed in the "Order details section".
    ![App Setup: Step 12.1](./img/shopifyv2/app-setup_step-9-1.png)
@@ -238,6 +246,13 @@ cd btcpayserver-docker
 ![plugin_update-app--finished.png](./img/shopifyv2/plugin_update-app--finished.png)
 
 Congratulations, you have now updated the BTCPay Shopify app.
+
+### I can't create a new app in the Shopify partner portal
+Check if you profile on the top right says "null null". This means you did not enter your first and last name in the profile. You need to fill out those fields and it should work.
+1. Click on your profile on the top right
+2. Select "Your profile"
+3. Enter "First name" and "Last name"
+4. Return to shopify partners and it should work now
 
 ## Support and community
 
