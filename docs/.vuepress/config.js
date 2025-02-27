@@ -110,6 +110,7 @@ const sidebarUserGuide = [
     children: [
     ['/BigCommerce/', 'Big Commerce'],
     ['/Drupal/', 'Drupal'],
+    ['/Ecwid/', 'Ecwid'],
     ['/Grandnode/', 'Grandnode'],
     ['/InvoiceNinja', 'Invoice Ninja'],
     ['/Magento', 'Magento'],
