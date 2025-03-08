@@ -5609,6 +5609,90 @@
         ]
       }
     },
+    "/api/v1/server/email": {
+      "get": {
+        "tags": [
+          "ServerEmail"
+        ],
+        "summary": "Get server email settings",
+        "description": "Retrieve the email settings configured for the server. The password field will be masked if present.",
+        "operationId": "ServerEmail_GetSettings",
+        "responses": {
+          "200": {
+            "description": "Server email settings",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/GetServerEmailSettings"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden - Insufficient permissions"
+          }
+        },
+        "security": [
+          {
+            "API_Key": [
+              "btcpay.server.canmodifyserversettings"
+            ],
+            "Basic": []
+          }
+        ]
+      },
+      "put": {
+        "tags": [
+          "ServerEmail"
+        ],
+        "summary": "Update server email settings",
+        "description": "Update server's email settings.",
+        "operationId": "ServerEmail_UpdateSettings",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UpdateServerEmailSettings"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Server email settings",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/GetServerEmailSettings"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Invalid request or email format",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden - Insufficient permissions"
+          }
+        },
+        "security": [
+          {
+            "API_Key": [
+              "btcpay.server.canmodifyserversettings"
+            ],
+            "Basic": []
+          }
+        ]
+      }
+    },
     "/api/v1/server/info": {
       "get": {
         "tags": [
@@ -5704,7 +5788,7 @@
             "$ref": "#/components/parameters/StoreId"
           }
         ],
-        "description": "View email settings of the specified store",
+        "description": "Retrieve the email settings configured for specific store. The password field will be masked if present.",
         "operationId": "Stores_GetStoreEmailSettings",
         "responses": {
           "200": {
@@ -5712,7 +5796,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/EmailSettingsData"
+                  "$ref": "#/components/schemas/GetEmailSettings"
                 }
               }
             }
@@ -5750,7 +5834,7 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/EmailSettingsData"
+                "$ref": "#/components/schemas/UpdateEmailSettings"
               }
             }
           },
@@ -5763,7 +5847,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/EmailSettingsData"
+                  "$ref": "#/components/schemas/GetEmailSettings"
                 }
               }
             }
@@ -5810,7 +5894,22 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/EmailData"
+                "type": "object",
+                "additionalProperties": false,
+                "properties": {
+                  "email": {
+                    "type": "string",
+                    "description": "Email of the recipient"
+                  },
+                  "subject": {
+                    "type": "string",
+                    "description": "Subject of the email"
+                  },
+                  "body": {
+                    "type": "string",
+                    "description": "Body of the email to send as plain text."
+                  }
+                }
               }
             }
           },
@@ -11809,6 +11908,38 @@
           }
         }
       },
+      "UpdateServerEmailSettings": {
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/UpdateEmailSettings"
+          },
+          {
+            "type": "object",
+            "properties": {
+              "enableStoresToUseServerEmailSettings": {
+                "type": "boolean",
+                "description": "Indicates if stores can use server email settings"
+              }
+            }
+          }
+        ]
+      },
+      "GetServerEmailSettings": {
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/GetEmailSettings"
+          },
+          {
+            "type": "object",
+            "properties": {
+              "enableStoresToUseServerEmailSettings": {
+                "type": "boolean",
+                "description": "Indicates if stores can use server email settings"
+              }
+            }
+          }
+        ]
+      },
       "ApplicationServerInfoData": {
         "type": "object",
         "properties": {
@@ -11888,57 +12019,67 @@
           }
         }
       },
-      "EmailData": {
-        "type": "object",
-        "additionalProperties": false,
-        "properties": {
-          "email": {
-            "type": "string",
-            "description": "Email of the recipient"
+      "UpdateEmailSettings": {
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/EmailSettingsBase"
           },
-          "subject": {
-            "type": "string",
-            "description": "Subject of the email"
-          },
-          "body": {
-            "type": "string",
-            "description": "Body of the email to send as plain text."
+          {
+            "type": "object",
+            "properties": {
+              "password": {
+                "type": "string",
+                "description": "SMTP password. Keep null or empty to not update it.",
+                "nullable": true,
+                "example": "MyS3cr3t"
+              }
+            }
           }
-        }
+        ]
       },
-      "EmailSettingsData": {
+      "GetEmailSettings": {
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/EmailSettingsBase"
+          },
+          {
+            "type": "object",
+            "properties": {
+              "passwordSet": {
+                "type": "boolean",
+                "description": "`true` if the password has been set."
+              }
+            }
+          }
+        ]
+      },
+      "EmailSettingsBase": {
         "type": "object",
-        "additionalProperties": false,
         "properties": {
+          "from": {
+            "type": "string",
+            "description": "The sender email address",
+            "example": "sender@gmail.com"
+          },
           "server": {
             "type": "string",
-            "description": "Smtp server host"
+            "description": "SMTP server host",
+            "example": "smtp.gmail.com"
           },
           "port": {
-            "type": "number",
-            "description": "Smtp server port"
+            "type": "integer",
+            "description": "SMTP server port",
+            "example": 587
           },
           "login": {
             "type": "string",
-            "description": "Smtp server username"
-          },
-          "password": {
-            "type": "string",
-            "description": "Smtp server password"
-          },
-          "from": {
-            "type": "string",
-            "format": "email",
-            "description": "Email to send from"
-          },
-          "fromDisplay": {
-            "type": "string",
-            "description": "The name of the sender"
+            "description": "SMTP username",
+            "example": "John.Smith"
           },
           "disableCertificateCheck": {
             "type": "boolean",
-            "default": false,
-            "description": "Disable TLS certificate security checks"
+            "description": "Disable TLS certificate security checks",
+            "example": false
           }
         }
       },
@@ -13585,6 +13726,10 @@
     {
       "name": "Pull payments payout (Public)",
       "description": "Pull payments payout (Public) operations"
+    },
+    {
+      "name": "ServerEmail",
+      "description": "Server Email Settings operations"
     },
     {
       "name": "ServerInfo",
