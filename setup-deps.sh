@@ -17,6 +17,7 @@ TROCADOR_DIR="$BASE_DIR/deps/trocador"
 LNDHUBAPI_DIR="$BASE_DIR/deps/lndhub-api"
 KUKKS_DIR="$BASE_DIR/deps/kukks"
 TOBSES_DIR="$BASE_DIR/deps/tobses"
+NISABA_DIR="$BASE_DIR/deps/nisaba"
 SMARTSTORE_DIR="$BASE_DIR/deps/smartstore"
 DRUPAL_DIR="$BASE_DIR/deps/drupal"
 GRANDNODE_DIR="$BASE_DIR/deps/grandnode"
@@ -487,6 +488,29 @@ cp -r README.md "$DOCS_DIR/BigCommerce"
 for file in "$DOCS_DIR"/BigCommerce/*.md; do
   update_external "$file" https://github.com/TChukwuleta/BTCPayServerPlugins/tree/main/Plugins/BTCPayServer.Plugins.BigCommercePlugin https://github.com/TChukwuleta/BTCPayServerPlugins/edit/main/Plugins/BTCPayServer.Plugins.BigCommercePlugin "$DOCS_DIR"/BigCommerce/
 done
+
+# Nisaba plugins
+
+echo "Setup dependency: Nisaba plugins"
+
+rm -rf "$DOCS_DIR/Ecwid"
+mkdir -p "$DOCS_DIR/Ecwid"
+
+if [ ! -d "$NISABA_DIR" ]; then
+  git clone --depth 1 https://github.com/Nisaba/btcpayserver-plugins.git "$NISABA_DIR"
+else
+  cd "$NISABA_DIR" && git checkout master && git pull
+fi
+
+# Ecwid
+cd "$NISABA_DIR/BTCPayServer.Plugins.Ecwid"
+
+cp -r README.md "$DOCS_DIR/Ecwid"
+cp -r docs/ "$DOCS_DIR/Ecwid"
+for file in "$DOCS_DIR"/Ecwid/*.md; do
+  update_external "$file" https://github.com/Nisaba/btcpayserver-plugins/master/Plugins/BTCPayServer.Plugins.Ecwid https://github.com/Nisaba/btcpayserver-plugins/edit/master/BTCPayServer.Plugins.Ecwid "$DOCS_DIR"/Ecwid/
+done
+
 
 # Swagger
 
