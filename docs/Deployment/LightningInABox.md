@@ -1,9 +1,5 @@
 # Hardware Deployment
 
-[Lightning in a Box](https://lightninginabox.co)
-"Your hardware. Your node. Your keys. Your Bitcoin".
-
-
 In order for your Bitcoin experience to be truly self-sovereign and trustless you should consider **running nodes on your own hardware** and internet connection.
 **BTCPay Server is an excellent way to run both Bitcoin & Lightning nodes**.
 Not only are you validating transactions you also get the ability to accept base layer Bitcoin and second layer Lightning payments.
