@@ -210,6 +210,34 @@ When you click on it you can see the payment details:
 ![BTCPay Server shopify step 38](./img/shopifyv2/invoice_payment_details.png)
 
 
+## FAQ
+
+- What happens when an invoice is Invalid? The sum of confirmed payments up to the expiration is reflected on Shopify
+
+- What if I mark an invoice as invalid in my BTCPay Server? BTCPay does nothing, so the Shopify order stays pending. 
+
+- What happens when an invoice is settled manually on BTCPay Server? The Shopify order is marked as fully paid in Shopify.
+
+- What happens if the customer didn't pay? When the BTCPay invoice expires, the Shopify order is voided, and stock is returned.
+
+- What happens if the customer did pay, but with insufficient fees for confirmation in a reasonable time? The BTCPay invoice becomes Invalid, and the Shopify order remains Payment Pending.
+
+- What if the customer paid partially? The BTCPay invoice expires. The Shopify order stays Payment Pending or is marked Partially Paid based on confirmed payments at expiration.
+
+- How to avoid partial payments? Partial payments often happen when customers pay from exchanges that deduct fees. You can set a small [underpayment tolerance](https://docs.btcpayserver.org/FAQ/Stores/#consider-the-invoice-paid-even-if-the-paid-amount-is-less-than-expected) in your store's settings to avoid this.
+
+- How can I reshare an invoice link if the customer didn’t complete the payment? BTCPay Server stores the invoice link in Shopify order metafields when BTCPay is the selected payment method. 
+
+Retrieve metafields using Shopify’s API:
+```pwsh
+https://{SHOPNAME}.myshopify.com/admin/api/{VERSION}/orders/{ORDER-ID}/metafields.json
+```
+More details:
+1. [Shopify GraphQL API - Order Metafields](https://shopify.dev/docs/api/admin-graphql/latest/objects/Order#fields-metafields)
+2. [Shopify REST API - Order Metafields](https://shopify.dev/docs/api/admin-rest/2025-01/resources/metafield#get-orders-order-id-metafields). 
+
+
+
 ## Troubleshooting
 
 ### How to update BTCPay Shopify app?
