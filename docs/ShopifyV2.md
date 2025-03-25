@@ -37,22 +37,36 @@ Before diving into the setup process, ensure you have the following:
 
 ## Set up a Shopify app
 
-First we will create a new app in the Shopify partner portal. Make sure you are registered as a [Shopify partner](https://www.shopify.com/partners) (it's free to register).
+First, you need to setup a payment method on your [Shopify](https://www.shopify.com/) account.
+
+1. In your Shopify admin page, click on `Settings` > `Payments` in the left sidebar, scroll down to "Manual payment methods", click on `(+) Manual payment method` and select `Create custom payment method` on the dropdown.
+2. In `Custom payment method name` fill in `Bitcoin with BTCPay Server`, optionally you can fill in other fields, but it's not required.
+3. Hit `Activate` and you've set up a payment method successfully.
+
+:::tip
+"Custom Payment method name" **must** contain at least one of the following words (case-insensitive): `bitcoin`, `btcpayserver`, `btcpay server` or `btc` to work.
+:::
+
+
+Next we will create a new app in the Shopify partner portal. Make sure you are registered as a [Shopify partner](https://www.shopify.com/partners) (it's free to register).
 
 1. On Shopify Partner [dashboard](https://partners.shopify.com), click on `Apps` > `All Apps` > `Create App` > `Create app manually`. Enter the name you want to call the app (e.g. BTCPay Server) and click `Create`.
 2. Once created displays your "Client ID" and "Client secret", which we need in a minute. Please note them down or come back to this page later.
    ![Shopify-App: client id and secret](./img/shopifyv2/partner-app_client-id-secret.png)
-3. Click on the shopify partner logo on the to return to partners dashboard
-4. At the bottom of the page, click on "Settings"   
+3. While in your just created app page, select API access on the left menu, scroll down to `Allow network access in checkout and account UI extensions` and grant network access. You should see the following screen once network access is granted 
+   ![Shopify-App: Partner app network access](./img/shopifyv2/partner_app_network_access.png)
+4. Click on the shopify partner logo on the to return to partners dashboard
+5. At the bottom of the page, click on "Settings"   
    ![partners_settings.png](./img/shopifyv2/partners_settings.png)
-5. Scroll down to the bottom section of "CLI Token" and click on "Manage tokens"
+6. Scroll down to the bottom section of "CLI Token" and click on "Manage tokens"
    ![partners_settings-cli-token.png](./img/shopifyv2/partners_settings-cli-token.png)
-6. On top right click on "Generate new token"
+7. On top right click on "Generate new token"
    ![partners_create-cli-token.png](./img/shopifyv2/partners_create-cli-token.png)
-7. In the modal popup keep the default and click on "Generate token"
+8. In the modal popup keep the default and click on "Generate token"
    ![partners_create-cli-token-duration.png](./img/shopifyv2/partners_create-cli-token-duration.png)
-8. Copy the token and note it next to client ID and client secret from above. This token is only shown once.
+. Copy the token and note it next to client ID and client secret from above. This token is only shown once.
    ![partners_cli-token-created.png](./img/shopifyv2/partners_cli-token-created.png)
+
 
 
 ## Deploy the Shopify-BTCPay-app on your BTCPay Server
@@ -194,6 +208,34 @@ In your BTCPay Server store you can see the paid invoice:
 
 When you click on it you can see the payment details:
 ![BTCPay Server shopify step 38](./img/shopifyv2/invoice_payment_details.png)
+
+
+## FAQ
+
+- What happens when an invoice is Invalid? The sum of confirmed payments up to the expiration is reflected on Shopify
+
+- What if I mark an invoice as invalid in my BTCPay Server? BTCPay does nothing, so the Shopify order stays pending. 
+
+- What happens when an invoice is settled manually on BTCPay Server? The Shopify order is marked as fully paid in Shopify.
+
+- What happens if the customer didn't pay? When the BTCPay invoice expires, the Shopify order is voided, and stock is returned.
+
+- What happens if the customer did pay, but with insufficient fees for confirmation in a reasonable time? The BTCPay invoice becomes Invalid, and the Shopify order remains Payment Pending.
+
+- What if the customer paid partially? The BTCPay invoice expires. The Shopify order stays Payment Pending or is marked Partially Paid based on confirmed payments at expiration.
+
+- How to avoid partial payments? Partial payments often happen when customers pay from exchanges that deduct fees. You can set a small [underpayment tolerance](https://docs.btcpayserver.org/FAQ/Stores/#consider-the-invoice-paid-even-if-the-paid-amount-is-less-than-expected) in your store's settings to avoid this.
+
+- How can I reshare an invoice link if the customer didn’t complete the payment? BTCPay Server stores the invoice link in Shopify order metafields when BTCPay is the selected payment method. 
+
+Retrieve metafields using Shopify’s API:
+```pwsh
+https://{SHOPNAME}.myshopify.com/admin/api/{VERSION}/orders/{ORDER-ID}/metafields.json
+```
+More details:
+1. [Shopify GraphQL API - Order Metafields](https://shopify.dev/docs/api/admin-graphql/latest/objects/Order#fields-metafields)
+2. [Shopify REST API - Order Metafields](https://shopify.dev/docs/api/admin-rest/2025-01/resources/metafield#get-orders-order-id-metafields). 
+
 
 
 ## Troubleshooting
