@@ -453,8 +453,8 @@ done
 
 echo "Setup dependency: Rockstar' plugins"
 
-rm -rf "$DOCS_DIR/Payroll"
-mkdir -p "$DOCS_DIR/Payroll"
+rm -rf "$DOCS_DIR/VendorPay"
+mkdir -p "$DOCS_DIR/VendorPay"
 
 if [ ! -d "$ROCKSTAR_DIR" ]; then
   git clone --depth 1 https://github.com/rockstardev/BTCPayServerPlugins.RockstarDev.git "$ROCKSTAR_DIR"
@@ -464,9 +464,9 @@ fi
 
 cd "$ROCKSTAR_DIR/Plugins/BTCPayServer.RockstarDev.Plugins.Payroll"
 
-cp -r README.md "$DOCS_DIR/Payroll"
-for file in "$DOCS_DIR"/Payroll/*.md; do
-  update_external "$file" https://github.com/rockstardev/BTCPayServerPlugins.RockstarDev/tree/master/Plugins/BTCPayServer.RockstarDev.Plugins.Payroll https://github.com/rockstardev/BTCPayServerPlugins.RockstarDev/edit/master/Plugins/BTCPayServer.RockstarDev.Plugins.Payroll "$DOCS_DIR"/Payroll/
+cp -r README.md "$DOCS_DIR/VendorPay"
+for file in "$DOCS_DIR"/VendorPay/*.md; do
+  update_external "$file" https://github.com/rockstardev/BTCPayServerPlugins.RockstarDev/tree/master/Plugins/BTCPayServer.RockstarDev.Plugins.Payroll https://github.com/rockstardev/BTCPayServerPlugins.RockstarDev/edit/master/Plugins/BTCPayServer.RockstarDev.Plugins.Payroll "$DOCS_DIR"/VendorPay/
 done
 
 # Tobe' plugins
@@ -475,6 +475,9 @@ echo "Setup dependency: Tobses' plugins"
 
 rm -rf "$DOCS_DIR/BigCommerce"
 mkdir -p "$DOCS_DIR/BigCommerce"
+
+rm -rf "$DOCS_DIR/Ghost"
+mkdir -p "$DOCS_DIR/Ghost"
 
 if [ ! -d "$TOBSES_DIR" ]; then
   git clone --depth 1 https://github.com/TChukwuleta/BTCPayServerPlugins.git "$TOBSES_DIR"
@@ -487,6 +490,13 @@ cd "$TOBSES_DIR/Plugins/BTCPayServer.Plugins.BigCommercePlugin"
 cp -r README.md "$DOCS_DIR/BigCommerce"
 for file in "$DOCS_DIR"/BigCommerce/*.md; do
   update_external "$file" https://github.com/TChukwuleta/BTCPayServerPlugins/tree/main/Plugins/BTCPayServer.Plugins.BigCommercePlugin https://github.com/TChukwuleta/BTCPayServerPlugins/edit/main/Plugins/BTCPayServer.Plugins.BigCommercePlugin "$DOCS_DIR"/BigCommerce/
+done
+
+cd "$TOBSES_DIR/Plugins/BTCPayServer.Plugins.GhostPlugin"
+
+cp -r README.md img "$DOCS_DIR/Ghost"
+for file in "$DOCS_DIR"/Ghost/*.md; do
+  update_external "$file" https://github.com/TChukwuleta/BTCPayServerPlugins/tree/main/Plugins/BTCPayServer.Plugins.GhostPlugin https://github.com/TChukwuleta/BTCPayServerPlugins/edit/main/Plugins/BTCPayServer.Plugins.GhostPlugin "$DOCS_DIR"/Ghost/
 done
 
 # Nisaba plugins
