@@ -122,6 +122,7 @@ module.exports = [
   { path: '/integrations/shopware', redirect: '/Shopware/' },
   { path: '/integrations/customintegration', redirect: '/CustomIntegration/' },
   { path: '/Shopify', redirect: '/ShopifyV2' },
+  { path: '/shopify', redirect: '/ShopifyV2' },
   // Development
   { path: '/development', redirect: '/Development/Architecture/' },
   { path: '/development/architecture', redirect: '/Development/Architecture/' },
