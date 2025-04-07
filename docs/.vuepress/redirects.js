@@ -121,6 +121,7 @@ module.exports = [
   { path: '/integrations/opencart', redirect: '/OpenCart/' },
   { path: '/integrations/shopware', redirect: '/Shopware/' },
   { path: '/integrations/customintegration', redirect: '/CustomIntegration/' },
+  { path: '/Shopify', redirect: '/ShopifyV2' },
   // Development
   { path: '/development', redirect: '/Development/Architecture/' },
   { path: '/development/architecture', redirect: '/Development/Architecture/' },
