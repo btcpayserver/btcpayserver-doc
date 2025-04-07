@@ -44,7 +44,7 @@ Key Path: 48'/0'/21'/2'
 ### Inviting Additional Signers
 
 1. Go to `Settings` > `Users`.
-2. Add each participant’s email address and share the generated invite link with them directly. If you have Email SMTP in your server, they'll receive an inite email.
+2. Add each participant’s email address and share the generated invite link with them directly. If you have Email SMTP in your server, they'll receive an invite email.
 3. Instruct participants to:
    - Accept the invitation
    - Create a BTCPay Server Store
@@ -92,8 +92,7 @@ To receive updates on multisig activity:
 - Signature Collected
 - Transaction Broadcasted
 
-This ensures all participants receive email when the new transaction is created, requires their signature and finally broadcasted sucessfully.
-
+This ensures all participants receive email when the new transaction is created, requires their signature and finally broadcasted successfully.
 ## Step 4: Send a transaction from the multisig wallet
 
 1. Go to your multisig wallet
@@ -101,14 +100,12 @@ This ensures all participants receive email when the new transaction is created,
 3. Click `Create Pending Transaction`
 4. Participants will not receive an email if you followed the Step 3.
 
-## Step 5. Signing a mutli-sig transaction:
-
+## Step 5. Signing a multi-sig transaction:
 1. In wallet transaction list, you will see a pending transaction.
 2. Click on `View`
 3.  If you're signing with a hardware wallet, connect your hardware wallet and ensure BTCPay Vault is running
-2. Click Sign
-3. Follow on-screen and device prompts to sign the transaction
-
+4. Click Sign
+5. Follow on-screen and device prompts to sign the transaction
 Once the required number of signatures is collected, click Broadcast to send the transaction.
 
 Congratulations! You’ve sent your first multisig transaction using BTCPay Server.
