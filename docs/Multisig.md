@@ -61,6 +61,7 @@ After collecting all required public keys, (e.g., 2-of-3 setup), proceed as foll
 4.  Click `Continue` to validate and preview the derived addresses. You can validate the preview via external software wallet, or simply by testing in the final step of this document.
 
 An example of your multisig could look like this:
+
 ```
 2-of-xpub6Eh12KpYoorF2phGJErUqk6A9SSezH2VBHZnVPMdk1diUgraoYpgTsAsWKiNfzFc73MKVqfvMymtqR8UBf2stztAFj8SWk2EML87WotrDfx-xpub6FChbvMdDCViWxLKu2PfSKkndZgNquGLVF3AxJAKmhrqYzzagtp7T9a6Jq9y6uWQVTNsa8UTRkgD1Erxt15hzbAaDuWUVy55LDtMDLem7EK-xpub6Ddo52iB3E3QUniDwsbMyGQVsYCCzyNdV4ULCFSeUw6h3LW4hYYcZsFAni8E5wEuMRuwr6fPtTrvRswitivuBmhiwwQ7dXyu6ibaKbcMMRy
 ```
