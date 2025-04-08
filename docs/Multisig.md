@@ -1,6 +1,6 @@
 # MultiSig support in BTCPay Server
 
-BTCPay Server v2.1.0 introduced refined support for multi signature (multisig) wallets designed to empower your  setup with added security, collaboration, and flexibility.
+BTCPay Server v2.1.0 introduced refined support for multi signature (multisig) wallets designed to empower your setup with added security, collaboration, and flexibility.
 
 This document provides step-by-step instructions for configuring and utilizing multisig wallets within your BTCPay Server instance.
 
@@ -37,9 +37,9 @@ The following explains how to get required public key from the hardware wallet. 
 Example value:
 
 ```
-xpub6Eh12KpYoorF2phGJErUqk6A9SSezH2VBHZnVPMdk1diUgraoYpgTsAsWKiNfzFc73MKVqfvMymtqR8UBf2stztAFj8SWk2EML87WotrDfx
-Root Fingerprint: a919595d
-Key Path: 48'/0'/21'/2'
+xpub6CUGRUonZSQ4TWtTMmzXdrXDtypWKiKp5KUMRmD9YgoWDbEVpLFgje71pRAVBPX6DCmV9HNTLr8GHqKZANvNcFpSZe3kiKsH5Ej7ApG1NVDK
+Root Fingerprint: abcdef21
+Key Path: 48'/0'/0'/0'
 ```
 ### Inviting Additional Signers
 
@@ -51,6 +51,8 @@ Key Path: 48'/0'/21'/2'
    - Use XpubExtractor to provide their xpub information
 4. They should save data for their wallets and share them with you.
 
+Please note that, for now, you must invite users as Store `Owners`. We plan to implement additional roles and permissions in the future to reduce the trust factor for those you invite to the multisig store. You can [track the status of this implementation on GitHub](https://github.com/btcpayserver/btcpayserver/issues/6651).
+
 ## Step 2: Create the Multisignature Wallet
 
 After collecting all required public keys, (e.g., 2-of-3 setup), proceed as follows:
@@ -58,15 +60,15 @@ After collecting all required public keys, (e.g., 2-of-3 setup), proceed as foll
 1. Go to `Bitcoin Wallets`.
 2. Select `Connect an existing wallet` > `Enter extended public key`.
 3. Choose `Show multisig examples` and input the collected xpubs in the required format.
-4.  Click `Continue` to validate and preview the derived addresses. You can validate the preview via external software wallet, or simply by testing in the final step of this document.
+4. Click `Continue` to validate and preview the derived addresses. You can validate the preview via external software wallet, or simply by testing in the final step of this document.
 
 An example of your multisig could look like this:
 
 ```
-2-of-xpub6Eh12KpYoorF2phGJErUqk6A9SSezH2VBHZnVPMdk1diUgraoYpgTsAsWKiNfzFc73MKVqfvMymtqR8UBf2stztAFj8SWk2EML87WotrDfx-xpub6FChbvMdDCViWxLKu2PfSKkndZgNquGLVF3AxJAKmhrqYzzagtp7T9a6Jq9y6uWQVTNsa8UTRkgD1Erxt15hzbAaDuWUVy55LDtMDLem7EK-xpub6Ddo52iB3E3QUniDwsbMyGQVsYCCzyNdV4ULCFSeUw6h3LW4hYYcZsFAni8E5wEuMRuwr6fPtTrvRswitivuBmhiwwQ7dXyu6ibaKbcMMRy
+2-of-xpub6BosLW1vGZLkCW7NrgUQdREa7i3a7XJXnAMQzA3aJCEuEt8hXNRu2yG6Vxq2YvCCu8n2eUpZhVz5Zw3eQro2d5Wq8UdD2qhM1YG4ZcnC3kYd-xpub6FHVXph13QMR77fUMLREpN2L7D1fCqcVtzsGhM28jUy5CWTpYHDuN6gvN5Gi5rxJjL45AgXLhSzE27AHZkDwKZgTYaUmYc9rBoF2tuAgf6M-xpub6CJ61yVNhtEtcpS7pU8Jjpd1NHgAG6xWv1NG4b47SvhhVVqfzFrHdcDUpm96B2ftov3qd5uoy6b7bEVcdxQwK6R7T5ndJP8vTWTdS6RBn7Jr
 ```
 
-This means 2 out of 3 listed signatures are required to authorize  a transaction. 
+This means 2 out of 3 listed signatures are required to authorize a transaction. 
 
 Next, adjust wallet settings to ensure proper compatability with various formats and easier signing.
 
