@@ -44,6 +44,11 @@ First we will create a new app in the Shopify partner portal. Make sure you are 
    ![Shopify-App: client id and secret](./img/shopifyv2/partner-app_client-id-secret.png)
 3. While in your just created app page, select API access on the left menu, scroll down to `Allow network access in checkout and account UI extensions` and grant network access. You should see the following screen once network access is granted 
    ![Shopify-App: Partner app network access](./img/shopifyv2/partner_app_network_access.png)
+
+:::tip
+In case you encounter an error: "Could not grant checkout ui extension scope 'read_checkout_external_data'" while granting network access, this error occurs when you have not setup your first and last name in partner's account profile. To resolve this, update your profile with the required information, then attempt to grant network access again.
+:::
+
 4. Click on the shopify partner logo on the to return to partners dashboard
 5. At the bottom of the page, click on "Settings"   
    ![partners_settings.png](./img/shopifyv2/partners_settings.png)
