@@ -68,7 +68,8 @@ const sidebarUserGuide = [
         title: 'Wallet',
         path: '/Wallet',
         children: [
-          ['/HardwareWalletIntegration', 'Hardware Wallet Integration']
+          ['/HardwareWalletIntegration', 'Hardware Wallet Integration'],
+          ['/Multisig', 'Multisig']
         ]
       },
       ['/Invoices', 'Invoices'],
