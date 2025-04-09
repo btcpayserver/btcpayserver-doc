@@ -4,6 +4,8 @@ BTCPay Server v2.1.0 introduced refined support for multi signature (multisig) w
 
 This document provides step-by-step instructions for configuring and utilizing multisig wallets within your BTCPay Server instance.
 
+[![Refined Multi-Sig in BTCPay Server using XPUB Extractor](https://img.youtube.com/vi/V95pLvVTAqM/mqdefault.jpg)](https://www.youtube.com/watch?v=V95pLvVTAqM)
+
 ## Overview
 
 Multisig functionality in BTCPay Server enables:
