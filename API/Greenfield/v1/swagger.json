@@ -10769,6 +10769,15 @@
         "format": "seconds",
         "description": "A span of times in seconds"
       },
+      "TimeSpanDays": {
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/TimeSpan"
+          }
+        ],
+        "format": "days",
+        "description": "A span of times in days"
+      },
       "TimeSpanMinutes": {
         "allOf": [
           {
@@ -11436,9 +11445,10 @@
                 "enum": [
                   "Pending",
                   "Completed",
+                  "Processing",
                   "Expired"
                 ],
-                "description": "The status of the payment request",
+                "description": "Represents the status of a payment request:\n* `Pending`: Not enough has been paid or settled.\n* `Completed`: Paid and fully settled.\n* `Expired`: Expired before full settlement.\n* `Processing`: Paid enough, awaiting full settlement.",
                 "nullable": false
               },
               "createdTime": {
@@ -12277,32 +12287,27 @@
       "StoreUserData": {
         "allOf": [
           {
+            "$ref": "#/components/schemas/ApplicationUserData"
+          },
+          {
             "type": "object",
             "properties": {
               "userId": {
                 "type": "string",
-                "description": "The id of the user",
-                "nullable": false
+                "description": "The id of the user (Deprecated, use `id` instead)",
+                "nullable": false,
+                "deprecated": true
               },
               "role": {
                 "type": "string",
+                "description": "The role of the user. Default roles are `Owner`, `Manager`, `Employee` and `Guest` (Deprecated, use `storeRole` instead)",
+                "nullable": false,
+                "deprecated": true
+              },
+              "storeRole": {
+                "type": "string",
                 "description": "The role of the user. Default roles are `Owner`, `Manager`, `Employee` and `Guest`",
                 "nullable": false
-              },
-              "email": {
-                "type": "string",
-                "description": "The email of the user",
-                "nullable": true
-              },
-              "name": {
-                "type": "string",
-                "description": "The name of the user",
-                "nullable": true
-              },
-              "imageUrl": {
-                "type": "string",
-                "description": "The profile picture URL of the user",
-                "nullable": true
               }
             }
           }
@@ -12969,6 +12974,17 @@
               }
             ]
           },
+          "refundBOLT11Expiration": {
+            "default": 30,
+            "minimum": 0,
+            "maximum": 3650,
+            "description": "The minimum expiry of BOLT11 invoices accepted for refunds by default. (in days)",
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/TimeSpanDays"
+              }
+            ]
+          },
           "displayExpirationTimer": {
             "default": 300,
             "minimum": 60,
@@ -13156,6 +13172,11 @@
             "description": "The profile picture URL of the user",
             "nullable": true
           },
+          "invitationUrl": {
+            "type": "string",
+            "description": "The pending invitation URL of the user",
+            "nullable": true
+          },
           "emailConfirmed": {
             "type": "boolean",
             "description": "True if the email has been confirmed by the user"
@@ -13181,6 +13202,10 @@
                 "$ref": "#/components/schemas/UnixTimestamp"
               }
             ]
+          },
+          "disabled": {
+            "type": "boolean",
+            "description": "True if an admin has disabled the user"
           },
           "roles": {
             "type": "array",
