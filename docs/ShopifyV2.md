@@ -210,7 +210,7 @@ When you click on it you can see the payment details:
 
 ## FAQ
 
-- Can I use ShopifyV1 and ShopifyV2 together? No, ShopifyV1 and ShopifyV2 should not be used together. Using both versions simultaneously can lead to unexpected behavior, such as duplicate order record on Shopify. We recommend that you disable Shopify V1 and stick to only ShopifyV2
+- Can I use Shopify V1 and Shopify V2 together? No, Shopify V1 and Shopify V2 should not be used together. Using both versions simultaneously can lead to unexpected behavior, such as duplicate order record on Shopify. We recommend that you disable Shopify V1 and stick to only Shopify V2
 
 - What happens when an invoice is Invalid? The sum of confirmed payments up to the expiration is reflected on Shopify
 
