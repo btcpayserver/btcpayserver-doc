@@ -210,6 +210,8 @@ When you click on it you can see the payment details:
 
 ## FAQ
 
+- Can I use Shopify V1 and Shopify V2 together? No, Shopify V1 and Shopify V2 should not be used together. Using both versions simultaneously can lead to unexpected behavior, such as duplicate order record on Shopify. We recommend that you disable Shopify V1 and stick to only Shopify V2
+
 - What happens when an invoice is Invalid? The sum of confirmed payments up to the expiration is reflected on Shopify
 
 - What if I mark an invoice as invalid in my BTCPay Server? BTCPay does nothing, so the Shopify order stays pending. 
