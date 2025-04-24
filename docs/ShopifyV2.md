@@ -141,6 +141,9 @@ Now it's time to install your Shopify app to the Shopify store (which will link 
    ![App install: link generated](./img/shopifyv2/app-deploy_distribution-generated-link-copy.png)
 4. You will see your app listed and you can now install it by clicking on `Install`. (If you are not logged in you need to log in first)
    ![app-deploy_distribution-install-to-store-confirm.png](./img/shopifyv2/app-deploy_distribution-install-to-store-confirm.png)
+:::tip
+Even though the app lists access to customer and store owner data it does not access any of that data. The app only uses the checkout ID and order ID to update the order status. At no time any personal customer or admin data is transmitted to your BTCPay Server.
+:::
 5. Once installed, you will see the app page with the message "Shopify plugin successfully configured"
    ![app-deploy_install-successful.png](./img/shopifyv2/app-deploy_install-successful.png)
 6. (Optional) You can click on the link at the bottom line "You can navigate to your plugin's settings page by clicking here." to double-check that the app is properly connected to your BTCPay Server. (The last section has now also a green checkmark)
