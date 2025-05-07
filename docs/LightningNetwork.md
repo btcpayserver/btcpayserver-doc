@@ -1,189 +1,95 @@
 # Lightning Network (LN) and BTCPay Server
 
-## Overview
+You as a merchant want to make it as cheap as possible for your customers (and yourself) to pay. Normal Bitcoin payments (also called on-chain payments) will only get more expensive as Bitcoin adoption grows in the future. With the Lightning Network (also called off-chain payments) it is possible to do cheap payments and on top of that unlike with normal Bitcoin payments the settlement is instant, which is a huge UX improvement. This makes the Lightning Network (LN) ideal for online payments but also very convenient for in person sales, also referred to as Point of Sale (PoS) sales.
 
-After deploying BTCPay Server, you may want to experiment with an innovative second-layer payment system built on top of Bitcoin protocol - the [Lightning Network](https://en.bitcoin.it/wiki/Lightning_Network).
+There are many different ways for merchants to get the Lightning Network setup on BTCPay Server - depending on your technical skills and desire to be in control of your funds. We will start with the easiest, but custodial options and evolve gradually towards full self custody and control. The thinking behind this is: Before you as a merchant do not accept bitcoin payments at all it’s better you do it via the most easy solution available for a great starting point and experience. We hope you will change your setup towards more self-sovereignty and control over your funds in the future, as you learn more about Bitcoin and its possibilities.
 
-This guide will show you how to set up your Lightning Network (LN) node in BTCPay Server and guide you through the basics.
+**Table of contents**:
+[[toc]]
 
-BTCPay Server currently offers these implementations of the Lightning Network:
+## Using a custodial wallet/service
 
-- [LND](https://github.com/lightningnetwork/lnd)
-- [Core Lightning (CLN)](https://github.com/ElementsProject/lightning) (formerly c-lightning)
-- [Eclair](https://github.com/ACINQ/eclair)
+**Pros:**
+* relatively easy to set up
+* no liquidity management needed
+* no need to run your own LN node
 
-::: danger
-Before you proceed, please understand that the Lightning Network is still in the experimental stage.
-Using the Lightning Network can put your money at risk. Do not use more than you can afford to lose.
+**Cons:**
+* trust in a 3rd party needed
+* some form of KYC needed
+* funds are at risk if the service goes bankrupt or rugpulls
+* often limits on per payment amount
+* often limits on total amounts processed per month
+
+With this option you use a trusted service to do all the heavy lifting of running a LN node for you. They also charge some Fee either directly or via exchange rate spread. and have full control over your funds. That said, it is the quickest and easiest way to accept LN payments and get started.
+
+At the time of writing you have two options available via Plugins on BTCPay Server:
+
+* Blink ([setup guide](https://dev.blink.sv/examples/btcpayserver-plugin))
+* Strike ([setup guide](https://github.com/rockstardev/strike-btcpayserver-plugin))
+
+:::tip
+When using a custodial service, you should keep your balance on the service low and withdraw the funds to your non-custodial LN wallet or swap it to on-chain bitcoin via a swapping service like boltz.exchange. Or you can swap funds to Fiat currency via our Bringin plugin or Strike directly.
 :::
 
-Take time to familiarize yourself with the risks associated with using the Lightning Network.
+## Using Boltz swapping service
 
-If you choose to run the internal Lightning Node in BTCPay Server, consider:
+**Pros:**
+* easy to setup
+* works even on shared instances (as long as the admin enables that plugin)
+* cheap compared to other solutions
 
-1. Any lightning network node operates at 2 levels: **on-chain** and **off-chain**.
-2. The LN implementation of choice will create an on-chain hot wallet that will be used to fund the off-chain payment channels.
-3. Make sure you back up the **on-chain** hot wallet seed (see below instructions for the individual implementations).
-4. The seed in step #3 can **only recover the on-chain funds**, although it is necessary for the off-chain operation.
-5. **Off-chain** funds locked in channels **cannot** be backed up using a single-seed. Read the documentation issued by your LN implementation of choice.
-6. **Off-chain** recovery mechanisms are under active research and development. Erasing your BTCPay Server or unsafe/unsecure operation of the computing environment (e.g Filesystem corruption, compromised keys) can lead to permanent **loss of funds**.
+**Cons:**
+* 0-amount invoices not possible (see [this](https://docs.boltz.exchange/boltz-btcpay-plugin/limitations))
+* swaps to L-BTC (needs swapping of L-BTC to BTC to be fully non-custodia)
 
-As the technology matures and develops, mechanisms for proper backup will be easier to implement in BTCPay Server.
-As of [v1.0.3.138](https://blog.btcpayserver.org/btcpay-lnd-migration/), LND is the only lightning network implementation that allows for [lightning seed backups with BTCPay Server](./FAQ/LightningNetwork.md#where-can-i-find-recovery-seed-backup-for-my-lightning-network-wallet-in-btcpay-server).
+This is option is using the [boltz.exchange](https://boltz.exchange) service by swapping LN payments to Liquid BTC (L-BTC, more about Liquid Network [here](https://liquid.net)). Liquid requires trust in a federation of companies so it is not fully non-custodial although many entities would need to collude to rugpull you.
 
-## Choosing the Lightning Network implementation
+Same as with custodial services, you should regularly swap funds to real non-custodial on-chain BTC from time to time to be in full control. With a hot wallet the boltz plugin allows you to automatically swap to BTC.
 
-First, read [here](./FAQ/LightningNetwork.md#can-i-use-a-pruned-node-with-ln-in-btcpay) about using pruned Bitcoin nodes with lightning network implementations before deploying.
+You can find the docs for the plugin [here](https://docs.boltz.exchange/boltz-btcpay-plugin) and a blog post with some more information [here](https://blog.boltz.exchange/p/launching-the-boltz-btcpay-plugin)
 
-On the installation, you'll have the option to choose the implementation.
+As time of writing, there is no step-by-step guide for setting up the plugin on BTCPay Server. So here is a quick run through:
+1. Go to your BTCPay Server instance and click on the "Manage Plugins"
+2. Search for "Boltz" and click on "Install"
+3. Restart BTCPay Server (a notification with a link to restart will show up)
+4. Select your store you want to setup with Boltz
+5. Click on "Boltz" in the left menu
+6. Click on "Accept Lightning payments without running a node" and follow the instructions.
+7. You will need to set up a new or use an existing Liquid wallet. You can use [Blockstream Green](https://blockstream.com/green/) wallet or [Aqua wallet](https://aquawallet.io/). You will need to create a new Liquid wallet and get the Liquid address.
 
-For [web-interface installations](/Deployment/LunaNode.md), you can simply select the implementation from the drop-down menu.
-For other [docker](https://github.com/btcpayserver/btcpayserver-docker) based [deployment methods](/Deployment/README.md) you need to:
+## Using Liquidity Service Providers (LSPs)
 
-```bash
-sudo su -
-cd btcpayserver-docker
-export BTCPAYGEN_LIGHTNING="implementationgoeshere"
-. ./btcpay-setup.sh -i
-```
+**Pros:**
+* Relatively easy to set up
+* non-custodial
+* no need to allocate capital
 
-- For **Core Lightning (CLN)** use `export BTCPAYGEN_LIGHTNING="clightning"`
-- For **LND** use `export BTCPAYGEN_LIGHTNING="lnd"`
-- For **eclair** use `export BTCPAYGEN_LIGHTNING="eclair"` AND `export BTCPAYGEN_ADDITIONAL_FRAGMENTS="opt-txindex"`
+**Cons:**
+* you need to buy liquidity (and pay for their capital costs)
+* needs rebalancing (swapping LN to on-chain BTC) to reuse channel capacity
+* expensive initial setup during high-fee environments
 
-Finally, to begin using Lightning, your blockchain needs to be fully synced.
+There are different ways on how you can interact with LSPs on BTCPay Server. The idea is that you pay the LSP so they open a LN channel to your node and you can receive payments without reserving your own funds. For this service the LSP charges a small fee and additionally you need to pay the cost for opening the channel to your node. One major benefit is that you can re-use channels by rebalancing funds. This means in practice you can let the LSP open an e.g. 10 million Sats channel to you. When the channel balance is almost fully on your side you can send funds out over LN or do a swap to on-chain BTC over Boltz or other swapping services.
 
-## Lightning node configuration in BTCPay Server
 
-### Connecting your internal Lightning Node
+## Doing it all on your own (fully self sovereign)
 
-Irrespective of the LN implementation deployed, the process of connecting your internal Lightning Node in BTCPay Server is the same.
+**Pros:**
+* you are in full control
+* no 3rd party involved
+* nobody can stop you
 
-1. Choose a store
-2. Go to "Lightning" > Select "Use internal node"
-3. Click "Save" > See "BTC Lightning node updated" message
-4. Go to "Public Node Info" > The node should appear **"Online"**
+**Cons:**
+* you need to manage payment channels
+* you need to manage liquidity
+* you need to allocate funds
 
-![LightningNetworkNodeSetupOverview](./img/lightning-node-setup/LightningNetworkNodeSetupOverview.jpg)
+By running your own node and also managing your channels on your own you are in full control and no 3rd party can deny you the ability to accept Bitcoin payments. This comes with a bit of a learning curve and ongoing management costs for managing channels and liquidity.
 
-If the internal connection fails, confirm:
+You can run CLN (Core Lightning) or LND alongside your BTCPay Server directly on your instance or you can connect to your externally hosted LN node via REST, Socket or LNDHub connections.
 
-1. The Bitcoin on-chain node is fully synchronized
-2. The Internal lightning node is "Enabled" under "Lightning" > "Settings" > "BTC Lightning Settings"
-
-If you are unable to connect to your Lightning node, try [restarting your server](./FAQ/ServerSettings.md#how-to-restart-btcpay-server) or reviewing our [troubleshooting guide](./Troubleshooting.md). You will not be able to accept lightning payments in your store until your Lightning node appears "Online". Try to test your Lightning connection by clicking the "Public Node Info" link.
-
-### Connecting an external Lightning Node in BTCPay Server
-
-BTCPay Server offers the option to connect to an external Lightning node. To configure it:
-
-1. Go to "Lightning" > Select "Use custom node" if there is no Lightning node configured.
-2. Go to "Lightning" > Select "Settings" > Select "Change connection" > Select "Use custom node" to modify an existing connection
-3. Add the configuration details matching the lightning implementation used > "Test connection"
-
-## Getting started with BTCPay Server and LND
-
-### Control your LND using Ride The Lightning (RTL)
-
-The easiest way to use LND implementation with BTCPay Server is to use the **[Ride The Lightning]https://github.com/Ride-The-Lightning/RTL)** (RTL) service. A web user interface for the Lightning Network, RTL allows you to operate your node without leaving BTCPay Server, from your browser.
-\
-To initiate RTL in BTCPay Server, Go to Server Settings > Services > Ride The Lightning > See information.
-
-### Control your LND using Zap
-
-For remote use of your LND node on iOS or PC, you can use [Zap wallet integration](https://github.com/LN-Zap/zap-tutorials/blob/master/docs/desktop/btcpay-server.mdx).
-\
-[![LND BTCPay](https://img.youtube.com/vi/CWhTOunTb2Q/mqdefault.jpg)](https://www.youtube.com/watch?v=CWhTOunTb2Q)
-\
-Besides Zap, there are a few more wallets that allow remote control of the LND node, [the Nayuta wallet](https://nayuta.co/) and the [ZeusLN](https://github.com/ZeusLN/zeus). Both of which have not yet extensively been tested by the community.
-
-### Control your LND using Lightning Joule
-
-To remotely control your LND node via web browser, you can use Lightning Joule.
-\
-[![Joule](https://img.youtube.com/vi/a9_uHJhnKR4/mqdefault.jpg)](https://www.youtube.com/watch?v=a9_uHJhnKR4)
-
-### Control your LND via the command-line: lncli
-
-LND can be accessed via the command-line using the shell script `bitcoin-lncli.sh`.
-\
-If you're on Docker make sure you're in docker directory.
-
-```bash
-sudo su -
-cd btcpayserver-docker
-./bitcoin-lncli.sh $command
-./bitcoin-lncli.sh getinfo #show info about the node
-```
-
-Run ./bitcoin-lncli.sh --help` to see a full list of commands or check the full [API documentation](https://api.lightning.community/).
-
-## Getting started with BTCPay Server and Core Lightning (CLN)
-
-### Control your CLN using Ride The Lightning (RTL)
-
-The easiest way to use CLN implementation with BTCPay Server is to use the **[Ride The Lightning]https://github.com/Ride-The-Lightning/RTL)** (RTL) service. A web user interface for the Lightning Network, RTL allows you to operate your node without leaving BTCPay Server, from your browser.
-\
-To initiate RTL in BTCPay Server, Go to Server Settings > Services > Ride The Lightning > See information.
-
-### Control your CLN via the command-line: lightning-cli
-
-Similar to `lncli`, CLN can be accessed via the command-line using the shell script `bitcoin-lightning-cli.sh`.
-\
-If you're on Docker make sure you're in docker directory.
-
-```bash
-sudo su -
-cd btcpayserver-docker
-./bitcoin-lightning-cli.sh $command
-./bitcoin-lightning-cli.sh getinfo #show info about the node
-```
-
-Run `./bitcoin-lightning-cli.sh help` to see a full list of commands or check the full [API documentation](https://lightning.readthedocs.io/).
-
-## Lightning node backup
-
-Before you start transacting using your new lightning node, consider backing up the **on-chain** wallet. Steps:
-
-1. **for LND**: storing a copy of the LND seed.
-   Go to "Server Settings" > "Services" > "LND Seed Backup" and select "See information"
-2. **for CLN**: storing a copy of the [hsm_secret](https://lightning.readthedocs.io/BACKUP.html#hsm-secret)
-\
-   The CLN $LIGHTNINGDIR is located in `/var/lib/docker/volumes/generated_clightning_bitcoin_datadir/_data/bitcoin`
-
-Acknowledge the limitations of **off-chain** payment channel backups and associated risks.
-\
-See [backup FAQ](https://docs.btcpayserver.org/Docker/backup-restore/#lightning-channel-backup) if you are running the BTCPay Server instance with Docker.
-
-### Funding your on-chain wallet
-
-Now that your lightning node is active, before opening lightning payment channels, you will need to fund the on-chain wallet.
-\
-The on-chain funding process can be performed in two ways:
-
-1. via the Ride The Lightning (RTL) UI interface
-
-- Select a "Store" and go to the "Lightning" section
-- Under "Services", select "Ride The Lightning"
-- In the RTL app, go to "On-chain", select "Receive" under the "On-chain Transactions" menu
-- Select "Generate Address" and use it as the destination for the allocated funds
-
-2. via the command-line using `bitcoin-lncli.sh` or `bitcoin-lightning-cli.sh`
-
-```bash
-sudo su -
-cd btcpayserver-docker
-./bitcoin-lncli.sh newaddress p2wkh #for LND
-./bitcoin-lightning-cli.sh newaddr  #for CLN
-{
-   "address" / "bech32": "bc1..........." #use this as the destination for the allocated funds
-}
-```
-
-Once your on-chain lightning node is funded, it's time to connect to other nodes on the network and open payment channels.
-\
-Check out [Payment channels](./LightningNetwork_PaymentChannels.md) for recommendations on opening payment channels, liquidity management and more.
-
-## Alby Extension
-
-[Alby](https://getalby.com/) is a free, fast, simple, and convenient way to send and receive Bitcoin payments with your normal browser on the Bitcoin Lightning Network with ease. You can now connect your BTCPay wallet directly to your Alby account. Learn more on [how to connect your BTCPay wallet to Alby](https://guides.getalby.com/user-guide/v/alby-account-and-browser-extension/alby-lightning-account/connect-your-alby-lightning-account-to-other-apps/connect-to-btcpay-server).
+**Ways to run and/or connect your LN node:**
+* Use internal LN node (CLN, LND or Eclair)
+* Connect your external LN node via REST, TCP or LNDHub (e.g. you can connect your Alby Hub node)
+* Connect your LN wallet over Nostr Wallet Connect (NWC), you need to have the [Nostr plugin](https://github.com/Kukks/BTCPayServerPlugins/tree/master/Plugins/BTCPayServer.Plugins.NIP05) installed (also works for Alby Hub)
