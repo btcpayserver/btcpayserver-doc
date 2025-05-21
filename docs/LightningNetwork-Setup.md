@@ -1,9 +1,15 @@
 # Lightning Network Setup options
 
-As discussed in the [Lightning Network overview](./LightningNetwork.md), there are several options to set up a Lightning Network node in BTCPay Server. On this page we will give you installation instructions and/or link to the relevant documentation.
+As discussed in the [Lightning Network overview](./LightningNetwork.md), there are several options to set up a Lightning Network node in BTCPay Server. Please read that page carefully to take the right choice and be aware of the pros and cons of each option.
+
+On this page we will give you installation instructions and/or link to the relevant documentation.
 
 Jump right to the section you are interested in:
 [[toc]]
+
+## Connecting a custodial Lightning Network wallet
+
+## Using a swapping service
 
 ## Setting up your own Lightning Network node (fully self sovereign)
 
@@ -57,9 +63,7 @@ export BTCPAYGEN_LIGHTNING="implementationgoeshere"
 
 Finally, to begin using LN, your blockchain needs to be fully synced.
 
-### Lightning node configuration in BTCPay Server
-
-#### Connecting your internal Lightning Node
+### Connecting your internal Lightning Node
 
 Irrespective of the LN implementation deployed, the process of connecting your internal Lightning Node in BTCPay Server is the same.
 
@@ -77,7 +81,7 @@ If the internal connection fails, confirm:
 
 If you are unable to connect to your Lightning node, try [restarting your server](./FAQ/ServerSettings.md#how-to-restart-btcpay-server) or reviewing our [troubleshooting guide](./Troubleshooting.md). You will not be able to accept lightning payments in your store until your Lightning node appears "Online". Try to test your Lightning connection by clicking the "Public Node Info" link.
 
-#### Connecting an external Lightning Node in BTCPay Server
+### Connecting an external Lightning Node in BTCPay Server
 
 BTCPay Server offers the option to connect to an external Lightning node. To configure it:
 
@@ -158,7 +162,12 @@ Acknowledge the limitations of **off-chain** payment channel backups and associa
 \
 See [backup FAQ](./Docker/backup-restore/#lightning-channel-backup) if you are running the BTCPay Server instance with Docker.
 
-### Funding your on-chain wallet
+### Manage liquidity via an Lightning Service Provider (LSP)
+...
+
+### Manage liquidity on your own (channel management)
+
+####  Funding your on-chain wallet 
 
 Now that your lightning node is active, before opening lightning payment channels, you will need to fund the on-chain wallet.
 \
@@ -186,3 +195,5 @@ cd btcpayserver-docker
 Once your on-chain lightning node is funded, it's time to connect to other nodes on the network and open payment channels.
 \
 Check out [Payment channels](./LightningNetwork_PaymentChannels.md) for recommendations on opening payment channels, liquidity management and more.
+
+todo: move the payment channels page here or keep it linked like that
