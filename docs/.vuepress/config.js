@@ -112,6 +112,7 @@ const sidebarUserGuide = [
     ['/BigCommerce/', 'Big Commerce'],
     ['/Drupal/', 'Drupal'],
     ['/Ecwid/', 'Ecwid'],
+    ['/GiveWP', 'GiveWP'],
     ['/Grandnode/', 'Grandnode'],
     ['/InvoiceNinja', 'Invoice Ninja'],
     ['/Magento', 'Magento'],
