@@ -501,25 +501,25 @@ done
 
 # Nisaba plugins
 
-echo "Setup dependency: Nisaba plugins"
+# echo "Setup dependency: Nisaba plugins"
 
-rm -rf "$DOCS_DIR/Ecwid"
-mkdir -p "$DOCS_DIR/Ecwid"
+# rm -rf "$DOCS_DIR/Ecwid"
+# mkdir -p "$DOCS_DIR/Ecwid"
 
-if [ ! -d "$NISABA_DIR" ]; then
-  git clone --depth 1 https://github.com/Nisaba/btcpayserver-plugins.git "$NISABA_DIR"
-else
-  cd "$NISABA_DIR" && git checkout master && git pull
-fi
+# if [ ! -d "$NISABA_DIR" ]; then
+#   git clone --depth 1 https://github.com/Nisaba/btcpayserver-plugins.git "$NISABA_DIR"
+# else
+#   cd "$NISABA_DIR" && git checkout master && git pull
+# fi
 
-# Ecwid
-cd "$NISABA_DIR/BTCPayServer.Plugins.Ecwid"
+# # Ecwid
+# cd "$NISABA_DIR/BTCPayServer.Plugins.Ecwid"
 
-cp -r README.md "$DOCS_DIR/Ecwid"
-cp -r docs/ "$DOCS_DIR/Ecwid"
-for file in "$DOCS_DIR"/Ecwid/*.md; do
-  update_external "$file" https://github.com/Nisaba/btcpayserver-plugins/master/Plugins/BTCPayServer.Plugins.Ecwid https://github.com/Nisaba/btcpayserver-plugins/edit/master/BTCPayServer.Plugins.Ecwid "$DOCS_DIR"/Ecwid/
-done
+# cp -r README.md "$DOCS_DIR/Ecwid"
+# cp -r docs/ "$DOCS_DIR/Ecwid"
+# for file in "$DOCS_DIR"/Ecwid/*.md; do
+#   update_external "$file" https://github.com/Nisaba/btcpayserver-plugins/master/Plugins/BTCPayServer.Plugins.Ecwid https://github.com/Nisaba/btcpayserver-plugins/edit/master/BTCPayServer.Plugins.Ecwid "$DOCS_DIR"/Ecwid/
+# done
 
 
 # Swagger
