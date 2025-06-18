@@ -121,6 +121,7 @@ const sidebarUserGuide = [
     ['/OpenCart', 'OpenCart'],
     ['/PhocaCart', 'PhocaCart'],
     ['/PrestaShop', 'PrestaShop'],
+    ['/Calcom', 'Cal.com'],
     ['/Pretix', 'Pretix'],
     ['/ShopifyV2', 'Shopify V2'],
     ['/Shopware', 'Shopware'],
