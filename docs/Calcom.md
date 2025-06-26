@@ -2,7 +2,7 @@
 
 This integration connects Cal.com with your own BTCPay Server instance, giving you an option to accept Bitcoin payment for all your bookings and appointments. 
 
-Whether you're offering consultation services, or one-on-one meetings, you can now accept Bitcoin payments for your cal.com bookings. Payments go directly to your wallet—no middlemen, no platform fees, and no hidden costs
+Whether you're offering consultation services, or one-on-one meetings, you can now accept Bitcoin payments for your cal.com bookings. Payments go directly to your wallet—no middlemen, no platform fees, and no hidden costs 
 
 
 ## Prerequisites:
