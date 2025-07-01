@@ -83,7 +83,7 @@ To have the main project include the plugin whenever you run the app in developm
 
 ```bash
 {
-  "DEBUG_PLUGINS": "/absolute/path/btcpayserver-plugin-template/BTCPay.Plugins.Template/bin/Debug/net6.0/BTCPayServer.Plugins.Template.dll"
+  "DEBUG_PLUGINS": "/absolute/path/btcpayserver-plugin-template/BTCPayServer.Plugins.Template/bin/Debug/net8.0/BTCPayServer.Plugins.Template.dll"
 }
 ```
 
