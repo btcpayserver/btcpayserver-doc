@@ -6392,18 +6392,91 @@
         ]
       }
     },
-    "/api/v1/stores/{storeId}/rates/configuration": {
+    "/api/v1/stores/{storeId}/rates": {
       "get": {
         "tags": [
-          "Stores (Rates Config)"
+          "Stores (Rates)"
         ],
-        "summary": "Get store rate settings",
         "parameters": [
+          {
+            "$ref": "#/components/parameters/StoreId"
+          },
+          {
+            "name": "currencyPair",
+            "description": "The currency pairs to fetch rates for",
+            "example": [
+              "BTC_USD",
+              "BTC_EUR"
+            ],
+            "in": "query",
+            "style": "form",
+            "explode": true,
+            "schema": {
+              "type": "array",
+              "nullable": true,
+              "items": {
+                "type": "string"
+              }
+            },
+            "x-position": 1
+          }
+        ],
+        "summary": "Get rates",
+        "description": "Get rates on the store",
+        "operationId": "Stores_GetStoreRates",
+        "responses": {
+          "200": {
+            "description": "The settings were executed and a preview was returned",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/StoreRateResult"
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "A list of errors that occurred when previewing the settings",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ValidationProblemDetails"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "If you are authenticated but forbidden to modify the store"
+          }
+        },
+        "security": [
+          {
+            "API_Key": [
+              "btcpay.store.canviewstoresettings"
+            ],
+            "Basic": []
+          }
+        ]
+      }
+    },
+    "/api/v1/stores/{storeId}/rates/configuration/{rateSource}": {
+      "get": {
+        "tags": [
+          "Stores (Rates)"
+        ],
+        "summary": "Get store rate settings for the specified rate source",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/RateSource"
+          },
           {
             "$ref": "#/components/parameters/StoreId"
           }
         ],
-        "description": "View rate settings of the specified store",
+        "description": "View rate settings for the specified store and rate source (`primary` or `fallback`).",
         "operationId": "Stores_GetStoreRateConfiguration",
         "responses": {
           "200": {
@@ -6420,13 +6493,13 @@
             "description": "If you are authenticated but forbidden to view the specified store"
           },
           "404": {
-            "description": "The key is not found for this store"
+            "description": "The specified store or rate source was not found"
           }
         },
         "security": [
           {
             "API_Key": [
-              "btcpay.store.canmodifystoresettings"
+              "btcpay.store.canviewstoresettings"
             ],
             "Basic": []
           }
@@ -6434,15 +6507,18 @@
       },
       "put": {
         "tags": [
-          "Stores (Rates Config)"
+          "Stores (Rates)"
         ],
         "parameters": [
+          {
+            "$ref": "#/components/parameters/RateSource"
+          },
           {
             "$ref": "#/components/parameters/StoreId"
           }
         ],
-        "summary": "Update store rate settings",
-        "description": "Update a store's rate settings",
+        "summary": "Get store rate settings for the specified rate source",
+        "description": "Update rate settings for the specified store and rate source (`primary` or `fallback`).",
         "operationId": "Stores_UpdateStoreRateConfiguration",
         "requestBody": {
           "x-name": "request",
@@ -6494,7 +6570,7 @@
     "/api/v1/stores/{storeId}/rates/configuration/preview": {
       "post": {
         "tags": [
-          "Stores (Rates Config)"
+          "Stores (Rates)"
         ],
         "parameters": [
           {
@@ -6563,76 +6639,6 @@
           {
             "API_Key": [
               "btcpay.store.canmodifystoresettings"
-            ],
-            "Basic": []
-          }
-        ]
-      }
-    },
-    "/api/v1/stores/{storeId}/rates": {
-      "get": {
-        "tags": [
-          "Stores (Rates)"
-        ],
-        "parameters": [
-          {
-            "$ref": "#/components/parameters/StoreId"
-          },
-          {
-            "name": "currencyPair",
-            "description": "The currency pairs to fetch rates for",
-            "example": [
-              "BTC_USD",
-              "BTC_EUR"
-            ],
-            "in": "query",
-            "style": "form",
-            "explode": true,
-            "schema": {
-              "type": "array",
-              "nullable": true,
-              "items": {
-                "type": "string"
-              }
-            },
-            "x-position": 1
-          }
-        ],
-        "summary": "Get rates",
-        "description": "Get rates on the store",
-        "operationId": "Stores_GetStoreRates",
-        "responses": {
-          "200": {
-            "description": "The settings were executed and a preview was returned",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/StoreRateResult"
-                  }
-                }
-              }
-            }
-          },
-          "400": {
-            "description": "A list of errors that occurred when previewing the settings",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ValidationProblemDetails"
-                }
-              }
-            }
-          },
-          "403": {
-            "description": "If you are authenticated but forbidden to modify the store"
-          }
-        },
-        "security": [
-          {
-            "API_Key": [
-              "btcpay.store.canviewstoresettings"
             ],
             "Basic": []
           }
@@ -8088,7 +8094,7 @@
           "Stores"
         ],
         "summary": "Create a new store",
-        "description": "Create a new store",
+        "description": "Create a new store (default values can be different if the server settings use a default store template)",
         "requestBody": {
           "x-name": "request",
           "content": {
@@ -8186,7 +8192,7 @@
             "$ref": "#/components/parameters/StoreId"
           }
         ],
-        "description": "Update the specified store",
+        "description": "Update the specified store (default values can be different if the server settings use a default store template)",
         "requestBody": {
           "x-name": "request",
           "content": {
@@ -8676,6 +8682,12 @@
                     "description": "Make this user administrator (only if you have the `unrestricted` permission of a server administrator)",
                     "nullable": true,
                     "default": false
+                  },
+                  "sendInvitationEmail": {
+                    "type": "boolean",
+                    "description": "Flag to specify if an email invitation should be sent to the user",
+                    "nullable": true,
+                    "default": true
                   }
                 }
               }
@@ -10130,6 +10142,12 @@
                 "type": "string",
                 "format": "decimal",
                 "description": "The amount of the invoice. Note that the amount will be zero for a top-up invoice that is paid after invoice expiry.",
+                "example": "5.00"
+              },
+              "paidAmount": {
+                "type": "string",
+                "format": "decimal",
+                "description": "The actual amount paid by the customer/buyer.",
                 "example": "5.00"
               },
               "currency": {
@@ -12247,7 +12265,7 @@
           },
           "preferredSource": {
             "type": "string",
-            "description": "If `isCustomerScript` is `false` affect use this source in the default's `effectiveScript`, if `isCustomerScript` is `false`, this setting is set to `null`. (See /misc/rate-sources for the available sources)"
+            "description": "When `isCustomScript` is `false`, uses this source in the default `effectiveScript`. When `isCustomScript` is `true`, this field is ignored (set to `null`). See `/misc/rate-sources` for available sources."
           },
           "isCustomScript": {
             "type": "boolean",
@@ -13003,7 +13021,7 @@
             ]
           },
           "monitoringExpiration": {
-            "default": 3600,
+            "default": 86400,
             "minimum": 600,
             "maximum": 2073600,
             "description": "The time after which an invoice which has been paid but not confirmed will be considered invalid. The value will be rounded down to a minute.",
@@ -13664,6 +13682,17 @@
         },
         "example": "BTC-CHAIN"
       },
+      "RateSource": {
+        "name": "rateSource",
+        "in": "path",
+        "required": true,
+        "description": "The rate source to configure (`primary` or `fallback`)",
+        "schema": {
+          "type": "string",
+          "default": "primary",
+          "example": "primary"
+        }
+      },
       "WebhookId": {
         "name": "webhookId",
         "in": "path",
@@ -13711,6 +13740,10 @@
       "description": "Authorization operations"
     },
     {
+      "name": "Crowdfund",
+      "description": "Crowdfund operations"
+    },
+    {
       "name": "Files",
       "description": "File operations"
     },
@@ -13731,6 +13764,10 @@
       "description": "Lightning (Store) operations"
     },
     {
+      "name": "Lightning address",
+      "description": "Lightning address configuration"
+    },
+    {
       "name": "Miscelleneous",
       "description": "Miscelleneous operations"
     },
@@ -13745,6 +13782,10 @@
     {
       "name": "Payout Processors",
       "description": "Payout Processors operations"
+    },
+    {
+      "name": "Point of Sale",
+      "description": "Point of Sale operations"
     },
     {
       "name": "Pull payments (Management)",
@@ -13775,14 +13816,6 @@
       "description": "Store Payment Methods operations"
     },
     {
-      "name": "Stores (Rates Config)",
-      "description": "Store Rates Config operations"
-    },
-    {
-      "name": "Stores (Rates)",
-      "description": "Store Rates operations"
-    },
-    {
       "name": "Stores (Users)",
       "description": "Store Users operations"
     },
@@ -13795,8 +13828,16 @@
       "description": "Store operations"
     },
     {
+      "name": "Stores (Payouts)",
+      "description": "Store pull payment payout operations"
+    },
+    {
       "name": "Stores (Payout Processors)",
       "description": "Stores (Payout Processors) operations"
+    },
+    {
+      "name": "Stores (Rates)",
+      "description": "Stores rate information and configuration"
     },
     {
       "name": "Users",
