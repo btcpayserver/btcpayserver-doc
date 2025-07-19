@@ -1583,53 +1583,6 @@
         ]
       }
     },
-    "/api/v1/stores/{storeId}/invoices/{invoiceId}/refund/{paymentMethodId}": {
-      "get": {
-        "tags": [
-          "Invoices"
-        ],
-        "summary": "Get invoice refund trigger data",
-        "parameters": [
-          {
-            "$ref": "#/components/parameters/InvoiceId"
-          },
-          {
-            "$ref": "#/components/parameters/PaymentMethodId"
-          },
-          {
-            "$ref": "#/components/parameters/StoreId"
-          }
-        ],
-        "description": "View calculated refund amounts (payment then/now, invoice, overpaid) for the specified invoice/payment-method. This can be used preceding the POST /refund call.",
-        "operationId": "Invoices_GetInvoiceRefundTriggerData",
-        "responses": {
-          "200": {
-            "description": "specified invoice refund trigger data",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/InvoiceRefundTriggerData"
-                }
-              }
-            }
-          },
-          "403": {
-            "description": "If you are authenticated but forbidden to view the specified invoice"
-          },
-          "404": {
-            "description": "The key is not found for this invoice"
-          }
-        },
-        "security": [
-          {
-            "API_Key": [
-              "btcpay.store.cancreatepullpayments"
-            ],
-            "Basic": []
-          }
-        ]
-      }
-    },
     "/api/v1/stores/{storeId}/invoices/{invoiceId}/status": {
       "post": {
         "tags": [
@@ -10469,55 +10422,6 @@
           }
         }
       },
-      "InvoiceRefundTriggerData": {
-        "type": "object",
-        "additionalProperties": false,
-        "properties": {
-          "paymentAmountThen": {
-            "type": "string",
-            "format": "decimal",
-            "description": "The amount in crypto at the time the invoice was paid.",
-            "example": "5.00"
-          },
-          "paymentAmountNow": {
-            "type": "string",
-            "format": "decimal",
-            "description": "The current amount in crypto.",
-            "example": "5.00"
-          },
-          "invoiceAmount": {
-            "type": "string",
-            "format": "decimal",
-            "description": "The fiat amount at the rate when the refund will be sent.",
-            "example": "5.00"
-          },
-          "paymentCurrency": {
-            "type": "string",
-            "description": "The crypto currency of the invoice",
-            "example": "BTC"
-          },
-          "paymentCurrencyDivisibility": {
-            "type": "number",
-            "description": "The maximum divisibility supported by the crypto currency of the invoice"
-          },
-          "invoiceCurrencyDivisibility": {
-            "type": "number",
-            "description": "The maximum divisibility supported by the fiat currency of the invoice"
-          },
-          "invoiceCurrency": {
-            "type": "string",
-            "description": "The fiat currency of the invoice",
-            "example": "USD"
-          },
-          "overpaidPaymentAmount": {
-            "type": "string",
-            "format": "decimal",
-            "nullable": true,
-            "description": "The amount by which the invoice is overpaid",
-            "example": "2.00"
-          }
-        }
-      },
       "CheckoutOptions": {
         "type": "object",
         "additionalProperties": false,
@@ -13082,18 +12986,6 @@
             "description": "The default currency of the store",
             "default": "USD",
             "example": "USD"
-          },
-          "additionalTrackedRates": {
-            "type": "array",
-            "items": {
-              "type": "string"
-            },
-            "description": "Additional rates to track.\nThe rates of those currencies, in addition to the default currency, will be recorded when a new invoice is created. The rates will then be accessible through reports.",
-            "default": [],
-            "example": [
-              "EUR",
-              "JPY"
-            ]
           },
           "invoiceExpiration": {
             "default": 900,
