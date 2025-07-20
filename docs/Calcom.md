@@ -1,8 +1,7 @@
 # Accept Bitcoin payment for your Cal.com bookings
 
-You can now accept Bitcoin payment for all your Calcom bookings and appointments. 
-Whether you're offering consultation services or one-on-one meetings, receive Bitcoin payments today directly in your wallet—no middlemen, no platform fees, and no hidden costs.
-
+You can now accept Bitcoin payment for all your [Cal.com](https://cal.com/) bookings and appointments. 
+Whether you're offering consultation services or one-on-one meetings, receive Bitcoin payments directly to your wallet - no middlemen, no platform fees, and no hidden costs.
 
 
 ## Prerequisites:
@@ -10,15 +9,15 @@ Whether you're offering consultation services or one-on-one meetings, receive Bi
 Before diving into the setup process, ensure you have the following:
 
 - [Cal.com account](https://cal.com/)
-- BTCPay Server - [self-hosted](Deployment.md) or run by a [third-party host](/Deployment/ThirdPartyHosting.md) * v2.0.6 or later.
+- BTCPay Server - [self-hosted](Deployment.md) or run by a [third-party host](/Deployment/ThirdPartyHosting.md)
 - [Created BTCPay Server store](CreateStore.md) with [wallet set up](WalletSetup.md)
 
 
 ## Set up Cal.com with BTCPay Server
 
-Login to your cal.com account. Navigate to `Apps` > `App store` > `Payments apps`
+Login to your Cal.com account. Navigate to `Apps` > `App store` > `Payments apps`
 
-Find the `BTCPayServer` app, click `details`, and then `install app` button
+Find the `BTCPayServer` app, click `Details`, and then `Install App` button
 
 ![Cal.com: image 1](./img/calcom/1_app_install_details.png)
 
@@ -31,9 +30,9 @@ The next step is to fill in your BTCPay credentials. Open your BTCPay Server ins
 
 **BTCPay Server URL**: your BTCPay instance url e.g. https://example.btcpay.com
 
-**BTCPay Store Id**: The store you want connected to cal.com. On your BTCPay server instance, select the chosen store, click on `Settings` on the left navigation, then you’d see your storeId displayed.
+**BTCPay Store Id**: The store you want connected to Cal.com. On your BTCPay Server instance, select the chosen store, click on `Settings` on the left navigation, then you’d see your storeId displayed.
 
-Copy the storeId, and fill in your cal.com - BTCPay server installation form
+Copy the Store Id, and fill in your Cal.com - BTCPay Server installation form
 
 **API Key**: In your BTCPay, go to `Account` > `Manage Account` > `API Keys`
 
@@ -44,12 +43,12 @@ For permissions check the follow:
 - Create Invoice (btcpay.store.cancreateinvoice)
 - Modify store webhook (btcpay.store.webhooks.canmodifywebhooks)
 
-Once done click save. Copy the API key and complete the form in cal.com installation.
+Once done click `Save`. Copy the API key and complete the form in Cal.com installation.
 
 Now that you have all three fields filled, click on connect button to complete installation. Once all fields are validated,
 your keys should be saved and you'd be redirected back to Cal.com page.
 
-**N.B:** This installation process creates a webhook in your BTCPay Server.
+**Please Note** This installation process creates a webhook in your BTCPay Server.
 
 
 ![Cal.com: image 3](./img/calcom/3_installation_step_two.png)
