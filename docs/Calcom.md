@@ -59,7 +59,9 @@ your keys should be saved and you'd be redirected back to Cal.com page.
 
 ## Demo 
 
-In your event type page, select and edit any booking.
+In your event type page, select any booking and click Edit.
+
+Each event in Cal.com is configured individually, so, if you want to accept Bitcoin payments for all events, you'll need to enable it manually for each one.
 
 ![Cal.com: image 6](./img/calcom/6_event_types_booking.png)
 
