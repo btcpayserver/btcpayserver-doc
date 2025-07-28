@@ -110,6 +110,7 @@ const sidebarUserGuide = [
     collapsable: false,
     children: [
     ['/BigCommerce/', 'Big Commerce'],
+    ['/Calcom', 'Cal.com'],
     ['/Drupal/', 'Drupal'],
     ['/Ecwid/', 'Ecwid'],
     ['/GiveWP', 'GiveWP'],
