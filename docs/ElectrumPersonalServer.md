@@ -16,7 +16,7 @@ By default your EPS is accessible over Tor. You can run the following command li
 cat /var/lib/docker/volumes/generated_tor_servicesdir/_data/btc-electrum-ps/hostname
 ```
 
-You can can also go to your BTCPay Server > Server Settings > Services and find the tor link in `Other TOR hidden services`.
+You can also go to your BTCPay Server > Server Settings > Services and find the tor link in `Other TOR hidden services`.
 
 On the Electrum wallet machine, if you want to connect to your server via Tor, we assume in this tutorial that you run the Tor Browser locally, and thus you will use SOCKS5 port `9150`. If you run Tor through the command line instead, the local SOCKS5 port is `9050`.
 
