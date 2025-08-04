@@ -60,7 +60,7 @@ docker build -t btcpayserver/btcpayserver:1.13.1 .
 
 Step 4:
 
-Switch to your btcpayserver-docker direcory and run btcpay-up.sh:
+Switch to your btcpayserver-docker directory and run btcpay-up.sh:
 ```bash
 cd $BTCPAY_BASE_DIRECTORY/btcpayserver-docker
 ./btcpay-up.sh

@@ -65,7 +65,7 @@ Edit the sshd config:
 sudo nano /etc/ssh/sshd_config
 ```
 
-Make sure these entries are active (meaning there is no `#` at the beggining of the line).
+Make sure these entries are active (meaning there is no `#` at the beginning of the line).
 Alternatively, you can just paste these on the end of the file:
 
 ```
