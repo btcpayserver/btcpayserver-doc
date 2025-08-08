@@ -3,6 +3,7 @@
 You can now accept Bitcoin payment for all your [Cal.com](https://cal.com/) bookings and appointments. 
 Whether you're offering consultation services or one-on-one meetings, receive Bitcoin payments directly to your wallet - no middlemen, no platform fees, and no hidden costs.
 
+[![Cal.com](https://img.youtube.com/vi/uttN0YILu3s/mqdefault.jpg)](https://www.youtube.com/watch?v=uttN0YILu3s)
 
 ## Prerequisites:
 
