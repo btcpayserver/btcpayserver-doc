@@ -58,7 +58,7 @@ In case you encounter an error: "Could not grant checkout ui extension scope 're
    ![partners_create-cli-token.png](./img/shopifyv2/partners_create-cli-token.png)
 8. In the modal popup keep the default and click on "Generate token"
    ![partners_create-cli-token-duration.png](./img/shopifyv2/partners_create-cli-token-duration.png)
-. Copy the token and note it next to client ID and client secret from above. This token is only shown once.
+9. Copy the token and note it next to client ID and client secret from above. This token is only shown once.
    ![partners_cli-token-created.png](./img/shopifyv2/partners_cli-token-created.png)
 
 
