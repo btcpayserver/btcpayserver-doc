@@ -149,7 +149,7 @@ In the BTCPay payment method settings you have a new setting **“Additional tok
    url to token symbol shown during checkout (can be empty but be sure to include the quotes). You can upload the icon in media manager and copy the url or you can use a link to external site or CDN.
 
 :::danger
-**Important:** All the columns text needs to be enclosed by double quotes `"` and separated by semicolon `; each asset has to be put in a new line.
+**Important:** All the columns text needs to be enclosed by double quotes `"` and separated by semicolon `;` each asset has to be put in a new line.
 :::
 
 **Example additional token config**
