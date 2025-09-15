@@ -10,18 +10,25 @@ There are many different ways for merchants to get the Lightning Network setup o
 ## Using a custodial wallet/service
 
 **Pros:**
-* relatively easy to set up
+* easy to set up
 * no liquidity management needed
 * no need to run your own LN node
+* you can choose to auto-convert to stablecoins/fiat
+* works even on shared instances (as long as the admin enables that plugin)
 
 **Cons:**
 * trust in a 3rd party needed
 * some form of KYC needed
-* funds are at risk if the service goes bankrupt or rugpulls
+* funds are at risk if the service goes bankrupt or does a rugpull
 * often limits on per payment amount
 * often limits on total amounts processed per month
 
-With this option you use a trusted service to do all the heavy lifting of running a LN node for you. They also charge some Fee either directly or via exchange rate spread. and have full control over your funds. That said, it is the quickest and easiest way to accept LN payments and get started.
+
+With this option you use a trusted service to do all the heavy lifting of running an LN node for you. They also charge some fee either directly or via exchange rate spread and have full control over your funds.
+
+If you are worried about Bitcoin price volatility, both of the options listed below allow you to auto-convert your BTC to stablecoins or fiat currencies (USD, EUR).
+
+All that said, it is the quickest and easiest way to accept LN payments and get started.
 
 At the time of writing you have two options available via Plugins on BTCPay Server:
 
@@ -29,34 +36,27 @@ At the time of writing you have two options available via Plugins on BTCPay Serv
 * Strike ([setup guide](https://github.com/rockstardev/strike-btcpayserver-plugin))
 
 :::tip
-When using a custodial service, you should keep your balance on the service low and withdraw the funds to your non-custodial LN wallet or swap it to on-chain bitcoin via a swapping service like boltz.exchange. Or you can swap funds to Fiat currency via our Bringin plugin or Strike directly.
+When using any custodial service, you should keep your balance on the service low and withdraw the funds to your non-custodial LN wallet or swap it to on-chain bitcoin via a swapping service like [Boltz](https://boltz.exchange). You can also swap funds to fiat currency via the Bringin plugin or Strike directly.
 :::
 
 ## Using Boltz swapping service
 
 **Pros:**
-* easy to setup
+* easy to set up
+* very cheap compared to other solutions
 * works even on shared instances (as long as the admin enables that plugin)
-* cheap compared to other solutions
 
 **Cons:**
 * 0-amount invoices not possible (see [this](https://docs.boltz.exchange/boltz-btcpay-plugin/limitations))
-* swaps to L-BTC (needs swapping of L-BTC to BTC to be fully non-custodia)
+* swaps to L-BTC (needs swapping of L-BTC to BTC to be fully non-custodial)
 
 This is option is using the [boltz.exchange](https://boltz.exchange) service by swapping LN payments to Liquid BTC (L-BTC, more about Liquid Network [here](https://liquid.net)). Liquid requires trust in a federation of companies so it is not fully non-custodial although many entities would need to collude to rugpull you.
 
 Same as with custodial services, you should regularly swap funds to real non-custodial on-chain BTC from time to time to be in full control. With a hot wallet the boltz plugin allows you to automatically swap to BTC.
 
-You can find the docs for the plugin [here](https://docs.boltz.exchange/boltz-btcpay-plugin) and a blog post with some more information [here](https://blog.boltz.exchange/p/launching-the-boltz-btcpay-plugin)
+You can find the docs for the plugin [here](https://btcpay.docs.boltz.exchange/) and a blog post with some more background information [here](https://blog.boltz.exchange/p/launching-the-boltz-btcpay-plugin)
 
-As time of writing, there is no step-by-step guide for setting up the plugin on BTCPay Server. So here is a quick run through:
-1. Go to your BTCPay Server instance and click on the "Manage Plugins"
-2. Search for "Boltz" and click on "Install"
-3. Restart BTCPay Server (a notification with a link to restart will show up)
-4. Select your store you want to setup with Boltz
-5. Click on "Boltz" in the left menu
-6. Click on "Accept Lightning payments without running a node" and follow the instructions.
-7. You will need to set up a new or use an existing Liquid wallet. You can use [Blockstream Green](https://blockstream.com/green/) wallet or [Aqua wallet](https://aquawallet.io/). You will need to create a new Liquid wallet and get the Liquid address.
+In the process of setup you will need to set up a new Liquid wallet or use an existing one. The quickest and easiest way to do so is using [Aqua wallet](https://aquawallet.io/) and [connect your store over the SamRock protocol](https://www.youtube.com/watch?v=d9T94kx92yY). 
 
 ## Using Liquidity Service Providers (LSPs)
 
@@ -70,7 +70,9 @@ As time of writing, there is no step-by-step guide for setting up the plugin on 
 * needs rebalancing (swapping LN to on-chain BTC) to reuse channel capacity
 * expensive initial setup during high-fee environments
 
-There are different ways on how you can interact with LSPs on BTCPay Server. The idea is that you pay the LSP so they open a LN channel to your node and you can receive payments without reserving your own funds. For this service the LSP charges a small fee and additionally you need to pay the cost for opening the channel to your node. One major benefit is that you can re-use channels by rebalancing funds. This means in practice you can let the LSP open an e.g. 10 million Sats channel to you. When the channel balance is almost fully on your side you can send funds out over LN or do a swap to on-chain BTC over Boltz or other swapping services.
+There are different ways on how you can interact with LSPs on BTCPay Server. The idea is that you pay the LSP so they open a LN channel to your node and you can receive payments without reserving your own funds. For this service the LSP charges a small fee, additionally you need to pay the cost for opening the channel to your node. One major benefit is that you can re-use channels by rebalancing funds. This means in practice you can let the LSP open an e.g. 10 million Sats channel to you. When the channel balance is almost fully on your side you can send funds out over LN or do a swap to on-chain BTC over [Boltz](https://boltz.exchange) or other swapping services.
+
+You can manually receive liquidity from LSPs like [LNBIG](https://lnbig.com/#/), [lightning network+](https://lightningnetwork.plus/), [Megalithic](https://megalithic.me/), [Zeus LSP](https://channels.zeuslsp.com/), [LN Server](https://lnserver.com/) or you can install the [LSPS plugin](https://plugin-builder.btcpayserver.org/public/plugins/get-lightning-channel) from megalith using [this guide](https://github.com/MegalithicBTC/BTCPayserver-LSPS1/blob/master/README.md) which supports multiple LSPs you can choose from.
 
 
 ## Doing it all on your own (fully self sovereign)
