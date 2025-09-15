@@ -98,7 +98,7 @@ If you already use [AlbyHub](https://getalby.com/) you can use the LNDHub connec
 
 #### Control your LND using Ride The Lightning (RTL)
 
-The easiest way to use LND implementation with BTCPay Server is to use the **[Ride The Lightning]https://github.com/Ride-The-Lightning/RTL)** (RTL) service. A web user interface for the Lightning Network, RTL allows you to operate your node without leaving BTCPay Server, from your browser.
+The easiest way to use LND implementation with BTCPay Server is to use the **[Ride The Lightning](https://github.com/Ride-The-Lightning/RTL)** (RTL) service. A web user interface for the Lightning Network, RTL allows you to operate your node without leaving BTCPay Server, from your browser.
 \
 To initiate RTL in BTCPay Server, Go to Server Settings > Services > Ride The Lightning > See information.
 
@@ -119,17 +119,17 @@ cd btcpayserver-docker
 ./bitcoin-lncli.sh getinfo #show info about the node
 ```
 
-Run ./bitcoin-lncli.sh --help` to see a full list of commands or check the full [API documentation](https://api.lightning.community/).
+Run `./bitcoin-lncli.sh --help` to see a full list of commands or check the full [API documentation](https://api.lightning.community/).
 
 ### Getting started with BTCPay Server and Core Lightning (CLN)
 
 #### Control your CLN using Ride The Lightning (RTL)
 
-The easiest way to use CLN implementation with BTCPay Server is to use the **[Ride The Lightning]https://github.com/Ride-The-Lightning/RTL)** (RTL) service. A web user interface for the Lightning Network, RTL allows you to operate your node without leaving BTCPay Server, from your browser.
+The easiest way to use CLN implementation with BTCPay Server is to use the **[Ride The Lightning](https://github.com/Ride-The-Lightning/RTL)** (RTL) service. A web user interface for the Lightning Network, RTL allows you to operate your node without leaving BTCPay Server, from your browser.
 \
 To initiate RTL in BTCPay Server, Go to Server Settings > Services > Ride The Lightning > See information.
 
-#### Control your LND using Zeus
+#### Control your CLN using Zeus
 
 For remote control of your LN node with your mobile phone, you can use [ZEUS](https://docs.zeusln.app/for-users/remote-connections/btcpay/)
 
@@ -162,12 +162,13 @@ Acknowledge the limitations of **off-chain** payment channel backups and associa
 \
 See [backup FAQ](./Docker/backup-restore/#lightning-channel-backup) if you are running the BTCPay Server instance with Docker.
 
-### Manage liquidity via an Lightning Service Provider (LSP)
-...
+### Manage liquidity via a Lightning Service Provider (LSP)
+
+For information on managing liquidity through Lightning Service Providers, please refer to the [Lightning Network overview](./LightningNetwork.md#using-liquidity-service-providers-lsps) section.
 
 ### Manage liquidity on your own (channel management)
 
-####  Funding your on-chain wallet 
+#### Funding your on-chain wallet 
 
 Now that your lightning node is active, before opening lightning payment channels, you will need to fund the on-chain wallet.
 \
