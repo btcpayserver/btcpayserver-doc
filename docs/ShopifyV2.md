@@ -70,6 +70,19 @@ In case you encounter an error: "Could not grant checkout ui extension scope 're
 
 :::tip
 For the instructions below to work you need to be the admin of your own BTCPay Server instance. If you are on a 3rd-party host then their admin needs to have activated the shopify fragment and enabled the Shopify v2 plugin for you, otherwise it won't be available to you.
+
+As of 15th of September, 2025, BTCPay Server-Shopify fragment has been updated to 1.5.
+This is to cater for [shopify migration](https://shopify.dev/docs/apps/build/dev-dashboard/migrate-from-partners)
+
+If you installed the V2 plugin prior to this date, no need to worry as your Shopify plugin still works fine.
+However, if you choose to update your fragment and your shopify plugin, we'd advice that you follow the folllowing steps:
+
+ - Uninstall the app linked to your shopify store.
+ - Delete the app in shopify partners (optional)
+ - Head back to your Shopify plugin page on BTCPay Server and click the `Reset` button
+ - Follow the installation instructions again
+
+Also note that from this date, all new plugin users are expected to be on the latest shopify fragment (>= 1.5) as new installation wold no longer work for older fragments
 :::
 
 ### Deploy the Shopify fragment
@@ -129,7 +142,7 @@ BTCPay Server will restart which can take a few minutes.
 
 Now it's time to install your Shopify app to the Shopify store (which will link your store to your BTCPay Server).
 
-1. On your [partner account](https://partners.shopify.com/) app overview, select the app you just created, click on `Distribution` and select `Custom distribution`. Confirm the selection.
+1. On your [partner account](https://partners.shopify.com/) app overview, select the app you just created, click on `Choose Distribution` and select `Custom distribution`. Confirm the selection.
     :::tip
     Please note that selecting custom distribution means that you can only use the app one Shopify store. This is irreversible. You can deploy multiple apps though if you have more than one store.
     :::
