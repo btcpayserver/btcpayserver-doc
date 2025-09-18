@@ -45,7 +45,7 @@ First we will create a new app in the Shopify partner portal. Make sure you are 
 
 2. Once created, click on `Settings`, there your "Client ID" and "Client secret" is displayed, which we need in a minute. Please note them down or come back to this page later.
    ![Shopify-App: client id and secret](./img/shopifyv2/partner-app_client-id-secret.png)
-3. Go back to your partner's dashboard, click `All Apps`, click your just created app, select `API access requests` on the left menu, scroll down to `Allow network access in checkout and account UI extensions` and grant network access. You should see the following screen once network access is granted 
+3. Go back to your partner's dashboard, click `All Apps`,  click your just created app, select `API access requests` on the left menu, scroll down to `Allow network access in checkout and account UI extensions` and grant network access. You should see the following screen once network access is granted 
    ![Shopify-App: Partner app network access](./img/shopifyv2/partner_app_network_access.png)
 
 :::tip
