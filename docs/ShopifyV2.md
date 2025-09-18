@@ -39,13 +39,13 @@ Before diving into the setup process, ensure you have the following:
 
 First we will create a new app in the Shopify partner portal. Make sure you are registered as a [Shopify partner](https://www.shopify.com/partners) (it's free to register).
 
-1. On Shopify Partner [dashboard](https://partners.shopify.com), click on `Apps` > `All Apps` > `View Dev Dashboard` > `Create app` > `Start from Dev Dashboard`. Enter the name you want to call the app (e.g. BTCPay Server) and click `Create`.
+1. On Shopify Partner [dashboard](https://partners.shopify.com), click on `App distribution`, on the next page click on `View Dev Dashboard` which will open a page in a new browser tab. In this page, click `Create app` > `Start from Dev Dashboard`, enter the name you want to call the app (e.g. BTCPay Server) and click `Create`.
 
    ![Shopify-App: Create app manually](./img/shopifyv2/create_app_manually.png)
 
 2. Once created, click on `Settings`, there your "Client ID" and "Client secret" is displayed, which we need in a minute. Please note them down or come back to this page later.
    ![Shopify-App: client id and secret](./img/shopifyv2/partner-app_client-id-secret.png)
-3. Go back to your partner's dashboard, click `All Apps`,  click your just created app, select `API access requests` on the left menu, scroll down to `Allow network access in checkout and account UI extensions` and grant network access. You should see the following screen once network access is granted 
+3. Go back to your partner's dashboard, reload the page so the app list now includes the newly created app. Once done, click `All Apps`,  click your just created app, select `API access requests` on the left menu, scroll down to `Allow network access in checkout and account UI extensions` and grant network access. You should see the following screen once network access is granted 
    ![Shopify-App: Partner app network access](./img/shopifyv2/partner_app_network_access.png)
 
 :::tip
