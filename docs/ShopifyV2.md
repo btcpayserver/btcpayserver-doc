@@ -70,19 +70,6 @@ In case you encounter an error: "Could not grant checkout ui extension scope 're
 
 :::tip
 For the instructions below to work you need to be the admin of your own BTCPay Server instance. If you are on a 3rd-party host then their admin needs to have activated the shopify fragment and enabled the Shopify v2 plugin for you, otherwise it won't be available to you.
-
-As of 15th of September, 2025, BTCPay Server-Shopify fragment has been updated to 1.5.
-This is to cater for [shopify migration](https://shopify.dev/docs/apps/build/dev-dashboard/migrate-from-partners)
-
-If you installed the V2 plugin prior to this date, no need to worry as your Shopify plugin still works fine.
-However, if you choose to update your fragment and your shopify plugin, we'd advice that you follow the folllowing steps:
-
- - Uninstall the app linked to your shopify store.
- - Delete the app in shopify partners (optional)
- - Head back to your Shopify plugin page on BTCPay Server and click the `Reset` button
- - Follow the installation instructions again
-
-Also note that from this date, all new plugin users are expected to be on the latest shopify fragment (>= 1.5) as new installation wold no longer work for older fragments
 :::
 
 ### Deploy the Shopify fragment
@@ -258,6 +245,19 @@ More details:
 
 
 ## Troubleshooting
+
+### The update of the app fails with an error?
+
+![Shopify Migration - Old user error](./img/shopifyv2/shopify_migration_old_user_error.png)
+
+If you installed your app before 15th September 2025 and get the error "Your app has extensions which need to be assigned 'uid' identifiers" when you try to update the app via redeployment - you need to uninstall and the app due to a major [Shopify app update](https://shopify.dev/docs/apps/build/dev-dashboard/migrate-from-partners) and install a new one following the steps below:
+
+ - Uninstall the app from your shopify store.
+ - Delete the app in shopify partners (optional)
+ - Head back to your Shopify plugin page on BTCPay Server and click the `Reset` button
+  - Ensure you are using the latest shopify fragment (>= 1.5)
+ - Follow the installation instructions and start afresh
+
 
 ### How to update BTCPay Shopify app?
 
