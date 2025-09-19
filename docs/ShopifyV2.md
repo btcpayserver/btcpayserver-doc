@@ -248,7 +248,7 @@ More details:
 
 ### Plugin Installation fails?
 
-You tried to install the plugin on BTCPay Server and you get the error "This app has been migrated to the new Next-Gen Dev platform"? if you are the Server Admin of the BTCPay instance, all you need to do is to update your shopify fragment to the latest following the `Deploy the Shopify fragment` guide discussed earlier. If you aren't the server admin, please reach out to the admin and request that they upgrade their shopify fragment. Once this is done, you should now be able to sucessfully link your BTCPay Server and Shopify following the installation guide. 
+You tried to install the plugin on BTCPay Server and you get the error "This app has been migrated to the new Next-Gen Dev platform"? If you are the server admin of the BTCPay instance, all you need to do is to update your BTCPay Server following the `Deploy the Shopify fragment` guide discussed earlier. If you aren't the server admin, please reach out to the admin and request that they upgrade their shopify fragment. Once this is done, you should now be able to sucessfully link your BTCPay Server and Shopify following the installation guide. 
 
 ![Shopify Migration - Plugin Install fails](./img/shopifyv2/plugin_install_fails.png)
 
@@ -257,10 +257,10 @@ You tried to install the plugin on BTCPay Server and you get the error "This app
 
 If you installed your app before 15th September 2025 and get the error "Your app has extensions which need to be assigned 'uid' identifiers" when you try to update the app via redeployment - you need to uninstall and the app due to a major [Shopify app update](https://shopify.dev/docs/apps/build/dev-dashboard/migrate-from-partners) and install a new one following the steps below:
 
- - Uninstall the app from your shopify store.
- - Delete the app in shopify partners (optional)
+ - Uninstall the app from your shopify store
+ - Delete the app in Shopify partners (optional)
  - Head back to your Shopify plugin page on BTCPay Server and click the `Reset` button
-  - Ensure you are using the latest shopify fragment (>= 1.5)
+ - Ensure you are using the latest shopify fragment (>= 1.5) by running ./btcpay-update.sh from your btcpayserver-docker directory
  - Follow the installation instructions and start afresh
 
 ![Shopify Migration - Old user error](./img/shopifyv2/shopify_migration_old_user_error.png)
