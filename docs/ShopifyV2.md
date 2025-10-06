@@ -39,10 +39,13 @@ Before diving into the setup process, ensure you have the following:
 
 First we will create a new app in the Shopify partner portal. Make sure you are registered as a [Shopify partner](https://www.shopify.com/partners) (it's free to register).
 
-1. On Shopify Partner [dashboard](https://partners.shopify.com), click on `Apps` > `All Apps` > `Create App` > `Create app manually`. Enter the name you want to call the app (e.g. BTCPay Server) and click `Create`.
-2. Once created displays your "Client ID" and "Client secret", which we need in a minute. Please note them down or come back to this page later.
+1. On Shopify Partner [dashboard](https://partners.shopify.com), click on `App distribution`, on the next page click on `View Dev Dashboard` which will open a page in a new browser tab. In this page, click `Create app` > `Start from Dev Dashboard`, enter the name you want to call the app (e.g. BTCPay Server) and click `Create`.
+
+   ![Shopify-App: Create app manually](./img/shopifyv2/create_app_manually.png)
+
+2. Once created, click on `Settings`, there your "Client ID" and "Client secret" is displayed, which we need in a minute. Please note them down or come back to this page later.
    ![Shopify-App: client id and secret](./img/shopifyv2/partner-app_client-id-secret.png)
-3. While in your just created app page, select API access on the left menu, scroll down to `Allow network access in checkout and account UI extensions` and grant network access. You should see the following screen once network access is granted 
+3. Go back to your partner's dashboard, reload the page so the app list now includes the newly created app. Once done, click `All Apps`,  click your just created app, select `API access requests` on the left menu, scroll down to `Allow network access in checkout and account UI extensions` and grant network access. You should see the following screen once network access is granted 
    ![Shopify-App: Partner app network access](./img/shopifyv2/partner_app_network_access.png)
 
 :::tip
@@ -126,7 +129,7 @@ BTCPay Server will restart which can take a few minutes.
 
 Now it's time to install your Shopify app to the Shopify store (which will link your store to your BTCPay Server).
 
-1. On your [partner account](https://partners.shopify.com/) app overview, select the app you just created, click on `Choose distribution` and select `Custom distribution`. Confirm the selection.
+1. On your [partner account](https://partners.shopify.com/) app overview, select the app you just created, click on `Choose Distribution` and select `Custom distribution`. Confirm the selection.
     :::tip
     Please note that selecting custom distribution means that you can only use the app one Shopify store. This is irreversible. You can deploy multiple apps though if you have more than one store.
     :::
@@ -242,6 +245,26 @@ More details:
 
 
 ## Troubleshooting
+
+### Plugin Installation fails?
+
+You tried to install the plugin on BTCPay Server and you get the error "This app has been migrated to the new Next-Gen Dev platform"? If you are the server admin of the BTCPay instance, all you need to do is to update your BTCPay Server following the `Deploy the Shopify fragment` guide discussed earlier. If you aren't the server admin, please reach out to the admin and request that they upgrade their shopify fragment. Once this is done, you should now be able to sucessfully link your BTCPay Server and Shopify following the installation guide. 
+
+![Shopify Migration - Plugin Install fails](./img/shopifyv2/plugin_install_fails.png)
+
+
+### The update of the app fails with an error?
+
+If you installed your app before 15th September 2025 and get the error "Your app has extensions which need to be assigned 'uid' identifiers" when you try to update the app via redeployment - you need to uninstall and the app due to a major [Shopify app update](https://shopify.dev/docs/apps/build/dev-dashboard/migrate-from-partners) and install a new one following the steps below:
+
+ - Uninstall the app from your shopify store
+ - Delete the app in Shopify partners (optional)
+ - Head back to your Shopify plugin page on BTCPay Server and click the `Reset` button
+ - Ensure you are using the latest shopify fragment (>= 1.5) by running ./btcpay-update.sh from your btcpayserver-docker directory
+ - Follow the installation instructions and start afresh
+
+![Shopify Migration - Old user error](./img/shopifyv2/shopify_migration_old_user_error.png)
+
 
 ### How to update BTCPay Shopify app?
 
