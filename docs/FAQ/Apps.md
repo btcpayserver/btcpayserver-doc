@@ -210,7 +210,7 @@ To remove the redundant fields in WooCommerce checkout, use [Flexible Checkout F
 
 To speed up the checkout process use [WooCommerce Direct Checkout](https://wordpress.org/plugins/woocommerce-direct-checkout/) (remove redundant steps in the checkout process and make pledging quicker)
 
-#### 2. Modifing WordPress functions
+#### 2. Modifying WordPress functions
 
 Insert the following code at the bottom of your child theme's **functions.php** file.
 
