@@ -81,7 +81,7 @@ Storing private keys on a public server comes with risks. This is similar to the
 As mentioned above, the create wallet functionality includes the risk of funds being stolen if the server or account is compromised. To mitigate this risk, we advise you to:
 
 - Enable two factor or U2F authentication
-- Occasionally move funds to your cold storage either manually or by configuring [BTC Transmuter](https://github.com/btcpayserver/btcTransmuter/blob/master/README.md) with automatic payment forwarding.
+- Occasionally manually move funds to your cold storage
 
 :::danger
 Do not give anyone else access to your server's SSH keys or server account credentials when using a hot wallet. Anyone with access to your account can spend the funds from your hot wallet. If you need to allow account access to employees, developers, etc. use an [existing wallet](ConnectWallet.md#connect-an-existing-wallet) instead.
