@@ -75,7 +75,7 @@ This references the plugin project in the folder, that sits right next to your B
 
 :::tip The BTCPay Server dependency
 Your plugin is part of the BTCPay Server solution then, but keep the following in mind:
-The BTCPay Server version your plugin has as a dependecy is the submodule in the plugin repository — not the one in the forked repository.
+The BTCPay Server version your plugin has as a dependency is the submodule in the plugin repository — not the one in the forked repository.
 You will need to update the submodule to access the latest version of BTCPay Server.
 :::
 
@@ -198,12 +198,12 @@ We extend them as we move along, same with [actions and filters](#actions-and-fi
 
 ### Actions and Filters
 
-In addtion to the extention points which hook into the UI, you can also use the following hooks to modify and extend behaviour:
+In addition to the extension points which hook into the UI, you can also use the following hooks to modify and extend behaviour:
 
 - [Action](https://github.com/btcpayserver/btcpayserver/blob/master/BTCPayServer.Abstractions/Contracts/IPluginHookAction.cs): Extend the core functionality
 - [Filters](https://github.com/btcpayserver/btcpayserver/blob/master/BTCPayServer.Abstractions/Contracts/IPluginHookFilter.cs): Do something and also return data
 
-As with the UI extention points, you can define them within the `Execute` method of the plugin base class:
+As with the UI extension points, you can define them within the `Execute` method of the plugin base class:
 
 ```csharp
 public class Plugin : BaseBTCPayServerPlugin

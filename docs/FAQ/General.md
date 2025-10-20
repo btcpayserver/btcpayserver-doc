@@ -157,10 +157,10 @@ Be sure to enable the webhook and hit the `Add webhook` to save it.
 
 ![Create new Webhook](../img/FAQ/btcpayWebhookFAQ2.jpg)
 
-## Webhook format is not bitpay compatible?
+## Webhook format is not BitPay compatible?
 
 Webhooks are not meant to be compatible with bitpay API.
-There's two seperate IPNs (in BitPay terms: "Instant Payment Notifications") in BTCPay Server.
+There's two separate IPNs (in BitPay terms: "Instant Payment Notifications") in BTCPay Server.
 
 - Webhooks
 - notifications
