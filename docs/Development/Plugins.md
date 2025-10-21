@@ -344,6 +344,20 @@ You can browse the prereleased plugin list on any BTCPay Server by going to `Ser
 
 Once you click the `Release` button on the build page, the package won't be in prerelease anymore and it is visible to everyone. Once the package is released, you won't be able to publish a new build with the same version number. So you will need to bump the `<Version>` of your plugin in the csproj before publishing any new adjustment to your plugin.
 
+## Important notice about plugins
+
+Plugins are developed by third parties. They need to be updated and maintained regularly, in addition to the BTCPay Server. Use plugins at your own risk. Read more
+
+**Use at Your Own Risk**: Plugins in this store are developed by independent third parties. These plugins have not undergone review by the BTCPay Server team.
+
+**Disclaimer of Responsibility**: BTCPay Server contributors or Foundation are not liable for any harm, loss, or damage resulting from the installation or use of the plugins. Users assume full responsibility for their installation, use, familiarity with licensing and terms of service and maintenance.
+
+**No Official Endorsement**: Inclusion in the list of BTCPay Server plugins does not constitute an endorsement or guarantee of quality, safety, or compatibility.
+
+**Due Diligence Advised**: We recommend users exercise caution and conduct their own research or consult the community before installing any plugin.
+
+**Feedback and Reporting**: Should you experience issues with a plugin, please provide feedback or report concerns directly to the respective plugin developers.
+
 ## Resources
 
 For more information check out these repositories with existing plugins:
