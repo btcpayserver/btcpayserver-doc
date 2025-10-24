@@ -64,10 +64,6 @@ This email is used to confirm new user account registration. In order to reduce 
 
 Send an invitation email to [invite a new user](./FAQ/ServerSettings.md#how-to-add-a-new-user-by-invite) to register an account on your server. This can be used to keep server registration closed to the public but still invite new users.
 
-## Custom Emails
-
-Custom emails can be created using the BTCPay Server Transmuter preset [Email Receipts](https://docs.btcpayserver.org/Transmuter/EmailReceiptsPreset/#transmuter-email-receipts-setup).
-
 ## Email rules
 
 Email rules allow BTCPay Server to send customized emails from your store based on events.

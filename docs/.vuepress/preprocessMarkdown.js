@@ -21,7 +21,6 @@ const EXTERNAL_DOCS = {
   SideShift: 'https://github.com/Kukks/BTCPayServerPlugins/tree/master/Plugins/BTCPayServer.Plugins.SideShift',
   Smartstore: 'https://github.com/btcpayserver/Smartstore.BTCPayServer',
   TicketTailor: 'https://github.com/Kukks/BTCPayServerPlugins/tree/master/Plugins/BTCPayServer.Plugins.TicketTailor',
-  Transmuter: 'https://github.com/btcpayserver/btcTransmuter',
   Trocador: 'https://github.com/saltrafael/trocador-plugin',
   Vault: 'https://github.com/btcpayserver/BTCPayServer.Vault',
   Wix: 'https://github.com/btcpayserver/wix',

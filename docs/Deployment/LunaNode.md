@@ -50,5 +50,5 @@ Now you need to wait for blockchain to sync fully. Depending on the plan you use
 
 ## 4. Additional customization (optional)
 
-Once your BTCPay Server instance is setup, as with any deployment method, you can add environment variables such as activating keysend and autopilot for LND as well as get access to your own transmuter.
+Once your BTCPay Server instance is setup, as with any deployment method, you can add environment variables such as activating keysend and autopilot for LND.
 For more information, visit the available [environment variable list](https://docs.btcpayserver.org/Docker/#generated-docker-compose). This requires knowledge of how to [SSH into your server](/FAQ/ServerSettings.md#how-to-ssh-into-my-btcpay-running-on-vps).
