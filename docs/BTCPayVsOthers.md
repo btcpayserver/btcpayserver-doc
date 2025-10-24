@@ -113,6 +113,8 @@ As the BTCPay Server community continues to grow, more deployment methods, use c
 
 Currently, BTCPay Server is a processor **without fiat conversion** capabilities out of the box. As a merchant, this may be difficult if business costs require fiat. Not providing fiat conversion out of the box allows BTCPay Server merchants to avoid KYC and AML identification verification. This also allows BTCPay Server to be free and available for anyone to use.
 
+However, instant fiat conversion is available through various BTCPay Server plugins. Explore the available plugins to find solutions that meet your needs.
+
 ---
 
 ## Can't find this information for other payment processors?
