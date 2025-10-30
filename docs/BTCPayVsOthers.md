@@ -111,9 +111,8 @@ As the BTCPay Server community continues to grow, more deployment methods, use c
 
 ## Fiat
 
-Currently, BTCPay Server is a processor **without fiat conversion** capabilities out of the box. As a merchant, this may be difficult if business costs require fiat. Not providing fiat conversion out of the box allows BTCPay Server merchants to avoid KYC and AML identification verification. This also allows BTCPay Server to be free and available for anyone to use.
 
-However, a fiat conversion plugin is available for BTCPay Server. Since merchants are always the owners of their private keys, they can always freely convert their coins manually, but for now there's no instant-fiat conversion. More info on the [Transmuter](https://github.com/btcpayserver/btcTransmuter).
+Conversion from bitcoin to local currencies or different altcoins to Bitcoin is available through various third-party BTCPay Server plugins. [Explore the available plugins](https://plugin-builder.btcpayserver.org/public/plugins) to find solutions that meets your needs.
 
 ---
 

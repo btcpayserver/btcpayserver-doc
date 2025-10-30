@@ -130,6 +130,6 @@ Third party hosts (non-malicious) can see the following:
 - Total number of users
 - The email and username of those users
 
-Note: If additional features are enabled such as non-admin lightning wallet, hot wallets or transmuter, the server admin can see additional information related to those features. Since it's impossible to know if the third party host is using a malicious fork, it's best to assume they may know all details about your BTCPay Server usage.
+Note: If additional features are enabled such as non-admin lightning wallet or hot wallets, the server admin can see additional information related to those features. Since it's impossible to know if the third party host is using a malicious fork, it's best to assume they may know all details about your BTCPay Server usage.
 
 If you are worried about the information a third party host knows about you, please consider [deploying your own](./README.md) self-hosted server.

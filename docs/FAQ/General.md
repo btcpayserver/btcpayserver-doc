@@ -79,7 +79,7 @@ If you're using a Third-Party BTCPay host, you should be familiar with the [secu
 
 ## Does BTCPay Server support crypto to fiat conversion?
 
-At this time, it is possible to do automated conversions using the BTCPay Server plugin called [BTCTransmuter](https://github.com/btcpayserver/btcTransmuter). Please note this software is currently in _alpha state_.
+Fiat conversion is available through various BTCPay Server [plugins](https://plugin-builder.btcpayserver.org/public/plugins). Explore the available plugins to find solutions that meet your needs.
 
 ## What if I have a problem paying an invoice?
 
@@ -181,7 +181,7 @@ It's possible to [create backups of your BTCPay Server](https://docs.btcpayserve
 ## How can I charge for using my BTCPay Server instance?
 
 Currently charging users for using your BTCPay Server instance, whether it's a percentage of transactions or a registration fee, is not supported natively.
-Enabling such a feature could be possible, using the [Transmuter](https://docs.btcpayserver.org/Transmuter/) and/or the [Greenfield API](https://docs.btcpayserver.org/API/Greenfield/v1/) but will require moderate to extensive technical knowledge.
+Enabling such a feature could be possible, using the [Greenfield API](https://docs.btcpayserver.org/API/Greenfield/v1/) but will require moderate to extensive technical knowledge.
 
 ## Stuck synching: "NBXplorer is synchronizing"
 

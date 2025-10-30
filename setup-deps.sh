@@ -10,7 +10,6 @@ NBXPLORER_DIR="$BASE_DIR/deps/nbxplorer"
 CONFIGURATOR_DIR="$BASE_DIR/deps/configurator"
 DOCKER_DIR="$BASE_DIR/deps/docker"
 VAULT_DIR="$BASE_DIR/deps/vault"
-TRANSMUTER_DIR="$BASE_DIR/deps/transmuter"
 ZAPIER_DIR="$BASE_DIR/deps/zapier"
 PODSERVER_DIR="$BASE_DIR/deps/podserver"
 TROCADOR_DIR="$BASE_DIR/deps/trocador"
@@ -155,26 +154,6 @@ sed -ie 's$(utxo-sets)$(https://github.com/btcpayserver/btcpayserver-docker/blob
 sed -ie 's$(load-utxo-set.sh)$(https://github.com/btcpayserver/btcpayserver-docker/blob/master/contrib/FastSync/load-utxo-set.sh)$g' "$DOCS_DIR/Docker/fastsync.md"
 sed -ie 's$(save-utxo-set.sh)$(https://github.com/btcpayserver/btcpayserver-docker/blob/master/contrib/FastSync/save-utxo-set.sh)$g' "$DOCS_DIR/Docker/fastsync.md"
 sed -ie 's$(sigs/NicolasDorier.utxo-sets.asc)$(https://github.com/btcpayserver/btcpayserver-docker/blob/master/contrib/FastSync/sigs/NicolasDorier.utxo-sets.asc)$g' "$DOCS_DIR/Docker/fastsync.md"
-
-# Transmuter
-
-echo "Setup dependency: Transmuter"
-
-rm -rf "$DOCS_DIR/Transmuter"
-mkdir -p "$DOCS_DIR/Transmuter"
-
-if [ ! -d "$TRANSMUTER_DIR" ]; then
-  git clone https://github.com/btcpayserver/btcTransmuter.git "$TRANSMUTER_DIR"
-else
-  cd "$TRANSMUTER_DIR" && git checkout master && git pull
-fi
-
-cd "$TRANSMUTER_DIR"
-cp -r README.md docs/* "$DOCS_DIR/Transmuter"
-sed -ie 's$(docs/$(./$g' "$DOCS_DIR/Transmuter/README.md"
-for file in "$DOCS_DIR"/Transmuter/*.md; do
-  update_external "$file" https://github.com/btcpayserver/btcTransmuter https://github.com/btcpayserver/btcTransmuter/edit/master "$DOCS_DIR"/Transmuter/
-done
 
 # Zapier
 
