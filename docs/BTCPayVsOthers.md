@@ -112,7 +112,7 @@ As the BTCPay Server community continues to grow, more deployment methods, use c
 ## Fiat
 
 
-Conversion from bitcoin to local currencies or different altcoins to Bitcoin is available through various third-party BTCPay Server plugins. [Explore the available plugins](https://plugin-builder.btcpayserver.org/public/plugins)) to find solutions that meets your needs.
+Conversion from bitcoin to local currencies or different altcoins to Bitcoin is available through various third-party BTCPay Server plugins. [Explore the available plugins](https://plugin-builder.btcpayserver.org/public/plugins) to find solutions that meets your needs.
 
 ---
 
