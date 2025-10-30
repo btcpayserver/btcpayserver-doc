@@ -79,7 +79,7 @@ If you're using a Third-Party BTCPay host, you should be familiar with the [secu
 
 ## Does BTCPay Server support crypto to fiat conversion?
 
-Fiat conversion is available through various BTCPay Server plugins. Explore the available plugins to find solutions that meet your needs.
+Fiat conversion is available through various BTCPay Server [plugins](https://plugin-builder.btcpayserver.org/public/plugins). Explore the available plugins to find solutions that meet your needs.
 
 ## What if I have a problem paying an invoice?
 
