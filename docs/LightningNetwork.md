@@ -1,8 +1,27 @@
 # Lightning Network (LN) and BTCPay Server
 
+## Glossary
+
+- **Lightning Network (LN)**: A second-layer payment protocol that enables fast, low-cost Bitcoin transactions by creating payment channels between parties.
+- **Self-custodial**: Maintaining full control and ownership of your private keys and funds, without relying on third parties.
+- **Custodial Wallet**: A wallet where a third party controls your private keys and manages your funds on your behalf.
+- **Liquidity**: The available balance in a payment channel that can be used to send or receive payments.
+- **Payment Channel**: A two-way payment relationship between two parties on the Lightning Network.
+- **LSP (Liquidity Service Provider)**: A service that provides inbound liquidity by opening payment channels to your node.
+- **On-chain**: Transactions that are recorded on the Bitcoin blockchain.
+- **Off-chain**: Transactions that occur on second-layer solutions like the Lightning Network, not directly on the blockchain.
+- **Sats (satoshis)**: The smallest unit of Bitcoin, equal to 0.00000001 BTC.
+- **L-BTC**: Liquid Bitcoin, a tokenized version of Bitcoin on the Liquid Network.
+
+## Lightning Network (LN) and BTCPay Server
+
 As a merchant, you want to make payments as affordable as possible for your customers and yourself. With the growing adoption of Bitcoin, traditional on-chain payments will become increasingly expensive. The Lightning Network, also known as off-chain payments, offers a solution by enabling cheap and instant transactions. This makes it an ideal choice for online payments and in-person sales, also referred to as Point of Sale (PoS) sales.
 
-There are many different ways for merchants to get the Lightning Network setup on BTCPay Server - depending on your technical skills and desire to be in control of your funds. We will start with the easiest, but custodial options and evolve gradually towards full self custody and control. The thinking behind this is: Before you as a merchant do not accept bitcoin payments at all it’s better you do it via the most easy solution available for a great starting point and experience. We hope you will change your setup towards more self-sovereignty and control over your funds in the future, as you learn more about Bitcoin and its possibilities.
+There are many different ways for merchants to get the Lightning Network setup on BTCPay Server - depending on your technical skills and desire to be in control of your funds. We will start with the easiest, but custodial options and evolve gradually towards full self-custody and control. The thinking behind this is: Before you as a merchant do not accept bitcoin payments at all it’s better you do it via the most easy solution available for a great starting point and experience. We hope you will change your setup towards more self-sovereignty and control over your funds in the future, as you learn more about Bitcoin and its possibilities.
+
+:::tip
+If you want to get started quickly and have no time to read this all take a look in using SamRock Protocol to [setup wallets auto-magically](SamRockProtocol.md) for you.
+:::
 
 **Table of contents**:
 [[toc]]
@@ -19,7 +38,7 @@ There are many different ways for merchants to get the Lightning Network setup o
 **Cons:**
 * trust in a 3rd party needed
 * some form of KYC needed
-* funds are at risk if the service goes bankrupt or does a rugpull
+* funds are at risk if the service goes bankrupt or does a rug-pull
 * often limits on per payment amount
 * often limits on total amounts processed per month
 
@@ -50,13 +69,13 @@ When using any custodial service, you should keep your balance on the service lo
 * 0-amount invoices not possible (see [this](https://docs.boltz.exchange/boltz-btcpay-plugin/limitations))
 * swaps to L-BTC (needs swapping of L-BTC to BTC to be fully self-custodial)
 
-This option is using the [boltz.exchange](https://boltz.exchange) service by swapping LN payments to Liquid BTC (L-BTC, more about Liquid Network [here](https://liquid.net)). Liquid requires trust in a federation of companies so it is not fully self-custodial although many entities would need to collude to rugpull you.
+This option is using the [boltz.exchange](https://boltz.exchange) service by swapping LN payments to Liquid BTC (L-BTC, more about Liquid Network [here](https://liquid.net)). Liquid requires trust in a federation of companies so it is not fully self-custodial, although many entities would need to collude to rug-pull you.
 
 Same as with custodial services, you should regularly swap funds to real self-custodial on-chain BTC from time to time to be in full control. With a hot wallet the boltz plugin allows you to automatically swap to BTC.
 
 You can find the docs for the plugin [here](https://btcpay.docs.boltz.exchange/) and a blog post with some more background information [here](https://blog.boltz.exchange/p/launching-the-boltz-btcpay-plugin)
 
-In the process of setup you will need to set up a new Liquid wallet or use an existing one. The quickest and easiest way to do so is using [Aqua wallet](https://aquawallet.io/) and [connect your store over the SamRock protocol](https://www.youtube.com/watch?v=d9T94kx92yY). 
+In the process of setup you will need to set up a new Liquid wallet or use an existing one. The quickest and easiest way to do so is using [SamRock Protocol](SamRockProtocol.md). 
 
 ## Using Liquidity Service Providers (LSPs)
 
