@@ -242,13 +242,13 @@ mkdir -p "$DOCS_DIR/Drupal"
 if [ ! -d "$DRUPAL_DIR" ]; then
   git clone --depth 1 https://github.com/btcpayserver/commerce_btcpay.git "$DRUPAL_DIR"
 else
-  cd "$DRUPAL_DIR" && git checkout 8.x-1.x && git pull
+  cd "$DRUPAL_DIR" && git checkout 3.x && git pull
 fi
 
 cd "$DRUPAL_DIR"
 cp -r README.md "$DOCS_DIR/Drupal"
 for file in "$DOCS_DIR"/Drupal/*.md; do
-  update_external "$file" https://github.com/btcpayserver/commerce_btcpay https://github.com/btcpayserver/commerce_btcpay/edit/8.x-1.x "$DOCS_DIR"/Drupal/
+  update_external "$file" https://github.com/btcpayserver/commerce_btcpay https://github.com/btcpayserver/commerce_btcpay/edit/3.x "$DOCS_DIR"/Drupal/
 done
 
 # Smartstore
