@@ -1,3 +1,5 @@
+# GiveWP donations integration
+
 ## Requirements
 
 Please ensure that you meet the following requirements before installing this plugin.
