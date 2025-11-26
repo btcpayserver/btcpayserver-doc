@@ -96,3 +96,6 @@ Always make sure that everything is set up correctly before going live.
 ![BTCPay for GiveWP: Test Donation](./img/givewp/givewp-bitcoin-payment-option.png)
 ![BTCPay for GiveWP: Test Donation payment page](./img/givewp/givewp-payment-page.png)
 ![BTCPay for GiveWP: Test Donation](./img/givewp/givewp-donation-paid.png)
+
+## Get support
+You can open an issue on [our repository](https://github.com/btcpayserver/givewp) or reach us on [Telegram](https://t.me/btcpayserver) or [Mattermost chat](http://chat.btcpayserver.org/).
