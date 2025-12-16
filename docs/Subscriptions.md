@@ -35,7 +35,7 @@ An **offering** represents the service or product you sell on a recurring basis.
 To create your first offering:
 
 1. To create an offering, in the sidebar click on **Subscriptions**.   
-2. Name your offering “My Product”  
+2. Enter a name for your offering e.g. My Product 
 3. Click the Create button in the top right corner.
 
 Once an offering is created, you add one or more plans to it to define pricing, billing intervals, and subscription behavior.
