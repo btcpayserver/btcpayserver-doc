@@ -21,9 +21,22 @@ Bitcoin is the only focus of the project and its core developers. However, opt i
 - Monacoin (MONA)
 - Monero (XMR) [(guide on deployment and usage)](https://sethforprivacy.com/guides/accepting-monero-via-btcpay-server/)
 - Polis (POLIS)
+- USDt (Tether) on Tron [via plugin](https://plugin-builder.btcpayserver.org/public/plugins/tether-usdt).
 - Viacoin (VIA)
 
 Altcoins are maintained by their respective communities and are listed here only for convenience. For support regarding Altcoin deployment, functionalities or issues, please contact the Altcoin maintainer or community directly.
+
+## Altcoin acceptance via exchange plugins
+
+The following plugins allow you to accept a variety of Altcoins by exchanging them into bitcoin via your store wallet.
+
+- [Exolix](https://plugin-builder.btcpayserver.org/public/plugins/exolix-plugin)
+- [Fixed Float](https://plugin-builder.btcpayserver.org/public/plugins/fixed-float)
+- [SideShift](https://plugin-builder.btcpayserver.org/public/plugins/sideshift)
+- [Trocador](https://plugin-builder.btcpayserver.org/public/plugins/trocador-app)
+
+Note that these external exchange providers charge your users a fee and can have minimums for transactions.
+
 
 ## Can an XYZ coin be added in BTCPay?
 
