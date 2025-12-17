@@ -3,7 +3,7 @@
 :::warning
 Please be aware that this integration is not maintained by the BTCPay Server team. If you have any feature requests or bug reports, please do so on [coinsnap repository](https://github.com/Coinsnap/Coinsnap-for-EasyDigitalDownloads) directly.
 :::
-
+[![Easy Digital Downloads Bitcoin](https://img.youtube.com/vi/qAenGKJYM8I/mqdefault.jpg)](https://www.youtube.com/watch?v= qAenGKJYM8I)
 ## Requirements
 
 Please ensure that you meet the following requirements before installing this plugin.
