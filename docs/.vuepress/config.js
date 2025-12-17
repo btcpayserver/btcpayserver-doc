@@ -112,6 +112,7 @@ const sidebarUserGuide = [
     ['/BigCommerce/', 'Big Commerce'],
     ['/Calcom', 'Cal.com'],
     ['/Drupal/', 'Drupal'],
+    ['/EasyDigitalDownloads', 'Easy Digital Downloads'],
     ['/EasyWebshop', 'EasyWebshop'],
     ['/Ecwid/', 'Ecwid'],
     ['/GiveWP', 'GiveWP'],
