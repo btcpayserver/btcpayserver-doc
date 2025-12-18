@@ -73,6 +73,11 @@ const sidebarUserGuide = [
         ]
       },
       ['/Invoices', 'Invoices'],
+      {
+        title: 'Subscriptions',
+        path: '/Subscriptions',
+        children: [['/Monetization', 'Monetization']]
+      },
       ['/Translations', 'Translations'],
       ['/PaymentRequests', 'Payment Requests'],
       {
