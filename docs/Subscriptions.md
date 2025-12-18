@@ -1,6 +1,6 @@
 # Subscriptions
 
-Subscriptions allow you to manage recurring payments for services you provide, such as newsletters, SaaS products, memberships, or recurring donations.
+Subscriptions allow you to manage recurring payments for services you provide, such as newsletters, SaaS products, memberships or recurring donations.
 
 [![Bitcoin Subscriptions](https://img.youtube.com/vi/CV5wckX7x80/mqdefault.jpg)](https://www.youtube.com/watch?v=CV5wckX7x80)
 
@@ -197,7 +197,7 @@ You can suspend a subscriber to temporarily disable access to the service.
 
 * Suspension immediately blocks access, regardless of subscription state  
 * You can optionally provide a suspension reason (The reason can be displayed to the subscriber in the customer portal)  
-* Suspended subscriptions can be unsuspended at any time.
+* Suspended subscriptions can be unsuspended at any time
 
 #### Add credits
 

@@ -1,6 +1,6 @@
 # Monetization
 
-Monetization lets a BTCPay Server administrator charge users of their BTCPay Server instance using the built in [Subscriptions](http://docs.btcpayserver.org/Subscriptions) system. It is intended for operators who host BTCPay Server for others and want to charge for server access, maintenance, or technical support.
+Monetization lets a BTCPay Server administrator charge users of their BTCPay Server instance using the built in [Subscriptions](http://docs.btcpayserver.org/Subscriptions) system. It is intended for operators who host BTCPay Server for others and want to charge for server access, maintenance or technical support.
 
 Monetization is available starting with **BTCPay Server v2.3.0**.
 
@@ -36,7 +36,7 @@ When monetization is enabled, BTCPay Server automatically:
 * Replaces the standard registration flow with a subscription checkout  
 * Preconfigures basic email notifications (if Server SMTP is configured)
 
-Users registering to your BTCPay Server, will not first have to go through a subscription checkout. The flow is as following:
+Users registering to your BTCPay Server, will now first have to go through a subscription checkout. The flow is as following:
 
 * User registers on BTCPay Server  
 * The user goes to Subscription Checkout where they can select a plan, and add their email.  
