@@ -6,6 +6,30 @@ With this feature, you can replace the default English text across the entire ba
 
 Here’s how you can create and manage translations to make the BTCPay server easier to use.
 
+## Language packs 
+
+Starting with BTCPay Server 2.3, administrators can also download community submitted language packs instead of creating translations from scratch. Language packs allow you to quickly localize the entire server backend using translations contributed by the community.
+
+[![BTCPay Language Packs](https://img.youtube.com/vi/WKxcdVIDT04/mqdefault.jpg)](https://www.youtube.com/watch?v=WKxcdVIDT04)
+
+### Downloading a language pack
+
+- Navigate to Server Settings >> `Translation`
+- Click `Download language pack`
+- Select a language from the dropdown
+- Click `Download`
+Once downloaded, the language pack will appear in your list of dictionaries.
+
+#### Applying a language pack
+
+- Click `Select` to make downloaded language pack the default language for your server
+
+#### Editing a downloaded language pack
+
+If you want to customize a downloaded language pack, it is recommended to clone the dictionary first.
+Apply your changes to the cloned version and select it as the active dictionary. This prevents your custom changes from being overwritten if the original language pack is updated in the future.
+
+If your language is not available, you can still create a new dictionary manually and [submit your translation](https://github.com/btcpayserver/btcpayserver-translator) so others can benefit from it.
 
 ## Translating BTCPay Server
 
