@@ -346,7 +346,7 @@ Once you click the `Release` button on the build page, the package won't be in p
 
 ## Important notice about plugins
 
-Plugins are developed by third parties. They need to be updated and maintained regularly, in addition to the BTCPay Server. Use plugins at your own risk. Read more
+Plugins are developed by third parties. They need to be updated and maintained regularly, in addition to the BTCPay Server.
 
 **Use at Your Own Risk**: Plugins in this store are developed by independent third parties. These plugins have not undergone review by the BTCPay Server team.
 
