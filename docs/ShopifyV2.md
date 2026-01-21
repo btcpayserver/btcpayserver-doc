@@ -214,6 +214,47 @@ When you click on it you can see the payment details:
 ![BTCPay Server shopify step 38](./img/shopifyv2/invoice_payment_details.png)
 
 
+## Shopify Refunds
+
+BTCPay Server supports processing refunds only for Shopify orders paid with Bitcoin via BTCPay Server. When you issue a refund in Shopify, BTCPay Server will handle refund process by sending a refund claim link based on the amount to be refunded back to the customer.
+
+:::warning
+For you to be able to perform refunds, your shopify fragments and shopify app needs to be v1.6 and higher. So for older Shopify plugin users, it is required that you update your shopify fragment to the latest, and redeploy the shopify app. 
+
+Click here to learn see how to [update shopify app and fragment](#how-to-update-btcpay-shopify-app)
+:::
+
+Before we continue, you need to have Email SMTP configured for your store for you to be able to continue with refunds in Shopify. 
+To setup email SMTP on your BTCPay Server store, on the left navigation menu click on `Settings` -> `Emails` and setup email SMTP settings for the store. 
+
+Once done, still in the email settings, click on `Go to email rules` -> `Create Email Rule`. Click on the `Trigger` dropdown and select `Shopify: Refund Created`. You can customize the body of the email rule, but ensure the `Claim Refund` button is present to enable the customer claim his refund. Once done click on Save.
+
+![Shopify Plugin - Email Rule settings](./img/shopifyv2/shopify-refund-email-rule.png)
+
+Navigate to Shopify refund settings by clicking on `Shopify V2` -> `Refund Settings`.
+![Shopify Plugin - Refunds settings](./img/shopifyv2/refund-settings.png)
+
+Copy the webhook URL in the settings page and go to your shopify store admin page. Click on `Settings` -> `Notifications` -> click `Webhooks`
+
+![Shopify app - Notification settings](./img/shopifyv2/app-notification_settings.png)
+
+In the webhook settings, click `Create webhook`, and in the modal select the following:
+- For event, select Refund create
+- Format should be JSON
+- URL is the webhook URL you copied from Shopify refund settings on BTCPay Server page
+- Webhook API version choose 2026-01
+
+Once done click save. On the same Shopify webhooks page, you would also see the webhook signature, copy it, go back to BTCPay Server shopify refunds settings and paste it in the `Webhook Secret` field. 
+
+![Shopify app - Webhook settings](./img/shopifyv2/app-webhook_settings.png)
+
+Still in the same refund settings page, you also have the option to select your preferred refund options if you want the refund to be done with the current exchange rate, or if you want the refund to be processed with the same rate the original payment was made at. 
+You can also specify refund spread percentage to cater for exchange rate volatility. 
+
+Once done, click the `Save Settings` button. 
+
+Congratulations, you have now process refunds for Shopify orders paid using BTCPay Server.
+
 ## FAQ
 
 - Can I use Shopify V1 and Shopify V2 together? No, Shopify V1 and Shopify V2 should not be used together. Using both versions simultaneously can lead to unexpected behavior, such as duplicate order record on Shopify. We recommend that you disable Shopify V1 and stick to only Shopify V2
@@ -312,6 +353,8 @@ cd btcpayserver-docker
 6. You will see some console output and the section will close if all went well
 ![plugin_update-app--console.png](./img/shopifyv2/plugin_update-app--console.png)
 ![plugin_update-app--finished.png](./img/shopifyv2/plugin_update-app--finished.png)
+7. Go back to your shopify admin page, and to the application, and if there is a modal to update your shopify app, go ahead and update
+![plugin_update-app--finished.png](./img/shopifyv2/app-update_view.png)
 
 Congratulations, you have now updated the BTCPay Shopify app.
 
