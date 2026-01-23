@@ -216,10 +216,12 @@ When you click on it you can see the payment details:
 
 ## Shopify Refunds
 
-BTCPay Server supports processing refunds only for Shopify orders paid with Bitcoin via BTCPay Server. When you issue a refund in Shopify, BTCPay Server will handle refund process by sending a refund claim link based on the amount to be refunded back to the customer.
+BTCPay Server processes refunds only for Shopify orders that were paid with Bitcoin via BTCPay Server.
+Refunds for orders paid using other payment methods are not supported. 
+When a refund is issued in Shopify, BTCPay Server handles the refund by sending the customer a refund-claim link for the refunded amount.
 
 :::warning
-For you to be able to perform refunds, your shopify fragments and shopify app needs to be v1.6 and higher. So for older Shopify plugin users, it is required that you update your shopify fragment to the latest, and redeploy the shopify app. 
+For you to be able to perform refunds, your Shopify fragments and Shopify app needs to be v1.6 and higher. So for older Shopify plugin users, it is required that you update your Shopify fragment to the latest, and redeploy the Shopify app. 
 
 Click here to learn see how to [update shopify app and fragment](#how-to-update-btcpay-shopify-app)
 :::
@@ -234,7 +236,7 @@ Once done, still in the email settings, click on `Go to email rules` -> `Create 
 Navigate to Shopify refund settings by clicking on `Shopify V2` -> `Refund Settings`.
 ![Shopify Plugin - Refunds settings](./img/shopifyv2/refund-settings.png)
 
-Copy the webhook URL in the settings page and go to your shopify store admin page. Click on `Settings` -> `Notifications` -> click `Webhooks`
+Copy the webhook URL in the settings page and go to your Shopify store admin page. Click on `Settings` -> `Notifications` -> click `Webhooks`
 
 ![Shopify app - Notification settings](./img/shopifyv2/app-notification_settings.png)
 
@@ -244,7 +246,7 @@ In the webhook settings, click `Create webhook`, and in the modal select the fol
 - URL is the webhook URL you copied from Shopify refund settings on BTCPay Server page
 - Webhook API version choose 2026-01
 
-Once done click save. On the same Shopify webhooks page, you would also see the webhook signature, copy it, go back to BTCPay Server shopify refunds settings and paste it in the `Webhook Secret` field. 
+Once done click save. On the same Shopify webhooks page, you would also see the webhook signature, copy it, go back to BTCPay Server Shopify refunds settings and paste it in the `Webhook Secret` field. 
 
 ![Shopify app - Webhook settings](./img/shopifyv2/app-webhook_settings.png)
 
