@@ -50,6 +50,7 @@ That's it! Your BTCPay Server store is now ready to receive payments directly to
 - **Self-custodial**: You maintain full control of your private keys and funds
 - **Multiple payment methods**: Support for Bitcoin, Lightning, and Liquid in one setup
 - **Mobile-friendly**: Manage your store payments directly from your phone
+- **Enhanced privacy**: Lightning payments are swapped via Boltz using atomic swaps, which means Boltz never takes custody of your funds and cannot link your Lightning payment to your wallet address
 
 ## Resources
 

@@ -20,7 +20,7 @@ As a merchant, you want to make payments as affordable as possible for your cust
 There are many different ways for merchants to get the Lightning Network setup on BTCPay Server - depending on your technical skills and desire to be in control of your funds. We will start with the easiest, but custodial options and evolve gradually towards full self-custody and control. The thinking behind this is: Before you as a merchant do not accept bitcoin payments at all it’s better you do it via the most easy solution available for a great starting point and experience. We hope you will change your setup towards more self-sovereignty and control over your funds in the future, as you learn more about Bitcoin and its possibilities.
 
 :::tip
-If you want to get started quickly and have no time to read this all take a look in using SamRock Protocol to [setup wallets auto-magically](SamRockProtocol.md) for you.
+If you want to get started quickly and have no time to read this all, take a look at using SamRock Protocol to [setup wallets auto-magically](SamRockProtocol.md) for you.
 :::
 
 **Table of contents**:
@@ -64,12 +64,15 @@ When using any custodial service, you should keep your balance on the service lo
 * easy to set up
 * very cheap compared to other solutions
 * works even on shared instances (as long as the admin enables that plugin)
+* **enhanced privacy**: Boltz uses atomic swaps, which means the service never takes custody of your funds and cannot link your Lightning payment to your Liquid wallet address
 
 **Cons:**
 * 0-amount invoices not possible (see [this](https://docs.boltz.exchange/boltz-btcpay-plugin/limitations))
 * swaps to L-BTC (needs swapping of L-BTC to BTC to be fully self-custodial)
 
-This option is using the [boltz.exchange](https://boltz.exchange) service by swapping LN payments to Liquid BTC (L-BTC, more about Liquid Network [here](https://liquid.net)). Liquid requires trust in a federation of companies so it is not fully self-custodial, although many entities would need to collude to rug-pull you.
+This option uses the [boltz.exchange](https://boltz.exchange) service by swapping LN payments to Liquid BTC (L-BTC, more about Liquid Network [here](https://liquid.net)) via **atomic swaps**. Atomic swaps are trustless: the swap either completes fully or fails completely, with no possibility of funds being lost in between. This also means Boltz never takes custody of your funds and cannot correlate your Lightning payment with your on-chain identity, providing better privacy compared to custodial solutions.
+
+Liquid requires trust in a federation of companies, so it is not fully self-custodial, although many entities would need to collude to rug-pull you.
 
 Same as with custodial services, you should regularly swap funds to real self-custodial on-chain BTC from time to time to be in full control. With a hot wallet the boltz plugin allows you to automatically swap to BTC.
 
@@ -114,3 +117,5 @@ You can run CLN (Core Lightning) or LND alongside your BTCPay Server directly on
 * Use internal LN node (CLN, LND or Eclair)
 * Connect your external LN node via REST, TCP or LNDHub (e.g. you can connect your Alby Hub node)
 * Connect your LN wallet over [Nostr Wallet Connect](https://nwc.dev/) (NWC), you need to have the [Nostr plugin](https://github.com/Kukks/BTCPayServerPlugins/tree/master/Plugins/BTCPayServer.Plugins.NIP05) installed (also works for Alby Hub)
+
+For detailed setup instructions, see the [Lightning Network Setup guide](./LightningNetwork-Setup.md).
