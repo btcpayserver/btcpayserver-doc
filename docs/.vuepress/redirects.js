@@ -103,6 +103,7 @@ module.exports = [
   { path: '/features/wallet', redirect: '/Wallet/' },
   { path: '/features/invoices', redirect: '/Invoices/' },
   { path: '/features/lightningnetwork', redirect: '/LightningNetwork/' },
+  { path: '/LightningNetwork_PaymentChannels/', redirect: '/LightningNetwork-Setup/#managing-ongoing-liquidity' },
   { path: '/features/accounting', redirect: '/Reporting/' },
   { path: '/Accounting', redirect: '/Reporting/' },
   { path: '/features/paymentrequests', redirect: '/PaymentRequests/' },

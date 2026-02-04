@@ -196,20 +196,52 @@ For information on managing liquidity through Lightning Service Providers, pleas
 
 ### Manage liquidity on your own (channel management)
 
+Getting your freshly deployed Lightning node ready to send and receive payments requires several steps. This section will guide you through funding your node, opening payment channels, and managing liquidity.
+
+#### Understanding payment channels and liquidity
+
+Before diving into the technical steps, it's important to understand key concepts:
+
+**Overview of the process:**
+
+1. The lightning node is deployed, enabled and its on-chain wallet is funded
+2. A peer is identified and the first payment channel is opened
+3. Inbound and outbound liquidity is acquired. The node is now able to **send** and **receive**
+4. Liquidity management, an ongoing process to maintain the capacity to **send** and **receive**
+
+**Key considerations:**
+
+- **Choosing the channel partner**: Consider opening the first channel to a well-connected peer with robust uptime. This will increase the chances for your payments to be routed and settled.
+- **Inbound vs outbound capacity**: Outbound capacity allows nodes to **send** payments whereas inbound capacity allows nodes to **receive** payments. As a merchant using lightning, having inbound capacity is essential for customers to be able to pay you.
+- **Inbound capacity**: A node adds inbound capacity by either spending sats from its local balance or having other nodes in the network open channels to it.
+- **Liquidity management**: Maintaining the ability to send and receive is a continuous process where a balance between inbound vs outbound capacity has to be maintained across payment channels. This capacity distribution must be adjusted depending upon the use case of the node operator.
+- **Lightning Service Providers**: LSPs offer paid third-party services that improve the ease of operating a lightning network node. Such services can be used to acquire inbound capacity or to automate the rebalancing process. See the [LSP section](./LightningNetwork.md#using-liquidity-service-providers-lsps) for more details.
+
+**Additional resources for deeper understanding:**
+
+- [Good peers on the LN](https://docs.lightning.engineering/the-lightning-network/the-gossip-network/identify-good-peers)
+- [Lightning node types](https://bitcoin.design/guide/how-it-works/nodes/#lightning-nodes)
+- [What is Lightning liquidity?](https://bitcoin.design/guide/how-it-works/liquidity/)
+- [How to get inbound capacity?](https://lightningnetwork.plus/posts/234)
+- [How to manage liquidity?](https://docs.lightning.engineering/the-lightning-network/liquidity/manage-liquidity#rebalancing-channels)
+- [Lightning service providers (LSP)](https://bitcoin.design/guide/how-it-works/lightning-services/)
+
 #### Funding your on-chain wallet 
 
 Now that your lightning node is active, before opening lightning payment channels, you will need to fund the on-chain wallet.
 
 The on-chain funding process can be performed in two ways:
 
-1. via the Ride The Lightning (RTL) UI interface
+**Option 1: Via the Ride The Lightning (RTL) UI interface**
 
 - Select a "Store" and go to the "Lightning" section
 - Under "Services", select "Ride The Lightning"
 - In the RTL app, go to "On-chain", select "Receive" under the "On-chain Transactions" menu
 - Select "Generate Address" and use it as the destination for the allocated funds
 
-2. via the command-line using `bitcoin-lncli.sh` or `bitcoin-lightning-cli.sh`
+**Option 2: Via the command-line**
+
+Using `bitcoin-lncli.sh` or `bitcoin-lightning-cli.sh`:
 
 ```bash
 sudo su -
@@ -221,6 +253,50 @@ cd btcpayserver-docker
 }
 ```
 
+#### Opening your first payment channel
+
 Once your on-chain lightning node is funded, it's time to connect to other nodes on the network and open payment channels.
 
-Check out [Payment channels](./LightningNetwork_PaymentChannels.md) for recommendations on opening payment channels, liquidity management and more.
+**Using Ride The Lightning (RTL):**
+
+1. In RTL, go to "Lightning" > "Peers/Channels"
+2. Click "Open Channel"
+3. Enter the peer's node URI (pubkey@host:port) or search for a well-connected node
+4. Specify the channel amount (in satoshis)
+5. Confirm and wait for the channel to be confirmed on-chain
+
+**Using the command-line:**
+
+For LND:
+```bash
+./bitcoin-lncli.sh connect <pubkey>@<host>:<port>
+./bitcoin-lncli.sh openchannel <pubkey> <amount_in_satoshis>
+```
+
+For CLN:
+```bash
+./bitcoin-lightning-cli.sh connect <pubkey>@<host>:<port>
+./bitcoin-lightning-cli.sh fundchannel <pubkey> <amount_in_satoshis>
+```
+
+::: tip
+As a merchant, you'll need **inbound liquidity** to receive payments. After opening a channel, your balance is 100% on your side (outbound only). To create inbound capacity, you can:
+- Spend some sats through the channel
+- Use a submarine swap service like [Boltz](https://boltz.exchange) to swap Lightning to on-chain BTC
+- Use an LSP service to have channels opened to your node
+- Join a liquidity swap pool like [Lightning Network+](https://lightningnetwork.plus/)
+:::
+
+#### Managing ongoing liquidity
+
+Lightning liquidity management is an ongoing process. As a merchant accepting payments, your channels will gradually fill up on your side, reducing your ability to receive more payments.
+
+**Strategies for maintaining inbound capacity:**
+
+1. **Submarine swaps**: Use services like Boltz to swap Lightning funds back to on-chain BTC, freeing up inbound capacity
+2. **Loop Out**: If using LND, use [Lightning Loop](https://lightning.engineering/loop/) to move funds from Lightning to on-chain
+3. **Spending**: Use your Lightning balance to pay invoices, which naturally creates more inbound capacity
+4. **Channel rebalancing**: Use RTL or command-line tools to rebalance funds between channels. For automated rebalancing, Lightning Loop is supported in RTL
+5. **LSP services**: Use automated liquidity services that handle channel management for you (see [LSP section](./LightningNetwork.md#using-liquidity-service-providers-lsps))
+
+The [LSPS plugin](https://plugin-builder.btcpayserver.org/public/plugins/get-lightning-channel) can help automate some of these processes directly from BTCPay Server.
