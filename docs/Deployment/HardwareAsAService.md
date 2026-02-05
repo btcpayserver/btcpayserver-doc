@@ -9,7 +9,7 @@ They are suitable for technical users to speed up the installation and initial s
 Less-technical users will find the 1-click or plug-and-play systems of these services incredibly practical.
 
 :::warning Please note:
-Hardware-as-a-Service products consist of multiple softwares tied together.
+Hardware-as-a-Service products consist of multiple software tied together.
 The BTCPay Server community has no knowledge of how BTCPay Server integrates into these services, and cannot provide any support for these types of [Manual Deployments](./ManualDeployment.md). Please report bugs and issues directly to the entity that provided you with BTCPay Server inside their product.
 :::
 

@@ -134,7 +134,7 @@ If you see an error `fatal: 'upstream' does not appear to be a git repository` w
 ```bash
 $ git remote add upstream https://github.com/btcpayserver/btcpayserver.git
 
-# check if the upstream repo is added succesfully
+# check if the upstream repo is added successfully
 $ git remote -v
 
 # you should see something like this:

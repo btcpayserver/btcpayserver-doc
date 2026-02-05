@@ -421,7 +421,7 @@ docker restart btcpayserver_clightning_bitcoin
 
 ### How to announce an IPv6 address?
 
-First, copy `bitcoin-clightning.yml` into the the docker fragment folder as `bitcoin-clightning.custom.yml`.
+First, copy `bitcoin-clightning.yml` into the docker fragment folder as `bitcoin-clightning.custom.yml`.
 Important: the file must end with `.custom.yml`, or there will be git conflicts whenever you run `btcpay-update.sh`.
 
 Modify the new `bitcoin-clightning.custom.yml` as the following:

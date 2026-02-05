@@ -270,6 +270,16 @@ BTCPAYGEN_EXCLUDE_FRAGMENTS="$BTCPAYGEN_EXCLUDE_FRAGMENTS;nginx-https"
 
 Notice: If your BTCPay Server install has more than one domain (for example `WOOCOMMERCE_HOST` or `BTCPAY_ADDITIONAL_HOSTS`) you will need to modify your config for each domain name. The example above only covers 1 domain name called `btcpay.domain.com`.
 
+### Can I use Bitcoin Knots instead of Bitcoin Core?
+
+That is possible. Just make sure you have recently updated your deployment (`btcpay-update.sh`) and then run the following commands:
+
+```bash
+export BTCPAYGEN_EXCLUDE_FRAGMENTS="$BTCPAYGEN_EXCLUDE_FRAGMENTS;bitcoin"
+export BTCPAYGEN_ADDITIONAL_FRAGMENTS="$BTCPAYGEN_ADDITIONAL_FRAGMENTS;bitcoinknots"
+. btcpay-setup.sh -i
+```
+
 ## How to change your BTCPay Server domain name?
 
 ### Setting up DNS Records

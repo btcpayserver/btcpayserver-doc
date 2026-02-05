@@ -19,8 +19,8 @@ Getting proper support also depends on how you formulate your questions. Read ou
 As we are an Open Source project, someone in the community might want to help.
 Therefore we've facilitated a channel on our Mattermost to find these talents.
 
-Check out our `Freelance` channel on Mattermost.
-[Mattermost Chat](https://chat.btcpayserver.org/btcpayserver/channels/freelance-jobs)
+Check out our `Dev` channel on Mattermost.
+[Mattermost Chat](https://chat.btcpayserver.org/btcpayserver/channels/dev)
 
 ::: danger
 **BTCPay Server is and will not guarantee or vouch for any support.**

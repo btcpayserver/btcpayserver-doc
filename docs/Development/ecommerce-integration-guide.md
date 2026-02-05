@@ -202,7 +202,7 @@ But you also need these events to e.g. handle payments after expiration:
 
 Normally the webhook events are enough to set the order status in your BE and there is no need to do an additional GET request to check the status of the invoice. However sometimes you still need to do that and check what the actual status is. You can do that by using the [get invoice endpoint](https://docs.btcpayserver.org/API/Greenfield/v1/#operation/Invoices_GetInvoice).
 
-Like with the webhook events you need to be aware of edge-cases like partial or overpayment. On the returned invoice object you have two important properties that will give you a clear status of what the current satus of the invoice is:
+Like with the webhook events you need to be aware of edge-cases like partial or overpayment. On the returned invoice object you have two important properties that will give you a clear status of what the current status of the invoice is:
 - **status**: `Expired` `Invalid` `New` `Processing` `Settled`
 - **additionalStatus**: `Invalid` `Marked` `None` `PaidLate` `PaidOver` `PaidPartial`
 

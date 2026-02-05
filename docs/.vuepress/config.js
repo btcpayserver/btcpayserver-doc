@@ -73,6 +73,11 @@ const sidebarUserGuide = [
         ]
       },
       ['/Invoices', 'Invoices'],
+      {
+        title: 'Subscriptions',
+        path: '/Subscriptions',
+        children: [['/Monetization', 'Monetization']]
+      },
       ['/Translations', 'Translations'],
       ['/PaymentRequests', 'Payment Requests'],
       {
@@ -110,8 +115,12 @@ const sidebarUserGuide = [
     collapsable: false,
     children: [
     ['/BigCommerce/', 'Big Commerce'],
+    ['/Calcom', 'Cal.com'],
     ['/Drupal/', 'Drupal'],
+    ['/EasyDigitalDownloads', 'Easy Digital Downloads'],
+    ['/EasyWebshop', 'EasyWebshop'],
     ['/Ecwid/', 'Ecwid'],
+    ['/GiveWP', 'GiveWP'],
     ['/Grandnode/', 'Grandnode'],
     ['/InvoiceNinja', 'Invoice Ninja'],
     ['/Magento', 'Magento'],
@@ -237,14 +246,6 @@ const sidebarDeployment = [
       {
         title: 'Docker Plugins',
         children: [
-          {
-            title: 'Transmuter',
-            path: '/Transmuter/',
-            children: [
-              ['/Transmuter/DCA', 'Dollar Cost Average Preset'],
-              ['/Transmuter/EmailReceiptsPreset', 'Email Receipts Preset']
-            ]
-          },
           ['/ElectrumX', 'Electrum X'],
           ['/ElectrumPersonalServer', 'Electrum Personal Server'],
           '/Docker/joinmarket',
@@ -534,7 +535,6 @@ module.exports = {
       '/Docker': sidebarDeployment,
       '/ElectrumX': sidebarDeployment,
       '/ElectrumPersonalServer': sidebarDeployment,
-      '/Transmuter': sidebarDeployment,
       '/FAQ/': sidebarFAQ,
       '/': sidebarUserGuide
     }

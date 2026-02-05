@@ -75,7 +75,7 @@ This references the plugin project in the folder, that sits right next to your B
 
 :::tip The BTCPay Server dependency
 Your plugin is part of the BTCPay Server solution then, but keep the following in mind:
-The BTCPay Server version your plugin has as a dependecy is the submodule in the plugin repository — not the one in the forked repository.
+The BTCPay Server version your plugin has as a dependency is the submodule in the plugin repository — not the one in the forked repository.
 You will need to update the submodule to access the latest version of BTCPay Server.
 :::
 
@@ -83,7 +83,7 @@ To have the main project include the plugin whenever you run the app in developm
 
 ```bash
 {
-  "DEBUG_PLUGINS": "/absolute/path/btcpayserver-plugin-template/BTCPay.Plugins.Template/bin/Debug/net6.0/BTCPayServer.Plugins.Template.dll"
+  "DEBUG_PLUGINS": "/absolute/path/btcpayserver-plugin-template/BTCPayServer.Plugins.Template/bin/Debug/net8.0/BTCPayServer.Plugins.Template.dll"
 }
 ```
 
@@ -198,12 +198,12 @@ We extend them as we move along, same with [actions and filters](#actions-and-fi
 
 ### Actions and Filters
 
-In addtion to the extention points which hook into the UI, you can also use the following hooks to modify and extend behaviour:
+In addition to the extension points which hook into the UI, you can also use the following hooks to modify and extend behaviour:
 
 - [Action](https://github.com/btcpayserver/btcpayserver/blob/master/BTCPayServer.Abstractions/Contracts/IPluginHookAction.cs): Extend the core functionality
 - [Filters](https://github.com/btcpayserver/btcpayserver/blob/master/BTCPayServer.Abstractions/Contracts/IPluginHookFilter.cs): Do something and also return data
 
-As with the UI extention points, you can define them within the `Execute` method of the plugin base class:
+As with the UI extension points, you can define them within the `Execute` method of the plugin base class:
 
 ```csharp
 public class Plugin : BaseBTCPayServerPlugin
@@ -343,6 +343,20 @@ A version in prerelease can be modified just by rebuilding your plugin in the pl
 You can browse the prereleased plugin list on any BTCPay Server by going to `Server Settings > Policies`, check `Show plugins in pre-release` and `Save`.
 
 Once you click the `Release` button on the build page, the package won't be in prerelease anymore and it is visible to everyone. Once the package is released, you won't be able to publish a new build with the same version number. So you will need to bump the `<Version>` of your plugin in the csproj before publishing any new adjustment to your plugin.
+
+## Important notice about plugins
+
+Plugins are developed by third parties. They need to be updated and maintained regularly, in addition to the BTCPay Server.
+
+**Use at Your Own Risk**: Plugins in this store are developed by independent third parties. These plugins have not undergone review by the BTCPay Server team.
+
+**Disclaimer of Responsibility**: BTCPay Server contributors or Foundation are not liable for any harm, loss, or damage resulting from the installation or use of the plugins. Users assume full responsibility for their installation, use, familiarity with licensing and terms of service and maintenance.
+
+**No Official Endorsement**: Inclusion in the list of BTCPay Server plugins does not constitute an endorsement or guarantee of quality, safety, or compatibility.
+
+**Due Diligence Advised**: We recommend users exercise caution and conduct their own research or consult the community before installing any plugin.
+
+**Feedback and Reporting**: Should you experience issues with a plugin, please provide feedback or report concerns directly to the respective plugin developers.
 
 ## Resources
 

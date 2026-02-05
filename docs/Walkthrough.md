@@ -106,7 +106,7 @@ For more information, check [Payment Requests](PaymentRequests.md)
 ### Pull Payments
 
 The feature of [pull payments](PullPayments.md) is one we see fit for options like
-A subscription service, refunds, time-based billing for freelancers, patronage, or a a withdrawal service.
+A subscription service, refunds, time-based billing for freelancers, patronage, or a withdrawal service.
 
 For a detailed description of the concept, please visit the [Pull Payments](PullPayments.md)
 

@@ -16,7 +16,7 @@ Final installation steps:
 
 - On Google cloud shell, Set the default project and zone where to deploy instance
 - Change yaml file to configure VM instance and BTCPay server: ![GCE and BTCPay Config](../img/gcloud-yaml.png)
-- Change mode 755 for shell scripts and run 'deploy.sh \<any deployname\>' to start depolyment
+- Change mode 755 for shell scripts and run 'deploy.sh \<any deployname\>' to start deployment
 - (Wait for Google Cloud deployment for a minute)
 - A static IP is shown on the Google cloud shell
 - Go to your DNS service and map it with your domain name, say EXAMPLE.MYSITE.com
