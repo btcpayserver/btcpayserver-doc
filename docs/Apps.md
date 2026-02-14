@@ -26,7 +26,7 @@ The **Point of sale app** can also be used to receive donations, tips or even as
 
 
 
-To get your first **Point of Sale app** running, follow theses few simple steps:
+To get your first **Point of Sale app** running, follow these few simple steps:
 
 ## Creating a POS App
 
