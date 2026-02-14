@@ -16,29 +16,27 @@ To create an app, go to Apps > Create a new app. Apps are store-dependent, which
 
 ## Point of Sale App
 
-The **web-based PoS app** allows users with brick and mortar stores to readily **accept cryptocurrencies without fees or a third-party**, directly to their wallet. The **PoS** can be displayed easily on tablets or any other devices which support web browsing. Users can easily create a homescreen shortcut for a quick access to the web-app.
+The **web-based POS app** allows merchants to accept cryptocurrencies directly to their wallet without relying on third parties. It works on tablets and other web-enabled devices, making it suitable for in-person payments. Users can also create a home screen shortcut for quick access to the POS interface.
 
 ![BTCPay Pos](./img/BTCPayPointOfSale1.jpg)
 
-Adding new products is easy. The app has a **shopping cart feature**, **tips**, **product inventory**, **custom payment options** and more.
+You can easily add new products. The POS app supports shopping carts, tipping, product inventory management, and custom payment options.
 
 The **Point of sale app** can also be used to receive donations, tips or even as a small e-commerce shop, depending on the options or customizations applied.
 
-Curently, the **Point of Sale app** supports three different views:
 
-- A `Static` view representing only the items for sale.
-- A `Cart` view including items for sale and a cart for checkout.
-- A `Light` view consisting only of a keypad for easy and quick payments (Starting from [v1.0.5.6](https://blog.btcpayserver.org/btcpay-server-1-0-5-6/#simplePOS)).
 
 To get your first **Point of Sale app** running, follow theses few simple steps:
 
-1. Go to `Apps` and `Create a new app`
-2. Add a `name` for your app
-3. Choose `app type` > Point Of Sale
-4. Select the `store` to associate with the app.
-5. Customize your PoS by choosing a `view` (Static, Cart, Light), adding your own `items` with prices, photos, and a description.
-6. Click `Save Settings`.
-7. Click `View App` to view your PoS (Your customers can access the PoS through that link).
+## Creating a POS App
+
+1. Go to **Apps** and click **Create a new app**.
+2. Enter a name for your app.
+3. Choose **Point of Sale** as the app type.
+4. Select the store to associate with the app.
+5. Add products with prices, photos, and descriptions.
+6. Click **Save Settings**.
+7. Click **View App** to open your POS page.
 
 You can change the appearance of your **Point of Sale app** by following the [theme customization guide](./Development/Theme.md).
 
