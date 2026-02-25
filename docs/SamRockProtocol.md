@@ -17,6 +17,8 @@ The SamRock Protocol plugin allows you to configure your BTCPay Server store to 
 
 ## Setup Instructions
 
+[![SamRockProtocol showcase](https://img.youtube.com/vi/d9T94kx92yY/mqdefault.jpg)](https://www.youtube.com/watch?v=d9T94kx92yY)
+
 ### 1. Install the Plugin
 
 1. Navigate to **Server Settings > Plugins** in your BTCPay Server

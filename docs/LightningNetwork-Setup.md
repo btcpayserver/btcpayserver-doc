@@ -4,12 +4,16 @@ As discussed in the [Lightning Network overview](./LightningNetwork.md), there a
 
 On this page we will give you installation instructions and/or link to the relevant documentation.
 
+:::tip
+If you want to get started quickly and have no time to read this all, take a look at using SamRock Protocol to [setup wallets auto-magically](SamRockProtocol.md) for you.
+:::
+
 Jump right to the section you are interested in:
 [[toc]]
 
 ## Connecting a custodial Lightning Network wallet
 
-Custodial Lightning wallets allow you to accept Lightning payments without running your own node. BTCPay Server supports integration with:
+Custodial Lightning wallets allow you to accept Lightning payments without running your own node. As time of writing, BTCPay Server supports integration with:
 
 ### Blink
 
@@ -138,7 +142,7 @@ For remote control of your LN node with your mobile phone, you can use [ZEUS](ht
 
 LND can be accessed via the command-line using the shell script `bitcoin-lncli.sh`.
 
-If you're on Docker make sure you're in docker directory.
+If you're on Docker, make sure you're in the Docker directory.
 
 ```bash
 sudo su -
@@ -165,7 +169,7 @@ For remote control of your LN node with your mobile phone, you can use [ZEUS](ht
 
 Similar to `lncli`, CLN can be accessed via the command-line using the shell script `bitcoin-lightning-cli.sh`.
 
-If you're on Docker make sure you're in docker directory.
+If you're on Docker, make sure you're in the Docker directory.
 
 ```bash
 sudo su -
@@ -192,7 +196,18 @@ See the [backup FAQ](./Docker/backup-restore/#lightning-channel-backup) if you a
 
 ### Manage liquidity via a Lightning Service Provider (LSP)
 
-For information on managing liquidity through Lightning Service Providers, please refer to the [Lightning Network overview](./LightningNetwork.md#using-liquidity-service-providers-lsps) section.
+You can manually receive inbound liquidity from LSPs like [LNBIG](https://lnbig.com/#/), [Lightning Network+](https://lightningnetwork.plus/), [Megalithic](https://megalithic.me/), [Zeus LSP](https://channels.zeuslsp.com/), [LN Server](https://lnserver.com/) or you can install the [LSPS plugin](https://plugin-builder.btcpayserver.org/public/plugins/get-lightning-channel) from Megalith.
+
+#### Get inbound liquidity from LNBig.com
+XXXX---replace with video ID XXXX
+[![LNBig.com getting inbound liquidity](https://img.youtube.com/vi/XXXXX/mqdefault.jpg)](https://www.youtube.com/watch?v=XXXXXXX)
+
+#### LSPS plugin
+
+Install the [LSPS plugin](https://plugin-builder.btcpayserver.org/public/plugins/get-lightning-channel) from Megalith using [this guide](https://github.com/MegalithicBTC/BTCPayserver-LSPS1/blob/master/README.md) which supports multiple LSPs you can choose from.
+
+Or if you prefer a video guide, check it out here:
+[![LSPS plugin](https://img.youtube.com/vi/WzpXopwZY9U/mqdefault.jpg)](https://www.youtube.com/watch?v=WzpXopwZY9U)
 
 ### Manage liquidity on your own (channel management)
 
