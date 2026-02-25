@@ -360,11 +360,17 @@ Plugins are developed by third parties. They need to be updated and maintained r
 
 ## Resources
 
-For more information check out these repositories with existing plugins:
+### Plugin directory
 
-- [kukks' plugins](https://github.com/Kukks/BTCPayServerPlugins)
-- [rockstardev's plugins](https://github.com/rockstardev/BTCPayServerPlugins.RockstarDev)
-- [Boltz BTCPay plugin](https://github.com/BoltzExchange/boltz-btcpay-plugin)
-- [LNDhub API](https://github.com/dennisreimann/btcpayserver-plugin-lndhub-api)
-- [PodServer](https://github.com/dennisreimann/btcpayserver-plugin-podserver)
-- [Trocador.app](https://github.com/saltrafael/trocador-plugin)
+Get inspirations and find plugins in the [BTCPay Plugin directory](https://plugin-builder.btcpayserver.org/).
+
+### Rockstardev's BTCPay Plugin vibe code instructions
+
+[![RockstarDev's vibe code plugins instructions](https://img.youtube.com/vi/dW9eSgA_dUg/mqdefault.jpg)](https://www.youtube.com/watch?v=dW9eSgA_dUg)
+
+### Example repositories
+For inspirations on how to create plugins, check out the following repositories:
+
+- [kukks's BTCPay Server plugins](https://github.com/Kukks/BTCPayServerPlugins)
+- [rockstardev's BTCPay Server plugins](https://github.com/rockstardev/BTCPayServerPlugins.RockstarDev)
+- [Boltz BTCPay Server plugin](https://github.com/BoltzExchange/boltz-btcpay-plugin)
