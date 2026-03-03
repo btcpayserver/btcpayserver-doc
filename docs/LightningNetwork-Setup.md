@@ -200,6 +200,8 @@ You can manually receive inbound liquidity from LSPs like [LNBIG](https://lnbig.
 
 #### Get inbound liquidity from LNBig.com
 
+LNBig.com is a service that allows you to receive inbound liquidity. In this guide I will walk you through the whole process.
+
 [![LNBig.com getting inbound liquidity](https://img.youtube.com/vi/8rJAxm0rwdw/mqdefault.jpg)](https://www.youtube.com/watch?v=8rJAxm0rwdw)
 
 #### LSPS plugin
