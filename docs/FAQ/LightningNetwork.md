@@ -19,15 +19,15 @@ It can be enabled in Server Settings > Policies > Allow non-admins to use the in
 
 :::warning As a third-party host
 All your registrants' funds will go to your own Lightning Wallet.
-You will have to manually check and redispatch the funds to their respective owners. This could potentially become a burden.
+You will have to manually check and redispatch the funds to their respective owners. This could potentially become a maintenance and legal burden. Be aware of laws in your country.
 :::
 
 :::danger As an individual using a third-party host
 All payments made through the Lightning Network will go to your third-party's wallet.
-Take precautions and only use this option while using a trustworthy third-party host to ensure you get your funds back.
+Take precautions and only use this option while using a trustworthy third-party host to ensure you get your funds back. In general this should be avoided and you should use available self-hosted options.
 :::
 
-Non-admin users can also connect to their own external nodes. Lightning node external connections are a technically advanced task. We recommend that if you want Lightning, you should deploy your own server instead, which comes with all the necessities bundled up.
+Non-admin users can also connect to their own external nodes or connect their custodial and self-custodial wallets, refer to our [Lightning Network](../LightningNetwork.md) guide for more information.
 
 ### How to find node info and open a direct channel with a store using BTCPay?
 
@@ -43,14 +43,16 @@ The exact procedure of opening a direct Lightning Network channel depends on the
 
 ### As a merchant, do I need to open direct channels?
 
-Merchants need incoming channels. Other people opening a channel with them provides liquidity to the merchant. Your customer should be able to open a direct channel with you.
+Merchants need incoming channels. Other people opening a channel with them provides liquidity to the merchant. 
 
 You can also ask well-connected nodes to open a direct channel with you. Opening a channel is not spending funds, it’s more like putting the funds on a pre-paid card, and spending it later, or withdrawing it by closing a channel.
 
+You can also look into getting inbound liquidity by using Lightning Service Providers (LSPs), refer to our [managing liquidity guide](../LightningNetwork-Setup/#manage-liquidity-via-a-lightning-service-provider-lsp) for more information.
+
 ### How can I get inbound capacity to my node?
 
-There are many ways in which one can get an inbound capacity. We recommend that you read this great article that provides [practical tips to inbound capacity](https://medium.com/lightningto-me/practical-solutions-to-inbound-capacity-problem-in-lightning-network-60224aa13393).
-When asking for inbound capacity, consider any routing policy fees the service may have.
+There are many ways in which one can get an inbound capacity. E.g. by spending your existing LN balance, [collaboratively opening channels with others](https://lightningnetwork.plus/), or [using LSPs](../LightningNetwork-Setup/#manage-liquidity-via-a-lightning-service-provider-lsp). For a more technical explanation, you can read [practical tips to inbound capacity](https://medium.com/lightningto-me/practical-solutions-to-inbound-capacity-problem-in-lightning-network-60224aa13393).
+When asking for inbound capacity or using LSPs, you may want to consider any routing policy fees the service may have as well as reliability and connections of the service.
 
 ### I previously installed BTCPayServer without lightning, can I enable it?
 
@@ -72,7 +74,7 @@ It is recommended to use Core Lightning (CLN) because the implementation support
 
 ### Can I use my existing LN node with BTCPay?
 
-If you already have a well connected lightning node with sufficient inbound liquidity, you may want to use it with BTCPay instead of the included lightning node.
+If you already have a well connected Lightning Network node with sufficient inbound liquidity, you may want to use it with BTCPay instead of the included lightning node.
 
 To do so, go to the lightning node settings page of your store (Store > Settings > Lightning > Modify). Here on the lightning node setting page, select the option for Use a custom lightning node.
 
@@ -82,7 +84,6 @@ The connection strings vary per lightning implementation, the [settings page](..
 
 :::warning
 Be sure to have closed all channels and removed both on-chain and Lightning funds from the Lightning node before switching from one to the other.
-
 :::
 
 You need to SSH log in into your virtual machine.
@@ -123,11 +124,17 @@ And add or modify the `LIGHTNING_ALIAS` entry to `LIGHTNING_ALIAS=myawesomenode`
 
 ### How to display my Lightning Node information so that others can connect to me?
 
+:::tip
+As the Lightning Network matured it turned out that connecting your own LN node to each merchant is not recommended. If you even run your own LN node these days, it's more common to have connections to a few well connected LN nodes like LSPs or exchanges.
+::: 
+
+
 The information other users need to connect to your node, is already displayed at the checkout. Sometimes, merchants want to display their node so that their customers can connect beforehand.
 
 There are numerous ways to find your node information, but the easiest way to display it to others is by using Lightning Node info page. Go to Store > Settings > Lightning > Modify. At the bottom of the page, there is a "Open Public Node Page" button. Click on it to see the information. The page can be embedded into your website with `<iframe>`.
 
 ![BTCPay Checkout](../img/LightningNodepPageInfo.png)
+
 
 ### Where can I find recovery seed backup for my Lightning Network wallet in BTCPay Server?
 
