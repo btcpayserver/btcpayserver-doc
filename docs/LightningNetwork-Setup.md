@@ -199,8 +199,8 @@ See the [backup FAQ](./Docker/backup-restore/#lightning-channel-backup) if you a
 You can manually receive inbound liquidity from LSPs like [LNBIG](https://lnbig.com/#/), [Lightning Network+](https://lightningnetwork.plus/), [Megalithic](https://megalithic.me/), [Zeus LSP](https://channels.zeuslsp.com/), [LN Server](https://lnserver.com/) or you can install the [LSPS plugin](https://plugin-builder.btcpayserver.org/public/plugins/get-lightning-channel) from Megalith.
 
 #### Get inbound liquidity from LNBig.com
-XXXX---replace with video ID XXXX
-[![LNBig.com getting inbound liquidity](https://img.youtube.com/vi/XXXXX/mqdefault.jpg)](https://www.youtube.com/watch?v=XXXXXXX)
+
+[![LNBig.com getting inbound liquidity](https://img.youtube.com/vi/8rJAxm0rwdw/mqdefault.jpg)](https://www.youtube.com/watch?v=8rJAxm0rwdw)
 
 #### LSPS plugin
 
