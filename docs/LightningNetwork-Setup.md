@@ -1,8 +1,6 @@
 # Lightning Network Setup options
 
-As discussed in the [Lightning Network overview](./LightningNetwork.md), there are several options to set up a Lightning Network node in BTCPay Server. Please read that page carefully to take the right choice and be aware of the pros and cons of each option.
-
-On this page we will give you installation instructions and/or link to the relevant documentation.
+On this page we will give you installation instructions and/or link to the relevant documentation. For a broader view about the Lightning Network and pros and cons of different options please take a look into our [Lightning Network overview](./LightningNetwork.md),
 
 :::tip
 If you want to get started quickly and have no time to read this all, take a look at using SamRock Protocol to [setup wallets auto-magically](SamRockProtocol.md) for you.
