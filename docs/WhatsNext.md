@@ -32,21 +32,21 @@ Depending on the CMS you're using, you can easily connect BTCPay to your online 
 - [Odoo](./Odoo.md)
 - [Big Commerce](./BigCommerce.md)
 - [Invoice Ninja](./InvoiceNinja.md)
-e.t.c
+- and many more, check out "Integrations" on the left sidebar [here](./Guide)
 
 ## Extending BTCPay Server: Plugins
 
-BTCPay Server is more than just a payment processor -  It can be personalized to your preference. Plugins allows you customize your BTCPay Server application,and tailor your instance to suit your specific needs.
+BTCPay Server is more than just a payment processor - it can be personalized to your preference. Plugins allow you customize your BTCPay Server, and tailor your instance to suit your specific needs.
 
 Every project is unique. Whether you're a freelancer, running a physical store, an online store, managing a creative project, or building, there's a good chance a plugin exists to solve your specific workflow challenge. 
 
-Need something custom? Click on the `Manage Plugin` section on your BTCPay instance and find what plugin works for you. 
+Need something custom? Click on the `Manage Plugin` section on your BTCPay instance or take a look into our [BTCPay Server Plugin Directory](https://plugin-builder.btcpayserver.org/).
 
 
-## Join The BTCPay Community
+## Join the BTCPay Community
 
 BTCPay Server is an open-source project, not a company. We rely on a network of diverse contributors and users to provide support for numerous use-cases. Join us in improving, learning, and building BTCPay.
 
 If you have questions, try searching our [FAQ Section](./FAQ/readme.md) or join the [BTCPay Community](./Community.md) and share questions and ideas for improvement.
 
-If you are a developer take a look at the [Local Development](../Development/LocalDevelopment.md) guide and help us with any [open issues](https://github.com/btcpayserver/btcpayserver/issues) on Github. If you would like to contribute to BTCPay in other ways, check out the [Contribution Guide](./Contribute.md) for ideas.
+If you are a developer, take a look at the [Local Development](../Development/LocalDevelopment.md) guide and help us with any [open issues](https://github.com/btcpayserver/btcpayserver/issues) on GitHub. If you would like to contribute to BTCPay in other ways, check out the [Contribution Guide](./Contribute.md) for ideas.
