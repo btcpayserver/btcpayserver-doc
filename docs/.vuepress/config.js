@@ -308,6 +308,7 @@ const sidebarDevelopment = [
       '/Development/LocalDevelopment',
       ['/BTCPayServer/greenfield-development', 'Greenfield API Development'],
       '/Development/Plugins',
+      ['/Development/Plugins-Permissions', 'Extending permissions'],
       '/Development/Altcoins',
       '/Development/InvoiceMetadata',
       '/Development/Theme'

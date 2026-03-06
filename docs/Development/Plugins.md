@@ -119,11 +119,7 @@ Then you can reference the assets in your views like this:
 ```html
 <img src="~/Resources/img/my.png" asp-append-version="true" />
 <script src="~/Resources/js/my.js" asp-append-version="true"></script>
-<link
-  href="~/Resources/css/my.css"
-  asp-append-version="true"
-  rel="stylesheet"
-/>
+<link href="~/Resources/css/my.css" asp-append-version="true" rel="stylesheet" />
 ```
 
 A good example of this is the [Bitcoin Whitepaper plugin](https://github.com/Kukks/BTCPayServerPlugins/tree/master/Plugins/BTCPayServer.Plugins.BitcoinWhitepaper) which exposes the bitcoin whitepaper PDF on your BTCPay Server using embedded resources.
@@ -250,51 +246,7 @@ To show certain parts of the UI depending on the permissions the user has, you c
 <li class="nav-item" permission="@Policies.CanModifyProfile"></li>
 ```
 
-#### Customizing Authorization
-
-You can also define your own `AuthenticationSchemes` and `Policies` within the `Execute` method of the plugin base class:
-
-```csharp
-public class Plugin : BaseBTCPayServerPlugin
-{
-    public override void Execute(IServiceCollection services)
-    {
-        // Add custom authentication scheme
-        var builder = new AuthenticationBuilder(services);
-        builder.AddScheme<PluginAuthenticationOptions, PluginAuthenticationHandler>(
-            PluginAuthenticationSchemes.AccessKey, _ => { });
-
-        // Add custom policies
-        services.AddAuthorization(opts =>
-        {
-            foreach (var policy in PluginPolicies.AllPolicies)
-            {
-                opts.AddPolicy(policy, policyBuilder => policyBuilder
-                    .AddRequirements(new PolicyRequirement(policy)));
-            }
-        });
-    }
-}
-```
-
-The custom policies might look like this:
-
-```csharp
-public class PluginPolicies
-{
-    public const string CanViewWallet = "btcpay.plugin.template.canviewwallet";
-    public const string CanManageWallet = "btcpay.plugin.template.canmanagewallet";
-
-    public static IEnumerable<string> AllPolicies
-    {
-        get
-        {
-            yield return CanViewWallet;
-            yield return CanManageWallet;
-        }
-    }
-}
-```
+For developing plugin-specific permissions, please read [this page](./Plugins-Permissions.md).
 
 ### API
 
@@ -369,6 +321,7 @@ Get inspirations and find plugins in the [BTCPay Plugin directory](https://plugi
 [![RockstarDev's vibe code plugins instructions](https://img.youtube.com/vi/dW9eSgA_dUg/mqdefault.jpg)](https://www.youtube.com/watch?v=dW9eSgA_dUg)
 
 ### Example repositories
+
 For inspirations on how to create plugins, check out the following repositories:
 
 - [kukks's BTCPay Server plugins](https://github.com/Kukks/BTCPayServerPlugins)
