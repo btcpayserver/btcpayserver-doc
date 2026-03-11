@@ -84,6 +84,7 @@ const sidebarUserGuide = [
       {
         title: 'Pull Payments',
         path: '/PullPayments',
+        collapsable: false,
         children: [['/Refund', 'Refunds']]
       },
       ['/Payouts', 'Payouts'],
@@ -307,8 +308,11 @@ const sidebarDevelopment = [
       '/Development/',
       '/Development/LocalDevelopment',
       ['/BTCPayServer/greenfield-development', 'Greenfield API Development'],
-      '/Development/Plugins',
-      ['/Development/Plugins-Permissions', 'Extending permissions'],
+      {
+        title: 'Plugins',
+        path: '/Development/Plugins',
+        children: [['/Development/Plugins-Permissions', 'Extending permissions']]
+      },
       '/Development/Altcoins',
       '/Development/InvoiceMetadata',
       '/Development/Theme'
