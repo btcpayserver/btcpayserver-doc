@@ -32,7 +32,7 @@ Depending on the CMS you're using, you can easily connect BTCPay to your online 
 - [Odoo](./Odoo.md)
 - [Big Commerce](./BigCommerce.md)
 - [Invoice Ninja](./InvoiceNinja.md)
-- and many more, check out "Integrations" on the left sidebar [here](./Guide)
+- ...and many more, check out the "Integrations" section on the left sidebar.
 
 ## Extending BTCPay Server: Plugins
 
