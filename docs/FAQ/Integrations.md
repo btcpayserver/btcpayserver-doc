@@ -13,8 +13,9 @@ This page covers questions about BTCPay integrations.
 - [Magento](../Magento.md)
 - [PrestaShop](../PrestaShop.md)
 - [Custom Integration](../CustomIntegration.md)
+- and many more, check out "Integrations" on the left sidebar [here](../Guide.md)
 
-If you're a developer, you can develop your own integration, by following the [custom integration instructions](../CustomIntegration.md).
+If you're a developer, you can develop your own integration by following the [ecommerce integration guide](../Development/ecommerce-integration-guide.md) and [Greenfield API docs](https://docs.btcpayserver.org/API/Greenfield/v1).
 
 ### How to use WooCommerce store with BTCPay?
 
@@ -26,10 +27,9 @@ If you're a developer, you can develop your own integration, by following the [c
 
 ### How to use BTCPay with Drupal?
 
-- [BTCPay and Drupal installation and configuration](https://github.com/btcpayserver/commerce_btcpay#installation-and-configuration)
-- [Drupal Commerce BTCPay module installation walkthrough](https://youtube.com/watch?v=XBZwyC2v48s)
+- [BTCPay and Drupal installation and configuration](../Drupal)
 
-### How to use BTCPay with Prestashop?
+### How to use BTCPay with PrestaShop?
 
 - [Using the BTCPay plugin for Prestashop](../PrestaShop.md)
 
@@ -50,7 +50,11 @@ There is no direct upgrade to the [old BitPay based legacy plugin](https://wordp
 ### How to configure order status in WooCommerce?
 
 Order status depends on a merchant's business model. To better understand BTCPay order (invoice) status [read this document](../WooCommerce.md#btcpay-order-statuses).
-There's no best way to configure them without trial and error and seeing what works for your business.
+There's no best way to configure them without trial and error and seeing what works for your business. The default configuration should work for 99% of the merchants.
+
+### Overriding the Paid payment status
+
+The "Paid (unconfirmed)" payment status mapps to WooCommerce's "On hold" order status by default. This is due to the fact that unconfirmed transactions are handled similar to "authorized" credit card payments. They are not yet settled and the payment can still fail. If you still want to override that mapping be aware that it can cause problems in combination with the "Protect order status" feature. E.g. in case you set the "Paid (unconfirmed)" payment status to "Processing" and the transaction gets replaced or never confirmed before the invoice expires. The order status will NOT be updated to the "Cancelled" status as the "Protect order status" feature is active. If you know what you are doing then you can disable the "Protect order status" feature. 
 
 ### How to customize e-mail confirmations in WooCommerce?
 
