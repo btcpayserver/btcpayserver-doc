@@ -161,19 +161,22 @@ Depending on your business model and store settings, you may want to configure y
 You can set BTCPay to trigger certain order status in WooCommerce automatically.
 
 - _New_ - order placed, not paid yet.
-- _Paid_ - order paid, not enough confirmations on the blockchain, yet.
+- _Paid (unconfirmed)_ - order paid, not enough confirmations on the blockchain, yet.
 - _Settled_ - order paid, confirmed on the blockchain.
 - _Settled (paid over)_ - order paid, confirmed on the blockchain but paid over.
 - _Invalid_ - order paid, did not get a sufficient number of confirmations in a pre-defined time-frame set in BTCPay store settings, or manually marked invalid.
 - _Expired_ - invoice expired, order not paid.
 - _Expired with partial payment_ - invoice expired and paid partially
 
-Take time to think about how you wish to automate these statuses.
-If you do not wish certain BTCPay status to trigger WooCommerce order status, you can leave it as default "- no mapping / defaults -".
+Take time to think about how you wish to automate these statuses. The default settings will just work fine for most of the use cases. Only change them if you have a specific use case in mind.
 
-Note: you should keep the "Settled" order status to "- no mapping / defaults-" if you sell digital and physical products. For digital products WooCommerce will automatically skip the "Processing" status and go directly to "Completed" for those orders only containing digital products.
+:::tip
+You should keep the "Settled" order status to "- no mapping / defaults-" if you sell digital and physical products. For digital products WooCommerce will automatically skip the "Processing" status and go directly to "Completed" for those orders only containing digital products.
+:::
 
-Another example, if a merchant wants to send an email notifying the customer that the payment has been received, but the order will be processed upon confirmation, the merchant would have to set order status for "Paid" to "On hold". Then, the merchant would have to customize and trigger email for "On hold" status of the order in WooCommerce.
+Another example, if a merchant wants to send an email notifying the customer that the payment has been received, but the order will be processed upon confirmation, the merchant would have to set order status for "Paid (unconfirmed)" to "On hold". Then, the merchant would have to customize and trigger email for "On hold" status of the order in WooCommerce.
+
+Check also this [FAQ item](../FAQ/Integrations/#overriding-the-paid-payment-status) if you want to change the order status for "Paid (unconfirmed)".
 
 It takes some time to find a perfect formula, so users should test things out before going live.
 
@@ -341,3 +344,7 @@ export WOOCOMMERCE_HOST="yourstoredomain.com"
 ```
 
 5. Go to your store's domain name, in our example that's store.yourdomain.com and follow the WordPress installation wizard.
+
+## FAQ
+
+You can find additional information about the WooCommerce integration in our FAQ [here](../FAQ/Integrations/#woocommerce-faq).
