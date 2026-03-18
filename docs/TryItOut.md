@@ -24,7 +24,7 @@ For more information see [testnet documentation](/Development/TestnetDemo.md).
 
 While most of them can be used in-production, you can also use them to try things out. They're similar to our demo server, but provide better uptime and reliability.
 
-For full lists of third-party hosts to pick from, [see our hosts directory](https://directory.btcpayserver.org/filter/hosts).
+For full lists of third-party hosts to pick from, [see our hosts directory](https://directory.btcpayserver.org/#type=Hosted+BTCPay).
 
 ## Start testing
 
