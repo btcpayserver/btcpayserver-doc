@@ -168,7 +168,7 @@ You can set BTCPay to trigger certain order status in WooCommerce automatically.
 - _Expired_ - invoice expired, order not paid.
 - _Expired with partial payment_ - invoice expired and paid partially
 
-Take time to think about how you wish to automate these statuses. The default settings will just work fine for 99% of the use cases. Only change them if you have a specific use case in mind.
+Take time to think about how you wish to automate these statuses. The default settings will just work fine for most of the use cases. Only change them if you have a specific use case in mind.
 
 :::tip
 You should keep the "Settled" order status to "- no mapping / defaults-" if you sell digital and physical products. For digital products WooCommerce will automatically skip the "Processing" status and go directly to "Completed" for those orders only containing digital products.
