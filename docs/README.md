@@ -5,11 +5,11 @@ heroText: BTCPay Server Documentation
 tagline: Start Accepting Bitcoin Payments With 0% Fees & No Third-party
 features:
   - title: User Guide
-    details: Guide for users and merchants using BTCPay Server.
+    details: Guide for users and merchants.
     actionText: User Docs  ❯
     actionLink: /Guide/
   - title: Deployment
-    details: Setting up and maintaining your BTCPay Server.
+    details: Self-hosting and maintaining your server.
     actionText: Deployment Docs  ❯
     actionLink: /Deployment/
   - title: Development
