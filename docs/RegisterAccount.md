@@ -6,7 +6,7 @@ To register a demo account, visit the [official demo](https://mainnet.demo.btcpa
 
 To deploy an instance of your own, see [choosing a deployment method](/Deployment/README.md).
 
-A non-exhaustive list of third-party hosts can be found in the BTCPay Server [directory](https://directory.btcpayserver.org/filter/hosts).
+A non-exhaustive list of third-party hosts can be found in the BTCPay Server [directory](https://directory.btcpayserver.org/#type=Hosted+BTCPay).
 
 ## Account Registration
 

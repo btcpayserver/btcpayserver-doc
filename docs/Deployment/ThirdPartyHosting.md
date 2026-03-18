@@ -98,7 +98,7 @@ Third-party users who are granted access to an internal lightning node or hot wa
 Feel free to chat with the [Community](../Community.md) to find the appropriate host for your needs, but also make sure to choose one that is trustworthy. Read the rest of this document to better understand the pros and cons of using a third-party host.
 
 :::tip
-The BTCPay Server [Directory](https://directory.btcpayserver.org/filter/hosts) lists multiple free or paid third-party hosts that you can register to, to start exploring BTCPay Server.
+The BTCPay Server [Directory](https://directory.btcpayserver.org/#type=Hosted+BTCPay) lists multiple free or paid third-party hosts that you can register to, to start exploring BTCPay Server.
 :::
 
 ## How can one become a third-party host?

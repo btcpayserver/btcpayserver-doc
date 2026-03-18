@@ -40,7 +40,7 @@ Once we created a payment gateway, let’s proceed to step 2, and pair our BTCPa
 
 ### 2.1 BTCPay URL
 
-In the BTCPay URL field of your, simply input the link to your self-hosted server or the one hosted by a [third-party provider](https://directory.btcpayserver.org/filter/hosts). 
+In the BTCPay URL field of your, simply input the link to your self-hosted server or the one hosted by a [third-party provider](https://directory.btcpayserver.org/#type=Hosted+BTCPay). 
 *For example; https://mainnet.demo.btcpayserver.org*
 
 ### 2.2 BTCPay Store ID
