@@ -50,7 +50,7 @@ There is no direct upgrade to the [old BitPay based legacy plugin](https://wordp
 ### How to configure order status in WooCommerce?
 
 Order status depends on a merchant's business model. To better understand BTCPay order (invoice) status [read this document](../WooCommerce.md#btcpay-order-statuses).
-There's no best way to configure them without trial and error and seeing what works for your business. The default configuration should work for 99% of the merchants.
+There's no best way to configure them without trial and error and seeing what works for your business. The default configuration should work for most of the merchants.
 
 ### Overriding the Paid payment status
 
