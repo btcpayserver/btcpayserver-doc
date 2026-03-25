@@ -4,6 +4,10 @@ BTCPay Server is built and maintained entirely by volunteer contributors around 
 
 We welcome, appreciate, and encourage new contributions.
 
+:::tip
+Check our [new contributors portal](https://contribute.btcpayserver.org) to start contributing right away.
+:::
+
 Depending on your skills and interest, you can help in a number of ways:
 
 - [Software](./Dev.md)
