@@ -1,5 +1,16 @@
 
 <template>
+  <div
+    class="theme-container"
+    :class="pageClasses"
+  >
+    <Navbar @toggle-sidebar="toggleSidebar" />
+
+    <Sidebar
+      :items="[]"
+      @toggle-sidebar="toggleSidebar"
+    />
+
   <main
     class="homepage"
     aria-labelledby="main-title"
@@ -85,10 +96,13 @@
       {{ data.footer }}
     </div>
   </main>
+  </div>
 </template>
 
 <script>
 // forked from https://github.com/vuejs/vuepress/blob/master/packages/%40vuepress/theme-default/components/Home.vue
+import Navbar from '@theme/components/Navbar.vue'
+import Sidebar from '@theme/components/Sidebar.vue'
 import NavLink from '@theme/components/NavLink.vue'
 import AlgoliaSearchBox from '@theme/components/AlgoliaSearchBox.vue'
 import SearchBox from '@vuepress/plugin-search/SearchBox.vue'
@@ -98,9 +112,17 @@ export default {
   name: 'Home',
 
   components: {
+    Navbar,
+    Sidebar,
     NavLink,
     AlgoliaSearchBox,
     SearchBox
+  },
+
+  data () {
+    return {
+      isSidebarOpen: false
+    }
   },
 
   computed: {
@@ -118,11 +140,21 @@ export default {
     },
     isAlgoliaSearch () {
       return this.algolia && this.algolia.apiKey && this.algolia.indexName
+    },
+    pageClasses () {
+      return [
+        {
+          'sidebar-open': this.isSidebarOpen
+        }
+      ]
     }
   },
 
   methods: {
-    toggleColorMode
+    toggleColorMode,
+    toggleSidebar (to) {
+      this.isSidebarOpen = typeof to === 'boolean' ? to : !this.isSidebarOpen
+    }
   }
 }
 </script>
