@@ -1,15 +1,21 @@
 
 <template>
+  <div
+    class="theme-container"
+    :class="pageClasses"
+  >
+    <Navbar @toggle-sidebar="toggleSidebar" />
+
+    <Sidebar
+      :items="[]"
+      @toggle-sidebar="toggleSidebar"
+    />
+
   <main
     class="homepage"
     aria-labelledby="main-title"
   >
     <header class="hero">
-      <img
-        v-if="data.heroImage"
-        :src="$withBase(data.heroImage)"
-        :alt="data.heroAlt || $title"
-      >
       <button type="button" class="btcpay-theme-switch" @click="toggleColorMode($event)">
         <svg viewBox="0 0 10 10" xmlns="http://www.w3.org/2000/svg">
           <path class="btcpay-theme-switch-dark" transform="translate(1 1)" d="M2.72 0A3.988 3.988 0 000 3.78c0 2.21 1.79 4 4 4 1.76 0 3.25-1.14 3.78-2.72-.4.13-.83.22-1.28.22-2.21 0-4-1.79-4-4 0-.45.08-.88.22-1.28z"/><path class="btcpay-theme-switch-light" transform="translate(1 1)" d="M4 0c-.28 0-.5.22-.5.5s.22.5.5.5.5-.22.5-.5S4.28 0 4 0zM1.5 1c-.28 0-.5.22-.5.5s.22.5.5.5.5-.22.5-.5-.22-.5-.5-.5zm5 0c-.28 0-.5.22-.5.5s.22.5.5.5.5-.22.5-.5-.22-.5-.5-.5zM4 2c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zM.5 3.5c-.28 0-.5.22-.5.5s.22.5.5.5.5-.22.5-.5-.22-.5-.5-.5zm7 0c-.28 0-.5.22-.5.5s.22.5.5.5.5-.22.5-.5-.22-.5-.5-.5zM1.5 6c-.28 0-.5.22-.5.5s.22.5.5.5.5-.22.5-.5-.22-.5-.5-.5zm5 0c-.28 0-.5.22-.5.5s.22.5.5.5.5-.22.5-.5-.22-.5-.5-.5zM4 7c-.28 0-.5.22-.5.5s.22.5.5.5.5-.22.5-.5S4.28 7 4 7z"/>
@@ -85,10 +91,13 @@
       {{ data.footer }}
     </div>
   </main>
+  </div>
 </template>
 
 <script>
 // forked from https://github.com/vuejs/vuepress/blob/master/packages/%40vuepress/theme-default/components/Home.vue
+import Navbar from '@theme/components/Navbar.vue'
+import Sidebar from '@theme/components/Sidebar.vue'
 import NavLink from '@theme/components/NavLink.vue'
 import AlgoliaSearchBox from '@theme/components/AlgoliaSearchBox.vue'
 import SearchBox from '@vuepress/plugin-search/SearchBox.vue'
@@ -98,9 +107,17 @@ export default {
   name: 'Home',
 
   components: {
+    Navbar,
+    Sidebar,
     NavLink,
     AlgoliaSearchBox,
     SearchBox
+  },
+
+  data () {
+    return {
+      isSidebarOpen: false
+    }
   },
 
   computed: {
@@ -118,11 +135,21 @@ export default {
     },
     isAlgoliaSearch () {
       return this.algolia && this.algolia.apiKey && this.algolia.indexName
+    },
+    pageClasses () {
+      return [
+        {
+          'sidebar-open': this.isSidebarOpen
+        }
+      ]
     }
   },
 
   methods: {
-    toggleColorMode
+    toggleColorMode,
+    toggleSidebar (to) {
+      this.isSidebarOpen = typeof to === 'boolean' ? to : !this.isSidebarOpen
+    }
   }
 }
 </script>
