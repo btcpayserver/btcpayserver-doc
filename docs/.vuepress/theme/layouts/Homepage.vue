@@ -139,7 +139,8 @@ export default {
     pageClasses () {
       return [
         {
-          'sidebar-open': this.isSidebarOpen
+          'sidebar-open': this.isSidebarOpen,
+          'no-sidebar': true
         }
       ]
     }
