@@ -160,7 +160,7 @@ export default {
   max-width $homePageWidth
   margin 0px auto
   display block
-  padding  1rem
+  padding $navbarHeight 1rem 1rem
   .hero
     padding 3rem 1rem
     display flex
