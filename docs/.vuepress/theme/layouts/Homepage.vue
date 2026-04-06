@@ -16,12 +16,6 @@
     aria-labelledby="main-title"
   >
     <header class="hero">
-      <button type="button" class="btcpay-theme-switch" @click="toggleColorMode($event)">
-        <svg viewBox="0 0 10 10" xmlns="http://www.w3.org/2000/svg">
-          <path class="btcpay-theme-switch-dark" transform="translate(1 1)" d="M2.72 0A3.988 3.988 0 000 3.78c0 2.21 1.79 4 4 4 1.76 0 3.25-1.14 3.78-2.72-.4.13-.83.22-1.28.22-2.21 0-4-1.79-4-4 0-.45.08-.88.22-1.28z"/><path class="btcpay-theme-switch-light" transform="translate(1 1)" d="M4 0c-.28 0-.5.22-.5.5s.22.5.5.5.5-.22.5-.5S4.28 0 4 0zM1.5 1c-.28 0-.5.22-.5.5s.22.5.5.5.5-.22.5-.5-.22-.5-.5-.5zm5 0c-.28 0-.5.22-.5.5s.22.5.5.5.5-.22.5-.5-.22-.5-.5-.5zM4 2c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zM.5 3.5c-.28 0-.5.22-.5.5s.22.5.5.5.5-.22.5-.5-.22-.5-.5-.5zm7 0c-.28 0-.5.22-.5.5s.22.5.5.5.5-.22.5-.5-.22-.5-.5-.5zM1.5 6c-.28 0-.5.22-.5.5s.22.5.5.5.5-.22.5-.5-.22-.5-.5-.5zm5 0c-.28 0-.5.22-.5.5s.22.5.5.5.5-.22.5-.5-.22-.5-.5-.5zM4 7c-.28 0-.5.22-.5.5s.22.5.5.5.5-.22.5-.5S4.28 7 4 7z"/>
-        </svg>
-      </button>
-
       <div>
         <h1
           v-if="data.heroText !== null"
@@ -101,7 +95,6 @@ import Sidebar from '@theme/components/Sidebar.vue'
 import NavLink from '@theme/components/NavLink.vue'
 import AlgoliaSearchBox from '@theme/components/AlgoliaSearchBox.vue'
 import SearchBox from '@vuepress/plugin-search/SearchBox.vue'
-import { toggleColorMode } from '../../themeSwitch'
 
 export default {
   name: 'Home',
@@ -147,7 +140,6 @@ export default {
   },
 
   methods: {
-    toggleColorMode,
     toggleSidebar (to) {
       this.isSidebarOpen = typeof to === 'boolean' ? to : !this.isSidebarOpen
     }
@@ -181,10 +173,6 @@ export default {
       margin .5rem auto 0
       line-height 1.3
       color var(--btcpay-secondary)
-    .btcpay-theme-switch
-      position absolute
-      top 1rem
-      right 1rem
   h3
     color var(--btcpay-body-text)
     font-weight var(--btcpay-font-weight-normal)
