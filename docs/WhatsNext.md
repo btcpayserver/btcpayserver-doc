@@ -1,14 +1,14 @@
 # (4) What's Next?
 
-After you've connected your wallet to your BTCPay, you can explore various built in tools in the software. See the full list of Use Cases [here](./UseCase.md).
+After you've connected your wallet to your BTCPay, you can explore various built-in plugins and tools in the software. See the full list of Use Cases [here](./UseCase.md).
 
-## Creating the Point of Sale App
+## Point of Sale
 
-BTCPay has a PoS app which you can use to receive payments from your customers directly or to receive donations. To **create the POS app**, you need to have a store created in BTCPay. View PoS instructions [here](./Apps.md#point-of-sale-app).
+BTCPay has a Point of Sale plugin which you can use to receive payments from your customers directly or to receive donations. To **create the Point of Sale plugin**, you need to have a store created in BTCPay. View Point of Sale instructions [here](./Apps.md#point-of-sale-app).
 
-## Creating the Crowdfund App
+## Crowdfunding
 
-Create a **crowdfunding campaign using BTCPay**. Unlike traditional crowdfunding platforms, the creator of the campaign is the owner of the platform. Funds go directly to the creator’s wallet without any fees. View Crowdfund instructions [here](./Apps.md#crowdfunding-app).
+Create a **crowdfunding campaign using BTCPay**. Unlike traditional crowdfunding platforms, the creator of the campaign is the owner of the platform. Funds go directly to the creator's wallet without any fees. View Crowdfunding instructions [here](./Apps.md#crowdfunding-app).
 
 ## Creating the Payment Request
 
