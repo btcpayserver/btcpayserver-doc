@@ -45,26 +45,20 @@ First we will create a new app in the Shopify partner portal. Make sure you are 
 
 2. Once created, click on `Settings`, there your "Client ID" and "Client secret" is displayed, which we need in a minute. Please note them down or come back to this page later.
    ![Shopify-App: client id and secret](./img/shopifyv2/partner-app_client-id-secret.png)
-3. Go back to your partner's dashboard, reload the page so the app list now includes the newly created app. Once done, click `All Apps`,  click your just created app, select `API access requests` on the left menu, scroll down to `Allow network access in checkout and account UI extensions` and grant network access. You should see the following screen once network access is granted 
+
+
+3. We need to retrieve the CLI token. Still in the dev dashboard, in settings, in the `App automation token` section, click on `Create token`, select your preferred expiration period for the token, click `Generate token`. Copy the token and note it next to client ID and client secret from above.
+   ![app-setup-clitoken1.png](./img/shopifyv2/app-setup-clitoken1.png)
+   ![app-setup-clitoken2.png](./img/shopifyv2/app-setup-clitoken2.png)
+   ![app-setup-clitoken3.png](./img/shopifyv2/app-setup-clitoken3.png)
+
+
+4. Go back to your partner's dashboard, reload the page so the app list now includes the newly created app. Once done, click `All Apps`,  click your just created app, select `API access requests` on the left menu, scroll down to `Allow network access in checkout and account UI extensions` and grant network access. You should see the following screen once network access is granted 
    ![Shopify-App: Partner app network access](./img/shopifyv2/partner_app_network_access.png)
 
 :::tip
 In case you encounter an error: "Could not grant checkout ui extension scope 'read_checkout_external_data'" while granting network access, this error occurs when you have not setup your first and last name in partner's account profile. To resolve this, update your profile with the required information, then attempt to grant network access again.
 :::
-
-4. Click on the shopify partner logo on the to return to partners dashboard
-5. At the bottom of the page, click on "Settings"   
-   ![partners_settings.png](./img/shopifyv2/partners_settings.png)
-6. Scroll down to the bottom section of "CLI Token" and click on "Manage tokens"
-   ![partners_settings-cli-token.png](./img/shopifyv2/partners_settings-cli-token.png)
-7. On top right click on "Generate new token"
-   ![partners_create-cli-token.png](./img/shopifyv2/partners_create-cli-token.png)
-8. In the modal popup keep the default and click on "Generate token"
-   ![partners_create-cli-token-duration.png](./img/shopifyv2/partners_create-cli-token-duration.png)
-9. Copy the token and note it next to client ID and client secret from above. This token is only shown once.
-   ![partners_cli-token-created.png](./img/shopifyv2/partners_cli-token-created.png)
-
-
 
 ## Deploy the Shopify-BTCPay-app on your BTCPay Server
 
@@ -316,17 +310,12 @@ When you see or hear that the [BTCPay Shopify app](https://github.com/btcpayserv
 First we need to get a new CLI token (in case you don't have it anymore, or it expired) from the [Shopify partner portal](https://partners.shopify.com).
 
 #### Get a new CLI token
-1. Log into the Shopify Partner Portal
-2. At the bottom of the page, click on "Settings"   
-   ![Partner dashboard Settings](./img/shopifyv2/partners_settings.png)
-3. Scroll down to the bottom section of "CLI Token" and click on "Manage tokens"
-   ![Settings CLI Token](./img/shopifyv2/partners_settings-cli-token.png)
-4. On top right click on "Generate new token"
-   ![Create CLI Token](./img/shopifyv2/partners_create-cli-token.png)
-5. In the modal popup keep the default and click on "Generate token"
-   ![Select CLI Token validity duration](./img/shopifyv2/partners_create-cli-token-duration.png)
-6. Copy the CLI token. This token is only shown once.
-   ![CLI Token was created successfully](./img/shopifyv2/partners_cli-token-created.png)
+1. Log into the Shopify Partner Portal, then head to the dev dashboard
+2. Select the particular application and click on `Settings`   
+3. In the settings, under `App automation token`, you'd see your token actions. You can choose to create a new token, revoke or rotate a token if you have previously created a token.
+   ![app-setup-clitoken1.png](./img/shopifyv2/app-setup-clitoken1.png)
+   ![app-setup-clitoken2.png](./img/shopifyv2/app-setup-clitoken2.png)
+   ![app-setup-clitoken3.png](./img/shopifyv2/app-setup-clitoken3.png)
 
 #### SSH into your BTCPay Server
 
