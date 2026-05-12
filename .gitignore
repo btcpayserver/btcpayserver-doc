@@ -44,3 +44,4 @@
 # Constructed docs
 /docs/Development/LocalDevelopment.md
 .idea
+*.Identifier
