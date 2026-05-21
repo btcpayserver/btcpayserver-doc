@@ -275,10 +275,10 @@ Notice: If your BTCPay Server install has more than one domain (for example `WOO
 That is possible. Just make sure you have recently updated your deployment (`btcpay-update.sh`) and then run the following commands:
 
 ```bash
-export BTCPAYGEN_EXCLUDE_FRAGMENTS="$BTCPAYGEN_EXCLUDE_FRAGMENTS;bitcoin"
-export BTCPAYGEN_ADDITIONAL_FRAGMENTS="$BTCPAYGEN_ADDITIONAL_FRAGMENTS;bitcoinknots"
-. btcpay-setup.sh -i
+switch-node.sh bitcoinknots
 ```
+
+If you want to switch back, simply use the argument `bitcoincore` instead of `bitcoinknots` above.
 
 ## How to change your BTCPay Server domain name?
 
