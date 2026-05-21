@@ -278,7 +278,7 @@ That is possible. Just make sure you have recently updated your deployment (`btc
 switch-node.sh bitcoinknots
 ```
 
-If you want to switch back, simply use the argument `bitcoincore` instead of `bitcoinknots` above.
+If you want to switch back, simply use the argument `default` instead of `bitcoinknots` above.
 
 ## How to change your BTCPay Server domain name?
 
