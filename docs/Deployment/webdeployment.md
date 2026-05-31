@@ -39,6 +39,12 @@ For more details on `Voltage Cloud` click [here](./voltagecloud.md)
 They allow deploying services, including BTCPay Server, either to their own servers, or to a variety of other VPS providers, such as Digital Ocean, AWS, and Linode.
 For more details on `Clovyr` click [here](./Clovyr.md)
 
+### Comet Cash
+
+[Comet Cash](https://dashboard.cometcash.com/) is a managed infrastructure platform for deploying BTCPay Server instances.
+Its dashboard provides a one-click deployment flow and a generated URL for accessing each BTCPay Server instance.
+For more details on `Comet Cash` click [here](./CometCash.md)
+
 ## Elestio
 
 [Elestio](https://elest.io/) is a fully managed DevOps platform to deploy your code and open-source software. 
