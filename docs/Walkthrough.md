@@ -1,6 +1,6 @@
 # BTCPay Server Walkthrough
 
-This page walks you through the **BTCPay user interface** and shows how to navigate through the different options.
+This page walks you through the **BTCPay user interface** and shows how to navigate through the different options in the sidebar.
 
 Watch the video below for an interactive overview of the features.
 
@@ -10,7 +10,7 @@ After you've created an account on the BTCPay Server instance hosted by yourself
 
 ![BTCPay Server Navigation](./img/walktrough/welcome-store.jpg)
 
-All the settings in the left menu are meant for the Current Store you selected at the top.
+Most settings in the left menu are connected to the current store you selected at the top. Some sections are only visible when your account has permission to use them. For example, `Server Settings` is only available to server admins, and individual plugins only appear after they are enabled for your store or installed on the server.
 
 ![BTCPay Server Navigation](./img/walktrough/selected-store.jpg)
 
@@ -26,16 +26,16 @@ All the settings in the left menu are meant for the Current Store you selected a
   - Pull Payments
   - Payouts
   - Pay Button
-- [Apps](Walkthrough.md#apps)
-  - New App
 - [Plugins](Walkthrough.md#plugins)
-  - Manage Plugins
+  - Point of Sale
+  - Crowdfunding
+  - Additional plugins
 - [Server Settings](Walkthrough.md#server-settings)
 - [Account](Walkthrough.md#account)
 
 ## Store
 
-Inside BTCPay, you can **create and manage an unlimited number of stores**. Each store has its own wallet, can create apps (Point of Sale or Payment Buttons and Crowdfunds) or be paired with external e-commerce software through one of the integrations available. Admin does not have control over the private keys of the other user's stores. For more information, check [Stores FAQ](./FAQ/Stores.md)
+Inside BTCPay, you can **create and manage an unlimited number of stores**. Each store has its own wallet, can use plugins such as Point of Sale, Pay Button, and Crowdfunding, or be paired with external e-commerce software through one of the integrations available. Admins do not have control over the private keys of other users' stores. For more information, check [Stores FAQ](./FAQ/Stores.md).
 
 - Store settings - Configure global payment settings and customize the payment experience for your customers.
 - Rates - Set the source for cryptocurrency to fiat [exchange rates for your store](./FAQ/Stores.md#how-to-change-the-exchange-rate-provider-for-invoices).
@@ -54,7 +54,7 @@ Learn more about all BTCPay notifications [here](./Notifications.md).
 
 ## Dashboard
 
-In dashboard you will see the stores wallet balance, a overview of invoices and quickly see your crowdfunds top perks.
+In dashboard you will see the store's wallet balance, an overview of invoices, and a quick view of your crowdfunding top perks.
 There's 5 main tiles in the Dashboard.
 
 - A quick view on the wallet balance
@@ -129,19 +129,18 @@ For more information, check [Create a payment button](./Apps.md#payment-button)
 
 ![BTCPay Server Navigation](./img/walktrough/preview-paybutton.jpg)
 
-## Apps
-
-Each store has access to different apps. **Applications built on top of BTCPay** extend the [use case](./UseCase.md) of the software and cater to other types of users. Here, you can create a new app, connect it to the store, and customize it. A good example is the Point of Sale app, which you can use to receive payments in physical stores or even donations.
-
-For more information, check [Apps](./Apps.md) or [Apps FAQ](./FAQ/Apps.md)
-
 ## Plugins
 
-Manage your store-used plugins right from this view.
-The available plugins for the user will show in the side menu.
+Plugins extend the [use case](./UseCase.md) of BTCPay Server beyond basic invoice payments. The default starting points are:
+
+- [Point of Sale](./Apps.md#point-of-sale-app) - accept payments from a physical store, event, or donation table.
+- [Crowdfunding](./Apps.md#crowdfunding-app) - run a self-hosted funding campaign where contributions go directly to your wallet.
+- [Pay Button](./Apps.md#payment-button) - embed a checkout button on your website.
+
+Available plugins appear in the sidebar when they are installed and enabled. Server admins can manage plugin availability from `Server Settings > Plugins`; regular users can ask their server admin to enable a plugin for their store. You can also explore additional plugins in the [BTCPay Server Plugin Directory](https://plugin-builder.btcpayserver.org/public/plugins/).
 
 For more information, check [Integrations](./CustomIntegration.md)
-or one of the pre build plugins like :
+or one of the prebuilt plugins like:
 
 - [WooCommerce](WooCommerce.md)
 - [Shopify](Shopify.md)
@@ -156,7 +155,7 @@ or one of the pre build plugins like :
 
 - Users - Add, remove or manage users of your BTCPay Server.
 - Email server - If you want users to verify their e-mail address when registering set up the SMTP settings.
-- Policies - Enable or disable user registration, e-mail verification, search engine indexing, display apps on website root.
+- Policies - Enable or disable user registration, e-mail verification, search engine indexing, and public display options.
 - Services - gRPC, REST, and RTL are used for connecting your LN node, SSH keys, and uploaded file storage setup.
 - Theme - Customize the front-end appearance of your BTCPay Server.
 - Maintenance - Update your BTCPay to the latest version and clean your BTCPay by deleting unused docker images.
