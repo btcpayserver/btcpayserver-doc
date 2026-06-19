@@ -116,32 +116,32 @@ const sidebarUserGuide = [
     title: 'Integrations',
     collapsable: false,
     children: [
-    ['/BigCommerce/', 'Big Commerce'],
-    ['/Calcom', 'Cal.com'],
-    ['/Drupal/', 'Drupal'],
-    ['/EasyDigitalDownloads', 'Easy Digital Downloads'],
-    ['/EasyWebshop', 'EasyWebshop'],
-    ['/Ecwid/', 'Ecwid'],
-    ['/GiveWP', 'GiveWP'],
-    ['/Grandnode/', 'Grandnode'],
-    ['/InvoiceNinja', 'Invoice Ninja'],
-    ['/Magento', 'Magento'],
-    ['/Nopcommerce/', 'Nopcommerce'],
-    ['/Odoo/', 'Odoo'],
-    ['/OpenCart', 'OpenCart'],
-    ['/PhocaCart', 'PhocaCart'],
-    ['/PrestaShop', 'PrestaShop'],
-    ['/Pretix', 'Pretix'],
-    ['/ShopifyV2', 'Shopify V2'],
-    ['/Shopware', 'Shopware'],
-    ['/Ghost/', 'Ghost'],
-    ['/Smartstore/', 'Smartstore'],
-    ['/VirtueMart', 'VirtueMart'],
-    ['/Wix/', 'Wix'],
-    ['/WooCommerce', 'WooCommerce'],
-    ['/Xenforo/', 'Xenforo'],
-    ['/Zapier/', 'Zapier'],
-    ['/CustomIntegration', 'Custom Integration']
+      ['/BigCommerce/', 'Big Commerce'],
+      ['/Calcom', 'Cal.com'],
+      ['/Drupal/', 'Drupal'],
+      ['/EasyDigitalDownloads', 'Easy Digital Downloads'],
+      ['/EasyWebshop', 'EasyWebshop'],
+      ['/Ecwid/', 'Ecwid'],
+      ['/GiveWP', 'GiveWP'],
+      ['/Grandnode/', 'Grandnode'],
+      ['/InvoiceNinja', 'Invoice Ninja'],
+      ['/Magento', 'Magento'],
+      ['/Nopcommerce/', 'Nopcommerce'],
+      ['/Odoo/', 'Odoo'],
+      ['/OpenCart', 'OpenCart'],
+      ['/PhocaCart', 'PhocaCart'],
+      ['/PrestaShop', 'PrestaShop'],
+      ['/Pretix', 'Pretix'],
+      ['/ShopifyV2', 'Shopify V2'],
+      ['/Shopware', 'Shopware'],
+      ['/Ghost/', 'Ghost'],
+      ['/Smartstore/', 'Smartstore'],
+      ['/VirtueMart', 'VirtueMart'],
+      ['/Wix/', 'Wix'],
+      ['/WooCommerce', 'WooCommerce'],
+      ['/Xenforo/', 'Xenforo'],
+      ['/Zapier/', 'Zapier'],
+      ['/CustomIntegration', 'Custom Integration']
     ]
   },
   {
@@ -149,11 +149,7 @@ const sidebarUserGuide = [
     collapsable: false,
     initialOpenGroupIndex: -1,
     children: [
-      [
-        `https://dev.blink.sv/examples/btcpayserver-plugin`,
-        'Blink',
-        { type: 'external' }
-      ],
+      [`https://dev.blink.sv/examples/btcpayserver-plugin`, 'Blink', { type: 'external' }],
       ['/Breez/', 'Breez'],
       ['/Bringin/', 'Bringin'],
       ['/DynamicReports/', 'Dynamic Reports'],
@@ -164,7 +160,7 @@ const sidebarUserGuide = [
       ['/SideShift/', 'SideShift'],
       ['/TicketTailor/', 'TicketTailor'],
       ['/Trocador/', 'Trocador'],
-      ['/Wabisabi/', 'Wabisabi Coinjoin'],
+      ['/Wabisabi/', 'Wabisabi Coinjoin']
     ]
   },
   {
@@ -183,11 +179,7 @@ const sidebarDeployment = [
   {
     title: 'Deployment',
     collapsable: false,
-    children: [
-      '/Deployment/',
-      '/Deployment/ThirdPartyHosting',
-      '/Configurator/'
-    ]
+    children: ['/Deployment/', '/Deployment/ThirdPartyHosting', '/Configurator/']
   },
   {
     title: 'Docker',
@@ -205,13 +197,15 @@ const sidebarDeployment = [
           {
             title: 'Azure',
             path: '/Deployment/Azure',
-            children: [
-              ['/Deployment/AzurePennyPinching', 'Reducing Cost on Azure']
-            ]
+            children: [['/Deployment/AzurePennyPinching', 'Reducing Cost on Azure']]
           },
           {
             title: 'Google Cloud',
             path: '/Deployment/GoogleCloud'
+          },
+          {
+            title: 'Comet Cash',
+            path: '/Deployment/CometCash'
           }
         ]
       },
@@ -234,10 +228,7 @@ const sidebarDeployment = [
           },
           ['/Deployment/DynamicDNS', 'Dynamic DNS'],
           ['/Docker/cloudflare-tunnel', 'Exposing on clearnet with Cloudflare'],
-          [
-            '/Deployment/ReverseSSHtunnel',
-            'Exposing on clearnet with a reverse SSH Tunnel'
-          ],
+          ['/Deployment/ReverseSSHtunnel', 'Exposing on clearnet with a reverse SSH Tunnel'],
           ['/Deployment/ReverseProxyToTor', 'Exposing on Tor'],
           {
             title: 'Hardware As A Service',
@@ -272,10 +263,7 @@ const sidebarDeployment = [
   {
     title: 'Manual Deployment',
     collapsable: false,
-    children: [
-      '/Deployment/ManualDeployment',
-      '/Deployment/ManualDeploymentExtended'
-    ]
+    children: ['/Deployment/ManualDeployment', '/Deployment/ManualDeploymentExtended']
   }
 ]
 
@@ -284,11 +272,7 @@ const sidebarDevelopment = [
     title: 'Greenfield API',
     collapsable: false,
     children: [
-      [
-        `${baseUrl}/API/Greenfield/v1`,
-        'Greenfield API v1',
-        { type: 'external' }
-      ],
+      [`${baseUrl}/API/Greenfield/v1`, 'Greenfield API v1', { type: 'external' }],
       // [
       //   `${baseUrl}/API/Greenfield/Plugins`,
       //   'Greenfield API Plugins',
@@ -397,19 +381,11 @@ module.exports = {
   title,
   description: 'BTCPay Server Official Documentation',
   head: [
-    [
-      'meta',
-      { name: 'viewport', content: 'width=device-width,initial-scale=1.0' }
-    ],
+    ['meta', { name: 'viewport', content: 'width=device-width,initial-scale=1.0' }],
     ['link', { rel: 'stylesheet', href: '/styles/btcpayserver-variables.css' }]
   ],
   chainWebpack(config) {
-    config.module
-      .rule('md')
-      .test(/\.md$/)
-      .use(preprocessMarkdown)
-      .loader(preprocessMarkdown)
-      .end()
+    config.module.rule('md').test(/\.md$/).use(preprocessMarkdown).loader(preprocessMarkdown).end()
   },
   plugins: [
     [
@@ -418,14 +394,12 @@ module.exports = {
         siteTitle: (_, $site) => $site.title,
         title: $page => $page.title,
         description: $page =>
-          $page.frontmatter.description ||
-          extractDescription($page._strippedContent),
+          $page.frontmatter.description || extractDescription($page._strippedContent),
         author: (_, $site) => info,
         tags: $page => $page.frontmatter.tags || ['BTCPay Server'],
         twitterCard: _ => 'summary',
         type: $page => 'article',
-        url: (_, $site, path) =>
-          `${baseUrl}${path.replace('.html', pageSuffix)}`,
+        url: (_, $site, path) => `${baseUrl}${path.replace('.html', pageSuffix)}`,
         image: ($page, $site) => `${baseUrl}/card.png`
       }
     ],
