@@ -68,7 +68,7 @@ See the [Monero plugin's docker-compose.yml](https://github.com/btcpay-monero/bt
 
 ### How do I test the Docker fragment for production?
 
-Install [.NET 8.0 SDK](https://dotnet.microsoft.com/en-us/download/dotnet/8.0) and run:
+Install [.NET 10.0 SDK](https://dotnet.microsoft.com/en-us/download/dotnet/10.0) and run:
 
 ```bash
 BTCPAYGEN_CRYPTO1='YOUR-COIN'

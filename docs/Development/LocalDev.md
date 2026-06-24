@@ -4,7 +4,7 @@
 
 For the **development environment** you need to install these tools:
 
-- [.NET 8.0 SDK](https://dotnet.microsoft.com/en-us/download/dotnet/8.0)
+- [.NET 10.0 SDK](https://dotnet.microsoft.com/en-us/download/dotnet/10.0)
 - Docker: [Windows](https://docs.docker.com/docker-for-windows/install/) | [Mac OS](https://docs.docker.com/docker-for-mac/install/) | [Linux](https://docs.docker.com/install/linux/docker-ce/ubuntu/)
 
 ## Dependencies

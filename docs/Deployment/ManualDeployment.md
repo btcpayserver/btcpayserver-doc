@@ -50,9 +50,9 @@ sudo tar -xzvf bitcoin.tar.gz -C /usr/local/bin --strip-components=2 "bitcoin-$B
 rm bitcoin.tar.gz
 ```
 
-### 2) Install .NET 8.0 SDK
+### 2) Install .NET 10.0 SDK
 
-On my Ubuntu 20.04 (See [these instructions](https://docs.microsoft.com/en-us/dotnet/core/install/linux-ubuntu#2004-) or [here](https://dotnet.microsoft.com/en-us/download/dotnet/8.0) for different OS).
+On my Ubuntu 20.04 (See [these instructions](https://docs.microsoft.com/en-us/dotnet/core/install/linux-ubuntu#2004-) or [here](https://dotnet.microsoft.com/en-us/download/dotnet/10.0) for different OS).
 
 ```bash
 # Add Microsoft package repository
@@ -64,7 +64,7 @@ rm packages-microsoft-prod.deb
 sudo apt-get update
 sudo apt-get install -y apt-transport-https
 sudo apt-get update
-sudo apt-get install -y dotnet-sdk-6.0
+sudo apt-get install -y dotnet-sdk-10.0
 
 ## Check
 dotnet --version
