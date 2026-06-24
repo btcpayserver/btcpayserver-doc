@@ -34,41 +34,13 @@ This steps have been done on Ubuntu 18.04, adapt for your own install.
 
 For Testnet specific deployment, after installing Bitcoin, .NET Core, NBXplorer and BTCPayServer, see [Commands for Running in Testnet Mode](#testnet-specific-deployments)
 
-### 1) Install Bitcoin Core 0.19.1
+### 1) Install Bitcoin Core
 
-```bash
-BITCOIN_VERSION="0.19.1"
-BITCOIN_URL="https://bitcoin.org/bin/bitcoin-core-0.19.1/bitcoin-0.19.1-x86_64-linux-gnu.tar.gz"
-BITCOIN_SHA256="5fcac9416e486d4960e1a946145566350ca670f9aaba99de6542080851122e4c"
+Download and install Bitcoin Core by following [the instructions](https://bitcoin.org/en/download).
 
-# install bitcoin binaries
-cd /tmp
-wget -O bitcoin.tar.gz "$BITCOIN_URL"
-echo "$BITCOIN_SHA256 bitcoin.tar.gz" | sha256sum -c - && \
-mkdir bin && \
-sudo tar -xzvf bitcoin.tar.gz -C /usr/local/bin --strip-components=2 "bitcoin-$BITCOIN_VERSION/bin/bitcoin-cli" "bitcoin-$BITCOIN_VERSION/bin/bitcoind"
-rm bitcoin.tar.gz
-```
+### 2) Install .NET dependencies
 
-### 2) Install .NET 10.0 SDK
-
-On my Ubuntu 20.04 (See [these instructions](https://docs.microsoft.com/en-us/dotnet/core/install/linux-ubuntu#2004-) or [here](https://dotnet.microsoft.com/en-us/download/dotnet/10.0) for different OS).
-
-```bash
-# Add Microsoft package repository
-wget https://packages.microsoft.com/config/ubuntu/20.04/packages-microsoft-prod.deb -O packages-microsoft-prod.deb
-sudo dpkg -i packages-microsoft-prod.deb
-rm packages-microsoft-prod.deb
-
-# Install the SDK
-sudo apt-get update
-sudo apt-get install -y apt-transport-https
-sudo apt-get update
-sudo apt-get install -y dotnet-sdk-10.0
-
-## Check
-dotnet --version
-```
+Download and install the .NET 10.0 SDK and the ASP.NET Core Runtime by following [the instructions](https://dotnet.microsoft.com/en-us/download).
 
 ### 3) Install NBXplorer
 
