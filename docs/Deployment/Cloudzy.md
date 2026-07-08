@@ -1,6 +1,6 @@
 # Deploying BTCPay Server on Cloudzy
 
-This article explains how to deploy **BTCPay Server through the Cloudzy Marketplace**. [Cloudzy](https://cloudzy.com/marketplace/btcpay-server/?utm_source=btcpayserver&utm_medium=deployment-guide) offers a one-click BTCPay Server deployment, allowing you to launch BTCPay Server on a VPS without manually configuring the server from scratch.
+This article explains how to deploy **BTCPay Server through the Cloudzy Marketplace**. [Cloudzy](https://cloudzy.com/marketplace/btcpay-server/) offers a one-click BTCPay Server deployment, allowing you to launch BTCPay Server on a VPS without manually configuring the server from scratch.
 
 This deployment method is recommended if you want a straightforward setup process through a hosting provider marketplace. Before you begin, make sure you have:
 
