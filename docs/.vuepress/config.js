@@ -193,6 +193,7 @@ const sidebarDeployment = [
         children: [
           ['/Deployment/LunaNode', 'Luna Node'],
           ['/Deployment/voltagecloud', 'Voltage Cloud'],
+          ['/Deployment/Cloudzy', 'Cloudzy'],
           ['/Deployment/Clovyr', 'Clovyr'],
           {
             title: 'Azure',
