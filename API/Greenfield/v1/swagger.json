@@ -1428,7 +1428,7 @@
         ]
       }
     },
-    "/api/v1/stores/{storeId}/invoices/{invoiceId}": {
+    "/api/v1/invoices/{invoiceId}": {
       "get": {
         "tags": [
           "Invoices"
@@ -1437,12 +1437,9 @@
         "parameters": [
           {
             "$ref": "#/components/parameters/InvoiceId"
-          },
-          {
-            "$ref": "#/components/parameters/StoreId"
           }
         ],
-        "description": "View information about the specified invoice",
+        "description": "View information about the specified invoice. The store is resolved automatically from the invoice.",
         "operationId": "Invoices_GetInvoice",
         "responses": {
           "200": {
@@ -1476,14 +1473,11 @@
           "Invoices"
         ],
         "summary": "Archive invoice",
-        "description": "Archives the specified invoice.",
+        "description": "Archives the specified invoice. The store is resolved automatically from the invoice.",
         "operationId": "Invoices_ArchiveInvoice",
         "parameters": [
           {
             "$ref": "#/components/parameters/InvoiceId"
-          },
-          {
-            "$ref": "#/components/parameters/StoreId"
           }
         ],
         "responses": {
@@ -1521,14 +1515,11 @@
           "Invoices"
         ],
         "summary": "Update invoice",
-        "description": "Updates the specified invoice.",
+        "description": "Updates the specified invoice. The store is resolved automatically from the invoice.",
         "operationId": "Invoices_UpdateInvoice",
         "parameters": [
           {
             "$ref": "#/components/parameters/InvoiceId"
-          },
-          {
-            "$ref": "#/components/parameters/StoreId"
           }
         ],
         "responses": {
@@ -1579,7 +1570,7 @@
         ]
       }
     },
-    "/api/v1/stores/{storeId}/invoices/{invoiceId}/payment-methods": {
+    "/api/v1/invoices/{invoiceId}/payment-methods": {
       "get": {
         "tags": [
           "Invoices"
@@ -1588,9 +1579,6 @@
         "parameters": [
           {
             "$ref": "#/components/parameters/InvoiceId"
-          },
-          {
-            "$ref": "#/components/parameters/StoreId"
           },
           {
             "name": "includeSensitive",
@@ -1613,7 +1601,7 @@
             }
           }
         ],
-        "description": "View information about the specified invoice's payment methods",
+        "description": "View information about the specified invoice's payment methods. The store is resolved automatically from the invoice.",
         "operationId": "Invoices_GetInvoicePaymentMethods",
         "responses": {
           "200": {
@@ -1647,54 +1635,7 @@
         ]
       }
     },
-    "/api/v1/stores/{storeId}/invoices/{invoiceId}/refund/{paymentMethodId}": {
-      "get": {
-        "tags": [
-          "Invoices"
-        ],
-        "summary": "Get invoice refund trigger data",
-        "parameters": [
-          {
-            "$ref": "#/components/parameters/InvoiceId"
-          },
-          {
-            "$ref": "#/components/parameters/PaymentMethodId"
-          },
-          {
-            "$ref": "#/components/parameters/StoreId"
-          }
-        ],
-        "description": "View calculated refund amounts (payment then/now, invoice, overpaid) for the specified invoice/payment-method. This can be used preceding the POST /refund call.",
-        "operationId": "Invoices_GetInvoiceRefundTriggerData",
-        "responses": {
-          "200": {
-            "description": "specified invoice refund trigger data",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/InvoiceRefundTriggerData"
-                }
-              }
-            }
-          },
-          "403": {
-            "description": "If you are authenticated but forbidden to view the specified invoice"
-          },
-          "404": {
-            "description": "The key is not found for this invoice"
-          }
-        },
-        "security": [
-          {
-            "API_Key": [
-              "btcpay.store.cancreatepullpayments"
-            ],
-            "Basic": []
-          }
-        ]
-      }
-    },
-    "/api/v1/stores/{storeId}/invoices/{invoiceId}/status": {
+    "/api/v1/invoices/{invoiceId}/status": {
       "post": {
         "tags": [
           "Invoices"
@@ -1703,12 +1644,9 @@
         "parameters": [
           {
             "$ref": "#/components/parameters/InvoiceId"
-          },
-          {
-            "$ref": "#/components/parameters/StoreId"
           }
         ],
-        "description": "Mark an invoice as invalid or settled.",
+        "description": "Mark an invoice as invalid or settled. The store is resolved automatically from the invoice.",
         "operationId": "Invoices_MarkInvoiceStatus",
         "responses": {
           "200": {
@@ -1755,7 +1693,7 @@
         ]
       }
     },
-    "/api/v1/stores/{storeId}/invoices/{invoiceId}/unarchive": {
+    "/api/v1/invoices/{invoiceId}/unarchive": {
       "post": {
         "tags": [
           "Invoices"
@@ -1764,12 +1702,9 @@
         "parameters": [
           {
             "$ref": "#/components/parameters/InvoiceId"
-          },
-          {
-            "$ref": "#/components/parameters/StoreId"
           }
         ],
-        "description": "Unarchive an invoice",
+        "description": "Unarchive an invoice. The store is resolved automatically from the invoice.",
         "operationId": "Invoices_UnarchiveInvoice",
         "responses": {
           "200": {
@@ -1806,7 +1741,7 @@
         ]
       }
     },
-    "/api/v1/stores/{storeId}/invoices/{invoiceId}/payment-methods/{paymentMethodId}/activate": {
+    "/api/v1/invoices/{invoiceId}/payment-methods/{paymentMethodId}/activate": {
       "post": {
         "tags": [
           "Invoices"
@@ -1818,12 +1753,9 @@
           },
           {
             "$ref": "#/components/parameters/PaymentMethodId"
-          },
-          {
-            "$ref": "#/components/parameters/StoreId"
           }
         ],
-        "description": "Activate an invoice payment method (if lazy payments mode is enabled)",
+        "description": "Activate an invoice payment method (if lazy payments mode is enabled). The store is resolved automatically from the invoice.",
         "operationId": "Invoices_ActivatePaymentMethod",
         "responses": {
           "200": {
@@ -1853,7 +1785,7 @@
         ]
       }
     },
-    "/api/v1/stores/{storeId}/invoices/{invoiceId}/refund": {
+    "/api/v1/invoices/{invoiceId}/refund": {
       "post": {
         "tags": [
           "Invoices"
@@ -1862,68 +1794,16 @@
         "parameters": [
           {
             "$ref": "#/components/parameters/InvoiceId"
-          },
-          {
-            "$ref": "#/components/parameters/StoreId"
           }
         ],
-        "description": "Refund invoice",
+        "description": "Refund invoice. The store is resolved automatically from the invoice.",
         "operationId": "Invoices_Refund",
         "requestBody": {
           "required": true,
           "content": {
             "application/json": {
               "schema": {
-                "type": "object",
-                "additionalProperties": false,
-                "properties": {
-                  "name": {
-                    "type": "string",
-                    "description": "Name of the pull payment (Default: 'Refund' followed by the invoice id)",
-                    "nullable": true
-                  },
-                  "description": {
-                    "type": "string",
-                    "description": "Description of the pull payment"
-                  },
-                  "payoutMethodId": {
-                    "$ref": "#/components/schemas/PayoutMethodId"
-                  },
-                  "refundVariant": {
-                    "type": "string",
-                    "description": "* `RateThen`: Refund the crypto currency price, at the rate the invoice got paid.\r\n* `CurrentRate`: Refund the crypto currency price, at the current rate.\r\n*`Fiat`: Refund the invoice currency, at the rate when the refund will be sent.\r\n*`OverpaidAmount`: Refund the crypto currency amount that was overpaid.\r\n*`Custom`: Specify the amount, currency, and rate of the refund. (see `customAmount` and `customCurrency`)",
-                    "x-enumNames": [
-                      "CurrentRate",
-                      "Custom",
-                      "Fiat",
-                      "RateThen"
-                    ],
-                    "enum": [
-                      "CurrentRate",
-                      "Custom",
-                      "Fiat",
-                      "OverpaidAmount",
-                      "RateThen"
-                    ]
-                  },
-                  "subtractPercentage": {
-                    "type": "string",
-                    "format": "decimal",
-                    "description": "Optional percentage by which to reduce the refund, e.g. as processing charge or to compensate for the mining fee.",
-                    "example": "2.1"
-                  },
-                  "customAmount": {
-                    "type": "string",
-                    "format": "decimal",
-                    "description": "The amount to refund if the `refundVariant` is `Custom`.",
-                    "example": "5.00"
-                  },
-                  "customCurrency": {
-                    "type": "string",
-                    "description": "The currency to refund if the `refundVariant` is `Custom`",
-                    "example": "USD"
-                  }
-                }
+                "$ref": "#/components/schemas/RefundInvoiceRequest"
               }
             }
           }
@@ -1951,6 +1831,50 @@
           },
           "403": {
             "description": "If you are authenticated but forbidden to refund the invoice"
+          }
+        },
+        "security": [
+          {
+            "API_Key": [
+              "btcpay.store.cancreatepullpayments"
+            ],
+            "Basic": []
+          }
+        ]
+      }
+    },
+    "/api/v1/invoices/{invoiceId}/refund/{paymentMethodId}": {
+      "get": {
+        "tags": [
+          "Invoices"
+        ],
+        "summary": "Get invoice refund trigger data",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/InvoiceId"
+          },
+          {
+            "$ref": "#/components/parameters/PaymentMethodId"
+          }
+        ],
+        "description": "View calculated refund amounts for the specified invoice/payment-method. The store is resolved automatically from the invoice.",
+        "operationId": "Invoices_GetInvoiceRefundTriggerData",
+        "responses": {
+          "200": {
+            "description": "specified invoice refund trigger data",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/InvoiceRefundTriggerData"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "If you are authenticated but forbidden to view the specified invoice"
+          },
+          "404": {
+            "description": "The key is not found for this invoice"
           }
         },
         "security": [
@@ -4070,16 +3994,13 @@
         ]
       }
     },
-    "/api/v1/stores/{storeId}/payment-requests/{paymentRequestId}": {
+    "/api/v1/payment-requests/{paymentRequestId}": {
       "get": {
         "tags": [
           "Payment Requests"
         ],
         "summary": "Get payment request",
         "parameters": [
-          {
-            "$ref": "#/components/parameters/StoreId"
-          },
           {
             "name": "paymentRequestId",
             "in": "path",
@@ -4090,7 +4011,7 @@
             }
           }
         ],
-        "description": "View information about the specified payment request",
+        "description": "View information about the specified payment request. The store is resolved automatically from the payment request.",
         "operationId": "PaymentRequests_GetPaymentRequest",
         "responses": {
           "200": {
@@ -4124,12 +4045,9 @@
           "Payment Requests"
         ],
         "summary": "Archive payment request",
-        "description": "Archives the specified payment request.",
+        "description": "Archives the specified payment request. The store is resolved automatically from the payment request.",
         "operationId": "PaymentRequests_ArchivePaymentRequest",
         "parameters": [
-          {
-            "$ref": "#/components/parameters/StoreId"
-          },
           {
             "name": "paymentRequestId",
             "in": "path",
@@ -4177,9 +4095,6 @@
         "summary": "Update payment request",
         "parameters": [
           {
-            "$ref": "#/components/parameters/StoreId"
-          },
-          {
             "name": "paymentRequestId",
             "in": "path",
             "required": true,
@@ -4189,7 +4104,7 @@
             }
           }
         ],
-        "description": "Update a payment request",
+        "description": "Update a payment request. The store is resolved automatically from the payment request.",
         "operationId": "PaymentRequests_UpdatePaymentRequest",
         "responses": {
           "200": {
@@ -4236,16 +4151,13 @@
         ]
       }
     },
-    "/api/v1/stores/{storeId}/payment-requests/{paymentRequestId}/pay": {
+    "/api/v1/payment-requests/{paymentRequestId}/pay": {
       "post": {
         "tags": [
           "Payment Requests"
         ],
         "summary": "Create a new invoice for the payment request",
         "parameters": [
-          {
-            "$ref": "#/components/parameters/StoreId"
-          },
           {
             "name": "paymentRequestId",
             "in": "path",
@@ -4257,7 +4169,7 @@
           }
         ],
         "operationId": "PaymentRequests_Pay",
-        "description": "Create a new invoice for the payment request, or reuse an existing one",
+        "description": "Create a new invoice for the payment request, or reuse an existing one. The store is resolved automatically from the payment request.",
         "requestBody": {
           "description": "Invoice creation request",
           "content": {
@@ -5099,33 +5011,17 @@
           "Pull payments (Public)"
         ],
         "security": []
-      }
-    },
-    "/api/v1/stores/{storeId}/pull-payments/{pullPaymentId}": {
-      "parameters": [
-        {
-          "$ref": "#/components/parameters/StoreId"
-        },
-        {
-          "name": "pullPaymentId",
-          "in": "path",
-          "required": true,
-          "description": "The ID of the pull payment",
-          "schema": {
-            "type": "string"
-          }
-        }
-      ],
+      },
       "delete": {
         "operationId": "PullPayments_ArchivePullPayment",
         "summary": "Archive a pull payment",
-        "description": "Archive this pull payment (Will cancel all payouts awaiting for payment)",
+        "description": "Archive this pull payment (Will cancel all payouts awaiting for payment). The store is resolved automatically from the pull payment.",
         "responses": {
           "200": {
             "description": "The pull payment has been archived"
           },
           "404": {
-            "description": "The pull payment has not been found, or does not belong to this store"
+            "description": "The pull payment has not been found. Well-known error code is: `pullpayment-not-found`"
           }
         },
         "tags": [
@@ -7012,7 +6908,7 @@
         "security": [
           {
             "API_Key": [
-              "btcpay.store.canmodifystoresettings"
+              "btcpay.store.canviewwallet"
             ],
             "Basic": []
           }
@@ -7056,7 +6952,7 @@
         "security": [
           {
             "API_Key": [
-              "btcpay.store.canmodifystoresettings"
+              "btcpay.store.canviewwallet"
             ],
             "Basic": []
           }
@@ -7110,7 +7006,7 @@
         "security": [
           {
             "API_Key": [
-              "btcpay.store.canviewstoresettings"
+              "btcpay.store.canviewwallet"
             ],
             "Basic": []
           }
@@ -7164,7 +7060,7 @@
         "security": [
           {
             "API_Key": [
-              "btcpay.store.canmodifystoresettings"
+              "btcpay.store.canviewwallet"
             ],
             "Basic": []
           }
@@ -7199,7 +7095,7 @@
         "security": [
           {
             "API_Key": [
-              "btcpay.store.canmodifystoresettings"
+              "btcpay.store.canmanagewallettransactions"
             ],
             "Basic": []
           }
@@ -7289,7 +7185,7 @@
         "security": [
           {
             "API_Key": [
-              "btcpay.store.canmodifystoresettings"
+              "btcpay.store.canviewwallet"
             ],
             "Basic": []
           }
@@ -7318,7 +7214,7 @@
             }
           }
         },
-        "description": "Create store on-chain wallet transaction",
+        "description": "Create store on-chain wallet transaction. Requires `btcpay.store.cancreatetransactions` and `btcpay.store.cansigntransactions`. Also requires `btcpay.store.canbroadcasttransactions` when `proceedWithBroadcast` is true, including Payjoin.",
         "operationId": "StoreOnChainWallets_CreateOnChainTransaction",
         "responses": {
           "200": {
@@ -7353,7 +7249,8 @@
         "security": [
           {
             "API_Key": [
-              "btcpay.store.canmodifystoresettings"
+              "btcpay.store.cancreatetransactions",
+              "btcpay.store.cansigntransactions"
             ],
             "Basic": []
           }
@@ -7413,7 +7310,7 @@
         "security": [
           {
             "API_Key": [
-              "btcpay.store.canmodifystoresettings"
+              "btcpay.store.canbroadcasttransactions"
             ],
             "Basic": []
           }
@@ -7466,7 +7363,7 @@
         "security": [
           {
             "API_Key": [
-              "btcpay.store.canmodifystoresettings"
+              "btcpay.store.canviewwallet"
             ],
             "Basic": []
           }
@@ -7536,7 +7433,7 @@
         "security": [
           {
             "API_Key": [
-              "btcpay.store.canmodifystoresettings"
+              "btcpay.store.canmanagewallettransactions"
             ],
             "Basic": []
           }
@@ -7583,7 +7480,7 @@
         "security": [
           {
             "API_Key": [
-              "btcpay.store.canmodifystoresettings"
+              "btcpay.store.canviewwallet"
             ],
             "Basic": []
           }
@@ -7733,7 +7630,7 @@
         "security": [
           {
             "API_Key": [
-              "btcpay.store.canviewstoresettings"
+              "btcpay.store.canviewwallet"
             ],
             "Basic": []
           }
@@ -7812,7 +7709,7 @@
         "security": [
           {
             "API_Key": [
-              "btcpay.store.canviewstoresettings"
+              "btcpay.store.canmanagewalletsettings"
             ],
             "Basic": []
           }
@@ -7892,7 +7789,7 @@
         "security": [
           {
             "API_Key": [
-              "btcpay.store.canmodifystoresettings"
+              "btcpay.store.canviewwallet"
             ],
             "Basic": []
           }
@@ -7944,7 +7841,7 @@
         "security": [
           {
             "API_Key": [
-              "btcpay.store.canmodifystoresettings"
+              "btcpay.store.canmanagewallettransactions"
             ],
             "Basic": []
           }
@@ -8018,7 +7915,7 @@
         "security": [
           {
             "API_Key": [
-              "btcpay.store.canmodifystoresettings"
+              "btcpay.store.canviewwallet"
             ],
             "Basic": []
           }
@@ -8073,7 +7970,7 @@
         "security": [
           {
             "API_Key": [
-              "btcpay.store.canmodifystoresettings"
+              "btcpay.store.canmanagewallettransactions"
             ],
             "Basic": []
           }
@@ -8140,7 +8037,7 @@
         "security": [
           {
             "API_Key": [
-              "btcpay.store.canmodifystoresettings"
+              "btcpay.store.canmanagewallettransactions"
             ],
             "Basic": []
           }
@@ -8217,7 +8114,7 @@
         "security": [
           {
             "API_Key": [
-              "btcpay.store.canmodifystoresettings"
+              "btcpay.store.canmanagewallettransactions"
             ],
             "Basic": []
           }
@@ -10053,11 +9950,8 @@
         ]
       }
     },
-    "/api/v1/stores/{storeId}/webhooks/{webhookId}": {
+    "/api/v1/webhooks/{webhookId}": {
       "parameters": [
-        {
-          "$ref": "#/components/parameters/StoreId"
-        },
         {
           "$ref": "#/components/parameters/WebhookId"
         }
@@ -10066,8 +9960,8 @@
         "tags": [
           "Webhooks"
         ],
-        "summary": "Get a webhook of a store",
-        "description": "View webhook of a store",
+        "summary": "Get a webhook",
+        "description": "View webhook",
         "operationId": "Webhooks_GetWebhook",
         "responses": {
           "200": {
@@ -10167,11 +10061,8 @@
         ]
       }
     },
-    "/api/v1/stores/{storeId}/webhooks/{webhookId}/deliveries": {
+    "/api/v1/webhooks/{webhookId}/deliveries": {
       "parameters": [
-        {
-          "$ref": "#/components/parameters/StoreId"
-        },
         {
           "$ref": "#/components/parameters/WebhookId"
         }
@@ -10219,13 +10110,10 @@
         ]
       }
     },
-    "/api/v1/stores/{storeId}/webhooks/{webhookId}/deliveries/{deliveryId}": {
+    "/api/v1/webhooks/{webhookId}/deliveries/{deliveryId}": {
       "parameters": [
         {
           "$ref": "#/components/parameters/DeliveryId"
-        },
-        {
-          "$ref": "#/components/parameters/StoreId"
         },
         {
           "$ref": "#/components/parameters/WebhookId"
@@ -10263,13 +10151,10 @@
         ]
       }
     },
-    "/api/v1/stores/{storeId}/webhooks/{webhookId}/deliveries/{deliveryId}/request": {
+    "/api/v1/webhooks/{webhookId}/deliveries/{deliveryId}/request": {
       "parameters": [
         {
           "$ref": "#/components/parameters/DeliveryId"
-        },
-        {
-          "$ref": "#/components/parameters/StoreId"
         },
         {
           "$ref": "#/components/parameters/WebhookId"
@@ -10311,13 +10196,10 @@
         ]
       }
     },
-    "/api/v1/stores/{storeId}/webhooks/{webhookId}/deliveries/{deliveryId}/redeliver": {
+    "/api/v1/webhooks/{webhookId}/deliveries/{deliveryId}/redeliver": {
       "parameters": [
         {
           "$ref": "#/components/parameters/DeliveryId"
-        },
-        {
-          "$ref": "#/components/parameters/StoreId"
         },
         {
           "$ref": "#/components/parameters/WebhookId"
@@ -11838,6 +11720,62 @@
           "Standard",
           "TopUp"
         ]
+      },
+      "RefundInvoiceRequest": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "refundVariant"
+        ],
+        "properties": {
+          "name": {
+            "type": "string",
+            "description": "Name of the pull payment (Default: 'Refund' followed by the invoice id)",
+            "nullable": true
+          },
+          "description": {
+            "type": "string",
+            "description": "Description of the pull payment"
+          },
+          "payoutMethodId": {
+            "$ref": "#/components/schemas/PayoutMethodId"
+          },
+          "refundVariant": {
+            "type": "string",
+            "description": "* `RateThen`: Refund the crypto currency price, at the rate the invoice got paid.\r\n* `CurrentRate`: Refund the crypto currency price, at the current rate.\r\n*`Fiat`: Refund the invoice currency, at the rate when the refund will be sent.\r\n*`OverpaidAmount`: Refund the crypto currency amount that was overpaid.\r\n*`Custom`: Specify the amount, currency, and rate of the refund. (see `customAmount` and `customCurrency`)",
+            "x-enumNames": [
+              "CurrentRate",
+              "Custom",
+              "Fiat",
+              "OverpaidAmount",
+              "RateThen"
+            ],
+            "enum": [
+              "CurrentRate",
+              "Custom",
+              "Fiat",
+              "OverpaidAmount",
+              "RateThen"
+            ]
+          },
+          "subtractPercentage": {
+            "type": "string",
+            "format": "decimal",
+            "description": "Optional percentage by which to reduce the refund, e.g. as processing charge or to compensate for the mining fee.",
+            "example": "2.1"
+          },
+          "customAmount": {
+            "type": "string",
+            "format": "decimal",
+            "description": "The amount to refund if the `refundVariant` is `Custom`.",
+            "example": "5.00"
+          },
+          "customCurrency": {
+            "type": "string",
+            "description": "The currency to refund if the `refundVariant` is `Custom`",
+            "example": "USD"
+          }
+        }
       },
       "BaseUrl": {
         "type": "string",
@@ -15347,6 +15285,11 @@
             "type": "boolean",
             "description": "True if the instance requires approval to log in"
           },
+          "storeQuota": {
+            "type": "number",
+            "nullable": true,
+            "description": "Per-user override for the max number of stores this user can create. Null means the server default applies"
+          },
           "created": {
             "type": "number",
             "nullable": true,
@@ -15914,7 +15857,7 @@
     "securitySchemes": {
       "API_Key": {
         "type": "apiKey",
-        "description": "BTCPay Server supports authenticating and authorizing users through an API Key that is generated by them. Send the API Key as a header value to Authorization with the format: `token {token}`. For a smoother experience, you can generate a url that redirects users to an API key creation screen.\n\n The following permissions are available to the context of the user creating the API Key:\n\n* `btcpay.impersonation.canimpersonate`: Can impersonate users\n* `btcpay.user.candeleteuser`: Delete user\n* `btcpay.user.canmanagenotificationsforuser`: Manage your notifications\n* `btcpay.user.canmodifyprofile`: Manage your profile\n* `btcpay.user.canviewnotificationsforuser`: View your notifications\n* `btcpay.user.canviewprofile`: View your profile\n* `unrestricted`: Unrestricted access\n\nThe following permissions are available if the user is an administrator:\n\n* `btcpay.server.cancreatelightninginvoiceinternalnode`: Create invoices with internal lightning node\n* `btcpay.server.cancreateuser`: Create new users\n* `btcpay.server.canmanageusers`: Manage users\n* `btcpay.server.canmodifyserversettings`: Manage your server\n* `btcpay.server.canuseinternallightningnode`: Use the internal lightning node\n* `btcpay.server.canviewlightninginvoiceinternalnode`: View invoices from internal lightning node\n* `btcpay.server.canviewusers`: View users\n\nThe following permissions applies to all stores of the user, you can limit to a specific store with the following format: `btcpay.store.cancreateinvoice:6HSHAEU4iYWtjxtyRs9KyPjM9GAQp8kw2T9VWbGG1FnZ`:\n\n* `btcpay.store.canarchivepullpayments`: Archive your pull payments\n* `btcpay.store.cancreateinvoice`: Create an invoice\n* `btcpay.store.cancreatelightninginvoice`: Create invoices from the lightning nodes associated with your stores\n* `btcpay.store.cancreatenonapprovedpullpayments`: Create non-approved pull payments\n* `btcpay.store.cancreatepullpayments`: Create pull payments\n* `btcpay.store.cancreditsubscribers`: Credit your subscribers\n* `btcpay.store.canmanagepayouts`: Manage payouts\n* `btcpay.store.canmanagepullpayments`: Manage your pull payments\n* `btcpay.store.canmanagesubscribers`: Manage your subscribers\n* `btcpay.store.canmodifyinvoices`: Modify invoices\n* `btcpay.store.canmodifyofferings`: Modify your offerings\n* `btcpay.store.canmodifypaymentrequests`: Modify your payment requests\n* `btcpay.store.canmodifystoresettings`: Modify your stores\n* `btcpay.store.canuselightningnode`: Use the lightning nodes associated with your stores\n* `btcpay.store.canviewinvoices`: View invoices\n* `btcpay.store.canviewlightninginvoice`: View the lightning invoices associated with your stores\n* `btcpay.store.canviewofferings`: View your offerings\n* `btcpay.store.canviewpaymentrequests`: View your payment requests\n* `btcpay.store.canviewpayouts`: View payouts\n* `btcpay.store.canviewpullpayments`: View your pull payments\n* `btcpay.store.canviewreports`: View your reports\n* `btcpay.store.canviewstoresettings`: View your stores\n* `btcpay.store.webhooks.canmodifywebhooks`: Modify stores webhooks\n\nNote that API Keys only limits permission of a user and can never expand it. If an API Key has the permission `btcpay.server.canmodifyserversettings` but that the user account creating this API Key is not administrator, the API Key will not be able to modify the server settings.\nSome permissions may include other permissions, see [this operation](#operation/permissionsMetadata).\n",
+        "description": "BTCPay Server supports authenticating and authorizing users through an API Key that is generated by them. Send the API Key as a header value to Authorization with the format: `token {token}`. For a smoother experience, you can generate a url that redirects users to an API key creation screen.\n\n The following permissions are available to the context of the user creating the API Key:\n\n* `btcpay.impersonation.canimpersonate`: Can impersonate users\n* `btcpay.user.candeleteuser`: Delete user\n* `btcpay.user.canmanagenotificationsforuser`: Manage your notifications\n* `btcpay.user.canmodifyprofile`: Manage your profile\n* `btcpay.user.canviewnotificationsforuser`: View your notifications\n* `btcpay.user.canviewprofile`: View your profile\n* `unrestricted`: Unrestricted access\n\nThe following permissions are available if the user is an administrator:\n\n* `btcpay.server.cancreatelightninginvoiceinternalnode`: Create invoices with internal lightning node\n* `btcpay.server.cancreateuser`: Create new users\n* `btcpay.server.canmanageusers`: Manage users\n* `btcpay.server.canmodifyserversettings`: Manage your server\n* `btcpay.server.canuseinternallightningnode`: Use the internal lightning node\n* `btcpay.server.canviewlightninginvoiceinternalnode`: View invoices from internal lightning node\n* `btcpay.server.canviewusers`: View users\n\nThe following permissions applies to all stores of the user, you can limit to a specific store with the following format: `btcpay.store.cancreateinvoice:6HSHAEU4iYWtjxtyRs9KyPjM9GAQp8kw2T9VWbGG1FnZ`:\n\n* `btcpay.store.canarchivepullpayments`: Archive your pull payments\n* `btcpay.store.canbroadcasttransactions`: Broadcast wallet transactions\n* `btcpay.store.cancanceltransactions`: Cancel wallet transactions\n* `btcpay.store.cancreateinvoice`: Create an invoice\n* `btcpay.store.cancreatelightninginvoice`: Create invoices from the lightning nodes associated with your stores\n* `btcpay.store.cancreatenonapprovedpullpayments`: Create non-approved pull payments\n* `btcpay.store.cancreatepullpayments`: Create pull payments\n* `btcpay.store.cancreatetransactions`: Create wallet transactions\n* `btcpay.store.cancreditsubscribers`: Credit your subscribers\n* `btcpay.store.canmanagepayouts`: Manage payouts\n* `btcpay.store.canmanagepullpayments`: Manage your pull payments\n* `btcpay.store.canmanagesubscribers`: Manage your subscribers\n* `btcpay.store.canmanagewallets`: Manage wallets\n* `btcpay.store.canmanagewalletsettings`: Manage wallet settings\n* `btcpay.store.canmanagewallettransactions`: Manage wallet transactions\n* `btcpay.store.canmodifyinvoices`: Modify invoices\n* `btcpay.store.canmodifyofferings`: Modify your offerings\n* `btcpay.store.canmodifypaymentrequests`: Modify your payment requests\n* `btcpay.store.canmodifystoresettings`: Modify your stores\n* `btcpay.store.cansendstoreemails`: Send store emails\n* `btcpay.store.cansigntransactions`: Sign wallet transactions\n* `btcpay.store.canuselightningnode`: Use the lightning nodes associated with your stores\n* `btcpay.store.canviewinvoices`: View invoices\n* `btcpay.store.canviewlightninginvoice`: View the lightning invoices associated with your stores\n* `btcpay.store.canviewofferings`: View your offerings\n* `btcpay.store.canviewpaymentrequests`: View your payment requests\n* `btcpay.store.canviewpayouts`: View payouts\n* `btcpay.store.canviewpullpayments`: View your pull payments\n* `btcpay.store.canviewreports`: View your reports\n* `btcpay.store.canviewstoresettings`: View your stores\n* `btcpay.store.canviewwallet`: View wallets\n* `btcpay.store.webhooks.canmodifywebhooks`: Modify stores webhooks\n\nNote that API Keys only limits permission of a user and can never expand it. If an API Key has the permission `btcpay.server.canmodifyserversettings` but that the user account creating this API Key is not administrator, the API Key will not be able to modify the server settings.\nSome permissions may include other permissions, see [this operation](#operation/permissionsMetadata).\n",
         "name": "Authorization",
         "in": "header"
       },
