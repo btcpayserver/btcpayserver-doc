@@ -160,7 +160,6 @@ const sidebarUserGuide = [
       ['/SideShift/', 'SideShift'],
       ['/TicketTailor/', 'TicketTailor'],
       ['/Trocador/', 'Trocador'],
-      ['/Wabisabi/', 'Wabisabi Coinjoin']
     ]
   },
   {
