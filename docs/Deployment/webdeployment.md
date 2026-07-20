@@ -25,14 +25,6 @@ LunaNode will provide you with a generic domain for your server to get you start
 
 For more details on `LunaNode` click [here](./LunaNode.md)
 
-### Voltage Cloud
-
-[Voltage](https://www.voltage.cloud) is an infrastructure provider for Bitcoin.
-By focusing on Bitcoin exclusively, they can offer quality services to their clients.
-Automatically connect your Voltage Lightning node.
-
-For more details on `Voltage Cloud` click [here](./voltagecloud.md)
-
 ### Clovyr
 
 [Clovyr](https://clovyr.app/) is an application deployment service.

@@ -192,7 +192,6 @@ const sidebarDeployment = [
         collapsable: false,
         children: [
           ['/Deployment/LunaNode', 'Luna Node'],
-          ['/Deployment/voltagecloud', 'Voltage Cloud'],
           ['/Deployment/Cloudzy', 'Cloudzy'],
           ['/Deployment/Clovyr', 'Clovyr'],
           {
