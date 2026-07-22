@@ -102,7 +102,7 @@ You will get redirected to BTCPay Server and qr-code for the invoice will be sho
 After you paid the invoice you can go back to your site:
 ![Bitcoin for EDD: Test purchase invoice paid](./img/edd/edd-checkout-invoice-paid.png)
 
-You will see the order confirmation page, with a completed payment satus:
+You will see the order confirmation page, with a completed payment status:
 ![Bitcoin for EDD: Test purchase redirect order confirmation](./img/edd/edd-checkout-invoice-paid.png)
 
 On admin backend under "_Downloads_" -> _"Orders"_ you will also see the order is completed:

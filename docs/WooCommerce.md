@@ -198,7 +198,7 @@ This option is helpful in case you have a problem and need more information on w
 
 ### 4.2 Payment Gateway specific
 
-Depending on wheter you have above mentioned "Separate Payment Gateways" enabled you will have one or more Payment Gateways available to configure in the payment gateway settings via _WooCommerce -> Settings -> Tab [Payments]_
+Depending on whether you have above mentioned "Separate Payment Gateways" enabled you will have one or more Payment Gateways available to configure in the payment gateway settings via _WooCommerce -> Settings -> Tab [Payments]_
 
 On all payment gateways you can set the following options:
 
