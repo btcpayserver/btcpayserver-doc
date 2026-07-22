@@ -13,6 +13,7 @@ VAULT_DIR="$BASE_DIR/deps/vault"
 ZAPIER_DIR="$BASE_DIR/deps/zapier"
 PODSERVER_DIR="$BASE_DIR/deps/podserver"
 TROCADOR_DIR="$BASE_DIR/deps/trocador"
+MAKEPAY_DIR="$BASE_DIR/deps/makepay"
 LNDHUBAPI_DIR="$BASE_DIR/deps/lndhub-api"
 KUKKS_DIR="$BASE_DIR/deps/kukks"
 TOBSES_DIR="$BASE_DIR/deps/tobses"
@@ -230,6 +231,29 @@ cd "$TROCADOR_DIR"
 cp -r README.md "$DOCS_DIR/Trocador"
 for file in "$DOCS_DIR"/Trocador/*.md; do
   update_external "$file" https://github.com/saltrafael/trocador-plugin https://github.com/saltrafael/trocador-plugin/edit/master "$DOCS_DIR"/Trocador/
+done
+
+# MakePay
+
+echo "Setup dependency: MakePay"
+
+rm -rf "$DOCS_DIR/Makepay"
+mkdir -p "$DOCS_DIR/Makepay"
+
+if [ ! -d "$MAKEPAY_DIR" ]; then
+  git clone --depth 1 https://github.com/makepay-io/btcpayserver-makepay.git "$MAKEPAY_DIR"
+else
+  cd "$MAKEPAY_DIR" && git checkout main && git pull
+fi
+
+cd "$MAKEPAY_DIR"
+cp -r README.md "$DOCS_DIR/Makepay"
+if [ -d docs ]; then
+  cp -r docs/* "$DOCS_DIR/Makepay"
+fi
+sed -ie 's$docs/$./$g' "$DOCS_DIR/Makepay/README.md"
+for file in "$DOCS_DIR"/Makepay/*.md; do
+  update_external "$file" https://github.com/makepay-io/btcpayserver-makepay https://github.com/makepay-io/btcpayserver-makepay/edit/main "$DOCS_DIR"/Makepay/
 done
 
 # Drupal
