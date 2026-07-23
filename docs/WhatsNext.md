@@ -1,26 +1,14 @@
 # (4) What's Next?
 
-After you've connected your wallet to your BTCPay, you can explore various built in tools in the software. See the full list of Use Cases [here](./UseCase.md).
+After you've connected your wallet to BTCPay Server, you can start exploring the built-in features and plugins available to your store. See the full list of use cases [here](./UseCase.md).
 
-## Creating the Point of Sale App
+## <a id="creating-the-payment-request"></a>Creating the Payment Request
 
-BTCPay has a PoS app which you can use to receive payments from your customers directly or to receive donations. To **create the POS app**, you need to have a store created in BTCPay. View PoS instructions [here](./Apps.md#point-of-sale-app).
-
-## Creating the Crowdfund App
-
-Create a **crowdfunding campaign using BTCPay**. Unlike traditional crowdfunding platforms, the creator of the campaign is the owner of the platform. Funds go directly to the creator’s wallet without any fees. View Crowdfund instructions [here](./Apps.md#crowdfunding-app).
-
-## Creating the Payment Request
-
-Create **custom invoices which can be shared with others**, by sending a link to your payment request. Users can pay the request at any time. BTCPay automatically updates the BTC exchange rate at the time of payment. View Payment Request instructions [here](./PaymentRequests.md).
-
-## Creating the Pay Button
-
-**Pay buttons** are great when you have a fixed amount for a product or a donation. You can easily embed the button into HTML. When the customer or a visitor clicks on the button, BTCPay displays a checkout page and an invoice for them. View Pay Button instructions [here](./Apps.md#payment-button).
+Create **custom invoices you can share with a client, customer, or friend** by sending them a payment link. Users can pay the request at any time, and BTCPay automatically updates the BTC exchange rate at the time of payment. View Payment Request instructions [here](./PaymentRequests.md).
 
 ## Connecting your BTCPay store to your e-commerce platform
 
-Depending on the CMS you're using, you can easily connect BTCPay to your online store. Currently, BTCPay offers following integrations :
+Depending on the CMS you're using, you can easily connect BTCPay to your online store. Currently, BTCPay offers the following integrations:
 
 - [WooCommerce](./WooCommerce.md)
 - [Shopify](./Shopify.md)
@@ -36,16 +24,27 @@ Depending on the CMS you're using, you can easily connect BTCPay to your online 
 
 ## Extending BTCPay Server: Plugins
 
-BTCPay Server is more than just a payment processor - it can be personalized to your preference. Plugins allow you customize your BTCPay Server, and tailor your instance to suit your specific needs.
+BTCPay Server is more than just a payment processor. Core plugins such as Point of Sale, Crowdfunding, and Pay Button help many users get started quickly, and additional plugins can extend your instance for more specialized workflows.
 
-Every project is unique. Whether you're a freelancer, running a physical store, an online store, managing a creative project, or building, there's a good chance a plugin exists to solve your specific workflow challenge. 
+### <a id="creating-the-point-of-sale-app"></a>Point of Sale plugin
 
-Need something custom? Click on the `Manage Plugin` section on your BTCPay instance or take a look into our [BTCPay Server Plugin Directory](https://plugin-builder.btcpayserver.org/).
+Use the **Point of Sale plugin** to accept payments from customers in person or collect donations through a simple checkout experience. View Point of Sale instructions [here](./Apps.md#point-of-sale-app).
 
+### <a id="creating-the-crowdfund-app"></a>Crowdfunding plugin
+
+Use the **Crowdfunding plugin** to run a campaign where funds go directly to your wallet without relying on a traditional crowdfunding platform. View Crowdfunding instructions [here](./Apps.md#crowdfunding-app).
+
+### <a id="creating-the-pay-button"></a>Pay Button plugin
+
+Use the **Pay Button plugin** when you have a fixed amount for a product or donation and want an embeddable checkout button for your website. View Pay Button instructions [here](./Apps.md#payment-button).
+
+Need something custom? Open the `Manage Plugins` section on your BTCPay instance or browse the [BTCPay Server Plugin Directory](https://plugin-builder.btcpayserver.org/).
+
+If you run a public-facing business that accepts bitcoin, you can also submit it to the community-maintained [BTCPay Server Merchant Directory](https://directory.btcpayserver.org/).
 
 ## Join the BTCPay Community
 
-BTCPay Server is an open-source project, not a company. We rely on a network of diverse contributors and users to provide support for numerous use-cases. Join us in improving, learning, and building BTCPay.
+BTCPay Server is an open-source project, not a company. We rely on a network of diverse contributors and users to provide support for numerous use cases. Join us in improving, learning, and building BTCPay.
 
 If you have questions, try searching our [FAQ Section](./FAQ/readme.md) or join the [BTCPay Community](./Community.md) and share questions and ideas for improvement.
 
