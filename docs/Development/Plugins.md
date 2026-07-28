@@ -15,7 +15,6 @@ Create a folder for the BTCPay Server projects. It will contain at least:
 
 You can get started by cloning the [plugin template](https://github.com/btcpayserver/btcpayserver-plugin-template) or taking a look at [existing plugins](#resources).
 
-
 ## Debugging
 
 If you used the [plugin template](https://github.com/btcpayserver/btcpayserver-plugin-template), please [follow those instructions](https://github.com/btcpayserver/btcpayserver-plugin-template/tree/master#debugging-the-plugin).
@@ -220,22 +219,101 @@ Once that is done, your plugin API documentation should appear on the instance `
 
 ## Publishing the plugin
 
-The plugins are published via the [plugin builder](https://plugin-builder.btcpayserver.org/).
-You can sign up, build and submit new versions of your plugin using this web UI.
+Use the [BTCPay Server Plugin Builder](https://plugin-builder.btcpayserver.org/) to build and publish your plugin.
+You can browse approved projects in the [public plugin directory](https://plugin-builder.btcpayserver.org/public/plugins).
 
-![Plugin Builder: Create a new plugin](../img/plugins/plugin-builder-create-plugin.png)
+### Before you start
 
-Once you have a new version ready, you can create a new build.
-To do so, you will need to reference the Git repository of your plugin, as well as the branch and path of your plugin.
+Create an account or sign in to the Plugin Builder, then verify your email address and GitHub account before creating a plugin or starting a build.
 
-![Plugin Builder: Create a new build](../img/plugins/plugin-builder-create-build.png)
+Your plugin must be hosted in a public GitHub or GitLab repository that the Builder can clone over HTTPS without credentials.
+Run your tests before submitting a build: the Builder publishes and packages the plugin, but it does not run your test suite or install the plugin.
 
-The result will be a packaged version of your plugin in `prerelease` state.
-A version in prerelease can be modified just by rebuilding your plugin in the plugin builder.
+### Create the plugin and its first build
 
-You can browse the prereleased plugin list on any BTCPay Server by going to `Server Settings > Policies`, check `Show plugins in pre-release` and `Save`.
+1. Select **Create Plugin** and enter a slug, title and description. A logo and demo video are optional at this stage, but required before requesting a public listing.
 
-Once you click the `Release` button on the build page, the package won't be in prerelease anymore and it is visible to everyone. Once the package is released, you won't be able to publish a new build with the same version number. So you will need to bump the `<Version>` of your plugin in the csproj before publishing any new adjustment to your plugin.
+   ![Create a new plugin form in the Plugin Builder](../img/plugins/plugin-builder-create-plugin-form.png)
+
+2. Select **Create Build** and enter the HTTPS URL of the Git repository.
+3. Optionally specify:
+   - A branch or tag. When omitted, the repository's default branch is used.
+   - The directory containing the plugin project. When omitted, the repository root is used. The selected directory must contain exactly one `.csproj` file.
+   - A .NET build configuration. When omitted, `Release` is used.
+4. Submit the build and follow its status and output on the build page.
+
+The Builder clones Git submodules recursively, runs `dotnet publish`, validates the plugin manifest and packages the result.
+A successful build is initially published as a pre-release.
+
+![Published pre-release build in the Plugin Builder](../img/plugins/plugin-builder-prerelease-build.png)
+
+### Test a pre-release
+
+Use a non-production BTCPay Server instance that is compatible with the plugin.
+Go to **Server Settings > Policies**, enable **Show plugins in pre-release**, and save.
+
+![Show plugins in pre-release option on the BTCPay Server Policies page](../img/plugins/plugin-builder-show-prereleases.png)
+
+Then open **Plugin Directory** and search for the plugin by its exact name if it is still unlisted.
+Install it, restart BTCPay Server when prompted, and test installation, startup, configuration, upgrades and the plugin's main workflows.
+After installation, use **Installed Plugins** to manage it.
+
+While a version is a pre-release, you can correct the source and rebuild the same version.
+A successful Builder result only confirms that the plugin could be published and packaged; it does not confirm that the plugin works correctly.
+
+### Release and listing
+
+Version state and project visibility are separate concepts:
+
+| Label           | Applies to     | Meaning                                                                      |
+| --------------- | -------------- | ---------------------------------------------------------------------------- |
+| **Pre-release** | Plugin version | Available to users who enable pre-releases. The same version can be rebuilt. |
+| **Released**    | Plugin version | A stable package. It cannot be replaced by another build while released.     |
+| **Listed**      | Plugin project | Approved for normal discovery in the public plugin directory.                |
+
+Select **Release** only after testing the pre-release.
+For corrections and future versions, update `<Version>` in the plugin's `.csproj`, create another build, test it and then release it.
+
+:::warning Release is not listing
+Releasing a version does not add the plugin to the main public directory.
+New projects remain **Unlisted** until a listing request is reviewed and approved.
+An unlisted plugin still has a public page and can be found by users who search for its exact name.
+:::
+
+### Request a public listing
+
+Once the plugin has a version, select **Request Listing** from its navigation.
+
+![Plugin Listing Request checklist in the Plugin Builder](../img/plugins/plugin-builder-request-listing.png)
+
+The **Release Note** in the listing form is required, limited to 200 characters and used as the plugin's social announcement pitch.
+
+Before submitting the request:
+
+- Complete the plugin settings with a clear description, logo, Git repository, documentation URL and demo video.
+- Make sure every plugin owner has verified their email, GitHub and Nostr accounts.
+- Post a verification message in the [official BTCPay Server Telegram group](https://t.me/btcpayserver) and provide the message URL.
+- Provide at least one publicly posted review from a reputable Bitcoiner who tested the plugin.
+- Optionally provide a preferred announcement date and time.
+
+The request is reviewed manually.
+If it is rejected, address the reason shown in **Listing History** and submit it again.
+Once approved, the listing applies to the project, so future versions only need to go through the build, test and release cycle.
+
+Listing approval is not a code or security audit, and does not constitute an endorsement by the BTCPay Server team.
+
+### Troubleshooting and automation
+
+If a build fails, inspect its output and confirm that:
+
+- The repository and its submodules can be cloned without private credentials.
+- The branch or tag exists.
+- The selected directory contains exactly one `.csproj` file.
+- The project builds and its tests pass locally with the selected configuration.
+- The plugin identifier belongs to this Plugin Builder project.
+- The `<Version>` is not already released.
+
+To automate later builds and releases, see the interactive [Plugin Builder API documentation](https://plugin-builder.btcpayserver.org/docs).
 
 ## Important notice about plugins
 

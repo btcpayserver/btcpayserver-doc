@@ -38,10 +38,9 @@ Depending on the CMS you're using, you can easily connect BTCPay to your online 
 
 BTCPay Server is more than just a payment processor - it can be personalized to your preference. Plugins allow you customize your BTCPay Server, and tailor your instance to suit your specific needs.
 
-Every project is unique. Whether you're a freelancer, running a physical store, an online store, managing a creative project, or building, there's a good chance a plugin exists to solve your specific workflow challenge. 
+Every project is unique. Whether you're a freelancer, running a physical store, an online store, managing a creative project, or building, there's a good chance a plugin exists to solve your specific workflow challenge.
 
-Need something custom? Click on the `Manage Plugin` section on your BTCPay instance or take a look into our [BTCPay Server Plugin Directory](https://plugin-builder.btcpayserver.org/).
-
+Need something custom? Use **Installed Plugins** to manage your current plugins or **Plugin Directory** to discover new ones. You can also browse the [BTCPay Server Plugin Directory](https://plugin-builder.btcpayserver.org/).
 
 ## Join the BTCPay Community
 
