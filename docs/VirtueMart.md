@@ -138,7 +138,7 @@ The store ID of your BTCPay Server store. Can be found on the store settings pag
 
 **Webhook Secret**
 
-The wehbook secret which was generated on webhook createion, see [here](#23-create-a-webhook-on-btcpay-server)
+The webhook secret which was generated on webhook creation, see [here](#23-create-a-webhook-on-btcpay-server)
 
 **Webhook callback URL**
 
