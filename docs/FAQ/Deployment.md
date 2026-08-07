@@ -384,6 +384,9 @@ services:
       NBXPLORER_BTCNODEENDPOINT: host.docker.internal:39388
     volumes:
       - 'localBitcoinfolder:/root/.bitcoin'
+
+required:
+  - "nbxplorer"
 ```
 
 - Replace: `43782` with your bitcoin node's configured RPC port
@@ -402,7 +405,7 @@ extra_hosts:
   - 'host.docker.internal:$DOCKER_HOST_IP'
 ```
 
-- Run `export BTCPAYGEN_EXCLUDE_FRAGMENTS="bitcoin"`
+- Run `export BTCPAYGEN_EXCLUDE_FRAGMENTS="$BTCPAYGEN_EXCLUDE_FRAGMENTS;bitcoin"`
 - Run `export BTCPAYGEN_ADDITIONAL_FRAGMENTS="$BTCPAYGEN_ADDITIONAL_FRAGMENTS;bitcoin.custom"`
 - Run `. ./btcpay-setup.sh -i`
 
