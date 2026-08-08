@@ -179,7 +179,7 @@ const sidebarDeployment = [
   {
     title: 'Deployment',
     collapsable: false,
-    children: ['/Deployment/', '/Hardening', '/Deployment/ThirdPartyHosting', '/Configurator/']
+    children: ['/Deployment/', '/Hardening/', '/Deployment/ThirdPartyHosting', '/Configurator/']
   },
   {
     title: 'Docker',
