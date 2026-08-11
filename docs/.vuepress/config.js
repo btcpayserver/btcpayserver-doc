@@ -116,31 +116,20 @@ const sidebarUserGuide = [
     title: 'Integrations',
     collapsable: false,
     children: [
-      ['/BigCommerce/', 'Big Commerce'],
       ['/Calcom', 'Cal.com'],
-      ['/Drupal/', 'Drupal'],
       ['/EasyDigitalDownloads', 'Easy Digital Downloads'],
       ['/EasyWebshop', 'EasyWebshop'],
-      ['/Ecwid/', 'Ecwid'],
       ['/GiveWP', 'GiveWP'],
-      ['/Grandnode/', 'Grandnode'],
       ['/InvoiceNinja', 'Invoice Ninja'],
       ['/Magento', 'Magento'],
-      ['/Nopcommerce/', 'Nopcommerce'],
-      ['/Odoo/', 'Odoo'],
       ['/OpenCart', 'OpenCart'],
       ['/PhocaCart', 'PhocaCart'],
       ['/PrestaShop', 'PrestaShop'],
       ['/Pretix', 'Pretix'],
       ['/ShopifyV2', 'Shopify V2'],
       ['/Shopware', 'Shopware'],
-      ['/Ghost/', 'Ghost'],
-      ['/Smartstore/', 'Smartstore'],
       ['/VirtueMart', 'VirtueMart'],
-      ['/Wix/', 'Wix'],
       ['/WooCommerce', 'WooCommerce'],
-      ['/Xenforo/', 'Xenforo'],
-      ['/Zapier/', 'Zapier'],
       ['/CustomIntegration', 'Custom Integration']
     ]
   },
@@ -149,18 +138,7 @@ const sidebarUserGuide = [
     collapsable: false,
     initialOpenGroupIndex: -1,
     children: [
-      [`https://dev.blink.sv/examples/btcpayserver-plugin`, 'Blink', { type: 'external' }],
-      ['/Breez/', 'Breez'],
-      ['/Bringin/', 'Bringin'],
-      ['/DynamicReports/', 'Dynamic Reports'],
-      ['/LNDhubAPI/', 'LNDhub API'],
-      ['/Nostr/', 'Nostr'],
-      ['/VendorPay/', 'Vendor Pay'],
-      ['/PodServer/', 'PodServer'],
-      ['/SideShift/', 'SideShift'],
-      ['/TicketTailor/', 'TicketTailor'],
-      ['/Trocador/', 'Trocador'],
-      ['/Wabisabi/', 'Wabisabi Coinjoin']
+      [`https://dev.blink.sv/examples/btcpayserver-plugin`, 'Blink', { type: 'external' }]
     ]
   },
   {
@@ -377,7 +355,284 @@ const sidebarFAQ = [
   }
 ]
 
+// Swahili (Kiswahili) locale - /sw/
+const navSwahili = [
+  {
+    text: 'Mwongozo wa Mtumiaji',
+    link: '/sw/Guide/'
+  },
+  {
+    text: 'Usambazaji',
+    link: '/sw/Deployment/'
+  },
+  {
+    text: 'Uendelezaji',
+    link: '/sw/Development/'
+  },
+  {
+    text: 'Changia',
+    link: '/sw/Contribute/'
+  },
+  {
+    text: 'Maswali',
+    link: '/sw/FAQ/'
+  }
+]
+
+const sidebarSwahili = [
+  {
+    title: 'Jifunze',
+    collapsable: false,
+    children: [
+      ['/sw/Guide', 'Utangulizi'],
+      ['/sw/TryItOut', 'Ijaribu'],
+      ['/sw/Walkthrough', 'Maelekezo'],
+      ['/sw/UseCase', 'Matumizi'],
+      ['/sw/BTCPayVsOthers', 'BTCPay Server dhidi ya Wengine']
+    ]
+  },
+  {
+    title: 'Kuanza',
+    collapsable: false,
+    children: [
+      '/sw/RegisterAccount',
+      '/sw/CreateStore',
+      {
+        title: '(3) Usanidi wa Pochi',
+        path: '/sw/WalletSetup',
+        collapsable: false,
+        initialOpenGroupIndex: -1,
+        children: [
+          {
+            title: 'Unganisha Pochi',
+            path: '/sw/ConnectWallet'
+          },
+          {
+            title: 'Unda Pochi',
+            path: '/sw/CreateWallet'
+          },
+          {
+            title: 'Usanidi wa Mtandao wa Lightning',
+            path: '/sw/LightningNetwork-Setup'
+          }
+        ]
+      },
+      ['/sw/WhatsNext', '(4) Nini Kifuatavyo?']
+    ]
+  },
+  {
+    title: 'Vipengele',
+    collapsable: false,
+    children: [
+      ['/sw/Dashboard', 'Dashibodi'],
+      {
+        title: 'Pochi',
+        path: '/sw/Wallet',
+        children: [
+          '/sw/HardwareWalletIntegration',
+          '/sw/Multisig',
+          '/sw/LightningNetwork'
+        ]
+      },
+      '/sw/Invoices',
+      {
+        title: 'Usajili',
+        path: '/sw/Subscriptions',
+        children: ['/sw/Monetization']
+      },
+      '/sw/Translations',
+      '/sw/PaymentRequests',
+      {
+        title: 'Malipo ya Kuvuta',
+        path: '/sw/PullPayments',
+        collapsable: false,
+        children: ['/sw/Refund']
+      },
+      '/sw/Payouts',
+      {
+        title: 'Mjenzi wa Fomu',
+        path: '/sw/Forms',
+        children: ['/sw/AdvancedForms']
+      },
+      {
+        title: 'Programu',
+        path: '/sw/Apps',
+        children: ['/sw/Conference-PoS-guide']
+      },
+      '/sw/Reporting',
+      ['/sw/Payjoin', 'Payjoin']
+    ]
+  },
+  {
+    title: 'Ushirikiano',
+    collapsable: false,
+    children: [
+      ['/sw/Calcom', 'Cal.com'],
+      ['/sw/EasyDigitalDownloads', 'Easy Digital Downloads'],
+      ['/sw/EasyWebshop', 'EasyWebshop'],
+      ['/sw/GiveWP', 'GiveWP'],
+      ['/sw/InvoiceNinja', 'Invoice Ninja'],
+      ['/sw/Magento', 'Magento'],
+      ['/sw/OpenCart', 'OpenCart'],
+      ['/sw/PhocaCart', 'PhocaCart'],
+      ['/sw/PrestaShop', 'PrestaShop'],
+      ['/sw/Pretix', 'Pretix'],
+      ['/sw/ShopifyV2', 'Shopify V2'],
+      ['/sw/Shopware', 'Shopware'],
+      ['/sw/VirtueMart', 'VirtueMart'],
+      ['/sw/WooCommerce', 'WooCommerce'],
+      ['/sw/CustomIntegration', 'Ushirikiano Maalum']
+    ]
+  },
+  {
+    title: 'Msaada na Jamii',
+    collapsable: false,
+    initialOpenGroupIndex: -1,
+    children: [
+      ['/sw/Troubleshooting', 'Utatuzi wa Matatizo'],
+      ['/sw/Support', 'Msaada'],
+      ['/sw/Community', 'Jamii']
+    ]
+  },
+  {
+    title: 'Usambazaji',
+    collapsable: false,
+    children: [
+      {
+        title: 'Usambazaji',
+        path: '/sw/Deployment/',
+        children: ['/sw/Deployment/ThirdPartyHosting']
+      },
+      {
+        title: 'Usambazaji wa Wavuti/Wingu',
+        path: '/sw/Deployment/webdeployment',
+        collapsable: false,
+        children: [
+          ['/sw/Deployment/LunaNode', 'Luna Node'],
+          ['/sw/Deployment/Cloudzy', 'Cloudzy'],
+          ['/sw/Deployment/Clovyr', 'Clovyr'],
+          {
+            title: 'Azure',
+            path: '/sw/Deployment/Azure',
+            children: ['/sw/Deployment/AzurePennyPinching']
+          },
+          ['/sw/Deployment/GoogleCloud', 'Google Cloud'],
+          ['/sw/Deployment/CometCash', 'Comet Cash']
+        ]
+      },
+      {
+        title: 'Usambazaji wa Maunzi',
+        path: '/sw/Deployment/Hardware',
+        collapsable: false,
+        children: [
+          ['/sw/Deployment/RaspberryPi4', 'Raspberry Pi'],
+          ['/sw/Deployment/Hack0', 'Hack0'],
+          ['/sw/Deployment/LightningInABox', 'LightningInABox'],
+          '/sw/Deployment/DynamicDNS',
+          '/sw/Deployment/ReverseSSHtunnel',
+          '/sw/Deployment/ReverseProxyToTor',
+          '/sw/Deployment/HardwareAsAService'
+        ]
+      },
+      ['/sw/Deployment/ManualDeployment', 'Usambazaji wa Mwongozo'],
+      ['/sw/Deployment/ManualDeploymentExtended', 'Usambazaji wa Mwongozo uliopanuliwa']
+    ]
+  },
+  {
+    title: 'Uendelezaji',
+    collapsable: false,
+    children: [
+      {
+        title: 'Greenfield API',
+        path: '/sw/Development/',
+        children: [
+          ['/sw/Development/ecommerce-integration-guide', 'Mwongozo wa Ushirikiano'],
+          '/sw/Development/GreenFieldExample',
+          '/sw/Development/GreenFieldExample-NodeJS',
+          '/sw/Development/GreenfieldExample-PHP'
+        ]
+      },
+      {
+        title: 'Uendelezaji',
+        path: '/sw/Development/LocalDev',
+        children: ['/sw/Development/Altcoins', '/sw/Development/InvoiceMetadata', '/sw/Development/Theme']
+      },
+      {
+        title: 'Plugins',
+        path: '/sw/Development/Plugins',
+        children: ['/sw/Development/Plugins-Permissions']
+      },
+      {
+        title: 'Zaidi',
+        collapsable: false,
+        children: [
+          ['/sw/ElectrumX', 'ElectrumX'],
+          ['/sw/ElectrumWallet', 'Electrum Wallet'],
+          ['/sw/WasabiWallet', 'Wasabi Wallet'],
+          ['/sw/LedgerWallet', 'Ledger Wallet'],
+          ['/sw/ColdCardWallet', 'ColdCard Wallet'],
+          ['/sw/Sign-PSBT-with-sparrow-wallet', 'Sparrow Wallet PSBT'],
+          ['/sw/SamRockProtocol', 'Itifaki ya SamRock'],
+          '/sw/Notifications',
+          '/sw/Shopify'
+        ]
+      }
+    ]
+  },
+  {
+    title: 'Changia',
+    path: '/sw/Contribute/',
+    collapsable: false,
+    children: [
+      {
+        title: 'Msimbo',
+        path: '/sw/Contribute/Dev',
+        collapsable: false,
+        children: ['/sw/Contribute/DevCode', '/sw/Contribute/DevTest']
+      },
+      {
+        title: 'Andika',
+        path: '/sw/Contribute/Write',
+        collapsable: false,
+        children: ['/sw/Contribute/WriteSoftware', '/sw/Contribute/WriteDocs', '/sw/Contribute/WriteBlog']
+      },
+      ['/sw/Contribute/Design', 'Ubunifu'],
+      ['/sw/Contribute/Translate', 'Tafsiri'],
+      ['/sw/Contribute/Misc', 'Mengineyo']
+    ]
+  },
+  {
+    title: 'Maswali Yanayoulizwa Mara kwa Mara',
+    path: '/sw/FAQ/',
+    collapsable: false,
+    children: [
+      ['/sw/FAQ/General', 'Jumla'],
+      ['/sw/FAQ/Deployment', 'Usambazaji'],
+      ['/sw/FAQ/Synchronization', 'Usawazishaji'],
+      ['/sw/FAQ/Integrations', 'Ushirikiano'],
+      ['/sw/FAQ/ServerSettings', 'Mipangilio ya Seva'],
+      ['/sw/FAQ/Stores', 'Maduka'],
+      ['/sw/FAQ/Wallet', 'Pochi'],
+      ['/sw/FAQ/Apps', 'Programu'],
+      ['/sw/FAQ/LightningNetwork', 'Mtandao wa Lightning'],
+      ['/sw/FAQ/Altcoin', 'Altcoin']
+    ]
+  }
+]
+
 module.exports = {
+  locales: {
+    '/': {
+      lang: 'en-US',
+      title,
+      description: 'BTCPay Server Official Documentation'
+    },
+    '/sw/': {
+      lang: 'sw',
+      title: 'BTCPay Server',
+      description: 'Hati rasmi za BTCPay Server'
+    }
+  },
   title,
   description: 'BTCPay Server Official Documentation',
   head: [
@@ -438,6 +693,18 @@ module.exports = {
     slugify
   },
   themeConfig: {
+    locales: {
+      '/': {
+        selectText: 'Languages',
+        label: 'English'
+      },
+      '/sw/': {
+        selectText: 'Lugha',
+        label: 'Kiswahili',
+        nav: navSwahili,
+        sidebar: sidebarSwahili
+      }
+    },
     domain: baseUrl,
     logo: '/img/btcpay-logo.svg',
     displayAllHeaders: false,
