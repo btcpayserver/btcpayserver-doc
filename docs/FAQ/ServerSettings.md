@@ -11,9 +11,15 @@ These settings are only available to the server admin. Take a look at the [walkt
 
 There are 2 ways to update your BTCPay Server:
 
-1. Updating in the user interface: Server Settings > Maintenance > Update.
+1. Updating in the user interface:
 
-![Updating BTCPay Server](../img/HowToUpdateBTCPayServer.png)
+   1. Open the server settings menu and select **Maintenance**.
+
+      ![Opening BTCPay Server maintenance settings](../img/UpdateBTCPayServer1.png)
+
+   2. Click **Update**.
+
+      ![Updating BTCPay Server](../img/UpdateBTCPayServer2.png)
 
 2. Updating using SSH: Login into your virtual machine with ssh, then apply following commands:
 
@@ -29,7 +35,7 @@ There are 2 ways to restart your BTCPay Server:
 
 1. Restarting in the user interface: Server Settings > Maintenance > Restart.
 
-![Restarting BTCPay Server](../img/HowToRestartBTCPayServer.png)
+![Restarting BTCPay Server](../img/RestartBTCPayServer.png)
 
 2. Restarting using SSH: Login into your virtual machine with ssh, then apply following commands:
 
