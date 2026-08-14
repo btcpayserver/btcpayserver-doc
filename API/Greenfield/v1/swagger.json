@@ -9434,6 +9434,11 @@
                     "type": "string",
                     "description": "The new password of the user",
                     "nullable": true
+                  },
+                  "allowGreenfieldBasicAuth": {
+                    "type": "boolean",
+                    "description": "Whether to allow Basic authentication for the Greenfield API",
+                    "nullable": true
                   }
                 }
               }
@@ -15311,6 +15316,10 @@
             "type": "boolean",
             "description": "True if an admin has disabled the user"
           },
+          "allowGreenfieldBasicAuth": {
+            "type": "boolean",
+            "description": "Whether Basic authentication is allowed for the Greenfield API"
+          },
           "roles": {
             "type": "array",
             "nullable": false,
@@ -15870,7 +15879,7 @@
       },
       "Basic": {
         "type": "http",
-        "description": "BTCPay Server supports authenticating and authorizing users through the Basic HTTP authentication scheme. Send the user and password encoded in base64 with the format `Basic {base64(username:password)}`. Using this authentication method implicitly provides you with the `unrestricted` permission",
+        "description": "BTCPay Server supports authenticating and authorizing users through the Basic HTTP authentication scheme during the first five minutes after account creation or when the user explicitly enables it. Send the user and password encoded in base64 with the format `Basic {base64(username:password)}`. Using this authentication method implicitly provides you with the `unrestricted` permission",
         "scheme": "Basic"
       }
     }
