@@ -179,7 +179,7 @@ const sidebarDeployment = [
   {
     title: 'Deployment',
     collapsable: false,
-    children: ['/Deployment/', '/Deployment/ThirdPartyHosting', '/Configurator/']
+    children: ['/Deployment/', '/Hardening/', '/Deployment/ThirdPartyHosting', '/Configurator/']
   },
   {
     title: 'Docker',
@@ -511,6 +511,7 @@ module.exports = {
       '/BTCPayServer': sidebarDevelopment,
       '/NBXplorer': sidebarDevelopment,
       '/Configurator': sidebarDeployment,
+      '/Hardening': sidebarDeployment,
       '/Deployment': sidebarDeployment,
       '/Docker': sidebarDeployment,
       '/ElectrumX': sidebarDeployment,
