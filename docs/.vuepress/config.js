@@ -291,6 +291,7 @@ const sidebarDevelopment = [
     children: [
       '/Development/',
       '/Development/LocalDevelopment',
+      '/Development/HostIntegration',
       ['/BTCPayServer/greenfield-development', 'Greenfield API Development'],
       {
         title: 'Plugins',
