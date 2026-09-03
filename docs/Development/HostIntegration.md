@@ -47,12 +47,13 @@ A deployment can advertise any subset of the following commands:
 
 | Command              | Arguments                                       | Successful output                         | Enables                                                               |
 | -------------------- | ----------------------------------------------- | ----------------------------------------- | --------------------------------------------------------------------- |
+| `env`                | None                                            | Deployment metadata as a JSON object      | Host integration discovery                                            |
 | `showauthorizedkeys` | None                                            | The authorized keys file as a JSON string | Reading SSH keys in **Server Settings > Services > SSH**              |
-| `setauthorizedkeys`  | The complete authorized keys file as argument 1 | Not used                                  | Updating SSH keys in **Server Settings > Services > SSH**             |
-| `changedomain`       | The new domain as argument 1                    | Not used                                  | Changing the domain from **Server Settings > Maintenance**            |
-| `update`             | None                                            | Not used                                  | Updating the deployment from **Server Settings > Maintenance**        |
-| `clean`              | None                                            | Not used                                  | Cleaning unused host resources from **Server Settings > Maintenance** |
-| `restart`            | None                                            | Not used                                  | Restarting the deployment from **Server Settings > Maintenance**      |
+| `setauthorizedkeys`  | The complete authorized keys file as argument 1 | Logs                                      | Updating SSH keys in **Server Settings > Services > SSH**             |
+| `changedomain`       | The new domain as argument 1                    | Logs                                      | Changing the domain from **Server Settings > Maintenance**            |
+| `update`             | None                                            | Logs                                      | Updating the deployment from **Server Settings > Maintenance**        |
+| `clean`              | None                                            | Logs                                      | Cleaning unused host resources from **Server Settings > Maintenance** |
+| `restart`            | None                                            | Logs                                      | Restarting the deployment from **Server Settings > Maintenance**      |
 
 The SSH service is available only when both `showauthorizedkeys` and `setauthorizedkeys` are
 advertised. Unknown command names in the `commands` array are ignored by BTCPay Server, so a
