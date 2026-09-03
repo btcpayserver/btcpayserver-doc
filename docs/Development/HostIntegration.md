@@ -5,6 +5,9 @@ BTCPay Server delegates deployment-specific administration to an executable name
 administration features that it supports without exposing general host access to BTCPay
 Server.
 
+Providing `btcpay-host` is optional. When it is unavailable or does not advertise a
+feature, BTCPay Server hides the related Server Settings pages and actions.
+
 BTCPay Server runs the executable directly and passes the command and its arguments as
 regular process arguments:
 
