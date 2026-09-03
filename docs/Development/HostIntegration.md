@@ -34,6 +34,9 @@ The properties are:
 - `commands`: The commands supported by this deployment. BTCPay Server uses this list to
   decide which administration features to expose.
 
+Deployments can include extra properties for their own metadata. BTCPay Server ignores
+properties it does not recognize.
+
 Invalid JSON, a nonzero exit status, or an unavailable executable disables the host-backed
 administration features. BTCPay Server performs discovery only during startup, so it must be
 restarted after the available commands change.
@@ -70,3 +73,8 @@ The official [Docker deployment](https://github.com/btcpayserver/btcpayserver-do
 calls over SSH with a restricted key and a forced command. Its proxy serializes process
 arguments as a JSON array for transport over SSH. That transport format is specific to the
 Docker implementation and is not part of the `btcpay-host` interface.
+
+See the reference implementations in
+[BTCPay Server](https://github.com/btcpayserver/btcpayserver/pull/7511),
+[host environment discovery](https://github.com/btcpayserver/btcpayserver/pull/7543), and
+[btcpayserver-docker](https://github.com/btcpayserver/btcpayserver-docker/pull/1081).
