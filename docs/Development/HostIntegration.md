@@ -84,5 +84,6 @@ Docker implementation and is not part of the `btcpay-host` interface.
 
 See the reference implementations in
 [BTCPay Server](https://github.com/btcpayserver/btcpayserver/pull/7511),
-[host environment discovery](https://github.com/btcpayserver/btcpayserver/pull/7543), and
+[host environment discovery](https://github.com/btcpayserver/btcpayserver/pull/7543),
+[host integration opt-in](https://github.com/btcpayserver/btcpayserver/pull/7554), and
 [btcpayserver-docker](https://github.com/btcpayserver/btcpayserver-docker/pull/1081).
