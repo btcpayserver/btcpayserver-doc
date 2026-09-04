@@ -116,31 +116,20 @@ const sidebarUserGuide = [
     title: 'Integrations',
     collapsable: false,
     children: [
-      ['/BigCommerce/', 'Big Commerce'],
       ['/Calcom', 'Cal.com'],
-      ['/Drupal/', 'Drupal'],
       ['/EasyDigitalDownloads', 'Easy Digital Downloads'],
       ['/EasyWebshop', 'EasyWebshop'],
-      ['/Ecwid/', 'Ecwid'],
       ['/GiveWP', 'GiveWP'],
-      ['/Grandnode/', 'Grandnode'],
       ['/InvoiceNinja', 'Invoice Ninja'],
       ['/Magento', 'Magento'],
-      ['/Nopcommerce/', 'Nopcommerce'],
-      ['/Odoo/', 'Odoo'],
       ['/OpenCart', 'OpenCart'],
       ['/PhocaCart', 'PhocaCart'],
       ['/PrestaShop', 'PrestaShop'],
       ['/Pretix', 'Pretix'],
       ['/ShopifyV2', 'Shopify V2'],
       ['/Shopware', 'Shopware'],
-      ['/Ghost/', 'Ghost'],
-      ['/Smartstore/', 'Smartstore'],
       ['/VirtueMart', 'VirtueMart'],
-      ['/Wix/', 'Wix'],
       ['/WooCommerce', 'WooCommerce'],
-      ['/Xenforo/', 'Xenforo'],
-      ['/Zapier/', 'Zapier'],
       ['/CustomIntegration', 'Custom Integration']
     ]
   },
@@ -149,18 +138,7 @@ const sidebarUserGuide = [
     collapsable: false,
     initialOpenGroupIndex: -1,
     children: [
-      [`https://dev.blink.sv/examples/btcpayserver-plugin`, 'Blink', { type: 'external' }],
-      ['/Breez/', 'Breez'],
-      ['/Bringin/', 'Bringin'],
-      ['/DynamicReports/', 'Dynamic Reports'],
-      ['/LNDhubAPI/', 'LNDhub API'],
-      ['/Nostr/', 'Nostr'],
-      ['/VendorPay/', 'Vendor Pay'],
-      ['/PodServer/', 'PodServer'],
-      ['/SideShift/', 'SideShift'],
-      ['/TicketTailor/', 'TicketTailor'],
-      ['/Trocador/', 'Trocador'],
-      ['/Wabisabi/', 'Wabisabi Coinjoin']
+      [`https://dev.blink.sv/examples/btcpayserver-plugin`, 'Blink', { type: 'external' }]
     ]
   },
   {
