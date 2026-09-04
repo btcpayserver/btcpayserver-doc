@@ -5,8 +5,12 @@ BTCPay Server delegates deployment-specific administration to an executable name
 administration features that it supports without exposing general host access to BTCPay
 Server.
 
-Providing `btcpay-host` is optional. When it is unavailable or does not advertise a
-feature, BTCPay Server hides the related Server Settings pages and actions.
+Host integration is disabled by default. Enable it with `btcpayhostenabled=true` in the
+configuration file or `BTCPAY_BTCPAYHOSTENABLED=true` in the environment. Providing a
+`btcpay-host` executable alone does not enable the integration.
+
+When host integration is disabled, unavailable, or does not advertise a feature, BTCPay
+Server hides the related Server Settings pages and actions.
 
 BTCPay Server runs the executable directly and passes the command and its arguments as
 regular process arguments:
