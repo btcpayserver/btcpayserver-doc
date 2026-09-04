@@ -1,0 +1,91 @@
+# Host integration
+
+BTCPay Server delegates deployment-specific administration to an executable named
+`btcpay-host`. A deployment can provide this executable to enable only the server
+administration features that it supports without exposing general host access to BTCPay
+Server.
+
+Host integration is disabled by default. Enable it with `btcpayhostenabled=true` in the
+configuration file, `BTCPAY_BTCPAYHOSTENABLED=true` in the environment, or
+`--btcpayhostenabled true` on the command line. Providing a `btcpay-host` executable alone
+does not enable the integration.
+
+When host integration is disabled, unavailable, or does not advertise a feature, BTCPay
+Server hides the related Server Settings pages and actions.
+
+BTCPay Server runs the executable directly and passes the command and its arguments as
+regular process arguments:
+
+```bash
+btcpay-host <command> [arguments]
+```
+
+The executable must be available to the BTCPay Server process. Its path can be overridden
+with the `btcpayhostexecutable` configuration setting or the `--btcpayhostexecutable`
+command-line option.
+
+## Environment discovery
+
+BTCPay Server runs `btcpay-host env` during startup. A successful call must exit with status
+`0` and write one JSON object to standard output:
+
+```json
+{
+  "deploymentType": "btcpayserver-docker",
+  "commands": ["changedomain", "update", "clean", "restart"]
+}
+```
+
+The properties are:
+
+- `deploymentType`: A stable identifier for the deployment implementation. BTCPay Server
+  includes it in the startup log.
+- `commands`: The commands supported by this deployment. BTCPay Server uses this list to
+  decide which administration features to expose.
+
+Deployments can include extra properties for their own metadata. BTCPay Server ignores
+properties it does not recognize.
+
+Invalid JSON, a nonzero exit status, or an unavailable executable disables the host-backed
+administration features. BTCPay Server performs discovery only during startup, so it must be
+restarted after the available commands change.
+
+## Commands
+
+A deployment can advertise any subset of the following commands:
+
+| Command              | Arguments                                       | Successful output                         | Enables                                                               |
+| -------------------- | ----------------------------------------------- | ----------------------------------------- | --------------------------------------------------------------------- |
+| `env`                | None                                            | Deployment metadata as a JSON object      | Host integration discovery                                            |
+| `showauthorizedkeys` | None                                            | The authorized keys file as a JSON string | Reading SSH keys in **Server Settings > Services > SSH**              |
+| `setauthorizedkeys`  | The complete authorized keys file as argument 1 | Logs                                      | Updating SSH keys in **Server Settings > Services > SSH**             |
+| `changedomain`       | The new domain as argument 1                    | Logs                                      | Changing the domain from **Server Settings > Maintenance**            |
+| `update`             | None                                            | Logs                                      | Updating the deployment from **Server Settings > Maintenance**        |
+| `clean`              | None                                            | Logs                                      | Cleaning unused host resources from **Server Settings > Maintenance** |
+| `restart`            | None                                            | Logs                                      | Restarting the deployment from **Server Settings > Maintenance**      |
+
+The SSH service is available only when both `showauthorizedkeys` and `setauthorizedkeys` are
+advertised. Unknown command names in the `commands` array are ignored by BTCPay Server, so a
+deployment can also expose commands for its own tools.
+
+Commands should exit with status `0` when accepted. On failure, they should return a nonzero
+status and write a diagnostic message to standard error. JSON-producing commands must reserve
+standard output for their documented response.
+
+## Security
+
+`btcpay-host` is a privileged boundary between the BTCPay Server application and its
+deployment. Implement only the required commands, validate every argument, and do not pass
+untrusted values through a shell. The account running BTCPay Server should not receive broader
+host access than these commands require.
+
+The official [Docker deployment](https://github.com/btcpayserver/btcpayserver-docker) forwards
+calls over SSH with a restricted key and a forced command. Its proxy serializes process
+arguments as a JSON array for transport over SSH. That transport format is specific to the
+Docker implementation and is not part of the `btcpay-host` interface.
+
+See the reference implementations in
+[BTCPay Server](https://github.com/btcpayserver/btcpayserver/pull/7511),
+[host environment discovery](https://github.com/btcpayserver/btcpayserver/pull/7543),
+[host integration opt-in](https://github.com/btcpayserver/btcpayserver/pull/7554), and
+[btcpayserver-docker](https://github.com/btcpayserver/btcpayserver-docker/pull/1081).
