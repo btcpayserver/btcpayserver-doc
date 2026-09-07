@@ -1,6 +1,6 @@
 # (4) What's Next?
 
-After you've connected your wallet to your BTCPay, you can explore various built in tools in the software. See the full list of Use Cases [here](./UseCase.md).
+After you've connected your wallet to your BTCPay, you can explore various built-in tools in the software. See the full list of Use Cases [here](./UseCase.md).
 
 ## Creating the Point of Sale App
 
@@ -20,12 +20,12 @@ Create **custom invoices which can be shared with others**, by sending a link to
 
 ## Connecting your BTCPay store to your e-commerce platform
 
-Depending on the CMS you're using, you can easily connect BTCPay to your online store. Currently, BTCPay offers following integrations :
+Depending on the CMS you're using, you can easily connect BTCPay to your online store. Currently, BTCPay offers the following integrations:
 
 - [WooCommerce](./WooCommerce.md)
 - [Shopify](./Shopify.md)
 - [Drupal](./Drupal.md)
-- [Magneto](./Magento.md)
+- [Magento](./Magento.md)
 - [PrestaShop](./PrestaShop.md)
 - [Custom integration](./CustomIntegration.md)
 - [Wix](./Wix.md)
@@ -36,7 +36,7 @@ Depending on the CMS you're using, you can easily connect BTCPay to your online 
 
 ## Extending BTCPay Server: Plugins
 
-BTCPay Server is more than just a payment processor - it can be personalized to your preference. Plugins allow you customize your BTCPay Server, and tailor your instance to suit your specific needs.
+BTCPay Server is more than just a payment processor - it can be personalized to your preference. Plugins allow you to customize your BTCPay Server, and tailor your instance to suit your specific needs.
 
 Every project is unique. Whether you're a freelancer, running a physical store, an online store, managing a creative project, or building, there's a good chance a plugin exists to solve your specific workflow challenge.
 
