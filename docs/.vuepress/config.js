@@ -232,17 +232,17 @@ const sidebarDeployment = [
     ]
   },
   {
-    title: 'Docker',
+    title: 'Docker deployment',
     collapsable: false,
     children: [['/Docker/', 'Overview']]
   },
   {
-    title: 'Docker: Get Started',
+    title: 'Get Started',
     collapsable: false,
     children: ['/Docker/installation', '/Docker/architecture']
   },
   {
-    title: 'Docker: Configure the Stack',
+    title: 'Configure the Stack',
     collapsable: false,
     children: [
       '/Docker/configuration',
@@ -253,7 +253,7 @@ const sidebarDeployment = [
     ]
   },
   {
-    title: 'Docker: Operate and Maintain',
+    title: 'Operate and Maintain',
     collapsable: false,
     children: [
       '/Docker/operations',
@@ -263,12 +263,12 @@ const sidebarDeployment = [
     ]
   },
   {
-    title: 'Docker: Customize and Develop',
+    title: 'Customize and Develop',
     collapsable: false,
     children: ['/Docker/customization', '/Docker/development']
   },
   {
-    title: 'Docker: Optional Services',
+    title: 'Optional Services',
     collapsable: false,
     children: [
       '/Docker/chatwoot',
@@ -282,7 +282,7 @@ const sidebarDeployment = [
     ]
   },
   {
-    title: 'Docker: Build Provenance',
+    title: 'Build Provenance',
     collapsable: false,
     children: ['/Docker/supported-images', '/Docker/fastsync']
   },
