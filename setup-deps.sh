@@ -153,7 +153,7 @@ rm -rf "$DOCS_DIR/Docker"
 mkdir -p "$DOCS_DIR/Docker"
 
 if [ ! -d "$DOCKER_DIR" ]; then
-  git clone https://github.com/btcpayserver/btcpayserver-docker.git "$DOCKER_DIR"
+  git clone --depth 1 https://github.com/btcpayserver/btcpayserver-docker.git "$DOCKER_DIR"
 elif [ -z "$BTCPAYSERVER_DOCKER_DIR" ]; then
   cd "$DOCKER_DIR" && git checkout master && git pull
 fi
