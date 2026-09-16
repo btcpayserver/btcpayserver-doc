@@ -124,7 +124,7 @@ Similarly if you are adding an environment variable, the export command would in
 export BTCPAYGEN_ADDITIONAL_FRAGMENTS="$BTCPAYGEN_ADDITIONAL_FRAGMENTS;opt-add-tor"
 ```
 
-If you need to figure out which environment variable you need to modify, have a look at [this list](https://github.com/btcpayserver/btcpayserver-docker#environment-variables).
+If you need to figure out which environment variable you need to modify, have a look at the [Docker configuration reference](/Docker/configuration/).
 
 ### How can I run BTCPay on testnet?
 
@@ -159,7 +159,7 @@ Or via the `Server Settings` of your BTCPay Server instance, logged as an admini
 
 Please do not share this tor hidden service with untrusted parties. Connections to this hidden service are whitelisted by the bitcoin node, malicious peer would be able to DDoS your node.
 
-If you need to unsafely expose bitcoind P2P port 8333 (for example if you require P2P for Bisq, DOJO, Esplora, etc.) and you are using a docker deployment, you can use the [opt-unsafe-expose](https://docs.btcpayserver.org/Docker/#generated-docker-compose) additional fragment.
+If you need to unsafely expose bitcoind P2P port 8333 (for example if you require P2P for Bisq, DOJO, Esplora, etc.) and you are using a Docker deployment, you can use the [`opt-expose-unsafe`](/Docker/fragments/#lightning-and-node-features) additional fragment.
 
 :::danger WARNING
 ONLY USE ON TRUSTED LAN OR WITH FIREWALL RULES WHITELISTING SPECIFIC HOSTS
@@ -364,7 +364,7 @@ This will completely erase BTCPay Server from your instance and remove the assoc
 
 The instructions below are valid for Docker deployments:
 
-- Run setup as described in [btcpayserver-docker](https://github.com/btcpayserver/btcpayserver-docker#full-installation-for-technical-users) up until `. ./btcpay-setup.sh -i`
+- Run setup as described in the [Docker installation guide](/Docker/installation/) up until `. ./btcpay-setup.sh -i`
 - Create `bitcoin.custom.yml` in the `docker-compose-generator/docker-fragments/` folder.
 
 ```yml

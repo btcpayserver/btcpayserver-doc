@@ -4,6 +4,7 @@ const implicitFigures = require('markdown-it-implicit-figures')
 const slugify = require('./slugify')
 const preprocessMarkdown = resolve(__dirname, 'preprocessMarkdown')
 const imageAltToTitlePlugin = require('./imageAltToTitlePlugin')
+const { hash } = require('@vuepress/shared-utils')
 
 const title = 'BTCPay Server'
 const baseUrl = 'https://docs.btcpayserver.org'
@@ -16,6 +17,20 @@ const extractDescription = text => {
   if (!text) return
   const paragraph = text.match(/^[A-Za-z].*(?:\n[A-Za-z].*)*/m)
   return paragraph ? paragraph.toString().replace(/[\*\_\(\)\[\]]/g, '') : null
+}
+
+const mermaidPlugin = md => {
+  const renderFence = md.renderer.rules.fence
+  md.renderer.rules.fence = (tokens, idx, options, env, self) => {
+    const token = tokens[idx]
+    if (token.info.trim().split(/\s+/)[0] !== 'mermaid') {
+      return renderFence(tokens, idx, options, env, self)
+    }
+
+    const key = `mermaid_${hash(`${env.relativePath}:${idx}`)}`
+    md.$dataBlock[key] = token.content
+    return `<MermaidDiagram id="${key}" :graph="$dataBlock.${key}" />`
+  }
 }
 
 const sidebarUserGuide = [
@@ -179,13 +194,10 @@ const sidebarDeployment = [
   {
     title: 'Deployment',
     collapsable: false,
-    children: ['/Deployment/', '/Deployment/ThirdPartyHosting', '/Configurator/']
-  },
-  {
-    title: 'Docker',
-    collapsable: false,
     children: [
-      ['/Docker/', 'Introduction'],
+      '/Deployment/',
+      '/Deployment/ThirdPartyHosting',
+      '/Configurator/',
       {
         title: 'Web/Cloud Deployment',
         path: '/Deployment/webdeployment',
@@ -199,14 +211,8 @@ const sidebarDeployment = [
             path: '/Deployment/Azure',
             children: [['/Deployment/AzurePennyPinching', 'Reducing Cost on Azure']]
           },
-          {
-            title: 'Google Cloud',
-            path: '/Deployment/GoogleCloud'
-          },
-          {
-            title: 'Comet Cash',
-            path: '/Deployment/CometCash'
-          }
+          ['/Deployment/GoogleCloud', 'Google Cloud'],
+          ['/Deployment/CometCash', 'Comet Cash']
         ]
       },
       {
@@ -214,51 +220,71 @@ const sidebarDeployment = [
         path: '/Deployment/Hardware',
         collapsable: false,
         children: [
-          {
-            title: 'Raspberry Pi Deployment',
-            path: '/Deployment/RaspberryPi4'
-          },
-          {
-            title: 'Hack0 Deployment',
-            path: '/Deployment/Hack0'
-          },
-          {
-            title: 'LightningInABox Deployment',
-            path: '/Deployment/LightningInABox'
-          },
+          ['/Deployment/RaspberryPi4', 'Raspberry Pi'],
+          ['/Deployment/Hack0', 'Hack0'],
+          ['/Deployment/LightningInABox', 'LightningInABox'],
           ['/Deployment/DynamicDNS', 'Dynamic DNS'],
-          ['/Docker/cloudflare-tunnel', 'Exposing on clearnet with Cloudflare'],
-          ['/Deployment/ReverseSSHtunnel', 'Exposing on clearnet with a reverse SSH Tunnel'],
+          ['/Deployment/ReverseSSHtunnel', 'Reverse SSH Tunnel'],
           ['/Deployment/ReverseProxyToTor', 'Exposing on Tor'],
-          {
-            title: 'Hardware As A Service',
-            path: '/Deployment/HardwareAsAService'
-          }
+          ['/Deployment/HardwareAsAService', 'Hardware As A Service']
         ]
-      },
-      {
-        title: 'Docker Plugins',
-        children: [
-          ['/ElectrumX', 'Electrum X'],
-          ['/ElectrumPersonalServer', 'Electrum Personal Server'],
-          '/Docker/joinmarket',
-          '/Docker/pihole',
-          '/Docker/fireflyiii',
-          '/Docker/ndlc',
-          '/Docker/lightning-terminal',
-          '/Docker/tallycoin-connect',
-          '/Docker/cloudflare-tunnel'
-        ]
-      },
-      {
-        title: 'FastSync',
-        path: '/Docker/fastsync'
-      },
-      {
-        title: 'Backup & Restore',
-        path: '/Docker/backup-restore'
       }
     ]
+  },
+  {
+    title: 'Docker',
+    collapsable: false,
+    children: [['/Docker/', 'Overview']]
+  },
+  {
+    title: 'Docker: Get Started',
+    collapsable: false,
+    children: ['/Docker/installation', '/Docker/architecture']
+  },
+  {
+    title: 'Docker: Configure the Stack',
+    collapsable: false,
+    children: [
+      '/Docker/configuration',
+      '/Docker/networking',
+      '/Docker/lightning',
+      '/Docker/cryptocurrencies',
+      '/Docker/fragments'
+    ]
+  },
+  {
+    title: 'Docker: Operate and Maintain',
+    collapsable: false,
+    children: [
+      '/Docker/operations',
+      '/Docker/updating',
+      '/Docker/backup-restore',
+      '/Docker/troubleshooting'
+    ]
+  },
+  {
+    title: 'Docker: Customize and Develop',
+    collapsable: false,
+    children: ['/Docker/customization', '/Docker/development']
+  },
+  {
+    title: 'Docker: Optional Services',
+    collapsable: false,
+    children: [
+      '/Docker/chatwoot',
+      '/Docker/cloudflare-tunnel',
+      '/Docker/fireflyiii',
+      '/Docker/lightning-terminal',
+      '/Docker/pihole',
+      '/Docker/tallycoin-connect',
+      ['/ElectrumX', 'Electrum X'],
+      ['/ElectrumPersonalServer', 'Electrum Personal Server']
+    ]
+  },
+  {
+    title: 'Docker: Build Provenance',
+    collapsable: false,
+    children: ['/Docker/supported-images', '/Docker/fastsync']
   },
   {
     title: 'Manual Deployment',
@@ -434,6 +460,7 @@ module.exports = {
       md.use(implicitFigures)
       md.use(include, { root: resolve(__dirname, 'includes') })
       md.use(imageAltToTitlePlugin)
+      md.use(mermaidPlugin)
     },
     pageSuffix,
     slugify
