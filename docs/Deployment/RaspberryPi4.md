@@ -29,7 +29,7 @@ Don’t settle for only 1GB or 2GB of RAM. The **4GB RAM** version is harder to 
 - [SanDisk Ultra 3D 1TB](https://www.amazon.com/dp/B071KGRXRG/) (~$100)
 
 A 1TB SSD allows you to keep a full copy of the Bitcoin blockchain.
-You can also use BTCPay Server without a full copy of the Bitcoin blockchain by using the [pruning option](/Docker/#how-i-can-prune-my-nodes).
+You can also use BTCPay Server without a full copy of the Bitcoin blockchain by using a [pruning profile](/Docker/configuration/#storage-and-memory-profiles).
 
 ### Power Adapter options
 
@@ -114,7 +114,7 @@ export BTCPAYGEN_LIGHTNING="clightning"
 export BTCPAYGEN_LIGHTNING="lnd"
 ```
 
-**Optional:** You can also configure [additional settings](/Docker/#environment-variables) …
+**Optional:** You can also configure [additional settings](/Docker/configuration/) …
 
 ```bash
 # optional, this is just an example for runing a pruned node on a public domain
@@ -271,7 +271,7 @@ git clone https://github.com/btcpayserver/btcpayserver-docker
 cd btcpayserver-docker
 ```
 
-Configure BTCPay by setting some [environment variables](https://github.com/btcpayserver/btcpayserver-docker#environment-variables):
+Configure BTCPay by setting some [environment variables](/Docker/configuration/):
 
 ```bash
 export BTCPAY_HOST="btcpay.local"

@@ -194,21 +194,15 @@ flowchart TD
     Request[Incoming request]
     CheckClaims[Check AspNet user's claim]
     Scheme{Authentication scheme}
-    Cookie[Cookie auth
-Identity.Application]
-    Basic[Basic auth
-Greenfield.Basic]
-    ApiKey[API key auth
-Greenfield.APIKeys]
+    Cookie["Cookie auth<br/>Identity.Application"]
+    Basic["Basic auth<br/>Greenfield.Basic"]
+    ApiKey["API key auth<br/>Greenfield.APIKeys"]
     Claims[Build permission claims]
-    Unrestricted[Unrestricted permission
-cookie/basic]
+    Unrestricted["Unrestricted permission<br/>cookie/basic"]
     ApiKeyPerms[Permissions from API key]
     AuthZ[ASP.NET authorization policy]
-    ScopeProvider[IPermissionScopeProvider
-derives scope]
-    Handler[IPermissionHandler
-validates access]
+    ScopeProvider["IPermissionScopeProvider<br/>derives scope"]
+    Handler["IPermissionHandler<br/>validates access"]
     Resource[Access granted to resource]
 
     Request --> Scheme

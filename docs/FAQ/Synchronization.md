@@ -164,7 +164,7 @@ tmpfs           2.0G     0  2.0G   0% /sys/fs/cgroup
 /dev/sdb1       7.8G   18M  7.4G   1% /mnt
 ```
 
-[Choose the docker fragment](https://docs.btcpayserver.org/Docker/#generated-docker-compose) for the amount of storage you aim to keep. Then [prune your node](https://docs.btcpayserver.org/Docker/#how-i-can-prune-my-nodes).
+[Choose the Docker fragment](/Docker/configuration/#storage-and-memory-profiles) for the amount of storage you aim to keep. Then [prune your node](/Docker/configuration/#storage-and-memory-profiles).
 
 ### Cause 3: You accidentally disabled pruning
 
@@ -260,7 +260,7 @@ export BTCPAYGEN_ADDITIONAL_FRAGMENTS="opt-save-storage"
 . ./btcpay-setup.sh -i
 ```
 
-Other pruning options are [documented here](https://docs.btcpayserver.org/Docker/#generated-docker-compose). See [this example](./Deployment.md#how-can-i-modify-or-deactivate-environment-variables) for use with other additional fragments.
+Other pruning options are [documented here](/Docker/configuration/#storage-and-memory-profiles). See [this example](./Deployment.md#how-can-i-modify-or-deactivate-environment-variables) for use with other additional fragments.
 
 ## How to disable Bitcoin node pruning?
 

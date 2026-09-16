@@ -5,10 +5,15 @@ set -e
 BASE_DIR=$(cd `dirname $0` && pwd)
 DOCS_DIR="$BASE_DIR/docs"
 PUBLIC_DIR="$DOCS_DIR/.vuepress/public"
+MERMAID_DIR="$PUBLIC_DIR/vendor"
 BTCPAYSERVER_DIR="$BASE_DIR/deps/btcpayserver"
 NBXPLORER_DIR="$BASE_DIR/deps/nbxplorer"
 CONFIGURATOR_DIR="$BASE_DIR/deps/configurator"
-DOCKER_DIR="$BASE_DIR/deps/docker"
+if [[ -n "${BTCPAYSERVER_DOCKER_DIR:-}" ]]; then
+  DOCKER_DIR=$(cd "$BTCPAYSERVER_DOCKER_DIR" && pwd)
+else
+  DOCKER_DIR="$BASE_DIR/deps/docker"
+fi
 VAULT_DIR="$BASE_DIR/deps/vault"
 ZAPIER_DIR="$BASE_DIR/deps/zapier"
 PODSERVER_DIR="$BASE_DIR/deps/podserver"
@@ -27,15 +32,29 @@ XENFORO_DIR="$BASE_DIR/deps/xenforo"
 ODOO_DIR="$BASE_DIR/deps/odoo"
 WIX_DIR="$BASE_DIR/deps/wix"
 
+mkdir -p "$MERMAID_DIR"
+cp "$BASE_DIR/node_modules/mermaid/dist/mermaid.min.js" "$MERMAID_DIR/mermaid.min.js"
+
 update_external() {
   file="$1"
   repo="$2"
   edit="$3"
   base="$4"
-  path="${file#${base}}"
-  [[ $path = "Security.md" ]] && path="SECURITY.md"
-  [[ $path = "README.md" || $path = "readme.md" || $path = "SECURITY.md" ]] && folder="" || folder="docs/"
-  content=$(cat "$file" | tr -cd '\11\12\15\40-\176')
+  explicit_path="$5"
+  preserve_unicode="$6"
+  if [[ -n "$explicit_path" ]]; then
+    path="$explicit_path"
+    folder=""
+  else
+    path="${file#${base}}"
+    [[ $path = "Security.md" ]] && path="SECURITY.md"
+    [[ $path = "README.md" || $path = "readme.md" || $path = "SECURITY.md" ]] && folder="" || folder="docs/"
+  fi
+  if [[ "$preserve_unicode" == "true" ]]; then
+    content=$(cat "$file")
+  else
+    content=$(cat "$file" | tr -cd '\11\12\15\40-\176')
+  fi
   # add frontmatter to omit edit links for external docs
   echo $'---\nexternalRepo: '"$repo"$'\neditLink: '"$edit/$folder$path"$'\n---\n'"$content" > "$file"
 }
@@ -134,26 +153,28 @@ rm -rf "$DOCS_DIR/Docker"
 mkdir -p "$DOCS_DIR/Docker"
 
 if [ ! -d "$DOCKER_DIR" ]; then
-  git clone https://github.com/btcpayserver/btcpayserver-docker.git "$DOCKER_DIR"
-else
+  git clone --depth 1 https://github.com/btcpayserver/btcpayserver-docker.git "$DOCKER_DIR"
+elif [ -z "$BTCPAYSERVER_DOCKER_DIR" ]; then
   cd "$DOCKER_DIR" && git checkout master && git pull
 fi
 
 cd "$DOCKER_DIR"
 cp -r docs/* "$DOCS_DIR/Docker"
 cp -r docs/img/* "$DOCS_DIR/img"
-line=$(grep -n '# Introduction' README.md | cut -d ":" -f 1)
-tail -n +$line "README.md" > "$DOCS_DIR/Docker/README.md"
-sed -ie 's$(docs/$(./$g' "$DOCS_DIR/Docker/README.md"
-for file in "$DOCS_DIR"/Docker/*.md; do
-  update_external "$file" https://github.com/btcpayserver/btcpayserver-docker https://github.com/btcpayserver/btcpayserver-docker/edit/master "$DOCS_DIR"/Docker/
-done
-
 cp contrib/FastSync/README.md "$DOCS_DIR/Docker/fastsync.md"
 sed -ie 's$(utxo-sets)$(https://github.com/btcpayserver/btcpayserver-docker/blob/master/contrib/FastSync/utxo-sets)$g' "$DOCS_DIR/Docker/fastsync.md"
 sed -ie 's$(load-utxo-set.sh)$(https://github.com/btcpayserver/btcpayserver-docker/blob/master/contrib/FastSync/load-utxo-set.sh)$g' "$DOCS_DIR/Docker/fastsync.md"
 sed -ie 's$(save-utxo-set.sh)$(https://github.com/btcpayserver/btcpayserver-docker/blob/master/contrib/FastSync/save-utxo-set.sh)$g' "$DOCS_DIR/Docker/fastsync.md"
 sed -ie 's$(sigs/NicolasDorier.utxo-sets.asc)$(https://github.com/btcpayserver/btcpayserver-docker/blob/master/contrib/FastSync/sigs/NicolasDorier.utxo-sets.asc)$g' "$DOCS_DIR/Docker/fastsync.md"
+for file in "$DOCS_DIR"/Docker/*.md; do
+  filename="${file#${DOCS_DIR}/Docker/}"
+  if [[ "$filename" == "fastsync.md" ]]; then
+    source_path="contrib/FastSync/README.md"
+  else
+    source_path="docs/$filename"
+  fi
+  update_external "$file" https://github.com/btcpayserver/btcpayserver-docker https://github.com/btcpayserver/btcpayserver-docker/edit/master "$DOCS_DIR"/Docker/ "$source_path" true
+done
 
 # Zapier
 
