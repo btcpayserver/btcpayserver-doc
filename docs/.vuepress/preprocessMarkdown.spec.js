@@ -8,6 +8,35 @@ const pp = preprocess.bind({
 const externalFrontmatter = `---\nexternalRepo: https://github.com/btcpayserver/btcpayserver-docker\n---`
 
 describe('preprocessMarkdown', () => {
+  it('replaces GitHub alerts with VuePress containers', () => {
+    const md = `> [!WARNING]
+> Back up your data before continuing.
+>
+> - Keep the backup offline.
+
+> [!TIP]
+> Test the restore procedure.`
+
+    expect(pp(md)).toBe(`:::warning
+Back up your data before continuing.
+
+- Keep the backup offline.
+:::
+
+:::tip
+Test the restore procedure.
+:::`)
+  })
+
+  it('preserves GitHub alert examples in fenced code blocks', () => {
+    const md = `\`\`\`md
+> [!WARNING]
+> This is an example.
+\`\`\``
+
+    expect(pp(md)).toBe(md)
+  })
+
   it('replaces YouTube links', () => {
     const md = `
 Take a look at how BTCPay works in a video below.

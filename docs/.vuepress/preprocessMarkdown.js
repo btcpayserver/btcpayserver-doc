@@ -81,6 +81,50 @@ const replaceExternalRepoLinks = (source, externalRepoUrl, resourcePath) => {
   return processed
 }
 
+const replaceGithubAlerts = source => {
+  const lines = source.split('\n')
+  const processed = []
+  let fence = null
+
+  for (let i = 0; i < lines.length; i++) {
+    const line = lines[i]
+    const fenceMatch = line.match(/^ {0,3}(`{3,}|~{3,})/)
+
+    if (fence) {
+      processed.push(line)
+      if (
+        fenceMatch &&
+        fenceMatch[1][0] === fence[0] &&
+        fenceMatch[1].length >= fence.length &&
+        line.slice(fenceMatch[0].length).trim() === ''
+      ) {
+        fence = null
+      }
+      continue
+    }
+
+    if (fenceMatch) {
+      fence = fenceMatch[1]
+      processed.push(line)
+      continue
+    }
+
+    const alertMatch = line.match(/^>\s*\[!(WARNING|TIP)\]\s*$/i)
+    if (!alertMatch) {
+      processed.push(line)
+      continue
+    }
+
+    processed.push(`:::${alertMatch[1].toLowerCase()}`)
+    while (i + 1 < lines.length && lines[i + 1].startsWith('>')) {
+      processed.push(lines[++i].replace(/^> ?/, ''))
+    }
+    processed.push(':::')
+  }
+
+  return processed.join('\n')
+}
+
 const replaceYouTubeLinks = source =>
   source.replace(
     /\[(!.*)\]\((.*(youtube\.com\/watch|youtu\.be).*?)(?:\s(["'])(.*?)\4)?\)/gi,
@@ -115,7 +159,7 @@ const replaceYouTubeLinks = source =>
 // https://webpack.js.org/api/loaders/
 module.exports = function (source) {
   const { resourcePath } = this
-  let processed = source
+  let processed = replaceGithubAlerts(source)
   processed = replaceYouTubeLinks(processed)
 
   const [, externalRepo] = source.match(/externalRepo: (.*)/) || []
