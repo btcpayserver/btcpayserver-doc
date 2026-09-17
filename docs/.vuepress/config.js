@@ -239,7 +239,7 @@ const sidebarDeployment = [
   {
     title: 'Get Started',
     collapsable: false,
-    children: ['/Docker/installation', '/Docker/architecture']
+    children: ['/Docker/installation', '/Docker/specs', '/Docker/architecture']
   },
   {
     title: 'Configure the Stack',
@@ -271,12 +271,9 @@ const sidebarDeployment = [
     title: 'Optional Services',
     collapsable: false,
     children: [
-      '/Docker/chatwoot',
       '/Docker/cloudflare-tunnel',
-      '/Docker/fireflyiii',
       '/Docker/lightning-terminal',
       '/Docker/pihole',
-      '/Docker/tallycoin-connect',
       ['/ElectrumX', 'Electrum X'],
       ['/ElectrumPersonalServer', 'Electrum Personal Server']
     ]
