@@ -22,7 +22,7 @@ docker-compose up dev
 
 ## Which IDE?
 
-We recommend using Visual Studio 2022 (Windows Only) or Rider (cross platform). Visual Studio Code (cross platform) should also be possible, but isn't as straightforward to setup for a comfortable development environment.
+We recommend using Visual Studio 2026 (Windows Only) or Rider (cross platform). Visual Studio Code (cross platform) should also be possible, but isn't as straightforward to setup for a comfortable development environment.
 You can of course use VIM if you are hardcore, .NET Core is easy to use via command-line.
 
 Visual Studio Code, Visual Studio and Rider will run the launch profile `Bitcoin`.
