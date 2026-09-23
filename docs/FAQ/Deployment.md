@@ -454,52 +454,23 @@ If the docker container is not running, then check the reason for crash like thi
 
 Where 6a6b9fd75692 is the container ID that is having issues.
 
-#### Cause 3: BTCPay is expecting you to access this website from
+#### Cause 3: You access BTCPay Server over an unsecured network
 
-You might also see the following error: `You access BTCPay Server over an unsecured network`.
+This warning can appear when an external reverse proxy terminates HTTPS but
+BTCPay Server does not receive or trust the original host and protocol headers.
 
-You might see this error on the front page of your BTCPay Server since version `1.0.3.73`.
+After configuring the reverse proxy to forward these headers, reconfigure
+BTCPay Server to trust them:
 
-This is caused by a breaking change made in BTCPay to be able to handle different domain on the same server.
-
-It happens because your BTCPay Server is not exposed directly on internet, instead a reverse proxy (like nginx or IIS) receive the request and forward it to BTCPay Server.
-
-Sadly, depending on the configuration of your reverse proxy, either the HTTP HOST header has been replaced, or the reverse proxy did not forwarded the protocol at the front with the http header `X-Forwarded-Proto`.
-
-If you use NGinx, here is what you need to have at the top level in `/etc/nginx/conf.d/default.conf`:
-
-```nginx
-map $http_x_forwarded_proto $proxy_x_forwarded_proto {
-  default $http_x_forwarded_proto;
-  ''      $scheme;
-}
-proxy_set_header Host $http_host;
-proxy_set_header X-Forwarded-Proto $proxy_x_forwarded_proto;
-
-server_names_hash_bucket_size 128;
-proxy_buffer_size          128k;
-proxy_buffers              4 256k;
-proxy_busy_buffers_size    256k;
-client_header_buffer_size 500k;
-large_client_header_buffers 4 500k;
+```bash
+export TRUST_DOWNSTREAM_PROXY="true"
+. btcpay-setup.sh -i
 ```
 
-If your reverse proxy is Apache 2, you need to set those two settings
-
-```
-<VirtualHost *:443>
-    RequestHeader set X-Forwarded-Proto "https"
-    ProxyPreserveHost on
-...
-</VirtualHost>
-```
-
-You will also need those settings in the `apache2.conf` to prevent issues while signing PSBTs.
-
-```
-LimitRequestLine 500000
-LimitRequestFieldSize 500000
-```
+Only enable this when the BTCPay host's HTTP port is accessible exclusively
+through the trusted reverse proxy. Follow the complete [external reverse proxy
+configuration](/Docker/networking.md#external-reverse-proxy) for Nginx or
+Apache, including the required security restrictions.
 
 #### Cause 4: Getting 500 nginx error on a local server https and for http BTCPay is expecting you to access this website from
 
