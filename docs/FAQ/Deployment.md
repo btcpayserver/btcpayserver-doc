@@ -454,6 +454,8 @@ If the docker container is not running, then check the reason for crash like thi
 
 Where 6a6b9fd75692 is the container ID that is having issues.
 
+<a id="cause-3-btcpay-is-expecting-you-to-access-this-website-from"></a>
+
 #### Cause 3: You access BTCPay Server over an unsecured network
 
 This warning can appear when an external reverse proxy terminates HTTPS but
