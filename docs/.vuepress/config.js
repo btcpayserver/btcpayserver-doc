@@ -24,11 +24,6 @@ const sidebarUsers = [
     collapsable: false,
     children: [
       ['/Users/', 'User Guide'],
-      ['/Users/overview', 'Overview'],
-      ['/Users/account-and-store-setup', 'Account and Store Setup'],
-      ['/Users/wallet-setup', 'Wallet Setup'],
-      ['/Users/first-payment', 'Receive a First Payment'],
-      ['/Users/next-steps', 'Next Steps'],
       ['/TryItOut', 'Try it out'],
       ['/UseCase', 'Use Case'],
       ['/BTCPayVsOthers', 'BTCPay Server vs. Others']
@@ -154,14 +149,7 @@ const sidebarOperators = [
   {
     title: 'Operate BTCPay Server',
     collapsable: false,
-    children: [
-      ['/Operators/', 'Operator Guide'],
-      '/Operators/configuration',
-      '/Operators/configuration-reference',
-      '/Operators/host-integration',
-      '/Operators/database-migration',
-      '/Operators/diagnostics'
-    ]
+    children: [['/Operators/', 'Operator Guide'], '/Operators/configuration-reference']
   },
   {
     title: 'Deployment',

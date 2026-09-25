@@ -22,10 +22,10 @@ footer: Content Released under MIT license.
 <div class="topics">
   <h3>Explore by topic</h3>
 
-- [What is BTCPay&nbsp;Server](./Users/overview.md)
+- [What is BTCPay&nbsp;Server](./Users/#overview)
 - [Why BTCPay&nbsp;Server](./UseCase.md)
 - [How to deploy BTCPay&nbsp;Server](./TryItOut.md)
-- [Wallet Setup](./Users/wallet-setup.md)
+- [Wallet Setup](./Users/#set-up-a-wallet)
 - [Lightning Network](./LightningNetwork.md)
 - [How to setup POS](./Conference-PoS-guide.md)
 - [Greenfield API](./Developers/api/README.md)

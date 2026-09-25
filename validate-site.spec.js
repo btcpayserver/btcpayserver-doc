@@ -13,7 +13,7 @@ describe('site validation', () => {
       new URL('https://docs.btcpayserver.org/getting-started/connectwallet/#protect-the-wallet')
     )
     expect(target.href).toBe(
-      'https://docs.btcpayserver.org/Users/wallet-setup/#protect-the-wallet'
+      'https://docs.btcpayserver.org/Users/#protect-the-wallet'
     )
   })
 })

@@ -253,6 +253,15 @@ module.exports = [
     redirect: '/FAQ/Deployment/#how-to-change-your-btcpay-server-domain-name'
   },
   // Pages migrated into the BTCPay Server repository
+  { path: '/Users/overview/', redirect: '/Users/' },
+  { path: '/Users/account-and-store-setup/', redirect: '/Users/' },
+  { path: '/Users/wallet-setup/', redirect: '/Users/' },
+  { path: '/Users/first-payment/', redirect: '/Users/' },
+  { path: '/Users/next-steps/', redirect: '/Users/' },
+  { path: '/Operators/configuration/', redirect: '/Operators/' },
+  { path: '/Operators/host-integration/', redirect: '/Operators/' },
+  { path: '/Operators/database-migration/', redirect: '/Operators/' },
+  { path: '/Operators/diagnostics/', redirect: '/Operators/' },
   {
     path: '/RegisterAccount/',
     redirect: '/Users/account-and-store-setup/#create-an-account'
@@ -263,7 +272,7 @@ module.exports = [
   },
   { path: '/WalletSetup/', redirect: '/Users/wallet-setup/#set-up-a-wallet' },
   { path: '/CreateWallet/', redirect: '/Users/wallet-setup/#set-up-a-wallet' },
-  { path: '/Guide/', redirect: '/Users/overview/#btcpay-server-for-users' },
+  { path: '/Guide/', redirect: '/Users/#overview' },
   { path: '/Walkthrough/', redirect: '/Users/#user-guide' },
   { path: '/WhatsNext/', redirect: '/Users/next-steps/#next-steps' },
   {
