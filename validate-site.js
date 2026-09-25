@@ -146,6 +146,7 @@ const validateRedirects = errors => {
       destination = new URL(next, origin)
     }
 
+    target = followRedirects(target)
     const file = routeFile(target.pathname)
     if (!file) {
       errors.push(`Missing redirect target: ${path} -> ${redirect}`)
