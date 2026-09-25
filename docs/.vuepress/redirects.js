@@ -260,7 +260,10 @@ module.exports = [
   { path: '/Users/next-steps/', redirect: '/Users/' },
   { path: '/Operators/configuration/', redirect: '/Operators/' },
   { path: '/Operators/host-integration/', redirect: '/Operators/' },
-  { path: '/Operators/database-migration/', redirect: '/Operators/' },
+  {
+    path: '/Operators/database-migration/',
+    redirect: 'https://github.com/btcpayserver/btcpayserver/blob/v1.13.7/docs/db-migration.md'
+  },
   { path: '/Operators/diagnostics/', redirect: '/Operators/' },
   {
     path: '/RegisterAccount/',
@@ -322,7 +325,10 @@ module.exports = [
     path: '/Contribute/DevTest/',
     redirect: 'https://github.com/btcpayserver/btcpayserver/blob/master/docs/maintainers/README.md#testing'
   },
-  { path: '/BTCPayServer/db-migration/', redirect: '/Operators/database-migration/' },
+  {
+    path: '/BTCPayServer/db-migration/',
+    redirect: 'https://github.com/btcpayserver/btcpayserver/blob/v1.13.7/docs/db-migration.md'
+  },
   {
     path: '/BTCPayServer/greenfield-development/',
     redirect: '/Developers/api/compatibility/'
