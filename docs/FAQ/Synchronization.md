@@ -34,7 +34,7 @@ If your FastSync returns `You need to delete your Bitcoin Core wallet` after you
 
 ## How do I know that BTCPay synced completely?
 
-When you do not see a pop-up message in the bottom right corner, which shows the sync progress, that means that your server is fully synced and you can [begin using it](../RegisterAccount.md).
+When you do not see a pop-up message in the bottom right corner, which shows the sync progress, that means that your server is fully synced and you can [begin using it](../Users/account-and-store-setup.md#create-an-account).
 
 If you want to check that your BTCPay Server Bitcoin node is synchronized with the most recent block in the Bitcoin blockchain, [check your node height](#how-can-i-check-the-block-height-of-my-bitcoin-node) matches the current block height using any blockchain explorer.
 

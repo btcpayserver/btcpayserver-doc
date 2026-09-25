@@ -15,8 +15,8 @@ This guide will walk you through the steps to configure and use your BTCPay Serv
 
 - InvoiceNinja (hosted or self-hosted)
 - BTCPay Server ([self-hosted](https://docs.btcpayserver.org/Deployment/) or hosted by a [third-party provider](https://docs.btcpayserver.org/Deployment/ThirdPartyHosting/))
-- [Created store](https://docs.btcpayserver.org/CreateStore/) on BTCPay Server
-- [Connected wallet](https://docs.btcpayserver.org/WalletSetup/) on BTCPay Server
+- [Created store](/Users/account-and-store-setup/#create-a-store) on BTCPay Server
+- [Connected wallet](/Users/wallet-setup/) on BTCPay Server
 
 ## 1. Payment Gateway configuration
 

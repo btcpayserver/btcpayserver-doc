@@ -1,4 +1,6 @@
 const isDev = process.env.NODE_ENV === 'development'
+const { existsSync } = require('fs')
+const { dirname, resolve } = require('path')
 
 // external docs: local dir as key, repo base as value
 const EXTERNAL_DOCS = {
@@ -46,18 +48,21 @@ const replaceExternalRepoLinks = (source, externalRepoUrl, resourcePath) => {
         `\\]\\(((?!https?:\/\/|#|\.?\/).*?)\\)`,
         'gi'
       )
-      processed = processed.replace(repoLinks, (all, path) =>
-        replace(all, path, `${baseUrl}/blob/master/${path}`, 1)
-      )
+      processed = processed.replace(repoLinks, (all, path) => {
+        const localPath = path.split('#')[0]
+        if (localPath && existsSync(resolve(dirname(resourcePath), localPath))) return all
+        return replace(all, path, `${baseUrl}/blob/master/${path}`, 1)
+      })
 
       // rewrite links to docs to internal VuePress links
       const docsLinks = new RegExp(
         `\\]\\((${baseUrl}/blob/master/((README\.md|docs/).*?))\\)`,
         'gi'
       )
-      processed = processed.replace(docsLinks, (all, url, path) =>
-        replace(all, url, `/${baseDir}/${path.replace('docs/', '')}`, 2)
-      )
+      processed = processed.replace(docsLinks, (all, url, path) => {
+        if (path.startsWith('docs/maintainers/')) return all
+        return replace(all, url, `/${baseDir}/${path.replace('docs/', '')}`, 2)
+      })
     }
 
     // rewrite external links to docs to internal VuePress links

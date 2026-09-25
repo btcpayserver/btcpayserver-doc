@@ -6,6 +6,7 @@ BASE_DIR=$(cd `dirname $0` && pwd)
 DOCS_DIR="$BASE_DIR/docs"
 PUBLIC_DIR="$DOCS_DIR/.vuepress/public"
 BTCPAYSERVER_DIR="$BASE_DIR/deps/btcpayserver"
+BTCPAYSERVER_REF="${BTCPAYSERVER_REF:-master}"
 NBXPLORER_DIR="$BASE_DIR/deps/nbxplorer"
 CONFIGURATOR_DIR="$BASE_DIR/deps/configurator"
 DOCKER_DIR="$BASE_DIR/deps/docker"
@@ -32,38 +33,51 @@ update_external() {
   repo="$2"
   edit="$3"
   base="$4"
+  source="$5"
   path="${file#${base}}"
   [[ $path = "Security.md" ]] && path="SECURITY.md"
   [[ $path = "README.md" || $path = "readme.md" || $path = "SECURITY.md" ]] && folder="" || folder="docs/"
+  [[ -n $source ]] && edit_link="$edit/$source" || edit_link="$edit/$folder$path"
   content=$(cat "$file" | tr -cd '\11\12\15\40-\176')
   # add frontmatter to omit edit links for external docs
-  echo $'---\nexternalRepo: '"$repo"$'\neditLink: '"$edit/$folder$path"$'\n---\n'"$content" > "$file"
+  echo $'---\nexternalRepo: '"$repo"$'\neditLink: '"$edit_link"$'\n---\n'"$content" > "$file"
 }
 
 # BTCPay Server
 
 echo "Setup dependency: BTCPayServer"
 
-rm -rf "$DOCS_DIR/BTCPayServer"
-mkdir -p "$DOCS_DIR/BTCPayServer"
+rm -rf "$DOCS_DIR/BTCPayServer" "$DOCS_DIR/Users" "$DOCS_DIR/Operators" "$DOCS_DIR/Developers"
+mkdir -p "$DOCS_DIR/BTCPayServer" "$DOCS_DIR/Users" "$DOCS_DIR/Operators" "$DOCS_DIR/Developers"
 
 if [ ! -d "$BTCPAYSERVER_DIR" ]; then
-  git clone https://github.com/btcpayserver/btcpayserver.git "$BTCPAYSERVER_DIR"
+  git clone --branch "$BTCPAYSERVER_REF" https://github.com/btcpayserver/btcpayserver.git "$BTCPAYSERVER_DIR"
 else
-  cd "$BTCPAYSERVER_DIR" && git checkout master && git pull
+  cd "$BTCPAYSERVER_DIR" && git fetch origin "$BTCPAYSERVER_REF" && git checkout --detach FETCH_HEAD
 fi
 
 cd "$BTCPAYSERVER_DIR"
 
 cp SECURITY.md "$DOCS_DIR/BTCPayServer/Security.md"
 cp BTCPayServer.Tests/README.md "$DOCS_DIR/BTCPayServer/LocalDevSetup.md"
-cp -r docs/* "$DOCS_DIR/BTCPayServer"
-line=$(grep -n '## How to manually test payments' $DOCS_DIR/BTCPayServer/LocalDevSetup.md | cut -d ":" -f 1)
-{ echo $'---\neditLink: https://github.com/btcpayserver/btcpayserver-doc/edit/master/docs/Development/LocalDev.md\n---\n'; cat "$DOCS_DIR/Development/LocalDev.md"; echo; tail -n +$line "$DOCS_DIR/BTCPayServer/LocalDevSetup.md"; } > "$DOCS_DIR/Development/LocalDevelopment.md"
+cp -r docs/users/. "$DOCS_DIR/Users"
+cp -r docs/operators/. "$DOCS_DIR/Operators"
+cp -r docs/developers/. "$DOCS_DIR/Developers"
 
-for file in "$DOCS_DIR"/BTCPayServer/*.md; do
-  update_external "$file" https://github.com/btcpayserver/btcpayserver https://github.com/btcpayserver/btcpayserver/edit/master "$DOCS_DIR"/BTCPayServer/
+update_external "$DOCS_DIR/BTCPayServer/Security.md" https://github.com/btcpayserver/btcpayserver https://github.com/btcpayserver/btcpayserver/edit/master "$DOCS_DIR"/BTCPayServer/
+update_external "$DOCS_DIR/BTCPayServer/LocalDevSetup.md" https://github.com/btcpayserver/btcpayserver https://github.com/btcpayserver/btcpayserver/edit/master "$DOCS_DIR"/BTCPayServer/ "BTCPayServer.Tests/README.md"
+
+for audience in users operators developers; do
+  target="$DOCS_DIR/${audience^}"
+  while IFS= read -r -d '' file; do
+    path="docs/$audience/${file#${target}/}"
+    update_external "$file" https://github.com/btcpayserver/btcpayserver https://github.com/btcpayserver/btcpayserver/edit/master "$target/" "$path"
+  done < <(find "$target" -type f -name '*.md' -print0)
 done
+
+# Preserve canonical cross-audience links after mapping source directories to public paths.
+sed -i 's$../operators/$../Operators/$g' "$DOCS_DIR/Users/README.md"
+sed -i 's$../users/$../Users/$g' "$DOCS_DIR/Operators/README.md"
 
 # NBXplorer
 
@@ -81,7 +95,8 @@ fi
 cd "$NBXPLORER_DIR"
 
 cp -r README.md docs/* "$DOCS_DIR/NBXplorer"
-sed -ie 's$(./docs/$(./$g' "$DOCS_DIR/NBXplorer/README.md"
+sed -i 's$(./docs/$(./$g; s$(./docs/$(./$g' "$DOCS_DIR/NBXplorer/README.md"
+sed -ie 's$(#addresses)$(#standalone-addresses)$g' "$DOCS_DIR/NBXplorer/API.md"
 for file in "$DOCS_DIR"/NBXplorer/*.md; do
   update_external "$file" https://github.com/dgarage/NBXplorer  https://github.com/dgarage/NBXplorer/edit/master "$DOCS_DIR"/NBXplorer/
 done
@@ -142,14 +157,14 @@ fi
 cd "$DOCKER_DIR"
 cp -r docs/* "$DOCS_DIR/Docker"
 cp -r docs/img/* "$DOCS_DIR/img"
-line=$(grep -n '# Introduction' README.md | cut -d ":" -f 1)
-tail -n +$line "README.md" > "$DOCS_DIR/Docker/README.md"
-sed -ie 's$(docs/$(./$g' "$DOCS_DIR/Docker/README.md"
+sed -i 's$(../docker-compose-generator/$(https://github.com/btcpayserver/btcpayserver-docker/blob/master/docker-compose-generator/$g' "$DOCS_DIR"/Docker/*.md
 for file in "$DOCS_DIR"/Docker/*.md; do
-  update_external "$file" https://github.com/btcpayserver/btcpayserver-docker https://github.com/btcpayserver/btcpayserver-docker/edit/master "$DOCS_DIR"/Docker/
+  source="docs/${file#${DOCS_DIR}/Docker/}"
+  update_external "$file" https://github.com/btcpayserver/btcpayserver-docker https://github.com/btcpayserver/btcpayserver-docker/edit/master "$DOCS_DIR"/Docker/ "$source"
 done
 
 cp contrib/FastSync/README.md "$DOCS_DIR/Docker/fastsync.md"
+sed -ie 's$(./README.md#$(./fastsync.md#$g' "$DOCS_DIR/Docker/fastsync.md"
 sed -ie 's$(utxo-sets)$(https://github.com/btcpayserver/btcpayserver-docker/blob/master/contrib/FastSync/utxo-sets)$g' "$DOCS_DIR/Docker/fastsync.md"
 sed -ie 's$(load-utxo-set.sh)$(https://github.com/btcpayserver/btcpayserver-docker/blob/master/contrib/FastSync/load-utxo-set.sh)$g' "$DOCS_DIR/Docker/fastsync.md"
 sed -ie 's$(save-utxo-set.sh)$(https://github.com/btcpayserver/btcpayserver-docker/blob/master/contrib/FastSync/save-utxo-set.sh)$g' "$DOCS_DIR/Docker/fastsync.md"
@@ -381,6 +396,7 @@ cd "$KUKKS_DIR/Plugins/BTCPayServer.Plugins.Wabisabi"
 
 cp -r readme.md docs/* "$DOCS_DIR/Wabisabi"
 sed -ie 's$docs/$./$g' "$DOCS_DIR/Wabisabi/readme.md"
+sed -ie 's$https://docs.btcpayserver.org/CreateWallet/#hot-wallet$/Users/wallet-setup/#protect-the-wallet$g' "$DOCS_DIR/Wabisabi/readme.md"
 for file in "$DOCS_DIR"/Wabisabi/*.md; do
   update_external "$file" https://github.com/Kukks/BTCPayServerPlugins/tree/master/Plugins/BTCPayServer.Plugins.Wabisabi https://github.com/Kukks/BTCPayServerPlugins/edit/master/Plugins/BTCPayServer.Plugins.Wabisabi "$DOCS_DIR"/Wabisabi/
 done
@@ -474,6 +490,7 @@ done
 cd "$TOBSES_DIR/Plugins/BTCPayServer.Plugins.GhostPlugin"
 
 cp -r README.md img "$DOCS_DIR/Ghost"
+sed -ie 's$(Deployment.md)$(/Deployment/)$g; s$(CreateStore.md)$(/Users/account-and-store-setup/#create-a-store)$g; s$(WalletSetup.md)$(/Users/wallet-setup/#set-up-a-wallet)$g' "$DOCS_DIR/Ghost/README.md"
 for file in "$DOCS_DIR"/Ghost/*.md; do
   update_external "$file" https://github.com/TChukwuleta/BTCPayServerPlugins/tree/main/Plugins/BTCPayServer.Plugins.GhostPlugin https://github.com/TChukwuleta/BTCPayServerPlugins/edit/main/Plugins/BTCPayServer.Plugins.GhostPlugin "$DOCS_DIR"/Ghost/
 done

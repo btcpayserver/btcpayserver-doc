@@ -10,6 +10,7 @@
 /docs/Bringin
 /docs/BTCPayServer
 /docs/Configurator
+/docs/Developers
 /docs/Docker
 /docs/Drupal
 /docs/DynamicReports
@@ -21,13 +22,15 @@
 /docs/Nopcommerce
 /docs/Nostr
 /docs/Odoo
+/docs/Operators
 /docs/Payroll
 /docs/PodServer
 /docs/SideShift
 /docs/Smartstore
 /docs/TicketTailor
 /docs/Trocador
-/docs/Vendorpay
+/docs/Users
+/docs/VendorPay
 /docs/Wabisabi
 /docs/Wix
 /docs/Vault
@@ -42,7 +45,5 @@
 /docs/img/Cloudflare*
 /swagger/plugins/btcpay.json
 
-# Constructed docs
-/docs/Development/LocalDevelopment.md
 .idea
 *.Identifier

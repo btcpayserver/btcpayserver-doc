@@ -34,7 +34,7 @@ Before diving into the setup process, ensure you have the following:
 
 - Shopify account
 - BTCPay Server - [self-hosted](Deployment.md) or run by a [third-party host](/Deployment/ThirdPartyHosting.md) v1.4.8 or later.
-- [Created BTCPay Server store](CreateStore.md) with [wallet set up](WalletSetup.md)
+- [Created BTCPay Server store](Users/account-and-store-setup.md#create-a-store) with [wallet set up](Users/wallet-setup.md)
 
 [![BTCPay Server - Shopify Video](https://img.youtube.com/vi/jJjAyvgWVfk/mqdefault.jpg)](https://www.youtube.com/watch?v=jJjAyvgWVfk)
 

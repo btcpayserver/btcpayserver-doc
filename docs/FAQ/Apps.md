@@ -14,14 +14,14 @@ Apps are added on the store level. To create one, you need to have a store alrea
 
 ## Is there a Point of Sale feature in BTCPay?
 
-Yes. Please read our [guide on creating the POS app](../WhatsNext.md#creating-the-pay-button).
+Yes. Please read the [next steps guide](../Users/next-steps.md#next-steps) before creating a POS app.
 
 ## How can I use BTCPay in a physical store?
 
 You can use our Point of Sale (PoS) app. When you create a PoS app within BTCPay Server, it will be publicly accessible via a URL where checkout buttons for products you’ve created for your PoS will be displayed.
 To have a physical PoS, the easiest solution (currently) is to create a PoS App in BTCPay and display it on any web device such as a phone, tablet or pc.
 
-Please follow our detailed guide on how to use our [PoS App on a mobile device](https://blog.btcpayserver.org/bitcoin-pos/). Also note that Section 2.3 Connecting a Wallet is covered much more in-depth here in the [wallet section](../WalletSetup.md).
+Please follow our detailed guide on how to use our [PoS App on a mobile device](https://blog.btcpayserver.org/bitcoin-pos/). Wallet connection is covered in the [wallet section](../Users/wallet-setup.md).
 
 ## How to customize the appearance of Point of Sale App in BTCPay
 
@@ -29,14 +29,14 @@ It is very easy to customize the look of the Point of Sale app. [Follow this gui
 
 ## What is a Payment Button?
 
-The Payment Button is a simple and customizable HTML button you can create and embed into your website. To create a payment button, [follow this guide](../WhatsNext.md#creating-the-point-of-sale-app).
+The Payment Button is a simple and customizable HTML button you can create and embed into your website. To create a payment button, [follow the next steps guide](../Users/next-steps.md#next-steps).
 
 ## How to create a Pay Button with a custom amount?
 
 The BTCPay Server Pay Button which can be found in Store Settings > Pay Button, currently does not support custom amounts.
 However, you can use a work-around:
 
-- [Create Point of sale app](../WhatsNext.md#creating-the-point-of-sale-app)
+- [Create Point of sale app](../Users/next-steps.md#next-steps)
 - Enable `user can input a custom amount` field
 - Remove all the products from the automatically generated template.
 - Save settings.

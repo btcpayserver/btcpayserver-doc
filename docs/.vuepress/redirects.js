@@ -2,10 +2,13 @@ module.exports = [
   // Basics
   { path: '/btcpay-basics', redirect: '/UseCase/' },
   { path: '/btcpay-basics/usecase', redirect: '/UseCase/' },
-  { path: '/btcpay-basics/walkthrough', redirect: '/Walkthrough/' },
+  { path: '/btcpay-basics/walkthrough', redirect: '/Users/' },
   { path: '/btcpay-basics/btcpayvsothers', redirect: '/BTCPayVsOthers/' },
   { path: '/btcpay-basics/tryitout', redirect: '/TryItOut/' },
-  { path: '/btcpay-basics/gettingstarted', redirect: '/RegisterAccount/' },
+  {
+    path: '/btcpay-basics/gettingstarted',
+    redirect: '/Users/account-and-store-setup/#create-an-account'
+  },
   // Deployment
   { path: '/deployment', redirect: '/Deployment/' },
   { path: '/deployment/deployment', redirect: '/Deployment/' },
@@ -20,7 +23,7 @@ module.exports = [
   },
   {
     path: '/deployment/azuredeployment/changedomain',
-    redirect: '/Deployment/ChangeDomain/'
+    redirect: '/FAQ/Deployment/#how-to-change-your-btcpay-server-domain-name'
   },
   { path: '/deployment/dockerdeployment', redirect: '/Docker/' },
   {
@@ -67,11 +70,17 @@ module.exports = [
   { path: '/LunaNodeWebDeployment', redirect: '/Deployment/LunaNode/' },
   { path: '/ThirdPartyHosting', redirect: '/Deployment/ThirdPartyHosting/' },
   // Getting Started
-  { path: '/getting-started', redirect: '/RegisterAccount/' },
-  { path: '/getting-started/registeraccount', redirect: '/RegisterAccount/' },
-  { path: '/getting-started/createstore', redirect: '/CreateStore/' },
-  { path: '/getting-started/connectwallet', redirect: '/WalletSetup/' },
-  { path: '/ConnectWallet', redirect: '/WalletSetup/' },
+  { path: '/getting-started', redirect: '/Users/' },
+  {
+    path: '/getting-started/registeraccount',
+    redirect: '/Users/account-and-store-setup/#create-an-account'
+  },
+  {
+    path: '/getting-started/createstore',
+    redirect: '/Users/account-and-store-setup/#create-a-store'
+  },
+  { path: '/getting-started/connectwallet', redirect: '/Users/wallet-setup/' },
+  { path: '/ConnectWallet', redirect: '/Users/wallet-setup/' },
   {
     path: '/getting-started/connectwallet/ledgerwallet',
     redirect: '/LedgerWallet/'
@@ -96,21 +105,26 @@ module.exports = [
     path: '/getting-started/connectwallet/electrumwallet/electrumpersonalserver',
     redirect: '/ElectrumPersonalServer/'
   },
-  { path: '/getting-started/whatsnext', redirect: '/WhatsNext/' },
+  { path: '/getting-started/whatsnext', redirect: '/Users/next-steps/' },
   // Features
   { path: '/features', redirect: '/Apps/' },
   { path: '/features/apps', redirect: '/Apps/' },
   { path: '/features/wallet', redirect: '/Wallet/' },
   { path: '/features/invoices', redirect: '/Invoices/' },
   { path: '/features/lightningnetwork', redirect: '/LightningNetwork/' },
-  { path: '/LightningNetwork_PaymentChannels/', redirect: '/LightningNetwork-Setup/#managing-ongoing-liquidity' },
+  {
+    path: '/LightningNetwork_PaymentChannels/',
+    redirect: '/LightningNetwork-Setup/#managing-ongoing-liquidity'
+  },
   { path: '/features/accounting', redirect: '/Reporting/' },
   { path: '/Accounting', redirect: '/Reporting/' },
   { path: '/features/paymentrequests', redirect: '/PaymentRequests/' },
   { path: '/features/vault', redirect: '/HardwareWalletIntegration/' },
-  { path: '/Vault', redirect: '/HardwareWalletIntegration/' },
   { path: '/features/payjoin', redirect: '/Payjoin/' },
-  { path: '/features/payjoin/payjoin-spec', redirect: '/Payjoin-spec/' },
+  {
+    path: '/features/payjoin/payjoin-spec',
+    redirect: 'https://github.com/bitcoin/bips/blob/master/bip-0078.mediawiki'
+  },
   // Integrations
   { path: '/integrations', redirect: '/WooCommerce/' },
   { path: '/integrations/woocommerce', redirect: '/WooCommerce/' },
@@ -122,14 +136,22 @@ module.exports = [
   { path: '/integrations/opencart', redirect: '/OpenCart/' },
   { path: '/integrations/shopware', redirect: '/Shopware/' },
   { path: '/integrations/customintegration', redirect: '/CustomIntegration/' },
-  { path: '/Shopify', redirect: '/ShopifyV2' },
   { path: '/shopify', redirect: '/ShopifyV2' },
   // Development
-  { path: '/development', redirect: '/Development/Architecture/' },
-  { path: '/development/architecture', redirect: '/Development/Architecture/' },
+  {
+    path: '/development',
+    redirect:
+      'https://github.com/btcpayserver/btcpayserver/blob/master/docs/maintainers/architecture.md'
+  },
+  {
+    path: '/development/architecture',
+    redirect:
+      'https://github.com/btcpayserver/btcpayserver/blob/master/docs/maintainers/architecture.md'
+  },
   {
     path: '/development/localdevelopment',
-    redirect: '/Development/LocalDevelopment/'
+    redirect:
+      'https://github.com/btcpayserver/btcpayserver/blob/master/docs/maintainers/local-development.md'
   },
   { path: '/development/altcoins', redirect: '/Development/Altcoins/' },
   { path: '/development/theme', redirect: '/Development/Theme/' },
@@ -170,19 +192,6 @@ module.exports = [
   { path: '/FAQ/FAQ-Wallet/', redirect: '/FAQ/Wallet/' },
   { path: '/FAQ/FAQ-Apps/', redirect: '/FAQ/Apps/' },
   { path: '/FAQ/FAQ-LightningNetwork/', redirect: '/FAQ/LightningNetwork/' },
-  // Redirects for old c-lightning faq links
-  {
-    path: '/FAQ/LightningNetwork/#how-to-change-from-c-lightning-to-lnd-or-vice-versa',
-    redirect: '/FAQ/LightningNetwork/#how-to-change-from-core-lightning-cln-to-lnd-or-vice-versa'
-  },
-  {
-    path: '/FAQ/LightningNetwork/#lightning-network-c-lightning-faq',
-    redirect: '/FAQ/LightningNetwork/#lightning-network-core-lightning-cln-faq'
-  },
-  {
-    path: '/FAQ/LightningNetwork/#how-to-restart-my-c-lightning',
-    redirect: '/FAQ/LightningNetwork/#how-to-restart-my-core-lightning-cln'
-  },
   { path: '/FAQ/FAQ-Altcoin/', redirect: '/FAQ/Altcoin/' },
   // Support
   { path: '/support-and-community', redirect: '/Troubleshooting/' },
@@ -192,14 +201,24 @@ module.exports = [
   },
   { path: '/support-and-community/support', redirect: '/Support/' },
   { path: '/support-and-community/contribute', redirect: '/Contribute/' },
-  { path: '/support-and-community/translate', redirect: '/Translate/' },
+  { path: '/support-and-community/translate', redirect: '/Contribute/Translate/' },
   { path: '/support-and-community/community', redirect: '/Community/' },
   // Old paths in new docs
   { path: '/DockerDeployment/', redirect: '/Docker/' },
-  { path: '/HotWallet/', redirect: '/CreateWallet/' },
-  { path: '/Contribute/ContributeDev/', redirect: '/Contribute/Dev/' },
-  { path: '/Contribute/ContributeDevCode/', redirect: '/Contribute/DevCode/' },
-  { path: '/Contribute/ContributeDevTest/', redirect: '/Contribute/DevTest/' },
+  { path: '/HotWallet/', redirect: '/Users/wallet-setup/' },
+  {
+    path: '/Contribute/ContributeDev/',
+    redirect: 'https://github.com/btcpayserver/btcpayserver/blob/master/docs/maintainers/README.md'
+  },
+  {
+    path: '/Contribute/ContributeDevCode/',
+    redirect:
+      'https://github.com/btcpayserver/btcpayserver/blob/master/docs/maintainers/local-development.md'
+  },
+  {
+    path: '/Contribute/ContributeDevTest/',
+    redirect: 'https://github.com/btcpayserver/btcpayserver/blob/master/docs/maintainers/testing.md'
+  },
   { path: '/Contribute/ContributeWrite/', redirect: '/Contribute/Write/' },
   {
     path: '/Contribute/ContributeWrite/WriteSoftware',
@@ -220,9 +239,11 @@ module.exports = [
   },
   { path: '/Contribute/ContributeMisc', redirect: '/Contribute/Misc/' },
   { path: '/Theme/', redirect: '/Development/Theme/' },
-  { path: '/GreenFieldExample/', redirect: '/Development/GreenFieldExample/' },
-  { path: '/ThirdPartyHosting/', redirect: '/Deployment/ThirdPartyHosting/' },
-  { path: '/ChangeDomain/', redirect: '/Deployment/ChangeDomain/' },
+  { path: '/GreenFieldExample/', redirect: '/Developers/api/examples/#curl' },
+  {
+    path: '/ChangeDomain/',
+    redirect: '/FAQ/Deployment/#how-to-change-your-btcpay-server-domain-name'
+  },
   { path: '/DynamicDNS/', redirect: '/Deployment/DynamicDNS/' },
   { path: '/Deployment/RaspberryPi/', redirect: '/Deployment/RaspberryPi4/' },
   { path: '/Deployment/RPi3/', redirect: '/Deployment/RaspberryPi4/' },
@@ -230,5 +251,75 @@ module.exports = [
   {
     path: '/Deployment/ChangeDomain',
     redirect: '/FAQ/Deployment/#how-to-change-your-btcpay-server-domain-name'
+  },
+  // Pages migrated into the BTCPay Server repository
+  {
+    path: '/RegisterAccount/',
+    redirect: '/Users/account-and-store-setup/#create-an-account'
+  },
+  {
+    path: '/CreateStore/',
+    redirect: '/Users/account-and-store-setup/#create-a-store'
+  },
+  { path: '/WalletSetup/', redirect: '/Users/wallet-setup/#set-up-a-wallet' },
+  { path: '/CreateWallet/', redirect: '/Users/wallet-setup/#set-up-a-wallet' },
+  { path: '/Guide/', redirect: '/Users/overview/#btcpay-server-for-users' },
+  { path: '/Walkthrough/', redirect: '/Users/#user-guide' },
+  { path: '/WhatsNext/', redirect: '/Users/next-steps/#next-steps' },
+  {
+    path: '/Development/HostIntegration/',
+    redirect: '/Operators/host-integration/#host-integration'
+  },
+  {
+    path: '/Development/GreenFieldExample/',
+    redirect: '/Developers/api/examples/#curl'
+  },
+  {
+    path: '/Development/GreenFieldExample-NodeJS/',
+    redirect: '/Developers/api/examples/#nodejs'
+  },
+  {
+    path: '/Development/GreenfieldExample-PHP/',
+    redirect: '/Developers/api/examples/#php'
+  },
+  {
+    path: '/Development/Plugins/',
+    redirect: '/Developers/plugins/#plugin-development'
+  },
+  {
+    path: '/Development/Plugins-Permissions/',
+    redirect: '/Developers/plugins/permissions/#plugin-authentication-and-permissions'
+  },
+  {
+    path: '/Development/LocalDevelopment/',
+    redirect:
+      'https://github.com/btcpayserver/btcpayserver/blob/master/docs/maintainers/local-development.md'
+  },
+  {
+    path: '/Development/LocalDev/',
+    redirect:
+      'https://github.com/btcpayserver/btcpayserver/blob/master/docs/maintainers/local-development.md'
+  },
+  {
+    path: '/Contribute/Dev/',
+    redirect: 'https://github.com/btcpayserver/btcpayserver/blob/master/docs/maintainers/README.md'
+  },
+  {
+    path: '/Contribute/DevCode/',
+    redirect:
+      'https://github.com/btcpayserver/btcpayserver/blob/master/docs/maintainers/local-development.md'
+  },
+  {
+    path: '/Contribute/DevTest/',
+    redirect: 'https://github.com/btcpayserver/btcpayserver/blob/master/docs/maintainers/testing.md'
+  },
+  { path: '/BTCPayServer/db-migration/', redirect: '/Operators/database-migration/' },
+  {
+    path: '/BTCPayServer/greenfield-development/',
+    redirect: '/Developers/api/compatibility/'
+  },
+  {
+    path: '/BTCPayServer/greenfield-authorization/',
+    redirect: '/Developers/api/authentication/'
   }
 ]

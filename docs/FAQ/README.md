@@ -15,7 +15,7 @@ General, non-technical questions about BTCPay. What it is, how it works, what ar
 - [Do I need to have an online store to use BTCPay Server?](./General.md#do-i-need-to-have-an-online-store-to-use-btcpay-server)
 - [Why can't I just give my public address to a buyer?](./General.md#why-cant-i-just-give-my-bitcoin-address-to-a-buyer)
 - [How does BTCPay create a new address for each invoice?](./General.md#how-does-btcpay-create-a-new-address-for-each-invoice)
-- [Does BTCPay need my private key?](./General.md#does-btcpay-need-myprivate-key)
+- [Does BTCPay need my private key?](./General.md#does-btcpay-need-my-private-key)
 - [Does BTCPay Server support crypto to fiat conversion?](./General.md#does-btcpay-server-support-crypto-to-fiat-conversion)
 - [What if I have a problem paying a BTCPay Server invoice?](./General.md#what-if-i-have-a-problem-paying-an-invoice)
 - [What if I have a problem with a paid invoice?](./General.md#what-if-i-have-a-problem-with-a-paid-invoice)
@@ -29,7 +29,7 @@ General, non-technical questions about BTCPay. What it is, how it works, what ar
 
 Questions and solutions to BTCPay installation.
 
-### [General Deployment FAQ](./Deployment.md#general-deployment-faq)
+### [General Deployment FAQ](./Deployment.md#general-deployment)
 
 - [How much does it cost to run BTCPay Server?](./Deployment.md#how-much-does-it-cost-to-run-btcpay-server)
 - [What are the minimal requirements for BTCPay?](./Deployment.md#what-are-the-minimal-requirements-for-btcpay)
@@ -39,28 +39,28 @@ Questions and solutions to BTCPay installation.
 - [Can I run BTCPay on my hardware?](./Deployment.md#can-i-run-btcpay-on-my-own-hardware)
 - [Can I deploy on my existing VPS?](./Deployment.md#can-i-deploy-btcpay-on-my-existing-vps)
 - [Are there free hosts where I can test?](./Deployment.md#are-there-free-hosts-where-i-can-test)
-- [After initial deployment, I can't register and I don't have a login yet?](./Deployment.md#after-initial-deployment-i-can-t-register-and-i-don-t-have-a-login-yet)
+- [After initial deployment, I can't register and I don't have a login yet?](./Deployment.md#after-initial-deployment-i-cant-register-and-i-dont-have-a-login-yet)
 - [How do I activate Tor on my BTCPay Server?](./Deployment.md#how-do-i-activate-tor-on-my-btcpay-server)
 - [How do I disable Tor on my BTCPay Server?](./Deployment.md#how-do-i-disable-tor-on-my-btcpay-server)
 - [Why activate Tor? Does it mean that nobody knows who I am?](./Deployment.md#why-activate-tor-does-it-mean-that-nobody-knows-who-i-am)
 - [How to access the .onion address without clearnet?](./Deployment.md#how-to-access-the-onion-address-without-clearnet)
 - [How can I modify or deactivate environment variables?](./Deployment.md#how-can-i-modify-or-deactivate-environment-variables)
 - [How can I run BTCPay on testnet?](./Deployment.md#how-can-i-run-btcpay-on-testnet)
-- [Can I start BTCPay only when I'm expecting a payment?](./Deployment.md#can-i-start-btcpay-only-when-i-m-expecting-a-payment)
+- [Can I start BTCPay only when I'm expecting a payment?](./Deployment.md#can-i-start-btcpay-only-when-im-expecting-a-payment)
 - [Can I connect to my BTCPay Bitcoin P2P on port 8333?](./Deployment.md#can-i-connect-to-my-btcpay-bitcoin-p2p-on-port-8333)
 - [How can I renew my SSL certificate?](./Deployment.md#how-can-i-renew-my-ssl-certificate)
 - [Can I use an existing Nginx server as a reverse proxy with SSL termination?](./Deployment.md#can-i-use-an-existing-nginx-server-as-a-reverse-proxy-with-ssl-termination)
 - [Can I use Bitcoin Knots instead of Bitcoin Core?](./Deployment.md#can-i-use-bitcoin-knots-instead-of-bitcoin-core)
 
-### [Web Deployment FAQ](./Deployment.md#web-deployment-faq)
+### [Web Deployment FAQ](./Deployment.md#web-deployment)
 
-#### [Luna Node Web Deployment FAQ](./Deployment.md#luna-node-web-deployment-faq)
+#### [Luna Node Web Deployment FAQ](./Deployment.md#lunanode-web-deployment)
 
 - [How to change domain name on my LunaNode BTCPay?](./Deployment.md#how-to-change-domain-name-on-my-lunanode-btcpay)
 
 ### [Manual Deployment FAQ](./Deployment.md#manual-deployment)
 
-- [How to manually install BTCPay on Ubuntu 18.04?](./Deployment.md#how-to-manually-install-btcpay-on-ubuntu-18-04)
+- [How to manually install BTCPay on Ubuntu 18.04?](./Deployment.md#how-to-manually-install-btcpay-on-ubuntu-1804)
 - [How do I completely uninstall BTCPay from a linux environment (docker version)](./Deployment.md#how-do-i-completely-uninstall-btcpay-from-a-linux-environment-docker-version)
 - [How to deploy BTCPay Server alongside existing Bitcoin full node?](./Deployment.md#how-to-deploy-btcpay-server-alongside-existing-bitcoin-node)
 - [With the docker deployment, how to use a different volume for the data?](./Deployment.md#with-the-docker-deployment-how-to-use-a-different-volume-for-the-data)
@@ -86,13 +86,13 @@ Common questions and issues that may occur during the initial sync of BTCPay.
 
 Questions about e-commerce and other integrations.
 
-### [Integrations General](./Integrations.md#integrations-general-faq)
+### [Integrations General](./Integrations.md#general-integrations-faq)
 
 - [What e-commerce integrations are available?](./Integrations.md#what-e-commerce-integrations-are-available)
 - [Does BTCPay have a Shopify plugin?](./Integrations.md#does-btcpay-have-a-shopify-plugin)
 - [Can I use BTCPay without an integration?](./Integrations.md#can-i-use-btcpay-without-an-integration)
 
-### [WooCommerce FAQ](./Integrations.md#woocommerce-faq-2)
+### [WooCommerce FAQ](./Integrations.md#woocommerce-faq)
 
 - [How to configure order status in WooCommerce?](./Integrations.md#how-to-configure-order-status-in-woocommerce)
 - [How to customize e-mail confirmations in WooCommerce?](./Integrations.md#how-to-customize-e-mail-confirmations-in-woocommerce)
@@ -102,19 +102,19 @@ Questions about e-commerce and other integrations.
 
 Common problems and questions server admins have.
 
-### [Maintenance FAQ](./ServerSettings.md#maintainance)
+### [Maintenance FAQ](./ServerSettings.md#maintenance)
 
 - [How to update BTCPay Server?](./ServerSettings.md#how-to-update-btcpay-server)
 - [How to restart BTCPay Server?](./ServerSettings.md#how-to-restart-btcpay-server)
 - [How to SSH into my BTCPay running on VPS?](./ServerSettings.md#how-to-ssh-into-my-btcpay-running-on-vps)
-- [How can I check my BTCPay Server version?](./ServerSettings.md#how-can-i-see-my-btcpay-version)
+- [How can I check my BTCPay Server version?](./ServerSettings.md#how-can-i-see-my-btcpay-server-version)
 - [How can I check my BTCPay Server version via terminal?](./ServerSettings.md#how-can-i-check-my-btcpay-server-version-via-terminal)
 - [What is BTCPay SSH key file](./ServerSettings.md#what-is-btcpay-ssh-key-file)
 - [Forgot BTCPay Admin password](./ServerSettings.md#forgot-btcpay-admin-password)
 - [How to add a new user by invite?](./ServerSettings.md#how-to-add-a-new-user-by-invite)
 - [How to disable U2F and 2FA for a user?](./ServerSettings.md#how-to-disable-u2f-and-2fa-for-a-user)
 - [How to configure SMTP settings in BTCPay?](./ServerSettings.md#how-to-configure-smtp-settings-in-btcpay)
-- [Error: Maintenance feature requires access to SSH properly configured in BTCPayServer configuration](./ServerSettings.md#error-maintenance-feature-requires-access-to-SSH-properly-configured-in-btcpayserver-configuration)
+- [Error: Maintenance feature requires access to SSH properly configured in BTCPayServer configuration](./ServerSettings.md#error-maintenance-feature-requires-access-to-ssh-properly-configured-in-btcpayserver-configuration)
 - [Error: Your local changes to the following files would be overwritten by merge](./ServerSettings.md#error-your-local-changes-to-the-following-files-would-be-overwritten-by-merge)
 - [Error: the BTCPAY_SSHKEYFILE variable is not set/ Unable to update](./ServerSettings.md#error-btcpay-sshkeyfile-is-not-set-when-running-the-docker-install-or-unable-to-update-through-server-settings-maintenance)
 
@@ -122,7 +122,7 @@ Common problems and questions server admins have.
 
 - [How to customize my BTCPay theme style?](./ServerSettings.md#how-to-customize-my-btcpay-theme-style)
 - [How to modify BTCPay the checkout page?](./ServerSettings.md#how-to-modify-the-checkout-page)
-- [How to customize the POS app theme?](../Development/Theme.md#2-bootstrap-themes)
+- [How to customize the POS app theme?](../Development/Theme.md#developing-and-extending-a-custom-theme)
 - [How to add Google Analytics code to BTCPay?](./ServerSettings.md#how-to-add-google-analytics-code-to-btcpay)
 
 ### [Policies FAQ](./ServerSettings.md#policies)
@@ -142,10 +142,10 @@ Common problems and questions server admins have.
 
 Store settings explained.
 
-- [How to create a store in BTCPay?](./Stores.md#how-to-create-a-store-in-btcpay)
+- [How to create a store in BTCPay?](./Stores.md#how-to-create-a-store-in-btcpay-server)
 - [How many stores can I create?](./Stores.md#how-many-stores-can-i-create)
 - [Why are invoices without payment showing as complete?](./Stores.md#why-are-invoices-without-payment-showing-as-complete)
-- [Store General Settings](./Stores.md#store-general-settings)
+- [Store General Settings](../Users/account-and-store-setup.md#create-a-store)
 - [Add network fee to invoice (vary with mining fees)?](./Stores.md#add-network-fee-to-invoice-vary-with-mining-fees)
 - [Allow anyone to create invoice?](./Stores.md#allow-anyone-to-create-invoice)
 - [Invoice expires if the full amount has not been paid after ... minutes?](./Stores.md#invoice-expires-if-the-full-amount-has-not-been-paid-after-minutes)
@@ -184,7 +184,7 @@ Frequent questions about the applications in BTCPay.
 - [Is there a limit on the number of Apps I can create?](./Apps.md#is-there-a-limit-on-the-number-of-apps-i-can-create)
 - [Is there a Point of Sale feature in BTCPay?](./Apps.md#is-there-a-point-of-sale-feature-in-btcpay)
 - [How can I use BTCPay in a physical store?](./Apps.md#how-can-i-use-btcpay-in-a-physical-store)
-- [How to customize the appearance of POS in BTCPay?](./Apps.md#how-to-customize-the-appearance-of-Point-of-Sale-App-in-BTCPay)
+- [How to customize the appearance of POS in BTCPay?](./Apps.md#how-to-customize-the-appearance-of-point-of-sale-app-in-btcpay)
 - [What is a Payment Button?](./Apps.md#what-is-a-payment-button)
 - [How to create a Pay Button with a custom amount?](./Apps.md#how-to-create-a-pay-button-with-a-custom-amount)
 - [How to map a domain name to an app?](./Apps.md#how-to-map-a-domain-name-to-an-app)
@@ -220,7 +220,7 @@ Lightning Network troubleshooting and common problems.
 - [What’s the default LND Directory in BTCPay?](./LightningNetwork.md#what-s-the-default-directory-of-lnd-in-btcpay)
 - [Which macaroon needs to be provided for external nodes?](./LightningNetwork.md#which-macaroon-needs-to-be-provided-for-external-nodes)
 - [LND connection issue - cannot get macaroon: root key with id 0 doesn’t exist](./LightningNetwork.md#lnd-connection-issues-after-an-update)
-- [How to change LND Node alias](./LightningNetwork.md#how-to-change-my-LND-Node-alias)
+- [How to change LND Node alias](./LightningNetwork.md#how-to-change-my-lnd-node-alias)
 - [How to edit lnd.conf](./LightningNetwork.md#how-to-edit-lndconf)
 - [How to install ThunderHub](./LightningNetwork.md#how-to-install-thunderhub)
 

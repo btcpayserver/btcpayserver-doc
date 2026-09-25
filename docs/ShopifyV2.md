@@ -31,7 +31,7 @@ Before diving into the setup process, ensure you have the following:
 - An active Shopify subscription plan (at least Basic Shopify plan)
 - [A Shopify partner account](https://www.shopify.com/partners) (it's free to register)
 - BTCPay Server - [self-hosted](Deployment.md) or run by a [third-party host](/Deployment/ThirdPartyHosting.md) * v2.0.6 or later.
-- [Created BTCPay Server store](CreateStore.md) with [wallet set up](WalletSetup.md)
+- [Created BTCPay Server store](Users/account-and-store-setup.md#create-a-store) with [wallet set up](Users/wallet-setup.md)
 
 * Please note that if you are on a 3rd-party host, they need to have activated the shopify fragment and enabled the Shopify v2 plugin for you. Otherwise it won't be available in your BTCPay Server.
 
@@ -110,7 +110,7 @@ BTCPay Server will restart which can take a few minutes.
 1. Make sure your store is selected at the top, then on the left sidebar click on `Shopify v2`
 2. In the first of 3 sections you will need to enter the `Client ID`, `Client Secret` from [Shopify app setup](#set-up-a-shopify-app) above. Click on "Save"
    ![plugin_section-1.png](./img/shopifyv2/plugin_section-1.png)
-3. In the next section "Deploy the app" you need to enter the `App name`, best to use the same as on [Shopify app setup](#setup-a-shopify-app). In the field `CLI token` enter the also previously noted "CLI Token" from the app setup.
+3. In the next section "Deploy the app" you need to enter the `App name`, best to use the same as on [Shopify app setup](#set-up-a-shopify-app). In the field `CLI token` enter the also previously noted "CLI Token" from the app setup.
    ![plugin_section-2.png](./img/shopifyv2/plugin_section-2.png)
 4. Click on "Deploy App"
    You will now see some console output and that the app will be deployed to shopify. If everything goes well the section will close and the last section will open.
