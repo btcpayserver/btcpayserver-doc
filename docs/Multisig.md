@@ -49,7 +49,7 @@ Key Path: 48'/0'/0'/0'
 2. Add each participant’s email address and share the generated invite link with them directly. If you have Email SMTP in your server, they'll receive an invite email.
 3. Instruct participants to:
    - Accept the invitation
-   - [Create a BTCPay Server Store](https://docs.btcpayserver.org/CreateStore/)
+   - [Create a BTCPay Server Store](/Users/account-and-store-setup/#create-a-store)
    - Use [XpubExtractor](https://github.com/rockstardev/BTCPayServerPlugins.RockstarDev/tree/1235799827c24d33bfe1095db5169afd39e620f1/Plugins/BTCPayServer.RockstarDev.Plugins.XpubExtractor) to provide their xpub information
 4. They should save data for their wallets and share them with you.
 

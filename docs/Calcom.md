@@ -11,7 +11,7 @@ Before diving into the setup process, ensure you have the following:
 
 - [Cal.com account](https://cal.com/)
 - BTCPay Server - [self-hosted](Deployment.md) or run by a [third-party host](/Deployment/ThirdPartyHosting.md)
-- [Created BTCPay Server store](CreateStore.md) with [wallet set up](WalletSetup.md)
+- [Created BTCPay Server store](Users/account-and-store-setup.md#create-a-store) with [wallet set up](Users/wallet-setup.md)
 
 
 ## Set up Cal.com with BTCPay Server

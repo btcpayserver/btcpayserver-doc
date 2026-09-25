@@ -36,7 +36,7 @@ Your new instance opens the BTCPay Server registration page. Enter your email ad
 
 ![BTCPay Server account registration](../img/CometCash/5-btcpay-register.png)
 
-You are now ready to create your first store. Continue with the [BTCPay Server registration guide](../RegisterAccount.md), then follow the [wallet setup guide](../WalletSetup.md).
+You are now ready to create your first store. Continue with the [account and store setup guide](../Users/account-and-store-setup.md), then follow the [wallet setup guide](../Users/wallet-setup.md).
 
 :::tip
 For questions about the Comet Cash dashboard, billing, or your managed deployment, contact Comet Cash support.

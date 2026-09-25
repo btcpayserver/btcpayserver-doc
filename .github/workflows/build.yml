@@ -41,6 +41,9 @@ jobs:
       - name: Redirects
         if: success()
         run: npm run redirects
+      - name: Validate generated site
+        if: success()
+        run: npm run validate
       - name: Deploy
         if: success() && github.ref == 'refs/heads/master'
         uses: peaceiris/actions-gh-pages@v3
