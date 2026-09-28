@@ -130,7 +130,7 @@ Return to the Extensions overview page, you should see a notification that says 
 On successfully saving, the BTCPay extension automatically creates a webhook to notify OpenCart when payments are settled or failed. To double check it was successful. You can do that by editing the BTCPay extension settings again if you see the "Webhook Data" field filled out like this:
 ![BTCPay OpenCart: Save OpenCart Settings form](./img/opencart/oc3--12--webhook-success.png)
 
-As you can see on the BTCPay extension settings, you can customize the order statuses depending on the [invoice statuses](https://docs.btcpayserver.org/Invoices/#invoice-statuses) and other common settings. The defaults should be a good starting point but feel free to adjust them to your specific needs.
+As you can see on the BTCPay extension settings, you can customize the order statuses depending on the [invoice statuses](https://docs.btcpayserver.org/Users/invoices/#invoice-statuses) and other common settings. The defaults should be a good starting point but feel free to adjust them to your specific needs.
 
 
 ### 3. Test the checkout
