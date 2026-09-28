@@ -150,7 +150,7 @@ You can adjust the mapping of BTCPay Server invoice status to VirtueMart order s
 
 VirtueMart order statuses are explained [here](https://docs.virtuemart.net/manual/configuration-menu/order-statuses.html)
 
-BTCPay server invoice statuses are explained [here](https://docs.btcpayserver.org/Invoices/#invoice-statuses)
+BTCPay server invoice statuses are explained [here](https://docs.btcpayserver.org/Users/invoices/#invoice-statuses)
 
 ### Section: Restrictions
 

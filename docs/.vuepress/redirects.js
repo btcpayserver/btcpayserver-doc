@@ -110,7 +110,9 @@ module.exports = [
   { path: '/features', redirect: '/Apps/' },
   { path: '/features/apps', redirect: '/Apps/' },
   { path: '/features/wallet', redirect: '/Wallet/' },
-  { path: '/features/invoices', redirect: '/Invoices/' },
+  { path: '/features/invoices', redirect: '/Users/invoices/' },
+  { path: '/Invoices', redirect: '/Users/invoices/' },
+  { path: '/Translations', redirect: '/Operators/translations/' },
   { path: '/features/lightningnetwork', redirect: '/LightningNetwork/' },
   {
     path: '/LightningNetwork_PaymentChannels/',
@@ -138,6 +140,10 @@ module.exports = [
   { path: '/integrations/customintegration', redirect: '/CustomIntegration/' },
   { path: '/shopify', redirect: '/ShopifyV2' },
   // Development
+  {
+    path: '/Development/InvoiceMetadata',
+    redirect: '/Developers/api/invoice-metadata/'
+  },
   {
     path: '/development',
     redirect:

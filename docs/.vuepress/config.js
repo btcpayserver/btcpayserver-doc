@@ -58,7 +58,7 @@ const sidebarUsers = [
           ['/LightningNetwork', 'Lightning Network']
         ]
       },
-      ['/Invoices', 'Invoices'],
+      ['/Users/invoices', 'Invoices'],
       {
         title: 'Subscriptions',
         path: '/Subscriptions',
@@ -67,7 +67,6 @@ const sidebarUsers = [
           ['/Monetization', 'Monetization']
         ]
       },
-      ['/Translations', 'Translations'],
       {
         title: 'Payment Requests',
         path: '/PaymentRequests',
@@ -176,6 +175,7 @@ const sidebarOperators = [
     collapsable: false,
     children: [
       ['/Operators/', 'Operator Guide'],
+      ['/Operators/translations', 'Backend Translations'],
       '/Operators/configuration-reference',
       '/Operators/host-integration'
     ]
@@ -293,6 +293,7 @@ const sidebarDevelopers = [
       ['/Developers/api/', 'Integration Guide'],
       '/Developers/api/authentication',
       '/Developers/api/examples',
+      '/Developers/api/invoice-metadata',
       '/Developers/api/compatibility',
       '/Development/ecommerce-integration-guide'
     ]
@@ -316,7 +317,7 @@ const sidebarDevelopers = [
   {
     title: 'More Development Topics',
     collapsable: false,
-    children: ['/Development/Altcoins', '/Development/InvoiceMetadata', '/Development/Theme']
+    children: ['/Development/Altcoins', '/Development/Theme']
   },
   {
     title: 'NBXplorer',
