@@ -1,7 +1,7 @@
 # Server Settings FAQ
 
 This document covers all the questions and issues related to Server Settings.
-These settings are only available to the server admin. Take a look at the [walkthrough page](../Walkthrough.md) to learn more.
+These settings are only available to the server admin. See the [operator responsibilities](../Users/overview.md#user-and-operator-responsibilities) to learn more.
 
 [[toc]]
 
@@ -248,7 +248,7 @@ A forked BTCPay Server will need to create a new image manually and follow these
 
 ### How to modify the checkout page?
 
-You can easily change the appearance of your BTCPay's checkout page by following the [instructions here](../Development/Theme.md#checkout-page-theme)
+You can easily change the appearance of your BTCPay's checkout page by following the [theme instructions](../Development/Theme.md#developing-and-extending-a-custom-theme).
 
 ### How to add Google Analytics code to BTCPay?
 

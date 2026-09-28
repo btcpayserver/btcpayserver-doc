@@ -10,9 +10,9 @@ This integration is maintained by Pretix and is not part of the BTCPay Server pr
 - You have a [Pretix cloud account](https://pretix.eu/signup/) or [self-hosted instance](https://docs.pretix.eu/en/latest/admin/installation/index.html)
 - If you are self-hosting Pretix, you need to manually install their [BitPay plugin](https://github.com/pretix/pretix-bitpay)
 - You have a BTCPay Server version 1.15.0 or later, either [self-hosted](/Deployment/README.md) or [hosted by a third-party](/Deployment/ThirdPartyHosting.md)
-- [You've a registered account on the instance](./RegisterAccount.md)
-- [You've a BTCPay store on the instance](./CreateStore.md)
-- [You've a wallet connected to your store](./WalletSetup.md)
+- [You've a registered account on the instance](./Users/account-and-store-setup.md#create-an-account)
+- [You've a BTCPay store on the instance](./Users/account-and-store-setup.md#create-a-store)
+- [You've a wallet connected to your store](./Users/wallet-setup.md)
 
 ## Installing and configuring BitPay plugin for Pretix
 

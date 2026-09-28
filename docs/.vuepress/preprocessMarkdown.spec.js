@@ -96,4 +96,15 @@ Available \`BTCPAYGEN_ADDITIONAL_FRAGMENTS\` currently are:
 
     expect(pp(md)).toMatchSnapshot()
   })
+
+  it('keeps maintainer documentation in the repository', () => {
+    const md = `---
+externalRepo: https://github.com/btcpayserver/btcpayserver
+---
+[Database migrations](https://github.com/btcpayserver/btcpayserver/blob/master/docs/maintainers/README.md#database-migrations)`
+
+    expect(pp(md)).toContain(
+      'https://github.com/btcpayserver/btcpayserver/blob/master/docs/maintainers/README.md#database-migrations'
+    )
+  })
 })

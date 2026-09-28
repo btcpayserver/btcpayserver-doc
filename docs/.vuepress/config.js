@@ -33,45 +33,15 @@ const mermaidPlugin = md => {
   }
 }
 
-const sidebarUserGuide = [
+const sidebarUsers = [
   {
-    title: 'Learn',
+    title: 'Start Here',
     collapsable: false,
     children: [
-      ['/Guide', 'Introduction'],
+      ['/Users/', 'User Guide'],
       ['/TryItOut', 'Try it out'],
-      ['/Walkthrough', 'Walkthrough'],
       ['/UseCase', 'Use Case'],
       ['/BTCPayVsOthers', 'BTCPay Server vs. Others']
-    ]
-  },
-  {
-    title: 'Getting Started',
-    collapsable: false,
-    children: [
-      '/RegisterAccount',
-      '/CreateStore',
-      {
-        title: '(3) Wallet Setup',
-        path: '/WalletSetup',
-        collapsable: false,
-        initialOpenGroupIndex: -1,
-        children: [
-          {
-            title: 'Connect Wallet',
-            path: '/ConnectWallet'
-          },
-          {
-            title: 'Create Wallet',
-            path: '/CreateWallet'
-          },
-          {
-            title: 'Lightning Network Setup',
-            path: '/LightningNetwork-Setup'
-          }
-        ]
-      },
-      ['/WhatsNext', "(4) What's Next?"]
     ]
   },
   {
@@ -92,15 +62,25 @@ const sidebarUserGuide = [
       {
         title: 'Subscriptions',
         path: '/Subscriptions',
-        children: [['/Monetization', 'Monetization']]
+        children: [
+          ['/Users/offerings', 'Offerings and Recurring Payments'],
+          ['/Monetization', 'Monetization']
+        ]
       },
       ['/Translations', 'Translations'],
-      ['/PaymentRequests', 'Payment Requests'],
+      {
+        title: 'Payment Requests',
+        path: '/PaymentRequests',
+        children: [['/Users/payment-requests', 'Payment Requests Guide']]
+      },
       {
         title: 'Pull Payments',
         path: '/PullPayments',
         collapsable: false,
-        children: [['/Refund', 'Refunds']]
+        children: [
+          ['/Users/pull-payments', 'Pull Payments Guide'],
+          ['/Refund', 'Refunds']
+        ]
       },
       ['/Payouts', 'Payouts'],
       {
@@ -190,7 +170,16 @@ const sidebarUserGuide = [
   }
 ]
 
-const sidebarDeployment = [
+const sidebarOperators = [
+  {
+    title: 'Operate BTCPay Server',
+    collapsable: false,
+    children: [
+      ['/Operators/', 'Operator Guide'],
+      '/Operators/configuration-reference',
+      '/Operators/host-integration'
+    ]
+  },
   {
     title: 'Deployment',
     collapsable: false,
@@ -290,7 +279,7 @@ const sidebarDeployment = [
   }
 ]
 
-const sidebarDevelopment = [
+const sidebarDevelopers = [
   {
     title: 'Greenfield API',
     collapsable: false,
@@ -301,30 +290,33 @@ const sidebarDevelopment = [
       //   'Greenfield API Plugins',
       //   { type: 'external' }
       // ],
-      '/Development/ecommerce-integration-guide',
-      '/BTCPayServer/greenfield-authorization',
-      '/Development/GreenFieldExample',
-      '/Development/GreenFieldExample-NodeJS',
-      '/Development/GreenfieldExample-PHP'
+      ['/Developers/api/', 'Integration Guide'],
+      '/Developers/api/authentication',
+      '/Developers/api/examples',
+      '/Developers/api/compatibility',
+      '/Development/ecommerce-integration-guide'
     ]
   },
   {
-    title: 'Development',
+    title: 'Plugin Development',
     collapsable: false,
     children: [
-      '/Development/',
-      '/Development/LocalDevelopment',
-      '/Development/HostIntegration',
-      ['/BTCPayServer/greenfield-development', 'Greenfield API Development'],
-      {
-        title: 'Plugins',
-        path: '/Development/Plugins',
-        children: [['/Development/Plugins-Permissions', 'Extending permissions']]
-      },
-      '/Development/Altcoins',
-      '/Development/InvoiceMetadata',
-      '/Development/Theme'
+      ['/Developers/', 'Developer Guide'],
+      ['/Developers/plugins/', 'Plugin Development'],
+      '/Developers/plugins/architecture-lifecycle',
+      '/Developers/plugins/ui-hooks',
+      '/Developers/plugins/global-search',
+      '/Developers/plugins/permissions',
+      '/Developers/plugins/data-migrations',
+      '/Developers/plugins/api-swagger',
+      '/Developers/plugins/testing-compatibility',
+      '/Developers/plugins/publishing'
     ]
+  },
+  {
+    title: 'More Development Topics',
+    collapsable: false,
+    children: ['/Development/Altcoins', '/Development/InvoiceMetadata', '/Development/Theme']
   },
   {
     title: 'NBXplorer',
@@ -358,12 +350,11 @@ const sidebarContribute = [
     path: '/Contribute/',
     collapsable: false,
     children: [
-      {
-        title: 'Code',
-        path: '/Contribute/Dev',
-        collapsable: false,
-        children: ['/Contribute/DevCode', '/Contribute/DevTest']
-      },
+      [
+        'https://github.com/btcpayserver/btcpayserver/blob/master/docs/maintainers/README.md',
+        'Code',
+        { type: 'external' }
+      ],
       {
         title: 'Write',
         path: '/Contribute/Write',
@@ -487,16 +478,16 @@ module.exports = {
     },
     nav: [
       {
-        text: 'User Guide',
-        link: '/Guide/'
+        text: 'Users',
+        link: '/Users/'
       },
       {
-        text: 'Deployment',
-        link: '/Deployment/'
+        text: 'Operators',
+        link: '/Operators/'
       },
       {
         text: 'Developers',
-        link: '/Development/'
+        link: '/Developers/'
       },
       {
         text: 'Contribute',
@@ -530,18 +521,21 @@ module.exports = {
       }
     ],
     sidebar: {
-      '/Development': sidebarDevelopment,
+      '/Developers': sidebarDevelopers,
+      '/Development': sidebarDevelopers,
       '/Contribute': sidebarContribute,
-      '/Vault': sidebarDevelopment,
-      '/BTCPayServer': sidebarDevelopment,
-      '/NBXplorer': sidebarDevelopment,
-      '/Configurator': sidebarDeployment,
-      '/Deployment': sidebarDeployment,
-      '/Docker': sidebarDeployment,
-      '/ElectrumX': sidebarDeployment,
-      '/ElectrumPersonalServer': sidebarDeployment,
+      '/Vault': sidebarDevelopers,
+      '/BTCPayServer': sidebarDevelopers,
+      '/NBXplorer': sidebarDevelopers,
+      '/Operators': sidebarOperators,
+      '/Configurator': sidebarOperators,
+      '/Deployment': sidebarOperators,
+      '/Docker': sidebarOperators,
+      '/ElectrumX': sidebarOperators,
+      '/ElectrumPersonalServer': sidebarOperators,
       '/FAQ/': sidebarFAQ,
-      '/': sidebarUserGuide
+      '/Users': sidebarUsers,
+      '/': sidebarUsers
     }
   }
 }

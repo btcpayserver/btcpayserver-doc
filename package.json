@@ -24,6 +24,8 @@
     "netlify": "./setup-deps.sh && npm run build",
     "test": "jest",
     "redirects": "node create-redirects.js",
+    "validate": "node validate-site.js",
+    "build:check": "npm run build && npm run redirects && npm run validate",
     "prettier": "prettier --write '*.{js,json,md}' 'docs/**/*.{js,json,md}'"
   },
   "devDependencies": {

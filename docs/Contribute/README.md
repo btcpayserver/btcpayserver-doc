@@ -10,9 +10,7 @@ Check our [new contributors portal](https://contribute.btcpayserver.org) to star
 
 Depending on your skills and interest, you can help in a number of ways:
 
-- [Software](./Dev.md)
-  - [Development](./DevCode.md)
-  - [Testing](./DevTest.md)
+- [Software development](https://github.com/btcpayserver/btcpayserver/blob/master/docs/maintainers/README.md)
 - [Writing](./Write.md)
   - [Tools](./WriteSoftware.md)
   - [Documentation](./WriteDocs.md)

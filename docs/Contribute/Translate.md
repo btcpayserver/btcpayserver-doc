@@ -43,7 +43,7 @@ Example for French
 
 ## Translation Tips
 
-### **Variables**
+### Variables
 
 ```
 {{Words}} like this will be replaced by a variable depending on user choices.
@@ -61,7 +61,7 @@ Japanese Example:
 "Return to StoreName" translates to "{{storeName}} に戻る"
 ```
 
-### **Notifications**
+### Notifications
 
 To stay up to date with new strings - enable alerts for new strings needing to be translated by enabling the watch language feature in Transifex.
 

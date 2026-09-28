@@ -78,7 +78,9 @@ If you already have a well connected Lightning Network node with sufficient inbo
 
 To do so, go to the lightning node settings page of your store (Store > Settings > Lightning > Modify). Here on the lightning node setting page, select the option for Use a custom lightning node.
 
-The connection strings vary per lightning implementation, the [settings page](../LightningNetwork.md#connecting-an-external-lightning-node-in-btcpay) contains the documentation for the connection settings to give you further guidance.
+The connection strings vary per lightning implementation, the [settings page](../LightningNetwork-Setup.md#connecting-an-external-lightning-node-in-btcpay-server) contains the documentation for the connection settings to give you further guidance.
+
+<a id="how-to-change-from-c-lightning-to-lnd-or-vice-versa"></a>
 
 ### How to change from Core Lightning (CLN) to LND or vice-versa?
 
@@ -415,9 +417,13 @@ docker restart btcpayserver_lnd_bitcoin
 docker restart generated_bitcoin_thub_1
 ```
 
+<a id="lightning-network-c-lightning-faq"></a>
+
 ## Lightning Network Core Lightning (CLN) FAQ
 
 Here are some of the common questions about the [Core Lightning (CLN)](https://github.com/ElementsProject/lightning/issues) implementation of the Lightning Network.
+
+<a id="how-to-restart-my-c-lightning"></a>
 
 ### How to restart my Core Lightning (CLN)?
 
