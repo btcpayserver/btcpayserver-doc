@@ -4,8 +4,12 @@ const { createRedirects, redirectFile, redirectHtml } = require('./create-redire
 
 describe('redirect generation', () => {
   const files = ['/test-redirect', '/test-redirect/child'].map(redirectFile)
+  const dist = dirname(dirname(files[0]))
 
-  beforeEach(() => files.forEach(file => rmSync(dirname(file), { recursive: true, force: true })))
+  beforeEach(() => {
+    files.forEach(file => rmSync(dirname(file), { recursive: true, force: true }))
+    mkdirSync(dist, { recursive: true })
+  })
   afterAll(() => files.forEach(file => rmSync(dirname(file), { recursive: true, force: true })))
 
   test('preserves an incoming anchor when the target has none', () => {
