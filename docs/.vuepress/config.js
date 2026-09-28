@@ -62,7 +62,10 @@ const sidebarUsers = [
       {
         title: 'Subscriptions',
         path: '/Subscriptions',
-        children: [['/Monetization', 'Monetization']]
+        children: [
+          ['/Users/offerings', 'Offerings and Recurring Payments'],
+          ['/Monetization', 'Monetization']
+        ]
       },
       ['/Translations', 'Translations'],
       ['/PaymentRequests', 'Payment Requests'],
