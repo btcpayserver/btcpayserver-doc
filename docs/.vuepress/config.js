@@ -159,7 +159,11 @@ const sidebarOperators = [
   {
     title: 'Operate BTCPay Server',
     collapsable: false,
-    children: [['/Operators/', 'Operator Guide'], '/Operators/configuration-reference']
+    children: [
+      ['/Operators/', 'Operator Guide'],
+      '/Operators/configuration-reference',
+      '/Operators/host-integration'
+    ]
   },
   {
     title: 'Deployment',

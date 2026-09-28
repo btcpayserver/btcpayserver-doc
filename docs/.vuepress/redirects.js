@@ -259,7 +259,6 @@ module.exports = [
   { path: '/Users/first-payment/', redirect: '/Users/' },
   { path: '/Users/next-steps/', redirect: '/Users/' },
   { path: '/Operators/configuration/', redirect: '/Operators/' },
-  { path: '/Operators/host-integration/', redirect: '/Operators/' },
   {
     path: '/Operators/database-migration/',
     redirect: 'https://github.com/btcpayserver/btcpayserver/blob/v1.13.7/docs/db-migration.md'
