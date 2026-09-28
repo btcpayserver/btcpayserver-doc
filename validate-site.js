@@ -64,6 +64,9 @@ const attributes = (html, name) => {
   return values
 }
 
+const imageSources = html =>
+  (html.match(/<img\b[^>]*>/gi) || []).flatMap(image => attributes(image, 'src'))
+
 const hasAnchor = (file, html, fragment) => {
   let id
   try {
@@ -186,6 +189,22 @@ const validateLinks = (htmlFiles, errors) => {
         }
       }
     })
+
+    imageSources(html).forEach(src => {
+      if (!src || /^(?:data:|blob:)/i.test(src)) return
+
+      let target
+      try {
+        target = new URL(src, `${origin}${pageUrl(source)}`)
+      } catch (_) {
+        errors.push(`Invalid image source in ${pageUrl(source)}: ${src}`)
+        return
+      }
+      if (target.hostname !== hostname) return
+      if (!routeFile(target.pathname)) {
+        errors.push(`Missing image target in ${pageUrl(source)}: ${src}`)
+      }
+    })
   })
 }
 
@@ -209,4 +228,4 @@ if (require.main === module) {
   }
 }
 
-module.exports = { attributes, followRedirects, pageUrl, routeFile, validateSite }
+module.exports = { attributes, followRedirects, imageSources, pageUrl, routeFile, validateSite }
