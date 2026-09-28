@@ -278,6 +278,7 @@ const sidebarDevelopers = [
       ['/Developers/plugins/', 'Plugin Development'],
       '/Developers/plugins/architecture-lifecycle',
       '/Developers/plugins/ui-hooks',
+      '/Developers/plugins/global-search',
       '/Developers/plugins/permissions',
       '/Developers/plugins/data-migrations',
       '/Developers/plugins/api-swagger',
