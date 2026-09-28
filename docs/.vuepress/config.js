@@ -77,7 +77,10 @@ const sidebarUsers = [
         title: 'Pull Payments',
         path: '/PullPayments',
         collapsable: false,
-        children: [['/Refund', 'Refunds']]
+        children: [
+          ['/Users/pull-payments', 'Pull Payments Guide'],
+          ['/Refund', 'Refunds']
+        ]
       },
       ['/Payouts', 'Payouts'],
       {
