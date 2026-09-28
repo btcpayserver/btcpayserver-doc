@@ -279,7 +279,7 @@ module.exports = [
     redirect: '/Users/account-and-store-setup/#create-a-store'
   },
   { path: '/WalletSetup/', redirect: '/Users/wallet-setup/#set-up-a-wallet' },
-  { path: '/CreateWallet/', redirect: '/Users/wallet-setup/#set-up-a-wallet' },
+  { path: '/CreateWallet/', redirect: '/Users/' },
   { path: '/Guide/', redirect: '/Users/#overview' },
   { path: '/Walkthrough/', redirect: '/Users/#user-guide' },
   { path: '/WhatsNext/', redirect: '/Users/next-steps/#next-steps' },
@@ -300,6 +300,10 @@ module.exports = [
     redirect: '/Developers/api/examples/#php'
   },
   {
+    path: '/Development/GreenFieldExample-PHP/',
+    redirect: '/Developers/api/examples/#php'
+  },
+  {
     path: '/Development/Plugins/',
     redirect: '/Developers/plugins/#plugin-development'
   },
@@ -309,6 +313,11 @@ module.exports = [
   },
   {
     path: '/Development/LocalDevelopment/',
+    redirect:
+      'https://github.com/btcpayserver/btcpayserver/blob/master/docs/maintainers/README.md#local-development'
+  },
+  {
+    path: '/LocalDevelopment/',
     redirect:
       'https://github.com/btcpayserver/btcpayserver/blob/master/docs/maintainers/README.md#local-development'
   },
