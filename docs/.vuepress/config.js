@@ -53,7 +53,11 @@ const sidebarUsers = [
         ]
       },
       ['/Translations', 'Translations'],
-      ['/PaymentRequests', 'Payment Requests'],
+      {
+        title: 'Payment Requests',
+        path: '/PaymentRequests',
+        children: [['/Users/payment-requests', 'Payment Requests Guide']]
+      },
       {
         title: 'Pull Payments',
         path: '/PullPayments',
