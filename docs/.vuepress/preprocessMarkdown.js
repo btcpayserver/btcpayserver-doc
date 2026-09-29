@@ -14,7 +14,6 @@ const EXTERNAL_DOCS = {
   DynamicReports: 'https://github.com/Kukks/BTCPayServerPlugins/tree/master/Plugins/BTCPayServer.Plugins.DynamicReports',
   Grandnode: 'https://github.com/btcpayserver/grandnode',
   LNDhubAPI: 'https://github.com/dennisreimann/btcpayserver-plugin-lndhub-api',
-  NBXplorer: 'https://github.com/dgarage/NBXplorer',
   Nopcommerce: 'https://github.com/btcpayserver/nopcommerce',
   Nostr: 'https://github.com/Kukks/BTCPayServerPlugins/tree/master/Plugins/BTCPayServer.Plugins.NIP05',
   Odoo: 'https://github.com/btcpayserver/odoo',

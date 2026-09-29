@@ -320,16 +320,6 @@ const sidebarDevelopers = [
     children: ['/Development/Altcoins', '/Development/Theme']
   },
   {
-    title: 'NBXplorer',
-    collapsable: false,
-    children: [
-      ['/NBXplorer/', 'Overview'],
-      '/NBXplorer/API',
-      ['/NBXplorer/Postgres-Schema', 'Postgres Schema'],
-      ['/NBXplorer/Postgres-Migration', 'Postgres Migration']
-    ]
-  },
-  {
     title: 'More',
     collapsable: false,
     initialOpenGroupIndex: -1,
@@ -527,7 +517,6 @@ module.exports = {
       '/Contribute': sidebarContribute,
       '/Vault': sidebarDevelopers,
       '/BTCPayServer': sidebarDevelopers,
-      '/NBXplorer': sidebarDevelopers,
       '/Operators': sidebarOperators,
       '/Configurator': sidebarOperators,
       '/Deployment': sidebarOperators,

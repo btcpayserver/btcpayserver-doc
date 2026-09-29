@@ -161,6 +161,20 @@ module.exports = [
   },
   { path: '/development/altcoins', redirect: '/Development/Altcoins/' },
   { path: '/development/theme', redirect: '/Development/Theme/' },
+  // NBXplorer
+  { path: '/NBXplorer', redirect: 'https://github.com/btcpayserver/NBXplorer' },
+  {
+    path: '/NBXplorer/API',
+    redirect: 'https://github.com/btcpayserver/NBXplorer/blob/master/docs/API.md'
+  },
+  {
+    path: '/NBXplorer/Postgres-Schema',
+    redirect: 'https://github.com/btcpayserver/NBXplorer/blob/master/docs/Postgres-Schema.md'
+  },
+  {
+    path: '/NBXplorer/Postgres-Migration',
+    redirect: 'https://github.com/btcpayserver/NBXplorer/blob/v2.5.2/docs/Postgres-Migration.md'
+  },
   // FAQ
   { path: '/faq-and-common-issues', redirect: '/FAQ/' },
   { path: '/faq-and-common-issues/faq', redirect: '/FAQ/' },
