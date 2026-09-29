@@ -35,7 +35,7 @@ describe('site validation', () => {
     expect(
       followRedirects(new URL('https://docs.btcpayserver.org/LocalDevelopment/')).href
     ).toBe(
-      'https://github.com/btcpayserver/btcpayserver/blob/master/docs/maintainers/README.md#local-development'
+      'https://github.com/btcpayserver/btcpayserver/blob/master/docs/maintainers/local-development.md'
     )
   })
 
