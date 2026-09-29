@@ -8,7 +8,6 @@ PUBLIC_DIR="$DOCS_DIR/.vuepress/public"
 MERMAID_DIR="$PUBLIC_DIR/vendor"
 BTCPAYSERVER_DIR="$BASE_DIR/deps/btcpayserver"
 BTCPAYSERVER_REF="${BTCPAYSERVER_REF:-master}"
-NBXPLORER_DIR="$BASE_DIR/deps/nbxplorer"
 CONFIGURATOR_DIR="$BASE_DIR/deps/configurator"
 if [[ -n "${BTCPAYSERVER_DOCKER_DIR:-}" ]]; then
   DOCKER_DIR=$(cd "$BTCPAYSERVER_DOCKER_DIR" && pwd)
@@ -35,6 +34,7 @@ WIX_DIR="$BASE_DIR/deps/wix"
 
 mkdir -p "$MERMAID_DIR"
 cp "$BASE_DIR/node_modules/mermaid/dist/mermaid.min.js" "$MERMAID_DIR/mermaid.min.js"
+rm -rf "$DOCS_DIR/NBXplorer"
 
 update_external() {
   file="$1"
@@ -95,28 +95,6 @@ done
 # Preserve canonical cross-audience links after mapping source directories to public paths.
 sed -i 's$../operators/$../Operators/$g' "$DOCS_DIR/Users/README.md"
 sed -i 's$../users/$../Users/$g' "$DOCS_DIR/Operators/README.md"
-
-# NBXplorer
-
-echo "Setup dependency: NBXplorer"
-
-rm -rf "$DOCS_DIR/NBXplorer"
-mkdir -p "$DOCS_DIR/NBXplorer"
-
-if [ ! -d "$NBXPLORER_DIR" ]; then
-  git clone https://github.com/dgarage/NBXplorer.git "$NBXPLORER_DIR"
-else
-  cd "$NBXPLORER_DIR" && git checkout master && git pull
-fi
-
-cd "$NBXPLORER_DIR"
-
-cp -r README.md docs/* "$DOCS_DIR/NBXplorer"
-sed -i 's$(./docs/$(./$g; s$(./docs/$(./$g' "$DOCS_DIR/NBXplorer/README.md"
-sed -ie 's$(#addresses)$(#standalone-addresses)$g' "$DOCS_DIR/NBXplorer/API.md"
-for file in "$DOCS_DIR"/NBXplorer/*.md; do
-  update_external "$file" https://github.com/dgarage/NBXplorer  https://github.com/dgarage/NBXplorer/edit/master "$DOCS_DIR"/NBXplorer/
-done
 
 # Vault
 
