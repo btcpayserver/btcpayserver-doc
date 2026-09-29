@@ -157,7 +157,7 @@ module.exports = [
   {
     path: '/development/localdevelopment',
     redirect:
-      'https://github.com/btcpayserver/btcpayserver/blob/master/docs/maintainers/README.md#local-development'
+      'https://github.com/btcpayserver/btcpayserver/blob/master/docs/maintainers/local-development.md'
   },
   { path: '/development/altcoins', redirect: '/Development/Altcoins/' },
   { path: '/development/theme', redirect: '/Development/Theme/' },
@@ -233,11 +233,12 @@ module.exports = [
   {
     path: '/Contribute/ContributeDevCode/',
     redirect:
-      'https://github.com/btcpayserver/btcpayserver/blob/master/docs/maintainers/README.md#local-development'
+      'https://github.com/btcpayserver/btcpayserver/blob/master/docs/maintainers/local-development.md'
   },
   {
     path: '/Contribute/ContributeDevTest/',
-    redirect: 'https://github.com/btcpayserver/btcpayserver/blob/master/docs/maintainers/README.md#testing'
+    redirect:
+      'https://github.com/btcpayserver/btcpayserver/blob/master/docs/maintainers/local-development.md#testing'
   },
   { path: '/Contribute/ContributeWrite/', redirect: '/Contribute/Write/' },
   {
@@ -328,17 +329,17 @@ module.exports = [
   {
     path: '/Development/LocalDevelopment/',
     redirect:
-      'https://github.com/btcpayserver/btcpayserver/blob/master/docs/maintainers/README.md#local-development'
+      'https://github.com/btcpayserver/btcpayserver/blob/master/docs/maintainers/local-development.md'
   },
   {
     path: '/LocalDevelopment/',
     redirect:
-      'https://github.com/btcpayserver/btcpayserver/blob/master/docs/maintainers/README.md#local-development'
+      'https://github.com/btcpayserver/btcpayserver/blob/master/docs/maintainers/local-development.md'
   },
   {
     path: '/Development/LocalDev/',
     redirect:
-      'https://github.com/btcpayserver/btcpayserver/blob/master/docs/maintainers/README.md#local-development'
+      'https://github.com/btcpayserver/btcpayserver/blob/master/docs/maintainers/local-development.md'
   },
   {
     path: '/Contribute/Dev/',
@@ -347,11 +348,12 @@ module.exports = [
   {
     path: '/Contribute/DevCode/',
     redirect:
-      'https://github.com/btcpayserver/btcpayserver/blob/master/docs/maintainers/README.md#local-development'
+      'https://github.com/btcpayserver/btcpayserver/blob/master/docs/maintainers/local-development.md'
   },
   {
     path: '/Contribute/DevTest/',
-    redirect: 'https://github.com/btcpayserver/btcpayserver/blob/master/docs/maintainers/README.md#testing'
+    redirect:
+      'https://github.com/btcpayserver/btcpayserver/blob/master/docs/maintainers/local-development.md#testing'
   },
   {
     path: '/BTCPayServer/db-migration/',
