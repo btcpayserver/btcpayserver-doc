@@ -92,6 +92,7 @@ const sidebarUsers = [
         path: '/Apps',
         children: [['/Conference-PoS-guide', 'Conference PoS Guide']]
       },
+      ['/Plugins', 'Plugins'],
       ['/Reporting', 'Reporting'],
       {
         title: 'Payjoin',
