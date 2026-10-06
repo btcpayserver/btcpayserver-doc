@@ -1696,7 +1696,7 @@
         "security": [
           {
             "API_Key": [
-              "btcpay.store.canmodifyinvoices"
+              "btcpay.store.canmanageinvoicestatus"
             ],
             "Basic": []
           }
@@ -5631,6 +5631,130 @@
           {
             "API_Key": [
               "btcpay.store.canmanagepullpayments"
+            ],
+            "Basic": []
+          }
+        ]
+      }
+    },
+    "/api/v1/stores/{storeId}/reports": {
+      "get": {
+        "tags": [
+          "Reports"
+        ],
+        "summary": "Get available reports",
+        "description": "Get the names of reports currently available for the store.",
+        "operationId": "Reports_GetStoreReports",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/StoreId"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "The available report names",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                "example": [
+                  "Credit History",
+                  "Invoices",
+                  "Payments",
+                  "Payouts",
+                  "Refunds",
+                  "Requests",
+                  "Sales",
+                  "Subscribers",
+                  "Wallets"
+                ]
+              }
+            }
+          },
+          "401": {
+            "description": "Missing authorization"
+          },
+          "403": {
+            "description": "Authenticated but forbidden to view reports"
+          }
+        },
+        "security": [
+          {
+            "API_Key": [
+              "btcpay.store.canviewreports"
+            ],
+            "Basic": []
+          }
+        ]
+      },
+      "post": {
+        "tags": [
+          "Reports"
+        ],
+        "summary": "Run a report",
+        "description": "Run an available store report over an explicit date range. The `search` value is a comma-separated list of `field:value` filters.\n\nRequired report filter:\n- `view`: The report name returned by [Get available reports](#operation/Reports_GetStoreReports), for example `view:Invoices`.\n\nDate filters:\n- `daterange`: A predefined range. Supported values are `alltime`, `today`, `yesterday`, `thisweek`, `lastweek`, `thismonth`, `lastmonth`, `last30d`, `thisquarter`, `lastquarter`, `thisyear`, `lastyear`, `yeartodate`, `-1d`, `-24h`, `-3d`, and `-7d`. `alltime` covers the Unix epoch through the current time.\n- `startdate`: The inclusive start date or timestamp. Use this instead of `daterange` for a custom range.\n- `enddate`: The inclusive end date or timestamp. It is optional when `startdate` is present and defaults to the current time. It cannot be used without `startdate`.\n- `timezone`: An IANA timezone such as `America/New_York` or `Asia/Tokyo`. It is required with `daterange` and whenever `startdate` or `enddate` does not contain an explicit UTC offset.\n\nDates with an explicit offset use ISO 8601, for example `2026-01-01T00:00:00Z` or `2026-01-01T09:00:00+09:00`. The resolved start date must be before the resolved end date. Other search filters are accepted but ignored by the built-in report providers.",
+        "operationId": "Reports_RunStoreReport",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/StoreId"
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/StoreReportRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "The generated report",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StoreReportResponse"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Missing authorization"
+          },
+          "403": {
+            "description": "Authenticated but forbidden to view reports"
+          },
+          "422": {
+            "description": "The search string or requested report is invalid",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ValidationProblemDetails"
+                }
+              }
+            }
+          },
+          "503": {
+            "description": "The requested report is temporarily unavailable",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "API_Key": [
+              "btcpay.store.canviewreports"
             ],
             "Basic": []
           }
@@ -10847,7 +10971,8 @@
               },
               "notificationUrl": {
                 "type": "string",
-                "description": "Callback notification url to POST to once when invoice is paid for and once when there are enough blockchain confirmations",
+                "description": "Deprecated. Use webhooks instead. Callback notification URL to POST to once when an invoice is paid and once when there are enough blockchain confirmations.",
+                "deprecated": true,
                 "nullable": true
               },
               "redirectUrl": {
@@ -11016,7 +11141,8 @@
               },
               "notificationUrl": {
                 "type": "string",
-                "description": "Callback notification url to POST to once when invoice is paid for and once when there are enough blockchain confirmations",
+                "description": "Deprecated. Use webhooks instead. Callback notification URL to POST to once when an invoice is paid and once when there are enough blockchain confirmations.",
+                "deprecated": true,
                 "nullable": true
               },
               "tagline": {
@@ -11576,7 +11702,7 @@
       "InvoiceMetadata": {
         "type": "object",
         "additionalProperties": true,
-        "description": "Additional information around the invoice that can be supplied. The mentioned properties are all optional and you can introduce any json format you wish. See [our documentation](https://docs.btcpayserver.org/Development/InvoiceMetadata/) for more information.",
+        "description": "Additional information around the invoice that can be supplied. The mentioned properties are all optional and you can introduce any json format you wish. See [our documentation](https://docs.btcpayserver.org/Developers/api/invoice-metadata/) for more information.",
         "example": {
           "orderId": "pos-app_346KRC5BjXXXo8cRFKwTBmdR6ZJ4",
           "orderUrl": "https://localhost:14142/apps/346KRC5BjXXXo8cRFKwTBmdR6ZJ4/pos",
@@ -13429,6 +13555,91 @@
           }
         }
       },
+      "StoreReportRequest": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "search"
+        ],
+        "properties": {
+          "search": {
+            "type": "string",
+            "description": "A report search string containing a report view and date range.",
+            "example": "view:Invoices,daterange:thismonth,timezone:UTC"
+          }
+        }
+      },
+      "StoreReportResponse": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "data",
+          "fields",
+          "from",
+          "reportName",
+          "to"
+        ],
+        "properties": {
+          "reportName": {
+            "type": "string",
+            "description": "The canonical report name."
+          },
+          "timeZone": {
+            "type": "string",
+            "description": "The timezone from the search string, when specified.",
+            "example": "Asia/Tokyo"
+          },
+          "from": {
+            "description": "The inclusive start of the effective report range.",
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/UnixTimestamp"
+              }
+            ]
+          },
+          "to": {
+            "description": "The inclusive end of the effective report range.",
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/UnixTimestamp"
+              }
+            ]
+          },
+          "fields": {
+            "type": "array",
+            "description": "The report columns in the same order as each data row.",
+            "items": {
+              "$ref": "#/components/schemas/StoreReportField"
+            }
+          },
+          "data": {
+            "type": "array",
+            "description": "The report rows. Datetime values are Unix timestamps. Amount and decimal values are strings to preserve precision.",
+            "items": {
+              "type": "array",
+              "items": {}
+            }
+          }
+        }
+      },
+      "StoreReportField": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "name",
+          "type"
+        ],
+        "properties": {
+          "name": {
+            "type": "string",
+            "description": "The field name."
+          },
+          "type": {
+            "type": "string",
+            "description": "The report provider's field type."
+          }
+        }
+      },
       "UpdateServerEmailSettings": {
         "allOf": [
           {
@@ -14569,7 +14780,7 @@
           "website": {
             "type": "string",
             "nullable": true,
-            "description": "The absolute url of the store",
+            "description": "The absolute HTTP or HTTPS URL of the store",
             "format": "url"
           },
           "supportUrl": {
@@ -16401,7 +16612,7 @@
     "securitySchemes": {
       "API_Key": {
         "type": "apiKey",
-        "description": "BTCPay Server supports authenticating and authorizing users through an API Key that is generated by them. Send the API Key as a header value to Authorization with the format: `token {token}`. For a smoother experience, you can generate a url that redirects users to an API key creation screen.\n\n The following permissions are available to the context of the user creating the API Key:\n\n* `btcpay.impersonation.canimpersonate`: Can impersonate users\n* `btcpay.user.candeleteuser`: Delete user\n* `btcpay.user.canmanagenotificationsforuser`: Manage your notifications\n* `btcpay.user.canmodifyprofile`: Manage your profile\n* `btcpay.user.canviewnotificationsforuser`: View your notifications\n* `btcpay.user.canviewprofile`: View your profile\n* `unrestricted`: Unrestricted access\n\nThe following permissions are available if the user is an administrator:\n\n* `btcpay.server.cancreatelightninginvoiceinternalnode`: Create invoices with internal lightning node\n* `btcpay.server.cancreateuser`: Create new users\n* `btcpay.server.canmanageusers`: Manage users\n* `btcpay.server.canmodifyserversettings`: Manage your server\n* `btcpay.server.canuseinternallightningnode`: Use the internal lightning node\n* `btcpay.server.canviewlightninginvoiceinternalnode`: View invoices from internal lightning node\n* `btcpay.server.canviewusers`: View users\n\nThe following permissions applies to all stores of the user, you can limit to a specific store with the following format: `btcpay.store.cancreateinvoice:6HSHAEU4iYWtjxtyRs9KyPjM9GAQp8kw2T9VWbGG1FnZ`:\n\n* `btcpay.store.canarchivepullpayments`: Archive your pull payments\n* `btcpay.store.canbroadcasttransactions`: Broadcast wallet transactions\n* `btcpay.store.cancanceltransactions`: Cancel wallet transactions\n* `btcpay.store.cancreateinvoice`: Create an invoice\n* `btcpay.store.cancreatelightninginvoice`: Create invoices from the lightning nodes associated with your stores\n* `btcpay.store.cancreatenonapprovedpullpayments`: Create non-approved pull payments\n* `btcpay.store.cancreatepullpayments`: Create pull payments\n* `btcpay.store.cancreatetransactions`: Create wallet transactions\n* `btcpay.store.cancreditsubscribers`: Credit your subscribers\n* `btcpay.store.canmanagepayouts`: Manage payouts\n* `btcpay.store.canmanagepullpayments`: Manage your pull payments\n* `btcpay.store.canmanagesubscribers`: Manage your subscribers\n* `btcpay.store.canmanagewallets`: Manage wallets\n* `btcpay.store.canmanagewalletsettings`: Manage wallet settings\n* `btcpay.store.canmanagewallettransactions`: Manage wallet transactions\n* `btcpay.store.canmodifyinvoices`: Modify invoices\n* `btcpay.store.canmodifyofferings`: Modify your offerings\n* `btcpay.store.canmodifypaymentrequests`: Modify your payment requests\n* `btcpay.store.canmodifystoresettings`: Modify your stores\n* `btcpay.store.cansendstoreemails`: Send store emails\n* `btcpay.store.cansigntransactions`: Sign wallet transactions\n* `btcpay.store.canuselightningnode`: Use the lightning nodes associated with your stores\n* `btcpay.store.canviewinvoices`: View invoices\n* `btcpay.store.canviewlightninginvoice`: View the lightning invoices associated with your stores\n* `btcpay.store.canviewofferings`: View your offerings\n* `btcpay.store.canviewpaymentrequests`: View your payment requests\n* `btcpay.store.canviewpayouts`: View payouts\n* `btcpay.store.canviewpullpayments`: View your pull payments\n* `btcpay.store.canviewreports`: View your reports\n* `btcpay.store.canviewstoresettings`: View your stores\n* `btcpay.store.canviewwallet`: View wallets\n* `btcpay.store.webhooks.canmodifywebhooks`: Modify stores webhooks\n\nNote that API Keys only limits permission of a user and can never expand it. If an API Key has the permission `btcpay.server.canmodifyserversettings` but that the user account creating this API Key is not administrator, the API Key will not be able to modify the server settings.\nSome permissions may include other permissions, see [this operation](#operation/permissionsMetadata).\n",
+        "description": "BTCPay Server supports authenticating and authorizing users through an API Key that is generated by them. Send the API Key as a header value to Authorization with the format: `token {token}`. For a smoother experience, you can generate a url that redirects users to an API key creation screen.\n\n The following permissions are available to the context of the user creating the API Key:\n\n* `btcpay.impersonation.canimpersonate`: Can impersonate users\n* `btcpay.user.candeleteuser`: Delete user\n* `btcpay.user.canmanagenotificationsforuser`: Manage your notifications\n* `btcpay.user.canmodifyprofile`: Manage your profile\n* `btcpay.user.canviewnotificationsforuser`: View your notifications\n* `btcpay.user.canviewprofile`: View your profile\n* `unrestricted`: Unrestricted access\n\nThe following permissions are available if the user is an administrator:\n\n* `btcpay.server.cancreatelightninginvoiceinternalnode`: Create invoices with internal lightning node\n* `btcpay.server.cancreateuser`: Create new users\n* `btcpay.server.canmanageusers`: Manage users\n* `btcpay.server.canmodifyserversettings`: Manage your server\n* `btcpay.server.canuseinternallightningnode`: Use the internal lightning node\n* `btcpay.server.canviewlightninginvoiceinternalnode`: View invoices from internal lightning node\n* `btcpay.server.canviewusers`: View users\n\nThe following permissions applies to all stores of the user, you can limit to a specific store with the following format: `btcpay.store.cancreateinvoice:6HSHAEU4iYWtjxtyRs9KyPjM9GAQp8kw2T9VWbGG1FnZ`:\n\n* `btcpay.store.canarchivepullpayments`: Archive your pull payments\n* `btcpay.store.canbroadcasttransactions`: Broadcast wallet transactions\n* `btcpay.store.cancanceltransactions`: Cancel wallet transactions\n* `btcpay.store.cancreateinvoice`: Create an invoice\n* `btcpay.store.cancreatelightninginvoice`: Create invoices from the lightning nodes associated with your stores\n* `btcpay.store.cancreatenonapprovedpullpayments`: Create non-approved pull payments\n* `btcpay.store.cancreatepullpayments`: Create pull payments\n* `btcpay.store.cancreatetransactions`: Create wallet transactions\n* `btcpay.store.cancreditsubscribers`: Credit your subscribers\n* `btcpay.store.canmanageinvoicestatus`: Manage invoice status\n* `btcpay.store.canmanagelegacyaccesstokens`: Manage legacy access tokens\n* `btcpay.store.canmanagepayouts`: Manage payouts\n* `btcpay.store.canmanagepullpayments`: Manage your pull payments\n* `btcpay.store.canmanagesubscribers`: Manage your subscribers\n* `btcpay.store.canmanagewallets`: Manage wallets\n* `btcpay.store.canmanagewalletsettings`: Manage wallet settings\n* `btcpay.store.canmanagewallettransactions`: Manage wallet transactions\n* `btcpay.store.canmodifyinvoices`: Modify invoices\n* `btcpay.store.canmodifyofferings`: Modify your offerings\n* `btcpay.store.canmodifypaymentrequests`: Modify your payment requests\n* `btcpay.store.canmodifystoresettings`: Modify your stores\n* `btcpay.store.cansendstoreemails`: Send store emails\n* `btcpay.store.cansigntransactions`: Sign wallet transactions\n* `btcpay.store.canuselightningnode`: Use the lightning nodes associated with your stores\n* `btcpay.store.canviewinvoices`: View invoices\n* `btcpay.store.canviewlightninginvoice`: View the lightning invoices associated with your stores\n* `btcpay.store.canviewofferings`: View your offerings\n* `btcpay.store.canviewpaymentrequests`: View your payment requests\n* `btcpay.store.canviewpayouts`: View payouts\n* `btcpay.store.canviewpullpayments`: View your pull payments\n* `btcpay.store.canviewreports`: View your reports\n* `btcpay.store.canviewstoresettings`: View your stores\n* `btcpay.store.canviewwallet`: View wallets\n* `btcpay.store.webhooks.canmodifywebhooks`: Modify stores webhooks\n\nNote that API Keys only limits permission of a user and can never expand it. If an API Key has the permission `btcpay.server.canmodifyserversettings` but that the user account creating this API Key is not administrator, the API Key will not be able to modify the server settings.\nSome permissions may include other permissions, see [this operation](#operation/permissionsMetadata).\n",
         "name": "Authorization",
         "in": "header"
       },
@@ -16518,6 +16729,10 @@
       "description": "Store pull payment payout operations"
     },
     {
+      "name": "Reports",
+      "description": "Store report operations"
+    },
+    {
       "name": "Stores (Payout Processors)",
       "description": "Stores (Payout Processors) operations"
     },
@@ -16542,7 +16757,7 @@
   "info": {
     "title": "BTCPay Greenfield API",
     "version": "v1",
-    "description": "# Introduction\n\nThe BTCPay Server Greenfield API is a REST API. Our API has predictable resource-oriented URLs, accepts form-encoded request bodies, returns JSON-encoded responses, and uses standard HTTP response codes, authentication, and verbs.\n\n# Authentication\n\nYou can authenticate either via Basic Auth or an API key. It's recommended to use an API key for better security. You can create an API key in the BTCPay Server UI under `Account` -> `Manage Account` -> `API keys`. You can restrict the API key for one or multiple stores and for specific permissions. For testing purposes, you can give it the 'Unrestricted access' permission. On production you should limit the permissions to the actual endpoints you use, you can see the required permission on the API docs at the top of each endpoint under `AUTHORIZATIONS`.\n\nIf you want to simplify the process of creating API keys for your users, you can use the [Authorization endpoint](https://docs.btcpayserver.org/API/Greenfield/v1/#tag/Authorization) to predefine permissions and redirect your users to the BTCPay Server Authorization UI. You can find more information about this on the [API Authorization Flow docs](https://docs.btcpayserver.org/BTCPayServer/greenfield-authorization/) page.\n\n# Usage examples\n\nUse **Basic Auth** to read store information with cURL:\n```bash\nBTCPAY_INSTANCE=\"https://mainnet.demo.btcpayserver.org\"\nUSER=\"MyTestUser@gmail.com\"\nPASSWORD=\"notverysecurepassword\"\nPERMISSION=\"btcpay.store.canmodifystoresettings\"\nBODY=\"$(echo \"{}\" | jq --arg \"a\" \"$PERMISSION\" '. + {permissions:[$a]}')\"\n\nAPI_KEY=\"$(curl -s \\\n     -H \"Content-Type: application/json\" \\\n     --user \"$USER:$PASSWORD\" \\\n     -X POST \\\n     -d \"$BODY\" \\\n     \"$BTCPAY_INSTANCE/api/v1/api-keys\" | jq -r .apiKey)\"\n```\n\n\nUse an **API key** to read store information with cURL:\n```bash\nSTORE_ID=\"yourStoreId\"\n\ncurl -s \\\n     -H \"Content-Type: application/json\" \\\n     -H \"Authorization: token $API_KEY\" \\\n     -X GET \\\n     \"$BTCPAY_INSTANCE/api/v1/stores/$STORE_ID\"\n```\n\nYou can find more examples on our docs for different programming languages:\n- [cURL](https://docs.btcpayserver.org/Development/GreenFieldExample/)\n- [Javascript/Node.Js](https://docs.btcpayserver.org/Development/GreenFieldExample-NodeJS/)\n- [PHP](https://docs.btcpayserver.org/Development/GreenFieldExample-PHP/)\n\n",
+    "description": "# Introduction\n\nThe BTCPay Server Greenfield API is a REST API. Our API has predictable resource-oriented URLs, accepts form-encoded request bodies, returns JSON-encoded responses, and uses standard HTTP response codes, authentication, and verbs.\n\n# Authentication\n\nYou can authenticate either via Basic Auth or an API key. It's recommended to use an API key for better security. You can create an API key in the BTCPay Server UI under `Account` -> `Manage Account` -> `API keys`. You can restrict the API key for one or multiple stores and for specific permissions. For testing purposes, you can give it the 'Unrestricted access' permission. On production you should limit the permissions to the actual endpoints you use, you can see the required permission on the API docs at the top of each endpoint under `AUTHORIZATIONS`.\n\nIf you want to simplify the process of creating API keys for your users, you can use the [Authorization endpoint](https://docs.btcpayserver.org/API/Greenfield/v1/#tag/Authorization) to predefine permissions and redirect your users to the BTCPay Server Authorization UI. You can find more information about this on the [API Authorization Flow docs](https://docs.btcpayserver.org/Developers/api/authentication/) page.\n\n# Usage examples\n\nUse **Basic Auth** to read store information with cURL:\n```bash\nBTCPAY_INSTANCE=\"https://mainnet.demo.btcpayserver.org\"\nUSER=\"MyTestUser@gmail.com\"\nPASSWORD=\"notverysecurepassword\"\nPERMISSION=\"btcpay.store.canmodifystoresettings\"\nBODY=\"$(echo \"{}\" | jq --arg \"a\" \"$PERMISSION\" '. + {permissions:[$a]}')\"\n\nAPI_KEY=\"$(curl -s \\\n     -H \"Content-Type: application/json\" \\\n     --user \"$USER:$PASSWORD\" \\\n     -X POST \\\n     -d \"$BODY\" \\\n     \"$BTCPAY_INSTANCE/api/v1/api-keys\" | jq -r .apiKey)\"\n```\n\n\nUse an **API key** to read store information with cURL:\n```bash\nSTORE_ID=\"yourStoreId\"\n\ncurl -s \\\n     -H \"Content-Type: application/json\" \\\n     -H \"Authorization: token $API_KEY\" \\\n     -X GET \\\n     \"$BTCPAY_INSTANCE/api/v1/stores/$STORE_ID\"\n```\n\nYou can find more examples on our docs for different programming languages:\n- [cURL](https://docs.btcpayserver.org/Developers/api/examples/#curl)\n- [Javascript/Node.Js](https://docs.btcpayserver.org/Developers/api/examples/#nodejs)\n- [PHP](https://docs.btcpayserver.org/Developers/api/examples/#php)\n\n",
     "contact": {
       "name": "BTCPay Server",
       "url": "https://btcpayserver.org"
