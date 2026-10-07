@@ -148,6 +148,7 @@ const sidebarUsers = [
       ['/Bringin/', 'Bringin'],
       ['/DynamicReports/', 'Dynamic Reports'],
       ['/LNDhubAPI/', 'LNDhub API'],
+      ['/Makepay/', 'MakePay'],
       ['/Nostr/', 'Nostr'],
       ['/VendorPay/', 'Vendor Pay'],
       ['/PodServer/', 'PodServer'],
