@@ -154,7 +154,6 @@ const sidebarUsers = [
       ['/SideShift/', 'SideShift'],
       ['/TicketTailor/', 'TicketTailor'],
       ['/Trocador/', 'Trocador'],
-      ['/Wabisabi/', 'Wabisabi Coinjoin']
     ]
   },
   {
