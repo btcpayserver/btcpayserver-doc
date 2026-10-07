@@ -275,7 +275,7 @@ const sidebarOperators = [
   {
     title: 'Manual Deployment',
     collapsable: false,
-    children: ['/Deployment/ManualDeployment', '/Deployment/ManualDeploymentExtended']
+    children: ['/Deployment/ManualDeployment']
   }
 ]
 

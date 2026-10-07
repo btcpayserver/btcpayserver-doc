@@ -36,7 +36,11 @@ module.exports = [
   },
   {
     path: '/deployment/manualdeployment/manualdeploymentextended',
-    redirect: '/Deployment/ManualDeploymentExtended/'
+    redirect: '/Deployment/ManualDeployment/'
+  },
+  {
+    path: '/Deployment/ManualDeploymentExtended/',
+    redirect: '/Deployment/ManualDeployment/'
   },
   { path: '/deployment/hardwaredeployment', redirect: '/Deployment/Hardware/' },
   {
