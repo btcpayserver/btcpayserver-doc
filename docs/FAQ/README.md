@@ -219,6 +219,7 @@ Lightning Network troubleshooting and common problems.
 - [What’s the default LND Directory in BTCPay?](./LightningNetwork.md#what-s-the-default-directory-of-lnd-in-btcpay)
 - [Which macaroon needs to be provided for external nodes?](./LightningNetwork.md#which-macaroon-needs-to-be-provided-for-external-nodes)
 - [LND connection issue - cannot get macaroon: root key with id 0 doesn’t exist](./LightningNetwork.md#lnd-connection-issues-after-an-update)
+- [LND does not start: "Wallet unlocking failed" after an update](./LightningNetwork.md#lnd-does-not-start-wallet-unlocking-failed-after-an-update)
 - [How to change LND Node alias](./LightningNetwork.md#how-to-change-my-lnd-node-alias)
 - [How to edit lnd.conf](./LightningNetwork.md#how-to-edit-lndconf)
 - [How to install ThunderHub](./LightningNetwork.md#how-to-install-thunderhub)
