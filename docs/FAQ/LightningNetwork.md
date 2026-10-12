@@ -291,11 +291,12 @@ If a macaroon does not exist, you will see an error message, you can safely igno
 
 Because this will invalidate the previous macaroons, you need to manually reconnect with Zap with `Server Settings / Services / LND-gRPC`.
 
-### LND does not start: "Wallet unlocking failed" after an update
+### LND wallet stays locked: "invalid passphrase for master public key"
 
-If Lightning stopped working after an update and the LND logs (`docker logs --tail 40 btcpayserver_lnd_bitcoin`) show:
+If Lightning stopped working after an update and the LND logs (`docker logs --tail 40 btcpayserver_lnd_bitcoin`) show one of these lines:
 
 ```
+[initunlocklnd] Password change or macaroon rotation failed: {"code":2, "message":"invalid passphrase for master public key", "details":[]}
 [initunlocklnd] Wallet unlocking failed, lnd returned: {"code":2, "message":"invalid passphrase for master public key", "details":[]}
 ```
 
@@ -339,7 +340,7 @@ rescue_dir=/root/lnd-rescue
    cat $rescue_dir/new-password
    ```
 
-3. Move the locked wallet and all macaroon files aside. `channel.db`, which holds your channels, stays in place.
+3. Move the locked wallet, all macaroon files and any pending password change (`walletunlock.json.newpassword`) aside. `channel.db`, which holds your channels, stays in place.
    The macaroon files must move too: LND only creates new ones when none exist, and the old ones do not work with the rebuilt wallet.
 
    ```bash
@@ -347,7 +348,7 @@ rescue_dir=/root/lnd-rescue
    set -e
    d=/data/data/chain/bitcoin/$1
    mkdir -p /data/locked-wallet/chain /data/locked-wallet/root
-   for f in $d/wallet.db $d/macaroons.db $d/*.macaroon; do
+   for f in $d/wallet.db $d/macaroons.db $d/*.macaroon $d/walletunlock.json.newpassword; do
      if [ -e "$f" ]; then mv "$f" /data/locked-wallet/chain/; fi
    done
    for f in /data/*.macaroon; do
