@@ -140,25 +140,6 @@ const sidebarUsers = [
     ]
   },
   {
-    title: 'Plugins',
-    collapsable: false,
-    initialOpenGroupIndex: -1,
-    children: [
-      [`https://dev.blink.sv/examples/btcpayserver-plugin`, 'Blink', { type: 'external' }],
-      ['/Breez/', 'Breez'],
-      ['/Bringin/', 'Bringin'],
-      ['/DynamicReports/', 'Dynamic Reports'],
-      ['/LNDhubAPI/', 'LNDhub API'],
-      ['/Nostr/', 'Nostr'],
-      ['/VendorPay/', 'Vendor Pay'],
-      ['/PodServer/', 'PodServer'],
-      ['/SideShift/', 'SideShift'],
-      ['/TicketTailor/', 'TicketTailor'],
-      ['/Trocador/', 'Trocador'],
-      ['/Wabisabi/', 'Wabisabi Coinjoin']
-    ]
-  },
-  {
     title: 'Support and Community',
     collapsable: false,
     initialOpenGroupIndex: -1,
