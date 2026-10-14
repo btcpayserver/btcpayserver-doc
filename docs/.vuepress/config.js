@@ -92,6 +92,7 @@ const sidebarUsers = [
         path: '/Apps',
         children: [['/Conference-PoS-guide', 'Conference PoS Guide']]
       },
+      ['/Plugins', 'Plugins'],
       ['/Reporting', 'Reporting'],
       {
         title: 'Payjoin',
@@ -136,25 +137,6 @@ const sidebarUsers = [
       ['/Xenforo/', 'Xenforo'],
       ['/Zapier/', 'Zapier'],
       ['/CustomIntegration', 'Custom Integration']
-    ]
-  },
-  {
-    title: 'Plugins',
-    collapsable: false,
-    initialOpenGroupIndex: -1,
-    children: [
-      [`https://dev.blink.sv/examples/btcpayserver-plugin`, 'Blink', { type: 'external' }],
-      ['/Breez/', 'Breez'],
-      ['/Bringin/', 'Bringin'],
-      ['/DynamicReports/', 'Dynamic Reports'],
-      ['/LNDhubAPI/', 'LNDhub API'],
-      ['/Nostr/', 'Nostr'],
-      ['/VendorPay/', 'Vendor Pay'],
-      ['/PodServer/', 'PodServer'],
-      ['/SideShift/', 'SideShift'],
-      ['/TicketTailor/', 'TicketTailor'],
-      ['/Trocador/', 'Trocador'],
-      ['/Wabisabi/', 'Wabisabi Coinjoin']
     ]
   },
   {
