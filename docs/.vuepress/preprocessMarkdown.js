@@ -5,27 +5,16 @@ const { dirname, resolve } = require('path')
 // external docs: local dir as key, repo base as value
 const EXTERNAL_DOCS = {
   BigCommerce: 'https://github.com/TChukwuleta/BTCPayServerPlugins/tree/main/Plugins/BTCPayServer.Plugins.BigCommercePlugin',
-  Breez: 'https://github.com/Kukks/BTCPayServerPlugins/tree/master/Plugins/BTCPayServer.Plugins.Breez',
-  Bringin: 'https://github.com/Kukks/BTCPayServerPlugins/tree/master/Plugins/BTCPayServer.Plugins.Bringin',
   BTCPayServer: 'https://github.com/btcpayserver/btcpayserver',
   Configurator: 'https://github.com/btcpayserver/btcpayserver-configurator',
   Docker: 'https://github.com/btcpayserver/btcpayserver-docker',
   Drupal: 'https://github.com/btcpayserver/commerce_btcpay',
-  DynamicReports: 'https://github.com/Kukks/BTCPayServerPlugins/tree/master/Plugins/BTCPayServer.Plugins.DynamicReports',
   Grandnode: 'https://github.com/btcpayserver/grandnode',
-  LNDhubAPI: 'https://github.com/dennisreimann/btcpayserver-plugin-lndhub-api',
   Nopcommerce: 'https://github.com/btcpayserver/nopcommerce',
-  Nostr: 'https://github.com/Kukks/BTCPayServerPlugins/tree/master/Plugins/BTCPayServer.Plugins.NIP05',
   Odoo: 'https://github.com/btcpayserver/odoo',
-  Payroll: 'https://github.com/rockstardev/BTCPayServerPlugins.RockstarDev/tree/master/Plugins/BTCPayServer.RockstarDev.Plugins.Payroll',
-  PodServer: 'https://github.com/dennisreimann/btcpayserver-plugin-podserver',
-  SideShift: 'https://github.com/Kukks/BTCPayServerPlugins/tree/master/Plugins/BTCPayServer.Plugins.SideShift',
   Smartstore: 'https://github.com/btcpayserver/Smartstore.BTCPayServer',
-  TicketTailor: 'https://github.com/Kukks/BTCPayServerPlugins/tree/master/Plugins/BTCPayServer.Plugins.TicketTailor',
-  Trocador: 'https://github.com/saltrafael/trocador-plugin',
   Vault: 'https://github.com/btcpayserver/BTCPayServer.Vault',
   Wix: 'https://github.com/btcpayserver/wix',
-  Wabisabi: 'https://github.com/Kukks/BTCPayServerPlugins/tree/master/Plugins/BTCPayServer.Plugins.Wabisabi',
   Xenforo: 'https://github.com/btcpayserver/xenforo',
   Zapier: 'https://github.com/btcpayserver/zapier'
 }
