@@ -291,7 +291,7 @@ If a macaroon does not exist, you will see an error message, you can safely igno
 
 Because this will invalidate the previous macaroons, you need to manually reconnect with Zap with `Server Settings / Services / LND-gRPC`.
 
-### LND wallet stays locked: "invalid passphrase for master public key"
+### LND wallet stays locked: invalid passphrase for master public key
 
 If Lightning stopped working after an update and the LND logs (`docker logs --tail 40 btcpayserver_lnd_bitcoin`) show one of these lines:
 
