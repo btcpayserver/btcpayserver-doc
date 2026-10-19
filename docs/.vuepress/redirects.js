@@ -131,6 +131,56 @@ module.exports = [
     path: '/features/payjoin/payjoin-spec',
     redirect: 'https://github.com/bitcoin/bips/blob/master/bip-0078.mediawiki'
   },
+  // Plugin guides are maintained in their source repositories.
+  {
+    path: '/Breez/',
+    redirect:
+      'https://github.com/Kukks/BTCPayServerPlugins/tree/master/Plugins/BTCPayServer.Plugins.Breez'
+  },
+  {
+    path: '/Bringin/',
+    redirect:
+      'https://github.com/Kukks/BTCPayServerPlugins/tree/master/Plugins/BTCPayServer.Plugins.Bringin'
+  },
+  {
+    path: '/DynamicReports/',
+    redirect:
+      'https://github.com/Kukks/BTCPayServerPlugins/tree/master/Plugins/BTCPayServer.Plugins.DynamicReports'
+  },
+  {
+    path: '/LNDhubAPI/',
+    redirect: 'https://github.com/dennisreimann/btcpayserver-plugin-lndhub-api'
+  },
+  {
+    path: '/Nostr/',
+    redirect:
+      'https://github.com/Kukks/BTCPayServerPlugins/tree/master/Plugins/BTCPayServer.Plugins.NIP05'
+  },
+  {
+    path: '/VendorPay/',
+    redirect:
+      'https://github.com/rockstardev/BTCPayServerPlugins.RockstarDev/tree/master/Plugins/BTCPayServer.RockstarDev.Plugins.Payroll'
+  },
+  {
+    path: '/PodServer/',
+    redirect: 'https://github.com/dennisreimann/btcpayserver-plugin-podserver'
+  },
+  {
+    path: '/SideShift/',
+    redirect:
+      'https://github.com/Kukks/BTCPayServerPlugins/tree/master/Plugins/BTCPayServer.Plugins.SideShift'
+  },
+  {
+    path: '/TicketTailor/',
+    redirect:
+      'https://github.com/Kukks/BTCPayServerPlugins/tree/master/Plugins/BTCPayServer.Plugins.TicketTailor'
+  },
+  { path: '/Trocador/', redirect: 'https://github.com/saltrafael/trocador-plugin' },
+  {
+    path: '/Wabisabi/',
+    redirect:
+      'https://github.com/Kukks/BTCPayServerPlugins/tree/master/Plugins/BTCPayServer.Plugins.Wabisabi'
+  },
   // Integrations
   { path: '/integrations', redirect: '/WooCommerce/' },
   { path: '/integrations/woocommerce', redirect: '/WooCommerce/' },
