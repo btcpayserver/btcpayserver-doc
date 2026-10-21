@@ -13,17 +13,6 @@ You can see examples of videos that are already on the Official BTCPay Server [Y
 
 The BTCPay Server community is looking for more VPS hosting providers to implement [1-Click BTCPay Server deployment](/Deployment/LunaNode.md) and make the deployment of software more accessible, decentralized and widely-available.
 
-## Contribute to the Directory
-
-The Directory has been created to showcase the possibilities of BTCPay Server for merchant checkouts, donations, fundraisers, or any other use-case users come up with.
-
-It contains a non-exhaustive list of websites that use the software.
-
-Anyone can [add a person or an organisation](https://directory.btcpayserver.org/newentry) to the [Directory](https://directory.btcpayserver.org/).
-If you know how to use Github, you can directly create a Pull Request and add an entry by editing the `.vuepress/list.js` file.
-
-Please note that only websites that use BTCPay Server are accepted in the Directory and entries are expected to be in English language.
-
 ## Project Discussions
 
 Check out the [BTCPay Discussions Page](https://github.com/btcpayserver/btcpayserver/discussions) and provide feedback on new feature ideas and other project topics. Features that may be good ideas for the project but aren't ready for development yet, can be found here.

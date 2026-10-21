@@ -91,7 +91,7 @@ People self-hosting a BTCPay Server instance, can enable registration for other 
 
 ## Cryptocurrency exchanges
 
-The [number of merchants](https://directory.btcpayserver.org) using BTCPay Server grows each day, and cryptocurrency exchanges could benefit from it by developing integrations with BTCPay and allow offer instant conversion of payments into local fiat currencies.
+The number of merchants using BTCPay Server grows each day, and cryptocurrency exchanges could benefit from it by developing integrations with BTCPay and allowing instant conversion of payments into local fiat currencies.
 
 ## Hosting providers
 
