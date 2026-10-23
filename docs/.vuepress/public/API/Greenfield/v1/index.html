@@ -15,8 +15,14 @@
             padding: 0;
         }
     </style>
+    <script>
+        if (location.hash === '#operation/APIKeys_CreateAPIKey') {
+            location.replace('#operation/ApiKeys_CreateApiKey');
+        }
+    </script>
 </head>
 <body>
+    <a id="operation/APIKeys_CreateAPIKey" hidden></a>
     <redoc spec-url="./swagger.json"></redoc>
     <script src="https://cdn.jsdelivr.net/npm/redoc@2.0.0-rc.54/bundles/redoc.standalone.js" integrity="sha384-pxWFJkxrlfignEDb+sJ8XrdnJQ+V2bsiRqgPnfmOk1i3KKSubbydbolVZJeKisNY" crossorigin="anonymous"></script>
 </body>

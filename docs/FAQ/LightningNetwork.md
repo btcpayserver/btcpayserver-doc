@@ -78,7 +78,9 @@ If you already have a well connected Lightning Network node with sufficient inbo
 
 To do so, go to the lightning node settings page of your store (Store > Settings > Lightning > Modify). Here on the lightning node setting page, select the option for Use a custom lightning node.
 
-The connection strings vary per lightning implementation, the [settings page](../LightningNetwork.md#connecting-an-external-lightning-node-in-btcpay) contains the documentation for the connection settings to give you further guidance.
+The connection strings vary per lightning implementation, the [settings page](../LightningNetwork-Setup.md#connecting-an-external-lightning-node-in-btcpay-server) contains the documentation for the connection settings to give you further guidance.
+
+<a id="how-to-change-from-c-lightning-to-lnd-or-vice-versa"></a>
 
 ### How to change from Core Lightning (CLN) to LND or vice-versa?
 
@@ -289,6 +291,128 @@ If a macaroon does not exist, you will see an error message, you can safely igno
 
 Because this will invalidate the previous macaroons, you need to manually reconnect with Zap with `Server Settings / Services / LND-gRPC`.
 
+### LND wallet stays locked: invalid passphrase for master public key
+
+If Lightning stopped working after an update and the LND logs (`docker logs --tail 40 btcpayserver_lnd_bitcoin`) show one of these lines:
+
+```
+[initunlocklnd] Password change or macaroon rotation failed: {"code":2, "message":"invalid passphrase for master public key", "details":[]}
+[initunlocklnd] Wallet unlocking failed, lnd returned: {"code":2, "message":"invalid passphrase for master public key", "details":[]}
+```
+
+then LND's wallet password no longer matches the one BTCPay Server saved in `walletunlock.json`, so BTCPay cannot unlock the wallet ([as explained in this issue](https://github.com/btcpayserver/btcpayserver-docker/issues/1112)).
+Your funds are not lost: the wallet can be rebuilt from your seed with a new password while keeping your channels.
+
+To recover your LND, follow the guide below. [Credit to damanic for the original recovery instructions and testing](https://github.com/btcpayserver/btcpayserver-docker/issues/1112#issuecomment-6107536989).
+
+:::danger
+Do not delete `wallet.db` and simply restart BTCPay Server. When LND has no wallet, BTCPay Server creates a **new** wallet with a **new** seed and overwrites `walletunlock.json`, and your channels can no longer be used.
+Never run two LND instances on the same data, and never start LND from an old copy of `channel.db` once the node has run again.
+:::
+
+You need the 24-word seed of this node: either under Server Settings > Services > LND Seed Backup (if you did not remove it from the server), or your own written backup.
+If the node has a seed passphrase, you need it too.
+
+Connect to your server with SSH and run, as root (`sudo su -`). Replace `mainnet` if your node runs on another network:
+
+```bash
+lnd_network=mainnet
+lnd_container=btcpayserver_lnd_bitcoin
+lnd_image=$(docker inspect -f '{{.Config.Image}}' $lnd_container)
+lnd_docker_network=$(docker inspect -f '{{range $k, $v := .NetworkSettings.Networks}}{{$k}}{{end}}' $lnd_container)
+rescue_dir=/root/lnd-rescue
+```
+
+1. Stop LND and back up its data:
+
+   ```bash
+   docker stop $lnd_container
+   mkdir -p $rescue_dir && chmod 700 $rescue_dir
+   docker run --rm --volumes-from $lnd_container -v $rescue_dir:/backup --entrypoint tar $lnd_image czf /backup/lnd-full.tgz -C /data .
+   ```
+
+   Keep this archive until the node works again. It contains your seed, so treat it like the seed.
+
+2. Create the new wallet password and save it before using it:
+
+   ```bash
+   head -c 24 /dev/urandom | base64 > $rescue_dir/new-password && chmod 600 $rescue_dir/new-password
+   cat $rescue_dir/new-password
+   ```
+
+3. Move the locked wallet, all macaroon files and any pending password change (`walletunlock.json.newpassword`) aside. `channel.db`, which holds your channels, stays in place.
+   The macaroon files must move too: LND only creates new ones when none exist, and the old ones do not work with the rebuilt wallet.
+
+   ```bash
+   docker run --rm -i --volumes-from $lnd_container --entrypoint sh $lnd_image -s $lnd_network <<'EOF'
+   set -e
+   d=/data/data/chain/bitcoin/$1
+   mkdir -p /data/locked-wallet/chain /data/locked-wallet/root
+   for f in $d/wallet.db $d/macaroons.db $d/*.macaroon $d/walletunlock.json.newpassword; do
+     if [ -e "$f" ]; then mv "$f" /data/locked-wallet/chain/; fi
+   done
+   for f in /data/*.macaroon; do
+     if [ -e "$f" ]; then mv "$f" /data/locked-wallet/root/; fi
+   done
+   if [ -e $d/wallet.db ]; then echo "wallet.db is still in place: stop here"; exit 1; fi
+   ls -l /data/data/graph/$1/channel.db
+   EOF
+   ```
+
+4. Start a temporary LND without BTCPay Server's automatic unlock, so it cannot create a new wallet. The `lnd_bitcoin` alias is needed because LND's configuration listens on that name:
+
+   ```bash
+   docker run -d --name lnd_rescue --volumes-from $lnd_container --network $lnd_docker_network --network-alias lnd_bitcoin --entrypoint lnd $lnd_image --lnddir=/data
+   ```
+
+5. Recreate the wallet from your seed with the new password:
+
+   ```bash
+   docker exec -it lnd_rescue lncli --lnddir=/data --network=$lnd_network create
+   ```
+
+   Paste the password from step 2 (twice), answer `y` to "existing cipher seed mnemonic", enter the 24 words, enter your seed passphrase if you have one (otherwise press Enter), and keep the default recovery window.
+
+6. Check that this is the same node. The `identity_pubkey` must be your node's old public key; if it is not, the seed is wrong: stop here and ask for help.
+
+   ```bash
+   docker exec lnd_rescue lncli --lnddir=/data --network=$lnd_network --macaroonpath=/data/admin.macaroon getinfo
+   ```
+
+7. Wait until LND has found your on-chain funds. Repeat this command until it shows `"recovery_finished": true`; on mainnet this can take a while:
+
+   ```bash
+   docker exec lnd_rescue lncli --lnddir=/data --network=$lnd_network --macaroonpath=/data/admin.macaroon getrecoveryinfo
+   ```
+
+8. Stop the temporary LND, save the new password for BTCPay Server, and start LND again:
+
+   ```bash
+   docker exec lnd_rescue lncli --lnddir=/data --network=$lnd_network --macaroonpath=/data/admin.macaroon stop
+   docker wait lnd_rescue && docker rm lnd_rescue
+   docker run --rm -i --volumes-from $lnd_container -v $rescue_dir:/rescue --entrypoint sh $lnd_image -s $lnd_network <<'EOF'
+   set -e
+   f=/data/data/chain/bitcoin/$1/walletunlock.json
+   jq --arg p "$(cat /rescue/new-password)" '.wallet_password = $p' $f > $f.new
+   mv $f.new $f
+   EOF
+   docker start $lnd_container
+   ```
+
+9. Check that BTCPay Server unlocked it and your channels are back:
+
+   ```bash
+   docker logs --tail 40 $lnd_container 2>&1 | grep initunlocklnd
+   docker exec $lnd_container lncli --network=$lnd_network --macaroonpath=/data/admin.macaroon listchannels
+   ```
+
+   The log should end with `Wallet unlocked`. Then restart BTCPay Server (`btcpay-restart.sh`) so it uses the new macaroon.
+
+The rebuilt wallet has new macaroons, so reconnect any external wallet (for example Zeus) under Server Settings > Services, and recreate custom macaroons.
+When everything works, delete `$rescue_dir` and `/data/locked-wallet` (it holds the locked wallet and the old macaroons).
+
+If the seed does not match your node, or your channels do not come back, keep all files and follow [Recovering LND with a static channel backup](/Docker/backup-restore/#recovering-lnd-with-a-static-channel-backup), which asks your peers to close the channels and returns the funds on-chain.
+
 ### How to change my LND Node alias?
 
 To change the display name of your LND node, you should ssh log in into your virtual machine and apply the following:
@@ -415,9 +539,13 @@ docker restart btcpayserver_lnd_bitcoin
 docker restart generated_bitcoin_thub_1
 ```
 
+<a id="lightning-network-c-lightning-faq"></a>
+
 ## Lightning Network Core Lightning (CLN) FAQ
 
 Here are some of the common questions about the [Core Lightning (CLN)](https://github.com/ElementsProject/lightning/issues) implementation of the Lightning Network.
+
+<a id="how-to-restart-my-c-lightning"></a>
 
 ### How to restart my Core Lightning (CLN)?
 

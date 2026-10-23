@@ -44,9 +44,9 @@ Ensure that you meet the following requirements before installing this extension
 - The curl, gd, intl, json, and mbstring PHP extensions are available
 - A OpenCart 3/4 store ([Download and installation instructions](https://www.opencart.com/index.php?route=cms/download))
 - **IMPORTANT:** You have a BTCPay Server version 1.3.0 or later, either [self-hosted](/Deployment/README.md) or [hosted by a third-party](/Deployment/ThirdPartyHosting.md)
-- [You've a registered account on the instance](./RegisterAccount.md)
-- [You've got a BTCPay store on the instance](./CreateStore.md)
-- [You've got a wallet connected to your store](./WalletSetup.md)
+- [You've a registered account on the instance](./Users/account-and-store-setup.md#create-an-account)
+- [You've got a BTCPay store on the instance](./Users/account-and-store-setup.md#create-a-store)
+- [You've got a wallet connected to your store](./Users/wallet-setup.md)
 
 :::tip
 The instructions are based on OpenCart 3, but the UI and steps are almost identical to OpenCart 4. Therefore we have no separate instructions.
@@ -130,7 +130,7 @@ Return to the Extensions overview page, you should see a notification that says 
 On successfully saving, the BTCPay extension automatically creates a webhook to notify OpenCart when payments are settled or failed. To double check it was successful. You can do that by editing the BTCPay extension settings again if you see the "Webhook Data" field filled out like this:
 ![BTCPay OpenCart: Save OpenCart Settings form](./img/opencart/oc3--12--webhook-success.png)
 
-As you can see on the BTCPay extension settings, you can customize the order statuses depending on the [invoice statuses](https://docs.btcpayserver.org/Invoices/#invoice-statuses) and other common settings. The defaults should be a good starting point but feel free to adjust them to your specific needs.
+As you can see on the BTCPay extension settings, you can customize the order statuses depending on the [invoice statuses](https://docs.btcpayserver.org/Users/invoices/#invoice-statuses) and other common settings. The defaults should be a good starting point but feel free to adjust them to your specific needs.
 
 
 ### 3. Test the checkout

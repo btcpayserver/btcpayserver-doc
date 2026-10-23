@@ -8,9 +8,9 @@ Please ensure that you meet the following requirements before installing this pl
 - The cURL, gd, intl, json, and mbstring PHP extensions are available
 - A WordPress site with GiveWP installed ([Installation instructions](https://givewp.com/getting-started/intro-to-givewp/)
 - You have a BTCPay Server version 2.0.0 or later, either [self-hosted](/Deployment/README.md) or [hosted by a third-party](/Deployment/ThirdPartyHosting.md)
-- [You've a registered account on the instance](./RegisterAccount.md)
-- [You've a BTCPay store on the instance](./CreateStore.md)
-- [You've a wallet connected to your store](./WalletSetup.md)
+- [You've a registered account on the instance](./Users/account-and-store-setup.md#create-an-account)
+- [You've a BTCPay store on the instance](./Users/account-and-store-setup.md#create-a-store)
+- [You've a wallet connected to your store](./Users/wallet-setup.md)
 
 ## 1. Install BTCPay for GiveWP Plugin
 

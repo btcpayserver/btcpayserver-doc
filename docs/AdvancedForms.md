@@ -116,7 +116,7 @@ In a field definition, only the following fields can be set:
 | `.fields.fields`        | If `.fields.type` is `fieldset`, you can organize your fields in a hierarchy, allowing child fields to be nested within the invoice's metadata. This structure can help you better organize and manage the collected information, making it easier to access and interpret. For example, if you have a form that collects customer information, you can group the fields under a parent field called customer. Within this parent field, you might have child fields like name, email, and address. |
 | `.fields.valuemap`      | If `.fields.type` is `mirror`, you can specify an object, where the key is the value to match and and the value is the mapped result. `{ "hello": "world"}`, means that if the copied value is `hello`, it will be saved as `world`.
 
-The values of the fields are stored in the [metadata of the invoice](/Development/InvoiceMetadata/).
+The values of the fields are stored in the [metadata of the invoice](/Developers/api/invoice-metadata/).
 
 ## Well-known field names
 

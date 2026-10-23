@@ -2,7 +2,7 @@
 
 BTCPay Server has a built in, **full-node reliant wallet** that allows for easy funds management.
 
-Each [store](./CreateStore.md)'s configured cryptocurrency has a separate wallet displayed under Wallets in the menu bar.
+Each [store](./Users/account-and-store-setup.md#create-a-store)'s configured cryptocurrency has a separate wallet displayed under Wallets in the menu bar.
 
 ## Wallet features
 
@@ -85,7 +85,7 @@ To spend the funds, you are required to **sign** the transaction. Transactions c
 
 ##### Signing with HD Private Key or mnemonic seed
 
-If you set up an [existing wallet with your BTCPay Server](./WalletSetup.md#use-an-existing-wallet), you can spend the funds by inputting your private key into an appropriate field. Make sure to set a proper `AccountKeyPath` in Wallet > Settings otherwise you won't be able to spend.
+If you set up an [existing wallet with your BTCPay Server](./Users/wallet-setup.md#set-up-a-wallet), you can spend the funds by inputting your private key into an appropriate field. Make sure to set a proper `AccountKeyPath` in Wallet > Settings otherwise you won't be able to spend.
 
 ##### Signing with a wallet supporting PSBT
 
@@ -113,10 +113,10 @@ BTCPay Server has built-in hardware wallet support allowing you to **use your ha
 
 ##### Signing with a hot wallet
 
-If you [created a new wallet](./CreateWallet.md) when setting up your store and enabled it as a [hot wallet](./CreateWallet.md#hot-wallet), since version 1.2.0, we've added an option that when a [hot wallet](./CreateWallet.md#hot-wallet) is created, it'll automatically use the seed stored on a server to sign.
+If you [created a new wallet](./Users/wallet-setup.md#set-up-a-wallet) when setting up your store and enabled it as a [hot wallet](./Users/wallet-setup.md#protect-the-wallet), since version 1.2.0, we've added an option that when a [hot wallet](./Users/wallet-setup.md#protect-the-wallet) is created, it'll automatically use the seed stored on a server to sign.
 
 :::danger
-Using the hot wallet feature comes with security implications; please be sure to read and understand them over at the [Hot Wallet documentation](./CreateWallet.md#security-implications)
+Using the hot wallet feature comes with security implications; please be sure to read and understand them in the [wallet protection documentation](./Users/wallet-setup.md#protect-the-wallet).
 :::
 
 
@@ -143,7 +143,7 @@ For more information, see [Payouts](./PullPayments.md#approve-and-pay-a-payout).
 ### Settings
 
 In the top right corner of your `wallet` you will find the `wallet settings`.
-In the wallet settings tab you can adjust certain settings. If you've configured your wallet by [creating a new wallet](./CreateWallet.md) or using an existing wallet via the [hardware wallet integration](./HardwareWalletIntegration.md) these settings will be pre-configured.
+In the wallet settings tab you can adjust certain settings. If you've configured your wallet by [creating a new wallet](./Users/wallet-setup.md#set-up-a-wallet) or using an existing wallet via the [hardware wallet integration](./HardwareWalletIntegration.md) these settings will be pre-configured.
 Here, you have the options to perform several actions on your wallet, such Rescanning wallet for missing transactions, prunning old transactions, view wallet phrase, remove wallet among features.
 
 
@@ -156,7 +156,7 @@ If you manually added the extended public key from an external wallet, you'd nee
 
 
 In `wallet settings` you will also find the `speed policy` for the specific store.
-There are 2 main settings under `Payment`, [Payment invalid if transaction fails to confirm in ... after invoice creation](./FAQ/Stores.md#payment-invalid-if-transactions-fails-to-confirm--minutes-after-invoice-expiration) and [Consider the invoice confirmed when the payment transaction...](./FAQ/Stores/#consider-the-invoice-confirmed-when-the-payment-transaction). The latter lets you set the number of confirmations required to be recognized as settled.
+There are 2 main settings under `Payment`, [Payment invalid if transaction fails to confirm in ... after invoice creation](./FAQ/Stores.md#payment-invalid-if-transactions-fails-to-confirm-minutes-after-invoice-expiration) and [Consider the invoice confirmed when the payment transaction...](./FAQ/Stores/#consider-the-invoice-confirmed-when-the-payment-transaction). The latter lets you set the number of confirmations required to be recognized as settled.
 
 
 ![Wallet settings](./img/wallet/WalletSettingTwo.png)

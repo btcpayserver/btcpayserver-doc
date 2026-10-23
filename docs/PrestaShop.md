@@ -22,9 +22,9 @@ Please ensure that you meet the following requirements before installing this pl
 - The PDO, curl, gd, intl, json, and mbstring PHP extensions are available
 - You have a BTCPay Server, either [self-hosted](/Deployment/README.md) or [hosted by a third-party](/Deployment/ThirdPartyHosting.md)
   - The BTCPay Server instance must have HTTPS enabled and be publicly accessible.
-- [You've a registered account on the instance](./RegisterAccount.md)
-- [You've a BTCPay store on the instance](./CreateStore.md)
-- [You've a wallet connected to your store](./WalletSetup.md)
+- [You've a registered account on the instance](./Users/account-and-store-setup.md#create-an-account)
+- [You've a BTCPay store on the instance](./Users/account-and-store-setup.md#create-a-store)
+- [You've a wallet connected to your store](./Users/wallet-setup.md)
 
 ## Install BTCPay Plugin
 

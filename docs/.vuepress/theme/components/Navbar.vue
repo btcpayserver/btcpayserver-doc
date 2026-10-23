@@ -29,10 +29,10 @@
       } : {}"
     >
       <AlgoliaSearchBox
-        v-if="isAlgoliaSearch"
+        v-if="showSearch && isAlgoliaSearch"
         :options="algolia"
       />
-      <SearchBox v-else-if="$site.themeConfig.search !== false && $page.frontmatter.search !== false" />
+      <SearchBox v-else-if="showSearch && $site.themeConfig.search !== false && $page.frontmatter.search !== false" />
 
       <NavLinks class="can-hide social" :links="$site.themeConfig.social" />
 
@@ -54,6 +54,13 @@ import { toggleColorMode } from '../../themeSwitch'
 
 export default {
   name: 'Navbar',
+
+  props: {
+    showSearch: {
+      type: Boolean,
+      default: true
+    }
+  },
 
   components: {
     SidebarButton,

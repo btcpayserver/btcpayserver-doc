@@ -34,7 +34,7 @@ If your FastSync returns `You need to delete your Bitcoin Core wallet` after you
 
 ## How do I know that BTCPay synced completely?
 
-When you do not see a pop-up message in the bottom right corner, which shows the sync progress, that means that your server is fully synced and you can [begin using it](../RegisterAccount.md).
+When you do not see a pop-up message in the bottom right corner, which shows the sync progress, that means that your server is fully synced and you can [begin using it](../Users/account-and-store-setup.md#create-an-account).
 
 If you want to check that your BTCPay Server Bitcoin node is synchronized with the most recent block in the Bitcoin blockchain, [check your node height](#how-can-i-check-the-block-height-of-my-bitcoin-node) matches the current block height using any blockchain explorer.
 
@@ -164,7 +164,7 @@ tmpfs           2.0G     0  2.0G   0% /sys/fs/cgroup
 /dev/sdb1       7.8G   18M  7.4G   1% /mnt
 ```
 
-[Choose the docker fragment](https://docs.btcpayserver.org/Docker/#generated-docker-compose) for the amount of storage you aim to keep. Then [prune your node](https://docs.btcpayserver.org/Docker/#how-i-can-prune-my-nodes).
+[Choose the Docker fragment](/Docker/configuration/#storage-and-memory-profiles) for the amount of storage you aim to keep. Then [prune your node](/Docker/configuration/#storage-and-memory-profiles).
 
 ### Cause 3: You accidentally disabled pruning
 
@@ -260,7 +260,7 @@ export BTCPAYGEN_ADDITIONAL_FRAGMENTS="opt-save-storage"
 . ./btcpay-setup.sh -i
 ```
 
-Other pruning options are [documented here](https://docs.btcpayserver.org/Docker/#generated-docker-compose). See [this example](./Deployment.md#how-can-i-modify-or-deactivate-environment-variables) for use with other additional fragments.
+Other pruning options are [documented here](/Docker/configuration/#storage-and-memory-profiles). See [this example](./Deployment.md#how-can-i-modify-or-deactivate-environment-variables) for use with other additional fragments.
 
 ## How to disable Bitcoin node pruning?
 

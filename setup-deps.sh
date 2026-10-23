@@ -5,37 +5,58 @@ set -e
 BASE_DIR=$(cd `dirname $0` && pwd)
 DOCS_DIR="$BASE_DIR/docs"
 PUBLIC_DIR="$DOCS_DIR/.vuepress/public"
+MERMAID_DIR="$PUBLIC_DIR/vendor"
 BTCPAYSERVER_DIR="$BASE_DIR/deps/btcpayserver"
-NBXPLORER_DIR="$BASE_DIR/deps/nbxplorer"
+BTCPAYSERVER_REF="${BTCPAYSERVER_REF:-master}"
 CONFIGURATOR_DIR="$BASE_DIR/deps/configurator"
-DOCKER_DIR="$BASE_DIR/deps/docker"
+if [[ -n "${BTCPAYSERVER_DOCKER_DIR:-}" ]]; then
+  DOCKER_DIR=$(cd "$BTCPAYSERVER_DOCKER_DIR" && pwd)
+else
+  DOCKER_DIR="$BASE_DIR/deps/docker"
+fi
 VAULT_DIR="$BASE_DIR/deps/vault"
 ZAPIER_DIR="$BASE_DIR/deps/zapier"
-PODSERVER_DIR="$BASE_DIR/deps/podserver"
-TROCADOR_DIR="$BASE_DIR/deps/trocador"
-LNDHUBAPI_DIR="$BASE_DIR/deps/lndhub-api"
-KUKKS_DIR="$BASE_DIR/deps/kukks"
 TOBSES_DIR="$BASE_DIR/deps/tobses"
 NISABA_DIR="$BASE_DIR/deps/nisaba"
 SMARTSTORE_DIR="$BASE_DIR/deps/smartstore"
 DRUPAL_DIR="$BASE_DIR/deps/drupal"
 GRANDNODE_DIR="$BASE_DIR/deps/grandnode"
 BOLTCARDPLUGIN_DIR="$BASE_DIR/deps/boltcardplugin"
-ROCKSTAR_DIR="$BASE_DIR/deps/rockstar"
 NOPCOMMERCE_DIR="$BASE_DIR/deps/nopcommerce"
 XENFORO_DIR="$BASE_DIR/deps/xenforo"
 ODOO_DIR="$BASE_DIR/deps/odoo"
 WIX_DIR="$BASE_DIR/deps/wix"
+
+mkdir -p "$MERMAID_DIR"
+cp "$BASE_DIR/node_modules/mermaid/dist/mermaid.min.js" "$MERMAID_DIR/mermaid.min.js"
+rm -rf "$DOCS_DIR/NBXplorer"
+
+# Remove generated plugin guides now maintained in their source repositories.
+rm -rf "$DOCS_DIR/Breez" "$DOCS_DIR/Bringin" "$DOCS_DIR/DynamicReports" \
+  "$DOCS_DIR/LNDhubAPI" "$DOCS_DIR/Nostr" "$DOCS_DIR/VendorPay" \
+  "$DOCS_DIR/PodServer" "$DOCS_DIR/SideShift" "$DOCS_DIR/TicketTailor" \
+  "$DOCS_DIR/Trocador" "$DOCS_DIR/Wabisabi"
 
 update_external() {
   file="$1"
   repo="$2"
   edit="$3"
   base="$4"
-  path="${file#${base}}"
-  [[ $path = "Security.md" ]] && path="SECURITY.md"
-  [[ $path = "README.md" || $path = "readme.md" || $path = "SECURITY.md" ]] && folder="" || folder="docs/"
-  content=$(cat "$file" | tr -cd '\11\12\15\40-\176')
+  explicit_path="$5"
+  preserve_unicode="$6"
+  if [[ -n "$explicit_path" ]]; then
+    path="$explicit_path"
+    folder=""
+  else
+    path="${file#${base}}"
+    [[ $path = "Security.md" ]] && path="SECURITY.md"
+    [[ $path = "README.md" || $path = "readme.md" || $path = "SECURITY.md" ]] && folder="" || folder="docs/"
+  fi
+  if [[ "$preserve_unicode" == "true" ]]; then
+    content=$(cat "$file")
+  else
+    content=$(cat "$file" | tr -cd '\11\12\15\40-\176')
+  fi
   # add frontmatter to omit edit links for external docs
   echo $'---\nexternalRepo: '"$repo"$'\neditLink: '"$edit/$folder$path"$'\n---\n'"$content" > "$file"
 }
@@ -44,47 +65,37 @@ update_external() {
 
 echo "Setup dependency: BTCPayServer"
 
-rm -rf "$DOCS_DIR/BTCPayServer"
-mkdir -p "$DOCS_DIR/BTCPayServer"
+rm -rf "$DOCS_DIR/BTCPayServer" "$DOCS_DIR/Users" "$DOCS_DIR/Operators" "$DOCS_DIR/Developers"
+mkdir -p "$DOCS_DIR/BTCPayServer" "$DOCS_DIR/Users" "$DOCS_DIR/Operators" "$DOCS_DIR/Developers"
 
 if [ ! -d "$BTCPAYSERVER_DIR" ]; then
-  git clone https://github.com/btcpayserver/btcpayserver.git "$BTCPAYSERVER_DIR"
+  git clone --branch "$BTCPAYSERVER_REF" https://github.com/btcpayserver/btcpayserver.git "$BTCPAYSERVER_DIR"
 else
-  cd "$BTCPAYSERVER_DIR" && git checkout master && git pull
+  cd "$BTCPAYSERVER_DIR" && git fetch origin "$BTCPAYSERVER_REF" && git checkout --detach FETCH_HEAD
 fi
 
 cd "$BTCPAYSERVER_DIR"
 
 cp SECURITY.md "$DOCS_DIR/BTCPayServer/Security.md"
 cp BTCPayServer.Tests/README.md "$DOCS_DIR/BTCPayServer/LocalDevSetup.md"
-cp -r docs/* "$DOCS_DIR/BTCPayServer"
-line=$(grep -n '## How to manually test payments' $DOCS_DIR/BTCPayServer/LocalDevSetup.md | cut -d ":" -f 1)
-{ echo $'---\neditLink: https://github.com/btcpayserver/btcpayserver-doc/edit/master/docs/Development/LocalDev.md\n---\n'; cat "$DOCS_DIR/Development/LocalDev.md"; echo; tail -n +$line "$DOCS_DIR/BTCPayServer/LocalDevSetup.md"; } > "$DOCS_DIR/Development/LocalDevelopment.md"
+cp -r docs/users/. "$DOCS_DIR/Users"
+cp -r docs/operators/. "$DOCS_DIR/Operators"
+cp -r docs/developers/. "$DOCS_DIR/Developers"
 
-for file in "$DOCS_DIR"/BTCPayServer/*.md; do
-  update_external "$file" https://github.com/btcpayserver/btcpayserver https://github.com/btcpayserver/btcpayserver/edit/master "$DOCS_DIR"/BTCPayServer/
+update_external "$DOCS_DIR/BTCPayServer/Security.md" https://github.com/btcpayserver/btcpayserver https://github.com/btcpayserver/btcpayserver/edit/master "$DOCS_DIR"/BTCPayServer/
+update_external "$DOCS_DIR/BTCPayServer/LocalDevSetup.md" https://github.com/btcpayserver/btcpayserver https://github.com/btcpayserver/btcpayserver/edit/master "$DOCS_DIR"/BTCPayServer/ "BTCPayServer.Tests/README.md"
+
+for audience in users operators developers; do
+  target="$DOCS_DIR/${audience^}"
+  while IFS= read -r -d '' file; do
+    path="docs/$audience/${file#${target}/}"
+    update_external "$file" https://github.com/btcpayserver/btcpayserver https://github.com/btcpayserver/btcpayserver/edit/master "$target/" "$path"
+  done < <(find "$target" -type f -name '*.md' -print0)
 done
 
-# NBXplorer
-
-echo "Setup dependency: NBXplorer"
-
-rm -rf "$DOCS_DIR/NBXplorer"
-mkdir -p "$DOCS_DIR/NBXplorer"
-
-if [ ! -d "$NBXPLORER_DIR" ]; then
-  git clone https://github.com/dgarage/NBXplorer.git "$NBXPLORER_DIR"
-else
-  cd "$NBXPLORER_DIR" && git checkout master && git pull
-fi
-
-cd "$NBXPLORER_DIR"
-
-cp -r README.md docs/* "$DOCS_DIR/NBXplorer"
-sed -ie 's$(./docs/$(./$g' "$DOCS_DIR/NBXplorer/README.md"
-for file in "$DOCS_DIR"/NBXplorer/*.md; do
-  update_external "$file" https://github.com/dgarage/NBXplorer  https://github.com/dgarage/NBXplorer/edit/master "$DOCS_DIR"/NBXplorer/
-done
+# Preserve canonical cross-audience links after mapping source directories to public paths.
+sed -i 's$../operators/$../Operators/$g' "$DOCS_DIR/Users/README.md"
+sed -i 's$../users/$../Users/$g' "$DOCS_DIR/Operators/README.md"
 
 # Vault
 
@@ -134,26 +145,29 @@ rm -rf "$DOCS_DIR/Docker"
 mkdir -p "$DOCS_DIR/Docker"
 
 if [ ! -d "$DOCKER_DIR" ]; then
-  git clone https://github.com/btcpayserver/btcpayserver-docker.git "$DOCKER_DIR"
-else
+  git clone --depth 1 https://github.com/btcpayserver/btcpayserver-docker.git "$DOCKER_DIR"
+elif [ -z "$BTCPAYSERVER_DOCKER_DIR" ]; then
   cd "$DOCKER_DIR" && git checkout master && git pull
 fi
 
 cd "$DOCKER_DIR"
 cp -r docs/* "$DOCS_DIR/Docker"
 cp -r docs/img/* "$DOCS_DIR/img"
-line=$(grep -n '# Introduction' README.md | cut -d ":" -f 1)
-tail -n +$line "README.md" > "$DOCS_DIR/Docker/README.md"
-sed -ie 's$(docs/$(./$g' "$DOCS_DIR/Docker/README.md"
-for file in "$DOCS_DIR"/Docker/*.md; do
-  update_external "$file" https://github.com/btcpayserver/btcpayserver-docker https://github.com/btcpayserver/btcpayserver-docker/edit/master "$DOCS_DIR"/Docker/
-done
-
 cp contrib/FastSync/README.md "$DOCS_DIR/Docker/fastsync.md"
+sed -ie 's$(./README.md#$(./fastsync.md#$g' "$DOCS_DIR/Docker/fastsync.md"
 sed -ie 's$(utxo-sets)$(https://github.com/btcpayserver/btcpayserver-docker/blob/master/contrib/FastSync/utxo-sets)$g' "$DOCS_DIR/Docker/fastsync.md"
 sed -ie 's$(load-utxo-set.sh)$(https://github.com/btcpayserver/btcpayserver-docker/blob/master/contrib/FastSync/load-utxo-set.sh)$g' "$DOCS_DIR/Docker/fastsync.md"
 sed -ie 's$(save-utxo-set.sh)$(https://github.com/btcpayserver/btcpayserver-docker/blob/master/contrib/FastSync/save-utxo-set.sh)$g' "$DOCS_DIR/Docker/fastsync.md"
 sed -ie 's$(sigs/NicolasDorier.utxo-sets.asc)$(https://github.com/btcpayserver/btcpayserver-docker/blob/master/contrib/FastSync/sigs/NicolasDorier.utxo-sets.asc)$g' "$DOCS_DIR/Docker/fastsync.md"
+for file in "$DOCS_DIR"/Docker/*.md; do
+  filename="${file#${DOCS_DIR}/Docker/}"
+  if [[ "$filename" == "fastsync.md" ]]; then
+    source_path="contrib/FastSync/README.md"
+  else
+    source_path="docs/$filename"
+  fi
+  update_external "$file" https://github.com/btcpayserver/btcpayserver-docker https://github.com/btcpayserver/btcpayserver-docker/edit/master "$DOCS_DIR"/Docker/ "$source_path" true
+done
 
 # Zapier
 
@@ -173,63 +187,6 @@ cp -r README.md doc/* "$DOCS_DIR/Zapier"
 sed -ie 's$(./doc/$(./$g' "$DOCS_DIR/Zapier/README.md"
 for file in "$DOCS_DIR"/Zapier/*.md; do
   update_external "$file" https://github.com/btcpayserver/zapier https://github.com/btcpayserver/zapier/edit/master "$DOCS_DIR"/Zapier/
-done
-
-# PodServer
-
-echo "Setup dependency: PodServer"
-
-rm -rf "$PODSERVER_DIR"
-rm -rf "$DOCS_DIR/PodServer"
-mkdir -p "$DOCS_DIR/PodServer"
-
-if [ ! -d "$PODSERVER_DIR" ]; then
-  git clone --depth 1 https://github.com/dennisreimann/btcpayserver-plugin-podserver.git "$PODSERVER_DIR"
-fi
-
-cd "$PODSERVER_DIR"
-cp -r README.md docs/* "$DOCS_DIR/PodServer"
-sed -ie 's$(./docs/$(./$g' "$DOCS_DIR/PodServer/README.md"
-for file in "$DOCS_DIR"/PodServer/*.md; do
-  update_external "$file" https://github.com/dennisreimann/btcpayserver-plugin-podserver https://github.com/dennisreimann/btcpayserver-plugin-podserver/edit/master "$DOCS_DIR"/PodServer/
-done
-
-# LNDhub API
-
-echo "Setup dependency: LNDhub API"
-
-rm -rf "$LNDHUBAPI_DIR"
-rm -rf "$DOCS_DIR/LNDhubAPI"
-mkdir -p "$DOCS_DIR/LNDhubAPI"
-
-if [ ! -d "$LNDHUBAPI_DIR" ]; then
-  git clone --depth 1 https://github.com/dennisreimann/btcpayserver-plugin-lndhub-api.git "$LNDHUBAPI_DIR"
-fi
-
-cd "$LNDHUBAPI_DIR"
-cp -r README.md docs/* "$DOCS_DIR/LNDhubAPI"
-sed -ie 's$(./docs/$(./$g' "$DOCS_DIR/LNDhubAPI/README.md"
-for file in "$DOCS_DIR"/LNDhubAPI/*.md; do
-  update_external "$file" https://github.com/dennisreimann/btcpayserver-plugin-lndhub-api https://github.com/dennisreimann/btcpayserver-plugin-lndhub-api/edit/master "$DOCS_DIR"/LNDhubAPI/
-done
-
-# Trocador
-
-echo "Setup dependency: Trocador"
-
-rm -rf "$DOCS_DIR/Trocador"
-mkdir -p "$DOCS_DIR/Trocador"
-
-if [ ! -d "$TROCADOR_DIR" ]; then
-  git clone --depth 1 https://github.com/saltrafael/trocador-plugin.git "$TROCADOR_DIR"
-else
-  cd "$TROCADOR_DIR" && git checkout master && git pull
-fi
-
-cd "$TROCADOR_DIR"
-cp -r README.md "$DOCS_DIR/Trocador"
-for file in "$DOCS_DIR"/Trocador/*.md; do
-  update_external "$file" https://github.com/saltrafael/trocador-plugin https://github.com/saltrafael/trocador-plugin/edit/master "$DOCS_DIR"/Trocador/
 done
 
 # Drupal
@@ -364,90 +321,6 @@ for file in "$DOCS_DIR"/Odoo/*.md; do
   update_external "$file" https://github.com/btcpayserver/odoo https://github.com/btcpayserver/odoo/edit/18.0 "$DOCS_DIR"/Odoo/
 done
 
-# Kukks' plugins
-
-echo "Setup dependency: Kukks' plugins"
-
-rm -rf "$DOCS_DIR/TicketTailor" "$DOCS_DIR/Nostr" "$DOCS_DIR/Wabisabi" "$DOCS_DIR/SideShift" "$DOCS_DIR/Breez" "$DOCS_DIR/Bringin" "$DOCS_DIR/DynamicReports"
-mkdir -p "$DOCS_DIR/TicketTailor" "$DOCS_DIR/Nostr" "$DOCS_DIR/Wabisabi" "$DOCS_DIR/SideShift" "$DOCS_DIR/Breez" "$DOCS_DIR/Bringin" "$DOCS_DIR/DynamicReports"
-
-if [ ! -d "$KUKKS_DIR" ]; then
-  git clone --depth 1 https://github.com/Kukks/BTCPayServerPlugins.git "$KUKKS_DIR"
-else
-  cd "$KUKKS_DIR" && git checkout master && git pull
-fi
-
-cd "$KUKKS_DIR/Plugins/BTCPayServer.Plugins.Wabisabi"
-
-cp -r readme.md docs/* "$DOCS_DIR/Wabisabi"
-sed -ie 's$docs/$./$g' "$DOCS_DIR/Wabisabi/readme.md"
-for file in "$DOCS_DIR"/Wabisabi/*.md; do
-  update_external "$file" https://github.com/Kukks/BTCPayServerPlugins/tree/master/Plugins/BTCPayServer.Plugins.Wabisabi https://github.com/Kukks/BTCPayServerPlugins/edit/master/Plugins/BTCPayServer.Plugins.Wabisabi "$DOCS_DIR"/Wabisabi/
-done
-
-cd "$KUKKS_DIR/Plugins/BTCPayServer.Plugins.TicketTailor"
-
-cp -r README.md "$DOCS_DIR/TicketTailor"
-for file in "$DOCS_DIR"/TicketTailor/*.md; do
-  update_external "$file" https://github.com/Kukks/BTCPayServerPlugins/tree/master/Plugins/BTCPayServer.Plugins.TicketTailor https://github.com/Kukks/BTCPayServerPlugins/edit/master/Plugins/BTCPayServer.Plugins.TicketTailor "$DOCS_DIR"/TicketTailor/
-done
-
-cd "$KUKKS_DIR/Plugins/BTCPayServer.Plugins.NIP05"
-
-cp -r readme.md "$DOCS_DIR/Nostr"
-for file in "$DOCS_DIR"/Nostr/*.md; do
-  update_external "$file" https://github.com/Kukks/BTCPayServerPlugins/tree/master/Plugins/BTCPayServer.Plugins.NIP05 https://github.com/Kukks/BTCPayServerPlugins/edit/master/Plugins/BTCPayServer.Plugins.NIP05 "$DOCS_DIR"/Nostr/
-done
-
-cd "$KUKKS_DIR/Plugins/BTCPayServer.Plugins.SideShift"
-
-cp -r README.md "$DOCS_DIR/SideShift"
-for file in "$DOCS_DIR"/SideShift/*.md; do
-  update_external "$file" https://github.com/Kukks/BTCPayServerPlugins/tree/master/Plugins/BTCPayServer.Plugins.SideShift https://github.com/Kukks/BTCPayServerPlugins/edit/master/Plugins/BTCPayServer.Plugins.SideShift "$DOCS_DIR"/SideShift/
-done
-
-cd "$KUKKS_DIR/Plugins/BTCPayServer.Plugins.Breez"
-
-cp -r README.md "$DOCS_DIR/Breez"
-for file in "$DOCS_DIR"/Breez/*.md; do
-  update_external "$file" https://github.com/Kukks/BTCPayServerPlugins/tree/master/Plugins/BTCPayServer.Plugins.Breez https://github.com/Kukks/BTCPayServerPlugins/edit/master/Plugins/BTCPayServer.Plugins.Breez "$DOCS_DIR"/Breez/
-done
-
-cd "$KUKKS_DIR/Plugins/BTCPayServer.Plugins.Bringin"
-
-cp -r README.md "$DOCS_DIR/Bringin"
-for file in "$DOCS_DIR"/Bringin/*.md; do
-  update_external "$file" https://github.com/Kukks/BTCPayServerPlugins/tree/master/Plugins/BTCPayServer.Plugins.Bringin https://github.com/Kukks/BTCPayServerPlugins/edit/master/Plugins/BTCPayServer.Plugins.Bringin "$DOCS_DIR"/Bringin/
-done
-
-cd "$KUKKS_DIR/Plugins/BTCPayServer.Plugins.DynamicReports"
-
-cp -r README.md "$DOCS_DIR/DynamicReports"
-for file in "$DOCS_DIR"/DynamicReports/*.md; do
-  update_external "$file" https://github.com/Kukks/BTCPayServerPlugins/tree/master/Plugins/BTCPayServer.Plugins.DynamicReports https://github.com/Kukks/BTCPayServerPlugins/edit/master/Plugins/BTCPayServer.Plugins.DynamicReports "$DOCS_DIR"/DynamicReports/
-done
-
-
-# Rockstar' plugins
-
-echo "Setup dependency: Rockstar' plugins"
-
-rm -rf "$DOCS_DIR/VendorPay"
-mkdir -p "$DOCS_DIR/VendorPay"
-
-if [ ! -d "$ROCKSTAR_DIR" ]; then
-  git clone --depth 1 https://github.com/rockstardev/BTCPayServerPlugins.RockstarDev.git "$ROCKSTAR_DIR"
-else
-  cd "$ROCKSTAR_DIR" && git checkout master && git pull
-fi
-
-cd "$ROCKSTAR_DIR/Plugins/BTCPayServer.RockstarDev.Plugins.Payroll"
-
-cp -r README.md "$DOCS_DIR/VendorPay"
-for file in "$DOCS_DIR"/VendorPay/*.md; do
-  update_external "$file" https://github.com/rockstardev/BTCPayServerPlugins.RockstarDev/tree/master/Plugins/BTCPayServer.RockstarDev.Plugins.Payroll https://github.com/rockstardev/BTCPayServerPlugins.RockstarDev/edit/master/Plugins/BTCPayServer.RockstarDev.Plugins.Payroll "$DOCS_DIR"/VendorPay/
-done
-
 # Tobe' plugins
 
 echo "Setup dependency: Tobses' plugins"
@@ -474,6 +347,7 @@ done
 cd "$TOBSES_DIR/Plugins/BTCPayServer.Plugins.GhostPlugin"
 
 cp -r README.md img "$DOCS_DIR/Ghost"
+sed -ie 's$(Deployment.md)$(/Deployment/)$g; s$(CreateStore.md)$(/Users/account-and-store-setup/#create-a-store)$g; s$(WalletSetup.md)$(/Users/wallet-setup/#set-up-a-wallet)$g' "$DOCS_DIR/Ghost/README.md"
 for file in "$DOCS_DIR"/Ghost/*.md; do
   update_external "$file" https://github.com/TChukwuleta/BTCPayServerPlugins/tree/main/Plugins/BTCPayServer.Plugins.GhostPlugin https://github.com/TChukwuleta/BTCPayServerPlugins/edit/main/Plugins/BTCPayServer.Plugins.GhostPlugin "$DOCS_DIR"/Ghost/
 done

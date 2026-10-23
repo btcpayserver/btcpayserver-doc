@@ -10,11 +10,11 @@ BTCPay Server has an internal wallet which you can use to view incoming and outg
 
 It works like any other wallet, but has enhanced privacy features (non-custodial, no third-parties, verified with your server's dedicated full node, etc.) by default and also solves certain UX problems you may encounter when using an existing wallet with BTCPay Server. It also includes many other wallet features such as custom transaction labelling, blockchain explorer links, transaction confirmation status, etc. It can be connected with many different external wallet types and even server generated hot wallets. For these reasons, it's recommended to use the internal wallet for the most flexible and best wallet experience in BTCPay Server.
 
-For more information on how to use the built-in wallet [check this page](../Wallet.md). To use the internal wallet, you first need to [set up the wallet](../WalletSetup.md) with your BTCPay store.
+For more information on how to use the built-in wallet [check this page](../Wallet.md). To use the internal wallet, you first need to [set up the wallet](../Users/wallet-setup.md) with your BTCPay store.
 
 ## How to set up my wallet with BTCPay Server?
 
-Your store's wallet setup page should guide you completely step by step to setting up any kind of wallet with BTCPay Server. If you have more questions, check our in-depth documentation on [how to set up a wallet](../WalletSetup.md).
+Your store's wallet setup page should guide you completely step by step to setting up any kind of wallet with BTCPay Server. If you have more questions, check our in-depth documentation on [how to set up a wallet](../Users/wallet-setup.md).
 
 ## Can I use a hardware wallet with BTCPay Server?
 
@@ -35,7 +35,7 @@ As was documented in [Github issue #960](https://github.com/btcpayserver/btcpays
 
 ## Do I have to use BTCPay Server wallet?
 
-By default BTCPay Server only requires an extended public key. To receive payments to your BTCPay store, you provide an extended public key (xPub) which you can generate in an external (existing) wallet. You do not have to use the built in wallet at all, you can manage funds in your [existing wallet](../WalletSetup.md#use-an-existing-wallet) instead.
+By default BTCPay Server only requires an extended public key. To receive payments to your BTCPay store, you provide an extended public key (xPub) which you can generate in an external (existing) wallet. You do not have to use the built in wallet at all, you can manage funds in your [existing wallet](../Users/wallet-setup.md#set-up-a-wallet) instead.
 
 However, it's recommended to use the built in wallet for funds management. The built in wallet not only improves your privacy by default, but also solves user-experience issues like [gap-limit](#missing-payments-in-my-software-or-hardware-wallet).
 
@@ -45,7 +45,7 @@ If you are experiencing problems (such as "user refused" or unresponsive Trezor)
 
 ## Missing payments in my software or hardware wallet
 
-If you're using an [existing software or a hardware wallet](../WalletSetup.md#use-an-existing-wallet) with your BTCPay Server, you may experience a discrepancy between balance in your BTCPay wallet and the external wallet's web, desktop or mobile app. This discrepancy is usually related to a **gap-limit** issue.
+If you're using an [existing software or a hardware wallet](../Users/wallet-setup.md#set-up-a-wallet) with your BTCPay Server, you may experience a discrepancy between balance in your BTCPay wallet and the external wallet's web, desktop or mobile app. This discrepancy is usually related to a **gap-limit** issue.
 
 ### The gap limit problem
 
@@ -64,7 +64,7 @@ It's not easy to solve the gap limit problem. You have two options:
 
 #### 1. Increasing the gap limit
 
-If your [external/existing wallet](../WalletSetup.md#use-an-existing-wallet) allows gap-limit configuration, the easy fix is to increase it. However, majority of wallets do not allow this.
+If your [external/existing wallet](../Users/wallet-setup.md#set-up-a-wallet) allows gap-limit configuration, the easy fix is to increase it. However, majority of wallets do not allow this.
 
 The only wallets that allow gap-limit configuration that we're aware of are the following:
 - [Electrum](../ElectrumWallet.md)
@@ -77,7 +77,7 @@ The only wallets that allow gap-limit configuration that we're aware of are the 
 
 Unfortunately, with any other wallet you're likely to encounter a problem.
 
-If you'd like to use an [external wallet](../WalletSetup.md#use-an-existing-wallet) to manage the funds, we recommend that you recover your existing wallet into one of following wallets and increase the gap limit:
+If you'd like to use an [external wallet](../Users/wallet-setup.md#set-up-a-wallet) to manage the funds, we recommend that you recover your existing wallet into one of following wallets and increase the gap limit:
 
 - [Increasing the gap limit in Electrum](../ElectrumWallet.md#configuring-the-gap-limit-in-electrum)
 - [Increasing the gap limit in Wasabi](../WasabiWallet.md#configuring-the-gap-limit-in-wasabi)
@@ -90,7 +90,7 @@ For best user-experience and privacy, we recommend that you consider dropping ex
 
 ## What is a derivation scheme?
 
-No matter [how you set up your wallet](../WalletSetup.md), BTCPay Server uses a `derivation scheme` to represent the destination of the funds received by your invoices. The destination of those funds will be your wallet, located by the extended public key that you provide.
+No matter [how you set up your wallet](../Users/wallet-setup.md), BTCPay Server uses a `derivation scheme` to represent the destination of the funds received by your invoices. The destination of those funds will be your wallet, located by the extended public key that you provide.
 
 Using different derivation schemes with your extended public key, you can also choose to create various receiving address types, shown in your store invoices.
 
@@ -111,7 +111,7 @@ On top of the xPub extended public key formats shown above, BTCPay Server suppor
 
 A Replace-By-Fee (RBF) transaction is a feature of the Bitcoin protocol. Learn more about what it is, why it happens and the different types of RBF [here](https://bitcoin.stackexchange.com/a/54457/85016).
 
-RBF capability is by default randomly enabled/disabled between transactions when using the BTCPay Server internal wallet, for enhanced privacy. In order to ensure it is enabled, or to disable it, see the advanced options of the BTCPay Server [internal wallet](../Wallet.md#rbf-replace-by-fee).
+RBF capability is by default randomly enabled/disabled between transactions when using the BTCPay Server internal wallet, for enhanced privacy. For more information, see [What is a Replace-By-Fee (RBF) transaction?](#what-is-a-replace-by-fee-rbf-transaction).
 
 ## Does BTCPay Server use mempoolfullrbf=1 ?
 
@@ -165,4 +165,4 @@ Here are some node statuses and network information you can easily monitor from 
 
 ## How can I use PSBT (partially signed bitcoin transactions) with BTCPay Server?
 
-You can use BTCPay Server to create and/or broadcast PSBT. Check our guides to [Sign a PSBT transaction with ColdCard hardware wallet](./ColdCardWallet.md#spending-from-btcpay-server-wallet-with-coldcard-psbt) and [create and sign a PSBT transaction with Sparrow wallet](./Sign-PSBT-with-sparrow-wallet.md).
+You can use BTCPay Server to create and/or broadcast PSBT. Check our guides to [Sign a PSBT transaction with ColdCard hardware wallet](../ColdCardWallet.md#spending-from-btcpay-server-wallet-with-coldcard-psbt) and [create and sign a PSBT transaction with Sparrow wallet](../Sign-PSBT-with-sparrow-wallet.md).

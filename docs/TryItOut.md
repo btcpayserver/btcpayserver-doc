@@ -32,10 +32,10 @@ Once you pick up a server to use, the steps are the same, regardless of which op
 
 Click on the following links for detailed instructions on how to:
 
-- [Register an account](./RegisterAccount.md)
-- [Create a store](./CreateStore.md)
-- [Create a wallet](./WalletSetup.md)
-- [Start exploring](./WhatsNext.md)
+- [Register an account](./Users/account-and-store-setup.md#create-an-account)
+- [Create a store](./Users/account-and-store-setup.md#create-a-store)
+- [Create a wallet](./Users/wallet-setup.md)
+- [Start exploring](./Users/next-steps.md)
 
 ### BTCPay Server in action
 

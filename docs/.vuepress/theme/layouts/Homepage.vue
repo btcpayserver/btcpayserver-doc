@@ -4,7 +4,7 @@
     class="theme-container"
     :class="pageClasses"
   >
-    <Navbar @toggle-sidebar="toggleSidebar" />
+    <Navbar :show-search="false" @toggle-sidebar="toggleSidebar" />
 
     <Sidebar
       :items="[]"

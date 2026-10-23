@@ -1,5 +1,6 @@
 const redirects = require('./redirects')
 const { COLOR_MODES, STORE_ATTR, setColorMode } = require('./themeSwitch')
+import MermaidDiagram from './components/MermaidDiagram.vue'
 
 // https://v1.vuepress.vuejs.org/guide/basic-config.html#app-level-enhancements
 const openVideo = embedEl => {
@@ -42,7 +43,8 @@ if (typeof process === 'undefined' || process.env.VUE_ENV !== 'server') {
   setColorMode(initialColorMode)
 }
 
-export default ({ router }) => {
+export default ({ Vue, router }) => {
+  Vue.component('MermaidDiagram', MermaidDiagram)
   if (typeof process === 'undefined' || process.env.VUE_ENV !== 'server') {
     router.onReady(() => {
       const { app } = router
