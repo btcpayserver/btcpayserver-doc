@@ -294,6 +294,14 @@ On the other side, if you see that line "HTTP/1.1 403 Forbidden" or "HTTP/2 403"
 
 If you see "Status 403 (Forbidden)" then POST requests to your site are blocked for some reason. You should ask your hosting provider or make sure no firewall or plugin is blocking the requests.
 
+#### 503: The settled invoice could not be verified
+
+In plugin version 2.8.6 or later, a webhook response containing `Could not verify the settled invoice.` with HTTP status 503 means the `InvoiceSettled` notification reached the plugin, but its separate API request to retrieve the invoice from BTCPay Server failed. The WooCommerce order note identifies the invoice and explains that the order was not marked as paid. A 503 status alone does not distinguish this case from a blocked incoming request.
+
+Check the configured BTCPay Server URL and store ID, and ensure the API key has the `btcpay.store.canviewinvoices` permission for that store. Check that BTCPay Server is available and reachable from your WooCommerce host. The [plugin debug logs](#i-get-an-error-during-checkout-but-not-sure-what-the-problem-is) can help distinguish an API access error from a server error or connection timeout.
+
+After correcting the cause, automatic webhook redelivery can retry the verification if enabled and attempts remain. Otherwise, open the invoice details in BTCPay Server and use **Redeliver** for the failed webhook delivery. Check that the WooCommerce order then reaches the expected paid status. Retrying while the verification problem remains will leave the order unpaid.
+
 ### I get an error during checkout but not sure what the problem is.
 
 In your BTCPay Settings in your admin dashboard: _WooCommerce -> Settings: Tab [BTCPay Settings]_ you can enable debug mode by setting the checkbox on that option.
