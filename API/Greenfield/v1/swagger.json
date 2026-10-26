@@ -444,7 +444,15 @@
           "404": {
             "description": "POS app with specified ID was not found"
           }
-        }
+        },
+        "security": [
+          {
+            "API_Key": [
+              "btcpay.store.canviewstoresettings"
+            ],
+            "Basic": []
+          }
+        ]
       }
     },
     "/api/v1/apps/crowdfund/{appId}": {
@@ -529,7 +537,15 @@
           "404": {
             "description": "Crowdfund app with specified ID was not found"
           }
-        }
+        },
+        "security": [
+          {
+            "API_Key": [
+              "btcpay.store.canviewstoresettings"
+            ],
+            "Basic": []
+          }
+        ]
       }
     },
     "/api/v1/stores/{storeId}/apps/crowdfund": {
@@ -9686,10 +9702,19 @@
     "/api/v1/plan-checkout/{checkoutId}": {
       "get": {
         "summary": "Get a plan checkout",
-        "description": "Retrieves the details of a plan checkout session.",
+        "description": "Retrieves the details of a plan checkout session. Authentication is optional. Before the plan starts, callers without the `btcpay.store.canmanagesubscribers` permission for the checkout's store receive `null` for `successRedirectUrl`, `redirectUrl`, and `subscriber.offering.successRedirectUrl`. After the plan starts, these values are returned to all callers.",
         "operationId": "GetPlanCheckout",
         "tags": [
           "Subscriptions"
+        ],
+        "security": [
+          {},
+          {
+            "API_Key": [
+              "btcpay.store.canmanagesubscribers"
+            ],
+            "Basic": []
+          }
         ],
         "parameters": [
           {
@@ -9714,10 +9739,19 @@
       },
       "post": {
         "summary": "Proceed with a plan checkout",
-        "description": "Continues a plan checkout session.\n\n**Behavior:**\n- If payment is required, the checkout assigns a BTCPay Server invoice and `invoiceId` will be set.\n- If no payment is required (for example, the subscriber already has enough credit or no credit purchase is needed), the plan will start immediately and `planStarted` will be `true`.",
+        "description": "Continues a plan checkout session.\n\n**Behavior:**\n- If payment is required, the checkout assigns a BTCPay Server invoice and `invoiceId` will be set.\n- If no payment is required (for example, the subscriber already has enough credit or no credit purchase is needed), the plan will start immediately and `planStarted` will be `true`.\n- Before the plan starts, callers without the `btcpay.store.canmanagesubscribers` permission for the checkout's store receive `null` for `successRedirectUrl`, `redirectUrl`, and `subscriber.offering.successRedirectUrl`.",
         "operationId": "ProceedPlanCheckout",
         "tags": [
           "Subscriptions"
+        ],
+        "security": [
+          {},
+          {
+            "API_Key": [
+              "btcpay.store.canmanagesubscribers"
+            ],
+            "Basic": []
+          }
         ],
         "parameters": [
           {
@@ -12031,7 +12065,7 @@
           "redirectURL": {
             "type": "string",
             "nullable": true,
-            "description": "When the customer has paid the invoice, the URL where the customer will be redirected when clicking on the `return to store` button. You can use placeholders `{InvoiceId}` or `{OrderId}` in the URL, BTCPay Server will replace those with this invoice `id` or `metadata.orderId` respectively."
+            "description": "When the customer has paid the invoice, the absolute HTTP or HTTPS URL where the customer will be redirected when clicking on the `return to store` button. You can use placeholders `{InvoiceId}` or `{OrderId}` in the URL, BTCPay Server will replace those with this invoice `id` or `metadata.orderId` respectively."
           },
           "redirectAutomatically": {
             "type": "boolean",
@@ -12818,18 +12852,21 @@
           },
           "amount": {
             "type": "string",
+            "minimum": 0,
             "description": "Optional explicit payment amount in millisatoshi (if specified, it overrides the BOLT11 amount)",
             "nullable": true
           },
           "maxFeePercent": {
             "type": "string",
             "format": "float",
+            "minimum": 0,
             "nullable": true,
             "description": "The fee limit expressed as a percentage of the payment amount",
             "example": "6.15"
           },
           "maxFeeFlat": {
             "type": "string",
+            "minimum": 0,
             "nullable": true,
             "description": "The fee limit expressed as a fixed amount in satoshi",
             "example": "21"
@@ -13324,6 +13361,8 @@
           "amount": {
             "type": "string",
             "format": "decimal",
+            "minimum": 0,
+            "exclusiveMinimum": true,
             "example": "10399.18",
             "description": "The amount of the payout in the currency of the pull payment (eg. USD)."
           },
@@ -13830,11 +13869,15 @@
           },
           "min": {
             "type": "string",
+            "format": "decimal",
+            "minimum": 1,
             "nullable": true,
             "description": "The minimum amount in sats this ln address allows"
           },
           "max": {
             "type": "string",
+            "format": "decimal",
+            "minimum": 1,
             "nullable": true,
             "description": "The maximum amount in sats this ln address allows"
           },
@@ -15072,7 +15115,8 @@
           },
           "successRedirectUrl": {
             "type": "string",
-            "description": "URL to redirect the user after checkout success. (The `checkoutPlanId` query parameter will be added to the URL.)",
+            "nullable": true,
+            "description": "Configured URL to redirect the user after checkout success. Before the plan starts, this is `null` for callers without permission to manage subscribers for the checkout's store.",
             "example": "https://example.com/success"
           },
           "expiration": {
@@ -15083,8 +15127,9 @@
           },
           "redirectUrl": {
             "type": "string",
-            "description": "URL where the user is redirected to proceed with payment.",
-            "example": "https://pay.example.com/plancheckout_Hpm59L1NPCMUj477Q5"
+            "nullable": true,
+            "description": "Checkout success redirect URL with the `checkoutPlanId` query parameter added. Before the plan starts, this is `null` for callers without permission to manage subscribers for the checkout's store.",
+            "example": "https://example.com/success?checkoutPlanId=plancheckout_Hpm59L1NPCMUj477Q5"
           },
           "invoiceMetadata": {
             "type": "object",
@@ -15296,6 +15341,7 @@
           "appName": {
             "type": "string",
             "nullable": true,
+            "maxLength": 100,
             "description": "Display name of the related [application](#tag/Apps).",
             "example": "Example App"
           },
@@ -15317,6 +15363,7 @@
           "features": {
             "type": "array",
             "nullable": true,
+            "maxItems": 100,
             "description": "List of features included in this offering.",
             "items": {
               "$ref": "#/components/schemas/FeatureModel"
@@ -15514,6 +15561,7 @@
           },
           "description": {
             "type": "string",
+            "maxLength": 500,
             "description": "Short description explaining the credit change.",
             "example": "Monthly reward bonus"
           },
@@ -15551,6 +15599,7 @@
           },
           "description": {
             "type": "string",
+            "maxLength": 1000,
             "description": "Short description of the plan.",
             "example": "Standard monthly subscription."
           },
@@ -15698,11 +15747,13 @@
         "properties": {
           "id": {
             "type": "string",
+            "maxLength": 50,
             "description": "Unique identifier of the feature.",
             "example": "feature-analytics"
           },
           "description": {
             "type": "string",
+            "maxLength": 500,
             "description": "Short description of the feature.",
             "example": "Access to analytics dashboard."
           }
