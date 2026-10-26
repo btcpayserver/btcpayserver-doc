@@ -369,7 +369,7 @@ fi
 cd "$NISABA_DIR/BTCPayServer.Plugins.Ecwid"
 
 cp -r README.md "$DOCS_DIR/Ecwid"
-cp -r docs/ "$DOCS_DIR/Ecwid"
+cp -r docs "$DOCS_DIR/Ecwid"
 for file in "$DOCS_DIR"/Ecwid/*.md; do
   update_external "$file" https://github.com/Nisaba/btcpayserver-plugins/master/Plugins/BTCPayServer.Plugins.Ecwid https://github.com/Nisaba/btcpayserver-plugins/edit/master/BTCPayServer.Plugins.Ecwid "$DOCS_DIR"/Ecwid/
 done
