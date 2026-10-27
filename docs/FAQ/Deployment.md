@@ -47,18 +47,23 @@ When you deploy your BTCPay Server, you should first register a user (during ser
 
 ### How do I activate Tor on my BTCPay Server?
 
-Tor is activated by default on the docker deployment.
+Tor is optional on Docker deployments. Run the following command as root to add
+the Tor fragment and reapply setup:
+
+```bash
+btcpay-fragments add opt-add-tor
+```
 
 ### How do I disable Tor on my BTCPay Server?
 
-That's really easy: just log in your instance with SSH, and enter as root the enter following commands:
+Run the following command as root:
 
 ```bash
-BTCPAYGEN_EXCLUDE_FRAGMENTS="$BTCPAYGEN_EXCLUDE_FRAGMENTS;opt-add-tor"
-. btcpay-setup.sh -i
+btcpay-fragments remove opt-add-tor
 ```
 
-Then wait a few minutes for the server to restart, and you're done!
+Fragment changes immediately reapply setup. See the [optional fragments
+guide](../Docker/fragments.md) for details.
 
 ### Why activate Tor? Does it mean that nobody knows who I am?
 
@@ -93,38 +98,17 @@ cat /var/lib/docker/volumes/generated_tor_servicesdir/_data/BTCPayServer/hostnam
 
 ### How can I modify or deactivate environment variables?
 
-In BTCPay, various options are activated through environment variables. You can modify or delete any of these options using command lines by exporting the new value with `export {environment variable}="{value}"` and then running `. ./btcpay-setup.sh -i` again.
-
-For example, let's say I want to deactivate Tor for my BTCPay server:
+Export the changed value and source setup again. For example:
 
 ```bash
-# Login as root
-sudo su -
-
-# Go to the root/btcpayserver-docker directory
-cd /root/btcpayserver-docker
-
-# Print the complete list of options that you are running (for the sake of the demonstration, let's say that besides Tor you have pruning mode activated too)
-echo $BTCPAYGEN_ADDITIONAL_FRAGMENTS
-opt-save-storage-s;opt-add-tor
-
-# Export the BTCPAYGEN_ADDITIONAL_FRAGMENTS variable without opt-add-tor
-export BTCPAYGEN_ADDITIONAL_FRAGMENTS="opt-save-storage-s"
-
-# Run btcpay-setup.sh
-. btcpay-setup.sh -i
-
-exit
+export NBITCOIN_NETWORK="testnet"
+. ./btcpay-setup.sh -i
 ```
 
-Similarly if you are adding an environment variable, the export command would instead look like this:
-
-```bash
-# Enable Tor in addition to your existing environment variables (such as pruning)
-export BTCPAYGEN_ADDITIONAL_FRAGMENTS="$BTCPAYGEN_ADDITIONAL_FRAGMENTS;opt-add-tor"
-```
-
-If you need to figure out which environment variable you need to modify, have a look at the [Docker configuration reference](/Docker/configuration/).
+Use `btcpay-fragments` instead of editing the additional and excluded fragment
+variables directly. See the [Docker configuration
+reference](../Docker/configuration.md) and [optional fragments
+guide](../Docker/fragments.md).
 
 ### How can I run BTCPay on testnet?
 
@@ -149,7 +133,8 @@ No, you need to keep your BTCPay running at all times so that your Bitcoin node 
 
 BTCPay's Bitcoin core node is not exposed externally by default. For BTCPay purposes, it is typically not in the interest of the user, as it increases the bandwidth requirement. BTCPay is also whitebinding connections to this port, so opening it would expose the node to potential DDoS.
 
-However, we expose a P2P connection to your full node on Tor. You can get the Tor address by running:
+When Tor is enabled, it exposes a P2P connection to your full node. You can get
+the Tor address by running:
 
 ```bash
 cat /var/lib/docker/volumes/generated_tor_servicesdir/_data/BTC-P2P/hostname
@@ -256,52 +241,8 @@ This will completely erase BTCPay Server from your instance and remove the assoc
 
 ### How to deploy BTCPay Server alongside existing Bitcoin node?
 
-The instructions below are valid for Docker deployments:
-
-- Run setup as described in the [Docker installation guide](/Docker/installation/) up until `. ./btcpay-setup.sh -i`
-- Create `bitcoin.custom.yml` in the `docker-compose-generator/docker-fragments/` folder.
-
-```yml
-version: '3'
-
-services:
-  btcpayserver:
-    environment:
-      BTCPAY_CHAINS: 'btc'
-      BTCPAY_BTCEXPLORERURL: http://nbxplorer:32838/
-  nbxplorer:
-    environment:
-      NBXPLORER_CHAINS: 'btc'
-      NBXPLORER_BTCRPCURL: http://host.docker.internal:43782/
-      NBXPLORER_BTCRPCUSER: 'rpc-username'
-      NBXPLORER_BTCRPCPASSWORD: 'rpc-password'
-      NBXPLORER_BTCNODEENDPOINT: host.docker.internal:39388
-    volumes:
-      - 'localBitcoinfolder:/root/.bitcoin'
-
-required:
-  - "nbxplorer"
-```
-
-- Replace: `43782` with your bitcoin node's configured RPC port
-- Replace: `rpc-username` with your bitcoin node's configured RPC username
-- Replace: `rpc-password` with your bitcoin node's configured RPC password
-- Replace: `39388` with your bitcoin node's configured p2p port
-- Replace `localBitcoinfolder` with the path to your bitcoin data folder
-
-If you are running on linux, due to [a limitation of docker](https://github.com/docker/for-linux/issues/264), you will also need to do the following:
-
-- Run `ip route | grep docker0 | awk '{print $9}'`
-  - Add the following at the end of the `bitcoin.custom.yml` file, replacing `$DOCKER_HOST_IP` with the result of the previous command.
-
-```yml
-extra_hosts:
-  - 'host.docker.internal:$DOCKER_HOST_IP'
-```
-
-- Run `export BTCPAYGEN_EXCLUDE_FRAGMENTS="$BTCPAYGEN_EXCLUDE_FRAGMENTS;bitcoin"`
-- Run `export BTCPAYGEN_ADDITIONAL_FRAGMENTS="$BTCPAYGEN_ADDITIONAL_FRAGMENTS;bitcoin.custom"`
-- Run `. ./btcpay-setup.sh -i`
+For Docker deployments, follow the authoritative guide for [using an existing
+Bitcoin Core node](../Docker/customization.md#use-an-existing-bitcoin-core-node).
 
 If you are looking for how to deploy alongside existing Lightning node [see this](./LightningNetwork.md#can-i-use-my-existing-ln-node-with-btcpay).
 
