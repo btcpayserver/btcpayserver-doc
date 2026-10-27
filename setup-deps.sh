@@ -86,7 +86,8 @@ update_external "$DOCS_DIR/BTCPayServer/Security.md" https://github.com/btcpayse
 update_external "$DOCS_DIR/BTCPayServer/LocalDevSetup.md" https://github.com/btcpayserver/btcpayserver https://github.com/btcpayserver/btcpayserver/edit/master "$DOCS_DIR"/BTCPayServer/ "BTCPayServer.Tests/README.md"
 
 for audience in users operators developers; do
-  target="$DOCS_DIR/${audience^}"
+  # Capitalize without bash 4's ${var^} so this also runs on macOS's bash 3.2
+  target="$DOCS_DIR/$(printf '%s' "${audience:0:1}" | tr '[:lower:]' '[:upper:]')${audience:1}"
   while IFS= read -r -d '' file; do
     path="docs/$audience/${file#${target}/}"
     update_external "$file" https://github.com/btcpayserver/btcpayserver https://github.com/btcpayserver/btcpayserver/edit/master "$target/" "$path"
@@ -94,8 +95,8 @@ for audience in users operators developers; do
 done
 
 # Preserve canonical cross-audience links after mapping source directories to public paths.
-sed -i 's$../operators/$../Operators/$g' "$DOCS_DIR/Users/README.md"
-sed -i 's$../users/$../Users/$g' "$DOCS_DIR/Operators/README.md"
+sed -ie 's$../operators/$../Operators/$g' "$DOCS_DIR/Users/README.md"
+sed -ie 's$../users/$../Users/$g' "$DOCS_DIR/Operators/README.md"
 
 # Vault
 
