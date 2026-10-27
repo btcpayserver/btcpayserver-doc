@@ -1,0 +1,5 @@
+# Netlify deploy previews (build command and publish dir are set in the Netlify UI).
+# Settings here override the UI, so the Node version lives with the code and
+# matches CI (.github/workflows/build.yml).
+[build.environment]
+  NODE_VERSION = "22"
