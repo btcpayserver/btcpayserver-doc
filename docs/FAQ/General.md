@@ -131,11 +131,11 @@ Check out the [contribute section](../Contribute/README.md) for all the ways to 
 
 ## How can I use the BTCPay Server API?
 
-The original BTCPay Server API is compatible for the most part with [BitPay's API](https://bitpay.com/api/) to allow merchants to smoothly transition to using BTCPay if they prefer a free, open source, payment processing alternative.
+Use the [Greenfield API](../Developers/api/) for new integrations. It provides endpoints for managing stores, invoices, payment requests, payouts, and other BTCPay Server features. Start with the [cURL, Node.js, and PHP examples](../Developers/api/examples.md) and the [authentication guide](../Developers/api/authentication.md).
 
-In 2020, BTCPay Server started releasing a new Greenfield API. This new API will co-exist with the original API and allow full usage of all BTCPay Server features, without requiring the UI. You can view the current [Greenfield API documentation](https://docs.btcpayserver.org/API/Greenfield/v1/).
+The interactive API reference is available at `/docs` on your BTCPay Server instance and in the [public Greenfield API documentation](https://docs.btcpayserver.org/API/Greenfield/v1/). Consult your instance's reference for the endpoints available in its version and installed plugins.
 
-A BTCPay Server functionality that is not found in the Greenfield API documentation means it isn't fully implemented yet in the new API and users should use the original API instead. The discussion on the development of the new Greenfield API can be found [here](https://github.com/btcpayserver/btcpayserver/issues/1320).
+The legacy BitPay-compatible invoice API remains available for existing integrations and is discouraged for new integrations. See [Custom Integration](../CustomIntegration.md#legacy-bitpay-api) for details.
 
 ## How to create a webhook ?
 

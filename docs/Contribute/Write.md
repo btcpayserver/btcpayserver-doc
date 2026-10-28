@@ -18,11 +18,11 @@ For documentation guidance or discussion of a new documentation idea, join the [
 
 ## BTCPay Blog
 
-Another great way to contribute is by writing content for the [BTCPay blog](WriteBlog.md). To get started on a blog topic, join the [#general creation channel on Mattermost](https://chat.btcpayserver.org/btcpayserver/channels/town-square).
+Another great way to contribute is by writing content for the [BTCPay blog](WriteBlog.md). To get started on a blog topic, join the [#general channel on Mattermost](https://chat.btcpayserver.org/btcpayserver/channels/town-square).
 
 ## YouTube
 
-If you are more into video content we would also love if you could contribute to the [BTCPay YouTube channel](https://www.youtube.com/btcpayserver). To get started and coordinate your efforts, join the [#general creation channel on Mattermost](https://chat.btcpayserver.org/btcpayserver/channels/town-square).
+If you prefer video content, you can contribute to the [BTCPay YouTube channel](https://www.youtube.com/btcpayserver). To get started and coordinate your efforts, join the [#general channel on Mattermost](https://chat.btcpayserver.org/btcpayserver/channels/town-square).
 
 ## Requirements
 
