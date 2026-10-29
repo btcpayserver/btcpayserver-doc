@@ -926,8 +926,8 @@
           "Apps"
         ],
         "operationId": "Apps_GetAllApps",
-        "summary": "Get basic app data for all apps for all stores for a user",
-        "description": "Returns basic app data for all apps for all stores",
+        "summary": "Get basic app data for all authorized stores",
+        "description": "Returns basic app data for apps in stores where the caller has the `btcpay.store.canmodifystoresettings` permission. Store-scoped API keys only return apps from their authorized stores.",
         "responses": {
           "200": {
             "description": "Array of basic app data object",
@@ -5537,7 +5537,7 @@
       "post": {
         "summary": "Mark Payout as Paid",
         "operationId": "PullPayments_MarkPayoutPaid",
-        "description": "Mark a payout as paid",
+        "description": "Mark a payout as paid. Completed or cancelled payouts cannot be marked paid and return `400 invalid-state`.",
         "responses": {
           "200": {
             "description": "The payout has been marked paid, transitioning to `Completed` state."
@@ -5594,7 +5594,7 @@
       "post": {
         "summary": "Mark Payout",
         "operationId": "PullPayments_MarkPayout",
-        "description": "Mark a payout with a state",
+        "description": "Mark a payout with a state. Completed and cancelled payouts are final and cannot transition to another state; attempts return `400 invalid-state`.",
         "requestBody": {
           "content": {
             "application/json": {
@@ -6476,6 +6476,16 @@
               "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/GenericPaymentMethodData"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Unable to validate the request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ValidationProblemDetails"
                 }
               }
             }
@@ -8033,7 +8043,7 @@
             "$ref": "#/components/parameters/StoreId"
           }
         ],
-        "description": "Generate a wallet and update the specified store's payment method to it",
+        "description": "Generate a wallet and update the specified store's payment method to it. Unless the server policies allow non-admins to create hot wallets (`savePrivateKeys` is `true`) or cold wallets (`savePrivateKeys` is `false`), this requires the `btcpay.server.canmodifyserversettings` permission.",
         "requestBody": {
           "x-name": "request",
           "content": {
@@ -9452,7 +9462,7 @@
             "$ref": "#/components/parameters/StoreId"
           },
           {
-            "$ref": "#/components/parameters/Subscriptions/Currency"
+            "$ref": "#/components/parameters/SubscriptionsCurrency"
           }
         ],
         "responses": {
@@ -9497,7 +9507,7 @@
             "$ref": "#/components/parameters/StoreId"
           },
           {
-            "$ref": "#/components/parameters/Subscriptions/Currency"
+            "$ref": "#/components/parameters/SubscriptionsCurrency"
           }
         ],
         "requestBody": {
@@ -9523,11 +9533,21 @@
             }
           },
           "400": {
-            "description": "Error code: `overdraft`. The subscriber's balance would be overdrawn. Use `allowOverdraft` to allow this.",
+            "description": "Error codes: `overdraft`, `balance-limit`. The balance update would exceed the permitted overdraft or balance limits.",
             "content": {
               "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Invalid credit, charge, or description.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ValidationProblemDetails"
                 }
               }
             }
@@ -9702,7 +9722,7 @@
     "/api/v1/plan-checkout/{checkoutId}": {
       "get": {
         "summary": "Get a plan checkout",
-        "description": "Retrieves the details of a plan checkout session. Authentication is optional. Before the plan starts, callers without the `btcpay.store.canmanagesubscribers` permission for the checkout's store receive `null` for `successRedirectUrl`, `redirectUrl`, and `subscriber.offering.successRedirectUrl`. After the plan starts, these values are returned to all callers.",
+        "description": "Retrieves the details of a plan checkout session. Authentication is optional. Before the plan starts, callers without the `btcpay.store.canmanagesubscribers` permission for the checkout's store receive `null` for `successRedirectUrl`, `redirectUrl`, and `subscriber.offering.successRedirectUrl`. After the plan starts, these values are returned to all callers. Regardless of whether the plan has started, callers without this permission receive `null` for every `metadata` field (including `invoiceMetadata` and `newSubscriberMetadata`), `0` for every `memberCount`, and only the checkout's plan and the subscriber's current and next plans, with their features, in `subscriber.offering`.",
         "operationId": "GetPlanCheckout",
         "tags": [
           "Subscriptions"
@@ -9739,7 +9759,7 @@
       },
       "post": {
         "summary": "Proceed with a plan checkout",
-        "description": "Continues a plan checkout session.\n\n**Behavior:**\n- If payment is required, the checkout assigns a BTCPay Server invoice and `invoiceId` will be set.\n- If no payment is required (for example, the subscriber already has enough credit or no credit purchase is needed), the plan will start immediately and `planStarted` will be `true`.\n- Before the plan starts, callers without the `btcpay.store.canmanagesubscribers` permission for the checkout's store receive `null` for `successRedirectUrl`, `redirectUrl`, and `subscriber.offering.successRedirectUrl`.",
+        "description": "Continues a plan checkout session.\n\n**Behavior:**\n- If payment is required, the checkout assigns a BTCPay Server invoice and `invoiceId` will be set. Repeated or concurrent requests reuse the existing invoice unless it is expired or invalid.\n- If no payment is required (for example, the subscriber already has enough credit or no credit purchase is needed), the plan will start immediately and `planStarted` will be `true`.\n- Before the plan starts, callers without the `btcpay.store.canmanagesubscribers` permission for the checkout's store receive `null` for `successRedirectUrl`, `redirectUrl`, and `subscriber.offering.successRedirectUrl`.\n- Regardless of whether the plan has started, callers without this permission receive `null` for every `metadata` field (including `invoiceMetadata` and `newSubscriberMetadata`), `0` for every `memberCount`, and only the checkout's plan and the subscriber's current and next plans, with their features, in `subscriber.offering`.",
         "operationId": "ProceedPlanCheckout",
         "tags": [
           "Subscriptions"
@@ -9886,10 +9906,19 @@
     "/api/v1/subscriber-portal/{portalSessionId}": {
       "get": {
         "summary": "Get a subscriber portal session",
-        "description": "Retrieves the details of an existing subscriber portal session.",
+        "description": "Retrieves the details of an existing subscriber portal session. Authentication is optional. Callers without the `btcpay.store.canmanagesubscribers` permission for the subscriber's store receive `null` for every `metadata` field, `0` for every `memberCount`, and only the subscriber's current and next plans and the plans they can change to, with their features, in `subscriber.offering`.",
         "operationId": "GetPortalSession",
         "tags": [
           "Subscriptions"
+        ],
+        "security": [
+          {},
+          {
+            "API_Key": [
+              "btcpay.store.canmanagesubscribers"
+            ],
+            "Basic": []
+          }
         ],
         "parameters": [
           {
@@ -9976,7 +10005,7 @@
                   },
                   "currentPassword": {
                     "type": "string",
-                    "description": "The current password of the user. Required when changing the email or the password.",
+                    "description": "The current password of the user. Required when changing the email or the password. Incorrect attempts count toward account lockout.",
                     "nullable": true
                   },
                   "newPassword": {
@@ -11206,6 +11235,14 @@
               "resetEvery": {
                 "type": "string",
                 "description": "Contribution goal reset frequency",
+                "enum": [
+                  "Never",
+                  "Hour",
+                  "Day",
+                  "Month",
+                  "Year",
+                  null
+                ],
                 "example": "Day",
                 "nullable": true
               },
@@ -13800,7 +13837,7 @@
             "properties": {
               "password": {
                 "type": "string",
-                "description": "SMTP password. Keep null or empty to not update it.",
+                "description": "SMTP password. Null or empty preserves the saved password only when login is provided and server is unchanged.",
                 "nullable": true,
                 "example": "MyS3cr3t"
               }
@@ -13899,7 +13936,6 @@
             "example": true
           },
           "config": {
-            "type": "object",
             "description": "The new payment method config, leave null or unspecified to not change current setting",
             "default": null,
             "nullable": true,
@@ -14841,7 +14877,7 @@
           "cssUrl": {
             "type": "string",
             "nullable": true,
-            "description": "Absolute URL to CSS file to customize the public/customer-facing pages of the store. (Invoice, Payment Request, Pull Payment, etc.) or a reference to an uploaded file id with `fileid:ID`",
+            "description": "Absolute HTTP or HTTPS URL to CSS file to customize the public/customer-facing pages of the store. (Invoice, Payment Request, Pull Payment, etc.) or a reference to an uploaded file id with `fileid:ID`",
             "format": "uri"
           },
           "paymentSoundUrl": {
@@ -15133,6 +15169,7 @@
           },
           "invoiceMetadata": {
             "type": "object",
+            "nullable": true,
             "description": "Custom metadata that will be attached to the invoice when it is created.",
             "additionalProperties": true,
             "example": {
@@ -15141,6 +15178,7 @@
           },
           "metadata": {
             "type": "object",
+            "nullable": true,
             "description": "Custom metadata for the checkout.",
             "additionalProperties": true,
             "example": {
@@ -15170,6 +15208,7 @@
           },
           "newSubscriberMetadata": {
             "type": "object",
+            "nullable": true,
             "description": "Metadata for creating a new subscriber.",
             "additionalProperties": true,
             "example": {
@@ -15184,7 +15223,7 @@
           },
           "creditedByInvoice": {
             "type": "string",
-            "description": "Amount credited due to invoice settlement.",
+            "description": "Amount credited from invoice payments.",
             "example": "12.00"
           },
           "onPayBehavior": {
@@ -15353,6 +15392,7 @@
           },
           "metadata": {
             "type": "object",
+            "nullable": true,
             "description": "Custom metadata for the offering.",
             "additionalProperties": true,
             "example": {
@@ -15401,6 +15441,7 @@
           },
           "metadata": {
             "type": "object",
+            "nullable": true,
             "description": "Custom metadata associated with the customer.",
             "additionalProperties": true,
             "example": {
@@ -15476,6 +15517,7 @@
           },
           "metadata": {
             "type": "object",
+            "nullable": true,
             "description": "Custom metadata for the subscription.",
             "additionalProperties": true,
             "example": {
@@ -15819,7 +15861,7 @@
           },
           "memberCount": {
             "type": "integer",
-            "description": "Maximum number of members allowed under this plan.",
+            "description": "Number of active subscribers of this plan. Returned as 0 in public checkout and portal responses for callers without permission to manage subscribers for the store.",
             "example": 10
           },
           "optimisticActivation": {
@@ -15844,6 +15886,7 @@
           },
           "metadata": {
             "type": "object",
+            "nullable": true,
             "description": "Custom metadata for the plan.",
             "additionalProperties": true,
             "example": {
@@ -16602,7 +16645,7 @@
           "$ref": "#/components/schemas/PlanCheckoutId"
         }
       },
-      "Subscriptions/Currency": {
+      "SubscriptionsCurrency": {
         "name": "currency",
         "in": "path",
         "required": true,
