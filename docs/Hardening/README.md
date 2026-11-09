@@ -1,6 +1,6 @@
 # Hardening BTCPay and General Security Best Practises
 
-This guide will outline best practises to reduce your personal risk in case of an attack. Lots of it are learnings from the recent hack.
+This guide will outline best practises to reduce your personal risk in case of an attack.
 
 ## When setting up your Instance
 
