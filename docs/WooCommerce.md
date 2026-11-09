@@ -32,9 +32,9 @@ Please ensure that you meet the following requirements before installing this pl
 - The cURL, gd, intl, json, and mbstring PHP extensions are available
 - A WooCommerce website ([Installation instructions](https://woocommerce.com/document/installing-uninstalling-woocommerce/) or [directly on BTCPay Server](#deploying-woocommerce-from-btcpay-server))
 - You have a BTCPay Server version 1.3.0 or later, either [self-hosted](/Deployment/README.md) or [hosted by a third-party](/Deployment/ThirdPartyHosting.md)
-- [You've a registered account on the instance](./RegisterAccount.md)
-- [You've a BTCPay store on the instance](./CreateStore.md)
-- [You've a wallet connected to your store](./WalletSetup.md)
+- [You've a registered account on the instance](./Users/account-and-store-setup.md#create-an-account)
+- [You've a BTCPay store on the instance](./Users/account-and-store-setup.md#create-a-store)
+- [You've a wallet connected to your store](./Users/wallet-setup.md)
 
 ## 1. Install BTCPay Plugin
 
@@ -186,7 +186,7 @@ Enable this option if you want the BTCPay Server invoice to be shown directly on
 
 **Separate Payment Gateways**
 
-If this option is enabled the plugin will generate one separate payment gateway per supported payment method on BTCPay Server. E.g. if you have BTC, LightningNetwork and maybe Liquid Assets enabled on your BTCPay Server store, then you will have a separate gateway available for each. This allows many new use cases like discount per gateway or country based restrictions. More details [here](./FAQ/Integrations/#how-to-configure-additional-token-support).
+If this option is enabled the plugin will generate one separate payment gateway per supported payment method on BTCPay Server. E.g. if you have BTC, LightningNetwork and maybe Liquid Assets enabled on your BTCPay Server store, then you will have a separate gateway available for each. This allows many new use cases like discount per gateway or country based restrictions. More details [here](./FAQ/Integrations/#how-to-configure-additional-token-support-separate-payment-gateways).
 
 **Send customer data to BTCPayServer**
 
@@ -219,7 +219,7 @@ Additional options only available for the default payment gateway:
 
 **Enforce payment tokens**
 
-With "Separate Payment Gateways" feature enabled in BTCPay Settings you can use this option to enforce only payment tokens. This means that the created invoice will _only_ include tokens of type "payment" and _not any_ of type "promotion". See difference of token types [here](./FAQ/Integrations/#how-to-configure-additional-token-support#token-types)
+With "Separate Payment Gateways" feature enabled in BTCPay Settings you can use this option to enforce only payment tokens. This means that the created invoice will _only_ include tokens of type "payment" and _not any_ of type "promotion". See the difference between [token types here](./FAQ/Integrations/#token-types).
 
 #### 4.2.2 Separate Payment Gateways
 
@@ -227,7 +227,7 @@ Additional options only available for the separate payment gateways (if that fea
 
 **Token Type**
 
-By default type "payment" is selected. But if you have Liquid Assets with your own issued asset/token (e.g. used as voucher) you can select "promotion" here. Those are processed differently than normal payment tokens. Details can be found [here](./FAQ/Integrations/#how-to-configure-additional-token-support#promotional-tokens-100-discount)
+By default type "payment" is selected. But if you have Liquid Assets with your own issued asset/token (e.g. used as voucher) you can select "promotion" here. Those are processed differently than normal payment tokens. Details can be found in the [promotional token section](./FAQ/Integrations/#promotional-tokens-100-discount).
 
 ## Troubleshooting
 
@@ -294,6 +294,14 @@ On the other side, if you see that line "HTTP/1.1 403 Forbidden" or "HTTP/2 403"
 
 If you see "Status 403 (Forbidden)" then POST requests to your site are blocked for some reason. You should ask your hosting provider or make sure no firewall or plugin is blocking the requests.
 
+#### 503: The settled invoice could not be verified
+
+In plugin version 2.8.6 or later, a webhook response containing `Could not verify the settled invoice.` with HTTP status 503 means the `InvoiceSettled` notification reached the plugin, but its separate API request to retrieve the invoice from BTCPay Server failed. The WooCommerce order note identifies the invoice and explains that the order was not marked as paid. A 503 status alone does not distinguish this case from a blocked incoming request.
+
+First, check that BTCPay Server is available and reachable from your WooCommerce host. This may have been a temporary connection problem. If the problem persists, check the configured BTCPay Server URL and store ID, and ensure the API key has the `btcpay.store.canviewinvoices` permission for that store. The [plugin debug logs](#i-get-an-error-during-checkout-but-not-sure-what-the-problem-is) can help distinguish an API access error from a server error or connection timeout.
+
+After correcting the cause, BTCPay Server will try to send the `InvoiceSettled` event again if automatic redelivery is enabled and retries remain. If verification succeeds, WooCommerce updates the order status automatically. If that fails, or no automatic retry is pending, open the invoice details in BTCPay Server and use **Redeliver** for the failed webhook delivery. Check that the WooCommerce order then reaches the expected paid status.
+
 ### I get an error during checkout but not sure what the problem is.
 
 In your BTCPay Settings in your admin dashboard: _WooCommerce -> Settings: Tab [BTCPay Settings]_ you can enable debug mode by setting the checkbox on that option.
@@ -312,7 +320,7 @@ Feel free to join our support channel over at [https://chat.btcpayserver.org/](h
 
 ### Create a new API key
 
-If you have been using the WooCommerce V2 plugin prior to version 2.0.0, your API key won't have the required permissions to issue refunds via pull-payments. If you want to use that feature, you can create a new API key (editing an API key is not currently supported). You can use the above described [2.1 Connect using API key wizard](#21-connect-using-the-api-key-wizard--recommended-) or the [manual API key generation](#22-connect-by-manually-creating-the-api-key-and-permissions). The configured webhook will continue to work, and no change is needed.
+If you have been using the WooCommerce V2 plugin prior to version 2.0.0, your API key won't have the required permissions to issue refunds via pull-payments. If you want to use that feature, you can create a new API key (editing an API key is not currently supported). You can use the above described [2.1 Connect using API key wizard](#21-connect-using-the-api-key-wizard-recommended) or the [manual API key generation](#22-connect-by-manually-creating-the-api-key-and-permissions). The configured webhook will continue to work, and no change is needed.
 
 ### I messed around with the webhook, how to fix
 

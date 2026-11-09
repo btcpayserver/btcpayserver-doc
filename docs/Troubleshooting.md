@@ -13,7 +13,7 @@ If you think it will describe your issue better, take a screenshot.
 
 ### 1.1 Updating the server
 
-Check [your version of BTCPay](./FAQ/ServerSettings.md#how-can-i-see-my-btcpay-version).
+Check [your version of BTCPay](./FAQ/ServerSettings.md#how-can-i-see-my-btcpay-server-version).
 If it is much older than the [latest version](https://github.com/btcpayserver/btcpayserver/releases) of BTCPay, [updating your server](./FAQ/ServerSettings.md#how-to-update-btcpay-server) may resolve the issue.
 
 ### 1.2 Restarting the server
@@ -176,7 +176,7 @@ There's an amid community ready to help you.
 
 The better you describe the problem, the higher are the chances of getting a timely fix.
 Be concise and provide as much relevant information as possible.
-Be sure to include the [version you're using](./FAQ/ServerSettings.md#how-can-i-see-my-btcpay-version) and describe your BTCPay Deployment Setup.
+Be sure to include the [version you're using](./FAQ/ServerSettings.md#how-can-i-see-my-btcpay-server-version) and describe your BTCPay Deployment Setup.
 Try to explain what you're trying to do and what's the issue.
 If you can provide the logs.
 If you think it's relevant, feel free to include a screenshot.

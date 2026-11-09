@@ -63,7 +63,7 @@ Merchants can _provide_ payment by sharing a [Pull Payment](./PullPayments.md). 
 
 ## Charities & non-profits
 
-Charities, non-profits, content creators, and other organizations that want to accept bitcoin donations in a more private way than the traditional static bitcoin address method can utilize the [Pay Button](./WhatsNext.md#creating-the-pay-button), [POS app](./WhatsNext.md#creating-the-point-of-sale-app) or [Crowdfunding app](./Apps.md#crowdfunding-app) for a better user experience.
+Charities, non-profits, content creators, and other organizations that want to accept bitcoin donations in a more private way than the traditional static bitcoin address method can utilize the [Pay Button](./Users/next-steps.md#next-steps), [POS app](./Users/next-steps.md#next-steps) or [Crowdfunding app](./Apps.md#crowdfunding-app) for a better user experience.
 
 Benefits of using BTCPay for accepting donations:
 

@@ -6,7 +6,7 @@ Learn more about the [standard design specifications used in BTCPay](https://des
 ## Developing and extending a custom theme
 
 The BTCPay Server user interface is built on a **customized version of Bootstrap** that supports [CSS custom properties](https://developer.mozilla.org/en-US/docs/Web/CSS/--*).
-This allows us to change theme related settings like fonts and colors without affecting the [`bootstrap.css`](#notes-on-bootstrap-css).
+This allows us to change theme related settings like fonts and colors without affecting the [`bootstrap.css`](#overriding-bootstrap-selectors).
 Also we can provide just the relevant customized parts instead of shipping a whole `bootstrap.css` file for each theme.
 
 Take a look at the [predefined themes](https://github.com/btcpayserver/btcpayserver/blob/master/BTCPayServer/wwwroot/main/themes/) to get an overview of this approach.
@@ -35,7 +35,7 @@ This allows us to address individual portions of the styles without affecting ot
 
 For cases in which you want to introduce new variables that are used across all themes, add them to the `site.css` file.
 This file contains our modifications of the Bootstrap styles.
-Refrain from modifying `bootstrap.css` directly – see the [additional notes](#notes-on-bootstrap-css) for the reasoning behind this.
+Refrain from modifying `bootstrap.css` directly - see the [additional notes](#overriding-bootstrap-selectors) for the reasoning behind this.
 
 #### Adding a new theme
 

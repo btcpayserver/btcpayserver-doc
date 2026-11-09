@@ -34,12 +34,12 @@ Once back on the Clovyr dashboard, click on the "Open" button under App Essentia
 You will be prompted to create the first account on your new BTCPay Server. Make sure to have the Administrator account checked.
 
 You are now ready to set up your first store!
-To follow more on setting up your store, follow along in this [Guide](../RegisterAccount.md).
+To continue setting up your store, follow the [account and store setup guide](../Users/account-and-store-setup.md).
 
 ## 5. Welcome to your BTCPay Server dashboard
 
 You are now inside your new BTCPay Server.
-The bitcoin wallet is still missing. You can follow along in [this wallet setup guide](../WalletSetup.md)
+The bitcoin wallet is still missing. You can follow along in [this wallet setup guide](../Users/wallet-setup.md).
 
 :::tip
 If there are questions about your node, the deployment, or updates, please reach out to the support of Clovyr, using their Feedback tab.

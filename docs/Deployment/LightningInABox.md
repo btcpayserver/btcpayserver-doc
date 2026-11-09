@@ -150,7 +150,7 @@ git clone https://github.com/btcpayserver/btcpayserver-docker
 cd btcpayserver-docker
 ```
 
-Configure BTCPay by setting some [environment variables](https://github.com/btcpayserver/btcpayserver-docker#environment-variables):
+Configure BTCPay by setting some [environment variables](/Docker/configuration/):
 
 ```bash
 export BTCPAY_HOST="btcpay.local"

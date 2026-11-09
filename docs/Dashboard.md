@@ -49,7 +49,7 @@ Showcasing the five most recent transactions that arrived to your on-chain walle
 
 ### Recent invoices
 
-The five most recent invoices are shown with their corresponding status and value allowing you to quickly access and manage a particular [invoice](/Invoices.md).
+The five most recent invoices are shown with their corresponding status and value allowing you to quickly access and manage a particular [invoice](/Users/invoices/).
 
 ![BTCPay Server Navigation](./img/dashboard/recent-invoice-view.jpg)
 

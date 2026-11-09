@@ -1,30 +1,20 @@
 const isDev = process.env.NODE_ENV === 'development'
+const { existsSync } = require('fs')
+const { dirname, resolve } = require('path')
 
 // external docs: local dir as key, repo base as value
 const EXTERNAL_DOCS = {
   BigCommerce: 'https://github.com/TChukwuleta/BTCPayServerPlugins/tree/main/Plugins/BTCPayServer.Plugins.BigCommercePlugin',
-  Breez: 'https://github.com/Kukks/BTCPayServerPlugins/tree/master/Plugins/BTCPayServer.Plugins.Breez',
-  Bringin: 'https://github.com/Kukks/BTCPayServerPlugins/tree/master/Plugins/BTCPayServer.Plugins.Bringin',
   BTCPayServer: 'https://github.com/btcpayserver/btcpayserver',
   Configurator: 'https://github.com/btcpayserver/btcpayserver-configurator',
   Docker: 'https://github.com/btcpayserver/btcpayserver-docker',
   Drupal: 'https://github.com/btcpayserver/commerce_btcpay',
-  DynamicReports: 'https://github.com/Kukks/BTCPayServerPlugins/tree/master/Plugins/BTCPayServer.Plugins.DynamicReports',
   Grandnode: 'https://github.com/btcpayserver/grandnode',
-  LNDhubAPI: 'https://github.com/dennisreimann/btcpayserver-plugin-lndhub-api',
-  NBXplorer: 'https://github.com/dgarage/NBXplorer',
   Nopcommerce: 'https://github.com/btcpayserver/nopcommerce',
-  Nostr: 'https://github.com/Kukks/BTCPayServerPlugins/tree/master/Plugins/BTCPayServer.Plugins.NIP05',
   Odoo: 'https://github.com/btcpayserver/odoo',
-  Payroll: 'https://github.com/rockstardev/BTCPayServerPlugins.RockstarDev/tree/master/Plugins/BTCPayServer.RockstarDev.Plugins.Payroll',
-  PodServer: 'https://github.com/dennisreimann/btcpayserver-plugin-podserver',
-  SideShift: 'https://github.com/Kukks/BTCPayServerPlugins/tree/master/Plugins/BTCPayServer.Plugins.SideShift',
   Smartstore: 'https://github.com/btcpayserver/Smartstore.BTCPayServer',
-  TicketTailor: 'https://github.com/Kukks/BTCPayServerPlugins/tree/master/Plugins/BTCPayServer.Plugins.TicketTailor',
-  Trocador: 'https://github.com/saltrafael/trocador-plugin',
   Vault: 'https://github.com/btcpayserver/BTCPayServer.Vault',
   Wix: 'https://github.com/btcpayserver/wix',
-  Wabisabi: 'https://github.com/Kukks/BTCPayServerPlugins/tree/master/Plugins/BTCPayServer.Plugins.Wabisabi',
   Xenforo: 'https://github.com/btcpayserver/xenforo',
   Zapier: 'https://github.com/btcpayserver/zapier'
 }
@@ -46,18 +36,21 @@ const replaceExternalRepoLinks = (source, externalRepoUrl, resourcePath) => {
         `\\]\\(((?!https?:\/\/|#|\.?\/).*?)\\)`,
         'gi'
       )
-      processed = processed.replace(repoLinks, (all, path) =>
-        replace(all, path, `${baseUrl}/blob/master/${path}`, 1)
-      )
+      processed = processed.replace(repoLinks, (all, path) => {
+        const localPath = path.split('#')[0]
+        if (localPath && existsSync(resolve(dirname(resourcePath), localPath))) return all
+        return replace(all, path, `${baseUrl}/blob/master/${path}`, 1)
+      })
 
       // rewrite links to docs to internal VuePress links
       const docsLinks = new RegExp(
         `\\]\\((${baseUrl}/blob/master/((README\.md|docs/).*?))\\)`,
         'gi'
       )
-      processed = processed.replace(docsLinks, (all, url, path) =>
-        replace(all, url, `/${baseDir}/${path.replace('docs/', '')}`, 2)
-      )
+      processed = processed.replace(docsLinks, (all, url, path) => {
+        if (path.startsWith('docs/maintainers/')) return all
+        return replace(all, url, `/${baseDir}/${path.replace('docs/', '')}`, 2)
+      })
     }
 
     // rewrite external links to docs to internal VuePress links
@@ -79,6 +72,50 @@ const replaceExternalRepoLinks = (source, externalRepoUrl, resourcePath) => {
   }
 
   return processed
+}
+
+const replaceGithubAlerts = source => {
+  const lines = source.split('\n')
+  const processed = []
+  let fence = null
+
+  for (let i = 0; i < lines.length; i++) {
+    const line = lines[i]
+    const fenceMatch = line.match(/^ {0,3}(`{3,}|~{3,})/)
+
+    if (fence) {
+      processed.push(line)
+      if (
+        fenceMatch &&
+        fenceMatch[1][0] === fence[0] &&
+        fenceMatch[1].length >= fence.length &&
+        line.slice(fenceMatch[0].length).trim() === ''
+      ) {
+        fence = null
+      }
+      continue
+    }
+
+    if (fenceMatch) {
+      fence = fenceMatch[1]
+      processed.push(line)
+      continue
+    }
+
+    const alertMatch = line.match(/^>\s*\[!(WARNING|TIP)\]\s*$/i)
+    if (!alertMatch) {
+      processed.push(line)
+      continue
+    }
+
+    processed.push(`:::${alertMatch[1].toLowerCase()}`)
+    while (i + 1 < lines.length && lines[i + 1].startsWith('>')) {
+      processed.push(lines[++i].replace(/^> ?/, ''))
+    }
+    processed.push(':::')
+  }
+
+  return processed.join('\n')
 }
 
 const replaceYouTubeLinks = source =>
@@ -115,7 +152,7 @@ const replaceYouTubeLinks = source =>
 // https://webpack.js.org/api/loaders/
 module.exports = function (source) {
   const { resourcePath } = this
-  let processed = source
+  let processed = replaceGithubAlerts(source)
   processed = replaceYouTubeLinks(processed)
 
   const [, externalRepo] = source.match(/externalRepo: (.*)/) || []

@@ -47,18 +47,23 @@ When you deploy your BTCPay Server, you should first register a user (during ser
 
 ### How do I activate Tor on my BTCPay Server?
 
-Tor is activated by default on the docker deployment.
+Tor is optional on Docker deployments. Run the following command as root to add
+the Tor fragment and reapply setup:
+
+```bash
+btcpay-fragments add opt-add-tor
+```
 
 ### How do I disable Tor on my BTCPay Server?
 
-That's really easy: just log in your instance with SSH, and enter as root the enter following commands:
+Run the following command as root:
 
 ```bash
-BTCPAYGEN_EXCLUDE_FRAGMENTS="$BTCPAYGEN_EXCLUDE_FRAGMENTS;opt-add-tor"
-. btcpay-setup.sh -i
+btcpay-fragments remove opt-add-tor
 ```
 
-Then wait a few minutes for the server to restart, and you're done!
+Fragment changes immediately reapply setup. See the [optional fragments
+guide](../Docker/fragments.md) for details.
 
 ### Why activate Tor? Does it mean that nobody knows who I am?
 
@@ -93,38 +98,17 @@ cat /var/lib/docker/volumes/generated_tor_servicesdir/_data/BTCPayServer/hostnam
 
 ### How can I modify or deactivate environment variables?
 
-In BTCPay, various options are activated through environment variables. You can modify or delete any of these options using command lines by exporting the new value with `export {environment variable}="{value}"` and then running `. ./btcpay-setup.sh -i` again.
-
-For example, let's say I want to deactivate Tor for my BTCPay server:
+Export the changed value and source setup again. For example:
 
 ```bash
-# Login as root
-sudo su -
-
-# Go to the root/btcpayserver-docker directory
-cd /root/btcpayserver-docker
-
-# Print the complete list of options that you are running (for the sake of the demonstration, let's say that besides Tor you have pruning mode activated too)
-echo $BTCPAYGEN_ADDITIONAL_FRAGMENTS
-opt-save-storage-s;opt-add-tor
-
-# Export the BTCPAYGEN_ADDITIONAL_FRAGMENTS variable without opt-add-tor
-export BTCPAYGEN_ADDITIONAL_FRAGMENTS="opt-save-storage-s"
-
-# Run btcpay-setup.sh
-. btcpay-setup.sh -i
-
-exit
+export NBITCOIN_NETWORK="testnet"
+. ./btcpay-setup.sh -i
 ```
 
-Similarly if you are adding an environment variable, the export command would instead look like this:
-
-```bash
-# Enable Tor in addition to your existing environment variables (such as pruning)
-export BTCPAYGEN_ADDITIONAL_FRAGMENTS="$BTCPAYGEN_ADDITIONAL_FRAGMENTS;opt-add-tor"
-```
-
-If you need to figure out which environment variable you need to modify, have a look at [this list](https://github.com/btcpayserver/btcpayserver-docker#environment-variables).
+Use `btcpay-fragments` instead of editing the additional and excluded fragment
+variables directly. See the [Docker configuration
+reference](../Docker/configuration.md) and [optional fragments
+guide](../Docker/fragments.md).
 
 ### How can I run BTCPay on testnet?
 
@@ -149,7 +133,8 @@ No, you need to keep your BTCPay running at all times so that your Bitcoin node 
 
 BTCPay's Bitcoin core node is not exposed externally by default. For BTCPay purposes, it is typically not in the interest of the user, as it increases the bandwidth requirement. BTCPay is also whitebinding connections to this port, so opening it would expose the node to potential DDoS.
 
-However, we expose a P2P connection to your full node on Tor. You can get the Tor address by running:
+When Tor is enabled, it exposes a P2P connection to your full node. You can get
+the Tor address by running:
 
 ```bash
 cat /var/lib/docker/volumes/generated_tor_servicesdir/_data/BTC-P2P/hostname
@@ -159,7 +144,7 @@ Or via the `Server Settings` of your BTCPay Server instance, logged as an admini
 
 Please do not share this tor hidden service with untrusted parties. Connections to this hidden service are whitelisted by the bitcoin node, malicious peer would be able to DDoS your node.
 
-If you need to unsafely expose bitcoind P2P port 8333 (for example if you require P2P for Bisq, DOJO, Esplora, etc.) and you are using a docker deployment, you can use the [opt-unsafe-expose](https://docs.btcpayserver.org/Docker/#generated-docker-compose) additional fragment.
+If you need to unsafely expose bitcoind P2P port 8333 (for example if you require P2P for Bisq, DOJO, Esplora, etc.) and you are using a Docker deployment, you can use the [`opt-expose-unsafe`](/Docker/fragments/#lightning-and-node-features) additional fragment.
 
 :::danger WARNING
 ONLY USE ON TRUSTED LAN OR WITH FIREWALL RULES WHITELISTING SPECIFIC HOSTS
@@ -171,114 +156,8 @@ If your SSL certificate has expired for your BTCPay Server, you can manually ren
 
 ### Can I use an existing Nginx server as a reverse proxy with SSL termination?
 
-Yes you can! Just make sure to use the proper configuration.
-
-Create an extra config file for your vhost in `/etc/nginx/sites-available/btcpayserver` and create a symlink for this file at `/etc/nginx/sites-enabled/btcpayserver`
-
-The contents of this vhost file should look like this:
-
-```nginx
-server {
-	listen 80;
-
-	root /var/www/html;
-	index index.html index.htm index.nginx-debian.html;
-
-	# Put your domain name here
-	server_name btcpay.domain.com;
-
-	# Needed for Let's Encrypt verification
-	location ~ /.well-known/acme-challenge {
-		allow all;
-	}
-
-	# Force HTTP to HTTPS
-	location / {
-		return 301 https://$http_host$request_uri;
-	}
-}
-
-server {
-	listen 443 ssl http2;
-
-	ssl on;
-
-	# SSL certificate by Let's Encrypt in this Nginx (not using Let's Encyrpt that came with BTCPay Server Docker)
-	ssl_certificate      /etc/letsencrypt/live/btcpay.domain.com/fullchain.pem;
-	ssl_certificate_key  /etc/letsencrypt/live/btcpay.domain.com/privkey.pem;
-
-	root /var/www/html;
-	index index.html index.htm index.nginx-debian.html;
-
-	# Put your domain name here
-	server_name btcpay.domain.com;
-
-	# Route everything to the real BTCPay server
-	location / {
-		# URL of BTCPay Server (i.e. a Docker installation with REVERSEPROXY_HTTP_PORT set to 10080)
-		proxy_pass http://127.0.0.1:10080;
-
-		proxy_set_header Host $http_host;
-		proxy_set_header X-Forwarded-Proto $scheme;
-		proxy_set_header X-Real-IP $remote_addr;
-		proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
-
-		# For websockets (used by Ledger hardware wallets)
-		proxy_set_header Upgrade $http_upgrade;
-	}
-
-	# Needed for Let's Encrypt verification
-	location ~ /.well-known/acme-challenge {
-		allow all;
-	}
-}
-
-```
-
-Also, put the following in your main Nginx config file at `/etc/nginx/nginx.conf`:
-
-```nginx
-http {
-
-	# ... # Existing stuff
-
-	# Needed to allow very long URLs to prevent issues while signing PSBTs
-	server_names_hash_bucket_size 128;
-	proxy_buffer_size          128k;
-	proxy_buffers              4 256k;
-	proxy_busy_buffers_size    256k;
-	client_header_buffer_size 500k;
-	large_client_header_buffers 4 500k;
-
-	# Needed websocket support (used by Ledger hardware wallets)
-	map $http_upgrade $connection_upgrade {
-    	default upgrade;
-    	''      close;
-	}
-
-}
-```
-
-Now test your Nginx config with `service nginx configtest` and reload the config with `service nginx reload`.
-
-Then, you need to make sure that BTCPayServer does not try to handle HTTPS on its side, you can do this by disabling it on your BTCPayServer instance.
-
-```bash
-BTCPAYGEN_EXCLUDE_FRAGMENTS="$BTCPAYGEN_EXCLUDE_FRAGMENTS;nginx-https"
-. btcpay-setup.sh -i
-```
-
-Notice: If your BTCPay Server install has more than one domain (for example `WOOCOMMERCE_HOST` or `BTCPAY_ADDITIONAL_HOSTS`) you will need to modify your config for each domain name. The example above only covers 1 domain name called `btcpay.domain.com`.
-
-### Can I use Bitcoin Knots instead of Bitcoin Core?
-
-That is possible. Just make sure you have recently updated your deployment (`btcpay-update.sh`) and then run the following commands:
-
-```bash
-switch-node.sh bitcoinknots
-```
-
-If you want to switch back, simply use the argument `default` instead of `bitcoinknots` above.
+Yes. Follow the Docker deployment guide for [terminating HTTPS with an external
+reverse proxy](../Docker/networking.md#external-reverse-proxy).
 
 ## How to change your BTCPay Server domain name?
 
@@ -362,49 +241,8 @@ This will completely erase BTCPay Server from your instance and remove the assoc
 
 ### How to deploy BTCPay Server alongside existing Bitcoin node?
 
-The instructions below are valid for Docker deployments:
-
-- Run setup as described in [btcpayserver-docker](https://github.com/btcpayserver/btcpayserver-docker#full-installation-for-technical-users) up until `. ./btcpay-setup.sh -i`
-- Create `bitcoin.custom.yml` in the `docker-compose-generator/docker-fragments/` folder.
-
-```yml
-version: '3'
-
-services:
-  btcpayserver:
-    environment:
-      BTCPAY_CHAINS: 'btc'
-      BTCPAY_BTCEXPLORERURL: http://nbxplorer:32838/
-  nbxplorer:
-    environment:
-      NBXPLORER_CHAINS: 'btc'
-      NBXPLORER_BTCRPCURL: http://host.docker.internal:43782/
-      NBXPLORER_BTCRPCUSER: 'rpc-username'
-      NBXPLORER_BTCRPCPASSWORD: 'rpc-password'
-      NBXPLORER_BTCNODEENDPOINT: host.docker.internal:39388
-    volumes:
-      - 'localBitcoinfolder:/root/.bitcoin'
-```
-
-- Replace: `43782` with your bitcoin node's configured RPC port
-- Replace: `rpc-username` with your bitcoin node's configured RPC username
-- Replace: `rpc-password` with your bitcoin node's configured RPC password
-- Replace: `39388` with your bitcoin node's configured p2p port
-- Replace `localBitcoinfolder` with the path to your bitcoin data folder
-
-If you are running on linux, due to [a limitation of docker](https://github.com/docker/for-linux/issues/264), you will also need to do the following:
-
-- Run `ip route | grep docker0 | awk '{print $9}'`
-  - Add the following at the end of the `bitcoin.custom.yml` file, replacing `$DOCKER_HOST_IP` with the result of the previous command.
-
-```yml
-extra_hosts:
-  - 'host.docker.internal:$DOCKER_HOST_IP'
-```
-
-- Run `export BTCPAYGEN_EXCLUDE_FRAGMENTS="bitcoin"`
-- Run `export BTCPAYGEN_ADDITIONAL_FRAGMENTS="$BTCPAYGEN_ADDITIONAL_FRAGMENTS;bitcoin.custom"`
-- Run `. ./btcpay-setup.sh -i`
+For Docker deployments, follow the authoritative guide for [using an existing
+Bitcoin Core node](../Docker/customization.md#use-an-existing-bitcoin-core-node).
 
 If you are looking for how to deploy alongside existing Lightning node [see this](./LightningNetwork.md#can-i-use-my-existing-ln-node-with-btcpay).
 
@@ -560,52 +398,25 @@ If the docker container is not running, then check the reason for crash like thi
 
 Where 6a6b9fd75692 is the container ID that is having issues.
 
-#### Cause 3: BTCPay is expecting you to access this website from
+<a id="cause-3-btcpay-is-expecting-you-to-access-this-website-from"></a>
 
-You might also see the following error: `You access BTCPay Server over an unsecured network`.
+#### Cause 3: You access BTCPay Server over an unsecured network
 
-You might see this error on the front page of your BTCPay Server since version `1.0.3.73`.
+This warning can appear when an external reverse proxy terminates HTTPS but
+BTCPay Server does not receive or trust the original host and protocol headers.
 
-This is caused by a breaking change made in BTCPay to be able to handle different domain on the same server.
+After configuring the reverse proxy to forward these headers, reconfigure
+BTCPay Server to trust them:
 
-It happens because your BTCPay Server is not exposed directly on internet, instead a reverse proxy (like nginx or IIS) receive the request and forward it to BTCPay Server.
-
-Sadly, depending on the configuration of your reverse proxy, either the HTTP HOST header has been replaced, or the reverse proxy did not forwarded the protocol at the front with the http header `X-Forwarded-Proto`.
-
-If you use NGinx, here is what you need to have at the top level in `/etc/nginx/conf.d/default.conf`:
-
-```nginx
-map $http_x_forwarded_proto $proxy_x_forwarded_proto {
-  default $http_x_forwarded_proto;
-  ''      $scheme;
-}
-proxy_set_header Host $http_host;
-proxy_set_header X-Forwarded-Proto $proxy_x_forwarded_proto;
-
-server_names_hash_bucket_size 128;
-proxy_buffer_size          128k;
-proxy_buffers              4 256k;
-proxy_busy_buffers_size    256k;
-client_header_buffer_size 500k;
-large_client_header_buffers 4 500k;
+```bash
+export TRUST_DOWNSTREAM_PROXY="true"
+. btcpay-setup.sh -i
 ```
 
-If your reverse proxy is Apache 2, you need to set those two settings
-
-```
-<VirtualHost *:443>
-    RequestHeader set X-Forwarded-Proto "https"
-    ProxyPreserveHost on
-...
-</VirtualHost>
-```
-
-You will also need those settings in the `apache2.conf` to prevent issues while signing PSBTs.
-
-```
-LimitRequestLine 500000
-LimitRequestFieldSize 500000
-```
+Only enable this when the BTCPay host's HTTP port is accessible exclusively
+through the trusted reverse proxy. Follow the complete [external reverse proxy
+configuration](/Docker/networking.md#external-reverse-proxy) for Nginx or
+Apache, including the required security restrictions.
 
 #### Cause 4: Getting 500 nginx error on a local server https and for http BTCPay is expecting you to access this website from
 
