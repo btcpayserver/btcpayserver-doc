@@ -167,6 +167,7 @@ const sidebarOperators = [
     collapsable: false,
     children: [
       '/Deployment/',
+      '/Hardening/',
       '/Deployment/ThirdPartyHosting',
       '/Configurator/',
       {
@@ -502,6 +503,7 @@ module.exports = {
       '/Operators': sidebarOperators,
       '/Configurator': sidebarOperators,
       '/Deployment': sidebarOperators,
+      '/Hardening': sidebarOperators,
       '/Docker': sidebarOperators,
       '/ElectrumX': sidebarOperators,
       '/ElectrumPersonalServer': sidebarOperators,
