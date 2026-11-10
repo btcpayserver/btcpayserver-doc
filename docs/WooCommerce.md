@@ -353,6 +353,14 @@ export WOOCOMMERCE_HOST="yourstoredomain.com"
 
 5. Go to your store's domain name, in our example that's store.yourdomain.com and follow the WordPress installation wizard.
 
+### Updating an existing WooCommerce installation
+
+Updating BTCPay Server or pulling a newer WooCommerce Docker image does not replace the WordPress files in your store's persistent volume. The image supplies files for a new installation; an existing store keeps its installed WordPress, WooCommerce, and BTCPay for WooCommerce plugin files. The image tag alone therefore does not tell you which application versions the store is running.
+
+Check the installed versions in WordPress under **Dashboard > Updates** and **Plugins > Installed Plugins**. Use the WordPress [core update](https://wordpress.org/documentation/article/updating-wordpress/) and [plugin update](https://wordpress.org/documentation/article/manage-plugins/#updating-plugins) procedures to maintain those applications. For multisite, have the network administrator check the shared installation and the plugins enabled for each subsite.
+
+Back up the shop's files and database, and validate application updates on staging before applying them to the live shop. After updating, verify the installed versions, checkout, signed BTCPay webhook delivery, and the resulting WooCommerce order status on each affected subsite. Keep the existing store volumes; deleting them to force initialization would remove the store's data.
+
 ## FAQ
 
 You can find additional information about the WooCommerce integration in our FAQ [here](../FAQ/Integrations/#woocommerce-faq).
