@@ -353,6 +353,16 @@ export WOOCOMMERCE_HOST="yourstoredomain.com"
 
 5. Go to your store's domain name, in our example that's store.yourdomain.com and follow the WordPress installation wizard.
 
+### Updating an existing WooCommerce installation
+
+Updating BTCPay Server or pulling a newer WooCommerce Docker image does not replace the WordPress files in your store's persistent volume. An existing store keeps its installed WordPress, WooCommerce, and BTCPay for WooCommerce plugin files, which WordPress updates separately. The image tag alone therefore does not tell you which application versions the store is running.
+
+WordPress enables automatic core updates by default; check the site's update settings and installed version under **Dashboard > Updates**. Plugin auto-updates are configured separately: under **Plugins > Installed Plugins**, you can [enable auto-updates](https://wordpress.org/documentation/article/plugins-themes-auto-updates/) for WooCommerce and BTCPay for WooCommerce. The WordPress [core update](https://wordpress.org/documentation/article/updating-wordpress/) and [plugin update](https://wordpress.org/documentation/article/manage-plugins/#updating-plugins) procedures also cover manual updates. For multisite, have the network administrator check the shared installation and plugin update settings.
+
+Container image updates maintain the underlying PHP and MariaDB runtimes. Their release series are upgraded conservatively as the end of support approaches, rather than always tracking the newest major version, to reduce compatibility problems with other plugins.
+
+Back up the shop's files and database, and validate application updates on staging before applying them to the live shop. After updating, verify the installed versions, checkout, signed BTCPay webhook delivery, and the resulting WooCommerce order status on each affected subsite. Keep the existing store volumes; deleting them to force initialization would remove the store's data.
+
 ## FAQ
 
 You can find additional information about the WooCommerce integration in our FAQ [here](../FAQ/Integrations/#woocommerce-faq).
