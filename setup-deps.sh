@@ -77,12 +77,14 @@ fi
 cd "$BTCPAYSERVER_DIR"
 
 cp SECURITY.md "$DOCS_DIR/BTCPayServer/Security.md"
+cp GLOSSARY.md "$DOCS_DIR/BTCPayServer/Glossary.md"
 cp BTCPayServer.Tests/README.md "$DOCS_DIR/BTCPayServer/LocalDevSetup.md"
 cp -r docs/users/. "$DOCS_DIR/Users"
 cp -r docs/operators/. "$DOCS_DIR/Operators"
 cp -r docs/developers/. "$DOCS_DIR/Developers"
 
 update_external "$DOCS_DIR/BTCPayServer/Security.md" https://github.com/btcpayserver/btcpayserver https://github.com/btcpayserver/btcpayserver/edit/master "$DOCS_DIR"/BTCPayServer/
+update_external "$DOCS_DIR/BTCPayServer/Glossary.md" https://github.com/btcpayserver/btcpayserver https://github.com/btcpayserver/btcpayserver/edit/master "$DOCS_DIR"/BTCPayServer/ "GLOSSARY.md"
 update_external "$DOCS_DIR/BTCPayServer/LocalDevSetup.md" https://github.com/btcpayserver/btcpayserver https://github.com/btcpayserver/btcpayserver/edit/master "$DOCS_DIR"/BTCPayServer/ "BTCPayServer.Tests/README.md"
 
 for audience in users operators developers; do

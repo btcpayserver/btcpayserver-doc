@@ -39,6 +39,7 @@ const sidebarUsers = [
     collapsable: false,
     children: [
       ['/Users/', 'User Guide'],
+      ['/BTCPayServer/Glossary', 'Glossary'],
       ['/TryItOut', 'Try it out'],
       ['/UseCase', 'Use Case'],
       ['/BTCPayVsOthers', 'BTCPay Server vs. Others']
