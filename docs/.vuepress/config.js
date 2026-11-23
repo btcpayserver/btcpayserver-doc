@@ -178,6 +178,7 @@ const sidebarOperators = [
         children: [
           ['/Deployment/LunaNode', 'Luna Node'],
           ['/Deployment/Cloudzy', 'Cloudzy'],
+          ['/Deployment/NoctHost', 'NoctHost'],
           ['/Deployment/Clovyr', 'Clovyr'],
           {
             title: 'Azure',
