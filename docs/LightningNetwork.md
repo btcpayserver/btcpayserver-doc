@@ -114,5 +114,6 @@ You can run CLN (Core Lightning) or LND alongside your BTCPay Server directly on
 * Use internal LN node (CLN, LND or Eclair)
 * Connect your external LN node via REST, TCP or LNDHub (e.g. you can connect your Alby Hub node)
 * Connect your LN wallet over [Nostr Wallet Connect](https://nwc.dev/) (NWC), you need to have the [Nostr plugin](https://github.com/Kukks/BTCPayServerPlugins/tree/master/Plugins/BTCPayServer.Plugins.NIP05) installed (also works for Alby Hub)
+* Connect a receive-only NWC wallet with the [OpenReceive plugin](https://openreceive.org/integrations/btcpay-server) (BTCPay Server 2.4.4 or later)
 
 For detailed setup instructions, see the [Lightning Network Setup guide](./LightningNetwork-Setup/#manage-liquidity-on-your-own-channel-management).
